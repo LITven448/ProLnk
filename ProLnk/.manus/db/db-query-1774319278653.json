@@ -1,0 +1,418 @@
+{
+  "query": "DESCRIBE partnerVerifications;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute DESCRIBE partnerVerifications;",
+  "rows": [
+    {
+      "Field": "id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": "NULL",
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "partnerId",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "UNI",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseNumber",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseState",
+      "Type": "varchar(10)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseExpiresAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseDocUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "licenseNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceCarrier",
+      "Type": "varchar(200)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insurancePolicyNumber",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceExpiresAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceDocUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "insuranceNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckProvider",
+      "Type": "varchar(100)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckDate",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckDocUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "backgroundCheckNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "businessRegistrationVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "businessRegistrationDocUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "businessRegistrationVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "businessRegistrationVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "businessRegistrationNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "referencesVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "referencesCount",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "referencesNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "referencesVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "referencesVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "portfolioVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "portfolioUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "portfolioNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "portfolioVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "portfolioVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "identityVerified",
+      "Type": "tinyint(1)",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "identityDocType",
+      "Type": "varchar(50)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "identityDocUrl",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "identityVerifiedAt",
+      "Type": "bigint",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "identityVerifiedBy",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "identityNotes",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": "NULL",
+      "Extra": ""
+    },
+    {
+      "Field": "trustScore",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "badgeLevel",
+      "Type": "enum('none','bronze','silver','gold','platinum')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "none",
+      "Extra": ""
+    },
+    {
+      "Field": "overallStatus",
+      "Type": "enum('unverified','partial','verified','suspended')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "unverified",
+      "Extra": ""
+    },
+    {
+      "Field": "createdAt",
+      "Type": "bigint",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "updatedAt",
+      "Type": "bigint",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    }
+  ],
+  "messages": [],
+  "stdout": "Field\tType\tNull\tKey\tDefault\tExtra\nid\tint\tNO\tPRI\tNULL\tauto_increment\npartnerId\tint\tNO\tUNI\tNULL\t\nlicenseVerified\ttinyint(1)\tNO\t\t0\t\nlicenseNumber\tvarchar(100)\tYES\t\tNULL\t\nlicenseState\tvarchar(10)\tYES\t\tNULL\t\nlicenseExpiresAt\tbigint\tYES\t\tNULL\t\nlicenseDocUrl\ttext\tYES\t\tNULL\t\nlicenseVerifiedAt\tbigint\tYES\t\tNULL\t\nlicenseVerifiedBy\tint\tYES\t\tNULL\t\nlicenseNotes\ttext\tYES\t\tNULL\t\ninsuranceVerified\ttinyint(1)\tNO\t\t0\t\ninsuranceCarrier\tvarchar(200)\tYES\t\tNULL\t\ninsurancePolicyNumber\tvarchar(100)\tYES\t\tNULL\t\ninsuranceExpiresAt\tbigint\tYES\t\tNULL\t\ninsuranceDocUrl\ttext\tYES\t\tNULL\t\ninsuranceVerifiedAt\tbigint\tYES\t\tNULL\t\ninsuranceVerifiedBy\tint\tYES\t\tNULL\t\ninsuranceNotes\ttext\tYES\t\tNULL\t\nbackgroundCheckVerified\ttinyint(1)\tNO\t\t0\t\nbackgroundCheckProvider\tvarchar(100)\tYES\t\tNULL\t\nbackgroundCheckDate\tbigint\tYES\t\tNULL\t\nbackgroundCheckDocUrl\ttext\tYES\t\tNULL\t\nbackgroundCheckVerifiedAt\tbigint\tYES\t\tNULL\t\nbackgroundCheckVerifiedBy\tint\tYES\t\tNULL\t\nbackgroundCheckNotes\ttext\tYES\t\tNULL\t\nbusinessRegistrationVerified\ttinyint(1)\tNO\t\t0\t\nbusinessRegistrationDocUrl\ttext\tYES\t\tNULL\t\nbusinessRegistrationVerifiedAt\tbigint\tYES\t\tNULL\t\nbusinessRegistrationVerifiedBy\tint\tYES\t\tNULL\t\nbusinessRegistrationNotes\ttext\tYES\t\tNULL\t\nreferencesVerified\ttinyint(1)\tNO\t\t0\t\nreferencesCount\tint\tYES\t\t0\t\nreferencesNotes\ttext\tYES\t\tNULL\t\nreferencesVerifiedAt\tbigint\tYES\t\tNULL\t\nreferencesVerifiedBy\tint\tYES\t\tNULL\t\nportfolioVerified\ttinyint(1)\tNO\t\t0\t\nportfolioUrl\ttext\tYES\t\tNULL\t\nportfolioNotes\ttext\tYES\t\tNULL\t\nportfolioVerifiedAt\tbigint\tYES\t\tNULL\t\nportfolioVerifiedBy\tint\tYES\t\tNULL\t\nidentityVerified\ttinyint(1)\tNO\t\t0\t\nidentityDocType\tvarchar(50)\tYES\t\tNULL\t\nidentityDocUrl\ttext\tYES\t\tNULL\t\nidentityVerifiedAt\tbigint\tYES\t\tNULL\t\nidentityVerifiedBy\tint\tYES\t\tNULL\t\nidentityNotes\ttext\tYES\t\tNULL\t\ntrustScore\tint\tNO\t\t0\t\nbadgeLevel\tenum('none','bronze','silver','gold','platinum')\tNO\t\tnone\t\noverallStatus\tenum('unverified','partial','verified','suspended')\tNO\t\tunverified\t\ncreatedAt\tbigint\tNO\t\t0\t\nupdatedAt\tbigint\tNO\t\t0\t\n",
+  "stderr": "",
+  "execution_time_ms": 125
+}

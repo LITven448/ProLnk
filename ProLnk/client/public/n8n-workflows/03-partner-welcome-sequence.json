@@ -1,0 +1,138 @@
+{
+  "name": "ProLnk: Partner Welcome Email Sequence (Day 0, 3, 7)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "prolnk-partner-approved",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.event }}",
+              "rightValue": "partner.approved",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ]
+        }
+      },
+      "id": "check-event",
+      "name": "Check Event",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "welcome@prolnk.io",
+        "fromName": "Andrew at ProLnk",
+        "toEmail": "={{ $json.partner_email }}",
+        "subject": "Welcome to ProLnk, {{ $json.partner_name }}! Here's how to get your first commission 🎉",
+        "emailType": "html",
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Welcome, {{ $json.partner_name }}!</h2><p>You're now a verified ProLnk partner. Here's what to do in the next 24 hours:</p><ol><li><strong>Download the Field OS app</strong> — log your first job photo to activate AI scanning</li><li><strong>Complete your profile</strong> — add your service area, license number, and a headshot</li><li><strong>Share your profile link</strong> — send it to 3 past customers to collect your first reviews</li></ol><a href='https://prolnk.io/dashboard' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Go to Your Dashboard →</a><p style='color: #666; font-size: 14px; margin-top: 24px;'>Questions? Reply to this email — I read every one. — Andrew</p></body></html>"
+      },
+      "id": "day0-email",
+      "name": "Day 0 — Welcome Email",
+      "type": "n8n-nodes-base.sendEmail",
+      "typeVersion": 2,
+      "position": [680, 220],
+      "credentials": { "smtp": { "id": "smtp-credentials", "name": "SMTP / SendGrid" } }
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "id": "wait-3-days",
+      "name": "Wait 3 Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [900, 220]
+    },
+    {
+      "parameters": {
+        "fromEmail": "tips@prolnk.io",
+        "fromName": "ProLnk Tips",
+        "toEmail": "={{ $json.partner_email }}",
+        "subject": "Day 3: Your first AI-detected lead is waiting",
+        "emailType": "html",
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.partner_name }},</h2><p>It's been 3 days since you joined. Here's a quick tip that top earners use:</p><blockquote style='border-left: 4px solid #0A1628; padding-left: 16px; color: #444;'><strong>Take 1-3 wide-angle photos at every job.</strong> Our AI scans for 50+ types of work your neighbors might need — and routes those leads to your partner network automatically.</blockquote><p>Partners who log photos in the first week earn <strong>3x more commissions</strong> in their first month.</p><a href='https://prolnk.io/field-os' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>Open Field OS →</a></body></html>"
+      },
+      "id": "day3-email",
+      "name": "Day 3 — First Job Tips",
+      "type": "n8n-nodes-base.sendEmail",
+      "typeVersion": 2,
+      "position": [1120, 220],
+      "credentials": { "smtp": { "id": "smtp-credentials", "name": "SMTP / SendGrid" } }
+    },
+    {
+      "parameters": {
+        "amount": 4,
+        "unit": "days"
+      },
+      "id": "wait-4-more-days",
+      "name": "Wait 4 More Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1340, 220]
+    },
+    {
+      "parameters": {
+        "fromEmail": "commissions@prolnk.io",
+        "fromName": "ProLnk",
+        "toEmail": "={{ $json.partner_email }}",
+        "subject": "Day 7: Here's exactly how your commissions work",
+        "emailType": "html",
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2>Hi {{ $json.partner_name }},</h2><p>You've been with ProLnk for a week. Let's make sure you understand how commissions work so you don't leave money on the table.</p><table style='width: 100%; border-collapse: collapse;'><tr style='background: #f5f5f5;'><th style='padding: 8px; text-align: left;'>Your Tier</th><th style='padding: 8px; text-align: left;'>Commission Rate</th><th style='padding: 8px; text-align: left;'>Monthly Cap</th></tr><tr><td style='padding: 8px;'>Scout (Free)</td><td style='padding: 8px;'>3%</td><td style='padding: 8px;'>$500</td></tr><tr style='background: #f5f5f5;'><td style='padding: 8px;'>Pro ($29/mo)</td><td style='padding: 8px;'>5%</td><td style='padding: 8px;'>Unlimited</td></tr><tr><td style='padding: 8px;'>Crew ($79/mo)</td><td style='padding: 8px;'>7%</td><td style='padding: 8px;'>Unlimited</td></tr></table><p style='margin-top: 16px;'>Commissions are paid on the 1st of each month via direct deposit (Stripe Connect).</p><a href='https://prolnk.io/dashboard/earnings' style='display: inline-block; background: #0A1628; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;'>View Your Earnings →</a></body></html>"
+      },
+      "id": "day7-email",
+      "name": "Day 7 — Commission Structure",
+      "type": "n8n-nodes-base.sendEmail",
+      "typeVersion": 2,
+      "position": [1560, 220],
+      "credentials": { "smtp": { "id": "smtp-credentials", "name": "SMTP / SendGrid" } }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true, \"sequence\": \"started\" } }}"
+      },
+      "id": "respond-ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [680, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": { "main": [[{ "node": "Check Event", "type": "main", "index": 0 }]] },
+    "Check Event": {
+      "main": [
+        [{ "node": "Day 0 — Welcome Email", "type": "main", "index": 0 }, { "node": "Respond OK", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Day 0 — Welcome Email": { "main": [[{ "node": "Wait 3 Days", "type": "main", "index": 0 }]] },
+    "Wait 3 Days": { "main": [[{ "node": "Day 3 — First Job Tips", "type": "main", "index": 0 }]] },
+    "Day 3 — First Job Tips": { "main": [[{ "node": "Wait 4 More Days", "type": "main", "index": 0 }]] },
+    "Wait 4 More Days": { "main": [[{ "node": "Day 7 — Commission Structure", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "prolnk": {
+      "version": "1.0",
+      "trigger_event": "partner.approved",
+      "payload_fields": ["event", "partner_email", "partner_name", "partner_id", "tier", "trade_category"]
+    }
+  }
+}

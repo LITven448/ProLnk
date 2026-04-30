@@ -1,0 +1,760 @@
+{
+  "query": "SELECT id, businessName, userId FROM partners ORDER BY id ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT id, businessName, userId FROM partners ORDER BY id ASC;",
+  "rows": [
+    {
+      "id": "593",
+      "businessName": "Green Thumb Lawn Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "594",
+      "businessName": "DFW Lawn Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "595",
+      "businessName": "Precision Mowing Co",
+      "userId": "NULL"
+    },
+    {
+      "id": "596",
+      "businessName": "Lone Star Lawn Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "597",
+      "businessName": "Premier Turf Management",
+      "userId": "NULL"
+    },
+    {
+      "id": "598",
+      "businessName": "Emerald Lawn Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "599",
+      "businessName": "Texas Green Lawn",
+      "userId": "NULL"
+    },
+    {
+      "id": "600",
+      "businessName": "ProCut Lawn Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "601",
+      "businessName": "Frisco Lawn Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "602",
+      "businessName": "McKinney Mowing Co",
+      "userId": "NULL"
+    },
+    {
+      "id": "603",
+      "businessName": "Artisan Landscapes DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "604",
+      "businessName": "Signature Outdoor Design",
+      "userId": "NULL"
+    },
+    {
+      "id": "605",
+      "businessName": "Nature's Edge Landscaping",
+      "userId": "NULL"
+    },
+    {
+      "id": "606",
+      "businessName": "Elite Landscape Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "607",
+      "businessName": "Texas Outdoor Living",
+      "userId": "NULL"
+    },
+    {
+      "id": "608",
+      "businessName": "AquaRight Irrigation",
+      "userId": "NULL"
+    },
+    {
+      "id": "609",
+      "businessName": "DFW Sprinkler Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "610",
+      "businessName": "Precision Irrigation Systems",
+      "userId": "NULL"
+    },
+    {
+      "id": "611",
+      "businessName": "WaterSmart DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "612",
+      "businessName": "Texas Irrigation Experts",
+      "userId": "NULL"
+    },
+    {
+      "id": "613",
+      "businessName": "Canopy Tree Service",
+      "userId": "NULL"
+    },
+    {
+      "id": "614",
+      "businessName": "DFW Tree Experts",
+      "userId": "NULL"
+    },
+    {
+      "id": "615",
+      "businessName": "Lone Star Tree Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "616",
+      "businessName": "Premier Arborist DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "617",
+      "businessName": "Texas Tree Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "618",
+      "businessName": "Stump Out DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "619",
+      "businessName": "Clean Slate Stump Removal",
+      "userId": "NULL"
+    },
+    {
+      "id": "620",
+      "businessName": "Texas Stump Grinders",
+      "userId": "NULL"
+    },
+    {
+      "id": "621",
+      "businessName": "Fortress Fence DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "622",
+      "businessName": "Premier Fence Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "623",
+      "businessName": "Texas Fence Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "624",
+      "businessName": "DFW Fence Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "625",
+      "businessName": "Lone Star Fencing",
+      "userId": "NULL"
+    },
+    {
+      "id": "626",
+      "businessName": "Iron Gate Fence Co",
+      "userId": "NULL"
+    },
+    {
+      "id": "627",
+      "businessName": "Cedar Creek Fencing",
+      "userId": "NULL"
+    },
+    {
+      "id": "628",
+      "businessName": "Boundary Line Fence",
+      "userId": "NULL"
+    },
+    {
+      "id": "629",
+      "businessName": "All-Star Fence DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "630",
+      "businessName": "Secure Fence Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "631",
+      "businessName": "ColorWave Painting DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "632",
+      "businessName": "Premier Coat Painters",
+      "userId": "NULL"
+    },
+    {
+      "id": "633",
+      "businessName": "Texas Brush Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "634",
+      "businessName": "Flawless Finish Painting",
+      "userId": "NULL"
+    },
+    {
+      "id": "635",
+      "businessName": "DFW Pro Painters",
+      "userId": "NULL"
+    },
+    {
+      "id": "636",
+      "businessName": "BlastOff Power Washing",
+      "userId": "NULL"
+    },
+    {
+      "id": "637",
+      "businessName": "Sparkle Clean DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "638",
+      "businessName": "HydroBlast Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "639",
+      "businessName": "Crystal Clear Washing",
+      "userId": "NULL"
+    },
+    {
+      "id": "640",
+      "businessName": "Texas Power Wash Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "641",
+      "businessName": "GutterGuard DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "642",
+      "businessName": "Clean Flow Gutters",
+      "userId": "NULL"
+    },
+    {
+      "id": "643",
+      "businessName": "Premier Gutter Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "644",
+      "businessName": "Texas Gutter Experts",
+      "userId": "NULL"
+    },
+    {
+      "id": "645",
+      "businessName": "All-Clear Gutters",
+      "userId": "NULL"
+    },
+    {
+      "id": "646",
+      "businessName": "Apex Roofing DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "647",
+      "businessName": "Storm Shield Roofing",
+      "userId": "NULL"
+    },
+    {
+      "id": "648",
+      "businessName": "Premier Roof Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "649",
+      "businessName": "Texas Top Roofing",
+      "userId": "NULL"
+    },
+    {
+      "id": "650",
+      "businessName": "Reliable Roofing Co",
+      "userId": "NULL"
+    },
+    {
+      "id": "651",
+      "businessName": "DFW Roof Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "652",
+      "businessName": "Guardian Roofing",
+      "userId": "NULL"
+    },
+    {
+      "id": "653",
+      "businessName": "Summit Roofing DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "654",
+      "businessName": "AquaBlue Pool Service",
+      "userId": "NULL"
+    },
+    {
+      "id": "655",
+      "businessName": "Crystal Waters Pool Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "656",
+      "businessName": "DFW Pool Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "657",
+      "businessName": "Premier Pool Service",
+      "userId": "NULL"
+    },
+    {
+      "id": "658",
+      "businessName": "Texas Pool Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "659",
+      "businessName": "Blue Lagoon Pool Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "660",
+      "businessName": "Splash Zone Pool Service",
+      "userId": "NULL"
+    },
+    {
+      "id": "661",
+      "businessName": "Clear View Pool Maintenance",
+      "userId": "NULL"
+    },
+    {
+      "id": "662",
+      "businessName": "Aqua Perfect DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "663",
+      "businessName": "Poolside Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "664",
+      "businessName": "Shield Pest Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "665",
+      "businessName": "Texas Bug Busters",
+      "userId": "NULL"
+    },
+    {
+      "id": "666",
+      "businessName": "Premier Pest Control DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "667",
+      "businessName": "Terminator Pest Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "668",
+      "businessName": "BugFree DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "669",
+      "businessName": "Eco Guard Pest Control",
+      "userId": "NULL"
+    },
+    {
+      "id": "670",
+      "businessName": "Fortress Pest Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "671",
+      "businessName": "DFW Pest Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "672",
+      "businessName": "AirPro HVAC DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "673",
+      "businessName": "Cool Breeze HVAC",
+      "userId": "NULL"
+    },
+    {
+      "id": "674",
+      "businessName": "Premier Air Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "675",
+      "businessName": "Texas Climate Control",
+      "userId": "NULL"
+    },
+    {
+      "id": "676",
+      "businessName": "Comfort Zone HVAC",
+      "userId": "NULL"
+    },
+    {
+      "id": "677",
+      "businessName": "Arctic Air DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "678",
+      "businessName": "TempRight HVAC",
+      "userId": "NULL"
+    },
+    {
+      "id": "679",
+      "businessName": "DFW Air Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "680",
+      "businessName": "FlowRight Plumbing DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "681",
+      "businessName": "Premier Plumbing Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "682",
+      "businessName": "Texas Pipe Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "683",
+      "businessName": "DFW Plumbing Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "684",
+      "businessName": "Leak Stop Plumbing",
+      "userId": "NULL"
+    },
+    {
+      "id": "685",
+      "businessName": "AquaFix Plumbing",
+      "userId": "NULL"
+    },
+    {
+      "id": "686",
+      "businessName": "Reliable Plumbing DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "687",
+      "businessName": "Clear Flow Plumbing",
+      "userId": "NULL"
+    },
+    {
+      "id": "688",
+      "businessName": "FixIt Pro DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "689",
+      "businessName": "All Hands Handyman",
+      "userId": "NULL"
+    },
+    {
+      "id": "690",
+      "businessName": "Premier Home Repairs",
+      "userId": "NULL"
+    },
+    {
+      "id": "691",
+      "businessName": "Texas Fix-All Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "692",
+      "businessName": "Reliable Handyman DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "693",
+      "businessName": "HomeFix Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "694",
+      "businessName": "Master Handyman DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "695",
+      "businessName": "Ace Home Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "696",
+      "businessName": "StoneCraft DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "697",
+      "businessName": "Premier Concrete Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "698",
+      "businessName": "Texas Hardscape Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "699",
+      "businessName": "Solid Ground DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "700",
+      "businessName": "Artisan Concrete Works",
+      "userId": "NULL"
+    },
+    {
+      "id": "701",
+      "businessName": "DFW Paving Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "702",
+      "businessName": "Crystal Clear Windows DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "703",
+      "businessName": "Shine Bright Window Service",
+      "userId": "NULL"
+    },
+    {
+      "id": "704",
+      "businessName": "Premier Window Cleaning",
+      "userId": "NULL"
+    },
+    {
+      "id": "705",
+      "businessName": "ClearView Window Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "706",
+      "businessName": "Spotless Windows DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "707",
+      "businessName": "Texas Window Masters",
+      "userId": "NULL"
+    },
+    {
+      "id": "708",
+      "businessName": "Premier Remodel DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "709",
+      "businessName": "Texas Home Transformations",
+      "userId": "NULL"
+    },
+    {
+      "id": "710",
+      "businessName": "Elite Kitchen & Bath",
+      "userId": "NULL"
+    },
+    {
+      "id": "711",
+      "businessName": "Craftsman Remodeling DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "712",
+      "businessName": "Signature Home Renovations",
+      "userId": "NULL"
+    },
+    {
+      "id": "713",
+      "businessName": "OutdoorCraft DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "714",
+      "businessName": "Premier Deck Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "715",
+      "businessName": "Texas Patio Builders",
+      "userId": "NULL"
+    },
+    {
+      "id": "716",
+      "businessName": "Backyard Paradise DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "717",
+      "businessName": "Artisan Outdoor Living",
+      "userId": "NULL"
+    },
+    {
+      "id": "718",
+      "businessName": "TurfPro DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "719",
+      "businessName": "EverGreen Turf Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "720",
+      "businessName": "Texas Synthetic Grass",
+      "userId": "NULL"
+    },
+    {
+      "id": "721",
+      "businessName": "Premier Turf DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "722",
+      "businessName": "GreenScape Artificial Turf",
+      "userId": "NULL"
+    },
+    {
+      "id": "723",
+      "businessName": "Scoop Duke",
+      "userId": "NULL"
+    },
+    {
+      "id": "724",
+      "businessName": "DFW Pet Waste Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "725",
+      "businessName": "Clean Yard Pet Services",
+      "userId": "NULL"
+    },
+    {
+      "id": "726",
+      "businessName": "SecureHome DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "727",
+      "businessName": "Guardian Security Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "728",
+      "businessName": "Premier Security DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "729",
+      "businessName": "Texas Home Security",
+      "userId": "NULL"
+    },
+    {
+      "id": "730",
+      "businessName": "PureWater DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "731",
+      "businessName": "Texas Water Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "732",
+      "businessName": "ClearFlow Water Treatment",
+      "userId": "NULL"
+    },
+    {
+      "id": "733",
+      "businessName": "PowerRight Electric DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "734",
+      "businessName": "Premier Electrical Solutions",
+      "userId": "NULL"
+    },
+    {
+      "id": "735",
+      "businessName": "Texas Wiring Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "736",
+      "businessName": "Bright Spark Electric",
+      "userId": "NULL"
+    },
+    {
+      "id": "737",
+      "businessName": "Interior Artistry DFW",
+      "userId": "NULL"
+    },
+    {
+      "id": "738",
+      "businessName": "Premier Interior Painters",
+      "userId": "NULL"
+    },
+    {
+      "id": "739",
+      "businessName": "Texas Color Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "740",
+      "businessName": "Flawless Interior Painting",
+      "userId": "NULL"
+    },
+    {
+      "id": "30001",
+      "businessName": "Scoop Duke DFW",
+      "userId": "1"
+    },
+    {
+      "id": "30002",
+      "businessName": "Green Thumb Lawn Care",
+      "userId": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tbusinessName\tuserId\n593\tGreen Thumb Lawn Care\tNULL\n594\tDFW Lawn Masters\tNULL\n595\tPrecision Mowing Co\tNULL\n596\tLone Star Lawn Services\tNULL\n597\tPremier Turf Management\tNULL\n598\tEmerald Lawn Care\tNULL\n599\tTexas Green Lawn\tNULL\n600\tProCut Lawn Services\tNULL\n601\tFrisco Lawn Pros\tNULL\n602\tMcKinney Mowing Co\tNULL\n603\tArtisan Landscapes DFW\tNULL\n604\tSignature Outdoor Design\tNULL\n605\tNature's Edge Landscaping\tNULL\n606\tElite Landscape Solutions\tNULL\n607\tTexas Outdoor Living\tNULL\n608\tAquaRight Irrigation\tNULL\n609\tDFW Sprinkler Pros\tNULL\n610\tPrecision Irrigation Systems\tNULL\n611\tWaterSmart DFW\tNULL\n612\tTexas Irrigation Experts\tNULL\n613\tCanopy Tree Service\tNULL\n614\tDFW Tree Experts\tNULL\n615\tLone Star Tree Care\tNULL\n616\tPremier Arborist DFW\tNULL\n617\tTexas Tree Masters\tNULL\n618\tStump Out DFW\tNULL\n619\tClean Slate Stump Removal\tNULL\n620\tTexas Stump Grinders\tNULL\n621\tFortress Fence DFW\tNULL\n622\tPremier Fence Solutions\tNULL\n623\tTexas Fence Masters\tNULL\n624\tDFW Fence Pros\tNULL\n625\tLone Star Fencing\tNULL\n626\tIron Gate Fence Co\tNULL\n627\tCedar Creek Fencing\tNULL\n628\tBoundary Line Fence\tNULL\n629\tAll-Star Fence DFW\tNULL\n630\tSecure Fence Solutions\tNULL\n631\tColorWave Painting DFW\tNULL\n632\tPremier Coat Painters\tNULL\n633\tTexas Brush Masters\tNULL\n634\tFlawless Finish Painting\tNULL\n635\tDFW Pro Painters\tNULL\n636\tBlastOff Power Washing\tNULL\n637\tSparkle Clean DFW\tNULL\n638\tHydroBlast Services\tNULL\n639\tCrystal Clear Washing\tNULL\n640\tTexas Power Wash Pros\tNULL\n641\tGutterGuard DFW\tNULL\n642\tClean Flow Gutters\tNULL\n643\tPremier Gutter Solutions\tNULL\n644\tTexas Gutter Experts\tNULL\n645\tAll-Clear Gutters\tNULL\n646\tApex Roofing DFW\tNULL\n647\tStorm Shield Roofing\tNULL\n648\tPremier Roof Solutions\tNULL\n649\tTexas Top Roofing\tNULL\n650\tReliable Roofing Co\tNULL\n651\tDFW Roof Masters\tNULL\n652\tGuardian Roofing\tNULL\n653\tSummit Roofing DFW\tNULL\n654\tAquaBlue Pool Service\tNULL\n655\tCrystal Waters Pool Care\tNULL\n656\tDFW Pool Pros\tNULL\n657\tPremier Pool Service\tNULL\n658\tTexas Pool Masters\tNULL\n659\tBlue Lagoon Pool Care\tNULL\n660\tSplash Zone Pool Service\tNULL\n661\tClear View Pool Maintenance\tNULL\n662\tAqua Perfect DFW\tNULL\n663\tPoolside Pros\tNULL\n664\tShield Pest Solutions\tNULL\n665\tTexas Bug Busters\tNULL\n666\tPremier Pest Control DFW\tNULL\n667\tTerminator Pest Services\tNULL\n668\tBugFree DFW\tNULL\n669\tEco Guard Pest Control\tNULL\n670\tFortress Pest Solutions\tNULL\n671\tDFW Pest Pros\tNULL\n672\tAirPro HVAC DFW\tNULL\n673\tCool Breeze HVAC\tNULL\n674\tPremier Air Solutions\tNULL\n675\tTexas Climate Control\tNULL\n676\tComfort Zone HVAC\tNULL\n677\tArctic Air DFW\tNULL\n678\tTempRight HVAC\tNULL\n679\tDFW Air Masters\tNULL\n680\tFlowRight Plumbing DFW\tNULL\n681\tPremier Plumbing Solutions\tNULL\n682\tTexas Pipe Masters\tNULL\n683\tDFW Plumbing Pros\tNULL\n684\tLeak Stop Plumbing\tNULL\n685\tAquaFix Plumbing\tNULL\n686\tReliable Plumbing DFW\tNULL\n687\tClear Flow Plumbing\tNULL\n688\tFixIt Pro DFW\tNULL\n689\tAll Hands Handyman\tNULL\n690\tPremier Home Repairs\tNULL\n691\tTexas Fix-All Services\tNULL\n692\tReliable Handyman DFW\tNULL\n693\tHomeFix Pros\tNULL\n694\tMaster Handyman DFW\tNULL\n695\tAce Home Services\tNULL\n696\tStoneCraft DFW\tNULL\n697\tPremier Concrete Solutions\tNULL\n698\tTexas Hardscape Pros\tNULL\n699\tSolid Ground DFW\tNULL\n700\tArtisan Concrete Works\tNULL\n701\tDFW Paving Masters\tNULL\n702\tCrystal Clear Windows DFW\tNULL\n703\tShine Bright Window Service\tNULL\n704\tPremier Window Cleaning\tNULL\n705\tClearView Window Pros\tNULL\n706\tSpotless Windows DFW\tNULL\n707\tTexas Window Masters\tNULL\n708\tPremier Remodel DFW\tNULL\n709\tTexas Home Transformations\tNULL\n710\tElite Kitchen & Bath\tNULL\n711\tCraftsman Remodeling DFW\tNULL\n712\tSignature Home Renovations\tNULL\n713\tOutdoorCraft DFW\tNULL\n714\tPremier Deck Solutions\tNULL\n715\tTexas Patio Builders\tNULL\n716\tBackyard Paradise DFW\tNULL\n717\tArtisan Outdoor Living\tNULL\n718\tTurfPro DFW\tNULL\n719\tEverGreen Turf Solutions\tNULL\n720\tTexas Synthetic Grass\tNULL\n721\tPremier Turf DFW\tNULL\n722\tGreenScape Artificial Turf\tNULL\n723\tScoop Duke\tNULL\n724\tDFW Pet Waste Pros\tNULL\n725\tClean Yard Pet Services\tNULL\n726\tSecureHome DFW\tNULL\n727\tGuardian Security Solutions\tNULL\n728\tPremier Security DFW\tNULL\n729\tTexas Home Security\tNULL\n730\tPureWater DFW\tNULL\n731\tTexas Water Solutions\tNULL\n732\tClearFlow Water Treatment\tNULL\n733\tPowerRight Electric DFW\tNULL\n734\tPremier Electrical Solutions\tNULL\n735\tTexas Wiring Pros\tNULL\n736\tBright Spark Electric\tNULL\n737\tInterior Artistry DFW\tNULL\n738\tPremier Interior Painters\tNULL\n739\tTexas Color Pros\tNULL\n740\tFlawless Interior Painting\tNULL\n30001\tScoop Duke DFW\t1\n30002\tGreen Thumb Lawn Care\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 64
+}

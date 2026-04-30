@@ -1,0 +1,47 @@
+# ProLnk Master Document
+Last updated: [today's date]
+
+## Current Reality
+- Stage:
+- Pros warm:
+- Pros committed (signed founding agreement):
+- Homeowners on waitlist:
+- Revenue: $0
+- Burn rate: [your monthly spend]
+- Runway: 24+ months
+
+## What's Actually Built (will update after audit)
+- [Leave this blank, we'll fill from PROLNK_AUDIT.md]
+
+## What's NOT Built / Critical Gaps
+- [Leave blank, fill from audit]
+
+## 30-Day Pilot Plan
+- Pilot pros (5-10 names):
+- Start date:
+- Manual operations process:
+- Success metrics:
+
+## Open Questions / Decisions Needed
+1. Pricing for founding partners (locked rate)
+2. Background check vendor (Checkr vs Certn)
+3. Insurance verification vendor
+4. Contract dev hire — when, who, scope
+5. Homeowner consent flow — final wording
+6. Demand-side launch — which neighborhoods first
+
+## Decisions Already Made (and why)
+- AI auto-approve threshold: ≥80/100 with insurance
+- Payout batching: weekly, Friday 6am CT, $25 minimum
+- Origination override: 1.5% forever to first-to-document pro
+- Founding partner cap: 100
+- ProLnk Media: standalone business, not bundled
+
+## Weekly Operating Notes
+[Empty — start adding entries every Friday for 30 minutes]
+
+## Risks I'm Tracking
+- Pro retention after 90-day free period (the #1 metric)
+- Homeowner cold-introduction backlash
+- Manus codebase accuracy (resolving with audit)
+- Lit Ventures stake clarity (resolving with attorney)

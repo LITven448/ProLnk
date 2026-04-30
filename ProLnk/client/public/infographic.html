@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ProLnk Ecosystem — Partner & Investor Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Brand palette */
+  --prolnk:       #0369A1;   /* strong blue */
+  --prolnk-light: #E0F2FE;
+  --prolnk-mid:   #0284C7;
+  --fieldos:      #D97706;   /* amber */
+  --fieldos-light:#FEF3C7;
+  --trustypro:    #059669;   /* emerald */
+  --trustypro-light:#D1FAE5;
+  --purple:       #7C3AED;
+  --purple-light: #EDE9FE;
+
+  /* Neutrals */
+  --ink:    #0F172A;
+  --ink2:   #334155;
+  --ink3:   #64748B;
+  --rule:   #E2E8F0;
+  --bg:     #F8FAFC;
+  --white:  #FFFFFF;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.page { max-width: 1160px; margin: 0 auto; padding: 52px 32px 80px; }
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 56px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--rule);
+}
+.header-left {}
+.confidential {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--purple-light);
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.header h1 em { font-style: normal; color: var(--prolnk-mid); }
+.header p {
+  font-size: 15px;
+  color: var(--ink3);
+  line-height: 1.65;
+  max-width: 520px;
+}
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+}
+.logo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+.logo-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.lp-prolnk    { background: var(--prolnk-light);    color: var(--prolnk); }
+.lp-fieldos   { background: var(--fieldos-light);   color: var(--fieldos); }
+.lp-trustypro { background: var(--trustypro-light); color: var(--trustypro); }
+
+/* ── SECTION TITLE ──────────────────────────────────────── */
+.sec {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+.sec-num {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.sn-blue   { background: var(--prolnk-light); color: var(--prolnk); }
+.sn-amber  { background: var(--fieldos-light); color: var(--fieldos); }
+.sn-green  { background: var(--trustypro-light); color: var(--trustypro); }
+.sn-purple { background: var(--purple-light); color: var(--purple); }
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.sec-rule { flex: 1; height: 1px; background: var(--rule); }
+
+/* ── PLATFORM CARDS ─────────────────────────────────────── */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pcard {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+}
+.pcard-header {
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid var(--rule);
+}
+.pcard-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+.pi-prolnk    { background: var(--prolnk-light); }
+.pi-fieldos   { background: var(--fieldos-light); }
+.pi-trustypro { background: var(--trustypro-light); }
+
+.pcard-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.pb-prolnk    { background: var(--prolnk-light);    color: var(--prolnk); }
+.pb-fieldos   { background: var(--fieldos-light);   color: var(--fieldos); }
+.pb-trustypro { background: var(--trustypro-light); color: var(--trustypro); }
+
+.pcard-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.pcard-tagline {
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.55;
+}
+.pcard-body { padding: 20px 24px; flex: 1; }
+.pcard-features { list-style: none; }
+.pcard-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 7px 0;
+  font-size: 13px;
+  color: var(--ink2);
+  border-bottom: 1px solid #F1F5F9;
+  line-height: 1.4;
+}
+.pcard-features li:last-child { border-bottom: none; }
+.fdot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.fd-prolnk    { background: var(--prolnk); }
+.fd-fieldos   { background: var(--fieldos); }
+.fd-trustypro { background: var(--trustypro); }
+
+.pcard-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pf-prolnk    { background: #F0F9FF; color: var(--prolnk); }
+.pf-fieldos   { background: #FFFBEB; color: var(--fieldos); }
+.pf-trustypro { background: #ECFDF5; color: var(--trustypro); }
+
+/* ── FLOW SECTION ───────────────────────────────────────── */
+.flow-wrap {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+.flow-header {
+  padding: 20px 28px;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flow-header-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+.flow-header-sub { font-size: 12px; color: #94A3B8; }
+.flow-lanes { display: grid; grid-template-columns: 1fr 1fr; }
+.flow-lane {
+  padding: 24px 28px;
+  border-right: 1px solid var(--rule);
+}
+.flow-lane:last-child { border-right: none; }
+.lane-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+}
+.lane-dot { width: 8px; height: 8px; border-radius: 50%; }
+.ld-amber { background: var(--fieldos); }
+.ld-green { background: var(--trustypro); }
+
+.flow-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.fstep {
+  flex: 1;
+  text-align: center;
+  padding: 14px 8px;
+  border-radius: 12px;
+}
+.fs-amber   { background: #FFFBEB; border: 1px solid #FDE68A; }
+.fs-purple  { background: #F5F3FF; border: 1px solid #DDD6FE; }
+.fs-blue    { background: #EFF6FF; border: 1px solid #BFDBFE; }
+.fs-green   { background: #ECFDF5; border: 1px solid #A7F3D0; }
+.fs-gold    { background: #FEFCE8; border: 1px solid #FEF08A; }
+
+.fstep-icon { font-size: 22px; margin-bottom: 6px; }
+.fstep-name {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+.fstep-desc { font-size: 10px; color: var(--ink3); line-height: 1.35; }
+.farrow {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  color: var(--ink3);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.full-commission-badge {
+  display: inline-block;
+  background: var(--trustypro);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+
+/* ── REVENUE CARDS ──────────────────────────────────────── */
+.rev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.rev-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.rev-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.rc-blue::before   { background: var(--prolnk); }
+.rc-green::before  { background: var(--trustypro); }
+.rc-amber::before  { background: var(--fieldos); }
+
+.rev-stream {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.rs-blue  { color: var(--prolnk); }
+.rs-green { color: var(--trustypro); }
+.rs-amber { color: var(--fieldos); }
+
+.rev-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.rev-desc  { font-size: 12.5px; color: var(--ink3); line-height: 1.5; margin-bottom: 16px; }
+.rev-rate  {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+.rr-blue  { color: var(--prolnk); }
+.rr-green { color: var(--trustypro); }
+.rr-amber { color: var(--fieldos); }
+.rev-rate-sub { font-size: 11.5px; color: var(--ink3); margin-top: 4px; }
+
+/* ── COMMISSION TABLE ───────────────────────────────────── */
+.comm-wrap {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+.comm-table { width: 100%; border-collapse: collapse; }
+.comm-table thead { background: var(--ink); }
+.comm-table th {
+  padding: 13px 18px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94A3B8;
+  text-align: left;
+}
+.comm-table td {
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--ink2);
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+.comm-table tr:last-child td { border-bottom: none; }
+.comm-table tr.tr-trustypro { background: #ECFDF5; }
+.tier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.tc-bronze  { background: #FEF3C7; color: #92400E; }
+.tc-silver  { background: #F1F5F9; color: #475569; }
+.tc-gold    { background: #FEF9C3; color: #713F12; }
+.tc-trusty  { background: var(--trustypro-light); color: var(--trustypro); }
+.rate-big   { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--prolnk); }
+.rate-full  { color: var(--trustypro); }
+.comm-insight {
+  padding: 16px 20px;
+  background: #EFF6FF;
+  border-top: 1px solid #BFDBFE;
+  font-size: 12.5px;
+  color: var(--prolnk);
+  line-height: 1.55;
+}
+
+/* ── STATS ROW ──────────────────────────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 22px 18px;
+  text-align: center;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+}
+.stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.sv-blue   { color: var(--prolnk); }
+.sv-green  { color: var(--trustypro); }
+.sv-amber  { color: var(--fieldos); }
+.sv-purple { color: var(--purple); }
+.stat-label { font-size: 12px; color: var(--ink3); line-height: 1.4; }
+
+/* ── MOAT GRID ──────────────────────────────────────────── */
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.moat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid var(--rule);
+  box-shadow: var(--card-shadow);
+}
+.moat-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.mi-1 { background: var(--prolnk-light); }
+.mi-2 { background: var(--trustypro-light); }
+.mi-3 { background: var(--fieldos-light); }
+.mi-4 { background: var(--purple-light); }
+.mi-5 { background: #FEE2E2; }
+.mi-6 { background: #F0FDF4; }
+.moat-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.moat-desc  { font-size: 12.5px; color: var(--ink3); line-height: 1.5; }
+
+/* ── ROADMAP ────────────────────────────────────────────── */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.roadmap::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--prolnk), var(--trustypro), var(--fieldos), var(--purple));
+  border-radius: 2px;
+  z-index: 0;
+}
+.rm-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.rm-dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 14px;
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--rule);
+}
+.rd-1 { background: var(--prolnk-light); }
+.rd-2 { background: var(--trustypro-light); }
+.rd-3 { background: var(--fieldos-light); }
+.rd-4 { background: var(--purple-light); }
+.rm-phase { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink3); margin-bottom: 4px; }
+.rm-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+.rm-desc  { font-size: 11.5px; color: var(--ink3); line-height: 1.45; }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+.footer {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 2px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.footer-brand span { color: var(--prolnk); }
+.footer-right { text-align: right; font-size: 11.5px; color: var(--ink3); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .platforms-grid, .rev-grid, .moat-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .roadmap { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .roadmap::before { display: none; }
+  .flow-lanes { grid-template-columns: 1fr; }
+  .flow-lane { border-right: none; border-bottom: 1px solid var(--rule); }
+  .header { grid-template-columns: 1fr; }
+  .header h1 { font-size: 36px; }
+}
+@media print {
+  body { background: white; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════════ -->
+  <div class="header">
+    <div class="header-left">
+      <div class="confidential">🔒 Confidential — Partner &amp; Investor Overview</div>
+      <h1>Three Platforms.<br /><em>One Flywheel.</em></h1>
+      <p>A vertically integrated home service intelligence network connecting field technicians, service partners, and homeowners through AI-powered lead generation and referral automation.</p>
+    </div>
+    <div class="header-right">
+      <div class="logo-stack">
+        <div class="logo-pill lp-prolnk">🔗 &nbsp;<strong>ProLnk</strong> — Partner Network</div>
+        <div class="logo-pill lp-fieldos">📱 &nbsp;<strong>FieldOS</strong> — Field Operations</div>
+        <div class="logo-pill lp-trustypro">🛡️ &nbsp;<strong>TrustyPro</strong> — Consumer Platform</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. THE THREE PLATFORMS
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-blue">1</div>
+    <div class="sec-title">The Three Platforms</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="platforms-grid">
+
+    <!-- ProLnk -->
+    <div class="pcard">
+      <div class="pcard-header">
+        <div class="pcard-icon pi-prolnk">🔗</div>
+        <div class="pcard-badge pb-prolnk">Partner Network</div>
+        <div class="pcard-name">ProLnk</div>
+        <div class="pcard-tagline">The B2B backbone. Connects home service businesses into a cross-referral network where every completed job generates leads for partner companies.</div>
+      </div>
+      <div class="pcard-body">
+        <ul class="pcard-features">
+          <li><span class="fdot fd-prolnk"></span>Partner onboarding, tiering &amp; commission management</li>
+          <li><span class="fdot fd-prolnk"></span>AI-powered opportunity routing by category &amp; proximity</li>
+          <li><span class="fdot fd-prolnk"></span>Admin Command Center with full network visibility</li>
+          <li><span class="fdot fd-prolnk"></span>Leaderboard, analytics &amp; performance alerts</li>
+          <li><span class="fdot fd-prolnk"></span>Stripe Connect automated commission payouts</li>
+          <li><span class="fdot fd-prolnk"></span>Integrations: Jobber, ServiceTitan, CompanyCam</li>
+        </ul>
+      </div>
+      <div class="pcard-footer pf-prolnk">👥 &nbsp;Home Service Business Owners</div>
+    </div>
+
+    <!-- FieldOS -->
+    <div class="pcard">
+      <div class="pcard-header">
+        <div class="pcard-icon pi-fieldos">📱</div>
+        <div class="pcard-badge pb-fieldos">Field Operations</div>
+        <div class="pcard-name">FieldOS</div>
+        <div class="pcard-tagline">The technician app. Field crews log jobs, upload photos, and trigger AI analysis — automatically generating referral opportunities without any extra work.</div>
+      </div>
+      <div class="pcard-body">
+        <ul class="pcard-features">
+          <li><span class="fdot fd-fieldos"></span>Mobile-first job logging with 1-tap photo capture</li>
+          <li><span class="fdot fd-fieldos"></span>Real-time earnings dashboard &amp; tier progress</li>
+          <li><span class="fdot fd-fieldos"></span>Route management &amp; job scheduling</li>
+          <li><span class="fdot fd-fieldos"></span>Inbound lead notifications &amp; acceptance flow</li>
+          <li><span class="fdot fd-fieldos"></span>Homeowner confirmation photos (trust builder)</li>
+          <li><span class="fdot fd-fieldos"></span>Offline-capable PWA — works in the field</li>
+        </ul>
+      </div>
+      <div class="pcard-footer pf-fieldos">🔧 &nbsp;Field Technicians &amp; Crew Members</div>
+    </div>
+
+    <!-- TrustyPro -->
+    <div class="pcard">
+      <div class="pcard-header">
+        <div class="pcard-icon pi-trustypro">🛡️</div>
+        <div class="pcard-badge pb-trustypro">Consumer Platform</div>
+        <div class="pcard-name">TrustyPro</div>
+        <div class="pcard-tagline">The homeowner portal. Homeowners upload photos of their property, AI identifies what needs attention, and they're matched with verified local professionals.</div>
+      </div>
+      <div class="pcard-body">
+        <ul class="pcard-features">
+          <li><span class="fdot fd-trustypro"></span>AI home scan — upload photos, detect service needs</li>
+          <li><span class="fdot fd-trustypro"></span>Searchable directory of verified, insured pros</li>
+          <li><span class="fdot fd-trustypro"></span>Background-checked partner trust signals</li>
+          <li><span class="fdot fd-trustypro"></span>Request a quote directly from any matched pro</li>
+          <li><span class="fdot fd-trustypro"></span>Leads flow to ProLnk at <strong>full commission</strong></li>
+          <li><span class="fdot fd-trustypro"></span>No referring partner split — 100% margin to ProLnk</li>
+        </ul>
+      </div>
+      <div class="pcard-footer pf-trustypro">🏠 &nbsp;DFW Homeowners</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. ECOSYSTEM FLOW
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-amber">2</div>
+    <div class="sec-title">How the Ecosystem Flows</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="flow-wrap">
+    <div class="flow-header">
+      <div>
+        <div class="flow-header-title">Two Lead Generation Engines → One Network</div>
+        <div class="flow-header-sub">Every photo taken in the field — or uploaded by a homeowner — becomes a monetizable lead.</div>
+      </div>
+    </div>
+    <div class="flow-lanes">
+      <!-- Lane A -->
+      <div class="flow-lane">
+        <div class="lane-label">
+          <div class="lane-dot ld-amber"></div>
+          <span style="color: var(--fieldos);">Lane A — Partner-Originated Leads</span>
+        </div>
+        <div class="flow-steps">
+          <div class="fstep fs-amber">
+            <div class="fstep-icon">📱</div>
+            <div class="fstep-name" style="color:var(--fieldos);">FieldOS</div>
+            <div class="fstep-desc">Tech completes job &amp; uploads photos</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-purple">
+            <div class="fstep-icon">🤖</div>
+            <div class="fstep-name" style="color:var(--purple);">AI Scan</div>
+            <div class="fstep-desc">GPT-4o Vision detects opportunities</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-blue">
+            <div class="fstep-icon">🔗</div>
+            <div class="fstep-name" style="color:var(--prolnk);">ProLnk</div>
+            <div class="fstep-desc">Routes lead to matched partner</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-gold">
+            <div class="fstep-icon">💰</div>
+            <div class="fstep-name" style="color:#92400E;">Revenue</div>
+            <div class="fstep-desc">5% to referring pro<br />10–15% to ProLnk</div>
+          </div>
+        </div>
+      </div>
+      <!-- Lane B -->
+      <div class="flow-lane">
+        <div class="lane-label">
+          <div class="lane-dot ld-green"></div>
+          <span style="color: var(--trustypro);">Lane B — TrustyPro Homeowner Leads</span>
+        </div>
+        <div class="flow-steps">
+          <div class="fstep fs-green">
+            <div class="fstep-icon">🏠</div>
+            <div class="fstep-name" style="color:var(--trustypro);">TrustyPro</div>
+            <div class="fstep-desc">Homeowner uploads home photos</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-purple">
+            <div class="fstep-icon">🤖</div>
+            <div class="fstep-name" style="color:var(--purple);">AI Scan</div>
+            <div class="fstep-desc">Identifies service needs &amp; matches pros</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-blue">
+            <div class="fstep-icon">🔗</div>
+            <div class="fstep-name" style="color:var(--prolnk);">ProLnk</div>
+            <div class="fstep-desc">Routes lead to nearest verified partner</div>
+          </div>
+          <div class="farrow">→</div>
+          <div class="fstep fs-green">
+            <div class="fstep-icon">💰</div>
+            <div class="fstep-name" style="color:var(--trustypro);">Revenue</div>
+            <div class="fstep-desc">
+              <div class="full-commission-badge">100% to ProLnk</div>
+              <div style="margin-top:3px;">No partner split</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       3. REVENUE MODEL
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-green">3</div>
+    <div class="sec-title">Revenue Model</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="rev-grid">
+    <div class="rev-card rc-blue">
+      <div class="rev-stream rs-blue">Stream 1 · Referral Commissions</div>
+      <div class="rev-title">Per-Job Commission</div>
+      <div class="rev-desc">ProLnk earns a percentage of every closed job value when a partner-originated lead converts.</div>
+      <div class="rev-rate rr-blue">10–15%</div>
+      <div class="rev-rate-sub">of closed job value, paid monthly</div>
+    </div>
+    <div class="rev-card rc-green">
+      <div class="rev-stream rs-green">Stream 2 · TrustyPro Leads</div>
+      <div class="rev-title">Full-Margin Leads</div>
+      <div class="rev-desc">Homeowner-originated leads carry no referring partner split — ProLnk keeps the full commission.</div>
+      <div class="rev-rate rr-green">10–15%</div>
+      <div class="rev-rate-sub">full margin — zero partner split</div>
+    </div>
+    <div class="rev-card rc-amber">
+      <div class="rev-stream rs-amber">Stream 3 · Partner Subscriptions</div>
+      <div class="rev-title">Monthly SaaS Fee</div>
+      <div class="rev-desc">Partners pay monthly for access to the ProLnk network, FieldOS app, and analytics dashboard.</div>
+      <div class="rev-rate rr-amber">$99–$299</div>
+      <div class="rev-rate-sub">per partner per month</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       4. COMMISSION STRUCTURE
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-purple">4</div>
+    <div class="sec-title">Commission Structure by Tier</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="comm-wrap">
+    <table class="comm-table">
+      <thead>
+        <tr>
+          <th>Lead Source</th>
+          <th>Partner Tier</th>
+          <th>Referring Pro Earns</th>
+          <th>ProLnk Earns</th>
+          <th>Total Job Value Captured</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--ink3);">Partner Network</td>
+          <td><span class="tier-chip tc-bronze">🥉 Bronze</span></td>
+          <td>5%</td>
+          <td><span class="rate-big">10%</span></td>
+          <td>15% of job value</td>
+        </tr>
+        <tr>
+          <td style="color:var(--ink3);">Partner Network</td>
+          <td><span class="tier-chip tc-silver">🥈 Silver</span></td>
+          <td>7%</td>
+          <td><span class="rate-big">10%</span></td>
+          <td>17% of job value</td>
+        </tr>
+        <tr>
+          <td style="color:var(--ink3);">Partner Network</td>
+          <td><span class="tier-chip tc-gold">🥇 Gold</span></td>
+          <td>8%</td>
+          <td><span class="rate-big">12%</span></td>
+          <td>20% of job value</td>
+        </tr>
+        <tr class="tr-trustypro">
+          <td style="color:var(--trustypro); font-weight:700;">TrustyPro</td>
+          <td><span class="tier-chip tc-trusty">🏠 Homeowner Lead</span></td>
+          <td style="color:var(--ink3);">—</td>
+          <td><span class="rate-big rate-full">10–15%</span><br /><span style="font-size:11px;color:var(--trustypro);">Full margin, no split</span></td>
+          <td style="color:var(--trustypro); font-weight:700;">100% to ProLnk</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="comm-insight">
+      💡 <strong>Key insight:</strong> TrustyPro leads are structurally more profitable than partner-originated leads — same AI pipeline, zero commission split. As TrustyPro scales, it increases overall platform margin without adding operational complexity.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       5. MARKET OPPORTUNITY
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-blue">5</div>
+    <div class="sec-title">Market Opportunity</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-val sv-blue">$600B</div>
+      <div class="stat-label">U.S. Home Services Market (2025)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val sv-green">7.8M</div>
+      <div class="stat-label">DFW Metro Households — Launch Market</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val sv-amber">50K+</div>
+      <div class="stat-label">Home Service Businesses in DFW</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val sv-purple">$2,400</div>
+      <div class="stat-label">Est. Annual Revenue per Active Partner</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       6. COMPETITIVE MOAT
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-green">6</div>
+    <div class="sec-title">Competitive Moat</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="moat-grid">
+    <div class="moat-card">
+      <div class="moat-icon mi-1">🤖</div>
+      <div class="moat-title">AI-First Lead Detection</div>
+      <div class="moat-desc">No other referral network uses computer vision to auto-detect opportunities from job photos. These leads don't exist anywhere else.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon mi-2">🔄</div>
+      <div class="moat-title">Self-Reinforcing Flywheel</div>
+      <div class="moat-desc">More partners → more photos → more AI leads → more commissions → more partners. Network effects compound with every new member.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon mi-3">🏠</div>
+      <div class="moat-title">Dual Lead Sources</div>
+      <div class="moat-desc">TrustyPro adds a consumer channel generating full-margin leads independently of the partner network — two engines, one platform.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon mi-4">📱</div>
+      <div class="moat-title">Field-Level Capture</div>
+      <div class="moat-desc">FieldOS embeds ProLnk into daily technician workflow — lead generation happens as a byproduct of normal job completion.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon mi-5">🔗</div>
+      <div class="moat-title">Integration Depth</div>
+      <div class="moat-desc">Native integrations with Jobber, ServiceTitan, and CompanyCam mean partners don't change their workflow — ProLnk plugs in silently.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon mi-6">🌐</div>
+      <div class="moat-title">Franchise-Ready Architecture</div>
+      <div class="moat-desc">Built to replicate the DFW model in any metro. Market expansion is a configuration change, not a rebuild — designed for rapid national rollout.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       7. GROWTH ROADMAP
+  ════════════════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num sn-purple">7</div>
+    <div class="sec-title">Growth Roadmap</div>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="roadmap">
+    <div class="rm-step">
+      <div class="rm-dot rd-1">🚀</div>
+      <div class="rm-phase">Phase 1 · Now</div>
+      <div class="rm-title">DFW Launch</div>
+      <div class="rm-desc">50 Founding Partners, ProLnk + FieldOS live, TrustyPro beta, AI pipeline active</div>
+    </div>
+    <div class="rm-step">
+      <div class="rm-dot rd-2">📈</div>
+      <div class="rm-phase">Phase 2 · Year 1</div>
+      <div class="rm-title">DFW Scale</div>
+      <div class="rm-desc">500 partners, TrustyPro public launch, Stripe Connect payouts, Jobber integration</div>
+    </div>
+    <div class="rm-step">
+      <div class="rm-dot rd-3">🌆</div>
+      <div class="rm-phase">Phase 3 · Year 2–3</div>
+      <div class="rm-title">Texas Expansion</div>
+      <div class="rm-desc">Houston, Austin, San Antonio — replicate DFW playbook with local partner recruitment</div>
+    </div>
+    <div class="rm-step">
+      <div class="rm-dot rd-4">🌎</div>
+      <div class="rm-phase">Phase 4 · Year 4–5</div>
+      <div class="rm-title">National Rollout</div>
+      <div class="rm-desc">Top 25 metros, franchise licensing model, Series A / strategic acquisition exit</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
+  <div class="footer">
+    <div class="footer-brand">Pro<span>Lnk</span> Ecosystem</div>
+    <div class="footer-right">
+      Confidential — For Partner &amp; Investor Use Only<br />
+      DFW Launch 2026 · FieldOS · TrustyPro · ProLnk Partner Network
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "query": "SELECT id, businessName, businessType, rating, reviewCount, referralCount, totalCommissionEarned, tier, serviceArea FROM partners WHERE status='approved' AND rating >= 4.0 ORDER BY rating DESC, reviewCount DESC LIMIT 6",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT id, businessName, businessType, rating, reviewCount, referralCount, totalCommissionEarned, tier, serviceArea FROM partners WHERE status='approved' AND rating >= 4.0 ORDER BY rating DESC, reviewCount DESC LIMIT 6",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 59
+}

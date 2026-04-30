@@ -1,0 +1,79 @@
+{
+  "name": "ProLnk — 02 Homeowner Opportunity Email",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "prolnk-homeowner-opportunity",
+        "responseMode": "onReceived"
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook — Homeowner Opportunity",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "hello@trustypro.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "=Your Home Has a New Opportunity: {{ $json.opportunityType }}",
+        "emailFormat": "html",
+        "message": "=<div style='font-family:Inter,sans-serif;max-width:600px;margin:0 auto;'><img src='https://prolnk.manus.space/logo.png' height='32' style='margin-bottom:24px;'/><h2 style='color:#0A1628;'>Hi {{ $json.homeownerName }},</h2><p>One of our trusted service professionals recently noticed something at your property that could save you money or prevent a bigger problem down the road.</p><div style='background:#F4F6FA;border-radius:12px;padding:20px;margin:20px 0;'><h3 style='color:#0A1628;margin:0 0 8px;'>{{ $json.opportunityType }}</h3><p style='color:#666;margin:0;'>{{ $json.description }}</p><p style='color:#0A1628;font-weight:600;margin:12px 0 0;'>Estimated cost: ${{ $json.estimatedValue }}</p></div>{{ $json.beforeAfterImageHtml }}<p>This recommendation comes from <strong>{{ $json.partnerName }}</strong>, a verified ProLnk professional in your area.</p><a href='{{ $json.dealUrl }}' style='background:#0A1628;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:16px;font-weight:600;'>View Your Deal →</a><p style='color:#999;font-size:12px;margin-top:32px;'>You're receiving this because you opted in to TrustyPro recommendations. <a href='{{ $json.unsubscribeUrl }}'>Unsubscribe</a></p></div>"
+      },
+      "id": "resend-email",
+      "name": "Resend — Opportunity Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.homeownerPhone !== null && $json.homeownerPhone !== '' }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "check-phone",
+      "name": "Has Phone?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "accountSid": "={{ $env.TWILIO_ACCOUNT_SID }}",
+        "authToken": "={{ $env.TWILIO_AUTH_TOKEN }}",
+        "from": "={{ $env.TWILIO_FROM_NUMBER }}",
+        "to": "={{ $json.homeownerPhone }}",
+        "message": "=Hi {{ $json.homeownerName }}! TrustyPro found a {{ $json.opportunityType }} opportunity at your home (est. ${{ $json.estimatedValue }}). View your personalized deal: {{ $json.dealUrl }}"
+      },
+      "id": "twilio-sms",
+      "name": "Twilio — Opportunity SMS",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [900, 220]
+    }
+  ],
+  "connections": {
+    "Webhook — Homeowner Opportunity": {
+      "main": [[{ "node": "Resend — Opportunity Email", "type": "main", "index": 0 }]]
+    },
+    "Resend — Opportunity Email": {
+      "main": [[{ "node": "Has Phone?", "type": "main", "index": 0 }]]
+    },
+    "Has Phone?": {
+      "main": [[{ "node": "Twilio — Opportunity SMS", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": ["prolnk", "homeowner", "trustypro"],
+  "_meta": {
+    "description": "Fires when an AI opportunity is ready for homeowner outreach. Sends email always; SMS only if phone is available. Payload: { homeownerEmail, homeownerName, homeownerPhone, opportunityType, description, estimatedValue, partnerName, dealUrl, unsubscribeUrl, beforeAfterImageHtml }",
+    "setup": "1. Set Twilio + Resend env vars. 2. Set webhook URL in ProLnk admin → Webhooks → Homeowner Opportunity. 3. Activate."
+  }
+}

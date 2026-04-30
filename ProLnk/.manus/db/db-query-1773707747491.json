@@ -1,0 +1,36 @@
+{
+  "query": "SHOW CREATE TABLE commissions;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SHOW CREATE TABLE commissions;",
+  "rows": [
+    {
+      "Table": "commissions",
+      "Create Table": "CREATE TABLE `commissions` ("
+    }
+  ],
+  "messages": [
+    "  `id` int NOT NULL AUTO_INCREMENT,",
+    "  `partnerId` int NOT NULL,",
+    "  `referralId` int DEFAULT NULL,",
+    "  `amount` decimal(10,2) NOT NULL,",
+    "  `description` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,",
+    "  `paid` tinyint(1) NOT NULL DEFAULT '0',",
+    "  `paidAt` timestamp NULL DEFAULT NULL,",
+    "  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,",
+    "  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,",
+    "  `opportunityId` int DEFAULT NULL,",
+    "  `payingPartnerId` int NOT NULL DEFAULT '0',",
+    "  `receivingPartnerId` int DEFAULT NULL,",
+    "  `commissionType` enum('platform_fee','referral_commission','prolink_net') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'platform_fee',",
+    "  `jobValue` decimal(10,2) DEFAULT NULL,",
+    "  `feeRate` decimal(5,4) DEFAULT NULL,",
+    "  PRIMARY KEY (`id`) /*T![clustered_index] CLUSTERED */,",
+    "  KEY `commissions_partnerId_partners_id_fk` (`partnerId`),",
+    "  KEY `commissions_referralId_referrals_id_fk` (`referralId`),",
+    "  CONSTRAINT `commissions_partnerId_partners_id_fk` FOREIGN KEY (`partnerId`) REFERENCES `partners` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,",
+    "  CONSTRAINT `commissions_referralId_referrals_id_fk` FOREIGN KEY (`referralId`) REFERENCES `referrals` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION",
+    ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=30001"
+  ],
+  "stdout": "Table\tCreate Table\ncommissions\tCREATE TABLE `commissions` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `partnerId` int NOT NULL,\n  `referralId` int DEFAULT NULL,\n  `amount` decimal(10,2) NOT NULL,\n  `description` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `paid` tinyint(1) NOT NULL DEFAULT '0',\n  `paidAt` timestamp NULL DEFAULT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  `opportunityId` int DEFAULT NULL,\n  `payingPartnerId` int NOT NULL DEFAULT '0',\n  `receivingPartnerId` int DEFAULT NULL,\n  `commissionType` enum('platform_fee','referral_commission','prolink_net') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'platform_fee',\n  `jobValue` decimal(10,2) DEFAULT NULL,\n  `feeRate` decimal(5,4) DEFAULT NULL,\n  PRIMARY KEY (`id`) /*T![clustered_index] CLUSTERED */,\n  KEY `commissions_partnerId_partners_id_fk` (`partnerId`),\n  KEY `commissions_referralId_referrals_id_fk` (`referralId`),\n  CONSTRAINT `commissions_partnerId_partners_id_fk` FOREIGN KEY (`partnerId`) REFERENCES `partners` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\n  CONSTRAINT `commissions_referralId_referrals_id_fk` FOREIGN KEY (`referralId`) REFERENCES `referrals` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=30001\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

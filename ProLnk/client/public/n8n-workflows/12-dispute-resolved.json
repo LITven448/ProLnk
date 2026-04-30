@@ -1,0 +1,193 @@
+{
+  "name": "ProLnk — Dispute Resolution Workflow",
+  "description": "Handles partner or homeowner disputes end-to-end: opens a ticket, notifies both parties, escalates to admin if unresolved within 72h, and closes the loop with outcome notifications and commission adjustments.",
+  "version": "1.0.0",
+  "tags": ["prolnk", "dispute", "resolution", "commission", "admin"],
+  "nodes": [
+    {
+      "id": "trigger",
+      "name": "Webhook — Dispute Filed",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "parameters": {
+        "path": "prolnk-dispute-filed",
+        "method": "POST",
+        "responseMode": "onReceived",
+        "responseData": "{ \"received\": true, \"ticketId\": \"DIS-{{ $now.format('YYMMDDHHmmss') }}\" }"
+      },
+      "notes": "Payload: { disputeId, filedBy (partner|homeowner), partnerEmail, partnerName, homeownerEmail, homeownerName, jobId, reason, description, commissionAmount }"
+    },
+    {
+      "id": "set_vars",
+      "name": "Set Variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [300, 300],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "name": "disputeId",        "value": "={{ $json.disputeId }}",        "type": "string" },
+            { "name": "filedBy",          "value": "={{ $json.filedBy }}",          "type": "string" },
+            { "name": "partnerEmail",     "value": "={{ $json.partnerEmail }}",     "type": "string" },
+            { "name": "partnerName",      "value": "={{ $json.partnerName }}",      "type": "string" },
+            { "name": "homeownerEmail",   "value": "={{ $json.homeownerEmail }}",   "type": "string" },
+            { "name": "homeownerName",    "value": "={{ $json.homeownerName }}",    "type": "string" },
+            { "name": "jobId",            "value": "={{ $json.jobId }}",            "type": "string" },
+            { "name": "reason",           "value": "={{ $json.reason }}",           "type": "string" },
+            { "name": "description",      "value": "={{ $json.description }}",      "type": "string" },
+            { "name": "commissionAmount", "value": "={{ $json.commissionAmount }}", "type": "string" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "notify_admin_opened",
+      "name": "Notify Admin — Dispute Opened",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [500, 200],
+      "parameters": {
+        "fromEmail": "system@prolnk.com",
+        "toEmail": "={{ $env.ADMIN_EMAIL }}",
+        "subject": "🚨 Dispute Filed: Job #{{ $vars.jobId }} — {{ $vars.reason }}",
+        "emailType": "html",
+        "message": "<h2>Dispute Filed</h2><p><strong>Filed by:</strong> {{ $vars.filedBy }}<br><strong>Job ID:</strong> {{ $vars.jobId }}<br><strong>Reason:</strong> {{ $vars.reason }}<br><strong>Commission at stake:</strong> ${{ $vars.commissionAmount }}</p><p><strong>Description:</strong><br>{{ $vars.description }}</p><p><strong>Partner:</strong> {{ $vars.partnerName }} ({{ $vars.partnerEmail }})<br><strong>Homeowner:</strong> {{ $vars.homeownerName }} ({{ $vars.homeownerEmail }})</p><p><a href='{{ $env.APP_URL }}/admin/disputes/{{ $vars.disputeId }}' style='background:#EF4444;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;'>Review Dispute →</a></p>"
+      }
+    },
+    {
+      "id": "notify_partner_opened",
+      "name": "Notify Partner — Dispute Acknowledged",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [500, 400],
+      "parameters": {
+        "fromEmail": "support@prolnk.com",
+        "toEmail": "={{ $vars.partnerEmail }}",
+        "subject": "Dispute #{{ $vars.disputeId }} — We've received your case",
+        "emailType": "html",
+        "message": "<p>Hi {{ $vars.partnerName }},</p><p>We've received your dispute for job #{{ $vars.jobId }}. Our team will review the case and respond within 72 hours.</p><p>Dispute ID: <strong>{{ $vars.disputeId }}</strong></p><p>You'll receive an email once a decision has been made.</p>"
+      }
+    },
+    {
+      "id": "wait_72h",
+      "name": "Wait 72 Hours for Resolution",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [700, 300],
+      "parameters": {
+        "resume": "timeInterval",
+        "unit": "hours",
+        "amount": 72
+      }
+    },
+    {
+      "id": "check_dispute_status",
+      "name": "Check Dispute Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 300],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.PROLNK_API_URL }}/api/trpc/admin.getDisputeStatus?input={\"id\":\"{{ $vars.disputeId }}\"}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      }
+    },
+    {
+      "id": "is_resolved",
+      "name": "Is Dispute Resolved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1100, 300],
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.result?.data?.status }}",
+              "rightValue": "resolved",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "escalate_admin",
+      "name": "Escalate — Still Unresolved After 72h",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1300, 500],
+      "parameters": {
+        "fromEmail": "system@prolnk.com",
+        "toEmail": "={{ $env.ADMIN_EMAIL }}",
+        "subject": "⚠️ ESCALATION: Dispute #{{ $vars.disputeId }} Unresolved After 72h",
+        "emailType": "html",
+        "message": "<p><strong>URGENT:</strong> Dispute #{{ $vars.disputeId }} for job #{{ $vars.jobId }} has not been resolved after 72 hours. Immediate action required.</p><p><a href='{{ $env.APP_URL }}/admin/disputes/{{ $vars.disputeId }}'>Resolve Now →</a></p>"
+      }
+    },
+    {
+      "id": "get_outcome",
+      "name": "Get Dispute Outcome",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 200],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.PROLNK_API_URL }}/api/trpc/admin.getDisputeOutcome?input={\"id\":\"{{ $vars.disputeId }}\"}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      }
+    },
+    {
+      "id": "notify_outcome_partner",
+      "name": "Notify Partner — Outcome",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1500, 100],
+      "parameters": {
+        "fromEmail": "support@prolnk.com",
+        "toEmail": "={{ $vars.partnerEmail }}",
+        "subject": "Dispute #{{ $vars.disputeId }} — Decision Made",
+        "emailType": "html",
+        "message": "<p>Hi {{ $vars.partnerName }},</p><p>A decision has been made on your dispute for job #{{ $vars.jobId }}.</p><p><strong>Outcome:</strong> {{ $json.result?.data?.outcome }}<br><strong>Commission adjustment:</strong> {{ $json.result?.data?.commissionAdjustment }}</p><p>If you have questions, reply to this email.</p>"
+      }
+    },
+    {
+      "id": "notify_outcome_homeowner",
+      "name": "Notify Homeowner — Outcome",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1500, 300],
+      "parameters": {
+        "fromEmail": "support@trustypro.com",
+        "toEmail": "={{ $vars.homeownerEmail }}",
+        "subject": "Your service dispute has been resolved",
+        "emailType": "html",
+        "message": "<p>Hi {{ $vars.homeownerName }},</p><p>Your dispute regarding job #{{ $vars.jobId }} has been reviewed and resolved.</p><p><strong>Resolution:</strong> {{ $json.result?.data?.outcome }}</p><p>Thank you for your patience. We're committed to ensuring every service meets our quality standards.</p>"
+      }
+    }
+  ],
+  "connections": {
+    "trigger":                 { "main": [[{ "node": "set_vars",                 "type": "main", "index": 0 }]] },
+    "set_vars":                { "main": [[{ "node": "notify_admin_opened",      "type": "main", "index": 0 }, { "node": "notify_partner_opened", "type": "main", "index": 0 }, { "node": "wait_72h", "type": "main", "index": 0 }]] },
+    "wait_72h":                { "main": [[{ "node": "check_dispute_status",     "type": "main", "index": 0 }]] },
+    "check_dispute_status":    { "main": [[{ "node": "is_resolved",              "type": "main", "index": 0 }]] },
+    "is_resolved": {
+      "main": [
+        [{ "node": "get_outcome",    "type": "main", "index": 0 }],
+        [{ "node": "escalate_admin", "type": "main", "index": 0 }]
+      ]
+    },
+    "get_outcome": {
+      "main": [[
+        { "node": "notify_outcome_partner",   "type": "main", "index": 0 },
+        { "node": "notify_outcome_homeowner", "type": "main", "index": 0 }
+      ]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  }
+}

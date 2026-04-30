@@ -1,0 +1,122 @@
+{
+  "name": "11 - Homeowner NPS Survey",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "homeowner-nps",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-nps",
+      "name": "Webhook: Job Completed",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": { "amount": 30, "unit": "days" },
+      "id": "wait-30d",
+      "name": "Wait 30 Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "How did your {{ $json.serviceCategory }} service go?",
+        "html": "<h2>Hi {{ $json.homeownerName }},</h2><p>It's been 30 days since {{ $json.partnerName }} completed your {{ $json.serviceCategory }} service. We'd love to hear how it went.</p><p><strong>On a scale of 0–10, how likely are you to recommend ProLnk to a friend?</strong></p><div style='display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;'>{{ $json.npsButtonsHtml }}</div><p>Your feedback helps us improve and reward our best partners.</p><p style='font-size:12px;color:#6B7280;'>If you have any issues, reply to this email directly.</p>"
+      },
+      "id": "email-nps",
+      "name": "Send NPS Survey Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "homeowner-nps-response",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-nps-response",
+      "name": "Webhook: NPS Response",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [{ "value1": "={{ $json.score }}", "operation": "smallerEqual", "value2": 6 }]
+        }
+      },
+      "id": "check-detractor",
+      "name": "Detractor? (0-6)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "admin@prolnk.com",
+        "toEmail": "admin@prolnk.com",
+        "subject": "⚠️ Detractor NPS: {{ $json.homeownerName }} scored {{ $json.score }}/10",
+        "text": "Homeowner {{ $json.homeownerName }} ({{ $json.homeownerEmail }}) gave a score of {{ $json.score }}/10 for {{ $json.partnerName }}'s {{ $json.serviceCategory }} service.\n\nComment: {{ $json.comment }}\n\nJob ID: {{ $json.jobId }}\nPartner: {{ $json.partnerName }}\n\nConsider reaching out to resolve any issues."
+      },
+      "id": "alert-admin-detractor",
+      "name": "Alert Admin: Detractor",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "Thank you for your feedback",
+        "text": "Hi {{ $json.homeownerName }},\n\nThank you for sharing your experience. We're sorry it didn't meet your expectations. A member of our team will reach out within 24 hours to make it right.\n\n— ProLnk Team"
+      },
+      "id": "email-detractor-response",
+      "name": "Send Detractor Response",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1560, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "Thanks! Would you mind leaving a quick review?",
+        "text": "Hi {{ $json.homeownerName }},\n\nThank you for the great score! We're thrilled you had a positive experience with {{ $json.partnerName }}.\n\nWould you mind sharing your experience with others? It only takes 30 seconds:\n{{ $json.reviewUrl }}\n\nThank you!\n— ProLnk Team"
+      },
+      "id": "email-promoter-review-ask",
+      "name": "Ask Promoter for Review",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1340, 400]
+    }
+  ],
+  "connections": {
+    "Webhook: Job Completed": { "main": [[{ "node": "Wait 30 Days", "type": "main", "index": 0 }]] },
+    "Wait 30 Days": { "main": [[{ "node": "Send NPS Survey Email", "type": "main", "index": 0 }]] },
+    "Webhook: NPS Response": { "main": [[{ "node": "Detractor? (0-6)", "type": "main", "index": 0 }]] },
+    "Detractor? (0-6)": {
+      "main": [
+        [{ "node": "Alert Admin: Detractor", "type": "main", "index": 0 }],
+        [{ "node": "Ask Promoter for Review", "type": "main", "index": 0 }]
+      ]
+    },
+    "Alert Admin: Detractor": { "main": [[{ "node": "Send Detractor Response", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "description": "Sends homeowner NPS survey 30 days after job completion. Detractors (0-6) trigger admin alert + recovery email. Promoters (9-10) get a review request.",
+    "triggerWebhookPath": "/webhook/homeowner-nps",
+    "responseWebhookPath": "/webhook/homeowner-nps-response",
+    "requiredFields": ["homeownerEmail", "homeownerName", "partnerName", "serviceCategory", "jobId", "npsButtonsHtml", "reviewUrl"]
+  }
+}

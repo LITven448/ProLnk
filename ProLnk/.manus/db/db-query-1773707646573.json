@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, businessName, userId FROM partners ORDER BY id DESC LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT id, businessName, userId FROM partners ORDER BY id DESC LIMIT 5;",
+  "rows": [
+    {
+      "id": "30002",
+      "businessName": "Green Thumb Lawn Care",
+      "userId": "NULL"
+    },
+    {
+      "id": "30001",
+      "businessName": "Scoop Duke DFW",
+      "userId": "1"
+    },
+    {
+      "id": "740",
+      "businessName": "Flawless Interior Painting",
+      "userId": "NULL"
+    },
+    {
+      "id": "739",
+      "businessName": "Texas Color Pros",
+      "userId": "NULL"
+    },
+    {
+      "id": "738",
+      "businessName": "Premier Interior Painters",
+      "userId": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tbusinessName\tuserId\n30002\tGreen Thumb Lawn Care\tNULL\n30001\tScoop Duke DFW\t1\n740\tFlawless Interior Painting\tNULL\n739\tTexas Color Pros\tNULL\n738\tPremier Interior Painters\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

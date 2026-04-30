@@ -1,0 +1,45 @@
+{
+  "query": "SELECT COUNT(*) as total, status, tier FROM partners GROUP BY status, tier LIMIT 20",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT COUNT(*) as total, status, tier FROM partners GROUP BY status, tier LIMIT 20",
+  "rows": [
+    {
+      "total": "55",
+      "status": "pending",
+      "tier": "pro"
+    },
+    {
+      "total": "49",
+      "status": "pending",
+      "tier": "crew"
+    },
+    {
+      "total": "2",
+      "status": "approved",
+      "tier": "enterprise"
+    },
+    {
+      "total": "283",
+      "status": "approved",
+      "tier": "pro"
+    },
+    {
+      "total": "261",
+      "status": "approved",
+      "tier": "scout"
+    },
+    {
+      "total": "249",
+      "status": "approved",
+      "tier": "crew"
+    },
+    {
+      "total": "50",
+      "status": "pending",
+      "tier": "scout"
+    }
+  ],
+  "messages": [],
+  "stdout": "total\tstatus\ttier\n55\tpending\tpro\n49\tpending\tcrew\n2\tapproved\tenterprise\n283\tapproved\tpro\n261\tapproved\tscout\n249\tapproved\tcrew\n50\tpending\tscout\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

@@ -1,0 +1,190 @@
+{
+  "query": "\n-- Check existing partner accounts\nSELECT id, businessName, contactEmail, tier, isExempt, commissionRate, subscriptionFee \nFROM partners \nORDER BY id \nLIMIT 20;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \n-- Check existing partner accounts\nSELECT id, businessName, contactEmail, tier, isExempt, commissionRate, subscriptionFee \nFROM partners \nORDER BY id \nLIMIT 20;\n",
+  "rows": [
+    {
+      "id": "593",
+      "businessName": "Green Thumb Lawn Care",
+      "contactEmail": "green.thumb.lawn.care.prolink-seed@example.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "commissionRate": "0.6500",
+      "subscriptionFee": "79.00"
+    },
+    {
+      "id": "594",
+      "businessName": "DFW Lawn Masters",
+      "contactEmail": "dfw.lawn.masters.prolink-seed@example.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "commissionRate": "0.4000",
+      "subscriptionFee": "0.00"
+    },
+    {
+      "id": "595",
+      "businessName": "Precision Mowing Co",
+      "contactEmail": "precision.mowing.co.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "596",
+      "businessName": "Lone Star Lawn Services",
+      "contactEmail": "lone.star.lawn.services.prolink-seed@example.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "commissionRate": "0.6500",
+      "subscriptionFee": "79.00"
+    },
+    {
+      "id": "597",
+      "businessName": "Premier Turf Management",
+      "contactEmail": "premier.turf.management.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "598",
+      "businessName": "Emerald Lawn Care",
+      "contactEmail": "emerald.lawn.care.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "599",
+      "businessName": "Texas Green Lawn",
+      "contactEmail": "texas.green.lawn.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "600",
+      "businessName": "ProCut Lawn Services",
+      "contactEmail": "procut.lawn.services.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "601",
+      "businessName": "Frisco Lawn Pros",
+      "contactEmail": "frisco.lawn.pros.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "602",
+      "businessName": "McKinney Mowing Co",
+      "contactEmail": "mckinney.mowing.co.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "603",
+      "businessName": "Artisan Landscapes DFW",
+      "contactEmail": "artisan.landscapes.dfw.prolink-seed@example.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "commissionRate": "0.4000",
+      "subscriptionFee": "0.00"
+    },
+    {
+      "id": "604",
+      "businessName": "Signature Outdoor Design",
+      "contactEmail": "signature.outdoor.design.prolink-seed@example.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "commissionRate": "0.4000",
+      "subscriptionFee": "0.00"
+    },
+    {
+      "id": "605",
+      "businessName": "Nature's Edge Landscaping",
+      "contactEmail": "nature.s.edge.landscaping.prolink-seed@example.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "commissionRate": "0.6500",
+      "subscriptionFee": "79.00"
+    },
+    {
+      "id": "606",
+      "businessName": "Elite Landscape Solutions",
+      "contactEmail": "elite.landscape.solutions.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "607",
+      "businessName": "Texas Outdoor Living",
+      "contactEmail": "texas.outdoor.living.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "608",
+      "businessName": "AquaRight Irrigation",
+      "contactEmail": "aquaright.irrigation.prolink-seed@example.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "commissionRate": "0.4000",
+      "subscriptionFee": "0.00"
+    },
+    {
+      "id": "609",
+      "businessName": "DFW Sprinkler Pros",
+      "contactEmail": "dfw.sprinkler.pros.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "610",
+      "businessName": "Precision Irrigation Systems",
+      "contactEmail": "precision.irrigation.systems.prolink-seed@example.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "commissionRate": "0.6500",
+      "subscriptionFee": "79.00"
+    },
+    {
+      "id": "611",
+      "businessName": "WaterSmart DFW",
+      "contactEmail": "watersmart.dfw.prolink-seed@example.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "commissionRate": "0.5500",
+      "subscriptionFee": "29.00"
+    },
+    {
+      "id": "612",
+      "businessName": "Texas Irrigation Experts",
+      "contactEmail": "texas.irrigation.experts.prolink-seed@example.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "commissionRate": "0.4000",
+      "subscriptionFee": "0.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tbusinessName\tcontactEmail\ttier\tisExempt\tcommissionRate\tsubscriptionFee\n593\tGreen Thumb Lawn Care\tgreen.thumb.lawn.care.prolink-seed@example.com\tcrew\t0\t0.6500\t79.00\n594\tDFW Lawn Masters\tdfw.lawn.masters.prolink-seed@example.com\tscout\t0\t0.4000\t0.00\n595\tPrecision Mowing Co\tprecision.mowing.co.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n596\tLone Star Lawn Services\tlone.star.lawn.services.prolink-seed@example.com\tcrew\t0\t0.6500\t79.00\n597\tPremier Turf Management\tpremier.turf.management.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n598\tEmerald Lawn Care\temerald.lawn.care.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n599\tTexas Green Lawn\ttexas.green.lawn.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n600\tProCut Lawn Services\tprocut.lawn.services.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n601\tFrisco Lawn Pros\tfrisco.lawn.pros.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n602\tMcKinney Mowing Co\tmckinney.mowing.co.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n603\tArtisan Landscapes DFW\tartisan.landscapes.dfw.prolink-seed@example.com\tscout\t0\t0.4000\t0.00\n604\tSignature Outdoor Design\tsignature.outdoor.design.prolink-seed@example.com\tscout\t0\t0.4000\t0.00\n605\tNature's Edge Landscaping\tnature.s.edge.landscaping.prolink-seed@example.com\tcrew\t0\t0.6500\t79.00\n606\tElite Landscape Solutions\telite.landscape.solutions.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n607\tTexas Outdoor Living\ttexas.outdoor.living.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n608\tAquaRight Irrigation\taquaright.irrigation.prolink-seed@example.com\tscout\t0\t0.4000\t0.00\n609\tDFW Sprinkler Pros\tdfw.sprinkler.pros.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n610\tPrecision Irrigation Systems\tprecision.irrigation.systems.prolink-seed@example.com\tcrew\t0\t0.6500\t79.00\n611\tWaterSmart DFW\twatersmart.dfw.prolink-seed@example.com\tpro\t0\t0.5500\t29.00\n612\tTexas Irrigation Experts\ttexas.irrigation.experts.prolink-seed@example.com\tscout\t0\t0.4000\t0.00\n",
+  "stderr": "",
+  "execution_time_ms": 66
+}

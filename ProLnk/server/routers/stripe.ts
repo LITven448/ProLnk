@@ -12,8 +12,16 @@ import { getDb } from "../db";
 import Stripe from "stripe";
 import type { Request, Response } from "express";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2025-02-24.acacia" as any,
+let _stripe: Stripe | null = null;
+const stripe = new Proxy({} as Stripe, {
+  get(_t, prop) {
+    if (!_stripe) {
+      const key = process.env.STRIPE_SECRET_KEY;
+      if (!key) throw new Error("STRIPE_SECRET_KEY not configured");
+      _stripe = new Stripe(key, { apiVersion: "2025-02-24.acacia" as any });
+    }
+    return (_stripe as any)[prop];
+  },
 });
 
 // --- Tier subscription products -----------------------------------------------

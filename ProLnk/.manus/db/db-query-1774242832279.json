@@ -1,0 +1,13 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'photoIntakeQueue';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'photoIntakeQueue';",
+  "rows": [
+    {
+      "TABLE_NAME": "photoIntakeQueue"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\nphotoIntakeQueue\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

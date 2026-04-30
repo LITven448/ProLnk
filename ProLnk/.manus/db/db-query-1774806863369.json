@@ -1,0 +1,31 @@
+{
+  "query": "SHOW TABLES LIKE '%partner%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SHOW TABLES LIKE '%partner%';",
+  "rows": [
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerAlerts"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerIntegrations"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerNotifications"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerPerformanceScores"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerReviews"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partnerVerifications"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)": "partners"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_dAVBxpSeSZ4jhwmMBJquFo (%partner%)\npartnerAlerts\npartnerIntegrations\npartnerNotifications\npartnerPerformanceScores\npartnerReviews\npartnerVerifications\npartners\n",
+  "stderr": "",
+  "execution_time_ms": 200
+}

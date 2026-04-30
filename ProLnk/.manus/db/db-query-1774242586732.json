@@ -1,0 +1,73 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "activityLog"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "broadcasts"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "commissions"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "customerDeals"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "homeownerLeads"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "homeownerProfiles"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "homeownerReviews"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "industryRates"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "jobs"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "messages"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "opportunities"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "partnerAlerts"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "partnerIntegrations"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "partnerReviews"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "partnerVerifications"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "partners"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "photoIntakeQueue"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "referralClicks"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "referrals"
+    },
+    {
+      "Tables_in_dAVBxpSeSZ4jhwmMBJquFo": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_dAVBxpSeSZ4jhwmMBJquFo\n__drizzle_migrations\nactivityLog\nbroadcasts\ncommissions\ncustomerDeals\nhomeownerLeads\nhomeownerProfiles\nhomeownerReviews\nindustryRates\njobs\nmessages\nopportunities\npartnerAlerts\npartnerIntegrations\npartnerReviews\npartnerVerifications\npartners\nphotoIntakeQueue\nreferralClicks\nreferrals\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 267
+}

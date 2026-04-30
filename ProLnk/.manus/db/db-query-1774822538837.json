@@ -1,0 +1,14 @@
+{
+  "query": "SELECT id, businessName FROM partners WHERE id = 594 LIMIT 1; SELECT MAX(id) as max_id, COUNT(*) as total FROM partners;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT id, businessName FROM partners WHERE id = 594 LIMIT 1; SELECT MAX(id) as max_id, COUNT(*) as total FROM partners;",
+  "rows": [
+    {
+      "max_id": "180450",
+      "total": "151"
+    }
+  ],
+  "messages": [],
+  "stdout": "max_id\ttotal\n180450\t151\n",
+  "stderr": "",
+  "execution_time_ms": 73
+}

@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, businessName, businessType, rating, reviewCount, referralCount, totalCommissionEarned, tier FROM partners WHERE status='approved' ORDER BY totalCommissionEarned DESC LIMIT 6",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT id, businessName, businessType, rating, reviewCount, referralCount, totalCommissionEarned, tier FROM partners WHERE status='approved' ORDER BY totalCommissionEarned DESC LIMIT 6",
+  "rows": [
+    {
+      "id": "60043",
+      "businessName": "Texas Roofing Pros",
+      "businessType": "Roofing",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "37",
+      "totalCommissionEarned": "3200.00",
+      "tier": "crew"
+    },
+    {
+      "id": "60011",
+      "businessName": "Arctic Air HVAC",
+      "businessType": "HVAC",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "52",
+      "totalCommissionEarned": "2840.00",
+      "tier": "crew"
+    },
+    {
+      "id": "60028",
+      "businessName": "DFW Pool Builders",
+      "businessType": "Pool Construction",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "29",
+      "totalCommissionEarned": "2800.00",
+      "tier": "crew"
+    },
+    {
+      "id": "60032",
+      "businessName": "Restore Pro Water Damage",
+      "businessType": "Water Damage Restoration",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "29",
+      "totalCommissionEarned": "2700.00",
+      "tier": "crew"
+    },
+    {
+      "id": "60031",
+      "businessName": "DFW Mold Remediation",
+      "businessType": "Mold Remediation",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "31",
+      "totalCommissionEarned": "2480.00",
+      "tier": "crew"
+    },
+    {
+      "id": "60040",
+      "businessName": "Volt Masters Electric",
+      "businessType": "Electrical",
+      "rating": "0.00",
+      "reviewCount": "0",
+      "referralCount": "46",
+      "totalCommissionEarned": "2307.00",
+      "tier": "crew"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tbusinessName\tbusinessType\trating\treviewCount\treferralCount\ttotalCommissionEarned\ttier\n60043\tTexas Roofing Pros\tRoofing\t0.00\t0\t37\t3200.00\tcrew\n60011\tArctic Air HVAC\tHVAC\t0.00\t0\t52\t2840.00\tcrew\n60028\tDFW Pool Builders\tPool Construction\t0.00\t0\t29\t2800.00\tcrew\n60032\tRestore Pro Water Damage\tWater Damage Restoration\t0.00\t0\t29\t2700.00\tcrew\n60031\tDFW Mold Remediation\tMold Remediation\t0.00\t0\t31\t2480.00\tcrew\n60040\tVolt Masters Electric\tElectrical\t0.00\t0\t46\t2307.00\tcrew\n",
+  "stderr": "",
+  "execution_time_ms": 66
+}

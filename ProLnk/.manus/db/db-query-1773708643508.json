@@ -1,0 +1,19 @@
+{
+  "query": "\nSET @demo_user_id = (SELECT id FROM users WHERE openId = 'demo_partner_prolink_2026' LIMIT 1);\nSET @scoop_duke_id = (SELECT id FROM partners WHERE businessName = 'Scoop Duke DFW' LIMIT 1);\n\n-- Link the Scoop Duke partner to the demo user\nUPDATE partners SET userId = @demo_user_id WHERE id = @scoop_duke_id;\n\n-- Confirm\nSELECT u.id as userId, u.name, u.openId, p.id as partnerId, p.businessName, p.tier, p.status \nFROM users u JOIN partners p ON p.userId = u.id \nWHERE u.openId = 'demo_partner_prolink_2026';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \nSET @demo_user_id = (SELECT id FROM users WHERE openId = 'demo_partner_prolink_2026' LIMIT 1);\nSET @scoop_duke_id = (SELECT id FROM partners WHERE businessName = 'Scoop Duke DFW' LIMIT 1);\n\n-- Link the Scoop Duke partner to the demo user\nUPDATE partners SET userId = @demo_user_id WHERE id = @scoop_duke_id;\n\n-- Confirm\nSELECT u.id as userId, u.name, u.openId, p.id as partnerId, p.businessName, p.tier, p.status \nFROM users u JOIN partners p ON p.userId = u.id \nWHERE u.openId = 'demo_partner_prolink_2026';\n",
+  "rows": [
+    {
+      "userId": "150006",
+      "name": "Demo Partner",
+      "openId": "demo_partner_prolink_2026",
+      "partnerId": "30001",
+      "businessName": "Scoop Duke DFW",
+      "tier": "silver",
+      "status": "approved"
+    }
+  ],
+  "messages": [],
+  "stdout": "userId\tname\topenId\tpartnerId\tbusinessName\ttier\tstatus\n150006\tDemo Partner\tdemo_partner_prolink_2026\t30001\tScoop Duke DFW\tsilver\tapproved\n",
+  "stderr": "",
+  "execution_time_ms": 101
+}

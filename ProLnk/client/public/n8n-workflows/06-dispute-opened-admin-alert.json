@@ -1,0 +1,76 @@
+{
+  "name": "ProLnk: Dispute Opened → Admin Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "prolnk-dispute-opened",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.event }}",
+              "rightValue": "dispute.opened",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ]
+        }
+      },
+      "id": "check-event",
+      "name": "Check Event",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "alerts@prolnk.io",
+        "fromName": "ProLnk Alerts",
+        "toEmail": "andrew@prolnk.io",
+        "subject": "⚠️ Commission Dispute Opened — {{ $json.partner_name }}",
+        "emailType": "html",
+        "message": "<html><body style='font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;'><h2 style='color: #dc2626;'>⚠️ Commission Dispute Opened</h2><table style='width: 100%; border-collapse: collapse;'><tr><td style='padding: 8px; color: #666;'>Partner</td><td style='padding: 8px; font-weight: bold;'>{{ $json.partner_name }}</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Commission ID</td><td style='padding: 8px;'>{{ $json.commission_id }}</td></tr><tr><td style='padding: 8px; color: #666;'>Amount</td><td style='padding: 8px;'>${{ $json.amount }}</td></tr><tr style='background: #f9f9f9;'><td style='padding: 8px; color: #666;'>Reason</td><td style='padding: 8px;'>{{ $json.reason }}</td></tr><tr><td style='padding: 8px; color: #666;'>Opened At</td><td style='padding: 8px;'>{{ $json.opened_at }}</td></tr></table><a href='https://prolnk.io/admin/disputes' style='display: inline-block; background: #dc2626; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 16px;'>Review Dispute →</a></body></html>"
+      },
+      "id": "send-admin-email",
+      "name": "Send Admin Alert Email",
+      "type": "n8n-nodes-base.sendEmail",
+      "typeVersion": 2,
+      "position": [680, 220],
+      "credentials": { "smtp": { "id": "smtp-credentials", "name": "SMTP / SendGrid" } }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true } }}"
+      },
+      "id": "respond-ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 220]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": { "main": [[{ "node": "Check Event", "type": "main", "index": 0 }]] },
+    "Check Event": { "main": [[{ "node": "Send Admin Alert Email", "type": "main", "index": 0 }], []] },
+    "Send Admin Alert Email": { "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "prolnk": {
+      "version": "1.0",
+      "trigger_event": "dispute.opened",
+      "payload_fields": ["event", "partner_name", "partner_id", "commission_id", "amount", "reason", "opened_at"]
+    }
+  }
+}

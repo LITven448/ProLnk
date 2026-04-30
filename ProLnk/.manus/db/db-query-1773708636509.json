@@ -1,0 +1,9 @@
+{
+  "query": "\nINSERT INTO users (openId, name, email, loginMethod, role, lastSignedIn, createdAt, updatedAt)\nVALUES ('demo_partner_prolink_2026', 'Demo Partner', 'demo@prolink.com', 'demo', 'user', NOW(), NOW(), NOW());\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \nINSERT INTO users (openId, name, email, loginMethod, role, lastSignedIn, createdAt, updatedAt)\nVALUES ('demo_partner_prolink_2026', 'Demo Partner', 'demo@prolink.com', 'demo', 'user', NOW(), NOW(), NOW());\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 72
+}

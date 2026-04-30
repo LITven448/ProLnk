@@ -1,0 +1,272 @@
+I need a comprehensive, brutally honest audit of this codebase. This is a pre-launch property service platform called ProLnk with sister products TrustyPro and ProLnk Media. The architecture documentation claims a lot — I need you to tell me what's actually built versus what's documented. I would rather discover problems now than after launching with real users and real money.
+
+Please read through the codebase thoroughly before answering. Follow imports, trace function calls, check schemas, look at config files, review environment variable usage, and examine actual route handlers — not just route definitions. Take your time. Output a single comprehensive markdown document organized into the sections below.
+
+═══════════════════════════════════════════════════════
+SECTION 1: PROJECT OVERVIEW & ARCHITECTURE
+═══════════════════════════════════════════════════════
+
+- What is the actual tech stack in use? Frontend, backend, database, ORM, hosting.
+- What are the main entry points? Where does a request actually start?
+- How is the codebase organized? What are the major folders and what's in each?
+- Is this a monorepo or single app? How many distinct services/apps are deployed?
+- What's the deployment setup (Manus hosting, Vercel, AWS, etc.)?
+- What's the actual line count and route count?
+
+═══════════════════════════════════════════════════════
+SECTION 2: ROUTES & ENDPOINTS INVENTORY
+═══════════════════════════════════════════════════════
+
+List every route/endpoint (frontend pages AND backend API routes) and classify each:
+
+- LIVE — fully implemented end-to-end with real logic, real database calls, real external services
+- PARTIAL — partially implemented, some real logic but missing pieces
+- STUB — route exists but returns mock data, hardcoded responses, or has placeholder logic
+- BROKEN — route exists but has clear bugs, references functions that don't exist, or fails on inspection
+- UNCLEAR — can't determine without runtime testing
+
+Group routes by feature area (partner application, lead routing, commissions, homeowner profiles, admin, ProLnk Media, etc.). Give me a count summary at the end of this section: X LIVE, Y PARTIAL, Z STUB, W BROKEN.
+
+═══════════════════════════════════════════════════════
+SECTION 3: ALL EXTERNAL INTEGRATIONS — REAL STATUS CHECK
+═══════════════════════════════════════════════════════
+
+For each of the following integrations, tell me:
+- Is it actually wired to a live external service, or stubbed/mocked?
+- Where in the code does the integration happen?
+- Are API keys/credentials referenced (don't print them, just confirm presence)?
+- Are there error handlers and retry logic, or naive happy-path code?
+- Are there obvious bugs or compliance issues?
+
+PAYMENT & FINANCE:
+- Stripe (subscriptions)
+- Stripe Connect (partner payouts) — this is the most critical one
+- Stripe webhooks (payment event handling)
+- Any 1099 generation logic
+
+COMMUNICATIONS:
+- Twilio SMS (TCPA compliance especially — opt-in/opt-out, consent logging, frequency caps)
+- Resend (transactional email)
+- Push notification infrastructure
+
+AI & MEMORY LAYER:
+- OpenAI GPT-4 Vision (photo analysis)
+- OpenAI structured outputs / JSON schema usage
+- Zep AI memory layer (temporal home condition tracking)
+- Paperclip orchestrator (event-driven agent routing)
+- OpenAI Whisper (voice transcription)
+- LLM helper utilities (invokeLLM)
+- Image generation utilities (generateImage)
+- Any other AI/ML libraries or services
+
+WATERFALL VLM PIPELINE (this is critical — multiple AI integrations chained for photo analysis):
+Map out the entire waterfall pipeline as it actually exists in code. What are the stages? What model is called at each stage? How are outputs from one stage passed to the next? Is the pipeline actually multi-stage in code, or is it documented as multi-stage but implemented as a single call?
+
+STORAGE & DATA:
+- AWS S3 (photo storage via Manus helpers)
+- MySQL/TiDB database
+- Drizzle ORM — is the schema actually in sync with what's documented?
+- Any caching layer (Redis, in-memory)
+
+FSM INTEGRATIONS:
+- ServiceTitan
+- Jobber
+- CompanyCam
+- Housecall Pro (if any)
+- For each: is it actually authenticating, syncing data, or just stub?
+
+COMPLIANCE & VERIFICATION:
+- Background check provider (Checkr, Certn, anyone)
+- Insurance verification provider
+- Texas state contractor license database lookup
+- TCPA consent tracking
+- CCPA/GDPR data deletion handling
+- Privacy Agent functionality
+
+MAPPING & EXTERNAL DATA:
+- Google Maps (proximity, ZIP mapping)
+- Mapbox (if any)
+- NOAA weather API (for Storm Tracking Agent)
+- Materials pricing APIs
+- Real estate data APIs (Zillow, Attom, MLS, RESO Web API)
+- ATTOM Data or similar public records APIs
+
+ANALYTICS & MARKETING:
+- Google Analytics 4
+- Facebook Pixel
+- Google Tag Manager
+- Mixpanel/Amplitude
+- Hotjar/FullStory
+- Any conversion tracking
+
+WORKFLOW AUTOMATION:
+- n8n integrations (and whether the multi-instance separation actually exists in code)
+- Any webhook receivers from n8n
+
+DEVELOPMENT INFRASTRUCTURE:
+- Manus hosting and deployment hooks
+- Manus OAuth handling
+- Manus secrets management — are secrets properly scoped or exposed?
+- GitHub integration (CI/CD if any)
+- Vitest test coverage
+
+For each integration, give me a one-line verdict: LIVE / STUBBED / NOT IMPLEMENTED / BROKEN.
+
+═══════════════════════════════════════════════════════
+SECTION 4: THE 47 AI AGENTS — THE BIG MANUS HALLUCINATION CHECK
+═══════════════════════════════════════════════════════
+
+The documentation claims 47 AI agents exist across 4 tiers (Executive, Supreme Court, Managing, Sub-Agents). I am specifically worried that many of these are documented but not actually implemented.
+
+For EACH of the 47 claimed agents, classify:
+- IMPLEMENTED — has real logic, is callable, does something meaningful
+- SCAFFOLDED — file exists with structure but logic is placeholder
+- DOCUMENTED ONLY — referenced in docs but no code file exists
+- UNCLEAR — exists in some form, can't determine functionality
+
+Pay special attention to:
+
+TIER 1 EXECUTIVE: Platform Intelligence Director, Growth Strategy Agent, Revenue Optimization Agent, CEO Agent, CFO Agent, COO Agent, CMO Agent, CTO Agent, Brain Trust Council
+
+TIER 2 SUPREME COURT: Compliance Guardian, Fraud Detection Agent, Dispute Resolution Agent, Privacy Agent, Brand Safety Agent, Data Integrity Agent, Ethics Reviewer
+
+TIER 3 MANAGING: Partner Lifecycle Manager, Lead Pipeline Manager, Commission & Payout Manager, Homeowner Acquisition Manager, Home Intelligence Manager, Advertiser Success Manager, Notification Orchestrator, Content & Media Manager, Partner Success Manager, Insurance & Claims Manager, Inventory & Pricing Manager, Integration Sync Manager
+
+TIER 4 SUB-AGENTS — ProLnk: Screening Agent, Insurance Verification Agent, License Verification Agent, Onboarding Sequence Agent, Photo Analysis Agent, Home Profile Match Agent, Lead Creation Agent, Lead Routing Agent, Lead Timer Agent, Completion Verification Agent, Commission Calculator, Origination Lock Agent, Payout Batch Agent, Partner Score Agent, Content Agent, Outreach Agent, Partner Retention Agent, Materials Pricing Agent, Referral Agent
+
+TIER 4 SUB-AGENTS — TrustyPro: Zep Memory Agent, Alert Triage Agent, Seasonal Maintenance Agent, Warranty Tracker Agent, Insurance Assist Agent, Profile Completion Agent, Ask-a-Pro Agent
+
+TIER 4 SUB-AGENTS — ProLnk Media: Targeting Agent, Performance Agent, Report Agent, Advertiser Retention Agent
+
+SHARED INFRASTRUCTURE: Storm Tracking Agent, Materials Pricing Agent, Notification Dispatch Agent
+
+Output as a table or structured list with verdict per agent. Give me a final count: X IMPLEMENTED, Y SCAFFOLDED, Z DOCUMENTED ONLY.
+
+═══════════════════════════════════════════════════════
+SECTION 5: COMMISSION MATH & MONEY FLOW — CRITICAL
+═══════════════════════════════════════════════════════
+
+This is the most reputationally fragile part of the platform. Trace the actual code path for the commission flow and verify:
+
+- When a job is marked complete, what code runs?
+- Is the platform fee (12% of job value) actually calculated in code?
+- Is the referring pro commission (48% of platform fee) calculated correctly?
+- Is the origination override (1.5% of platform fee) calculated correctly?
+- Is the originating pro actually locked to the home address on first scan? Where is this stored? Is it persistent and immutable, or can it be overwritten?
+- What happens if the originating pro's account closes — does the override revert correctly?
+- Is the weekly batch payout (Friday 6am CT) actually scheduled? Where is the cron/scheduler? Does it exist in code?
+- Is the $25 minimum threshold logic correct?
+- What happens with refunds and clawbacks — is the code there?
+- Are commission ledger entries actually written to the database?
+- Is there an audit trail for every commission calculation?
+- Is there a way to dispute and hold a commission pending resolution?
+
+Show me the actual function names and file paths for each step in the commission flow. Flag any bugs, off-by-one errors, rounding issues, or places where money could go missing.
+
+═══════════════════════════════════════════════════════
+SECTION 6: DATABASE SCHEMA REALITY CHECK
+═══════════════════════════════════════════════════════
+
+- List every table that actually exists in the schema files.
+- Compare to what the documentation claims exists. Flag mismatches.
+- Are there foreign keys properly set up?
+- Are there indexes on commonly queried fields?
+- Are there any tables that are referenced in code but don't exist in the schema?
+- Are there any tables in the schema that are never read or written by code (dead tables)?
+- Specifically check: do these tables exist with proper relationships? — partners, homeProfiles, jobPhotos, photoAnalysis, leadOpportunities, commissions, advertisers, zipClusters, storms, alerts, notifications.
+- Is the originating partner ID actually stored on the home profile in a way that can't be tampered with?
+
+═══════════════════════════════════════════════════════
+SECTION 7: SECURITY, COMPLIANCE & PRIVACY
+═══════════════════════════════════════════════════════
+
+The platform handles photos of people's homes plus PII plus money flows. Audit:
+
+- Are API keys hardcoded anywhere in the codebase? (Critical security issue.)
+- Are environment variables properly used and is there a .env.example?
+- Are secrets exposed in any client-side code, frontend bundle, or git history?
+- Is photo metadata (EXIF, GPS) actually stripped server-side on upload? Where?
+- Is there any high-value item masking or blurring before storage?
+- Is authentication implemented correctly? What's the auth method (sessions, JWT, OAuth)?
+- Are there role-based access controls? Can a partner access another partner's data?
+- Is there any way for a user to enumerate other users (IDOR vulnerabilities)?
+- Are inputs validated and sanitized? SQL injection risks via Drizzle? XSS in frontend?
+- Are file uploads validated for type and size? Are uploaded files scanned?
+- Is rate limiting implemented anywhere?
+- Is there CCPA/GDPR data deletion implemented? Can a user actually delete their data?
+- Is consent for photo capture and AI analysis tracked anywhere with timestamps?
+- TCPA compliance — is SMS opt-in tracked, with opt-out (STOP) handling?
+- Are audit logs being written for sensitive actions?
+
+═══════════════════════════════════════════════════════
+SECTION 8: CODE QUALITY ASSESSMENT
+═══════════════════════════════════════════════════════
+
+- Overall code quality on a 1-10 scale, with rationale.
+- Is there test coverage? Are tests actually meaningful or just smoke tests?
+- Are there obvious anti-patterns (god functions, copy-paste code, mixed concerns)?
+- Is error handling consistent or are there silent failures everywhere?
+- Are there TODO comments or "// TODO: implement this" placeholders? List the most concerning ones.
+- Is there dead code — features that were started and abandoned?
+- How readable is the code for a new developer onboarding? Could a contract dev understand and extend this?
+- Are types used consistently (since TypeScript is in the stack)?
+- Are there circular dependencies or fragile import chains?
+- Is the codebase consistent in style or does it look like multiple different authors with no coherent style?
+
+═══════════════════════════════════════════════════════
+SECTION 9: BUSINESS-CRITICAL FLOWS — END-TO-END VERIFICATION
+═══════════════════════════════════════════════════════
+
+For each of these flows, trace the code and verify it actually works end-to-end OR identify exactly where it breaks:
+
+FLOW A: Pro Application → Approval → Onboarding
+A pro fills out the application form. What happens next in code? Does the screening agent actually score them? Does insurance verification happen? Does the welcome email actually fire via Resend? Does Stripe Connect onboarding actually trigger?
+
+FLOW B: Photo Upload → AI Analysis → Lead Creation
+A pro uploads a photo. Walk through every step until a lead is in the database. Does the photo actually go to S3? Is GPT-4 Vision actually called? Is the structured output parsed correctly? Is a lead opportunity actually created?
+
+FLOW C: Lead Routing → Acceptance → Job Completion
+A lead is created. Does the lead routing agent actually rank partners? Does it pick one and notify them via Twilio + email? Does the 24-hour timer actually run? Does re-routing work?
+
+FLOW D: Job Complete → Commission Calculated → Payout Scheduled
+The job is marked complete. Does the commission agent fire? Are ledger entries written? Does the weekly batch actually pick this up on Friday? Does Stripe Connect transfer actually fire?
+
+FLOW E: Draft Profile Created → Homeowner Outreach → Profile Activated
+A new home address is documented. Is a draft profile actually created? Does the outreach agent send the email sequence via Resend? When the homeowner clicks the link, does activation actually work?
+
+FLOW F: Storm Detected → Risk Scored → Lead Batch Created
+NOAA data comes in. Is the storm tracking agent actually scheduled to run every 6 hours? Does it actually pull NOAA data? Does it cross-reference home conditions? Does it actually generate a lead batch?
+
+For each flow, give me a verdict: WORKS / PARTIALLY WORKS (and explain where it breaks) / DOES NOT WORK / NOT IMPLEMENTED.
+
+═══════════════════════════════════════════════════════
+SECTION 10: TOP 20 PRIORITY GAPS
+═══════════════════════════════════════════════════════
+
+Based on everything you found, give me the TOP 20 things that need to be fixed or built before this platform can safely handle real users and real money. Rank them by criticality:
+
+P0 — must fix before any pilot launch (would cause real harm: data loss, money loss, legal exposure)
+P1 — must fix before scaling beyond pilot (would cause significant operational pain)
+P2 — should fix in the next quarter (technical debt or feature gaps)
+
+For each item: what it is, where in the code it lives, why it matters, and a rough estimate of effort to fix (hours/days/weeks).
+
+═══════════════════════════════════════════════════════
+SECTION 11: WHAT'S ACTUALLY GOOD
+═══════════════════════════════════════════════════════
+
+Be fair. After all that critique, tell me what's well-built in this codebase. What architectural decisions were smart? What modules are clean and ready for production? What would I be proud to show an engineer?
+
+═══════════════════════════════════════════════════════
+SECTION 12: BOTTOM LINE
+═══════════════════════════════════════════════════════
+
+Three honest summary paragraphs:
+
+1. If I tried to launch a 10-pro pilot tomorrow, what would break first and why?
+2. If I hire a contract developer for 90 days at $25-35K, what's the realistic priority list to get this production-ready?
+3. What's the gap between what the documentation claims and what's actually built? Be specific about the magnitude — is the documentation 10% ahead of reality, 50%, 90%?
+
+═══════════════════════════════════════════════════════
+
+Be brutally honest throughout. I have built this with AI assistance and I am specifically worried that the documentation has drifted ahead of reality. I want the truth, not encouragement. Save the final output as a single markdown file called PROLNK_AUDIT.md in the root of the project.

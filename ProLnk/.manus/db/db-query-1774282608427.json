@@ -1,0 +1,94 @@
+{
+  "query": "\n-- Search for Scoop Duke by name\nSELECT id, businessName, contactEmail, tier, isExempt, userId FROM partners \nWHERE businessName LIKE '%scoop%' OR businessName LIKE '%duke%' OR contactEmail LIKE '%scoop%' OR contactEmail LIKE '%duke%'\nLIMIT 10;\n\n-- Also check the users table for the owner\nSELECT id, name, email, role FROM users LIMIT 10;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \n-- Search for Scoop Duke by name\nSELECT id, businessName, contactEmail, tier, isExempt, userId FROM partners \nWHERE businessName LIKE '%scoop%' OR businessName LIKE '%duke%' OR contactEmail LIKE '%scoop%' OR contactEmail LIKE '%duke%'\nLIMIT 10;\n\n-- Also check the users table for the owner\nSELECT id, name, email, role FROM users LIMIT 10;\n",
+  "rows": [
+    {
+      "id": "723",
+      "businessName": "Scoop Duke",
+      "contactEmail": "scoop.duke.prolink-seed@example.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "30001",
+      "businessName": "Scoop Duke DFW",
+      "contactEmail": "andrew@scoopduke.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "userId": "150006"
+    },
+    {
+      "id": "90191",
+      "businessName": "Scoop Duke DFW",
+      "contactEmail": "partner191@scoop-duke-dfw-190.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90193",
+      "businessName": "DFW Poop Scoop",
+      "contactEmail": "partner193@dfw-poop-scoop-192.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90195",
+      "businessName": "Lone Star Scoopers",
+      "contactEmail": "partner195@lone-star-scoopers-1.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90196",
+      "businessName": "ProScoop DFW",
+      "contactEmail": "partner196@proscoop-dfw-195.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90441",
+      "businessName": "Scoop Duke DFW",
+      "contactEmail": "partner191@scoop-duke-dfw-190.com",
+      "tier": "crew",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90443",
+      "businessName": "DFW Poop Scoop",
+      "contactEmail": "partner193@dfw-poop-scoop-192.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90445",
+      "businessName": "Lone Star Scoopers",
+      "contactEmail": "partner195@lone-star-scoopers-1.com",
+      "tier": "pro",
+      "isExempt": "0",
+      "userId": "NULL"
+    },
+    {
+      "id": "90446",
+      "businessName": "ProScoop DFW",
+      "contactEmail": "partner196@proscoop-dfw-195.com",
+      "tier": "scout",
+      "isExempt": "0",
+      "userId": "NULL"
+    }
+  ],
+  "messages": [
+    "id\tname\temail\trole",
+    "1\tAndrew Frakes\tfrakeshome@gmail.com\tadmin",
+    "150006\tDemo Partner\tdemo@prolink.com\tuser"
+  ],
+  "stdout": "id\tbusinessName\tcontactEmail\ttier\tisExempt\tuserId\n723\tScoop Duke\tscoop.duke.prolink-seed@example.com\tcrew\t0\tNULL\n30001\tScoop Duke DFW\tandrew@scoopduke.com\tpro\t0\t150006\n90191\tScoop Duke DFW\tpartner191@scoop-duke-dfw-190.com\tcrew\t0\tNULL\n90193\tDFW Poop Scoop\tpartner193@dfw-poop-scoop-192.com\tpro\t0\tNULL\n90195\tLone Star Scoopers\tpartner195@lone-star-scoopers-1.com\tcrew\t0\tNULL\n90196\tProScoop DFW\tpartner196@proscoop-dfw-195.com\tcrew\t0\tNULL\n90441\tScoop Duke DFW\tpartner191@scoop-duke-dfw-190.com\tcrew\t0\tNULL\n90443\tDFW Poop Scoop\tpartner193@dfw-poop-scoop-192.com\tpro\t0\tNULL\n90445\tLone Star Scoopers\tpartner195@lone-star-scoopers-1.com\tpro\t0\tNULL\n90446\tProScoop DFW\tpartner196@proscoop-dfw-195.com\tscout\t0\tNULL\nid\tname\temail\trole\n1\tAndrew Frakes\tfrakeshome@gmail.com\tadmin\n150006\tDemo Partner\tdemo@prolink.com\tuser\n",
+  "stderr": "",
+  "execution_time_ms": 114
+}

@@ -1,0 +1,83 @@
+{
+  "name": "ProLnk — 01 Lead Dispatched SMS",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "prolnk-lead-dispatched",
+        "responseMode": "onReceived",
+        "responseData": "firstEntryJson"
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook — Lead Dispatched",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.event }}",
+              "operation": "equals",
+              "value2": "lead_dispatched"
+            }
+          ]
+        }
+      },
+      "id": "filter-event",
+      "name": "Filter — lead_dispatched only",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "accountSid": "={{ $env.TWILIO_ACCOUNT_SID }}",
+        "authToken": "={{ $env.TWILIO_AUTH_TOKEN }}",
+        "from": "={{ $env.TWILIO_FROM_NUMBER }}",
+        "to": "={{ $json.partnerPhone }}",
+        "message": "=🔔 New ProLnk Lead!\n\n{{ $json.opportunityType }} opportunity at {{ $json.serviceAddress }}\nEstimated value: ${{ $json.estimatedValue }}\n\nLog in to accept: https://prolnk.manus.space/dashboard/leads\n\nExpires in 24 hours."
+      },
+      "id": "twilio-sms",
+      "name": "Twilio — Send SMS",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [680, 220]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.partnerEmail }}",
+        "subject": "=🔔 New Lead: {{ $json.opportunityType }} at {{ $json.serviceAddress }}",
+        "emailFormat": "html",
+        "message": "=<h2>New Lead Available</h2><p>A new <strong>{{ $json.opportunityType }}</strong> opportunity has been matched to you.</p><p><strong>Address:</strong> {{ $json.serviceAddress }}<br><strong>Estimated Value:</strong> ${{ $json.estimatedValue }}<br><strong>Confidence:</strong> {{ $json.confidence }}%</p><p>This lead expires in <strong>24 hours</strong>.</p><a href='https://prolnk.manus.space/dashboard/leads' style='background:#0A1628;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:12px;'>View Lead →</a>"
+      },
+      "id": "resend-email",
+      "name": "Resend — Lead Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [680, 380]
+    }
+  ],
+  "connections": {
+    "Webhook — Lead Dispatched": {
+      "main": [[{ "node": "Filter — lead_dispatched only", "type": "main", "index": 0 }]]
+    },
+    "Filter — lead_dispatched only": {
+      "main": [
+        [
+          { "node": "Twilio — Send SMS", "type": "main", "index": 0 },
+          { "node": "Resend — Lead Email", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": ["prolnk", "partner", "leads"],
+  "_meta": {
+    "description": "Fires when a lead is dispatched to a partner. Sends both SMS (Twilio) and email (Resend) simultaneously. Webhook payload: { event, partnerPhone, partnerEmail, opportunityType, serviceAddress, estimatedValue, confidence }",
+    "setup": "1. Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM_NUMBER env vars in n8n. 2. Set webhook URL in ProLnk admin → Settings → Webhooks → Lead Dispatched. 3. Activate workflow."
+  }
+}

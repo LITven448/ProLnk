@@ -1,0 +1,140 @@
+{
+  "name": "09 - Lead Follow-Up Sequence",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-followup",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-lead-followup",
+      "name": "Webhook: Lead Assigned",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      },
+      "id": "wait-24h",
+      "name": "Wait 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.dealStatus }}",
+              "operation": "notEqual",
+              "value2": "accepted"
+            }
+          ]
+        }
+      },
+      "id": "check-deal-status-1",
+      "name": "Still Pending?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.partnerEmail }}",
+        "subject": "Reminder: New lead waiting for your response",
+        "text": "Hi {{ $json.partnerName }},\n\nYou have a new lead from {{ $json.homeownerName }} that hasn't been accepted yet.\n\nService: {{ $json.serviceCategory }}\nLocation: {{ $json.city }}, TX\nEstimated Value: ${{ $json.estimatedValue }}\n\nThis lead expires in 48 hours. Accept it now:\n{{ $json.dealUrl }}\n\n— ProLnk Team"
+      },
+      "id": "email-followup-1",
+      "name": "Send Follow-Up Email 1",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      },
+      "id": "wait-48h",
+      "name": "Wait Another 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.dealStatus }}",
+              "operation": "notEqual",
+              "value2": "accepted"
+            }
+          ]
+        }
+      },
+      "id": "check-deal-status-2",
+      "name": "Still Pending After 48h?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.partnerEmail }}",
+        "subject": "⚠️ Final notice: Lead expires in 24 hours",
+        "text": "Hi {{ $json.partnerName }},\n\nThis is your final reminder. The lead from {{ $json.homeownerName }} expires in 24 hours.\n\nIf you don't accept, it will be reassigned to another partner.\n\nAccept now: {{ $json.dealUrl }}\n\n— ProLnk Team"
+      },
+      "id": "email-followup-2",
+      "name": "Send Final Warning Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1560, 120]
+    },
+    {
+      "parameters": {
+        "fromEmail": "admin@prolnk.com",
+        "toEmail": "admin@prolnk.com",
+        "subject": "Lead expired — reassignment needed",
+        "text": "Lead for {{ $json.homeownerName }} ({{ $json.serviceCategory }}) was not accepted by {{ $json.partnerName }} within 72 hours.\n\nDeal ID: {{ $json.dealId }}\nPartner: {{ $json.partnerName }} ({{ $json.partnerEmail }})\n\nPlease reassign manually or trigger auto-reassignment."
+      },
+      "id": "notify-admin-expired",
+      "name": "Notify Admin: Lead Expired",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1560, 280]
+    }
+  ],
+  "connections": {
+    "Webhook: Lead Assigned": { "main": [[{ "node": "Wait 24 Hours", "type": "main", "index": 0 }]] },
+    "Wait 24 Hours": { "main": [[{ "node": "Still Pending?", "type": "main", "index": 0 }]] },
+    "Still Pending?": {
+      "main": [
+        [{ "node": "Send Follow-Up Email 1", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Send Follow-Up Email 1": { "main": [[{ "node": "Wait Another 24 Hours", "type": "main", "index": 0 }]] },
+    "Wait Another 24 Hours": { "main": [[{ "node": "Still Pending After 48h?", "type": "main", "index": 0 }]] },
+    "Still Pending After 48h?": {
+      "main": [
+        [{ "node": "Send Final Warning Email", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Send Final Warning Email": { "main": [[{ "node": "Notify Admin: Lead Expired", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "description": "3-touch follow-up sequence when a lead is assigned but not accepted. Sends reminders at 24h and 48h, then notifies admin at 72h for reassignment.",
+    "triggerWebhookPath": "/webhook/lead-followup",
+    "requiredFields": ["partnerEmail", "partnerName", "homeownerName", "serviceCategory", "city", "estimatedValue", "dealUrl", "dealId", "dealStatus"]
+  }
+}

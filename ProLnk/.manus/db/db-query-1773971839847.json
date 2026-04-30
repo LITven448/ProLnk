@@ -1,0 +1,9 @@
+{
+  "query": "\nALTER TABLE partners \n  ADD COLUMN stripeConnectAccountId VARCHAR(255) NULL,\n  ADD COLUMN stripeConnectStatus ENUM('not_connected','pending','active','restricted') DEFAULT 'not_connected' NOT NULL,\n  ADD COLUMN bankAccountLast4 VARCHAR(4) NULL,\n  ADD COLUMN payoutReadyAt TIMESTAMP NULL,\n  ADD COLUMN trialStatus ENUM('trial','active','expired','cancelled') DEFAULT 'trial' NOT NULL,\n  ADD COLUMN trialStartedAt TIMESTAMP NULL,\n  ADD COLUMN trialEndsAt TIMESTAMP NULL,\n  ADD COLUMN subscriptionPlan ENUM('local','regional','metro') NULL;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \nALTER TABLE partners \n  ADD COLUMN stripeConnectAccountId VARCHAR(255) NULL,\n  ADD COLUMN stripeConnectStatus ENUM('not_connected','pending','active','restricted') DEFAULT 'not_connected' NOT NULL,\n  ADD COLUMN bankAccountLast4 VARCHAR(4) NULL,\n  ADD COLUMN payoutReadyAt TIMESTAMP NULL,\n  ADD COLUMN trialStatus ENUM('trial','active','expired','cancelled') DEFAULT 'trial' NOT NULL,\n  ADD COLUMN trialStartedAt TIMESTAMP NULL,\n  ADD COLUMN trialEndsAt TIMESTAMP NULL,\n  ADD COLUMN subscriptionPlan ENUM('local','regional','metro') NULL;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3429
+}

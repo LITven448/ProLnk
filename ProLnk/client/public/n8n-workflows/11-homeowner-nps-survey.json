@@ -1,0 +1,150 @@
+{
+  "name": "ProLnk — Homeowner NPS Survey (Post-Service)",
+  "description": "Sends an NPS survey to a homeowner 48 hours after a job is marked complete. Captures the score, routes promoters (9-10) to a review request, passives (7-8) to a re-engagement offer, and detractors (0-6) to admin escalation.",
+  "version": "1.0.0",
+  "tags": ["prolnk", "nps", "homeowner", "survey", "review"],
+  "nodes": [
+    {
+      "id": "trigger",
+      "name": "Webhook — Job Completed",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "parameters": {
+        "path": "prolnk-job-completed",
+        "method": "POST",
+        "responseMode": "onReceived",
+        "responseData": "{ \"received\": true }"
+      },
+      "notes": "Payload: { jobId, homeownerEmail, homeownerName, partnerName, serviceType, completedAt }"
+    },
+    {
+      "id": "wait_48h",
+      "name": "Wait 48 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [300, 300],
+      "parameters": {
+        "resume": "timeInterval",
+        "unit": "hours",
+        "amount": 48
+      }
+    },
+    {
+      "id": "send_nps_email",
+      "name": "Send NPS Survey Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [500, 300],
+      "parameters": {
+        "fromEmail": "feedback@trustypro.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "How did your {{ $json.serviceType }} service go?",
+        "emailType": "html",
+        "message": "<div style='font-family:sans-serif;max-width:600px;margin:0 auto;'><div style='background:#0A1628;padding:24px;border-radius:12px 12px 0 0;text-align:center;'><h2 style='color:white;margin:0;'>How was your experience?</h2></div><div style='background:#ffffff;padding:32px;border-radius:0 0 12px 12px;'><p>Hi <strong>{{ $json.homeownerName }}</strong>,</p><p>Your <strong>{{ $json.serviceType }}</strong> service with <strong>{{ $json.partnerName }}</strong> was recently completed. We'd love to know how it went!</p><p style='font-weight:bold;text-align:center;margin:24px 0 8px;'>On a scale of 0-10, how likely are you to recommend TrustyPro?</p><div style='display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:16px 0;'>{{ range(0, 11) | map(score => '<a href=\"' + $env.APP_URL + '/nps?jobId=' + $json.jobId + '&score=' + score + '\" style=\"display:inline-block;width:40px;height:40px;line-height:40px;text-align:center;border-radius:8px;background:' + (score >= 9 ? '#10B981' : score >= 7 ? '#F59E0B' : '#EF4444') + ';color:white;font-weight:bold;text-decoration:none;\">' + score + '</a>') | join('') }}</div><p style='color:#6b7280;font-size:12px;text-align:center;'>0 = Not at all likely &nbsp;|&nbsp; 10 = Extremely likely</p></div></div>"
+      }
+    },
+    {
+      "id": "nps_response_webhook",
+      "name": "Webhook — NPS Response Received",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [700, 300],
+      "parameters": {
+        "path": "prolnk-nps-response",
+        "method": "GET",
+        "responseMode": "onReceived",
+        "responseData": "{ \"received\": true }"
+      },
+      "notes": "Query params: jobId, score (0-10)"
+    },
+    {
+      "id": "score_router",
+      "name": "Route by NPS Score",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [900, 300],
+      "parameters": {
+        "mode": "expression",
+        "output": "={{ $json.score >= 9 ? 'promoter' : $json.score >= 7 ? 'passive' : 'detractor' }}"
+      }
+    },
+    {
+      "id": "promoter_review",
+      "name": "Promoter — Request Google Review",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1100, 100],
+      "parameters": {
+        "fromEmail": "feedback@trustypro.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "Thank you! Would you leave us a review? ⭐",
+        "emailType": "html",
+        "message": "<p>Hi {{ $json.homeownerName }}, thank you for your amazing score! Would you mind leaving a quick Google review? It helps other homeowners find trusted pros. <a href='{{ $env.GOOGLE_REVIEW_URL }}'>Leave a Review →</a></p>"
+      }
+    },
+    {
+      "id": "passive_offer",
+      "name": "Passive — Re-Engagement Offer",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1100, 300],
+      "parameters": {
+        "fromEmail": "feedback@trustypro.com",
+        "toEmail": "={{ $json.homeownerEmail }}",
+        "subject": "We want to do better — here's $15 off your next service",
+        "emailType": "html",
+        "message": "<p>Hi {{ $json.homeownerName }}, thanks for your feedback! We're always working to improve. Here's a <strong>$15 credit</strong> toward your next TrustyPro service as a thank-you. Use code: <strong>THANKYOU15</strong></p>"
+      }
+    },
+    {
+      "id": "detractor_escalate",
+      "name": "Detractor — Admin Escalation",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1100, 500],
+      "parameters": {
+        "fromEmail": "system@prolnk.com",
+        "toEmail": "={{ $env.ADMIN_EMAIL }}",
+        "subject": "⚠️ Low NPS Score — Requires Follow-Up",
+        "emailType": "html",
+        "message": "<p><strong>Detractor Alert</strong></p><p>Homeowner {{ $json.homeownerName }} ({{ $json.homeownerEmail }}) gave a score of <strong>{{ $json.score }}/10</strong> for job #{{ $json.jobId }}.</p><p>Please follow up within 24 hours to resolve any issues and prevent churn.</p>"
+      }
+    },
+    {
+      "id": "log_nps",
+      "name": "Log NPS to ProLnk",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.PROLNK_API_URL }}/api/trpc/admin.logNpsScore",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={ \"jobId\": {{ $json.jobId }}, \"score\": {{ $json.score }}, \"homeownerEmail\": \"{{ $json.homeownerEmail }}\" }"
+      }
+    }
+  ],
+  "connections": {
+    "trigger":              { "main": [[{ "node": "wait_48h",            "type": "main", "index": 0 }]] },
+    "wait_48h":             { "main": [[{ "node": "send_nps_email",      "type": "main", "index": 0 }]] },
+    "nps_response_webhook": { "main": [[{ "node": "score_router",        "type": "main", "index": 0 }]] },
+    "score_router": {
+      "main": [
+        [{ "node": "promoter_review",   "type": "main", "index": 0 }],
+        [{ "node": "passive_offer",     "type": "main", "index": 0 }],
+        [{ "node": "detractor_escalate","type": "main", "index": 0 }]
+      ]
+    },
+    "promoter_review":    { "main": [[{ "node": "log_nps", "type": "main", "index": 0 }]] },
+    "passive_offer":      { "main": [[{ "node": "log_nps", "type": "main", "index": 0 }]] },
+    "detractor_escalate": { "main": [[{ "node": "log_nps", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  }
+}

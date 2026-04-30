@@ -1,0 +1,9 @@
+{
+  "query": "\nALTER TABLE partners \n  ADD COLUMN IF NOT EXISTS priorityScore INT NOT NULL DEFAULT 0,\n  ADD COLUMN IF NOT EXISTS avgLeadResponseHours DECIMAL(6,2) NOT NULL DEFAULT 24.00,\n  ADD COLUMN IF NOT EXISTS partnersReferred INT NOT NULL DEFAULT 0,\n  ADD COLUMN IF NOT EXISTS referredByPartnerId INT NULL;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \nALTER TABLE partners \n  ADD COLUMN IF NOT EXISTS priorityScore INT NOT NULL DEFAULT 0,\n  ADD COLUMN IF NOT EXISTS avgLeadResponseHours DECIMAL(6,2) NOT NULL DEFAULT 24.00,\n  ADD COLUMN IF NOT EXISTS partnersReferred INT NOT NULL DEFAULT 0,\n  ADD COLUMN IF NOT EXISTS referredByPartnerId INT NULL;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 3410
+}

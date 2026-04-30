@@ -1,0 +1,50 @@
+{
+  "query": "\nSELECT 'partners' as tbl, COUNT(*) as cnt FROM partners\nUNION ALL SELECT 'users', COUNT(*) FROM users\nUNION ALL SELECT 'properties', COUNT(*) FROM properties\nUNION ALL SELECT 'propertyProfiles', COUNT(*) FROM propertyProfiles\nUNION ALL SELECT 'homeownerProfiles', COUNT(*) FROM homeownerProfiles\nUNION ALL SELECT 'jobs', COUNT(*) FROM jobs\nUNION ALL SELECT 'opportunities', COUNT(*) FROM opportunities\nUNION ALL SELECT 'commissions', COUNT(*) FROM commissions\nUNION ALL SELECT 'partnerReviews', COUNT(*) FROM partnerReviews\nUNION ALL SELECT 'referralGraph', COUNT(*) FROM referralGraph;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute \nSELECT 'partners' as tbl, COUNT(*) as cnt FROM partners\nUNION ALL SELECT 'users', COUNT(*) FROM users\nUNION ALL SELECT 'properties', COUNT(*) FROM properties\nUNION ALL SELECT 'propertyProfiles', COUNT(*) FROM propertyProfiles\nUNION ALL SELECT 'homeownerProfiles', COUNT(*) FROM homeownerProfiles\nUNION ALL SELECT 'jobs', COUNT(*) FROM jobs\nUNION ALL SELECT 'opportunities', COUNT(*) FROM opportunities\nUNION ALL SELECT 'commissions', COUNT(*) FROM commissions\nUNION ALL SELECT 'partnerReviews', COUNT(*) FROM partnerReviews\nUNION ALL SELECT 'referralGraph', COUNT(*) FROM referralGraph;\n",
+  "rows": [
+    {
+      "tbl": "users",
+      "cnt": "2"
+    },
+    {
+      "tbl": "properties",
+      "cnt": "0"
+    },
+    {
+      "tbl": "propertyProfiles",
+      "cnt": "0"
+    },
+    {
+      "tbl": "homeownerProfiles",
+      "cnt": "0"
+    },
+    {
+      "tbl": "partnerReviews",
+      "cnt": "0"
+    },
+    {
+      "tbl": "partners",
+      "cnt": "949"
+    },
+    {
+      "tbl": "referralGraph",
+      "cnt": "0"
+    },
+    {
+      "tbl": "commissions",
+      "cnt": "1056"
+    },
+    {
+      "tbl": "opportunities",
+      "cnt": "1942"
+    },
+    {
+      "tbl": "jobs",
+      "cnt": "2626"
+    }
+  ],
+  "messages": [],
+  "stdout": "tbl\tcnt\nusers\t2\nproperties\t0\npropertyProfiles\t0\nhomeownerProfiles\t0\npartnerReviews\t0\npartners\t949\nreferralGraph\t0\ncommissions\t1056\nopportunities\t1942\njobs\t2626\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

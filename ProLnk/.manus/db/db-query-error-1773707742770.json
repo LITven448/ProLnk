@@ -1,0 +1,8 @@
+{
+  "query": "SELECT Field, Type, `Null`, `Default` FROM information_schema.COLUMNS WHERE TABLE_NAME = 'commissions' AND IS_NULLABLE = 'NO' AND COLUMN_DEFAULT IS NULL AND EXTRA NOT LIKE '%auto_increment%' AND TABLE_SCHEMA = DATABASE();",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT Field, Type, `Null`, `Default` FROM information_schema.COLUMNS WHERE TABLE_NAME = 'commissions' AND IS_NULLABLE = 'NO' AND COLUMN_DEFAULT IS NULL AND EXTRA NOT LIKE '%auto_increment%' AND TABLE_SCHEMA = DATABASE();",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'field' in 'field list'"
+  ]
+}

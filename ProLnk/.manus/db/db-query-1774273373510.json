@@ -1,0 +1,17 @@
+{
+  "query": "SELECT \n  (SELECT COUNT(*) FROM partners) as partners,\n  (SELECT COUNT(*) FROM jobs) as jobs,\n  (SELECT COUNT(*) FROM opportunities) as opportunities,\n  (SELECT COUNT(*) FROM commissions) as commissions,\n  (SELECT COUNT(*) FROM broadcasts) as broadcasts;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute SELECT \n  (SELECT COUNT(*) FROM partners) as partners,\n  (SELECT COUNT(*) FROM jobs) as jobs,\n  (SELECT COUNT(*) FROM opportunities) as opportunities,\n  (SELECT COUNT(*) FROM commissions) as commissions,\n  (SELECT COUNT(*) FROM broadcasts) as broadcasts;",
+  "rows": [
+    {
+      "partners": "949",
+      "jobs": "2626",
+      "opportunities": "1942",
+      "commissions": "1056",
+      "broadcasts": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "partners\tjobs\topportunities\tcommissions\tbroadcasts\n949\t2626\t1942\t1056\t8\n",
+  "stderr": "",
+  "execution_time_ms": 597
+}

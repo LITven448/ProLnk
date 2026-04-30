@@ -1,0 +1,86 @@
+{
+  "name": "10 - Partner Tier Upgrade",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "partner-tier-upgrade",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-tier-upgrade",
+      "name": "Webhook: Tier Upgraded",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.partnerEmail }}",
+        "subject": "🎉 Congratulations! You've been upgraded to {{ $json.newTier }}",
+        "html": "<h2>Congratulations, {{ $json.partnerName }}!</h2><p>You've been upgraded from <strong>{{ $json.oldTier }}</strong> to <strong>{{ $json.newTier }}</strong> in the ProLnk Partner Network.</p><h3>Your new benefits:</h3><ul>{{ $json.newBenefitsHtml }}</ul><p>Your new commission rate is <strong>{{ $json.newCommissionRate }}%</strong>.</p><p>Keep up the great work! You're now {{ $json.referralsToNextTier }} referrals away from {{ $json.nextTier }}.</p><a href='{{ $json.dashboardUrl }}' style='background:#0A1628;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:16px;'>View Your Dashboard</a>"
+      },
+      "id": "email-tier-upgrade",
+      "name": "Send Tier Upgrade Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [460, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "admin@prolnk.com",
+        "toEmail": "admin@prolnk.com",
+        "subject": "Partner tier upgrade: {{ $json.partnerName }} → {{ $json.newTier }}",
+        "text": "{{ $json.partnerName }} ({{ $json.partnerEmail }}) has been upgraded from {{ $json.oldTier }} to {{ $json.newTier }}.\n\nTotal referrals: {{ $json.totalReferrals }}\nNew commission rate: {{ $json.newCommissionRate }}%\n\nView partner: {{ $json.adminPartnerUrl }}"
+      },
+      "id": "notify-admin-upgrade",
+      "name": "Notify Admin: Tier Upgrade",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [460, 400]
+    },
+    {
+      "parameters": {
+        "amount": 7,
+        "unit": "days"
+      },
+      "id": "wait-7d",
+      "name": "Wait 7 Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@prolnk.com",
+        "toEmail": "={{ $json.partnerEmail }}",
+        "subject": "You're {{ $json.referralsToNextTier }} referrals from {{ $json.nextTier }} — here's how",
+        "text": "Hi {{ $json.partnerName }},\n\nYou've been at {{ $json.newTier }} for a week now. Here's a quick tip to reach {{ $json.nextTier }}:\n\n1. Share your referral link with 3 new homeowners this week\n2. Follow up on any pending leads within 24 hours\n3. Complete your profile to rank higher in the partner directory\n\nYour referral link: {{ $json.referralUrl }}\n\n— ProLnk Team"
+      },
+      "id": "email-next-tier-nudge",
+      "name": "Send Next-Tier Nudge",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [900, 200]
+    }
+  ],
+  "connections": {
+    "Webhook: Tier Upgraded": {
+      "main": [
+        [
+          { "node": "Send Tier Upgrade Email", "type": "main", "index": 0 },
+          { "node": "Notify Admin: Tier Upgrade", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Send Tier Upgrade Email": { "main": [[{ "node": "Wait 7 Days", "type": "main", "index": 0 }]] },
+    "Wait 7 Days": { "main": [[{ "node": "Send Next-Tier Nudge", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "description": "Fires when a partner's tier is upgraded. Sends congratulations email + admin notification immediately, then a next-tier nudge 7 days later.",
+    "triggerWebhookPath": "/webhook/partner-tier-upgrade",
+    "requiredFields": ["partnerEmail", "partnerName", "oldTier", "newTier", "newCommissionRate", "newBenefitsHtml", "referralsToNextTier", "nextTier", "totalReferrals", "dashboardUrl", "adminPartnerUrl", "referralUrl"]
+  }
+}

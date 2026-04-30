@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `partnerNotifications` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `partnerId` int NOT NULL,\n  `type` enum('new_lead','lead_expired','commission_paid','approval','broadcast','system') NOT NULL DEFAULT 'system',\n  `title` varchar(255) NOT NULL,\n  `message` text NOT NULL,\n  `actionUrl` varchar(512) DEFAULT NULL,\n  `isRead` tinyint(1) NOT NULL DEFAULT 0,\n  `metadata` json DEFAULT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  PRIMARY KEY (`id`),\n  KEY `idx_partner_notif_partner` (`partnerId`),\n  KEY `idx_partner_notif_read` (`isRead`),\n  CONSTRAINT `partnerNotifications_partnerId_fk` FOREIGN KEY (`partnerId`) REFERENCES `partners` (`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute CREATE TABLE IF NOT EXISTS `partnerNotifications` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `partnerId` int NOT NULL,\n  `type` enum('new_lead','lead_expired','commission_paid','approval','broadcast','system') NOT NULL DEFAULT 'system',\n  `title` varchar(255) NOT NULL,\n  `message` text NOT NULL,\n  `actionUrl` varchar(512) DEFAULT NULL,\n  `isRead` tinyint(1) NOT NULL DEFAULT 0,\n  `metadata` json DEFAULT NULL,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  PRIMARY KEY (`id`),\n  KEY `idx_partner_notif_partner` (`partnerId`),\n  KEY `idx_partner_notif_read` (`isRead`),\n  CONSTRAINT `partnerNotifications_partnerId_fk` FOREIGN KEY (`partnerId`) REFERENCES `partners` (`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 273
+}

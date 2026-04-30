@@ -1,0 +1,14 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "id": "0002_sprint8_waves",
+  "prevId": "0001_easy_raza",
+  "tables": {},
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

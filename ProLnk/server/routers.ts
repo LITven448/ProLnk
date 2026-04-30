@@ -1863,7 +1863,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 );
                 const userId = (userRows.rows ?? userRows)[0]?.userId;
                 if (!userId) return;
-                const { NETWORK_RATES } = await import("../../shared/const");
+                const { NETWORK_RATES } = await import("../shared/const");
                 const addrHash = createHash("sha256")
                   .update((opp.serviceAddress as string).toLowerCase().replace(/\s+/g, " ").trim())
                   .digest("hex");

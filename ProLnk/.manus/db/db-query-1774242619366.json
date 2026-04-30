@@ -1,9 +1,0 @@
-{
-  "query": "ALTER TABLE `opportunities` \nADD COLUMN IF NOT EXISTS `adminReviewStatus` ENUM('pending_review', 'approved', 'rejected') NOT NULL DEFAULT 'pending_review',\nADD COLUMN IF NOT EXISTS `adminReviewedAt` TIMESTAMP NULL,\nADD COLUMN IF NOT EXISTS `adminReviewedBy` INT NULL,\nADD COLUMN IF NOT EXISTS `leadExpiresAt` TIMESTAMP NULL,\nADD COLUMN IF NOT EXISTS `routingQueue` TEXT NULL,\nADD COLUMN IF NOT EXISTS `routingPosition` INT NOT NULL DEFAULT 0;",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user e6qeZQ9RRN5ZtzL.187ccab2ac56 --database dAVBxpSeSZ4jhwmMBJquFo --execute ALTER TABLE `opportunities` \nADD COLUMN IF NOT EXISTS `adminReviewStatus` ENUM('pending_review', 'approved', 'rejected') NOT NULL DEFAULT 'pending_review',\nADD COLUMN IF NOT EXISTS `adminReviewedAt` TIMESTAMP NULL,\nADD COLUMN IF NOT EXISTS `adminReviewedBy` INT NULL,\nADD COLUMN IF NOT EXISTS `leadExpiresAt` TIMESTAMP NULL,\nADD COLUMN IF NOT EXISTS `routingQueue` TEXT NULL,\nADD COLUMN IF NOT EXISTS `routingPosition` INT NOT NULL DEFAULT 0;",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 998
-}

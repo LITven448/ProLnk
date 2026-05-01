@@ -6,12 +6,6 @@
   "outputDirectory": "dist",
   "framework": null,
   "regions": ["iad1"],
-  "functions": {
-    "dist/index.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "rewrites": [
     {
       "source": "/api/:path*",

@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd ProLnk && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "ProLnk/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "framework": null
+}

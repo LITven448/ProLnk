@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd ProLnk && npm install --legacy-peer-deps && npx vite build",
+  "buildCommand": "cd ProLnk && npm install --legacy-peer-deps && ./node_modules/.bin/vite build",
   "outputDirectory": "ProLnk/dist/public",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "framework": null

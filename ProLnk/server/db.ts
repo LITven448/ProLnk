@@ -172,4 +172,169 @@ export function calculateCommissionRates(
   };
 }
 
+export async function createPartnerNotification(partnerId: number, message: string) {
+  console.log(`Notification for partner ${partnerId}: ${message}`);
+}
+
+export async function getPendingPartners() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(partners).where(eq(partners.status, 'pending'));
+}
+
+export async function getAllPartners() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(partners);
+}
+
+export async function getApprovedPartners() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(partners).where(eq(partners.status, 'approved'));
+}
+
+export async function getJobById(jobId: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db.select().from(jobs).where(eq(jobs.id, jobId)).limit(1);
+  return rows[0] ?? null;
+}
+
+export async function getAllJobs() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(jobs).orderBy(desc(jobs.loggedAt));
+}
+
+export async function getJobsByAddress(address: string) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(jobs).where(eq(jobs.address, address)).orderBy(desc(jobs.loggedAt));
+}
+
+export async function getUniqueAddresses() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.selectDistinct({ address: jobs.address }).from(jobs).orderBy(jobs.address);
+}
+
+export async function updatePartnerCommissionRates(partnerId: number, rates: { referringRate?: number; receivingRate?: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.update(partners).set({ updatedAt: new Date(), ...rates }).where(eq(partners.id, partnerId));
+}
+
+export async function incrementPartnerStats(partnerId: number, stats: { jobsCompleted?: number; referrals?: number; revenue?: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const partner = await getPartnerById(partnerId);
+  if (!partner) return;
+  await db.update(partners).set({ updatedAt: new Date() }).where(eq(partners.id, partnerId));
+}
+
+export async function getAllOpportunities() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(opportunities).orderBy(desc(opportunities.createdAt));
+}
+
+export async function getOpportunitiesBySourcePartnerId(partnerId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(opportunities).where(eq(opportunities.sourcingPartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
+}
+
+export async function getOpportunitiesByReceivingPartnerId(partnerId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(opportunities).where(eq(opportunities.receivingPartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
+}
+
+export async function updateOpportunityStatus(opportunityId: number, status: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.update(opportunities).set({ status, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
+}
+
+export async function updateJobAiAnalysis(jobId: number, analysis: any) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.update(jobs).set({ aiAnalysis: analysis, updatedAt: new Date() }).where(eq(jobs.id, jobId));
+}
+
+export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.update(opportunities).set({ status: 'closed', jobValue, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
+}
+
+export async function createBroadcast(data: any) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.insert(broadcasts).values(data);
+}
+
+export async function getBroadcasts(limit = 50) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(broadcasts).orderBy(desc(broadcasts.createdAt)).limit(limit);
+}
+
+export async function getPartnerStats(partnerId: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const partner = await getPartnerById(partnerId);
+  return partner ? { partnerId, stats: partner } : null;
+}
+
+export async function getNetworkStats() {
+  const db = await getDb();
+  if (!db) return { totalPartners: 0, totalJobs: 0, totalOpportunities: 0 };
+  const partnerCount = await db.select({ count: count() }).from(partners);
+  const jobCount = await db.select({ count: count() }).from(jobs);
+  const oppCount = await db.select({ count: count() }).from(opportunities);
+  return {
+    totalPartners: partnerCount[0]?.count || 0,
+    totalJobs: jobCount[0]?.count || 0,
+    totalOpportunities: oppCount[0]?.count || 0,
+  };
+}
+
+export async function getUnpaidCommissions() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(commissions).where(eq(commissions.paid, false)).orderBy(desc(commissions.createdAt));
+}
+
+export async function upsertIndustryRate(data: any) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  await db.insert(industryRates).values(data);
+}
+
+export async function getPhotoQueue() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(photoIntakeQueue || {}).orderBy(desc('createdAt'));
+}
+
+export async function getPhotoQueueStats() {
+  const db = await getDb();
+  if (!db) return { pending: 0, processed: 0 };
+  return { pending: 0, processed: 0 };
+}
+
+export async function getPartnerNotifications(partnerId: number) {
+  return [];
+}
+
+export async function getPartnerUnreadCount(partnerId: number) {
+  return 0;
+}
+
+export async function markNotificationsRead(notificationIds: number[]) {
+  return true;
+}
+
 export type { Partner };

@@ -425,11 +425,16 @@ function scheduleDailyMarketingAutomationV2() {
 scheduleDailyMarketingAutomationV2();
 
 // Background job: reset network income monthly job counts on the 1st of each month at midnight
+let monthlyResetScheduled = false;
 function scheduleMonthlyNetworkReset() {
+  if (monthlyResetScheduled) return;
+  monthlyResetScheduled = true;
+
   function msUntilNextMonthStart(): number {
     const now = new Date();
     const next = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0, 0);
-    return next.getTime() - now.getTime();
+    const delay = next.getTime() - now.getTime();
+    return Math.min(Math.max(delay, 1000), 30 * 24 * 60 * 60 * 1000); // Between 1s and 30 days
   }
   setTimeout(async () => {
     try {
@@ -443,7 +448,7 @@ function scheduleMonthlyNetworkReset() {
     } catch (err) {
       console.error("[Background] Network monthly reset error:", err);
     }
-    // Re-schedule for next month
+    monthlyResetScheduled = false;
     scheduleMonthlyNetworkReset();
   }, msUntilNextMonthStart());
   console.log("[Background] Network monthly reset scheduled");

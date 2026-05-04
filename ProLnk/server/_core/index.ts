@@ -27,6 +27,7 @@ import { recalculateAllPartnerScores } from "../routers/partnerScore";
 import { runComplianceScan } from "../compliance-agent";
 import { runStormScan } from "../storm-agent";
 import { sweepPendingCheckins, processCheckinResponse } from "../checkin-scheduler";
+import { runMigrations } from "./migrations";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -194,6 +195,13 @@ async function startServer() {
 
   if (port !== preferredPort) {
     console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
+  }
+
+  // Run database migrations on startup
+  try {
+    await runMigrations();
+  } catch (err) {
+    console.error("[Server] Migration failed, but continuing with startup:", err);
   }
 
   server.listen(port, () => {

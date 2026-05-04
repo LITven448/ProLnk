@@ -22,6 +22,11 @@ export async function getDb() {
         waitForConnections: true,
         connectionLimit: 10,
         queueLimit: 0,
+        enableKeepAlive: true,
+        keepAliveInitialDelayMs: 0,
+        connectionTimeout: 10000,
+        acquireTimeout: 10000,
+        charset: 'utf8mb4',
       });
       _db = drizzle(_pool);
     } catch (e) {

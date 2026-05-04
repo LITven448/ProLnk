@@ -146,9 +146,12 @@ export async function runReferralAgent(): Promise<{
   try {
     const referralRows = await (db as any).execute(sql`
       SELECT
-        p.businessName, p.partnersReferred, p.referralCount,
+        p.id, p.businessName, p.partnersReferred, p.referralCount,
         p.totalCommissionEarned,
-        (SELECT COUNT(*) FROM partners referred WHERE referred.referredByPartnerId = p.id AND referred.status = 'approved') as confirmedReferrals
+        (SELECT COUNT(*) FROM partners referred WHERE referred.referredByPartnerId = p.id AND referred.status = 'approved') as confirmedReferrals,
+        (SELECT COALESCE(SUM(c.amount), 0) FROM commissions c
+         JOIN partners referred ON c.partnerId = referred.id
+         WHERE referred.referredByPartnerId = p.id AND c.paid = false) as pendingBonusAmount
       FROM partners p
       WHERE p.partnersReferred > 0 OR p.referralCount > 0
       ORDER BY p.partnersReferred DESC
@@ -156,11 +159,23 @@ export async function runReferralAgent(): Promise<{
     `);
     const referrers = referralRows.rows || referralRows;
 
-    const topReferrers = referrers.map((r: any) => ({
-      partnerName: r.businessName,
-      referralCount: parseInt(r.confirmedReferrals || "0"),
-      bonusEarned: 0, // TODO: calculate from commission records
-    }));
+    // Network tier bonus rates
+    const BONUS_RATES: Record<string, number> = {
+      'charter': 0.05, // 5% of referred partner commissions
+      'founding': 0.03, // 3%
+      'growth': 0.02, // 2%
+      'standard': 0.01, // 1%
+    };
+
+    const topReferrers = referrers.map((r: any) => {
+      const bonusRate = BONUS_RATES[r.tier?.toLowerCase()] || 0.02;
+      const referredCommissions = parseFloat(r.pendingBonusAmount || "0");
+      return {
+        partnerName: r.businessName,
+        referralCount: parseInt(r.confirmedReferrals || "0"),
+        bonusEarned: Math.round(referredCommissions * bonusRate * 100) / 100,
+      };
+    });
 
     const activeReferrals = referrers.reduce((s: number, r: any) => s + parseInt(r.confirmedReferrals || "0"), 0);
 

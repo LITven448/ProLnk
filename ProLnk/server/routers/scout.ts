@@ -25,6 +25,7 @@ import { generateImage } from "../_core/imageGeneration";
 import { storagePut } from "../storage";
 import { notifyOwner } from "../_core/notification";
 import { n8n } from "../n8n-triggers";
+import { sendScoutReportEmail } from "../email";
 import pdfkit from "pdfkit";
 
 // ─── Zone Definitions ─────────────────────────────────────────────────────────
@@ -664,8 +665,16 @@ export const scoutRouter = router({
         WHERE id = ${input.assessmentId}
       `);
 
-      // TODO: Send report email via Resend when credentials available
-      return { success: true, message: `Report will be sent to ${input.homeownerEmail}` };
+      // Send report email via Resend (if configured)
+      try {
+        const reportUrl = `${process.env.APP_BASE_URL}/scout-reports/${input.assessmentId}`;
+        await sendScoutReportEmail(input.homeownerEmail, input.homeownerName, reportUrl, input.propertyAddress);
+      } catch (error) {
+        console.warn("[Scout] Failed to send report email:", error);
+        // Don't fail the operation if email fails
+      }
+
+      return { success: true, message: `Report shared with ${input.homeownerEmail}` };
     }),
 
   // ── My assessments (Scout dashboard) ────────────────────────────────────────

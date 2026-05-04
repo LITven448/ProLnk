@@ -44,12 +44,38 @@ export async function runTargetingAgent(): Promise<{
     `);
     const advertisers = advertiserRows.rows || advertiserRows;
 
-    // Build match segments
+    // Calculate real match scoring
+    const totalHomeowners = zips.reduce((s: number, z: any) => s + parseInt(z.homeownerCount || "0"), 0);
+    const topZips = zips.slice(0, 5).map((z: any) => z.zip).filter(Boolean);
+
+    // Match scoring algorithm (0-100)
+    const calculateMatchScore = (advertiser: any): number => {
+      let score = 50; // Base score
+
+      // Category relevance boost (20 pts)
+      const categoryKeywords = advertiser.category?.toLowerCase() || "";
+      if (["real estate", "insurance", "warranty", "contractor", "repair", "service"].some(k => categoryKeywords.includes(k))) {
+        score += 20;
+      }
+
+      // Zip coverage boost (20 pts for high overlap)
+      const advZips = (advertiser.coverageZips || "").split(",").filter(Boolean);
+      const overlapCount = topZips.filter((z: string) => advZips.includes(z)).length;
+      score += Math.min(20, overlapCount * 4);
+
+      // Market size bonus (10 pts if large market)
+      if (totalHomeowners > 5000) score += 10;
+      else if (totalHomeowners > 2000) score += 5;
+
+      // Cap at 100
+      return Math.min(100, Math.max(50, score));
+    };
+
     const segments = advertisers.map((adv: any) => ({
       advertiserCategory: adv.category,
-      bestZips: zips.slice(0, 5).map((z: any) => z.zip).filter(Boolean),
-      homeownerCount: zips.reduce((s: number, z: any) => s + parseInt(z.homeownerCount || "0"), 0),
-      matchScore: Math.round(70 + Math.random() * 30), // TODO: real match scoring
+      bestZips: topZips,
+      homeownerCount: totalHomeowners,
+      matchScore: calculateMatchScore(adv),
     }));
 
     const untappedOpportunities: string[] = [];

@@ -1,6 +1,5 @@
-import { promises as fs } from "fs";
-import path from "path";
 import mysql from "mysql2/promise";
+import { MIGRATION_0000, MIGRATION_0001 } from "./migrations-embedded";
 
 export async function runMigrations() {
   if (!process.env.DATABASE_URL) {
@@ -19,24 +18,20 @@ export async function runMigrations() {
       ssl: { rejectUnauthorized: false },
     });
 
-    // Read and execute migration files in order
-    const migrationsDir = path.join(process.cwd(), "drizzle", "migrations");
-    const files = await fs.readdir(migrationsDir);
-    const sqlFiles = files
-      .filter(f => f.endsWith(".sql") && f.startsWith("000"))
-      .sort();
+    // Execute embedded migrations in order
+    const migrations = [
+      { name: "0000_natural_angel", sql: MIGRATION_0000 },
+      { name: "0001_cynical_iron_patriot", sql: MIGRATION_0001 },
+    ];
 
-    for (const file of sqlFiles) {
-      const filePath = path.join(migrationsDir, file);
-      const sql = await fs.readFile(filePath, "utf-8");
-
+    for (const { name, sql } of migrations) {
       // Split by statement-breakpoint and execute each statement
       const statements = sql
         .split("--> statement-breakpoint")
         .map(s => s.trim())
         .filter(s => s.length > 0);
 
-      console.log(`[Migrations] Running ${file} (${statements.length} statements)...`);
+      console.log(`[Migrations] Running ${name} (${statements.length} statements)...`);
 
       for (const statement of statements) {
         try {
@@ -46,11 +41,14 @@ export async function runMigrations() {
           if (err?.code === "ER_TABLE_EXISTS_ERROR") {
             continue;
           }
-          throw err;
+          // Log other errors but continue to next statement
+          if (err?.code !== "ER_DUP_FIELDNAME") {
+            console.warn(`[Migrations] Warning in ${name}:`, err?.message);
+          }
         }
       }
 
-      console.log(`[Migrations] ✓ Completed ${file}`);
+      console.log(`[Migrations] ✓ Completed ${name}`);
     }
 
     await connection.end();

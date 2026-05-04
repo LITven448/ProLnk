@@ -13,10 +13,12 @@ let _pool: ReturnType<typeof mysql.createPool> | null = null;
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
+      // Remove SSL query params from URL since mysql2 doesn't parse them
+      const dbUrl = process.env.DATABASE_URL.replace(/\?.*$/, '');
       // MySQL connection pool for TiDB Cloud with SSL enabled
       _pool = mysql.createPool({
-        uri: process.env.DATABASE_URL,
-        ssl: 'amazon-rds',
+        uri: dbUrl,
+        ssl: { rejectUnauthorized: false },
         waitForConnections: true,
         connectionLimit: 10,
         queueLimit: 0,

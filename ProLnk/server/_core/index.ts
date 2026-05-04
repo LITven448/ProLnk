@@ -27,7 +27,6 @@ import { recalculateAllPartnerScores } from "../routers/partnerScore";
 import { runComplianceScan } from "../compliance-agent";
 import { runStormScan } from "../storm-agent";
 import { sweepPendingCheckins, processCheckinResponse } from "../checkin-scheduler";
-import { runMigrations } from "./migrations";
 import mysql from "mysql2/promise";
 
 // Safely cap timeout values to prevent 32-bit overflow
@@ -255,12 +254,8 @@ async function startServer() {
     console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
   }
 
-  // Run database migrations on startup
-  try {
-    await runMigrations();
-  } catch (err) {
-    console.error("[Server] Migration failed, but continuing with startup:", err);
-  }
+  // Migrations are run via GET /setup endpoint instead of at startup
+  // This allows them to be executed on-demand after deployment
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);

@@ -2,71 +2,65 @@ import mysql from "mysql2/promise";
 
 export async function runMigrations() {
   if (!process.env.DATABASE_URL) {
-    console.log("[Migrations] No DATABASE_URL set, skipping migrations");
+    console.log("[Migrations] No DATABASE_URL, skipping");
     return;
   }
 
   const dbUrl = process.env.DATABASE_URL.replace(/\?.*$/, '');
-
   let connection: any = null;
+
   try {
-    console.log("[Migrations] Connecting to database for migrations...");
+    console.log("[Migrations] Starting...");
 
-    // Create a connection to run migrations
-    connection = await mysql.createConnection({
-      uri: dbUrl,
-      ssl: { rejectUnauthorized: false },
-    });
+    // Create connection with explicit timeouts
+    connection = await Promise.race([
+      mysql.createConnection({
+        uri: dbUrl,
+        ssl: { rejectUnauthorized: false },
+        connectionTimeout: 10000,
+        enableKeepAlive: true,
+      }),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Migration connection timeout")), 15000)
+      ),
+    ]);
 
-    console.log("[Migrations] Connected. Checking if tables exist...");
+    console.log("[Migrations] Connected");
 
-    // Quick check - see if users table exists
+    // Check if tables exist
     try {
-      await connection.query("SELECT 1 FROM users LIMIT 1");
-      console.log("[Migrations] Tables already exist, skipping migrations");
+      await connection.query("SELECT 1 FROM `users` LIMIT 1");
+      console.log("[Migrations] ✓ Tables exist, skipping");
       return;
     } catch (e: any) {
       if (e?.code !== "ER_NO_SUCH_TABLE") {
         throw e;
       }
-      // Table doesn't exist, proceed with migrations
     }
 
-    console.log("[Migrations] Tables missing. Running migrations...");
+    console.log("[Migrations] Creating tables...");
+    const statements = await getMigrationStatements();
 
-    // Execute migrations with proper error handling
-    const sqlStatements = await getMigrationStatements();
-
-    let successCount = 0;
-    for (let i = 0; i < sqlStatements.length; i++) {
-      const stmt = sqlStatements[i];
+    let count = 0;
+    for (const stmt of statements) {
       try {
         await connection.query(stmt);
-        successCount++;
-        if (i % 10 === 0) {
-          console.log(`[Migrations] Progress: ${successCount}/${sqlStatements.length}`);
+        count++;
+      } catch (e: any) {
+        if (e?.code !== "ER_TABLE_EXISTS_ERROR") {
+          console.warn(`[Migrations] ${e?.code}: ${e?.message?.substring(0, 100)}`);
         }
-      } catch (err: any) {
-        // Skip table already exists errors
-        if (err?.code === "ER_TABLE_EXISTS_ERROR" || err?.message?.includes("already exists")) {
-          continue;
-        }
-        console.error(`[Migrations] Error on statement ${i}:`, err?.message);
-        // Continue anyway - some errors are non-fatal
       }
     }
 
-    console.log(`[Migrations] ✓ Completed ${successCount} statements`);
-  } catch (err) {
-    console.error("[Migrations] Fatal error:", err);
-    // Don't throw - let app start anyway
+    console.log(`[Migrations] ✓ ${count} statements executed`);
+  } catch (err: any) {
+    console.warn(`[Migrations] Skipped: ${err?.message}`);
   } finally {
-    if (connection) {
-      try {
-        await connection.end();
-      } catch (e) {
-        // ignore
-      }
+    try {
+      if (connection) await connection.end();
+    } catch (e) {
+      // ignore
     }
   }
 }

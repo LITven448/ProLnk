@@ -30,6 +30,13 @@ import { sweepPendingCheckins, processCheckinResponse } from "../checkin-schedul
 import { runMigrations } from "./migrations";
 import mysql from "mysql2/promise";
 
+// Safely cap timeout values to prevent 32-bit overflow
+// Max safe value is 2^31 - 1 = 2147483647ms (about 24.8 days)
+function safeTimeout(ms: number): number {
+  const MAX_TIMEOUT = 2147483647;
+  return Math.min(Math.max(ms, 0), MAX_TIMEOUT);
+}
+
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
     const server = net.createServer();
@@ -299,7 +306,7 @@ function scheduleNightlyPpsRecalculation() {
         console.error("[Background] PPS recalculation error:", err);
       }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilNext2am);
+  }, safeTimeout(msUntilNext2am));
   console.log(`[Background] Nightly PPS recalculation scheduled (next run: ${next2am.toISOString()})`);
 }
 try {
@@ -326,7 +333,7 @@ function scheduleNightlyComplianceScan() {
     setInterval(async () => {
       try { await runComplianceScan(); } catch (err) { console.error("[Background] Compliance scan error:", err); }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilNext3am);
+  }, safeTimeout(msUntilNext3am));
   console.log(`[Background] Nightly compliance scan scheduled (next run: ${next3am.toISOString()})`);
 }
 try {
@@ -353,7 +360,7 @@ function scheduleNightlyStormScan() {
     setInterval(async () => {
       try { await runStormScan(); } catch (err) { console.error("[Background] Storm scan error:", err); }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilNext4am);
+  }, safeTimeout(msUntilNext4am));
   console.log(`[Background] Nightly storm scan scheduled (next run: ${next4am.toISOString()})`);
 }
 try {
@@ -387,7 +394,7 @@ function scheduleNightlyPayoutSweep() {
     setInterval(async () => {
       try { await runPayoutSweep(); } catch (err) { console.error("[Background] Payout sweep error:", err); }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilFirst);
+  }, safeTimeout(msUntilFirst));
 
   console.log(`[Background] Nightly commission payout sweep scheduled (next run: ${next230am.toISOString()})`);
 }
@@ -462,7 +469,7 @@ function scheduleDailyMarketingAutomation() {
         await runDailyMarketingAutomation();
       } catch (err) { console.error("[Background] Marketing automation error:", err); }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilFirst);
+  }, safeTimeout(msUntilFirst));
   console.log(`[Background] Daily marketing automation scheduled (next run: ${next8am.toISOString()})`);
 }
 try {
@@ -490,7 +497,7 @@ function scheduleDailyMarketingAutomationV2() {
         await runExtendedMarketingAutomation();
       } catch (err) { console.error("[Background] Marketing automation v2 error:", err); }
     }, 24 * 60 * 60 * 1000);
-  }, msUntilFirst);
+  }, safeTimeout(msUntilFirst));
   console.log(`[Background] Extended marketing automation v2 scheduled (next run: ${next9am.toISOString()})`);
 }
 try {
@@ -525,7 +532,7 @@ function scheduleMonthlyNetworkReset() {
     }
     monthlyResetScheduled = false;
     scheduleMonthlyNetworkReset();
-  }, msUntilNextMonthStart());
+  }, safeTimeout(msUntilNextMonthStart()));
   console.log("[Background] Network monthly reset scheduled");
 }
 try {

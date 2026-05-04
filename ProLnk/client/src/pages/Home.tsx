@@ -1236,7 +1236,7 @@ export default function Home() {
 
             <FadeUp delay={0.2}>
               <h1 className="text-6xl md:text-7xl font-heading font-bold text-white leading-[1.05] mb-6 tracking-tight">
-                Your Photos.<br />Their Next Job.
+                Turn Your Work<br />Into Passive Income
               </h1>
             </FadeUp>
 

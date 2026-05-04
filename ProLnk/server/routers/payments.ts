@@ -55,9 +55,20 @@ import { getDb } from "../db";
 import { TRPCError } from "@trpc/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2025-02-24.acacia" as any,
-});
+let stripe: Stripe | null = null;
+
+function getStripe(): Stripe {
+  if (!stripe) {
+    const apiKey = process.env.STRIPE_SECRET_KEY;
+    if (!apiKey) {
+      throw new Error("STRIPE_SECRET_KEY is not configured. Stripe features are unavailable.");
+    }
+    stripe = new Stripe(apiKey, {
+      apiVersion: "2025-02-24.acacia" as any,
+    });
+  }
+  return stripe;
+}
 
 // ─── Commission calculation helper ───────────────────────────────────────────
 function calculateCommissions(
@@ -178,7 +189,7 @@ export const paymentsRouter = router({
       // Create or retrieve Stripe customer for homeowner
       let stripeCustomerId = homeowner.stripeCustomerId as string | null;
       if (!stripeCustomerId) {
-        const customer = await stripe.customers.create({
+        const customer = await getStripe().customers.create({
           email: homeowner.email,
           name: homeowner.name,
           metadata: { homeownerId: String(homeowner.id), platform: "trustypro" },
@@ -191,7 +202,7 @@ export const paymentsRouter = router({
       }
 
       // Create SetupIntent for card-on-file
-      const setupIntent = await stripe.setupIntents.create({
+      const setupIntent = await getStripe().setupIntents.create({
         customer: stripeCustomerId,
         payment_method_types: ["card"],
         usage: "off_session", // Critical: allows charging without homeowner present
@@ -240,12 +251,12 @@ export const paymentsRouter = router({
       const deal = (dealRows.rows || dealRows)[0];
       if (!deal) throw new TRPCError({ code: "NOT_FOUND", message: "Deal not found" });
       // Create or retrieve Stripe customer for this homeowner email
-      const existingCustomers = await stripe.customers.list({ email: input.homeownerEmail, limit: 1 });
+      const existingCustomers = await getStripe().customers.list({ email: input.homeownerEmail, limit: 1 });
       let stripeCustomerId: string;
       if (existingCustomers.data.length > 0) {
         stripeCustomerId = existingCustomers.data[0].id;
       } else {
-        const customer = await stripe.customers.create({
+        const customer = await getStripe().customers.create({
           email: input.homeownerEmail,
           name: input.homeownerName,
           metadata: { dealId: String(deal.id), platform: "trustypro" },
@@ -253,7 +264,7 @@ export const paymentsRouter = router({
         stripeCustomerId = customer.id;
       }
       // Create SetupIntent for card-on-file
-      const setupIntent = await stripe.setupIntents.create({
+      const setupIntent = await getStripe().setupIntents.create({
         customer: stripeCustomerId,
         payment_method_types: ["card"],
         usage: "off_session",
@@ -322,7 +333,7 @@ export const paymentsRouter = router({
       if (!deal) throw new TRPCError({ code: "NOT_FOUND", message: "Deal not found" });
 
       // Retrieve payment method details from Stripe
-      const pm = await stripe.paymentMethods.retrieve(input.paymentMethodId);
+      const pm = await getStripe().paymentMethods.retrieve(input.paymentMethodId);
       const cardBrand = pm.card?.brand ?? null;
       const cardLast4 = pm.card?.last4 ?? null;
       const cardExpMonth = pm.card?.exp_month ?? null;
@@ -471,7 +482,7 @@ export const paymentsRouter = router({
       // The charge goes to the platform; platform then transfers to receiving partner
       let paymentIntent: Stripe.PaymentIntent;
       try {
-        paymentIntent = await stripe.paymentIntents.create({
+        paymentIntent = await getStripe().paymentIntents.create({
           amount: depositMilestone.amountCents,
           currency: "usd",
           customer: jp.homeownerStripeCustomerId || jp.stripeCustomerId,
@@ -559,7 +570,7 @@ export const paymentsRouter = router({
       if (!jp.isInsuranceJob) throw new TRPCError({ code: "BAD_REQUEST", message: "This deal is not an insurance job" });
 
       // Retrieve bank account details from Stripe
-      const pm = await stripe.paymentMethods.retrieve(input.stripePaymentMethodId);
+      const pm = await getStripe().paymentMethods.retrieve(input.stripePaymentMethodId);
       const bankName = (pm as any).us_bank_account?.bank_name ?? null;
       const bankLast4 = (pm as any).us_bank_account?.last4 ?? null;
       const routingNumber = (pm as any).us_bank_account?.routing_number ?? null;
@@ -725,14 +736,14 @@ Date: ${new Date().toISOString()}
 
       // Create or retrieve Stripe customer for partner (for ACH debit)
       let stripeCustomerId: string;
-      const existingCustomers = await stripe.customers.list({
+      const existingCustomers = await getStripe().customers.list({
         email: partner.contactEmail,
         limit: 1,
       });
       if (existingCustomers.data.length > 0) {
         stripeCustomerId = existingCustomers.data[0].id;
       } else {
-        const customer = await stripe.customers.create({
+        const customer = await getStripe().customers.create({
           email: partner.contactEmail,
           name: partner.businessName,
           metadata: { partnerId: String(partner.id), platform: "prolnk" },
@@ -741,7 +752,7 @@ Date: ${new Date().toISOString()}
       }
 
       // Create SetupIntent for ACH debit
-      const setupIntent = await stripe.setupIntents.create({
+      const setupIntent = await getStripe().setupIntents.create({
         customer: stripeCustomerId,
         payment_method_types: ["us_bank_account"],
         payment_method_options: {
@@ -817,7 +828,7 @@ Date: ${new Date().toISOString()}
       let accountId = partner.stripeConnectAccountId as string | null;
 
       if (!accountId) {
-        const account = await stripe.accounts.create({
+        const account = await getStripe().accounts.create({
           type: "express",
           email: partner.contactEmail,
           business_profile: { name: partner.businessName },
@@ -832,7 +843,7 @@ Date: ${new Date().toISOString()}
         `);
       }
 
-      const link = await stripe.accountLinks.create({
+      const link = await getStripe().accountLinks.create({
         account: accountId,
         refresh_url: `${input.origin}/dashboard/payout-setup?refresh=1`,
         return_url: `${input.origin}/dashboard/payout-setup?success=1`,
@@ -855,7 +866,7 @@ Date: ${new Date().toISOString()}
 
     if (partner.stripeConnectAccountId && partner.stripeConnectStatus === 'pending') {
       try {
-        const account = await stripe.accounts.retrieve(partner.stripeConnectAccountId);
+        const account = await getStripe().accounts.retrieve(partner.stripeConnectAccountId);
         const isActive = account.charges_enabled && account.payouts_enabled;
         if (isActive) {
           await (db as any).execute(sql`
@@ -1002,7 +1013,7 @@ Date: ${new Date().toISOString()}
       }
 
       const payoutAmountCents = Math.round(parseFloat(jp.receivingPartnerPayout || "0") * 100);
-      const transfer = await stripe.transfers.create({
+      const transfer = await getStripe().transfers.create({
         amount: payoutAmountCents,
         currency: "usd",
         destination: jp.stripeConnectAccountId,
@@ -1218,7 +1229,7 @@ Date: ${new Date().toISOString()}
         throw new TRPCError({ code: 'BAD_REQUEST', message: 'Partner does not have an active Stripe Connect account. Cannot process payout.' });
       }
       const amountCents = Math.round(parseFloat(req.requestedAmount) * 100);
-      const transfer = await stripe.transfers.create({
+      const transfer = await getStripe().transfers.create({
         amount: amountCents,
         currency: 'usd',
         destination: req.stripeConnectAccountId,
@@ -1308,7 +1319,7 @@ async function processBalanceCharge(
       };
     }
 
-    paymentIntent = await stripe.paymentIntents.create(paymentConfig);
+    paymentIntent = await getStripe().paymentIntents.create(paymentConfig);
   } catch (stripeError: any) {
     await (db as any).execute(sql`
       UPDATE paymentMilestones SET status = 'failed', failureReason = ${stripeError.message}
@@ -1392,12 +1403,12 @@ async function processInsuranceCommissionPull(
   let paymentIntent: Stripe.PaymentIntent;
   try {
     // Find partner's Stripe customer
-    const customers = await stripe.customers.list({ email: partner?.contactEmail, limit: 1 });
+    const customers = await getStripe().customers.list({ email: partner?.contactEmail, limit: 1 });
     if (!customers.data.length) {
       return { success: false, reason: "partner_no_stripe_customer" };
     }
 
-    paymentIntent = await stripe.paymentIntents.create({
+    paymentIntent = await getStripe().paymentIntents.create({
       amount: commissionCents,
       currency: "usd",
       customer: customers.data[0].id,

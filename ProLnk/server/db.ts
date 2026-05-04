@@ -13,6 +13,7 @@ let _pool: ReturnType<typeof mysql.createPool> | null = null;
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
+      // MySQL connection pool for TiDB Cloud
       _pool = mysql.createPool(process.env.DATABASE_URL);
       _db = drizzle(_pool);
     } catch (e) {

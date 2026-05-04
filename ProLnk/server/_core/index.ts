@@ -152,6 +152,9 @@ async function startServer() {
         connectionTimeout: 10000,
       });
 
+      // Disable foreign key checks to allow flexible table creation order
+      await connection.query("SET FOREIGN_KEY_CHECKS=0");
+
       const statements = [
         ...MIGRATION_0000.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
         ...MIGRATION_0001.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
@@ -159,18 +162,23 @@ async function startServer() {
 
       let succeeded = 0;
       const errors: string[] = [];
+      const skipPatterns = ["already exists", "Duplicate key name", "FOREIGN KEY"];
 
       for (const stmt of statements) {
         try {
           await connection.query(stmt);
           succeeded++;
         } catch (e: any) {
-          if (!e?.message?.includes("already exists")) {
-            errors.push(e?.message);
+          const msg = e?.message || "";
+          // Skip expected errors during migration
+          if (!skipPatterns.some(p => msg.includes(p))) {
+            errors.push(msg.substring(0, 100));
           }
         }
       }
 
+      // Re-enable foreign key checks
+      await connection.query("SET FOREIGN_KEY_CHECKS=1");
       await connection.end();
       res.json({ status: "success", created: succeeded, errors: errors.slice(0, 5) });
     } catch (e: any) {

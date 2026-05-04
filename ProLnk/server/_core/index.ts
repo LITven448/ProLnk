@@ -302,7 +302,11 @@ function scheduleNightlyPpsRecalculation() {
   }, msUntilNext2am);
   console.log(`[Background] Nightly PPS recalculation scheduled (next run: ${next2am.toISOString()})`);
 }
-scheduleNightlyPpsRecalculation();
+try {
+  scheduleNightlyPpsRecalculation();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule nightly PPS recalculation:", err);
+}
 
 // Background job: daily compliance scan at 3 AM server time
 function scheduleNightlyComplianceScan() {
@@ -325,7 +329,11 @@ function scheduleNightlyComplianceScan() {
   }, msUntilNext3am);
   console.log(`[Background] Nightly compliance scan scheduled (next run: ${next3am.toISOString()})`);
 }
-scheduleNightlyComplianceScan();
+try {
+  scheduleNightlyComplianceScan();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule nightly compliance scan:", err);
+}
 
 // Background job: nightly storm scan at 4 AM server time
 function scheduleNightlyStormScan() {
@@ -348,7 +356,11 @@ function scheduleNightlyStormScan() {
   }, msUntilNext4am);
   console.log(`[Background] Nightly storm scan scheduled (next run: ${next4am.toISOString()})`);
 }
-scheduleNightlyStormScan();
+try {
+  scheduleNightlyStormScan();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule nightly storm scan:", err);
+}
 
 // Background job: sweep pending check-ins every 30 minutes
 setInterval(async () => {
@@ -426,7 +438,11 @@ async function runPayoutSweep() {
   console.log(`[PayoutSweep] Complete: ${swept} paid out, ${errors} errors`);
 }
 
-scheduleNightlyPayoutSweep();
+try {
+  scheduleNightlyPayoutSweep();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule nightly payout sweep:", err);
+}
 
 // Background job: daily marketing automation at 8:00 AM (seasonal reminders, win-back, tier milestones)
 function scheduleDailyMarketingAutomation() {
@@ -449,7 +465,11 @@ function scheduleDailyMarketingAutomation() {
   }, msUntilFirst);
   console.log(`[Background] Daily marketing automation scheduled (next run: ${next8am.toISOString()})`);
 }
-scheduleDailyMarketingAutomation();
+try {
+  scheduleDailyMarketingAutomation();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule daily marketing automation:", err);
+}
 
 // Background job: extended marketing automation v2 at 9:00 AM
 // Handles: weekly partner digest, referral nudge, deal expiry push, NPS follow-up, leaderboard broadcast, scan re-engagement
@@ -473,7 +493,11 @@ function scheduleDailyMarketingAutomationV2() {
   }, msUntilFirst);
   console.log(`[Background] Extended marketing automation v2 scheduled (next run: ${next9am.toISOString()})`);
 }
-scheduleDailyMarketingAutomationV2();
+try {
+  scheduleDailyMarketingAutomationV2();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule extended marketing automation v2:", err);
+}
 
 // Background job: reset network income monthly job counts on the 1st of each month at midnight
 let monthlyResetScheduled = false;
@@ -504,4 +528,8 @@ function scheduleMonthlyNetworkReset() {
   }, msUntilNextMonthStart());
   console.log("[Background] Network monthly reset scheduled");
 }
-scheduleMonthlyNetworkReset();
+try {
+  scheduleMonthlyNetworkReset();
+} catch (err) {
+  console.warn("[Startup] Failed to schedule monthly network reset:", err);
+}

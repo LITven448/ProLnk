@@ -1,10 +1,2 @@
-[install]
-dependencyManagers = ["pnpm"]
-commands = ["npm install -g corepack@0.24.1 && corepack enable", "pnpm i --no-frozen-lockfile"]
-
-[build]
-commands = ["pnpm run build"]
-
-[start]
-runImage = "node:18-alpine"
-startCommand = "node dist/index.js"
+[phases.install]
+cmds = ["pnpm install --no-frozen-lockfile"]

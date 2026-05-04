@@ -1291,7 +1291,7 @@ export default function Home() {
       <section id="how-it-works" className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Four Steps. Zero Extra Work.</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">🚀 It Takes Just 4 Steps</h2>
             <p className="text-gray-500 max-w-lg mx-auto text-lg">You already take photos after every job. ProLnk turns those photos into a referral engine that runs in the background — no new workflow, no extra selling, no cold calls.</p>
           </div>
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">

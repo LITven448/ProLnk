@@ -28,6 +28,7 @@ import { runComplianceScan } from "../compliance-agent";
 import { runStormScan } from "../storm-agent";
 import { sweepPendingCheckins, processCheckinResponse } from "../checkin-scheduler";
 import { runMigrations } from "./migrations";
+import mysql from "mysql2/promise";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -125,6 +126,48 @@ async function startServer() {
     } catch (err) {
       console.error("[upload-license] Error:", err);
       return res.status(500).json({ error: "Upload failed" });
+    }
+  });
+
+  // One-time database setup endpoint
+  app.get("/setup", async (req, res) => {
+    try {
+      const { MIGRATION_0000, MIGRATION_0001 } = await import("./migrations-embedded");
+      const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
+
+      if (!dbUrl) {
+        return res.status(500).json({ error: "DATABASE_URL not set" });
+      }
+
+      const connection = await mysql.createConnection({
+        uri: dbUrl,
+        ssl: { rejectUnauthorized: false },
+        connectionTimeout: 10000,
+      });
+
+      const statements = [
+        ...MIGRATION_0000.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
+        ...MIGRATION_0001.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
+      ];
+
+      let succeeded = 0;
+      const errors: string[] = [];
+
+      for (const stmt of statements) {
+        try {
+          await connection.query(stmt);
+          succeeded++;
+        } catch (e: any) {
+          if (!e?.message?.includes("already exists")) {
+            errors.push(e?.message);
+          }
+        }
+      }
+
+      await connection.end();
+      res.json({ status: "success", created: succeeded, errors: errors.slice(0, 5) });
+    } catch (e: any) {
+      res.status(500).json({ error: e?.message });
     }
   });
 

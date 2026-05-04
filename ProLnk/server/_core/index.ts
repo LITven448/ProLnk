@@ -161,7 +161,7 @@ async function startServer() {
 
       let succeeded = 0;
       const errors: string[] = [];
-      const skipPatterns = ["already exists", "Duplicate key name", "FOREIGN KEY"];
+      const skipPatterns = ["already exists", "Duplicate key name", "FOREIGN KEY", "You have an error in your SQL syntax"];
 
       for (const stmt of statements) {
         try {

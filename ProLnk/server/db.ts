@@ -13,8 +13,14 @@ let _pool: ReturnType<typeof mysql.createPool> | null = null;
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      // MySQL connection pool for TiDB Cloud
-      _pool = mysql.createPool(process.env.DATABASE_URL);
+      // MySQL connection pool for TiDB Cloud with SSL enabled
+      _pool = mysql.createPool({
+        uri: process.env.DATABASE_URL,
+        ssl: 'amazon-rds',
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0,
+      });
       _db = drizzle(_pool);
     } catch (e) {
       console.error("[DB] Failed to connect:", e);

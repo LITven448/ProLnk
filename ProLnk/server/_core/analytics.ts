@@ -1,6 +1,6 @@
 import { createLogger } from "./logger";
 import { getDb, eq, sql } from "../db";
-import { analyticsEvents, InsertAnalyticsEvent } from "../drizzle/schema";
+import { analyticsEvents, InsertAnalyticsEvent } from "../../drizzle/schema";
 
 const log = createLogger("Analytics");
 

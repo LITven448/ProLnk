@@ -95,7 +95,12 @@ export function serveStatic(app: Express) {
 
   // Fallback: serve index.html for all SPA routes (client-side routing)
   // Always with no-cache headers so every navigation gets the freshest shell.
-  app.use("*", (req, res) => {
+  app.use("*", (req, res, next) => {
+    // Skip API and webhook routes—they're handled by Express middleware
+    if (req.path.startsWith("/api") || req.path.startsWith("/setup")) {
+      return next();
+    }
+
     // Detect brand from hostname
     const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
     const isTrustyPro = hostname.includes("trustypro");

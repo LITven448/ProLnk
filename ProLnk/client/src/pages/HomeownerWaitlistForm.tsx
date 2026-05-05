@@ -210,56 +210,7 @@ export default function HomeownerWaitlistForm() {
       city: city.trim(),
       state: state.trim(),
       zipCode: zipCode.trim(),
-      homeType,
-      yearBuilt,
-      squareFootage,
-      lotSizeSqFt: undefined,
-      bedrooms,
-      bathrooms: bathrooms || undefined,
-      stories: undefined,
-      garageSpaces,
-      hasPool,
-      hasBasement,
-      hasAttic,
-      ownershipStatus,
-      ownershipType: (ownershipType === "vacation" || ownershipType === "primary" || ownershipType === "other")
-        ? "primary_residence"
-        : ownershipType === "rental" ? "rental"
-        : ownershipType === "company_owned" ? "company_owned"
-        : "primary_residence",
-      isRental: ownershipStatus === "rent",
-      companyName: companyName || undefined,
-      companyEin: undefined,
-      propertyManagerName: propertyManagerName || undefined,
-      propertyManagerPhone: propertyManagerPhone || undefined,
-      yearsOwned,
-      overallCondition,
-      recentImprovements: [],
-      desiredProjects,
-      projectTimeline,
-      estimatedBudget: estimatedBudget || undefined,
-      homeSystems: Object.fromEntries(
-        Object.entries(systemReplaced).map(([k, replaced]) => [
-          k,
-          replaced === null
-            ? "unknown"
-            : replaced
-              ? (systemYear[k] ? `replaced_${systemYear[k]}` : "replaced")
-              : "original",
-        ])
-      ),
-      homeStyle: undefined,
-      exteriorColor: undefined,
-      primaryPainPoint: primaryPainPoint || undefined,
-      hearAboutUs: hearAboutUs || undefined,
-      additionalNotes: additionalNotes || undefined,
-      consentTerms,
-      consentEmail,
-      consentSms,
-      consentPush: false,
-      consentMarketing: consentEmail,
-      consentDataUse: consentTerms,
-      preferredContact: phone ? "phone" : "email",
+      serviceNeeded: desiredProjects[0] || "General home maintenance",
     });
   };
 

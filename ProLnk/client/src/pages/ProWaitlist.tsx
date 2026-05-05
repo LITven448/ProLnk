@@ -990,33 +990,14 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
                 if (showCustomTrade && !customTradeDesc.trim()) {
                   toast.error("Please describe your trade or specialty."); return;
                 }
-                const yrsMap: Record<string, number> = { "0-1": 0, "1-3": 2, "3-5": 4, "5-10": 7, "10+": 15 };
                 join.mutate({
                   firstName: form.firstName,
                   lastName: form.lastName || "-",
                   email: form.email,
                   phone: form.phone,
-                  businessName: form.companyName,
-                  businessType: selectedTrades[0],
-                  yearsInBusiness: yrsMap[form.yearsInBusiness] ?? 0,
-                  employeeCount: form.employeeCount || "1-5",
-                  estimatedJobsPerMonth: parseInt(form.estimatedJobsPerMonth) || 0,
-                  avgJobValue: "Not specified",
-                  trades: selectedTrades,
+                  trade: selectedTrades[0] || "General Contractor",
                   primaryCity: form.city || "Not provided",
                   primaryState: form.state,
-                  serviceZipCodes: form.zip || "00000",
-                  serviceRadiusMiles: parseInt(form.serviceRadiusMiles) || 25,
-                  currentSoftware: form.currentSoftware ? [form.currentSoftware] : [],
-                  referralsGivenPerMonth: "0",
-                  referralsReceivedPerMonth: "0",
-                  primaryGoal: "Join waitlist",
-                  hearAboutUs: form.hearAboutUs || undefined,
-                  customTradeDescription: customTradeDesc.trim() || undefined,
-                  licenseFileUrl: licenseFile?.url || undefined,
-                  licenseFileName: licenseFile?.name || undefined,
-                  smsOptIn,
-                  referralCode: inboundRefCode || undefined,
                 });
               }}
               disabled={join.isPending}

@@ -5,8 +5,10 @@ import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation } from "../email";
 import { notifyOwner } from "../_core/notification";
-import { logger } from "../_core/logger";
-import { analyticsTracker } from "../_core/analytics";
+import { createLogger } from "../_core/logger";
+import { waitlistAnalytics } from "../_core/analytics";
+
+const logger = createLogger('waitlist');
 
 const ProWaitlistSchema = z.object({
   firstName: z.string().min(1).max(100).trim(),

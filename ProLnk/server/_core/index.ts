@@ -154,16 +154,6 @@ async function startServer() {
       // Disable foreign key checks to allow flexible table creation order
       await connection.query("SET FOREIGN_KEY_CHECKS=0");
 
-      // Get all existing tables and drop them
-      const [tables]: any = await connection.query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE()");
-      for (const { TABLE_NAME } of tables) {
-        try {
-          await connection.query(`DROP TABLE IF EXISTS \`${TABLE_NAME}\``);
-        } catch (e) {
-          console.error(`Failed to drop table ${TABLE_NAME}:`, e);
-        }
-      }
-
       const statements = [
         ...MIGRATION_0000.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
         ...MIGRATION_0001.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),

@@ -1,4 +1,4 @@
-CREATE TABLE `acceptanceSignals` (
+CREATE TABLE IF NOT EXISTS `acceptanceSignals` (
 	`id` int NOT NULL,
 	`opportunityId` int NOT NULL,
 	`propertyProfileId` int,
@@ -22,7 +22,7 @@ CREATE TABLE `acceptanceSignals` (
 	CONSTRAINT `acceptanceSignals_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `achAuthorizations` (
+CREATE TABLE IF NOT EXISTS `achAuthorizations` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`jobPaymentId` int,
@@ -50,7 +50,7 @@ CREATE TABLE `achAuthorizations` (
 	CONSTRAINT `achAuthorizations_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `activityLog` (
+CREATE TABLE IF NOT EXISTS `activityLog` (
 	`id` int NOT NULL,
 	`eventType` varchar(64) NOT NULL,
 	`actorId` int,
@@ -66,7 +66,7 @@ CREATE TABLE `activityLog` (
 	CONSTRAINT `activityLog_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `adminAuditLog` (
+CREATE TABLE IF NOT EXISTS `adminAuditLog` (
 	`id` int NOT NULL,
 	`adminUserId` int NOT NULL,
 	`action` varchar(100) NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE `adminAuditLog` (
 	CONSTRAINT `adminAuditLog_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `agentHomeownerReferrals` (
+CREATE TABLE IF NOT EXISTS `agentHomeownerReferrals` (
 	`id` int NOT NULL,
 	`agentId` int NOT NULL,
 	`homeownerName` varchar(200) NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE `agentHomeownerReferrals` (
 	CONSTRAINT `agentHomeownerReferrals_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `agentPerpetualCommissions` (
+CREATE TABLE IF NOT EXISTS `agentPerpetualCommissions` (
 	`id` int NOT NULL,
 	`agentId` int NOT NULL,
 	`referralId` int NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE `agentPerpetualCommissions` (
 	CONSTRAINT `agentPerpetualCommissions_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `agentProperties` (
+CREATE TABLE IF NOT EXISTS `agentProperties` (
 	`id` int NOT NULL,
 	`agentUserId` int NOT NULL,
 	`address` varchar(500) NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE `agentProperties` (
 	CONSTRAINT `agentProperties_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `aiPipelineRuns` (
+CREATE TABLE IF NOT EXISTS `aiPipelineRuns` (
 	`id` int NOT NULL,
 	`photoId` int,
 	`jobId` int,
@@ -157,7 +157,7 @@ CREATE TABLE `aiPipelineRuns` (
 	CONSTRAINT `aiPipelineRuns_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `aiTrainingDataset` (
+CREATE TABLE IF NOT EXISTS `aiTrainingDataset` (
 	`id` int NOT NULL,
 	`jobId` int,
 	`opportunityId` int,
@@ -178,7 +178,7 @@ CREATE TABLE `aiTrainingDataset` (
 	CONSTRAINT `aiTrainingDataset_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `broadcasts` (
+CREATE TABLE IF NOT EXISTS `broadcasts` (
 	`id` int NOT NULL,
 	`subject` varchar(255) NOT NULL,
 	`message` text NOT NULL,
@@ -187,7 +187,7 @@ CREATE TABLE `broadcasts` (
 	CONSTRAINT `broadcasts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `circumventionFlags` (
+CREATE TABLE IF NOT EXISTS `circumventionFlags` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`homeownerId` int,
@@ -203,7 +203,7 @@ CREATE TABLE `circumventionFlags` (
 	CONSTRAINT `circumventionFlags_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `commercialWaitlist` (
+CREATE TABLE IF NOT EXISTS `commercialWaitlist` (
 	`id` int NOT NULL,
 	`businessName` varchar(255) NOT NULL,
 	`contactName` varchar(255) NOT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE `commercialWaitlist` (
 	CONSTRAINT `commercialWaitlist_contactEmail_unique` UNIQUE(`contactEmail`)
 );
 --> statement-breakpoint
-CREATE TABLE `commission_payout` (
+CREATE TABLE IF NOT EXISTS `commission_payout` (
 	`id` int NOT NULL,
 	`job_commission_event_id` int NOT NULL,
 	`recipient_user_id` varchar(255) NOT NULL,
@@ -239,7 +239,7 @@ CREATE TABLE `commission_payout` (
 	CONSTRAINT `commission_payout_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `commissions` (
+CREATE TABLE IF NOT EXISTS `commissions` (
 	`id` int NOT NULL,
 	`opportunityId` int,
 	`payingPartnerId` int,
@@ -269,7 +269,7 @@ CREATE TABLE `commissions` (
 	CONSTRAINT `commissions_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `complianceEvents` (
+CREATE TABLE IF NOT EXISTS `complianceEvents` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`eventType` text NOT NULL,
@@ -283,7 +283,7 @@ CREATE TABLE `complianceEvents` (
 	CONSTRAINT `complianceEvents_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `contentItems` (
+CREATE TABLE IF NOT EXISTS `contentItems` (
 	`id` int NOT NULL,
 	`contentType` text NOT NULL,
 	`title` varchar(255) NOT NULL,
@@ -300,7 +300,7 @@ CREATE TABLE `contentItems` (
 	CONSTRAINT `contentItems_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `customerDeals` (
+CREATE TABLE IF NOT EXISTS `customerDeals` (
 	`id` int NOT NULL,
 	`token` varchar(64) NOT NULL,
 	`opportunityId` int NOT NULL,
@@ -350,7 +350,7 @@ CREATE TABLE `customerDeals` (
 	CONSTRAINT `customerDeals_token_unique` UNIQUE(`token`)
 );
 --> statement-breakpoint
-CREATE TABLE `dataExportRequests` (
+CREATE TABLE IF NOT EXISTS `dataExportRequests` (
 	`id` int NOT NULL,
 	`homeownerId` int NOT NULL,
 	`status` varchar(255) NOT NULL DEFAULT 'pending',
@@ -361,7 +361,7 @@ CREATE TABLE `dataExportRequests` (
 	CONSTRAINT `dataExportRequests_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `eventDrivenLeads` (
+CREATE TABLE IF NOT EXISTS `eventDrivenLeads` (
 	`id` int NOT NULL,
 	`triggerId` int,
 	`propertyId` int,
@@ -381,7 +381,7 @@ CREATE TABLE `eventDrivenLeads` (
 	CONSTRAINT `eventDrivenLeads_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `eventTriggers` (
+CREATE TABLE IF NOT EXISTS `eventTriggers` (
 	`id` int NOT NULL,
 	`type` text NOT NULL,
 	`sourceData` json,
@@ -404,7 +404,7 @@ CREATE TABLE `eventTriggers` (
 	CONSTRAINT `eventTriggers_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `exchangeBids` (
+CREATE TABLE IF NOT EXISTS `exchangeBids` (
 	`id` int NOT NULL,
 	`jobId` int NOT NULL,
 	`biddingPartnerId` int NOT NULL,
@@ -415,7 +415,7 @@ CREATE TABLE `exchangeBids` (
 	CONSTRAINT `exchangeBids_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `exchangeJobs` (
+CREATE TABLE IF NOT EXISTS `exchangeJobs` (
 	`id` int NOT NULL,
 	`postedByPartnerId` int NOT NULL,
 	`title` varchar(255) NOT NULL,
@@ -436,7 +436,7 @@ CREATE TABLE `exchangeJobs` (
 	CONSTRAINT `exchangeJobs_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `featuredAdvertisers` (
+CREATE TABLE IF NOT EXISTS `featuredAdvertisers` (
 	`id` int NOT NULL,
 	`businessName` varchar(200) NOT NULL,
 	`contactName` varchar(200),
@@ -465,7 +465,7 @@ CREATE TABLE `featuredAdvertisers` (
 	CONSTRAINT `featuredAdvertisers_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `fieldJobLog` (
+CREATE TABLE IF NOT EXISTS `fieldJobLog` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`jobTitle` varchar(255) NOT NULL,
@@ -484,7 +484,7 @@ CREATE TABLE `fieldJobLog` (
 	CONSTRAINT `fieldJobLog_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `forumLikes` (
+CREATE TABLE IF NOT EXISTS `forumLikes` (
 	`id` int NOT NULL,
 	`postId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -492,7 +492,7 @@ CREATE TABLE `forumLikes` (
 	CONSTRAINT `forumLikes_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `forumPosts` (
+CREATE TABLE IF NOT EXISTS `forumPosts` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`category` varchar(50) NOT NULL DEFAULT 'general',
@@ -505,7 +505,7 @@ CREATE TABLE `forumPosts` (
 	CONSTRAINT `forumPosts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `forumReplies` (
+CREATE TABLE IF NOT EXISTS `forumReplies` (
 	`id` int NOT NULL,
 	`postId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -514,7 +514,7 @@ CREATE TABLE `forumReplies` (
 	CONSTRAINT `forumReplies_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `fsmJobRecords` (
+CREATE TABLE IF NOT EXISTS `fsmJobRecords` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`integrationId` int NOT NULL,
@@ -540,7 +540,7 @@ CREATE TABLE `fsmJobRecords` (
 	CONSTRAINT `fsmJobRecords_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `fsmSyncJobs` (
+CREATE TABLE IF NOT EXISTS `fsmSyncJobs` (
 	`id` int NOT NULL,
 	`integrationId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -555,7 +555,7 @@ CREATE TABLE `fsmSyncJobs` (
 	CONSTRAINT `fsmSyncJobs_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `fsmWebhookEvents` (
+CREATE TABLE IF NOT EXISTS `fsmWebhookEvents` (
 	`id` int NOT NULL,
 	`source` text NOT NULL,
 	`eventType` varchar(100) NOT NULL,
@@ -572,7 +572,7 @@ CREATE TABLE `fsmWebhookEvents` (
 	CONSTRAINT `fsmWebhookEvents_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `funnelEvents` (
+CREATE TABLE IF NOT EXISTS `funnelEvents` (
 	`id` int NOT NULL,
 	`opportunityId` int NOT NULL,
 	`propertyProfileId` int,
@@ -588,7 +588,7 @@ CREATE TABLE `funnelEvents` (
 	CONSTRAINT `funnelEvents_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `geographicDensity` (
+CREATE TABLE IF NOT EXISTS `geographicDensity` (
 	`id` int NOT NULL,
 	`zip` varchar(20) NOT NULL,
 	`city` varchar(100),
@@ -608,7 +608,7 @@ CREATE TABLE `geographicDensity` (
 	CONSTRAINT `geographicDensity_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `growthProjections` (
+CREATE TABLE IF NOT EXISTS `growthProjections` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`currentMonthlyRevenue` decimal(12,2) NOT NULL,
@@ -620,7 +620,7 @@ CREATE TABLE `growthProjections` (
 	CONSTRAINT `growthProjections_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `home_documentation` (
+CREATE TABLE IF NOT EXISTS `home_documentation` (
 	`id` int NOT NULL,
 	`pro_user_id` varchar(255) NOT NULL,
 	`address_hash` varchar(64) NOT NULL,
@@ -633,7 +633,7 @@ CREATE TABLE `home_documentation` (
 	CONSTRAINT `home_doc_address_idx` UNIQUE(`address_hash`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeHealthVaultEntries` (
+CREATE TABLE IF NOT EXISTS `homeHealthVaultEntries` (
 	`id` int NOT NULL,
 	`serviceAddress` varchar(500) NOT NULL,
 	`component` varchar(200) NOT NULL,
@@ -646,7 +646,7 @@ CREATE TABLE `homeHealthVaultEntries` (
 	CONSTRAINT `homeHealthVaultEntries_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeMaintenanceItems` (
+CREATE TABLE IF NOT EXISTS `homeMaintenanceItems` (
 	`id` int NOT NULL,
 	`name` varchar(200) NOT NULL,
 	`category` varchar(100) NOT NULL,
@@ -658,7 +658,7 @@ CREATE TABLE `homeMaintenanceItems` (
 	CONSTRAINT `homeMaintenanceItems_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeMaintenanceLogs` (
+CREATE TABLE IF NOT EXISTS `homeMaintenanceLogs` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`systemHealthId` int,
@@ -681,7 +681,7 @@ CREATE TABLE `homeMaintenanceLogs` (
 	CONSTRAINT `homeMaintenanceLogs_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeMaintenanceRecords` (
+CREATE TABLE IF NOT EXISTS `homeMaintenanceRecords` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`maintenanceItemId` int,
@@ -696,7 +696,7 @@ CREATE TABLE `homeMaintenanceRecords` (
 	CONSTRAINT `homeMaintenanceRecords_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homePassportTransfers` (
+CREATE TABLE IF NOT EXISTS `homePassportTransfers` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`previousOwnerId` int,
@@ -718,7 +718,7 @@ CREATE TABLE `homePassportTransfers` (
 	CONSTRAINT `homePassportTransfers_transferToken_unique` UNIQUE(`transferToken`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeSystemHealth` (
+CREATE TABLE IF NOT EXISTS `homeSystemHealth` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`systemType` text NOT NULL,
@@ -748,7 +748,7 @@ CREATE TABLE `homeSystemHealth` (
 	CONSTRAINT `homeSystemHealth_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeSystemRecords` (
+CREATE TABLE IF NOT EXISTS `homeSystemRecords` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`systemType` varchar(100) NOT NULL,
@@ -765,7 +765,7 @@ CREATE TABLE `homeSystemRecords` (
 	CONSTRAINT `homeSystemRecords_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeWaitlist` (
+CREATE TABLE IF NOT EXISTS `homeWaitlist` (
 	`id` int NOT NULL,
 	`firstName` varchar(100) NOT NULL,
 	`lastName` varchar(100) NOT NULL,
@@ -824,7 +824,7 @@ CREATE TABLE `homeWaitlist` (
 	CONSTRAINT `homeWaitlist_email_unique` UNIQUE(`email`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeowner360Profiles` (
+CREATE TABLE IF NOT EXISTS `homeowner360Profiles` (
 	`id` int NOT NULL,
 	`userId` int NOT NULL,
 	`householdSize` text,
@@ -867,7 +867,7 @@ CREATE TABLE `homeowner360Profiles` (
 	CONSTRAINT `homeowner360Profiles_userId_unique` UNIQUE(`userId`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerCheckins` (
+CREATE TABLE IF NOT EXISTS `homeownerCheckins` (
 	`id` int NOT NULL,
 	`opportunityId` int NOT NULL,
 	`confirmedCompletion` boolean NOT NULL DEFAULT false,
@@ -883,7 +883,7 @@ CREATE TABLE `homeownerCheckins` (
 	CONSTRAINT `homeownerCheckins_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerFavorites` (
+CREATE TABLE IF NOT EXISTS `homeownerFavorites` (
 	`id` int NOT NULL,
 	`homeownerProfileId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -892,7 +892,7 @@ CREATE TABLE `homeownerFavorites` (
 	CONSTRAINT `homeownerFavorites_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerLeads` (
+CREATE TABLE IF NOT EXISTS `homeownerLeads` (
 	`id` int NOT NULL,
 	`homeownerName` varchar(255),
 	`homeownerEmail` varchar(255),
@@ -916,7 +916,7 @@ CREATE TABLE `homeownerLeads` (
 	CONSTRAINT `homeownerLeads_homeownerEmail_unique` UNIQUE(`homeownerEmail`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerNotifications` (
+CREATE TABLE IF NOT EXISTS `homeownerNotifications` (
 	`id` int NOT NULL,
 	`userId` int NOT NULL,
 	`type` varchar(255) NOT NULL DEFAULT ('system'),
@@ -929,7 +929,7 @@ CREATE TABLE `homeownerNotifications` (
 	CONSTRAINT `homeownerNotifications_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerPaymentMethods` (
+CREATE TABLE IF NOT EXISTS `homeownerPaymentMethods` (
 	`id` int NOT NULL,
 	`homeownerId` int NOT NULL,
 	`stripeCustomerId` varchar(255) NOT NULL,
@@ -951,7 +951,7 @@ CREATE TABLE `homeownerPaymentMethods` (
 	CONSTRAINT `homeownerPaymentMethods_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerProfiles` (
+CREATE TABLE IF NOT EXISTS `homeownerProfiles` (
 	`id` int NOT NULL,
 	`userId` int NOT NULL,
 	`displayName` varchar(255),
@@ -974,7 +974,7 @@ CREATE TABLE `homeownerProfiles` (
 	CONSTRAINT `homeownerProfiles_userId_unique` UNIQUE(`userId`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerReviews` (
+CREATE TABLE IF NOT EXISTS `homeownerReviews` (
 	`id` int NOT NULL,
 	`dealId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -990,7 +990,7 @@ CREATE TABLE `homeownerReviews` (
 	CONSTRAINT `homeownerReviews_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerScanHistory` (
+CREATE TABLE IF NOT EXISTS `homeownerScanHistory` (
 	`id` int NOT NULL,
 	`homeownerProfileId` int,
 	`homeownerEmail` varchar(320),
@@ -1006,7 +1006,7 @@ CREATE TABLE `homeownerScanHistory` (
 	CONSTRAINT `homeownerScanHistory_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `homeownerScanOffers` (
+CREATE TABLE IF NOT EXISTS `homeownerScanOffers` (
 	`id` int NOT NULL,
 	`homeownerProfileId` int,
 	`homeownerEmail` varchar(320),
@@ -1030,7 +1030,7 @@ CREATE TABLE `homeownerScanOffers` (
 	CONSTRAINT `homeownerScanOffers_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `industryRates` (
+CREATE TABLE IF NOT EXISTS `industryRates` (
 	`id` int NOT NULL,
 	`industryName` varchar(100) NOT NULL,
 	`platformFeeRate` decimal(5,4) NOT NULL DEFAULT '0.1200',
@@ -1041,7 +1041,7 @@ CREATE TABLE `industryRates` (
 	CONSTRAINT `industryRates_industryName_unique` UNIQUE(`industryName`)
 );
 --> statement-breakpoint
-CREATE TABLE `industryRatesData` (
+CREATE TABLE IF NOT EXISTS `industryRatesData` (
 	`id` int NOT NULL,
 	`serviceCategory` varchar(100) NOT NULL,
 	`jobType` varchar(255) NOT NULL,
@@ -1054,7 +1054,7 @@ CREATE TABLE `industryRatesData` (
 	CONSTRAINT `industryRatesData_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `insuranceClaims` (
+CREATE TABLE IF NOT EXISTS `insuranceClaims` (
 	`id` int NOT NULL,
 	`opportunityId` int NOT NULL,
 	`homeownerProfileId` int,
@@ -1082,7 +1082,7 @@ CREATE TABLE `insuranceClaims` (
 	CONSTRAINT `insuranceClaims_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `job_commission_event` (
+CREATE TABLE IF NOT EXISTS `job_commission_event` (
 	`id` int NOT NULL,
 	`pro_user_id` varchar(255) NOT NULL,
 	`job_id` varchar(255) NOT NULL,
@@ -1097,7 +1097,7 @@ CREATE TABLE `job_commission_event` (
 	CONSTRAINT `job_commission_event_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `jobPayments` (
+CREATE TABLE IF NOT EXISTS `jobPayments` (
 	`id` int NOT NULL,
 	`dealId` int NOT NULL,
 	`homeownerId` int,
@@ -1143,7 +1143,7 @@ CREATE TABLE `jobPayments` (
 	CONSTRAINT `jobPayments_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `jobs` (
+CREATE TABLE IF NOT EXISTS `jobs` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`loggedByUserId` int,
@@ -1165,7 +1165,7 @@ CREATE TABLE `jobs` (
 	CONSTRAINT `jobs_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `marketingEmailLog` (
+CREATE TABLE IF NOT EXISTS `marketingEmailLog` (
 	`id` int NOT NULL,
 	`userId` int NOT NULL,
 	`campaignKey` varchar(128) NOT NULL,
@@ -1173,7 +1173,7 @@ CREATE TABLE `marketingEmailLog` (
 	CONSTRAINT `marketingEmailLog_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `messages` (
+CREATE TABLE IF NOT EXISTS `messages` (
 	`id` int NOT NULL,
 	`thread_id` varchar(64) NOT NULL,
 	`sender_type` varchar(255) NOT NULL DEFAULT ('homeowner'),
@@ -1187,7 +1187,7 @@ CREATE TABLE `messages` (
 	CONSTRAINT `messages_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `networkingEventRegistrations` (
+CREATE TABLE IF NOT EXISTS `networkingEventRegistrations` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`eventName` varchar(255) NOT NULL,
@@ -1198,7 +1198,7 @@ CREATE TABLE `networkingEventRegistrations` (
 	CONSTRAINT `networkingEventRegistrations_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `npsSurveys` (
+CREATE TABLE IF NOT EXISTS `npsSurveys` (
 	`id` int NOT NULL,
 	`token` varchar(64) NOT NULL,
 	`jobId` int NOT NULL,
@@ -1216,7 +1216,7 @@ CREATE TABLE `npsSurveys` (
 	CONSTRAINT `npsSurveys_token_unique` UNIQUE(`token`)
 );
 --> statement-breakpoint
-CREATE TABLE `opportunities` (
+CREATE TABLE IF NOT EXISTS `opportunities` (
 	`id` int NOT NULL,
 	`jobId` int NOT NULL,
 	`sourcePartnerId` int NOT NULL,
@@ -1246,7 +1246,7 @@ CREATE TABLE `opportunities` (
 	CONSTRAINT `opportunities_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partner360Profiles` (
+CREATE TABLE IF NOT EXISTS `partner360Profiles` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`yearsInBusiness` text,
@@ -1291,7 +1291,7 @@ CREATE TABLE `partner360Profiles` (
 	CONSTRAINT `partner360Profiles_partnerId_unique` UNIQUE(`partnerId`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerAlerts` (
+CREATE TABLE IF NOT EXISTS `partnerAlerts` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`alertType` varchar(100) NOT NULL,
@@ -1305,7 +1305,7 @@ CREATE TABLE `partnerAlerts` (
 	CONSTRAINT `partnerAlerts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerAvailability` (
+CREATE TABLE IF NOT EXISTS `partnerAvailability` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`dayOfWeek` int NOT NULL,
@@ -1316,7 +1316,7 @@ CREATE TABLE `partnerAvailability` (
 	CONSTRAINT `partnerAvailability_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerGalleryProjects` (
+CREATE TABLE IF NOT EXISTS `partnerGalleryProjects` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`title` varchar(255) NOT NULL,
@@ -1329,7 +1329,7 @@ CREATE TABLE `partnerGalleryProjects` (
 	CONSTRAINT `partnerGalleryProjects_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerIntegrations` (
+CREATE TABLE IF NOT EXISTS `partnerIntegrations` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`source` varchar(50) NOT NULL,
@@ -1348,7 +1348,7 @@ CREATE TABLE `partnerIntegrations` (
 	CONSTRAINT `partnerIntegrations_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerJobPreferences` (
+CREATE TABLE IF NOT EXISTS `partnerJobPreferences` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`serviceCategories` json NOT NULL DEFAULT ('[]'),
@@ -1361,7 +1361,7 @@ CREATE TABLE `partnerJobPreferences` (
 	CONSTRAINT `partnerJobPreferences_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerNotifications` (
+CREATE TABLE IF NOT EXISTS `partnerNotifications` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`type` varchar(255) NOT NULL DEFAULT ('system'),
@@ -1374,7 +1374,7 @@ CREATE TABLE `partnerNotifications` (
 	CONSTRAINT `partnerNotifications_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerOnboardingChecklist` (
+CREATE TABLE IF NOT EXISTS `partnerOnboardingChecklist` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`profileComplete` boolean NOT NULL DEFAULT false,
@@ -1386,7 +1386,7 @@ CREATE TABLE `partnerOnboardingChecklist` (
 	CONSTRAINT `partnerOnboardingChecklist_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerPerformanceScores` (
+CREATE TABLE IF NOT EXISTS `partnerPerformanceScores` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`totalLeadsReceived` int NOT NULL DEFAULT 0,
@@ -1413,7 +1413,7 @@ CREATE TABLE `partnerPerformanceScores` (
 	CONSTRAINT `partnerPerformanceScores_partnerId_unique` UNIQUE(`partnerId`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerReviews` (
+CREATE TABLE IF NOT EXISTS `partnerReviews` (
 	`id` int NOT NULL,
 	`dealId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -1434,7 +1434,7 @@ CREATE TABLE `partnerReviews` (
 	CONSTRAINT `partnerReviews_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partnerVerifications` (
+CREATE TABLE IF NOT EXISTS `partnerVerifications` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`licenseVerified` boolean NOT NULL DEFAULT false,
@@ -1489,7 +1489,7 @@ CREATE TABLE `partnerVerifications` (
 	CONSTRAINT `partnerVerifications_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `partners` (
+CREATE TABLE IF NOT EXISTS `partners` (
 	`id` int NOT NULL,
 	`userId` int,
 	`businessName` varchar(255) NOT NULL,
@@ -1566,7 +1566,7 @@ CREATE TABLE `partners` (
 	CONSTRAINT `partners_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `paymentMilestones` (
+CREATE TABLE IF NOT EXISTS `paymentMilestones` (
 	`id` int NOT NULL,
 	`jobPaymentId` int NOT NULL,
 	`dealId` int NOT NULL,
@@ -1586,7 +1586,7 @@ CREATE TABLE `paymentMilestones` (
 	CONSTRAINT `paymentMilestones_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `payoutRequests` (
+CREATE TABLE IF NOT EXISTS `payoutRequests` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`requestedAmount` decimal(10,2) NOT NULL,
@@ -1602,7 +1602,7 @@ CREATE TABLE `payoutRequests` (
 	CONSTRAINT `payoutRequests_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `photoIngestionBatches` (
+CREATE TABLE IF NOT EXISTS `photoIngestionBatches` (
 	`id` int NOT NULL,
 	`source` varchar(100) NOT NULL,
 	`totalPhotos` int NOT NULL,
@@ -1618,7 +1618,7 @@ CREATE TABLE `photoIngestionBatches` (
 	CONSTRAINT `photoIngestionBatches_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `photoIntakeQueue` (
+CREATE TABLE IF NOT EXISTS `photoIntakeQueue` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`integrationId` int,
@@ -1643,7 +1643,7 @@ CREATE TABLE `photoIntakeQueue` (
 	CONSTRAINT `photoIntakeQueue_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `photoQueueItems` (
+CREATE TABLE IF NOT EXISTS `photoQueueItems` (
 	`id` int NOT NULL,
 	`photoUrl` varchar(1000) NOT NULL,
 	`serviceAddress` varchar(500) NOT NULL,
@@ -1667,7 +1667,7 @@ CREATE TABLE `photoQueueItems` (
 	CONSTRAINT `photoQueueItems_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `proAgreements` (
+CREATE TABLE IF NOT EXISTS `proAgreements` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`templateVersion` varchar(20) NOT NULL DEFAULT 'v1.0',
@@ -1688,7 +1688,7 @@ CREATE TABLE `proAgreements` (
 	CONSTRAINT `proAgreements_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `pro_network_profile` (
+CREATE TABLE IF NOT EXISTS `pro_network_profile` (
 	`id` int NOT NULL,
 	`user_id` varchar(255) NOT NULL,
 	`network_level` int NOT NULL DEFAULT 4,
@@ -1711,7 +1711,7 @@ CREATE TABLE `pro_network_profile` (
 	CONSTRAINT `pro_network_profile_referral_code_unique` UNIQUE(`referral_code`)
 );
 --> statement-breakpoint
-CREATE TABLE `pro_upline_chain` (
+CREATE TABLE IF NOT EXISTS `pro_upline_chain` (
 	`id` int NOT NULL,
 	`pro_user_id` varchar(255) NOT NULL,
 	`upline_user_id` varchar(255) NOT NULL,
@@ -1721,7 +1721,7 @@ CREATE TABLE `pro_upline_chain` (
 	CONSTRAINT `pro_upline_chain_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `proWaitlist` (
+CREATE TABLE IF NOT EXISTS `proWaitlist` (
 	`id` int NOT NULL,
 	`firstName` varchar(100) NOT NULL,
 	`lastName` varchar(100) NOT NULL,
@@ -1762,7 +1762,7 @@ CREATE TABLE `proWaitlist` (
 	CONSTRAINT `proWaitlist_email_unique` UNIQUE(`email`)
 );
 --> statement-breakpoint
-CREATE TABLE `processedStripeEvents` (
+CREATE TABLE IF NOT EXISTS `processedStripeEvents` (
 	`id` int NOT NULL,
 	`eventId` varchar(255) NOT NULL,
 	`eventType` varchar(100) NOT NULL,
@@ -1771,7 +1771,7 @@ CREATE TABLE `processedStripeEvents` (
 	CONSTRAINT `processedStripeEvents_eventId_unique` UNIQUE(`eventId`)
 );
 --> statement-breakpoint
-CREATE TABLE `projectBids` (
+CREATE TABLE IF NOT EXISTS `projectBids` (
 	`id` int NOT NULL,
 	`jobId` int NOT NULL,
 	`submittingPartnerId` int NOT NULL,
@@ -1800,7 +1800,7 @@ CREATE TABLE `projectBids` (
 	CONSTRAINT `projectBids_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `properties` (
+CREATE TABLE IF NOT EXISTS `properties` (
 	`id` int NOT NULL,
 	`ownerId` int NOT NULL,
 	`nickname` varchar(100),
@@ -1875,7 +1875,7 @@ CREATE TABLE `properties` (
 	CONSTRAINT `properties_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyAssets` (
+CREATE TABLE IF NOT EXISTS `propertyAssets` (
 	`id` int NOT NULL,
 	`propertyId` int,
 	`photoId` int,
@@ -1894,7 +1894,7 @@ CREATE TABLE `propertyAssets` (
 	CONSTRAINT `propertyAssets_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyDocuments` (
+CREATE TABLE IF NOT EXISTS `propertyDocuments` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`documentType` varchar(100) NOT NULL,
@@ -1908,7 +1908,7 @@ CREATE TABLE `propertyDocuments` (
 	CONSTRAINT `propertyDocuments_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyImprovements` (
+CREATE TABLE IF NOT EXISTS `propertyImprovements` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`category` varchar(100) NOT NULL,
@@ -1919,7 +1919,7 @@ CREATE TABLE `propertyImprovements` (
 	CONSTRAINT `propertyImprovements_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyPhotos` (
+CREATE TABLE IF NOT EXISTS `propertyPhotos` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`uploadedByUserId` int,
@@ -1936,7 +1936,7 @@ CREATE TABLE `propertyPhotos` (
 	CONSTRAINT `propertyPhotos_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyProfiles` (
+CREATE TABLE IF NOT EXISTS `propertyProfiles` (
 	`id` int NOT NULL,
 	`address` text NOT NULL,
 	`city` varchar(100),
@@ -1961,7 +1961,7 @@ CREATE TABLE `propertyProfiles` (
 	CONSTRAINT `propertyProfiles_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyTimeline` (
+CREATE TABLE IF NOT EXISTS `propertyTimeline` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`eventType` varchar(100) NOT NULL,
@@ -1974,7 +1974,7 @@ CREATE TABLE `propertyTimeline` (
 	CONSTRAINT `propertyTimeline_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `propertyWishes` (
+CREATE TABLE IF NOT EXISTS `propertyWishes` (
 	`id` int NOT NULL,
 	`propertyId` int NOT NULL,
 	`category` varchar(100) NOT NULL,
@@ -1989,7 +1989,7 @@ CREATE TABLE `propertyWishes` (
 	CONSTRAINT `propertyWishes_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `proposals` (
+CREATE TABLE IF NOT EXISTS `proposals` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`clientName` varchar(255) NOT NULL,
@@ -2010,7 +2010,7 @@ CREATE TABLE `proposals` (
 	CONSTRAINT `proposals_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `quickQuoteRequests` (
+CREATE TABLE IF NOT EXISTS `quickQuoteRequests` (
 	`id` int NOT NULL,
 	`homeownerUserId` int,
 	`homeownerName` varchar(255) NOT NULL,
@@ -2036,7 +2036,7 @@ CREATE TABLE `quickQuoteRequests` (
 	CONSTRAINT `quickQuoteRequests_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `quotes` (
+CREATE TABLE IF NOT EXISTS `quotes` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`clientName` varchar(255) NOT NULL,
@@ -2051,7 +2051,7 @@ CREATE TABLE `quotes` (
 	CONSTRAINT `quotes_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `realEstateAgents` (
+CREATE TABLE IF NOT EXISTS `realEstateAgents` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`licenseNumber` varchar(100),
@@ -2078,7 +2078,7 @@ CREATE TABLE `realEstateAgents` (
 	CONSTRAINT `realEstateAgents_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `recallAlerts` (
+CREATE TABLE IF NOT EXISTS `recallAlerts` (
 	`id` int NOT NULL,
 	`recallNumber` varchar(100) NOT NULL,
 	`productName` varchar(512) NOT NULL,
@@ -2096,7 +2096,7 @@ CREATE TABLE `recallAlerts` (
 	CONSTRAINT `recallAlerts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `referralClicks` (
+CREATE TABLE IF NOT EXISTS `referralClicks` (
 	`id` int NOT NULL,
 	`referrerId` int NOT NULL,
 	`referralCode` varchar(100) NOT NULL,
@@ -2108,7 +2108,7 @@ CREATE TABLE `referralClicks` (
 	CONSTRAINT `referralClicks_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `referralGraph` (
+CREATE TABLE IF NOT EXISTS `referralGraph` (
 	`id` int NOT NULL,
 	`sourcePartnerId` int NOT NULL,
 	`receivingPartnerId` int NOT NULL,
@@ -2130,7 +2130,7 @@ CREATE TABLE `referralGraph` (
 	CONSTRAINT `referralGraph_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `referrals` (
+CREATE TABLE IF NOT EXISTS `referrals` (
 	`id` int NOT NULL,
 	`fromPartnerId` int NOT NULL,
 	`toPartnerId` int,
@@ -2147,7 +2147,7 @@ CREATE TABLE `referrals` (
 	CONSTRAINT `referrals_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `reviewRequests` (
+CREATE TABLE IF NOT EXISTS `reviewRequests` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`jobId` int,
@@ -2164,7 +2164,7 @@ CREATE TABLE `reviewRequests` (
 	CONSTRAINT `reviewRequests_token_unique` UNIQUE(`token`)
 );
 --> statement-breakpoint
-CREATE TABLE `reviewResponses` (
+CREATE TABLE IF NOT EXISTS `reviewResponses` (
 	`id` int NOT NULL,
 	`reviewId` int NOT NULL,
 	`partnerId` int NOT NULL,
@@ -2175,7 +2175,7 @@ CREATE TABLE `reviewResponses` (
 	CONSTRAINT `reviewResponses_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `roomMakeoverSessions` (
+CREATE TABLE IF NOT EXISTS `roomMakeoverSessions` (
 	`id` int NOT NULL,
 	`homeownerUserId` int,
 	`guestEmail` varchar(320),
@@ -2194,7 +2194,7 @@ CREATE TABLE `roomMakeoverSessions` (
 	CONSTRAINT `roomMakeoverSessions_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `seasonalPrepItems` (
+CREATE TABLE IF NOT EXISTS `seasonalPrepItems` (
 	`id` int NOT NULL,
 	`season` text NOT NULL,
 	`title` varchar(255) NOT NULL,
@@ -2208,7 +2208,7 @@ CREATE TABLE `seasonalPrepItems` (
 	CONSTRAINT `seasonalPrepItems_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `serviceRequests` (
+CREATE TABLE IF NOT EXISTS `serviceRequests` (
 	`id` int NOT NULL,
 	`homeownerProfileId` int NOT NULL,
 	`propertyId` int,
@@ -2225,7 +2225,7 @@ CREATE TABLE `serviceRequests` (
 	CONSTRAINT `serviceRequests_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `skillEnrollments` (
+CREATE TABLE IF NOT EXISTS `skillEnrollments` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`skillId` varchar(100) NOT NULL,
@@ -2237,7 +2237,7 @@ CREATE TABLE `skillEnrollments` (
 	CONSTRAINT `skillEnrollments_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `stormAlerts` (
+CREATE TABLE IF NOT EXISTS `stormAlerts` (
 	`id` int NOT NULL,
 	`propertyId` int,
 	`zipCode` varchar(10) NOT NULL,
@@ -2253,7 +2253,7 @@ CREATE TABLE `stormAlerts` (
 	CONSTRAINT `stormAlerts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `stormEvents` (
+CREATE TABLE IF NOT EXISTS `stormEvents` (
 	`id` int NOT NULL,
 	`eventId` varchar(255) NOT NULL,
 	`eventType` varchar(100) NOT NULL,
@@ -2273,7 +2273,7 @@ CREATE TABLE `stormEvents` (
 	CONSTRAINT `stormEvents_eventId_unique` UNIQUE(`eventId`)
 );
 --> statement-breakpoint
-CREATE TABLE `stormLeads` (
+CREATE TABLE IF NOT EXISTS `stormLeads` (
 	`id` int NOT NULL,
 	`stormEventId` int NOT NULL,
 	`propertyId` int,
@@ -2290,7 +2290,7 @@ CREATE TABLE `stormLeads` (
 	CONSTRAINT `stormLeads_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `stripeConnectOnboarding` (
+CREATE TABLE IF NOT EXISTS `stripeConnectOnboarding` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`stripeAccountId` varchar(255),
@@ -2305,7 +2305,7 @@ CREATE TABLE `stripeConnectOnboarding` (
 	CONSTRAINT `stripeConnectOnboarding_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `systemSettings` (
+CREATE TABLE IF NOT EXISTS `systemSettings` (
 	`id` int NOT NULL,
 	`key` varchar(100) NOT NULL,
 	`value` text NOT NULL,
@@ -2315,7 +2315,7 @@ CREATE TABLE `systemSettings` (
 	CONSTRAINT `systemSettings_key_unique` UNIQUE(`key`)
 );
 --> statement-breakpoint
-CREATE TABLE `taxEstimates` (
+CREATE TABLE IF NOT EXISTS `taxEstimates` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`year` int NOT NULL,
@@ -2328,7 +2328,7 @@ CREATE TABLE `taxEstimates` (
 	CONSTRAINT `taxEstimates_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `trainingEnrollments` (
+CREATE TABLE IF NOT EXISTS `trainingEnrollments` (
 	`id` int NOT NULL,
 	`partnerId` int NOT NULL,
 	`courseId` varchar(100) NOT NULL,
@@ -2340,7 +2340,7 @@ CREATE TABLE `trainingEnrollments` (
 	CONSTRAINT `trainingEnrollments_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `userPasswords` (
+CREATE TABLE IF NOT EXISTS `userPasswords` (
 	`id` int NOT NULL,
 	`openId` varchar(64) NOT NULL,
 	`passwordHash` varchar(256) NOT NULL,
@@ -2350,7 +2350,7 @@ CREATE TABLE `userPasswords` (
 	CONSTRAINT `userPasswords_openId_unique` UNIQUE(`openId`)
 );
 --> statement-breakpoint
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
 	`id` int NOT NULL,
 	`openId` varchar(64) NOT NULL,
 	`name` text,
@@ -2365,7 +2365,7 @@ CREATE TABLE `users` (
 	CONSTRAINT `users_openId_unique` UNIQUE(`openId`)
 );
 --> statement-breakpoint
-CREATE TABLE `vaultImportConsents` (
+CREATE TABLE IF NOT EXISTS `vaultImportConsents` (
 	`id` int NOT NULL,
 	`homeownerProfileId` int NOT NULL,
 	`propertyId` int,
@@ -2377,7 +2377,7 @@ CREATE TABLE `vaultImportConsents` (
 	CONSTRAINT `vaultImportConsents_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `webhookDeliveryLog` (
+CREATE TABLE IF NOT EXISTS `webhookDeliveryLog` (
 	`id` int NOT NULL,
 	`subscriptionId` int NOT NULL,
 	`eventName` varchar(100) NOT NULL,
@@ -2390,7 +2390,7 @@ CREATE TABLE `webhookDeliveryLog` (
 	CONSTRAINT `webhookDeliveryLog_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
-CREATE TABLE `webhookSubscriptions` (
+CREATE TABLE IF NOT EXISTS `webhookSubscriptions` (
 	`id` int NOT NULL,
 	`name` varchar(255) NOT NULL,
 	`url` text NOT NULL,

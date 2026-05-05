@@ -1,436 +1,309 @@
-# ProLnk System Architecture
-
-**Version**: 1.0.0 | **Last Updated**: May 6, 2026
-
----
+# ProLnk Architecture
 
 ## System Overview
 
-ProLnk is a two-sided marketplace platform connecting skilled home service professionals (ProLnk) with homeowners (TrustyPro) through AI-powered home health assessments.
-
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    ProLnk / TrustyPro Platform              │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──────────────────┐         ┌──────────────────┐        │
-│  │   ProLnk Pro     │ ◄─────► │  Admin Portal    │        │
-│  │   Waitlist       │         │  & Dashboard     │        │
-│  │                  │         │                  │        │
-│  │ • Signup Form    │         │ • Metrics        │        │
-│  │ • Referral Codes │         │ • Search/Filter  │        │
-│  │ • Position Track │         │ • Bulk Actions   │        │
-│  └──────────────────┘         └──────────────────┘        │
-│          ▲                              │                  │
-│          │                              │                  │
-│  ┌──────────────────┐         ┌──────────────────┐        │
-│  │   TrustyPro      │ ◄─────► │   Auth System    │        │
-│  │   Homeowner      │         │                  │        │
-│  │   Waitlist       │         │ • Email/Password │        │
-│  │                  │         │ • Google OAuth   │        │
-│  │ • 7-Step Form    │         │ • Session Mgmt   │        │
-│  │ • Property Data  │         │                  │        │
-│  │ • Projects List  │         └──────────────────┘        │
-│  └──────────────────┘                  │                  │
-│                                         ▼                  │
-│                        ┌──────────────────────────┐        │
-│                        │   tRPC API Router        │        │
-│                        │                          │        │
-│                        │ • 50+ public procedures │        │
-│                        │ • 30+ admin procedures  │        │
-│                        │ • Type-safe endpoints   │        │
-│                        └──────────────────────────┘        │
-│                                  │                         │
-│                        ┌─────────┴────────┐               │
-│                        ▼                  ▼               │
-│                  ┌──────────┐      ┌──────────┐          │
-│                  │ TiDB     │      │ Resend   │          │
-│                  │ Database │      │ Email    │          │
-│                  │          │      │ Service  │          │
-│                  │ 130+tbl  │      │ API      │          │
-│                  └──────────┘      └──────────┘          │
-│                                                           │
+│                     Cloudflare DNS                          │
+│  prolnk.io → prolnk-production.up.railway.app               │
+│  trustypro.prolnk.io → prolnk-production.up.railway.app     │
 └─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│                      Railway (Prod)                          │
+│  Node.js + Express + tRPC on Linux container                │
+└─────────────────────────────────────────────────────────────┘
+         ↓                    ↓                    ↓
+    ┌─────────┐          ┌──────────┐         ┌───────────┐
+    │   Vite  │          │ tRPC API │         │  Express  │
+    │ Dev/HMR │          │ Router   │         │  Static   │
+    └─────────┘          └──────────┘         │  Assets   │
+         ↓                    ↓                └───────────┘
+    ┌──────────────────────────────────────────────────────┐
+    │         Brand Detection (hostname)                    │
+    │  prolnk.io → window.__BRAND__ = 'prolnk'             │
+    │  trustypro → window.__BRAND__ = 'trustypro'          │
+    └──────────────────────────────────────────────────────┘
+         ↓                                        ↓
+    ┌─────────────────┐              ┌──────────────────────┐
+    │  React Frontend │              │  TiDB Cloud Database │
+    │ (React 19 + TS) │              │  (MySQL-compatible)  │
+    │                 │              │  130+ tables         │
+    │ • ProLnk Home   │              │  • Partners          │
+    │ • TrustyPro Home│              │  • Opportunities     │
+    │ • Forms         │              │  • Commissions       │
+    │ • Dashboards    │              │  • Health Records    │
+    └─────────────────┘              └──────────────────────┘
 ```
-
----
 
 ## Technology Stack
 
-### Frontend
-- **Framework**: React 19 with Vite
-- **Styling**: Tailwind CSS + shadcn/ui components
-- **Type Safety**: TypeScript (strict mode)
-- **State Management**: tRPC useQuery/useMutation hooks
-- **Validation**: Zod schemas (client-side mirrors server schemas)
-- **Routing**: wouter (lightweight router)
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| DNS | Cloudflare | Domain routing, SSL/TLS, DDoS protection |
+| Hosting | Railway | Container-based deployment, auto-scaling |
+| Frontend | React 19, Vite | UI rendering, dev experience |
+| Backend | Node.js, Express | HTTP server, middleware, static serving |
+| API | tRPC | Type-safe RPC, automatic Zod validation |
+| Database | TiDB Cloud | Distributed MySQL, high availability |
+| Email | Resend | Transactional email delivery |
+| Workflows | n8n | Lead matching, notifications, processing |
+| Authentication | JWT (WIP) | Session tokens, user verification |
+| Payments | Stripe (WIP) | Payment processing, commission payouts |
+| Monitoring | Railway Logs | Error tracking, performance monitoring |
 
-### Backend
-- **Runtime**: Node.js (ES2020+)
-- **Framework**: Express.js
-- **API**: tRPC v11 (JSON-RPC over HTTP)
-- **Type Safety**: TypeScript (strict mode)
-- **Database**: TiDB Cloud (MySQL-compatible)
-- **ORM**: Drizzle ORM (type-safe, lightweight)
-- **Email**: Resend API (transactional emails)
-- **Authentication**: Session-based (cookies + server-side validation)
-- **Error Tracking**: Sentry
-
-### DevOps
-- **Deployment**: Railway (Cloud Native)
-- **Domain**: prolnk.io (managed DNS)
-- **SSL/TLS**: Auto-renewed certificates
-- **Database**: TiDB Serverless cluster
-- **Monitoring**: Sentry + Railway Dashboard
-
----
-
-## Code Organization
+## Directory Structure
 
 ```
 ProLnk/
-├── client/src/                    # React frontend
-│   ├── pages/                     # Page components
-│   │   ├── admin/                 # Admin-only pages
-│   │   ├── ProWaitlist.tsx        # Pro waitlist form
-│   │   ├── TrustyProWaitlist.tsx  # Homeowner forms
-│   │   └── Login.tsx              # Auth page
-│   ├── components/                # Reusable components
-│   ├── lib/                       # Utilities & hooks
-│   │   └── trpc.ts               # tRPC client setup
-│   └── App.tsx                    # Main app
+├── client/                      # React frontend
+│   ├── src/
+│   │   ├── main.tsx             # Entry point
+│   │   ├── App.tsx              # Root component (RootPage with brand routing)
+│   │   ├── pages/               # Page components
+│   │   │   ├── RootPage.tsx     # Conditional Home/TrustyProHome
+│   │   │   ├── Home.tsx         # ProLnk landing page
+│   │   │   ├── TrustyProHome.tsx# TrustyPro landing page
+│   │   │   └── ...              # 60-80 other pages
+│   │   ├── components/          # React components
+│   │   ├── hooks/               # Custom React hooks
+│   │   ├── utils/               # Utility functions
+│   │   └── styles/              # CSS/styling
+│   └── index.html               # HTML template
 │
-├── server/                        # Backend
-│   ├── routers/                   # tRPC procedure definitions
-│   │   ├── waitlist.ts           # Hardened waitlist procedures (public)
-│   │   ├── waitlistAdmin.ts      # Admin-only waitlist procedures
-│   │   └── [40+ other routers]   # Partner, payment, scout, etc.
-│   ├── _core/                     # Core infrastructure
-│   │   ├── index.ts              # Express server setup
-│   │   ├── trpc.ts               # tRPC router + middleware
-│   │   ├── context.ts            # Request context
-│   │   ├── logger.ts             # Structured logging
-│   │   ├── analytics.ts          # Event tracking
-│   │   ├── notification.ts       # Admin notifications
-│   │   ├── oauth.ts              # Google/OAuth flow
-│   │   └── [10+ others]          # Auth, email, storage, etc.
-│   ├── db.ts                      # Database connection
-│   ├── email.ts                   # Email templates
-│   ├── webhooks/                  # External integrations
-│   └── agents/                    # AI agents
+├── server/                      # Node.js backend
+│   ├── _core/
+│   │   ├── index.ts             # Entry point, app initialization
+│   │   └── vite.ts              # Vite integration, brand detection
+│   ├── routers/
+│   │   ├── index.ts             # tRPC router composition
+│   │   ├── waitlist.ts          # Pro/homeowner signup procedures
+│   │   ├── opportunities.ts     # Lead management
+│   │   ├── partners.ts          # Pro profile management
+│   │   ├── commissions.ts       # Earnings data
+│   │   └── ...                  # Other API endpoints
+│   ├── webhooks/
+│   │   └── n8n.ts               # n8n webhook handlers (lead-qualified, payout, referral)
+│   ├── emails/
+│   │   ├── confirmation.tsx     # JSX email templates
+│   │   └── ...                  # Other email templates
+│   ├── db/
+│   │   └── index.ts             # Database connection, getDb()
+│   └── api/
+│       └── health.ts            # Health check endpoint
 │
-├── shared/                        # Shared types & constants
-│   ├── const.ts                   # Error messages, etc.
-│   └── types.ts                   # Shared TypeScript types
+├── drizzle/                     # Database ORM
+│   ├── schema.ts                # Table definitions (130+ tables)
+│   └── migrations/              # Database migrations
 │
-├── package.json                   # Dependencies
-├── tsconfig.json                  # TypeScript config
-├── vite.config.ts                 # Vite bundler config
-└── README.md                       # Project overview
+├── docs/                        # Documentation
+│   ├── AGENTS.md                # 47 AI agent specifications
+│   ├── COMMISSION.md            # Network income system details
+│   ├── SCHEMA.md                # Database table descriptions
+│   ├── BRANDS.md                # Brand differences and routing
+│   └── ...                      # Other documentation
+│
+├── vite.config.ts               # Vite build config
+├── tsconfig.json                # TypeScript config
+├── package.json                 # Dependencies and scripts
+├── railway.json                 # Railway deployment config
+│
+└── .claude/
+    ├── settings.json            # Permissions for autonomous work
+    └── memory/                  # Session memory and context
 ```
 
----
+## Request Flow
 
-## Data Flow: Waitlist Signup
-
+### 1. HTTP Request Arrives
 ```
-1. USER FILLS FORM (Client)
-   ├─ React component collects data
-   ├─ Client-side Zod validation
-   └─ Submit to tRPC endpoint
-
-2. tRPC API PROCESSES (Server)
-   ├─ Input validation via Zod schema
-   ├─ Extract & normalize user data
-   ├─ Check for duplicate email (pre-insert)
-   └─ Insert into database (TiDB)
-
-3. POSITION CALCULATION
-   ├─ COUNT(*) FROM waitlist table
-   └─ Return position to client
-
-4. EMAIL & NOTIFICATIONS
-   ├─ Fire-and-forget email send (Resend API)
-   ├─ Send admin notification
-   └─ Continue without blocking response
-
-5. ANALYTICS TRACKING
-   ├─ Log event with metadata
-   ├─ Track form_type, referral source, etc.
-   └─ Store in analytics service
-
-6. RESPONSE TO USER
-   ├─ Return { success: true, position: 42 }
-   ├─ Display success screen
-   └─ Show referral link (for Pro tier)
+curl https://prolnk.io/
+→ Cloudflare routes to prolnk-production.up.railway.app
+→ Railway container receives request
 ```
 
----
-
-## Database Schema (Waitlist)
-
-### `proWaitlist` Table (Pro network signups)
-```sql
-CREATE TABLE proWaitlist (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  firstName VARCHAR(100) NOT NULL,
-  lastName VARCHAR(100) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  phone VARCHAR(30),
-  businessName VARCHAR(255),
-  businessType VARCHAR(100),
-  yearsInBusiness INT,
-  employeeCount VARCHAR(50),
-  estimatedJobsPerMonth INT,
-  avgJobValue VARCHAR(50),
-  trades JSON,           -- ["plumbing", "hvac"]
-  customTradeDescription VARCHAR(500),
-  primaryCity VARCHAR(100),
-  primaryState VARCHAR(50),
-  serviceZipCodes VARCHAR(255),
-  serviceRadiusMiles INT DEFAULT 25,
-  currentSoftware JSON,  -- ["jobber", "hcp"]
-  otherSoftware VARCHAR(255),
-  referralsGivenPerMonth VARCHAR(50),
-  referralsReceivedPerMonth VARCHAR(50),
-  currentReferralMethod VARCHAR(255),
-  primaryGoal VARCHAR(100),
-  hearAboutUs VARCHAR(255),
-  additionalNotes VARCHAR(2000),
-  licenseFileUrl VARCHAR(1000),
-  licenseFileName VARCHAR(255),
-  smsOptIn BOOLEAN DEFAULT false,
-  referredBy VARCHAR(100),
-  status ENUM('pending', 'approved', 'rejected', 'invited') DEFAULT 'pending',
-  adminNotes VARCHAR(1000),
-  approvedAt DATETIME,
-  approvedBy INT,
-  invitedAt DATETIME,
-  createdAt DATETIME DEFAULT NOW(),
-  updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
-  
-  KEY idx_email (email),
-  KEY idx_createdAt (createdAt DESC),
-  KEY idx_referredBy (referredBy)
-);
-```
-
-### `homeWaitlist` Table (Homeowner signups)
-```sql
-CREATE TABLE homeWaitlist (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  firstName VARCHAR(100) NOT NULL,
-  lastName VARCHAR(100) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  phone VARCHAR(30),
-  address VARCHAR(500),
-  city VARCHAR(100),
-  state VARCHAR(50),
-  zipCode VARCHAR(10),
-  homeType ENUM('single_family', 'townhouse', 'condo', 'multi_family', 'mobile'),
-  yearBuilt INT,
-  squareFootage INT,
-  lotSizeSqFt INT,
-  bedrooms INT,
-  bathrooms VARCHAR(10),
-  stories INT,
-  garageSpaces INT,
-  hasPool BOOLEAN DEFAULT false,
-  hasBasement BOOLEAN DEFAULT false,
-  hasAttic BOOLEAN DEFAULT false,
-  ownershipStatus ENUM('own', 'rent') DEFAULT 'own',
-  ownershipType ENUM('primary_residence', 'rental', 'company_owned'),
-  isRental BOOLEAN DEFAULT false,
-  companyName VARCHAR(255),
-  companyEin VARCHAR(20),
-  propertyManagerName VARCHAR(255),
-  propertyManagerPhone VARCHAR(30),
-  yearsOwned INT,
-  overallCondition ENUM('excellent', 'good', 'fair', 'needs_work'),
-  recentImprovements JSON,
-  desiredProjects JSON,
-  projectTimeline ENUM('asap', '3_months', '6_months', '1_year', 'just_exploring'),
-  estimatedBudget VARCHAR(50),
-  homeSystems JSON,
-  homeStyle VARCHAR(100),
-  exteriorColor VARCHAR(100),
-  primaryPainPoint VARCHAR(255),
-  hearAboutUs VARCHAR(255),
-  additionalNotes VARCHAR(2000),
-  consentTerms BOOLEAN DEFAULT false,
-  consentEmail BOOLEAN DEFAULT false,
-  consentSms BOOLEAN DEFAULT false,
-  consentPush BOOLEAN DEFAULT false,
-  consentMarketing BOOLEAN DEFAULT false,
-  consentDataUse BOOLEAN DEFAULT false,
-  preferredContact VARCHAR(20),
-  status ENUM('pending', 'approved', 'rejected', 'invited') DEFAULT 'pending',
-  adminNotes VARCHAR(1000),
-  approvedAt DATETIME,
-  approvedBy INT,
-  invitedAt DATETIME,
-  createdAt DATETIME DEFAULT NOW(),
-  updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
-  
-  KEY idx_email (email),
-  KEY idx_createdAt (createdAt DESC),
-  KEY idx_zipCode (zipCode)
-);
-```
-
----
-
-## Security Architecture
-
-### Input Validation
-- **Client-side**: Zod schemas (TypeScript validation)
-- **Server-side**: Zod schemas (mandatory re-validation)
-- **Database**: SQL parameterization via Drizzle ORM
-
-### SQL Injection Prevention
-- **Method**: Parameterized queries with template literals
-- **Implementation**: Drizzle ORM handles parameter binding
-- **Result**: 100% SQL injection protection
-
-### XSS Prevention
-- **Method**: No raw HTML generation from user input
-- **Strategy**: Zod trim/lowercase/validation + JSON serialization for arrays
-- **Email**: HTML templates use static content, dynamic data is escaped
-
-### CSRF Prevention
-- **Method**: tRPC's JSON-based RPC is inherently CSRF-resistant
-- **Reason**: Requires proper Content-Type headers + SOP enforcement
-- **Fallback**: Rate limiting provides additional protection
-
-### Authentication & Authorization
-- **Session Management**: HTTP-only, Secure, SameSite=Strict cookies
-- **User Context**: Extracted from cookies, validated on each request
-- **Admin Check**: Middleware verifies `user.role === 'admin'`
-- **Error Messages**: Generic messages for auth failures (no user enumeration)
-
----
-
-## Performance Optimization
-
-### Database Indexes
-```sql
--- Email lookup (duplicate detection)
-CREATE INDEX idx_proWaitlist_email ON proWaitlist(email);
-
--- Sorting by creation date
-CREATE INDEX idx_proWaitlist_createdAt ON proWaitlist(createdAt DESC);
-
--- Referral tracking
-CREATE INDEX idx_proWaitlist_referredBy ON proWaitlist(referredBy);
-```
-
-### API Response Optimization
-- **Minimal payload**: Only return `{success, position}`
-- **Async operations**: Fire-and-forget email (doesn't block response)
-- **Caching opportunity**: Position counter could be cached for 10 seconds
-- **Compression**: gzip enabled (Railway default)
-
-### Current Performance
-- Form submission: **~200ms** (p95: 380ms)
-- Position calculation: **<100ms**
-- Admin dashboard: **~1200ms** (p95: <2s)
-
----
-
-## Logging & Monitoring
-
-### Structured Logging
+### 2. Express Middleware
 ```typescript
-logger.track("waitlist:joinProWaitlist", async () => {
-  // Tracks:
-  // - Operation name
-  // - Execution time (ms)
-  // - Success/failure
-  // - Error details (if failed)
-});
+// server/_core/index.ts
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(setupVite(app));        // Vite or Vite middleware
+app.use("/api/trpc", trpcHandler); // tRPC router
+app.use(serveStatic(app));      // Static files fallback
 ```
 
-### Analytics Events
+### 3. Brand Detection
 ```typescript
-analyticsTracker.track("signup", {
-  form_type: "pro",
-  email: sanitized_email,
-  trades_count: 2,
-  position: 42,
-  referred_by: "referral",  // or "direct"
-  sms_optin: true,
-  has_license: true
-});
+// server/_core/vite.ts line 36
+const hostname = req.get("host").split(":")[0].toLowerCase();
+const isTrustyPro = hostname.includes("trustypro");
+// Inject: window.__BRAND__ = 'trustypro' | 'prolnk'
 ```
 
-### Error Tracking (Sentry)
-- **Events**: All exceptions caught and reported
-- **Breadcrumbs**: Request/response cycle tracking
-- **Rate Limiting**: 20% sample rate in production (0% errors = no cost)
+### 4. Frontend Renders
+```typescript
+// client/src/App.tsx
+if (window.__BRAND__ === 'trustypro') {
+  return <TrustyProHome />;
+} else {
+  return <Home />;
+}
+```
 
----
+### 5. API Calls
+```typescript
+// tRPC client call
+const result = await trpc.waitlist.submitPro.mutate({
+  name, email, trade, serviceArea, ...
+});
+// → server/routers/waitlist.ts
+// → Database insert
+// → Resend email send
+```
+
+## Database Schema Highlights
+
+**Partners Table**:
+```typescript
+partners: {
+  id: integer (PK)
+  email: string
+  name: string
+  phone: string
+  tradeType: string ('plumber', 'electrician', 'hvac', ...)
+  serviceArea: polygon (geographic coverage)
+  tier: integer (1-5, affects commission rate)
+  monthlyEarnings: decimal
+  status: enum ('pending', 'active', 'inactive')
+  createdAt: timestamp
+}
+```
+
+**Homes Table** (Health Vault):
+```typescript
+homes: {
+  id: integer (PK)
+  address: string
+  homeownerId: integer (FK)
+  squareFeet: integer
+  yearBuilt: integer
+  roofType: string
+  foundation: string
+  hvacType: string
+  electrical: string
+  plumbing: string
+  // 20+ other structural attributes
+}
+```
+
+**Opportunities Table** (Leads):
+```typescript
+opportunities: {
+  id: integer (PK)
+  homeownerId: integer (FK)
+  homeId: integer (FK)
+  serviceCategory: string
+  description: string
+  estimatedValue: decimal
+  status: enum ('open', 'matched', 'in_progress', 'completed')
+  createdAt: timestamp
+}
+```
+
+**Commission Cascade**:
+```typescript
+commissionPayout: {
+  id: integer (PK)
+  recipientUserId: integer (FK to partners)
+  sourceProUserId: integer (FK to partners)
+  jobCommissionEventId: integer (FK to opportunities)
+  payoutType: enum (
+    'direct_match',      // 12-70% by tier
+    'network_l1',        // 1% from direct recruits
+    'network_l2',        // 0.5% from their recruits
+    'network_l3',        // 0.25%
+    'network_l4',        // 0.1%
+    'subscription_override', // 10% of $199/mo
+    'homeowner_override' // Per-lead fee
+  )
+  amount: decimal
+  status: enum ('pending', 'processed', 'failed')
+  payoutMonth: string (YYYY-MM)
+}
+```
+
+## API Endpoints
+
+### Public (No Auth)
+- `POST /setup` - Initialize database (idempotent)
+- `GET /api/health` - Health check
+- `POST /api/trpc/waitlist.submitPro` - Pro signup
+- `POST /api/trpc/waitlist.submitHomeowner` - Homeowner signup
+
+### Protected (JWT Required)
+- `GET /api/trpc/partner.getMe` - Current pro profile
+- `GET /api/trpc/opportunities.getFeed` - My matched leads
+- `POST /api/trpc/commissions.getHistory` - Earnings history
+
+### Admin (JWT + admin flag)
+- `GET /api/trpc/admin.waitlist.all` - All signups
+- `POST /api/trpc/admin.partner.updateStatus` - Approve/reject pro
+
+### Webhooks (n8n)
+- `POST /api/webhooks/n8n/lead-qualified` - Match created
+- `POST /api/webhooks/n8n/referral-bonus` - Bonus earned
+- `POST /api/webhooks/n8n/notification-sent` - Notification logged
 
 ## Deployment Pipeline
 
 ```
-1. Developer commits to main branch
-   └─ Pre-commit hooks check linting & formatting
-
-2. GitHub Actions runs CI
-   ├─ npm run lint
-   ├─ npx tsc --noEmit
-   └─ npm run build
-
-3. Railway detects main push
-   ├─ Builds Docker image
-   ├─ Installs dependencies
-   ├─ Runs build command
-   └─ Deploys to staging/production
-
-4. Post-deployment
-   ├─ Health check endpoint responds
-   ├─ Database migrations run (manual via /setup endpoint)
-   └─ Sentry captures first error
+Code Change
+     ↓
+git push origin main
+     ↓
+GitHub webhook → Railway
+     ↓
+Railway rebuilds Docker image
+     ↓
+npm install
+npm run build (Vite)
+npm run check (TypeScript)
+     ↓
+Deploy to production container
+     ↓
+Rails health check
+     ↓
+Zero-downtime deploy (old + new running, traffic switched)
 ```
 
----
+## Scaling Considerations
 
-## Scaling Strategy
+**Current Capacity**:
+- Single Railway container handles ~1,000 concurrent users
+- TiDB Cloud starter tier: 2 replicas, auto-failover
+- Cloudflare DDoS protection: 250K req/sec
 
-### Current Scale (May 2026)
-- **Users**: ~100 concurrent, 500+ signups
-- **Database**: TiDB Serverless (auto-scaling)
-- **API**: Railway single instance (512MB RAM)
-- **Email**: Resend free tier (10K/month)
+**Future Scaling**:
+- Multiple Railway containers behind load balancer
+- TiDB cluster upgrade to standard tier (more replicas)
+- Redis for session caching + rate limiting
+- CDN for static assets (Cloudflare)
+- Message queue for async jobs (RabbitMQ, AWS SQS)
 
-### Growth Thresholds
-| Signups | Action |
-|---------|--------|
-| <5K | Single node (current) |
-| 5K-50K | Add TiDB node 2 + caching layer |
-| 50K-500K | Add TiDB node 3 + pagination |
-| 500K+ | Multi-region replication |
+## Performance Targets
 
----
+- Page load: <2s (Lighthouse 90+)
+- API response: <100ms (p95)
+- Email delivery: <2 minutes
+- Database query: <50ms (p95)
+- Monthly uptime: 99.9%
 
-## Future Enhancements
+## Security
 
-- [ ] Redis cache for position counter (reduce DB queries)
-- [ ] Email queue (Bull/BullMQ for reliability)
-- [ ] Commission calculation engine (Phase 2)
-- [ ] n8n automation workflows
-- [ ] Payment processing (Stripe integration)
-- [ ] Photo upload/scanning infrastructure
-- [ ] Partner onboarding flow
-- [ ] Analytics dashboard (conversion funnels, trends)
-
----
-
-## Compliance & Standards
-
-- **TypeScript**: Strict mode enabled
-- **Accessibility**: WCAG 2.1 level AA target
-- **GDPR**: Consent forms, data export via API
-- **CCPA**: Privacy policy, user data access
-- **PCI DSS**: Payment processing (external provider)
-
+- HTTPS everywhere (Cloudflare SSL)
+- Environment variables for secrets (no hardcoding)
+- Zod validation on all tRPC inputs
+- JWT tokens with 24h expiry
+- n8n webhook signature validation (HMAC-SHA256)
+- No sensitive data in logs
+- Database encryption at rest (TiDB)

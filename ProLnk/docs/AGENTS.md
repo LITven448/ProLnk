@@ -133,50 +133,71 @@
 
 ## Financial Department (7 agents)
 
-### 7. Commission Calculator Agent ✅
-**Status**: Implemented
-**Responsibility**: Real-time earnings calculation
-
-**Capabilities**:
-- Calculate direct commissions (12-70% by tier)
-- Calculate network overrides (1-4%, 4 levels)
-- Calculate subscription revenue share (10%)
-- Calculate homeowner overrides
-- Update partner earnings in real-time
+### 7. Commission Calculator Agent (n8n Workflow 1) ✅
+**Status**: Implemented (spec complete, n8n workflow ready for build)
+**Responsibility**: Monthly cascade commission calculation (1st of month, 2am CST)
 
 **Triggers**:
-- Match created → Calculate commission
-- Tier upgrade → Recalculate earnings
-- Payout period closed → Calculate final amounts
-- Referral bonus earned → Calculate bonus
+- 1st of every month at 2:00 AM CST (automated)
 
-**Database Updates**:
-- commissionPayout (insert record)
-- partners.monthlyCommissionEarned (update)
+**Algorithm**:
+1. Collect all jobs closed in previous month
+2. For each job, walk recruitedBy upline chain (L1 → L2 → L3 → L4)
+3. Apply cascade rates based on networkLevel:
+   - Charter: 5% / 3% / 1.5% / 0.5%
+   - Founding: 4% / 2% / 1% / —
+   - Level 3: 3% / 1.5% / — / —
+   - Level 4: 2% / — / — / —
+4. Check home for originationOwner, calculate origination payout (1.5% Charter or 1.0% Founding)
+5. Enforce 20% floor: Verify ProLnk retains ≥20% of platform fee. If breached, reduce cascade proportionally from deepest level first
+6. Enforce $25 minimum: Earnings <$25 roll forward with status='rolled_forward', accumulate until crossing $25
+7. Queue payouts: Update all status='pending' to status='approved' for processor
 
-**Success Metric**: 100% accuracy, <100ms calculation time
+**Database Tables**:
+- networkEarnings (insert all cascade + origination records)
+- partners (reference for networkLevel, recruitedBy chain)
+- jobs (read completed jobs from previous month)
+- homes (reference for originationOwner)
+
+**Error Handling**: If calculation fails, send alert to Andrew via Resend, halt payout processing
+
+**Success Metric**: 100% accuracy, 20% floor enforced on every job, zero calculation errors
 
 ---
 
 ### 8. Payout Processor Agent 🔄
 **Status**: Planned (Week 3)
-**Responsibility**: Monthly payout generation and delivery
+**Responsibility**: Monthly payout generation and Stripe Connect delivery
 
-**Capabilities**:
-- Aggregate commissions by partner
-- Generate payout records
-- Integrate with Stripe/ACH
-- Send payout notifications
-- Handle failed payouts
-- Generate 1099 data
+**n8n Workflow 2 — Payout Processor**
 
-**Triggers**:
-- Monthly payout date (15th)
-- Manual payout request
-- Dispute resolution
-- Tax year end
+**Trigger**: 3rd of month at 2:00 AM CST (runs after Commission Calculator)
 
-**Success Metric**: 100% accurate payouts, <99% delivery rate
+**Algorithm**:
+1. Query all networkEarnings with status='approved'
+2. Group by proId, sum total earnings (cascade + origination)
+3. Apply minimum payout threshold: Only disburse if total ≥$25
+4. Earnings <$25 roll forward and accumulate in networkEarnings table (status remains 'pending')
+5. Send via Stripe Connect using pro's connected bank account
+6. Update records to status='paid' and set paidAt timestamp
+7. Send email to each pro via Resend with breakdown (cascade earnings, origination earnings, total, next payment if rolled forward)
+8. Error handling: Stripe failures marked as status='retry' (retry next month)
+
+**Database Operations**:
+- SELECT: networkEarnings (status='approved'), pro (stripeConnectId)
+- UPDATE: networkEarnings SET status='paid', paidAt=NOW()
+- UPDATE: networkEarnings SET status='rolled_forward' WHERE amount < 25
+
+**Stripe Integration**:
+- Each pro must have Stripe Connect account onboarded at signup
+- API call: Stripe.transfers.create() to pro's connected account
+- Failure handling: Catch Stripe errors, mark as 'retry', send alert to Andrew
+
+**Email Notification**:
+- Template: EarningsNotification
+- Contains: Earnings breakdown by type, total amount, payment method (Stripe), next payout date
+
+**Success Metric**: 100% accurate payouts, ≥99% delivery rate, <$1 error margin
 
 ---
 

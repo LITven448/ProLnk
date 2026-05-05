@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { publicProcedure, adminProcedure, router } from "../_core/trpc";
-import { getDb } from "../db";
+import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation } from "../email";
 import { notifyOwner } from "../_core/notification";
@@ -98,27 +98,29 @@ export const waitlistRouter = router({
     .mutation(async ({ input, ctx }) => {
       return await logger.track("waitlist:joinProWaitlist", async () => {
         const db = await getDb();
+        const pool = await getPool();
         const ipAddress = ctx.req.ip || ctx.req.headers["x-forwarded-for"] || "unknown";
         const userAgent = ctx.req.headers["user-agent"];
 
-        if (!db) {
+        if (!db || !pool) {
           await waitlistAnalytics.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
           throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable. Please try again.' });
         }
 
         try {
           // Validate email is not already in system (catch duplicate early)
-          const existingProSignup = await (db as any).execute(
-            sql`SELECT id FROM proWaitlist WHERE email = ${input.email} LIMIT 1`
+          const [existingProSignup] = await pool.query(
+            `SELECT id FROM proWaitlist WHERE email = ? LIMIT 1`,
+            [input.email]
           );
-          if (existingProSignup?.rows?.[0]) {
+          if ((existingProSignup as any[])?.[0]) {
             await waitlistAnalytics.track({ type: "error", source: "pro_waitlist", email: input.email }, String(ipAddress), String(userAgent));
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
           }
 
           // Insert with full field validation
-          await (db as any).execute(
-            sql`INSERT INTO proWaitlist (
+          await pool.query(
+            `INSERT INTO proWaitlist (
               firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
               employeeCount, estimatedJobsPerMonth, avgJobValue, trades, customTradeDescription,
               licenseFileUrl, licenseFileName, smsOptIn, primaryCity, primaryState, serviceZipCodes,
@@ -126,26 +128,27 @@ export const waitlistRouter = router({
               referralsReceivedPerMonth, currentReferralMethod, primaryGoal, hearAboutUs,
               additionalNotes, referredBy, createdAt
             ) VALUES (
-              ${input.firstName}, ${input.lastName}, ${input.email}, ${input.phone},
-              ${input.businessName}, ${input.businessType}, ${input.yearsInBusiness},
-              ${input.employeeCount}, ${input.estimatedJobsPerMonth}, ${input.avgJobValue},
-              ${JSON.stringify(input.trades)}, ${input.customTradeDescription ?? null},
-              ${input.licenseFileUrl ?? null}, ${input.licenseFileName ?? null},
-              ${input.smsOptIn ? 1 : 0}, ${input.primaryCity}, ${input.primaryState},
-              ${input.serviceZipCodes}, ${input.serviceRadiusMiles},
-              ${JSON.stringify(input.currentSoftware)}, ${input.otherSoftware ?? null},
-              ${input.referralsGivenPerMonth}, ${input.referralsReceivedPerMonth},
-              ${input.currentReferralMethod ?? null}, ${input.primaryGoal},
-              ${input.hearAboutUs ?? null}, ${input.additionalNotes ?? null},
-              ${input.referralCode ?? null}, NOW()
-            )`
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
+            )`,
+            [
+              input.firstName, input.lastName, input.email, input.phone,
+              input.businessName, input.businessType, input.yearsInBusiness,
+              input.employeeCount, input.estimatedJobsPerMonth, input.avgJobValue,
+              JSON.stringify(input.trades), input.customTradeDescription ?? null,
+              input.licenseFileUrl ?? null, input.licenseFileName ?? null,
+              input.smsOptIn ? 1 : 0, input.primaryCity, input.primaryState,
+              input.serviceZipCodes, input.serviceRadiusMiles,
+              JSON.stringify(input.currentSoftware), input.otherSoftware ?? null,
+              input.referralsGivenPerMonth, input.referralsReceivedPerMonth,
+              input.currentReferralMethod ?? null, input.primaryGoal,
+              input.hearAboutUs ?? null, input.additionalNotes ?? null,
+              input.referralCode ?? null
+            ]
           );
 
           // Get position
-          const countResult = await (db as any).execute(
-            sql`SELECT COUNT(*) as cnt FROM proWaitlist`
-          );
-          const position = Number((countResult?.rows?.[0] as any)?.cnt ?? 1);
+          const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM proWaitlist`);
+          const position = Number((countResult[0] as any)?.cnt ?? 1);
 
           // Send confirmation email (fire-and-forget, errors logged separately)
           sendProWaitlistConfirmation({
@@ -211,27 +214,29 @@ export const waitlistRouter = router({
     .mutation(async ({ input, ctx }) => {
       return await logger.track("waitlist:joinHomeWaitlist", async () => {
         const db = await getDb();
+        const pool = await getPool();
         const ipAddress = ctx.req.ip || ctx.req.headers["x-forwarded-for"] || "unknown";
         const userAgent = ctx.req.headers["user-agent"];
 
-        if (!db) {
+        if (!db || !pool) {
           await waitlistAnalytics.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
           throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable.' });
         }
 
         try {
           // Check for existing signup
-          const existingHomeSignup = await (db as any).execute(
-            sql`SELECT id FROM homeWaitlist WHERE email = ${input.email} LIMIT 1`
+          const [existingHomeSignup] = await pool.query(
+            `SELECT id FROM homeWaitlist WHERE email = ? LIMIT 1`,
+            [input.email]
           );
-          if (existingHomeSignup?.rows?.[0]) {
+          if ((existingHomeSignup as any[])?.[0]) {
             await waitlistAnalytics.track({ type: "error", source: "trustypro_7step", email: input.email }, String(ipAddress), String(userAgent));
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
           }
 
           // Insert
-          await (db as any).execute(
-            sql`INSERT INTO homeWaitlist (
+          await pool.query(
+            `INSERT INTO homeWaitlist (
               firstName, lastName, email, phone, address, city, state, zipCode, homeType,
               yearBuilt, squareFootage, lotSizeSqFt, bedrooms, bathrooms, stories, garageSpaces,
               hasPool, hasBasement, hasAttic, ownershipStatus, ownershipType, isRental,
@@ -241,33 +246,34 @@ export const waitlistRouter = router({
               hearAboutUs, additionalNotes, consentTerms, consentEmail, consentSms,
               consentPush, consentMarketing, consentDataUse, preferredContact, createdAt
             ) VALUES (
-              ${input.firstName}, ${input.lastName}, ${input.email}, ${input.phone ?? null},
-              ${input.address}, ${input.city}, ${input.state}, ${input.zipCode}, ${input.homeType},
-              ${input.yearBuilt ?? null}, ${input.squareFootage ?? null}, ${input.lotSizeSqFt ?? null},
-              ${input.bedrooms ?? null}, ${input.bathrooms ?? null}, ${input.stories ?? null},
-              ${input.garageSpaces ?? null}, ${input.hasPool ? 1 : 0}, ${input.hasBasement ? 1 : 0},
-              ${input.hasAttic ? 1 : 0}, ${input.ownershipStatus}, ${input.ownershipType},
-              ${input.isRental ? 1 : 0}, ${input.companyName ?? null}, ${input.companyEin ?? null},
-              ${input.propertyManagerName ?? null}, ${input.propertyManagerPhone ?? null},
-              ${input.yearsOwned ?? null}, ${input.overallCondition ?? null},
-              ${input.recentImprovements ? JSON.stringify(input.recentImprovements) : null},
-              ${JSON.stringify(input.desiredProjects)}, ${input.projectTimeline},
-              ${input.estimatedBudget ?? null},
-              ${input.homeSystems ? JSON.stringify(input.homeSystems) : null},
-              ${input.homeStyle ?? null}, ${input.exteriorColor ?? null},
-              ${input.primaryPainPoint ?? null}, ${input.hearAboutUs ?? null},
-              ${input.additionalNotes ?? null}, ${input.consentTerms ? 1 : 0},
-              ${input.consentEmail ? 1 : 0}, ${input.consentSms ? 1 : 0},
-              ${input.consentPush ? 1 : 0}, ${input.consentMarketing ? 1 : 0},
-              ${input.consentDataUse ? 1 : 0}, ${input.preferredContact ?? null}, NOW()
-            )`
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
+            )`,
+            [
+              input.firstName, input.lastName, input.email, input.phone ?? null,
+              input.address, input.city, input.state, input.zipCode, input.homeType,
+              input.yearBuilt ?? null, input.squareFootage ?? null, input.lotSizeSqFt ?? null,
+              input.bedrooms ?? null, input.bathrooms ?? null, input.stories ?? null,
+              input.garageSpaces ?? null, input.hasPool ? 1 : 0, input.hasBasement ? 1 : 0,
+              input.hasAttic ? 1 : 0, input.ownershipStatus, input.ownershipType,
+              input.isRental ? 1 : 0, input.companyName ?? null, input.companyEin ?? null,
+              input.propertyManagerName ?? null, input.propertyManagerPhone ?? null,
+              input.yearsOwned ?? null, input.overallCondition ?? null,
+              input.recentImprovements ? JSON.stringify(input.recentImprovements) : null,
+              JSON.stringify(input.desiredProjects), input.projectTimeline,
+              input.estimatedBudget ?? null,
+              input.homeSystems ? JSON.stringify(input.homeSystems) : null,
+              input.homeStyle ?? null, input.exteriorColor ?? null,
+              input.primaryPainPoint ?? null, input.hearAboutUs ?? null,
+              input.additionalNotes ?? null, input.consentTerms ? 1 : 0,
+              input.consentEmail ? 1 : 0, input.consentSms ? 1 : 0,
+              input.consentPush ? 1 : 0, input.consentMarketing ? 1 : 0,
+              input.consentDataUse ? 1 : 0, input.preferredContact ?? null
+            ]
           );
 
           // Get position
-          const countResult = await (db as any).execute(
-            sql`SELECT COUNT(*) as cnt FROM homeWaitlist`
-          );
-          const position = Number((countResult?.rows?.[0] as any)?.cnt ?? 1);
+          const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM homeWaitlist`);
+          const position = Number((countResult[0] as any)?.cnt ?? 1);
 
           // Send confirmation email
           sendHomeownerWaitlistConfirmation({

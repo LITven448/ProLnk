@@ -37,6 +37,11 @@ export async function getDb() {
   return _db;
 }
 
+export async function getPool() {
+  await getDb();
+  return _pool;
+}
+
 export { eq, and, desc, sql, count };
 
 export async function getUserByOpenId(openId: string) {

@@ -1366,6 +1366,9 @@ export const proWaitlist = mysqlTable("proWaitlist", {
   approvedBy: int("approvedBy").references(() => users.id),
   invitedAt: timestamp("invitedAt"),
   adminNotes: text("adminNotes"),
+  rejectionReason: varchar("rejectionReason", { length: 500 }),
+  rejectedAt: timestamp("rejectedAt"),
+  activatedAt: timestamp("activatedAt"),
   source: varchar("source", { length: 100 }).default("prolnk-waitlist"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
@@ -1436,6 +1439,9 @@ export const homeWaitlist = mysqlTable("homeWaitlist", {
   approvedBy: int("approvedBy").references(() => users.id),
   invitedAt: timestamp("invitedAt"),
   adminNotes: text("adminNotes"),
+  rejectionReason: varchar("rejectionReason", { length: 500 }),
+  rejectedAt: timestamp("rejectedAt"),
+  activatedAt: timestamp("activatedAt"),
   source: varchar("source", { length: 100 }).default("trustypro-waitlist"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
@@ -3049,3 +3055,28 @@ export const homeDocumentation = mysqlTable("home_documentation", {
   addressIdx: uniqueIndex("home_doc_address_idx").on(table.addressHash),
   proIdx: index("home_doc_pro_idx").on(table.proUserId),
 }));
+
+// ─── Analytics Events ─────────────────────────────────────────────────────────
+export const analyticsEvents = mysqlTable("analytics_events", {
+  id: int("id").primaryKey(),
+  eventType: varchar("event_type", { length: 50 }).notNull(), // "signup", "form_abandoned", "referral", etc.
+  source: varchar("source", { length: 50 }).notNull(), // "pro_waitlist", "trustypro_7step", "trustypro_simple"
+  email: varchar("email", { length: 320 }),
+  userAgent: text("user_agent"),
+  ipAddress: varchar("ip_address", { length: 64 }),
+  referredBy: varchar("referred_by", { length: 100 }),
+  tradesCount: int("trades_count"),
+  smsOptIn: boolean("sms_opt_in").default(false),
+  hasLicense: boolean("has_license").default(false),
+  duration: int("duration"), // milliseconds to complete form
+  formPosition: int("form_position"), // waitlist position returned
+  metadata: json("metadata").$type<Record<string, any>>(), // arbitrary event data
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+}, (table) => ({
+  eventTypeIdx: index("analytics_event_type_idx").on(table.eventType),
+  sourceIdx: index("analytics_source_idx").on(table.source),
+  emailIdx: index("analytics_email_idx").on(table.email),
+  createdAtIdx: index("analytics_created_at_idx").on(table.createdAt),
+}));
+export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
+export type InsertAnalyticsEvent = typeof analyticsEvents.$inferInsert;

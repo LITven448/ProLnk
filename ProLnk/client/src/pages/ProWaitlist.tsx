@@ -20,71 +20,135 @@ import { Badge } from "@/components/ui/badge";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing -- 3 tiers -------------------------------------------------------
+// --- Pricing -- 5 tiers with Network Income -----------------------------------------------
 const PRICING_TIERS = [
   {
-    name: "Starter",
+    name: "Scout",
     subtitle: "Free to join",
     monthlyFee: 0,
     keepRate: 0.40,
     commissionCap: 500,
     seats: 1,
     popular: false,
-    cta: "Join Free",
+    cta: "Start Free",
     apiAccess: false,
+    tier: "scout",
+    networkIncome: false,
     features: [
       "1 user seat",
       "AI opportunity detection on all jobs",
       "Commission tracking dashboard",
       "FSM integration (Jobber, HCP, ServiceTitan)",
       "Keep 40% of every referral",
-      "$500/mo commission cap",
+      "$500/mo earnings cap",
       "Event-driven leads (storm, aging, recalls)",
+      "Mobile app access",
     ],
   },
   {
     name: "Pro",
-    subtitle: "Most popular",
-    monthlyFee: 79,
-    keepRate: 0.65,
+    subtitle: "Build your network",
+    monthlyFee: 49,
+    keepRate: 0.55,
     commissionCap: null,
-    seats: 5,
-    popular: true,
+    seats: 3,
+    popular: false,
     cta: "Get Pro",
     apiAccess: true,
+    tier: "pro",
+    networkIncome: true,
+    networkRate: "0.5% L1",
     features: [
-      "Up to 5 user seats",
-      "AI opportunity detection on all jobs",
-      "Priority lead routing",
-      "FSM integration (all platforms)",
-      "Keep 65% of every referral",
-      "No commission cap",
+      "Up to 3 user seats",
+      "Keep 55% of every referral",
+      "No earnings cap",
+      "Network income from 1 direct referral",
+      "2% bonus on your own completed jobs",
       "API & webhook access",
-      "Bi-weekly performance report",
-      "Event-driven leads + residual commissions",
+      "Priority lead routing",
+      "Weekly performance analytics",
+      "FSM + AI integration",
     ],
   },
   {
-    name: "Teams",
-    subtitle: "Large operations",
+    name: "Crew",
+    subtitle: "Scale faster",
+    monthlyFee: 99,
+    keepRate: 0.65,
+    commissionCap: null,
+    seats: 10,
+    popular: false,
+    cta: "Get Crew",
+    apiAccess: true,
+    tier: "crew",
+    networkIncome: true,
+    networkRate: "1% L4 + bonuses",
+    features: [
+      "Up to 10 user seats",
+      "Keep 65% of every referral",
+      "Unlimited earnings",
+      "Network income: 1% from 4th-level referrals",
+      "2% bonus on your own jobs",
+      "API & webhook access",
+      "Priority lead routing",
+      "Bi-weekly strategy reviews",
+      "Custom FSM workflows",
+      "Advanced analytics & forecasting",
+    ],
+  },
+  {
+    name: "Company",
+    subtitle: "Most popular",
+    monthlyFee: 149,
+    keepRate: 0.72,
+    commissionCap: null,
+    seats: 25,
+    popular: true,
+    cta: "Get Company",
+    apiAccess: true,
+    tier: "company",
+    networkIncome: true,
+    networkRate: "1.5% L3, 1% L4",
+    features: [
+      "Up to 25 user seats",
+      "Keep 72% of every referral",
+      "Unlimited earnings",
+      "Network income: 1.5% from L3 + 1% from L4",
+      "2% bonus on your own jobs",
+      "Dedicated API support",
+      "First-priority lead routing",
+      "Monthly strategy reviews",
+      "Co-marketing opportunities",
+      "Custom integrations",
+      "Revenue forecasting",
+    ],
+  },
+  {
+    name: "Enterprise",
+    subtitle: "Unlimited growth",
     monthlyFee: null,
     keepRate: 0.78,
     commissionCap: null,
     seats: 999,
     popular: false,
-    cta: "Contact Us",
+    cta: "Contact Sales",
     apiAccess: true,
+    tier: "enterprise",
+    networkIncome: true,
+    networkRate: "2% all levels",
     features: [
       "Unlimited user seats",
-      "AI opportunity detection on all jobs",
-      "First-priority lead routing",
-      "FSM integration (all platforms)",
       "Keep up to 78% of every referral",
-      "API & webhook access",
-      "Dedicated support channel",
-      "Quarterly strategy review",
-      "Event-driven leads + residual commissions",
+      "Unlimited earnings",
+      "Network income: 2% from ALL downline levels",
+      "2% bonus on your own jobs",
+      "Dedicated account manager",
+      "White-label portal options",
+      "Custom pricing & terms",
+      "Integration development support",
       "Predictive revenue forecasting",
+      "Exclusive partner events",
+      "Strategic partnership opportunities",
     ],
   },
 ];
@@ -171,7 +235,11 @@ const FAQS = [
   },
   {
     q: "How do I earn commissions?",
-    a: "When your job photos generate a lead that another partner closes, you earn a share of the platform fee. Starter keeps 40%, Pro keeps 65%, Teams up to 78%. Paid monthly, tracked in real time.",
+    a: "When your job photos generate a lead that another partner closes, you earn a share of the platform fee: Scout keeps 40%, Pro 55%, Crew 65%, Company 72%, Enterprise 78%. Plus earn network income when partners you refer complete jobs. Paid monthly, tracked in real time.",
+  },
+  {
+    q: "What is network income?",
+    a: "When you refer someone to ProLnk, you earn a percentage of their job commissions. Pro earns 0.5% from direct referrals. Crew earns from 4 levels deep. Company earns 1.5% from level 3 + 1% from level 4. Enterprise earns 2% from all downline levels.",
   },
   {
     q: "Do I have to change how I run my business?",
@@ -206,9 +274,15 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 function ROICalculator() {
   const [jobsPerMonth, setJobsPerMonth] = useState([20]);
   const [avgJobValue, setAvgJobValue] = useState([1200]);
-  const [tier, setTier] = useState<"Starter" | "Pro" | "Teams">("Pro");
+  const [tier, setTier] = useState<"scout" | "pro" | "crew" | "company" | "enterprise">("pro");
 
-  const tierData = { Starter: { keep: 0.40, fee: 0, cap: 500 }, Pro: { keep: 0.65, fee: 79, cap: null }, Teams: { keep: 0.78, fee: 299, cap: null } };
+  const tierData = {
+    scout: { keep: 0.40, fee: 0, cap: 500 },
+    pro: { keep: 0.55, fee: 49, cap: null },
+    crew: { keep: 0.65, fee: 99, cap: null },
+    company: { keep: 0.72, fee: 149, cap: null },
+    enterprise: { keep: 0.78, fee: 0, cap: null } // Custom pricing
+  };
   const t = tierData[tier];
   const platformFee = 0.10;
   const conversionRate = 0.15;
@@ -236,16 +310,19 @@ function ROICalculator() {
           <Slider value={avgJobValue} onValueChange={setAvgJobValue} min={200} max={5000} step={100} className="w-full" />
         </div>
       </div>
-      <div className="flex gap-2 mb-6">
-        {(["Starter", "Pro", "Teams"] as const).map((t) => (
-          <button
-            key={t}
-            onClick={() => setTier(t)}
-            className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-all ${tier === t ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
-          >
-            {t}
-          </button>
-        ))}
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {(["scout", "pro", "crew", "company", "enterprise"] as const).map((t) => {
+          const tierLabel = { scout: "Scout", pro: "Pro", crew: "Crew", company: "Company", enterprise: "Enterprise" }[t];
+          return (
+            <button
+              key={t}
+              onClick={() => setTier(t)}
+              className={`flex-1 min-w-[100px] py-2 rounded-lg text-sm font-semibold transition-all ${tier === t ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+            >
+              {tierLabel}
+            </button>
+          );
+        })}
       </div>
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-gray-50 rounded-xl p-4 text-center">
@@ -649,12 +726,16 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto">
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">×</button>
-        {step === "success" ? (
+        {step === "success" && join.data ? (
           <div className="text-center py-4">
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the list!</h2>
+            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-5 inline-block">
+              <p className="text-[#0A1628] font-bold text-lg">Position: #{join.data.position}</p>
+              <p className="text-gray-600 text-xs mt-1">You're #{join.data.position} in the ProLnk network.</p>
+            </div>
             <p className="text-gray-500 text-sm mb-5">Welcome to the ProLnk founding network. Check your email for confirmation.</p>
 
             {/* Step 1: Refer other pros */}
@@ -930,11 +1011,12 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
                   referralsGivenPerMonth: "0",
                   referralsReceivedPerMonth: "0",
                   primaryGoal: "Join waitlist",
-                  hearAboutUs: form.hearAboutUs || (inboundRefCode ? `Referred by code: ${inboundRefCode}` : undefined),
+                  hearAboutUs: form.hearAboutUs || undefined,
                   customTradeDescription: customTradeDesc.trim() || undefined,
                   licenseFileUrl: licenseFile?.url || undefined,
                   licenseFileName: licenseFile?.name || undefined,
                   smsOptIn,
+                  referralCode: inboundRefCode || undefined,
                 });
               }}
               disabled={join.isPending}

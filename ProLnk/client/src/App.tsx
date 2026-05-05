@@ -308,12 +308,20 @@ function LoginRedirect() {
   return null;
 }
 
+function RootPage() {
+  const isTrustyPro = (window as any).__BRAND__ === "trustypro";
+  if (isTrustyPro) {
+    return <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>;
+  }
+  return <SmoothScrollProvider><Home /></SmoothScrollProvider>;
+}
+
 function Router() {
   return (
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
-        <SmoothScrollProvider><Home /></SmoothScrollProvider>
+        <RootPage />
       </Route>
       <Route path="/demo" component={Demo} />
       <Route path="/apply" component={Apply} />

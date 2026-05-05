@@ -1759,6 +1759,7 @@ CREATE TABLE IF NOT EXISTS \`proWaitlist\` (
 	\`invitedAt\` timestamp,
 	\`adminNotes\` text,
 	\`source\` varchar(100) DEFAULT 'prolnk-waitlist',
+	\`referredBy\` varchar(100),
 	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
 	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
 	CONSTRAINT \`proWaitlist_id\` PRIMARY KEY(\`id\`),

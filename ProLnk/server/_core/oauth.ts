@@ -233,17 +233,46 @@ export function registerOAuthRoutes(app: Express) {
 
       await createSession(res, req, openId, googleUser.name);
 
-      // Determine where to redirect
+      // Check if this is a partner signup flow
+      let isPartnerSignup = false;
       let returnPath = "/dashboard";
       if (stateStr) {
         try {
-          const state = JSON.parse(Buffer.from(stateStr, "base64url").toString()) as { returnPath?: string };
+          const state = JSON.parse(Buffer.from(stateStr, "base64url").toString()) as { returnPath?: string; partner?: boolean };
+          isPartnerSignup = state.partner === true;
           if (state.returnPath) returnPath = state.returnPath;
         } catch {}
       }
 
       const savedUser = await db.getUserByOpenId(openId);
       if (savedUser?.role === "admin") returnPath = "/admin";
+
+      // Create partner profile if this is a partner signup
+      if (isPartnerSignup) {
+        try {
+          const { createPartner } = await import("../db");
+          // Create new partner profile via db helper
+          await createPartner({
+            businessName: googleUser.name,
+            businessType: "consulting",
+            serviceArea: "",
+            contactName: googleUser.name,
+            contactEmail: googleUser.email,
+            description: "Partner created via Google OAuth",
+            status: "pending",
+            tier: "scout",
+            commissionRate: "0.40",
+            platformFeeRate: "0.12",
+            referralCommissionRate: "0.048",
+            trialStatus: "active",
+            trialStartedAt: new Date(),
+            stripeConnectStatus: "not_connected",
+          } as any);
+          returnPath = "/partners/dashboard";
+        } catch (err) {
+          console.warn("[Partner OAuth] Failed to create profile:", err);
+        }
+      }
 
       return res.redirect(302, returnPath);
     } catch (err) {

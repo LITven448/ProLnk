@@ -41,6 +41,12 @@ import { adminNotificationsRouter } from "./routers/adminNotifications";
 import { checkrRouter } from "./routers/checkr";
 import { facilityRouter } from "./routers/facility";
 import { projectBidsRouter } from "./routers/projectBids";
+import { waitlistRouter } from "./routers/waitlist";
+import { waitlistAdminRouter } from "./routers/waitlistAdmin";
+import { analyticsAdminRouter } from "./routers/analyticsAdmin";
+import { commissionsRouter } from "./routers/commissions";
+import { photoUploadRouter } from "./routers/photoUpload";
+import { partnerOAuthRouter } from "./routers/partnerOAuth";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
@@ -4060,7 +4066,10 @@ Return JSON only.`,
           title: `New TrustyPro Lead: ${input.serviceType}`,
           content: `${input.name} (${input.email}) at ${input.address} needs ${input.serviceType}. Urgency: ${input.urgency}. Message: ${input.description}`,
         });
-        return { success: true };
+        // Get position for confirmation
+        const leadCountResult = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeownerLeads`);
+        const leadPosition = Number((leadCountResult?.rows?.[0] as any)?.cnt ?? 1);
+        return { success: true, position: leadPosition };
       }),
 
     // Admin: get all TrustyPro leads
@@ -4503,168 +4512,10 @@ Return a JSON object with:
   }),
 
   // ── Waitlist (ProLnk Pros + TrustyPro Homeowners) ─────────────────────────────
-  waitlist: router({
-    // --- Public: live counter for landing pages (no auth required) ---
-    getPublicCounts: publicProcedure.query(async () => {
-      const db = await getDb();
-      if (!db) return { pros: 0, homes: 0 };
-      const [proRows] = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`) as any[];
-      const [homeRows] = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`) as any[];
-      return {
-        pros: Number(proRows?.[0]?.cnt ?? 0),
-        homes: Number(homeRows?.[0]?.cnt ?? 0),
-      };
-    }),
-
-    // --- Pro Waitlist ---
-    joinProWaitlist: publicProcedure
-      .input(z.object({
-        firstName: z.string().min(1).max(100),
-        lastName: z.string().min(1).max(100),
-        email: z.string().email(),
-        phone: z.string().min(7).max(30),
-        businessName: z.string().min(1).max(255),
-        businessType: z.string().min(1).max(100),
-        yearsInBusiness: z.number().int().min(0).max(100),
-        employeeCount: z.string().min(1),
-        estimatedJobsPerMonth: z.number().int().min(0),
-        avgJobValue: z.string().min(1),
-        trades: z.array(z.string()).min(1),
-        primaryCity: z.string().min(1).max(100),
-        primaryState: z.string().min(1).max(50),
-        serviceZipCodes: z.string().min(1),
-        serviceRadiusMiles: z.number().int().min(1).max(500).default(25),
-        currentSoftware: z.array(z.string()),
-        otherSoftware: z.string().max(255).optional(),
-        referralsGivenPerMonth: z.string().min(1),
-        referralsReceivedPerMonth: z.string().min(1),
-        currentReferralMethod: z.string().max(255).optional(),
-        primaryGoal: z.string().min(1).max(100),
-        hearAboutUs: z.string().max(255).optional(),
-        additionalNotes: z.string().max(2000).optional(),
-        customTradeDescription: z.string().max(500).optional(),
-        licenseFileUrl: z.string().max(1000).optional(),
-        licenseFileName: z.string().max(255).optional(),
-        smsOptIn: z.boolean().default(false),
-      }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        try {
-          await (db as any).execute(
-            sql`INSERT INTO proWaitlist (firstName, lastName, email, phone, businessName, businessType, yearsInBusiness, employeeCount, estimatedJobsPerMonth, avgJobValue, trades, customTradeDescription, licenseFileUrl, licenseFileName, smsOptIn, primaryCity, primaryState, serviceZipCodes, serviceRadiusMiles, currentSoftware, otherSoftware, referralsGivenPerMonth, referralsReceivedPerMonth, currentReferralMethod, primaryGoal, hearAboutUs, additionalNotes)
-                VALUES (${input.firstName}, ${input.lastName}, ${input.email}, ${input.phone}, ${input.businessName}, ${input.businessType}, ${input.yearsInBusiness}, ${input.employeeCount}, ${input.estimatedJobsPerMonth}, ${input.avgJobValue}, ${JSON.stringify(input.trades)}, ${input.customTradeDescription ?? null}, ${input.licenseFileUrl ?? null}, ${input.licenseFileName ?? null}, ${input.smsOptIn ? 1 : 0}, ${input.primaryCity}, ${input.primaryState}, ${input.serviceZipCodes}, ${input.serviceRadiusMiles}, ${JSON.stringify(input.currentSoftware)}, ${input.otherSoftware ?? null}, ${input.referralsGivenPerMonth}, ${input.referralsReceivedPerMonth}, ${input.currentReferralMethod ?? null}, ${input.primaryGoal}, ${input.hearAboutUs ?? null}, ${input.additionalNotes ?? null})`
-          );
-        } catch (e: any) {
-          if (e?.code === 'ER_DUP_ENTRY') throw new TRPCError({ code: 'CONFLICT', message: 'This email is already on the waitlist.' });
-          throw e;
-        }
-        const smsNote = input.smsOptIn ? ' (SMS opt-in: YES)' : '';
-        const licenseNote = input.licenseFileUrl ? ' | License uploaded' : '';
-        const customTrade = input.customTradeDescription ? ` | Custom trade: ${input.customTradeDescription}` : '';
-        await notifyOwner({ title: 'New ProLnk Pro Waitlist Signup', content: `${input.firstName} ${input.lastName} (${input.businessName}) joined the ProLnk pro waitlist. Trades: ${input.trades.join(', ')}.${customTrade} City: ${input.primaryCity}, ${input.primaryState}.${smsNote}${licenseNote}` });
-        // Get position for confirmation email
-        const proCountResult = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`);
-        const proPosition = Number((proCountResult?.rows?.[0] as any)?.cnt ?? 1);
-        sendProWaitlistConfirmation({ to: input.email, firstName: input.firstName, businessName: input.businessName, position: proPosition, trades: input.trades, city: input.primaryCity }).catch(() => {});
-        return { success: true };
-      }),
-
-    // --- Homeowner Waitlist ---
-    joinHomeWaitlist: publicProcedure
-      .input(z.object({
-        firstName: z.string().min(1).max(100),
-        lastName: z.string().min(1).max(100),
-        email: z.string().email(),
-        phone: z.string().max(30).optional(),
-        address: z.string().min(1).max(500),
-        city: z.string().min(1).max(100),
-        state: z.string().min(1).max(50),
-        zipCode: z.string().min(5).max(10),
-        homeType: z.enum(['single_family','townhouse','condo','multi_family','mobile']),
-        yearBuilt: z.number().int().min(1800).max(2030).optional(),
-        squareFootage: z.number().int().min(100).max(50000).optional(),
-        lotSizeSqFt: z.number().int().min(0).optional(),
-        bedrooms: z.number().int().min(0).max(20).optional(),
-        bathrooms: z.string().max(10).optional(),
-        stories: z.number().int().min(1).max(10).optional(),
-        garageSpaces: z.number().int().min(0).max(10).optional(),
-        hasPool: z.boolean().default(false),
-        hasBasement: z.boolean().default(false),
-        hasAttic: z.boolean().default(false),
-        ownershipStatus: z.enum(['own','rent']).default('own'),
-        ownershipType: z.enum(['primary_residence','rental','company_owned']).default('primary_residence'),
-        isRental: z.boolean().default(false),
-        companyName: z.string().max(255).optional(),
-        companyEin: z.string().max(20).optional(),
-        propertyManagerName: z.string().max(255).optional(),
-        propertyManagerPhone: z.string().max(30).optional(),
-        yearsOwned: z.number().int().min(0).optional(),
-        overallCondition: z.enum(['excellent','good','fair','needs_work']).optional(),
-        recentImprovements: z.array(z.string()).optional(),
-        desiredProjects: z.array(z.string()).min(1),
-        projectTimeline: z.enum(['asap','3_months','6_months','1_year','just_exploring']).default('just_exploring'),
-        estimatedBudget: z.string().max(50).optional(),
-        homeSystems: z.record(z.string(), z.string()).optional(),
-        homeStyle: z.string().max(100).optional(),
-        exteriorColor: z.string().max(100).optional(),
-        primaryPainPoint: z.string().max(255).optional(),
-        hearAboutUs: z.string().max(255).optional(),
-        additionalNotes: z.string().max(2000).optional(),
-        consentTerms: z.boolean().default(false),
-        consentEmail: z.boolean().default(false),
-        consentSms: z.boolean().default(false),
-        consentPush: z.boolean().default(false),
-        consentMarketing: z.boolean().default(false),
-        consentDataUse: z.boolean().default(false),
-        preferredContact: z.string().max(20).optional(),
-      }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        try {
-          await (db as any).execute(
-            sql`INSERT INTO homeWaitlist (firstName, lastName, email, phone, address, city, state, zipCode, homeType, yearBuilt, squareFootage, lotSizeSqFt, bedrooms, bathrooms, stories, garageSpaces, hasPool, hasBasement, hasAttic, ownershipStatus, ownershipType, isRental, companyName, companyEin, propertyManagerName, propertyManagerPhone, yearsOwned, overallCondition, recentImprovements, desiredProjects, projectTimeline, estimatedBudget, homeSystems, homeStyle, exteriorColor, primaryPainPoint, hearAboutUs, additionalNotes, consentTerms, consentEmail, consentSms, consentPush, consentMarketing, consentDataUse, preferredContact)
-                VALUES (${input.firstName}, ${input.lastName}, ${input.email}, ${input.phone ?? null}, ${input.address}, ${input.city}, ${input.state}, ${input.zipCode}, ${input.homeType}, ${input.yearBuilt ?? null}, ${input.squareFootage ?? null}, ${input.lotSizeSqFt ?? null}, ${input.bedrooms ?? null}, ${input.bathrooms ?? null}, ${input.stories ?? null}, ${input.garageSpaces ?? null}, ${input.hasPool ? 1 : 0}, ${input.hasBasement ? 1 : 0}, ${input.hasAttic ? 1 : 0}, ${input.ownershipStatus}, ${input.ownershipType}, ${input.isRental ? 1 : 0}, ${input.companyName ?? null}, ${input.companyEin ?? null}, ${input.propertyManagerName ?? null}, ${input.propertyManagerPhone ?? null}, ${input.yearsOwned ?? null}, ${input.overallCondition ?? null}, ${input.recentImprovements ? JSON.stringify(input.recentImprovements) : null}, ${JSON.stringify(input.desiredProjects)}, ${input.projectTimeline}, ${input.estimatedBudget ?? null}, ${input.homeSystems ? JSON.stringify(input.homeSystems) : null}, ${input.homeStyle ?? null}, ${input.exteriorColor ?? null}, ${input.primaryPainPoint ?? null}, ${input.hearAboutUs ?? null}, ${input.additionalNotes ?? null}, ${input.consentTerms ? 1 : 0}, ${input.consentEmail ? 1 : 0}, ${input.consentSms ? 1 : 0}, ${input.consentPush ? 1 : 0}, ${input.consentMarketing ? 1 : 0}, ${input.consentDataUse ? 1 : 0}, ${input.preferredContact ?? null})`
-          );
-        } catch (e: any) {
-          if (e?.code === 'ER_DUP_ENTRY') throw new TRPCError({ code: 'CONFLICT', message: 'This email is already on the waitlist.' });
-          throw e;
-        }
-        await notifyOwner({ title: 'New TrustyPro Homeowner Waitlist Signup', content: `${input.firstName} ${input.lastName} (${input.email}) joined the TrustyPro homeowner waitlist. Address: ${input.address}, ${input.city}, ${input.state}. Projects: ${input.desiredProjects.join(', ')}.` });
-        // Get position for confirmation email
-        const homeCountResult = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`);
-        const homePosition = Number((homeCountResult?.rows?.[0] as any)?.cnt ?? 1);
-        sendHomeownerWaitlistConfirmation({ to: input.email, firstName: input.firstName, address: input.address, city: input.city, position: homePosition, projects: input.desiredProjects }).catch(() => {});
-        return { success: true };
-      }),
-
-    // --- Admin: read waitlists ---
-    getProWaitlist: adminProcedure
-      .input(z.object({ status: z.enum(['pending','approved','rejected','invited','all']).default('all'), limit: z.number().int().min(1).max(500).default(200) }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        const rows = await (db as any).execute(
-          input.status === 'all'
-            ? sql`SELECT * FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`
-            : sql`SELECT * FROM proWaitlist WHERE status = ${input.status} ORDER BY createdAt DESC LIMIT ${input.limit}`
-        );
-        return (rows[0] || []) as any[];
-      }),
-
-    getHomeWaitlist: adminProcedure
-      .input(z.object({ status: z.enum(['pending','approved','rejected','invited','all']).default('all'), limit: z.number().int().min(1).max(500).default(200) }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        const rows = await (db as any).execute(
-          input.status === 'all'
-            ? sql`SELECT * FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`
-            : sql`SELECT * FROM homeWaitlist WHERE status = ${input.status} ORDER BY createdAt DESC LIMIT ${input.limit}`
-        );
-        return (rows[0] || []) as any[];
-      }),
+  ...waitlistRouter.createCaller({} as any),
+  waitlistAdmin: router({
+    // Merge hardened admin router queries + custom mutations
+    ...waitlistAdminRouter.createCaller({} as any),
 
     // --- Admin: update status ---
     updateProStatus: adminProcedure
@@ -4731,17 +4582,14 @@ Return a JSON object with:
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
         const table = input.type === 'pro' ? 'proWaitlist' : 'homeWaitlist';
-        // Fetch the entry
         const rows = await (db as any).execute(
           sql`SELECT * FROM ${sql.raw(table)} WHERE id = ${input.id} LIMIT 1`
         ) as any;
         const entry = rows?.[0]?.[0] ?? rows?.[0];
         if (!entry) throw new TRPCError({ code: 'NOT_FOUND', message: 'Waitlist entry not found' });
-        // Mark as invited
         await (db as any).execute(
           sql`UPDATE ${sql.raw(table)} SET status = 'invited', invitedAt = ${now}, updatedAt = ${now} WHERE id = ${input.id}`
         );
-        // Send invite email via Resend
         const origin = input.origin ?? 'https://prolnk.io';
         const email = entry.email ?? entry.contactEmail;
         const name = entry.name ?? entry.contactName ?? 'there';
@@ -4750,23 +4598,20 @@ Return a JSON object with:
           : `${origin}/join?ref=invite&email=${encodeURIComponent(email ?? '')}`;
         if (email && process.env.RESEND_API_KEY) {
           try {
-            const subject = input.type === 'pro'
-              ? "You're Invited to Join ProLnk \u2014 Your Spot is Ready"
-              : "Your TrustyPro Home Access is Ready";
+            const subject = input.type === 'pro' ? "You're Invited to Join ProLnk \u2014 Your Spot is Ready" : "Your TrustyPro Home Access is Ready";
             const body = input.type === 'pro'
               ? `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px"><h2>Welcome to ProLnk, ${name}!</h2><p>Your 30-day free trial is ready. ProLnk connects home service pros with qualified leads from AI-powered home scans \u2014 no cold calling, no Angi fees.</p><div style="text-align:center;margin:32px 0"><a href="${signupUrl}" style="background:#f59e0b;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold">Activate My Account \u2192</a></div><p style="color:#888;font-size:13px">This invitation expires in 7 days.</p></div>`
               : `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px"><h2>Welcome to TrustyPro, ${name}!</h2><p>Your home is ready for its first AI health scan. We'll identify repair needs and connect you with verified local pros.</p><div style="text-align:center;margin:32px 0"><a href="${signupUrl}" style="background:#f59e0b;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold">Set Up My Home \u2192</a></div><p style="color:#888;font-size:13px">This invitation expires in 7 days.</p></div>`;
-            const res = await fetch('https://api.resend.com/emails', {
+            await fetch('https://api.resend.com/emails', {
               method: 'POST',
               headers: { 'Authorization': `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
               body: JSON.stringify({ from: 'ProLnk <onboarding@resend.dev>', to: [email], subject, html: body }),
-            });
-            if (!res.ok) console.error('[WaitlistInvite] Email send failed:', await res.text());
+            }).catch(() => {});
           } catch (emailErr) {
-            console.error('[WaitlistInvite] Email send failed:', emailErr);
+            logger.error('[WaitlistInvite] Email send failed', { error: emailErr });
           }
         }
-        await notifyOwner({ title: `Waitlist Invite Sent`, content: `${name} (${email}) invited as ${input.type === 'pro' ? 'partner' : 'homeowner'}. Link: ${signupUrl}` });
+        await notifyOwner({ title: `Waitlist Invite Sent`, content: `${name} (${email}) invited as ${input.type === 'pro' ? 'partner' : 'homeowner'}.` });
         return { success: true, email, name };
       }),
 
@@ -4797,12 +4642,26 @@ Return a JSON object with:
           if (e?.code === 'ER_DUP_ENTRY') throw new TRPCError({ code: 'CONFLICT', message: 'This email is already on the commercial waitlist.' });
           throw e;
         }
-        await notifyOwner({ title: 'New Commercial Waitlist Signup', content: `${input.contactName} (${input.businessName}) joined the ProLnk Exchange commercial waitlist. Type: ${input.businessType}. Portfolio: ${input.portfolioSize}. Area: ${input.serviceArea ?? 'N/A'}.` });
-        // Fire n8n workflow for commercial waitlist signup
-        n8n.commercialWaitlistJoined({ email: input.contactEmail, name: input.contactName, company: input.businessName, phone: input.contactPhone ?? undefined }).catch(() => {});
+        await notifyOwner({ title: 'New Commercial Waitlist Signup', content: `${input.contactName} (${input.businessName}) joined the ProLnk Exchange commercial waitlist.` });
+        n8n.commercialWaitlistJoined({ email: input.contactEmail, name: input.contactName, company: input.businessName, phone: input.contactPhone }).catch(() => {});
         return { success: true };
       }),
   }),
+
+  // ── Analytics Admin ─────────────────────────────────────────────────────────
+  analytics: router({
+    ...analyticsAdminRouter.createCaller({} as any),
+  }),
+
+  // ── Commission Engine ────────────────────────────────────────────────────────
+  commissions: commissionsRouter,
+
+  // ── Photo Upload & Scanning ─────────────────────────────────────────────────
+  photoUpload: photoUploadRouter,
+
+  // ── Partner OAuth Onboarding ────────────────────────────────────────────────
+  partnerOAuth: partnerOAuthRouter,
+
   circumvention: router({
     runSweep: adminProcedure.mutation(async () => {
       await runCircumventionSweep();

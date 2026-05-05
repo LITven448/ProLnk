@@ -1174,6 +1174,15 @@ export default function TrustyProHome() {
 
               {intakeStep === 3 && (
                 <div className="px-8 py-6 text-center">
+                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-7 h-7 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">You're All Set!</h3>
+                  <div className="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-3 mb-4 inline-block">
+                    <p className="text-indigo-900 font-bold text-lg">Position: #{submitLead.data?.position ?? '...'}</p>
+                    <p className="text-indigo-700 text-xs mt-1">You're #{submitLead.data?.position ?? '...'} in the queue.</p>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-6">We'll match you with vetted pros. Check your email for updates!</p>
                   <button
                     onClick={closeIntake}
                     className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"

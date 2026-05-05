@@ -19,6 +19,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { webhookRouter } from "../webhooks";
+import { registerN8nWebhooks } from "../webhooks/n8n";
 import { handleStripeWebhook } from "../routers/stripe";
 import { storagePut } from "../storage";
 import { sweepExpiredLeads } from "../intake-router";
@@ -55,7 +56,34 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
   throw new Error(`No available port found starting from ${startPort}`);
 }
 
+async function validateEnvironment() {
+  const required = [
+    'DATABASE_URL',
+    'NODE_ENV',
+    'RESEND_API_KEY',
+    'STRIPE_SECRET_KEY',
+  ];
+
+  const missing = required.filter(v => !process.env[v]);
+  if (missing.length > 0) {
+    console.error(`[ERROR] Missing required environment variables: ${missing.join(', ')}`);
+    console.error('Server startup blocked. Check your .env file.');
+    process.exit(1);
+  }
+
+  const warnings = [];
+  if (!process.env.OPENAI_API_KEY) warnings.push('OPENAI_API_KEY');
+  if (!process.env.ANTHROPIC_API_KEY) warnings.push('ANTHROPIC_API_KEY');
+  if (!process.env.SENTRY_DSN) warnings.push('SENTRY_DSN (error tracking disabled)');
+
+  if (warnings.length > 0) {
+    console.warn(`[WARN] Optional env vars not set: ${warnings.join(', ')}`);
+  }
+}
+
 async function startServer() {
+  await validateEnvironment();
+
   const app = express();
   const server = createServer(app);
   // Trust proxy for proper rate limiting behind reverse proxy
@@ -87,6 +115,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Webhook receivers for external integrations
   app.use("/api/webhooks", webhookRouter);
+  // n8n automation webhooks
+  registerN8nWebhooks(app);
 
   // Photo upload endpoint -- accepts base64 encoded images
   app.post("/api/upload-photos", async (req, res) => {

@@ -32,12 +32,20 @@ export async function setupVite(app: Express, server: Server) {
         "index.html"
       );
 
+      // Detect brand from hostname
+      const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
+      const isTrustyPro = hostname.includes("trustypro");
+
       // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
       template = template.replace(
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
+      // Inject brand detection script
+      const brandScript = `<script>window.__BRAND__='${isTrustyPro ? "trustypro" : "prolnk"}';</script>`;
+      template = template.replace("</head>", `${brandScript}</head>`);
+
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
@@ -87,12 +95,20 @@ export function serveStatic(app: Express) {
 
   // Fallback: serve index.html for all SPA routes (client-side routing)
   // Always with no-cache headers so every navigation gets the freshest shell.
-  app.use("*", (_req, res) => {
+  app.use("*", (req, res) => {
+    // Detect brand from hostname
+    const hostname = (req.get("host") || "prolnk.io").split(":")[0].toLowerCase();
+    const isTrustyPro = hostname.includes("trustypro");
+
+    let indexHtml = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+    const brandScript = `<script>window.__BRAND__='${isTrustyPro ? "trustypro" : "prolnk"}';</script>`;
+    indexHtml = indexHtml.replace("</head>", `${brandScript}</head>`);
+
     res.set({
       "Cache-Control": "no-cache, no-store, must-revalidate",
       Pragma: "no-cache",
       Expires: "0",
     });
-    res.sendFile(path.resolve(distPath, "index.html"));
+    res.send(indexHtml);
   });
 }

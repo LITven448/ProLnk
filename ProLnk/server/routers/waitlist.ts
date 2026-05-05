@@ -126,7 +126,7 @@ export const waitlistRouter = router({
               licenseFileUrl, licenseFileName, smsOptIn, primaryCity, primaryState, serviceZipCodes,
               serviceRadiusMiles, currentSoftware, otherSoftware, referralsGivenPerMonth,
               referralsReceivedPerMonth, currentReferralMethod, primaryGoal, hearAboutUs,
-              additionalNotes, referredBy, createdAt
+              additionalNotes, createdAt
             ) VALUES (
               ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
             )`,
@@ -141,8 +141,7 @@ export const waitlistRouter = router({
               JSON.stringify(input.currentSoftware), input.otherSoftware ?? null,
               input.referralsGivenPerMonth, input.referralsReceivedPerMonth,
               input.currentReferralMethod ?? null, input.primaryGoal,
-              input.hearAboutUs ?? null, input.additionalNotes ?? null,
-              input.referralCode ?? null
+              input.hearAboutUs ?? null, input.additionalNotes ?? null
             ]
           );
 

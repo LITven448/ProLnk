@@ -13,30 +13,9 @@ const ProWaitlistSchema = z.object({
   lastName: z.string().min(1).max(100).trim(),
   email: z.string().email().toLowerCase(),
   phone: z.string().min(7).max(30),
-  businessName: z.string().min(1).max(255),
-  businessType: z.string().min(1).max(100),
-  yearsInBusiness: z.number().int().min(0).max(100),
-  employeeCount: z.string().min(1),
-  estimatedJobsPerMonth: z.number().int().min(0),
-  avgJobValue: z.string().min(1),
-  trades: z.array(z.string().min(1).max(50)).min(1).max(20),
+  trade: z.string().min(1).max(100),
   primaryCity: z.string().min(1).max(100),
-  primaryState: z.string().min(1).max(50),
-  serviceZipCodes: z.string().min(1),
-  serviceRadiusMiles: z.number().int().min(1).max(500).default(25),
-  currentSoftware: z.array(z.string()),
-  otherSoftware: z.string().max(255).optional(),
-  referralsGivenPerMonth: z.string().min(1),
-  referralsReceivedPerMonth: z.string().min(1),
-  currentReferralMethod: z.string().max(255).optional(),
-  primaryGoal: z.string().min(1).max(100),
-  hearAboutUs: z.string().max(255).optional(),
-  additionalNotes: z.string().max(2000).optional(),
-  customTradeDescription: z.string().max(500).optional(),
-  licenseFileUrl: z.string().url().max(1000).optional(),
-  licenseFileName: z.string().max(255).optional(),
-  smsOptIn: z.boolean().default(false),
-  referralCode: z.string().max(100).optional(),
+  primaryState: z.string().min(2).max(2),
 });
 
 const HomeWaitlistSchema = z.object({
@@ -46,45 +25,9 @@ const HomeWaitlistSchema = z.object({
   phone: z.string().max(30).optional(),
   address: z.string().min(1).max(500),
   city: z.string().min(1).max(100),
-  state: z.string().min(1).max(50),
+  state: z.string().min(2).max(2),
   zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
-  homeType: z.enum(['single_family','townhouse','condo','multi_family','mobile']),
-  yearBuilt: z.number().int().min(1800).max(new Date().getFullYear() + 1).optional(),
-  squareFootage: z.number().int().min(100).max(50000).optional(),
-  lotSizeSqFt: z.number().int().min(0).optional(),
-  bedrooms: z.number().int().min(0).max(20).optional(),
-  bathrooms: z.string().max(10).optional(),
-  stories: z.number().int().min(1).max(10).optional(),
-  garageSpaces: z.number().int().min(0).max(10).optional(),
-  hasPool: z.boolean().default(false),
-  hasBasement: z.boolean().default(false),
-  hasAttic: z.boolean().default(false),
-  ownershipStatus: z.enum(['own','rent']).default('own'),
-  ownershipType: z.enum(['primary_residence','rental','company_owned']).default('primary_residence'),
-  isRental: z.boolean().default(false),
-  companyName: z.string().max(255).optional(),
-  companyEin: z.string().max(20).optional(),
-  propertyManagerName: z.string().max(255).optional(),
-  propertyManagerPhone: z.string().max(30).optional(),
-  yearsOwned: z.number().int().min(0).optional(),
-  overallCondition: z.enum(['excellent','good','fair','needs_work']).optional(),
-  recentImprovements: z.array(z.string()).optional(),
-  desiredProjects: z.array(z.string()).min(1).max(20),
-  projectTimeline: z.enum(['asap','3_months','6_months','1_year','just_exploring']).default('just_exploring'),
-  estimatedBudget: z.string().max(50).optional(),
-  homeSystems: z.record(z.string(), z.string()).optional(),
-  homeStyle: z.string().max(100).optional(),
-  exteriorColor: z.string().max(100).optional(),
-  primaryPainPoint: z.string().max(255).optional(),
-  hearAboutUs: z.string().max(255).optional(),
-  additionalNotes: z.string().max(2000).optional(),
-  consentTerms: z.boolean().default(false),
-  consentEmail: z.boolean().default(false),
-  consentSms: z.boolean().default(false),
-  consentPush: z.boolean().default(false),
-  consentMarketing: z.boolean().default(false),
-  consentDataUse: z.boolean().default(false),
-  preferredContact: z.string().max(20).optional(),
+  serviceNeeded: z.string().min(1).max(255),
 });
 
 const SimpleWaitlistSchema = z.object({
@@ -118,30 +61,20 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
           }
 
-          // Insert with full field validation
           await pool.query(
             `INSERT INTO proWaitlist (
               firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
-              employeeCount, estimatedJobsPerMonth, avgJobValue, trades, customTradeDescription,
-              licenseFileUrl, licenseFileName, smsOptIn, primaryCity, primaryState, serviceZipCodes,
-              serviceRadiusMiles, currentSoftware, otherSoftware, referralsGivenPerMonth,
-              referralsReceivedPerMonth, currentReferralMethod, primaryGoal, hearAboutUs,
-              additionalNotes
+              employeeCount, estimatedJobsPerMonth, avgJobValue, trades, primaryCity, primaryState,
+              serviceZipCodes, serviceRadiusMiles, currentSoftware, referralsGivenPerMonth,
+              referralsReceivedPerMonth, primaryGoal
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
               input.firstName, input.lastName, input.email, input.phone,
-              input.businessName, input.businessType, input.yearsInBusiness,
-              input.employeeCount, input.estimatedJobsPerMonth, input.avgJobValue,
-              JSON.stringify(input.trades), input.customTradeDescription ?? null,
-              input.licenseFileUrl ?? null, input.licenseFileName ?? null,
-              input.smsOptIn ? 1 : 0, input.primaryCity, input.primaryState,
-              input.serviceZipCodes, input.serviceRadiusMiles,
-              JSON.stringify(input.currentSoftware), input.otherSoftware ?? null,
-              input.referralsGivenPerMonth, input.referralsReceivedPerMonth,
-              input.currentReferralMethod ?? null, input.primaryGoal,
-              input.hearAboutUs ?? null, input.additionalNotes ?? null
+              input.trade, input.trade, 1,
+              "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
+              input.primaryState, 25, JSON.stringify([]), "0", "0", "more_leads"
             ]
           );
 
@@ -149,13 +82,11 @@ export const waitlistRouter = router({
           const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM proWaitlist`);
           const position = Number((countResult[0] as any)?.cnt ?? 1);
 
-          // Send confirmation email (fire-and-forget, errors logged separately)
           sendProWaitlistConfirmation({
             to: input.email,
             firstName: input.firstName,
-            businessName: input.businessName,
+            trade: input.trade,
             position,
-            trades: input.trades,
             city: input.primaryCity
           }).catch((err) => {
             logger.error("Email send failed for Pro waitlist", {
@@ -164,30 +95,20 @@ export const waitlistRouter = router({
             });
           });
 
-          // Send admin notification
-          const smsNote = input.smsOptIn ? ' (SMS opt-in: YES)' : '';
-          const licenseNote = input.licenseFileUrl ? ' | License uploaded' : '';
-          const customTrade = input.customTradeDescription ? ` | Custom trade: ${input.customTradeDescription}` : '';
           notifyOwner({
             title: 'New ProLnk Pro Waitlist Signup',
-            content: `${input.firstName} ${input.lastName} (${input.businessName}) joined Pro waitlist. Trades: ${input.trades.join(', ')}.${customTrade} City: ${input.primaryCity}, ${input.primaryState}.${smsNote}${licenseNote}`
+            content: `${input.firstName} ${input.lastName} joined Pro waitlist. Trade: ${input.trade}. City: ${input.primaryCity}, ${input.primaryState}.`
           }).catch((err) => {
             logger.warn("Admin notification failed for Pro waitlist", { email: input.email });
           });
 
-          // Track analytics
           await waitlistAnalytics.track({
             type: "signup",
             source: "pro_waitlist",
             email: input.email,
-            referredBy: input.referralCode,
-            tradesCount: input.trades.length,
-            smsOptIn: input.smsOptIn,
-            hasLicense: !!input.licenseFileUrl,
             formPosition: position,
             metadata: {
-              businessName: input.businessName,
-              businessType: input.businessType,
+              trade: input.trade,
               city: input.primaryCity,
               state: input.primaryState
             }
@@ -240,40 +161,17 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
           }
 
-          // Insert
           await pool.query(
             `INSERT INTO homeWaitlist (
               firstName, lastName, email, phone, address, city, state, zipCode, homeType,
-              yearBuilt, squareFootage, lotSizeSqFt, bedrooms, bathrooms, stories, garageSpaces,
-              hasPool, hasBasement, hasAttic, ownershipStatus, ownershipType, isRental,
-              companyName, companyEin, propertyManagerName, propertyManagerPhone, yearsOwned,
-              overallCondition, recentImprovements, desiredProjects, projectTimeline,
-              estimatedBudget, homeSystems, homeStyle, exteriorColor, primaryPainPoint,
-              hearAboutUs, additionalNotes, consentTerms, consentEmail, consentSms,
-              consentPush, consentMarketing, consentDataUse, preferredContact
+              desiredProjects, projectTimeline, ownershipStatus, ownershipType
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
               input.firstName, input.lastName, input.email, input.phone ?? null,
-              input.address, input.city, input.state, input.zipCode, input.homeType,
-              input.yearBuilt ?? null, input.squareFootage ?? null, input.lotSizeSqFt ?? null,
-              input.bedrooms ?? null, input.bathrooms ?? null, input.stories ?? null,
-              input.garageSpaces ?? null, input.hasPool ? 1 : 0, input.hasBasement ? 1 : 0,
-              input.hasAttic ? 1 : 0, input.ownershipStatus, input.ownershipType,
-              input.isRental ? 1 : 0, input.companyName ?? null, input.companyEin ?? null,
-              input.propertyManagerName ?? null, input.propertyManagerPhone ?? null,
-              input.yearsOwned ?? null, input.overallCondition ?? null,
-              input.recentImprovements ? JSON.stringify(input.recentImprovements) : null,
-              JSON.stringify(input.desiredProjects), input.projectTimeline,
-              input.estimatedBudget ?? null,
-              input.homeSystems ? JSON.stringify(input.homeSystems) : null,
-              input.homeStyle ?? null, input.exteriorColor ?? null,
-              input.primaryPainPoint ?? null, input.hearAboutUs ?? null,
-              input.additionalNotes ?? null, input.consentTerms ? 1 : 0,
-              input.consentEmail ? 1 : 0, input.consentSms ? 1 : 0,
-              input.consentPush ? 1 : 0, input.consentMarketing ? 1 : 0,
-              input.consentDataUse ? 1 : 0, input.preferredContact ?? null
+              input.address, input.city, input.state, input.zipCode, "single_family",
+              JSON.stringify([input.serviceNeeded]), "just_exploring", "own", "primary_residence"
             ]
           );
 
@@ -281,14 +179,13 @@ export const waitlistRouter = router({
           const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM homeWaitlist`);
           const position = Number((countResult[0] as any)?.cnt ?? 1);
 
-          // Send confirmation email
           sendHomeownerWaitlistConfirmation({
             to: input.email,
             firstName: input.firstName,
             address: input.address,
             city: input.city,
             position,
-            projects: input.desiredProjects
+            serviceNeeded: input.serviceNeeded
           }).catch((err) => {
             logger.error("Email send failed for Home waitlist", {
               email: input.email,
@@ -296,25 +193,21 @@ export const waitlistRouter = router({
             });
           });
 
-          // Admin notification
           notifyOwner({
             title: 'New TrustyPro Homeowner Waitlist Signup',
-            content: `${input.firstName} ${input.lastName} (${input.email}) joined homeowner waitlist. Address: ${input.address}, ${input.city}, ${input.state}. Projects: ${input.desiredProjects.join(', ')}.`
+            content: `${input.firstName} ${input.lastName} joined homeowner waitlist. Address: ${input.address}, ${input.city}, ${input.state}. Service: ${input.serviceNeeded}.`
           }).catch(() => {});
 
-          // Analytics
           await waitlistAnalytics.track({
             type: "signup",
             source: "trustypro_7step",
             email: input.email,
             formPosition: position,
             metadata: {
-              homeType: input.homeType,
-              projectTimeline: input.projectTimeline,
-              projectsCount: input.desiredProjects.length,
               address: input.address,
               city: input.city,
-              state: input.state
+              state: input.state,
+              serviceNeeded: input.serviceNeeded
             }
           }, String(ipAddress), String(userAgent));
 

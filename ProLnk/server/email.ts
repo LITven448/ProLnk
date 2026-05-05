@@ -476,9 +476,8 @@ export async function sendTierUpgradeCongrats(opts: {
 export async function sendProWaitlistConfirmation(opts: {
   to: string;
   firstName: string;
-  businessName: string;
+  trade: string;
   position: number;
-  trades: string[];
   city: string;
   referralLink?: string;
 }) {
@@ -498,7 +497,7 @@ export async function sendProWaitlistConfirmation(opts: {
   <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:24px;margin:0 0 24px;text-align:center;">
     <p style="color:#1e40af;font-size:13px;font-weight:600;margin:0 0 4px;">YOUR WAITLIST POSITION</p>
     <p style="color:#1d4ed8;font-size:52px;font-weight:900;margin:0;line-height:1;">#${opts.position}</p>
-    <p style="color:#3b82f6;font-size:13px;margin:8px 0 0;">${opts.businessName} — ${opts.trades.slice(0,3).join(', ')} — ${opts.city}</p>
+    <p style="color:#3b82f6;font-size:13px;margin:8px 0 0;">${opts.trade} — ${opts.city}</p>
   </div>
   <div style="background:#0A1628;border-radius:12px;padding:24px;margin:0 0 24px;">
     <p style="color:#F5E642;font-size:13px;font-weight:700;margin:0 0 8px;">YOUR PERSONAL REFERRAL LINK</p>
@@ -527,14 +526,13 @@ export async function sendHomeownerWaitlistConfirmation(opts: {
   address: string;
   city: string;
   position: number;
-  projects: string[];
+  serviceNeeded: string;
 }) {
-  const projectList = opts.projects.slice(0, 5).map(p => "<li style=\"color:#475569;font-size:14px;line-height:1.8;\">" + p + "</li>").join('');
   return sendEmail({
     from: FROM_TRUSTYPRO,
     to: opts.to,
     subject: `Your TrustyPro Home is Reserved — Welcome, ${opts.firstName}!`,
-    html: "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;\"><div style=\"background:linear-gradient(135deg,#1e3a5f,#00B5B8);padding:40px 32px;text-align:center;\"><div style=\"font-size:32px;font-weight:900;color:#fff;\">TrustyPro</div><p style=\"color:rgba(255,255,255,0.75);margin:8px 0 0;font-size:14px;\">Your Home. Protected. Verified. Smart.</p></div><div style=\"padding:36px 32px;\"><h2 style=\"color:#0f172a;margin:0 0 8px;\">Welcome to TrustyPro, " + opts.firstName + "!</h2><p style=\"color:#475569;line-height:1.7;margin:0 0 24px;\">Your home at <strong>" + opts.address + ", " + opts.city + "</strong> is reserved on the TrustyPro platform.</p><div style=\"background:#E6FAFA;border:1px solid #99E6E8;border-radius:12px;padding:24px;margin:0 0 24px;text-align:center;\"><p style=\"color:#0e7490;font-size:13px;font-weight:600;margin:0 0 4px;\">YOUR WAITLIST POSITION</p><p style=\"color:#0891b2;font-size:52px;font-weight:900;margin:0;line-height:1;\">#" + opts.position + "</p></div><div style=\"background:#F8FAFC;border-radius:12px;padding:20px;margin:0 0 24px;\"><p style=\"color:#0f172a;font-weight:700;margin:0 0 12px;\">Projects we'll match you with pros for:</p><ul style=\"margin:0;padding-left:20px;\">" + projectList + "</ul></div><div style=\"text-align:center;\"><a href=\"${BASE_URL}/join\" style=\"background:#00B5B8;color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;\">View My Waitlist Status</a></div></div><div style=\"background:#F1F5F9;padding:20px 32px;text-align:center;\"><p style=\"color:#94a3b8;font-size:12px;margin:0;\">2026 TrustyPro - DFW, Texas</p></div></div>",
+    html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#1e3a5f,#00B5B8);padding:40px 32px;text-align:center;"><div style="font-size:32px;font-weight:900;color:#fff;">TrustyPro</div><p style="color:rgba(255,255,255,0.75);margin:8px 0 0;font-size:14px;">Your Home. Protected. Verified. Smart.</p></div><div style="padding:36px 32px;"><h2 style="color:#0f172a;margin:0 0 8px;">Welcome to TrustyPro, ${opts.firstName}!</h2><p style="color:#475569;line-height:1.7;margin:0 0 24px;">Your home at <strong>${opts.address}, ${opts.city}</strong> is reserved on the TrustyPro platform.</p><div style="background:#E6FAFA;border:1px solid #99E6E8;border-radius:12px;padding:24px;margin:0 0 24px;text-align:center;"><p style="color:#0e7490;font-size:13px;font-weight:600;margin:0 0 4px;">YOUR WAITLIST POSITION</p><p style="color:#0891b2;font-size:52px;font-weight:900;margin:0;line-height:1;">#${opts.position}</p></div><div style="background:#F8FAFC;border-radius:12px;padding:20px;margin:0 0 24px;"><p style="color:#0f172a;font-weight:700;margin:0 0 12px;">Service Needed:</p><p style="color:#475569;font-size:14px;margin:0;">${opts.serviceNeeded}</p></div><div style="text-align:center;"><a href="${BASE_URL}/join" style="background:#00B5B8;color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">View My Waitlist Status</a></div></div><div style="background:#F1F5F9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 TrustyPro - DFW, Texas</p></div></div>`,
   });
 }
 

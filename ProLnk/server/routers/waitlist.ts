@@ -198,11 +198,18 @@ export const waitlistRouter = router({
           if (error?.code === 'CONFLICT') {
             throw error; // Re-throw TRPC errors
           }
-          logger.error("Pro waitlist signup failed", { email: input.email, error: error?.message });
+          const errorDetails = {
+            email: input.email,
+            message: error?.message,
+            code: error?.code || error?.errno,
+            sqlState: error?.sqlState,
+            sql: error?.sql
+          };
+          logger.error("Pro waitlist signup failed", errorDetails);
           await waitlistAnalytics.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
           throw new TRPCError({
             code: 'INTERNAL_SERVER_ERROR',
-            message: 'Signup failed. Please try again.'
+            message: `Signup failed: ${error?.message || 'Unknown error'}`
           });
         }
       });

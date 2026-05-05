@@ -28,8 +28,15 @@ export default function TrustyProLogin() {
   }, [loading, isAuthenticated, navigate]);
 
   const handleLogin = () => {
-    // Encode return path so after OAuth the user lands on /my-home
     const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
+
+    // OAuth is optional — if not configured, navigate to home
+    if (!oauthPortalUrl) {
+      navigate("/my-home");
+      return;
+    }
+
+    // Encode return path so after OAuth the user lands on /my-home
     const appId = import.meta.env.VITE_APP_ID;
     const redirectUri = `${window.location.origin}/api/oauth/callback`;
     // We embed a custom state that tells the callback this is a homeowner login
@@ -45,6 +52,13 @@ export default function TrustyProLogin() {
 
   const handleSignUp = () => {
     const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
+
+    // OAuth is optional — if not configured, navigate to home
+    if (!oauthPortalUrl) {
+      navigate("/my-home/wizard");
+      return;
+    }
+
     const appId = import.meta.env.VITE_APP_ID;
     const redirectUri = `${window.location.origin}/api/oauth/callback`;
     const statePayload = JSON.stringify({ redirectUri, returnPath: "/my-home/wizard", source: "trustypro" });

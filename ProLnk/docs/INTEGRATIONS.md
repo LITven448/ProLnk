@@ -43,8 +43,8 @@ await stripe.payouts.create({
 ### Testing
 
 Use Stripe test keys for development:
-- `sk_test_4eC39HqLyjWDarhtT657a494` (test secret)
-- `pk_test_51234567890ABCDEF` (test publishable)
+- `sk_test_[test_secret_key]` (test secret)
+- `pk_test_[test_publishable_key]` (test publishable)
 
 ---
 

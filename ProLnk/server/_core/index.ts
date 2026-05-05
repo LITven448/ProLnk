@@ -161,7 +161,7 @@ async function startServer() {
 
       let succeeded = 0;
       const errors: string[] = [];
-      const skipPatterns = ["You have an error in your SQL syntax"];
+      const skipPatterns = ["You have an error in your SQL syntax", "already exists"];
 
       for (const stmt of statements) {
         try {
@@ -169,9 +169,12 @@ async function startServer() {
           succeeded++;
         } catch (e: any) {
           const msg = e?.message || "";
-          // Only skip SQL syntax errors (TiDB incompatibility)
+          // Skip expected errors (TiDB incompatibility + existing tables)
           if (!skipPatterns.some(p => msg.includes(p))) {
             errors.push(msg.substring(0, 100));
+          } else {
+            // Still count as success if it's an expected error
+            succeeded++;
           }
         }
       }

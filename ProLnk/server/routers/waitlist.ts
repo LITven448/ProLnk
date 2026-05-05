@@ -126,9 +126,9 @@ export const waitlistRouter = router({
               licenseFileUrl, licenseFileName, smsOptIn, primaryCity, primaryState, serviceZipCodes,
               serviceRadiusMiles, currentSoftware, otherSoftware, referralsGivenPerMonth,
               referralsReceivedPerMonth, currentReferralMethod, primaryGoal, hearAboutUs,
-              additionalNotes, createdAt
+              additionalNotes
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
               input.firstName, input.lastName, input.email, input.phone,
@@ -243,9 +243,9 @@ export const waitlistRouter = router({
               overallCondition, recentImprovements, desiredProjects, projectTimeline,
               estimatedBudget, homeSystems, homeStyle, exteriorColor, primaryPainPoint,
               hearAboutUs, additionalNotes, consentTerms, consentEmail, consentSms,
-              consentPush, consentMarketing, consentDataUse, preferredContact, createdAt
+              consentPush, consentMarketing, consentDataUse, preferredContact
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
               input.firstName, input.lastName, input.email, input.phone ?? null,

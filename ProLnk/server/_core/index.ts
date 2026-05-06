@@ -231,6 +231,11 @@ async function startServer() {
     }
   });
 
+  // Health check endpoint for Railway/load balancers
+  app.get("/api/health", (_req, res) => {
+    res.json({ status: "ok", timestamp: Date.now() });
+  });
+
   // Sitemap.xml endpoint for SEO
   app.get("/sitemap.xml", async (_req, res) => {
     const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";

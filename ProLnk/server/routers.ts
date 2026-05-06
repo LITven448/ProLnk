@@ -4509,10 +4509,39 @@ Return a JSON object with:
   }),
 
   // ── Waitlist (ProLnk Pros + TrustyPro Homeowners) ─────────────────────────────
-  ...waitlistRouter.createCaller({} as any),
+  proWaitlist: router({
+    create: publicProcedure
+      .input(z.object({
+        firstName: z.string().min(1).max(100),
+        lastName: z.string().min(1).max(100),
+        email: z.string().email(),
+        phone: z.string().min(7).max(30),
+        trade: z.string().min(1).max(100),
+        primaryCity: z.string().min(1).max(100),
+        primaryState: z.string().min(2).max(2),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        return await waitlistRouter.createCaller(ctx).joinProWaitlist(input);
+      }),
+  }),
+  homeWaitlist: router({
+    create: publicProcedure
+      .input(z.object({
+        firstName: z.string().min(1).max(100),
+        lastName: z.string().min(1).max(100),
+        email: z.string().email(),
+        phone: z.string().max(30).optional(),
+        address: z.string().min(1).max(500),
+        city: z.string().min(1).max(100),
+        state: z.string().min(2).max(2),
+        zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
+        serviceNeeded: z.string().min(1).max(255),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        return await waitlistRouter.createCaller(ctx).joinHomeWaitlist(input);
+      }),
+  }),
   waitlistAdmin: router({
-    // Merge hardened admin router queries + custom mutations
-    ...waitlistAdminRouter.createCaller({} as any),
 
     // --- Admin: update status ---
     updateProStatus: adminProcedure

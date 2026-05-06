@@ -594,3 +594,17 @@ export async function sendScoutReportEmail(to: string, homeownerName: string, re
     html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#1e1b4b,#7c3aed);padding:32px;text-align:center;"><div style="font-size:40px;margin-bottom:8px;">📋</div><div style="font-size:28px;font-weight:800;color:#fff;">Your Home Assessment</div><p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:14px;">ProLnk Scout Report</p></div><div style="padding:32px;"><h2 style="color:#0f172a;margin:0 0 8px;">Report Ready: ${propertyAddress}</h2><p style="color:#475569;line-height:1.7;">Hi ${homeownerName}, your comprehensive home assessment report has been completed and is ready to review. Your Scout documented your entire property across 12 zones and generated an AI-powered analysis of condition, priorities, and estimated costs.</p><div style="background:#F3E8FF;border:1px solid #DDD6FE;border-radius:12px;padding:20px;margin:20px 0;"><p style="color:#6B21A8;font-weight:700;margin:0 0 8px;">What's Inside Your Report</p><ul style="color:#7C3A00;margin:8px 0;padding-left:20px;"><li>12-zone property assessment</li><li>Condition analysis & health score</li><li>Priority repair recommendations</li><li>Estimated costs for repairs</li><li>Post to Bid Board (sellers find pros)</li></ul></div><div style="text-align:center;margin:24px 0;"><a href="${reportUrl}" style="background:#7c3aed;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">View Your Report</a></div></div><div style="background:#f1f5f9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 ProLnk - DFW, Texas</p></div></div>`,
   });
 }
+
+// ─── Partner Password Reset ────────────────────────────────────────────────────
+export async function sendPartnerPasswordReset(opts: {
+  to: string;
+  partnerName: string;
+  resetUrl: string;
+}) {
+  return sendEmail({
+    from: FROM_PROLNK,
+    to: opts.to,
+    subject: `Reset your ProLnk password`,
+    html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#0A1628,#00B5B8);padding:32px;text-align:center;"><div style="font-size:28px;font-weight:800;color:#fff;">ProLnk</div></div><div style="padding:32px;"><h2 style="color:#0f172a;margin:0 0 8px;">Reset Your Password</h2><p style="color:#475569;line-height:1.7;">Hi ${opts.partnerName}, we received a request to reset your ProLnk partner account password. Click the button below to set a new password.</p><div style="text-align:center;margin:24px 0;"><a href="${opts.resetUrl}" style="background:#00B5B8;color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Reset Password</a></div><p style="color:#94a3b8;font-size:13px;">This link expires in 1 hour. If you did not request a password reset, you can safely ignore this email.</p></div><div style="background:#f1f5f9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 ProLnk - DFW, Texas</p></div></div>`,
+  });
+}

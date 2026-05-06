@@ -44,6 +44,14 @@ import { projectBidsRouter } from "./routers/projectBids";
 import { waitlistRouter } from "./routers/waitlist";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
+import { automationRulesRouter } from "./routers/automationRules";
+import { diagnosticAgentRouter } from "./routers/diagnosticAgent";
+import { engagementRouter } from "./routers/engagement";
+import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
+import { mediaLibraryRouter } from "./routers/mediaLibrary";
+import { partnerAuthRouter } from "./routers/partnerAuth";
+import { photoPipelineRouter } from "./routers/photo-pipeline";
+import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
@@ -4541,8 +4549,15 @@ Return a JSON object with:
         return await waitlistRouter.createCaller(ctx).joinHomeWaitlist(input);
       }),
   }),
+   automationRules: automationRulesRouter,
+  diagnosticAgent: diagnosticAgentRouter,
+  engagement: engagementRouter,
+  integrationWebhooks: integrationWebhooksRouter,
+  mediaLibrary: mediaLibraryRouter,
+  partnerAuth: partnerAuthRouter,
+  photoPipeline: photoPipelineRouter,
+  seasonalMaintenance: seasonalMaintenanceRouter,
   waitlistAdmin: router({
-
     // --- Admin: update status ---
     updateProStatus: adminProcedure
       .input(z.object({ id: z.number().int(), status: z.enum(['pending','approved','rejected','invited']), adminNotes: z.string().max(1000).optional() }))

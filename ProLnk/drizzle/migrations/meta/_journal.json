@@ -15,6 +15,13 @@
       "when": 1777931115102,
       "tag": "0001_cynical_iron_patriot",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1778092780529,
+      "tag": "0002_spicy_steve_rogers",
+      "breakpoints": true
     }
   ]
 }

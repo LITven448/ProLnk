@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 import {
   InsertUser, users, partners, jobs, opportunities, commissions, broadcasts, industryRates,
-  Partner, InsertPartner, InsertJob, InsertOpportunity,
+  Partner, InsertPartner, InsertJob, InsertOpportunity, photoIntakeQueue,
 } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
@@ -126,7 +126,7 @@ export async function createJob(data: InsertJob) {
 export async function getJobsByPartnerId(partnerId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(jobs).where(eq(jobs.partnerId, partnerId)).orderBy(desc(jobs.loggedAt));
+  return db.select().from(jobs).where(eq(jobs.partnerId, partnerId)).orderBy(desc(jobs.createdAt));
 }
 
 export async function createOpportunity(data: InsertOpportunity) {
@@ -152,7 +152,7 @@ export async function markCommissionPaid(commissionId: number) {
 export async function getEarnedCommissionsByPartnerId(partnerId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(commissions).where(eq(commissions.partnerId, partnerId)).orderBy(desc(commissions.createdAt));
+  return db.select().from(commissions).where(eq(commissions.receivingPartnerId, partnerId)).orderBy(desc(commissions.createdAt));
 }
 
 export async function getCommissionsByPartnerId(partnerId: number) {
@@ -170,7 +170,7 @@ export async function getBroadcastsForPartner(partnerId: number, limit = 20) {
 export async function getIndustryRates() {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(industryRates).orderBy(industryRates.serviceType);
+  return db.select().from(industryRates).orderBy(industryRates.industryName);
 }
 
 export function calculateCommissionRates(
@@ -223,19 +223,19 @@ export async function getJobById(jobId: number) {
 export async function getAllJobs() {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(jobs).orderBy(desc(jobs.loggedAt));
+  return db.select().from(jobs).orderBy(desc(jobs.createdAt));
 }
 
 export async function getJobsByAddress(address: string) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(jobs).where(eq(jobs.address, address)).orderBy(desc(jobs.loggedAt));
+  return db.select().from(jobs).where(eq(jobs.serviceAddress, address)).orderBy(desc(jobs.createdAt));
 }
 
 export async function getUniqueAddresses() {
   const db = await getDb();
   if (!db) return [];
-  return db.selectDistinct({ address: jobs.address }).from(jobs).orderBy(jobs.address);
+  return db.selectDistinct({ address: jobs.serviceAddress }).from(jobs).orderBy(jobs.serviceAddress);
 }
 
 export async function updatePartnerCommissionRates(partnerId: number, rates: { referringRate?: number; receivingRate?: number }) {
@@ -279,7 +279,7 @@ export async function updateOpportunityStatus(opportunityId: number, status: str
 export async function updateJobAiAnalysis(jobId: number, analysis: any) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.update(jobs).set({ aiAnalysis: analysis, updatedAt: new Date() }).where(eq(jobs.id, jobId));
+  await db.update(jobs).set({ aiAnalysisResult: analysis, updatedAt: new Date() }).where(eq(jobs.id, jobId));
 }
 
 export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number) {
@@ -335,7 +335,7 @@ export async function upsertIndustryRate(data: any) {
 export async function getPhotoQueue() {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(photoIntakeQueue || {}).orderBy(desc('createdAt'));
+  return db.select().from(photoIntakeQueue).orderBy(desc(photoIntakeQueue.createdAt));
 }
 
 export async function getPhotoQueueStats() {

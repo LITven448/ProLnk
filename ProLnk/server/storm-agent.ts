@@ -284,7 +284,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
               LIMIT 50`
         ).catch(() => ({ rows: [] })) as any;
         const homeowners = (homeownerRows.rows ?? homeownerRows) as any[];
-        const dashboardUrl = process.env.VITE_FRONTEND_FORGE_API_URL?.includes('manus') ? 'https://prolnk.manus.space/my-home' : 'https://prolnk.io/my-home';
+        const dashboardUrl = 'https://prolnk.io/my-home';
         for (const ho of homeowners.slice(0, 50)) {
           sendStormAlertToHomeowner({
             homeownerEmail: ho.email,

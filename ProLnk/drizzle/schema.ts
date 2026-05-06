@@ -3080,3 +3080,699 @@ export const analyticsEvents = mysqlTable("analytics_events", {
 }));
 export type AnalyticsEvent = typeof analyticsEvents.$inferSelect;
 export type InsertAnalyticsEvent = typeof analyticsEvents.$inferInsert;
+
+
+// ===== ADDITIONAL TABLES (merged from Manus branch) =====
+
+export const advertiserImpressionLog = mysqlTable("advertiserImpressionLog", {
+  id: int("id").primaryKey().autoincrement(),
+  advertiserId: int("advertiserId").notNull(),
+  surface: mysqlEnum("surface", ["dashboard", "scan_results", "email", "directory"]).notNull(),
+  date: varchar("date", { length: 10 }).notNull(),
+  impressions: int("impressions").notNull().default(0),
+  clicks: int("clicks").notNull().default(0),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+});
+export type AdvertiserImpressionEntry = typeof advertiserImpressionLog.$inferSelect;
+
+// ── Advertiser Waitlist ──────────────────────────────────────────────────────
+
+export const advertiserWaitlist = mysqlTable("advertiserWaitlist", {
+  id: int("id").primaryKey().autoincrement(),
+  companyName: varchar("companyName", { length: 200 }).notNull(),
+  contactName: varchar("contactName", { length: 200 }).notNull(),
+  email: varchar("email", { length: 200 }).notNull(),
+  phone: varchar("phone", { length: 50 }),
+  category: varchar("category", { length: 150 }),
+  budget: varchar("budget", { length: 100 }),
+  message: text("message"),
+  status: mysqlEnum("status", ["pending", "contacted", "converted", "declined"]).notNull().default("pending"),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AdvertiserWaitlistEntry = typeof advertiserWaitlist.$inferSelect;
+
+// ── Photo Access Audit Log (RBAC + Security) ─────────────────────────────────
+// Logs every access to a job photo — who accessed it, when, and from where.
+// Required for RBAC compliance: partners can only access their own job photos.
+
+export const affiliateClicks = mysqlTable("affiliateClicks", {
+  id: int("id").primaryKey().autoincrement(),
+  productId: int("productId").notNull(),
+  source: varchar("source", { length: 100 }).notNull().default("ai_diagnostic"),
+  sessionId: varchar("sessionId", { length: 128 }),
+  repairCategory: varchar("repairCategory", { length: 100 }),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AffiliateClick = typeof affiliateClicks.$inferSelect;
+
+// ── System Health Log ────────────────────────────────────────────────────────
+
+export const affiliateProducts = mysqlTable("affiliateProducts", {
+  id: int("id").primaryKey().autoincrement(),
+  repairCategory: varchar("repairCategory", { length: 100 }).notNull(),
+  productName: varchar("productName", { length: 500 }).notNull(),
+  brand: varchar("brand", { length: 100 }),
+  amazonUrl: text("amazonUrl").notNull(),
+  affiliateUrl: text("affiliateUrl"),
+  price: decimal("price", { precision: 10, scale: 2 }),
+  rating: decimal("rating", { precision: 3, scale: 1 }),
+  reviewCount: int("reviewCount"),
+  imageUrl: text("imageUrl"),
+  isPrimary: boolean("isPrimary").notNull().default(false),
+  isActive: boolean("isActive").notNull().default(true),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AffiliateProduct = typeof affiliateProducts.$inferSelect;
+
+// -- Agent Run Log (tracks all background agent executions) --
+
+export const agentActivityLog = mysqlTable("agentActivityLog", {
+  id: int("id").primaryKey().autoincrement(),
+  agentId: varchar("agentId", { length: 80 }).notNull(),
+  action: varchar("action", { length: 255 }).notNull(),
+  outcome: mysqlEnum("outcome", ["success", "failure", "pending", "blocked"]).notNull().default("success"),
+  details: text("details"),
+  inputTokens: int("inputTokens").default(0),
+  outputTokens: int("outputTokens").default(0),
+  costCents: int("costCents").default(0),
+  durationMs: int("durationMs").default(0),
+  relatedEntityType: varchar("relatedEntityType", { length: 60 }),
+  relatedEntityId: varchar("relatedEntityId", { length: 120 }),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AgentActivity = typeof agentActivityLog.$inferSelect;
+
+// ── Agent Command Center: Daily Performance Metrics ─────────────────
+
+export const agentDailyMetrics = mysqlTable("agentDailyMetrics", {
+  id: int("id").primaryKey().autoincrement(),
+  agentId: varchar("agentId", { length: 80 }).notNull(),
+  date: varchar("date", { length: 10 }).notNull(),
+  actionsCompleted: int("actionsCompleted").default(0),
+  successCount: int("successCount").default(0),
+  failureCount: int("failureCount").default(0),
+  totalInputTokens: int("totalInputTokens").default(0),
+  totalOutputTokens: int("totalOutputTokens").default(0),
+  totalCostCents: int("totalCostCents").default(0),
+  avgResponseMs: int("avgResponseMs").default(0),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AgentDailyMetric = typeof agentDailyMetrics.$inferSelect;
+
+// ── Agent Command Center: Supreme Court Audit Log ───────────────────
+
+export const agentEventBus = mysqlTable("agentEventBus", {
+  id: int("id").primaryKey().autoincrement(),
+  eventType: varchar("eventType", { length: 120 }).notNull(),
+  publisherAgentId: varchar("publisherAgentId", { length: 80 }).notNull(),
+  payload: text("payload"),
+  consumedBy: text("consumedBy"),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AgentEvent = typeof agentEventBus.$inferSelect;
+
+// ── Agent Command Center: Activity Log ──────────────────────────────
+
+export const agentRegistry = mysqlTable("agentRegistry", {
+  id: int("id").primaryKey().autoincrement(),
+  agentId: varchar("agentId", { length: 80 }).notNull().unique(),
+  name: varchar("name", { length: 120 }).notNull(),
+  department: varchar("department", { length: 60 }).notNull(),
+  llmTier: mysqlEnum("llmTier", ["budget", "reasoning", "supreme", "vision"]).notNull().default("budget"),
+  llmModel: varchar("llmModel", { length: 120 }).notNull().default("GPT-4o Mini"),
+  triggerType: mysqlEnum("triggerType", ["event", "schedule", "on_demand"]).notNull().default("event"),
+  triggerDescription: varchar("triggerDescription", { length: 255 }),
+  description: text("description"),
+  status: mysqlEnum("status", ["active", "idle", "error", "suspended", "disabled"]).notNull().default("active"),
+  parentAgentId: varchar("parentAgentId", { length: 80 }),
+  monthlyBudgetCents: int("monthlyBudgetCents").default(0),
+  currentMonthSpendCents: int("currentMonthSpendCents").default(0),
+  totalActionsLifetime: int("totalActionsLifetime").default(0),
+  successRatePercent: decimal("successRatePercent", { precision: 5, scale: 2 }).default("100.00"),
+  avgResponseMs: int("avgResponseMs").default(0),
+  lastActiveAt: timestamp("lastActiveAt"),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type AgentRegistryEntry = typeof agentRegistry.$inferSelect;
+
+// ── Agent Command Center: Event Bus Log ─────────────────────────────
+
+export const agentRunLog = mysqlTable("agentRunLog", {
+  id: int("id").primaryKey().autoincrement(),
+  agentName: varchar("agentName", { length: 100 }).notNull(),
+  status: mysqlEnum("status", ["running", "completed", "failed"]).notNull().default("running"),
+  itemsProcessed: int("itemsProcessed").default(0),
+  errorMessage: text("errorMessage"),
+  durationMs: int("durationMs"),
+  startedAt: timestamp("startedAt").notNull().defaultNow(),
+  completedAt: timestamp("completedAt"),
+});
+export type AgentRunLogEntry = typeof agentRunLog.$inferSelect;
+
+// ── Agent Command Center: Registry ──────────────────────────────────
+
+export const automationRules = mysqlTable("automationRules", {
+  id: int("id").primaryKey().autoincrement(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description"),
+  triggerType: mysqlEnum("triggerType", [
+    "new_signup", "referral_milestone", "photo_uploaded", "analysis_complete",
+    "score_below_threshold", "storm_detected", "maintenance_due",
+    "commission_earned", "review_received", "partner_inactive",
+    "homeowner_inactive", "property_anniversary", "seasonal_change"
+  ]).notNull(),
+  conditionJson: text("conditionJson"),
+  actionType: mysqlEnum("actionType", [
+    "send_email", "send_sms", "send_notification", "assign_task",
+    "create_lead", "update_score", "trigger_webhook", "notify_admin",
+    "schedule_followup", "award_points", "flag_for_review"
+  ]).notNull(),
+  actionConfigJson: text("actionConfigJson"),
+  isActive: boolean("isActive").default(true),
+  executionCount: int("executionCount").default(0),
+  lastExecutedAt: datetime("lastExecutedAt"),
+  createdBy: int("createdBy"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type AutomationRule = typeof automationRules.$inferSelect;
+
+export const diagnosticSessions = mysqlTable("diagnosticSessions", {
+  id: int("id").primaryKey().autoincrement(),
+  homeownerId: int("homeownerId").notNull(),
+  propertyAddress: varchar("propertyAddress", { length: 500 }),
+  messages: json("messages").notNull().$type<Array<{role: string; content: string; timestamp: number}>>().default([]),
+  photoUrls: json("photoUrls").$type<string[]>().default([]),
+  diagnosis: text("diagnosis"),
+  trade: varchar("trade", { length: 100 }),
+  severity: mysqlEnum("severity", ["cosmetic", "monitor", "soon", "urgent", "emergency"]),
+  scope: text("scope"),
+  recommendation: mysqlEnum("recommendation", ["diy", "parts_only", "pro_required", "unknown"]),
+  quoteMin: decimal("quoteMin", { precision: 10, scale: 2 }),
+  quoteMax: decimal("quoteMax", { precision: 10, scale: 2 }),
+  quoteMaterials: decimal("quoteMaterials", { precision: 10, scale: 2 }),
+  quoteLabor: decimal("quoteLabor", { precision: 10, scale: 2 }),
+  quoteBreakdown: json("quoteBreakdown"),
+  status: mysqlEnum("status", ["in_progress", "completed", "abandoned"]).notNull().default("in_progress"),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+});
+export type DiagnosticSession = typeof diagnosticSessions.$inferSelect;
+export type InsertDiagnosticSession = typeof diagnosticSessions.$inferInsert;
+
+// -- Home Profiles (persistent equipment + condition data per property) --
+
+export const homeHealthVaultScores = mysqlTable("homeHealthVault", {
+  id: int("id").primaryKey().autoincrement(),
+  homeWaitlistId: int("homeWaitlistId"),
+  userId: int("userId").references(() => users.id),
+  propertyAddress: varchar("propertyAddress", { length: 500 }),
+  overallHealthScore: int("overallHealthScore"),
+  roofScore: int("roofScore"),
+  hvacScore: int("hvacScore"),
+  plumbingScore: int("plumbingScore"),
+  electricalScore: int("electricalScore"),
+  exteriorScore: int("exteriorScore"),
+  interiorScore: int("interiorScore"),
+  lastScanDate: timestamp("lastScanDate"),
+  totalScans: int("totalScans").default(0),
+  activeIssues: int("activeIssues").default(0),
+  resolvedIssues: int("resolvedIssues").default(0),
+  estimatedRepairCost: varchar("estimatedRepairCost", { length: 20 }),
+  urgentItems: text("urgentItems"), // JSON
+  attentionItems: text("attentionItems"), // JSON
+  goodItems: text("goodItems"), // JSON
+  maintenanceSchedule: text("maintenanceSchedule"), // JSON
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type HomeHealthVaultScore = typeof homeHealthVaultScores.$inferSelect;
+export type InsertHomeHealthVaultScore = typeof homeHealthVaultScores.$inferInsert;
+
+// ── Wave 16: Partner Check-In System ──
+
+export const homeProfiles = mysqlTable("homeProfiles", {
+  id: int("id").primaryKey().autoincrement(),
+  homeownerId: int("homeownerId").notNull(),
+  propertyAddress: varchar("propertyAddress", { length: 500 }).notNull(),
+  zipCode: varchar("zipCode", { length: 10 }),
+  yearBuilt: int("yearBuilt"),
+  squareFootage: int("squareFootage"),
+  bedrooms: int("bedrooms"),
+  bathrooms: decimal("bathrooms", { precision: 3, scale: 1 }),
+  hvacBrand: varchar("hvacBrand", { length: 100 }),
+  hvacModel: varchar("hvacModel", { length: 100 }),
+  hvacYear: int("hvacYear"),
+  hvacType: varchar("hvacType", { length: 100 }),
+  hvacCondition: varchar("hvacCondition", { length: 20 }).default("unknown"),
+  hvacNotes: text("hvacNotes"),
+  roofMaterial: varchar("roofMaterial", { length: 100 }),
+  roofYear: int("roofYear"),
+  roofCondition: varchar("roofCondition", { length: 20 }).default("unknown"),
+  roofNotes: text("roofNotes"),
+  waterHeaterBrand: varchar("waterHeaterBrand", { length: 100 }),
+  waterHeaterYear: int("waterHeaterYear"),
+  waterHeaterType: varchar("waterHeaterType", { length: 50 }).default("unknown"),
+  waterHeaterFuel: varchar("waterHeaterFuel", { length: 50 }).default("unknown"),
+  electricalPanelBrand: varchar("electricalPanelBrand", { length: 100 }),
+  electricalPanelAmps: int("electricalPanelAmps"),
+  electricalPanelYear: int("electricalPanelYear"),
+  electricalCondition: varchar("electricalCondition", { length: 20 }).default("unknown"),
+  plumbingMaterial: varchar("plumbingMaterial", { length: 100 }),
+  plumbingCondition: varchar("plumbingCondition", { length: 20 }).default("unknown"),
+  flooringTypes: json("flooringTypes").$type<string[]>().default([]),
+  appliances: json("appliances").$type<Array<{name: string; brand: string; year: number; condition: string}>>().default([]),
+  windowType: varchar("windowType", { length: 100 }),
+  windowCondition: varchar("windowCondition", { length: 20 }).default("unknown"),
+  activeAlerts: json("activeAlerts").$type<Array<{system: string; message: string; severity: string; createdAt: number}>>().default([]),
+  lastScannedAt: timestamp("lastScannedAt"),
+  // Origination model: first pro to document this address earns a permanent override commission
+  originatingPartnerId: int("originatingPartnerId").references(() => partners.id),
+  originationOverrideRate: decimal("originationOverrideRate", { precision: 5, scale: 4 }).default("0.0150"),
+  originationLockedAt: timestamp("originationLockedAt"),
+  // Draft profile: created from pro photos before homeowner signs up
+  isDraft: boolean("isDraft").default(false).notNull(),
+  draftOutreachSentAt: timestamp("draftOutreachSentAt"),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+});
+export type HomeProfile = typeof homeProfiles.$inferSelect;
+export type InsertHomeProfile = typeof homeProfiles.$inferInsert;
+
+// -- Materials Pricing (daily background agent) --
+
+export const homeownerDataConsent = mysqlTable("homeownerDataConsent", {
+  id: int("id").primaryKey().autoincrement(),
+  userId: int("userId").notNull().references(() => users.id).unique(),
+  homeownerProfileId: int("homeownerProfileId").references(() => homeownerProfiles.id),
+  // Consent flags
+  consentPhotoAnalysis: boolean("consentPhotoAnalysis").notNull().default(false),
+  consentAnonymizedDataLicensing: boolean("consentAnonymizedDataLicensing").notNull().default(false),
+  consentAggregateInsights: boolean("consentAggregateInsights").notNull().default(false),
+  consentPropertyConditionTracking: boolean("consentPropertyConditionTracking").notNull().default(false),
+  // Consent metadata
+  consentVersion: varchar("consentVersion", { length: 20 }).notNull().default("1.0"),
+  consentedAt: timestamp("consentedAt").notNull().defaultNow(),
+  ipAddress: varchar("ipAddress", { length: 64 }),
+  userAgent: varchar("userAgent", { length: 512 }),
+  // Revocation
+  revokedAt: timestamp("revokedAt"),
+  revocationReason: text("revocationReason"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type HomeownerDataConsentRecord = typeof homeownerDataConsent.$inferSelect;
+
+// ── Photo Sessions ─────────────────────────────────────────────────────────────
+// Groups photos taken at the same job or home scan into named room/area sessions.
+// Supports both ProLnk job site uploads and TrustyPro homeowner scans.
+// A session = one room/area + one reference (wide) shot + N detail shots.
+
+export const laborRates = mysqlTable("laborRates", {
+  id: int("id").primaryKey().autoincrement(),
+  trade: varchar("trade", { length: 100 }).notNull(),
+  jobType: varchar("jobType", { length: 255 }),
+  zipCluster: varchar("zipCluster", { length: 50 }).notNull().default("DFW"),
+  rateMin: decimal("rateMin", { precision: 10, scale: 2 }).notNull(),
+  rateMax: decimal("rateMax", { precision: 10, scale: 2 }).notNull(),
+  rateMedian: decimal("rateMedian", { precision: 10, scale: 2 }).notNull(),
+  rateUnit: varchar("rateUnit", { length: 50 }).notNull().default("per_job"),
+  source: varchar("source", { length: 100 }).notNull().default("homeadvisor"),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type LaborRate = typeof laborRates.$inferSelect;
+
+// -- Affiliate Products (weekly background agent) --
+
+export const materialsPricing = mysqlTable("materialsPricing", {
+  id: int("id").primaryKey().autoincrement(),
+  item: varchar("item", { length: 255 }).notNull(),
+  category: varchar("category", { length: 100 }).notNull(),
+  unit: varchar("unit", { length: 50 }).notNull(),
+  priceMin: decimal("priceMin", { precision: 10, scale: 2 }).notNull(),
+  priceMax: decimal("priceMax", { precision: 10, scale: 2 }).notNull(),
+  priceAvg: decimal("priceAvg", { precision: 10, scale: 2 }).notNull(),
+  source: varchar("source", { length: 100 }).notNull().default("home_depot"),
+  region: varchar("region", { length: 50 }).notNull().default("DFW"),
+  sku: varchar("sku", { length: 100 }),
+  productUrl: text("productUrl"),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow().onUpdateNow(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type MaterialPrice = typeof materialsPricing.$inferSelect;
+
+// -- Labor Rates (weekly background agent) --
+
+export const mediaLibrary = mysqlTable("mediaLibrary", {
+  id: int("id").primaryKey().autoincrement(),
+  uploaderId: int("uploaderId").notNull(),
+  uploaderType: mysqlEnum("uploaderType", ["partner", "homeowner", "admin", "ai"]).notNull(),
+  fileUrl: text("fileUrl").notNull(),
+  fileKey: text("fileKey").notNull(),
+  fileName: varchar("fileName", { length: 255 }),
+  mimeType: varchar("mimeType", { length: 100 }),
+  fileSizeBytes: int("fileSizeBytes"),
+  category: mysqlEnum("category", ["job_photo", "before_after", "profile", "property", "document", "marketing", "ai_generated"]).default("job_photo"),
+  tags: text("tags"),
+  propertyId: int("propertyId"),
+  jobId: int("jobId"),
+  sessionId: int("sessionId"),
+  aiAnalyzed: boolean("aiAnalyzed").default(false),
+  aiTags: text("aiTags"),
+  aiDescription: text("aiDescription"),
+  isPublic: boolean("isPublic").default(false),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type MediaLibraryItem = typeof mediaLibrary.$inferSelect;
+
+// ── Wave 37: Seasonal Maintenance Tasks ──
+
+export const notificationPreferences = mysqlTable("notificationPreferences", {
+  id: int("id").primaryKey().autoincrement(),
+  userId: int("userId").notNull(),
+  channel: mysqlEnum("channel", ["email", "sms", "push", "in_app"]).notNull(),
+  category: varchar("category", { length: 100 }).notNull(),
+  enabled: boolean("enabled").default(true),
+  frequency: mysqlEnum("frequency", ["instant", "daily_digest", "weekly_digest", "never"]).default("instant"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type NotificationPreference = typeof notificationPreferences.$inferSelect;
+
+// Wave 22 & 30 tables already defined above (reviewResponses at line ~2607, stormEvents at line ~1678)
+
+// ── Wave 31: Media Library ──
+
+export const partnerCheckIns = mysqlTable("partnerCheckIns", {
+  id: int("id").primaryKey().autoincrement(),
+  partnerId: int("partnerId").notNull(),
+  jobId: int("jobId"),
+  propertyId: int("propertyId"),
+  checkInType: mysqlEnum("checkInType", ["job_start", "job_progress", "job_complete", "site_visit", "estimate"]).notNull(),
+  latitude: decimal("latitude", { precision: 10, scale: 7 }),
+  longitude: decimal("longitude", { precision: 10, scale: 7 }),
+  address: text("address"),
+  photoUrl: text("photoUrl"),
+  notes: text("notes"),
+  verifiedByGeo: boolean("verifiedByGeo").default(false),
+  verifiedByPhoto: boolean("verifiedByPhoto").default(false),
+  verifiedByHomeowner: boolean("verifiedByHomeowner").default(false),
+  homeownerRating: int("homeownerRating"),
+  homeownerFeedback: text("homeownerFeedback"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type PartnerCheckIn = typeof partnerCheckIns.$inferSelect;
+
+// ── Wave 17: Partner Spotlights ──
+
+export const partnerPhotoConsent = mysqlTable("partnerPhotoConsent", {
+  id: int("id").primaryKey().autoincrement(),
+  partnerId: int("partnerId").notNull().unique(),
+  consentedAt: timestamp("consentedAt").notNull().defaultNow(),
+  consentVersion: varchar("consentVersion", { length: 20 }).notNull().default("1.0"),
+  ipAddress: varchar("ipAddress", { length: 64 }),
+  userAgent: varchar("userAgent", { length: 512 }),
+  consentPhotoStorage: boolean("consentPhotoStorage").notNull().default(true),
+  consentAiAnalysis: boolean("consentAiAnalysis").notNull().default(true),
+  consentLeadRouting: boolean("consentLeadRouting").notNull().default(true),
+  revokedAt: timestamp("revokedAt"),
+});
+export type PartnerPhotoConsent = typeof partnerPhotoConsent.$inferSelect;
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// AI DATA COLLECTION PIPELINE — Property Condition Data Asset
+// Every AI scan (partner job photos + homeowner TrustyPro scans) outputs a
+// structured JSON record alongside the human-readable recommendation.
+// This table is the foundation for the data licensing business.
+// ══════════════════════════════════════════════════════════════════════════════
+
+// Structured condition data types
+export type RoomConditionScore = {
+  roomLabel: string;        // e.g. "kitchen", "primary_bathroom", "exterior_front"
+  conditionScore: number;   // 1-10 scale
+  notes: string;
+};
+
+export type SystemAgeEstimate = {
+  systemType: string;       // e.g. "hvac", "water_heater", "roof", "electrical_panel"
+  estimatedAge: number | null;  // years, null if not visible
+  estimatedInstallYear: number | null;
+  confidence: number;       // 0-1
+  notes: string;
+};
+
+export type MaterialIdentification = {
+  location: string;         // e.g. "kitchen_floor", "bathroom_countertop"
+  materialType: string;     // e.g. "hardwood", "laminate", "granite", "pvc"
+  materialSubtype: string;  // e.g. "oak", "maple", "carrara_marble"
+  confidence: number;
+};
+
+export type DamageFlag = {
+  location: string;
+  damageType: string;       // e.g. "water_stain", "crack", "mold", "rust", "wood_rot"
+  severity: "minor" | "moderate" | "severe";
+  description: string;
+  estimatedRepairCost: number | null;
+};
+
+export type ApplianceEntry = {
+  applianceType: string;    // e.g. "refrigerator", "dishwasher", "oven", "washer"
+  make: string | null;
+  model: string | null;
+  estimatedAge: number | null;
+  condition: "new" | "good" | "fair" | "worn" | "end_of_life" | "unknown";
+};
+
+export type EnergyIndicator = {
+  feature: string;          // e.g. "window_type", "insulation", "smart_thermostat"
+  value: string;            // e.g. "double_pane", "visible_gaps", "nest_present"
+  energyImpact: "positive" | "neutral" | "negative";
+  notes: string;
+};
+
+export type SafetyFeature = {
+  featureType: string;      // e.g. "smoke_detector", "co_detector", "security_camera"
+  present: boolean;
+  condition: "good" | "fair" | "poor" | "missing";
+  location: string;
+};
+
+export type StructuralIndicator = {
+  indicatorType: string;    // e.g. "foundation_crack", "roof_sag", "settling"
+  severity: "minor" | "moderate" | "severe";
+  location: string;
+  description: string;
+};
+
+export type FutureValueField = {
+  category: string;         // e.g. "pest_indicator", "code_compliance", "smart_home", "landscaping"
+  observation: string;
+  value: string;
+};
+
+// The master structured data record — one per AI scan
+
+export const partnerSpotlights = mysqlTable("partnerSpotlights", {
+  id: int("id").primaryKey().autoincrement(),
+  partnerId: int("partnerId").notNull(),
+  headline: varchar("headline", { length: 255 }).notNull(),
+  story: text("story"),
+  photoUrl: text("photoUrl"),
+  videoUrl: text("videoUrl"),
+  featuredMetric: varchar("featuredMetric", { length: 100 }),
+  featuredMetricValue: varchar("featuredMetricValue", { length: 100 }),
+  category: mysqlEnum("category", ["top_earner", "most_referrals", "best_rated", "fastest_response", "community_hero", "new_partner"]).default("top_earner"),
+  isActive: boolean("isActive").default(true),
+  displayOrder: int("displayOrder").default(0),
+  startDate: datetime("startDate"),
+  endDate: datetime("endDate"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type PartnerSpotlight = typeof partnerSpotlights.$inferSelect;
+
+// ── Wave 18: Notification Preferences ──
+
+export const photoAccessLog = mysqlTable("photoAccessLog", {
+  id: int("id").primaryKey().autoincrement(),
+  photoUrl: text("photoUrl").notNull(),
+  jobId: int("jobId"),
+  accessedByPartnerId: int("accessedByPartnerId"),
+  accessedByUserId: int("accessedByUserId"),
+  accessedByRole: mysqlEnum("accessedByRole", ["partner", "admin", "system", "ai_pipeline"]).notNull().default("partner"),
+  accessType: mysqlEnum("accessType", ["view", "download", "ai_analysis", "upload"]).notNull().default("view"),
+  ipAddress: varchar("ipAddress", { length: 64 }),
+  userAgent: varchar("userAgent", { length: 512 }),
+  accessedAt: timestamp("accessedAt").notNull().defaultNow(),
+});
+export type PhotoAccessEntry = typeof photoAccessLog.$inferSelect;
+
+// ── Partner Photo Consent ─────────────────────────────────────────────────────
+// Stores explicit opt-in consent for photo collection and AI analysis.
+// Must be obtained before any photos are uploaded.
+
+export const photoSessions = mysqlTable("photoSessions", {
+  id: int("id").primaryKey().autoincrement(),
+  userId: int("userId").references(() => users.id),
+  homeownerProfileId: int("homeownerProfileId").references(() => homeownerProfiles.id),
+  jobId: int("jobId"),
+  propertyId: int("propertyId"),
+  sessionType: varchar("sessionType", { length: 20 }).notNull().default("manual"),
+  roomArea: varchar("roomArea", { length: 100 }).notNull(),
+  roomAreaCustom: varchar("roomAreaCustom", { length: 200 }),
+  platform: varchar("platform", { length: 20 }).notNull().default("trustypro"),
+  photoType: varchar("photoType", { length: 20 }).notNull().default("both"),
+  referencePhotoUrl: text("referencePhotoUrl"),
+  referencePhotoKey: varchar("referencePhotoKey", { length: 512 }),
+  detailPhotoUrls: text("detailPhotoUrls"),
+  detailPhotoKeys: text("detailPhotoKeys"),
+  photoCount: int("photoCount").notNull().default(0),
+  aiGroupingConfidence: int("aiGroupingConfidence"),
+  aiGroupingConfirmed: boolean("aiGroupingConfirmed").default(false),
+  analysisStatus: varchar("analysisStatus", { length: 30 }).notNull().default("pending"),
+  analysisResult: text("analysisResult"),
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type PhotoSession = typeof photoSessions.$inferSelect;
+export type InsertPhotoSession = typeof photoSessions.$inferInsert;
+
+export const propertyConditionData = mysqlTable("propertyConditionData", {
+  id: int("id").autoincrement().primaryKey(),
+  // Link to source
+  propertyId: int("propertyId").references(() => properties.id),
+  scanHistoryId: int("scanHistoryId").references(() => homeownerScanHistory.id),
+  photoId: int("photoId").references(() => propertyPhotos.id),
+  // Source tracking
+  source: mysqlEnum("source", ["partner_job", "trustypro_scan", "homeowner_upload", "field_app"]).notNull(),
+  sourcePartnerId: int("sourcePartnerId").references(() => partners.id),
+  sourceUserId: int("sourceUserId").references(() => users.id),
+  // Photo metadata
+  photoUrl: text("photoUrl"),
+  photoTimestamp: timestamp("photoTimestamp"),
+  photoLatitude: decimal("photoLatitude", { precision: 10, scale: 7 }),
+  photoLongitude: decimal("photoLongitude", { precision: 10, scale: 7 }),
+  photoExifData: json("photoExifData").$type<Record<string, any>>().default({}),
+  // Room identification
+  roomLabel: varchar("roomLabel", { length: 100 }),
+  roomConditionScore: int("roomConditionScore"), // 1-10
+  // Structured condition data (the core data asset)
+  roomConditionScores: json("roomConditionScores").$type<RoomConditionScore[]>().default([]),
+  systemAgeEstimates: json("systemAgeEstimates").$type<SystemAgeEstimate[]>().default([]),
+  materialIdentifications: json("materialIdentifications").$type<MaterialIdentification[]>().default([]),
+  damageFlags: json("damageFlags").$type<DamageFlag[]>().default([]),
+  applianceInventory: json("applianceInventory").$type<ApplianceEntry[]>().default([]),
+  energyIndicators: json("energyIndicators").$type<EnergyIndicator[]>().default([]),
+  safetyFeatures: json("safetyFeatures").$type<SafetyFeature[]>().default([]),
+  structuralIndicators: json("structuralIndicators").$type<StructuralIndicator[]>().default([]),
+  futureValueFields: json("futureValueFields").$type<FutureValueField[]>().default([]),
+  // Renovation tracking
+  hasBeforeAfter: boolean("hasBeforeAfter").default(false).notNull(),
+  renovationType: varchar("renovationType", { length: 100 }),
+  renovationEstimatedCost: decimal("renovationEstimatedCost", { precision: 10, scale: 2 }),
+  // Overall property condition from this scan
+  overallConditionScore: int("overallConditionScore"), // 1-100 composite
+  overallConditionLabel: mysqlEnum("overallConditionLabel", ["excellent", "good", "fair", "needs_attention", "critical"]),
+  // Data quality metrics
+  dataQualityScore: int("dataQualityScore"), // 0-100 (photo clarity, field completeness, etc.)
+  fieldsPopulated: int("fieldsPopulated").default(0), // count of non-empty structured fields
+  totalPossibleFields: int("totalPossibleFields").default(17), // total possible structured fields
+  // Geographic data (anonymizable for licensing)
+  zipCode: varchar("zipCode", { length: 10 }),
+  city: varchar("city", { length: 100 }),
+  state: varchar("state", { length: 10 }),
+  // Anonymization
+  anonymizedHash: varchar("anonymizedHash", { length: 64 }), // SHA-256 of address for dedup without PII
+  isAnonymizedExport: boolean("isAnonymizedExport").default(false).notNull(),
+  // Raw AI response for audit
+  rawAiResponse: json("rawAiResponse"),
+  // Timestamps
+  scannedAt: timestamp("scannedAt").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type PropertyConditionDataRecord = typeof propertyConditionData.$inferSelect;
+export type InsertPropertyConditionData = typeof propertyConditionData.$inferInsert;
+
+// ── Homeowner Data Consent ─────────────────────────────────────────────────────
+// Stores explicit opt-in consent for data collection, AI analysis, and licensing.
+// Must be obtained before any property data is included in licensed datasets.
+
+export const seasonalMaintenanceTasks = mysqlTable("seasonalMaintenanceTasks", {
+  id: int("id").primaryKey().autoincrement(),
+  propertyId: int("propertyId").notNull(),
+  userId: int("userId").notNull(),
+  taskName: varchar("taskName", { length: 255 }).notNull(),
+  description: text("description"),
+  category: mysqlEnum("category", ["hvac", "roof", "plumbing", "electrical", "exterior", "interior", "landscaping", "pest_control", "appliance"]).notNull(),
+  season: mysqlEnum("season", ["spring", "summer", "fall", "winter"]).notNull(),
+  dueMonth: int("dueMonth"),
+  priority: mysqlEnum("priority", ["low", "medium", "high", "urgent"]).default("medium"),
+  status: mysqlEnum("status", ["upcoming", "due", "overdue", "completed", "skipped"]).default("upcoming"),
+  completedAt: datetime("completedAt"),
+  completedByPartnerId: int("completedByPartnerId"),
+  estimatedCost: decimal("estimatedCost", { precision: 10, scale: 2 }),
+  actualCost: decimal("actualCost", { precision: 10, scale: 2 }),
+  reminderSentAt: datetime("reminderSentAt"),
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type SeasonalMaintenanceTask = typeof seasonalMaintenanceTasks.$inferSelect;
+
+// ── Wave 39: Automation Rules Engine ──
+
+export const sessionPhotos = mysqlTable("sessionPhotos", {
+  id: int("id").primaryKey().autoincrement(),
+  sessionId: int("sessionId").notNull().references(() => photoSessions.id),
+  photoUrl: text("photoUrl").notNull(),
+  thumbnailUrl: text("thumbnailUrl"),
+  roomType: varchar("roomType", { length: 100 }),
+  roomLabel: varchar("roomLabel", { length: 200 }),
+  analysisStatus: varchar("analysisStatus", { length: 30 }).notNull().default("pending"),
+  qualityScore: int("qualityScore"),
+  findings: text("findings"), // JSON
+  segmentationOverlayUrl: text("segmentationOverlayUrl"),
+  aiModel: varchar("aiModel", { length: 100 }),
+  processingTimeMs: int("processingTimeMs"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type SessionPhoto = typeof sessionPhotos.$inferSelect;
+export type InsertSessionPhoto = typeof sessionPhotos.$inferInsert;
+
+// ── Home Health Vault Scores (aggregated per-property health scores) ──────────
+
+export const supremeCourtAudit = mysqlTable("supremeCourtAudit", {
+  id: int("id").primaryKey().autoincrement(),
+  requestingAgentId: varchar("requestingAgentId", { length: 80 }).notNull(),
+  actionAttempted: varchar("actionAttempted", { length: 255 }).notNull(),
+  category: mysqlEnum("category", ["content", "spend", "partner_action", "data_access", "pricing", "legal"]).notNull(),
+  ruling: mysqlEnum("ruling", ["approved", "blocked", "escalated"]).notNull(),
+  reason: text("reason"),
+  validatorModel: varchar("validatorModel", { length: 80 }),
+  confidencePercent: decimal("confidencePercent", { precision: 5, scale: 2 }),
+  reviewedBy: varchar("reviewedBy", { length: 80 }),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+export type SupremeCourtEntry = typeof supremeCourtAudit.$inferSelect;
+
+// ── Affiliate Click Tracking ─────────────────────────────────────────────────
+
+export const systemHealthLog = mysqlTable("systemHealthLog", {
+  id: int("id").primaryKey().autoincrement(),
+  service: varchar("service", { length: 80 }).notNull(),
+  status: mysqlEnum("status", ["ok", "degraded", "down"]).notNull().default("ok"),
+  responseMs: int("responseMs"),
+  errorMessage: varchar("errorMessage", { length: 500 }),
+  checkedAt: timestamp("checkedAt").notNull().defaultNow(),
+});
+export type SystemHealthEntry = typeof systemHealthLog.$inferSelect;
+
+// ── Advertiser Impression Log (daily rollups) ────────────────────────────────

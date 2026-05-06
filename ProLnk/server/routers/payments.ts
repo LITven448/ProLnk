@@ -1038,7 +1038,7 @@ Date: ${new Date().toISOString()}
             amount: payoutAmountCents / 100,
             method: 'Stripe Connect',
             periodLabel: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
-            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || 'https://prolnk.manus.space'}/dashboard/earnings`,
+            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || 'https://prolnk.io'}/dashboard/earnings`,
           });
         }
       } catch (emailErr) {
@@ -1251,7 +1251,7 @@ Date: ${new Date().toISOString()}
             amount: amountCents / 100,
             method: 'Stripe Connect',
             periodLabel: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
-            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || 'https://prolnk.manus.space'}/dashboard/payout-history`,
+            dashboardUrl: `${process.env.VITE_OAUTH_PORTAL_URL || 'https://prolnk.io'}/dashboard/payout-history`,
           });
         }
       } catch {}

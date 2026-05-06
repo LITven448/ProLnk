@@ -8,7 +8,7 @@
  * prolnk.io       → ProLnk (partner network, partner portal, admin)
  * trustypro.io    → TrustyPro (homeowner product, homeowner portal)
  * prolnkmedia.io  → ProLnk Media (advertiser product)
- * *.manus.space   → ProLnk (development/staging)
+ * *.onrender.com  → ProLnk (development/staging)
  * localhost       → ProLnk (local dev)
  *
  * The brand is attached to res.locals.brand and can be read by any route.

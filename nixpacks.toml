@@ -4,3 +4,6 @@ buildCommand = "cd ProLnk && npm install --legacy-peer-deps && npm run build"
 
 [start]
 runCommand = "cd ProLnk && node dist/index.js"
+
+[build.env]
+NODE_ENV = "production"

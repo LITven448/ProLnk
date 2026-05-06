@@ -5,8 +5,10 @@ import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation } from "../email";
 import { notifyOwner } from "../_core/notification";
-import { logger } from "../_core/logger";
+import { createLogger } from "../_core/logger";
 import { analyticsTracker } from "../_core/analytics";
+
+const logger = createLogger("waitlist");
 
 const ProWaitlistSchema = z.object({
   firstName: z.string().min(1).max(100).trim(),
@@ -46,7 +48,7 @@ export const waitlistRouter = router({
         const userAgent = ctx.req.headers["user-agent"];
 
         if (!db || !pool) {
-          await waitlistAnalytics.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
+          await analyticsTracker.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
           throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable. Please try again.' });
         }
 
@@ -57,7 +59,7 @@ export const waitlistRouter = router({
             [input.email]
           );
           if ((existingProSignup as any[])?.[0]) {
-            await waitlistAnalytics.track({ type: "error", source: "pro_waitlist", email: input.email }, String(ipAddress), String(userAgent));
+            await analyticsTracker.track({ type: "error", source: "pro_waitlist", email: input.email }, String(ipAddress), String(userAgent));
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
           }
 
@@ -102,7 +104,7 @@ export const waitlistRouter = router({
             logger.warn("Admin notification failed for Pro waitlist", { email: input.email });
           });
 
-          await waitlistAnalytics.track({
+          await analyticsTracker.track({
             type: "signup",
             source: "pro_waitlist",
             email: input.email,
@@ -127,7 +129,7 @@ export const waitlistRouter = router({
             sql: error?.sql
           };
           logger.error("Pro waitlist signup failed", errorDetails);
-          await waitlistAnalytics.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
+          await analyticsTracker.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
           throw new TRPCError({
             code: 'INTERNAL_SERVER_ERROR',
             message: `Signup failed: ${error?.message || 'Unknown error'}`
@@ -146,7 +148,7 @@ export const waitlistRouter = router({
         const userAgent = ctx.req.headers["user-agent"];
 
         if (!db || !pool) {
-          await waitlistAnalytics.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
+          await analyticsTracker.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
           throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable.' });
         }
 
@@ -157,7 +159,7 @@ export const waitlistRouter = router({
             [input.email]
           );
           if ((existingHomeSignup as any[])?.[0]) {
-            await waitlistAnalytics.track({ type: "error", source: "trustypro_7step", email: input.email }, String(ipAddress), String(userAgent));
+            await analyticsTracker.track({ type: "error", source: "trustypro_7step", email: input.email }, String(ipAddress), String(userAgent));
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
           }
 
@@ -198,7 +200,7 @@ export const waitlistRouter = router({
             content: `${input.firstName} ${input.lastName} joined homeowner waitlist. Address: ${input.address}, ${input.city}, ${input.state}. Service: ${input.serviceNeeded}.`
           }).catch(() => {});
 
-          await waitlistAnalytics.track({
+          await analyticsTracker.track({
             type: "signup",
             source: "trustypro_7step",
             email: input.email,
@@ -215,7 +217,7 @@ export const waitlistRouter = router({
         } catch (error: any) {
           if (error?.code === 'CONFLICT') throw error;
           logger.error("Home waitlist signup failed", { email: input.email, error: error?.message });
-          await waitlistAnalytics.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
+          await analyticsTracker.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
           throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Signup failed. Please try again.' });
         }
       });
@@ -263,7 +265,7 @@ export const waitlistRouter = router({
             projects: ["Home Improvements"]
           }).catch(() => {});
 
-          await waitlistAnalytics.track({
+          await analyticsTracker.track({
             type: "signup",
             source: "trustypro_simple",
             email: input.email,

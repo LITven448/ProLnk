@@ -44,9 +44,6 @@ import { projectBidsRouter } from "./routers/projectBids";
 import { waitlistRouter } from "./routers/waitlist";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
-import { commissionsRouter } from "./routers/commissions";
-import { photoUploadRouter } from "./routers/photoUpload";
-import { partnerOAuthRouter } from "./routers/partnerOAuth";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
@@ -4652,15 +4649,6 @@ Return a JSON object with:
   analytics: router({
     ...analyticsAdminRouter.createCaller({} as any),
   }),
-
-  // ── Commission Engine ────────────────────────────────────────────────────────
-  commissions: commissionsRouter,
-
-  // ── Photo Upload & Scanning ─────────────────────────────────────────────────
-  photoUpload: photoUploadRouter,
-
-  // ── Partner OAuth Onboarding ────────────────────────────────────────────────
-  partnerOAuth: partnerOAuthRouter,
 
   circumvention: router({
     runSweep: adminProcedure.mutation(async () => {

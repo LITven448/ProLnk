@@ -227,6 +227,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
+    /* Mobile scroll performance */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -243,6 +246,14 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+  /* Accessible focus-visible outlines */
+  :focus-visible {
+    outline: 2px solid var(--prolnk-navy);
+    outline-offset: 2px;
+  }
+  .dark :focus-visible {
+    outline-color: var(--prolnk-teal);
   }
 }
 

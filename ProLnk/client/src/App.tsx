@@ -5,7 +5,6 @@ import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
-import PWAInstallBanner from "./components/PWAInstallBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -19,6 +18,8 @@ import CCPARights from "@/pages/legal/CCPARights";
 import CookiePolicy from "@/pages/legal/CookiePolicy";
 import Demo from "@/pages/Demo";
 import Apply from "./pages/Apply";
+import ApplicationStatus from "./pages/ApplicationStatus";
+import SetPassword from "./pages/SetPassword";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import InboundLeads from "./pages/InboundLeads";
 import MyReferrals from "./pages/MyReferrals";
@@ -36,6 +37,16 @@ import PartnerVerification from "./pages/admin/PartnerVerification";
 import PlatformHealth from "./pages/admin/PlatformHealth";
 import ActivityLog from "./pages/admin/ActivityLog";
 import TrustyProLeads from "./pages/admin/TrustyProLeads";
+import TrustyProOverview from "./pages/admin/TrustyProOverview";
+import TrustyProScans from "./pages/admin/TrustyProScans";
+import KnowledgeGraph from "./pages/admin/KnowledgeGraph";
+import BusinessPacket from "./pages/admin/BusinessPacket";
+import TrustyProAgentsPage from "./pages/admin/TrustyProAgents";
+import TrustyProOrgChartPage from "./pages/admin/TrustyProOrgChart";
+import TrustyProRevenuePage from "./pages/admin/TrustyProRevenue";
+import MediaAgentsPage from "./pages/admin/MediaAgents";
+import MediaOrgChartPage from "./pages/admin/MediaOrgChart";
+import MediaRevenuePage from "./pages/admin/MediaRevenue";
 import PartnerAnalytics from "./pages/PartnerAnalytics";
 import PerformanceAlerts from "./pages/PerformanceAlerts";
 import AIChatAssistant from "./pages/AIChatAssistant";
@@ -54,9 +65,7 @@ import PhotoGuidelines from "./pages/PhotoGuidelines";
 import NetworkFeed from "./pages/NetworkFeed";
 import TierProgress from "./pages/TierProgress";
 import ReferralLink from "./pages/ReferralLink";
-import NetworkIncomeHub from "./pages/NetworkIncomeHub";
-import JoinLanding from "./pages/JoinLanding";
-import NetworkOverview from "./pages/admin/NetworkOverview";
+import ReferralHub from "./pages/dashboard/ReferralHub";
 import ReferralFunnelTracker from "./pages/ReferralFunnelTracker";
 import TierUpgradeFlow from "./pages/TierUpgradeFlow";
 import Notifications from "./pages/Notifications";
@@ -96,6 +105,8 @@ import JobCompletion from "./pages/JobCompletion";
 
 // New Admin Command Center pages
 import CommandCenter from "./pages/admin/CommandCenter";
+import PortfolioDashboard from "./pages/admin/PortfolioDashboard";
+import StrategicOverview from "./pages/admin/StrategicOverview";
 import HomeIntelligence from "./pages/admin/HomeIntelligence";
 import NetworkMap from "./pages/admin/NetworkMap";
 import PartnerIntelligence from "./pages/admin/PartnerIntelligence";
@@ -142,6 +153,24 @@ import AIPipelineMonitor from "./pages/admin/AIPipelineMonitor";
 import StormWatch from "./pages/admin/StormWatch";
 import StormDashboard from "./pages/admin/StormDashboard";
 import AgentStatusDashboard from "./pages/admin/AgentStatusDashboard";
+import AgentTracker from "./pages/admin/AgentTracker";
+import Accountability from "./pages/admin/Accountability";
+import CompanyOrgChart from "./pages/admin/CompanyOrgChart";
+// 7 Company-level Executive Dashboards (top-level)
+import ExecutiveDashboard from "./pages/admin/dashboards/ExecutiveDashboard";
+import OperationsDashboard from "./pages/admin/dashboards/OperationsDashboard";
+import SalesDashboard from "./pages/admin/dashboards/SalesDashboard";
+import MarketingDashboard from "./pages/admin/dashboards/MarketingDashboard";
+import SupportDashboard from "./pages/admin/dashboards/SupportDashboard";
+import FinancialDashboard from "./pages/admin/dashboards/FinancialDashboard";
+import AIAgentsDashboard from "./pages/admin/dashboards/AIAgentsDashboard";
+// ProLnk Residential per-company dashboards
+import { ProLnkExecutive, ProLnkOperations, ProLnkSales, ProLnkMarketing, ProLnkSupport, ProLnkFinancial, ProLnkAgents } from "./pages/admin/dashboards/prolnk";
+// TrustyPro per-company dashboards
+import { TrustyProExecutive, TrustyProOperations, TrustyProSales, TrustyProMarketing, TrustyProSupport, TrustyProFinancial, TrustyProAgents } from "./pages/admin/dashboards/trustypro";
+// ProLnk Media per-company dashboards
+import { MediaExecutive, MediaOperations, MediaSales, MediaMarketing, MediaSupport, MediaFinancial, MediaAgents } from "./pages/admin/dashboards/media";
+import AgentCommandCenter from "./pages/admin/AgentCommandCenter";
 import AssetAging from "./pages/admin/AssetAging";
 import SafetyRecalls from "./pages/admin/SafetyRecalls";
 import DataMarketplace from "./pages/admin/DataMarketplace";
@@ -163,11 +192,17 @@ import HomeHealthVault from "./pages/homeowner/HomeHealthVault";
 import ScanHistory from "./pages/homeowner/ScanHistory";
 import AdminTaskList from "./pages/admin/AdminTaskList";
 
+// Contest page
+import Contest from "./pages/Contest";
+
 // Waitlist landing pages
 import ProWaitlist from "./pages/ProWaitlist";
 import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
+import TrustyProWaitlistStatus from "./pages/TrustyProWaitlistStatus";
+import TrustyProComingSoon from "./pages/TrustyProComingSoon";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import WaitlistManager from "./pages/admin/WaitlistManager";
+import WaitlistIntelligence from "./pages/admin/WaitlistIntelligence";
 import WaitlistProLanding from "./pages/WaitlistProLanding";
 import WaitlistHomeLanding from "./pages/WaitlistHomeLanding";
 
@@ -216,7 +251,6 @@ import AdvertisingPreview from "./pages/admin/AdvertisingPreview";
 import UnifiedInbox from "./pages/UnifiedInbox";
 import JobSchedule from "./pages/JobSchedule";
 import CommissionRates from "./pages/CommissionRates";
-import AdvertiseWithUs from "./pages/AdvertiseWithUs";
 import CommissionStrategy from "./pages/admin/CommissionStrategy";
 import TrustedProAlgorithm from "./pages/admin/TrustedProAlgorithm";
 import Pricing from "./pages/Pricing";
@@ -242,6 +276,7 @@ import GeoExpansionMap from "./pages/admin/GeoExpansionMap";
 import RevenueForecast from "./pages/admin/RevenueForecast";
 import LeadQualityCenter from "./pages/admin/LeadQualityCenter";
 import HomeAssistant from "./pages/homeowner/HomeAssistant";
+import HomeDiagnostic from "./pages/homeowner/HomeDiagnostic";
 import SkillsMarketplace from "./pages/SkillsMarketplace";
 import TrainingAcademy from "./pages/TrainingAcademy";
 import JobMatchingPreferences from "./pages/JobMatchingPreferences";
@@ -269,7 +304,7 @@ import AdminPartnerContent from "./pages/admin/AdminPartnerContent";
 import OnboardingFunnel from "./pages/admin/OnboardingFunnel";
 import ABTestManager from "./pages/admin/ABTestManager";
 import NPSSurveyManager from "./pages/admin/NPSSurveyManager";
-import FranchiseTerritories from "./pages/admin/FranchiseTerritories";
+import CoverageZones from "./pages/admin/FranchiseTerritories";
 import AdminPayoutHistory from "./pages/admin/PayoutHistory";
 import SeasonalCampaigns from "./pages/admin/SeasonalCampaigns";
 import PaymentMonitor from "./pages/admin/PaymentMonitor";
@@ -288,16 +323,96 @@ import Admin360Members from "@/pages/admin/Admin360Members";
 import AgentPortal from "@/pages/AgentPortal";
 import ResourceCenter from "@/pages/ResourceCenter";
 import BillingPortal from "@/pages/BillingPortal";
-import BidBoardPage from "@/pages/BidBoardPage";
-import BriefcaseManager from "@/pages/BriefcaseManager";
-import FoundingPartnerPage from "@/pages/FoundingPartnerPage";
-import ProPassManager from "@/pages/ProPassManager";
-import ProPassVerify from "@/pages/ProPassVerify";
-import PublicBriefcaseVerify from "@/pages/PublicBriefcaseVerify";
-import ScoutAssessmentWizard from "@/pages/ScoutAssessmentWizard";
-import PartnerOnboardingWizard from "@/pages/PartnerOnboardingWizard";
-import AdvertiserDashboard from "@/pages/AdvertiserDashboard";
-import AgentAgreement from "@/pages/AgentAgreement";
+import ProLnkMedia from "@/pages/ProLnkMedia";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
+import SecurityTrustCenter from "@/pages/SecurityTrustCenter";
+import PhotoAccessLog from "@/pages/admin/PhotoAccessLog";
+import PartnerCheckIns from "./pages/admin/PartnerCheckIns";
+import PartnerSpotlightsAdmin from "./pages/admin/PartnerSpotlights";
+import NotificationCenterAdmin from "./pages/admin/NotificationCenter";
+import AutomationRulesEngine from "./pages/admin/AutomationRulesEngine";
+import MediaLibraryAdmin from "./pages/admin/MediaLibraryAdmin";
+import SeasonalMaintenanceAdmin from "./pages/admin/SeasonalMaintenanceAdmin";
+import IntegrationWebhookDashboard from "./pages/admin/IntegrationWebhookDashboard";
+
+// Wave 14: Content & Marketing
+import Blog from "./pages/Blog";
+import HowAIWorks from "./pages/HowAIWorks";
+import ForRealEstateAgents from "./pages/ForRealEstateAgents";
+import ForInsuranceAgents from "./pages/ForInsuranceAgents";
+import ForPropertyManagers from "./pages/ForPropertyManagers";
+
+// Wave 33: Multi-Property
+import LandlordView from "./pages/homeowner/LandlordView";
+import PropertyPortfolio from "./pages/homeowner/PropertyPortfolio";
+
+// Wave 34: Insurance
+import InsuranceCarrierDB from "./pages/admin/InsuranceCarrierDB";
+import InsuranceClaimAssistant from "./pages/homeowner/InsuranceClaimAssistant";
+import InsuranceCoverageChecker from "./pages/homeowner/InsuranceCoverageChecker";
+
+// Wave 35: Agent Portal
+import AgentSignup from "./pages/AgentSignup";
+import AgentDashboard from "./pages/AgentDashboard";
+import PreListingScan from "./pages/PreListingScan";
+
+// Wave 36: Warranty
+import WarrantyTracker from "./pages/homeowner/WarrantyTracker";
+
+// Wave 38: Partner Training
+import PartnerResourceCenter from "./pages/PartnerResourceCenter";
+import PhotoGuide from "./pages/PhotoGuide";
+import MaximizeEarnings from "./pages/MaximizeEarnings";
+import PartnerFAQ from "./pages/PartnerFAQ";
+import PartnerSuccessStories from "./pages/PartnerSuccessStories";
+
+// Wave 40: Data Visualization
+import DashboardBuilder from "./pages/admin/DashboardBuilder";
+import ReportGenerator from "./pages/admin/ReportGenerator";
+import ScheduledReports from "./pages/admin/ScheduledReports";
+import KPITracker from "./pages/admin/KPITracker";
+
+// Wave 16-30 Pages
+import CheckInSystem from "./pages/homeowner/CheckInSystem";
+import LeadInbox from "./pages/LeadInbox";
+import LeadDetail from "./pages/LeadDetail";
+import JobDocumentation from "./pages/JobDocumentation";
+import MonthlyRevenueReport from "./pages/admin/MonthlyRevenueReport";
+import TradeRevenueBreakdown from "./pages/admin/TradeRevenueBreakdown";
+import AskAPro from "./pages/homeowner/AskAPro";
+import BulkOperations from "./pages/admin/BulkOperations";
+import ConversionFunnel from "./pages/admin/ConversionFunnel";
+import TierBenefits from "./pages/TierBenefits";
+import ContentLibrary from "./pages/ContentLibrary";
+import ApiKeyManagement from "./pages/admin/ApiKeyManagement";
+
+// Wave 31-45 Pages
+import MobileOptimization from "./pages/admin/MobileOptimization";
+import AccessibilitySettings from "./pages/admin/AccessibilitySettings";
+import ErrorMonitoring from "./pages/admin/ErrorMonitoring";
+import PerformanceMonitoring from "./pages/admin/PerformanceMonitoring";
+import Documentation from "./pages/Documentation";
+
+// Domain-based routing: trustypro.io → /trustypro
+function DomainRouter() {
+  const [location, navigate] = useLocation();
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    const isTrustyPro =
+      hostname === "trustypro.io" ||
+      hostname === "www.trustypro.io" ||
+      hostname.endsWith(".trustypro.io");
+    if (isTrustyPro) {
+      // Allow /waitlist/* paths to work directly on trustypro.io (homeowner waitlist)
+      if (location.startsWith("/waitlist")) return;
+      // Allow /trustypro/* paths through
+      if (location.startsWith("/trustypro")) return;
+      // Redirect root and all other paths to /trustypro
+      navigate("/trustypro", { replace: true });
+    }
+  }, [location, navigate]);
+  return null;
+}
 
 // Redirect /login  OAuth login URL
 function LoginRedirect() {
@@ -308,28 +423,24 @@ function LoginRedirect() {
   return null;
 }
 
-function RootPage() {
-  const isTrustyPro = (window as any).__BRAND__ === "trustypro";
-  if (isTrustyPro) {
-    return <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>;
-  }
-  return <SmoothScrollProvider><Home /></SmoothScrollProvider>;
-}
-
 function Router() {
   return (
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
-        <RootPage />
+        <SmoothScrollProvider><Home /></SmoothScrollProvider>
       </Route>
       <Route path="/demo" component={Demo} />
       <Route path="/apply" component={Apply} />
+      <Route path="/application-status" component={ApplicationStatus} />
+      <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
-      <Route path="/join" component={JoinLanding} />
-      <Route path="/waitlist/pro" component={WaitlistProLanding} />
-      <Route path="/waitlist/homeowner" component={WaitlistHomeLanding} />
+      <Route path="/join" component={HomeownerWaitlistForm} />
+      <Route path="/waitlist/pro" component={ProWaitlist} />
+      <Route path="/waitlist/homeowner" component={TrustyProWaitlistPage} />
+      <Route path="/waitlist/homeowner/status" component={TrustyProWaitlistStatus} />
+      <Route path="/contest" component={Contest} />
       <Route path="/partners" component={PartnerDirectory} />
       <Route path="/pro/:id" component={PartnerSpotlight} />
       <Route path="/login" component={LoginRedirect} />
@@ -353,9 +464,11 @@ function Router() {
       <Route path="/dashboard/earnings" component={EarningsTracker} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
-      <Route path="/dashboard/network" component={NetworkIncomeHub} />
       <Route path="/dashboard/referral" component={ReferralLink} />
+      <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
+      <Route path="/dashboard/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
+      <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
       <Route path="/dashboard/upgrade" component={TierUpgradeFlow} />
       <Route path="/dashboard/notifications" component={Notifications} />
       <Route path="/dashboard/notification-preferences" component={NotificationPreferences} />
@@ -378,13 +491,17 @@ function Router() {
       <Route path="/admin/verification" component={PartnerVerification} />
       <Route path="/admin/health" component={PlatformHealth} />
       <Route path="/admin/activity" component={ActivityLog} />
+      <Route path="/admin/activity-logs" component={ActivityLog} />
       <Route path="/admin/rates" component={AdminCommissionRates} />
       <Route path="/admin/opportunities-old" component={AdminOpportunityFeed} />
 
       {/* Admin Command Center */}
       <Route path="/admin" component={CommandCenter} />
+      <Route path="/admin/dashboard" component={PortfolioDashboard} />
+      <Route path="/admin/prolnk/overview" component={CommandCenter} />
+      <Route path="/admin/trustypro/overview" component={TrustyProOverview} />
+      <Route path="/admin/strategic-overview" component={StrategicOverview} />
       <Route path="/admin/map" component={NetworkMap} />
-      <Route path="/admin/network" component={NetworkOverview} />
       <Route path="/admin/partners" component={PartnerIntelligence} />
       <Route path="/admin/ai" component={AIOpportunityEngine} />
       <Route path="/admin/opportunities" component={AIOpportunityEngine} />
@@ -399,6 +516,7 @@ function Router() {
       <Route path="/admin/fsm-webhooks" component={FsmWebhookLog} />
       <Route path="/admin/n8n-webhooks" component={WebhookManager} />
       <Route path="/admin/n8n-setup" component={N8nSetupGuide} />
+      <Route path="/admin/n8n" component={N8nSetupGuide} />
       <Route path="/admin/disputes" component={CommissionDisputes} />
       <Route path="/admin/deals" component={DealManagement} />
       <Route path="/admin/deal-pipeline" component={DealPipelineKanban} />
@@ -423,14 +541,64 @@ function Router() {
       <Route path="/admin/platform-settings" component={PlatformSettings} />
       <Route path="/admin/comm-sequence" component={CommSequence} />
       <Route path="/admin/trustypro-leads" component={TrustyProLeads} />
+      <Route path="/admin/trustypro" component={TrustyProOverview} />
+      <Route path="/admin/trustypro-scans" component={TrustyProScans} />
+      <Route path="/admin/photo-access-log" component={PhotoAccessLog} />
       <Route path="/admin/home-intelligence" component={HomeIntelligence} />
+      <Route path="/admin/knowledge-graph" component={KnowledgeGraph} />
+      <Route path="/admin/business-packet" component={BusinessPacket} />
+      <Route path="/admin/tp-agents" component={TrustyProAgentsPage} />
+      <Route path="/admin/tp-org-chart" component={TrustyProOrgChartPage} />
+      <Route path="/admin/tp-revenue" component={TrustyProRevenuePage} />
+      <Route path="/admin/media-agents" component={MediaAgentsPage} />
+      <Route path="/admin/media-org-chart" component={MediaOrgChartPage} />
+      <Route path="/admin/media-revenue" component={MediaRevenuePage} />
+
+      {/* 7 Top-level Executive Dashboards */}
+      <Route path="/admin/dashboard/executive"  component={ExecutiveDashboard} />
+      <Route path="/admin/dashboard/operations" component={OperationsDashboard} />
+      <Route path="/admin/dashboard/sales"      component={SalesDashboard} />
+      <Route path="/admin/dashboard/marketing"  component={MarketingDashboard} />
+      <Route path="/admin/dashboard/support"    component={SupportDashboard} />
+      <Route path="/admin/dashboard/financial"  component={FinancialDashboard} />
+      <Route path="/admin/dashboard/agents"     component={AIAgentsDashboard} />
+
+      {/* ProLnk Residential — 7 company dashboards */}
+      <Route path="/admin/prolnk/executive"   component={ProLnkExecutive}   />
+      <Route path="/admin/prolnk/operations"  component={ProLnkOperations}  />
+      <Route path="/admin/prolnk/sales"       component={ProLnkSales}       />
+      <Route path="/admin/prolnk/marketing"   component={ProLnkMarketing}   />
+      <Route path="/admin/prolnk/support"     component={ProLnkSupport}     />
+      <Route path="/admin/prolnk/financial"   component={ProLnkFinancial}   />
+      <Route path="/admin/prolnk/agents"      component={ProLnkAgents}      />
+
+      {/* TrustyPro — 7 company dashboards */}
+      <Route path="/admin/tp/executive"       component={TrustyProExecutive}   />
+      <Route path="/admin/tp/operations"      component={TrustyProOperations}  />
+      <Route path="/admin/tp/sales"           component={TrustyProSales}       />
+      <Route path="/admin/tp/marketing"       component={TrustyProMarketing}   />
+      <Route path="/admin/tp/support"         component={TrustyProSupport}     />
+      <Route path="/admin/tp/financial"       component={TrustyProFinancial}   />
+      <Route path="/admin/tp/agents"          component={TrustyProAgents}      />
+
+      {/* ProLnk Media — 7 company dashboards */}
+      <Route path="/admin/media-dash/executive"  component={MediaExecutive}   />
+      <Route path="/admin/media-dash/operations" component={MediaOperations}  />
+      <Route path="/admin/media-dash/sales"      component={MediaSales}       />
+      <Route path="/admin/media-dash/marketing"  component={MediaMarketing}   />
+      <Route path="/admin/media-dash/support"    component={MediaSupport}     />
+      <Route path="/admin/media-dash/financial"  component={MediaFinancial}   />
+      <Route path="/admin/media-dash/agents"     component={MediaAgents}      />
 
       {/* V6 -- Predictive Engine */}
       <Route path="/admin/predict" component={EventEngineDashboard} />
       <Route path="/admin/ai-pipeline" component={AIPipelineMonitor} />
       <Route path="/admin/storm-watch" component={StormWatch} />
       <Route path="/admin/storm" component={StormDashboard} />
-      <Route path="/admin/agents" component={AgentStatusDashboard} />
+      <Route path="/admin/agents" component={AgentTracker} />
+      <Route path="/admin/org-chart" component={CompanyOrgChart} />
+      <Route path="/admin/accountability" component={Accountability} />
+      <Route path="/admin/agent-command-center" component={AgentCommandCenter} />
       <Route path="/admin/asset-aging" component={AssetAging} />
       <Route path="/admin/recalls" component={SafetyRecalls} />
       <Route path="/admin/data-marketplace" component={DataMarketplace} />
@@ -464,11 +632,12 @@ function Router() {
       <Route path="/trustypro/login" component={TrustyProLogin} />
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
+      {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
       <Route path="/trustypro/scan" component={PhotoScan} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />
-      <Route path="/my-home/photos" component={HomeownerProjects} />
+      <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/projects" component={HomeownerProjects} />
       <Route path="/my-home/timeline" component={HomeownerTimeline} />
       <Route path="/my-home/messages" component={HomeownerMessages} />
@@ -509,6 +678,7 @@ function Router() {
       <Route path="/partner-agreement" component={PartnerAgreement} />
       <Route path="/admin/compliance" component={StrikeManagement} />
       <Route path="/admin/waitlist" component={WaitlistManager} />
+      <Route path="/admin/waitlist-intelligence" component={WaitlistIntelligence} />
       <Route path="/admin/homeowners" component={HomeownerCRM} />
       <Route path="/admin/customer-success" component={CustomerSuccess} />
       <Route path="/admin/tax-reports" component={TaxReports} />
@@ -532,7 +702,7 @@ function Router() {
       <Route path="/admin/bundle-offers" component={BundleOffers} />
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
-      <Route path="/advertise" component={AdvertiseWithUs} />
+      <Route path="/advertise" component={ProLnkMedia} />
       <Route path="/pricing" component={Pricing} />
 
       {/* Fallback */}
@@ -541,12 +711,13 @@ function Router() {
       <Route path="/terms" component={TermsOfService} />
       <Route path="/ccpa" component={CCPARights} />
       <Route path="/cookies" component={CookiePolicy} />
+      <Route path="/security" component={SecurityTrustCenter} />
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
-      <Route path="/my-home/milestones" component={MilestoneTracker} />
+      <Route path="/my-home/milestones" component={TrustyProComingSoon} />
       <Route path="/dashboard/growth-calculator" component={GrowthCalculator} />
       <Route path="/dashboard/community" component={CommunityForum} />
       <Route path="/leaderboard" component={PartnerLeaderboard} />
@@ -556,7 +727,11 @@ function Router() {
       <Route path="/my-home/savings" component={SavingsTracker} />
       <Route path="/my-home/home-value" component={HomeValueImpact} />
       <Route path="/my-home/assistant" component={HomeAssistant} />
+      <Route path="/my-home/diagnose" component={TrustyProComingSoon} />
       <Route path="/admin/partner-health" component={PartnerHealthDashboard} />
+      <Route path="/admin/home-health" component={TrustyProOverview} />
+      <Route path="/admin/media-analytics" component={Analytics} />
+      <Route path="/admin/media-settings" component={PlatformSettings} />
       <Route path="/admin/geo-expansion" component={GeoExpansionMap} />
       <Route path="/admin/revenue-forecast" component={RevenueForecast} />
       <Route path="/admin/lead-quality" component={LeadQualityCenter} />
@@ -571,21 +746,21 @@ function Router() {
       <Route path="/dashboard/upsell" component={UpsellPlaybook} />
       <Route path="/dashboard/events" component={NetworkingEvents} />
       <Route path="/dashboard/tax-estimator" component={TaxEstimator} />
-      <Route path="/my-home/compare-contractors" component={ContractorComparison} />
+      <Route path="/my-home/compare-contractors" component={TrustyProComingSoon} />
       <Route path="/my-home/seasonal-prep" component={SeasonalPrepGuide} />
       <Route path="/my-home/notifications" component={NotificationSettings} />
       <Route path="/my-home/notification-settings" component={NotificationSettings} />
       <Route path="/my-home/documents" component={DocumentVault} />
       <Route path="/my-home/document-vault" component={DocumentVault} />
-      <Route path="/my-home/referral" component={ReferralProgram} />
+      <Route path="/my-home/referral" component={HomeownerReferral} />
       <Route path="/my-home/homeowner-referral" component={HomeownerReferral} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/emergency" component={EmergencyServices} />
-      <Route path="/my-home/neighborhood-deals" component={NeighborhoodDeals} />
+      <Route path="/my-home/neighborhood-deals" component={TrustyProComingSoon} />
       <Route path="/my-home/favorites" component={HomeownerFavorites} />
       <Route path="/my-home/saved-pros" component={HomeownerFavorites} />
-      <Route path="/my-home/property-comparison" component={PropertyComparison} />
-      <Route path="/my-home/job-timeline" component={JobTimeline} />
+      <Route path="/my-home/property-comparison" component={TrustyProComingSoon} />
+      <Route path="/my-home/job-timeline" component={HomeownerTimeline} />
       <Route path="/admin/churn-prediction" component={ChurnPrediction} />
       <Route path="/admin/tier-upgrades" component={TierUpgradeCenter} />
       <Route path="/admin/content" component={ContentManagement} />
@@ -593,7 +768,8 @@ function Router() {
       <Route path="/admin/onboarding-funnel" component={OnboardingFunnel} />
       <Route path="/admin/ab-tests" component={ABTestManager} />
       <Route path="/admin/nps" component={NPSSurveyManager} />
-      <Route path="/admin/franchise-territories" component={FranchiseTerritories} />
+      <Route path="/admin/coverage-zones" component={CoverageZones} />
+      <Route path="/admin/franchise-territories" component={CoverageZones} />
       <Route path="/admin/payout-history" component={AdminPayoutHistory} />
       <Route path="/admin/seasonal-campaigns" component={SeasonalCampaigns} />
       <Route path="/admin/payment-monitor" component={PaymentMonitor} />
@@ -606,22 +782,67 @@ function Router() {
       <Route path="/dashboard/360-profile" component={Partner360Profile} />
       <Route path="/my-home/360-profile" component={Homeowner360Profile} />
       <Route path="/admin/360-members" component={Admin360Members} />
+      <Route path="/admin/exchange" component={B2BDataExchange} />
+      <Route path="/admin/commercial" component={ProLnkExchangeCommercial} />
+      <Route path="/admin/partner-check-ins" component={PartnerCheckIns} />
+      <Route path="/admin/partner-spotlights" component={PartnerSpotlightsAdmin} />
+      <Route path="/admin/notification-center" component={NotificationCenterAdmin} />
+      <Route path="/admin/automation-rules" component={AutomationRulesEngine} />
+      <Route path="/admin/media-library" component={MediaLibraryAdmin} />
+      <Route path="/admin/seasonal-maintenance" component={SeasonalMaintenanceAdmin} />
+      <Route path="/admin/integration-webhooks" component={IntegrationWebhookDashboard} />
+      <Route path="/admin/insurance-carriers" component={InsuranceCarrierDB} />
+      <Route path="/admin/dashboard-builder" component={DashboardBuilder} />
+      <Route path="/admin/report-generator" component={ReportGenerator} />
+      <Route path="/admin/scheduled-reports" component={ScheduledReports} />
+      <Route path="/admin/kpi-tracker" component={KPITracker} />
+      <Route path="/admin/monthly-revenue" component={MonthlyRevenueReport} />
+      <Route path="/admin/trade-revenue" component={TradeRevenueBreakdown} />
+      <Route path="/admin/bulk-operations" component={BulkOperations} />
+      <Route path="/admin/conversion-funnel" component={ConversionFunnel} />
+      <Route path="/admin/api-keys" component={ApiKeyManagement} />
+      <Route path="/admin/mobile-optimization" component={MobileOptimization} />
+      <Route path="/admin/accessibility" component={AccessibilitySettings} />
+      <Route path="/admin/error-monitoring" component={ErrorMonitoring} />
+      <Route path="/admin/performance" component={PerformanceMonitoring} />
 
-      {/* Partner tools */}
-      <Route path="/dashboard/bid-board" component={BidBoardPage} />
-      <Route path="/dashboard/briefcase" component={BriefcaseManager} />
-      <Route path="/dashboard/pro-pass" component={ProPassManager} />
-      <Route path="/dashboard/scout-assessment" component={ScoutAssessmentWizard} />
-      <Route path="/onboarding/wizard" component={PartnerOnboardingWizard} />
+      {/* Content & Marketing */}
+      <Route path="/blog" component={Blog} />
+      <Route path="/how-ai-works" component={HowAIWorks} />
+      <Route path="/for-real-estate-agents" component={ForRealEstateAgents} />
+      <Route path="/for-insurance-agents" component={ForInsuranceAgents} />
+      <Route path="/for-property-managers" component={ForPropertyManagers} />
 
-      {/* Public verification & programs */}
-      <Route path="/founding-partner" component={FoundingPartnerPage} />
-      <Route path="/verify/pro-pass/:code" component={ProPassVerify} />
-      <Route path="/verify/briefcase/:id" component={PublicBriefcaseVerify} />
-      <Route path="/agent-portal" component={AgentPortal} />
-      <Route path="/agent-agreement" component={AgentAgreement} />
-      <Route path="/my-campaign" component={AdvertiserDashboard} />
+      {/* Agent Portal */}
+      <Route path="/agent/signup" component={AgentSignup} />
+      <Route path="/agent/dashboard" component={AgentDashboard} />
+      <Route path="/agent/pre-listing-scan" component={PreListingScan} />
 
+      {/* Partner Training */}
+      <Route path="/resources" component={PartnerResourceCenter} />
+      <Route path="/resources/photo-guide" component={PhotoGuide} />
+      <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
+      <Route path="/resources/faq" component={PartnerFAQ} />
+      <Route path="/resources/success-stories" component={PartnerSuccessStories} />
+
+      {/* Lead Management */}
+      <Route path="/leads" component={LeadInbox} />
+      <Route path="/leads/:id" component={LeadDetail} />
+      <Route path="/jobs/:id/document" component={JobDocumentation} />
+      <Route path="/tier-benefits" component={TierBenefits} />
+      <Route path="/content-library" component={ContentLibrary} />
+
+      {/* Homeowner Extensions */}
+      <Route path="/my-home/check-in" component={CheckInSystem} />
+      <Route path="/my-home/ask-a-pro" component={AskAPro} />
+      <Route path="/my-home/landlord" component={LandlordView} />
+      <Route path="/my-home/portfolio" component={PropertyPortfolio} />
+      <Route path="/my-home/insurance-claim" component={InsuranceClaimAssistant} />
+      <Route path="/my-home/insurance-coverage" component={InsuranceCoverageChecker} />
+      <Route path="/my-home/warranties" component={WarrantyTracker} />
+
+      <Route path="/docs" component={Documentation} />
+      <Route path="/media" component={ProLnkMedia} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -629,11 +850,11 @@ function Router() {
 
 function AppContent() {
   const [location] = useLocation();
-  const showPWA = !location.startsWith("/trustypro");
   return (
     <>
+      <DomainRouter />
       <Router />
-      {showPWA && <PWAInstallBanner />}
+      <CookieConsentBanner />
     </>
   );
 }

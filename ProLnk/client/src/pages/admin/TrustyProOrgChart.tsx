@@ -1,0 +1,52 @@
+import AdminLayout from "@/components/AdminLayout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Network, Shield, Camera, Home, Brain, DollarSign, Settings } from "lucide-react";
+
+const ORG_NODES = [
+  { role: "Owner / Founder", name: "Andrew", level: 0, color: "#82D616", icon: Shield },
+  { role: "Product Lead", name: "TBD", level: 1, color: "#3b82f6", icon: Settings },
+  { role: "Photo Analysis Lead", name: "TBD", level: 1, color: "#10b981", icon: Camera },
+  { role: "Homeowner Success", name: "TBD", level: 1, color: "#f59e0b", icon: Home },
+  { role: "AI / ML Engineer", name: "TBD", level: 2, color: "#8b5cf6", icon: Brain },
+  { role: "Revenue / Partnerships", name: "TBD", level: 2, color: "#f97316", icon: DollarSign },
+];
+
+export default function TrustyProOrgChart() {
+  return (
+    <AdminLayout>
+      <div className="p-6 space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold text-[#344767] flex items-center gap-2">
+            <Network className="w-6 h-6 text-[#82D616]" />
+            TrustyPro — Org Chart
+          </h1>
+          <p className="text-sm text-[#7B809A] mt-1">
+            Team structure and role assignments for TrustyPro operations.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {ORG_NODES.map((node) => {
+            const Icon = node.icon;
+            return (
+              <Card key={node.role} className="border border-[#E9ECEF]">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: node.color + "20" }}>
+                    <Icon className="w-5 h-5" style={{ color: node.color }} />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-[#344767]">{node.role}</div>
+                    <div className="text-xs text-[#7B809A]">{node.name}</div>
+                    <div className="text-[10px] text-[#AEAEAE] mt-0.5">Level {node.level + 1}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <p className="text-xs text-[#7B809A] text-center pt-4">
+          Full interactive org chart with reporting lines coming soon. Roles marked TBD are open positions.
+        </p>
+      </div>
+    </AdminLayout>
+  );
+}

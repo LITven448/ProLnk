@@ -1,0 +1,79 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Building2 } from "lucide-react";
+
+
+export default function LandlordView() {
+  return (
+    <div className="min-h-screen bg-slate-950">
+      <div className="container max-w-6xl mx-auto px-4 py-8 space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
+            <Building2 className="h-6 w-6 text-teal-400" />
+            Property Portfolio
+          </h1>
+          <p className="text-slate-400 mt-1">Manage multiple rental and investment properties from one dashboard</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card className="bg-slate-800/60 border-slate-700">
+            <CardHeader>
+              <CardTitle className="text-white text-lg">Status</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Badge className="bg-amber-500/20 text-amber-400">In Development</Badge>
+              <p className="text-sm text-slate-400 mt-2">This feature is being built as part of the platform expansion.</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-slate-800/60 border-slate-700">
+            <CardHeader>
+              <CardTitle className="text-white text-lg">Category</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Badge className="bg-teal-500/20 text-teal-400">Multi-Property</Badge>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="bg-slate-800/60 border-slate-700">
+          <CardHeader>
+            <CardTitle className="text-white text-lg">Planned Features</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              
+              <div key="0" className="flex items-start gap-3 p-3 bg-slate-800/40 rounded-lg">
+                <div className="w-2 h-2 rounded-full bg-teal-400 mt-2 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white">Property List</p>
+                  <p className="text-xs text-slate-400 mt-0.5">View all your properties with health scores and status</p>
+                </div>
+              </div>
+              <div key="1" className="flex items-start gap-3 p-3 bg-slate-800/40 rounded-lg">
+                <div className="w-2 h-2 rounded-full bg-teal-400 mt-2 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white">Tenant Management</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Track tenants, leases, and maintenance requests per property</p>
+                </div>
+              </div>
+              <div key="2" className="flex items-start gap-3 p-3 bg-slate-800/40 rounded-lg">
+                <div className="w-2 h-2 rounded-full bg-teal-400 mt-2 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white">Maintenance Coordination</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Schedule and track maintenance across all properties</p>
+                </div>
+              </div>
+              <div key="3" className="flex items-start gap-3 p-3 bg-slate-800/40 rounded-lg">
+                <div className="w-2 h-2 rounded-full bg-teal-400 mt-2 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white">Financial Overview</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Track expenses, income, and ROI per property</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

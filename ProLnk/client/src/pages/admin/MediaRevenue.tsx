@@ -1,0 +1,63 @@
+import AdminLayout from "@/components/AdminLayout";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DollarSign, Megaphone, Building2, Star, TrendingUp } from "lucide-react";
+
+const REVENUE_STREAMS = [
+  { name: "Advertiser Placements", desc: "Local businesses pay for featured placement in ProLnk job confirmation emails, homeowner reports, and the partner directory.", status: "Planned", color: "#FBB140", icon: Megaphone },
+  { name: "Real Estate Agent Packages", desc: "Real estate agents pay for exclusive zip code sponsorships and pre-listing repair referral partnerships.", status: "Planned", color: "#3b82f6", icon: Building2 },
+  { name: "Sponsored Content", desc: "Home services brands pay for sponsored how-to content distributed to the ProLnk homeowner audience.", status: "Planned", color: "#ec4899", icon: Star },
+  { name: "Data & Insights Reports", desc: "Aggregated, anonymized market data reports sold to insurance companies, lenders, and real estate investors.", status: "Planned", color: "#8b5cf6", icon: TrendingUp },
+];
+
+export default function MediaRevenue() {
+  return (
+    <AdminLayout>
+      <div className="p-6 space-y-6">
+        <div>
+          <h1 className="text-2xl font-bold text-[#344767] flex items-center gap-2">
+            <DollarSign className="w-6 h-6 text-[#FBB140]" />
+            ProLnk Media — Revenue
+          </h1>
+          <p className="text-sm text-[#7B809A] mt-1">Revenue streams and financial metrics for ProLnk Media.</p>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { label: "MRR", value: "$0", note: "Pre-launch" },
+            { label: "Active Advertisers", value: "0", note: "Outreach pending" },
+            { label: "Real Estate Partners", value: "0", note: "Pipeline building" },
+            { label: "Content Pieces", value: "0", note: "Production planned" },
+          ].map((stat) => (
+            <Card key={stat.label}>
+              <CardContent className="p-4">
+                <div className="text-xs text-[#7B809A] mb-1">{stat.label}</div>
+                <div className="text-2xl font-bold text-[#344767]">{stat.value}</div>
+                <div className="text-[10px] text-[#AEAEAE] mt-0.5">{stat.note}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {REVENUE_STREAMS.map((stream) => {
+            const Icon = stream.icon;
+            return (
+              <Card key={stream.name} className="border border-[#E9ECEF]">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: stream.color + "20" }}>
+                      <Icon className="w-4 h-4" style={{ color: stream.color }} />
+                    </div>
+                    <CardTitle className="text-sm font-semibold text-[#344767]">{stream.name}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-xs text-[#7B809A] leading-relaxed">{stream.desc}</p>
+                  <div className="mt-2 text-[10px] font-medium text-zinc-400">{stream.status}</div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </AdminLayout>
+  );
+}

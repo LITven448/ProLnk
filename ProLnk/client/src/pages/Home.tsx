@@ -1,17 +1,21 @@
-import { useState, useMemo, useEffect } from "react";
-import { getLoginUrl } from "@/const";
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { useDomain } from "@/hooks/useDomain";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";
-import SEO from "@/components/SEO";
+import BackToTop from "@/components/BackToTop";
+import ProLnkJobSiteVisual from "@/components/ProLnkJobSiteVisual";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
 import { trpc } from "@/lib/trpc";
-import type React from "react";
 import { Link } from "wouter";
 import {
   Users, TrendingUp, DollarSign, Star, CheckCircle, ChevronDown, ChevronUp,
-  ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck, Play,
+  ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck,
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
-  XCircle, Award, Target, Lock, RefreshCw, BarChart3, Megaphone, Wrench, Plug, Globe
+  XCircle, Award, Target, Lock, RefreshCw, BarChart3, Megaphone, Wrench, Plug,
+  Bot, Brain, CalendarDays, PieChart, MessageSquare, Sparkles,
+  MapPin, Layers, TrendingDown, CheckCircle2, ChevronRight, Play, Pause, Briefcase,
+  Hammer, TreePine
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -22,83 +26,85 @@ import { toast } from "sonner";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing -- 3 residential tiers + 30-day trial ----------------------------
+// --- Pricing — 3 residential tiers (Connect/Growth/Elite) ----------------------------
 const PRICING_TIERS = [
   {
-    name: "Scout",
+    name: "Connect",
     subtitle: "Solo operators & new partners",
     monthlyFee: 79,
-    commissionShare: 0.40,
-    photoCap: 200,
+    commissionShare: 0.45,
+    photoCap: null,
     zipLimit: 5,
-    weeklyLeadCap: 5,
+    weeklyLeadCap: 20,
     popular: false,
-    cta: "Start Free Trial",
+    cta: "Apply Now",
     features: [
-      "30-day free trial",
-      "Upload up to 200 photos/month",
+      "Free during beta — no credit card required",
+      "Unlimited photo uploads",
       "AI opportunity detection on every photo",
       "Partner profile + verification badge",
-      "Earn 40% of ProLnk's fee on every job your photos generate",
-      "5 service zip codes",
-      "Up to 5 leads/week",
+      "Up to 20 verified leads/month",
+      "5 zip code service area",
+      "1 service category",
       "Commission tracking dashboard",
       "FieldOS mobile access",
       "Email support",
     ],
   },
   {
-    name: "Pro",
-    subtitle: "Growing businesses",
+    name: "Growth",
+    subtitle: "Established businesses",
     monthlyFee: 149,
     commissionShare: 0.55,
-    photoCap: 500,
+    photoCap: null,
     zipLimit: 15,
-    weeklyLeadCap: 15,
+    weeklyLeadCap: 60,
     popular: true,
-    cta: "Start Free Trial",
+    cta: "Apply Now",
     features: [
-      "30-day free trial",
-      "Upload up to 500 photos/month",
-      "Earn 55% of ProLnk's fee on every job your photos generate",
-      "15 service zip codes",
-      "Up to 15 leads/week",
-      "Enhanced TrustyPro homeowner listing",
-      "Deal Composer access",
+      "Free during beta — no credit card required",
+      "Unlimited photo uploads",
+      "Up to 60 verified leads/month",
+      "15 zip code service area",
+      "All service categories",
+      "Higher commission share",
       "FSM integration (Jobber, HCP, ServiceTitan)",
-      "Weekly earnings summary + forecast",
-      "Review management",
+      "Bundle offer matching",
+      "Deal Composer access",
+      "Review management suite",
       "Priority email support",
     ],
   },
   {
-    name: "Crew",
-    subtitle: "Established businesses",
+    name: "Elite",
+    subtitle: "Multi-location & high-volume",
     monthlyFee: 249,
     commissionShare: 0.65,
     photoCap: null,
     zipLimit: 30,
-    weeklyLeadCap: 30,
+    weeklyLeadCap: null,
     popular: false,
-    cta: "Start Free Trial",
+    cta: "Apply Now",
     features: [
-      "30-day free trial",
+      "Free during beta — no credit card required",
       "Unlimited photo uploads",
-      "Earn 65% of ProLnk's fee on every job your photos generate",
-      "30 service zip codes",
-      "Up to 30 leads/week",
-      "Featured placement on TrustyPro homeowner platform",
-      "Storm Alert Dispatch included",
+      "Unlimited verified leads",
+      "30 zip code service area",
+      "Priority lead routing (first-look advantage)",
+      "Highest commission share",
+      "Up to 25 team seats",
+      "Multi-location management",
       "API & webhook integrations",
-      "Real-time dashboard + job pipeline",
-      "Dedicated partner success rep",
+      "Dedicated partner success manager",
       "Quarterly strategy review",
     ],
   },
 ]
 
 // --- Add-On Modules -----------------------------------------------------------
+// Regular add-ons first (available now), then AI Agent add-ons (Coming Soon) at the bottom
 const ADD_ONS = [
+  // --- Available Now ---
   {
     id: "storm-alert",
     name: "Storm Alert Dispatch",
@@ -106,15 +112,6 @@ const ADD_ONS = [
     unit: "/mo",
     description: "When a storm hits your service area, you get an instant alert with affected addresses and a one-click outreach template. Included free in Crew.",
     icon: CloudLightning,
-    perUnit: false,
-  },
-  {
-    id: "priority-routing",
-    name: "Priority Lead Routing",
-    price: 79,
-    unit: "/mo",
-    description: "Your profile is weighted higher in the ProLnk routing algorithm for leads in your service zip codes. More visibility, more opportunities.",
-    icon: TrendingUp,
     perUnit: false,
   },
   {
@@ -136,15 +133,6 @@ const ADD_ONS = [
     perUnit: false,
   },
   {
-    id: "homeowner-report",
-    name: "Homeowner Report Access",
-    price: 39,
-    unit: "/mo",
-    description: "When a TrustyPro homeowner scans their home and your trade is flagged, you receive the full AI property report — not just a lead notification.",
-    icon: Eye,
-    perUnit: false,
-  },
-  {
     id: "success-coaching",
     name: "Partner Success Coaching",
     price: 99,
@@ -152,6 +140,7 @@ const ADD_ONS = [
     description: "Monthly 1-on-1 session with a ProLnk partner success rep to optimize your photo strategy, improve your profile, and maximize your earnings.",
     icon: Award,
     perUnit: false,
+    comingSoon: false,
   },
   {
     id: "marketing-advertising",
@@ -161,17 +150,89 @@ const ADD_ONS = [
     description: "ProLnk runs paid digital ads in your service area to drive homeowner awareness directly to your profile. We handle the creative, targeting, and spend — you just close the leads.",
     icon: Megaphone,
     perUnit: false,
+    comingSoon: false,
+  },
+  {
+    id: "extended-territory",
+    name: "Extended Territory",
+    price: 29,
+    unit: "/zip/mo",
+    description: "Expand your service area beyond your plan's included zip codes. Each additional zip code adds $29/month and is covered by the same AI detection and lead routing as your base territory.",
+    icon: MapPin,
+    perUnit: true,
+    comingSoon: false,
+  },
+  // --- AI Agent Add-Ons (Coming Soon) ---
+  {
+    id: "smart-glasses",
+    name: "ProLnk Smart Glasses",
+    price: 0,
+    unit: "TBD",
+    description: "Hands-free job documentation. Smart glasses (Meta Ray-Ban style) that video the job, auto-capture photos, and use voice-to-text to log notes and descriptions — all synced to your ProLnk profile automatically.",
+    icon: Eye,
+    perUnit: false,
+    comingSoon: true,
+  },
+  {
+    id: "finance-agent",
+    name: "Finance Agent",
+    price: 79,
+    unit: "/mo",
+    description: "An AI agent that monitors your earnings, flags payout anomalies, generates monthly P&L summaries, and recommends tier upgrades based on your actual revenue data.",
+    icon: PieChart,
+    perUnit: false,
+    comingSoon: true,
+  },
+  {
+    id: "marketing-agent",
+    name: "Marketing Agent",
+    price: 49,
+    unit: "/mo",
+    description: "An AI agent that writes geo-targeted social posts, follow-up email sequences, and seasonal campaign copy based on your trade, service area, and recent jobs — automatically.",
+    icon: Sparkles,
+    perUnit: false,
+    comingSoon: true,
+  },
+  {
+    id: "scheduling-agent",
+    name: "Scheduling Agent",
+    price: 59,
+    unit: "/mo",
+    description: "An AI agent that manages your availability window, auto-responds to inbound leads with proposed time slots, and syncs confirmed jobs to your calendar — no back-and-forth.",
+    icon: CalendarDays,
+    perUnit: false,
+    comingSoon: true,
+  },
+  {
+    id: "client-comms-agent",
+    name: "Client Comms Agent",
+    price: 39,
+    unit: "/mo",
+    description: "An AI agent that handles post-job follow-ups, review requests, and homeowner check-ins via SMS — so you stay top of mind without lifting a finger.",
+    icon: MessageSquare,
+    perUnit: false,
+    comingSoon: true,
+  },
+  {
+    id: "ops-intelligence-agent",
+    name: "Ops Intelligence Agent",
+    price: 89,
+    unit: "/mo",
+    description: "An AI agent that analyzes your job history, photo upload patterns, and lead conversion rates to surface weekly insights and specific actions to grow your earnings.",
+    icon: Brain,
+    perUnit: false,
+    comingSoon: true,
   },
 ]
 
 // --- Who Can Join -------------------------------------------------------------
 const WHO_CAN_JOIN = [
-  { group: "Outdoor & Lawn", emoji: "", categories: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Trimming & Removal", "Irrigation & Sprinklers", "Hardscaping & Patios", "Outdoor Lighting", "Drainage Solutions"] },
-  { group: "Home Maintenance", emoji: "🔧", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair"] },
-  { group: "Cleaning & Restoration", emoji: "✨", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation"] },
-  { group: "Specialty Trades", emoji: "", categories: ["Interior & Exterior Painting", "Pool Service & Repair", "Pest Control", "Security Systems", "Solar Installation", "Kitchen & Bath Remodeling"] },
-  { group: "Pet & Animal", emoji: "", categories: ["Pet Waste Removal", "Dog Walking & Pet Sitting", "Pet Grooming"] },
-  { group: "Real Estate & Finance", emoji: "🏡", categories: ["Real Estate Agents", "Mortgage Brokers", "Title Companies", "Home Warranty Companies", "Home Insurance Agents", "Property Managers"] },
+  { group: "Outdoor & Lawn", categories: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Trimming & Removal", "Irrigation & Sprinklers", "Hardscaping & Patios", "Outdoor Lighting", "Drainage Solutions", "Artificial Turf Installation", "Retaining Walls", "Outdoor Kitchen & Fire Pit"] },
+  { group: "Home Maintenance & Repair", categories: ["Handyman Services", "Fencing & Gates", "Roofing & Gutters", "HVAC Service & Repair", "Plumbing", "Electrical", "Garage Door Service", "Foundation Repair", "Chimney & Fireplace", "Concrete & Masonry", "Deck & Porch Repair", "Insulation"] },
+  { group: "Cleaning & Restoration", categories: ["House Cleaning", "Pressure Washing", "Window Cleaning", "Carpet Cleaning", "Gutter Cleaning", "Junk Removal", "Mold Remediation", "Air Duct Cleaning", "Dryer Vent Cleaning", "Biohazard & Trauma Cleanup"] },
+  { group: "Specialty Trades", categories: ["Interior & Exterior Painting", "Pool Service & Repair", "Pest Control", "Security Systems", "Solar Installation", "Kitchen & Bath Remodeling", "Flooring & Tile", "Drywall & Plastering", "Cabinet Refacing", "Waterproofing", "Epoxy Flooring", "Glass & Mirror Installation"] },
+  { group: "Home Technology & Energy", categories: ["Smart Home Installation", "EV Charger Installation", "Generator Installation", "Home Theater & AV", "Alarm & Surveillance Systems", "Whole-Home Water Filtration"] },
+  { group: "Pet & Animal", categories: ["Pet Waste Removal", "Dog Walking & Pet Sitting", "Pet Grooming", "Animal Control & Wildlife Removal"] },
 ];
 
 // --- FAQ ----------------------------------------------------------------------
@@ -182,15 +243,15 @@ const FAQS = [
   },
   {
     q: "How does the AI actually work?",
-    a: "You upload 1-3 photos after each job. Our AI scans every image for signs of work other partners can do -- overgrown grass, broken fences, dirty windows, drainage problems, and 50+ more. When it finds something, it routes the lead automatically.",
+    a: "You upload before-and-after photos after each job, plus 3 wide-angle shots of the home exterior. Our AI scans every image across 150+ detection categories — overgrown grass, broken fences, dirty windows, aging roofs, drainage problems, HVAC units nearing end-of-life, foundation cracks, gutter damage, and more. When it finds something actionable, it routes the lead automatically to the right partner.",
   },
   {
     q: "How do I earn commissions?",
-    a: "When your job photos generate a lead that another partner closes, you earn a share of the platform fee. Scout earns 40% of ProLnk's fee, Pro earns 55%, and Crew earns 65% — meaning you keep more on every job. Paid monthly, tracked in real time.",
+    a: "When your job photos generate a lead that another partner closes, you earn a referral commission — a share of the platform fee on that job. Your commission share increases with your tier, so you earn more as you grow. Paid monthly, tracked in real time on your dashboard.",
   },
   {
     q: "Do I have to change how I run my business?",
-    a: "No. Upload 1–3 photos after each job. It takes 60 seconds. The AI handles detection, routing, and tracking. Your existing workflow stays exactly the same — we built it that way on purpose.",
+    a: "Minimal change. Take before-and-after photos of your work area and 3 wide-angle shots of the home's front exterior before you leave. That's it — under 60 seconds. The AI handles detection, routing, and tracking automatically. Your scheduling, invoicing, and dispatch stay exactly the same.",
   },
   {
     q: "What if I'm not a home service pro? Can real estate agents or mortgage brokers join?",
@@ -200,11 +261,34 @@ const FAQS = [
     q: "How long does approval take?",
     a: "Most applications are reviewed within 1-2 business days. Once approved, you can start uploading jobs and receiving leads immediately.",
   },
+  {
+    q: "What is TrustyPro and how does it connect to ProLnk?",
+    a: "TrustyPro is the homeowner side of the ProLnk ecosystem. Homeowners upload photos of their property, log repairs, and track their home's health over time. When they need work done, TrustyPro automatically matches them with a vetted, verified ProLnk partner for that specific job. Your TrustyPro badge is what homeowners see before they see your price — it's the trust signal that makes you the obvious choice.",
+  },
+
+  {
+    q: "Can I refer other pros and earn from their activity too?",
+    a: "Yes. When you refer another pro who joins ProLnk and starts generating leads, you earn a referral bonus. Details are in your partner dashboard under Growth → Referral Hub. The more you grow the network, the more passive income you generate on top of your direct commissions.",
+  },
+  {
+    q: "What happens if a lead doesn't close?",
+    a: "You only earn a commission when a job actually closes. ProLnk tracks the full pipeline — photo upload → lead detection → partner match → job close → commission payout. If a lead doesn't close, no commission is charged or earned. Your earnings are always tied to real, verified outcomes.",
+  },
+  {
+    q: "Is my service area exclusive?",
+    a: "Service areas are not exclusive by default, but your tier determines how many zip codes you cover. Elite partners get 30 zips, Growth partners get 15, and Connect partners start with 5. Need more coverage? Add extra zip codes with the Extended Territory add-on. Within your zips, leads are routed based on your badge tier, response time, and homeowner match score — so top performers consistently get first access.",
+  },
+  {
+    q: "What integrations are supported?",
+    a: "ProLnk integrates with Jobber, Housecall Pro, and ServiceTitan for automatic job sync — no manual uploads required. When a job closes in your FSM, ProLnk captures the photos, runs AI analysis, and routes leads automatically. Additional integrations (Google Calendar, QuickBooks, CompanyCam) are available on the Pro and Crew tiers.",
+  },
 ];
 
 // --- FAQ Item -----------------------------------------------------------------
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  useEffect(() => { document.title = "ProLnk — AI-Powered Home Service Partner Network"; }, []);
+
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden">
       <button
@@ -224,25 +308,25 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 // --- Earnings Estimator (single-sided) --------------------------------------
 function EarningsEstimator() {
   const [mode, setMode] = useState<"referring" | "receiving">("referring");
-  const [photosPerMonth, setPhotosPerMonth] = useState([50]);
+  const [photosPerMonth, setPhotosPerMonth] = useState([15]);
   const [avgJobValue, setAvgJobValue] = useState([1500]);
   const [receivedJobs, setReceivedJobs] = useState([5]);
-  const [tier, setTier] = useState<"Scout" | "Pro" | "Crew">("Pro");
+  const [tier, setTier] = useState<"Connect" | "Growth" | "Elite">("Growth");
   const tierData = {
-    Scout: { share: 0.40, fee: 79,  photoCap: 200 as number | null },
-    Pro:   { share: 0.55, fee: 149, photoCap: 500 as number | null },
-    Crew:  { share: 0.65, fee: 249, photoCap: null as number | null },
+    Connect: { share: 0.45, fee: 79,  earningsCap: 500 as number | null },
+    Growth:  { share: 0.55, fee: 149, earningsCap: null as number | null },
+    Elite:   { share: 0.65, fee: 249, earningsCap: null as number | null },
   };
   const t = tierData[tier];
   const proLnkRate = 0.10;
-  const effectivePhotos = t.photoCap ? Math.min(photosPerMonth[0], t.photoCap) : photosPerMonth[0];
-  const leadsGenerated = Math.round(effectivePhotos * 0.15);
+  const leadsGenerated = Math.round(photosPerMonth[0] * 0.15);
   const closedJobs = Math.round(leadsGenerated * 0.20);
   const proLnkFeePerJob = avgJobValue[0] * proLnkRate;
-  const partnerEarnings = closedJobs * proLnkFeePerJob * t.share;
+  const rawEarnings = closedJobs * proLnkFeePerJob * t.share;
+  const partnerEarnings = t.earningsCap ? Math.min(rawEarnings, t.earningsCap) : rawEarnings;
+  const atEarningsCap = t.earningsCap !== null && rawEarnings >= (t.earningsCap ?? 0);
   const annualEarnings = partnerEarnings * 12;
-  const monthsToOffset = partnerEarnings > 0 ? Math.ceil(t.fee / partnerEarnings) : null;
-  const atCap = t.photoCap !== null && photosPerMonth[0] >= (t.photoCap ?? 0);
+  const monthsToOffset = t.fee > 0 && partnerEarnings > 0 ? Math.ceil(t.fee / partnerEarnings) : null;
   // Receiving side
   const platformFeePerJob = avgJobValue[0] * proLnkRate;
   const totalPlatformFees = receivedJobs[0] * platformFeePerJob;
@@ -257,7 +341,7 @@ function EarningsEstimator() {
           <p className="text-xs text-gray-400 mt-0.5">Model both sides of the ProLnk network</p>
         </div>
         <div className="flex gap-2">
-          {(["Scout", "Pro", "Crew"] as const).map((tName) => (
+          {(["Connect", "Growth", "Elite"] as const).map((tName) => (
             <button
               key={tName}
               onClick={() => setTier(tName)}
@@ -293,20 +377,20 @@ function EarningsEstimator() {
           <div className="space-y-5 mb-6">
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label className="text-sm font-semibold text-gray-700">Photos you upload / month</label>
+                <label className="text-sm font-semibold text-gray-700">Jobs completed / month</label>
                 <div className="flex items-center gap-2">
                   <span className="text-base font-heading font-bold text-[#0A1628]">{photosPerMonth[0]}</span>
-                  {atCap && (
+                  {atEarningsCap && (
                     <span className="text-xs bg-amber-100 text-amber-700 font-semibold px-2 py-0.5 rounded-full">
-                      Plan cap — upgrade to upload more
+                      Earnings cap reached — upgrade to Pro
                     </span>
                   )}
                 </div>
               </div>
-              <Slider value={photosPerMonth} onValueChange={setPhotosPerMonth} min={10} max={600} step={10} className="w-full" />
+              <Slider value={photosPerMonth} onValueChange={setPhotosPerMonth} min={1} max={100} step={1} className="w-full" />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>~{leadsGenerated} leads detected · ~{closedJobs} jobs closed by the network</span>
-                {t.photoCap && <span>Plan cap: {t.photoCap} photos/mo</span>}
+                {t.earningsCap && <span className="text-amber-600 font-medium">Connect tier earns up to ${t.earningsCap}/mo — upgrade to Growth to remove cap</span>}
               </div>
             </div>
             <div>
@@ -334,7 +418,7 @@ function EarningsEstimator() {
               <div className="text-xs text-gray-400 mt-0.5">of ProLnk fee</div>
             </div>
           </div>
-          <div className="rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#0A1628]">
+          <div className="rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#1a2d4a]">
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Estimated Monthly Earnings</div>
               <div className="flex items-baseline gap-2">
@@ -345,6 +429,9 @@ function EarningsEstimator() {
               </div>
               <div className="text-white/50 text-xs mt-1">
                 {closedJobs} jobs × ${Math.round(proLnkFeePerJob).toLocaleString()} ProLnk fee × {(t.share * 100).toFixed(0)}% your share
+              </div>
+              <div className="text-white/30 text-xs mt-1 italic">
+                Estimates use 15% AI detection rate &amp; 20% network close rate. Actual results vary.
               </div>
             </div>
             <div className="text-right shrink-0 space-y-2">
@@ -421,10 +508,10 @@ function EarningsEstimator() {
       )}
       <div className="flex items-center justify-between mt-3">
         <p className="text-xs text-gray-400">
-          {mode === "referring" ? "Conservative estimate: 15% photo-to-lead rate, 20% lead-to-close rate." : "Platform fee applies only to ProLnk-verified job sources."} Actual results vary.
+          {mode === "referring" ? "Estimate based on network averages. Actual results vary by trade, service area, and photo volume." : "Platform fee applies only to ProLnk-verified job sources. Actual results vary."}
         </p>
         <button
-          onClick={() => { setPhotosPerMonth([50]); setAvgJobValue([1500]); setReceivedJobs([5]); setTier("Pro"); setMode("referring"); }}
+          onClick={() => { setPhotosPerMonth([15]); setAvgJobValue([1500]); setReceivedJobs([5]); setTier("Growth"); setMode("referring"); }}
           className="text-xs text-gray-400 hover:text-gray-600 underline underline-offset-2 ml-3 flex-shrink-0"
         >
           Reset
@@ -553,38 +640,60 @@ function PricingSection() {
           <h3 className="text-2xl font-heading font-bold text-gray-900">Add-On Modules</h3>
           <span className="text-sm text-gray-400 font-medium">Stack on top of any plan</span>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {ADD_ONS.map((addon) => {
-            const qty = selectedAddOns[addon.id] ?? 0;
-            const isOn = qty > 0;
+        {/* Available Now add-ons */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {ADD_ONS.filter(a => !(a as any).comingSoon).map((addon) => {
             const Icon = addon.icon;
-            const cost = addon.price * (addon.perUnit ? qty : 1);
             return (
               <div
                 key={addon.id}
-                className={`rounded-xl border-2 p-5 transition-all cursor-pointer ${
-                  isOn ? "border-[#0A1628] bg-[#0A1628]/[0.03]" : "border-gray-200 hover:border-gray-400"
-                }`}
-                onClick={() => toggleAddon(addon.id)}
+                className="rounded-xl border border-gray-200 bg-white p-5"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className={`p-2 rounded-lg ${ isOn ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-500" }`}>
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm text-gray-900">{addon.name}</div>
-                      <div className="text-xs text-gray-500">${addon.price} {addon.unit}</div>
-                    </div>
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-[#0A1628]/8 text-[#0A1628] shrink-0">
+                    <Icon className="h-4 w-4" />
                   </div>
-                  <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${
-                    isOn ? "border-[#0A1628] bg-[#0A1628]" : "border-gray-300"
-                  }`}>
-                    {isOn && <CheckCircle className="h-3 w-3 text-white" />}
+                  <div>
+                    <div className="font-semibold text-sm text-gray-900">{addon.name}</div>
+                    <div className="text-xs text-gray-500 font-medium">
+                      {(addon as any).perUnit ? `+$${addon.price}${addon.unit}` : `$${addon.price}${addon.unit}`}
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 leading-relaxed mb-3">{addon.description}</p>
-
+                <p className="text-xs text-gray-500 leading-relaxed">{addon.description}</p>
+              </div>
+            );
+          })}
+        </div>
+        {/* AI Agent Add-Ons — Coming Soon */}
+        <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-2">
+            <Bot className="w-4 h-4 text-[#0A1628]" />
+            <span className="text-sm font-semibold text-gray-700">AI Agent Add-Ons</span>
+          </div>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#0A1628]/10 text-[#0A1628]">
+            Coming Soon
+          </span>
+          <div className="flex-1 h-px bg-gray-200" />
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {ADD_ONS.filter(a => (a as any).comingSoon).map((addon) => {
+            const Icon = addon.icon;
+            return (
+              <div
+                key={addon.id}
+                className="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50/50 p-5 cursor-default opacity-80"
+              >
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className="p-2 rounded-lg bg-[#0A1628]/10 text-[#0A1628]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-sm text-gray-900">{addon.name}</div>
+                    <div className="text-xs text-gray-400">${addon.price}{addon.unit} &middot; Coming soon</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{addon.description}</p>
               </div>
             );
           })}
@@ -594,7 +703,7 @@ function PricingSection() {
       {/* Live Total */}
       {(addOnTotal > 0 || activeTierIdx > 0) && (
         <div className="max-w-4xl mx-auto mb-10">
-          <div className="rounded-2xl border-2 border-[#0A1628] bg-[#0A1628] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="rounded-2xl border-2 border-[#1a2d4a] bg-[#1a2d4a] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Your Estimated Monthly</div>
               <div className="flex items-baseline gap-2">
@@ -619,7 +728,7 @@ function PricingSection() {
       {/* Earnings Calculator */}
       <EarningsEstimator />
 
-      <p className="text-center text-sm text-gray-400 mt-8">All plans include FSM integration. No contracts -- upgrade or cancel anytime.</p>
+      <p className="text-center text-sm text-gray-400 mt-8">All plans include FSM integration. No contracts — upgrade or cancel anytime.</p>
 
       {/* ── COMMERCIAL DIVIDER ─────────────────────────────────────────────── */}
       <div className="mt-20 mb-16">
@@ -636,7 +745,7 @@ function PricingSection() {
 
       {/* ── PROLNK EXCHANGE BANNER ─────────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto mb-12">
-        <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1628 0%, #0f2040 60%, #1a1040 100%)" }}>
+        <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #162844 0%, #1a2e50 60%, #1e1a50 100%)" }}>
           <div className="p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-3">
@@ -656,16 +765,16 @@ function PricingSection() {
               </div>
             </div>
             <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
-              <Link href="/pro-waitlist">
+              <Link href="/apply">
                 <button
                   className="group flex items-center gap-2 px-7 py-3.5 font-bold text-sm tracking-wide transition-all rounded-none"
                   style={{ background: "#F5E642", color: "#0A1628" }}
                 >
-                  Join the Waitlist
+                  Apply Now
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-              <span className="text-white/40 text-xs">prolnkexchange.com — launching 2025</span>
+              <span className="text-white/40 text-xs">prolnkexchange.com — launching 2026</span>
             </div>
           </div>
         </div>
@@ -704,7 +813,7 @@ function PricingSection() {
           </div>
 
           {/* Commercial Crew — Featured */}
-          <div className="rounded-2xl border-2 bg-[#0A1628] p-7 flex flex-col relative overflow-hidden" style={{ borderColor: "#F5E642" }}>
+          <div className="rounded-2xl border-2 bg-[#162844] p-7 flex flex-col relative overflow-hidden" style={{ borderColor: "#F5E642" }}>
             <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "#F5E642" }} />
             <div className="absolute top-4 right-4">
               <span className="px-2.5 py-1 rounded-full text-xs font-bold" style={{ background: "#F5E642", color: "#0A1628" }}>Most Popular</span>
@@ -738,7 +847,7 @@ function PricingSection() {
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-4xl font-heading font-bold text-gray-900">Custom</span>
               </div>
-              <p className="text-sm text-gray-500">For national franchises, large GCs, and multi-market operators.</p>
+              <p className="text-sm text-gray-500">For large GCs, multi-market operators, and enterprise service companies.</p>
             </div>
             <ul className="space-y-2.5 flex-1 mb-7">
               {["Unlimited crew members","White-label option available","Custom AI detection rules","API access + webhooks","SLA-backed uptime guarantee","Custom commission structure","Dedicated engineering support"].map((f) => (
@@ -756,7 +865,7 @@ function PricingSection() {
         </div>
         <p className="text-center text-sm text-gray-400 mt-8">
           Commercial plans include all residential features. Pricing subject to change during beta.{" "}
-          <Link href="/pro-waitlist" className="text-[#0A1628] font-semibold hover:underline">Join the Exchange waitlist →</Link>
+          <Link href="/apply" className="text-[#0A1628] font-semibold hover:underline">Apply for the Exchange →</Link>
         </p>
       </div>
     </div>
@@ -773,122 +882,13 @@ const TIER_COLORS: Record<string, string> = {
 };
 const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
-  company: "Company",
-  crew: "Crew",
-  pro: "Pro",
-  scout: "Scout",
+  company: "Elite",
+  crew: "Growth",
+  pro: "Connect",
+  scout: "Connect",
 };
 
-function PartnerSpotlightSection() {
-  const { data: spotlightPartners, isLoading } = trpc.directory.getSpotlightPartners.useQuery();
 
-  return (
-    <section id="spotlight" className="py-24 bg-white relative overflow-hidden"><div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0A1628 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-      <div className="container">
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0A1628] uppercase mb-3 px-3 py-1 bg-[#F5E642] rounded-full">Network Spotlight</span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Top Performers in DFW</h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            These partners are generating the most referral revenue on the network this month.
-          </p>
-        </div>
-        {isLoading && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[1,2,3,4,5,6].map(i => (
-              <div key={i} className="bg-gray-100 rounded-2xl h-48 animate-pulse" />
-            ))}
-          </div>
-        )}
-        {!isLoading && (!spotlightPartners || spotlightPartners.length === 0) && (
-          <div className="text-center py-16">
-            <div className="w-20 h-20 rounded-full bg-[#F5E642]/20 flex items-center justify-center mx-auto mb-6">
-              <Star className="w-10 h-10 text-[#0A1628]" />
-            </div>
-            <h3 className="text-2xl font-black text-[#0A1628] mb-3">Be the First in the Spotlight</h3>
-            <p className="text-gray-500 max-w-md mx-auto mb-6">The first wave of approved ProLnk partners will be featured here — with their badge, trade, service area, and verified reviews. Apply now to secure your spot before your market fills up.</p>
-            <a href="/apply" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-[#0A1628] hover:bg-teal-700 transition-colors">
-              Apply for Early Access <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        )}
-        {!isLoading && spotlightPartners && spotlightPartners.length > 0 && (<>
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {spotlightPartners.slice(0, 6).map((p: any, i: number) => {
-            const tierColor = TIER_COLORS[p.tier] ?? "#6B7280";
-            const tierLabel = TIER_LABELS[p.tier] ?? p.tier;
-            const rating = Number(p.avgRating ?? 0).toFixed(1);
-            const reviews = Number(p.reviewCount ?? 0);
-            const referrals = Number(p.referralCount ?? 0);
-            return (
-              <StaggerItem key={p.id}>
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6 h-full flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
-                        style={{ backgroundColor: tierColor }}
-                      >
-                        {p.businessName?.[0] ?? "P"}
-                      </div>
-                      <div>
-                        <div className="font-heading font-bold text-gray-900 text-sm leading-tight">{p.businessName}</div>
-                        <div className="text-xs text-gray-500 mt-0.5">{p.businessType}</div>
-                      </div>
-                    </div>
-                    <span
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white flex-shrink-0"
-                      style={{ backgroundColor: tierColor }}
-                    >
-                      {tierLabel}
-                    </span>
-                  </div>
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{referrals}</div>
-                      <div className="text-[10px] text-gray-400">Referrals</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{rating}</div>
-                      <div className="text-[10px] text-gray-400">Rating</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-2 text-center">
-                      <div className="text-base font-heading font-bold text-gray-800">{reviews}</div>
-                      <div className="text-[10px] text-gray-400">Reviews</div>
-                    </div>
-                  </div>
-                  {/* Service area */}
-                  <div className="text-xs text-gray-400 mt-auto flex items-center gap-1">
-                    <HomeIcon className="w-3 h-3" />
-                    <span className="truncate">{p.serviceArea}</span>
-                  </div>
-                  {/* Rank badge for top 3 */}
-                  {i < 3 && (
-                    <div className="mt-3 flex items-center gap-1.5">
-                      <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                      <span className="text-xs font-semibold text-yellow-600">
-                        {i === 0 ? "🥇 #1 This Month" : i === 1 ? "🥈 #2 This Month" : "🥉 #3 This Month"}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerChildren>
-          <div className="text-center mt-10">
-            <Link href="/leaderboard">
-              <button className="px-6 py-3 text-sm font-semibold text-[#0A1628] border-2 border-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all rounded-none">
-                View Full Leaderboard <ArrowRight className="w-4 h-4 inline ml-1" />
-              </button>
-            </Link>
-          </div>
-        </>)}
-      </div>
-    </section>
-  );
-}
 
 // --- Why ProLnk Wins -----------------------------------------------------------
 function WhyProLnkSection() {
@@ -934,7 +934,7 @@ function WhyProLnkSection() {
       title: "Warm Leads Only",
       desc: "Every lead comes from a verified job photo at a real property. The homeowner's neighbor already trusted you enough to let you on their property. That's the warmest lead in the industry.",
       stat: "3–5×",
-      statLabel: "higher close rate vs cold leads",
+      statLabel: "projected close rate vs cold leads",
     },
     {
       icon: RefreshCw,
@@ -945,17 +945,10 @@ function WhyProLnkSection() {
     },
     {
       icon: Lock,
-      title: "We Only Win When You Do",
-      desc: "Angi charges $542 per booked job — whether you close it or not. ProLnk charges $0 until money hits your account. No monthly fees. No pay-per-click. No wasted budget. Just a commission split when you win.",
+      title: "No Risk on Unmatched Jobs",
+      desc: "ProLnk charges a flat monthly subscription — not a per-lead fee. If a referral doesn't result in a closed job, you pay nothing beyond your subscription. No wasted spend on homeowners who never respond.",
       stat: "$0",
-      statLabel: "cost if the job doesn't close",
-    },
-    {
-      icon: TrendingUp,
-      title: "Build a Network That Earns While You Work",
-      desc: "Recruit other pros into the network and earn a percentage of every job they close — up to 4 levels deep. Charter Partners earn 2% on their entire downline. The more pros you bring in, the more the network pays you without lifting a finger.",
-      stat: "4×",
-      statLabel: "levels of network income",
+      statLabel: "extra cost if the job doesn't close",
     },
     {
       icon: Shield,
@@ -975,8 +968,8 @@ function WhyProLnkSection() {
       icon: Users,
       title: "Network Effect Compounds",
       desc: "The more partners in your area, the more photos get uploaded, the more leads get generated — for everyone. Angi is a marketplace where you compete. ProLnk is a network where everyone wins together.",
-      stat: "50+",
-      statLabel: "trades in the network",
+      stat: "150+",
+      statLabel: "trade categories covered",
     },
   ];
 
@@ -1050,7 +1043,7 @@ function WhyProLnkSection() {
 
         {/* Cost Comparison Bar */}
         <FadeUp>
-          <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
+          <div className="bg-[#1a2d4a] rounded-2xl p-8 text-white">
             <h3 className="text-xl font-heading font-bold mb-2 text-center">Average Cost Per Booked Job — Industry Comparison</h3>
             <p className="text-white/50 text-sm text-center mb-8">Based on 2025–2026 industry data. ProLnk commission-only model shown at 10% on a $1,200 avg job.</p>
             <div className="space-y-4 max-w-2xl mx-auto">
@@ -1081,8 +1074,8 @@ function WhyProLnkSection() {
         {/* CTA */}
         <div className="text-center mt-10">
           <Link href="/apply">
-            <button className="inline-flex items-center gap-3 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 rounded-none" style={{ backgroundColor: "#0A1628", color: "white" }}>
-              Join the Network — It's Free to Apply <ArrowRight className="w-4 h-4" />
+            <button className="inline-flex items-center gap-3 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:opacity-90 rounded-none" style={{ backgroundColor: "#1a2d4a", color: "white" }}>
+              Apply Now — Free During Beta <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
         </div>
@@ -1094,6 +1087,7 @@ function WhyProLnkSection() {
 // --- Main Landing Page -------------------------------------------------------------
 export default function Home() {
   const { user } = useAuth();
+  const { isTrustyPro } = useDomain();
   const isAdmin = user?.role === "admin";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -1114,33 +1108,77 @@ export default function Home() {
     });
     return () => observer.disconnect();
   }, []);
+  const [urgencyDismissed, setUrgencyDismissed] = useState(false);
+  // Waitlist state removed — main site now uses direct apply flow
+  const [selectedTrade, setSelectedTrade] = useState<string | null>(null);
+
+  // Quick waitlist mutation removed — main site now uses direct apply flow
+
   const { data: foundingData } = trpc.directory.getFoundingPartnerCount.useQuery();
-  const spotsRemaining = foundingData?.spotsRemaining ?? 50;
-  const spotsUsed = 50 - spotsRemaining;
-  const spotsPercent = Math.round((spotsUsed / 50) * 100);
+  // Waitlist counts removed — main site uses founding partner count instead
+  const rawSpotsRemaining = foundingData?.spotsRemaining ?? 94;
+  const spotsRemaining = rawSpotsRemaining;
+  const spotsUsed = 100 - spotsRemaining;
+  const spotsPercent = Math.round((spotsUsed / 100) * 100);
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="ProLnk — Home Service Partner Network"
-        description="Join the #1 referral network for home service professionals. AI-powered lead routing, commission tracking, and partner matching in DFW and beyond."
-        path="/"
-      />
+      {/* — Urgency Bar — */}
+      {!urgencyDismissed && (
+        <div className="relative z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-xs font-semibold text-[#0A1628]" style={{ backgroundColor: "#F5E642" }}>
+          <span className="animate-pulse w-2 h-2 rounded-full bg-[#0A1628] shrink-0" />
+          <span>
+            DFW Beta — Only <strong>100 Founding Partner spots</strong> available network-wide.{" "}
+            {spotsRemaining > 0 ? (
+              <span className="underline underline-offset-2 cursor-pointer" onClick={() => document.getElementById('guarantee')?.scrollIntoView({ behavior: 'smooth' })}>
+                {spotsRemaining} spots remaining →
+              </span>
+            ) : (
+              <span>Apply now to lock in your founding rate.</span>
+            )}
+          </span>
+          <button onClick={() => setUrgencyDismissed(true)} className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:opacity-60 transition-opacity">
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      )}
+      <Helmet>
+        <title>ProLnk — Your Photos. Their Next Job.</title>
+        <meta name="description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission. Free for home service pros in DFW." />
+        <meta property="og:title" content="ProLnk — Your Photos. Their Next Job." />
+        <meta property="og:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/" />
+        <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProLnk — Your Photos. Their Next Job." />
+        <meta name="twitter:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
+        <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp" />
+        <link rel="canonical" href="https://prolnk.io/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ProLnk",
+          "url": "https://prolnk.io",
+          "description": "AI-powered referral network for home service professionals in Dallas-Fort Worth. Upload job-site photos, earn commissions on cross-trade referrals.",
+          "areaServed": { "@type": "Place", "name": "Dallas-Fort Worth, TX" },
+          "sameAs": [],
+          "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "support@prolnk.io" }
+        })}</script>
+      </Helmet>
 
-      {/* -- Navigation -- */}
+      {/* — Navigation — */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <ProLnkLogo height={44} variant="light" className="shrink-0" />
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
             {[
-              { href: "#how-it-works", id: "how-it-works", label: "How It Works" },
-              { href: "#the-engine", id: "the-engine", label: "The Engine" },
-              { href: "#spotlight", id: "spotlight", label: "Top Partners" },
-              { href: "#who-can-join", id: "who-can-join", label: "Who Can Join" },
-              { href: "/pricing", id: "pricing", label: "Pricing" },
-              { href: "#badge-system", id: "badge-system", label: "TrustyPro Badge" },
-              { href: "#faq", id: "faq", label: "FAQ" },
-              { href: "/resources", id: "resources", label: "Resources" },
+              { href: "#how-it-works", id: "how-it-works", label: "How It Works", isHash: true },
+              { href: "#who-can-join", id: "who-can-join", label: "Who Can Join", isHash: true },
+              { href: "/pricing", id: "pricing", label: "Pricing", isHash: false },
+              { href: "#badge-system", id: "badge-system", label: "TrustyPro Badge", isHash: true },
             ].map((item) => (
               <a
                 key={item.id}
@@ -1150,6 +1188,7 @@ export default function Home() {
                     ? "text-[#0A1628] border-b-2 border-[#0A1628] pb-0.5"
                     : "text-gray-500 hover:text-gray-900"
                 }`}
+                onClick={item.isHash ? (e) => { e.preventDefault(); document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' }); } : undefined}
               >
                 {item.label}
               </a>
@@ -1165,56 +1204,70 @@ export default function Home() {
             <Link href="/advertise">
               <Button variant="ghost" className="text-sm font-medium" style={{ color: "#00B5B8" }}>Advertise</Button>
             </Link>
-            <Link href="/dashboard">
-              <Button variant="ghost" className="text-sm font-medium">Partner Login</Button>
-            </Link>
-            <Link href="/admin">
-              <Button variant="ghost" className="text-sm font-medium flex items-center gap-1.5" style={{ color: isAdmin ? "#b45309" : "#6b7280" }}>
-                <span className="text-base leading-none"></span>
-                {isAdmin ? "Admin" : "Admin"}
-              </Button>
-            </Link>
+            {!isTrustyPro && (
+              <Link href="/dashboard">
+                <Button variant="ghost" className="text-sm font-medium">Partner Login</Button>
+              </Link>
+            )}
+            {!isTrustyPro && (
+              <Link href="/admin">
+                <Button variant="ghost" className="text-sm font-medium flex items-center gap-1.5" style={{ color: isAdmin ? "#b45309" : "#6b7280" }}>
+                  <Lock className="w-3.5 h-3.5" />
+                  Admin
+                </Button>
+              </Link>
+            )}
             <Link href="/apply">
               <Button className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>
                 Apply Now
               </Button>
             </Link>
           </div>
-          <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="md:hidden p-2" aria-label="Toggle mobile menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-3">
-            <a href="#how-it-works" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>How It Works</a>
-            <a href="#the-engine" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>The Engine</a>
-            <a href="#who-can-join" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>Who Can Join</a>
-            <a href="#pricing" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
-            <a href="#badge-system" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>TrustyPro Badge</a>
-            <a href="#faq" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+            {["how-it-works", "who-can-join", "pricing", "badge-system", "faq"].map((id) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className="block text-sm font-medium text-gray-700 py-2 capitalize"
+                onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                {id === 'how-it-works' ? 'How It Works' : id === 'who-can-join' ? 'Who Can Join' : id === 'badge-system' ? 'TrustyPro Badge' : id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            ))}
             <div className="flex gap-3 pt-2">
-              <Link href="/dashboard" className="flex-1"><Button variant="outline" className="w-full text-sm">Partner Login</Button></Link>
+              {!isTrustyPro && (
+                <Link href="/dashboard" className="flex-1"><Button variant="outline" className="w-full text-sm">Partner Login</Button></Link>
+              )}
               <Link href="/apply" className="flex-1">
                 <Button className="w-full text-sm text-white rounded-none font-semibold" style={{ backgroundColor: "#0A1628" }}>Apply Now</Button>
               </Link>
             </div>
-            <Link href="/trustypro" className="block">
-              <Button variant="ghost" className="w-full text-sm text-blue-600 flex items-center justify-center gap-1.5">
-                <Shield className="w-3.5 h-3.5" />
-                TrustyPro -- Homeowner Portal
-              </Button>
-            </Link>
-            <Link href="/admin" className="block">
-              <Button variant="ghost" className="w-full text-sm flex items-center justify-center gap-1.5" style={{ color: "#92400e", backgroundColor: "#fef3c7", border: "1px solid #fde68a" }}>
-                <span className="text-base leading-none"></span>
-                Admin Portal
-              </Button>
-            </Link>
+            {!isTrustyPro && (
+              <Link href="/trustypro" className="block">
+                <Button variant="ghost" className="w-full text-sm text-blue-600 flex items-center justify-center gap-1.5">
+                  <Shield className="w-3.5 h-3.5" />
+                  TrustyPro — Homeowner Portal
+                </Button>
+              </Link>
+            )}
+            {!isTrustyPro && (
+              <Link href="/admin" className="block">
+                <Button variant="ghost" className="w-full text-sm flex items-center justify-center gap-1.5" style={{ color: "#92400e", backgroundColor: "#fef3c7", border: "1px solid #fde68a" }}>
+                  <Lock className="w-3.5 h-3.5" />
+                  Admin Portal
+                </Button>
+              </Link>
+            )}
           </div>
         )}
       </nav>
 
-      {/* -- 1. Hero -- */}
+      {/* — 1. Hero — */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
         <div className="absolute inset-0">
           <img
@@ -1230,74 +1283,149 @@ export default function Home() {
             <FadeUp delay={0.1}>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 mb-8 tracking-widest uppercase animate-pulse"
                 style={{ backgroundColor: "rgba(245,230,66,0.15)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.3)" }}>
-                Patent Pending  DFW Launch
+                DFW Beta Launch — Founding Partner Spots Available
               </span>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <h1 className="text-6xl md:text-7xl font-heading font-bold text-white leading-[1.05] mb-6 tracking-tight">
-                Turn Your Work<br />Into Passive Income
+                You're Already Doing<br />the Work. ProLnk Makes<br />Sure You Get Paid Twice.
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.35}>
               <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-lg">
-                Every other lead service gets paid whether your job closes or not. We built the one that only wins when you do. Your job-site photos become warm referrals — from neighbors who already watched you work — and you never pay a cent until money hits your account.
+                You're already taking photos after every job. ProLnk turns those photos into a referral engine that finds your peers' next project — and pays you a commission every time one closes. No cold calls. No ad spend. No extra work.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.45}>
-              <div className="flex items-center gap-4 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-3 items-start">
                 <Link href="/apply">
                   <button
-                    className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold tracking-wide transition-all hover:opacity-90"
-                    style={{ backgroundColor: "#0A1628", color: "white", border: "2px solid #F5E642" }}
+                    className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
+                    style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
                   >
-                    Join the Network <ArrowRight className="h-5 w-5" />
+                    Apply for Early Access <ArrowRight className="w-4 h-4" />
                   </button>
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center gap-2 px-6 py-4 text-base font-semibold tracking-wide text-slate-300 hover:text-white transition-colors border border-white/20 hover:border-white/40"
+                  className="inline-flex items-center gap-2 px-5 py-4 text-sm font-semibold text-white/80 hover:text-white transition-colors"
+                  onClick={(e) => { e.preventDefault(); document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }); }}
                 >
-                  See How It Works
+                  See How It Works <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
+              <p className="text-xs text-white/40 mt-2">Subscription-based platform. Commission earned only when jobs close. No credit card required during beta.</p>
             </FadeUp>
 
             <FadeIn delay={0.6}>
-              <div className="flex items-center gap-6 mt-12 pt-10 border-t border-white/10">
+              <div className="flex flex-wrap items-center gap-8 mt-12 pt-10 border-t border-white/10">
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white tabular-nums"><CountUp target={148} suffix="+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Active Partners</div>
+                  <div className="text-2xl font-heading font-bold text-white tabular-nums">
+                    <CountUp target={150} suffix="+" />
+                  </div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">AI Detection Categories</div>
                 </div>
                 <div className="w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white tabular-nums"><CountUp target={820} suffix="+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Leads Detected</div>
+                  <div className="text-2xl font-heading font-bold text-white tabular-nums">
+                    <CountUp target={100} />
+                  </div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Founding Partner Spots</div>
                 </div>
                 <div className="w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-white tabular-nums">$<CountUp target={45} suffix="K+" /></div>
-                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Commissions Paid</div>
+                  <div className="text-2xl font-heading font-bold text-white tabular-nums">
+                    <CountUp target={30} suffix="-Day" />
+                  </div>
+                  <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Guarantee</div>
                 </div>
               </div>
+              <p className="text-xs text-slate-500 mt-3 italic">DFW launch — Only 100 Founding Partner spots available. Lock in your rate before we open to the public.</p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* -- 2. How It Works -- */}
+      {/* — 1.5. Trade Selector Micro-Commitment — */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="container">
+          <FadeUp>
+            <div className="text-center mb-10">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#0A1628]/40 mb-3">Personalize Your Experience</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3">What's your primary trade?</h2>
+              <p className="text-gray-500 max-w-md mx-auto">Select your trade to see estimated passive commission earnings based on 50 photos/month at the Pro tier.</p>
+            </div>
+          </FadeUp>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 max-w-5xl mx-auto mb-8">
+            {[
+              { label: "Roofing", roi: 880 },
+              { label: "HVAC", roi: 550 },
+              { label: "Plumbing", roi: 330 },
+              { label: "Electrical", roi: 440 },
+              { label: "Landscaping", roi: 220 },
+              { label: "Painting", roi: 385 },
+              { label: "Flooring", roi: 440 },
+              { label: "Windows", roi: 385 },
+              { label: "Gutters", roi: 165 },
+              { label: "Concrete", roi: 330 },
+              { label: "Pest Control", roi: 55 },
+              { label: "Cleaning", roi: 33 },
+              { label: "Foundation", roi: 1100 },
+              { label: "Other", roi: 330 },
+            ].map((trade) => (
+              <StaggerItem key={trade.label}>
+                <button
+                  onClick={() => {
+                    setSelectedTrade(trade.label);
+                    document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }}
+                  className={`w-full flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 hover:-translate-y-0.5 ${
+                    selectedTrade === trade.label
+                      ? 'border-[#0A1628] bg-[#0A1628] text-white shadow-lg'
+                      : 'border-gray-200 bg-white text-gray-700 hover:border-[#0A1628]/40 hover:shadow-md'
+                  }`}
+                >
+                  <span className="text-xs font-semibold text-center leading-tight">{trade.label}</span>
+                  {selectedTrade === trade.label && (
+                    <span className="text-[10px] font-bold text-[#F5E642]">~${trade.roi.toLocaleString()}/mo</span>
+                  )}
+                </button>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+          {selectedTrade && (
+            <FadeUp>
+              <div className="max-w-lg mx-auto text-center p-5 rounded-2xl border border-[#0A1628]/10 bg-[#0A1628]/5">
+                <p className="text-sm text-gray-600">
+                  <strong className="text-[#0A1628]">{selectedTrade} pros</strong> on the Pro tier uploading ~50 photos/month could earn an estimated{" "}
+                  <strong className="text-[#0A1628]">
+                    {["Roofing","Foundation"].includes(selectedTrade!) ? "$880–$1,100" :
+                     ["HVAC","Electrical","Flooring","Windows","Painting"].includes(selectedTrade!) ? "$385–$550" :
+                     "$33–$330"}/month
+                  </strong>{" "}
+                  in passive commissions — and that scales with every photo you add.
+                  <a href="#roi-calculator" className="ml-2 text-[#0A1628] font-bold underline underline-offset-2">See your estimate →</a>
+                </p>
+              </div>
+            </FadeUp>
+          )}
+        </div>
+      </section>
+
+      {/* — 2. How It Works — */}
       <section id="how-it-works" className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">🚀 It Takes Just 4 Steps</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Four Steps. Zero Extra Work.</h2>
             <p className="text-gray-500 max-w-lg mx-auto text-lg">You already take photos after every job. ProLnk turns those photos into a referral engine that runs in the background — no new workflow, no extra selling, no cold calls.</p>
           </div>
           <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { step: "01", title: "Finish a Job", desc: "Complete your normal work. Before you leave, take 1–3 wide-angle photos of the property exterior. That's the only workflow change.", icon: Camera },
-              { step: "02", title: "AI Scans the Photos", desc: "Our AI analyzes every image for 50+ issue types — aging roofs, HVAC units, cracked driveways, overgrown landscaping, and more. Done in seconds.", icon: Zap },
+              { step: "01", title: "Finish a Job", desc: "Complete your normal work. Before you start and after you finish, take before-and-after photos of the work area — plus 3 wide-angle shots of the front of the house. That's the only workflow change.", icon: Camera },
+              { step: "02", title: "AI Scans the Photos", desc: "Our AI analyzes every image across 65+ detection categories — aging roofs, HVAC units, cracked driveways, overgrown landscaping, deferred maintenance, and more. Done in seconds.", icon: Zap },
               { step: "03", title: "Collect Your Commission", desc: "When a partner in the network closes a job from your referral lead, you earn a commission. Tracked in real time. Paid monthly. No chasing.", icon: DollarSign },
               { step: "04", title: "It Never Stops Working", desc: "Your photos stay in the engine permanently. A storm hits 6 months later — your old photos generate new leads. Residual income from work you already did.", icon: Repeat },
             ].map((item) => (
@@ -1316,8 +1444,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- 2.5. The ProLnk Engine -- */}
-      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
+      {/* — 2.5. The ProLnk Engine — */}
+      <section id="the-engine" className="py-24 relative overflow-hidden" style={{ backgroundColor: "#0d1e38" }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, #3B82F6 0%, transparent 50%), radial-gradient(circle at 80% 70%, #7C3AED 0%, transparent 50%)" }} />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="container relative">
@@ -1329,7 +1457,7 @@ export default function Home() {
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">The ProLnk Engine</h2>
               <p className="text-white/60 max-w-2xl mx-auto text-lg">
-                Four autonomous AI engines work 24/7 to turn your job photos into a continuous stream of revenue -- long after you leave the property.
+                Four autonomous AI engines work 24/7 to turn your job photos into a continuous stream of revenue — long after you leave the property.
               </p>
             </div>
           </FadeUp>
@@ -1339,10 +1467,10 @@ export default function Home() {
               {
                 icon: Eye,
                 title: "Photo Intelligence",
-                desc: "Every photo is analyzed for 50+ opportunity types. AI identifies aging equipment, damage patterns, and upgrade potential invisible to the human eye.",
+                desc: "Every photo is analyzed across 65+ trade categories. AI identifies aging equipment, damage patterns, deferred maintenance, and upgrade potential invisible to the human eye.",
                 color: "#3B82F6",
-                stat: "50+",
-                statLabel: "Detection Types",
+                stat: "65+",
+                statLabel: "Trade Categories",
               },
               {
                 icon: CloudLightning,
@@ -1423,57 +1551,216 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- Partner Spotlight -- */}
-      <div className="h-1 bg-gradient-to-b from-[#050d1a] to-white" />
-      <PartnerSpotlightSection />
-      {/* -- Why ProLnk Wins -- */}
-      <WhyProLnkSection />
-      {/* -- 3. Who Can Join -- */}
-      <section id="who-can-join" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
+      {/* — ProLnk Job Site AI Visual — */}
+      <section className="py-24 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Built for the Trades</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              Any licensed, insured home service business in DFW. If you work at people's homes, you belong here.
-            </p>
-          </div>
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WHO_CAN_JOIN.map((group) => (
-              <StaggerItem key={group.group}>
-                <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{group.emoji}</span>
-                    <h3 className="text-base font-heading font-bold text-gray-900">{group.group}</h3>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <FadeUp>
+              <p className="text-xs text-[#0A1628]/70 font-semibold uppercase tracking-widest mb-4">AI Detection in Action</p>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6 leading-tight">
+                One Photo.<br />
+                <span className="text-[#0A1628]">Multiple Commission Opportunities.</span>
+              </h2>
+              <p className="text-gray-500 text-lg mb-6 leading-relaxed">
+                When you upload a job-site photo, our AI doesn&apos;t just see your trade — it scans the entire property for issues across <strong className="text-gray-900">65+ categories</strong>. Every detection is a referral opportunity. Every referral is a commission.
+              </p>
+              <div className="space-y-3 mb-8">
+                {[
+                  { label: "Toggle to Detection View", desc: "See what the AI flags beyond your trade" },
+                  { label: "Toggle to Commission View", desc: "See exactly what each detection is worth" },
+                  { label: "One photo generates multiple streams", desc: "Roofing job → gutters, paint, HVAC, landscaping, fascia" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#0A1628]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-[#0A1628] text-xs font-bold">{i + 1}</span>
+                    </div>
+                    <div>
+                      <p className="text-gray-900 font-semibold text-sm">{item.label}</p>
+                      <p className="text-gray-500 text-sm">{item.desc}</p>
+                    </div>
                   </div>
-                  <div className="space-y-1.5">
-                    {group.categories.map((cat) => (
-                      <div key={cat} className="flex items-center gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#0A1628]" />
+                ))}
+              </div>
+              <Link href="/apply">
+                <button className="px-6 py-3 rounded-xl bg-[#1a2d4a] text-white font-bold text-sm hover:bg-[#1a2d4a]/90 transition-colors flex items-center gap-2">
+                  Start Detecting Opportunities <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
+            </FadeUp>
+            <FadeUp delay={0.15}>
+              <ProLnkJobSiteVisual />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* — Passive Income Engine — */}
+      <section id="passive-income" className="py-24" style={{ background: "linear-gradient(135deg, #162844 0%, #1a2e50 60%, #162844 100%)" }}>
+        <div className="container">
+          <FadeUp>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 mb-6">
+                <TrendingUp className="w-4 h-4 text-[#F5E642]" />
+                <span className="text-xs font-bold text-[#F5E642] uppercase tracking-wider">Multiplied Returns</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">You Do the Job Once.<br />ProLnk Pays You Forever.</h2>
+              <p className="text-white/60 max-w-2xl mx-auto text-lg">Most referral platforms pay you once. ProLnk is built differently — your photos and your network create two compounding income streams that run in the background while you focus on your own work.</p>
+            </div>
+          </FadeUp>
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+            <FadeUp delay={0.1}>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 h-full">
+                <div className="w-12 h-12 rounded-xl bg-[#F5E642] flex items-center justify-center mb-6">
+                  <Camera className="w-6 h-6 text-[#0A1628]" />
+                </div>
+                <div className="text-xs font-bold text-[#F5E642] uppercase tracking-wider mb-2">Stream 1 — Photo Origination</div>
+                <h3 className="text-2xl font-heading font-bold text-white mb-3">Your Photos. Their Jobs. Your Commission.</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  Every time you upload job photos, our AI scans the entire property and generates referral leads for other trades. When any of those leads close — whether it’s a roofer, an HVAC tech, or a landscaper — you earn a commission on that job. You never lifted a finger for it.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { label: "Roofing job photo", result: "AI flags HVAC unit aging → HVAC partner closes $4,200 job → you earn $168" },
+                    { label: "Landscaping job photo", result: "AI flags cracked driveway → Concrete partner closes $3,800 job → you earn $152" },
+                    { label: "Painting job photo", result: "AI flags gutter damage → Gutter partner closes $900 job → you earn $36" },
+                  ].map((ex, i) => (
+                    <div key={i} className="rounded-xl bg-white/5 border border-white/10 p-4">
+                      <div className="text-xs font-semibold text-[#F5E642] mb-1">{ex.label}</div>
+                      <div className="text-xs text-white/60 leading-relaxed">{ex.result}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 h-full">
+                <div className="w-12 h-12 rounded-xl bg-[#F5E642] flex items-center justify-center mb-6">
+                  <Users className="w-6 h-6 text-[#0A1628]" />
+                </div>
+                <div className="text-xs font-bold text-[#F5E642] uppercase tracking-wider mb-2">Stream 2 — Network Growth</div>
+                <h3 className="text-2xl font-heading font-bold text-white mb-3">Refer a Pro. Earn From Their Network.</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  When you refer another pro who joins ProLnk, you earn a referral bonus every time they generate a closed job. The more pros you bring in, the more your passive income compounds — without doing any additional work.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { label: "You refer 1 roofer", result: "They close 8 jobs/month at $6,000 avg → you earn a network bonus every month" },
+                    { label: "You refer 3 pros", result: "3 active partners generating leads → your passive income triples automatically" },
+                    { label: "Your network grows", result: "More pros = more photos = more AI detections = more commissions flowing to you" },
+                  ].map((ex, i) => (
+                    <div key={i} className="rounded-xl bg-white/5 border border-white/10 p-4">
+                      <div className="text-xs font-semibold text-[#F5E642] mb-1">{ex.label}</div>
+                      <div className="text-xs text-white/60 leading-relaxed">{ex.result}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+          <FadeUp delay={0.3}>
+            <div className="max-w-3xl mx-auto rounded-2xl border border-[#F5E642]/20 bg-[#F5E642]/5 p-8 text-center">
+              <div className="text-xs font-bold text-[#F5E642] uppercase tracking-wider mb-6">The Compounding Effect</div>
+              <div className="grid grid-cols-3 gap-6 mb-6">
+                <div>
+                  <div className="text-3xl font-heading font-black text-white mb-1">1 Job</div>
+                  <div className="text-xs text-white/50">You complete your trade</div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <ArrowRight className="w-6 h-6 text-[#F5E642]" />
+                </div>
+                <div>
+                  <div className="text-3xl font-heading font-black text-[#F5E642] mb-1">5–12 Leads</div>
+                  <div className="text-xs text-white/50">AI generates for other trades</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-6">
+                <div>
+                  <div className="text-3xl font-heading font-black text-white mb-1">$0</div>
+                  <div className="text-xs text-white/50">Extra work required</div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <ArrowRight className="w-6 h-6 text-[#F5E642]" />
+                </div>
+                <div>
+                  <div className="text-3xl font-heading font-black text-[#F5E642] mb-1">$50–$400</div>
+                  <div className="text-xs text-white/50">Passive commissions per job</div>
+                </div>
+              </div>
+              <p className="text-white/40 text-xs mt-6">Estimates based on Pro tier at 10% platform fee. Actual results vary by trade, photo quality, and market density.</p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+      {/* — Why ProLnk Wins — */}
+      <WhyProLnkSection />
+      {/* — 3. Who Can Join — */}
+      <section id="who-can-join" className="py-20" style={{ backgroundColor: "#FAFAF9" }}>
+        <div className="container">
+          <FadeUp>
+            <div className="text-center mb-14">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-[#0A1628]/8 px-4 py-2 rounded-full mb-4">
+                <Briefcase className="w-3.5 h-3.5" /> 150+ Trade Categories
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">Built for the Trades</h2>
+              <p className="text-gray-500 max-w-xl mx-auto text-lg">
+                Any licensed, insured home service business in DFW. If you work at people’s homes, you belong here.
+              </p>
+            </div>
+          </FadeUp>
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {[
+              { group: "Outdoor & Lawn", icon: TreePine, color: "#16a34a", bg: "#f0fdf4", border: "#bbf7d0", count: 10, top: ["Lawn Care", "Landscaping", "Tree Removal", "Irrigation", "Hardscaping"] },
+              { group: "Home Maintenance", icon: Wrench, color: "#1d4ed8", bg: "#eff6ff", border: "#bfdbfe", count: 12, top: ["Handyman", "Roofing", "HVAC", "Plumbing", "Electrical"] },
+              { group: "Cleaning & Restoration", icon: Sparkles, color: "#0891b2", bg: "#ecfeff", border: "#a5f3fc", count: 10, top: ["House Cleaning", "Pressure Washing", "Carpet Cleaning", "Mold Remediation", "Junk Removal"] },
+              { group: "Specialty Trades", icon: Hammer, color: "#7c3aed", bg: "#f5f3ff", border: "#ddd6fe", count: 12, top: ["Painting", "Pool Service", "Pest Control", "Kitchen Remodel", "Flooring & Tile"] },
+              { group: "Home Technology", icon: Zap, color: "#d97706", bg: "#fffbeb", border: "#fde68a", count: 6, top: ["Smart Home", "EV Charger", "Generator", "Home Theater", "Solar"] },
+              { group: "Pet & Animal", icon: Users, color: "#db2777", bg: "#fdf2f8", border: "#fbcfe8", count: 4, top: ["Pet Waste Removal", "Dog Walking", "Pet Grooming", "Wildlife Removal"] },
+            ].map((item) => (
+              <StaggerItem key={item.group}>
+                <div
+                  className="rounded-2xl p-6 h-full flex flex-col"
+                  style={{ backgroundColor: item.bg, border: `1.5px solid ${item.border}` }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: item.color + "20" }}>
+                      <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-gray-900">{item.group}</h3>
+                      <p className="text-xs font-medium" style={{ color: item.color }}>{item.count}+ categories</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 flex-1">
+                    {item.top.map((cat) => (
+                      <span key={cat} className="text-xs font-medium text-gray-700 bg-white/80 border border-white px-2.5 py-1 rounded-full shadow-sm">
                         {cat}
-                      </div>
+                      </span>
                     ))}
+                    <span className="text-xs font-medium text-gray-400 bg-white/50 border border-gray-200 px-2.5 py-1 rounded-full">
+                      +{item.count - item.top.length} more
+                    </span>
                   </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
           <div className="mt-10 text-center">
-            <p className="text-gray-500 text-sm mb-4">Don't see your trade? We're adding new categories every month.</p>
+            <p className="text-gray-500 text-sm mb-4">Don’t see your trade? We review every application individually.</p>
             <Link href="/apply">
-              <button className="px-6 py-3 text-sm font-semibold border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all rounded-none">
-                Apply Anyway -- We'll Review Your Category
+              <button className="px-8 py-3 text-sm font-bold border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all rounded-none">
+                Apply Anyway — We’ll Review Your Category
               </button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* -- 4. Pricing -- */}
+      {/* — 4. Pricing — */}
       <section id="pricing" className="py-24 bg-white">
         <PricingSection />
       </section>
 
-      {/* -- 5. FSM Compatibility -- */}
+      {/* — 5. FSM Compatibility — */}
       <section id="fsm-compat" className="py-20 bg-white border-t border-gray-100">
         <div className="container">
           <FadeUp>
@@ -1519,7 +1806,7 @@ export default function Home() {
             ))}
           </div>
           <FadeUp>
-            <div className="max-w-5xl mx-auto bg-[#0A1628] rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
+            <div className="max-w-5xl mx-auto bg-[#1a2d4a] rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
                 <p className="text-white font-heading font-bold text-lg mb-1">Think of ProLnk as a referral network layer on top of your business.</p>
                 <p className="text-slate-400 text-sm">Your FSM runs your operations. ProLnk runs your passive referral income. They never conflict.</p>
@@ -1534,7 +1821,107 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- 5b. TrustyPro Badge System -- */}
+
+      {/* — 5a2. Your Past Jobs Are Still Working For You (FSM Backtrack) — */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-14 items-center">
+              <FadeUp>
+                <div>
+                  <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-yellow-50 border border-yellow-200 px-4 py-2 rounded-full mb-6">
+                    <RefreshCw className="w-3.5 h-3.5" /> FSM Integration
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-5">
+                    Your Past Jobs Are<br />Still Working for You.
+                  </h2>
+                  <p className="text-gray-500 text-lg leading-relaxed mb-6">
+                    Connect your Field Service Management software and ProLnk automatically pulls your historical job photos — every job you've ever completed becomes a potential commission. You don't start from zero. You start with years of data already in the engine.
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    {[
+                      { icon: Camera, title: "Historical Photo Import", desc: "Connect Jobber, HCP, or ServiceTitan and we pull every job photo from your history automatically." },
+                      { icon: Zap, title: "Instant AI Backfill", desc: "Every imported photo gets analyzed immediately. Leads start appearing in your dashboard within hours." },
+                      { icon: DollarSign, title: "Retroactive Commission Potential", desc: "A roofer with 3 years of job photos could have hundreds of undetected opportunities already waiting." },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-[#F5E642] flex items-center justify-center shrink-0">
+                          <item.icon className="w-5 h-5 text-[#0A1628]" />
+                        </div>
+                        <div>
+                          <h4 className="font-heading font-bold text-gray-900 mb-1">{item.title}</h4>
+                          <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <Link href="/apply">
+                    <button className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold text-[#0A1628] hover:opacity-90 transition-all" style={{ backgroundColor: "#F5E642" }}>
+                      Connect Your FSM — It's Free <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </Link>
+                </div>
+              </FadeUp>
+              <FadeUp delay={0.2}>
+                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+                  <h3 className="text-lg font-heading font-bold text-gray-900 mb-6">Every Photo Has a Strategy</h3>
+                  <div className="space-y-5">
+                    {[
+                      {
+                        label: "Before Photos",
+                        icon: Camera,
+                        color: "#3B82F6",
+                        desc: "Document the property condition before you start. AI captures baseline data for the entire home — not just your work area.",
+                        badge: "Required",
+                        badgeColor: "bg-blue-100 text-blue-800",
+                      },
+                      {
+                        label: "After Photos",
+                        icon: CheckCircle,
+                        color: "#10B981",
+                        desc: "Prove your work quality and capture the finished state. AI compares before/after to track improvements and detect adjacent needs.",
+                        badge: "Required",
+                        badgeColor: "bg-emerald-100 text-emerald-800",
+                      },
+                      {
+                        label: "FSM Historical Import",
+                        icon: RefreshCw,
+                        color: "#8B5CF6",
+                        desc: "Connect your FSM software and backfill years of job photos automatically. Your history becomes instant commission potential.",
+                        badge: "Passive",
+                        badgeColor: "bg-purple-100 text-purple-800",
+                      },
+                      {
+                        label: "Current Job Photos",
+                        icon: Zap,
+                        color: "#F59E0B",
+                        desc: "Every job you complete from today forward. Upload at job close and the AI scans immediately.",
+                        badge: "Ongoing",
+                        badgeColor: "bg-amber-100 text-amber-800",
+                      },
+                    ].map((item) => (
+                      <div key={item.label} className="flex gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${item.color}15` }}>
+                          <item.icon className="w-4.5 h-4.5" style={{ color: item.color }} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-sm font-bold text-gray-900">{item.label}</span>
+                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${item.badgeColor}`}>{item.badge}</span>
+                          </div>
+                          <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* — 5b. TrustyPro Badge System — */}
       <section id="badge-system" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
         <div className="container">
           <FadeUp>
@@ -1546,7 +1933,7 @@ export default function Home() {
                 Earn Your Badge.<br />Build Homeowner Trust.
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed">
-                TrustyPro certification is the trust signal homeowners look for when choosing a service pro. Every ProLnk partner starts at Bronze and earns their way up through verified performance — not pay-to-play.
+                TrustyPro is the homeowner platform where people upload photos of their home, track its health, and get matched with the right pro automatically. Your TrustyPro badge is what homeowners see before they see your price — earned through verified performance, not purchased.
               </p>
             </div>
           </FadeUp>
@@ -1606,7 +1993,7 @@ export default function Home() {
                 tagline: "Elite. Invite-only.",
                 requirements: [
                   "300+ job photos uploaded",
-                  "50+ closed referral jobs",
+                  "50+ closed referral jobs",  // badge requirement — intentional
                   "4.9+ homeowner rating",
                   "Active 12+ months",
                 ],
@@ -1649,7 +2036,7 @@ export default function Home() {
             ))}
           </StaggerChildren>
           <FadeUp>
-            <div className="max-w-3xl mx-auto bg-[#0A1628] rounded-2xl p-8 text-center">
+            <div className="max-w-3xl mx-auto bg-[#1a2d4a] rounded-2xl p-8 text-center">
               <BadgeCheck className="w-10 h-10 text-[#F5E642] mx-auto mb-3" />
               <h3 className="text-2xl font-heading font-bold text-white mb-2">Your Badge Lives on Your TrustyPro Profile</h3>
               <p className="text-slate-400 text-sm leading-relaxed max-w-xl mx-auto mb-6">
@@ -1665,7 +2052,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- 6. Social Proof & Guarantee -- */}
+      {/* — 5c. ProLnk vs Traditional Lead Gen Comparison — */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container">
+          <FadeUp>
+            <div className="text-center mb-14 max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-yellow-50 border border-yellow-200 px-4 py-2 rounded-full mb-4">
+                <Target className="w-3.5 h-3.5" /> Why ProLnk Is Different
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">
+                Stop Buying Leads.<br />Start Earning From Your Work.
+              </h2>
+              <p className="text-gray-500 text-lg leading-relaxed">
+                Traditional lead gen charges you for names. ProLnk pays you for photos you're already taking.
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp>
+            <div className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+              <table className="w-full text-sm min-w-[600px]">
+                <thead>
+                  <tr className="bg-[#0A1628] text-white">
+                    <th className="text-left px-6 py-4 font-bold">Feature</th>
+                    <th className="text-center px-6 py-4 font-bold">ProLnk</th>
+                    <th className="text-center px-6 py-4 font-bold text-white/60">Angi / HomeAdvisor</th>
+                    <th className="text-center px-6 py-4 font-bold text-white/60">Thumbtack</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { feature: "Cost to join", prolnk: "Monthly subscription (no per-lead fees)", angi: "$300/yr + $15–$85/lead", thumb: "Pay per lead" },
+                    { feature: "Lead quality", prolnk: "Warm (neighbor referral)", angi: "Cold (shared leads)", thumb: "Cold (bidding war)" },
+                    { feature: "Exclusive leads", prolnk: "Yes — 1:1 match", angi: "No — shared with 3–5 pros", thumb: "No — bidding system" },
+                    { feature: "You earn referral commissions", prolnk: "Yes — paid on verified closed jobs", angi: "No", thumb: "No" },
+                    { feature: "AI-powered detection", prolnk: "65+ detection categories (and growing)", angi: "None", thumb: "None" },
+                    { feature: "Homeowner trust signal", prolnk: "TrustyPro Badge", angi: "Generic rating", thumb: "Generic rating" },
+                    { feature: "Photo-based referrals", prolnk: "Core model", angi: "Not available", thumb: "Not available" },
+                    { feature: "Money-back guarantee", prolnk: "30-day satisfaction guarantee", angi: "No", thumb: "No" },
+                  ].map((row, i) => (
+                    <tr key={row.feature} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-6 py-3.5 font-medium text-gray-900">{row.feature}</td>
+                      <td className="px-6 py-3.5 text-center">
+                        <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
+                          <CheckCircle className="w-4 h-4" />{row.prolnk}
+                        </span>
+                      </td>
+                      <td className="px-6 py-3.5 text-center text-gray-400">{row.angi}</td>
+                      <td className="px-6 py-3.5 text-center text-gray-400">{row.thumb}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* — 6. Social Proof & Guarantee — */}
       <section id="guarantee" className="py-24" style={{ backgroundColor: "#FAFAF9" }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
@@ -1674,48 +2117,42 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8">What Partners Say</h2>
               <div className="space-y-5">
-                {[
-                  {
-                    name: "Marcus T.",
-                    business: "Green Edge Landscaping",
-                    quote: "I uploaded gate photos from a pet waste job and within an hour had a lead for a full backyard landscaping project. Closed it for $2,400.",
-                    tier: "Pro",
-                  },
-                  {
-                    name: "Sarah K.",
-                    business: "Paws & Play Dog Walking",
-                    quote: "My team takes photos at every visit anyway. Now those photos are generating referral income I didn't have before. Completely passive.",
-                    tier: "Pro",
-                  },
-                  {
-                    name: "David R.",
-                    business: "AquaClear Pool Services",
-                    quote: "The AI caught a broken fence panel in a photo I didn't even notice. The fence company closed the job and I got a commission check.",
-                    tier: "Starter",
-                  },
-                ].map((t) => (
-                  <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-[#F5E642] text-[#F5E642]" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.quote}"</p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400">{t.business}</div>
-                      </div>
-                      <div className="flex flex-col items-end gap-1"><span className="text-xs font-bold px-2 py-1 bg-gray-100 text-gray-600 rounded">{t.tier}</span><span className="text-[10px] text-green-600 font-semibold flex items-center gap-0.5">✓ Verified</span></div>
-                    </div>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-dashed border-gray-200 text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#F5E642]/10 flex items-center justify-center mx-auto mb-4">
+                    <Star className="w-6 h-6 text-[#0A1628]" />
                   </div>
-                ))}
+                  <h4 className="font-heading font-bold text-gray-900 mb-2">Be the First to Share Your Story</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                    ProLnk is in its founding partner phase — launching in DFW. Real partner results will appear here as the network grows. We don't fabricate social proof.
+                  </p>
+                  <Link href="/apply">
+                    <button className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white rounded-none transition-all hover:opacity-90" style={{ backgroundColor: "#0A1628" }}>
+                      Join as a Founding Partner <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </Link>
+                </div>
+                <div className="bg-[#FAFAF9] rounded-2xl p-6 border border-gray-100">
+                  <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-3">What to expect</p>
+                  <div className="space-y-2.5">
+                    {[
+                      "Commissions tracked in real time in your dashboard",
+                      "Payouts processed monthly — no chasing required",
+                      "Every lead tied to a specific photo you uploaded",
+                      "Transparent conversion data: photo → lead → close",
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-2.5">
+                        <CheckCircle className="w-4 h-4 text-[#0A1628] shrink-0 mt-0.5" />
+                        <p className="text-sm text-gray-600">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Guarantee + Founding Partner */}
             <div className="space-y-6">
-              <div className="bg-[#0A1628] rounded-2xl p-8 text-white">
+              <div className="bg-[#1a2d4a] rounded-2xl p-8 text-white">
                 <div className="text-4xl mb-4"></div>
                 <h3 className="text-2xl font-heading font-bold mb-3">30-Day Guarantee</h3>
                 <p className="text-slate-300 text-sm leading-relaxed mb-5">
@@ -1723,7 +2160,7 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "No contracts -- cancel anytime",
+                    "No contracts — cancel anytime",
                     "Refund issued within 5 business days",
                     "Applies to first-time partners only",
                   ].map((item) => (
@@ -1751,7 +2188,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-600">Spots remaining</span>
-                  <span className="text-xl font-heading font-bold text-[#0A1628]">{spotsRemaining} <span className="text-sm font-normal text-gray-400">of 50</span></span>
+                  <span className="text-xl font-heading font-bold text-[#0A1628]">{spotsRemaining} <span className="text-sm font-normal text-gray-400">of 100</span></span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden mb-3">
                   <div className="h-2 rounded-full transition-all duration-700 bg-[#0A1628]" style={{ width: `${spotsPercent}%` }} />
@@ -1760,7 +2197,7 @@ export default function Home() {
                   {[
                     "Locked-in pricing forever",
                     "Founding Partner badge on your profile",
-                    "Priority lead routing -- first look at new leads",
+                    "Priority access to new platform features and markets",
                     "Early access to every new feature",
                   ].map((perk) => (
                     <li key={perk} className="flex items-center gap-2 text-xs text-gray-600">
@@ -1785,8 +2222,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- 6. Final CTA -- */}
-      <section className="py-24" style={{ backgroundColor: "#050d1a" }}>
+      {/* — 6. Final CTA — */}
+      <section className="py-24" style={{ backgroundColor: "#0d1e38" }}>
         <div className="container text-center">
           <FadeUp>
             <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
@@ -1804,37 +2241,55 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
                 style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
               >
-                Apply Now -- It's Free <ArrowRight className="h-5 w-5" />
+                Apply Now — It's Free <ArrowRight className="h-5 w-5" />
               </button>
             </Link>
           </FadeUp>
         </div>
       </section>
 
-      {/* -- Footer -- */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
+      {/* — Footer — */}
+      <footer className="bg-gray-800 text-gray-400 py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <ProLnkLogo height={28} variant="dark" className="shrink-0" />
-            <div className="flex gap-6 text-sm">
+            <div className="flex flex-wrap gap-5 text-sm">
               <Link href="/apply" className="hover:text-white transition-colors">Apply</Link>
               <Link href="/partners" className="hover:text-white transition-colors">Directory</Link>
-              <Link href="/leaderboard" className="hover:text-white transition-colors">Leaderboard</Link>
               <Link href="/dashboard" className="hover:text-white transition-colors">Partner Login</Link>
               <Link href="/trustypro" className="hover:text-white transition-colors">TrustyPro</Link>
+              <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
+              <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+              <a href="#faq" className="hover:text-white transition-colors">Resources</a>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
-              <p> 2026 ProLnk. DFW, Texas. &nbsp;&nbsp; <span className="text-[#F5E642] font-semibold">Patent Pending</span></p>
-              <div className="flex gap-4">
+              <div className="flex items-center gap-2 mb-1 md:mb-0">
+                <Link href="/dashboard">
+                  <button className="px-3 py-1 rounded text-xs font-medium border border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 transition-colors">
+                    Partner Login
+                  </button>
+                </Link>
+                <Link href="/admin">
+                  <button className="px-3 py-1 rounded text-xs font-medium border border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 transition-colors">
+                    Admin Portal
+                  </button>
+                </Link>
+              </div>
+              <p>&copy; {new Date().getFullYear()} ProLnk. DFW, Texas. All rights reserved.</p>
+              <div className="flex gap-4 flex-wrap justify-center">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                 <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 <Link href="/ccpa" className="hover:text-white transition-colors">CCPA Rights</Link>
                 <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+                <a href="https://instagram.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+                <a href="https://facebook.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
+                <a href="https://linkedin.com/company/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
               </div>
             </div>
           </div>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }

@@ -61,7 +61,6 @@ async function validateEnvironment() {
     'DATABASE_URL',
     'NODE_ENV',
     'RESEND_API_KEY',
-    'STRIPE_SECRET_KEY',
   ];
 
   const missing = required.filter(v => !process.env[v]);
@@ -72,6 +71,7 @@ async function validateEnvironment() {
   }
 
   const warnings = [];
+  if (!process.env.STRIPE_SECRET_KEY) warnings.push('STRIPE_SECRET_KEY (payments disabled)');
   if (!process.env.OPENAI_API_KEY) warnings.push('OPENAI_API_KEY');
   if (!process.env.ANTHROPIC_API_KEY) warnings.push('ANTHROPIC_API_KEY');
   if (!process.env.SENTRY_DSN) warnings.push('SENTRY_DSN (error tracking disabled)');

@@ -1120,7 +1120,7 @@ export default function ProWaitlist() {
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
         <div className="absolute inset-0">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp"
+            src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
             alt="Home service AI analysis"
             className="w-full h-full object-cover object-center"
           />

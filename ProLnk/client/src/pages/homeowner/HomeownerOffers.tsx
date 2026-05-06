@@ -24,13 +24,13 @@ const TRADE_BEFORE: Record<string, string> = {
 
 // Style-matched mockup images keyed by trade category
 const TRADE_MOCKUPS: Record<string, string> = {
-  Fencing: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-front-yard_3b26a6f3.jpg",
-  Gutters: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-front-yard_3b26a6f3.jpg",
-  Concrete: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-front-yard_3b26a6f3.jpg",
-  Handyman: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-interior_aa7c0963.jpg",
-  Interior: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-interior_aa7c0963.jpg",
-  Painting: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-interior_aa7c0963.jpg",
-  default: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/after-front-yard_3b26a6f3.jpg",
+  Fencing: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-front-yard_3b26a6f3.jpg",
+  Gutters: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-front-yard_3b26a6f3.jpg",
+  Concrete: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-front-yard_3b26a6f3.jpg",
+  Handyman: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-interior_aa7c0963.jpg",
+  Interior: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-interior_aa7c0963.jpg",
+  Painting: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-interior_aa7c0963.jpg",
+  default: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/after-front-yard_3b26a6f3.jpg",
 };
 
 const DEMO_OFFERS = [

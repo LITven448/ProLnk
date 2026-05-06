@@ -1149,13 +1149,13 @@ export default function Home() {
         <meta property="og:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/" />
-        <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk — Your Photos. Their Next Job." />
         <meta name="twitter:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
-        <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp" />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.io/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -1271,7 +1271,7 @@ export default function Home() {
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
         <div className="absolute inset-0">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-hero-house_ad6a73f1.webp"
+            src="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp"
             alt="Home service AI analysis"
             className="w-full h-full object-cover object-center"
           />

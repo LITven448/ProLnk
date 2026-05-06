@@ -7,7 +7,7 @@ import { Shield, Camera, Star, CheckCircle, ArrowRight, Home } from "lucide-reac
 import { motion } from "framer-motion";
 
 const ACCENT = "#4F46E5";
-const CDN_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-hero-interior_21ad489c.webp";
+const CDN_BG = "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp";
 
 const BENEFITS = [
   { icon: Camera,       text: "AI scans your home photos for maintenance needs" },

@@ -97,8 +97,8 @@ const SEVERITY_COLORS = {
 type ViewMode = "detect" | "commission";
 type ScanTab = "exterior" | "interior";
 
-const EXTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-exterior-scan-XiC5FEL4WRxV9PvSmrUL3X.webp";
-const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/prolnk-interior-scan-Cr7e7AXTDitRxYoMQcu8Y5.webp";
+const EXTERIOR_IMG = "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-exterior-scan-XiC5FEL4WRxV9PvSmrUL3X.webp";
+const INTERIOR_IMG = "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-interior-scan-Cr7e7AXTDitRxYoMQcu8Y5.webp";
 
 export default function ProLnkJobSiteVisual() {
   const [tab, setTab] = useState<ScanTab>("exterior");

@@ -30,13 +30,13 @@ import {
 
 // CDN images
 const HERO_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/4kBvYpFmoTde_d24a0312.jpg";
+  "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/4kBvYpFmoTde_d24a0312.jpg";
 const ABOUT_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/9FJZvhvZxcme_45933d90.jpg";
+  "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/9FJZvhvZxcme_45933d90.jpg";
 const AERIAL_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/NEu2wYCLPuV7_f84a4e52.jpg";
+  "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/NEu2wYCLPuV7_f84a4e52.jpg";
 const TRADES_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/wkaZGwMbBw8r_bace4d06.jpg";
+  "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/wkaZGwMbBw8r_bace4d06.jpg";
 
 const AD_FORMATS = [
   {

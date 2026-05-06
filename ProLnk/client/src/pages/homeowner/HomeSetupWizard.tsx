@@ -1148,7 +1148,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
 }
 
 // --- Step 7: Property Photos ---
-const PHOTO_EXAMPLE_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/photo-example-good-2xpeBBGXksWdwvxoGE2D3u.webp";
+const PHOTO_EXAMPLE_URL = "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/photo-example-good-2xpeBBGXksWdwvxoGE2D3u.webp";
 
 function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => void; propertyId: number | null }) {
   // uploadedPhotos: Record<roomId, string[]> -- multiple photos per room

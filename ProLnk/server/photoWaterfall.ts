@@ -125,7 +125,8 @@ function runTier0Heuristic(photo: PhotoInput): Tier0Result {
     url.includes("cdn.") ||
     url.includes("storage.") ||
     url.includes("forge") ||
-    url.includes("cloudfront");
+    url.includes("cloudfront") ||
+    url.includes("r2.dev");
 
   if (!isImageUrl) {
     return { passed: false, reason: "URL does not appear to point to an image" };

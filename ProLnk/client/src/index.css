@@ -4,28 +4,28 @@
 /* ── Geist Sans (Vercel) — self-hosted via CDN ─────────────────────────────── */
 @font-face {
   font-family: 'Geist Sans';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/Geist-Regular_a52d94c2.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/Geist-Regular_a52d94c2.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Sans';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/Geist-Medium_5e164063.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/Geist-Medium_5e164063.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Sans';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/Geist-SemiBold_6390aba2.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/Geist-SemiBold_6390aba2.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Sans';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/Geist-Bold_c8bf8524.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/Geist-Bold_c8bf8524.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -33,21 +33,21 @@
 /* ── Geist Mono (Vercel) — self-hosted via CDN ──────────────────────────────── */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/GeistMono-Regular_46b33d9f.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/GeistMono-Regular_46b33d9f.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/GeistMono-Medium_d352dc76.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/GeistMono-Medium_d352dc76.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/GeistMono-SemiBold_6a12411d.woff2') format('woff2');
+  src: url('https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/GeistMono-SemiBold_6a12411d.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;

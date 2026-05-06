@@ -605,7 +605,7 @@ export default function BusinessPacket() {
                     { label: "Auth", value: "Manus OAuth + JWT sessions" },
                     { label: "Payments", value: "Stripe (test mode)" },
                     { label: "Email", value: "Resend API" },
-                    { label: "Hosting", value: "Manus managed (manus.space)" },
+                    { label: "Hosting", value: "Render (render.com)" },
                     { label: "Automation", value: "n8n (webhook-driven)" },
                   ].map((item) => (
                     <div key={item.label} className="p-3 bg-slate-700/30 rounded-lg">

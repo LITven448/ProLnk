@@ -1,6 +1,6 @@
 import React from "react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-logo-v2-nPx4Cz87k9qTYHs8gDFKhH.webp";
+const LOGO_URL = "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-logo-v2-nPx4Cz87k9qTYHs8gDFKhH.webp";
 
 interface TrustyProLogoProps {
   variant?: "light" | "dark" | "icon-only";

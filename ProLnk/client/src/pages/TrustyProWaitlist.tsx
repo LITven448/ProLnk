@@ -600,23 +600,23 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
 // --- CDN Images ----------------------------------------------------------------
 const CDN = {
-  heroModel:      "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/framer-hero-reference_949730d3.webp",
-  heroExterior:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/home-exterior-modern_d492c1af.jpg",
-  heroInterior:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-hero-interior_21ad489c.webp",
-  aboutWide:      "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/living-room-luxury_9bf5543c.jpg",
-  aboutWide2:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/kitchen-white-cabinets_d735258a.jpg",
-  projectKitchen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-kitchen_d8ca391a.jpg",
-  projectRoofing: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-roofing_7f6afdec.jpg",
-  projectBath:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-bathroom_f9a2bb62.jpg",
-  projectLand:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-landscaping_7000c429.jpg",
-  projectPaint:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-painting-c7oS8XApoWgskDsGbPd6h7.webp",
-  projectFloor:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-flooring_e65ecd45.jpg",
-  projectHVAC:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-hvac-RMvrh5j9LFy8iRDqmf8xvZ.webp",
-  projectPlumb:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/project-plumbing-2mpXEhBrHpF7opmP2R7fBg.webp",
-  beforeFront:    "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/demo-before-front-jqo6uC4xnXLx3JnChPjeTu.webp",
-  afterFront:     "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/demo-after-front-JyL4xHCPoi4dWpiePAXTFA.webp",
-  scanFrontYard:  "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
-  scanBackYard:   "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
+  heroModel:      "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/framer-hero-reference_949730d3.webp",
+  heroExterior:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/home-exterior-modern_d492c1af.jpg",
+  heroInterior:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
+  aboutWide:      "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/living-room-luxury_9bf5543c.jpg",
+  aboutWide2:     "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/kitchen-white-cabinets_d735258a.jpg",
+  projectKitchen: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-kitchen_d8ca391a.jpg",
+  projectRoofing: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-roofing_7f6afdec.jpg",
+  projectBath:    "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-bathroom_f9a2bb62.jpg",
+  projectLand:    "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-landscaping_7000c429.jpg",
+  projectPaint:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-painting-c7oS8XApoWgskDsGbPd6h7.webp",
+  projectFloor:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-flooring_e65ecd45.jpg",
+  projectHVAC:    "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-hvac-RMvrh5j9LFy8iRDqmf8xvZ.webp",
+  projectPlumb:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/project-plumbing-2mpXEhBrHpF7opmP2R7fBg.webp",
+  beforeFront:    "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/demo-before-front-jqo6uC4xnXLx3JnChPjeTu.webp",
+  afterFront:     "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/demo-after-front-JyL4xHCPoi4dWpiePAXTFA.webp",
+  scanFrontYard:  "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
+  scanBackYard:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
 };
 
 // --- Accent Color --------------------------------------------------------------
@@ -816,7 +816,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
 const SCAN_TABS = [
   {
     label: "Interior",
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-hero-interior_21ad489c.webp",
+    img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
     issues: [
       { label: "Water Damage", color: "#ef4444" },
       { label: "Floor Refinishing", color: "#f59e0b" },
@@ -826,7 +826,7 @@ const SCAN_TABS = [
   },
   {
     label: "Front Yard",
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
+    img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
     issues: [
       { label: "Driveway Crack", color: "#ef4444" },
       { label: "Gutter Sagging", color: "#f59e0b" },
@@ -836,7 +836,7 @@ const SCAN_TABS = [
   },
   {
     label: "Back Yard",
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388846002/dAVBxpSeSZ4jhwmMBJquFo/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
+    img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
     issues: [
       { label: "Fence Damage", color: "#ef4444" },
       { label: "Deck Wear", color: "#f59e0b" },

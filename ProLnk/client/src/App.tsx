@@ -414,33 +414,71 @@ function DomainRouter() {
   return null;
 }
 
-// /login — OAuth if configured, otherwise show placeholder login
+// /login — Email/password login form (OAuth fallback when VITE_OAUTH_PORTAL_URL not configured)
 function LoginRedirect() {
-  const [, navigate] = useLocation();
   const loginUrl = getLoginUrl();
-  useEffect(() => {
-    // Only hard-redirect if it's an external OAuth URL (not a loop back to /login)
-    if (loginUrl && !loginUrl.endsWith('/login')) {
-      window.location.href = loginUrl;
-    }
-  }, [loginUrl]);
+  const [email, setEmail] = (window as any).React?.useState
+    ? (window as any).React.useState("")
+    : ["", () => {}];
 
-  // OAuth not configured — show a simple holding page so admin can reach /admin/waitlist
-  if (!loginUrl || loginUrl.endsWith('/login')) {
-    return (
-      <div style={{minHeight:'100vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#0f1117',color:'#fff',fontFamily:'sans-serif',gap:24}}>
-        <div style={{fontSize:32,fontWeight:700}}>ProLnk Admin</div>
-        <div style={{color:'#888',fontSize:14,maxWidth:400,textAlign:'center'}}>
-          Partner authentication is being set up. To access the admin dashboard directly, navigate to:
-        </div>
-        <a href="/admin/waitlist" style={{background:'#22c55e',color:'#fff',padding:'12px 32px',borderRadius:8,textDecoration:'none',fontWeight:600,fontSize:16}}>
-          Go to Waitlist Dashboard →
-        </a>
-        <a href="/" style={{color:'#555',fontSize:13,marginTop:8}}>← Back to homepage</a>
-      </div>
-    );
+  // Use React hooks properly via import at top
+  const [emailVal, setEmailVal] = window.location ? (() => {
+    const [e, se] = require ? ["", () => {}] : ["", () => {}];
+    return [e, se];
+  })() : ["", () => {}];
+
+  // External OAuth — redirect immediately
+  if (loginUrl && !loginUrl.endsWith('/login')) {
+    useEffect(() => { window.location.href = loginUrl; }, []);
+    return null;
   }
-  return null;
+
+  // Email/password login form
+  return <AdminLoginForm />;
+}
+
+function AdminLoginForm() {
+  const { trpc: trpcHook } = { trpc };
+  const [email, setEmail] = (useState as typeof useState)("");
+  const [password, setPassword] = (useState as typeof useState)("");
+  const [error, setError] = (useState as typeof useState)("");
+  const [loading, setLoading] = (useState as typeof useState)(false);
+  const loginMutation = trpc.partnerAuth.login.useMutation({
+    onSuccess: () => { window.location.href = "/admin/waitlist"; },
+    onError: (e: { message: string }) => { setError(e.message); setLoading(false); },
+  });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+    loginMutation.mutate({ email, password });
+  };
+  return (
+    <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"#0f1117",color:"#fff",fontFamily:"sans-serif"}}>
+      <div style={{background:"#1a1d27",padding:"40px",borderRadius:"16px",width:"100%",maxWidth:"400px",boxSizing:"border-box" as any}}>
+        <div style={{fontSize:"28px",fontWeight:700,marginBottom:"8px"}}>ProLnk</div>
+        <div style={{color:"#888",fontSize:"14px",marginBottom:"32px"}}>Sign in to your account</div>
+        <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"16px"}}>
+          <div>
+            <label style={{display:"block",fontSize:"13px",color:"#aaa",marginBottom:"6px"}}>Email</label>
+            <input type="email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} required
+              style={{width:"100%",padding:"10px 14px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box" as any}} />
+          </div>
+          <div>
+            <label style={{display:"block",fontSize:"13px",color:"#aaa",marginBottom:"6px"}}>Password</label>
+            <input type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} required
+              style={{width:"100%",padding:"10px 14px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box" as any}} />
+          </div>
+          {error && <div style={{color:"#f87171",fontSize:"13px",background:"#2d1515",padding:"10px",borderRadius:"8px"}}>{error}</div>}
+          <button type="submit" disabled={loading}
+            style={{background:"#22c55e",color:"#fff",border:"none",padding:"12px",borderRadius:"8px",fontWeight:600,fontSize:"15px",cursor:"pointer",opacity:loading?0.7:1}}>
+            {loading ? "Signing in…" : "Sign In"}
+          </button>
+        </form>
+        <a href="/" style={{display:"block",textAlign:"center",color:"#555",fontSize:"13px",marginTop:"24px",textDecoration:"none"}}>← Back to homepage</a>
+      </div>
+    </div>
+  );
 }
 
 function Router() {

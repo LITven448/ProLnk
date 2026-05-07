@@ -237,6 +237,63 @@ async function startServer() {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
+
+  // Safe: create any missing tables without truncating existing data
+  app.get("/api/create-missing-tables", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.query.secret !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
+      if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
+      const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false }, connectionTimeout: 15000 });
+      const createStatements = [
+        `CREATE TABLE IF NOT EXISTS \`homeWaitlist\` (
+          \`id\` bigint NOT NULL,
+          \`firstName\` varchar(100) NOT NULL,
+          \`lastName\` varchar(100) NOT NULL,
+          \`email\` varchar(320) NOT NULL,
+          \`phone\` varchar(30),
+          \`address\` varchar(500) NOT NULL,
+          \`city\` varchar(100) NOT NULL,
+          \`state\` varchar(50) NOT NULL,
+          \`zipCode\` varchar(10) NOT NULL,
+          \`homeType\` text NOT NULL,
+          \`desiredProjects\` text,
+          \`projectTimeline\` varchar(100),
+          \`ownershipStatus\` varchar(50) NOT NULL DEFAULT 'own',
+          \`ownershipType\` varchar(50),
+          \`status\` varchar(50) NOT NULL DEFAULT 'pending',
+          \`adminNotes\` text,
+          \`approvedAt\` timestamp,
+          \`approvedBy\` int,
+          \`invitedAt\` timestamp,
+          \`consentTerms\` tinyint(1) NOT NULL DEFAULT 0,
+          \`consentEmail\` tinyint(1) NOT NULL DEFAULT 1,
+          \`consentDataUse\` tinyint(1) NOT NULL DEFAULT 1,
+          \`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          \`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+          PRIMARY KEY (\`id\`),
+          UNIQUE KEY \`homeWaitlist_email_unique\` (\`email\`)
+        )`,
+      ];
+      const results: string[] = [];
+      for (const stmt of createStatements) {
+        try {
+          await conn.query(stmt);
+          results.push("OK: " + stmt.split("\n")[0].slice(0, 60));
+        } catch (e: any) {
+          results.push("SKIP (" + e.message.slice(0, 80) + ")");
+        }
+      }
+      await conn.end();
+      return res.json({ done: true, results });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
   // One-time safe schema patch — adds AUTO_INCREMENT to waitlist id columns (no data loss)
   app.get("/api/patch-schema", async (req, res) => {
     const secret = process.env.JWT_SECRET;

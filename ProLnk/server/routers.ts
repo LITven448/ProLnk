@@ -4649,7 +4649,7 @@ Return a JSON object with:
               body: JSON.stringify({ from: 'ProLnk <onboarding@resend.dev>', to: [email], subject, html: body }),
             }).catch(() => {});
           } catch (emailErr) {
-            logger.error('[WaitlistInvite] Email send failed', { error: emailErr });
+            console.error('[WaitlistInvite] Email send failed', emailErr);
           }
         }
         await notifyOwner({ title: `Waitlist Invite Sent`, content: `${name} (${email}) invited as ${input.type === 'pro' ? 'partner' : 'homeowner'}.` });

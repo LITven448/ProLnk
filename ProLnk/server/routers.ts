@@ -45,6 +45,7 @@ import { waitlistRouter } from "./routers/waitlist";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
 import { automationRulesRouter } from "./routers/automationRules";
+import { partnerAuthRouter } from "./routers/partnerAuth";
 import { diagnosticAgentRouter } from "./routers/diagnosticAgent";
 import { engagementRouter } from "./routers/engagement";
 import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
@@ -4549,6 +4550,7 @@ Return a JSON object with:
       }),
   }),
    automationRules: automationRulesRouter,
+  partnerAuth: partnerAuthRouter,
   diagnosticAgent: diagnosticAgentRouter,
   engagement: engagementRouter,
   integrationWebhooks: integrationWebhooksRouter,

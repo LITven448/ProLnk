@@ -414,12 +414,32 @@ function DomainRouter() {
   return null;
 }
 
-// Redirect /login  OAuth login URL
+// /login — OAuth if configured, otherwise show placeholder login
 function LoginRedirect() {
   const [, navigate] = useLocation();
+  const loginUrl = getLoginUrl();
   useEffect(() => {
-    window.location.href = getLoginUrl();
-  }, []);
+    // Only hard-redirect if it's an external OAuth URL (not a loop back to /login)
+    if (loginUrl && !loginUrl.endsWith('/login')) {
+      window.location.href = loginUrl;
+    }
+  }, [loginUrl]);
+
+  // OAuth not configured — show a simple holding page so admin can reach /admin/waitlist
+  if (!loginUrl || loginUrl.endsWith('/login')) {
+    return (
+      <div style={{minHeight:'100vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#0f1117',color:'#fff',fontFamily:'sans-serif',gap:24}}>
+        <div style={{fontSize:32,fontWeight:700}}>ProLnk Admin</div>
+        <div style={{color:'#888',fontSize:14,maxWidth:400,textAlign:'center'}}>
+          Partner authentication is being set up. To access the admin dashboard directly, navigate to:
+        </div>
+        <a href="/admin/waitlist" style={{background:'#22c55e',color:'#fff',padding:'12px 32px',borderRadius:8,textDecoration:'none',fontWeight:600,fontSize:16}}>
+          Go to Waitlist Dashboard →
+        </a>
+        <a href="/" style={{color:'#555',fontSize:13,marginTop:8}}>← Back to homepage</a>
+      </div>
+    );
+  }
   return null;
 }
 

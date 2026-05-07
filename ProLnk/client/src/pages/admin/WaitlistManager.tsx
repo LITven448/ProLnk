@@ -41,19 +41,19 @@ export default function WaitlistManager() {
 
   const utils = trpc.useUtils();
 
-  const stats = trpc.waitlist.getWaitlistStats.useQuery(undefined, { refetchInterval: 30000 });
-  const pros = trpc.waitlist.getProWaitlist.useQuery({ status: proStatus, limit: 500 });
-  const homes = trpc.waitlist.getHomeWaitlist.useQuery({ status: homeStatus, limit: 500 });
+  const stats = trpc.waitlistAdmin.getWaitlistStats.useQuery(undefined, { refetchInterval: 30000 });
+  const pros = trpc.waitlistAdmin.getProWaitlist.useQuery({ status: proStatus, limit: 500 });
+  const homes = trpc.waitlistAdmin.getHomeWaitlist.useQuery({ status: homeStatus, limit: 500 });
 
-  const updatePro = trpc.waitlist.updateProStatus.useMutation({
+  const updatePro = trpc.waitlistAdmin.updateProStatus.useMutation({
     onSuccess: () => { utils.waitlist.getProWaitlist.invalidate(); utils.waitlist.getWaitlistStats.invalidate(); toast.success("Status updated"); },
     onError: (e) => toast.error(e.message),
   });
-  const updateHome = trpc.waitlist.updateHomeStatus.useMutation({
+  const updateHome = trpc.waitlistAdmin.updateHomeStatus.useMutation({
     onSuccess: () => { utils.waitlist.getHomeWaitlist.invalidate(); utils.waitlist.getWaitlistStats.invalidate(); toast.success("Status updated"); },
     onError: (e) => toast.error(e.message),
   });
-  const activateAndInvite = trpc.waitlist.activateAndInvite.useMutation({
+  const activateAndInvite = trpc.waitlistAdmin.activateAndInvite.useMutation({
     onSuccess: (data) => {
       utils.waitlist.getProWaitlist.invalidate();
       utils.waitlist.getHomeWaitlist.invalidate();
@@ -63,7 +63,7 @@ export default function WaitlistManager() {
     onError: (e) => toast.error(`Invite failed: ${e.message}`),
   });
 
-  const bulkApprove = trpc.waitlist.bulkApproveAll.useMutation({
+  const bulkApprove = trpc.waitlistAdmin.bulkApproveAll.useMutation({
     onSuccess: (data) => {
       utils.waitlist.getProWaitlist.invalidate();
       utils.waitlist.getHomeWaitlist.invalidate();

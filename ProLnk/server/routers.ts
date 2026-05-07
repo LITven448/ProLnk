@@ -2805,8 +2805,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
       .mutation(async ({ input }) => {
         await updatePartnerCommissionRates(
           input.partnerId,
-          input.platformFeeRate.toFixed(4),
-          input.referralCommissionRate.toFixed(4),
+          { referringRate: input.platformFeeRate, receivingRate: input.referralCommissionRate },
         );
         return { success: true };
       }),
@@ -2895,7 +2894,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
         // Save broadcast record
-        await createBroadcast(input.subject, input.message, ctx.user.id);
+        await createBroadcast({ subject: input.subject, message: input.message, createdBy: ctx.user.id });
         // Send in-app notifications to matching partners
         if (input.channels.includes('in_app')) {
           let partnerRows: Array<{ id: number }>;

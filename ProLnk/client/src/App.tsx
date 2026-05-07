@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -325,7 +324,8 @@ import AgentPortal from "@/pages/AgentPortal";
 import ResourceCenter from "@/pages/ResourceCenter";
 import BillingPortal from "@/pages/BillingPortal";
 import ProLnkMedia from "@/pages/ProLnkMedia";
-const ProLnkMediaSite = React.lazy(() => import("@/pages/media/ProLnkMediaSite"));
+const ProLnkMediaSite = lazy(() => import("@/pages/media/ProLnkMediaSite"));
+const MediaSiteLazy = () => <Suspense fallback={<div style={{background:"#050508",minHeight:"100vh"}} />}><ProLnkMediaSite /></Suspense>;
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import SecurityTrustCenter from "@/pages/SecurityTrustCenter";
 import PhotoAccessLog from "@/pages/admin/PhotoAccessLog";
@@ -745,9 +745,9 @@ function Router() {
       <Route path="/admin/bundle-offers" component={BundleOffers} />
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
-      <Route path="/advertise">{() => <React.Suspense fallback={<div style={{background:"#050508",height:"100vh"}}/>}><ProLnkMediaSite /></React.Suspense>}</Route>
-      <Route path="/media">{() => <React.Suspense fallback={<div style={{background:"#050508",height:"100vh"}}/>}><ProLnkMediaSite /></React.Suspense>}</Route>
-      <Route path="/prolnk-media">{() => <React.Suspense fallback={<div style={{background:"#050508",height:"100vh"}}/>}><ProLnkMediaSite /></React.Suspense>}</Route>
+      <Route path="/advertise" component={MediaSiteLazy} />
+      <Route path="/media" component={MediaSiteLazy} />
+      <Route path="/prolnk-media" component={MediaSiteLazy} />
       <Route path="/pricing" component={Pricing} />
 
       {/* Fallback */}
@@ -887,7 +887,6 @@ function Router() {
       <Route path="/my-home/warranties" component={WarrantyTracker} />
 
       <Route path="/docs" component={Documentation} />
-      <Route path="/media" component={ProLnkMedia} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -350,7 +350,12 @@ async function startServer() {
       const { getSessionCookieOptions } = await import("./cookies");
       const { COOKIE_NAME, ONE_YEAR_MS } = await import("../../shared/const");
       const { sdk } = await import("./sdk");
-      const sessionToken = await sdk.createSessionToken(openId, { name: "Andrew Frakes", expiresInMs: ONE_YEAR_MS });
+      // appId must be non-empty for verifySession to accept the token
+      const appId = process.env.VITE_APP_ID || "prolnk";
+      const sessionToken = await (sdk as any).signSession(
+        { openId, appId, name: "Andrew Frakes" },
+        { expiresInMs: ONE_YEAR_MS }
+      );
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
       return res.redirect("/admin/waitlist");

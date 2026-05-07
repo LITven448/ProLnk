@@ -4689,9 +4689,7 @@ Return a JSON object with:
   }),
 
   // ── Analytics Admin ─────────────────────────────────────────────────────────
-  analytics: router({
-    ...analyticsAdminRouter.createCaller({} as any),
-  }),
+  analytics: analyticsAdminRouter,
 
   circumvention: router({
     runSweep: adminProcedure.mutation(async () => {

@@ -294,6 +294,58 @@ async function startServer() {
     }
   });
 
+  // One-time admin setup — creates the owner admin account
+  app.get("/api/create-admin", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.query.secret !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const bcrypt = await import("bcryptjs");
+      const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
+      if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
+      const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false }, connectionTimeout: 15000 });
+      const adminEmail = process.env.OWNER_EMAIL || "andrew@lit-ventures.com";
+      const openId = "admin_" + adminEmail.toLowerCase().replace(/[^a-z0-9]/g, "_");
+      const tempPw = "ProLnk" + secret.slice(0, 6) + "!";
+      const hash = await bcrypt.default.hash(tempPw, 10);
+
+      // Check if admin already exists
+      const [existing]: any = await conn.query("SELECT id FROM users WHERE openId = ? LIMIT 1", [openId]);
+      if ((existing as any[]).length > 0) {
+        await conn.end();
+        return res.json({ exists: true, message: "Admin already created. Use the login form at /login." });
+      }
+
+      // Create admin user
+      await conn.query(
+        "INSERT INTO users (openId, name, email, loginMethod, role, lastSignedIn) VALUES (?, ?, ?, ?, ?, NOW())",
+        [openId, "Andrew Frakes", adminEmail, "partner_password", "admin"]
+      );
+      const [userRows]: any = await conn.query("SELECT id FROM users WHERE openId = ? LIMIT 1", [openId]);
+      const userId = (userRows as any[])[0]?.id;
+
+      // Create partner record (needed for partnerAuth.login)
+      const partnerId = Math.floor(Math.random() * 2_000_000_000) + 1;
+      await conn.query(
+        \`INSERT INTO partners (id, userId, businessName, businessType, contactName, contactEmail, serviceArea, passwordHash, status, tier, updatedAt)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'approved', 'pro', NOW())
+         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), status = 'approved'\`,
+        [partnerId, userId, "ProLnk Admin", "Admin", "Andrew Frakes", adminEmail, "DFW", hash]
+      );
+
+      await conn.end();
+      return res.json({
+        created: true,
+        email: adminEmail,
+        tempPassword: tempPw,
+        message: "Login at /login with these credentials. Change your password after first login."
+      });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
   // One-time safe schema patch — adds AUTO_INCREMENT to waitlist id columns (no data loss)
   app.get("/api/patch-schema", async (req, res) => {
     const secret = process.env.JWT_SECRET;

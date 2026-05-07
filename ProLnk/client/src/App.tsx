@@ -324,6 +324,7 @@ import AgentPortal from "@/pages/AgentPortal";
 import ResourceCenter from "@/pages/ResourceCenter";
 import BillingPortal from "@/pages/BillingPortal";
 import ProLnkMedia from "@/pages/ProLnkMedia";
+import ProLnkMediaSite from "@/pages/media/ProLnkMediaSite";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import SecurityTrustCenter from "@/pages/SecurityTrustCenter";
 import PhotoAccessLog from "@/pages/admin/PhotoAccessLog";
@@ -743,7 +744,9 @@ function Router() {
       <Route path="/admin/bundle-offers" component={BundleOffers} />
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
-      <Route path="/advertise" component={ProLnkMedia} />
+      <Route path="/advertise" component={ProLnkMediaSite} />
+      <Route path="/media" component={ProLnkMediaSite} />
+      <Route path="/prolnk-media" component={ProLnkMediaSite} />
       <Route path="/pricing" component={Pricing} />
 
       {/* Fallback */}

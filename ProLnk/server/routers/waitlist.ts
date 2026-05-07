@@ -63,7 +63,7 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
           }
 
-          const proId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
+          const proId = Math.floor(Math.random() * 2_000_000_000) + 1;
           await pool.query(
             `INSERT INTO proWaitlist (
               id, firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
@@ -165,7 +165,7 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
           }
 
-          const homeId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
+          const homeId = Math.floor(Math.random() * 2_000_000_000) + 1;
           await pool.query(
             `INSERT INTO homeWaitlist (
               id, firstName, lastName, email, phone, address, city, state, zipCode, homeType,

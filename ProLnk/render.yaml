@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: standard
     rootDir: ProLnk
-    buildCommand: pnpm install && pnpm run build
+    buildCommand: COREPACK_ENABLE_STRICT=0 pnpm install --ignore-workspace && pnpm run build
     startCommand: node dist/index.js
     healthCheckPath: /api/health
     autoDeploy: true

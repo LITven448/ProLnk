@@ -1,6 +1,6 @@
 // Auto-generated migration SQL embedded in code for production builds
 
-export const MIGRATION_0000 = String.raw`
+export const MIGRATION_0000 = `
 CREATE TABLE IF NOT EXISTS \`acceptanceSignals\` (
 	\`id\` int NOT NULL,
 	\`opportunityId\` int NOT NULL,
@@ -2528,7 +2528,7 @@ CREATE INDEX \`pro_upline_pro_idx\` ON \`pro_upline_chain\` (\`pro_user_id\`);--
 CREATE INDEX \`pro_upline_upline_idx\` ON \`pro_upline_chain\` (\`upline_user_id\`);
 `;
 
-export const MIGRATION_0001 = String.raw`
+export const MIGRATION_0001 = `
 ALTER TABLE \`achAuthorizations\` MODIFY COLUMN \`accountType\` varchar(255) DEFAULT 'checking';--> statement-breakpoint
 ALTER TABLE \`achAuthorizations\` MODIFY COLUMN \`authorizationType\` varchar(255) NOT NULL DEFAULT 'single_job';--> statement-breakpoint
 ALTER TABLE \`achAuthorizations\` MODIFY COLUMN \`status\` varchar(255) NOT NULL DEFAULT 'pending_signature';--> statement-breakpoint
@@ -2643,7 +2643,7 @@ ALTER TABLE \`trainingEnrollments\` MODIFY COLUMN \`status\` varchar(255) NOT NU
 ALTER TABLE \`users\` MODIFY COLUMN \`role\` varchar(255) NOT NULL DEFAULT 'user';
 `;
 
-export const MIGRATION_0002 = String.raw`
+export const MIGRATION_0002 = `
 CREATE TABLE \`advertiserImpressionLog\` (
 	\`id\` int AUTO_INCREMENT NOT NULL,
 	\`advertiserId\` int NOT NULL,

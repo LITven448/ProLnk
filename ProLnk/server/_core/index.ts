@@ -168,7 +168,7 @@ async function startServer() {
   // One-time database setup endpoint
   app.get("/setup", async (req, res) => {
     try {
-      const { MIGRATION_0000, MIGRATION_0001 } = await import("./migrations-embedded");
+      const { MIGRATION_0000, MIGRATION_0001, MIGRATION_0002 } = await import("./migrations-embedded");
       const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
 
       if (!dbUrl) {
@@ -203,6 +203,7 @@ async function startServer() {
       const statements = [
         ...MIGRATION_0000.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
         ...MIGRATION_0001.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
+        ...MIGRATION_0002.split("--> statement-breakpoint").map(s => s.trim()).filter(s => s),
       ];
 
       let succeeded = 0;

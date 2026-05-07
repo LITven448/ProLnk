@@ -328,11 +328,7 @@ async function startServer() {
       // Create partner record (needed for partnerAuth.login)
       const partnerId = Math.floor(Math.random() * 2_000_000_000) + 1;
       await conn.query(
-        \`INSERT INTO partners (id, userId, businessName, businessType, contactName, contactEmail, serviceArea, passwordHash, status, tier, updatedAt)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'approved', 'pro', NOW())
-         ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), status = 'approved'\`,
-        [partnerId, userId, "ProLnk Admin", "Admin", "Andrew Frakes", adminEmail, "DFW", hash]
-      );
+        "INSERT INTO partners (id, userId, businessName, businessType, contactName, contactEmail, serviceArea, passwordHash, status, tier, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'approved', 'pro', NOW()) ON DUPLICATE KEY UPDATE passwordHash = VALUES(passwordHash), status = 'approved'",);
 
       await conn.end();
       return res.json({

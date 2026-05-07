@@ -310,6 +310,22 @@ async function startServer() {
       const tempPw = "ProLnk" + secret.slice(0, 6) + "!";
       const hash = await bcrypt.default.hash(tempPw, 10);
 
+      // Ensure users table exists (may not exist if migrations haven't run)
+      await conn.query(`CREATE TABLE IF NOT EXISTS \`users\` (
+        \`id\` int NOT NULL AUTO_INCREMENT,
+        \`openId\` varchar(64) NOT NULL,
+        \`name\` text,
+        \`email\` varchar(320),
+        \`loginMethod\` varchar(64),
+        \`role\` varchar(255) NOT NULL DEFAULT 'user',
+        \`createdAt\` timestamp NOT NULL DEFAULT (now()),
+        \`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+        \`lastSignedIn\` timestamp NOT NULL DEFAULT (now()),
+        \`stripeCustomerId\` varchar(255),
+        PRIMARY KEY (\`id\`),
+        UNIQUE KEY \`users_openId_unique\` (\`openId\`)
+      )`).catch(() => {});
+
       // Check if admin already exists
       const [existing]: any = await conn.query("SELECT id FROM users WHERE openId = ? LIMIT 1", [openId]);
       if ((existing as any[]).length > 0) {

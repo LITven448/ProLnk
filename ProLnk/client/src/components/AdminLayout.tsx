@@ -64,7 +64,7 @@ export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
     { label: "Applications",   href: "/admin/pipeline" },
     { label: "Leaderboard",    href: "/admin/leaderboard" },
     { label: "Commissions",    href: "/admin/rates" },
-    { label: "Network Income", href: "/admin/network" },
+    { label: "Network Income", href: "/admin/prolnk/financial" },
   ],
 
   // ── TrustyPro — homeowner platform ───────────────────────────────────────

@@ -333,13 +333,12 @@ async function startServer() {
         return res.json({ exists: true, message: "Admin already created. Use the login form at /login." });
       }
 
-      // Create admin user
+      // Create admin user — provide explicit id since users.id may lack AUTO_INCREMENT
+      const userId = Math.floor(Math.random() * 2_000_000_000) + 1;
       await conn.query(
-        "INSERT INTO users (openId, name, email, loginMethod, role, lastSignedIn) VALUES (?, ?, ?, ?, ?, NOW())",
-        [openId, "Andrew Frakes", adminEmail, "partner_password", "admin"]
+        "INSERT INTO users (id, openId, name, email, loginMethod, role, lastSignedIn) VALUES (?, ?, ?, ?, ?, ?, NOW())",
+        [userId, openId, "Andrew Frakes", adminEmail, "partner_password", "admin"]
       );
-      const [userRows]: any = await conn.query("SELECT id FROM users WHERE openId = ? LIMIT 1", [openId]);
-      const userId = (userRows as any[])[0]?.id;
 
       // Create partner record (needed for partnerAuth.login)
       const partnerId = Math.floor(Math.random() * 2_000_000_000) + 1;

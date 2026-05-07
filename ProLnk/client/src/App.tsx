@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -414,72 +414,55 @@ function DomainRouter() {
   return null;
 }
 
-// /login — Email/password login form (OAuth fallback when VITE_OAUTH_PORTAL_URL not configured)
+// /login — Email/password login form (OAuth fallback when VITE_OAUTH_PORTAL_URL not set)
 function LoginRedirect() {
   const loginUrl = getLoginUrl();
-  const [email, setEmail] = (window as any).React?.useState
-    ? (window as any).React.useState("")
-    : ["", () => {}];
-
-  // Use React hooks properly via import at top
-  const [emailVal, setEmailVal] = window.location ? (() => {
-    const [e, se] = require ? ["", () => {}] : ["", () => {}];
-    return [e, se];
-  })() : ["", () => {}];
-
-  // External OAuth — redirect immediately
-  if (loginUrl && !loginUrl.endsWith('/login')) {
-    useEffect(() => { window.location.href = loginUrl; }, []);
-    return null;
-  }
-
-  // Email/password login form
+  useEffect(() => {
+    if (loginUrl && !loginUrl.endsWith('/login')) {
+      window.location.href = loginUrl;
+    }
+  }, []);
+  if (loginUrl && !loginUrl.endsWith('/login')) return null;
   return <AdminLoginForm />;
 }
 
 function AdminLoginForm() {
-  const { trpc: trpcHook } = { trpc };
-  const [email, setEmail] = (useState as typeof useState)("");
-  const [password, setPassword] = (useState as typeof useState)("");
-  const [error, setError] = (useState as typeof useState)("");
-  const [loading, setLoading] = (useState as typeof useState)(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const loginMutation = trpc.partnerAuth.login.useMutation({
     onSuccess: () => { window.location.href = "/admin/waitlist"; },
-    onError: (e: { message: string }) => { setError(e.message); setLoading(false); },
+    onError: (e) => setError(e.message),
   });
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-    loginMutation.mutate({ email, password });
-  };
   return (
-    <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"#0f1117",color:"#fff",fontFamily:"sans-serif"}}>
-      <div style={{background:"#1a1d27",padding:"40px",borderRadius:"16px",width:"100%",maxWidth:"400px",boxSizing:"border-box" as any}}>
-        <div style={{fontSize:"28px",fontWeight:700,marginBottom:"8px"}}>ProLnk</div>
-        <div style={{color:"#888",fontSize:"14px",marginBottom:"32px"}}>Sign in to your account</div>
-        <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"16px"}}>
+    <div style={{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",background:"#0f1117",fontFamily:"sans-serif"}}>
+      <div style={{background:"#1a1d27",padding:"40px",borderRadius:"16px",width:"380px",boxSizing:"border-box"}}>
+        <div style={{fontSize:"26px",fontWeight:700,color:"#fff",marginBottom:"6px"}}>ProLnk</div>
+        <div style={{color:"#888",fontSize:"13px",marginBottom:"28px"}}>Sign in to your account</div>
+        <form onSubmit={(e) => { e.preventDefault(); setError(""); loginMutation.mutate({ email, password }); }}
+          style={{display:"flex",flexDirection:"column",gap:"14px"}}>
           <div>
-            <label style={{display:"block",fontSize:"13px",color:"#aaa",marginBottom:"6px"}}>Email</label>
-            <input type="email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} required
-              style={{width:"100%",padding:"10px 14px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box" as any}} />
+            <label style={{display:"block",fontSize:"12px",color:"#aaa",marginBottom:"5px"}}>Email</label>
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} required
+              style={{width:"100%",padding:"10px 12px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box"}} />
           </div>
           <div>
-            <label style={{display:"block",fontSize:"13px",color:"#aaa",marginBottom:"6px"}}>Password</label>
-            <input type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} required
-              style={{width:"100%",padding:"10px 14px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box" as any}} />
+            <label style={{display:"block",fontSize:"12px",color:"#aaa",marginBottom:"5px"}}>Password</label>
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} required
+              style={{width:"100%",padding:"10px 12px",background:"#252836",border:"1px solid #333",borderRadius:"8px",color:"#fff",fontSize:"14px",boxSizing:"border-box"}} />
           </div>
-          {error && <div style={{color:"#f87171",fontSize:"13px",background:"#2d1515",padding:"10px",borderRadius:"8px"}}>{error}</div>}
-          <button type="submit" disabled={loading}
-            style={{background:"#22c55e",color:"#fff",border:"none",padding:"12px",borderRadius:"8px",fontWeight:600,fontSize:"15px",cursor:"pointer",opacity:loading?0.7:1}}>
-            {loading ? "Signing in…" : "Sign In"}
+          {error && <div style={{color:"#f87171",fontSize:"13px",background:"rgba(239,68,68,0.1)",padding:"10px 12px",borderRadius:"8px"}}>{error}</div>}
+          <button type="submit" disabled={loginMutation.isPending}
+            style={{background:"#22c55e",color:"#fff",border:"none",padding:"12px",borderRadius:"8px",fontWeight:600,fontSize:"14px",cursor:"pointer",opacity:loginMutation.isPending?0.7:1}}>
+            {loginMutation.isPending ? "Signing in…" : "Sign In"}
           </button>
         </form>
-        <a href="/" style={{display:"block",textAlign:"center",color:"#555",fontSize:"13px",marginTop:"24px",textDecoration:"none"}}>← Back to homepage</a>
+        <a href="/" style={{display:"block",textAlign:"center",color:"#555",fontSize:"12px",marginTop:"20px",textDecoration:"none"}}>← Back to homepage</a>
       </div>
     </div>
   );
 }
+
 
 function Router() {
   return (

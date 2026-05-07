@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: prolnk-platform
+    runtime: node
+    region: oregon
+    plan: starter
+    rootDir: ProLnk
+    buildCommand: pnpm install && pnpm run build
+    startCommand: node dist/index.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: VITE_STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

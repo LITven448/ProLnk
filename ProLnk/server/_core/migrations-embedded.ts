@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS \`acceptanceSignals\` (
 	\`propertyState\` varchar(50),
 	\`isFirstOffer\` boolean DEFAULT true,
 	\`priorOfferCount\` int DEFAULT 0,
-	\`recordedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`recordedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`acceptanceSignals_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS \`achAuthorizations\` (
 	\`expiresAt\` timestamp,
 	\`revokedAt\` timestamp,
 	\`revokedReason\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`achAuthorizations_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS \`activityLog\` (
 	\`description\` text NOT NULL,
 	\`metadata\` json,
 	\`ipAddress\` varchar(64),
-	\`createdAt\` timestamp DEFAULT (now()),
+	\`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`activityLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS \`adminAuditLog\` (
 	\`targetId\` int,
 	\`detail\` text,
 	\`ipAddress\` varchar(64),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`adminAuditLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -99,8 +99,8 @@ CREATE TABLE IF NOT EXISTS \`agentHomeownerReferrals\` (
 	\`perpetualCommissionActive\` boolean NOT NULL DEFAULT true,
 	\`totalPerpetualEarned\` decimal(12,2) NOT NULL DEFAULT '0.00',
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentHomeownerReferrals_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS \`agentPerpetualCommissions\` (
 	\`agentEarnedAmount\` decimal(10,2) NOT NULL,
 	\`paid\` boolean NOT NULL DEFAULT false,
 	\`paidAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentPerpetualCommissions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -133,8 +133,8 @@ CREATE TABLE IF NOT EXISTS \`agentProperties\` (
 	\`squareFootage\` int,
 	\`yearBuilt\` int,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentProperties_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS \`aiPipelineRuns\` (
 	\`totalProcessingMs\` int,
 	\`status\` varchar(255) NOT NULL DEFAULT 'running',
 	\`errorMessage\` text,
-	\`startedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`startedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`completedAt\` timestamp,
 	CONSTRAINT \`aiPipelineRuns_id\` PRIMARY KEY(\`id\`)
 );
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS \`aiTrainingDataset\` (
 	\`capturedSeason\` text,
 	\`modelVersion\` varchar(50) DEFAULT 'v1',
 	\`approvedForTraining\` boolean DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`aiTrainingDataset_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS \`broadcasts\` (
 	\`subject\` varchar(255) NOT NULL,
 	\`message\` text NOT NULL,
 	\`sentBy\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`broadcasts_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS \`circumventionFlags\` (
 	\`resolvedAt\` timestamp,
 	\`resolvedBy\` int,
 	\`resolutionNote\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`circumventionFlags_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS \`commission_payout\` (
 	\`status\` varchar(20) NOT NULL DEFAULT 'pending',
 	\`payout_month\` varchar(7) NOT NULL,
 	\`paid_at\` timestamp,
-	\`created_at\` timestamp NOT NULL DEFAULT (now()),
+	\`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`commission_payout_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -267,8 +267,8 @@ CREATE TABLE IF NOT EXISTS \`commissions\` (
 	\`disputeAppealedAt\` timestamp,
 	\`disputeAppealReason\` varchar(1000),
 	\`disputeAppealStatus\` varchar(255) NOT NULL DEFAULT 'none',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`commissions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS \`complianceEvents\` (
 	\`resolutionNote\` text,
 	\`resolvedAt\` timestamp,
 	\`metadata\` json,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`complianceEvents_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -298,8 +298,8 @@ CREATE TABLE IF NOT EXISTS \`contentItems\` (
 	\`publishedAt\` timestamp,
 	\`sortOrder\` int NOT NULL DEFAULT 0,
 	\`createdBy\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`contentItems_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -347,8 +347,8 @@ CREATE TABLE IF NOT EXISTS \`customerDeals\` (
 	\`aiFixImageUrl\` text,
 	\`aiFixGeneratedAt\` timestamp,
 	\`aiFixPrompt\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`customerDeals_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`customerDeals_token_unique\` UNIQUE(\`token\`)
 );
@@ -360,7 +360,7 @@ CREATE TABLE IF NOT EXISTS \`dataExportRequests\` (
 	\`requestedAt\` int NOT NULL,
 	\`processedAt\` int,
 	\`exportUrl\` varchar(1024),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`dataExportRequests_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS \`eventDrivenLeads\` (
 	\`acceptedAt\` timestamp,
 	\`completedAt\` timestamp,
 	\`expiresAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`eventDrivenLeads_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -401,9 +401,9 @@ CREATE TABLE IF NOT EXISTS \`eventTriggers\` (
 	\`leadsGenerated\` int NOT NULL DEFAULT 0,
 	\`estimatedRevenue\` decimal(10,2) NOT NULL DEFAULT '0.00',
 	\`eventDate\` timestamp,
-	\`firedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`firedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`completedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`eventTriggers_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -414,7 +414,7 @@ CREATE TABLE IF NOT EXISTS \`exchangeBids\` (
 	\`bidAmount\` decimal(10,2) NOT NULL,
 	\`message\` text,
 	\`status\` varchar(255) NOT NULL DEFAULT 'pending',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`exchangeBids_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -434,8 +434,8 @@ CREATE TABLE IF NOT EXISTS \`exchangeJobs\` (
 	\`clientName\` varchar(255),
 	\`isCommercial\` boolean DEFAULT false,
 	\`bidsCount\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`exchangeJobs_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -463,8 +463,8 @@ CREATE TABLE IF NOT EXISTS \`featuredAdvertisers\` (
 	\`endDate\` date,
 	\`partnerId\` int,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`featuredAdvertisers_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -482,8 +482,8 @@ CREATE TABLE IF NOT EXISTS \`fieldJobLog\` (
 	\`status\` varchar(255) NOT NULL DEFAULT 'scheduled',
 	\`notes\` text,
 	\`source\` varchar(255) NOT NULL DEFAULT 'manual',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`fieldJobLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -538,8 +538,8 @@ CREATE TABLE IF NOT EXISTS \`fsmJobRecords\` (
 	\`claimedByHomeownerId\` int,
 	\`claimedAt\` timestamp,
 	\`rawData\` json,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`fsmJobRecords_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -554,7 +554,7 @@ CREATE TABLE IF NOT EXISTS \`fsmSyncJobs\` (
 	\`errorMessage\` text,
 	\`startedAt\` timestamp,
 	\`completedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`fsmSyncJobs_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -571,7 +571,7 @@ CREATE TABLE IF NOT EXISTS \`fsmWebhookEvents\` (
 	\`errorMessage\` text,
 	\`rawPayload\` json,
 	\`processedAt\` timestamp,
-	\`receivedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`receivedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`fsmWebhookEvents_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -587,7 +587,7 @@ CREATE TABLE IF NOT EXISTS \`funnelEvents\` (
 	\`secondsFromPreviousEvent\` int,
 	\`deviceType\` varchar(50),
 	\`metadata\` text,
-	\`occurredAt\` timestamp NOT NULL DEFAULT (now()),
+	\`occurredAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`funnelEvents_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -607,7 +607,7 @@ CREATE TABLE IF NOT EXISTS \`geographicDensity\` (
 	\`totalOffersAccepted\` int DEFAULT 0,
 	\`coverageGapScore\` int DEFAULT 0,
 	\`unmetDemandTrades\` json DEFAULT '[]',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`geographicDensity_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -619,7 +619,7 @@ CREATE TABLE IF NOT EXISTS \`growthProjections\` (
 	\`projectedRevenue12m\` decimal(12,2) NOT NULL,
 	\`referralGoal\` int NOT NULL DEFAULT 0,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`growthProjections_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -631,7 +631,7 @@ CREATE TABLE IF NOT EXISTS \`home_documentation\` (
 	\`is_first_documentation\` boolean NOT NULL DEFAULT true,
 	\`origination_credit_earned\` boolean NOT NULL DEFAULT false,
 	\`origination_credit_amount\` decimal(5,2) NOT NULL DEFAULT '0.00',
-	\`documented_at\` timestamp NOT NULL DEFAULT (now()),
+	\`documented_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`home_documentation_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`home_doc_address_idx\` UNIQUE(\`address_hash\`)
 );
@@ -657,7 +657,7 @@ CREATE TABLE IF NOT EXISTS \`homeMaintenanceItems\` (
 	\`description\` text,
 	\`importance\` varchar(255) NOT NULL DEFAULT 'medium',
 	\`isActive\` boolean NOT NULL DEFAULT true,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeMaintenanceItems_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -680,7 +680,7 @@ CREATE TABLE IF NOT EXISTS \`homeMaintenanceLogs\` (
 	\`notes\` text,
 	\`conditionAfter\` text,
 	\`resetMaintenanceClock\` boolean NOT NULL DEFAULT true,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeMaintenanceLogs_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -695,7 +695,7 @@ CREATE TABLE IF NOT EXISTS \`homeMaintenanceRecords\` (
 	\`notes\` text,
 	\`photoUrls\` json,
 	\`nextDueAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeMaintenanceRecords_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -716,7 +716,7 @@ CREATE TABLE IF NOT EXISTS \`homePassportTransfers\` (
 	\`pdfUrl\` text,
 	\`expiresAt\` timestamp NOT NULL,
 	\`claimedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homePassportTransfers_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homePassportTransfers_transferToken_unique\` UNIQUE(\`transferToken\`)
 );
@@ -746,8 +746,8 @@ CREATE TABLE IF NOT EXISTS \`homeSystemHealth\` (
 	\`estimatedReplacementCostHigh\` decimal(10,2),
 	\`photoUrls\` json DEFAULT '[]',
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeSystemHealth_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -763,8 +763,8 @@ CREATE TABLE IF NOT EXISTS \`homeSystemRecords\` (
 	\`lastServicedAt\` timestamp,
 	\`condition\` varchar(255) NOT NULL DEFAULT 'good',
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeSystemRecords_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -821,8 +821,8 @@ CREATE TABLE IF NOT EXISTS \`homeWaitlist\` (
 	\`invitedAt\` timestamp,
 	\`adminNotes\` text,
 	\`source\` varchar(100) DEFAULT 'trustypro-waitlist',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeWaitlist_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homeWaitlist_email_unique\` UNIQUE(\`email\`)
 );
@@ -864,8 +864,8 @@ CREATE TABLE IF NOT EXISTS \`homeowner360Profiles\` (
 	\`npsScore\` int,
 	\`satisfactionNotes\` text,
 	\`completenessScore\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeowner360Profiles_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homeowner360Profiles_userId_unique\` UNIQUE(\`userId\`)
 );
@@ -875,7 +875,7 @@ CREATE TABLE IF NOT EXISTS \`homeownerCheckins\` (
 	\`opportunityId\` int NOT NULL,
 	\`confirmedCompletion\` boolean NOT NULL DEFAULT false,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`checkinToken\` varchar(64),
 	\`scheduledSendAt\` timestamp,
 	\`checkinEmailSentAt\` timestamp,
@@ -891,7 +891,7 @@ CREATE TABLE IF NOT EXISTS \`homeownerFavorites\` (
 	\`homeownerProfileId\` int NOT NULL,
 	\`partnerId\` int NOT NULL,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerFavorites_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -913,8 +913,8 @@ CREATE TABLE IF NOT EXISTS \`homeownerLeads\` (
 	\`fullCommission\` boolean NOT NULL DEFAULT true,
 	\`status\` varchar(255) NOT NULL DEFAULT 'new',
 	\`notes\` text,
-	\`createdAt\` timestamp DEFAULT (now()),
-	\`updatedAt\` timestamp DEFAULT (now()),
+	\`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerLeads_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homeownerLeads_homeownerEmail_unique\` UNIQUE(\`homeownerEmail\`)
 );
@@ -928,7 +928,7 @@ CREATE TABLE IF NOT EXISTS \`homeownerNotifications\` (
 	\`actionUrl\` varchar(512),
 	\`isRead\` boolean NOT NULL DEFAULT false,
 	\`metadata\` json,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerNotifications_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -949,8 +949,8 @@ CREATE TABLE IF NOT EXISTS \`homeownerPaymentMethods\` (
 	\`consentText\` text,
 	\`consentSignedAt\` timestamp,
 	\`consentIpAddress\` varchar(45),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerPaymentMethods_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -971,8 +971,8 @@ CREATE TABLE IF NOT EXISTS \`homeownerProfiles\` (
 	\`creditBalance\` decimal(10,2) NOT NULL DEFAULT '0.00',
 	\`referralCount\` int NOT NULL DEFAULT 0,
 	\`referralCode\` varchar(50),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerProfiles_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homeownerProfiles_userId_unique\` UNIQUE(\`userId\`)
 );
@@ -989,7 +989,7 @@ CREATE TABLE IF NOT EXISTS \`homeownerReviews\` (
 	\`ratingCommunication\` int,
 	\`ratingPayment\` int,
 	\`isPublic\` boolean NOT NULL DEFAULT true,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerReviews_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1004,7 +1004,7 @@ CREATE TABLE IF NOT EXISTS \`homeownerScanHistory\` (
 	\`issueCount\` int DEFAULT 0,
 	\`upgradeCount\` int DEFAULT 0,
 	\`photoQualityFlag\` varchar(50),
-	\`createdAt\` timestamp DEFAULT (now()),
+	\`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	\`propertyId\` int,
 	CONSTRAINT \`homeownerScanHistory_id\` PRIMARY KEY(\`id\`)
 );
@@ -1023,8 +1023,8 @@ CREATE TABLE IF NOT EXISTS \`homeownerScanOffers\` (
 	\`photoUrl\` text,
 	\`status\` varchar(255) NOT NULL DEFAULT 'new',
 	\`source\` varchar(50) DEFAULT 'ai_scan',
-	\`createdAt\` timestamp DEFAULT (now()),
-	\`updatedAt\` timestamp DEFAULT (now()),
+	\`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	\`offerTrack\` varchar(50) DEFAULT 'repair',
 	\`transformationImageUrl\` text,
 	\`isInsuranceClaim\` boolean DEFAULT false,
@@ -1039,7 +1039,7 @@ CREATE TABLE IF NOT EXISTS \`industryRates\` (
 	\`platformFeeRate\` decimal(5,4) NOT NULL DEFAULT '0.1200',
 	\`referralCommissionRate\` decimal(5,4) NOT NULL DEFAULT '0.0500',
 	\`notes\` text,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`industryRates_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`industryRates_industryName_unique\` UNIQUE(\`industryName\`)
 );
@@ -1053,7 +1053,7 @@ CREATE TABLE IF NOT EXISTS \`industryRatesData\` (
 	\`highEstimate\` decimal(10,2) NOT NULL,
 	\`avgEstimate\` decimal(10,2) NOT NULL,
 	\`unit\` varchar(50) NOT NULL DEFAULT 'per job',
-	\`lastUpdated\` timestamp NOT NULL DEFAULT (now()),
+	\`lastUpdated\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`industryRatesData_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1080,8 +1080,8 @@ CREATE TABLE IF NOT EXISTS \`insuranceClaims\` (
 	\`reminderCount\` int NOT NULL DEFAULT 0,
 	\`notes\` text,
 	\`aiDetected\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`insuranceClaims_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1096,7 +1096,7 @@ CREATE TABLE IF NOT EXISTS \`job_commission_event\` (
 	\`platform_fee_gross\` decimal(10,2) NOT NULL,
 	\`platform_fee_net\` decimal(10,2) NOT NULL,
 	\`status\` varchar(20) NOT NULL DEFAULT 'pending',
-	\`created_at\` timestamp NOT NULL DEFAULT (now()),
+	\`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`job_commission_event_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1141,8 +1141,8 @@ CREATE TABLE IF NOT EXISTS \`jobPayments\` (
 	\`disputeResolution\` varchar(500),
 	\`triggeredByCheckinId\` int,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`jobPayments_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1163,8 +1163,8 @@ CREATE TABLE IF NOT EXISTS \`jobs\` (
 	\`aiAnalysisResult\` json DEFAULT 'null',
 	\`status\` varchar(255) NOT NULL DEFAULT 'logged',
 	\`completedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`jobs_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1172,7 +1172,7 @@ CREATE TABLE IF NOT EXISTS \`marketingEmailLog\` (
 	\`id\` int NOT NULL,
 	\`userId\` int NOT NULL,
 	\`campaignKey\` varchar(128) NOT NULL,
-	\`sentAt\` timestamp NOT NULL DEFAULT (now()),
+	\`sentAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`marketingEmailLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1197,7 +1197,7 @@ CREATE TABLE IF NOT EXISTS \`networkingEventRegistrations\` (
 	\`eventDate\` timestamp NOT NULL,
 	\`location\` varchar(255),
 	\`status\` varchar(255) NOT NULL DEFAULT 'registered',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`networkingEventRegistrations_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1214,7 +1214,7 @@ CREATE TABLE IF NOT EXISTS \`npsSurveys\` (
 	\`followUpOk\` boolean DEFAULT false,
 	\`completedAt\` timestamp,
 	\`expiresAt\` timestamp NOT NULL,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`npsSurveys_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`npsSurveys_token_unique\` UNIQUE(\`token\`)
 );
@@ -1244,8 +1244,8 @@ CREATE TABLE IF NOT EXISTS \`opportunities\` (
 	\`jobClosedAt\` timestamp,
 	\`sentAt\` timestamp,
 	\`acceptedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`opportunities_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1288,8 +1288,8 @@ CREATE TABLE IF NOT EXISTS \`partner360Profiles\` (
 	\`totalOnlineReviews\` int DEFAULT 0,
 	\`avgOnlineRating\` decimal(3,2),
 	\`completenessScore\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partner360Profiles_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`partner360Profiles_partnerId_unique\` UNIQUE(\`partnerId\`)
 );
@@ -1304,7 +1304,7 @@ CREATE TABLE IF NOT EXISTS \`partnerAlerts\` (
 	\`isRead\` boolean NOT NULL DEFAULT false,
 	\`isDismissed\` boolean NOT NULL DEFAULT false,
 	\`metadata\` json,
-	\`createdAt\` timestamp DEFAULT (now()),
+	\`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerAlerts_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1315,7 +1315,7 @@ CREATE TABLE IF NOT EXISTS \`partnerAvailability\` (
 	\`startHour\` int NOT NULL,
 	\`endHour\` int NOT NULL,
 	\`isAvailable\` boolean NOT NULL DEFAULT true,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerAvailability_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1346,8 +1346,8 @@ CREATE TABLE IF NOT EXISTS \`partnerIntegrations\` (
 	\`lastSyncAt\` timestamp,
 	\`errorMessage\` text,
 	\`metadata\` text,
-	\`connectedAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`connectedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerIntegrations_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1360,7 +1360,7 @@ CREATE TABLE IF NOT EXISTS \`partnerJobPreferences\` (
 	\`maxJobValue\` decimal(10,2),
 	\`preferredDays\` json NOT NULL DEFAULT '[]',
 	\`acceptsEmergency\` boolean NOT NULL DEFAULT false,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerJobPreferences_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1373,7 +1373,7 @@ CREATE TABLE IF NOT EXISTS \`partnerNotifications\` (
 	\`actionUrl\` varchar(512),
 	\`isRead\` boolean NOT NULL DEFAULT false,
 	\`metadata\` json,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerNotifications_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1385,7 +1385,7 @@ CREATE TABLE IF NOT EXISTS \`partnerOnboardingChecklist\` (
 	\`firstReferralSent\` boolean NOT NULL DEFAULT false,
 	\`trainingComplete\` boolean NOT NULL DEFAULT false,
 	\`agreementSigned\` boolean NOT NULL DEFAULT false,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerOnboardingChecklist_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1410,8 +1410,8 @@ CREATE TABLE IF NOT EXISTS \`partnerPerformanceScores\` (
 	\`churnRisk\` varchar(255) DEFAULT 'low',
 	\`lastJobLoggedAt\` timestamp,
 	\`lastLeadAcceptedAt\` timestamp,
-	\`calculatedAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`calculatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerPerformanceScores_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`partnerPerformanceScores_partnerId_unique\` UNIQUE(\`partnerId\`)
 );
@@ -1433,7 +1433,7 @@ CREATE TABLE IF NOT EXISTS \`partnerReviews\` (
 	\`yelpReviewRequested\` boolean NOT NULL DEFAULT false,
 	\`isPublic\` boolean NOT NULL DEFAULT true,
 	\`flagged\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerReviews_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1563,9 +1563,9 @@ CREATE TABLE IF NOT EXISTS \`partners\` (
 	\`streakUpdatedAt\` timestamp,
 	\`achievementBadges\` json DEFAULT '[]',
 	\`achievementsUpdatedAt\` timestamp,
-	\`appliedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`appliedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`approvedAt\` timestamp,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partners_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1585,7 +1585,7 @@ CREATE TABLE IF NOT EXISTS \`paymentMilestones\` (
 	\`stripeIntentId\` varchar(255),
 	\`failureReason\` text,
 	\`retryCount\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`paymentMilestones_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1600,8 +1600,8 @@ CREATE TABLE IF NOT EXISTS \`payoutRequests\` (
 	\`reviewedAt\` timestamp,
 	\`paidAt\` timestamp,
 	\`stripeTransferId\` varchar(255),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`payoutRequests_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1642,7 +1642,7 @@ CREATE TABLE IF NOT EXISTS \`photoIntakeQueue\` (
 	\`processedAt\` timestamp,
 	\`errorMessage\` text,
 	\`capturedAt\` timestamp,
-	\`receivedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`receivedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`photoIntakeQueue_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1686,8 +1686,8 @@ CREATE TABLE IF NOT EXISTS \`proAgreements\` (
 	\`pdfUrl\` text,
 	\`sentAt\` timestamp,
 	\`sentVia\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`proAgreements_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1707,8 +1707,8 @@ CREATE TABLE IF NOT EXISTS \`pro_network_profile\` (
 	\`business_mailing_address\` text,
 	\`agreement_signed_at\` timestamp,
 	\`agreement_version\` varchar(20),
-	\`created_at\` timestamp NOT NULL DEFAULT (now()),
-	\`updated_at\` timestamp NOT NULL DEFAULT (now()),
+	\`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updated_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`pro_network_profile_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`pro_network_profile_user_id_unique\` UNIQUE(\`user_id\`),
 	CONSTRAINT \`pro_network_profile_referral_code_unique\` UNIQUE(\`referral_code\`)
@@ -1720,7 +1720,7 @@ CREATE TABLE IF NOT EXISTS \`pro_upline_chain\` (
 	\`upline_user_id\` varchar(255) NOT NULL,
 	\`levels_above\` int NOT NULL,
 	\`upline_network_level\` int NOT NULL,
-	\`created_at\` timestamp NOT NULL DEFAULT (now()),
+	\`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`pro_upline_chain_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1760,8 +1760,8 @@ CREATE TABLE IF NOT EXISTS \`proWaitlist\` (
 	\`adminNotes\` text,
 	\`source\` varchar(100) DEFAULT 'prolnk-waitlist',
 	\`referredBy\` varchar(100),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`proWaitlist_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`proWaitlist_email_unique\` UNIQUE(\`email\`)
 );
@@ -1770,7 +1770,7 @@ CREATE TABLE IF NOT EXISTS \`processedStripeEvents\` (
 	\`id\` int NOT NULL,
 	\`eventId\` varchar(255) NOT NULL,
 	\`eventType\` varchar(100) NOT NULL,
-	\`processedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`processedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`processedStripeEvents_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`processedStripeEvents_eventId_unique\` UNIQUE(\`eventId\`)
 );
@@ -1799,8 +1799,8 @@ CREATE TABLE IF NOT EXISTS \`projectBids\` (
 	\`rejectedAt\` timestamp,
 	\`rejectedBy\` int,
 	\`rejectionReason\` varchar(500),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`projectBids_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1874,8 +1874,8 @@ CREATE TABLE IF NOT EXISTS \`properties\` (
 	\`aiMockupSourcePhotoUrl\` varchar(1024),
 	\`setupStep\` int NOT NULL DEFAULT 1,
 	\`setupComplete\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`properties_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1893,8 +1893,8 @@ CREATE TABLE IF NOT EXISTS \`propertyAssets\` (
 	\`manufacturer\` varchar(255),
 	\`modelNumber\` varchar(255),
 	\`replacementLeadTriggered\` boolean NOT NULL DEFAULT false,
-	\`lastAssessedAt\` timestamp NOT NULL DEFAULT (now()),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`lastAssessedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyAssets_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1908,7 +1908,7 @@ CREATE TABLE IF NOT EXISTS \`propertyDocuments\` (
 	\`mimeType\` varchar(100),
 	\`fileSize\` int,
 	\`uploadedByUserId\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyDocuments_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1919,7 +1919,7 @@ CREATE TABLE IF NOT EXISTS \`propertyImprovements\` (
 	\`completedYear\` int,
 	\`hasWarranty\` boolean NOT NULL DEFAULT false,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyImprovements_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1936,7 +1936,7 @@ CREATE TABLE IF NOT EXISTS \`propertyPhotos\` (
 	\`aiSignals\` json DEFAULT '[]',
 	\`aiScannedAt\` timestamp,
 	\`hasPetSignal\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyPhotos_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1960,8 +1960,8 @@ CREATE TABLE IF NOT EXISTS \`propertyProfiles\` (
 	\`detectionHistory\` json DEFAULT '[]',
 	\`avgAcceptedDiscountPct\` decimal(5,2),
 	\`lastServicedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyProfiles_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1974,7 +1974,7 @@ CREATE TABLE IF NOT EXISTS \`propertyTimeline\` (
 	\`eventDate\` timestamp,
 	\`metadata\` json,
 	\`createdByUserId\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyTimeline_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -1988,8 +1988,8 @@ CREATE TABLE IF NOT EXISTS \`propertyWishes\` (
 	\`notes\` text,
 	\`leadCreated\` boolean NOT NULL DEFAULT false,
 	\`leadCreatedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyWishes_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2009,8 +2009,8 @@ CREATE TABLE IF NOT EXISTS \`proposals\` (
 	\`respondedAt\` timestamp,
 	\`expiresAt\` timestamp,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`proposals_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2035,8 +2035,8 @@ CREATE TABLE IF NOT EXISTS \`quickQuoteRequests\` (
 	\`partnerResponse\` text,
 	\`respondedAt\` timestamp,
 	\`expiresAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`quickQuoteRequests_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2050,8 +2050,8 @@ CREATE TABLE IF NOT EXISTS \`quotes\` (
 	\`estimatedAmount\` decimal(10,2) NOT NULL DEFAULT '0',
 	\`status\` varchar(255) NOT NULL DEFAULT 'draft',
 	\`sentAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`quotes_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2077,8 +2077,8 @@ CREATE TABLE IF NOT EXISTS \`realEstateAgents\` (
 	\`contactEmail\` varchar(255),
 	\`businessName\` varchar(200),
 	\`userId\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`realEstateAgents_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2095,8 +2095,8 @@ CREATE TABLE IF NOT EXISTS \`recallAlerts\` (
 	\`leadsGenerated\` int NOT NULL DEFAULT 0,
 	\`status\` varchar(255) NOT NULL DEFAULT 'active',
 	\`publishedDate\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`recallAlerts_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2104,7 +2104,7 @@ CREATE TABLE IF NOT EXISTS \`referralClicks\` (
 	\`id\` int NOT NULL,
 	\`referrerId\` int NOT NULL,
 	\`referralCode\` varchar(100) NOT NULL,
-	\`clickedAt\` timestamp DEFAULT (now()),
+	\`clickedAt\` timestamp DEFAULT CURRENT_TIMESTAMP,
 	\`convertedAt\` timestamp,
 	\`convertedPartnerId\` int,
 	\`ipAddress\` varchar(45),
@@ -2129,8 +2129,8 @@ CREATE TABLE IF NOT EXISTS \`referralGraph\` (
 	\`relationshipStrength\` int DEFAULT 0,
 	\`firstReferralAt\` timestamp,
 	\`lastReferralAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`referralGraph_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2146,8 +2146,8 @@ CREATE TABLE IF NOT EXISTS \`referrals\` (
 	\`status\` varchar(255) NOT NULL DEFAULT 'pending',
 	\`commissionAmount\` decimal(10,2) DEFAULT '0.00',
 	\`commissionPaid\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`referrals_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2163,7 +2163,7 @@ CREATE TABLE IF NOT EXISTS \`reviewRequests\` (
 	\`status\` varchar(255) NOT NULL DEFAULT 'pending',
 	\`submittedAt\` timestamp,
 	\`expiresAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`reviewRequests_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`reviewRequests_token_unique\` UNIQUE(\`token\`)
 );
@@ -2174,8 +2174,8 @@ CREATE TABLE IF NOT EXISTS \`reviewResponses\` (
 	\`partnerId\` int NOT NULL,
 	\`body\` text NOT NULL,
 	\`isPublic\` boolean NOT NULL DEFAULT true,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`reviewResponses_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2193,8 +2193,8 @@ CREATE TABLE IF NOT EXISTS \`roomMakeoverSessions\` (
 	\`generationError\` text,
 	\`savedToHomeProfile\` boolean NOT NULL DEFAULT false,
 	\`detectedOpportunities\` json DEFAULT '[]',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`roomMakeoverSessions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2208,7 +2208,7 @@ CREATE TABLE IF NOT EXISTS \`seasonalPrepItems\` (
 	\`diyDifficulty\` varchar(255) NOT NULL DEFAULT 'moderate',
 	\`sortOrder\` int NOT NULL DEFAULT 0,
 	\`isActive\` boolean NOT NULL DEFAULT true,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`seasonalPrepItems_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2224,8 +2224,8 @@ CREATE TABLE IF NOT EXISTS \`serviceRequests\` (
 	\`photoUrls\` json,
 	\`status\` varchar(255) NOT NULL DEFAULT 'open',
 	\`matchedPartnerId\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`serviceRequests_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2237,7 +2237,7 @@ CREATE TABLE IF NOT EXISTS \`skillEnrollments\` (
 	\`price\` decimal(10,2) NOT NULL DEFAULT '0',
 	\`status\` varchar(255) NOT NULL DEFAULT 'active',
 	\`expiresAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`skillEnrollments_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2253,7 +2253,7 @@ CREATE TABLE IF NOT EXISTS \`stormAlerts\` (
 	\`endsAt\` timestamp,
 	\`source\` varchar(100),
 	\`notificationSent\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`stormAlerts_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2271,8 +2271,8 @@ CREATE TABLE IF NOT EXISTS \`stormEvents\` (
 	\`expiresAt\` timestamp,
 	\`propertiesAffected\` int NOT NULL DEFAULT 0,
 	\`leadsGenerated\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`stormEvents_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`stormEvents_eventId_unique\` UNIQUE(\`eventId\`)
 );
@@ -2290,7 +2290,7 @@ CREATE TABLE IF NOT EXISTS \`stormLeads\` (
 	\`priority\` varchar(255) NOT NULL DEFAULT 'normal',
 	\`dispatchedToPartnerId\` int,
 	\`dispatchedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`stormLeads_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2304,8 +2304,8 @@ CREATE TABLE IF NOT EXISTS \`stripeConnectOnboarding\` (
 	\`chargesEnabled\` boolean NOT NULL DEFAULT false,
 	\`payoutsEnabled\` boolean NOT NULL DEFAULT false,
 	\`detailsSubmitted\` boolean NOT NULL DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`stripeConnectOnboarding_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2314,7 +2314,7 @@ CREATE TABLE IF NOT EXISTS \`systemSettings\` (
 	\`key\` varchar(100) NOT NULL,
 	\`value\` text NOT NULL,
 	\`description\` varchar(500),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`systemSettings_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`systemSettings_key_unique\` UNIQUE(\`key\`)
 );
@@ -2328,7 +2328,7 @@ CREATE TABLE IF NOT EXISTS \`taxEstimates\` (
 	\`estimatedTax\` decimal(12,2) NOT NULL,
 	\`effectiveRate\` decimal(5,2) NOT NULL,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`taxEstimates_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2340,7 +2340,7 @@ CREATE TABLE IF NOT EXISTS \`trainingEnrollments\` (
 	\`status\` varchar(255) NOT NULL DEFAULT 'enrolled',
 	\`progress\` int NOT NULL DEFAULT 0,
 	\`completedAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`trainingEnrollments_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2348,8 +2348,8 @@ CREATE TABLE IF NOT EXISTS \`userPasswords\` (
 	\`id\` int NOT NULL,
 	\`openId\` varchar(64) NOT NULL,
 	\`passwordHash\` varchar(256) NOT NULL,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`userPasswords_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`userPasswords_openId_unique\` UNIQUE(\`openId\`)
 );
@@ -2361,9 +2361,9 @@ CREATE TABLE IF NOT EXISTS \`users\` (
 	\`email\` varchar(320),
 	\`loginMethod\` varchar(64),
 	\`role\` varchar(255) NOT NULL DEFAULT 'user',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
-	\`lastSignedIn\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`lastSignedIn\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`stripeCustomerId\` varchar(255),
 	CONSTRAINT \`users_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`users_openId_unique\` UNIQUE(\`openId\`)
@@ -2375,9 +2375,9 @@ CREATE TABLE IF NOT EXISTS \`vaultImportConsents\` (
 	\`propertyId\` int,
 	\`fsmJobRecordId\` int NOT NULL,
 	\`decision\` text NOT NULL,
-	\`decidedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`decidedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`vaultEntryId\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`vaultImportConsents_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2390,7 +2390,7 @@ CREATE TABLE IF NOT EXISTS \`webhookDeliveryLog\` (
 	\`responseBody\` text,
 	\`success\` boolean NOT NULL DEFAULT false,
 	\`durationMs\` int,
-	\`firedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`firedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`webhookDeliveryLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2407,8 +2407,8 @@ CREATE TABLE IF NOT EXISTS \`webhookSubscriptions\` (
 	\`lastFiredAt\` timestamp,
 	\`lastStatus\` int,
 	\`createdBy\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`webhookSubscriptions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2651,8 +2651,8 @@ CREATE TABLE \`advertiserImpressionLog\` (
 	\`date\` varchar(10) NOT NULL,
 	\`impressions\` int NOT NULL DEFAULT 0,
 	\`clicks\` int NOT NULL DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`advertiserImpressionLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2666,7 +2666,7 @@ CREATE TABLE \`advertiserWaitlist\` (
 	\`budget\` varchar(100),
 	\`message\` text,
 	\`status\` enum('pending','contacted','converted','declined') NOT NULL DEFAULT 'pending',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`advertiserWaitlist_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2676,7 +2676,7 @@ CREATE TABLE \`affiliateClicks\` (
 	\`source\` varchar(100) NOT NULL DEFAULT 'ai_diagnostic',
 	\`sessionId\` varchar(128),
 	\`repairCategory\` varchar(100),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`affiliateClicks_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2693,8 +2693,8 @@ CREATE TABLE \`affiliateProducts\` (
 	\`imageUrl\` text,
 	\`isPrimary\` boolean NOT NULL DEFAULT false,
 	\`isActive\` boolean NOT NULL DEFAULT true,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`affiliateProducts_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2710,7 +2710,7 @@ CREATE TABLE \`agentActivityLog\` (
 	\`durationMs\` int DEFAULT 0,
 	\`relatedEntityType\` varchar(60),
 	\`relatedEntityId\` varchar(120),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentActivityLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2725,7 +2725,7 @@ CREATE TABLE \`agentDailyMetrics\` (
 	\`totalOutputTokens\` int DEFAULT 0,
 	\`totalCostCents\` int DEFAULT 0,
 	\`avgResponseMs\` int DEFAULT 0,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentDailyMetrics_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2735,7 +2735,7 @@ CREATE TABLE \`agentEventBus\` (
 	\`publisherAgentId\` varchar(80) NOT NULL,
 	\`payload\` text,
 	\`consumedBy\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentEventBus_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2757,7 +2757,7 @@ CREATE TABLE \`agentRegistry\` (
 	\`successRatePercent\` decimal(5,2) DEFAULT '100.00',
 	\`avgResponseMs\` int DEFAULT 0,
 	\`lastActiveAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`agentRegistry_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`agentRegistry_agentId_unique\` UNIQUE(\`agentId\`)
 );
@@ -2769,7 +2769,7 @@ CREATE TABLE \`agentRunLog\` (
 	\`itemsProcessed\` int DEFAULT 0,
 	\`errorMessage\` text,
 	\`durationMs\` int,
-	\`startedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`startedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`completedAt\` timestamp,
 	CONSTRAINT \`agentRunLog_id\` PRIMARY KEY(\`id\`)
 );
@@ -2788,7 +2788,7 @@ CREATE TABLE \`analytics_events\` (
 	\`duration\` int,
 	\`form_position\` int,
 	\`metadata\` json,
-	\`created_at\` timestamp NOT NULL DEFAULT (now()),
+	\`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`analytics_events_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2804,8 +2804,8 @@ CREATE TABLE \`automationRules\` (
 	\`executionCount\` int DEFAULT 0,
 	\`lastExecutedAt\` datetime,
 	\`createdBy\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`automationRules_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2826,8 +2826,8 @@ CREATE TABLE \`diagnosticSessions\` (
 	\`quoteLabor\` decimal(10,2),
 	\`quoteBreakdown\` json,
 	\`status\` enum('in_progress','completed','abandoned') NOT NULL DEFAULT 'in_progress',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`diagnosticSessions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2852,8 +2852,8 @@ CREATE TABLE \`homeHealthVault\` (
 	\`attentionItems\` text,
 	\`goodItems\` text,
 	\`maintenanceSchedule\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeHealthVault_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2897,8 +2897,8 @@ CREATE TABLE \`homeProfiles\` (
 	\`originationLockedAt\` timestamp,
 	\`isDraft\` boolean NOT NULL DEFAULT false,
 	\`draftOutreachSentAt\` timestamp,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeProfiles_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2911,13 +2911,13 @@ CREATE TABLE \`homeownerDataConsent\` (
 	\`consentAggregateInsights\` boolean NOT NULL DEFAULT false,
 	\`consentPropertyConditionTracking\` boolean NOT NULL DEFAULT false,
 	\`consentVersion\` varchar(20) NOT NULL DEFAULT '1.0',
-	\`consentedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`consentedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`ipAddress\` varchar(64),
 	\`userAgent\` varchar(512),
 	\`revokedAt\` timestamp,
 	\`revocationReason\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`homeownerDataConsent_id\` PRIMARY KEY(\`id\`),
 	CONSTRAINT \`homeownerDataConsent_userId_unique\` UNIQUE(\`userId\`)
 );
@@ -2932,8 +2932,8 @@ CREATE TABLE \`laborRates\` (
 	\`rateMedian\` decimal(10,2) NOT NULL,
 	\`rateUnit\` varchar(50) NOT NULL DEFAULT 'per_job',
 	\`source\` varchar(100) NOT NULL DEFAULT 'homeadvisor',
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`laborRates_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2949,8 +2949,8 @@ CREATE TABLE \`materialsPricing\` (
 	\`region\` varchar(50) NOT NULL DEFAULT 'DFW',
 	\`sku\` varchar(100),
 	\`productUrl\` text,
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`materialsPricing_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2972,7 +2972,7 @@ CREATE TABLE \`mediaLibrary\` (
 	\`aiTags\` text,
 	\`aiDescription\` text,
 	\`isPublic\` boolean DEFAULT false,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`mediaLibrary_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -2983,8 +2983,8 @@ CREATE TABLE \`notificationPreferences\` (
 	\`category\` varchar(100) NOT NULL,
 	\`enabled\` boolean DEFAULT true,
 	\`frequency\` enum('instant','daily_digest','weekly_digest','never') DEFAULT 'instant',
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`notificationPreferences_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3004,14 +3004,14 @@ CREATE TABLE \`partnerCheckIns\` (
 	\`verifiedByHomeowner\` boolean DEFAULT false,
 	\`homeownerRating\` int,
 	\`homeownerFeedback\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerCheckIns_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
 CREATE TABLE \`partnerPhotoConsent\` (
 	\`id\` int AUTO_INCREMENT NOT NULL,
 	\`partnerId\` int NOT NULL,
-	\`consentedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`consentedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	\`consentVersion\` varchar(20) NOT NULL DEFAULT '1.0',
 	\`ipAddress\` varchar(64),
 	\`userAgent\` varchar(512),
@@ -3037,8 +3037,8 @@ CREATE TABLE \`partnerSpotlights\` (
 	\`displayOrder\` int DEFAULT 0,
 	\`startDate\` datetime,
 	\`endDate\` datetime,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`partnerSpotlights_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3052,7 +3052,7 @@ CREATE TABLE \`photoAccessLog\` (
 	\`accessType\` enum('view','download','ai_analysis','upload') NOT NULL DEFAULT 'view',
 	\`ipAddress\` varchar(64),
 	\`userAgent\` varchar(512),
-	\`accessedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`accessedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`photoAccessLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3077,8 +3077,8 @@ CREATE TABLE \`photoSessions\` (
 	\`analysisStatus\` varchar(30) NOT NULL DEFAULT 'pending',
 	\`analysisResult\` text,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`photoSessions_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3120,9 +3120,9 @@ CREATE TABLE \`propertyConditionData\` (
 	\`anonymizedHash\` varchar(64),
 	\`isAnonymizedExport\` boolean NOT NULL DEFAULT false,
 	\`rawAiResponse\` json,
-	\`scannedAt\` timestamp NOT NULL DEFAULT (now()),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`scannedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`propertyConditionData_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3143,8 +3143,8 @@ CREATE TABLE \`seasonalMaintenanceTasks\` (
 	\`actualCost\` decimal(10,2),
 	\`reminderSentAt\` datetime,
 	\`notes\` text,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`seasonalMaintenanceTasks_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3161,8 +3161,8 @@ CREATE TABLE \`sessionPhotos\` (
 	\`segmentationOverlayUrl\` text,
 	\`aiModel\` varchar(100),
 	\`processingTimeMs\` int,
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
-	\`updatedAt\` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	\`updatedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	CONSTRAINT \`sessionPhotos_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3176,7 +3176,7 @@ CREATE TABLE \`supremeCourtAudit\` (
 	\`validatorModel\` varchar(80),
 	\`confidencePercent\` decimal(5,2),
 	\`reviewedBy\` varchar(80),
-	\`createdAt\` timestamp NOT NULL DEFAULT (now()),
+	\`createdAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`supremeCourtAudit_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint
@@ -3186,7 +3186,7 @@ CREATE TABLE \`systemHealthLog\` (
 	\`status\` enum('ok','degraded','down') NOT NULL DEFAULT 'ok',
 	\`responseMs\` int,
 	\`errorMessage\` varchar(500),
-	\`checkedAt\` timestamp NOT NULL DEFAULT (now()),
+	\`checkedAt\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT \`systemHealthLog_id\` PRIMARY KEY(\`id\`)
 );
 --> statement-breakpoint

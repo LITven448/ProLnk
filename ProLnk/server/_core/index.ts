@@ -237,6 +237,36 @@ async function startServer() {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
+  // One-time safe schema patch — adds AUTO_INCREMENT to waitlist id columns (no data loss)
+  app.get("/api/patch-schema", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.query.secret !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
+      if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
+      const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false } });
+      const results: string[] = [];
+      const alters = [
+        "ALTER TABLE `proWaitlist` MODIFY COLUMN `id` int NOT NULL AUTO_INCREMENT",
+        "ALTER TABLE `homeWaitlist` MODIFY COLUMN `id` int NOT NULL AUTO_INCREMENT",
+      ];
+      for (const sql of alters) {
+        try {
+          await conn.query(sql);
+          results.push(`OK: ${sql.slice(0, 60)}`);
+        } catch (e: any) {
+          results.push(`SKIP (${e.message.slice(0, 60)}): ${sql.slice(0, 40)}`);
+        }
+      }
+      await conn.end();
+      return res.json({ patched: true, results });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
   // Sitemap.xml endpoint for SEO
   app.get("/sitemap.xml", async (_req, res) => {
     const baseUrl = process.env.APP_BASE_URL || "https://prolnk.io";

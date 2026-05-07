@@ -12,6 +12,18 @@ export default defineConfig({
   build: {
     outDir: '../dist/client',
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three') || id.includes('@react-three')) return 'three';
+          if (id.includes('node_modules/framer-motion')) return 'framer';
+          if (id.includes('node_modules/recharts')) return 'recharts';
+          if (id.includes('node_modules/@radix-ui')) return 'radix';
+          if (id.includes('node_modules/@tanstack')) return 'query';
+        },
+      },
+    },
   },
   resolve: {
     alias: {

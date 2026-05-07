@@ -4550,7 +4550,6 @@ Return a JSON object with:
       }),
   }),
    automationRules: automationRulesRouter,
-  partnerAuth: partnerAuthRouter,
   diagnosticAgent: diagnosticAgentRouter,
   engagement: engagementRouter,
   integrationWebhooks: integrationWebhooksRouter,

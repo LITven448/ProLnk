@@ -4559,6 +4559,41 @@ Return a JSON object with:
   photoPipeline: photoPipelineRouter,
   seasonalMaintenance: seasonalMaintenanceRouter,
   waitlistAdmin: router({
+    // --- Admin: read waitlists ---
+    getProWaitlist: adminProcedure
+      .input(z.object({ status: z.string().optional(), limit: z.number().default(200) }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        const statusFilter = input.status && input.status !== 'all' ? input.status : null;
+        let rows: any[];
+        if (statusFilter) {
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+        } else {
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+        }
+        return rows;
+      }),
+
+    getHomeWaitlist: adminProcedure
+      .input(z.object({ status: z.string().optional(), limit: z.number().default(200) }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        const statusFilter = input.status && input.status !== 'all' ? input.status : null;
+        let rows: any[];
+        if (statusFilter) {
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+        } else {
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          rows = Array.isArray(r) ? r : (r as any).rows ?? [];
+        }
+        return rows;
+      }),
+
     // --- Admin: update status ---
     updateProStatus: adminProcedure
       .input(z.object({ id: z.number().int(), status: z.enum(['pending','approved','rejected','invited']), adminNotes: z.string().max(1000).optional() }))

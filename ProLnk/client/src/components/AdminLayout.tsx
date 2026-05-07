@@ -238,7 +238,7 @@ const SECTION_COLORS: Record<string, string> = {
 // --- Helper: which brand section is active ───────────────────────────────────
 function getActiveSection(path: string, search?: string): string {
   // Overview
-  if (path === "/admin" || path.startsWith("/admin/health") || path.startsWith("/admin/activity") || path.startsWith("/admin/analytics") || path.startsWith("/admin/investor") || path.startsWith("/admin/business-plan") || path.startsWith("/admin/finance") || path.startsWith("/admin/org-chart") || path.startsWith("/admin/knowledge-graph") || path.startsWith("/admin/ai-agents") || path.startsWith("/admin/exchange") || path.startsWith("/admin/commercial")) return "overview";
+  if (path === "/admin" || path.startsWith("/admin/health") || path.startsWith("/admin/activity") || path.startsWith("/admin/analytics") || path.startsWith("/admin/investor") || path.startsWith("/admin/business-plan") || path.startsWith("/admin/finance") || path.startsWith("/admin/org-chart") || path.startsWith("/admin/knowledge-graph") || path.startsWith("/admin/agents")) return "overview";
 
   // Waitlist: route to brand based on ?view= query param
   if (path.startsWith("/admin/waitlist")) {

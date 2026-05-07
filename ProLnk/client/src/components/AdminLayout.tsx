@@ -115,19 +115,10 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
         label: "AI & ORG",
         defaultOpen: true,
         items: [
-          { label: "All Agents",       href: "/admin/ai-agents" },
+          { label: "All Agents",       href: "/admin/agents" },
           { label: "Org Chart",        href: "/admin/org-chart" },
           { label: "Knowledge Graph",  href: "/admin/knowledge-graph" },
-          { label: "n8n Hub",          href: "/admin/n8n-setup" },
-        ],
-      },
-      {
-        label: "MORE DASHBOARDS",
-        defaultOpen: false,
-        items: [
-          { label: "ProLnk Exchange",        href: "/admin/exchange" },
-          { label: "TrustyPro Commercial",   href: "/admin/commercial" },
-          { label: "Agent Portal",           href: "/agent-portal" },
+          { label: "n8n Hub",          href: "/admin/n8n" },
         ],
       },
     ],
@@ -136,15 +127,14 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   prolnk: {
     header: "PROLNK RESIDENTIAL",
     items: [
-      { label: "Command Center",  href: "/admin/partners" },
+      { label: "Command Center",  href: "/admin/prolnk/overview" },
       { label: "Waitlist",        href: "/admin/waitlist?view=pros" },
       { label: "Partners",        href: "/admin/partners" },
       { label: "Leads & Intel",   href: "/admin/opportunities" },
-      { label: "AI Agents",       href: "/admin/ai" },
+      { label: "AI Agents",       href: "/admin/prolnk/agents" },
       { label: "Org Chart",       href: "/admin/org-chart" },
-      { label: "Accountability",  href: "/admin/compliance" },
-      { label: "Revenue",         href: "/admin/rates" },
-      { label: "Settings",        href: "/admin/platform-settings" },
+      { label: "Accountability",  href: "/admin/prolnk/operations" },
+      { label: "Revenue",         href: "/admin/prolnk/financial" },
     ],
     groups: [],
   },
@@ -152,15 +142,14 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   trustypro: {
     header: "TRUSTYPRO",
     items: [
-      { label: "Command Center",  href: "/admin/homeowners" },
+      { label: "Command Center",  href: "/admin/trustypro/overview" },
       { label: "Waitlist",        href: "/admin/waitlist?view=homes" },
       { label: "Homeowners",      href: "/admin/homeowners" },
       { label: "Photo Analysis",  href: "/admin/photo-queue" },
-      { label: "AI Agents",       href: "/admin/ai" },
-      { label: "Org Chart",       href: "/admin/org-chart" },
-      { label: "Accountability",  href: "/admin/compliance" },
-      { label: "Revenue",         href: "/admin/rates" },
-      { label: "Settings",        href: "/admin/platform-settings" },
+      { label: "AI Agents",       href: "/admin/tp/agents" },
+      { label: "Org Chart",       href: "/admin/tp-org-chart" },
+      { label: "Accountability",  href: "/admin/tp/operations" },
+      { label: "Revenue",         href: "/admin/tp/financial" },
     ],
     groups: [],
   },
@@ -168,15 +157,40 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
   media: {
     header: "PROLNK MEDIA",
     items: [
-      { label: "Command Center",       href: "/admin/campaigns" },
-      { label: "Advertiser Leads",     href: "/admin/featured-advertisers" },
-      { label: "Advertisers",          href: "/admin/advertising-preview" },
-      { label: "Real Estate",          href: "/admin/real-estate-agents" },
-      { label: "AI Agents",            href: "/admin/ai" },
-      { label: "Org Chart",            href: "/admin/org-chart" },
-      { label: "Accountability",       href: "/admin/compliance" },
-      { label: "Revenue",              href: "/admin/rates" },
-      { label: "Settings",             href: "/admin/platform-settings" },
+      { label: "Command Center",    href: "/admin/campaigns" },
+      { label: "Advertiser Leads",  href: "/admin/featured-advertisers" },
+      { label: "Advertisers",       href: "/admin/advertising-preview" },
+      { label: "Real Estate",       href: "/admin/real-estate-agents" },
+      { label: "AI Agents",         href: "/admin/media-agents" },
+      { label: "Org Chart",         href: "/admin/media-org-chart" },
+      { label: "Accountability",    href: "/admin/media-dash/operations" },
+      { label: "Revenue",           href: "/admin/media-revenue" },
+    ],
+    groups: [],
+  },
+
+  exchange: {
+    header: "PROLNK EXCHANGE",
+    items: [
+      { label: "Command Center",    href: "/admin/exchange" },
+      { label: "Job Board",         href: "/admin/exchange" },
+      { label: "Brokers",           href: "/admin/exchange" },
+      { label: "Commercial Bids",   href: "/admin/exchange" },
+      { label: "Territories",       href: "/admin/territory" },
+      { label: "Data Marketplace",  href: "/admin/data-marketplace" },
+    ],
+    groups: [],
+  },
+
+  commercial: {
+    header: "TRUSTYPRO COMMERCIAL",
+    items: [
+      { label: "Command Center",    href: "/admin/commercial" },
+      { label: "Properties",        href: "/admin/properties" },
+      { label: "Contractors",       href: "/admin/partners" },
+      { label: "Inspections",       href: "/admin/commercial" },
+      { label: "Compliance",        href: "/admin/compliance" },
+      { label: "Revenue",           href: "/admin/commercial" },
     ],
     groups: [],
   },
@@ -185,12 +199,14 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
     header: "PLATFORM",
     items: [
       { label: "Platform Settings", href: "/admin/platform-settings" },
+      { label: "Service Categories",href: "/admin/categories" },
       { label: "Integrations",      href: "/admin/integrations" },
-      { label: "n8n / Webhooks",    href: "/admin/n8n-setup" },
+      { label: "n8n / Webhooks",    href: "/admin/n8n" },
       { label: "FSM Webhooks",      href: "/admin/fsm-webhooks" },
       { label: "Jobber",            href: "/admin/jobber" },
       { label: "Housecall Pro",     href: "/admin/housecallpro" },
       { label: "ServiceTitan",      href: "/admin/servicetitan" },
+      { label: "Integration Health",href: "/admin/integration-health" },
       { label: "Data Export",       href: "/admin/analytics-export" },
     ],
     groups: [],
@@ -199,20 +215,24 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
 
 // --- Icon rail config ─────────────────────────────────────────────────────────
 const RAIL_ITEMS = [
-  { icon: LayoutDashboard, section: "overview",  color: "#17C1E8" },
-  { icon: Home,            section: "prolnk",    color: "#0A1628" },
-  { icon: Shield,          section: "trustypro", color: "#00B5B8" },
-  { icon: Megaphone,       section: "media",     color: "#7C3AED" },
-  { icon: Wrench,          section: "platform",  color: "#6B7280" },
+  { icon: LayoutDashboard, section: "overview",    color: "#17C1E8" },
+  { icon: Home,            section: "prolnk",      color: "#0A1628" },
+  { icon: Shield,          section: "trustypro",   color: "#00B5B8" },
+  { icon: Megaphone,       section: "media",       color: "#7C3AED" },
+  { icon: ArrowLeftRight,  section: "exchange",    color: "#F59E0B" },
+  { icon: Building2,       section: "commercial",  color: "#059669" },
+  { icon: Wrench,          section: "platform",    color: "#6B7280" },
 ] as const;
 
 // Brand accent colors for sub-tab active indicators
 const SECTION_COLORS: Record<string, string> = {
-  overview:  T.accent,
-  prolnk:    "#0A1628",
-  trustypro: "#00B5B8",
-  media:     "#7C3AED",
-  platform:  "#6B7280",
+  overview:   T.accent,
+  prolnk:     "#0A1628",
+  trustypro:  "#00B5B8",
+  media:      "#7C3AED",
+  exchange:   "#F59E0B",
+  commercial: "#059669",
+  platform:   "#6B7280",
 };
 
 // --- Helper: which brand section is active ───────────────────────────────────
@@ -263,6 +283,13 @@ function getActiveSection(path: string, search?: string): string {
     path.startsWith("/admin/smart-notifications") || path.startsWith("/admin/google-reviews") ||
     path.startsWith("/admin/advertising-preview") || path.startsWith("/admin/comms")
   ) return "media";
+
+  // Exchange
+  if (path.startsWith("/admin/exchange") || path.startsWith("/admin/data-marketplace") ||
+      path.startsWith("/admin/territory") || path.startsWith("/admin/franchise")) return "exchange";
+
+  // Commercial
+  if (path.startsWith("/admin/commercial") || path.startsWith("/admin/mass-adoption")) return "commercial";
 
   // Platform — settings, integrations
   if (

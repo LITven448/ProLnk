@@ -63,16 +63,18 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
           }
 
+          const proId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
           await pool.query(
             `INSERT INTO proWaitlist (
-              firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
+              id, firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
               employeeCount, estimatedJobsPerMonth, avgJobValue, trades, primaryCity, primaryState,
               serviceZipCodes, serviceRadiusMiles, currentSoftware, referralsGivenPerMonth,
               referralsReceivedPerMonth, primaryGoal
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
+              proId,
               input.firstName, input.lastName, input.email, input.phone,
               input.trade, input.trade, 1,
               "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
@@ -91,7 +93,7 @@ export const waitlistRouter = router({
             position,
             city: input.primaryCity
           }).catch((err) => {
-            logger.error("Email send failed for Pro waitlist", {
+            console.error("[waitlist] Email send failed for Pro waitlist", {
               email: input.email,
               error: err?.message
             });
@@ -163,14 +165,16 @@ export const waitlistRouter = router({
             throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
           }
 
+          const homeId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
           await pool.query(
             `INSERT INTO homeWaitlist (
-              firstName, lastName, email, phone, address, city, state, zipCode, homeType,
+              id, firstName, lastName, email, phone, address, city, state, zipCode, homeType,
               desiredProjects, projectTimeline, ownershipStatus, ownershipType
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`,
             [
+              homeId,
               input.firstName, input.lastName, input.email, input.phone ?? null,
               input.address, input.city, input.state, input.zipCode, "single_family",
               JSON.stringify([input.serviceNeeded]), "just_exploring", "own", "primary_residence"

@@ -10,6 +10,31 @@ import { analyticsTracker } from "../_core/analytics";
 
 const logger = createLogger("waitlist");
 
+// Tier thresholds by position
+const TIER_THRESHOLDS = { charter: 100, founding: 500, growth: 1000 };
+
+function assignTier(position: number): string {
+  if (position <= TIER_THRESHOLDS.charter) return "charter";
+  if (position <= TIER_THRESHOLDS.founding) return "founding";
+  if (position <= TIER_THRESHOLDS.growth) return "growth";
+  return "standard";
+}
+
+// Tier commission rates
+const TIER_RATES = {
+  charter:  { ownJob: 0.020, networkL1: 0.010, networkL2: 0.008, networkL3: 0.006, networkL4: 0.004, label: "Charter Partner" },
+  founding: { ownJob: 0.015, networkL1: 0.008, networkL2: 0.006, networkL3: 0.004, networkL4: 0.000, label: "Founding Partner" },
+  growth:   { ownJob: 0.010, networkL1: 0.006, networkL2: 0.004, networkL3: 0.000, networkL4: 0.000, label: "Growth Pro" },
+  standard: { ownJob: 0.005, networkL1: 0.000, networkL2: 0.000, networkL3: 0.000, networkL4: 0.000, label: "Standard Pro" },
+};
+
+function generateReferralCode(length = 7): string {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let code = "";
+  for (let i = 0; i < length; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return code;
+}
+
 const ProWaitlistSchema = z.object({
   firstName: z.string().min(1).max(100).trim(),
   lastName: z.string().min(1).max(100).trim(),
@@ -18,6 +43,7 @@ const ProWaitlistSchema = z.object({
   trade: z.string().min(1).max(100),
   primaryCity: z.string().min(1).max(100),
   primaryState: z.string().min(2).max(2),
+  referredBy: z.string().max(20).optional(),
 });
 
 const HomeWaitlistSchema = z.object({
@@ -30,6 +56,7 @@ const HomeWaitlistSchema = z.object({
   state: z.string().min(2).max(2),
   zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
   serviceNeeded: z.string().min(1).max(255),
+  referredBy: z.string().max(20).optional(),
 });
 
 const SimpleWaitlistSchema = z.object({
@@ -48,97 +75,209 @@ export const waitlistRouter = router({
         const userAgent = ctx.req.headers["user-agent"];
 
         if (!db || !pool) {
-          await analyticsTracker.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
-          throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable. Please try again.' });
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
         }
 
-        try {
-          // Validate email is not already in system (catch duplicate early)
-          const [existingProSignup] = await pool.query(
-            `SELECT id FROM proWaitlist WHERE email = ? LIMIT 1`,
-            [input.email]
-          );
-          if ((existingProSignup as any[])?.[0]) {
-            await analyticsTracker.track({ type: "error", source: "pro_waitlist", email: input.email }, String(ipAddress), String(userAgent));
-            throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the ProLnk waitlist.' });
+        // Check for duplicate
+        const [existingRows] = await pool.query(
+          "SELECT id FROM proWaitlist WHERE email = ? LIMIT 1",
+          [input.email]
+        );
+        if ((existingRows as any[])?.[0]) {
+          await analyticsTracker.track({ type: "error", source: "pro_waitlist", email: input.email }, String(ipAddress), String(userAgent));
+          throw new TRPCError({ code: "CONFLICT", message: "This email is already registered on the ProLnk waitlist." });
+        }
+
+        // Get current position
+        const [countRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+        const currentCount = Number((countRows as any[])[0]?.cnt ?? 0);
+        const position = currentCount + 1;
+        const tier = assignTier(position);
+
+        // Generate unique referral code
+        let referralCode = generateReferralCode();
+        let codeAttempts = 0;
+        while (codeAttempts < 10) {
+          const [existing] = await pool.query("SELECT id FROM proWaitlist WHERE referralCode = ? LIMIT 1", [referralCode]);
+          if (!(existing as any[])[0]) break;
+          referralCode = generateReferralCode();
+          codeAttempts++;
+        }
+
+        // Validate referredBy code if provided
+        let referrerId: number | null = null;
+        if (input.referredBy) {
+          const [refRows] = await pool.query("SELECT id FROM proWaitlist WHERE referralCode = ? LIMIT 1", [input.referredBy.toUpperCase()]);
+          if ((refRows as any[])[0]) {
+            referrerId = (refRows as any[])[0].id;
           }
+        }
 
-          const proId = Math.floor(Math.random() * 2_000_000_000) + 1;
-          await pool.query(
-            `INSERT INTO proWaitlist (
-              id, firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
-              employeeCount, estimatedJobsPerMonth, avgJobValue, trades, primaryCity, primaryState,
-              serviceZipCodes, serviceRadiusMiles, currentSoftware, referralsGivenPerMonth,
-              referralsReceivedPerMonth, primaryGoal
-            ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-            )`,
-            [
-              proId,
-              input.firstName, input.lastName, input.email, input.phone,
-              input.trade, input.trade, 1,
-              "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
-              input.primaryState, 25, JSON.stringify([]), "0", "0", "more_leads"
-            ]
-          );
+        const proId = Math.floor(Math.random() * 2_000_000_000) + 1;
 
-          // Get position
-          const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM proWaitlist`);
-          const position = Number((countResult[0] as any)?.cnt ?? 1);
-
-          sendProWaitlistConfirmation({
-            to: input.email,
-            firstName: input.firstName,
-            trade: input.trade,
+        await pool.query(
+          `INSERT INTO proWaitlist (
+            id, firstName, lastName, email, phone, businessName, businessType, yearsInBusiness,
+            employeeCount, estimatedJobsPerMonth, avgJobValue, trades, primaryCity, primaryState,
+            serviceZipCodes, serviceRadiusMiles, currentSoftware, referralsGivenPerMonth,
+            referralsReceivedPerMonth, primaryGoal,
+            referralCode, referredBy, tier, waitlistPosition, referralCount
+          ) VALUES (
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?
+          )`,
+          [
+            proId,
+            input.firstName, input.lastName, input.email, input.phone,
+            input.trade, input.trade, 1,
+            "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
+            input.primaryState, 25, JSON.stringify([]), "0", "0", "more_leads",
+            referralCode,
+            input.referredBy ? input.referredBy.toUpperCase() : null,
+            tier,
             position,
-            city: input.primaryCity
-          }).catch((err) => {
-            console.error("[waitlist] Email send failed for Pro waitlist", {
-              email: input.email,
-              error: err?.message
-            });
-          });
+            0
+          ]
+        );
 
-          notifyOwner({
-            title: 'New ProLnk Pro Waitlist Signup',
-            content: `${input.firstName} ${input.lastName} joined Pro waitlist. Trade: ${input.trade}. City: ${input.primaryCity}, ${input.primaryState}.`
-          }).catch((err) => {
-            logger.warn("Admin notification failed for Pro waitlist", { email: input.email });
-          });
-
-          await analyticsTracker.track({
-            type: "signup",
-            source: "pro_waitlist",
-            email: input.email,
-            formPosition: position,
-            metadata: {
-              trade: input.trade,
-              city: input.primaryCity,
-              state: input.primaryState
-            }
-          }, String(ipAddress), String(userAgent));
-
-          return { success: true, position };
-        } catch (error: any) {
-          if (error?.code === 'CONFLICT') {
-            throw error; // Re-throw TRPC errors
-          }
-          const errorDetails = {
-            email: input.email,
-            message: error?.message,
-            code: error?.code || error?.errno,
-            sqlState: error?.sqlState,
-            sql: error?.sql
-          };
-          logger.error("Pro waitlist signup failed", errorDetails);
-          await analyticsTracker.track({ type: "error", source: "pro_waitlist" }, String(ipAddress), String(userAgent));
-          throw new TRPCError({
-            code: 'INTERNAL_SERVER_ERROR',
-            message: `Signup failed: ${error?.message || 'Unknown error'}`
-          });
+        // Increment referral count for the referring partner
+        if (referrerId) {
+          await pool.query(
+            "UPDATE proWaitlist SET referralCount = referralCount + 1 WHERE id = ?",
+            [referrerId]
+          ).catch(() => {});
         }
+
+        const rates = TIER_RATES[tier as keyof typeof TIER_RATES];
+
+        sendProWaitlistConfirmation({
+          to: input.email,
+          firstName: input.firstName,
+          trade: input.trade,
+          position,
+          city: input.primaryCity,
+        }).catch((err) => {
+          console.error("[waitlist] Email send failed for Pro waitlist", { email: input.email, error: err?.message });
+        });
+
+        notifyOwner({
+          subject: `New ProLnk Pro Signup: ${input.firstName} ${input.lastName} (${input.trade})`,
+          body: `Position #${position} | Tier: ${rates.label} | Referred by: ${input.referredBy || "organic"} | City: ${input.primaryCity}, ${input.primaryState}`,
+        }).catch(() => {});
+
+        return {
+          success: true as const,
+          position,
+          tier,
+          tierLabel: rates.label,
+          referralCode,
+          ownJobRate: rates.ownJob,
+          spotsRemaining: Math.max(0, TIER_THRESHOLDS.charter - position),
+        };
       });
     }),
+
+  // Get waitlist status by email or referral code
+  getWaitlistStatus: publicProcedure
+    .input(z.object({
+      email: z.string().email().optional(),
+      referralCode: z.string().optional(),
+    }))
+    .query(async ({ input }) => {
+      const pool = await getPool();
+      if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      let rows: any[];
+      if (input.email) {
+        const [r] = await pool.query(
+          "SELECT id, firstName, lastName, email, trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
+          [input.email]
+        );
+        rows = r as any[];
+      } else if (input.referralCode) {
+        const [r] = await pool.query(
+          "SELECT id, firstName, lastName, email, trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
+          [input.referralCode.toUpperCase()]
+        );
+        rows = r as any[];
+      } else {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "Provide email or referralCode" });
+      }
+
+      if (!rows[0]) throw new TRPCError({ code: "NOT_FOUND", message: "Not found on waitlist" });
+
+      const row = rows[0];
+      const tier = (row.tier as string) || "standard";
+      const rates = TIER_RATES[tier as keyof typeof TIER_RATES];
+      const position = row.waitlistPosition || 1;
+
+      // Calculate tier upgrade path
+      const referralCount = row.referralCount || 0;
+      let upgradeMessage = "";
+      if (tier === "standard") upgradeMessage = `Refer ${Math.max(0, 1 - referralCount)} more pro to reach Growth tier`;
+      else if (tier === "growth") upgradeMessage = `Refer ${Math.max(0, 3 - referralCount)} more pros to reach Founding tier`;
+      else if (tier === "founding") upgradeMessage = `Refer ${Math.max(0, 5 - referralCount)} more pros to reach Charter tier`;
+      else upgradeMessage = "You are at the top Charter Partner tier!";
+
+      // Get direct referrals
+      const [refRows] = await pool.query(
+        "SELECT firstName, lastName, trade, createdAt FROM proWaitlist WHERE referredBy = ? ORDER BY createdAt DESC LIMIT 20",
+        [row.referralCode]
+      );
+
+      // Get total count for leaderboard context
+      const [totalRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+      const totalSignups = Number((totalRows as any[])[0]?.cnt ?? 0);
+
+      return {
+        found: true,
+        firstName: row.firstName,
+        lastName: row.lastName,
+        trade: row.trade,
+        city: row.primaryCity,
+        state: row.primaryState,
+        referralCode: row.referralCode,
+        referredBy: row.referredBy,
+        tier,
+        tierLabel: rates.label,
+        position,
+        totalSignups,
+        referralCount,
+        rates,
+        upgradeMessage,
+        referrals: (refRows as any[]).map(r => ({
+          firstName: r.firstName,
+          trade: r.trade,
+          joinedAt: r.createdAt,
+        })),
+        spotsRemaining: {
+          charter: Math.max(0, TIER_THRESHOLDS.charter - totalSignups),
+          founding: Math.max(0, TIER_THRESHOLDS.founding - totalSignups),
+        },
+      };
+    }),
+
+  // Get public leaderboard (top referrers, no PII)
+  getLeaderboard: publicProcedure.query(async () => {
+    const pool = await getPool();
+    if (!pool) return { leaders: [], totalSignups: 0 };
+    const [rows] = await pool.query(
+      "SELECT firstName, LEFT(lastName, 1) as lastInitial, trade, primaryCity, primaryState, referralCount, tier, waitlistPosition FROM proWaitlist WHERE referralCount > 0 ORDER BY referralCount DESC LIMIT 20"
+    );
+    const [total] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+    return {
+      leaders: (rows as any[]).map((r, i) => ({
+        rank: i + 1,
+        name: `${r.firstName} ${r.lastInitial}.`,
+        trade: r.trade,
+        city: r.primaryCity,
+        state: r.primaryState,
+        referralCount: r.referralCount,
+        tier: r.tier,
+      })),
+      totalSignups: Number((total as any[])[0]?.cnt ?? 0),
+    };
+  }),
 
   joinHomeWaitlist: publicProcedure
     .input(HomeWaitlistSchema)
@@ -150,183 +289,96 @@ export const waitlistRouter = router({
         const userAgent = ctx.req.headers["user-agent"];
 
         if (!db || !pool) {
-          await analyticsTracker.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
-          throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database service temporarily unavailable.' });
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
         }
 
-        try {
-          // Check for existing signup
-          const [existingHomeSignup] = await pool.query(
-            `SELECT id FROM homeWaitlist WHERE email = ? LIMIT 1`,
-            [input.email]
-          );
-          if ((existingHomeSignup as any[])?.[0]) {
-            await analyticsTracker.track({ type: "error", source: "trustypro_7step", email: input.email }, String(ipAddress), String(userAgent));
-            throw new TRPCError({ code: 'CONFLICT', message: 'This email is already registered on the TrustyPro waitlist.' });
-          }
-
-          const homeId = Math.floor(Math.random() * 2_000_000_000) + 1;
-          await pool.query(
-            `INSERT INTO homeWaitlist (
-              id, firstName, lastName, email, phone, address, city, state, zipCode, homeType,
-              desiredProjects, projectTimeline, ownershipStatus, ownershipType
-            ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-            )`,
-            [
-              homeId,
-              input.firstName, input.lastName, input.email, input.phone ?? null,
-              input.address, input.city, input.state, input.zipCode, "single_family",
-              JSON.stringify([input.serviceNeeded]), "just_exploring", "own", "primary_residence"
-            ]
-          );
-
-          // Get position
-          const [countResult] = await pool.query(`SELECT COUNT(*) as cnt FROM homeWaitlist`);
-          const position = Number((countResult[0] as any)?.cnt ?? 1);
-
-          sendHomeownerWaitlistConfirmation({
-            to: input.email,
-            firstName: input.firstName,
-            address: input.address,
-            city: input.city,
-            position,
-            serviceNeeded: input.serviceNeeded
-          }).catch((err) => {
-            logger.error("Email send failed for Home waitlist", {
-              email: input.email,
-              error: err?.message
-            });
-          });
-
-          notifyOwner({
-            title: 'New TrustyPro Homeowner Waitlist Signup',
-            content: `${input.firstName} ${input.lastName} joined homeowner waitlist. Address: ${input.address}, ${input.city}, ${input.state}. Service: ${input.serviceNeeded}.`
-          }).catch(() => {});
-
-          await analyticsTracker.track({
-            type: "signup",
-            source: "trustypro_7step",
-            email: input.email,
-            formPosition: position,
-            metadata: {
-              address: input.address,
-              city: input.city,
-              state: input.state,
-              serviceNeeded: input.serviceNeeded
-            }
-          }, String(ipAddress), String(userAgent));
-
-          return { success: true, position };
-        } catch (error: any) {
-          if (error?.code === 'CONFLICT') throw error;
-          logger.error("Home waitlist signup failed", { email: input.email, error: error?.message });
-          await analyticsTracker.track({ type: "error", source: "trustypro_7step" }, String(ipAddress), String(userAgent));
-          throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Signup failed. Please try again.' });
+        const [existingRows] = await pool.query("SELECT id FROM homeWaitlist WHERE email = ? LIMIT 1", [input.email]);
+        if ((existingRows as any[])?.[0]) {
+          await analyticsTracker.track({ type: "error", source: "home_waitlist", email: input.email }, String(ipAddress), String(userAgent));
+          throw new TRPCError({ code: "CONFLICT", message: "This email is already registered on the TrustyPro waitlist." });
         }
+
+        const [countRows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist");
+        const position = Number((countRows as any[])[0]?.cnt ?? 0) + 1;
+
+        const homeId = Math.floor(Math.random() * 2_000_000_000) + 1;
+
+        await pool.query(
+          `INSERT INTO homeWaitlist (
+            id, firstName, lastName, email, phone, address, city, state, zipCode, homeType,
+            desiredProjects, projectTimeline, ownershipStatus, ownershipType, status, referredBy
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [
+            homeId,
+            input.firstName, input.lastName, input.email, input.phone ?? null,
+            input.address, input.city, input.state, input.zipCode, "single_family",
+            JSON.stringify([input.serviceNeeded]), "just_exploring", "own", "primary_residence",
+            "pending", input.referredBy ?? null
+          ]
+        );
+
+        sendHomeownerWaitlistConfirmation({
+          to: input.email,
+          firstName: input.firstName,
+          city: input.city,
+          serviceNeeded: input.serviceNeeded,
+          position,
+        }).catch((err) => {
+          console.error("[waitlist] Email send failed for Homeowner waitlist", { email: input.email, error: err?.message });
+        });
+
+        notifyOwner({
+          subject: `New TrustyPro Homeowner Signup: ${input.firstName} ${input.lastName}`,
+          body: `Position #${position} | Service: ${input.serviceNeeded} | City: ${input.city}, ${input.state}`,
+        }).catch(() => {});
+
+        return { success: true as const, position };
       });
     }),
 
   joinSimpleWaitlist: publicProcedure
     .input(SimpleWaitlistSchema)
-    .mutation(async ({ input, ctx }) => {
-      return await logger.track("waitlist:joinSimpleWaitlist", async () => {
-        const db = await getDb();
-        const ipAddress = ctx.req.ip || ctx.req.headers["x-forwarded-for"] || "unknown";
-        const userAgent = ctx.req.headers["user-agent"];
-
-        if (!db) {
-          throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Service unavailable.' });
-        }
-
-        try {
-          const existing = await (db as any).execute(
-            sql`SELECT id FROM homeWaitlist WHERE email = ${input.email} LIMIT 1`
-          );
-          if (existing?.rows?.[0]) {
-            throw new TRPCError({ code: 'CONFLICT', message: 'Email already registered.' });
-          }
-
-          const [firstName, ...lastNameParts] = input.name.split(' ');
-          const lastName = lastNameParts.join(' ') || 'Homeowner';
-
-          await (db as any).execute(
-            sql`INSERT INTO homeWaitlist (firstName, lastName, email, createdAt)
-                VALUES (${firstName}, ${lastName}, ${input.email}, NOW())`
-          );
-
-          const countResult = await (db as any).execute(
-            sql`SELECT COUNT(*) as cnt FROM homeWaitlist`
-          );
-          const position = Number((countResult?.rows?.[0] as any)?.cnt ?? 1);
-
-          sendHomeownerWaitlistConfirmation({
-            to: input.email,
-            firstName,
-            address: "Home",
-            city: "Your Area",
-            position,
-            projects: ["Home Improvements"]
-          }).catch(() => {});
-
-          await analyticsTracker.track({
-            type: "signup",
-            source: "trustypro_simple",
-            email: input.email,
-            formPosition: position
-          }, String(ipAddress), String(userAgent));
-
-          return { success: true, position };
-        } catch (error: any) {
-          if (error?.code === 'CONFLICT') throw error;
-          logger.error("Simple waitlist signup failed", { email: input.email });
-          throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Signup failed.' });
-        }
-      });
+    .mutation(async ({ input }) => {
+      const pool = await getPool();
+      if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+      const [existing] = await pool.query("SELECT id FROM proWaitlist WHERE email = ? LIMIT 1", [input.email]);
+      if ((existing as any[])[0]) return { success: true as const, position: 1, alreadyRegistered: true };
+      const [countRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+      const position = Number((countRows as any[])[0]?.cnt ?? 0) + 1;
+      const [nameparts] = [input.name.split(" ")];
+      const firstName = nameparts[0] || input.name;
+      const lastName = nameparts.slice(1).join(" ") || "";
+      const id = Math.floor(Math.random() * 2_000_000_000) + 1;
+      const referralCode = generateReferralCode();
+      const tier = assignTier(position);
+      await pool.query(
+        "INSERT INTO proWaitlist (id, firstName, lastName, email, phone, businessName, businessType, yearsInBusiness, employeeCount, estimatedJobsPerMonth, avgJobValue, trades, primaryCity, primaryState, serviceZipCodes, serviceRadiusMiles, currentSoftware, referralsGivenPerMonth, referralsReceivedPerMonth, primaryGoal, referralCode, tier, waitlistPosition, referralCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [id, firstName, lastName, input.email, "", "", "", 1, "1", 0, "varies", "[]", "", "", "", 25, "[]", "0", "0", "more_leads", referralCode, tier, position, 0]
+      );
+      return { success: true as const, position };
     }),
 
-  getWaitlistMetrics: adminProcedure
-    .query(async () => {
-      return await logger.track("waitlist:getMetrics", async () => {
-        const db = await getDb();
-        if (!db) return { pro: 0, home: 0, total: 0, referrals: 0 };
+  getWaitlistMetrics: adminProcedure.query(async () => {
+    const pool = await getPool();
+    if (!pool) return {};
+    const [pros] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+    const [homes] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist");
+    const [tiers] = await pool.query("SELECT tier, COUNT(*) as cnt FROM proWaitlist GROUP BY tier");
+    const [topRefs] = await pool.query("SELECT firstName, LEFT(lastName,1) as li, referralCount, tier FROM proWaitlist ORDER BY referralCount DESC LIMIT 10");
+    return {
+      totalPros: Number((pros as any[])[0]?.cnt ?? 0),
+      totalHomes: Number((homes as any[])[0]?.cnt ?? 0),
+      tierBreakdown: (tiers as any[]).reduce((acc, r) => ({ ...acc, [r.tier]: Number(r.cnt) }), {}),
+      topReferrers: topRefs,
+    };
+  }),
 
-        const [proCount, homeCount, referralCount] = await Promise.all([
-          (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`),
-          (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`),
-          (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE referredBy IS NOT NULL AND referredBy != ''`)
-        ]);
-
-        return {
-          pro: Number(proCount?.rows?.[0]?.cnt ?? 0),
-          home: Number(homeCount?.rows?.[0]?.cnt ?? 0),
-          total: Number((proCount?.rows?.[0]?.cnt ?? 0)) + Number((homeCount?.rows?.[0]?.cnt ?? 0)),
-          referrals: Number(referralCount?.rows?.[0]?.cnt ?? 0)
-        };
-      });
-    }),
-
-  exportWaitlist: adminProcedure
-    .input(z.object({ source: z.enum(['pro', 'home', 'all']) }))
-    .query(async ({ input }) => {
-      return await logger.track("waitlist:export", async () => {
-        const db = await getDb();
-        if (!db) return [];
-
-        if (input.source === 'all') {
-          const [pro, home] = await Promise.all([
-            (db as any).execute(sql`SELECT * FROM proWaitlist ORDER BY createdAt DESC`),
-            (db as any).execute(sql`SELECT * FROM homeWaitlist ORDER BY createdAt DESC`)
-          ]);
-          return [...(pro?.rows || []), ...(home?.rows || [])];
-        }
-
-        const result = await (db as any).execute(
-          input.source === 'pro'
-            ? sql`SELECT * FROM proWaitlist ORDER BY createdAt DESC`
-            : sql`SELECT * FROM homeWaitlist ORDER BY createdAt DESC`
-        );
-        return result?.rows || [];
-      });
-    })
+  exportWaitlist: adminProcedure.query(async () => {
+    const pool = await getPool();
+    if (!pool) return [];
+    const [rows] = await pool.query(
+      "SELECT firstName, lastName, email, phone, businessType as trade, primaryCity, primaryState, tier, waitlistPosition, referralCode, referredBy, referralCount, status, createdAt FROM proWaitlist ORDER BY waitlistPosition ASC"
+    );
+    return rows as any[];
+  }),
 });

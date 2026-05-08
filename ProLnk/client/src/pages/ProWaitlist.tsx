@@ -703,11 +703,14 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
   })();
 
   const join = trpc.waitlist.joinProWaitlist.useMutation({
-    onSuccess: (_data, vars) => {
+    onSuccess: (data, vars) => {
       const base = window.location.origin;
-      // Generate a simple waitlist referral link using their email as a slug
-      const slug = btoa(vars.email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
-      setReferralLink(`${base}/join?ref=${slug}`);
+      // Use the server-assigned referral code if available, fallback to email slug
+      const code = (data as any)?.referralCode || btoa(vars.email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
+      // Store for use across sessions
+      localStorage.setItem("prolnk_referral_code", code);
+      localStorage.setItem("prolnk_user_email", vars.email);
+      setReferralLink(`${base}/join?ref=${code}`);
       setStep("success");
     },
     onError: (e: { message?: string }) => toast.error(e.message || "Something went wrong."),
@@ -998,6 +1001,7 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
                   trade: selectedTrades[0] || "General Contractor",
                   primaryCity: form.city || "Not provided",
                   primaryState: form.state,
+                  referredBy: inboundRefCode ?? undefined,
                 });
               }}
               disabled={join.isPending}

@@ -509,8 +509,17 @@ const STATS = [
 
 function Numbers() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [inView, setInView] = useState(false);
   const mobile = useMobile();
+  useEffect(() => {
+    if (!ref.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect(); } },
+      { rootMargin: "-100px" }
+    );
+    obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <section

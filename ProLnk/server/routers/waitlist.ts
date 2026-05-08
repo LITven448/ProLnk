@@ -10,22 +10,53 @@ import { analyticsTracker } from "../_core/analytics";
 
 const logger = createLogger("waitlist");
 
-// Tier thresholds by position
-const TIER_THRESHOLDS = { charter: 100, founding: 500, growth: 1000 };
+// ProLnk 4-Tier Founding Network — caps are cumulative position thresholds
+// Charter (25) → Founding (100) → Level 3 (400) → Level 4 (1600) = 2,125 total
+// All founding network tiers get same package: $149/mo locked, 72% keep, 4-level depth
+const TIER_CAP = { charter: 25, founding: 125, level3: 525, level4: 2125 };
 
 function assignTier(position: number): string {
-  if (position <= TIER_THRESHOLDS.charter) return "charter";
-  if (position <= TIER_THRESHOLDS.founding) return "founding";
-  if (position <= TIER_THRESHOLDS.growth) return "growth";
-  return "standard";
+  if (position <= TIER_CAP.charter)  return "charter";
+  if (position <= TIER_CAP.founding) return "founding";
+  if (position <= TIER_CAP.level3)   return "level3";
+  if (position <= TIER_CAP.level4)   return "level4";
+  return "waitlist"; // after founding network closes
 }
 
-// Tier commission rates
-const TIER_RATES = {
-  charter:  { ownJob: 0.020, networkL1: 0.010, networkL2: 0.008, networkL3: 0.006, networkL4: 0.004, label: "Charter Partner" },
-  founding: { ownJob: 0.015, networkL1: 0.008, networkL2: 0.006, networkL3: 0.004, networkL4: 0.000, label: "Founding Partner" },
-  growth:   { ownJob: 0.010, networkL1: 0.006, networkL2: 0.004, networkL3: 0.000, networkL4: 0.000, label: "Growth Pro" },
-  standard: { ownJob: 0.005, networkL1: 0.000, networkL2: 0.000, networkL3: 0.000, networkL4: 0.000, label: "Standard Pro" },
+// All 4 tiers in founding network share the same rates
+// (tier label differs, benefits are identical — $149/mo locked, 72% keep rate)
+const FOUNDING_RATES = {
+  jobCommissionKeepRate: 0.72,
+  homeOriginationRate: 0.015,
+  networkJob:  { l1: 0.07, l2: 0.04, l3: 0.02, l4: 0.01 },
+  networkSubs: { l1: 0.12, l2: 0.06, l3: 0.03, l4: 0.015 },
+  platformFeeMin: 0.06, platformFeeMax: 0.15,
+  subscriptionRate: 149, trialDays: 90,
+};
+
+const TIER_LABELS: Record<string, string> = {
+  charter:  "Charter Member",
+  founding: "Founding Member",
+  level3:   "Level 3 Partner",
+  level4:   "Level 4 Partner",
+  waitlist: "Waitlist",
+};
+
+const TIER_SPOTS_REMAINING = (totalSignups: number) => ({
+  charter:  Math.max(0, 25   - totalSignups),
+  founding: Math.max(0, 125  - totalSignups),
+  level3:   Math.max(0, 525  - totalSignups),
+  level4:   Math.max(0, 2125 - totalSignups),
+  total:    Math.max(0, 2125 - totalSignups),
+});
+
+// Legacy alias so existing getWaitlistStatus code works
+const TIER_RATES: Record<string, { label: string; ownJob: number; networkL1: number }> = {
+  charter:  { label: "Charter Member",   ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  founding: { label: "Founding Member",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  level3:   { label: "Level 3 Partner",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  level4:   { label: "Level 4 Partner",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
+  waitlist: { label: "Waitlist",          ownJob: 0, networkL1: 0 },
 };
 
 function generateReferralCode(length = 7): string {

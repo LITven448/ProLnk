@@ -4532,7 +4532,6 @@ Return a JSON object with:
       .mutation(async ({ input, ctx }) => {
         return await waitlistRouter.createCaller(ctx).joinProWaitlist(input);
       }),
-  }),
 
     getWaitlistStatus: publicProcedure
       .input(z.object({

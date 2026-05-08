@@ -324,6 +324,8 @@ import AgentPortal from "@/pages/AgentPortal";
 import ResourceCenter from "@/pages/ResourceCenter";
 import BillingPortal from "@/pages/BillingPortal";
 import ProLnkMedia from "@/pages/ProLnkMedia";
+const ProLnkMediaSite = lazy(() => import("@/pages/media/ProLnkMediaSite"));
+const MediaSiteLazy = () => <Suspense fallback={<div style={{background:"#050508",minHeight:"100vh"}} />}><ProLnkMediaSite /></Suspense>;
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import SecurityTrustCenter from "@/pages/SecurityTrustCenter";
 import PhotoAccessLog from "@/pages/admin/PhotoAccessLog";

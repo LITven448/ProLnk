@@ -386,6 +386,7 @@ import AskAPro from "./pages/homeowner/AskAPro";
 import BulkOperations from "./pages/admin/BulkOperations";
 import ConversionFunnel from "./pages/admin/ConversionFunnel";
 import TierBenefits from "./pages/TierBenefits";
+import WaitlistStatus from "./pages/WaitlistStatus";
 import ContentLibrary from "./pages/ContentLibrary";
 import ApiKeyManagement from "./pages/admin/ApiKeyManagement";
 
@@ -877,6 +878,8 @@ function Router() {
       <Route path="/leads/:id" component={LeadDetail} />
       <Route path="/jobs/:id/document" component={JobDocumentation} />
       <Route path="/tier-benefits" component={TierBenefits} />
+      <Route path="/waitlist-status" component={WaitlistStatus} />
+      <Route path="/waitlist/status" component={WaitlistStatus} />
       <Route path="/content-library" component={ContentLibrary} />
 
       {/* Homeowner Extensions */}

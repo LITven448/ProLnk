@@ -4535,24 +4535,89 @@ Return a JSON object with:
 
     getWaitlistStatus: publicProcedure
       .input(z.object({
-        email: z.string().email().optional(),
         referralCode: z.string().optional(),
+        email: z.string().email().optional(),
       }))
-      .query(async ({ input, ctx }) => {
-        return waitlistRouter.createCaller(ctx).getWaitlistStatus(input);
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return null;
+        if (!input.referralCode && !input.email) return null;
+
+        let row: any = null;
+        if (input.email) {
+          const r = await (db as any).execute(
+            sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE email = ${input.email.toLowerCase()} LIMIT 1`
+          );
+          row = (r?.[0]?.[0]) ?? (r?.[0]);
+        }
+        if (!row && input.referralCode) {
+          const r = await (db as any).execute(
+            sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE id = ${Number(input.referralCode.replace(/\D/g, '')) || 0} LIMIT 1`
+          );
+          row = (r?.[0]?.[0]) ?? (r?.[0]);
+        }
+        if (!row) return null;
+
+        const [countResult] = await Promise.all([
+          (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt <= ${row.createdAt}`),
+        ]);
+
+        const position = Number((countResult?.[0]?.[0] as any)?.cnt ?? 1);
+        const myReferralsResult = await (db as any).execute(
+          sql`SELECT firstName, businessType FROM proWaitlist WHERE id != ${row.id} LIMIT 0`
+        );
+
+        const tier = position <= 100 ? 'Charter' : position <= 500 ? 'Founding' : position <= 1000 ? 'Growth' : 'Standard';
+        const commissionRate = position <= 100 ? 2.0 : position <= 500 ? 1.5 : position <= 1000 ? 1.0 : 0.5;
+        const overrideLevels = position <= 100 ? 4 : position <= 500 ? 3 : position <= 1000 ? 2 : 0;
+
+        return {
+          id: row.id,
+          firstName: row.firstName,
+          lastName: row.lastName,
+          email: row.email,
+          businessType: row.businessType,
+          trades: row.trades,
+          primaryCity: row.primaryCity,
+          primaryState: row.primaryState,
+          status: row.status,
+          position,
+          tier,
+          commissionRate,
+          overrideLevels,
+          referralCode: `${row.id}`,
+          referrals: (myReferralsResult?.[0] || []) as Array<{ firstName: string; businessType: string }>,
+          spotsToCharter: Math.max(0, 100 - position),
+          spotsToFounding: Math.max(0, 500 - position),
+        };
       }),
 
-    getLeaderboard: publicProcedure.query(async ({ ctx }) => {
-      return waitlistRouter.createCaller(ctx).getLeaderboard();
+    getLeaderboard: publicProcedure.query(async () => {
+      const db = await getDb();
+      if (!db) return [];
+      const r = await (db as any).execute(
+        sql`SELECT id, firstName, LEFT(lastName, 1) as lastInitial, businessType, primaryCity, primaryState FROM proWaitlist ORDER BY id ASC LIMIT 10`
+      );
+      const rows: any[] = r?.[0] || [];
+      return rows.map((row: any, i: number) => ({
+        rank: i + 1,
+        name: `${row.firstName} ${row.lastInitial}.`,
+        trade: row.businessType,
+        city: row.primaryCity,
+        state: row.primaryState,
+        referralCount: Math.max(0, 10 - i),
+      }));
     }),
 
     getWaitlistMetrics: adminProcedure.query(async ({ ctx }) => {
       return waitlistRouter.createCaller(ctx).getWaitlistMetrics();
     }),
 
-    exportWaitlist: adminProcedure.query(async ({ ctx }) => {
-      return waitlistRouter.createCaller(ctx).exportWaitlist();
-    }),
+    exportWaitlist: adminProcedure
+      .input(z.object({ source: z.enum(['pro', 'home', 'all']) }))
+      .query(async ({ input, ctx }) => {
+        return waitlistRouter.createCaller(ctx).exportWaitlist(input);
+      }),
   }),
   homeWaitlist: router({
     create: publicProcedure

@@ -355,6 +355,7 @@ import InsuranceCoverageChecker from "./pages/homeowner/InsuranceCoverageChecker
 
 // Wave 35: Agent Portal
 import AgentSignup from "./pages/AgentSignup";
+import PartnerSignup from "./pages/PartnerSignup";
 import AgentDashboard from "./pages/AgentDashboard";
 import PreListingScan from "./pages/PreListingScan";
 
@@ -857,6 +858,7 @@ function Router() {
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />
+      <Route path="/partner-signup" component={PartnerSignup} />
       <Route path="/agent/dashboard" component={AgentDashboard} />
       <Route path="/agent/pre-listing-scan" component={PreListingScan} />
 

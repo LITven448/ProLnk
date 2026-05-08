@@ -1209,9 +1209,7 @@ export default function Home() {
 
               </Link>
             )}
-            {!isTrustyPro && (
 
-            )}
             <Link href="/apply">
               <Button className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>
                 Apply Now

@@ -190,13 +190,13 @@ export const waitlistRouter = router({
       let rows: any[];
       if (input.email) {
         const [r] = await pool.query(
-          "SELECT id, firstName, lastName, email, trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
+          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
           [input.email]
         );
         rows = r as any[];
       } else if (input.referralCode) {
         const [r] = await pool.query(
-          "SELECT id, firstName, lastName, email, trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
+          "SELECT id, firstName, lastName, email, businessType as trade, primaryCity, primaryState, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
           [input.referralCode.toUpperCase()]
         );
         rows = r as any[];
@@ -262,7 +262,7 @@ export const waitlistRouter = router({
     const pool = await getPool();
     if (!pool) return { leaders: [], totalSignups: 0 };
     const [rows] = await pool.query(
-      "SELECT firstName, LEFT(lastName, 1) as lastInitial, trade, primaryCity, primaryState, referralCount, tier, waitlistPosition FROM proWaitlist WHERE referralCount > 0 ORDER BY referralCount DESC LIMIT 20"
+      "SELECT firstName, LEFT(lastName, 1) as lastInitial, businessType as trade, primaryCity, primaryState, referralCount, tier, waitlistPosition FROM proWaitlist WHERE referralCount > 0 ORDER BY referralCount DESC LIMIT 20"
     );
     const [total] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
     return {

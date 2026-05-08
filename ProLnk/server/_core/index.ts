@@ -238,6 +238,39 @@ async function startServer() {
   });
 
 
+  // Migrate: add referral columns to existing proWaitlist table
+  app.get("/api/add-referral-columns", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.query.secret !== secret.slice(0, 16)) return res.status(401).json({ error: "Unauthorized" });
+    try {
+      const dbUrl = process.env.DATABASE_URL?.replace(/\?.*$/, '');
+      if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
+      const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false }, connectionTimeout: 15000 });
+      const migrations = [
+        "ALTER TABLE `proWaitlist` ADD COLUMN IF NOT EXISTS `referralCode` varchar(20) NULL",
+        "ALTER TABLE `proWaitlist` ADD COLUMN IF NOT EXISTS `referredBy` varchar(20) NULL",
+        "ALTER TABLE `proWaitlist` ADD COLUMN IF NOT EXISTS `tier` varchar(20) NOT NULL DEFAULT 'standard'",
+        "ALTER TABLE `proWaitlist` ADD COLUMN IF NOT EXISTS `waitlistPosition` int NOT NULL DEFAULT 0",
+        "ALTER TABLE `proWaitlist` ADD COLUMN IF NOT EXISTS `referralCount` int NOT NULL DEFAULT 0",
+        "ALTER TABLE `homeWaitlist` ADD COLUMN IF NOT EXISTS `referredBy` varchar(20) NULL",
+        "CREATE UNIQUE INDEX IF NOT EXISTS `proWaitlist_referralCode_unique` ON `proWaitlist` (`referralCode`)",
+      ];
+      const results: string[] = [];
+      for (const stmt of migrations) {
+        try {
+          await conn.query(stmt);
+          results.push("OK: " + stmt.slice(0, 60));
+        } catch (e: any) {
+          results.push("SKIP (" + e.message.slice(0, 60) + ")");
+        }
+      }
+      await conn.end();
+      return res.json({ done: true, results });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
   // Safe: create any missing tables without truncating existing data
   app.get("/api/create-missing-tables", async (req, res) => {
     const secret = process.env.JWT_SECRET;

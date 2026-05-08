@@ -485,6 +485,9 @@ function Router() {
       <Route path="/waitlist/homeowner" component={TrustyProWaitlistPage} />
       <Route path="/waitlist/homeowner/status" component={TrustyProWaitlistStatus} />
       <Route path="/contest" component={Contest} />
+      <Route path="/advertise" component={MediaSiteLazy} />
+      <Route path="/media" component={MediaSiteLazy} />
+      <Route path="/prolnk-media" component={MediaSiteLazy} />
       <Route path="/partners" component={PartnerDirectory} />
       <Route path="/pro/:id" component={PartnerSpotlight} />
       <Route path="/login" component={LoginRedirect} />

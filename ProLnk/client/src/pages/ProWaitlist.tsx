@@ -735,10 +735,25 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the list!</h2>
-            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-5 inline-block">
-              <p className="text-[#0A1628] font-bold text-lg">Position: #{join.data.position}</p>
-              <p className="text-gray-600 text-xs mt-1">You're #{join.data.position} in the ProLnk network.</p>
+            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-3 inline-block">
+              <p className="text-[#0A1628] font-bold text-lg">Position: #{(join.data as any).position}</p>
+              {(join.data as any).tierLabel && (
+                <p className="text-[#0A1628] font-semibold text-sm mt-1">
+                  🏆 {(join.data as any).tierLabel} — {((join.data as any).ownJobRate * 100).toFixed(1)}% commission rate
+                </p>
+              )}
+              <p className="text-gray-600 text-xs mt-1">You're #{(join.data as any).position} in the ProLnk network.</p>
             </div>
+            {(join.data as any).referralCode && (
+              <div className="mb-4">
+                <a
+                  href={`/waitlist-status?ref=${(join.data as any).referralCode}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A1628] text-white rounded-lg text-sm font-semibold hover:bg-[#1a2a40] transition-colors"
+                >
+                  View My Referral Dashboard →
+                </a>
+              </div>
+            )}
             <p className="text-gray-500 text-sm mb-5">Welcome to the ProLnk founding network. Check your email for confirmation.</p>
 
             {/* Step 1: Refer other pros */}

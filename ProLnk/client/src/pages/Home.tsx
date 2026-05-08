@@ -1210,12 +1210,7 @@ export default function Home() {
               </Link>
             )}
             {!isTrustyPro && (
-              {false && <Link href="/admin">
-                <Button variant="ghost" className="text-sm font-medium flex items-center gap-1.5" style={{ color: isAdmin ? "#b45309" : "#6b7280" }}>
-                  <Lock className="w-3.5 h-3.5" />
-                  Admin
-                </Button>
-              </Link>
+
             )}
             <Link href="/apply">
               <Button className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>

@@ -203,7 +203,7 @@ export const waitlistRouter = router({
           tierLabel: rates.label,
           referralCode,
           ownJobRate: rates.ownJob,
-          spotsRemaining: Math.max(0, TIER_THRESHOLDS.charter - position),
+          spotsRemaining: { charter: Math.max(0, TIER_CAP.charter - position), founding: Math.max(0, TIER_CAP.founding - position), total: Math.max(0, TIER_CAP.level4 - position) },
         };
       });
     }),
@@ -282,8 +282,8 @@ export const waitlistRouter = router({
           joinedAt: r.createdAt,
         })),
         spotsRemaining: {
-          charter: Math.max(0, TIER_THRESHOLDS.charter - totalSignups),
-          founding: Math.max(0, TIER_THRESHOLDS.founding - totalSignups),
+          charter: Math.max(0, TIER_CAP.charter - totalSignups),
+          founding: Math.max(0, TIER_CAP.founding - totalSignups),
         },
       };
     }),

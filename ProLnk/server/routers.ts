@@ -113,7 +113,7 @@ import { eq, sql, and, or, ne, desc } from "drizzle-orm";
 import { ENV } from "./_core/env";
 import { ONE_YEAR_MS } from "@shared/const";
 import { dispatchLeadToPartner, rejectOpportunityByAdmin, sweepExpiredLeads } from "./intake-router";
-import { analyzeJobPhoto } from "../photo-intelligence";
+import { analyzeJobPhoto } from "./photo-intelligence";
 
 // -- Admin guard --
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {

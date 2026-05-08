@@ -14,7 +14,7 @@
  *   7. Tier Promotion Agent — handles tier fill events, updates recruiting rules, notifies members
  */
 
-import { db } from "../db";
+import { getDb, getPool } from "../db";
 import { invokeLLM } from "../_core/llm";
 import { addAgentMemory, searchAgentMemory } from "../memory";
 

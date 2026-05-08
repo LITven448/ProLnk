@@ -4533,6 +4533,28 @@ Return a JSON object with:
         return await waitlistRouter.createCaller(ctx).joinProWaitlist(input);
       }),
   }),
+
+    getWaitlistStatus: publicProcedure
+      .input(z.object({
+        email: z.string().email().optional(),
+        referralCode: z.string().optional(),
+      }))
+      .query(async ({ input, ctx }) => {
+        return waitlistRouter.createCaller(ctx).getWaitlistStatus(input);
+      }),
+
+    getLeaderboard: publicProcedure.query(async ({ ctx }) => {
+      return waitlistRouter.createCaller(ctx).getLeaderboard();
+    }),
+
+    getWaitlistMetrics: adminProcedure.query(async ({ ctx }) => {
+      return waitlistRouter.createCaller(ctx).getWaitlistMetrics();
+    }),
+
+    exportWaitlist: adminProcedure.query(async ({ ctx }) => {
+      return waitlistRouter.createCaller(ctx).exportWaitlist();
+    }),
+  }),
   homeWaitlist: router({
     create: publicProcedure
       .input(z.object({

@@ -113,6 +113,7 @@ import { eq, sql, and, or, ne, desc } from "drizzle-orm";
 import { ENV } from "./_core/env";
 import { ONE_YEAR_MS } from "@shared/const";
 import { dispatchLeadToPartner, rejectOpportunityByAdmin, sweepExpiredLeads } from "./intake-router";
+import { analyzeJobPhoto } from "../photo-intelligence";
 
 // -- Admin guard --
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -4555,6 +4556,35 @@ Return a JSON object with:
   integrationWebhooks: integrationWebhooksRouter,
   mediaLibrary: mediaLibraryRouter,
   partnerAuth: partnerAuthRouter,
+  photoIntelligence: router({
+    scanPhoto: protectedProcedure
+      .input(z.object({
+        photoUrl: z.string().url(),
+        jobId: z.number().optional(),
+        propertyAddress: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        return await analyzeJobPhoto(input.photoUrl);
+      }),
+    scanMultiplePhotos: protectedProcedure
+      .input(z.object({
+        photoUrls: z.array(z.string().url()).max(10),
+      }))
+      .mutation(async ({ input }) => {
+        const results = await Promise.all(
+          input.photoUrls.map(url => analyzeJobPhoto(url).catch(e => ({ error: e.message, detections: [] })))
+        );
+        const allDetections = results.flatMap((r: any) => r.detections ?? []);
+        return {
+          perPhoto: results,
+          combined: {
+            detections: allDetections,
+            totalOpportunities: allDetections.length,
+            highPriorityCount: allDetections.filter((d: any) => d.severity === 'high' || d.severity === 'urgent').length,
+          }
+        };
+      }),
+  }),
   photoPipeline: photoPipelineRouter,
   seasonalMaintenance: seasonalMaintenanceRouter,
   waitlistAdmin: router({

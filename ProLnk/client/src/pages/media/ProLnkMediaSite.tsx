@@ -91,7 +91,7 @@ function Nav({ onCta }: { onCta: () => void }) {
         {["Ad Formats", "Our Audience", "Pricing"].map(l => (
           <span key={l} style={{ cursor: "pointer" }}
             onMouseEnter={e => (e.currentTarget.style.color = CREAM)}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(245,240,232,0.6)"}}>
+            onMouseLeave={e => { e.currentTarget.style.color = "rgba(245,240,232,0.6)"; }}>
             {l}
           </span>
         ))}

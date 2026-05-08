@@ -1206,11 +1206,11 @@ export default function Home() {
             </Link>
             {!isTrustyPro && (
               <Link href="/dashboard">
-                <Button variant="ghost" className="text-sm font-medium">Partner Login</Button>
+
               </Link>
             )}
             {!isTrustyPro && (
-              <Link href="/admin">
+              {false && <Link href="/admin">
                 <Button variant="ghost" className="text-sm font-medium flex items-center gap-1.5" style={{ color: isAdmin ? "#b45309" : "#6b7280" }}>
                   <Lock className="w-3.5 h-3.5" />
                   Admin

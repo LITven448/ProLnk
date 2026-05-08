@@ -7,7 +7,7 @@
  *
  * WHAT FOUNDING PARTNERS GET:
  * 1. Locked rate: $149/month forever (gets the $249/month feature set)
- * 2. Maximum commission keep rate on their own jobs (78% = Enterprise rate)
+ * 2. Maximum commission keep rate on their own jobs (72% = Enterprise rate)
  * 3. Network job commissions from 4 levels deep:
  *    L1=7%, L2=4%, L3=2%, L4=1% of platform fee per closed job
  * 4. Network subscription commissions from 4 levels deep:
@@ -31,7 +31,7 @@
  * COMMISSION MATH:
  * ProLnk platform fee is 6-15% of job value (varies by trade).
  * From that fee:
- *   → Doing pro keeps their tier rate (40-78%)
+ *   → Doing pro keeps their tier rate (40-72%)
  *   → Network cuts come from ProLnk's remaining share
  *   → Cuts do NOT reduce what the doing pro earned
  *
@@ -67,7 +67,7 @@ export const FOUNDING_PARTNER_RATES = {
     level4: 0.015,  // 1.5% of base subscription
   },
   origination: 0.015,  // 1.5% of platform fee per job at documented address
-  commissionKeepRate: 0.78,     // Enterprise-level keep rate (78%)
+  commissionKeepRate: 0.72,     // Enterprise-level keep rate (72%)
   lockedMonthlyRate: 149.00,    // $149/month locked forever
   featureSetMonthly: 249.00,    // Gets $249/month feature set
 } as const;
@@ -414,7 +414,7 @@ export async function enrollFoundingPartner(opts: {
       isFoundingPartner = 1,
       foundingPartnerNumber = ${enrollmentNumber},
       tier = 'enterprise',
-      commissionRate = 0.7800,  -- 78% keep rate (enterprise)
+      commissionRate = 0.7200,  -- 72% keep rate (enterprise)
       subscriptionFee = 149.00,
       networkLevel1CommissionRate = 0.0700,
       networkLevel2CommissionRate = 0.0400,

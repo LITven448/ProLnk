@@ -23,6 +23,7 @@ import SetPassword from "./pages/SetPassword";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
 import PartnerCheckout from "./pages/PartnerCheckout";
+import FoundingPartnerLanding from "./pages/FoundingPartnerLanding";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import InboundLeads from "./pages/InboundLeads";
 import MyReferrals from "./pages/MyReferrals";
@@ -485,6 +486,8 @@ function Router() {
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/founding-network" component={FoundingPartnerLanding} />
+      <Route path="/founding-partner" component={FoundingPartnerLanding} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/join" component={HomeownerWaitlistForm} />
       <Route path="/waitlist/pro" component={ProWaitlist} />
@@ -500,6 +503,8 @@ function Router() {
       <Route path="/partner-login" component={PartnerLogin} />
       <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/founding-network" component={FoundingPartnerLanding} />
+      <Route path="/founding-partner" component={FoundingPartnerLanding} />
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />

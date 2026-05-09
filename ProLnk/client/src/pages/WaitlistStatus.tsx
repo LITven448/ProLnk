@@ -153,7 +153,7 @@ function NetworkTree({ levels, commissionRate }: { levels: number; commissionRat
   if (levels === 0) {
     return (
       <div className="p-4 rounded-xl text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-        <p className="text-gray-500 text-sm">Upgrade to Growth Pro or higher to earn network override income.</p>
+        <p className="text-gray-500 text-sm">All Founding Network members (Charter/Founding/L3/L4) earn 4 levels of network override override income.</p>
         <Link href="/waitlist-status?upgrade=1" className="text-amber-400 text-xs mt-2 inline-block hover:underline">How to unlock overrides →</Link>
       </div>
     );
@@ -195,7 +195,7 @@ function EarningsCalculator({ commissionRate, overrideLevels }: { commissionRate
   const jobsPerProPerMonth = 8;
   const proCommissionRate = 0.15;
 
-  const directEarnings = recruited * avgJobValue * jobsPerProPerMonth * (commissionRate / 100);
+  const directEarnings = recruited * avgJobValue * jobsPerProPerMonth * (commissionRate);
   const l1Override = recruited * avgJobValue * jobsPerProPerMonth * proCommissionRate * (overrideLevels >= 1 ? OVERRIDE_RATES[0] / 100 : 0);
   const l2Override = recruited * 2 * avgJobValue * jobsPerProPerMonth * proCommissionRate * (overrideLevels >= 2 ? OVERRIDE_RATES[1] / 100 : 0);
   const l3Override = recruited * 4 * avgJobValue * jobsPerProPerMonth * proCommissionRate * (overrideLevels >= 3 ? OVERRIDE_RATES[2] / 100 : 0);
@@ -484,7 +484,7 @@ export default function WaitlistStatus() {
           <p className="text-gray-400 text-sm mb-4">
             {tier === "Charter"
               ? "You're in the top 100. Lock in your 2.0% commission rate and 4-level override network forever."
-              : `Charter Partners (positions 1–100) earn 2.0% commission and 4 levels of network overrides. ${status.spotsToCharter > 0 ? `${status.spotsToCharter} spots remain — get 5 referrals to qualify.` : "Get 5 referrals to qualify."}`}
+              : `Charter Members (first 25 spots) earn 72% commission keep rate and 4 levels of network overriderrides. ${status.spotsToCharter > 0 ? `${status.spotsToCharter} spots remain — get 5 referrals to qualify.` : "Get 5 referrals to qualify."}`}
           </p>
           <CopyButton text={referralLink} label="Copy My Referral Link" />
           <div className="mt-3">

@@ -12,6 +12,7 @@
  */
 
 import { getPool } from "../db";
+import { notifyInactivePartners, notifyTierFull } from "./notificationService";
 
 // ─── Tier Configuration ───────────────────────────────────────────────────────
 
@@ -472,6 +473,9 @@ export async function runTierPromotionAgent(): Promise<TierUpdateResult> {
     if (l3Full) console.log('[TierPromotionAgent] Level 3 FULL (525 cumulative)');
     if (l4Full) console.log('[TierPromotionAgent] Level 4 FULL (2125 cumulative) — Founding Network CLOSED');
 
+    // Notify admin when tiers fill up
+    if (charterFull) await notifyTierFull("Charter Member", counts.charter || 25).catch(() => {});
+    if (foundingFull && !charterFull) await notifyTierFull("Founding Member", counts.founding || 100).catch(() => {});
     return { charterFull, foundingFull, l3Full, l4Full, counts };
   } catch (err) {
     console.log('[TierPromotionAgent] Error:', err);

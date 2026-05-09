@@ -1118,8 +1118,9 @@ export default function Home() {
   // Waitlist counts removed — main site uses founding partner count instead
   const rawSpotsRemaining = foundingData?.spotsRemaining ?? 94;
   const spotsRemaining = rawSpotsRemaining;
-  const spotsUsed = 100 - spotsRemaining;
-  const spotsPercent = Math.round((spotsUsed / 100) * 100);
+  const TOTAL_NETWORK = 2125; // Charter(25) + Founding(100) + L3(400) + L4(1600)
+  const spotsUsed = TOTAL_NETWORK - (spotsRemaining || 2125);
+  const spotsPercent = Math.round((spotsUsed / TOTAL_NETWORK) * 100);
 
   return (
     <div className="min-h-screen bg-white">
@@ -1128,7 +1129,7 @@ export default function Home() {
         <div className="relative z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-xs font-semibold text-[#0A1628]" style={{ backgroundColor: "#F5E642" }}>
           <span className="animate-pulse w-2 h-2 rounded-full bg-[#0A1628] shrink-0" />
           <span>
-            DFW Beta — Only <strong>100 Founding Partner spots</strong> available network-wide.{" "}
+            DFW Beta — Founding Network open. <strong>Charter tier: 25 spots</strong> · Founding: 100 · 2,125 total.{" "}
             {spotsRemaining > 0 ? (
               <span className="underline underline-offset-2 cursor-pointer" onClick={() => document.getElementById('guarantee')?.scrollIntoView({ behavior: 'smooth' })}>
                 {spotsRemaining} spots remaining →
@@ -1336,7 +1337,7 @@ export default function Home() {
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Guarantee</div>
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-3 italic">DFW launch — Only 100 Founding Partner spots available. Lock in your rate before we open to the public.</p>
+              <p className="text-xs text-slate-500 mt-3 italic">DFW launch — 4-tier Founding Network: Charter(25) · Founding(100) · Level 3(400) · Level 4(1,600). 2,125 total. Lock in your rate before we open to the public.</p>
             </FadeIn>
           </div>
         </div>

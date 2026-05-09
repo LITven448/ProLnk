@@ -86,3 +86,38 @@ export async function runJobCompleteAgents(jobData: {
 
   console.log('[AgentOrchestrator] Job-complete agents finished for job:', jobId);
 }
+
+/**
+ * Weekly digest — summary of platform activity
+ * Run once per week (Sunday midnight)
+ */
+export async function runWeeklyDigest(): Promise<void> {
+  console.log("[AgentOrchestrator] Running weekly digest...");
+  try {
+    const { automations } = await import("../webhooks/n8nAutomation");
+    const { getPool } = await import("../db");
+    const pool = await getPool();
+    
+    let totalSignups = 0;
+    let newReferrals = 0;
+    
+    if (pool) {
+      const [rows]: any = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist").catch(() => [[{cnt: 0}]]);
+      totalSignups = Number((rows as any[])[0]?.cnt || 0);
+      const [refRows]: any = await pool.query(
+        "SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt >= DATE_SUB(NOW(), INTERVAL 7 DAY) AND referredBy IS NOT NULL"
+      ).catch(() => [[{cnt: 0}]]);
+      newReferrals = Number((refRows as any[])[0]?.cnt || 0);
+    }
+    
+    await automations.weeklyDigest({ 
+      week: new Date().toISOString().slice(0, 10),
+      totalSignups,
+      newReferrals,
+    });
+    
+    console.log(`[AgentOrchestrator] Weekly digest: ${totalSignups} total, ${newReferrals} new referrals this week`);
+  } catch (e) {
+    console.error("[AgentOrchestrator] Weekly digest failed:", e);
+  }
+}

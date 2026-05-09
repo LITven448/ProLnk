@@ -43,81 +43,54 @@ export async function runMorningAgentCycle(): Promise<void> {
 }
 
 export async function runJobCompleteAgents(jobData: {
-  jobId: string;
-  completingProEmail: string;
-  jobValue: number;
-  platformFeeRate: number;
-  propertyAddress: string;
+  jobId?: string;
+  completingProEmail?: string;
+  proEmail?: string;
+  jobValue?: number;
+  platformFeeRate?: number;
+  propertyAddress?: string;
   photoUrls?: string[];
 }): Promise<void> {
-  const { jobId, completingProEmail, jobValue, platformFeeRate, propertyAddress, photoUrls = [] } = jobData;
-  console.log('[AgentOrchestrator] Running job-complete agents for job:', jobId);
+  const proEmail = jobData.completingProEmail ?? jobData.proEmail;
+  const { jobId, jobValue, platformFeeRate, propertyAddress, photoUrls = [] } = jobData;
+  console.log('[AgentOrchestrator] Running job-complete agents for:', jobId);
 
-  const [distribution, origination] = await Promise.allSettled([
-    runCommissionDistributionAgent({ jobId, completingProEmail, jobValue, platformFeeRate, propertyAddress }),
-    runOriginationLockAgent({ proEmail: completingProEmail, propertyAddress, photos: photoUrls }),
-  ]);
+  const tasks: Promise<any>[] = [];
 
-  if (distribution.status === 'fulfilled') {
-    const r = distribution.value;
-    console.log('[AgentOrchestrator] Commission distributed — fee:', r.platformFee, '| network payouts:', r.networkPayouts.length, '| ProLnk retained:', r.prolnkRetained);
-  } else {
-    console.log('[AgentOrchestrator] Commission distribution failed:', distribution.reason);
+  if (proEmail && propertyAddress && jobValue && jobId && platformFeeRate) {
+    tasks.push(
+      runCommissionDistributionAgent({ jobId, completingProEmail: proEmail, jobValue, platformFeeRate, propertyAddress })
+        .then((r) => console.log('[AgentOrchestrator] Commission distributed — fee:', r.platformFee, '| network payouts:', r.networkPayouts.length, '| ProLnk retained:', r.prolnkRetained))
+        .catch((err) => console.log('[AgentOrchestrator] Commission distribution failed:', err))
+    );
   }
 
-  if (origination.status === 'fulfilled') {
-    const r = origination.value;
-    if (r.isNewClaim) {
-      console.log('[AgentOrchestrator] Origination lock claimed for:', completingProEmail, 'at:', propertyAddress);
-    } else if (!r.locked) {
-      console.log('[AgentOrchestrator] Origination already exists:', r.existingOriginatorEmail ?? 'unknown');
-    }
-  } else {
-    console.log('[AgentOrchestrator] Origination lock failed:', origination.reason);
+  if (proEmail && propertyAddress) {
+    tasks.push(
+      runOriginationLockAgent({ proEmail, propertyAddress, photos: photoUrls })
+        .then((r) => {
+          if (r.isNewClaim) {
+            console.log('[AgentOrchestrator] Origination lock claimed for:', proEmail, 'at:', propertyAddress);
+          } else if (!r.locked) {
+            console.log('[AgentOrchestrator] Origination already exists:', r.existingOriginatorEmail ?? 'unknown');
+          }
+        })
+        .catch((err) => console.log('[AgentOrchestrator] Origination lock failed:', err))
+    );
   }
 
-  if (photoUrls.length) {
+  const results = await Promise.allSettled(tasks);
+  results.forEach((r, i) => {
+    if (r.status === 'rejected') console.error(`[AgentOrchestrator] Task ${i} failed:`, r.reason);
+  });
+
+  if (proEmail && propertyAddress && photoUrls.length && jobId) {
     for (const photoUrl of photoUrls) {
-      await runPhotoAttributionAgent({ photoUrl, uploaderEmail: completingProEmail, propertyAddress, jobId }).catch((err) => {
+      await runPhotoAttributionAgent({ photoUrl, uploaderEmail: proEmail, propertyAddress, jobId }).catch((err) => {
         console.log('[AgentOrchestrator] Photo attribution error (non-fatal):', err);
       });
     }
   }
 
-  console.log('[AgentOrchestrator] Job-complete agents finished for job:', jobId);
-}
-
-/**
- * Weekly digest — summary of platform activity
- * Run once per week (Sunday midnight)
- */
-export async function runWeeklyDigest(): Promise<void> {
-  console.log("[AgentOrchestrator] Running weekly digest...");
-  try {
-    const { automations } = await import("../webhooks/n8nAutomation");
-    const { getPool } = await import("../db");
-    const pool = await getPool();
-    
-    let totalSignups = 0;
-    let newReferrals = 0;
-    
-    if (pool) {
-      const [rows]: any = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist").catch(() => [[{cnt: 0}]]);
-      totalSignups = Number((rows as any[])[0]?.cnt || 0);
-      const [refRows]: any = await pool.query(
-        "SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt >= DATE_SUB(NOW(), INTERVAL 7 DAY) AND referredBy IS NOT NULL"
-      ).catch(() => [[{cnt: 0}]]);
-      newReferrals = Number((refRows as any[])[0]?.cnt || 0);
-    }
-    
-    await automations.weeklyDigest({ 
-      week: new Date().toISOString().slice(0, 10),
-      totalSignups,
-      newReferrals,
-    });
-    
-    console.log(`[AgentOrchestrator] Weekly digest: ${totalSignups} total, ${newReferrals} new referrals this week`);
-  } catch (e) {
-    console.error("[AgentOrchestrator] Weekly digest failed:", e);
-  }
+  console.log('[AgentOrchestrator] Job-complete agents finished for:', jobId);
 }

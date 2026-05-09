@@ -55,6 +55,7 @@ import { photoPipelineRouter } from "./routers/photo-pipeline";
 import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
+import { distributeJobCommissions, distributeSubscriptionCommissions, getRecruitingChain, previewJobCommissions } from "./agents/commissionCascadeEngine";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { sdk } from "./_core/sdk";
@@ -5116,6 +5117,37 @@ Return a JSON object with:
         }
         logAdminAction(ctx.user.id, `bulk_${input.action}`, "partners", 0, { partnerIds: input.partnerIds, count: affected });
         return { success: true, affected };
+      }),
+  }),
+
+  commissionCascade: router({
+    previewJob: publicProcedure
+      .input(z.object({
+        jobValue: z.number().positive(),
+        platformFeeRate: z.number().min(0.06).max(0.15),
+        completingProId: z.number().int().positive(),
+        propertyAddress: z.string().min(1),
+      }))
+      .query(async ({ input }) => {
+        return previewJobCommissions(input);
+      }),
+
+    distributeJob: adminProcedure
+      .input(z.object({
+        jobId: z.string().min(1),
+        completingProId: z.number().int().positive(),
+        propertyAddress: z.string().min(1),
+        jobValue: z.number().positive(),
+        platformFeeRate: z.number().min(0.06).max(0.15),
+      }))
+      .mutation(async ({ input }) => {
+        return distributeJobCommissions(input);
+      }),
+
+    getChain: protectedProcedure
+      .input(z.object({ partnerId: z.number().int().positive() }))
+      .query(async ({ input }) => {
+        return getRecruitingChain(input.partnerId);
       }),
   }),
 });

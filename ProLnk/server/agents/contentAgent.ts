@@ -1,17 +1,19 @@
-/**
- * Content Agent
- *
- * Generates marketing content for partners:
- * - Bio/profile descriptions (from their trade + years experience)
- * - Service descriptions (for each trade they offer)
- * - Review response templates (professional responses to reviews)
- * - Social media posts (job completion highlights)
- *
- * Partners can request content generation from their Profile settings.
- */
+import { VLM_MODELS } from "../_core/llm";
 
-import { invokeLLM } from "../_core/llm";
-import { queryKnowledge } from "../knowledge";
+async function callOpenAI(prompt: string, systemPrompt: string): Promise<string> {
+  if (!process.env.OPENAI_API_KEY) return "Content generation requires OPENAI_API_KEY.";
+  const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: { "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      messages: [{ role: "system", content: systemPrompt }, { role: "user", content: prompt }],
+      max_tokens: 500,
+    }),
+  });
+  const data = await resp.json() as any;
+  return data.choices?.[0]?.message?.content || "Unable to generate content.";
+}
 
 export async function generatePartnerBio(opts: {
   businessName: string;
@@ -21,59 +23,28 @@ export async function generatePartnerBio(opts: {
   specialties?: string[];
   tone?: "professional" | "friendly" | "authoritative";
 }): Promise<string> {
-  const tradeKnowledge = await queryKnowledge(`${opts.businessType} trade knowledge Texas`);
-
-  const response = await invokeLLM({
-    model: "claude-sonnet-4-5-20251022",
-    provider: "anthropic" as const,
-    thinking: false,
-    maxTokens: 512,
-    messages: [
-      {
-        role: "system",
-        content: `You write professional partner bios for ProLnk, a home service network. Write in a ${opts.tone ?? "professional"} tone. Keep it under 150 words. Focus on trust, experience, and local expertise.`,
-      },
-      {
-        role: "user",
-        content: `Write a compelling business bio for:
+  const systemPrompt = `You write professional partner bios for ProLnk, a home service network. Write in a ${opts.tone ?? "professional"} tone. Keep it under 150 words. Focus on trust, experience, and local expertise.`;
+  const prompt = `Write a compelling business bio for:
 Business: ${opts.businessName}
 Trade: ${opts.businessType}
 Years in business: ${opts.yearsInBusiness}
 Service area: ${opts.serviceArea}
-Specialties: ${opts.specialties?.join(", ") ?? "General services"}
+Specialties: ${opts.specialties?.join(", ") ?? "General services"}`;
 
-Context: ${tradeKnowledge.slice(0, 200)}`,
-      },
-    ],
-  });
-
-  return response.choices?.[0]?.message?.content?.toString() ?? "";
+  return callOpenAI(prompt, systemPrompt);
 }
 
 export async function generateServiceDescription(opts: {
-  serviceName: string;
-  partnerName: string;
+  serviceName?: string;
+  businessType?: string;
+  partnerName?: string;
   serviceArea: string;
 }): Promise<string> {
-  const response = await invokeLLM({
-    model: VLM_MODELS.report.model,
-    provider: VLM_MODELS.report.provider as any,
-    thinking: false,
-    maxTokens: 256,
-    messages: [
-      {
-        role: "system",
-        content: "Write a short service description (60-80 words) for a home service professional on TrustyPro. Professional, specific, trust-building. No superlatives like 'best' or 'amazing'.",
-      },
-      {
-        role: "user",
-        content: `Service: ${opts.serviceName}
-Provider: ${opts.partnerName} (${opts.serviceArea})`,
-      },
-    ],
-  });
+  const systemPrompt = "Write a short service description (60-80 words) for a home service professional on TrustyPro. Professional, specific, trust-building. No superlatives like 'best' or 'amazing'.";
+  const prompt = `Service: ${opts.serviceName ?? opts.businessType ?? "Home Services"}
+Provider: ${opts.partnerName ?? "ProLnk Partner"} (${opts.serviceArea})`;
 
-  return response.choices?.[0]?.message?.content?.toString() ?? "";
+  return callOpenAI(prompt, systemPrompt);
 }
 
 export async function generateReviewResponse(opts: {
@@ -81,28 +52,14 @@ export async function generateReviewResponse(opts: {
   rating: number;
   businessName: string;
 }): Promise<string> {
-  const response = await invokeLLM({
-    model: "claude-sonnet-4-5-20251022",
-    provider: "anthropic" as const,
-    thinking: false,
-    maxTokens: 256,
-    messages: [
-      {
-        role: "system",
-        content: "You write professional responses to customer reviews for home service businesses. Keep responses under 80 words. Be genuine and specific to the review content.",
-      },
-      {
-        role: "user",
-        content: `Write a professional response to this ${opts.rating}-star review for ${opts.businessName}:
+  const systemPrompt = "You write professional responses to customer reviews for home service businesses. Keep responses under 80 words. Be genuine and specific to the review content.";
+  const prompt = `Write a professional response to this ${opts.rating}-star review for ${opts.businessName}:
 
 Review: "${opts.reviewText}"
 
-${opts.rating >= 4 ? "Thank them genuinely and reinforce the specific positive." : "Address the concern professionally and explain how you've improved."}`,
-      },
-    ],
-  });
+${opts.rating >= 4 ? "Thank them genuinely and reinforce the specific positive." : "Address the concern professionally and explain how you've improved."}`;
 
-  return response.choices?.[0]?.message?.content?.toString() ?? "";
+  return callOpenAI(prompt, systemPrompt);
 }
 
-import { VLM_MODELS } from "../_core/llm";
+export { VLM_MODELS };

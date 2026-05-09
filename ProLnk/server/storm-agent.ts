@@ -184,6 +184,8 @@ async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
 /**
  * Main storm scan — called by background scheduler and admin manual trigger
  */
+import { notifyStormAlert } from "./agents/notificationService";
+
 export async function runStormScan(options?: { state?: string; adminUserId?: number }): Promise<StormScanResult> {
   const result: StormScanResult = {
     eventsFound: 0,

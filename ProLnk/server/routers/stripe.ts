@@ -602,7 +602,6 @@ export async function handleStripeWebhook(req: Request, res: Response) {
           WHERE id = ${parseInt(partnerId)}
         `);
 
-        // In-app notification to partner
         await (db as any).execute(sql`
           INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
           VALUES (
@@ -616,6 +615,78 @@ export async function handleStripeWebhook(req: Request, res: Response) {
         console.log(`[Stripe Webhook] Partner ${partnerId} upgraded to ${targetTier}`);
       }
     }
+
+    // Job payment — trigger commission cascade
+    if (session.metadata?.type === "job_payment") {
+      const proEmail = session.metadata?.proEmail || session.customer_email || "";
+      const jobId = session.metadata?.jobId || session.id;
+      const propertyAddress = session.metadata?.propertyAddress || "";
+      const jobValue = (session.amount_total || 0) / 100;
+      const platformFeeRate = parseFloat(session.metadata?.platformFeeRate || "0.10");
+
+      const cascadeDb = await getDb();
+      let completingProId: number | null = null;
+      if (cascadeDb && proEmail) {
+        try {
+          const proRows = await (cascadeDb as any).execute(sql`
+            SELECT id FROM proWaitlist WHERE email = ${proEmail} LIMIT 1
+          `);
+          const proRow = (proRows?.[0]?.[0] ?? proRows?.[0]);
+          if (proRow?.id) completingProId = parseInt(proRow.id, 10);
+        } catch (e) {
+          console.warn("[Stripe Webhook] Could not resolve proId for commission cascade:", e);
+        }
+      }
+
+      if (completingProId) {
+        import("../agents/commissionCascadeEngine").then(({ distributeJobCommissions }) => {
+          distributeJobCommissions({
+            jobId,
+            completingProId: completingProId as number,
+            propertyAddress,
+            jobValue,
+            platformFeeRate,
+          }).catch((e: Error) => console.error("[Stripe webhook] Commission cascade failed:", e));
+        });
+      } else {
+        console.warn(`[Stripe Webhook] Job payment ${jobId}: no proId resolved for email "${proEmail}" — commission cascade skipped`);
+      }
+    }
+  }
+
+  // Subscription payment — trigger subscription commission cascade
+  if (event.type === "invoice.paid") {
+    const invoice = event.data.object as Stripe.Invoice;
+    if (invoice.metadata?.type === "founding_network_subscription") {
+      const subscriberEmail = invoice.customer_email || "";
+      const subscriptionAmount = (invoice.amount_paid || 0) / 100;
+
+      const invoiceDb = await getDb();
+      let subscribingPartnerId: number | null = null;
+      if (invoiceDb && subscriberEmail) {
+        try {
+          const subRows = await (invoiceDb as any).execute(sql`
+            SELECT id FROM proWaitlist WHERE email = ${subscriberEmail} LIMIT 1
+          `);
+          const subRow = (subRows?.[0]?.[0] ?? subRows?.[0]);
+          if (subRow?.id) subscribingPartnerId = parseInt(subRow.id, 10);
+        } catch (e) {
+          console.warn("[Stripe Webhook] Could not resolve partnerId for subscription commission:", e);
+        }
+      }
+
+      if (subscribingPartnerId) {
+        import("../agents/commissionCascadeEngine").then(({ distributeSubscriptionCommissions }) => {
+          distributeSubscriptionCommissions({
+            subscribingPartnerId: subscribingPartnerId as number,
+            subscriptionAmount,
+          }).catch((e: Error) => console.error("[Stripe webhook] Subscription commission failed:", e));
+        });
+      } else {
+        console.warn(`[Stripe Webhook] invoice.paid: no partnerId resolved for "${subscriberEmail}" — subscription cascade skipped`);
+      }
+    }
+    return res.json({ received: true });
   }
 
   res.json({ received: true });

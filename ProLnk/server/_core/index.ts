@@ -548,8 +548,10 @@ async function startServer() {
     console.log(`Server running on http://localhost:${port}/`);
   });
 
-  // Schedule daily morning agent cycle (runs at 6am server time)
+  // Schedule daily morning agent cycle + weekly digest
   const TWENTY_FOUR_HOURS = safeTimeout(24 * 60 * 60 * 1000);
+  const SEVEN_DAYS = safeTimeout(7 * 24 * 60 * 60 * 1000);
+
   const runScheduledCycle = async () => {
     try {
       console.log("[Scheduler] Running morning agent cycle...");
@@ -561,8 +563,21 @@ async function startServer() {
     }
     setTimeout(runScheduledCycle, TWENTY_FOUR_HOURS);
   };
-  // Start first cycle after 1 hour delay (let server warm up)
+
+  const runWeeklySchedule = async () => {
+    try {
+      console.log("[Scheduler] Running weekly digest...");
+      const { runWeeklyDigest } = await import("../agents/agentOrchestrator");
+      await runWeeklyDigest();
+    } catch (e) {
+      console.error("[Scheduler] Weekly digest failed:", e);
+    }
+    setTimeout(runWeeklySchedule, SEVEN_DAYS);
+  };
+
+  // Start daily cycle after 1 hour (server warmup), weekly after 24h
   setTimeout(runScheduledCycle, safeTimeout(60 * 60 * 1000));
+  setTimeout(runWeeklySchedule, safeTimeout(24 * 60 * 60 * 1000));
 }
 
 startServer().catch(console.error);

@@ -237,6 +237,36 @@ async function startServer() {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
+  // Agent runner endpoint — triggers scheduled agent cycles
+  app.post("/api/agents/run-morning-cycle", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const { runMorningAgentCycle } = await import("../agents/agentOrchestrator");
+      await runMorningAgentCycle();
+      return res.json({ success: true, ran: "morning-cycle", timestamp: new Date().toISOString() });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
+  // Trigger job-complete agents (called by Stripe webhook or manual admin trigger)
+  app.post("/api/agents/job-complete", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const { runJobCompleteAgents } = await import("../agents/agentOrchestrator");
+      await runJobCompleteAgents(req.body);
+      return res.json({ success: true, ran: "job-complete", timestamp: new Date().toISOString() });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
 
   // Migrate: add referral columns to existing proWaitlist table
   app.get("/api/add-referral-columns", async (req, res) => {
@@ -503,6 +533,22 @@ async function startServer() {
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
+
+  // Schedule daily morning agent cycle (runs at 6am server time)
+  const TWENTY_FOUR_HOURS = safeTimeout(24 * 60 * 60 * 1000);
+  const runScheduledCycle = async () => {
+    try {
+      console.log("[Scheduler] Running morning agent cycle...");
+      const { runMorningAgentCycle } = await import("../agents/agentOrchestrator");
+      await runMorningAgentCycle();
+      console.log("[Scheduler] Morning cycle complete.");
+    } catch (e) {
+      console.error("[Scheduler] Morning cycle failed:", e);
+    }
+    setTimeout(runScheduledCycle, TWENTY_FOUR_HOURS);
+  };
+  // Start first cycle after 1 hour delay (let server warm up)
+  setTimeout(runScheduledCycle, safeTimeout(60 * 60 * 1000));
 }
 
 startServer().catch(console.error);

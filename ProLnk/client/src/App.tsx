@@ -20,6 +20,8 @@ import Demo from "@/pages/Demo";
 import Apply from "./pages/Apply";
 import ApplicationStatus from "./pages/ApplicationStatus";
 import SetPassword from "./pages/SetPassword";
+import PartnerLogin from "./pages/PartnerLogin";
+import PartnerForgotPassword from "./pages/PartnerForgotPassword";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import InboundLeads from "./pages/InboundLeads";
 import MyReferrals from "./pages/MyReferrals";
@@ -492,6 +494,8 @@ function Router() {
       <Route path="/partners" component={PartnerDirectory} />
       <Route path="/pro/:id" component={PartnerSpotlight} />
       <Route path="/login" component={LoginRedirect} />
+      <Route path="/partner-login" component={PartnerLogin} />
+      <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />

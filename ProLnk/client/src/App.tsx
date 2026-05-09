@@ -325,6 +325,7 @@ import Admin360Members from "@/pages/admin/Admin360Members";
 import AgentPortal from "@/pages/AgentPortal";
 import ResourceCenter from "@/pages/ResourceCenter";
 import BillingPortal from "@/pages/BillingPortal";
+import PartnerCheckout from "@/pages/PartnerCheckout";
 import ProLnkMedia from "@/pages/ProLnkMedia";
 const ProLnkMediaSite = lazy(() => import("@/pages/media/ProLnkMediaSite"));
 const MediaSiteLazy = () => <Suspense fallback={<div style={{background:"#050508",minHeight:"100vh"}} />}><ProLnkMediaSite /></Suspense>;
@@ -482,6 +483,7 @@ function Router() {
       <Route path="/application-status" component={ApplicationStatus} />
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
+      <Route path="/checkout" component={PartnerCheckout} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/join" component={HomeownerWaitlistForm} />
       <Route path="/waitlist/pro" component={ProWaitlist} />

@@ -5,6 +5,7 @@
  * - Webhook: checkout.session.completed  upgrade partner tier
  */
 import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 import { sql } from "drizzle-orm";
 import { processedStripeEvents } from "../../drizzle/schema";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
@@ -326,6 +327,39 @@ export const stripeRouter = router({
       connectedPartnerCount: parseInt(connectedPartnerCount),
     };
   }),
+
+  // --- Founding Network: public checkout for $149/mo charter partners -------
+  createFoundingNetworkCheckout: publicProcedure
+    .input(z.object({
+      email: z.string().email(),
+      partnerId: z.number().optional(),
+    }))
+    .mutation(async ({ input }) => {
+      if (!process.env.STRIPE_SECRET_KEY) {
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Stripe not configured" });
+      }
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        mode: "subscription",
+        customer_email: input.email,
+        line_items: [{
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: "ProLnk Founding Network — Charter Member",
+              description: "72% commission keep rate · 4-level network depth · 90-day free trial · $149/mo locked for life",
+            },
+            unit_amount: 14900,
+            recurring: { interval: "month", trial_period_days: 90 },
+          },
+          quantity: 1,
+        }],
+        success_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard?checkout=success`,
+        cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout?cancelled=true`,
+        metadata: { partnerId: String(input.partnerId || ""), type: "founding_network" },
+      });
+      return { url: session.url, sessionId: session.id };
+    }),
 
   // --- Billing Portal: partner manages their subscription -------------------
   createBillingPortalSession: protectedProcedure

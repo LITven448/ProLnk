@@ -4,6 +4,7 @@ import { publicProcedure, adminProcedure, router } from "../_core/trpc";
 import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation } from "../email";
+import { automations } from "../webhooks/n8nAutomation";
 import { notifyOwner } from "../_core/notification";
 import { createLogger } from "../_core/logger";
 import { analyticsTracker } from "../_core/analytics";
@@ -58,6 +59,10 @@ const TIER_RATES: Record<string, { label: string; ownJob: number; networkL1: num
   level4:   { label: "Level 4 Partner",  ownJob: FOUNDING_RATES.jobCommissionKeepRate, networkL1: FOUNDING_RATES.networkJob.l1 },
   waitlist: { label: "Waitlist",          ownJob: 0, networkL1: 0 },
 };
+
+void FOUNDING_RATES;
+void TIER_LABELS;
+void TIER_SPOTS_REMAINING;
 
 function generateReferralCode(length = 7): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -187,9 +192,13 @@ export const waitlistRouter = router({
           trade: input.trade,
           position,
           city: input.primaryCity,
+          tier,
+          referralCode,
         }).catch((err) => {
           console.error("[waitlist] Email send failed for Pro waitlist", { email: input.email, error: err?.message });
         });
+
+        automations.partnerWaitlistJoined({ email: input.email, tier, position, referralCode }).catch(() => {});
 
         notifyOwner({
           subject: `New ProLnk Pro Signup: ${input.firstName} ${input.lastName} (${input.trade})`,
@@ -357,6 +366,8 @@ export const waitlistRouter = router({
         }).catch((err) => {
           console.error("[waitlist] Email send failed for Homeowner waitlist", { email: input.email, error: err?.message });
         });
+
+        automations.homeownerWaitlistJoined({ email: input.email, city: input.city, serviceNeeded: input.serviceNeeded }).catch(() => {});
 
         notifyOwner({
           subject: `New TrustyPro Homeowner Signup: ${input.firstName} ${input.lastName}`,

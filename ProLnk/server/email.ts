@@ -479,33 +479,46 @@ export async function sendProWaitlistConfirmation(opts: {
   trade: string;
   position: number;
   city: string;
+  tier?: string;
+  referralCode?: string;
   referralLink?: string;
 }) {
-  const refLink = opts.referralLink ?? `${BASE_URL}/join?ref=${Buffer.from(opts.to).toString("base64").replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase()}`;
+  const tierLabel =
+    opts.tier === "charter" ? "Charter Member" :
+    opts.tier === "founding" ? "Founding Member" :
+    opts.tier === "level3" ? "Level 3 Partner" :
+    opts.tier === "level4" ? "Level 4 Partner" :
+    "Founding Network Member";
+  const refCode = opts.referralCode ?? Buffer.from(opts.to).toString("base64").replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
+  const refLink = opts.referralLink ?? `${BASE_URL}/apply?ref=${refCode}`;
+  const statusUrl = `${BASE_URL}/waitlist-status?ref=${refCode}`;
   return sendEmail({
     from: FROM_PROLNK,
     to: opts.to,
-    subject: `You're on the ProLnk Founding Partner Waitlist — Welcome, ${opts.firstName}!`,
+    subject: `You're on the ProLnk Founding Network waitlist — Position #${opts.position}`,
     html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
 <div style="background:linear-gradient(135deg,#0A1628,#1B4FD8);padding:40px 32px;text-align:center;">
   <div style="font-size:32px;font-weight:900;color:#fff;">ProLnk</div>
   <p style="color:rgba(255,255,255,0.75);margin:8px 0 0;font-size:14px;">Founding Partner Program</p>
 </div>
 <div style="padding:36px 32px;">
-  <h2 style="color:#0f172a;margin:0 0 8px;">You're in, ${opts.firstName}!</h2>
-  <p style="color:#475569;line-height:1.7;margin:0 0 24px;">Thanks for joining the ProLnk Founding Partner waitlist. You're among the first service professionals to get access to a referral network that works as hard as you do.</p>
+  <h2 style="color:#0f172a;margin:0 0 8px;">Welcome to ProLnk, ${opts.firstName}.</h2>
+  <p style="color:#475569;line-height:1.7;margin:0 0 24px;">You've secured your spot on the ProLnk Founding Network waitlist. You're among the first service professionals to lock in the charter rate.</p>
   <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:24px;margin:0 0 24px;text-align:center;">
     <p style="color:#1e40af;font-size:13px;font-weight:600;margin:0 0 4px;">YOUR WAITLIST POSITION</p>
     <p style="color:#1d4ed8;font-size:52px;font-weight:900;margin:0;line-height:1;">#${opts.position}</p>
-    <p style="color:#3b82f6;font-size:13px;margin:8px 0 0;">${opts.trade} — ${opts.city}</p>
+    <p style="color:#3b82f6;font-size:13px;margin:4px 0 0;">${tierLabel} &nbsp;·&nbsp; ${opts.trade} &nbsp;·&nbsp; ${opts.city}</p>
   </div>
   <div style="background:#0A1628;border-radius:12px;padding:24px;margin:0 0 24px;">
-    <p style="color:#F5E642;font-size:13px;font-weight:700;margin:0 0 8px;">YOUR PERSONAL REFERRAL LINK</p>
-    <p style="color:rgba(255,255,255,0.7);font-size:13px;margin:0 0 16px;">Share this with other contractors. Every pro you bring in counts toward your founding tier and future network income.</p>
+    <p style="color:#F5E642;font-size:13px;font-weight:700;margin:0 0 4px;">YOUR REFERRAL CODE: ${refCode}</p>
+    <p style="color:rgba(255,255,255,0.7);font-size:13px;margin:0 0 16px;">Share this link with other contractors to move up the list and build your 4-level network income from day one.</p>
     <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;margin:0 0 16px;word-break:break-all;">
       <p style="color:#fff;font-size:13px;font-family:monospace;margin:0;">${refLink}</p>
     </div>
     <a href="${refLink}" style="background:#F5E642;color:#0A1628;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;font-size:14px;">Copy &amp; Share Your Link</a>
+  </div>
+  <div style="text-align:center;margin:0 0 24px;">
+    <a href="${statusUrl}" style="background:#0A1628;color:#F5E642;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;font-size:15px;border:2px solid #F5E642;">View Your Waitlist Dashboard →</a>
   </div>
   <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:20px;margin:0 0 24px;">
     <p style="color:#1e40af;font-size:13px;font-weight:700;margin:0 0 8px;">NEXT STEP: PROTECT YOUR OWN HOME</p>
@@ -514,7 +527,7 @@ export async function sendProWaitlistConfirmation(opts: {
   </div>
   <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0 0 24px;">We're launching in DFW first. You'll get a personal email when your market opens with a direct link to activate your account at the founding partner rate.</p>
 </div>
-<div style="background:#F1F5F9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 ProLnk — DFW, Texas</p></div>
+<div style="background:#F1F5F9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 ProLnk — DFW, Texas · Patent Pending</p></div>
 </div>`,
   });
 }

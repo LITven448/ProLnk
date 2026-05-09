@@ -237,6 +237,21 @@ async function startServer() {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
+  // Trigger weekly digest manually
+  app.post("/api/agents/run-weekly-digest", async (req, res) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    try {
+      const { runWeeklyDigest } = await import("../agents/agentOrchestrator");
+      await runWeeklyDigest();
+      return res.json({ success: true, ran: "weekly-digest", timestamp: new Date().toISOString() });
+    } catch (e: any) {
+      return res.status(500).json({ error: e.message });
+    }
+  });
+
   // Agent runner endpoint — triggers scheduled agent cycles
   app.post("/api/agents/run-morning-cycle", async (req, res) => {
     const secret = process.env.JWT_SECRET;

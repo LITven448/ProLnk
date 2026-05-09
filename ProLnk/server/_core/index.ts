@@ -312,6 +312,20 @@ async function startServer() {
       if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
       const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false }, connectionTimeout: 15000 });
       const createStatements = [
+        `CREATE TABLE IF NOT EXISTS \`home_documentation\` (
+          \`id\` bigint NOT NULL,
+          \`pro_id\` int NOT NULL,
+          \`pro_email\` varchar(320) NOT NULL,
+          \`property_address\` varchar(500) NOT NULL,
+          \`normalized_address\` varchar(500) NOT NULL,
+          \`address_hash\` varchar(64) NOT NULL,
+          \`photos\` json,
+          \`is_originator\` tinyint(1) NOT NULL DEFAULT 1,
+          \`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (\`id\`),
+          UNIQUE KEY \`home_doc_address_hash_unique\` (\`address_hash\`),
+          KEY \`home_doc_pro_email\` (\`pro_email\`)
+        )`,
         `CREATE TABLE IF NOT EXISTS \`homeWaitlist\` (
           \`id\` bigint NOT NULL,
           \`firstName\` varchar(100) NOT NULL,

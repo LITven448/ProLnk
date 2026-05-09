@@ -22,6 +22,7 @@ import ApplicationStatus from "./pages/ApplicationStatus";
 import SetPassword from "./pages/SetPassword";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
+import PartnerCheckout from "./pages/PartnerCheckout";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import InboundLeads from "./pages/InboundLeads";
 import MyReferrals from "./pages/MyReferrals";
@@ -496,6 +497,7 @@ function Router() {
       <Route path="/login" component={LoginRedirect} />
       <Route path="/partner-login" component={PartnerLogin} />
       <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
+      <Route path="/checkout" component={PartnerCheckout} />
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />

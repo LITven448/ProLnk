@@ -5191,6 +5191,36 @@ Return a JSON object with:
       .query(async ({ input }) => {
         return getRecruitingChain(input.partnerId);
       }),
+
+    // Email-based preview for partner dashboard UI
+    previewByEmail: publicProcedure
+      .input(z.object({
+        jobValue: z.number().positive().default(5000),
+        tradeType: z.string().default("HVAC"),
+      }))
+      .query(async ({ input }) => {
+        const feeRates: Record<string, number> = {
+          "Roofing": 0.12, "HVAC": 0.12, "Plumbing": 0.10, "Electrical": 0.10,
+          "Landscaping": 0.08, "Painting": 0.08, "Flooring": 0.08, "Other": 0.10,
+        };
+        const feeRate = feeRates[input.tradeType] || 0.10;
+        const platformFee = input.jobValue * feeRate;
+        return {
+          jobValue: input.jobValue,
+          tradeType: input.tradeType,
+          platformFee,
+          feeRate,
+          homeOriginationEarning: parseFloat((platformFee * 0.015).toFixed(2)),
+          l1NetworkJobEarning: parseFloat((platformFee * 0.07).toFixed(2)),
+          l2NetworkJobEarning: parseFloat((platformFee * 0.04).toFixed(2)),
+          l3NetworkJobEarning: parseFloat((platformFee * 0.02).toFixed(2)),
+          l4NetworkJobEarning: parseFloat((platformFee * 0.01).toFixed(2)),
+          l1SubscriptionEarning: parseFloat((149 * 0.12).toFixed(2)),
+          l2SubscriptionEarning: parseFloat((149 * 0.06).toFixed(2)),
+          maxEarningOnJob: parseFloat((platformFee * (0.015 + 0.07)).toFixed(2)),
+          platformFeeRangeNote: "Platform fee varies 6-15% by trade type",
+        };
+      }),
   }),
 });
 export type AppRouter = typeof appRouter;

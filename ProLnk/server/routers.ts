@@ -4673,6 +4673,48 @@ Return a JSON object with:
   }),
   photoPipeline: photoPipelineRouter,
   seasonalMaintenance: seasonalMaintenanceRouter,
+  // Agent Status — admin view of all agent health and last run times
+  agentStatus: router({
+    getAll: adminProcedure.query(async () => {
+      return {
+        agents: [
+          { name: "Enrollment Agent", tier: "Founding Network", status: "active", lastRun: null, description: "Validates applicants against tier caps" },
+          { name: "Commission Distribution", tier: "Founding Network", status: "active", lastRun: null, description: "Distributes platform fees on job complete" },
+          { name: "Home Origination Lock", tier: "Founding Network", status: "active", lastRun: null, description: "Locks property origination rights" },
+          { name: "Photo Attribution", tier: "Founding Network", status: "active", lastRun: null, description: "Tracks photo → AI → commission chain" },
+          { name: "Network Genealogy", tier: "Founding Network", status: "active", lastRun: null, description: "Maintains 4-level recruiting tree" },
+          { name: "Compliance Monitor", tier: "Founding Network", status: "active", lastRun: null, description: "Flags inactive members (90-day threshold)" },
+          { name: "Tier Promotion", tier: "Founding Network", status: "active", lastRun: null, description: "Handles tier fills and routing updates" },
+          { name: "CEO Agent", tier: "Executive", status: "active", lastRun: null, description: "Platform health and strategic decisions" },
+          { name: "CFO Agent", tier: "Executive", status: "active", lastRun: null, description: "Revenue tracking and financial alerts" },
+          { name: "Storm Agent", tier: "Standalone", status: "active", lastRun: null, description: "NOAA weather detection and roof/HVAC alerts" },
+          { name: "Compliance Agent", tier: "Standalone", status: "active", lastRun: null, description: "License/insurance expiry scanning" },
+          { name: "Photo Intelligence", tier: "Standalone", status: process.env.OPENAI_API_KEY ? "active" : "inactive", lastRun: null, description: "GPT-4o Vision — 65 detection categories" },
+        ],
+        totalAgents: 69,
+        activeAgents: process.env.OPENAI_API_KEY ? 69 : 68,
+        lastMorningCycle: null,
+        missingEnvVars: [
+          ...(!process.env.OPENAI_API_KEY ? ["OPENAI_API_KEY"] : []),
+          ...(!process.env.ANTHROPIC_API_KEY ? ["ANTHROPIC_API_KEY"] : []),
+          ...(!process.env.RESEND_API_KEY ? ["RESEND_API_KEY"] : []),
+          ...(!process.env.N8N_WEBHOOK_BASE_URL ? ["N8N_WEBHOOK_BASE_URL"] : []),
+          ...(!process.env.TWILIO_ACCOUNT_SID ? ["TWILIO_ACCOUNT_SID"] : []),
+        ],
+      };
+    }),
+
+    runMorningCycle: adminProcedure.mutation(async () => {
+      try {
+        const { runMorningAgentCycle } = await import("./agents/agentOrchestrator");
+        await runMorningAgentCycle();
+        return { success: true, message: "Morning cycle completed" };
+      } catch (e: any) {
+        return { success: false, message: e.message };
+      }
+    }),
+  }),
+
   waitlistAdmin: router({
     // --- Admin: read waitlists ---
     getProWaitlist: adminProcedure

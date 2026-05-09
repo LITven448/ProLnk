@@ -59,12 +59,14 @@ export const SECTION_TABS: Record<string, { label: string; href: string }[]> = {
 
   // ── ProLnk — partner network ─────────────────────────────────────────────
   prolnk: [
-    { label: "Waitlist",       href: "/admin/waitlist?view=pros" },
-    { label: "All Partners",   href: "/admin/partners" },
-    { label: "Applications",   href: "/admin/pipeline" },
-    { label: "Leaderboard",    href: "/admin/leaderboard" },
-    { label: "Commissions",    href: "/admin/rates" },
-    { label: "Network Income", href: "/admin/prolnk/financial" },
+    { label: "Waitlist",           href: "/admin/waitlist?view=pros" },
+    { label: "All Partners",       href: "/admin/partners" },
+    { label: "Applications",       href: "/admin/pipeline" },
+    { label: "Leaderboard",        href: "/admin/leaderboard" },
+    { label: "Referral Tree",      href: "/admin/referral-tree" },
+    { label: "Commissions",        href: "/admin/rates" },
+    { label: "Network Income",     href: "/admin/prolnk/financial" },
+    { label: "Network Analytics",  href: "/admin/network-analytics" },
   ],
 
   // ── TrustyPro — homeowner platform ───────────────────────────────────────
@@ -256,7 +258,7 @@ function getActiveSection(path: string, search?: string): string {
     path.startsWith("/admin/deal-composer") || path.startsWith("/admin/referral-pipeline") ||
     path.startsWith("/admin/revenue-forecast") || path.startsWith("/admin/market") ||
     path.startsWith("/admin/compliance") || path.startsWith("/admin/featured-advertisers") ||
-    path.startsWith("/admin/real-estate-agents")
+    path.startsWith("/admin/real-estate-agents") || path.startsWith("/admin/referral-tree")
   ) return "prolnk";
 
   // TrustyPro — homeowner platform, scans, storm, property data

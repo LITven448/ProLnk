@@ -4647,28 +4647,46 @@ Return a JSON object with:
     scanPhoto: protectedProcedure
       .input(z.object({
         photoUrl: z.string().url(),
-        jobId: z.number().optional(),
         propertyAddress: z.string().optional(),
       }))
-      .mutation(async ({ input }) => {
-        return await analyzeJobPhoto(input.photoUrl);
+      .mutation(async ({ input, ctx }) => {
+        const result = await analyzeJobPhoto(input.photoUrl);
+        if (input.propertyAddress && ctx.user?.email) {
+          const { runOriginationLockAgent } = await import("./agents/foundingNetworkAgents");
+          await runOriginationLockAgent({
+            proEmail: ctx.user.email,
+            propertyAddress: input.propertyAddress,
+            photos: [input.photoUrl],
+          }).catch(() => null);
+        }
+        return result;
       }),
-    scanMultiplePhotos: protectedProcedure
+    scanMultiple: protectedProcedure
       .input(z.object({
         photoUrls: z.array(z.string().url()).max(10),
+        propertyAddress: z.string().optional(),
       }))
-      .mutation(async ({ input }) => {
-        const results = await Promise.all(
-          input.photoUrls.map(url => analyzeJobPhoto(url).catch(e => ({ error: e.message, detections: [] })))
-        );
-        const allDetections = results.flatMap((r: any) => r.detections ?? []);
+      .mutation(async ({ input, ctx }) => {
+        const results = await Promise.all(input.photoUrls.map(url => analyzeJobPhoto(url).catch(() => null)));
+        const validResults = results.filter(Boolean) as Awaited<ReturnType<typeof analyzeJobPhoto>>[];
+        const allDetections = validResults.flatMap(r => r.detections);
+        const totalValue = validResults.reduce((sum, r) => {
+          const match = r.estimatedTotalValue?.match(/\$([\d,]+)/);
+          return sum + (match ? parseInt(match[1].replace(/,/g, "")) : 0);
+        }, 0);
+        if (input.propertyAddress && ctx.user?.email) {
+          const { runOriginationLockAgent } = await import("./agents/foundingNetworkAgents");
+          await runOriginationLockAgent({
+            proEmail: ctx.user.email,
+            propertyAddress: input.propertyAddress,
+            photos: input.photoUrls,
+          }).catch(() => null);
+        }
         return {
-          perPhoto: results,
-          combined: {
-            detections: allDetections,
-            totalOpportunities: allDetections.length,
-            highPriorityCount: allDetections.filter((d: any) => d.severity === 'high' || d.severity === 'urgent').length,
-          }
+          photoCount: input.photoUrls.length,
+          totalDetections: allDetections.length,
+          detections: allDetections,
+          estimatedTotalValue: totalValue > 0 ? `$${totalValue.toLocaleString()}+` : "$0",
         };
       }),
   }),
@@ -4726,10 +4744,10 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         } else {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         }
         return rows;
@@ -4743,10 +4761,10 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         } else {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         }
         return rows;
@@ -5191,35 +5209,30 @@ Return a JSON object with:
       .query(async ({ input }) => {
         return getRecruitingChain(input.partnerId);
       }),
+  }),
 
-    // Email-based preview for partner dashboard UI
-    previewByEmail: publicProcedure
+  contentGeneration: router({
+    generateBio: protectedProcedure
       .input(z.object({
-        jobValue: z.number().positive().default(5000),
-        tradeType: z.string().default("HVAC"),
+        businessName: z.string(),
+        businessType: z.string(),
+        yearsInBusiness: z.number().default(1),
+        serviceArea: z.string().default("DFW"),
+        tone: z.enum(["professional", "friendly", "authoritative"]).default("professional"),
       }))
-      .query(async ({ input }) => {
-        const feeRates: Record<string, number> = {
-          "Roofing": 0.12, "HVAC": 0.12, "Plumbing": 0.10, "Electrical": 0.10,
-          "Landscaping": 0.08, "Painting": 0.08, "Flooring": 0.08, "Other": 0.10,
-        };
-        const feeRate = feeRates[input.tradeType] || 0.10;
-        const platformFee = input.jobValue * feeRate;
-        return {
-          jobValue: input.jobValue,
-          tradeType: input.tradeType,
-          platformFee,
-          feeRate,
-          homeOriginationEarning: parseFloat((platformFee * 0.015).toFixed(2)),
-          l1NetworkJobEarning: parseFloat((platformFee * 0.07).toFixed(2)),
-          l2NetworkJobEarning: parseFloat((platformFee * 0.04).toFixed(2)),
-          l3NetworkJobEarning: parseFloat((platformFee * 0.02).toFixed(2)),
-          l4NetworkJobEarning: parseFloat((platformFee * 0.01).toFixed(2)),
-          l1SubscriptionEarning: parseFloat((149 * 0.12).toFixed(2)),
-          l2SubscriptionEarning: parseFloat((149 * 0.06).toFixed(2)),
-          maxEarningOnJob: parseFloat((platformFee * (0.015 + 0.07)).toFixed(2)),
-          platformFeeRangeNote: "Platform fee varies 6-15% by trade type",
-        };
+      .mutation(async ({ input }) => {
+        const { generatePartnerBio } = await import("./agents/contentAgent");
+        return { bio: await generatePartnerBio(input) };
+      }),
+
+    generateServiceDescription: protectedProcedure
+      .input(z.object({
+        trade: z.string(),
+        serviceArea: z.string().default("DFW"),
+      }))
+      .mutation(async ({ input }) => {
+        const { generateServiceDescription } = await import("./agents/contentAgent");
+        return { description: await generateServiceDescription({ businessType: input.trade, serviceArea: input.serviceArea }) };
       }),
   }),
 });

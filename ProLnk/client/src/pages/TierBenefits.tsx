@@ -4,7 +4,7 @@ import { Link } from "wouter";
 
 const TIERS = [
   {
-    name: "Charter Partner",
+    name: "Charter Member",
     badge: "Charter",
     positions: "Position 1–100",
     shorthand: "Top 100 — or 5+ referrals",
@@ -23,7 +23,7 @@ const TIERS = [
       "2.0% of every job you close",
       "4-level network override (forever)",
       "First access to premium leads",
-      "Exclusive Charter Partner badge",
+      "Exclusive Charter Member badge",
       "Priority support queue",
       "Co-marketing opportunities",
       "Founding board input",
@@ -31,7 +31,7 @@ const TIERS = [
     highlight: true,
   },
   {
-    name: "Founding Partner",
+    name: "Founding Member",
     badge: "Founding",
     positions: "Position 101–500",
     shorthand: "3–4 referrals to qualify",
@@ -50,14 +50,14 @@ const TIERS = [
       "1.5% of every job you close",
       "3-level network override (forever)",
       "Early access to new markets",
-      "Founding Partner badge",
+      "Founding Member badge",
       "Standard support queue",
       "Monthly market reports",
     ],
     highlight: false,
   },
   {
-    name: "Growth Pro",
+    name: "Level 3 Partner",
     badge: "Growth",
     positions: "Position 501–1,000",
     shorthand: "1–2 referrals to qualify",
@@ -76,13 +76,13 @@ const TIERS = [
       "1.0% of every job you close",
       "2-level network override",
       "Standard lead access",
-      "Growth Pro badge",
+      "Level 3 Partner badge",
       "Community forum access",
     ],
     highlight: false,
   },
   {
-    name: "Standard Pro",
+    name: "Level 4 Partner",
     badge: "Standard",
     positions: "Position 1,001+",
     shorthand: "Open enrollment",
@@ -207,7 +207,7 @@ export default function TierBenefits() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-600 mt-3">Charter Partners unlock all 4 levels. Founding: 3 levels. Growth: 2 levels. Standard: none.</p>
+          <p className="text-xs text-gray-600 mt-3">Charter Members unlock all 4 levels. Founding: 3 levels. Growth: 2 levels. Standard: none.</p>
         </motion.div>
       </div>
 
@@ -371,7 +371,7 @@ export default function TierBenefits() {
           <Zap size={32} className="text-green-400 mx-auto mb-4" />
           <h2 className="text-2xl font-black text-white mb-3">Claim Your Charter Spot</h2>
           <p className="text-gray-400 mb-6">
-            Only 100 Charter Partner positions exist. Once they're gone, they're gone. Sign up now to lock in 2.0% commissions and 4 levels of network income — forever.
+            Only 100 Charter Member positions exist. Once they're gone, they're gone. Sign up now to lock in 2.0% commissions and 4 levels of network income — forever.
           </p>
           <Link
             href={applyUrl}

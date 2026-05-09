@@ -84,7 +84,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
     return (
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-green-400 font-medium">Charter Partner</span>
+          <span className="text-green-400 font-medium">Charter Member</span>
           <span className="text-gray-400">Position #{position} of 100</span>
         </div>
         <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
@@ -96,7 +96,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
             style={{ background: "linear-gradient(90deg, #22c55e, #16a34a)" }}
           />
         </div>
-        <p className="text-xs text-gray-500">You are a Charter Partner. Maximum tier achieved.</p>
+        <p className="text-xs text-gray-500">You are a Charter Member. Maximum tier achieved.</p>
       </div>
     );
   }
@@ -107,7 +107,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
     return (
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-blue-400 font-medium">Founding Partner</span>
+          <span className="text-blue-400 font-medium">Founding Member</span>
           <span className="text-gray-400">Position #{position}</span>
         </div>
         <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
@@ -120,7 +120,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
           />
         </div>
         <p className="text-xs text-gray-500">
-          Charter Partner spots are full. Refer 5+ pros to unlock Charter benefits.
+          Charter Member spots are full. Refer 5+ pros to unlock Charter benefits.
         </p>
       </div>
     );
@@ -130,7 +130,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
   return (
     <div className="space-y-2">
       <div className="flex justify-between text-sm">
-        <span className="text-amber-400 font-medium">Growth Pro → Founding Partner</span>
+        <span className="text-amber-400 font-medium">Level 3 Partner → Founding Member</span>
         <span className="text-gray-400">Position #{position}</span>
       </div>
       <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
@@ -143,7 +143,7 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
         />
       </div>
       <p className="text-xs text-gray-500">
-        {position - 500} spots from Founding Partner. Share your link to move up faster.
+        {position - 500} spots from Founding Member. Share your link to move up faster.
       </p>
     </div>
   );
@@ -479,7 +479,7 @@ export default function WaitlistStatus() {
         >
           <Zap size={28} className="text-green-400 mx-auto mb-3" />
           <h3 className="text-xl font-bold text-white mb-2">
-            {tier === "Charter" ? "You're a Charter Partner!" : `Share to reach Charter status`}
+            {tier === "Charter" ? "You're a Charter Member!" : `Share to reach Charter status`}
           </h3>
           <p className="text-gray-400 text-sm mb-4">
             {tier === "Charter"

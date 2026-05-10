@@ -735,20 +735,30 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the list!</h2>
-            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-3 inline-block">
+            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-3 w-full">
               <p className="text-[#0A1628] font-bold text-lg">Position: #{(join.data as any).position}</p>
               {(join.data as any).tierLabel && (
                 <p className="text-[#0A1628] font-semibold text-sm mt-1">
-                  🏆 {(join.data as any).tierLabel} — {((join.data as any).ownJobRate * 100).toFixed(1)}% commission rate
+                  {(join.data as any).tierLabel} — {(((join.data as any).ownJobRate ?? 0) * 100).toFixed(1)}% commission rate
+                </p>
+              )}
+              {(join.data as any).spotsRemaining && (join.data as any).spotsRemaining.charter > 0 && (
+                <p className="text-amber-700 text-xs mt-2 font-medium">
+                  Only {(join.data as any).spotsRemaining.charter} Charter Member spots remaining
+                </p>
+              )}
+              {(join.data as any).spotsRemaining && (join.data as any).spotsRemaining.charter === 0 && (join.data as any).spotsRemaining.founding > 0 && (
+                <p className="text-blue-700 text-xs mt-2 font-medium">
+                  {(join.data as any).spotsRemaining.founding} Founding Member spots remaining
                 </p>
               )}
               <p className="text-gray-600 text-xs mt-1">You're #{(join.data as any).position} in the ProLnk network.</p>
             </div>
             {(join.data as any).referralCode && (
-              <div className="mb-4">
+              <div className="mb-4 w-full">
                 <a
                   href={`/waitlist-status?ref=${(join.data as any).referralCode}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A1628] text-white rounded-lg text-sm font-semibold hover:bg-[#1a2a40] transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0A1628] text-white rounded-lg text-sm font-semibold hover:bg-[#1a2a40] transition-colors w-full justify-center"
                 >
                   View My Referral Dashboard →
                 </a>

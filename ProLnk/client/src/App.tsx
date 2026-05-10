@@ -29,6 +29,7 @@ import MyReferrals from "./pages/MyReferrals";
 import ProLnkApp from "./pages/ProLnkApp";
 import AdminDashboard from "./pages/AdminDashboard";
 import LogJob from "./pages/LogJob";
+import JobLog from "./pages/JobLog";
 import PartnerDirectory from "./pages/PartnerDirectory";
 import PartnerSpotlight from "./pages/PartnerSpotlight";
 import AdminCommissionRates from "./pages/AdminCommissionRates";
@@ -217,6 +218,7 @@ import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import TrustyProLogin from "./pages/trustypro/TrustyProLogin";
 import TrustyProWaitlist from "./pages/trustypro/TrustyProWaitlist";
 import PhotoScan from "./pages/trustypro/PhotoScan";
+import HomeHealthDashboard from "./pages/trustypro/HomeHealthDashboard";
 import TrustyProDirectory from "./pages/homeowner/TrustyProDirectory";
 import HomeownerDashboard from "./pages/homeowner/HomeownerDashboard";
 import HomeownerOffers from "./pages/homeowner/HomeownerOffers";
@@ -509,6 +511,7 @@ function Router() {
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
       <Route path="/job/new" component={LogJob} />
+      <Route path="/job-log" component={JobLog} />
       <Route path="/jobs" component={JobHistory} />
       <Route path="/dashboard/reviews" component={PartnerReviews} />
       <Route path="/dashboard/commissions" component={CommissionLedger} />
@@ -696,6 +699,7 @@ function Router() {
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
       <Route path="/trustypro/scan" component={PhotoScan} />
+      <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />

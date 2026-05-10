@@ -69,6 +69,7 @@ import NetworkFeed from "./pages/NetworkFeed";
 import TierProgress from "./pages/TierProgress";
 import ReferralLink from "./pages/ReferralLink";
 import ReferralHub from "./pages/dashboard/ReferralHub";
+import PartnerHome from "./pages/dashboard/PartnerHome";
 import ReferralFunnelTracker from "./pages/ReferralFunnelTracker";
 import TierUpgradeFlow from "./pages/TierUpgradeFlow";
 import Notifications from "./pages/Notifications";
@@ -83,6 +84,7 @@ import Leaderboard from "./pages/admin/Leaderboard";
 import LeadScoring from "./pages/admin/LeadScoring";
 import HeatMap from "./pages/admin/HeatMap";
 import Analytics from "./pages/admin/Analytics";
+import NetworkAnalytics from "./pages/admin/NetworkAnalytics";
 import OpportunityDetector from "./pages/admin/OpportunityDetector";
 import GrowthEngine from "./pages/admin/GrowthEngine";
 
@@ -206,6 +208,7 @@ import TrustyProComingSoon from "./pages/TrustyProComingSoon";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import WaitlistManager from "./pages/admin/WaitlistManager";
 import WaitlistIntelligence from "./pages/admin/WaitlistIntelligence";
+import ReferralTree from "./pages/admin/ReferralTree";
 import WaitlistProLanding from "./pages/WaitlistProLanding";
 import WaitlistHomeLanding from "./pages/WaitlistHomeLanding";
 
@@ -214,6 +217,7 @@ import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import TrustyProLogin from "./pages/trustypro/TrustyProLogin";
 import TrustyProWaitlist from "./pages/trustypro/TrustyProWaitlist";
 import PhotoScan from "./pages/trustypro/PhotoScan";
+import HomeHealthDashboard from "./pages/trustypro/HomeHealthDashboard";
 import TrustyProDirectory from "./pages/homeowner/TrustyProDirectory";
 import HomeownerDashboard from "./pages/homeowner/HomeownerDashboard";
 import HomeownerOffers from "./pages/homeowner/HomeownerOffers";
@@ -511,6 +515,7 @@ function Router() {
       <Route path="/dashboard/commissions" component={CommissionLedger} />
       <Route path="/onboarding" component={Onboarding} />
       <Route path="/job/photo" component={PhotoUpload} />
+      <Route path="/photo-upload" component={PhotoUpload} />
       <Route path="/dashboard/photo-guidelines" component={PhotoGuidelines} />
       <Route path="/dashboard/feed" component={NetworkFeed} />
       <Route path="/dashboard/tier" component={TierProgress} />
@@ -521,6 +526,7 @@ function Router() {
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />
+      <Route path="/dashboard/partner-home" component={PartnerHome} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
@@ -589,6 +595,7 @@ function Router() {
       <Route path="/admin/lead-scoring" component={LeadScoring} />
       <Route path="/admin/heatmap" component={HeatMap} />
       <Route path="/admin/analytics" component={Analytics} />
+      <Route path="/admin/network-analytics" component={NetworkAnalytics} />
       <Route path="/admin/detector" component={OpportunityDetector} />
       <Route path="/admin/growth" component={GrowthEngine} />
       <Route path="/admin/referral-pipeline" component={ReferralPipeline} />
@@ -690,6 +697,7 @@ function Router() {
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
       <Route path="/trustypro/scan" component={PhotoScan} />
+      <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />
@@ -735,6 +743,7 @@ function Router() {
       <Route path="/admin/compliance" component={StrikeManagement} />
       <Route path="/admin/waitlist" component={WaitlistManager} />
       <Route path="/admin/waitlist-intelligence" component={WaitlistIntelligence} />
+      <Route path="/admin/referral-tree" component={ReferralTree} />
       <Route path="/admin/homeowners" component={HomeownerCRM} />
       <Route path="/admin/customer-success" component={CustomerSuccess} />
       <Route path="/admin/tax-reports" component={TaxReports} />

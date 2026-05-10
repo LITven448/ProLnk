@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
-import { CheckCircle, Share2, Copy, ArrowLeft, Users, Star, Zap, Clock } from "lucide-react";
+import { CheckCircle, Share2, Copy, ArrowLeft, Users, Star, Zap, Clock, Camera, Shield, TrendingUp } from "lucide-react";
 import { toast } from "sonner";
 
 const ACCENT = "#00B5B8";
 const NAVY = "#1e3a5f";
+const BG = "#F7FFFE";
 
 function StatusBadge({ status }: { status: string }) {
   const map: Record<string, { label: string; color: string; bg: string }> = {
@@ -90,9 +91,9 @@ export default function TrustyProWaitlistStatus() {
   const isVIP = data && data.position <= 100;
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%)" }}>
+    <div className="min-h-screen" style={{ backgroundColor: BG }}>
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-4 py-3">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-teal-50 px-4 py-3">
         <div className="max-w-lg mx-auto flex items-center justify-between">
           <Link href="/trustypro">
             <TrustyProLogo className="h-7" />
@@ -123,7 +124,7 @@ export default function TrustyProWaitlistStatus() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="you@email.com"
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-300 mb-4"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-teal-300 mb-4"
               required
             />
             <button
@@ -276,6 +277,77 @@ export default function TrustyProWaitlistStatus() {
             </Link>
           </div>
         )}
+
+        {/* How TrustyPro Works */}
+        <div className="mt-8">
+          <div className="text-center mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: ACCENT }}>The TrustyPro Experience</p>
+            <h2 className="text-xl font-black text-gray-900">How It Works</h2>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                step: "1",
+                icon: Camera,
+                title: "Scan Your Home",
+                desc: "Upload photos of every room and major system. Our AI instantly builds your Home Health Score and surfaces hidden issues before they become expensive problems.",
+              },
+              {
+                step: "2",
+                icon: Shield,
+                title: "Get Verified Pros",
+                desc: "We match you with pre-screened, background-checked professionals in your area. See real reviews from real neighbors — no fake ratings, ever.",
+              },
+              {
+                step: "3",
+                icon: TrendingUp,
+                title: "Track Your Home's Health",
+                desc: "Your Home Health Vault stores every repair, upgrade, and inspection permanently. Share it with insurers for discounts or buyers when you sell.",
+              },
+            ].map(({ step, icon: Icon, title, desc }) => (
+              <div key={step} className="bg-white rounded-2xl border border-teal-50 p-5 flex items-start gap-4">
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-white text-sm font-black"
+                  style={{ backgroundColor: ACCENT }}
+                >
+                  {step}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Icon className="w-4 h-4" style={{ color: ACCENT }} />
+                    <p className="font-bold text-gray-900">{title}</p>
+                  </div>
+                  <p className="text-sm text-gray-500">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Refer a Homeowner CTA (always visible) */}
+        <div
+          className="mt-6 rounded-2xl p-5"
+          style={{ background: `linear-gradient(135deg, ${ACCENT}18 0%, #0891b218 100%)`, border: `1px solid ${ACCENT}30` }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <Users className="w-4 h-4" style={{ color: ACCENT }} />
+            <p className="font-bold text-gray-900 text-sm">Know a Neighbor Who Should Join?</p>
+          </div>
+          <p className="text-xs text-gray-500 mb-3">
+            Refer other homeowners and both of you move up the waitlist. Every referral earns you <strong>+10 priority points</strong>.
+          </p>
+          <Link href="/trustypro/waitlist">
+            <button
+              className="w-full py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: ACCENT }}
+            >
+              Share TrustyPro with a Neighbor
+            </button>
+          </Link>
+        </div>
+
+        <div className="h-8" />
       </div>
     </div>
   );

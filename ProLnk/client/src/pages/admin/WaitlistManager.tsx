@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
   Users, Home as HomeIcon, CheckCircle, XCircle, Clock, Mail,
-  Search, ChevronDown, ChevronUp, Zap, BarChart3, Send, Filter, Download
+  Search, ChevronDown, ChevronUp, Zap, BarChart3, Send, Filter, Download, Copy
 } from "lucide-react";
 
 type StatusFilter = "all" | "pending" | "approved" | "rejected" | "invited";
@@ -23,6 +23,22 @@ const STATUS_COLORS: Record<string, string> = {
   approved: "bg-green-100 text-green-800",
   rejected: "bg-red-100 text-red-800",
   invited: "bg-blue-100 text-blue-800",
+};
+
+const TIER_COLORS: Record<string, string> = {
+  charter:  "bg-yellow-50 text-yellow-700 border border-yellow-200",
+  founding: "bg-purple-50 text-purple-700 border border-purple-200",
+  level3:   "bg-blue-50 text-blue-700 border border-blue-200",
+  level4:   "bg-green-50 text-green-700 border border-green-200",
+  waitlist: "bg-gray-100 text-gray-500",
+};
+
+const TIER_LABELS: Record<string, string> = {
+  charter:  "Charter",
+  founding: "Founding",
+  level3:   "L3 Partner",
+  level4:   "L4 Partner",
+  waitlist: "Waitlist",
 };
 
 export default function WaitlistManager() {
@@ -248,11 +264,34 @@ export default function WaitlistManager() {
                           <span className="font-semibold text-sm text-gray-900">{pro.firstName} {pro.lastName}</span>
                           <span className="text-xs text-gray-500">{pro.businessName}</span>
                           <Badge className={`text-xs ${STATUS_COLORS[pro.status] || "bg-gray-100 text-gray-600"}`}>{pro.status}</Badge>
+                          {pro.tier && (
+                            <span className={`text-xs px-1.5 py-0.5 rounded font-semibold ${TIER_COLORS[pro.tier] ?? "bg-gray-100 text-gray-500"}`}>
+                              {TIER_LABELS[pro.tier] ?? pro.tier}
+                            </span>
+                          )}
+                          {pro.waitlistPosition && (
+                            <span className="text-xs text-gray-400">#{pro.waitlistPosition}</span>
+                          )}
                         </div>
                         <div className="text-xs text-gray-500 mt-0.5 flex flex-wrap gap-3">
                           <span>{pro.email}</span>
                           <span>{pro.primaryCity}, {pro.primaryState}</span>
                           <span>{Array.isArray(pro.trades) ? pro.trades.join(", ") : (typeof pro.trades === "string" ? JSON.parse(pro.trades).join(", ") : "")}</span>
+                          {pro.referralCode && (
+                            <span className="flex items-center gap-1 font-mono text-gray-600">
+                              {pro.referralCode}
+                              <button
+                                onClick={e => { e.stopPropagation(); navigator.clipboard.writeText(pro.referralCode); }}
+                                className="hover:text-gray-900 transition-colors"
+                                title="Copy referral code"
+                              >
+                                <Copy className="w-3 h-3" />
+                              </button>
+                            </span>
+                          )}
+                          {(pro.referralCount ?? 0) > 0 && (
+                            <span className="text-green-700 font-semibold">{pro.referralCount} referral{pro.referralCount !== 1 ? "s" : ""}</span>
+                          )}
                         </div>
                       </div>
                       <div className="text-xs text-gray-400 hidden sm:block">{new Date(pro.createdAt).toLocaleDateString()}</div>

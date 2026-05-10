@@ -29,6 +29,7 @@ import MyReferrals from "./pages/MyReferrals";
 import ProLnkApp from "./pages/ProLnkApp";
 import AdminDashboard from "./pages/AdminDashboard";
 import LogJob from "./pages/LogJob";
+import JobLog from "./pages/JobLog";
 import PartnerDirectory from "./pages/PartnerDirectory";
 import PartnerSpotlight from "./pages/PartnerSpotlight";
 import AdminCommissionRates from "./pages/AdminCommissionRates";
@@ -510,6 +511,7 @@ function Router() {
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
       <Route path="/job/new" component={LogJob} />
+      <Route path="/job-log" component={JobLog} />
       <Route path="/jobs" component={JobHistory} />
       <Route path="/dashboard/reviews" component={PartnerReviews} />
       <Route path="/dashboard/commissions" component={CommissionLedger} />

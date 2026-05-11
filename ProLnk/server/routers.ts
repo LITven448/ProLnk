@@ -18,7 +18,7 @@ import { supportChatRouter } from "./routers/supportChat";
 import { photoQueueRouter } from "./routers/photoQueue";
 import { bundleOffersRouter } from "./routers/bundleOffers";
 import { quickQuoteRouter } from "./routers/quickQuote";
-import { sendPartnerApplicationReceived, sendPartnerApproved, sendPartnerRejected, sendNewLeadNotification, sendHomeownerWelcome, sendQuoteRequestReceived, sendRoomMakeoverReady, sendQuoteResponseNotification, sendCommissionEarned, sendPayoutConfirmation, sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation, sendStormAlertToPro, sendReviewRequest, sendNeighborhoodReferralInvite } from "./email";
+import { sendPartnerApplicationReceived, sendPartnerApproved, sendPartnerRejected, sendNewLeadNotification, sendHomeownerWelcome, sendQuoteRequestReceived, sendRoomMakeoverReady, sendQuoteResponseNotification, sendCommissionEarned, sendPayoutConfirmation, sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation, sendStormAlertToPro, sendReviewRequest, sendNeighborhoodReferralInvite, sendPartnerApprovalEmail, sendPartnerRejectionEmail, sendWelcomeToNetworkEmail } from "./email";
 import { roomMakeoverRouter } from "./routers/roomMakeover";
 import { serviceAreaRouter } from "./routers/serviceArea";
 import { homeownerExtrasRouter } from "./routers/homeownerExtras";
@@ -50,7 +50,6 @@ import { diagnosticAgentRouter } from "./routers/diagnosticAgent";
 import { engagementRouter } from "./routers/engagement";
 import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
 import { mediaLibraryRouter } from "./routers/mediaLibrary";
-import { partnerAuthRouter } from "./routers/partnerAuth";
 import { photoPipelineRouter } from "./routers/photo-pipeline";
 import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
@@ -3238,11 +3237,11 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
           return { type: 'opportunities', rows: rows[0] || [] };
         }
         if (input.reportType === 'commissions') {
-          const rows = await (db as any).execute(sql`SELECT c.id, c.amount, c.type, c.paid, c.paidAt, c.createdAt, p.businessName as partnerName FROM commissions c LEFT JOIN partners p ON p.id = c.receivingPartnerId ORDER BY c.createdAt DESC LIMIT 1000`);
+          const rows = await (db as any).execute(sql`SELECT c.id, c.amount, c.commissionType, c.paid, c.paidAt, c.createdAt, p.businessName as partnerName FROM commissions c LEFT JOIN partners p ON p.id = c.receivingPartnerId ORDER BY c.createdAt DESC LIMIT 1000`);
           return { type: 'commissions', rows: rows[0] || [] };
         }
         if (input.reportType === 'jobs') {
-          const rows = await (db as any).execute(sql`SELECT j.id, j.serviceAddress, j.serviceCity, j.serviceState, j.jobValue, j.status, j.completedAt, j.createdAt, p.businessName as partnerName FROM jobs j LEFT JOIN partners p ON p.id = j.partnerId ORDER BY j.createdAt DESC LIMIT 1000`);
+          const rows = await (db as any).execute(sql`SELECT j.id, j.serviceAddress, j.status, j.completedAt, j.createdAt, p.businessName as partnerName FROM jobs j LEFT JOIN partners p ON p.id = j.partnerId ORDER BY j.createdAt DESC LIMIT 1000`);
           return { type: 'jobs', rows: rows[0] || [] };
         }
         if (input.reportType === 'leads') {
@@ -4777,9 +4776,38 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
+        const [[partnerRows]] = await (db as any).execute(
+          sql`SELECT id, firstName, email, tier, referralCode, waitlistPosition FROM proWaitlist WHERE id = ${input.id} LIMIT 1`
+        ) as any;
+        const partner = Array.isArray(partnerRows) ? partnerRows[0] : partnerRows;
         await (db as any).execute(
           sql`UPDATE proWaitlist SET status = ${input.status}, adminNotes = ${input.adminNotes ?? null}, approvedAt = ${input.status === 'approved' ? now : null}, approvedBy = ${input.status === 'approved' ? ctx.user.id : null}, invitedAt = ${input.status === 'invited' ? now : null}, updatedAt = ${now} WHERE id = ${input.id}`
         );
+        if (partner?.email) {
+          const tierLabelMap: Record<string, string> = {
+            charter: "Charter Member",
+            founding: "Founding Member",
+            level3: "Level 3 Partner",
+            level4: "Level 4 Partner",
+          };
+          const tierLabel = tierLabelMap[partner.tier] ?? "Founding Member";
+          if (input.status === 'approved') {
+            sendPartnerApprovalEmail({
+              to: partner.email,
+              firstName: partner.firstName ?? "Partner",
+              tier: partner.tier ?? "founding",
+              tierLabel,
+              referralCode: partner.referralCode ?? String(input.id),
+              position: partner.waitlistPosition ?? input.id,
+            }).catch(err => console.error("[Email] Approval email failed:", err));
+          } else if (input.status === 'rejected') {
+            sendPartnerRejectionEmail({
+              to: partner.email,
+              firstName: partner.firstName ?? "Partner",
+              reason: input.adminNotes,
+            }).catch(err => console.error("[Email] Rejection email failed:", err));
+          }
+        }
         return { success: true };
       }),
 

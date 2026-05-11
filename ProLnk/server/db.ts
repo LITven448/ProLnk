@@ -120,7 +120,7 @@ export async function linkPartnerToUser(partnerId: number, userId: number) {
 export async function createJob(data: InsertJob) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.insert(jobs).values(data);
+  return db.insert(jobs).values(data);
 }
 
 export async function getJobsByPartnerId(partnerId: number) {
@@ -244,7 +244,7 @@ export async function updatePartnerCommissionRates(partnerId: number, rates: { r
   await db.update(partners).set({ updatedAt: new Date(), ...rates }).where(eq(partners.id, partnerId));
 }
 
-export async function incrementPartnerStats(partnerId: number, stats: { jobsCompleted?: number; referrals?: number; revenue?: number }) {
+export async function incrementPartnerStats(partnerId: number, _stat: string | { jobsCompleted?: number; referrals?: number; revenue?: number }) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
   const partner = await getPartnerById(partnerId);
@@ -261,7 +261,7 @@ export async function getAllOpportunities() {
 export async function getOpportunitiesBySourcePartnerId(partnerId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(opportunities).where(eq(opportunities.sourcingPartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
+  return db.select().from(opportunities).where(eq(opportunities.sourcePartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
 }
 
 export async function getOpportunitiesByReceivingPartnerId(partnerId: number) {
@@ -276,16 +276,23 @@ export async function updateOpportunityStatus(opportunityId: number, status: str
   await db.update(opportunities).set({ status, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
 }
 
-export async function updateJobAiAnalysis(jobId: number, analysis: any) {
+export async function updateJobAiAnalysis(jobId: number, statusOrAnalysis: any, analysis?: any) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.update(jobs).set({ aiAnalysisResult: analysis, updatedAt: new Date() }).where(eq(jobs.id, jobId));
+  const isStatusCall = typeof statusOrAnalysis === "string";
+  const aiAnalysisStatus = isStatusCall ? statusOrAnalysis : undefined;
+  const aiAnalysisResult = isStatusCall ? (analysis ?? null) : statusOrAnalysis;
+  await db.update(jobs).set({
+    ...(aiAnalysisStatus !== undefined && { aiAnalysisStatus }),
+    aiAnalysisResult,
+    updatedAt: new Date(),
+  }).where(eq(jobs.id, jobId));
 }
 
-export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number) {
+export async function closeOpportunityWithJobValue(opportunityId: number, jobValue: number, _closedByPartnerId?: number) {
   const db = await getDb();
   if (!db) throw new Error("Database unavailable");
-  await db.update(opportunities).set({ status: 'closed', jobValue, updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
+  await db.update(opportunities).set({ status: 'closed', actualJobValue: String(jobValue), updatedAt: new Date() }).where(eq(opportunities.id, opportunityId));
 }
 
 export async function createBroadcast(data: any) {

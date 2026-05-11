@@ -1,9 +1,0 @@
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/public",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "framework": null,
-  "env": {
-    "NODE_ENV": "production"
-  }
-}

@@ -261,7 +261,7 @@ export async function getAllOpportunities() {
 export async function getOpportunitiesBySourcePartnerId(partnerId: number) {
   const db = await getDb();
   if (!db) return [];
-  return db.select().from(opportunities).where(eq(opportunities.sourcingPartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
+  return db.select().from(opportunities).where(eq(opportunities.sourcePartnerId, partnerId)).orderBy(desc(opportunities.createdAt));
 }
 
 export async function getOpportunitiesByReceivingPartnerId(partnerId: number) {

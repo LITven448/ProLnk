@@ -50,7 +50,6 @@ import { diagnosticAgentRouter } from "./routers/diagnosticAgent";
 import { engagementRouter } from "./routers/engagement";
 import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
 import { mediaLibraryRouter } from "./routers/mediaLibrary";
-import { partnerAuthRouter } from "./routers/partnerAuth";
 import { photoPipelineRouter } from "./routers/photo-pipeline";
 import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";

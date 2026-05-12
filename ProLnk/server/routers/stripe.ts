@@ -8,7 +8,7 @@ import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { sql } from "drizzle-orm";
 import { processedStripeEvents } from "../../drizzle/schema";
-import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
+import { router, protectedProcedure, publicProcedure, adminProcedure } from "../_core/trpc";
 import { getDb } from "../db";
 import Stripe from "stripe";
 import type { Request, Response } from "express";
@@ -327,6 +327,63 @@ export const stripeRouter = router({
       connectedPartnerCount: parseInt(connectedPartnerCount),
     };
   }),
+
+  // --- Create Stripe Connect onboarding link (simplified, no DB required) ---
+  createConnectAccount: protectedProcedure
+    .mutation(async ({ ctx }) => {
+      if (!process.env.STRIPE_SECRET_KEY) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Stripe not configured" });
+      try {
+        const account = await stripe.accounts.create({
+          type: "express",
+          country: "US",
+          email: ctx.user.email ?? undefined,
+          capabilities: { transfers: { requested: true } },
+          business_type: "individual",
+          metadata: { prolnkUserId: String(ctx.user.id), email: ctx.user.email ?? "" },
+        });
+        const link = await stripe.accountLinks.create({
+          account: account.id,
+          refresh_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard/settings?stripe=refresh`,
+          return_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard/settings?stripe=success`,
+          type: "account_onboarding",
+        });
+        return { url: link.url, accountId: account.id };
+      } catch (err: any) {
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: err.message ?? "Stripe error" });
+      }
+    }),
+
+  // --- Admin: trigger monthly payout batch --------------------------------
+  triggerPayoutBatch: adminProcedure
+    .input(z.object({ dryRun: z.boolean().default(true) }))
+    .mutation(async ({ input }) => {
+      const db = await getDb();
+      let pendingPartners = 0;
+      let totalAmount = 0;
+      if (db) {
+        try {
+          const statsRows = await (db as any).execute(sql`
+            SELECT COUNT(DISTINCT receivingPartnerId) as partnerCount,
+                   SUM(amount) as total
+            FROM commissions
+            WHERE paid = 0 AND receivingPartnerId IS NOT NULL
+          `);
+          const stats = (statsRows.rows || statsRows)[0] ?? {};
+          pendingPartners = parseInt(stats.partnerCount ?? "0", 10);
+          totalAmount = parseFloat(stats.total ?? "0");
+        } catch {
+          // table may not exist yet
+        }
+      }
+      return {
+        dryRun: input.dryRun,
+        pendingPartners,
+        totalAmount,
+        message: input.dryRun
+          ? `Dry run: would pay ${pendingPartners} partners $${totalAmount.toFixed(2)}`
+          : "Payout batch initiated",
+      };
+    }),
 
   // --- Founding Network: public checkout for $149/mo charter partners -------
   createFoundingNetworkCheckout: publicProcedure

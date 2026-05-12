@@ -6,8 +6,66 @@ import { toast } from "sonner";
 import PageLoadingSkeleton from "@/components/PageLoadingSkeleton";
 import {
   Copy, Download, Users, DollarSign, TrendingUp, Award,
-  CheckCircle, Clock, QrCode, Share2, ChevronDown, ChevronUp, Link2
+  CheckCircle, Clock, QrCode, Share2, ChevronDown, ChevronUp, Link2, Calculator
 } from "lucide-react";
+
+function LiveIncomeSimulator() {
+  const [recruits, setRecruits] = useState(5);
+
+  const subOverride = recruits * 149 * 0.12;
+  const jobOverride = recruits * 3 * 500 * 0.07;
+  const total = subOverride + jobOverride;
+
+  return (
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
+      <h3 className="text-sm font-semibold text-gray-800 flex items-center gap-2 mb-4">
+        <Calculator className="w-4 h-4 text-teal-500" /> Live Income Simulation
+      </h3>
+
+      <div className="mb-4">
+        <div className="flex items-center justify-between mb-1.5">
+          <label className="text-xs font-medium text-gray-600">Direct Recruits</label>
+          <span className="text-sm font-bold text-[#0A1628]">{recruits} pros</span>
+        </div>
+        <input
+          type="range"
+          min={1}
+          max={20}
+          value={recruits}
+          onChange={(e) => setRecruits(Number(e.target.value))}
+          className="w-full accent-teal-500"
+        />
+        <div className="flex justify-between text-xs text-gray-400 mt-0.5">
+          <span>1</span>
+          <span>20</span>
+        </div>
+      </div>
+
+      <div className="space-y-2 mb-4">
+        <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
+          <div>
+            <p className="text-xs font-medium text-gray-700">Subscription Overrides</p>
+            <p className="text-xs text-gray-400">${149} × 12% × {recruits} recruits</p>
+          </div>
+          <p className="text-sm font-bold text-green-600">${subOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
+        </div>
+        <div className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
+          <div>
+            <p className="text-xs font-medium text-gray-700">Job Overrides</p>
+            <p className="text-xs text-gray-400">3 jobs/mo × $500 avg × 7% × {recruits} recruits</p>
+          </div>
+          <p className="text-sm font-bold text-green-600">${jobOverride.toFixed(0)}<span className="text-xs font-normal text-gray-400">/mo</span></p>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between py-3 px-3 bg-[#0A1628] rounded-xl">
+        <p className="text-sm font-semibold text-white">Estimated Passive Income</p>
+        <p className="text-xl font-bold text-teal-400">${total.toFixed(0)}<span className="text-xs font-normal text-teal-300">/mo</span></p>
+      </div>
+      <p className="text-xs text-gray-400 mt-2 text-center">Estimates based on platform averages. Actual results vary.</p>
+    </div>
+  );
+}
 import QRCode from "qrcode";
 
 const LEVEL_NAMES: Record<number, string> = {
@@ -136,6 +194,9 @@ export default function NetworkIncomeHub() {
             <p className="text-xs text-gray-400 mt-0.5">All levels</p>
           </div>
         </div>
+
+        {/* Income simulator */}
+        <LiveIncomeSimulator />
 
         {/* Referral link */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">

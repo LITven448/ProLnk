@@ -25,7 +25,7 @@ export const adminNotificationsRouter = router({
         : input.filter === "email" ? sql`tier = 'email'`
         : sql`1=1`;
 
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT * FROM notificationLog
         WHERE ${whereClause}
         ORDER BY createdAt DESC
@@ -46,9 +46,9 @@ export const adminNotificationsRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       if (input.all) {
-        await (db as any).execute(sql`UPDATE notificationLog SET isRead = 1, readAt = NOW() WHERE isRead = 0`);
+        await db.execute(sql`UPDATE notificationLog SET isRead = 1, readAt = NOW() WHERE isRead = 0`);
       } else if (input.ids?.length) {
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE notificationLog SET isRead = 1, readAt = NOW()
           WHERE id IN (${sql.join(input.ids.map(id => sql`${id}`), sql`, `)})
         `);
@@ -63,7 +63,7 @@ export const adminNotificationsRouter = router({
     if (!db) return {};
 
     const [statsRows, pendingRows, recentPayouts] = await Promise.all([
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT
           (SELECT COUNT(*) FROM partners WHERE status = 'pending') as pendingApplications,
           (SELECT COUNT(*) FROM opportunities WHERE status = 'pending' AND adminReviewStatus = 'pending_review') as pendingOpportunities,
@@ -73,10 +73,10 @@ export const adminNotificationsRouter = router({
           (SELECT COUNT(*) FROM stormLeads WHERE status = 'pending') as pendingStormLeads,
           (SELECT COUNT(*) FROM bidBoardProjects WHERE status = 'open' AND biddingDeadline < DATE_ADD(NOW(), INTERVAL 24 HOUR)) as closingSoonBids
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT COUNT(*) as cnt FROM photoIntakeQueue WHERE status = 'pending' AND receivedAt > DATE_SUB(NOW(), INTERVAL 1 HOUR)
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT COUNT(*) as cnt, COALESCE(SUM(receivingPartnerPayout), 0) as total
         FROM jobPayments WHERE status = 'paid_out' AND updatedAt > DATE_SUB(NOW(), INTERVAL 24 HOUR)
       `),

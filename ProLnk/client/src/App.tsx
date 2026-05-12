@@ -136,7 +136,6 @@ import PhotoApprovalQueue from "./pages/admin/PhotoApprovalQueue";
 import CustomerDealPage from "./pages/CustomerDealPage";
 import PartnerProfile from "./pages/PartnerProfile";
 import Exchange from "./pages/Exchange";
-import ExchangeLanding from "./pages/ExchangeLanding";
 import ExchangeProfile from "./pages/ExchangeProfile";
 import PublicLeaderboard from "./pages/Leaderboard";
 import NetworkStats from "./pages/NetworkStats";
@@ -787,7 +786,6 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
-      <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />

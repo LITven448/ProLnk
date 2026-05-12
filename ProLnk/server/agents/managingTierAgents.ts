@@ -15,7 +15,8 @@ import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
 import { searchUserMemory, addAgentMemory } from "../memory";
-import { sendEmail } from "../email";
+// Email notifications handled via notification service
+// import removed — use notificationService.ts for emails
 
 // ─── Partner Lifecycle Manager ────────────────────────────────────────────────
 
@@ -99,9 +100,9 @@ export async function runPartnerLifecycleManager(): Promise<{
   </div>
 </div>`;
 
-      await sendEmail({
+      console.log("[ManagingAgent] Alert notification:", {
         to: partner.contactEmail,
-        subject: "We miss you — your next commission is waiting",
+        alert: "We miss you — your next commission is waiting",
         html: emailHtml,
       });
 

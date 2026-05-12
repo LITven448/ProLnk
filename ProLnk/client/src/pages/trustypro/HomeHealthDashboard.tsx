@@ -19,21 +19,56 @@ import {
   Clock,
   TrendingUp,
   Lock,
+  Zap,
 } from "lucide-react";
 
-const TEAL = "#00B5B8";
-const TEAL_LIGHT = "#E0F7F7";
-const BG = "#F7FFFE";
+const PRIMARY = "#1e3a5f";
+const ACCENT = "#0891b2";
+const ACCENT_LIGHT = "#e0f2fe";
+const BG = "#f8fafc";
 
-// --- Placeholder data -----------------------------------------------------------
+const SCORE_CATEGORIES = [
+  { id: "hvac", label: "HVAC", icon: Wind, score: 62, color: "#f59e0b", pendingIssues: 1 },
+  { id: "plumbing", label: "Plumbing", icon: Droplets, score: 79, color: "#3b82f6", pendingIssues: 0 },
+  { id: "electrical", label: "Electrical", icon: Zap, score: 85, color: "#10b981", pendingIssues: 0 },
+  { id: "roofing", label: "Roofing", icon: Home, score: 88, color: "#10b981", pendingIssues: 0 },
+  { id: "interior", label: "Interior", icon: Wrench, score: 70, color: ACCENT, pendingIssues: 2 },
+] as const;
 
-const HEALTH_SCORE = 74;
+const HEALTH_SCORE = Math.round(
+  SCORE_CATEGORIES.reduce((sum, c) => sum + c.score, 0) / SCORE_CATEGORIES.length
+);
 
-const SCORE_BREAKDOWN = [
-  { label: "Roof & Structure", score: 88, icon: Home, color: "#10B981" },
-  { label: "HVAC & Air Quality", score: 62, icon: Wind, color: "#F59E0B" },
-  { label: "Plumbing", score: 79, icon: Droplets, color: "#3B82F6" },
-  { label: "Exterior & Landscaping", score: 55, icon: Leaf, color: "#EF4444" },
+const LAST_SCAN: Date | null = null;
+
+const PENDING_ISSUES = [
+  {
+    name: "HVAC filter replacement overdue",
+    category: "HVAC",
+    severity: "urgent" as const,
+    description: "Detected during last scan — filter appears clogged, reducing airflow efficiency by ~30%.",
+    estimatedCost: "$20–$60",
+    tradeType: "HVAC",
+    scanDate: "Never",
+  },
+  {
+    name: "Interior water stain — master bath ceiling",
+    category: "Interior",
+    severity: "moderate" as const,
+    description: "Possible slow leak from upstairs plumbing. Monitor for expansion.",
+    estimatedCost: "$200–$800",
+    tradeType: "Plumbing",
+    scanDate: "Never",
+  },
+  {
+    name: "Cracked caulk around tub surround",
+    category: "Interior",
+    severity: "low" as const,
+    description: "Minor seal failure — reseal to prevent moisture intrusion.",
+    estimatedCost: "$50–$150",
+    tradeType: "General Contractor",
+    scanDate: "Never",
+  },
 ];
 
 const MAINTENANCE_ITEMS = [
@@ -73,18 +108,30 @@ const NEARBY_PROS = [
   { name: "Summit Roofing Co.", trade: "Roofing", rating: 4.7, reviews: 304, distance: "4.0 mi", verified: true, avatar: "SR" },
 ];
 
-// --- Sub-components -------------------------------------------------------------
+const severityMap = {
+  urgent: { label: "🔴 Urgent", bg: "bg-red-50", border: "border-red-200", text: "text-red-700" },
+  moderate: { label: "🟠 Schedule Service", bg: "bg-amber-50", border: "border-amber-200", text: "text-amber-700" },
+  low: { label: "🟡 Monitor", bg: "bg-yellow-50", border: "border-yellow-200", text: "text-yellow-700" },
+};
+
+function formatLastScan(date: Date | null): string {
+  if (!date) return "Last scan: Never";
+  const days = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24));
+  if (days === 0) return "Last scan: Today";
+  if (days === 1) return "Last scan: Yesterday";
+  return `Last scan: ${days} days ago`;
+}
 
 function ScoreRing({ score }: { score: number }) {
   const radius = 52;
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference - (score / 100) * circumference;
-  const color = score >= 80 ? "#10B981" : score >= 60 ? TEAL : "#F59E0B";
+  const color = score >= 80 ? "#10b981" : score >= 60 ? ACCENT : "#f59e0b";
 
   return (
     <div className="relative flex items-center justify-center w-36 h-36">
       <svg className="absolute inset-0" viewBox="0 0 120 120" style={{ transform: "rotate(-90deg)" }}>
-        <circle cx="60" cy="60" r={radius} fill="none" stroke="#E5E7EB" strokeWidth="10" />
+        <circle cx="60" cy="60" r={radius} fill="none" stroke="#e5e7eb" strokeWidth="10" />
         <circle
           cx="60"
           cy="60"
@@ -115,15 +162,14 @@ function UrgencyDot({ urgency }: { urgency: string }) {
   return <span className={`w-2 h-2 rounded-full shrink-0 mt-1.5 ${map[urgency] ?? "bg-gray-300"}`} />;
 }
 
-// --- Main Component -------------------------------------------------------------
-
 export default function HomeHealthDashboard() {
   const [shareHovered, setShareHovered] = useState(false);
+  const [scheduleModal, setScheduleModal] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: BG }}>
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-teal-50 px-4 py-3">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <Link href="/trustypro">
             <TrustyProLogo className="h-7" />
@@ -132,7 +178,7 @@ export default function HomeHealthDashboard() {
             <Link href="/trustypro/scan">
               <button
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: TEAL }}
+                style={{ backgroundColor: ACCENT }}
               >
                 <Camera className="w-3.5 h-3.5" />
                 Scan Home
@@ -145,15 +191,20 @@ export default function HomeHealthDashboard() {
       <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
         {/* Header */}
         <div>
-          <p className="text-sm font-semibold mb-1" style={{ color: TEAL }}>Home Health Dashboard</p>
+          <p className="text-sm font-semibold mb-1" style={{ color: ACCENT }}>Home Health Dashboard</p>
           <h1 className="text-2xl font-black text-gray-900">Your Home at a Glance</h1>
-          <p className="text-sm text-gray-500 mt-1">Updated today · 123 Maple St, Frisco TX 75035</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-sm text-gray-500">123 Maple St, Frisco TX 75035</p>
+            <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+              {formatLastScan(LAST_SCAN)}
+            </span>
+          </div>
         </div>
 
         {/* Health Score Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-teal-50 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <div className="flex items-center gap-2 mb-4">
-            <Shield className="w-4 h-4" style={{ color: TEAL }} />
+            <Shield className="w-4 h-4" style={{ color: ACCENT }} />
             <p className="font-bold text-gray-900">Home Health Score</p>
             <span className="ml-auto text-xs font-semibold text-gray-400">BETA</span>
           </div>
@@ -161,14 +212,19 @@ export default function HomeHealthDashboard() {
           <div className="flex items-center gap-6">
             <ScoreRing score={HEALTH_SCORE} />
             <div className="flex-1 space-y-3">
-              {SCORE_BREAKDOWN.map(({ label, score, icon: Icon, color }) => (
+              {SCORE_CATEGORIES.map(({ label, score, icon: Icon, color, pendingIssues }) => (
                 <div key={label}>
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-1.5">
                       <Icon className="w-3.5 h-3.5" style={{ color }} />
                       <span className="text-xs font-medium text-gray-600">{label}</span>
+                      {pendingIssues > 0 && (
+                        <span className="text-xs font-bold text-white px-1.5 py-0.5 rounded-full leading-none" style={{ backgroundColor: "#ef4444" }}>
+                          {pendingIssues}
+                        </span>
+                      )}
                     </div>
-                    <span className="text-xs font-bold" style={{ color }}>{score}</span>
+                    <span className="text-xs font-bold" style={{ color }}>{score}/100</span>
                   </div>
                   <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
                     <div
@@ -189,21 +245,114 @@ export default function HomeHealthDashboard() {
           </div>
         </div>
 
-        {/* Documentation Status */}
-        <div className="bg-white rounded-2xl shadow-sm border border-teal-50 p-6">
+        {/* Pending Issues from Scans */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Camera className="w-4 h-4" style={{ color: TEAL }} />
+              <AlertCircle className="w-4 h-4 text-red-500" />
+              <p className="font-bold text-gray-900">Pending Issues</p>
+            </div>
+            <span className="text-xs font-bold text-white px-2 py-0.5 rounded-full" style={{ backgroundColor: "#ef4444" }}>
+              {PENDING_ISSUES.length} found
+            </span>
+          </div>
+
+          {PENDING_ISSUES.length === 0 ? (
+            <div className="text-center py-6">
+              <CheckCircle className="w-10 h-10 text-green-400 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-gray-600">No pending issues</p>
+              <p className="text-xs text-gray-400 mt-1">Run a scan to check for issues</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {PENDING_ISSUES.map((issue, i) => {
+                const sev = severityMap[issue.severity];
+                return (
+                  <div key={i} className={`rounded-xl border p-4 ${sev.bg} ${sev.border}`}>
+                    <div className="flex items-start justify-between gap-3 mb-1">
+                      <p className="text-sm font-bold text-gray-900">{issue.name}</p>
+                      <span className={`text-xs font-semibold whitespace-nowrap ${sev.text}`}>{sev.label}</span>
+                    </div>
+                    <p className="text-xs text-gray-600 mb-2">{issue.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500">🔧 {issue.tradeType} · {issue.estimatedCost}</span>
+                      <Link href="/trustypro/waitlist">
+                        <button
+                          className="text-xs font-bold text-white px-3 py-1 rounded-full transition-opacity hover:opacity-90"
+                          style={{ backgroundColor: PRIMARY }}
+                        >
+                          Schedule Pro
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Category Quick-Actions */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Wrench className="w-4 h-4" style={{ color: ACCENT }} />
+            <p className="font-bold text-gray-900">Schedule a Pro by Category</p>
+          </div>
+          <div className="grid grid-cols-1 gap-2">
+            {SCORE_CATEGORIES.map(({ id, label, icon: Icon, score, color, pendingIssues }) => (
+              <div
+                key={id}
+                className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-sky-100 hover:bg-sky-50/30 transition-colors"
+              >
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: `${color}20` }}
+                >
+                  <Icon className="w-4 h-4" style={{ color }} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <p className="text-sm font-semibold text-gray-900">{label}</p>
+                    {pendingIssues > 0 && (
+                      <span className="text-xs font-bold text-red-600 bg-red-50 border border-red-100 px-1.5 py-0 rounded-full">
+                        {pendingIssues} issue{pendingIssues > 1 ? "s" : ""}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <div className="w-16 bg-gray-100 rounded-full h-1 overflow-hidden">
+                      <div className="h-1 rounded-full" style={{ width: `${score}%`, backgroundColor: color }} />
+                    </div>
+                    <span className="text-xs text-gray-400">{score}/100</span>
+                  </div>
+                </div>
+                <button
+                  className="shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-full transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: ACCENT }}
+                  onClick={() => setScheduleModal(label)}
+                >
+                  Get a Pro
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Documentation Status */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Camera className="w-4 h-4" style={{ color: ACCENT }} />
               <p className="font-bold text-gray-900">Documentation Status</p>
             </div>
             <Link href="/trustypro/scan">
-              <span className="text-xs font-semibold hover:underline" style={{ color: TEAL }}>Add Photos</span>
+              <span className="text-xs font-semibold hover:underline" style={{ color: ACCENT }}>Add Photos</span>
             </Link>
           </div>
 
           <div className="grid grid-cols-3 gap-3 mb-4">
-            <div className="text-center p-3 rounded-xl" style={{ backgroundColor: TEAL_LIGHT }}>
-              <p className="text-2xl font-black" style={{ color: TEAL }}>14</p>
+            <div className="text-center p-3 rounded-xl" style={{ backgroundColor: ACCENT_LIGHT }}>
+              <p className="text-2xl font-black" style={{ color: ACCENT }}>14</p>
               <p className="text-xs text-gray-500 mt-0.5">Photos</p>
             </div>
             <div className="text-center p-3 rounded-xl bg-indigo-50">
@@ -236,11 +385,11 @@ export default function HomeHealthDashboard() {
         </div>
 
         {/* Upcoming Maintenance */}
-        <div className="bg-white rounded-2xl shadow-sm border border-teal-50 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4" style={{ color: TEAL }} />
-            <p className="font-bold text-gray-900">Upcoming Maintenance</p>
-            <span className="ml-auto text-xs font-semibold text-white px-2 py-0.5 rounded-full" style={{ backgroundColor: "#EF4444" }}>
+            <Calendar className="w-4 h-4" style={{ color: ACCENT }} />
+            <p className="font-bold text-gray-900">Maintenance Timeline</p>
+            <span className="ml-auto text-xs font-semibold text-white px-2 py-0.5 rounded-full" style={{ backgroundColor: "#ef4444" }}>
               1 urgent
             </span>
           </div>
@@ -268,20 +417,23 @@ export default function HomeHealthDashboard() {
         {/* AI Scan CTA */}
         <div
           className="rounded-2xl p-6 text-white overflow-hidden relative"
-          style={{ background: `linear-gradient(135deg, ${TEAL} 0%, #0891b2 100%)` }}
+          style={{ background: `linear-gradient(135deg, ${PRIMARY} 0%, ${ACCENT} 100%)` }}
         >
           <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10 bg-white -translate-y-8 translate-x-8" />
           <div className="relative z-10">
             <div className="flex items-center gap-2 mb-2">
-              <Camera className="w-5 h-5 text-teal-100" />
-              <p className="text-sm font-semibold text-teal-100">AI Home Scan</p>
+              <Camera className="w-5 h-5 text-sky-200" />
+              <p className="text-sm font-semibold text-sky-200">AI Home Scan</p>
             </div>
             <h2 className="text-xl font-black mb-2">Scan Your Home for Hidden Issues</h2>
-            <p className="text-sm text-teal-100 mb-4">
+            <p className="text-sm text-sky-100 mb-4">
               Our AI analyzes your photos to detect water damage, structural concerns, and deferred maintenance — in seconds.
             </p>
             <Link href="/trustypro/scan">
-              <button className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-xl text-sm font-bold transition-opacity hover:opacity-90" style={{ color: TEAL }}>
+              <button
+                className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-xl text-sm font-bold transition-opacity hover:opacity-90"
+                style={{ color: PRIMARY }}
+              >
                 <Camera className="w-4 h-4" />
                 Start Scan
                 <ArrowRight className="w-4 h-4" />
@@ -291,14 +443,14 @@ export default function HomeHealthDashboard() {
         </div>
 
         {/* Verified Pros Near You */}
-        <div className="bg-white rounded-2xl shadow-sm border border-teal-50 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4" style={{ color: TEAL }} />
+              <Shield className="w-4 h-4" style={{ color: ACCENT }} />
               <p className="font-bold text-gray-900">Verified Pros Near You</p>
             </div>
             <Link href="/trustypro/pros">
-              <span className="text-xs font-semibold flex items-center gap-1 hover:underline" style={{ color: TEAL }}>
+              <span className="text-xs font-semibold flex items-center gap-1 hover:underline" style={{ color: ACCENT }}>
                 See All <ChevronRight className="w-3.5 h-3.5" />
               </span>
             </Link>
@@ -306,10 +458,10 @@ export default function HomeHealthDashboard() {
 
           <div className="space-y-3">
             {NEARBY_PROS.map(({ name, trade, rating, reviews, distance, verified, avatar }) => (
-              <div key={name} className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-teal-100 hover:bg-teal-50/30 transition-colors cursor-pointer">
+              <div key={name} className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-sky-100 hover:bg-sky-50/30 transition-colors cursor-pointer">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold shrink-0"
-                  style={{ backgroundColor: TEAL }}
+                  style={{ backgroundColor: ACCENT }}
                 >
                   {avatar}
                 </div>
@@ -334,8 +486,8 @@ export default function HomeHealthDashboard() {
           <Link href="/trustypro/waitlist">
             <button
               className="w-full mt-4 py-2.5 rounded-xl text-sm font-semibold border-2 transition-colors hover:text-white"
-              style={{ borderColor: TEAL, color: TEAL }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = TEAL)}
+              style={{ borderColor: ACCENT, color: ACCENT }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = ACCENT)}
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
             >
               Request a Pro for Your Project
@@ -346,7 +498,7 @@ export default function HomeHealthDashboard() {
         {/* Insurance Discount Banner */}
         <div
           className="rounded-2xl p-5 border"
-          style={{ backgroundColor: "#FFF7ED", borderColor: "#FED7AA" }}
+          style={{ backgroundColor: "#fff7ed", borderColor: "#fed7aa" }}
         >
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
@@ -370,9 +522,28 @@ export default function HomeHealthDashboard() {
           </div>
         </div>
 
-        {/* Footer spacer */}
         <div className="h-6" />
       </div>
+
+      {scheduleModal && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-end sm:items-center justify-center p-4" onClick={() => setScheduleModal(null)}>
+          <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
+            <h3 className="text-lg font-black text-gray-900 mb-1">Schedule a {scheduleModal} Pro</h3>
+            <p className="text-sm text-gray-500 mb-5">Join the waitlist and we'll match you with a background-checked, insured {scheduleModal} professional in your area.</p>
+            <Link href="/trustypro/waitlist" onClick={() => setScheduleModal(null)}>
+              <button
+                className="w-full text-white font-bold py-3 rounded-xl mb-2 transition-opacity hover:opacity-90"
+                style={{ backgroundColor: ACCENT }}
+              >
+                Join Waitlist — It's Free
+              </button>
+            </Link>
+            <button onClick={() => setScheduleModal(null)} className="w-full text-sm text-gray-400 hover:text-gray-600 py-2">
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

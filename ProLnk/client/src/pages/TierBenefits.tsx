@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Check, X, Award, Users, TrendingUp, DollarSign, Zap, ArrowRight, Star } from "lucide-react";
 import { Link } from "wouter";
 
 const TIERS = [
   {
-    name: "Charter Member",
+    name: "Charter Partner",
     badge: "Charter",
     positions: "Position 1–100",
     shorthand: "Top 100 — or 5+ referrals",
@@ -23,7 +24,7 @@ const TIERS = [
       "2.0% of every job you close",
       "4-level network override (forever)",
       "First access to premium leads",
-      "Exclusive Charter Member badge",
+      "Exclusive Charter Partner badge",
       "Priority support queue",
       "Co-marketing opportunities",
       "Founding board input",
@@ -31,7 +32,7 @@ const TIERS = [
     highlight: true,
   },
   {
-    name: "Founding Member",
+    name: "Founding Partner",
     badge: "Founding",
     positions: "Position 101–500",
     shorthand: "3–4 referrals to qualify",
@@ -50,14 +51,14 @@ const TIERS = [
       "1.5% of every job you close",
       "3-level network override (forever)",
       "Early access to new markets",
-      "Founding Member badge",
+      "Founding Partner badge",
       "Standard support queue",
       "Monthly market reports",
     ],
     highlight: false,
   },
   {
-    name: "Level 3 Partner",
+    name: "Growth Pro",
     badge: "Growth",
     positions: "Position 501–1,000",
     shorthand: "1–2 referrals to qualify",
@@ -76,13 +77,13 @@ const TIERS = [
       "1.0% of every job you close",
       "2-level network override",
       "Standard lead access",
-      "Level 3 Partner badge",
+      "Growth Pro badge",
       "Community forum access",
     ],
     highlight: false,
   },
   {
-    name: "Level 4 Partner",
+    name: "Standard Pro",
     badge: "Standard",
     positions: "Position 1,001+",
     shorthand: "Open enrollment",
@@ -163,6 +164,20 @@ export default function TierBenefits() {
 
   return (
     <div className="min-h-screen pb-24" style={{ background: "#0f1117", color: "#fff" }}>
+      <Helmet>
+        <title>ProLnk Partner Tiers — Charter, Founding, Growth, Standard</title>
+        <meta name="description" content="Join the ProLnk Founding Network. Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
+        <meta property="og:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
+        <meta property="og:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/tier-benefits" />
+        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
+        <meta name="twitter:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial." />
+        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <link rel="canonical" href="https://prolnk.io/tier-benefits" />
+      </Helmet>
       {/* Header */}
       <div className="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -207,7 +222,7 @@ export default function TierBenefits() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-600 mt-3">Charter Members unlock all 4 levels. Founding: 3 levels. Growth: 2 levels. Standard: none.</p>
+          <p className="text-xs text-gray-600 mt-3">Charter Partners unlock all 4 levels. Founding: 3 levels. Growth: 2 levels. Standard: none.</p>
         </motion.div>
       </div>
 
@@ -371,7 +386,7 @@ export default function TierBenefits() {
           <Zap size={32} className="text-green-400 mx-auto mb-4" />
           <h2 className="text-2xl font-black text-white mb-3">Claim Your Charter Spot</h2>
           <p className="text-gray-400 mb-6">
-            Only 100 Charter Member positions exist. Once they're gone, they're gone. Sign up now to lock in 2.0% commissions and 4 levels of network income — forever.
+            Only 100 Charter Partner positions exist. Once they're gone, they're gone. Sign up now to lock in 2.0% commissions and 4 levels of network income — forever.
           </p>
           <Link
             href={applyUrl}

@@ -1,10 +1,3 @@
-/**
- * ProLnk Exchange Commercial Waitlist
- * 
- * Separate from the residential side — collects business type, portfolio size,
- * and service area for commercial contractors.
- * Replaces the "coming soon" toast on the ProLnk Exchange commercial section.
- */
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
@@ -15,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import {
   Building2, CheckCircle, Users, DollarSign, MapPin,
-  Briefcase, TrendingUp, ArrowRight, Shield
+  Briefcase, TrendingUp, ArrowRight, Shield, Zap, BarChart3,
 } from "lucide-react";
 
 const BUSINESS_TYPES = [
@@ -62,6 +55,39 @@ const BENEFITS = [
     icon: <TrendingUp className="w-5 h-5 text-amber-400" />,
     title: "Pipeline Intelligence",
     desc: "AI-driven project pipeline alerts — know about commercial jobs before they're bid",
+  },
+];
+
+const FEATURE_SECTIONS = [
+  {
+    icon: <Building2 className="w-6 h-6 text-blue-400" />,
+    title: "Commercial Network",
+    desc: "Access a vetted roster of contractors built specifically for $50K+ commercial engagements. Every partner carries commercial licensing, bonding, and general liability — no residential-only operators.",
+    bullets: [
+      "GCs, property managers, and facility directors only",
+      "Minimum $50K job threshold to maintain quality",
+      "Background-checked and license-verified roster",
+    ],
+  },
+  {
+    icon: <Zap className="w-6 h-6 text-amber-400" />,
+    title: "Pipeline Intelligence",
+    desc: "AI-powered alerts surface commercial job opportunities before they hit public bid boards. Know about upcoming projects when they're still in planning — before the competition.",
+    bullets: [
+      "Pre-bid alerts for commercial projects in your trade",
+      "AI scoring by job fit, location, and your win rate",
+      "Early access typically 2–4 weeks ahead of public posting",
+    ],
+  },
+  {
+    icon: <BarChart3 className="w-6 h-6 text-emerald-400" />,
+    title: "Property Portfolio Management",
+    desc: "Track maintenance history, upcoming service dates, and vendor performance across every property in your portfolio. One dashboard for all your assets.",
+    bullets: [
+      "Centralized maintenance log across all properties",
+      "Recurring service scheduling and vendor assignment",
+      "Compliance and inspection tracking per property",
+    ],
   },
 ];
 
@@ -151,8 +177,53 @@ export default function ProLnkExchangeCommercial() {
         </div>
       </div>
 
+      {/* Social Proof Numbers */}
+      <div className="border-y border-gray-800 py-8">
+        <div className="max-w-3xl mx-auto px-4 grid grid-cols-3 gap-6 text-center">
+          {[
+            { value: "$50K+", label: "avg commercial job" },
+            { value: "Vetted", label: "commercial roster" },
+            { value: "Bid Intel", label: "pre-bid intelligence" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="text-2xl font-bold text-white">{s.value}</p>
+              <p className="text-xs text-gray-500 mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Feature Sections */}
+      <div className="max-w-4xl mx-auto px-4 py-16 space-y-16">
+        {FEATURE_SECTIONS.map((section, i) => (
+          <div key={i} className={`flex flex-col md:flex-row gap-8 items-start ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+            <div className="flex-1">
+              <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center mb-4">
+                {section.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">{section.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">{section.desc}</p>
+              <ul className="space-y-2">
+                {section.bullets.map((b, j) => (
+                  <li key={j} className="flex items-start gap-2 text-sm text-gray-300">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1 hidden md:block">
+              <div className="rounded-2xl border border-gray-700 bg-gray-900 h-40 flex items-center justify-center">
+                <p className="text-gray-600 text-xs">Coming Q3 2026</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Benefits */}
-      <div className="max-w-5xl mx-auto px-4 py-12">
+      <div className="max-w-5xl mx-auto px-4 pb-12">
+        <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-600 mb-6">Why Commercial Operators Choose ProLnk</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
           {BENEFITS.map((b, i) => (
             <div key={i} className="bg-gray-900 border border-gray-700 rounded-xl p-5 flex items-start gap-4">

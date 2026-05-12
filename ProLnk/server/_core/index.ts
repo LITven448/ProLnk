@@ -237,21 +237,6 @@ async function startServer() {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
-  // Trigger weekly digest manually
-  app.post("/api/agents/run-weekly-digest", async (req, res) => {
-    const secret = process.env.JWT_SECRET;
-    if (!secret || req.headers["x-agent-secret"] !== secret.slice(0, 16)) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
-    try {
-      const { runWeeklyDigest } = await import("../agents/agentOrchestrator");
-      await runWeeklyDigest();
-      return res.json({ success: true, ran: "weekly-digest", timestamp: new Date().toISOString() });
-    } catch (e: any) {
-      return res.status(500).json({ error: e.message });
-    }
-  });
-
   // Agent runner endpoint — triggers scheduled agent cycles
   app.post("/api/agents/run-morning-cycle", async (req, res) => {
     const secret = process.env.JWT_SECRET;
@@ -327,20 +312,6 @@ async function startServer() {
       if (!dbUrl) return res.status(500).json({ error: "No DATABASE_URL" });
       const conn = await mysql.createConnection({ uri: dbUrl, ssl: { rejectUnauthorized: false }, connectionTimeout: 15000 });
       const createStatements = [
-        `CREATE TABLE IF NOT EXISTS \`home_documentation\` (
-          \`id\` bigint NOT NULL,
-          \`pro_id\` int NOT NULL,
-          \`pro_email\` varchar(320) NOT NULL,
-          \`property_address\` varchar(500) NOT NULL,
-          \`normalized_address\` varchar(500) NOT NULL,
-          \`address_hash\` varchar(64) NOT NULL,
-          \`photos\` json,
-          \`is_originator\` tinyint(1) NOT NULL DEFAULT 1,
-          \`created_at\` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-          PRIMARY KEY (\`id\`),
-          UNIQUE KEY \`home_doc_address_hash_unique\` (\`address_hash\`),
-          KEY \`home_doc_pro_email\` (\`pro_email\`)
-        )`,
         `CREATE TABLE IF NOT EXISTS \`homeWaitlist\` (
           \`id\` bigint NOT NULL,
           \`firstName\` varchar(100) NOT NULL,
@@ -493,7 +464,10 @@ async function startServer() {
     const staticRoutes = [
       { path: "/", priority: "1.0", changefreq: "weekly" },
       { path: "/apply", priority: "0.9", changefreq: "monthly" },
+      { path: "/founding-network", priority: "0.9", changefreq: "monthly" },
+      { path: "/checkout", priority: "0.8", changefreq: "monthly" },
       { path: "/partners", priority: "0.8", changefreq: "weekly" },
+      { path: "/partner-login", priority: "0.7", changefreq: "monthly" },
       { path: "/trust", priority: "0.8", changefreq: "monthly" },
       { path: "/trustypro", priority: "0.8", changefreq: "weekly" },
       { path: "/leaderboard", priority: "0.6", changefreq: "daily" },
@@ -502,8 +476,15 @@ async function startServer() {
       { path: "/advertise", priority: "0.8", changefreq: "monthly" },
       { path: "/pricing", priority: "0.8", changefreq: "monthly" },
       { path: "/agent-portal", priority: "0.6", changefreq: "monthly" },
+      { path: "/photo-upload", priority: "0.7", changefreq: "monthly" },
+      { path: "/job-log", priority: "0.7", changefreq: "monthly" },
+      { path: "/job-complete", priority: "0.6", changefreq: "monthly" },
+      { path: "/commission-ledger", priority: "0.7", changefreq: "weekly" },
+      { path: "/waitlist-status", priority: "0.8", changefreq: "weekly" },
+      { path: "/tier-benefits", priority: "0.8", changefreq: "monthly" },
       { path: "/trustypro/scan", priority: "0.9", changefreq: "weekly" },
       { path: "/trustypro/pros", priority: "0.8", changefreq: "weekly" },
+      { path: "/trustypro/home-health", priority: "0.8", changefreq: "weekly" },
       { path: "/privacy", priority: "0.3", changefreq: "yearly" },
       { path: "/terms", priority: "0.3", changefreq: "yearly" },
     ];
@@ -563,10 +544,8 @@ async function startServer() {
     console.log(`Server running on http://localhost:${port}/`);
   });
 
-  // Schedule daily morning agent cycle + weekly digest
+  // Schedule daily morning agent cycle (runs at 6am server time)
   const TWENTY_FOUR_HOURS = safeTimeout(24 * 60 * 60 * 1000);
-  const SEVEN_DAYS = safeTimeout(7 * 24 * 60 * 60 * 1000);
-
   const runScheduledCycle = async () => {
     try {
       console.log("[Scheduler] Running morning agent cycle...");
@@ -578,21 +557,8 @@ async function startServer() {
     }
     setTimeout(runScheduledCycle, TWENTY_FOUR_HOURS);
   };
-
-  const runWeeklySchedule = async () => {
-    try {
-      console.log("[Scheduler] Running weekly digest...");
-      const { runWeeklyDigest } = await import("../agents/agentOrchestrator");
-      await runWeeklyDigest();
-    } catch (e) {
-      console.error("[Scheduler] Weekly digest failed:", e);
-    }
-    setTimeout(runWeeklySchedule, SEVEN_DAYS);
-  };
-
-  // Start daily cycle after 1 hour (server warmup), weekly after 24h
+  // Start first cycle after 1 hour delay (let server warm up)
   setTimeout(runScheduledCycle, safeTimeout(60 * 60 * 1000));
-  setTimeout(runWeeklySchedule, safeTimeout(24 * 60 * 60 * 1000));
 }
 
 startServer().catch(console.error);

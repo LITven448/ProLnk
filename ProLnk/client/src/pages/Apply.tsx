@@ -110,7 +110,7 @@ export default function Apply() {
             {["Application review (within 24 hrs)", "Onboarding call with your ProLnk rep", "Partner dashboard access + referral link", "TrustyPro Certified badge (after verification)"].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-[#0A1628]/70 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">{item}</span>
+                <span className="text-gray-700 text-sm">{item}</span>
               </div>
             ))}
           </div>
@@ -144,7 +144,7 @@ export default function Apply() {
             <Award className="w-4 h-4" /><span>Founding Partner Applications -- DFW Launch</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4 leading-tight">
-            Become a <span className="text-[#0A1628]/70">ProLnk Partner</span>
+            Become a <span className="text-teal-400">ProLnk Partner</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
             Join the DFW network of verified home service professionals. Earn commissions, receive matched leads, and get TrustyPro Certified.

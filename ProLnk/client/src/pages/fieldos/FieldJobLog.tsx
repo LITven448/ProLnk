@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Field OS -- Job Log Tab (v4 -- Unified FOS Design System)
  * Teal #0D9488 (actions) | Lime #E8FF47 (money/CTA) | Navy #070D1A (bg)

@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Homeowner Maintenance Schedule
  * Route: /my-home/maintenance

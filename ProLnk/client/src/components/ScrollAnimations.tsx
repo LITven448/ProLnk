@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * ScrollAnimations.tsx
  * Reusable scroll-driven animation primitives inspired by Estatia.

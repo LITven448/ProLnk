@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { CloudLightning, RefreshCw, Zap, MapPin, Users, AlertTriangle } from "lucide-react";
+import { CloudLightning, RefreshCw, Zap, MapPin, Users, AlertTriangle, Clock, CheckCircle2 } from "lucide-react";
 
 const SEVERITY_COLOR: Record<string, string> = {
   Extreme: "bg-red-600 text-white",
@@ -22,9 +22,23 @@ const US_STATES = [
   "VA","WA","WV","WI","WY",
 ];
 
+function formatLastScan(dateVal: string | null | undefined): string {
+  if (!dateVal) return "Never";
+  const d = new Date(dateVal);
+  const now = new Date();
+  const diffMs = now.getTime() - d.getTime();
+  const diffMin = Math.floor(diffMs / 60000);
+  if (diffMin < 1) return "Just now";
+  if (diffMin < 60) return `${diffMin}m ago`;
+  const diffH = Math.floor(diffMin / 60);
+  if (diffH < 24) return `${diffH}h ago`;
+  return d.toLocaleDateString();
+}
+
 export default function StormDashboard() {
   const [selectedState, setSelectedState] = useState("TX");
   const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
+  const [lastRunResult, setLastRunResult] = useState<{ eventsProcessed: number; leadsGenerated: number; propertiesAffected: number; affectedZips?: string[] } | null>(null);
 
   const { data: stats, refetch: refetchStats } = trpc.stormAgent.getStats.useQuery();
   const { data: events, refetch: refetchEvents, isLoading: eventsLoading } = trpc.stormAgent.listEvents.useQuery();
@@ -36,12 +50,20 @@ export default function StormDashboard() {
 
   const triggerScan = trpc.stormAgent.triggerScan.useMutation({
     onSuccess: (result) => {
+      setLastRunResult(result as any);
       toast.success(`Storm Scan Complete — ${result.eventsProcessed} events, ${result.leadsGenerated} leads, ${result.propertiesAffected} properties`);
       refetchStats();
       refetchEvents();
     },
     onError: () => toast.error("Scan failed"),
   });
+
+  const affectedZipCount = lastRunResult
+    ? (lastRunResult.affectedZips?.length ?? 0)
+    : (events ?? []).reduce((acc: number, e: any) => {
+        const zones = (() => { try { return JSON.parse(e.affectedZones ?? "[]"); } catch { return []; } })();
+        return acc + zones.length;
+      }, 0);
 
   return (
     <AdminLayout>
@@ -72,10 +94,22 @@ export default function StormDashboard() {
             className="bg-orange-500 hover:bg-orange-600 text-white gap-2"
           >
             {triggerScan.isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
-            Run Scan
+            {triggerScan.isPending ? "Scanning..." : "Run Storm Scan Now"}
           </Button>
         </div>
       </div>
+
+      {/* Last scan result banner */}
+      {lastRunResult && (
+        <div className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+          <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />
+          <p className="text-sm text-green-800 font-medium">
+            Scan complete — {lastRunResult.eventsProcessed} events processed · {lastRunResult.leadsGenerated} leads generated · {lastRunResult.propertiesAffected} properties affected
+            {lastRunResult.affectedZips?.length ? ` · ${lastRunResult.affectedZips.length} zip codes` : ""}
+          </p>
+          <button className="ml-auto text-green-600 hover:text-green-800 text-xs" onClick={() => setLastRunResult(null)}>Dismiss</button>
+        </div>
+      )}
 
       {/* Stats */}
       <div className="grid grid-cols-4 gap-4">
@@ -83,7 +117,7 @@ export default function StormDashboard() {
           { label: "Total Events", value: stats?.totalEvents ?? 0, icon: CloudLightning, color: "text-orange-500" },
           { label: "Leads Generated", value: stats?.totalLeads ?? 0, icon: Zap, color: "text-yellow-500" },
           { label: "Properties Affected", value: stats?.totalProperties ?? 0, icon: MapPin, color: "text-blue-500" },
-          { label: "Last Scan", value: stats?.lastScanAt ? new Date(stats.lastScanAt).toLocaleDateString() : "Never", icon: RefreshCw, color: "text-green-500" },
+          { label: "Last Scan", value: formatLastScan(stats?.lastScanAt), icon: Clock, color: "text-green-500" },
         ].map(s => (
           <Card key={s.label}>
             <CardContent className="p-4 flex items-center gap-3">
@@ -96,6 +130,14 @@ export default function StormDashboard() {
           </Card>
         ))}
       </div>
+
+      {/* Affected Zip Codes summary */}
+      {affectedZipCount > 0 && (
+        <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/40 rounded-lg px-4 py-2">
+          <MapPin className="w-4 h-4 text-orange-400" />
+          <span><strong className="text-foreground">{affectedZipCount}</strong> zip codes currently in storm-affected areas across all tracked events</span>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 gap-6">
         {/* Live NOAA Preview */}

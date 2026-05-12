@@ -2421,6 +2421,63 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         return job;
       }),
 
+    // Mark a job as complete — locks origination rights, distributes network commissions, fires n8n webhook
+    completeJob: protectedProcedure
+      .input(z.object({
+        propertyAddress: z.string().min(5),
+        jobType: z.string(),
+        jobValue: z.number().positive(),
+        completionDate: z.string().optional(),
+        notes: z.string().optional(),
+        platformFeeRate: z.number().min(0.06).max(0.15).default(0.1),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const partner = await getPartnerByUserId(ctx.user.id);
+        if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
+
+        const jobId = `job_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+
+        const { runOriginationLockAgent } = await import("./agents/foundingNetworkAgents");
+        const origination = await runOriginationLockAgent({
+          proEmail: ctx.user.email ?? partner.contactEmail ?? "",
+          propertyAddress: input.propertyAddress,
+          photos: [],
+        }).catch(() => ({ locked: false, isNewClaim: false }));
+
+        const { distributeJobCommissions } = await import("./agents/commissionCascadeEngine");
+        const distribution = await distributeJobCommissions({
+          jobId,
+          completingProId: partner.id,
+          propertyAddress: input.propertyAddress,
+          jobValue: input.jobValue,
+          platformFeeRate: input.platformFeeRate,
+        }).catch((e: Error) => ({
+          success: false,
+          message: e.message,
+          jobId,
+          distributions: [],
+          platformFee: Math.round(input.jobValue * input.platformFeeRate * 100) / 100,
+          totalDistributed: 0,
+          prolnkRetains: Math.round(input.jobValue * input.platformFeeRate * 100) / 100,
+        }));
+
+        const { automations } = await import("./webhooks/n8nAutomation");
+        automations.jobCompleted({
+          jobId,
+          proEmail: ctx.user.email ?? partner.contactEmail ?? "",
+          jobValue: input.jobValue,
+          address: input.propertyAddress,
+          platformFee: distribution.platformFee ?? 0,
+        }).catch(() => {});
+
+        return {
+          success: true,
+          jobId,
+          originationClaimed: (origination as any).isNewClaim ?? false,
+          distribution,
+        };
+      }),
+
   }),
   // -- Partner Notifications --
   notifications: router({
@@ -4825,15 +4882,19 @@ Return a JSON object with:
 
     // --- Admin: bulk approve all pending ---
     bulkApproveAll: adminProcedure
-      .input(z.object({ type: z.enum(['pros','homes']) }))
+      .input(z.object({ type: z.enum(['pros','homes']), tier: z.string().optional() }))
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
         const table = input.type === 'pros' ? 'proWaitlist' : 'homeWaitlist';
-        const result = await (db as any).execute(
-          sql`UPDATE ${sql.raw(table)} SET status = 'approved', approvedAt = ${now}, approvedBy = ${ctx.user.id} WHERE status = 'pending'`
-        );
+        const result = input.tier
+          ? await (db as any).execute(
+              sql`UPDATE ${sql.raw(table)} SET status = 'approved', approvedAt = ${now}, approvedBy = ${ctx.user.id} WHERE status = 'pending' AND tier = ${input.tier}`
+            )
+          : await (db as any).execute(
+              sql`UPDATE ${sql.raw(table)} SET status = 'approved', approvedAt = ${now}, approvedBy = ${ctx.user.id} WHERE status = 'pending'`
+            );
         return { success: true, updated: result[0]?.affectedRows ?? 0 };
       }),
 

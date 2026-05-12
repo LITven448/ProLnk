@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import { CloudLightning, Zap, Home, Bell } from "lucide-react";
+import { CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp } from "lucide-react";
 
 const ACTIVE_ALERTS = [
   { type: "Severe Thunderstorm Watch", area: "Dallas County, TX", severity: "Severe", issued: "May 11, 2026 · 2:30 PM CDT" },
@@ -12,6 +12,30 @@ const SEVERITY_BADGE: Record<string, string> = {
   Severe: "bg-amber-500 text-white",
   Moderate: "bg-yellow-400 text-black",
 };
+
+const SEVERITY_BORDER: Record<string, string> = {
+  Extreme: "border-red-500/60",
+  Severe: "border-amber-500/50",
+  Moderate: "border-yellow-400/30",
+};
+
+const PRO_BENEFITS = [
+  {
+    icon: <AlertTriangle className="w-5 h-5 text-red-400" />,
+    title: "Instant Storm Trigger",
+    desc: "The moment NOAA issues a severe weather alert in your ZIP, our AI auto-generates a lead list from affected properties — before storm chasers or competitors even know it hit.",
+  },
+  {
+    icon: <Home className="w-5 h-5 text-amber-400" />,
+    title: "HVAC & Roofing Get First Crack",
+    desc: "HVAC and roofing pros are priority-routed on every storm event. Storm-damaged properties surface instantly — pre-qualified, address-verified, ranked by urgency.",
+  },
+  {
+    icon: <TrendingUp className="w-5 h-5 text-green-400" />,
+    title: "Earn While You Sleep",
+    desc: "Storm leads auto-assign to your queue 24/7. Wake up to a full job list after every weather event — no cold calls, no bidding wars. Just work.",
+  },
+];
 
 const HOW_IT_WORKS = [
   {
@@ -36,6 +60,13 @@ export default function StormAlert() {
 
   return (
     <div className="min-h-screen bg-[#0A0F1C] text-white">
+      <style>{`
+        @keyframes flash-border {
+          0%, 100% { border-color: rgba(239,68,68,0.6); box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+          50% { border-color: rgba(239,68,68,1); box-shadow: 0 0 10px 2px rgba(239,68,68,0.25); }
+        }
+        .flash-red { animation: flash-border 1.6s ease-in-out infinite; }
+      `}</style>
       {/* Nav bar */}
       <nav className="border-b border-white/10 px-6 py-4 flex items-center justify-between max-w-5xl mx-auto">
         <button onClick={() => navigate("/")} className="text-lg font-bold tracking-tight text-white hover:opacity-80 transition-opacity">
@@ -69,9 +100,14 @@ export default function StormAlert() {
         <div className="space-y-3 mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">Current NOAA Alerts — Texas</p>
           {ACTIVE_ALERTS.map((alert, i) => (
-            <div key={i} className="flex items-start justify-between gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4 hover:bg-white/8 transition-colors">
+            <div
+              key={i}
+              className={`flex items-start justify-between gap-4 bg-white/5 border rounded-xl px-5 py-4 transition-colors ${
+                alert.severity === "Extreme" ? "flash-red" : `border ${SEVERITY_BORDER[alert.severity] ?? "border-white/10"}`
+              }`}
+            >
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0 animate-pulse" />
+                <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 animate-pulse ${alert.severity === "Extreme" ? "bg-red-500" : "bg-amber-400"}`} />
                 <div>
                   <p className="text-sm font-semibold text-white">{alert.type}</p>
                   <p className="text-xs text-gray-400 mt-0.5">{alert.area} · {alert.issued}</p>
@@ -118,6 +154,45 @@ export default function StormAlert() {
                 <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* AI Lead Auto-Generation section */}
+        <div className="mt-16 mb-16">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-red-400">For Service Pros</span>
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2 leading-tight">
+            Every storm is a lead queue.<br />
+            <span className="text-amber-400">ProLnk fills it automatically.</span>
+          </h2>
+          <p className="text-gray-400 text-sm mb-8 max-w-xl">
+            HVAC and roofing pros get first crack at storm-damaged properties through the AI lead system — ranked by urgency, pre-qualified, and delivered to your phone before you finish your morning coffee.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {PRO_BENEFITS.map((benefit, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-4">
+                  {benefit.icon}
+                </div>
+                <p className="text-sm font-bold text-white mb-1.5">{benefit.title}</p>
+                <p className="text-xs text-gray-400 leading-relaxed">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Pro sign-up CTA */}
+          <div className="bg-gradient-to-r from-red-500/15 via-amber-500/10 to-orange-500/10 border border-red-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <p className="text-base font-bold text-white">Don't wait for the next storm to cost you jobs.</p>
+              <p className="text-sm text-gray-300 mt-1">Join ProLnk's founding network — 72% commission keep, instant storm leads, 4-level network income. <span className="text-amber-400 font-semibold">First 500 partners only.</span></p>
+            </div>
+            <button
+              onClick={() => navigate("/apply")}
+              className="px-7 py-3.5 rounded-xl bg-red-500 hover:bg-red-400 text-white font-bold text-sm transition-colors flex-shrink-0 whitespace-nowrap shadow-lg shadow-red-500/20"
+            >
+              Sign Up as a Pro →
+            </button>
           </div>
         </div>
 

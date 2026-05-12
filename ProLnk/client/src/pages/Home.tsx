@@ -1338,6 +1338,12 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-3 italic">DFW launch — 4-tier Founding Network: Charter(25) · Founding(100) · Level 3(400) · Level 4(1,600). 2,125 total. Lock in your rate before we open to the public.</p>
+              {foundingData && (
+                <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(245,230,66,0.12)", border: "1px solid rgba(245,230,66,0.25)", color: "#F5E642" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F5E642] animate-pulse shrink-0" />
+                  {foundingData.approvedCount} pro{foundingData.approvedCount !== 1 ? "s" : ""} joined — {foundingData.spotsRemaining.toLocaleString()} spot{foundingData.spotsRemaining !== 1 ? "s" : ""} remaining
+                </div>
+              )}
             </FadeIn>
           </div>
         </div>
@@ -2230,14 +2236,21 @@ export default function Home() {
             </p>
           </FadeUp>
           <FadeUp delay={0.25}>
-            <Link href="/apply">
-              <button
-                className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
-                style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
-              >
-                Apply Now — It's Free <ArrowRight className="h-5 w-5" />
-              </button>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/apply">
+                <button
+                  className="inline-flex items-center gap-3 px-10 py-5 text-base font-bold tracking-wide transition-all hover:opacity-90"
+                  style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
+                >
+                  Apply Now — It's Free <ArrowRight className="h-5 w-5" />
+                </button>
+              </Link>
+              <Link href="/founding-partner">
+                <button className="inline-flex items-center gap-2 px-6 py-5 text-sm font-semibold text-white/70 hover:text-white border border-white/20 hover:border-white/40 transition-all">
+                  View Founding Partner Benefits <ChevronRight className="h-4 w-4" />
+                </button>
+              </Link>
+            </div>
           </FadeUp>
         </div>
       </section>

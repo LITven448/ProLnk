@@ -10,24 +10,12 @@
  *   - Integration Sync Manager — monitors FSM connection health
  */
 
-import { getDb } from "../db";
+import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
 import { searchUserMemory, addAgentMemory } from "../memory";
 import { sendEmail } from "../email";
-
-// Re-export from email module
-async function sendEmail(opts: { to: string; subject: string; html: string }) {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return false;
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: process.env.FROM_EMAIL ?? "ProLnk <noreply@prolnk.io>", to: [opts.to], subject: opts.subject, html: opts.html }),
-  });
-  return res.ok;
-}
 
 // ─── Partner Lifecycle Manager ────────────────────────────────────────────────
 
@@ -215,30 +203,36 @@ export async function runIntegrationSyncManager(): Promise<{
   staleSyncs: number;
   healthReport: string;
 }> {
-  const db = await getDb();
-  if (!db) return { connectedIntegrations: 0, failedIntegrations: 0, staleSyncs: 0, healthReport: "Database unavailable" };
+  console.log("[IntegrationSyncManager] Running...");
+  const pool = await getPool();
+  if (!pool) return { connectedIntegrations: 0, failedIntegrations: 0, staleSyncs: 0, healthReport: "Database unavailable" };
 
   try {
-    const integrationRows = await (db as any).execute(sql`
-      SELECT source, status, COUNT(*) as cnt,
-             MAX(lastSyncAt) as lastSync,
-             SUM(status = 'active') as activeCount,
-             SUM(status = 'error') as errorCount
-      FROM partnerIntegrations
-      GROUP BY source, status
-    `);
-    const integrations = integrationRows.rows || integrationRows;
+    const [integrationRows] = await pool.execute(
+      `SELECT source, status,
+              COUNT(*) as cnt,
+              MAX(lastSyncAt) as lastSync,
+              SUM(status = 'active') as activeCount,
+              SUM(status = 'error') as errorCount
+       FROM partnerIntegrations
+       GROUP BY source, status`
+    ) as any[];
+    const integrations: any[] = integrationRows ?? [];
 
-    const connected = integrations.filter((i: any) => i.status === "active").reduce((s: number, i: any) => s + parseInt(i.activeCount || "0"), 0);
-    const failed = integrations.filter((i: any) => i.status === "error").reduce((s: number, i: any) => s + parseInt(i.errorCount || "0"), 0);
+    const fsmSources = ["jobber", "servicetitan", "companycam"];
+    const connected = integrations
+      .filter((i: any) => i.status === "active" && fsmSources.includes(i.source))
+      .reduce((s: number, i: any) => s + parseInt(i.activeCount || "0"), 0);
+    const failed = integrations
+      .filter((i: any) => i.status === "error")
+      .reduce((s: number, i: any) => s + parseInt(i.errorCount || "0"), 0);
 
-    // Stale syncs (last sync > 24 hours ago for active integrations)
-    const staleRows = await (db as any).execute(sql`
-      SELECT COUNT(*) as cnt FROM partnerIntegrations
-      WHERE status = 'active'
-        AND (lastSyncAt IS NULL OR lastSyncAt < DATE_SUB(NOW(), INTERVAL 24 HOUR))
-    `);
-    const staleSyncs = parseInt((staleRows.rows || staleRows)[0]?.cnt ?? "0");
+    const [staleRows] = await pool.execute(
+      `SELECT COUNT(*) as cnt FROM partnerIntegrations
+       WHERE status = 'active'
+         AND (lastSyncAt IS NULL OR lastSyncAt < DATE_SUB(NOW(), INTERVAL 24 HOUR))`
+    ) as any[];
+    const staleSyncs = parseInt((staleRows as any[])[0]?.cnt ?? "0");
 
     if (failed > 0 || staleSyncs > 5) {
       await dashboard(
@@ -253,7 +247,7 @@ export async function runIntegrationSyncManager(): Promise<{
       failedIntegrations: failed,
       staleSyncs,
       healthReport: failed === 0 && staleSyncs === 0
-        ? "All integrations healthy"
+        ? "All integrations healthy (Jobber, ServiceTitan, CompanyCam)"
         : `${failed} errors, ${staleSyncs} stale — check FSM connections`,
     };
   } catch {
@@ -267,32 +261,52 @@ export async function runInsuranceClaimsManager(): Promise<{
   insuranceOpportunities: number;
   expiredCois: number;
   claimsDetectedThisMonth: number;
+  flaggedStaleClaims: Array<{ claimId: number; createdAt: string; daysPending: number }>;
 }> {
-  const db = await getDb();
-  if (!db) return { insuranceOpportunities: 0, expiredCois: 0, claimsDetectedThisMonth: 0 };
+  console.log("[InsuranceClaimsManager] Running...");
+  const pool = await getPool();
+  if (!pool) return { insuranceOpportunities: 0, expiredCois: 0, claimsDetectedThisMonth: 0, flaggedStaleClaims: [] };
 
   try {
-    // Opportunities flagged as potential insurance claims
-    const claimRows = await (db as any).execute(sql`
-      SELECT COUNT(*) as cnt FROM homeownerScanOffers
-      WHERE isInsuranceClaim = 1 AND createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
-    `).catch(() => ({ rows: [{ cnt: "0" }] }));
-    const claimsDetected = parseInt((claimRows.rows || claimRows)[0]?.cnt ?? "0");
+    // Claims detected this month (scan offers flagged as insurance)
+    const [claimRows] = await pool.execute(
+      `SELECT COUNT(*) as cnt FROM homeownerScanOffers
+       WHERE isInsuranceClaim = 1 AND createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)`
+    ).catch(() => [[{ cnt: "0" }]]) as any[];
+    const claimsDetected = parseInt((claimRows as any[])[0]?.cnt ?? "0");
 
     // Expired COIs on active partners
-    const expiredRows = await (db as any).execute(sql`
-      SELECT COUNT(*) as cnt FROM companyBriefcases
-      WHERE (generalLiabilityExpiresAt < NOW() OR workersCompExpiresAt < NOW())
-        AND status = 'active'
-    `).catch(() => ({ rows: [{ cnt: "0" }] }));
-    const expiredCois = parseInt((expiredRows.rows || expiredRows)[0]?.cnt ?? "0");
+    const [expiredRows] = await pool.execute(
+      `SELECT COUNT(*) as cnt FROM companyBriefcases
+       WHERE (generalLiabilityExpiresAt < NOW() OR workersCompExpiresAt < NOW())
+         AND status = 'active'`
+    ).catch(() => [[{ cnt: "0" }]]) as any[];
+    const expiredCois = parseInt((expiredRows as any[])[0]?.cnt ?? "0");
 
-    // Insurance opportunities from opportunities table
-    const insuranceOppRows = await (db as any).execute(sql`
-      SELECT COUNT(*) as cnt FROM opportunities
-      WHERE description LIKE '%insurance%' OR description LIKE '%storm%' OR description LIKE '%hail%'
-    `);
-    const insuranceOpps = parseInt((insuranceOppRows.rows || insuranceOppRows)[0]?.cnt ?? "0");
+    // Claims >30 days without resolution (stale)
+    const [staleRows] = await pool.execute(
+      `SELECT id as claimId, createdAt,
+              DATEDIFF(NOW(), createdAt) as daysPending
+       FROM homeownerScanOffers
+       WHERE isInsuranceClaim = 1
+         AND resolvedAt IS NULL
+         AND createdAt < DATE_SUB(NOW(), INTERVAL 30 DAY)
+       ORDER BY createdAt ASC
+       LIMIT 20`
+    ).catch(() => [[]]) as any[];
+    const flaggedStaleClaims: Array<{ claimId: number; createdAt: string; daysPending: number }> =
+      ((staleRows as any[]) ?? []).map((r: any) => ({
+        claimId: parseInt(r.claimId),
+        createdAt: String(r.createdAt),
+        daysPending: parseInt(r.daysPending),
+      }));
+
+    // Insurance-keyword opportunities
+    const [insuranceOppRows] = await pool.execute(
+      `SELECT COUNT(*) as cnt FROM opportunities
+       WHERE description LIKE '%insurance%' OR description LIKE '%storm%' OR description LIKE '%hail%'`
+    ) as any[];
+    const insuranceOpps = parseInt((insuranceOppRows as any[])[0]?.cnt ?? "0");
 
     if (expiredCois > 0) {
       await dashboard(
@@ -301,14 +315,17 @@ export async function runInsuranceClaimsManager(): Promise<{
         "insurance"
       );
     }
+    if (flaggedStaleClaims.length > 0) {
+      await dashboard(
+        `${flaggedStaleClaims.length} insurance claims unresolved >30 days`,
+        `Oldest claim is ${flaggedStaleClaims[0]?.daysPending ?? 0} days pending. Manual review required.`,
+        "insurance"
+      );
+    }
 
-    return {
-      insuranceOpportunities: insuranceOpps,
-      expiredCois,
-      claimsDetectedThisMonth: claimsDetected,
-    };
+    return { insuranceOpportunities: insuranceOpps, expiredCois, claimsDetectedThisMonth: claimsDetected, flaggedStaleClaims };
   } catch {
-    return { insuranceOpportunities: 0, expiredCois: 0, claimsDetectedThisMonth: 0 };
+    return { insuranceOpportunities: 0, expiredCois: 0, claimsDetectedThisMonth: 0, flaggedStaleClaims: [] };
   }
 }
 
@@ -317,30 +334,39 @@ export async function runInsuranceClaimsManager(): Promise<{
 export async function runInventoryPricingManager(): Promise<{
   tradeSupplyGaps: Array<{ trade: string; demandCount: number; supplyCount: number; coverageRatio: number }>;
   pricingRecommendations: string[];
+  attomStatus: "active" | "not_configured";
 }> {
-  const db = await getDb();
-  if (!db) return { tradeSupplyGaps: [], pricingRecommendations: [] };
+  console.log("[InventoryPricingManager] Running...");
+  const pool = await getPool();
+  const attomApiKey = process.env.ATTOM_API_KEY;
+
+  if (!pool) {
+    return {
+      tradeSupplyGaps: [],
+      pricingRecommendations: attomApiKey ? [] : ["Note: Set ATTOM_API_KEY to unlock property value-based pricing intelligence"],
+      attomStatus: attomApiKey ? "active" : "not_configured",
+    };
+  }
 
   try {
-    // Find trade categories with high demand (opportunities) but low supply (partners)
-    const demandRows = await (db as any).execute(sql`
-      SELECT opportunityCategory, COUNT(*) as demandCount
-      FROM opportunities
-      WHERE createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
-        AND status != 'expired'
-      GROUP BY opportunityCategory
-      ORDER BY demandCount DESC
-      LIMIT 15
-    `);
-    const demand = demandRows.rows || demandRows;
+    const [demandRows] = await pool.execute(
+      `SELECT opportunityCategory, COUNT(*) as demandCount
+       FROM opportunities
+       WHERE createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
+         AND status != 'expired'
+       GROUP BY opportunityCategory
+       ORDER BY demandCount DESC
+       LIMIT 15`
+    ) as any[];
+    const demand: any[] = demandRows ?? [];
 
-    const supplyRows = await (db as any).execute(sql`
-      SELECT businessType, COUNT(*) as supplyCount
-      FROM partners
-      WHERE status = 'approved'
-      GROUP BY businessType
-    `);
-    const supply = supplyRows.rows || supplyRows;
+    const [supplyRows] = await pool.execute(
+      `SELECT businessType, COUNT(*) as supplyCount
+       FROM partners
+       WHERE status = 'approved'
+       GROUP BY businessType`
+    ) as any[];
+    const supply: any[] = supplyRows ?? [];
 
     const gaps = demand.map((d: any) => {
       const matchingSupply = supply.find((s: any) =>
@@ -365,10 +391,21 @@ export async function runInventoryPricingManager(): Promise<{
     if (gaps.some((g: any) => g.trade === "hvac" && g.coverageRatio > 8)) {
       pricingRecommendations.push("HVAC demand high relative to supply in DFW — prioritize HVAC partner recruitment");
     }
+    if (!attomApiKey) {
+      pricingRecommendations.push("Note: Set ATTOM_API_KEY to unlock property value-based pricing intelligence from ATTOM Data Solutions");
+    }
 
-    return { tradeSupplyGaps: gaps, pricingRecommendations };
+    return {
+      tradeSupplyGaps: gaps,
+      pricingRecommendations,
+      attomStatus: attomApiKey ? "active" : "not_configured",
+    };
   } catch {
-    return { tradeSupplyGaps: [], pricingRecommendations: [] };
+    return {
+      tradeSupplyGaps: [],
+      pricingRecommendations: ["Could not fetch pricing data — check database connectivity"],
+      attomStatus: attomApiKey ? "active" : "not_configured",
+    };
   }
 }
 

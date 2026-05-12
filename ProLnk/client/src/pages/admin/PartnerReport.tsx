@@ -11,6 +11,7 @@ import {
   Phone, Mail, MapPin, Calendar
 } from "lucide-react";
 import { Link } from "wouter";
+import { toast } from "sonner";
 
 function formatDate(ts: number | Date | null | undefined) {
   if (!ts) return "—";
@@ -50,9 +51,214 @@ const TIER_LABELS: Record<string, string> = {
   enterprise: "Enterprise",
 };
 
-export default function PartnerReport() {
-  const [, params] = useRoute("/admin/partners/:id/report");
-  const partnerId = params?.id ? parseInt(params.id, 10) : 0;
+function WaitlistPartnerReport({ email }: { email: string }) {
+  const { data, isLoading } = trpc.proWaitlist.getWaitlistStatus.useQuery(
+    { email },
+    { enabled: !!email }
+  );
+  const updatePro = trpc.waitlistAdmin.updateProStatus.useMutation({
+    onSuccess: () => toast.success("Status updated — approval email sent"),
+    onError: (e) => toast.error(e.message),
+  });
+
+  const TIER_COMMISSION: Record<string, string> = {
+    Charter: "25% Direct · 7/4/2/1% Override · 12/6/3/1.5% Subscription",
+    Founding: "25% Direct · 7/4/2/1% Override · 12/6/3/1.5% Subscription",
+    Growth: "20% Direct · 4/2/1% Override · 6/3/1.5% Subscription",
+    Standard: "12% Direct · No override · No subscription override",
+  };
+
+  const reportDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+  if (isLoading) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8fafc" }}>
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-[#00B5B8] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-500">Loading waitlist partner data…</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8fafc" }}>
+        <div className="text-center">
+          <AlertTriangle className="w-12 h-12 text-red-400 mx-auto mb-3" />
+          <p className="text-gray-700 font-semibold">No waitlist record found for {email}</p>
+          <Link href="/admin/waitlist">
+            <Button variant="outline" className="mt-4">Back to Waitlist</Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <AdminLayout>
+      <div className="min-h-screen bg-gray-50">
+        <div className="no-print bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between sticky top-0 z-10">
+          <div className="flex items-center gap-3">
+            <Link href="/admin/waitlist">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <ArrowLeft className="w-4 h-4" /> Back to Waitlist
+              </Button>
+            </Link>
+            <span className="text-gray-300">|</span>
+            <span className="text-sm font-medium text-gray-600">Waitlist Partner Report</span>
+          </div>
+        </div>
+
+        <div className="max-w-3xl mx-auto px-6 py-8">
+          <Card className="border-gray-100 shadow-sm mb-6">
+            <CardContent className="pt-6">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-xs font-bold tracking-widest text-[#00B5B8] uppercase mb-1">ProLnk Partner Network</div>
+                  <h1 className="text-2xl font-bold text-gray-900">Waitlist Partner Report</h1>
+                  <p className="text-gray-500 text-sm mt-1">Generated {reportDate}</p>
+                </div>
+                <Badge variant="outline" className="text-sm font-bold px-3 py-1 border-blue-300 text-blue-700 bg-blue-50">
+                  <Award className="w-3.5 h-3.5 mr-1.5 inline" />
+                  {data.tier} Tier
+                </Badge>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <User className="w-3.5 h-3.5 text-gray-400" />
+                    {data.firstName} {data.lastName}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <Mail className="w-3.5 h-3.5 text-gray-400" />
+                    {data.email}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <MapPin className="w-3.5 h-3.5 text-gray-400" />
+                    {data.primaryCity}, {data.primaryState}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <Briefcase className="w-3.5 h-3.5 text-gray-400" />
+                    {data.businessType ?? "—"}
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">Waitlist Position</span>
+                    <span className="font-bold text-gray-900">#{data.position}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">Referral Code</span>
+                    <span className="font-mono font-bold text-gray-900">{data.referralCode}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">Status</span>
+                    <Badge className={`text-xs ${data.status === "approved" ? "bg-green-100 text-green-800" : data.status === "rejected" ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}>
+                      {data.status ?? "pending"}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">Spots to Charter</span>
+                    <span className="font-semibold text-gray-700">{data.spotsToCharter > 0 ? `${data.spotsToCharter} away` : "Charter member"}</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-gray-100 shadow-sm mb-6">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <DollarSign className="w-4 h-4 text-green-500" />
+                Commission Rate Breakdown — {data.tier} Tier
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <p className="text-sm text-gray-700 font-mono">{TIER_COMMISSION[data.tier] ?? "Standard rates apply"}</p>
+              </div>
+              <div className="grid grid-cols-3 gap-3 mt-4">
+                {[
+                  { label: "Override Levels", value: `${data.overrideLevels} deep` },
+                  { label: "Commission Rate", value: `${data.commissionRate}%` },
+                  { label: "Network Size", value: `${(data.referrals ?? []).length} direct` },
+                ].map((item) => (
+                  <div key={item.label} className="text-center bg-white border border-gray-100 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">{item.label}</div>
+                    <div className="text-lg font-bold text-gray-900">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {(data.referrals ?? []).length > 0 && (
+            <Card className="border-gray-100 shadow-sm mb-6">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <User className="w-4 h-4 text-[#00B5B8]" />
+                  L1 Referral Tree
+                  <Badge variant="outline" className="ml-auto text-xs">{(data.referrals ?? []).length} recruits</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="divide-y divide-gray-50">
+                  {(data.referrals ?? []).map((r, i) => (
+                    <div key={i} className="py-2 flex items-center gap-3 text-sm">
+                      <div className="w-6 h-6 rounded-full bg-[#00B5B8]/10 flex items-center justify-center text-xs font-bold text-[#00B5B8]">
+                        {(r.firstName ?? "?")[0]}
+                      </div>
+                      <span className="text-gray-800">{r.firstName}</span>
+                      <span className="text-gray-400 ml-auto">{r.businessType}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          <Card className="border-gray-100 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">Admin Actions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-3 flex-wrap">
+                <Button
+                  className="bg-green-600 hover:bg-green-700 text-white gap-2"
+                  disabled={updatePro.isPending || data.status === "approved"}
+                  onClick={() => {
+                    if (!data.id) return;
+                    if (!window.confirm(`Approve ${data.firstName} ${data.lastName}? An approval email will be sent.`)) return;
+                    updatePro.mutate({ id: data.id, status: "approved" });
+                  }}
+                >
+                  <CheckCircle className="w-4 h-4" />
+                  Send Approval Email
+                </Button>
+                <a href={`mailto:${data.email}`}>
+                  <Button variant="outline" className="gap-2">
+                    <Mail className="w-4 h-4" />
+                    Email Partner
+                  </Button>
+                </a>
+                <Link href="/admin/waitlist">
+                  <Button variant="outline">Back to Waitlist</Button>
+                </Link>
+              </div>
+              {data.status === "approved" && (
+                <p className="text-sm text-green-600 font-semibold mt-3">✓ Partner already approved</p>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </AdminLayout>
+  );
+}
+
+function ActivatedPartnerReport({ partnerId }: { partnerId: number }) {
   const [printing, setPrinting] = useState(false);
 
   const { data, isLoading } = trpc.compliance.getPartnerReport.useQuery(
@@ -470,4 +676,16 @@ export default function PartnerReport() {
     </div>
     </AdminLayout>
   );
+}
+
+export default function PartnerReport() {
+  const [, params] = useRoute("/admin/partners/:id/report");
+  const rawId = params?.id ?? "";
+  const isEmail = rawId.includes("@");
+
+  if (isEmail) {
+    return <WaitlistPartnerReport email={decodeURIComponent(rawId)} />;
+  }
+
+  return <ActivatedPartnerReport partnerId={rawId ? parseInt(rawId, 10) : 0} />;
 }

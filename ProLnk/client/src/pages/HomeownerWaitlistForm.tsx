@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * TrustyPro Homeowner Waitlist Intake Form
  * Route: /home-waitlist

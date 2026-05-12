@@ -17,7 +17,7 @@ interface EmailPayload {
   from?: string;
 }
 
-async function sendEmail(payload: EmailPayload): Promise<boolean> {
+export async function sendEmail(payload: EmailPayload): Promise<boolean> {
   if (!RESEND_API_KEY) {
     console.warn("[Email] RESEND_API_KEY not set — skipping email send");
     return false;

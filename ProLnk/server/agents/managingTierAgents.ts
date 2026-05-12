@@ -15,8 +15,7 @@ import { sql } from "drizzle-orm";
 import { invokeLLM } from "../_core/llm";
 import { dashboard, aiHandled } from "../notify";
 import { searchUserMemory, addAgentMemory } from "../memory";
-// Email notifications handled via notification service
-// import removed — use notificationService.ts for emails
+import { sendEmail } from "../email";
 
 // ─── Partner Lifecycle Manager ────────────────────────────────────────────────
 
@@ -33,7 +32,7 @@ export async function runPartnerLifecycleManager(): Promise<{
 
   try {
     // New partners (approved in last 7 days, haven't logged a job yet)
-    const newPartnerRows = await (db as any).execute(sql`
+    const newPartnerRows = await db.execute(sql`
       SELECT p.id, p.businessName, p.contactEmail, p.contactName, p.approvedAt
       FROM partners p
       WHERE p.status = 'approved'
@@ -44,7 +43,7 @@ export async function runPartnerLifecycleManager(): Promise<{
     newOnboarded = newPartners.length;
 
     // At-risk partners (approved > 30 days, never logged a job)
-    const atRiskRows = await (db as any).execute(sql`
+    const atRiskRows = await db.execute(sql`
       SELECT p.id, p.businessName, p.contactEmail, p.contactName, p.approvedAt
       FROM partners p
       WHERE p.status = 'approved'
@@ -57,7 +56,7 @@ export async function runPartnerLifecycleManager(): Promise<{
     atRisk = atRiskPartners.length;
 
     // Win-back: partners who were active, then went silent for 30+ days
-    const winBackRows = await (db as any).execute(sql`
+    const winBackRows = await db.execute(sql`
       SELECT p.id, p.businessName, p.contactEmail, p.contactName,
              p.totalCommissionEarned, p.jobsLogged
       FROM partners p
@@ -100,9 +99,9 @@ export async function runPartnerLifecycleManager(): Promise<{
   </div>
 </div>`;
 
-      console.log("[ManagingAgent] Alert notification:", {
+      await sendEmail({
         to: partner.contactEmail,
-        alert: "We miss you — your next commission is waiting",
+        subject: "We miss you — your next commission is waiting",
         html: emailHtml,
       });
 
@@ -111,7 +110,7 @@ export async function runPartnerLifecycleManager(): Promise<{
     }
 
     // Milestone notifications (first job, 5 jobs, first commission, $100/$1K earned)
-    const milestoneRows = await (db as any).execute(sql`
+    const milestoneRows = await db.execute(sql`
       SELECT p.id, p.businessName, p.contactEmail, p.jobsLogged, p.totalCommissionEarned
       FROM partners p
       WHERE p.status = 'approved'
@@ -157,7 +156,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
 
   try {
     // Find homeowners who signed up but haven't completed setup
-    const incompleteRows = await (db as any).execute(sql`
+    const incompleteRows = await db.execute(sql`
       SELECT hp.id, hp.displayName, u.email, u.name, hp.createdAt
       FROM homeownerProfiles hp
       JOIN users u ON hp.userId = u.id
@@ -170,7 +169,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
     const outreachSent = incomplete.length;
 
     // Check conversion rate from postcard → signup
-    const postcardConversionRows = await (db as any).execute(sql`
+    const postcardConversionRows = await db.execute(sql`
       SELECT
         COUNT(*) as total,
         SUM(convertedToSignup = 1) as converted
@@ -183,7 +182,7 @@ export async function runHomeownerAcquisitionManager(): Promise<{
       : "No data yet";
 
     // Top converting ZIPs from waitlist
-    const zipRows = await (db as any).execute(sql`
+    const zipRows = await db.execute(sql`
       SELECT zipCode, COUNT(*) as cnt FROM homeWaitlist
       WHERE zipCode IS NOT NULL
       GROUP BY zipCode ORDER BY cnt DESC LIMIT 5

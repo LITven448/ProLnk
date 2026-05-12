@@ -215,7 +215,7 @@ function EarningsCalculator({ commissionRate, overrideLevels }: { commissionRate
           max={50}
           value={recruited}
           onChange={(e) => setRecruited(Number(e.target.value))}
-          className="w-full accent-green-500"
+          className="w-full max-w-full accent-green-500"
         />
         <div className="flex justify-between text-xs text-gray-600 mt-1">
           <span>1</span>
@@ -224,7 +224,7 @@ function EarningsCalculator({ commissionRate, overrideLevels }: { commissionRate
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div className="p-3 rounded-xl text-center" style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)" }}>
           <p className="text-xs text-gray-400 mb-1">Your own job income</p>
           <p className="text-xl font-bold text-green-400">${Math.round(directEarnings).toLocaleString()}</p>
@@ -376,8 +376,8 @@ export default function WaitlistStatus() {
             <Share2 size={18} className="text-green-400" />
             <h2 className="font-bold text-white">Your Referral Link</h2>
           </div>
-          <div className="flex items-center gap-2 p-3 rounded-xl mb-3" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <span className="text-sm text-gray-300 flex-1 truncate font-mono">{referralLink}</span>
+          <div className="flex items-center gap-2 p-3 rounded-xl mb-3 overflow-hidden" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <span className="text-sm text-gray-300 flex-1 truncate font-mono min-w-0">{referralLink}</span>
           </div>
           <div className="flex gap-2 flex-wrap">
             <CopyButton text={referralLink} label="Copy Link" />

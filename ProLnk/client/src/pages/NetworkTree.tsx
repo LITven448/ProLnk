@@ -60,7 +60,7 @@ function UserCard({
   const label = TIER_LABEL[tier] ?? "Waitlist";
   return (
     <div
-      className="inline-flex flex-col items-center px-6 py-4 rounded-2xl"
+      className="flex flex-col items-center px-4 sm:px-6 py-4 rounded-2xl w-full sm:w-auto"
       style={{
         background: "rgba(255,255,255,0.06)",
         border: `2px solid ${border}`,
@@ -73,8 +73,8 @@ function UserCard({
       >
         {label}
       </div>
-      <p className="text-lg font-bold text-white">{name}</p>
-      <p className="text-xs text-gray-400 mt-1">
+      <p className="text-lg font-bold text-white text-center">{name}</p>
+      <p className="text-xs text-gray-400 mt-1 text-center">
         Position #{position} &middot; Code: <span className="font-mono text-gray-300">{referralCode}</span>
       </p>
     </div>
@@ -304,7 +304,7 @@ export default function NetworkTree() {
         </div>
 
         {/* Earnings summary */}
-        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div
             className="rounded-2xl p-5"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
@@ -358,7 +358,7 @@ export default function NetworkTree() {
           style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
           <h3 className="text-sm font-bold text-white mb-4">Override Rate Breakdown</h3>
-          <div className="grid sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { level: "L1", jobRate: "7%", subRate: "12%", color: "#3b82f6" },
               { level: "L2", jobRate: "4%", subRate: "6%",  color: "#22c55e" },

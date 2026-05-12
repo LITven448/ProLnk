@@ -154,7 +154,7 @@ export default function Contest() {
     refetchInterval: 60_000,
   });
 
-  const totalParticipants = counts?.total ?? 0;
+  const totalParticipants = (counts?.pros ?? 0) + (counts?.homes ?? 0);
 
   return (
     <div className="min-h-screen bg-white">

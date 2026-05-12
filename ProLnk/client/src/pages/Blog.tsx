@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, ArrowRight, Megaphone } from "lucide-react";
 import { Link } from "wouter";

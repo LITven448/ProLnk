@@ -15,6 +15,7 @@ import {
   Check, Save, Loader2, ExternalLink, Eye, EyeOff,
   Smartphone, Mail, MessageSquare, Zap, Lock,
   Star, Copy, FileCheck, FileX, AlertCircle,
+  Download, Trash2,
 } from "lucide-react";
 
 type Tab = "account" | "notifications" | "payout" | "integrations" | "security" | "status";
@@ -642,7 +643,85 @@ function SecurityTab() {
           ))}
         </div>
       </div>
+
+      <div>
+        <h3 className="text-sm font-semibold text-red-600 mb-1">Danger Zone</h3>
+        <p className="text-xs text-gray-400 mb-3">These actions are permanent or may affect your account.</p>
+        <div className="space-y-2 rounded-xl border border-red-200 p-4 bg-red-50/40">
+          <DangerZoneDownload />
+          <a
+            href="mailto:support@prolnk.io?subject=Account%20Closure%20Request"
+            className="flex items-center justify-between p-3 rounded-xl border border-red-200 bg-white hover:bg-red-50 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-red-100">
+                <Trash2 className="w-4 h-4 text-red-500" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-red-700">Close Account</p>
+                <p className="text-xs text-red-400">Contact support to request account closure</p>
+              </div>
+            </div>
+            <ExternalLink className="w-3.5 h-3.5 text-red-400 group-hover:text-red-600 transition-colors" />
+          </a>
+        </div>
+      </div>
     </div>
+  );
+}
+
+function DangerZoneDownload() {
+  const { data: profileData } = trpc.partners.getMyProfile.useQuery();
+  const { user } = useAuth();
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownload = () => {
+    setDownloading(true);
+    const partner = (profileData as any)?.partner ?? {};
+    const rows = [
+      ["Field", "Value"],
+      ["Name", partner.contactName ?? user?.name ?? ""],
+      ["Email", partner.contactEmail ?? user?.email ?? ""],
+      ["Business", partner.businessName ?? ""],
+      ["Phone", partner.contactPhone ?? ""],
+      ["Trade", partner.trade ?? ""],
+      ["Service Area", partner.serviceArea ?? ""],
+      ["Tier", partner.tier ?? ""],
+      ["Jobs Logged", partner.jobsLogged ?? "0"],
+      ["Referrals", partner.referralCount ?? "0"],
+      ["Total Earned", `$${Number(partner.totalCommissionEarned ?? 0).toFixed(2)}`],
+      ["Member Since", partner.createdAt ? new Date(partner.createdAt).toLocaleDateString() : ""],
+    ];
+    const csv = rows.map(r => r.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "prolnk-account-data.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+    setTimeout(() => setDownloading(false), 1000);
+  };
+
+  return (
+    <button
+      onClick={handleDownload}
+      disabled={downloading}
+      className="w-full flex items-center justify-between p-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors group text-left"
+    >
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gray-100">
+          <Download className={`w-4 h-4 text-gray-500 ${downloading ? "animate-bounce" : ""}`} />
+        </div>
+        <div>
+          <p className="text-sm font-medium text-gray-900">Download My Data</p>
+          <p className="text-xs text-gray-500">Export your account data as CSV</p>
+        </div>
+      </div>
+      <span className="text-xs font-semibold text-gray-400 group-hover:text-gray-700 transition-colors">
+        {downloading ? "Downloading…" : "Export CSV"}
+      </span>
+    </button>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useRef as _useRef } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -34,24 +34,31 @@ function loadPlayfair() {
   document.head.appendChild(link);
 }
 
-// Full-bleed video background component
-function VideoHero({ src, overlay = "rgba(8,12,20,0.55)", children }: {
+// Full-bleed video background component with fallback gradient
+function VideoHero({ src, overlay = "rgba(8,12,20,0.55)", fallbackGradient = "linear-gradient(135deg, #080C14 0%, #0D1424 50%, #111827 100%)", children }: {
   src: string;
   overlay?: string;
+  fallbackGradient?: string;
   children: React.ReactNode;
 }) {
+  const [videoError, setVideoError] = useState(false);
   return (
     <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-      <video
-        autoPlay muted loop playsInline
-        src={src}
-        style={{
-          position: "absolute", inset: 0,
-          width: "100%", height: "100%",
-          objectFit: "cover",
-          zIndex: 0,
-        }}
-      />
+      {videoError ? (
+        <div style={{ position: "absolute", inset: 0, background: fallbackGradient, zIndex: 0 }} />
+      ) : (
+        <video
+          autoPlay muted loop playsInline
+          src={src}
+          onError={() => setVideoError(true)}
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+          }}
+        />
+      )}
       <div style={{ position: "absolute", inset: 0, background: overlay, zIndex: 1 }} />
       <div style={{ position: "relative", zIndex: 2 }}>{children}</div>
     </div>
@@ -533,6 +540,220 @@ function Modal({ open, onClose }: { open: boolean; onClose: () => void }) {
   );
 }
 
+// ─── Partner Program ─────────────────────────────────────────────────────────
+const PARTNER_TIERS = [
+  {
+    name: "Starter",
+    price: "$999",
+    unit: "/mo",
+    tagline: "Get in front of the network",
+    highlight: false,
+    features: [
+      "Verified pro directory listing",
+      "1 sponsored email blast/mo",
+      "Dashboard display placement",
+      "DFW geo-targeting by ZIP",
+      "Monthly campaign report",
+      "Brand logo in partner portal",
+    ],
+  },
+  {
+    name: "Growth",
+    price: "$2,999",
+    unit: "/mo",
+    tagline: "Dominate your category",
+    highlight: true,
+    features: [
+      "Everything in Starter",
+      "Priority feed placement",
+      "Weekly email to 5K+ pros",
+      "Event-triggered notifications",
+      "Homeowner report sponsorships",
+      "Dedicated account manager",
+      "Category exclusivity (1 market)",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    unit: "",
+    tagline: "Full network ownership",
+    highlight: false,
+    features: [
+      "Full network exclusivity",
+      "Multi-market category lock-out",
+      "Custom branded subsite build",
+      "Social + SMS integration",
+      "Home sale history matching",
+      "White-glove campaign management",
+      "Quarterly business reviews",
+    ],
+  },
+];
+
+function PartnerProgram({ onCta }: { onCta: () => void }) {
+  return (
+    <div style={{ background: NAVY, padding: "120px clamp(16px,5vw,80px)" }}>
+      <Reveal>
+        <div style={{ textAlign: "center", marginBottom: 72 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: GOLD, textTransform: "uppercase", marginBottom: 16 }}>Partner Program</div>
+          <h2 style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(36px,5vw,64px)", fontWeight: 900, color: CREAM, margin: "0 0 20px" }}>
+            How Brands Partner<br /><em style={{ color: GOLD }}>With ProLnk.</em>
+          </h2>
+          <p style={{ color: "rgba(245,240,232,0.6)", fontSize: 18, maxWidth: 640, margin: "0 auto" }}>
+            More than ad placements — a partnership that puts your brand inside the daily workflow of verified home service professionals and the homeowners they serve.
+          </p>
+        </div>
+      </Reveal>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, maxWidth: 1100, margin: "0 auto 80px" }}>
+        {PARTNER_TIERS.map((tier, i) => (
+          <Reveal key={tier.name} delay={i * 0.1}>
+            <div style={{
+              background: tier.highlight ? `rgba(232,160,32,0.07)` : "rgba(255,255,255,0.025)",
+              border: `2px solid ${tier.highlight ? GOLD : BORDER}`,
+              borderRadius: 20, padding: "36px 28px",
+              position: "relative",
+            }}>
+              {tier.highlight && (
+                <div style={{
+                  position: "absolute", top: -13, left: "50%", transform: "translateX(-50%)",
+                  background: GOLD, color: NAVY, padding: "4px 18px", borderRadius: 100,
+                  fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                }}>Most Popular</div>
+              )}
+              <div style={{ fontSize: 12, color: "rgba(245,240,232,0.4)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>{tier.name}</div>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 8 }}>
+                <span style={{ fontFamily: "Playfair Display, serif", fontSize: 48, fontWeight: 900, color: CREAM }}>{tier.price}</span>
+                <span style={{ color: "rgba(245,240,232,0.4)", fontSize: 15 }}>{tier.unit}</span>
+              </div>
+              <div style={{ fontSize: 13, color: GOLD, marginBottom: 24, fontStyle: "italic" }}>{tier.tagline}</div>
+              {tier.features.map(f => (
+                <div key={f} style={{ display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 10 }}>
+                  <span style={{ color: GOLD, fontSize: 14 }}>✦</span>
+                  <span style={{ color: "rgba(245,240,232,0.65)", fontSize: 14, lineHeight: 1.5 }}>{f}</span>
+                </div>
+              ))}
+              <button onClick={onCta} style={{
+                marginTop: 28, width: "100%",
+                background: tier.highlight ? GOLD : "transparent",
+                color: tier.highlight ? NAVY : CREAM,
+                border: `1px solid ${tier.highlight ? GOLD : BORDER}`,
+                borderRadius: 100, padding: "13px 24px",
+                fontWeight: 700, fontSize: 15, cursor: "pointer", fontFamily: "inherit",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => { (e.currentTarget.style.opacity = "0.85"); }}
+              onMouseLeave={e => { (e.currentTarget.style.opacity = "1"); }}>
+                {tier.price === "Custom" ? "Contact Sales →" : "Claim This Tier →"}
+              </button>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* What makes a partner */}
+      <Reveal>
+        <div style={{
+          maxWidth: 900, margin: "0 auto",
+          background: "rgba(232,160,32,0.05)",
+          border: `1px solid rgba(232,160,32,0.15)`,
+          borderRadius: 20,
+          padding: "40px clamp(24px,5vw,56px)",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: 32,
+        }}>
+          {[
+            { num: "48hrs", label: "Average campaign launch time" },
+            { num: "94%", label: "Audience engagement rate" },
+            { num: "0 cookies", label: "First-party data only" },
+            { num: "1 market", label: "DFW — hyper-local focus" },
+          ].map(stat => (
+            <div key={stat.num} style={{ textAlign: "center" }}>
+              <div style={{ fontFamily: "Playfair Display, serif", fontSize: 36, fontWeight: 900, color: GOLD }}>{stat.num}</div>
+              <div style={{ fontSize: 13, color: "rgba(245,240,232,0.5)", marginTop: 6, lineHeight: 1.4 }}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
+// ─── Inline advertiser capture ────────────────────────────────────────────────
+function AdvertiserCapture() {
+  const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <div style={{ background: SURFACE, borderTop: `1px solid ${BORDER}`, padding: "80px clamp(16px,5vw,80px)" }}>
+      <Reveal>
+        <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: GOLD, textTransform: "uppercase", marginBottom: 16 }}>
+            Get in Touch
+          </div>
+          <h2 style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(32px,4vw,52px)", fontWeight: 900, color: CREAM, margin: "0 0 16px" }}>
+            Ready to Reach the<br /><em style={{ color: GOLD }}>Home Services Market?</em>
+          </h2>
+          <p style={{ color: "rgba(245,240,232,0.55)", fontSize: 16, marginBottom: 40, lineHeight: 1.6 }}>
+            Drop your info and we'll reach out within one business day with available placements and founding advertiser rates.
+          </p>
+
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              style={{
+                background: "rgba(232,160,32,0.08)",
+                border: `1px solid rgba(232,160,32,0.25)`,
+                borderRadius: 16, padding: "32px",
+              }}
+            >
+              <div style={{ fontSize: 40, marginBottom: 12 }}>✦</div>
+              <div style={{ fontFamily: "Playfair Display, serif", fontSize: 24, color: GOLD, marginBottom: 8 }}>You're on the list.</div>
+              <div style={{ color: "rgba(245,240,232,0.6)", fontSize: 15 }}>We'll reach out within one business day to discuss your campaign.</div>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "left" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div>
+                  <label style={{ display: "block", color: "rgba(245,240,232,0.45)", fontSize: 11, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.1em" }}>Company</label>
+                  <input
+                    type="text" required placeholder="Your company"
+                    value={company} onChange={e => setCompany(e.target.value)}
+                    style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: `1px solid ${BORDER}`, borderRadius: 10, padding: "12px 16px", color: CREAM, fontSize: 15, boxSizing: "border-box" as const, outline: "none", fontFamily: "inherit" }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: "block", color: "rgba(245,240,232,0.45)", fontSize: 11, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.1em" }}>Work Email</label>
+                  <input
+                    type="email" required placeholder="you@company.com"
+                    value={email} onChange={e => setEmail(e.target.value)}
+                    style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: `1px solid ${BORDER}`, borderRadius: 10, padding: "12px 16px", color: CREAM, fontSize: 15, boxSizing: "border-box" as const, outline: "none", fontFamily: "inherit" }}
+                  />
+                </div>
+              </div>
+              <button type="submit" style={{
+                background: GOLD, color: NAVY, border: "none", borderRadius: 100,
+                padding: "14px 32px", fontSize: 16, fontWeight: 700,
+                cursor: "pointer", fontFamily: "inherit", marginTop: 4,
+              }}>
+                Request Advertiser Info →
+              </button>
+              <p style={{ color: "rgba(245,240,232,0.3)", fontSize: 12, textAlign: "center", margin: 0 }}>No spam. One response from a real human. Founding rates locked on reply.</p>
+            </form>
+          )}
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
 // ─── Main export ──────────────────────────────────────────────────────────────
 export default function ProLnkMediaSite() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -541,16 +762,17 @@ export default function ProLnkMediaSite() {
   return (
     <div style={{ background: NAVY, fontFamily: "Inter, system-ui, sans-serif", color: CREAM, minHeight: "100vh" }}>
       <Helmet>
-        <title>ProLnk Media — The Future of Home Services</title>
-        <meta name="description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
-        <meta property="og:title" content="ProLnk Media — The Future of Home Services" />
-        <meta property="og:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
+        <title>ProLnk Media — Advertise to Verified Home Service Pros & Homeowners</title>
+        <meta name="description" content="Reach 500+ verified trade professionals and 12K+ DFW homeowners at the moment they're making buying decisions. Hyper-local, context-aware advertising — no banner blindness." />
+        <meta name="keywords" content="advertise home services, contractor advertising, DFW home services marketing, reach homeowners, trade professional network advertising" />
+        <meta property="og:title" content="ProLnk Media — Reach the Trades. Own the Neighborhood." />
+        <meta property="og:description" content="Reach 500+ verified trade professionals and 12K+ DFW homeowners at the moment they're making buying decisions. Context-aware placements with first-party data." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/media" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ProLnk Media — The Future of Home Services" />
-        <meta name="twitter:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
+        <meta name="twitter:title" content="ProLnk Media — Reach the Trades. Own the Neighborhood." />
+        <meta name="twitter:description" content="Reach 500+ verified trade professionals and 12K+ DFW homeowners at the moment they're making buying decisions." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.io/media" />
       </Helmet>
@@ -559,7 +781,9 @@ export default function ProLnkMediaSite() {
       <AudienceStrip />
       <AdFormats />
       <About />
+      <PartnerProgram onCta={() => setModalOpen(true)} />
       <Pricing onCta={() => setModalOpen(true)} />
+      <AdvertiserCapture />
       <CloseCta onCta={() => setModalOpen(true)} />
       <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
     </div>

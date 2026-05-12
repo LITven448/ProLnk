@@ -1,3 +1,4 @@
+import type React from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { useState } from "react";
 import {

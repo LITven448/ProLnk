@@ -457,9 +457,63 @@ export default function PartnerDashboard() {
     (sum, c) => sum + Number(c.amount ?? 0), 0
   ) ?? 0;
 
+  const now = Date.now();
+  const startOfMonth = new Date(); startOfMonth.setDate(1); startOfMonth.setHours(0,0,0,0);
+  const startOfWeek = new Date(now - 7 * 86400000);
+  const earningsThisMonth = (earnedCommissions ?? [])
+    .filter((c) => new Date(Number(c.createdAt)) >= startOfMonth)
+    .reduce((s, c) => s + Number(c.amount ?? 0), 0);
+  const leadsThisWeek = (inboundOpps ?? [])
+    .filter((o) => new Date(Number((o as any).createdAt ?? 0)) >= startOfWeek).length;
+  const jobsCompletedThisMonth = (inboundOpps ?? [])
+    .filter((o) => o.status === "converted" && new Date(Number((o as any).updatedAt ?? 0)) >= startOfMonth).length;
+  const networkDepth = Math.min(4, Math.floor(Math.log2(Math.max(1, partner.referralCount ?? 0) / 2 + 1)));
+  const trialEndsAt = partner.trialEndsAt ? new Date(partner.trialEndsAt) : null;
+  const trialDaysLeft = trialEndsAt ? Math.max(0, Math.ceil((trialEndsAt.getTime() - now) / 86400000)) : null;
+
+  const NETWORK_TIERS: Record<string, { label: string; color: string; bg: string }> = {
+    charter:  { label: "Charter",  color: "#10B981", bg: "bg-emerald-50 border-emerald-200" },
+    founding: { label: "Founding", color: "#3B82F6", bg: "bg-blue-50 border-blue-200" },
+    l3:       { label: "Level 3",  color: "#8B5CF6", bg: "bg-purple-50 border-purple-200" },
+    l4:       { label: "Level 4",  color: "#F59E0B", bg: "bg-amber-50 border-amber-200" },
+  };
+  const networkTierKey = (partner.networkTier as string) ?? "charter";
+  const networkTierCfg = NETWORK_TIERS[networkTierKey] ?? NETWORK_TIERS.charter;
+
   return (
     <PartnerLayout>
       <div className="p-6 max-w-7xl mx-auto">
+
+        {/* -- Quick Stats Banner ------------------------------------------------- */}
+        <div className="flex flex-wrap gap-3 mb-6">
+          <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${networkTierCfg.bg}`} style={{ color: networkTierCfg.color }}>
+            <Award className="w-3.5 h-3.5" />
+            {networkTierCfg.label} Member
+          </div>
+          {trialDaysLeft !== null && (
+            <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${trialDaysLeft > 14 ? "bg-green-50 border-green-200 text-green-700" : "bg-amber-50 border-amber-200 text-amber-700"}`}>
+              <Clock className="w-3.5 h-3.5" />
+              {trialDaysLeft > 0 ? `Trial: ${trialDaysLeft}d left` : "Trial ended"}
+            </div>
+          )}
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-indigo-50 border-indigo-200 text-indigo-700 text-xs font-semibold">
+            <Globe className="w-3.5 h-3.5" />
+            Network depth: {networkDepth} level{networkDepth !== 1 ? "s" : ""}
+          </div>
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-700 text-xs font-semibold">
+            <DollarSign className="w-3.5 h-3.5" />
+            <span className="text-green-600 font-bold">${earningsThisMonth.toFixed(0)}</span>
+            <span className="text-gray-500 font-normal">this month</span>
+          </div>
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-blue-50 border-blue-200 text-blue-700 text-xs font-semibold">
+            <Inbox className="w-3.5 h-3.5" />
+            {leadsThisWeek} lead{leadsThisWeek !== 1 ? "s" : ""} this week
+          </div>
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-purple-50 border-purple-200 text-purple-700 text-xs font-semibold">
+            <CheckCircle className="w-3.5 h-3.5" />
+            {jobsCompletedThisMonth} job{jobsCompletedThisMonth !== 1 ? "s" : ""} completed
+          </div>
+        </div>
 
         {/* -- Welcome Header ---------------------------------------------------- */}
         <div className="flex items-start justify-between flex-wrap gap-4 mb-8">

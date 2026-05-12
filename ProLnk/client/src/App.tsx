@@ -395,6 +395,7 @@ import CheckInSystem from "./pages/homeowner/CheckInSystem";
 import LeadInbox from "./pages/LeadInbox";
 import LeadDetail from "./pages/LeadDetail";
 import JobDocumentation from "./pages/JobDocumentation";
+import HomeDocumentation from "./pages/HomeDocumentation";
 import MonthlyRevenueReport from "./pages/admin/MonthlyRevenueReport";
 import TradeRevenueBreakdown from "./pages/admin/TradeRevenueBreakdown";
 import AskAPro from "./pages/homeowner/AskAPro";
@@ -910,6 +911,7 @@ function Router() {
       <Route path="/leads" component={LeadInbox} />
       <Route path="/leads/:id" component={LeadDetail} />
       <Route path="/jobs/:id/document" component={JobDocumentation} />
+      <Route path="/home-documentation" component={HomeDocumentation} />
       <Route path="/tier-benefits" component={TierBenefits} />
       <Route path="/waitlist-status" component={WaitlistStatus} />
       <Route path="/waitlist/status" component={WaitlistStatus} />

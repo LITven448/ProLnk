@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * TrustyPro Waitlist / Coming Soon page
  * Route: /trustypro/waitlist

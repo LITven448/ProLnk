@@ -178,7 +178,7 @@ export default function JobLog() {
                 size="sm"
                 className="border-white/20 text-white/60 hover:bg-white/10 text-xs gap-1.5"
                 onClick={() => {
-                  const rows = (myJobsQuery.data ?? []).map((j) => [
+                  const rows = (myJobsQuery.data ?? []).map((j: { serviceAddress: string; serviceType?: string | null; notes?: string | null; status: string; createdAt?: Date | string | null }) => [
                     j.serviceAddress,
                     j.serviceType ?? "",
                     parseJobValueFromNotes(j.notes),

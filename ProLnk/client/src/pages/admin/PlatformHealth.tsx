@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Platform Health Dashboard -- /admin/health
  * Real-time KPIs, system status, revenue pulse, and pipeline velocity.

@@ -95,6 +95,25 @@ export default function EarningsTracker() {
     return Object.entries(months).map(([month, amount]) => ({ month, amount }));
   }, [commissions]);
 
+  // Commission by source: direct (job commissions) vs network (override commissions)
+  const commissionBySource = useMemo(() => {
+    if (!commissions) return { direct: 0, networkOverride: 0, subscriptionOverride: 0, origination: 0 };
+    return commissions.reduce((acc: Record<string, number>, c: any) => {
+      const type = (c.commissionType ?? "").toLowerCase();
+      const amount = Number(c.amount ?? 0);
+      if (type.includes("network") || type.includes("override") || type.includes("referral")) {
+        acc.networkOverride += amount;
+      } else if (type.includes("subscription")) {
+        acc.subscriptionOverride += amount;
+      } else if (type.includes("origination")) {
+        acc.origination += amount;
+      } else {
+        acc.direct += amount;
+      }
+      return acc;
+    }, { direct: 0, networkOverride: 0, subscriptionOverride: 0, origination: 0 });
+  }, [commissions]);
+
   // YTD totals for 1099
   const ytdPaid = useMemo(() => {
     if (!commissions) return 0;
@@ -292,6 +311,73 @@ export default function EarningsTracker() {
               <BarChart2 className="w-3 h-3 text-purple-500" /> All time
             </p>
           </div>
+        </div>
+
+        {/* Commission by source breakdown */}
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+          <h2 className="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
+            <BarChart2 className="w-4 h-4 text-blue-500" /> Earnings by Source
+          </h2>
+          {isLoading ? (
+            <div className="flex items-center justify-center h-16"><Loader2 className="w-5 h-5 animate-spin text-gray-400" /></div>
+          ) : (
+            <div className="space-y-2.5">
+              {[
+                {
+                  label: "Direct Job Commissions",
+                  desc: `Your ${tierInfo.keepRate * 100}% share on matched jobs`,
+                  amount: commissionBySource.direct,
+                  color: "bg-green-500",
+                  textColor: "text-green-700",
+                  bgColor: "bg-green-50",
+                },
+                {
+                  label: "Network Override",
+                  desc: "7% on jobs completed by your referred pros",
+                  amount: commissionBySource.networkOverride,
+                  color: "bg-blue-500",
+                  textColor: "text-blue-700",
+                  bgColor: "bg-blue-50",
+                },
+                {
+                  label: "Subscription Override",
+                  desc: "12% recurring on referred pro subscriptions",
+                  amount: commissionBySource.subscriptionOverride,
+                  color: "bg-purple-500",
+                  textColor: "text-purple-700",
+                  bgColor: "bg-purple-50",
+                },
+                {
+                  label: "Home Origination Rights",
+                  desc: "1.5% permanent share on originated homes",
+                  amount: commissionBySource.origination,
+                  color: "bg-amber-500",
+                  textColor: "text-amber-700",
+                  bgColor: "bg-amber-50",
+                },
+              ].map(({ label, desc, amount, color, textColor, bgColor }) => {
+                const total = commissionBySource.direct + commissionBySource.networkOverride + commissionBySource.subscriptionOverride + commissionBySource.origination;
+                const pct = total > 0 ? Math.round((amount / total) * 100) : 0;
+                return (
+                  <div key={label} className={`rounded-lg p-3 ${bgColor}`}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <div>
+                        <p className="text-xs font-semibold text-gray-800">{label}</p>
+                        <p className="text-xs text-gray-500">{desc}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className={`text-sm font-bold ${textColor}`}>${amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                        <p className="text-xs text-gray-400">{pct}% of total</p>
+                      </div>
+                    </div>
+                    <div className="w-full h-1.5 bg-white/60 rounded-full overflow-hidden">
+                      <div className={`h-full rounded-full transition-all ${color}`} style={{ width: `${pct}%` }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Earnings Chart */}

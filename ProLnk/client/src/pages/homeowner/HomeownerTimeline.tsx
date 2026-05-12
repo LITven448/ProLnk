@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Wave 26 — Homeowner Property Timeline
  * Job history, AI scan history, before/after gallery, maintenance log entries.

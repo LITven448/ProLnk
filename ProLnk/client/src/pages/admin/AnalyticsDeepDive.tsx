@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Admin Analytics Deep Dive
  * Cohort analysis, LTV, CAC, payback period, retention curves.

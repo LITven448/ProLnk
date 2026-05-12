@@ -11,7 +11,7 @@ import ProLnkLogo from "@/components/ProLnkLogo";
 import {
   Star, MapPin, Globe, Shield, CheckCircle, Award, Phone,
   Mail, ArrowLeft, Clock, Briefcase, ChevronRight, ExternalLink,
-  Share2, MessageSquare, Loader2
+  Share2, MessageSquare, Loader2, Twitter, Copy, Smartphone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -50,6 +50,7 @@ export default function PartnerSpotlight() {
   const params = useParams<{ id: string }>();
   const partnerId = parseInt(params.id ?? "0");
   const [contactOpen, setContactOpen] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const { data, isLoading, error } = trpc.directory.getPublicProfile.useQuery(
     { partnerId },
@@ -63,6 +64,25 @@ export default function PartnerSpotlight() {
     } else {
       navigator.clipboard.writeText(url).then(() => toast.success("Profile link copied!"));
     }
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setLinkCopied(true);
+      toast.success("Link copied to clipboard!");
+      setTimeout(() => setLinkCopied(false), 2000);
+    });
+  };
+
+  const handleShareTwitter = (businessName: string) => {
+    const text = encodeURIComponent(`Check out ${businessName} on ProLnk — a trusted home services pro in the DFW area.`);
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+  };
+
+  const handleShareSMS = (businessName: string) => {
+    const body = encodeURIComponent(`Check out ${businessName} on ProLnk: ${window.location.href}`);
+    window.open(`sms:?body=${body}`);
   };
 
   if (isLoading) {
@@ -187,6 +207,22 @@ export default function PartnerSpotlight() {
               )}
             </div>
 
+            {/* TrustyPro Verified badge */}
+            {verifiedCount >= 3 && (
+              <div className="flex items-center gap-3 mb-4 p-3 rounded-2xl border" style={{ background: "linear-gradient(90deg, #0A1628 0%, #1B4FD8 100%)", borderColor: "#1B4FD8" }}>
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-bold text-white">TrustyPro Verified</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <p className="text-xs text-white/70">License, insurance &amp; background check confirmed</p>
+                </div>
+              </div>
+            )}
+
             {/* Trust score */}
             {verifiedCount > 0 && (
               <div className="flex items-center gap-2 mb-5 p-3 bg-green-50 rounded-xl border border-green-100">
@@ -204,7 +240,7 @@ export default function PartnerSpotlight() {
             )}
 
             {/* CTA */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-4">
               <Link href="/trustypro" className="flex-1">
                 <Button className="w-full text-white gap-2" style={{ backgroundColor: "#1B4FD8" }}>
                   <MessageSquare className="w-4 h-4" /> Request a Quote via TrustyPro
@@ -213,6 +249,29 @@ export default function PartnerSpotlight() {
               <Button variant="outline" size="icon" onClick={handleShare}>
                 <Share2 className="w-4 h-4" />
               </Button>
+            </div>
+
+            {/* Share row */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-gray-400 font-medium">Share this pro:</span>
+              <button
+                onClick={() => handleShareTwitter(p.businessName)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-50 text-sky-600 border border-sky-200 hover:bg-sky-100 transition-colors"
+              >
+                <Twitter className="w-3 h-3" /> Twitter
+              </button>
+              <button
+                onClick={() => handleShareSMS(p.businessName)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-green-50 text-green-600 border border-green-200 hover:bg-green-100 transition-colors"
+              >
+                <Smartphone className="w-3 h-3" /> SMS
+              </button>
+              <button
+                onClick={handleCopyLink}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100 transition-colors"
+              >
+                <Copy className="w-3 h-3" /> {linkCopied ? "Copied!" : "Copy link"}
+              </button>
             </div>
           </div>
         </div>
@@ -228,6 +287,59 @@ export default function PartnerSpotlight() {
             ))}
           </div>
         </div>
+
+        {/* Service area coverage */}
+        {p.serviceArea && (
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-6 mb-6">
+            <h2 className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-[#1B4FD8]" /> Service Area Coverage
+            </h2>
+            <div className="relative rounded-2xl overflow-hidden border border-slate-100" style={{ height: 160, background: "linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%)" }}>
+              {/* DFW dot map — purely decorative, shows coverage zone */}
+              <svg viewBox="0 0 400 160" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <radialGradient id="coverageGrad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#1B4FD8" stopOpacity="0.15" />
+                    <stop offset="100%" stopColor="#1B4FD8" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                {/* Background coverage blob */}
+                <ellipse cx="200" cy="80" rx="110" ry="55" fill="url(#coverageGrad)" />
+                {/* Grid dots */}
+                {Array.from({ length: 8 }, (_, col) =>
+                  Array.from({ length: 5 }, (_, row) => (
+                    <circle
+                      key={`${col}-${row}`}
+                      cx={60 + col * 42}
+                      cy={20 + row * 30}
+                      r="2"
+                      fill="#1B4FD8"
+                      opacity="0.12"
+                    />
+                  ))
+                )}
+                {/* Center pin */}
+                <circle cx="200" cy="80" r="10" fill="#1B4FD8" opacity="0.9" />
+                <circle cx="200" cy="80" r="5" fill="white" />
+                {/* Pulse ring */}
+                <circle cx="200" cy="80" r="20" fill="none" stroke="#1B4FD8" strokeWidth="1.5" opacity="0.4">
+                  <animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+              {/* Label */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-sm">
+                  <MapPin className="w-3.5 h-3.5 text-[#1B4FD8]" />
+                  <span className="text-xs font-semibold text-gray-700">{p.serviceArea}</span>
+                </div>
+                <div className="bg-[#1B4FD8]/10 rounded-lg px-3 py-1.5">
+                  <span className="text-xs font-bold text-[#1B4FD8]">DFW Network</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Reviews */}
         {reviews.length > 0 && (

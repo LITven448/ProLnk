@@ -355,6 +355,7 @@ import HowAIWorks from "./pages/HowAIWorks";
 import ForRealEstateAgents from "./pages/ForRealEstateAgents";
 import ForInsuranceAgents from "./pages/ForInsuranceAgents";
 import ForPropertyManagers from "./pages/ForPropertyManagers";
+import StormAlert from "./pages/StormAlert";
 
 // Wave 33: Multi-Property
 import LandlordView from "./pages/homeowner/LandlordView";
@@ -885,6 +886,7 @@ function Router() {
       <Route path="/for-real-estate-agents" component={ForRealEstateAgents} />
       <Route path="/for-insurance-agents" component={ForInsuranceAgents} />
       <Route path="/for-property-managers" component={ForPropertyManagers} />
+      <Route path="/storm-alert" component={StormAlert} />
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />

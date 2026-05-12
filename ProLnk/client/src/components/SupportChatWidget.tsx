@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { MessageCircle, X, Send, Loader2, ChevronDown } from "lucide-react";

@@ -738,13 +738,15 @@ export async function sendPartnerApprovalEmail(params: {
   tierLabel: string;
   referralCode: string;
   position: number;
+  setupUrl?: string;
 }): Promise<void> {
   if (!process.env.RESEND_API_KEY) {
     console.log(`[Email] RESEND_API_KEY not set — skipping approval email to ${params.to}`);
     return;
   }
   const referralLink = `${BASE_URL}/apply?ref=${params.referralCode}`;
-  const checkoutUrl = `${BASE_URL}/checkout`;
+  const primaryCtaUrl = params.setupUrl ?? `${BASE_URL}/checkout`;
+  const primaryCtaLabel = params.setupUrl ? "Set Your Password &amp; Activate Account →" : "Start Your 90-Day Free Trial →";
   const dashboardUrl = `${BASE_URL}/waitlist-status?ref=${params.referralCode}`;
   await sendEmail({
     from: FROM_PROLNK,
@@ -811,7 +813,7 @@ export async function sendPartnerApprovalEmail(params: {
 
     <!-- Two CTAs -->
     <div style="margin:0 0 16px;">
-      <a href="${checkoutUrl}" style="display:block;background:#F5E642;color:#0A1628;padding:17px 32px;border-radius:10px;text-decoration:none;font-weight:800;font-size:16px;text-align:center;">Start Your 90-Day Free Trial →</a>
+      <a href="${primaryCtaUrl}" style="display:block;background:#F5E642;color:#0A1628;padding:17px 32px;border-radius:10px;text-decoration:none;font-weight:800;font-size:16px;text-align:center;">${primaryCtaLabel}</a>
     </div>
     <div style="margin:0 0 8px;">
       <a href="${referralLink}" style="display:block;background:transparent;color:#F5E642;border:2px solid rgba(245,230,66,0.4);padding:15px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;text-align:center;">Share Your Referral Link</a>

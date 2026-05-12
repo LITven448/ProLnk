@@ -6,6 +6,7 @@
  * Each company passes its own config object with brand colors, metrics, etc.
  */
 
+import type React from "react";
 import AdminLayout from "@/components/AdminLayout";
 import {
   D, MetricCard, SectionHeader, DataTable, BarChart, DonutChart,

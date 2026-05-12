@@ -1,28 +1,87 @@
 import React, { useState } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
-import { Bell, CheckCircle, DollarSign, Send, Zap, Star, Info, Clock, RefreshCw } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import {
+  Bell, CheckCircle, DollarSign, Info,
+  Clock, RefreshCw, Network, Lightbulb, PartyPopper,
+} from "lucide-react";
 
-type NotifType = "lead" | "commission" | "tier" | "system" | "referral" | "alert";
+type NotifType = "commission" | "network" | "system" | "tips";
+type FilterKey = "all" | NotifType;
+
+interface Notification {
+  id: string;
+  numId: number;
+  type: NotifType;
+  title: string;
+  body: string;
+  timestamp: Date;
+  read: boolean;
+  pinned?: boolean;
+}
 
 function classifyEvent(eventType: string): NotifType {
-  if (eventType.includes("lead") || eventType.includes("opportunity") || eventType.includes("inbound")) return "lead";
   if (eventType.includes("commission") || eventType.includes("payout") || eventType.includes("earn")) return "commission";
-  if (eventType.includes("tier") || eventType.includes("upgrade") || eventType.includes("badge")) return "tier";
-  if (eventType.includes("referral") || eventType.includes("refer")) return "referral";
-  if (eventType.includes("alert") || eventType.includes("warn")) return "alert";
+  if (eventType.includes("referral") || eventType.includes("refer") || eventType.includes("network") || eventType.includes("tier")) return "network";
+  if (eventType.includes("tip") || eventType.includes("suggest") || eventType.includes("hint")) return "tips";
   return "system";
 }
 
-const TYPE_CONFIG: Record<NotifType, { icon: React.ReactNode; bg: string; text: string; label: string }> = {
-  lead:       { icon: <Zap className="w-4 h-4" />,          bg: "bg-purple-50",  text: "text-purple-600", label: "Lead" },
-  commission: { icon: <DollarSign className="w-4 h-4" />,   bg: "bg-green-50",   text: "text-green-600",  label: "Commission" },
-  referral:   { icon: <Send className="w-4 h-4" />,         bg: "bg-blue-50",    text: "text-blue-600",   label: "Referral" },
-  tier:       { icon: <Star className="w-4 h-4" />,         bg: "bg-yellow-50",  text: "text-yellow-600", label: "Tier" },
-  alert:      { icon: <Zap className="w-4 h-4" />,          bg: "bg-orange-50",  text: "text-orange-600", label: "Alert" },
-  system:     { icon: <Info className="w-4 h-4" />,         bg: "bg-gray-50",    text: "text-gray-500",   label: "System" },
+function classifyAlert(alertType: string): NotifType {
+  if (alertType.includes("commission") || alertType.includes("earn") || alertType.includes("payout")) return "commission";
+  if (alertType.includes("network") || alertType.includes("referral") || alertType.includes("tier")) return "network";
+  if (alertType.includes("tip")) return "tips";
+  return "system";
+}
+
+const TYPE_CONFIG: Record<NotifType, {
+  icon: React.ReactNode;
+  iconBg: string;
+  iconColor: string;
+  badgeBg: string;
+  badgeText: string;
+  label: string;
+}> = {
+  commission: {
+    icon: <DollarSign className="w-4 h-4" />,
+    iconBg: "rgba(34,197,94,0.15)",
+    iconColor: "#22c55e",
+    badgeBg: "rgba(34,197,94,0.1)",
+    badgeText: "#22c55e",
+    label: "Commission",
+  },
+  network: {
+    icon: <Network className="w-4 h-4" />,
+    iconBg: "rgba(59,130,246,0.15)",
+    iconColor: "#3b82f6",
+    badgeBg: "rgba(59,130,246,0.1)",
+    badgeText: "#3b82f6",
+    label: "Network",
+  },
+  system: {
+    icon: <Info className="w-4 h-4" />,
+    iconBg: "rgba(107,114,128,0.15)",
+    iconColor: "#9ca3af",
+    badgeBg: "rgba(107,114,128,0.1)",
+    badgeText: "#9ca3af",
+    label: "System",
+  },
+  tips: {
+    icon: <Lightbulb className="w-4 h-4" />,
+    iconBg: "rgba(245,158,11,0.15)",
+    iconColor: "#f59e0b",
+    badgeBg: "rgba(245,158,11,0.1)",
+    badgeText: "#f59e0b",
+    label: "Tips",
+  },
+};
+
+const FILTER_EMPTY: Record<FilterKey, string> = {
+  all: "No notifications yet. Activity will appear here as you use the platform.",
+  commission: "No commission notifications yet. Start earning to see commission notifications.",
+  network: "No network notifications yet. Invite pros to see your network grow.",
+  system: "No system notifications right now.",
+  tips: "No tips yet. Check back soon for personalized suggestions.",
 };
 
 function timeAgo(date: Date | string): string {
@@ -37,19 +96,55 @@ function timeAgo(date: Date | string): string {
   return `${days}d ago`;
 }
 
+const TRIAL_END = new Date(Date.now() + 90 * 86400000).toLocaleDateString("en-US", {
+  month: "long", day: "numeric", year: "numeric",
+});
+
+const STATIC_NOTIFICATIONS: Notification[] = [
+  {
+    id: "static-welcome",
+    numId: -1,
+    type: "system",
+    title: "Welcome to ProLnk!",
+    body: "Your founding partner account is active. Explore your dashboard, log your first job, and start building your network to unlock income streams.",
+    timestamp: new Date(),
+    read: false,
+    pinned: true,
+  },
+  {
+    id: "static-trial",
+    numId: -2,
+    type: "system",
+    title: "Your 90-day free trial starts today",
+    body: `You have full access to all founding network features. No credit card required until ${TRIAL_END}. You'll receive a reminder before your trial ends.`,
+    timestamp: new Date(Date.now() - 60000),
+    read: false,
+    pinned: true,
+  },
+  {
+    id: "static-signature-tip",
+    numId: -3,
+    type: "tips",
+    title: "Tip: Add your referral link to your email signature",
+    body: "Every time you email a client or vendor, your referral link is right there. Pros who click and sign up become your L1 network — earning you 7% on every job commission, forever.",
+    timestamp: new Date(Date.now() - 120000),
+    read: false,
+    pinned: true,
+  },
+];
+
 export default function Notifications() {
-  const [filter, setFilter] = useState<"all" | "unread" | NotifType>("all");
-  const [readIds, setReadIds] = useState<Set<number>>(new Set());
+  const [filter, setFilter] = useState<FilterKey>("all");
+  const [readIds, setReadIds] = useState<Set<string>>(new Set());
 
   const { data: events, isLoading, refetch } = trpc.activityLog.getRecent.useQuery({ limit: 60 });
   const { data: alerts } = trpc.partnerAlerts.getAlerts.useQuery();
 
-  // Build unified notification list from real DB sources
-  const notifications = [
-    ...(alerts ?? []).map((a: any) => ({
+  const dynamicNotifications: Notification[] = [
+    ...(alerts ?? []).map((a: any): Notification => ({
       id: `alert-${a.id}`,
       numId: a.id,
-      type: classifyEvent(a.alertType) as NotifType,
+      type: classifyAlert(a.alertType),
       title: a.title,
       body: a.message,
       timestamp: new Date(a.createdAt),
@@ -58,149 +153,208 @@ export default function Notifications() {
     ...(events ?? [])
       .filter((e) => e.actorRole === "system" || e.actorRole === "admin")
       .slice(0, 30)
-      .map((e) => ({
+      .map((e): Notification => ({
         id: `event-${e.id}`,
         numId: e.id,
-        type: classifyEvent(e.eventType) as NotifType,
+        type: classifyEvent(e.eventType),
         title: e.eventType.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
         body: e.description,
         timestamp: new Date(e.createdAt),
-        read: readIds.has(e.id),
+        read: readIds.has(`event-${e.id}`),
       })),
   ].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
 
-  const markAllRead = () => {
-    const allEventIds = (events ?? []).map((e) => e.id);
-    setReadIds(new Set(allEventIds));
-  };
-
-  const markRead = (numId: number, id: string) => {
-    if (id.startsWith("event-")) {
-      setReadIds((prev) => new Set(Array.from(prev).concat(numId)));
-    }
-  };
-
-  const unreadCount = notifications.filter((n) => !n.read).length;
-
-  const FILTER_TABS: { key: "all" | "unread" | NotifType; label: string }[] = [
-    { key: "all", label: "All" },
-    { key: "unread", label: "Unread" },
-    { key: "lead", label: "Leads" },
-    { key: "commission", label: "Commissions" },
-    { key: "referral", label: "Referrals" },
-    { key: "system", label: "System" },
+  const allNotifications: Notification[] = [
+    ...STATIC_NOTIFICATIONS.map((n) => ({ ...n, read: readIds.has(n.id) })),
+    ...dynamicNotifications,
   ];
 
-  const displayed = notifications.filter((n) => {
+  const markRead = (id: string) => {
+    setReadIds((prev) => new Set(Array.from(prev).concat(id)));
+  };
+
+  const markAllRead = () => {
+    setReadIds(new Set(allNotifications.map((n) => n.id)));
+  };
+
+  const unreadCount = allNotifications.filter((n) => !n.read).length;
+
+  const FILTER_TABS: { key: FilterKey; label: string }[] = [
+    { key: "all", label: "All" },
+    { key: "commission", label: "Commissions" },
+    { key: "network", label: "Network" },
+    { key: "system", label: "System" },
+    { key: "tips", label: "Tips" },
+  ];
+
+  const displayed = allNotifications.filter((n) => {
     if (filter === "all") return true;
-    if (filter === "unread") return !n.read;
     return n.type === filter;
   });
 
   return (
     <PartnerLayout>
       <div className="space-y-6 max-w-3xl">
+
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center relative">
-              <Bell className="w-5 h-5 text-[#0A1628]" />
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center relative"
+              style={{ background: "rgba(245,230,66,0.1)", border: "1px solid rgba(245,230,66,0.2)" }}
+            >
+              <Bell className="w-5 h-5" style={{ color: "#F5E642" }} />
               {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-white text-xs font-bold flex items-center justify-center">
-                  {unreadCount}
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold flex items-center justify-center">
+                  {unreadCount > 9 ? "9+" : unreadCount}
                 </span>
               )}
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Notifications</h1>
-              <p className="text-sm text-gray-500">{unreadCount > 0 ? `${unreadCount} unread` : "All caught up"}</p>
+              <h1 className="text-2xl font-bold text-white">Notifications</h1>
+              <p className="text-sm text-gray-400">
+                {unreadCount > 0 ? `${unreadCount} unread` : "All caught up"}
+              </p>
             </div>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" size="sm" onClick={() => refetch()} className="gap-1.5">
+            <button
+              onClick={() => refetch()}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+              style={{ background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }}
+            >
               <RefreshCw className="w-3.5 h-3.5" /> Refresh
-            </Button>
+            </button>
             {unreadCount > 0 && (
-              <Button variant="outline" size="sm" onClick={markAllRead} className="gap-1.5">
+              <button
+                onClick={markAllRead}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.25)" }}
+              >
                 <CheckCircle className="w-3.5 h-3.5" /> Mark all read
-              </Button>
+              </button>
             )}
           </div>
         </div>
 
-        {/* Filter tabs */}
+        {/* Filter bar */}
         <div className="flex gap-2 flex-wrap">
-          {FILTER_TABS.map((f) => (
-            <button
-              key={f.key}
-              onClick={() => setFilter(f.key)}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                filter === f.key
-                  ? "bg-[#0A1628] text-white shadow-sm"
-                  : "bg-white text-gray-500 border border-gray-200 hover:bg-gray-50"
-              }`}
-            >
-              {f.label}
-              {f.key === "unread" && unreadCount > 0 && ` (${unreadCount})`}
-            </button>
-          ))}
+          {FILTER_TABS.map((f) => {
+            const active = filter === f.key;
+            return (
+              <button
+                key={f.key}
+                onClick={() => setFilter(f.key)}
+                className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
+                style={
+                  active
+                    ? { background: "#F5E642", color: "#0A1628" }
+                    : { background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }
+                }
+              >
+                {f.label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Notification list */}
         {isLoading ? (
           <div className="space-y-2">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 animate-pulse">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="rounded-xl p-4 animate-pulse"
+                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
                 <div className="flex gap-3">
-                  <div className="w-9 h-9 bg-gray-100 rounded-xl flex-shrink-0" />
+                  <div className="w-9 h-9 rounded-xl flex-shrink-0" style={{ background: "rgba(255,255,255,0.08)" }} />
                   <div className="flex-1 space-y-2">
-                    <div className="h-4 bg-gray-100 rounded w-1/3" />
-                    <div className="h-3 bg-gray-100 rounded w-2/3" />
+                    <div className="h-4 rounded w-1/3" style={{ background: "rgba(255,255,255,0.08)" }} />
+                    <div className="h-3 rounded w-2/3" style={{ background: "rgba(255,255,255,0.05)" }} />
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : displayed.length === 0 ? (
-          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
-            <Bell className="w-10 h-10 text-gray-200 mx-auto mb-3" />
-            <p className="text-gray-500 font-medium">No notifications</p>
-            <p className="text-sm text-gray-400 mt-1">
-              {filter === "unread" ? "You're all caught up!" : "Activity will appear here as you use the platform"}
+          <div
+            className="rounded-2xl p-12 text-center"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+          >
+            <Bell className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(255,255,255,0.12)" }} />
+            <p className="text-gray-400 font-medium text-sm mb-1">
+              {filter === "all" ? "No notifications" : `No ${filter} notifications`}
             </p>
+            <p className="text-xs text-gray-600 max-w-xs mx-auto">{FILTER_EMPTY[filter]}</p>
           </div>
         ) : (
           <div className="space-y-2">
             {displayed.map((n) => {
-              const style = TYPE_CONFIG[n.type as NotifType] ?? TYPE_CONFIG.system;
+              const cfg = TYPE_CONFIG[n.type];
+              const isUnread = !n.read;
               return (
                 <div
                   key={n.id}
-                  onClick={() => markRead(n.numId, n.id)}
-                  className={`flex items-start gap-4 p-4 rounded-xl border cursor-pointer transition-all ${
-                    n.read
-                      ? "bg-white border-gray-100 hover:border-gray-200"
-                      : "bg-[#F5E642]/10/40 border-[#0A1628]/20 hover:border-[#0A1628]/30"
-                  }`}
+                  onClick={() => markRead(n.id)}
+                  className="flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all"
+                  style={{
+                    background: isUnread
+                      ? n.pinned
+                        ? "rgba(245,230,66,0.06)"
+                        : "rgba(255,255,255,0.06)"
+                      : "rgba(255,255,255,0.03)",
+                    border: isUnread
+                      ? n.pinned
+                        ? "1px solid rgba(245,230,66,0.2)"
+                        : "1px solid rgba(255,255,255,0.1)"
+                      : "1px solid rgba(255,255,255,0.05)",
+                  }}
                 >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${style.bg} ${style.text}`}>
-                    {style.icon}
+                  {/* Icon */}
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: cfg.iconBg, color: cfg.iconColor }}
+                  >
+                    {n.pinned && n.id === "static-welcome"
+                      ? <PartyPopper className="w-4 h-4" style={{ color: cfg.iconColor }} />
+                      : cfg.icon}
                   </div>
+
+                  {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <p className={`text-sm font-semibold ${n.read ? "text-gray-700" : "text-gray-900"}`}>
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <div className="flex items-center gap-2 flex-wrap min-w-0">
+                        <p className={`text-sm font-semibold truncate ${isUnread ? "text-white" : "text-gray-400"}`}>
                           {n.title}
-                          {!n.read && <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-[#0A1628] align-middle" />}
+                          {isUnread && (
+                            <span
+                              className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full align-middle"
+                              style={{ background: "#F5E642" }}
+                            />
+                          )}
                         </p>
-                        <Badge variant="outline" className="text-xs">{style.label}</Badge>
+                        <span
+                          className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
+                          style={{ background: cfg.badgeBg, color: cfg.badgeText }}
+                        >
+                          {cfg.label}
+                        </span>
+                        {n.pinned && (
+                          <span
+                            className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
+                            style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642" }}
+                          >
+                            Pinned
+                          </span>
+                        )}
                       </div>
-                      <span className="flex items-center gap-1 text-xs text-gray-400 flex-shrink-0">
+                      <span className="flex items-center gap-1 text-xs text-gray-500 flex-shrink-0">
                         <Clock className="w-3 h-3" />
                         {timeAgo(n.timestamp)}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{n.body}</p>
+                    <p className="text-xs text-gray-500 leading-relaxed">{n.body}</p>
                   </div>
                 </div>
               );

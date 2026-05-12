@@ -1,12 +1,67 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
   Copy, Check, Award, Users, TrendingUp, DollarSign,
   Share2, ChevronRight, Loader2, Trophy, Zap, Star,
-  ArrowUpRight, Crown, BarChart3, Gift
+  ArrowUpRight, Crown, BarChart3, Gift, X, Rocket
 } from "lucide-react";
+
+function OnboardingBanner() {
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("prolnk_onboarding_complete") === "true") {
+      setDismissed(true);
+    }
+  }, []);
+
+  if (dismissed) return null;
+
+  const handleDismiss = () => {
+    localStorage.setItem("prolnk_onboarding_complete", "true");
+    setDismissed(true);
+  };
+
+  return (
+    <div
+      className="rounded-2xl p-4 flex items-center gap-4"
+      style={{
+        background: "linear-gradient(135deg, rgba(245,230,66,0.12), rgba(245,230,66,0.05))",
+        border: "1px solid rgba(245,230,66,0.3)",
+      }}
+    >
+      <div
+        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+        style={{ background: "rgba(245,230,66,0.15)" }}
+      >
+        <Rocket size={20} style={{ color: "#F5E642" }} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-bold text-white">Complete your setup to start earning — 3 quick steps</p>
+        <p className="text-xs text-gray-400 mt-0.5">Add your service areas, business description, and payout account.</p>
+      </div>
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/partner-onboarding">
+          <span
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-90"
+            style={{ background: "#F5E642", color: "#0A1628" }}
+          >
+            Get Started <ChevronRight size={12} />
+          </span>
+        </Link>
+        <button
+          onClick={handleDismiss}
+          className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
+          aria-label="Dismiss"
+        >
+          <X size={14} className="text-gray-500" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -319,6 +374,9 @@ export default function PartnerHome() {
   return (
     <div className="min-h-screen" style={{ background: "#0A1628" }}>
       <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+
+        {/* ── Onboarding Banner ──────────────────────────────────────────── */}
+        <OnboardingBanner />
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

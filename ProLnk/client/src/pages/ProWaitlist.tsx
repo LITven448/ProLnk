@@ -12,7 +12,8 @@ import { toast } from "sonner";
 import {
   Users, TrendingUp, DollarSign, Star, CheckCircle, ChevronDown, ChevronUp,
   ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck, Play,
-  Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat
+  Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
+  Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -665,6 +666,207 @@ function PartnerSpotlightSection() {
   );
 }
 
+// --- Tier badge config for success state --------------------------------------
+const TIER_BADGE_CONFIG: Record<string, { label: string; badge: string; color: string; bg: string; border: string }> = {
+  charter:  { label: "Charter Member",    badge: "MOST EXCLUSIVE",  color: "#7C3AED", bg: "bg-purple-50",  border: "border-purple-200" },
+  founding: { label: "Founding Member",   badge: "FOUNDING MEMBER", color: "#0A1628", bg: "bg-[#0A1628]/5", border: "border-[#0A1628]/20" },
+  level3:   { label: "Level 3 Partner",   badge: "EARLY ADOPTER",   color: "#1D4ED8", bg: "bg-blue-50",    border: "border-blue-200" },
+  level4:   { label: "Level 4 Partner",   badge: "PARTNER",         color: "#059669", bg: "bg-emerald-50", border: "border-emerald-200" },
+};
+
+// --- Success State Component --------------------------------------------------
+function SuccessState({
+  data,
+  referralLink,
+  email,
+  onClose,
+}: {
+  data: { position?: number; tierLabel?: string; referralCode?: string; ownJobRate?: number; spotsRemaining?: { charter: number; founding: number; total: number } };
+  referralLink: string;
+  email: string;
+  onClose: () => void;
+}) {
+  const tierKey = (() => {
+    const label = (data.tierLabel ?? "").toLowerCase();
+    if (label.includes("charter")) return "charter";
+    if (label.includes("founding")) return "founding";
+    if (label.includes("level 3") || label.includes("level3")) return "level3";
+    if (label.includes("level 4") || label.includes("level4")) return "level4";
+    return "level4";
+  })();
+  const tierConf = TIER_BADGE_CONFIG[tierKey] ?? TIER_BADGE_CONFIG.level4;
+  const referralCode = data.referralCode ?? "";
+  const refUrl = `https://prolnk.io/join?ref=${referralCode}`;
+  const trialEndDate = new Date();
+  trialEndDate.setDate(trialEndDate.getDate() + 90);
+  const trialEndStr = trialEndDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+  const shareText = `Just joined ProLnk's founding network as a ${tierConf.label} — earning 72% on every referral + 4-level network income. Limited spots left. Use my link:`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText + " " + refUrl)}`;
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(refUrl)}`;
+  const smsUrl = `sms:?body=${encodeURIComponent(shareText + " " + refUrl)}`;
+
+  return (
+    <div className="py-2">
+      {/* Header */}
+      <div className="text-center mb-5">
+        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+          <CheckCircle className="w-8 h-8 text-green-600" />
+        </div>
+        <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're in the founding network!</h2>
+        <p className="text-gray-500 text-sm">Confirmation sent to {email}</p>
+      </div>
+
+      {/* Tier + Position hero card */}
+      <div className={`rounded-2xl border-2 p-5 mb-4 ${tierConf.bg} ${tierConf.border}`}>
+        <div className="flex items-start justify-between mb-3">
+          <div>
+            <span
+              className="inline-block text-[10px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full text-white mb-2"
+              style={{ backgroundColor: tierConf.color }}
+            >
+              {tierConf.badge}
+            </span>
+            <div className="text-xl font-heading font-bold text-gray-900">{tierConf.label}</div>
+          </div>
+          <div className="text-right">
+            <div className="text-5xl font-heading font-black" style={{ color: tierConf.color }}>
+              #{data.position ?? "—"}
+            </div>
+            <div className="text-xs text-gray-500 font-medium">Network Position</div>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3 pt-3 border-t border-gray-200/60">
+          <div className="flex items-center gap-2">
+            <Lock className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+            <div>
+              <div className="text-xs font-bold text-gray-900">$149/mo for life</div>
+              <div className="text-[10px] text-gray-500">Locked rate</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Calendar className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+            <div>
+              <div className="text-xs font-bold text-gray-900">Trial ends {trialEndStr}</div>
+              <div className="text-[10px] text-gray-500">90-day free trial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Referral code + URL */}
+      <div className="bg-[#0A1628] rounded-xl p-4 mb-4">
+        <p className="text-white font-semibold text-sm mb-1 flex items-center gap-2">
+          <Users className="w-4 h-4 text-[#F5E642]" /> Your Referral Code
+        </p>
+        <p className="text-white/50 text-xs mb-3">Every pro you invite counts toward your network income — 4 levels deep.</p>
+
+        {/* Code copy row */}
+        <div className="flex items-center gap-2 mb-2">
+          <div className="flex-1 bg-white/10 rounded-lg px-3 py-2 flex items-center justify-between">
+            <span className="text-[#F5E642] text-base font-black tracking-widest font-mono">{referralCode}</span>
+            <button
+              onClick={() => { navigator.clipboard.writeText(referralCode); toast.success("Code copied!"); }}
+              className="text-white/60 hover:text-[#F5E642] transition-colors ml-2"
+            >
+              <Copy className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* URL copy row */}
+        <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2 mb-3">
+          <span className="text-white/60 text-xs font-mono truncate flex-1">{refUrl}</span>
+          <button
+            onClick={() => { navigator.clipboard.writeText(refUrl); toast.success("Link copied!"); }}
+            className="text-white/60 hover:text-[#F5E642] transition-colors flex-shrink-0"
+          >
+            <Copy className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* Share buttons */}
+        <div className="grid grid-cols-4 gap-2">
+          <a
+            href={twitterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white"
+          >
+            <Twitter className="w-4 h-4" />
+            <span className="text-[9px] font-semibold">X</span>
+          </a>
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white"
+          >
+            <Linkedin className="w-4 h-4" />
+            <span className="text-[9px] font-semibold">LinkedIn</span>
+          </a>
+          <a
+            href={smsUrl}
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-white"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span className="text-[9px] font-semibold">SMS</span>
+          </a>
+          <button
+            onClick={() => { navigator.clipboard.writeText(refUrl); toast.success("Copied!"); }}
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-[#F5E642]/20 hover:bg-[#F5E642]/30 transition-colors text-[#F5E642]"
+          >
+            <Share2 className="w-4 h-4" />
+            <span className="text-[9px] font-semibold">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      {/* 3 next steps */}
+      <div className="mb-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your 3 Next Steps</p>
+        <div className="space-y-2">
+          {[
+            { num: "1", title: "Complete your profile", desc: "Add your license, trade details, and service area", href: `/waitlist-status?ref=${referralCode}` },
+            { num: "2", title: "Add your first home", desc: "Protect your own home in TrustyPro — it's included", href: `/trustypro/waitlist?ref=${btoa(email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase()}` },
+            { num: "3", title: "Invite 5 pros", desc: "Unlock Charter-level priority routing benefits", href: undefined },
+          ].map((step) => (
+            <div key={step.num} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
+              <div
+                className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-black shrink-0"
+                style={{ backgroundColor: tierConf.color }}
+              >
+                {step.num}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-gray-900">{step.title}</div>
+                <div className="text-xs text-gray-500">{step.desc}</div>
+              </div>
+              {step.href && (
+                <a href={step.href} className="shrink-0">
+                  <ArrowRight className="w-4 h-4 text-gray-400" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Referral dashboard link */}
+      {referralCode && (
+        <a
+          href={`/waitlist-status?ref=${referralCode}`}
+          className="w-full flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0A1628] text-white rounded-xl text-sm font-semibold hover:bg-[#1a2a40] transition-colors mb-3"
+        >
+          View My Referral Dashboard <ArrowRight className="w-4 h-4" />
+        </a>
+      )}
+
+      <button onClick={onClose} className="w-full text-xs text-gray-400 hover:text-gray-600 underline">Close</button>
+    </div>
+  );
+}
+
 // --- Pro Waitlist Modal -------------------------------------------------------
 const TRADE_OPTIONS = [
   { group: "Lawn & Outdoor", trades: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Service & Removal", "Irrigation & Sprinkler Systems", "Drainage & Grading", "Hardscaping & Patios", "Artificial Turf Installation", "Outdoor & Landscape Lighting", "Fence Installation & Repair"] },
@@ -732,83 +934,12 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto">
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">×</button>
         {step === "success" && join.data ? (
-          <div className="text-center py-4">
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-            </div>
-            <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the list!</h2>
-            <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-3 w-full">
-              <p className="text-[#0A1628] font-bold text-lg">Position: #{join.data?.position}</p>
-              {join.data?.tierLabel && (
-                <p className="text-[#0A1628] font-semibold text-sm mt-1">
-                  {join.data.tierLabel} — {((join.data.ownJobRate ?? 0) * 100).toFixed(1)}% commission rate
-                </p>
-              )}
-              {join.data?.spotsRemaining && join.data.spotsRemaining.charter > 0 && (
-                <p className="text-amber-700 text-xs mt-2 font-medium">
-                  Only {join.data.spotsRemaining.charter} Charter Member spots remaining
-                </p>
-              )}
-              {join.data?.spotsRemaining && join.data.spotsRemaining.charter === 0 && join.data.spotsRemaining.founding > 0 && (
-                <p className="text-blue-700 text-xs mt-2 font-medium">
-                  {join.data.spotsRemaining.founding} Founding Member spots remaining
-                </p>
-              )}
-              <p className="text-gray-600 text-xs mt-1">You're #{join.data?.position} in the ProLnk network.</p>
-            </div>
-            {join.data?.referralCode && (
-              <div className="mb-4 w-full">
-                <a
-                  href={`/waitlist-status?ref=${join.data.referralCode}`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0A1628] text-white rounded-lg text-sm font-semibold hover:bg-[#1a2a40] transition-colors w-full justify-center"
-                >
-                  View My Referral Dashboard →
-                </a>
-              </div>
-            )}
-            <p className="text-gray-500 text-sm mb-5">Welcome to the ProLnk founding network. Check your email for confirmation.</p>
-
-            {/* Step 1: Refer other pros */}
-            <div className="bg-[#0A1628] rounded-xl p-4 mb-4 text-left">
-              <p className="text-white font-semibold text-sm mb-1 flex items-center gap-2">
-                <Users className="w-4 h-4 text-[#F5E642]" /> Your Personal Referral Link
-              </p>
-              <p className="text-white/60 text-xs mb-3">Share this with other contractors. Every pro you bring in counts toward your founding tier and future network income.</p>
-              <div className="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2 mb-2">
-                <span className="text-white/80 text-xs font-mono truncate flex-1">{referralLink}</span>
-                <button
-                  onClick={() => { navigator.clipboard.writeText(referralLink); toast.success("Link copied!"); }}
-                  className="text-[#F5E642] hover:text-white transition-colors flex-shrink-0"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                </button>
-              </div>
-              <button
-                onClick={() => { navigator.clipboard.writeText(referralLink); toast.success("Copied! Share in your group chats."); }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#F5E642] text-[#0A1628] text-sm font-bold hover:opacity-90 transition-opacity"
-              >
-                Copy & Share with Your Network
-              </button>
-            </div>
-
-            {/* Step 2: TrustyPro for their own home */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-left">
-              <p className="text-blue-800 font-semibold text-sm mb-1 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-blue-600" /> Next: Protect Your Own Home
-              </p>
-              <p className="text-blue-700 text-xs mb-3">
-                As a ProLnk pro, you also get TrustyPro access for your own home — track maintenance, document systems, and get matched with vetted pros in the network.
-              </p>
-              <a
-                href={`/trustypro/waitlist?ref=${btoa(form.email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase()}`}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 transition-colors"
-              >
-                Sign Up for TrustyPro <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            <button onClick={onClose} className="text-xs text-gray-400 hover:text-gray-600 underline">Close</button>
-          </div>
+          <SuccessState
+            data={join.data}
+            referralLink={referralLink}
+            email={form.email}
+            onClose={onClose}
+          />
         ) : (
           <>
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">Join the ProLnk Waitlist</h2>
@@ -1074,9 +1205,16 @@ export default function ProWaitlist() {
     return () => observer.disconnect();
   }, []);
   const { data: foundingData } = trpc.directory.getFoundingPartnerCount.useQuery();
-  const spotsRemaining = foundingData?.spotsRemaining ?? 50;
-  const spotsUsed = 50 - spotsRemaining;
-  const spotsPercent = Math.round((spotsUsed / 50) * 100);
+  const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
+  const totalSignups = publicCounts?.pros ?? 0;
+  const TOTAL_NETWORK_SPOTS = 2125;
+  const spotsUsed = totalSignups;
+  const spotsRemaining = Math.max(0, TOTAL_NETWORK_SPOTS - totalSignups);
+  const spotsPercent = Math.min(100, Math.round((spotsUsed / TOTAL_NETWORK_SPOTS) * 100));
+  const charterRemaining = Math.max(0, 25 - totalSignups);
+  const foundingRemaining = Math.max(0, 125 - totalSignups);
+  const level3Remaining = Math.max(0, 525 - totalSignups);
+  const currentTierLabel = totalSignups < 25 ? "Charter" : totalSignups < 125 ? "Founding" : totalSignups < 525 ? "Level 3" : "Level 4";
 
   return (
     <div className="min-h-screen bg-white">
@@ -1160,6 +1298,32 @@ export default function ProWaitlist() {
           </div>
         )}
       </nav>
+
+      {/* -- Urgency Bar -- */}
+      <div className="bg-[#0A1628] border-b border-white/10 py-2 px-4">
+        <div className="container flex flex-col sm:flex-row items-center justify-between gap-2">
+          <div className="flex items-center gap-3 flex-1 min-w-0">
+            <span className="text-[#F5E642] text-xs font-black uppercase tracking-wider whitespace-nowrap">
+              {currentTierLabel} Tier Open
+            </span>
+            <div className="flex-1 bg-white/10 rounded-full h-1.5 overflow-hidden min-w-0">
+              <div
+                className="h-1.5 rounded-full transition-all duration-700 bg-[#F5E642]"
+                style={{ width: `${spotsPercent}%` }}
+              />
+            </div>
+            <span className="text-white/60 text-xs whitespace-nowrap">
+              {totalSignups} / {TOTAL_NETWORK_SPOTS} joined
+            </span>
+          </div>
+          <span
+            onClick={openWaitlist}
+            className="cursor-pointer text-xs font-bold text-[#0A1628] bg-[#F5E642] px-3 py-1 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+          >
+            Claim Your Spot →
+          </span>
+        </div>
+      </div>
 
       {/* -- 1. Hero -- */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
@@ -1484,35 +1648,74 @@ export default function ProWaitlist() {
                 </span>
               </div>
 
-              {/* Founding Partner Spot Counter */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">[AWARD]</span>
-                  <div>
-                    <h4 className="font-heading font-bold text-gray-900">Founding Partner Spots</h4>
-                    <p className="text-xs text-gray-500">Lock in your current rate forever</p>
+              {/* 4-Tier Founding Network Sidebar */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="bg-[#0A1628] px-5 py-4">
+                  <h4 className="font-heading font-bold text-white text-sm">Founding Network Tiers</h4>
+                  <p className="text-white/50 text-xs mt-0.5">Join now — current tier: <span className="text-[#F5E642] font-semibold">{currentTierLabel}</span></p>
+                </div>
+                {/* Progress bar */}
+                <div className="px-5 py-3 border-b border-gray-100 bg-gray-50">
+                  <div className="flex justify-between text-xs text-gray-500 mb-1.5">
+                    <span>{totalSignups.toLocaleString()} joined</span>
+                    <span>{spotsRemaining.toLocaleString()} spots left</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="h-2 rounded-full transition-all duration-700"
+                      style={{ width: `${spotsPercent}%`, backgroundColor: "#0A1628" }}
+                    />
                   </div>
                 </div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-600">Spots remaining</span>
-                  <span className="text-xl font-heading font-bold text-[#0A1628]">{spotsRemaining} <span className="text-sm font-normal text-gray-400">of 50</span></span>
-                </div>
-                <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden mb-3">
-                  <div className="h-2 rounded-full transition-all duration-700 bg-[#0A1628]" style={{ width: `${spotsPercent}%` }} />
-                </div>
-                <ul className="space-y-1.5">
+                <div className="p-4 space-y-3">
                   {[
-                    "Locked-in pricing forever",
-                    "Founding Partner badge on your profile",
-                    "Priority lead routing -- first look at new leads",
-                    "Early access to every new feature",
-                  ].map((perk) => (
-                    <li key={perk} className="flex items-center gap-2 text-xs text-gray-600">
-                      <CheckCircle className="h-3.5 w-3.5 text-[#0A1628] shrink-0" />
-                      {perk}
-                    </li>
-                  ))}
-                </ul>
+                    { key: "charter",  label: "Charter",   spots: 25,   remaining: charterRemaining,  badge: "MOST EXCLUSIVE",  color: "#7C3AED", textColor: "text-purple-700" },
+                    { key: "founding", label: "Founding",  spots: 100,  remaining: Math.max(0, foundingRemaining - charterRemaining <= 0 ? 0 : foundingRemaining), badge: "FOUNDING MEMBER", color: "#0A1628", textColor: "text-[#0A1628]" },
+                    { key: "level3",   label: "Level 3",   spots: 400,  remaining: Math.max(0, level3Remaining - foundingRemaining <= 0 ? 0 : level3Remaining),   badge: "EARLY ADOPTER",   color: "#1D4ED8", textColor: "text-blue-700" },
+                    { key: "level4",   label: "Level 4",   spots: 1600, remaining: Math.max(0, Math.min(1600, TOTAL_NETWORK_SPOTS - Math.max(totalSignups, 525))), badge: "PARTNER",         color: "#059669", textColor: "text-emerald-700" },
+                  ].map((tier) => {
+                    const isFull = tier.remaining === 0;
+                    return (
+                      <div
+                        key={tier.key}
+                        className={`rounded-xl p-3 border ${isFull ? "border-gray-200 bg-gray-50 opacity-60" : "border-gray-200 bg-white"}`}
+                      >
+                        <div className="flex items-start justify-between mb-1">
+                          <div>
+                            <div className="flex items-center gap-1.5 mb-0.5">
+                              <span className="font-heading font-bold text-gray-900 text-sm">{tier.label}</span>
+                              <span
+                                className="text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded text-white"
+                                style={{ backgroundColor: tier.color }}
+                              >
+                                {tier.badge}
+                              </span>
+                            </div>
+                            <div className="text-xs text-gray-400">{tier.spots} total spots</div>
+                          </div>
+                          <div className="text-right">
+                            {isFull ? (
+                              <span className="text-xs font-bold text-gray-400">FULL</span>
+                            ) : (
+                              <>
+                                <div className="text-base font-heading font-bold" style={{ color: tier.color }}>{tier.remaining}</div>
+                                <div className="text-[10px] text-gray-400">remaining</div>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  <p className="text-[10px] text-gray-400 text-center pt-1 leading-snug">
+                    These rates lock in permanently once the founding network closes at 2,125 partners.
+                  </p>
+                  <span onClick={openWaitlist} className="cursor-pointer block">
+                    <button className="w-full py-2.5 text-sm font-bold bg-[#0A1628] text-white hover:opacity-90 transition-all rounded-lg">
+                      Claim Your Spot Now
+                    </button>
+                  </span>
+                </div>
               </div>
 
               {/* FAQ */}

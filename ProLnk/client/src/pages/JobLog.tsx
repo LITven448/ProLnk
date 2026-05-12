@@ -118,7 +118,13 @@ export default function JobLog() {
               Log Another Job
             </Button>
           </div>
-          <Link href="/dashboard" className="mt-6 text-xs text-white/40 hover:text-white/70 underline">
+          <a
+            href={`/job-complete?address=${encodeURIComponent(form.address)}`}
+            className="mt-5 text-xs text-[#F5E642]/70 hover:text-[#F5E642] underline"
+          >
+            Mark this job complete to distribute commissions →
+          </a>
+          <Link href="/dashboard" className="mt-3 text-xs text-white/40 hover:text-white/70 underline">
             Back to Dashboard
           </Link>
         </div>

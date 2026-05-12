@@ -136,6 +136,7 @@ import PhotoApprovalQueue from "./pages/admin/PhotoApprovalQueue";
 import CustomerDealPage from "./pages/CustomerDealPage";
 import PartnerProfile from "./pages/PartnerProfile";
 import Exchange from "./pages/Exchange";
+import ExchangeLanding from "./pages/ExchangeLanding";
 import ExchangeProfile from "./pages/ExchangeProfile";
 import PublicLeaderboard from "./pages/Leaderboard";
 import NetworkStats from "./pages/NetworkStats";
@@ -354,6 +355,7 @@ import HowAIWorks from "./pages/HowAIWorks";
 import ForRealEstateAgents from "./pages/ForRealEstateAgents";
 import ForInsuranceAgents from "./pages/ForInsuranceAgents";
 import ForPropertyManagers from "./pages/ForPropertyManagers";
+import StormAlert from "./pages/StormAlert";
 
 // Wave 33: Multi-Property
 import LandlordView from "./pages/homeowner/LandlordView";
@@ -786,6 +788,7 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
+      <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />
@@ -883,6 +886,7 @@ function Router() {
       <Route path="/for-real-estate-agents" component={ForRealEstateAgents} />
       <Route path="/for-insurance-agents" component={ForInsuranceAgents} />
       <Route path="/for-property-managers" component={ForPropertyManagers} />
+      <Route path="/storm-alert" component={StormAlert} />
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />

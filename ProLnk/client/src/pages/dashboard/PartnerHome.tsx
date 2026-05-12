@@ -592,7 +592,7 @@ export default function PartnerHome() {
         <OnboardingBanner />
 
         {/* ── Trial Status Banner ─────────────────────────────────────────── */}
-        {isFoundingNetwork && <TrialBanner joinedAt={status.createdAt} />}
+        {isFoundingNetwork && <TrialBanner joinedAt={(status as any).createdAt} />}
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

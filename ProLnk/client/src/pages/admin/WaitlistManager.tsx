@@ -133,21 +133,22 @@ export default function WaitlistManager() {
     bulkApprove.mutate({ type: "pros", tier: "charter" });
   }
 
-  // CSV export helper
-  function exportToCsv(rows: any[], filename: string) {
-    if (!rows.length) { toast.error("No data to export"); return; }
-    const headers = Object.keys(rows[0]);
-    const csv = [
-      headers.join(","),
-      ...rows.map(row =>
-        headers.map(h => {
-          const val = row[h];
-          if (val === null || val === undefined) return "";
-          const str = Array.isArray(val) ? val.join(";") : String(val).replace(/"/g, '""');
-          return str.includes(",") || str.includes('"') || str.includes("\n") ? `"${str}"` : str;
-        }).join(",")
-      ),
-    ].join("\n");
+  const [exportingPros, setExportingPros] = useState(false);
+  const [exportingHomes, setExportingHomes] = useState(false);
+
+  function buildCsv(rows: any[], headers: string[]): string {
+    const csvRows = rows.map(row =>
+      headers.map(h => {
+        const val = row[h];
+        if (val === null || val === undefined) return "";
+        const str = Array.isArray(val) ? val.join(";") : String(val).replace(/"/g, '""');
+        return str.includes(",") || str.includes('"') || str.includes("\n") ? `"${str}"` : str;
+      }).join(",")
+    );
+    return [headers.join(","), ...csvRows].join("\n");
+  }
+
+  function triggerDownload(csv: string, filename: string) {
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -155,7 +156,40 @@ export default function WaitlistManager() {
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
-    toast.success(`Exported ${rows.length} rows to ${filename}`);
+  }
+
+  async function handleExportPros() {
+    setExportingPros(true);
+    try {
+      const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "pro" });
+      const rows = (data as any)?.pro ?? data ?? [];
+      if (!rows.length) { toast.error("No pro data to export"); return; }
+      const headers = ["firstName", "lastName", "email", "phone", "trade", "primaryCity", "primaryState", "tier", "waitlistPosition", "referralCode", "referredBy", "referralCount", "status", "createdAt"];
+      const csv = buildCsv(rows, headers);
+      triggerDownload(csv, `prolnk-waitlist-export-${new Date().toISOString().split("T")[0]}.csv`);
+      toast.success(`Exported ${rows.length} pro records`);
+    } catch (e: any) {
+      toast.error(`Export failed: ${e?.message ?? "Unknown error"}`);
+    } finally {
+      setExportingPros(false);
+    }
+  }
+
+  async function handleExportHomes() {
+    setExportingHomes(true);
+    try {
+      const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "home" });
+      const rows = (data as any)?.home ?? data ?? [];
+      if (!rows.length) { toast.error("No homeowner data to export"); return; }
+      const headers = ["firstName", "lastName", "email", "phone", "address", "city", "state", "homeType", "desiredProjects", "status", "createdAt"];
+      const csv = buildCsv(rows, headers);
+      triggerDownload(csv, `trustypro-homeowner-export-${new Date().toISOString().split("T")[0]}.csv`);
+      toast.success(`Exported ${rows.length} homeowner records`);
+    } catch (e: any) {
+      toast.error(`Export failed: ${e?.message ?? "Unknown error"}`);
+    } finally {
+      setExportingHomes(false);
+    }
   }
 
   const filteredPros = (pros.data || []).filter((p: any) => {
@@ -224,20 +258,24 @@ export default function WaitlistManager() {
             variant="outline"
             size="sm"
             className="text-xs flex items-center gap-1.5 border-gray-300"
-            onClick={() => exportToCsv(pros.data ?? [], `prolnk-pro-waitlist-${new Date().toISOString().split('T')[0]}.csv`)}
-            disabled={!pros.data?.length}
+            onClick={handleExportPros}
+            disabled={exportingPros}
           >
-            <Download className="w-3.5 h-3.5" />
+            {exportingPros
+              ? <span className="w-3.5 h-3.5 inline-block animate-spin border border-current border-t-transparent rounded-full" />
+              : <Download className="w-3.5 h-3.5" />}
             Export Pros CSV
           </Button>
           <Button
             variant="outline"
             size="sm"
             className="text-xs flex items-center gap-1.5 border-gray-300"
-            onClick={() => exportToCsv(homes.data ?? [], `trustypro-homeowner-waitlist-${new Date().toISOString().split('T')[0]}.csv`)}
-            disabled={!homes.data?.length}
+            onClick={handleExportHomes}
+            disabled={exportingHomes}
           >
-            <Download className="w-3.5 h-3.5" />
+            {exportingHomes
+              ? <span className="w-3.5 h-3.5 inline-block animate-spin border border-current border-t-transparent rounded-full" />
+              : <Download className="w-3.5 h-3.5" />}
             Export Homeowners CSV
           </Button>
         </div>

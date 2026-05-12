@@ -24,6 +24,7 @@ import {
   Home, Camera, Shield, Star, FileText, Zap, Clock,
   CheckCircle, ArrowRight, ChevronRight, Heart, TrendingUp,
   DollarSign, Search, Lock, BarChart3, Phone, Mail,
+  Upload, UserCheck, ClipboardList,
 } from "lucide-react";
 
 const HOW_IT_WORKS = [
@@ -95,6 +96,50 @@ const SCOUT_FEATURES = [
   "Available for residential, commercial, and multifamily",
 ];
 
+const HOMEOWNER_STEPS = [
+  {
+    step: "1",
+    icon: <UserCheck className="w-7 h-7 text-[#0891b2]" />,
+    title: "Create your free profile",
+    description: "Enter your address, tell us about your home, and describe what you need. Takes 2 minutes. No credit card, no commitment.",
+  },
+  {
+    step: "2",
+    icon: <Upload className="w-7 h-7 text-[#0891b2]" />,
+    title: "Upload photos of your home",
+    description: "Snap photos of any room, appliance, or system. Our AI analyzes 50+ issue types — roof, HVAC, electrical, plumbing, and more.",
+  },
+  {
+    step: "3",
+    icon: <ClipboardList className="w-7 h-7 text-[#0891b2]" />,
+    title: "Get matched with vetted pros",
+    description: "Receive quotes from background-checked, licensed professionals matched to your specific needs. Compare, choose, and book in one place.",
+  },
+];
+
+const VAULT_BENEFITS = [
+  {
+    icon: <Camera className="w-5 h-5 text-[#1e3a5f]" />,
+    title: "Photo-by-Photo History",
+    desc: "Every repair, upgrade, and inspection is photographed and stored permanently. Never lose a receipt or warranty again.",
+  },
+  {
+    icon: <BarChart3 className="w-5 h-5 text-[#1e3a5f]" />,
+    title: "Live Health Score",
+    desc: "A 0-100 score across all 12 home systems, updated after every service visit or photo upload.",
+  },
+  {
+    icon: <TrendingUp className="w-5 h-5 text-[#1e3a5f]" />,
+    title: "Resale Value Boost",
+    desc: "Homes with documented maintenance records sell faster and for more. Share your Vault with buyers in one click.",
+  },
+  {
+    icon: <Lock className="w-5 h-5 text-[#1e3a5f]" />,
+    title: "Private & Secure",
+    desc: "Your data is encrypted and belongs to you. Share only what you choose, with only the pros you approve.",
+  },
+];
+
 const TESTIMONIALS = [
   {
     name: "Jennifer R.",
@@ -116,6 +161,27 @@ const TESTIMONIALS = [
     text: "I used to dread finding contractors. Now I just open TrustyPro, see their verified background check and reviews, and book. It changed how I think about home maintenance.",
     rating: 5,
     project: "Kitchen Remodel",
+  },
+  {
+    name: "David L.",
+    location: "McKinney, TX",
+    text: "I uploaded photos of my HVAC unit and within 24 hours TrustyPro told me the system was 3 years from end-of-life and showed me three vetted pros to plan ahead with. Game changer.",
+    rating: 5,
+    project: "HVAC Planning",
+  },
+  {
+    name: "Priya N.",
+    location: "Plano, TX",
+    text: "The Home Health Vault gave me peace of mind I didn't know I was missing. Everything documented, all in one place. My home finally feels organized.",
+    rating: 5,
+    project: "Home Organization",
+  },
+  {
+    name: "Tom & Amy K.",
+    location: "Celina, TX",
+    text: "As first-time homeowners we had no idea where to start. TrustyPro walked us through our whole house and matched us with the right people. We feel like we actually know our home now.",
+    rating: 5,
+    project: "First-Time Homeowners",
   },
 ];
 
@@ -251,6 +317,123 @@ export default function TrustyProSite() {
         </div>
       </section>
 
+      {/* How It Works for Homeowners */}
+      <section className="bg-[#f0f7ff] py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0891b2]/10 rounded-full text-[#0891b2] text-xs font-semibold mb-4">
+              FOR HOMEOWNERS
+            </div>
+            <h2 className="text-4xl font-black text-[#1e3a5f] mb-4">Start Free in 3 Steps</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">No credit card. No commitment. Just better home ownership from day one.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {HOMEOWNER_STEPS.map((item) => (
+              <div key={item.step} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center">
+                <div className="w-14 h-14 rounded-2xl bg-[#0891b2]/10 flex items-center justify-center mx-auto mb-5">
+                  {item.icon}
+                </div>
+                <div className="text-5xl font-black text-[#0891b2]/20 mb-3">{item.step}</div>
+                <h3 className="font-bold text-[#1e3a5f] text-lg mb-3">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button
+              size="lg"
+              onClick={() => navigate("/waitlist/homeowner")}
+              className="bg-[#1e3a5f] hover:bg-[#0891b2] text-white font-bold text-base px-8 py-3 rounded-xl h-auto transition-colors"
+            >
+              Start Free — No Credit Card
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Home Health Vault */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1e3a5f]/10 rounded-full text-[#1e3a5f] text-xs font-semibold mb-6">
+                HOME HEALTH VAULT
+              </div>
+              <h2 className="text-4xl font-black text-[#1e3a5f] mb-6">
+                Your home, fully documented. Forever.
+              </h2>
+              <p className="text-gray-500 text-lg mb-8 leading-relaxed">
+                The Home Health Vault is your home's permanent digital record — every repair, every photo, every inspection. It grows with every service call and transfers automatically when you sell.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {VAULT_BENEFITS.map((b, i) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-[#f0f7ff] rounded-xl border border-[#0891b2]/10">
+                    <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                      {b.icon}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-[#1e3a5f]">{b.title}</p>
+                      <p className="text-xs text-gray-500 mt-0.5 leading-snug">{b.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Button
+                size="lg"
+                onClick={() => navigate("/waitlist/homeowner")}
+                className="bg-[#0891b2] hover:bg-[#1e3a5f] text-white font-bold px-8 py-3 rounded-xl h-auto transition-colors"
+              >
+                Start Your Vault — Free
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-[#1e3a5f] rounded-2xl p-6 text-white">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm font-semibold text-blue-200">Home Health Score</span>
+                  <span className="text-xs text-blue-300">Updated today</span>
+                </div>
+                <div className="text-6xl font-black text-white mb-1">82</div>
+                <div className="text-blue-300 text-sm mb-5">Good — 2 items need attention</div>
+                {[
+                  { label: "HVAC System", score: 94, good: true },
+                  { label: "Roof & Gutters", score: 71, good: false },
+                  { label: "Plumbing", score: 88, good: true },
+                  { label: "Electrical", score: 96, good: true },
+                  { label: "Foundation", score: 90, good: true },
+                ].map((sys) => (
+                  <div key={sys.label} className="mb-2.5">
+                    <div className="flex justify-between text-xs text-blue-200 mb-1">
+                      <span>{sys.label}</span>
+                      <span className={sys.good ? "text-green-300" : "text-yellow-300"}>{sys.score}/100</span>
+                    </div>
+                    <div className="h-1.5 bg-white/10 rounded-full">
+                      <div
+                        className={`h-full rounded-full ${sys.good ? "bg-green-400" : "bg-yellow-400"}`}
+                        style={{ width: `${sys.score}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { label: "Photos Stored", value: "47" },
+                  { label: "Services Logged", value: "12" },
+                  { label: "Est. Value Added", value: "$4.2K" },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-[#f0f7ff] rounded-xl p-4 text-center border border-[#0891b2]/10">
+                    <div className="text-2xl font-black text-[#1e3a5f]">{stat.value}</div>
+                    <div className="text-xs text-gray-500 mt-0.5">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Scout Assessment */}
       <section id="scout" className="bg-indigo-600 py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -339,24 +522,37 @@ export default function TrustyProSite() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-black text-gray-900 text-center mb-14">What Homeowners Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-black text-gray-900 mb-3">Homeowners Love TrustyPro</h2>
+            <p className="text-gray-500 text-lg">Real stories from DFW homeowners who finally feel in control of their homes.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col">
                 <div className="flex gap-0.5 mb-4">
                   {Array(t.rating).fill(0).map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
-                <div>
+                <p className="text-gray-700 text-sm leading-relaxed mb-5 flex-1">"{t.text}"</p>
+                <div className="border-t border-gray-50 pt-4">
                   <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
-                  <div className="text-gray-400 text-xs">{t.location} · {t.project}</div>
+                  <div className="text-gray-400 text-xs mt-0.5">{t.location} · {t.project}</div>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              onClick={() => navigate("/waitlist/homeowner")}
+              className="bg-[#1e3a5f] hover:bg-[#0891b2] text-white font-bold px-8 py-3 rounded-xl h-auto transition-colors"
+            >
+              Join DFW Homeowners on the Waitlist
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         </div>
       </section>

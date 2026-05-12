@@ -738,6 +738,7 @@ function Router() {
       <Route path="/deal/:token" component={CustomerDealPage} />
       <Route path="/partner/:id" component={PartnerProfile} />
       <Route path="/stats" component={NetworkStats} />
+      <Route path="/network-stats" component={NetworkStats} />
 
       {/* TrustyPro -- Homeowner Platform */}
       <Route path="/trustypro">

@@ -513,11 +513,11 @@ export default function TrustyProHome() {
         <meta property="og:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more in DFW." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://trustypro.io" />
-        <meta property="og:image" content="https://trustypro.io/og-image.png" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TrustyPro — Vetted Home Service Pros, AI-Matched" />
         <meta name="twitter:description" content="Get matched with verified, background-checked home service professionals using AI. The smart way to find plumbers, HVAC, electricians and more in DFW." />
-        <meta name="twitter:image" content="https://trustypro.io/og-image.png" />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp" />
         <link rel="canonical" href="https://trustypro.io" />
       </Helmet>
 

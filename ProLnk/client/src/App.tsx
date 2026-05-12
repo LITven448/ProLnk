@@ -72,6 +72,7 @@ import ReferralLink from "./pages/ReferralLink";
 import ReferralHub from "./pages/dashboard/ReferralHub";
 import PartnerHome from "./pages/dashboard/PartnerHome";
 import ReferralFunnelTracker from "./pages/ReferralFunnelTracker";
+import NetworkTree from "./pages/NetworkTree";
 import TierUpgradeFlow from "./pages/TierUpgradeFlow";
 import Notifications from "./pages/Notifications";
 import NotificationPreferences from "./pages/NotificationPreferences";
@@ -535,6 +536,7 @@ function Router() {
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
+      <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
       <Route path="/dashboard/upgrade" component={TierUpgradeFlow} />
       <Route path="/dashboard/notifications" component={Notifications} />

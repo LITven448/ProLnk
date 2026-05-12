@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * W25 — Partner Settings Page
  * Unified settings hub: account info, notifications, payout, integrations, partner status.

@@ -111,7 +111,7 @@ function BizCard({ name, tagline, color, icon: Icon, gradient, href, kpis, alert
 }
 
 export default function PortfolioDashboard() {
-  useEffect(() => { document.title = "Portfolio Dashboard — Duke Partners"; }, []);
+  useEffect(() => { document.title = "Portfolio Dashboard — ProLnk"; }, []);
 
   const { data: stats }       = trpc.admin.getNetworkStats.useQuery();
   const { data: pending }     = trpc.admin.getPendingApplications.useQuery();

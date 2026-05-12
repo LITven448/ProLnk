@@ -11,6 +11,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/_core/hooks/useAuth";
+import BackToTop from "@/components/BackToTop";
 import {
   Lock, DollarSign, RefreshCw, Calendar, Home, Zap, CheckCircle,
   Star, Users, TrendingUp, ArrowRight, Shield, Award,
@@ -238,6 +239,7 @@ export default function FoundingPartnerPage() {
       <footer className="border-t border-gray-800 py-8 text-center text-gray-600 text-sm">
         © 2026 ProLnk LLC · DFW, Texas · <a href="/legal/terms" className="hover:text-gray-400">Terms</a> · <a href="/legal/privacy" className="hover:text-gray-400">Privacy</a>
       </footer>
+      <BackToTop />
     </div>
   );
 }

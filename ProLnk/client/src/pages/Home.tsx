@@ -2275,6 +2275,7 @@ export default function Home() {
                 <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 <Link href="/ccpa" className="hover:text-white transition-colors">CCPA Rights</Link>
                 <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+                <a href="mailto:hello@prolnk.io" className="hover:text-white transition-colors">Contact</a>
                 <a href="https://instagram.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://facebook.com/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
                 <a href="https://linkedin.com/company/prolnk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>

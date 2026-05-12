@@ -145,6 +145,38 @@ export default function WaitlistProLanding() {
         </div>
       </section>
 
+      {/* 4-Tier Structure */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-black text-white text-center mb-3">4-Tier Partner Structure</h2>
+        <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">Start free, tier up as you close jobs. Higher tiers unlock higher commission splits and priority lead routing.</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { tier: "Charter",  spots: 25,   color: "#10B981", border: "border-emerald-500/30", bg: "bg-emerald-500/5",  keep: "72%", badge: "Founding Network", desc: "First 25 pros. Locked pricing forever. Priority lead routing at launch." },
+            { tier: "Founding", spots: 100,  color: "#3B82F6", border: "border-blue-500/30",    bg: "bg-blue-500/5",    keep: "72%", badge: "Founding Network", desc: "Spots 26–125. Same founding rate, second-tier network income rights." },
+            { tier: "Level 3",  spots: 400,  color: "#8B5CF6", border: "border-purple-500/30",  bg: "bg-purple-500/5",  keep: "72%", badge: "Early Access",     desc: "Spots 126–525. Full platform access, $149/mo at launch." },
+            { tier: "Level 4",  spots: 1600, color: "#F59E0B", border: "border-amber-500/30",   bg: "bg-amber-500/5",   keep: "72%", badge: "Open Waitlist",    desc: "Spots 526–2125. Standard launch pricing, all core features included." },
+          ].map((t) => (
+            <div key={t.tier} className={`rounded-2xl border ${t.border} ${t.bg} p-5 flex flex-col`}>
+              <div className="flex items-start justify-between mb-3">
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${t.color}20`, color: t.color }}>{t.badge}</span>
+                <span className="text-white/40 text-xs font-semibold">{t.spots.toLocaleString()} spots</span>
+              </div>
+              <h3 className="text-white font-black text-lg mb-1">{t.tier}</h3>
+              <div className="text-2xl font-black mb-1" style={{ color: t.color }}>{t.keep} keep</div>
+              <p className="text-white/50 text-xs leading-relaxed flex-1 mb-4">{t.desc}</p>
+              <button
+                onClick={() => window.location.href = "/pro-waitlist"}
+                className="text-xs font-bold py-2 px-4 rounded-xl transition-all hover:opacity-90 w-full text-center"
+                style={{ backgroundColor: `${t.color}20`, color: t.color }}
+              >
+                Claim {t.tier} Spot →
+              </button>
+            </div>
+          ))}
+        </div>
+        <p className="text-white/30 text-xs text-center mt-6">Waitlist closes at 500 applications + 5,000 homes. $149/mo locked for all tiers.</p>
+      </section>
+
       {/* Final CTA */}
       <section className="max-w-2xl mx-auto px-6 py-16 text-center">
         <div className="p-8 rounded-3xl bg-yellow-400/5 border border-yellow-400/20">

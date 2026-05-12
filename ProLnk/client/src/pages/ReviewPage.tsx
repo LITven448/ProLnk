@@ -83,7 +83,7 @@ export default function ReviewPage() {
       if (data.success) {
         setSubmitted(true);
       } else {
-        toast.error((data as any).error || "Failed to submit review");
+        toast.error(("error" in data && data.error) || "Failed to submit review");
       }
     },
     onError: () => toast.error("Something went wrong. Please try again."),

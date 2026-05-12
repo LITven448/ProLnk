@@ -222,6 +222,8 @@ import TrustyProLogin from "./pages/trustypro/TrustyProLogin";
 import TrustyProWaitlist from "./pages/trustypro/TrustyProWaitlist";
 import PhotoScan from "./pages/trustypro/PhotoScan";
 import HomeHealthDashboard from "./pages/trustypro/HomeHealthDashboard";
+import HomeownerLogin from "./pages/trustypro/HomeownerLogin";
+import TrustyProHomeownerDashboard from "./pages/trustypro/HomeownerDashboard";
 import TrustyProDirectory from "./pages/homeowner/TrustyProDirectory";
 import HomeownerDashboard from "./pages/homeowner/HomeownerDashboard";
 import HomeownerOffers from "./pages/homeowner/HomeownerOffers";
@@ -702,6 +704,8 @@ function Router() {
         <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>
       </Route>
       <Route path="/trustypro/login" component={TrustyProLogin} />
+      <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
+      <Route path="/trustypro/dashboard" component={TrustyProHomeownerDashboard} />
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
@@ -794,8 +798,9 @@ function Router() {
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />
       <Route path="/dashboard/growth-calculator" component={GrowthCalculator} />
       <Route path="/dashboard/community" component={CommunityForum} />
-      <Route path="/leaderboard" component={PartnerLeaderboard} />
+      <Route path="/leaderboard" component={PublicLeaderboard} />
       <Route path="/network/leaderboard" component={PublicLeaderboard} />
+      <Route path="/partner-leaderboard" component={PartnerLeaderboard} />
       <Route path="/my-home/true-cost" component={TrueCostGuide} />
       <Route path="/my-home/maintenance" component={MaintenanceSchedule} />
       <Route path="/my-home/savings" component={SavingsTracker} />

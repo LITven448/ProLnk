@@ -547,11 +547,11 @@ export default function ProLnkMediaSite() {
         <meta property="og:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/media" />
-        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk Media — The Future of Home Services" />
         <meta name="twitter:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
-        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.io/media" />
       </Helmet>
       <Nav onCta={() => setModalOpen(true)} />

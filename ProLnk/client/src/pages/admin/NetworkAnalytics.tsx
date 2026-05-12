@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
-import { Users, TrendingUp, MapPin, Network, Star, BarChart3 } from "lucide-react";
+import { Users, TrendingUp, MapPin, Network, Star, BarChart3, DollarSign, GitBranch } from "lucide-react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
 } from "recharts";
@@ -9,8 +9,8 @@ import {
 const TIER_CONFIG = [
   { key: "charter",  label: "Charter",  cap: 25,   color: "#F59E0B", bg: "rgba(245,158,11,0.15)" },
   { key: "founding", label: "Founding", cap: 100,  color: "#8B5CF6", bg: "rgba(139,92,246,0.15)" },
-  { key: "l3",       label: "L3",       cap: 400,  color: "#17C1E8", bg: "rgba(23,193,232,0.15)" },
-  { key: "l4",       label: "L4",       cap: 1600, color: "#22C55E", bg: "rgba(34,197,94,0.15)"  },
+  { key: "level3",   label: "Level 3",  cap: 400,  color: "#17C1E8", bg: "rgba(23,193,232,0.15)" },
+  { key: "level4",   label: "Level 4",  cap: 1600, color: "#22C55E", bg: "rgba(34,197,94,0.15)"  },
 ];
 
 function StatCard({
@@ -70,14 +70,30 @@ export default function NetworkAnalytics() {
       .slice(0, 10)
       .map(([name, count]) => ({ name, count }));
 
-    const tierCounts: Record<string, number> = { charter: 0, founding: 0, l3: 0, l4: 0 };
+    const tierCounts: Record<string, number> = { charter: 0, founding: 0, level3: 0, level4: 0 };
     raw.forEach((p: any) => {
       const t = (p.tier || "").toLowerCase();
       if (t === "charter") tierCounts.charter++;
       else if (t === "founding") tierCounts.founding++;
-      else if (t === "l3") tierCounts.l3++;
-      else if (t === "l4") tierCounts.l4++;
+      else if (t === "level3" || t === "l3") tierCounts.level3++;
+      else if (t === "level4" || t === "l4") tierCounts.level4++;
     });
+
+    // Referral depth distribution
+    const refCodeSet = new Set(raw.map((p: any) => p.referralCode).filter(Boolean));
+    const directRecruiters = raw.filter((p: any) => p.referralCount > 0).length;
+    const hasL2 = raw.filter((p: any) => {
+      if (!p.referralCode) return false;
+      return raw.some((r: any) => r.referredBy === p.referralCode && (r.referralCount ?? 0) > 0);
+    }).length;
+    const hasL3depth = raw.filter((p: any) => {
+      if (!p.referralCode) return false;
+      const l2recruits = raw.filter((r: any) => r.referredBy === p.referralCode);
+      return l2recruits.some((r2: any) => r2.referralCode && raw.some((r3: any) => r3.referredBy === r2.referralCode && (r3.referralCount ?? 0) > 0));
+    }).length;
+    const referralDepth = { direct: directRecruiters, l2: hasL2, l3: hasL3depth };
+
+    void refCodeSet;
 
     const velocityMap: Record<string, number> = {};
     raw.forEach((p: any) => {
@@ -105,10 +121,10 @@ export default function NetworkAnalytics() {
     const maxVelocity = Math.max(...velocityDays.map(d => d[1]), 1);
     const maxCity = Math.max(...topCities.map(c => c[1]), 1);
 
-    const dailyTierMap: Record<string, { date: string; charter: number; founding: number; l3: number; l4: number; other: number }> = {};
+    const dailyTierMap: Record<string, { date: string; charter: number; founding: number; level3: number; level4: number; other: number }> = {};
     for (let i = 13; i >= 0; i--) {
       const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
-      dailyTierMap[d] = { date: d.slice(5), charter: 0, founding: 0, l3: 0, l4: 0, other: 0 };
+      dailyTierMap[d] = { date: d.slice(5), charter: 0, founding: 0, level3: 0, level4: 0, other: 0 };
     }
     raw.forEach((p: any) => {
       if (!p.createdAt) return;
@@ -118,13 +134,13 @@ export default function NetworkAnalytics() {
       const bucket = dailyTierMap[d];
       if (t === "charter") bucket.charter++;
       else if (t === "founding") bucket.founding++;
-      else if (t === "l3") bucket.l3++;
-      else if (t === "l4") bucket.l4++;
+      else if (t === "level3" || t === "l3") bucket.level3++;
+      else if (t === "level4" || t === "l4") bucket.level4++;
       else bucket.other++;
     });
     const dailySignups = Object.values(dailyTierMap);
 
-    return { total, totalReferrals, avgReferrals, topReferrers, tierCounts, velocityDays, topCities, topStates, maxVelocity, maxCity, dailySignups };
+    return { total, totalReferrals, avgReferrals, topReferrers, tierCounts, velocityDays, topCities, topStates, maxVelocity, maxCity, dailySignups, referralDepth };
   }, [raw]);
 
   return (
@@ -240,8 +256,8 @@ export default function NetworkAnalytics() {
                       <Legend iconType="square" iconSize={8} wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
                       <Bar dataKey="charter"  stackId="a" fill="#F59E0B" name="Charter"  radius={[0,0,0,0]} />
                       <Bar dataKey="founding" stackId="a" fill="#8B5CF6" name="Founding" radius={[0,0,0,0]} />
-                      <Bar dataKey="l3"       stackId="a" fill="#17C1E8" name="L3"       radius={[0,0,0,0]} />
-                      <Bar dataKey="l4"       stackId="a" fill="#22C55E" name="L4"       radius={[0,0,0,0]} />
+                      <Bar dataKey="level3"   stackId="a" fill="#17C1E8" name="Level 3"  radius={[0,0,0,0]} />
+                      <Bar dataKey="level4"   stackId="a" fill="#22C55E" name="Level 4"  radius={[0,0,0,0]} />
                       <Bar dataKey="other"    stackId="a" fill="#CBD5E1" name="Other"    radius={[4,4,0,0]} />
                     </BarChart>
                   </ResponsiveContainer>

@@ -2,6 +2,7 @@
  * Platform Settings — Admin feature flags and system controls
  * Wired to real tRPC: admin.getFeatureFlags + admin.setFeatureFlag
  */
+import type React from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";

@@ -1,24 +1,24 @@
 import { Link } from "wouter";
-import { Home, Search } from "lucide-react";
+import { Home, Search, ArrowRight } from "lucide-react";
 import ProLnkLogo from "@/components/ProLnkLogo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#F0F2F5" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#0A1628" }}>
       {/* Minimal nav */}
-      <nav className="bg-white border-b border-gray-100 px-6 py-4">
+      <nav className="border-b border-white/10 px-6 py-4">
         <Link href="/">
-          <ProLnkLogo height={32} variant="light" className="cursor-pointer" />
+          <ProLnkLogo height={32} variant="dark" className="cursor-pointer" />
         </Link>
       </nav>
 
       {/* Main content */}
       <div className="flex-1 flex items-center justify-center px-6 py-24">
-        <div className="text-center max-w-md">
+        <div className="text-center max-w-lg">
           {/* Big 404 watermark */}
           <div
-            className="text-[9rem] font-black leading-none mb-2 select-none"
-            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "#0A1628", opacity: 0.07 }}
+            className="text-[10rem] font-black leading-none mb-2 select-none"
+            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "#F5E642", opacity: 0.06 }}
           >
             404
           </div>
@@ -26,47 +26,58 @@ export default function NotFound() {
           {/* Icon badge */}
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 -mt-8"
-            style={{ background: "linear-gradient(135deg, #0A1628, #1a3050)" }}
+            style={{ background: "linear-gradient(135deg, #F5E642, #e6d520)" }}
           >
-            <Search className="w-8 h-8 text-white" />
+            <Search className="w-8 h-8 text-[#0A1628]" />
           </div>
 
           <h1
-            className="text-3xl font-black text-gray-900 mb-3"
+            className="text-3xl font-black text-white mb-3"
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
           >
             Page Not Found
           </h1>
-          <p className="text-gray-500 mb-10 leading-relaxed">
-            The page you're looking for doesn't exist or has been moved.
+          <p className="text-white/50 mb-8 leading-relaxed">
+            The page you're looking for doesn't exist or has been moved. Try searching or use the links below.
           </p>
 
+          {/* Search bar (UI only) */}
+          <div className="relative mb-8 max-w-sm mx-auto">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+            <input
+              type="text"
+              placeholder="Search ProLnk..."
+              className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-[#F5E642]/50 rounded-none"
+            />
+          </div>
+
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <Link href="/">
               <button
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#0A1628" }}
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
               >
                 <Home className="w-4 h-4" />
                 Back to Home
               </button>
             </Link>
             <Link href="/apply">
-              <button className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white transition-all">
+              <button className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold border-2 border-white/20 text-white hover:border-[#F5E642] hover:text-[#F5E642] transition-all">
                 Apply to Join
+                <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
           </div>
 
           {/* Quick links */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <p className="text-xs text-gray-400 uppercase tracking-widest mb-4 font-semibold">Quick Links</p>
-            <div className="flex flex-wrap gap-4 justify-center text-sm text-gray-500">
-              <Link href="/dashboard" className="hover:text-gray-900 transition-colors">Partner Login</Link>
-              <Link href="/leaderboard" className="hover:text-gray-900 transition-colors">Leaderboard</Link>
-              <Link href="/trustypro" className="hover:text-gray-900 transition-colors">TrustyPro</Link>
-              <Link href="/partners" className="hover:text-gray-900 transition-colors">Directory</Link>
+          <div className="pt-8 border-t border-white/10">
+            <p className="text-xs text-white/30 uppercase tracking-widest mb-4 font-semibold">Quick Links</p>
+            <div className="flex flex-wrap gap-4 justify-center text-sm text-white/50">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <Link href="/apply" className="hover:text-white transition-colors">Apply</Link>
+              <Link href="/waitlist-status" className="hover:text-white transition-colors">Waitlist Status</Link>
+              <Link href="/media" className="hover:text-white transition-colors">ProLnk Media</Link>
             </div>
           </div>
         </div>

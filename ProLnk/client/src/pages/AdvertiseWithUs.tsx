@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * ProLnk Media — Advertise With Us
  * Cinematic scroll experience with Three.js particle network,

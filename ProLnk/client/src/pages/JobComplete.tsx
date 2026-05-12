@@ -87,26 +87,28 @@ function SuccessState({
           {dist.success && dist.distributions.length > 0 && (
             <div className="mb-4 rounded-xl border border-white/10 bg-white/5 overflow-hidden">
               <div className="px-4 py-3 border-b border-white/10 flex items-center gap-2">
-                <Network className="w-4 h-4" style={{ color: "#F5E642" }} />
+                <Network className="w-4 h-4 flex-shrink-0" style={{ color: "#F5E642" }} />
                 <span className="text-sm font-semibold text-white">
                   Commission pool: ${dist.platformFee.toFixed(2)} distributed
                 </span>
               </div>
-              <div className="divide-y divide-white/5">
-                {dist.distributions.map((line, i) => (
-                  <div key={i} className="px-4 py-3 flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-white font-medium">{line.partnerName}</p>
-                      <p className="text-xs text-white/40">{typeLabel(line.type)}</p>
+              <div className="overflow-x-auto">
+                <div className="divide-y divide-white/5 min-w-[280px]">
+                  {dist.distributions.map((line, i) => (
+                    <div key={i} className="px-4 py-3 flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="text-sm text-white font-medium truncate">{line.partnerName}</p>
+                        <p className="text-xs text-white/40">{typeLabel(line.type)}</p>
+                      </div>
+                      <span className="text-sm font-bold flex-shrink-0" style={{ color: "#F5E642" }}>
+                        ${line.amount.toFixed(2)}
+                      </span>
                     </div>
-                    <span className="text-sm font-bold" style={{ color: "#F5E642" }}>
-                      ${line.amount.toFixed(2)}
-                    </span>
+                  ))}
+                  <div className="px-4 py-3 flex items-center justify-between bg-white/5">
+                    <span className="text-xs text-white/40">ProLnk retains</span>
+                    <span className="text-xs text-white/60">${dist.prolnkRetains.toFixed(2)}</span>
                   </div>
-                ))}
-                <div className="px-4 py-3 flex items-center justify-between bg-white/5">
-                  <span className="text-xs text-white/40">ProLnk retains</span>
-                  <span className="text-xs text-white/60">${dist.prolnkRetains.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -141,11 +143,11 @@ function SuccessState({
             <p className="text-xs text-white/50 mb-3">
               Send this referral link to grow your network — you earn from every partner you recruit.
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap sm:flex-nowrap">
               <input
                 readOnly
                 value={referralUrl}
-                className="flex-1 text-xs bg-white/5 border border-white/10 rounded px-3 py-2 text-white/70 truncate"
+                className="w-full sm:flex-1 text-xs bg-white/5 border border-white/10 rounded px-3 py-2 text-white/70 truncate min-w-0"
               />
               <Button
                 size="sm"

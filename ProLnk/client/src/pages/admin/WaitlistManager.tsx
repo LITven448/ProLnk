@@ -62,18 +62,34 @@ export default function WaitlistManager() {
   const homes = trpc.waitlistAdmin.getHomeWaitlist.useQuery({ status: homeStatus, limit: 500 });
 
   const updatePro = trpc.waitlistAdmin.updateProStatus.useMutation({
-    onSuccess: () => { utils.waitlist.getProWaitlist.invalidate(); utils.waitlist.getWaitlistStats.invalidate(); toast.success("Status updated"); },
+    onSuccess: (_, variables) => {
+      utils.waitlistAdmin.getProWaitlist.invalidate();
+      utils.waitlistAdmin.getWaitlistStats.invalidate();
+      const pro = (pros.data || []).find((p: any) => p.id === variables.id);
+      const email = pro?.email ?? "";
+      if (variables.status === "approved") toast.success(`✓ Approved — confirmation email sent to ${email}`);
+      else if (variables.status === "rejected") toast.success(`✗ Rejected — notification sent to ${email}`);
+      else toast.success("Status updated");
+    },
     onError: (e) => toast.error(e.message),
   });
   const updateHome = trpc.waitlistAdmin.updateHomeStatus.useMutation({
-    onSuccess: () => { utils.waitlist.getHomeWaitlist.invalidate(); utils.waitlist.getWaitlistStats.invalidate(); toast.success("Status updated"); },
+    onSuccess: (_, variables) => {
+      utils.waitlistAdmin.getHomeWaitlist.invalidate();
+      utils.waitlistAdmin.getWaitlistStats.invalidate();
+      const home = (homes.data || []).find((h: any) => h.id === variables.id);
+      const email = home?.email ?? "";
+      if (variables.status === "approved") toast.success(`✓ Approved — confirmation email sent to ${email}`);
+      else if (variables.status === "rejected") toast.success(`✗ Rejected — notification sent to ${email}`);
+      else toast.success("Status updated");
+    },
     onError: (e) => toast.error(e.message),
   });
   const activateAndInvite = trpc.waitlistAdmin.activateAndInvite.useMutation({
     onSuccess: (data) => {
-      utils.waitlist.getProWaitlist.invalidate();
-      utils.waitlist.getHomeWaitlist.invalidate();
-      utils.waitlist.getWaitlistStats.invalidate();
+      utils.waitlistAdmin.getProWaitlist.invalidate();
+      utils.waitlistAdmin.getHomeWaitlist.invalidate();
+      utils.waitlistAdmin.getWaitlistStats.invalidate();
       toast.success(`Invite sent to ${data.name} (${data.email})`);
     },
     onError: (e) => toast.error(`Invite failed: ${e.message}`),
@@ -81,14 +97,41 @@ export default function WaitlistManager() {
 
   const bulkApprove = trpc.waitlistAdmin.bulkApproveAll.useMutation({
     onSuccess: (data) => {
-      utils.waitlist.getProWaitlist.invalidate();
-      utils.waitlist.getHomeWaitlist.invalidate();
-      utils.waitlist.getWaitlistStats.invalidate();
+      utils.waitlistAdmin.getProWaitlist.invalidate();
+      utils.waitlistAdmin.getHomeWaitlist.invalidate();
+      utils.waitlistAdmin.getWaitlistStats.invalidate();
       toast.success(`${data.updated} entries approved`);
       setConfirmBulk(false);
     },
     onError: (e) => toast.error(e.message),
   });
+
+  const pendingCharterCount = (pros.data || []).filter((p: any) => p.tier === "charter" && p.status === "pending").length;
+
+  function handleStatusClick(
+    id: number,
+    status: "approved" | "rejected" | "invited" | "pending",
+    email: string,
+    type: "pro" | "home",
+    adminNotes?: string
+  ) {
+    if (status === "approved" || status === "rejected") {
+      const verb = status === "approved" ? "approve" : "reject";
+      const confirmed = window.confirm(`Are you sure you want to ${verb} this applicant? An email notification will be sent to ${email}.`);
+      if (!confirmed) return;
+    }
+    if (type === "pro") {
+      updatePro.mutate({ id, status, adminNotes });
+    } else {
+      updateHome.mutate({ id, status, adminNotes });
+    }
+  }
+
+  function handleBulkApproveCharter() {
+    const confirmed = window.confirm(`Approve all ${pendingCharterCount} pending Charter tier applicants? Each will receive an approval email.`);
+    if (!confirmed) return;
+    bulkApprove.mutate({ type: "pros", tier: "charter" });
+  }
 
   // CSV export helper
   function exportToCsv(rows: any[], filename: string) {
@@ -115,9 +158,11 @@ export default function WaitlistManager() {
     toast.success(`Exported ${rows.length} rows to ${filename}`);
   }
 
-  const filteredPros = (pros.data || []).filter(p =>
-    !proSearch || `${p.firstName} ${p.lastName} ${p.businessName} ${p.email} ${p.primaryCity}`.toLowerCase().includes(proSearch.toLowerCase())
-  );
+  const filteredPros = (pros.data || []).filter((p: any) => {
+    if (!proSearch) return true;
+    const tradesStr = Array.isArray(p.trades) ? p.trades.join(" ") : (typeof p.trades === "string" ? p.trades : "");
+    return `${p.firstName} ${p.lastName} ${p.businessName} ${p.email} ${p.primaryCity} ${tradesStr}`.toLowerCase().includes(proSearch.toLowerCase());
+  });
   const filteredHomes = (homes.data || []).filter(h =>
     !homeSearch || `${h.firstName} ${h.lastName} ${h.email} ${h.city} ${h.address}`.toLowerCase().includes(homeSearch.toLowerCase())
   );
@@ -223,6 +268,33 @@ export default function WaitlistManager() {
           </div>
         </div>
 
+        {/* Summary row + Bulk Charter Approve */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 bg-white border border-gray-200 rounded-xl px-4 py-3">
+          <div className="flex flex-wrap gap-4 text-xs text-gray-600">
+            <span><span className="font-bold text-yellow-700">{s?.pros.pending ?? 0} pending</span> · <span className="font-bold text-green-700">{s?.pros.approved ?? 0} approved</span> · <span className="font-bold text-red-600">{s?.pros.rejected ?? 0} rejected</span></span>
+            <span className="text-gray-300">|</span>
+            {["charter","founding","level3","level4"].map(tier => {
+              const count = (pros.data || []).filter((p: any) => p.tier === tier).length;
+              return count > 0 ? (
+                <span key={tier} className={`px-1.5 py-0.5 rounded font-semibold ${TIER_COLORS[tier]}`}>
+                  {TIER_LABELS[tier]}: {count}
+                </span>
+              ) : null;
+            })}
+          </div>
+          {pendingCharterCount > 0 && (
+            <Button
+              size="sm"
+              className="text-xs bg-yellow-500 hover:bg-yellow-600 text-white whitespace-nowrap"
+              onClick={handleBulkApproveCharter}
+              disabled={bulkApprove.isPending}
+            >
+              <CheckCircle className="w-3.5 h-3.5 mr-1" />
+              Approve {pendingCharterCount} Pending Charter
+            </Button>
+          )}
+        </div>
+
         {/* Tabs */}
         <div className="flex gap-1 bg-gray-200 rounded-xl p-1 mb-6 w-fit">
           {(["pros", "homes"] as const).map(t => (
@@ -322,9 +394,9 @@ export default function WaitlistManager() {
                           {(["approved", "rejected", "invited", "pending"] as const).map(s => (
                             <Button key={s} size="sm"
                               disabled={updatePro.isPending}
-                              onClick={() => updatePro.mutate({ id: pro.id, status: s, adminNotes: editNotes[pro.id] ?? pro.adminNotes ?? undefined })}
+                              onClick={() => handleStatusClick(pro.id, s, pro.email, "pro", editNotes[pro.id] ?? pro.adminNotes ?? undefined)}
                               className={`text-xs ${pro.status === s ? "ring-2 ring-offset-1 ring-gray-400" : ""} ${s === "approved" ? "bg-green-600 text-white hover:bg-green-700" : s === "rejected" ? "bg-red-600 text-white hover:bg-red-700" : s === "invited" ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
-                              {s === "approved" ? <CheckCircle className="w-3 h-3 mr-1" /> : s === "rejected" ? <XCircle className="w-3 h-3 mr-1" /> : s === "invited" ? <Send className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
+                              {updatePro.isPending ? <span className="w-3 h-3 mr-1 inline-block animate-spin border border-current border-t-transparent rounded-full" /> : s === "approved" ? <CheckCircle className="w-3 h-3 mr-1" /> : s === "rejected" ? <XCircle className="w-3 h-3 mr-1" /> : s === "invited" ? <Send className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
                               Mark {s}
                             </Button>
                           ))}
@@ -420,9 +492,9 @@ export default function WaitlistManager() {
                           {(["approved", "rejected", "invited", "pending"] as const).map(s => (
                             <Button key={s} size="sm"
                               disabled={updateHome.isPending}
-                              onClick={() => updateHome.mutate({ id: home.id, status: s, adminNotes: editNotes[home.id] ?? home.adminNotes ?? undefined })}
+                              onClick={() => handleStatusClick(home.id, s, home.email, "home", editNotes[home.id] ?? home.adminNotes ?? undefined)}
                               className={`text-xs ${home.status === s ? "ring-2 ring-offset-1 ring-gray-400" : ""} ${s === "approved" ? "bg-green-600 text-white hover:bg-green-700" : s === "rejected" ? "bg-red-600 text-white hover:bg-red-700" : s === "invited" ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
-                              {s === "approved" ? <CheckCircle className="w-3 h-3 mr-1" /> : s === "rejected" ? <XCircle className="w-3 h-3 mr-1" /> : s === "invited" ? <Send className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
+                              {updateHome.isPending ? <span className="w-3 h-3 mr-1 inline-block animate-spin border border-current border-t-transparent rounded-full" /> : s === "approved" ? <CheckCircle className="w-3 h-3 mr-1" /> : s === "rejected" ? <XCircle className="w-3 h-3 mr-1" /> : s === "invited" ? <Send className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
                               Mark {s}
                             </Button>
                           ))}

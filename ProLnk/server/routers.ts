@@ -98,6 +98,7 @@ import {
   getIndustryRates,
   upsertIndustryRate,
   getDb,
+  getPool,
   getPhotoQueue,
   getPhotoQueueStats,
   getPartnerNotifications,
@@ -5298,6 +5299,57 @@ Return a JSON object with:
       .query(async ({ input }) => {
         return getRecruitingChain(input.partnerId);
       }),
+  }),
+
+  // ── Home Documentation (Origination Rights) ────────────────────────────────
+  homeDocumentation: router({
+    checkAddress: protectedProcedure
+      .input(z.object({ address: z.string().min(5) }))
+      .query(async ({ input, ctx }) => {
+        const pool = await getPool();
+        if (!pool) return { available: true, claimedBy: null };
+        const normalized = input.address.toLowerCase().trim().replace(/\s+/g, " ");
+        const [rows]: any = await pool.query(
+          "SELECT pro_email, created_at FROM home_documentation WHERE normalized_address = ? LIMIT 1",
+          [normalized]
+        ).catch(() => [[]]);
+        if ((rows as any[])[0]) {
+          const isYours = (rows as any[])[0].pro_email === (ctx.user.email ?? "");
+          return { available: false, claimedBy: isYours ? "you" : "another_pro", claimedAt: (rows as any[])[0].created_at };
+        }
+        return { available: true, claimedBy: null };
+      }),
+
+    claimAddress: protectedProcedure
+      .input(z.object({ address: z.string().min(5) }))
+      .mutation(async ({ input, ctx }) => {
+        const pool = await getPool();
+        if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const normalized = input.address.toLowerCase().trim().replace(/\s+/g, " ");
+        const crypto = await import("crypto");
+        const hash = crypto.createHash("sha256").update(normalized).digest("hex");
+        const id = Math.floor(Math.random() * 2_000_000_000) + 1;
+        try {
+          await pool.query(
+            "INSERT INTO home_documentation (id, pro_id, pro_email, property_address, normalized_address, address_hash, is_originator) VALUES (?, ?, ?, ?, ?, ?, 1)",
+            [id, 0, ctx.user.email ?? "", input.address, normalized, hash]
+          );
+          return { success: true, message: "Origination rights claimed!" };
+        } catch (e: any) {
+          if (e.code === "ER_DUP_ENTRY") throw new TRPCError({ code: "CONFLICT", message: "Address already claimed" });
+          throw e;
+        }
+      }),
+
+    getMyHomes: protectedProcedure.query(async ({ ctx }) => {
+      const pool = await getPool();
+      if (!pool) return [];
+      const [rows]: any = await pool.query(
+        "SELECT property_address, created_at FROM home_documentation WHERE pro_email = ? ORDER BY created_at DESC LIMIT 100",
+        [ctx.user.email ?? ""]
+      ).catch(() => [[]]);
+      return (rows as any[]);
+    }),
   }),
 
   contentGeneration: router({

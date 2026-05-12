@@ -367,9 +367,7 @@ export default function PartnerHome() {
 
   const spotsToNext = tierCfg.nextThreshold ? Math.max(0, tierCfg.nextThreshold - (status.position ?? 0)) : 0;
 
-  const leaderRows = Array.isArray(leaderboard)
-    ? leaderboard
-    : (leaderboard as any)?.leaders ?? [];
+  const leaderRows = Array.isArray(leaderboard) ? leaderboard : [];
 
   return (
     <div className="min-h-screen" style={{ background: "#0A1628" }}>

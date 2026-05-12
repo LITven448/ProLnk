@@ -19,10 +19,17 @@ import {
 type StatusFilter = "all" | "pending" | "approved" | "rejected" | "invited";
 
 const STATUS_COLORS: Record<string, string> = {
-  pending: "bg-yellow-100 text-yellow-800",
-  approved: "bg-green-100 text-green-800",
-  rejected: "bg-red-100 text-red-800",
-  invited: "bg-blue-100 text-blue-800",
+  pending:  "bg-amber-100 text-amber-800 border border-amber-300",
+  approved: "bg-green-100 text-green-800 border border-green-300",
+  rejected: "bg-red-100 text-red-700 border border-red-300",
+  invited:  "bg-blue-100 text-blue-800 border border-blue-300",
+};
+
+const STATUS_LABELS: Record<string, string> = {
+  pending:  "Pending Review",
+  approved: "Approved",
+  rejected: "Rejected",
+  invited:  "Invited",
 };
 
 const TIER_COLORS: Record<string, string> = {
@@ -108,6 +115,16 @@ export default function WaitlistManager() {
 
   const pendingCharterCount = (pros.data || []).filter((p: any) => p.tier === "charter" && p.status === "pending").length;
 
+  const tierCounts = (pros.data || []).reduce(
+    (acc: Record<string, number>, p: any) => {
+      const t = (p.tier || "").toLowerCase();
+      if (t === "charter" || t === "founding" || t === "level3" || t === "level4") acc[t] = (acc[t] ?? 0) + 1;
+      return acc;
+    },
+    { charter: 0, founding: 0, level3: 0, level4: 0 }
+  );
+  const totalApplied = (pros.data || []).length;
+
   function handleStatusClick(
     id: number,
     status: "approved" | "rejected" | "invited" | "pending",
@@ -162,7 +179,7 @@ export default function WaitlistManager() {
     setExportingPros(true);
     try {
       const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "pro" });
-      const rows = (data as { pro?: unknown[] }).pro ?? [];
+      const rows = (data as { pro?: any[] }).pro ?? [];
       if (!rows.length) { toast.error("No pro data to export"); return; }
       const headers = ["firstName", "lastName", "email", "phone", "trade", "primaryCity", "primaryState", "tier", "waitlistPosition", "referralCode", "referredBy", "referralCount", "status", "createdAt"];
       const csv = buildCsv(rows, headers);
@@ -179,7 +196,7 @@ export default function WaitlistManager() {
     setExportingHomes(true);
     try {
       const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "home" });
-      const rows = (data as { home?: unknown[] }).home ?? [];
+      const rows = (data as { home?: any[] }).home ?? [];
       if (!rows.length) { toast.error("No homeowner data to export"); return; }
       const headers = ["firstName", "lastName", "email", "phone", "address", "city", "state", "homeType", "desiredProjects", "status", "createdAt"];
       const csv = buildCsv(rows, headers);
@@ -228,6 +245,44 @@ export default function WaitlistManager() {
               <div className="text-2xl font-black text-gray-900">{stat.value}</div>
             </div>
           ))}
+        </div>
+
+        {/* Founding Network Summary */}
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl border border-slate-700 p-5 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-white font-bold text-sm tracking-wide uppercase">Founding Network Summary</h2>
+              <p className="text-slate-400 text-xs mt-0.5">Slot fill status — waitlist closes at 2,125 partners</p>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-black text-white">{totalApplied.toLocaleString()}<span className="text-slate-400 text-sm font-normal"> / 2,125</span></div>
+              <div className="text-xs text-slate-400">{Math.round((totalApplied / 2125) * 100)}% filled</div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { tier: "charter",  label: "Charter",  cap: 25,   filled: tierCounts.charter,  color: "#F59E0B", ring: "ring-yellow-500/40" },
+              { tier: "founding", label: "Founding", cap: 100,  filled: tierCounts.founding, color: "#8B5CF6", ring: "ring-purple-500/40" },
+              { tier: "level3",   label: "Level 3",  cap: 400,  filled: tierCounts.level3,   color: "#17C1E8", ring: "ring-cyan-500/40" },
+              { tier: "level4",   label: "Level 4",  cap: 1600, filled: tierCounts.level4,   color: "#22C55E", ring: "ring-green-500/40" },
+            ].map(({ tier, label, cap, filled, color, ring }) => {
+              const pct = Math.min(100, Math.round((filled / cap) * 100));
+              const remaining = Math.max(0, cap - filled);
+              return (
+                <div key={tier} className={`bg-slate-800/60 rounded-lg p-3 ring-1 ${ring}`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold" style={{ color }}>{label}</span>
+                    <span className="text-xs text-slate-400">{remaining} left</span>
+                  </div>
+                  <div className="text-xl font-black text-white mb-1">{filled}<span className="text-slate-500 text-xs font-normal"> / {cap}</span></div>
+                  <div className="h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: color }} />
+                  </div>
+                  <div className="text-xs text-slate-500 mt-1">{pct}% filled</div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Progress toward goals */}
@@ -373,7 +428,7 @@ export default function WaitlistManager() {
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-semibold text-sm text-gray-900">{pro.firstName} {pro.lastName}</span>
                           <span className="text-xs text-gray-500">{pro.businessName}</span>
-                          <Badge className={`text-xs ${STATUS_COLORS[pro.status] || "bg-gray-100 text-gray-600"}`}>{pro.status}</Badge>
+                          <Badge className={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_COLORS[pro.status] || "bg-gray-100 text-gray-600"}`}>{STATUS_LABELS[pro.status] ?? pro.status}</Badge>
                           {pro.tier && (
                             <span className={`text-xs px-1.5 py-0.5 rounded font-semibold ${TIER_COLORS[pro.tier] ?? "bg-gray-100 text-gray-500"}`}>
                               {TIER_LABELS[pro.tier] ?? pro.tier}
@@ -428,17 +483,28 @@ export default function WaitlistManager() {
                           <Textarea value={editNotes[pro.id] ?? pro.adminNotes ?? ""} onChange={e => setEditNotes(n => ({ ...n, [pro.id]: e.target.value }))}
                             className="text-xs min-h-[60px] resize-none" placeholder="Internal notes..." />
                         </div>
-                        <div className="flex gap-2 mt-3 flex-wrap">
-                          {(["approved", "rejected", "invited", "pending"] as const).map(s => (
-                            <Button key={s} size="sm"
-                              disabled={updatePro.isPending}
-                              onClick={() => handleStatusClick(pro.id, s, pro.email, "pro", editNotes[pro.id] ?? pro.adminNotes ?? undefined)}
-                              className={`text-xs ${pro.status === s ? "ring-2 ring-offset-1 ring-gray-400" : ""} ${s === "approved" ? "bg-green-600 text-white hover:bg-green-700" : s === "rejected" ? "bg-red-600 text-white hover:bg-red-700" : s === "invited" ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}>
-                              {updatePro.isPending ? <span className="w-3 h-3 mr-1 inline-block animate-spin border border-current border-t-transparent rounded-full" /> : s === "approved" ? <CheckCircle className="w-3 h-3 mr-1" /> : s === "rejected" ? <XCircle className="w-3 h-3 mr-1" /> : s === "invited" ? <Send className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
-                              Mark {s}
-                            </Button>
-                          ))}
-                          <Button size="sm" variant="outline" className="text-xs bg-amber-50 border-amber-300 text-amber-800 hover:bg-amber-100"
+                        <div className="flex gap-2 mt-4 flex-wrap items-center">
+                          <Button size="sm"
+                            disabled={updatePro.isPending || pro.status === "approved"}
+                            onClick={() => handleStatusClick(pro.id, "approved", pro.email, "pro", editNotes[pro.id] ?? pro.adminNotes ?? undefined)}
+                            className={`text-sm font-semibold px-4 bg-green-600 text-white hover:bg-green-700 ${pro.status === "approved" ? "ring-2 ring-offset-1 ring-green-400 opacity-70" : ""}`}>
+                            {updatePro.isPending ? <span className="w-3.5 h-3.5 mr-1.5 inline-block animate-spin border border-current border-t-transparent rounded-full" /> : <CheckCircle className="w-3.5 h-3.5 mr-1.5" />}
+                            {pro.status === "approved" ? "Approved" : "Approve"}
+                          </Button>
+                          <Button size="sm"
+                            disabled={updatePro.isPending || pro.status === "rejected"}
+                            onClick={() => handleStatusClick(pro.id, "rejected", pro.email, "pro", editNotes[pro.id] ?? pro.adminNotes ?? undefined)}
+                            className={`text-sm font-semibold px-4 bg-red-600 text-white hover:bg-red-700 ${pro.status === "rejected" ? "ring-2 ring-offset-1 ring-red-400 opacity-70" : ""}`}>
+                            {updatePro.isPending ? <span className="w-3.5 h-3.5 mr-1.5 inline-block animate-spin border border-current border-t-transparent rounded-full" /> : <XCircle className="w-3.5 h-3.5 mr-1.5" />}
+                            {pro.status === "rejected" ? "Rejected" : "Reject"}
+                          </Button>
+                          <Button size="sm"
+                            disabled={updatePro.isPending}
+                            onClick={() => handleStatusClick(pro.id, "pending", pro.email, "pro", editNotes[pro.id] ?? pro.adminNotes ?? undefined)}
+                            className={`text-xs px-3 bg-gray-200 text-gray-700 hover:bg-gray-300 ${pro.status === "pending" ? "ring-2 ring-offset-1 ring-gray-400" : ""}`}>
+                            <Clock className="w-3 h-3 mr-1" /> Reset to Pending
+                          </Button>
+                          <Button size="sm" variant="outline" className="text-xs bg-amber-50 border-amber-300 text-amber-800 hover:bg-amber-100 ml-1"
                             disabled={activateAndInvite.isPending}
                             onClick={() => activateAndInvite.mutate({ id: pro.id, type: 'pro', origin: window.location.origin })}>
                             <Zap className="w-3 h-3 mr-1" /> Send Invite Email
@@ -487,7 +553,7 @@ export default function WaitlistManager() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-semibold text-sm text-gray-900">{home.firstName} {home.lastName}</span>
-                          <Badge className={`text-xs ${STATUS_COLORS[home.status] || "bg-gray-100 text-gray-600"}`}>{home.status}</Badge>
+                          <Badge className={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_COLORS[home.status] || "bg-gray-100 text-gray-600"}`}>{STATUS_LABELS[home.status] ?? home.status}</Badge>
                         </div>
                         <div className="text-xs text-gray-500 mt-0.5 flex flex-wrap gap-3">
                           <span>{home.email}</span>

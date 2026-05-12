@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
@@ -31,13 +32,24 @@ interface AnalysisResult {
   photoQualityNote?: string;
 }
 
-const ACCENT = "#4f46e5";
+const ACCENT = "#1e3a5f";
+const ACCENT_BTN = "#0891b2";
 
 const severityConfig = {
-  urgent: { label: "Urgent", color: "bg-red-100 text-red-700 border-red-200", dot: "bg-red-500", icon: AlertTriangle },
-  moderate: { label: "Moderate", color: "bg-amber-100 text-amber-700 border-amber-200", dot: "bg-amber-500", icon: AlertTriangle },
-  low: { label: "Low Priority", color: "bg-green-100 text-green-700 border-green-200", dot: "bg-green-500", icon: CheckCircle },
+  urgent: { label: "🔴 Urgent", color: "bg-red-100 text-red-700 border-red-200", dot: "bg-red-500", icon: AlertTriangle },
+  moderate: { label: "🟠 Schedule Service", color: "bg-amber-100 text-amber-700 border-amber-200", dot: "bg-amber-500", icon: AlertTriangle },
+  low: { label: "🟡 Monitor", color: "bg-yellow-50 text-yellow-700 border-yellow-200", dot: "bg-yellow-400", icon: CheckCircle },
 };
+
+const DETECTED_CATEGORIES = [
+  { icon: "❄️", label: "HVAC & Air Quality" },
+  { icon: "🚿", label: "Plumbing" },
+  { icon: "⚡", label: "Electrical" },
+  { icon: "🏠", label: "Roofing" },
+  { icon: "🌿", label: "Landscaping" },
+  { icon: "🛋️", label: "Interior Conditions" },
+  { icon: "⚠️", label: "Safety Hazards" },
+];
 
 const conditionConfig = {
   excellent: { label: "Excellent Condition", color: "text-green-600", bg: "bg-green-50 border-green-200", emoji: "✅" },
@@ -85,9 +97,9 @@ function AnalyzingScreen({ uploading }: { uploading: boolean }) {
       className="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100"
     >
       <div className="relative w-24 h-24 mx-auto mb-8">
-        <div className="absolute inset-0 rounded-full border-4 border-indigo-100" />
-        <div className="absolute inset-0 rounded-full border-4 border-indigo-600 border-t-transparent animate-spin" />
-        <div className="absolute inset-3 rounded-full bg-indigo-50 flex items-center justify-center text-3xl">🏠</div>
+        <div className="absolute inset-0 rounded-full border-4 border-sky-100" />
+        <div className="absolute inset-0 rounded-full border-4 border-[#0891b2] border-t-transparent animate-spin" />
+        <div className="absolute inset-3 rounded-full bg-sky-50 flex items-center justify-center text-3xl">🏠</div>
       </div>
       <h2 className="text-2xl font-black text-gray-900 mb-3">
         {uploading ? "Uploading Photos..." : "AI is Scanning Your Home..."}
@@ -102,11 +114,11 @@ function AnalyzingScreen({ uploading }: { uploading: boolean }) {
           return (
             <div key={i} className={`flex items-center gap-3 transition-opacity duration-300 ${i > currentStep ? "opacity-30" : "opacity-100"}`}>
               <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0 transition-all duration-500 ${
-                isDone ? "bg-green-500 text-white" : isActive ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-400"
+                isDone ? "bg-green-500 text-white" : isActive ? "bg-[#0891b2] text-white" : "bg-gray-100 text-gray-400"
               }`}>
                 {isDone ? "✓" : isActive ? <span className="w-2 h-2 bg-white rounded-full animate-pulse" /> : "○"}
               </div>
-              <span className={`text-sm transition-all duration-300 ${isDone ? "text-green-700 font-medium" : isActive ? "text-indigo-700 font-semibold" : "text-gray-400"}`}>
+              <span className={`text-sm transition-all duration-300 ${isDone ? "text-green-700 font-medium" : isActive ? "text-[#1e3a5f] font-semibold" : "text-gray-400"}`}>
                 {step.label}
               </span>
             </div>
@@ -154,7 +166,7 @@ function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: {
             <div className="text-5xl mb-4">✅</div>
             <h3 className="text-2xl font-black text-gray-900 mb-2">Request Sent!</h3>
             <p className="text-gray-500 mb-6">A verified DFW pro specializing in <strong>{issue.tradeType}</strong> will reach out within 2 hours.</p>
-            <button onClick={onClose} className="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-colors">Done</button>
+            <button onClick={onClose} className="w-full text-white font-bold py-3 rounded-xl transition-colors" style={{ backgroundColor: "#0891b2" }}>Done</button>
           </div>
         ) : (
           <>
@@ -166,7 +178,7 @@ function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: {
               <button onClick={onClose} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5" /></button>
             </div>
             <div className="bg-gray-50 rounded-xl p-4 mb-6 text-sm">
-              <div className="flex items-center gap-2 mb-1"><span className="font-semibold text-gray-700">Trade needed:</span><span className="text-indigo-600 font-bold">{issue.tradeType}</span></div>
+              <div className="flex items-center gap-2 mb-1"><span className="font-semibold text-gray-700">Trade needed:</span><span className="font-bold" style={{ color: "#0891b2" }}>{issue.tradeType}</span></div>
               <div className="flex items-center gap-2"><span className="font-semibold text-gray-700">Est. cost:</span><span className="text-gray-600">{issue.estimatedCost}</span></div>
             </div>
             <p className="text-sm text-gray-500 mb-6">We'll match you with a background-checked, insured {issue.tradeType} professional in your area. No commitment required.</p>
@@ -175,7 +187,8 @@ function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: {
               <button
                 onClick={handleSubmit}
                 disabled={submitRequest.isPending}
-                className="flex-[2] bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+                className="flex-[2] text-white font-bold py-3 rounded-xl disabled:opacity-50 transition-colors"
+                style={{ backgroundColor: "#0891b2" }}
               >
                 {submitRequest.isPending ? "Sending..." : "Connect Me with a Pro →"}
               </button>
@@ -338,8 +351,8 @@ export default function PhotoScan() {
               <div className="flex items-center justify-center gap-2 mt-6">
                 {["upload", "contact", "analyzing", "results"].map((s, i) => (
                   <div key={s} className={`h-1.5 rounded-full transition-all duration-500 ${
-                    stepIndex >= i ? "bg-indigo-600 w-12" : "bg-gray-200 w-8"
-                  }`} />
+                    stepIndex >= i ? "w-12" : "bg-gray-200 w-8"
+                  }`} style={stepIndex >= i ? { backgroundColor: ACCENT_BTN } : {}} />
                 ))}
               </div>
             </motion.div>
@@ -361,7 +374,7 @@ export default function PhotoScan() {
                 onDragLeave={() => setIsDragging(false)}
                 onDrop={handleDrop}
                 className={`border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 ${
-                  isDragging ? "border-indigo-500 bg-indigo-50" : "border-gray-300 bg-white"
+                  isDragging ? "border-[#0891b2] bg-sky-50" : "border-gray-300 bg-white"
                 }`}
               >
                 <Camera className="w-12 h-12 text-indigo-400 mx-auto mb-3" />
@@ -372,7 +385,8 @@ export default function PhotoScan() {
                   <button
                     type="button"
                     onClick={() => cameraInputRef.current?.click()}
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 active:scale-95 transition-all"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-bold active:scale-95 transition-all"
+                    style={{ backgroundColor: ACCENT_BTN }}
                   >
                     <Camera className="w-4 h-4" /> Take Photo
                   </button>
@@ -448,8 +462,21 @@ export default function PhotoScan() {
                 ))}
               </div>
 
+              {/* What gets detected */}
+              <div className="mt-6 bg-white rounded-xl border border-gray-100 p-5">
+                <p className="text-sm font-bold text-gray-800 mb-3">What our AI detects</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {DETECTED_CATEGORIES.map(cat => (
+                    <div key={cat.label} className="flex items-center gap-2 text-xs text-gray-600">
+                      <span className="text-base leading-none">{cat.icon}</span>
+                      <span>{cat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Social proof */}
-              <div className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-4 flex items-center gap-4">
+              <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center gap-4">
                 <div className="flex -space-x-2">
                   {["👩", "👨", "👩‍🦳", "👨‍🦱"].map((e, i) => (
                     <div key={i} className="w-8 h-8 rounded-full bg-indigo-200 flex items-center justify-center text-sm border-2 border-white">{e}</div>
@@ -459,7 +486,7 @@ export default function PhotoScan() {
                   <div className="flex items-center gap-1 mb-0.5">
                     {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
                   </div>
-                  <p className="text-xs text-indigo-700 font-medium">2,400+ DFW homeowners have scanned their homes — average 3.2 issues found per scan</p>
+                  <p className="text-xs text-[#1e3a5f] font-medium">2,400+ DFW homeowners have scanned their homes — average 3.2 issues found per scan</p>
                 </div>
               </div>
 
@@ -468,7 +495,8 @@ export default function PhotoScan() {
                   if (photos.length === 0) { toast.error("Please upload at least one photo first."); return; }
                   setStep("contact");
                 }}
-                className="mt-8 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl text-lg transition-colors flex items-center justify-center gap-2"
+                className="mt-8 w-full text-white font-bold py-4 rounded-2xl text-lg transition-colors flex items-center justify-center gap-2"
+                style={{ backgroundColor: ACCENT_BTN }}
               >
                 Analyze My Home <ArrowRight className="w-5 h-5" />
               </button>
@@ -492,7 +520,7 @@ export default function PhotoScan() {
                     placeholder="Jane Smith"
                     value={contact.name}
                     onChange={e => setContact(p => ({ ...p, name: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
                   />
                 </div>
                 <div>
@@ -502,7 +530,7 @@ export default function PhotoScan() {
                     placeholder="jane@example.com"
                     value={contact.email}
                     onChange={e => setContact(p => ({ ...p, email: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
                   />
                 </div>
                 <div>
@@ -512,7 +540,7 @@ export default function PhotoScan() {
                     placeholder="(214) 555-0100"
                     value={contact.phone}
                     onChange={e => setContact(p => ({ ...p, phone: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
                   />
                 </div>
                 <div>
@@ -522,7 +550,7 @@ export default function PhotoScan() {
                     placeholder="1234 Oak St, Frisco TX 75034"
                     value={contact.address}
                     onChange={e => setContact(p => ({ ...p, address: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
                   />
                 </div>
               </div>
@@ -553,7 +581,8 @@ export default function PhotoScan() {
                 <button
                   onClick={() => handleAnalyze(false)}
                   disabled={!dataConsent}
-                  className={`flex-[2] font-bold py-4 rounded-2xl text-lg transition-colors ${dataConsent ? "bg-indigo-600 hover:bg-indigo-700 text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+                  className={`flex-[2] font-bold py-4 rounded-2xl text-lg transition-colors ${dataConsent ? "text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+                style={dataConsent ? { backgroundColor: ACCENT_BTN } : {}}
                 >
                   Run AI Scan — It's Free
                 </button>
@@ -804,15 +833,16 @@ export default function PhotoScan() {
               </div>
 
               {/* CTA */}
-              <div className="rounded-2xl p-8 text-center text-white" style={{ backgroundColor: ACCENT }}>
-                <h2 className="text-2xl font-black mb-2">Get Matched with a Verified DFW Pro</h2>
-                <p className="text-indigo-200 mb-6 text-sm">
-                  We'll connect you with a background-checked, insured professional in your area — usually within 2 hours.
+              <div className="rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_BTN} 100%)` }}>
+                <h2 className="text-2xl font-black mb-2">Get Quotes from Verified Pros</h2>
+                <p className="text-sky-200 mb-6 text-sm">
+                  We'll connect you with background-checked, insured professionals in your area — usually within 2 hours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href="/trustypro"
-                    className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors"
+                    className="bg-white font-bold px-8 py-3 rounded-xl hover:bg-sky-50 transition-colors"
+                    style={{ color: ACCENT }}
                   >
                     Browse Verified Pros
                   </Link>

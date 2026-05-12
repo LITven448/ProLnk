@@ -35,7 +35,7 @@ export async function enforceOriginationLock(opts: {
 
   try {
     // Check if this address already has an originator in propertyProfiles
-    const profileRows = await (db as any).execute(sql`
+    const profileRows = await db.execute(sql`
       SELECT id, homeownerName FROM propertyProfiles
       WHERE LOWER(address) LIKE LOWER(${`%${opts.propertyAddress.slice(0, 20)}%`})
       LIMIT 1
@@ -44,7 +44,7 @@ export async function enforceOriginationLock(opts: {
 
     if (!existingProfile) {
       // First visit to this address — create property profile with originator
-      await (db as any).execute(sql`
+      await db.execute(sql`
         INSERT INTO propertyProfiles (address, totalJobsLogged, tradesServiced, detectionHistory)
         VALUES (${opts.propertyAddress}, 1, '[]', '[]')
         ON DUPLICATE KEY UPDATE totalJobsLogged = totalJobsLogged + 1
@@ -64,7 +64,7 @@ export async function enforceOriginationLock(opts: {
     }
 
     // Address already documented — check who has origination
-    const originRows = await (db as any).execute(sql`
+    const originRows = await db.execute(sql`
       SELECT o.sourcePartnerId, COUNT(*) as cnt
       FROM opportunities o
       JOIN jobs j ON o.jobId = j.id
@@ -103,7 +103,7 @@ export async function runProfileCompletionAgent(): Promise<{
 
   try {
     // Partners missing key profile elements
-    const incompletePartnerRows = await (db as any).execute(sql`
+    const incompletePartnerRows = await db.execute(sql`
       SELECT COUNT(*) as cnt FROM partners
       WHERE status = 'approved'
         AND (
@@ -114,7 +114,7 @@ export async function runProfileCompletionAgent(): Promise<{
     const incompletePartners = parseInt((incompletePartnerRows.rows || incompletePartnerRows)[0]?.cnt ?? "0");
 
     // Homeowners without completed setup
-    const incompleteHoRows = await (db as any).execute(sql`
+    const incompleteHoRows = await db.execute(sql`
       SELECT COUNT(*) as cnt FROM homeownerProfiles WHERE setupComplete = 0
     `);
     const incompleteHomeowners = parseInt((incompleteHoRows.rows || incompleteHoRows)[0]?.cnt ?? "0");
@@ -144,7 +144,7 @@ export async function runReferralAgent(): Promise<{
   if (!db) return { activeReferrals: 0, pendingBonuses: 0, topReferrers: [] };
 
   try {
-    const referralRows = await (db as any).execute(sql`
+    const referralRows = await db.execute(sql`
       SELECT
         p.id, p.businessName, p.partnersReferred, p.referralCount,
         p.totalCommissionEarned,
@@ -247,7 +247,7 @@ export async function runWarrantyTrackerAgent(): Promise<{
 
   try {
     // Look for appliance/system ages in home maintenance logs
-    const warrantyRows = await (db as any).execute(sql`
+    const warrantyRows = await db.execute(sql`
       SELECT hml.systemType, hml.servicedAt, hml.notes, p.address,
              DATEDIFF(NOW(), hml.servicedAt) as daysSinceService
       FROM homeMaintenanceLogs hml
@@ -344,7 +344,7 @@ export async function runAlertTriageAgentFromDb(): Promise<{
   };
 
   try {
-    const rows = await (db as any).execute(sql`
+    const rows = await db.execute(sql`
       SELECT alertType as type, message, createdAt
       FROM complianceAlerts
       WHERE resolvedAt IS NULL
@@ -383,7 +383,7 @@ export async function runOutreachAgent(params: { partnerId: number; reason: stri
 
   if (db) {
     try {
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT fullName, trade, city, email
         FROM proWaitlist
         WHERE id = ${params.partnerId}

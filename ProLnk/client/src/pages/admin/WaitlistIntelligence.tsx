@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Admin Waitlist Intelligence Dashboard
  * Smart activation center for the TrustyPro homeowner waitlist.

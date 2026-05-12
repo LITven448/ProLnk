@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 // Videos served from /videos/ (Vite static public dir)
 const V1 = "/videos/prolnk-media-1.mp4";
@@ -539,6 +540,10 @@ export default function ProLnkMediaSite() {
 
   return (
     <div style={{ background: NAVY, fontFamily: "Inter, system-ui, sans-serif", color: CREAM, minHeight: "100vh" }}>
+      <Helmet>
+        <title>ProLnk Media — Reach Home Service Professionals in DFW</title>
+        <meta name="description" content="Advertise to 100K+ verified home service professionals and 150K+ homeowners. Trade-level targeting, event-triggered ads, category exclusivity." />
+      </Helmet>
       <Nav onCta={() => setModalOpen(true)} />
       <Hero onCta={() => setModalOpen(true)} />
       <AudienceStrip />

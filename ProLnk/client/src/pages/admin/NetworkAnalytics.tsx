@@ -80,7 +80,6 @@ export default function NetworkAnalytics() {
     });
 
     // Referral depth distribution
-    const refCodeSet = new Set(raw.map((p: any) => p.referralCode).filter(Boolean));
     const directRecruiters = raw.filter((p: any) => p.referralCount > 0).length;
     const hasL2 = raw.filter((p: any) => {
       if (!p.referralCode) return false;
@@ -92,8 +91,6 @@ export default function NetworkAnalytics() {
       return l2recruits.some((r2: any) => r2.referralCode && raw.some((r3: any) => r3.referredBy === r2.referralCode && (r3.referralCount ?? 0) > 0));
     }).length;
     const referralDepth = { direct: directRecruiters, l2: hasL2, l3: hasL3depth };
-
-    void refCodeSet;
 
     const velocityMap: Record<string, number> = {};
     raw.forEach((p: any) => {
@@ -397,7 +394,7 @@ export default function NetworkAnalytics() {
                   {[
                     { label: "Dallas", value: stats.topCities.find(([c]) => c.toLowerCase().includes("dallas"))?.[1] ?? 0, color: "#F59E0B" },
                     { label: "Fort Worth", value: stats.topCities.find(([c]) => c.toLowerCase().includes("fort worth"))?.[1] ?? 0, color: "#17C1E8" },
-                    { label: "Plano/Allen", value: stats.topCities.filter(([c]) => ["plano","allen","frisco","mckinney"].some(m => c.toLowerCase().includes(m))).reduce((s, [,v]) => s + v, 0), color: "#22C55E" },
+                    { label: "Plano/Allen", value: stats.topCities.filter(([c]) => ["plano","allen","frisco","mckinney"].some(m => c.toLowerCase().includes(m))).reduce((s, entry) => s + entry[1], 0), color: "#22C55E" },
                   ].map(({ label, value, color }) => (
                     <div key={label} style={{ background: `${color}11`, borderRadius: 8, padding: "8px 10px", border: `1px solid ${color}33` }}>
                       <p style={{ fontSize: 18, fontWeight: 800, color, margin: 0 }}>{value}</p>

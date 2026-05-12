@@ -166,7 +166,7 @@ const BUSINESSES = [
   { name: "ProLnk", status: "active", stage: "Pre-launch", mrr: 0, valuation: "TBD" },
   { name: "TrustyPro", status: "active", stage: "Pre-launch", mrr: 0, valuation: "TBD" },
   { name: "Scoop Duke", status: "active", stage: "Operating", mrr: null, valuation: "TBD" },
-  { name: "Duke Partners", status: "active", stage: "Holding", mrr: null, valuation: "TBD" },
+  { name: "ProLnk", status: "active", stage: "Holding", mrr: null, valuation: "TBD" },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────

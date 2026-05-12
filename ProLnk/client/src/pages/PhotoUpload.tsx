@@ -1,19 +1,47 @@
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
-import { Camera, Upload, Zap, CheckCircle, AlertCircle, X, Image, Loader2, MapPin, Home } from "lucide-react";
+import { Camera, Upload, Zap, CheckCircle, AlertCircle, X, Image, Loader2, MapPin, Home, ClipboardList, Shield } from "lucide-react";
 import { useState, useRef } from "react";
 import { toast } from "sonner";
+import { useLocation } from "wouter";
 
 type Severity = "low" | "medium" | "high" | "urgent";
 
-const SEVERITY_STYLES: Record<Severity, string> = {
-  low: "bg-gray-100 text-gray-600",
-  medium: "bg-yellow-100 text-yellow-700",
-  high: "bg-orange-100 text-orange-700",
-  urgent: "bg-red-100 text-red-700",
+const SEVERITY_STYLES: Record<Severity, { badge: string; header: string; dot: string }> = {
+  urgent: { badge: "bg-red-100 text-red-700 border border-red-200", header: "bg-red-50 border-b border-red-100 text-red-800", dot: "bg-red-500" },
+  high:   { badge: "bg-orange-100 text-orange-700 border border-orange-200", header: "bg-orange-50 border-b border-orange-100 text-orange-800", dot: "bg-orange-500" },
+  medium: { badge: "bg-yellow-100 text-yellow-700 border border-yellow-200", header: "bg-yellow-50 border-b border-yellow-100 text-yellow-800", dot: "bg-yellow-500" },
+  low:    { badge: "bg-gray-100 text-gray-600 border border-gray-200", header: "bg-gray-50 border-b border-gray-100 text-gray-700", dot: "bg-gray-400" },
 };
 
 const SEVERITY_ORDER: Record<Severity, number> = { urgent: 0, high: 1, medium: 2, low: 3 };
+
+const TRADE_ICONS: Record<string, string> = {
+  roofing: "🏚️",
+  hvac: "❄️",
+  plumbing: "🔧",
+  electrical: "⚡",
+  landscaping: "🌿",
+  siding: "🏠",
+  windows: "🪟",
+  pest: "🐛",
+  structural: "🏗️",
+  foundation: "🪨",
+  painting: "🎨",
+  flooring: "🪵",
+  insulation: "🌡️",
+  gutters: "💧",
+  fencing: "🏡",
+  drywall: "🔨",
+  garage: "🚗",
+  deck: "🌳",
+  chimney: "🏔️",
+  appliance: "🏠",
+  tree_service: "🌲",
+  water_mitigation: "💦",
+  general_contractor: "🔩",
+  default: "🔧",
+};
 
 export default function PhotoUpload() {
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
@@ -21,6 +49,7 @@ export default function PhotoUpload() {
   const [uploading, setUploading] = useState(false);
   const [originationClaimed, setOriginationClaimed] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [, navigate] = useLocation();
 
   const scanMutation = trpc.photoIntelligence.scanMultiple.useMutation({
     onSuccess: (data) => {
@@ -96,6 +125,20 @@ export default function PhotoUpload() {
   const sortedDetections = result?.detections
     ? [...result.detections].sort((a, b) => SEVERITY_ORDER[a.severity as Severity] - SEVERITY_ORDER[b.severity as Severity])
     : [];
+
+  const groupedDetections = sortedDetections.reduce((acc, det) => {
+    const sev = det.severity as Severity;
+    if (!acc[sev]) acc[sev] = [];
+    acc[sev].push(det);
+    return acc;
+  }, {} as Record<Severity, typeof sortedDetections>);
+
+  const highestSeverity = sortedDetections.length > 0 ? sortedDetections[0].severity : null;
+
+  const getTradeIcon = (trade: string) => {
+    const key = (trade ?? "").toLowerCase().replace(/\s+/g, "_").replace(/-/g, "_");
+    return TRADE_ICONS[key] ?? TRADE_ICONS.default;
+  };
 
   return (
     <PartnerLayout>
@@ -242,16 +285,31 @@ export default function PhotoUpload() {
         {result && !isAnalyzing && (
           <div className="space-y-4">
             {/* Summary bar */}
-            <div className="bg-[#0A1628] rounded-xl p-4 flex items-center justify-between text-white">
-              <div className="flex items-center gap-4">
+            <div className="bg-[#0A1628] rounded-xl p-4 text-white">
+              <div className="flex items-start justify-between mb-3">
+                <p className="text-xs text-white/60 uppercase tracking-wide font-medium">Scan Summary</p>
+                <button onClick={handleReset} className="text-xs text-white/60 hover:text-white underline">
+                  New scan
+                </button>
+              </div>
+              <div className="flex items-center gap-4 flex-wrap">
                 <div>
                   <p className="text-2xl font-bold">{result.totalDetections}</p>
                   <p className="text-xs text-white/60 mt-0.5">Opportunities detected</p>
                 </div>
                 <div className="w-px h-8 bg-white/20" />
+                {highestSeverity && (
+                  <>
+                    <div>
+                      <p className="text-2xl font-bold capitalize">{highestSeverity}</p>
+                      <p className="text-xs text-white/60 mt-0.5">Highest severity</p>
+                    </div>
+                    <div className="w-px h-8 bg-white/20" />
+                  </>
+                )}
                 <div>
                   <p className="text-2xl font-bold">{result.estimatedTotalValue}</p>
-                  <p className="text-xs text-white/60 mt-0.5">Total estimated value</p>
+                  <p className="text-xs text-white/60 mt-0.5">Estimated total value</p>
                 </div>
                 <div className="w-px h-8 bg-white/20" />
                 <div>
@@ -259,23 +317,21 @@ export default function PhotoUpload() {
                   <p className="text-xs text-white/60 mt-0.5">Photos analyzed</p>
                 </div>
               </div>
-              <button onClick={handleReset} className="text-xs text-white/60 hover:text-white underline">
-                New scan
-              </button>
             </div>
 
             {/* Origination claim banner */}
             {originationClaimed && propertyAddress && (
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-sm font-semibold text-green-800">Origination rights claimed</p>
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
+                <Shield className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-green-800">Origination Rights Claimed</p>
                   <p className="text-xs text-green-700 mt-0.5">You now hold Home Origination rights for <strong>{propertyAddress}</strong>. You'll earn a permanent revenue share on all future ProLnk activity at this address.</p>
                 </div>
+                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
               </div>
             )}
 
-            {/* Detection cards */}
+            {/* Detection cards grouped by severity */}
             {sortedDetections.length === 0 ? (
               <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
                 <AlertCircle className="w-10 h-10 text-gray-300 mx-auto mb-3" />
@@ -284,38 +340,79 @@ export default function PhotoUpload() {
                 <button onClick={handleReset} className="mt-4 text-sm text-[#0A1628] hover:underline">Try different photos</button>
               </div>
             ) : (
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                <div className="p-4 border-b border-gray-100">
-                  <p className="text-sm font-semibold text-gray-900">Detected Opportunities — sorted by severity</p>
-                </div>
-                <div className="divide-y divide-gray-100">
-                  {sortedDetections.map((det, i) => (
-                    <div key={i} className="flex items-start gap-4 p-4">
-                      <span className={`flex-shrink-0 mt-0.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wide ${SEVERITY_STYLES[det.severity as Severity] ?? SEVERITY_STYLES.low}`}>
-                        {det.severity}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-baseline gap-2 flex-wrap">
-                          <p className="text-sm font-semibold text-gray-900">{det.category.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}</p>
-                          <span className="text-xs text-gray-400 font-medium">{det.trade}</span>
-                        </div>
-                        <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{det.description}</p>
-                        <div className="flex items-center gap-3 mt-1.5">
-                          <span className="text-xs font-semibold text-[#0A1628]">{det.estimatedJobValue}</span>
-                          <span className="text-xs text-gray-400">{Math.round(det.confidence * 100)}% confidence</span>
-                        </div>
+              <div className="space-y-3">
+                {(["urgent", "high", "medium", "low"] as Severity[]).map(sev => {
+                  const dets = groupedDetections[sev];
+                  if (!dets?.length) return null;
+                  const styles = SEVERITY_STYLES[sev];
+                  return (
+                    <div key={sev} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                      <div className={`flex items-center gap-2 px-4 py-2.5 ${styles.header}`}>
+                        <span className={`w-2 h-2 rounded-full ${styles.dot}`} />
+                        <p className="text-xs font-semibold uppercase tracking-wide">{sev}</p>
+                        <span className="text-xs opacity-70 ml-auto">{dets.length} issue{dets.length !== 1 ? "s" : ""}</span>
+                      </div>
+                      <div className="divide-y divide-gray-100">
+                        {dets.map((det, i) => {
+                          const confidencePct = Math.round(det.confidence * 100);
+                          const tradeIcon = getTradeIcon(det.trade);
+                          return (
+                            <div key={i} className="flex items-start gap-3 p-4">
+                              <span className="text-xl flex-shrink-0 mt-0.5" title={det.trade}>{tradeIcon}</span>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-baseline gap-2 flex-wrap">
+                                  <p className="text-sm font-semibold text-gray-900">{det.category.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}</p>
+                                  <span className={`text-xs px-1.5 py-0.5 rounded-full ${styles.badge}`}>{sev}</span>
+                                  <span className="text-xs text-gray-400 capitalize ml-auto">{det.trade}</span>
+                                </div>
+                                <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{det.description}</p>
+                                <div className="flex items-center gap-3 mt-2">
+                                  <span className="text-xs font-semibold text-[#0A1628]">{det.estimatedJobValue}</span>
+                                  <div className="flex items-center gap-1.5 flex-1">
+                                    <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[80px]">
+                                      <div
+                                        className="h-full rounded-full bg-[#0A1628]/70 transition-all"
+                                        style={{ width: `${confidencePct}%` }}
+                                      />
+                                    </div>
+                                    <span className="text-xs text-gray-400">{confidencePct}%</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
-                  ))}
-                </div>
-                <div className="p-4 bg-[#F5E642]/10 border-t border-gray-100 flex items-center justify-between">
-                  <p className="text-xs text-[#0A1628] font-medium">
-                    {sortedDetections.length} opportunit{sortedDetections.length === 1 ? "y" : "ies"} identified — partner leads auto-routed in your network
-                  </p>
-                  <button onClick={handleReset} className="text-xs text-[#0A1628] hover:underline font-medium">Analyze more photos</button>
-                </div>
+                  );
+                })}
               </div>
             )}
+
+            {/* Log This Job CTA */}
+            {sortedDetections.length > 0 && (
+              <div className="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Ready to log this job?</p>
+                  <p className="text-xs text-gray-500 mt-0.5">Lock in origination rights and create a job record for this property.</p>
+                </div>
+                <button
+                  onClick={() => navigate(`/job-log${propertyAddress ? `?address=${encodeURIComponent(propertyAddress)}` : ""}`)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm font-medium flex-shrink-0 transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0A1628" }}
+                >
+                  <ClipboardList className="w-4 h-4" />
+                  Log This Job
+                </button>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between pt-1">
+              <p className="text-xs text-gray-400">
+                {sortedDetections.length} opportunit{sortedDetections.length === 1 ? "y" : "ies"} — partner leads auto-routed in your network
+              </p>
+              <button onClick={handleReset} className="text-xs text-[#0A1628] hover:underline font-medium">Analyze more photos</button>
+            </div>
           </div>
         )}
 

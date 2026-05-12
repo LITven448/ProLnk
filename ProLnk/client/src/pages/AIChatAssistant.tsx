@@ -17,12 +17,10 @@ interface Message {
 }
 
 const QUICK_PROMPTS = [
-  { icon: <TrendingUp className="w-3.5 h-3.5" />, text: "How can I increase my referral rate?" },
-  { icon: <DollarSign className="w-3.5 h-3.5" />, text: "What's the best way to earn more commission?" },
-  { icon: <Users className="w-3.5 h-3.5" />, text: "How do I move up to Gold tier?" },
-  { icon: <MessageSquare className="w-3.5 h-3.5" />, text: "What should I say when referring a homeowner?" },
-  { icon: <Lightbulb className="w-3.5 h-3.5" />, text: "Give me tips for spotting home repair needs" },
-  { icon: <Sparkles className="w-3.5 h-3.5" />, text: "How does the TrustyPro network work?" },
+  { icon: <DollarSign className="w-3.5 h-3.5" />, text: "Explain the commission cascade" },
+  { icon: <Users className="w-3.5 h-3.5" />, text: "How do I recruit?" },
+  { icon: <ChevronRight className="w-3.5 h-3.5" />, text: "What's my trial end date?" },
+  { icon: <Lightbulb className="w-3.5 h-3.5" />, text: "How does origination work?" },
 ];
 
 const INITIAL_MESSAGE: Message = {
@@ -110,8 +108,11 @@ export default function AIChatAssistant() {
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <h1 className="font-bold text-gray-900">ProLnk AI Assistant</h1>
-            <p className="text-xs text-gray-500">Ask anything about referrals, commissions, or growing your business</p>
+            <div className="flex items-center gap-2">
+              <h1 className="font-bold text-gray-900">ProLnk AI</h1>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-600 font-medium">Beta</span>
+            </div>
+            <p className="text-xs text-gray-500">Ask anything about commissions, recruiting, or platform features</p>
           </div>
           <button
             className="ml-auto p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-400"
@@ -171,7 +172,7 @@ export default function AIChatAssistant() {
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about referrals, commissions, tier progress..."
+              placeholder="Ask about commissions, recruiting, origination..."
               className="flex-1 text-sm"
               disabled={isLoading}
             />
@@ -184,6 +185,9 @@ export default function AIChatAssistant() {
               <Send className="w-4 h-4" />
             </Button>
           </form>
+          <p className="text-xs text-gray-400 mt-2 text-center">
+            AI answers are based on platform knowledge and may not reflect real-time data
+          </p>
         </div>
       </div>
     </PartnerLayout>

@@ -175,7 +175,7 @@ const BRAND_NAV: Record<string, { header: string; items: NavItem[]; groups: NavG
     header: "PROLNK EXCHANGE",
     items: [
       { label: "Command Center",    href: "/admin/exchange" },
-      { label: "Job Board",         href: "/admin/exchange" },
+      { label: "Job Board",         href: "/exchange" },
       { label: "Brokers",           href: "/admin/exchange" },
       { label: "Commercial Bids",   href: "/admin/exchange" },
       { label: "Territories",       href: "/admin/territory" },

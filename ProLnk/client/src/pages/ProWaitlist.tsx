@@ -1668,7 +1668,7 @@ export default function ProWaitlist() {
                 </div>
                 <div className="p-4 space-y-3">
                   {[
-                    { key: "charter",  label: "Charter",   spots: 25,   remaining: charterRemaining,  badge: "MOST EXCLUSIVE",  color: "#7C3AED", textColor: "text-purple-700" },
+                    { key: "charter",  label: "Charter",   spots: 25,   remaining: charterRemaining,  badge: "MOST EXCLUSIVE — only 25 total, ever",  color: "#7C3AED", textColor: "text-purple-700" },
                     { key: "founding", label: "Founding",  spots: 100,  remaining: Math.max(0, foundingRemaining - charterRemaining <= 0 ? 0 : foundingRemaining), badge: "FOUNDING MEMBER", color: "#0A1628", textColor: "text-[#0A1628]" },
                     { key: "level3",   label: "Level 3",   spots: 400,  remaining: Math.max(0, level3Remaining - foundingRemaining <= 0 ? 0 : level3Remaining),   badge: "EARLY ADOPTER",   color: "#1D4ED8", textColor: "text-blue-700" },
                     { key: "level4",   label: "Level 4",   spots: 1600, remaining: Math.max(0, Math.min(1600, TOTAL_NETWORK_SPOTS - Math.max(totalSignups, 525))), badge: "PARTNER",         color: "#059669", textColor: "text-emerald-700" },
@@ -1680,25 +1680,25 @@ export default function ProWaitlist() {
                         className={`rounded-xl p-3 border ${isFull ? "border-gray-200 bg-gray-50 opacity-60" : "border-gray-200 bg-white"}`}
                       >
                         <div className="flex items-start justify-between mb-1">
-                          <div>
-                            <div className="flex items-center gap-1.5 mb-0.5">
+                          <div className="flex-1 min-w-0 pr-2">
+                            <div className="flex items-center gap-1.5 mb-0.5 flex-wrap">
                               <span className="font-heading font-bold text-gray-900 text-sm">{tier.label}</span>
                               <span
-                                className="text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded text-white"
+                                className="text-[8px] font-black tracking-wide uppercase px-1.5 py-0.5 rounded text-white leading-tight"
                                 style={{ backgroundColor: tier.color }}
                               >
                                 {tier.badge}
                               </span>
                             </div>
-                            <div className="text-xs text-gray-400">{tier.spots} total spots</div>
+                            <div className="text-xs text-gray-400">{tier.spots} total spots · <span className="font-semibold text-gray-700">$149/mo</span></div>
                           </div>
-                          <div className="text-right">
+                          <div className="text-right flex-shrink-0">
                             {isFull ? (
                               <span className="text-xs font-bold text-gray-400">FULL</span>
                             ) : (
                               <>
                                 <div className="text-base font-heading font-bold" style={{ color: tier.color }}>{tier.remaining}</div>
-                                <div className="text-[10px] text-gray-400">remaining</div>
+                                <div className="text-[10px] text-gray-400">left</div>
                               </>
                             )}
                           </div>
@@ -1706,8 +1706,13 @@ export default function ProWaitlist() {
                       </div>
                     );
                   })}
-                  <p className="text-[10px] text-gray-400 text-center pt-1 leading-snug">
-                    These rates lock in permanently once the founding network closes at 2,125 partners.
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-1">
+                    <p className="text-[10px] text-amber-800 leading-snug font-medium">
+                      These prices are locked in your membership agreement. Non-members pay $249/mo.
+                    </p>
+                  </div>
+                  <p className="text-[10px] text-gray-400 text-center leading-snug">
+                    Rates lock permanently once the founding network closes at 2,125 partners.
                   </p>
                   <span onClick={openWaitlist} className="cursor-pointer block">
                     <button className="w-full py-2.5 text-sm font-bold bg-[#0A1628] text-white hover:opacity-90 transition-all rounded-lg">

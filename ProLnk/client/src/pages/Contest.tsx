@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { MapPin, Trophy, Calendar, Users, Star, ArrowRight, CheckCircle, Clock, Share2, Copy, ExternalLink } from "lucide-react";
+import { MapPin, Trophy, Calendar, Users, Star, ArrowRight, CheckCircle, Clock, Share2, Copy, Zap } from "lucide-react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
-const LAUNCH_DATE = new Date("2026-09-01T00:00:00"); // Target launch date — update when confirmed
+const LAUNCH_DATE = new Date("2026-09-01T00:00:00");
 
 const SHARE_URL = "https://prolnk.io/contest";
-const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & TrustyPro and compete for $10,000 in prizes. Top 5 referrers win cash + credits at the live launch event.";
+const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & TrustyPro and compete for $10,000 in prizes. Top 5 referrers win cash at the live launch event.";
 
 function ShareButtons() {
   const copyLink = () => {
@@ -25,7 +26,7 @@ function ShareButtons() {
         Post on X
       </a>
       <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`}
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}&quote=${encodeURIComponent(SHARE_TEXT)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1877F2] text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity"
@@ -94,26 +95,67 @@ function Countdown() {
 }
 
 const PRIZES = [
-  { place: "1st Place", medal: "🥇", prize: "$10,000 Cash", sub: "Grand Prize — handed to you in person at the launch event", perks: ["Lifetime Founding Member status", "VIP reserved seat at the launch event", "Featured in ProLnk & TrustyPro marketing"], gold: true },
-  { place: "2nd Place", medal: "🥈", prize: "$2,500 Credit", sub: "Home Improvement Credit (TrustyPro) or Lead Credits (ProLnk)", perks: ["2 years free Premium membership", "Launch event invite"], gold: false },
-  { place: "3rd Place", medal: "🥉", prize: "$1,000 Credit", sub: "Home Improvement Credit (TrustyPro) or Lead Credits (ProLnk)", perks: ["1 year free Premium membership", "Launch event invite"], gold: false },
-  { place: "4th Place", medal: "4️⃣", prize: "$500 Credit", sub: "Home Improvement or Lead Credits", perks: ["Priority matching at launch", "Launch event invite"], gold: false },
-  { place: "5th Place", medal: "5️⃣", prize: "$250 Credit", sub: "Home Improvement or Lead Credits", perks: ["Priority matching at launch", "Launch event invite"], gold: false },
+  {
+    place: "1st Place",
+    medal: "🥇",
+    prize: "$5,000 Cash",
+    sub: "Handed to you in person at the DFW launch event",
+    perks: ["Lifetime Founding Member status", "VIP reserved seat at the launch event", "Featured in ProLnk & TrustyPro marketing"],
+    gold: true,
+  },
+  {
+    place: "2nd Place",
+    medal: "🥈",
+    prize: "$2,500 Cash",
+    sub: "Cash prize awarded at the live launch event",
+    perks: ["2 years free Premium membership", "Launch event VIP invite"],
+    gold: false,
+  },
+  {
+    place: "3rd Place",
+    medal: "🥉",
+    prize: "$1,000 Cash",
+    sub: "Cash prize awarded at the live launch event",
+    perks: ["1 year free Premium membership", "Launch event invite"],
+    gold: false,
+  },
+  {
+    place: "4th Place",
+    medal: "4️⃣",
+    prize: "$750 in ProLnk Credits",
+    sub: "Lead credits or home improvement credits — your choice",
+    perks: ["Priority matching at launch", "Launch event invite"],
+    gold: false,
+  },
+  {
+    place: "5th Place",
+    medal: "5️⃣",
+    prize: "$750 in ProLnk Credits",
+    sub: "Lead credits or home improvement credits — your choice",
+    perks: ["Priority matching at launch", "Launch event invite"],
+    gold: false,
+  },
 ];
 
 const RULES = [
   "Contest is open to DFW Metroplex residents and service professionals only.",
   "Referrals must sign up using your unique referral link — direct signups without your link do not count.",
   "Both homeowner (TrustyPro) and service pro (ProLnk) referrals count toward your total.",
-  "Prizes are awarded at the live launch event. Winners must attend in person to claim cash prizes.",
-  "Cash prize ($10,000) is awarded to the single top referrer across both platforms combined.",
+  "To qualify for prizes, referred pros must sign up AND receive approval on their application.",
+  "Cash prizes are awarded at the live launch event. Winners must attend in person to claim cash prizes.",
   "Credits are non-transferable and expire 24 months after issuance.",
   "ProLnk and TrustyPro reserve the right to disqualify fraudulent or self-referral activity.",
-  "Contest runs from the date of waitlist launch through the official product launch date.",
+  "Contest runs from the date of waitlist launch through Sep 1, 2026 (DFW launch day).",
   "Winners will be contacted via the email used during waitlist signup at least 14 days before the event.",
 ];
 
 export default function Contest() {
+  const { data: counts } = trpc.waitlist.getPublicCounts.useQuery(undefined, {
+    refetchInterval: 60_000,
+  });
+
+  const totalParticipants = counts?.total ?? 0;
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
@@ -130,7 +172,16 @@ export default function Contest() {
           <p className="text-white/70 text-lg mb-2 max-w-xl mx-auto">
             The top 5 people who refer the most DFW homeowners and service pros to ProLnk and TrustyPro win real prizes — handed to you in person at our launch event.
           </p>
-          <p className="text-white/50 text-sm mb-8">Contest ends at launch. Winners celebrated live.</p>
+          <p className="text-white/50 text-sm mb-4">Contest ends Sep 1, 2026 — DFW launch day. Winners celebrated live.</p>
+
+          {totalParticipants > 0 && (
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8">
+              <Users className="w-3.5 h-3.5 text-[#F5E642]" />
+              <span className="text-white text-xs font-semibold">
+                <span className="text-[#F5E642] font-black">{totalParticipants.toLocaleString()}</span> people already competing
+              </span>
+            </div>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -154,22 +205,76 @@ export default function Contest() {
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Clock className="w-4 h-4 text-gray-400" />
-            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Estimated Time Until Launch</p>
+            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Time Until DFW Launch Day — Sep 1, 2026</p>
           </div>
           <Countdown />
-          <p className="text-xs text-gray-400 mt-2">Contest ends when ProLnk and TrustyPro officially launch in DFW</p>
+          <p className="text-xs text-gray-400 mt-2">Contest closes at launch. Refer as many people as possible before time runs out.</p>
+        </div>
+      </div>
+
+      {/* How to Win */}
+      <div className="py-14 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <Zap className="w-5 h-5 text-[#00B5B8]" />
+              <h2 className="text-2xl font-black text-[#0A1628]">How to Win</h2>
+            </div>
+            <p className="text-gray-500 text-sm max-w-lg mx-auto">
+              Your goal is simple: refer 5 or more service pros who sign up <em>and get approved</em>. The more approved pros you refer, the higher you climb the leaderboard.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-[#0A1628]/5 to-[#00B5B8]/5 rounded-2xl border border-[#0A1628]/10 p-8">
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                {
+                  step: "01",
+                  title: "Sign Up",
+                  desc: "Join the ProLnk or TrustyPro waitlist. You'll receive a unique referral link immediately after signing up.",
+                  icon: <Users className="w-6 h-6" />,
+                },
+                {
+                  step: "02",
+                  title: "Refer 5+ Approved Pros",
+                  desc: "Share your link with licensed contractors and service professionals in DFW. Each referral who gets approved counts toward your total.",
+                  icon: <Star className="w-6 h-6" />,
+                },
+                {
+                  step: "03",
+                  title: "Claim Your Prize",
+                  desc: "Top 5 referrers at launch day are invited to the live event. Prizes are handed out on stage. You must attend to collect cash.",
+                  icon: <Trophy className="w-6 h-6" />,
+                },
+              ].map(({ step, title, desc, icon }) => (
+                <div key={step} className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-[#0A1628] flex items-center justify-center mx-auto mb-4 text-white">
+                    {icon}
+                  </div>
+                  <div className="text-xs font-black text-gray-300 mb-1 tracking-widest">{step}</div>
+                  <h3 className="font-bold text-[#0A1628] mb-2">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex items-center justify-center gap-3 bg-[#F5E642]/20 border border-[#F5E642]/40 rounded-xl px-6 py-3">
+              <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />
+              <p className="text-sm font-semibold text-amber-800">
+                Minimum threshold: refer 5+ approved pros to be eligible for prizes
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Prize Tiers */}
-      <div className="py-16 px-4">
+      <div className="py-14 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-3">
               <Trophy className="w-5 h-5 text-amber-500" />
               <h2 className="text-2xl font-black text-[#0A1628]">Prize Breakdown</h2>
             </div>
-            <p className="text-gray-500 text-sm">Top 5 referrers across both ProLnk and TrustyPro win. Prizes are cumulative — the more you refer, the higher you climb.</p>
+            <p className="text-gray-500 text-sm">Top 5 referrers win. The more approved pros you refer, the higher you finish.</p>
           </div>
           <div className="space-y-3">
             {PRIZES.map(({ place, medal, prize, sub, perks, gold }) => (
@@ -180,7 +285,7 @@ export default function Contest() {
                 <div className="flex items-start gap-4">
                   <div className="text-3xl flex-shrink-0">{medal}</div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex items-center gap-3 mb-1 flex-wrap">
                       <span className={`text-xs font-bold uppercase tracking-wider ${gold ? "text-amber-600" : "text-gray-400"}`}>{place}</span>
                       <span className={`text-xl font-black ${gold ? "text-amber-700" : "text-[#0A1628]"}`}>{prize}</span>
                     </div>
@@ -198,54 +303,29 @@ export default function Contest() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* How It Works */}
-      <div className="bg-gray-50 py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-black text-[#0A1628] mb-2">How the Contest Works</h2>
-            <p className="text-gray-500 text-sm">Simple. Sign up, share your link, climb the leaderboard.</p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { step: "01", title: "Sign Up", desc: "Join the ProLnk or TrustyPro waitlist. You'll get a unique referral link after signing up.", icon: <Users className="w-6 h-6" /> },
-              { step: "02", title: "Share Your Link", desc: "Share with DFW neighbors, contractors, and homeowners. Every signup through your link counts.", icon: <Star className="w-6 h-6" /> },
-              { step: "03", title: "Win at the Event", desc: "Top 5 referrers are invited to the launch event where prizes are handed out in person.", icon: <Trophy className="w-6 h-6" /> },
-            ].map(({ step, title, desc, icon }) => (
-              <div key={step} className="bg-white rounded-xl border border-gray-100 p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#0A1628]/5 flex items-center justify-center mx-auto mb-4 text-[#0A1628]">
-                  {icon}
-                </div>
-                <div className="text-xs font-black text-gray-300 mb-1 tracking-widest">{step}</div>
-                <h3 className="font-bold text-[#0A1628] mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-center text-xs text-gray-400 mt-4">Total prize pool: $10,000 in cash + credits</p>
         </div>
       </div>
 
       {/* The Event */}
-      <div className="py-16 px-4">
+      <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-[#0A1628] to-[#1a2d4a] rounded-2xl p-8 text-white text-center">
             <Calendar className="w-10 h-10 text-[#F5E642] mx-auto mb-4" />
-            <h2 className="text-2xl font-black mb-3">The Launch Event</h2>
+            <h2 className="text-2xl font-black mb-3">The Launch Event — Sep 1, 2026</h2>
             <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-6">
-              When ProLnk and TrustyPro officially launch in DFW, we're hosting a live event to celebrate. The top 5 referrers will be invited as VIP guests. The $10,000 grand prize winner will receive their check on stage. We'll document everything — this is a moment worth being part of.
+              When ProLnk and TrustyPro officially launch in DFW, we're hosting a live event to celebrate. The top 5 referrers will be invited as VIP guests. Prize checks are handed out on stage. We're documenting everything — this is a moment worth being part of.
             </p>
             <div className="flex items-center justify-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/20 rounded-xl px-6 py-3 inline-flex">
               <MapPin className="w-4 h-4 text-[#F5E642]" />
-              <span className="text-[#F5E642] text-sm font-semibold">DFW Metroplex — Location TBD at Launch</span>
+              <span className="text-[#F5E642] text-sm font-semibold">DFW Metroplex — Location announced 30 days before launch</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Rules */}
-      <div className="bg-gray-50 py-16 px-4">
+      <div className="bg-gray-50 py-14 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl font-black text-[#0A1628] mb-6">Official Contest Rules</h2>
           <div className="space-y-3">
@@ -260,20 +340,23 @@ export default function Contest() {
       </div>
 
       {/* Share Section */}
-      <div className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      <div className="py-14 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-2xl mx-auto text-center">
           <Share2 className="w-8 h-8 text-[#00B5B8] mx-auto mb-4" />
           <h2 className="text-2xl font-black text-[#0A1628] mb-2">Spread the Word</h2>
-          <p className="text-gray-500 text-sm mb-6">Share this contest with DFW neighbors, contractors, and friends. The more people who know, the bigger the launch event.</p>
+          <p className="text-gray-500 text-sm mb-6">Share with DFW neighbors, contractors, and friends. Every approved referral climbs your rank.</p>
           <ShareButtons />
         </div>
       </div>
 
       {/* CTA */}
-      <div className="py-16 px-4 text-center">
+      <div className="py-14 px-4 text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-black text-[#0A1628] mb-3">Ready to compete?</h2>
-          <p className="text-gray-500 mb-8">Sign up now and start referring. The contest clock is running.</p>
+          <p className="text-gray-500 mb-2">Sign up now and start referring. Contest closes Sep 1, 2026.</p>
+          {totalParticipants > 0 && (
+            <p className="text-sm text-[#00B5B8] font-semibold mb-6">{totalParticipants.toLocaleString()} people are already on the board.</p>
+          )}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="/waitlist/pro"

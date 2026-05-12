@@ -66,10 +66,13 @@ const NAV_ITEMS = [
     sub: [
       { label: "Earnings",      href: "/dashboard/earnings" },
       { label: "Commissions",   href: "/dashboard/commissions" },
+      { label: "Commission History", href: "/commission-ledger" },
       { label: "Commission Rates", href: "/dashboard/commission-rates" },
+      { label: "Billing & Payouts", href: "/billing" },
       { label: "Dispute Center", href: "/dashboard/disputes" },
       { label: "Payout Setup", href: "/dashboard/payout-setup" },
       { label: "Payout History", href: "/dashboard/payout-history" },
+      { label: "Founding Network", href: "/founding-partner" },
       { label: "Tax Estimator", href: "/dashboard/tax-estimator" },
       { label: "Growth Calculator", href: "/dashboard/growth-calculator" },
       { label: "Training Hub", href: "/dashboard/training" },

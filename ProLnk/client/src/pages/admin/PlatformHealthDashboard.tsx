@@ -4,6 +4,7 @@
  * Route: /admin/platform-health
  */
 
+import type React from "react";
 import { trpc } from "@/lib/trpc";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

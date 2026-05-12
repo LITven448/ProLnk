@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
   CheckCircle, Loader2, MapPin, Wrench, DollarSign, FileText,
-  Camera, ArrowLeft, Network, Home, Share2,
+  Camera, ArrowLeft, Network, Home, Share2, AlertCircle, ArrowRight,
 } from "lucide-react";
 import { Link, useSearch } from "wouter";
 
@@ -59,14 +59,20 @@ function typeLabel(type: string): string {
 function SuccessState({
   result,
   address,
+  jobValue,
+  photosUploaded,
   onReset,
 }: {
   result: CompletionResult;
   address: string;
+  jobValue: string;
+  photosUploaded: boolean;
   onReset: () => void;
 }) {
   const dist = result.distribution;
   const referralUrl = `${window.location.origin}/refer?job=${result.jobId}`;
+  const val = Number(jobValue) || 0;
+  const fee = val * 0.1;
 
   return (
     <PartnerLayout>
@@ -80,9 +86,60 @@ function SuccessState({
           </div>
 
           <h2 className="text-2xl font-bold text-white mb-1 text-center">Job Logged</h2>
-          <p className="text-white/50 text-sm text-center mb-8">
+          <p className="text-white/50 text-sm text-center mb-4">
             Commission pool distributed · origination rights applied
           </p>
+
+          {/* Flow confirmation */}
+          <div className="flex flex-wrap justify-center items-center gap-1.5 text-xs mb-6">
+            <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#F5E642]/10 text-[#F5E642]/90">
+              <CheckCircle className="w-3 h-3" /> Job logged
+            </span>
+            <ArrowRight className="w-3 h-3 text-white/30" />
+            <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#F5E642]/10 text-[#F5E642]/90">
+              <CheckCircle className="w-3 h-3" /> Cascade calculated
+            </span>
+            <ArrowRight className="w-3 h-3 text-white/30" />
+            <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#F5E642]/10 text-[#F5E642]/90">
+              <CheckCircle className="w-3 h-3" /> Upline overrides distributed
+            </span>
+            <ArrowRight className="w-3 h-3 text-white/30" />
+            <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#F5E642]/10 text-[#F5E642]/90">
+              <CheckCircle className="w-3 h-3" /> Origination rights recorded
+            </span>
+          </div>
+
+          {/* Estimated earnings summary if no actual distribution data */}
+          {val > 0 && (!dist.success || dist.distributions.length === 0) && (
+            <div className="mb-4 rounded-xl border border-[#F5E642]/20 bg-[#F5E642]/5 px-4 py-3">
+              <p className="text-xs font-semibold text-[#F5E642] mb-2">Estimated network commissions triggered</p>
+              <div className="space-y-1">
+                <div className="flex justify-between text-xs">
+                  <span className="text-white/50">Platform fee (10%)</span>
+                  <span className="text-white/70">${fee.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-white/50">L1–L4 overrides (14% of fee)</span>
+                  <span className="text-[#F5E642]/80">${(fee * 0.14).toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-white/50">Your origination rights</span>
+                  <span className="text-[#F5E642]/70">1.5% of all future fees at this address</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Photo reminder on success if not uploaded */}
+          {!photosUploaded && (
+            <div className="mb-4 rounded-xl border border-orange-500/30 bg-orange-500/5 px-4 py-3 flex items-start gap-3">
+              <AlertCircle className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+              <p className="text-xs text-white/60 leading-relaxed">
+                <span className="text-orange-400 font-semibold">Photos not yet uploaded.</span>{" "}
+                Upload 1–3 job photos to unlock AI opportunity detection and maximize your network's earnings from this address.
+              </p>
+            </div>
+          )}
 
           {/* Commission breakdown */}
           {dist.success && dist.distributions.length > 0 && (
@@ -287,6 +344,8 @@ export default function JobComplete() {
       <SuccessState
         result={result}
         address={form.propertyAddress}
+        jobValue={form.jobValue}
+        photosUploaded={form.photosUploaded}
         onReset={handleReset}
       />
     );
@@ -303,11 +362,33 @@ export default function JobComplete() {
             </button>
           </Link>
 
-          <div className="mb-8">
+          <div className="mb-6">
             <h1 className="text-3xl font-bold text-white mb-2">Complete a Job</h1>
             <p className="text-white/50 text-sm">
               Log job completion to distribute commissions to your network and lock origination rights on this address.
             </p>
+          </div>
+
+          {/* Commission Trigger explanation */}
+          <div className="mb-6 rounded-xl border border-[#F5E642]/30 bg-[#F5E642]/5 p-4">
+            <div className="flex items-start gap-3">
+              <Network className="w-5 h-5 text-[#F5E642] flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-semibold text-[#F5E642] mb-1">Commission Trigger</p>
+                <p className="text-xs text-white/70 leading-relaxed mb-3">
+                  When you log a completed job, ProLnk automatically calculates and distributes commissions to your upline recruiter chain — all the way up 4 levels.
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 text-xs text-white/50">
+                  <span className="px-2 py-0.5 rounded bg-white/10 text-white/70">Job logged</span>
+                  <ArrowRight className="w-3 h-3" />
+                  <span className="px-2 py-0.5 rounded bg-white/10 text-white/70">Commission cascade calculated</span>
+                  <ArrowRight className="w-3 h-3" />
+                  <span className="px-2 py-0.5 rounded bg-white/10 text-white/70">Upline earns override</span>
+                  <ArrowRight className="w-3 h-3" />
+                  <span className="px-2 py-0.5 rounded bg-[#F5E642]/20 text-[#F5E642]/90">Origination rights locked</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -366,12 +447,41 @@ export default function JobComplete() {
                   required
                 />
               </div>
-              {form.jobValue && Number(form.jobValue) > 0 && (
-                <p className="text-xs text-white/40 mt-1.5">
-                  Platform fee (10%): ${(Number(form.jobValue) * 0.1).toFixed(2)} ·
-                  Network commissions: ${(Number(form.jobValue) * 0.1 * 0.14).toFixed(2)} (L1–L4)
-                </p>
-              )}
+              {form.jobValue && Number(form.jobValue) > 0 && (() => {
+                const val = Number(form.jobValue);
+                const fee = val * 0.1;
+                return (
+                  <div className="mt-2 p-3 rounded-lg bg-white/5 border border-white/10">
+                    <p className="text-xs font-semibold text-white/60 mb-2">Estimated commission distribution</p>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs">
+                        <span className="text-white/50">Platform fee (10%)</span>
+                        <span className="text-white/70">${fee.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-white/50">L1 Override — your recruiter (7%)</span>
+                        <span className="text-[#F5E642]/80">${(fee * 0.07).toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-white/50">L2 Override (4%)</span>
+                        <span className="text-[#F5E642]/60">${(fee * 0.04).toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-white/50">L3 Override (2%)</span>
+                        <span className="text-[#F5E642]/50">${(fee * 0.02).toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-white/50">L4 Override (1%)</span>
+                        <span className="text-[#F5E642]/40">${(fee * 0.01).toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-xs border-t border-white/10 pt-1 mt-1">
+                        <span className="text-white/40">Origination rights (1.5% of future fees)</span>
+                        <span className="text-[#F5E642]/70">Permanent</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             {/* Completion Date */}
@@ -428,14 +538,19 @@ export default function JobComplete() {
               </label>
             </div>
 
-            {/* Commission notice */}
-            <div className="p-4 rounded-xl border border-[#F5E642]/20 bg-[#F5E642]/5">
-              <p className="text-xs text-[#F5E642]/80 leading-relaxed">
-                <span className="font-bold text-[#F5E642]">Commission Cascade:</span> Submitting this
-                form distributes network overrides (L1 7%, L2 4%, L3 2%, L4 1%) and locks your
-                origination rights on this address — earning you 1.5% of all future platform fees here.
-              </p>
-            </div>
+            {/* Photo reminder — shown when photos not yet uploaded */}
+            {!form.photosUploaded && (
+              <div className="p-4 rounded-xl border border-orange-500/30 bg-orange-500/5 flex items-start gap-3">
+                <AlertCircle className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-orange-400 mb-0.5">Upload photos first</p>
+                  <p className="text-xs text-white/50 leading-relaxed">
+                    Photos are required for AI opportunity detection — the AI scans for 50+ additional services to route to your network.{" "}
+                    <a href="/photo-upload" className="text-orange-400 underline">Upload now</a>, then return to log this job.
+                  </p>
+                </div>
+              </div>
+            )}
 
             <Button
               type="submit"

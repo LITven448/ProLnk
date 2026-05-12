@@ -200,7 +200,7 @@ function EarningsCalculator({ tier }: { tier: string }) {
               max={50}
               value={extraReferrals}
               onChange={(e) => setExtraReferrals(Number(e.target.value))}
-              className="w-full accent-yellow-400"
+              className="w-full max-w-full accent-yellow-400"
             />
             <div className="flex justify-between text-xs text-gray-600 mt-1">
               <span>1</span>
@@ -348,7 +348,7 @@ export default function PartnerHome() {
         </div>
 
         {/* ── Key Metrics ─────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <MetricCard
             label="Waitlist Position"
             value={`#${status.position ?? "–"}`}
@@ -395,14 +395,14 @@ export default function PartnerHome() {
           </div>
 
           <div
-            className="flex items-center gap-3 p-3 rounded-xl mb-4"
+            className="flex items-center gap-3 p-3 rounded-xl mb-4 overflow-hidden"
             style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <p className="flex-1 text-sm text-gray-300 truncate font-mono">{referralLink}</p>
+            <p className="flex-1 text-sm text-gray-300 truncate font-mono min-w-0">{referralLink}</p>
             <CopyButton text={referralLink} />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
             {[
               { label: "Referral Code", value: status.referralCode },
               { label: "L1 Job Override", value: `${FOUNDING_RATES.networkJob.l1 * 100}%` },

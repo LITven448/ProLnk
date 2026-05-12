@@ -12,47 +12,99 @@ import {
   ChevronRight,
   Award,
   Home,
+  Upload,
+  ShieldCheck,
+  History,
+  MessageSquare,
+  Wrench,
+  AlertTriangle,
+  Clock,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const TEAL = "#00B5B8";
 const TEAL_LIGHT = "#E0F7F7";
 const BG = "#F7FFFE";
+const NAVY = "#1e3a5f";
+const CYAN = "#0891b2";
 
 const PLACEHOLDER_USER = { name: "Sarah" };
 
 const QUICK_ACTIONS = [
   {
-    icon: Camera,
-    label: "Scan My Home",
-    desc: "AI photo analysis to spot maintenance needs",
+    icon: MessageSquare,
+    label: "Request a Quote",
+    desc: "Get bids from vetted pros for any project",
+    href: "/trustypro/pros",
+    color: NAVY,
+    bg: "#EFF6FF",
+  },
+  {
+    icon: Upload,
+    label: "Upload a Photo",
+    desc: "AI scans your home for maintenance needs",
     href: "/trustypro/scan",
-    color: TEAL,
+    color: CYAN,
     bg: TEAL_LIGHT,
   },
   {
-    icon: Heart,
-    label: "My Home Health Score",
-    desc: "View your property's full health breakdown",
-    href: "/trustypro/home-health",
+    icon: ShieldCheck,
+    label: "Check Insurance",
+    desc: "Verify a pro's license and coverage",
+    href: "/trustypro/pros",
     color: "#10B981",
     bg: "#D1FAE5",
   },
   {
-    icon: Users,
-    label: "Find a Pro",
-    desc: "Browse verified, background-checked professionals",
-    href: "/trustypro/pros",
-    color: "#6366F1",
-    bg: "#EEF2FF",
-  },
-  {
-    icon: FileText,
-    label: "My Documents",
-    desc: "Invoices, warranties, and project records",
+    icon: History,
+    label: "View History",
+    desc: "All repairs, photos, and invoices logged",
     href: "/my-home/documents",
     color: "#F59E0B",
     bg: "#FEF3C7",
+  },
+];
+
+const RECENT_ACTIVITY = [
+  {
+    icon: Wrench,
+    iconColor: "#10B981",
+    iconBg: "#D1FAE5",
+    title: "HVAC annual service completed",
+    subtitle: "Apex HVAC Solutions · 3 days ago",
+    tag: "Completed",
+    tagColor: "#10B981",
+    tagBg: "#D1FAE5",
+  },
+  {
+    icon: Camera,
+    iconColor: CYAN,
+    iconBg: TEAL_LIGHT,
+    title: "AI scan detected gutter debris",
+    subtitle: "Photo uploaded · 1 week ago",
+    tag: "Action Needed",
+    tagColor: "#F59E0B",
+    tagBg: "#FEF3C7",
+  },
+  {
+    icon: FileText,
+    iconColor: "#6366F1",
+    iconBg: "#EEF2FF",
+    title: "Roof inspection invoice saved",
+    subtitle: "Summit Roofing Co. · 2 weeks ago",
+    tag: "Logged",
+    tagColor: "#6366F1",
+    tagBg: "#EEF2FF",
+  },
+  {
+    icon: AlertTriangle,
+    iconColor: "#EF4444",
+    iconBg: "#FEE2E2",
+    title: "Water heater approaching end of life",
+    subtitle: "Proactive alert · Estimated 18 months",
+    tag: "Plan Ahead",
+    tagColor: "#EF4444",
+    tagBg: "#FEE2E2",
   },
 ];
 
@@ -136,6 +188,49 @@ export default function HomeownerDashboard() {
           </p>
         </motion.div>
 
+        {/* Home Health Score */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="rounded-2xl p-6 border cursor-pointer hover:shadow-md transition-shadow"
+          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #0c2444 100%)`, borderColor: `${NAVY}40` }}
+          onClick={() => navigate("/trustypro/home-health")}
+        >
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="flex-shrink-0">
+              <p className="text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Home Health Score</p>
+              <div className="flex items-end gap-3">
+                <span className="text-7xl font-black text-white leading-none">0</span>
+                <div className="pb-1">
+                  <span className="text-blue-300 text-sm">/100</span>
+                  <p className="text-yellow-300 text-xs font-semibold mt-1">Upload photos to improve your score</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1 w-full">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {["Roof & Gutters", "HVAC", "Plumbing", "Electrical", "Foundation", "Interior"].map((sys) => (
+                  <div key={sys} className="bg-white/10 rounded-xl p-3">
+                    <p className="text-xs text-blue-200 mb-1.5">{sys}</p>
+                    <div className="h-1 bg-white/10 rounded-full">
+                      <div className="h-full w-0 bg-blue-400 rounded-full" />
+                    </div>
+                    <p className="text-xs text-blue-300 mt-1">Not scanned</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={(e) => { e.stopPropagation(); navigate("/trustypro/scan"); }}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white flex-shrink-0 hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: CYAN }}
+            >
+              <Upload className="w-4 h-4" /> Upload Photos
+            </button>
+          </div>
+        </motion.section>
+
         {/* Quick Actions */}
         <section>
           <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
@@ -170,6 +265,51 @@ export default function HomeownerDashboard() {
                   <ChevronRight className="w-3 h-3" style={{ color: action.color }} />
                 </div>
               </motion.button>
+            ))}
+          </div>
+        </section>
+
+        {/* Recent Activity */}
+        <section>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+              Recent Activity
+            </h2>
+            <button
+              onClick={() => navigate("/my-home/documents")}
+              className="text-xs font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity"
+              style={{ color: TEAL }}
+            >
+              View All <ArrowRight className="w-3 h-3" />
+            </button>
+          </div>
+          <div className="space-y-3">
+            {RECENT_ACTIVITY.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, delay: 0.2 + i * 0.07 }}
+                className="bg-white rounded-2xl px-5 py-4 border flex items-center gap-4"
+                style={{ borderColor: "#E5E7EB" }}
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: item.iconBg }}
+                >
+                  <item.icon className="w-5 h-5" style={{ color: item.iconColor }} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-900 truncate">{item.title}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{item.subtitle}</p>
+                </div>
+                <span
+                  className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0"
+                  style={{ color: item.tagColor, backgroundColor: item.tagBg }}
+                >
+                  {item.tag}
+                </span>
+              </motion.div>
             ))}
           </div>
         </section>

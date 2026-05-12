@@ -8,7 +8,8 @@ import { toast } from "sonner";
 import {
   User, MapPin, Globe, Phone, FileText, Save, Loader2,
   CheckCircle, Building2, Star, Award, Camera, ArrowRight,
-  Shield, Upload, AlertTriangle, ExternalLink
+  Shield, Upload, AlertTriangle, ExternalLink, Copy, Network,
+  CalendarClock, BadgeCheck
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -187,6 +188,70 @@ export default function PartnerProfileEditor() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Founding Network Status */}
+        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Network className="w-4 h-4 text-[#0A1628]" />
+            <h3 className="text-sm font-bold text-gray-900">Founding Network Status</h3>
+          </div>
+          <div className="grid grid-cols-3 gap-3 mb-4">
+            <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Tier</p>
+              <p className="text-base font-black capitalize" style={{ color: tierColor }}>{partner.tier ?? "bronze"}</p>
+            </div>
+            <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Position</p>
+              <p className="text-base font-black text-gray-900">#{partner.id}</p>
+            </div>
+            <div className="rounded-lg bg-gray-50 border border-gray-100 p-3 text-center">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-1">Trial Status</p>
+              {(partner as any).trialEndsAt ? (
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center gap-1">
+                    <CalendarClock className="w-3 h-3 text-amber-500" />
+                    <p className="text-xs font-semibold text-amber-600">Active</p>
+                  </div>
+                  <p className="text-[10px] text-gray-400">
+                    until {new Date((partner as any).trialEndsAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                  </p>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-1">
+                  <BadgeCheck className="w-3 h-3 text-green-500" />
+                  <p className="text-xs font-semibold text-green-600">Live</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Referral Code */}
+          {(partner as any).referralCode && (
+            <div className="rounded-lg bg-[#0A1628]/4 border border-[#0A1628]/10 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-0.5">Your Referral Code</p>
+                  <p className="text-sm font-mono font-bold text-[#0A1628] tracking-widest">
+                    {(partner as any).referralCode}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText((partner as any).referralCode);
+                    toast.success("Referral code copied!");
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0A1628]/20 text-xs font-semibold text-[#0A1628] hover:bg-[#0A1628]/5 transition-colors flex-shrink-0"
+                >
+                  <Copy className="w-3 h-3" /> Copy
+                </button>
+              </div>
+              <p className="text-[10px] text-gray-400 mt-2">
+                Share this code when recruiting partners — you earn 12% of their $149/mo subscription.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Edit form */}
@@ -434,6 +499,22 @@ export default function PartnerProfileEditor() {
             </div>
           </Link>
         </div>
+
+        {/* Photo Guide banner */}
+        <Link href="/photo-guide">
+          <div className="mt-4 bg-gradient-to-r from-[#0A1628] to-[#1B4FD8] rounded-xl p-4 cursor-pointer hover:opacity-95 transition-opacity group">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                <Camera className="w-4 h-4 text-[#F5E642]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-white">Photo Guide</p>
+                <p className="text-xs text-blue-300">Learn how to document homes for maximum AI match quality and origination rights</p>
+              </div>
+              <ArrowRight className="w-4 h-4 text-blue-300 group-hover:text-[#F5E642] transition-colors flex-shrink-0" />
+            </div>
+          </div>
+        </Link>
       </div>
     </PartnerLayout>
   );

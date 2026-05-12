@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
 import {
-  AreaChart, Area, BarChart, Bar,
+  AreaChart, Area, BarChart, Bar, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
 import {
@@ -11,6 +11,7 @@ import {
   Clock, ChevronRight, CheckCircle,
   TrendingUp, ArrowUpRight, Radar,
   CloudLightning, AlertTriangle, Activity,
+  Filter, Wrench,
 } from "lucide-react";
 
 // --- Shared styles ------------------------------------------------------------
@@ -114,6 +115,7 @@ export default function CommandCenter() {
   const { data: oppFeed }     = trpc.admin.getOpportunityFeed.useQuery();
   const { data: trustyLeads } = trpc.trustyPro.getLeads.useQuery();
   const { data: npsStats }    = trpc.homeowner.getNpsStats.useQuery();
+  const { data: waitlistRaw = [] } = trpc.waitlistAdmin.getProWaitlist.useQuery({ status: "all", limit: 2125 });
 
   const totalPartners        = stats?.totalPartners        ?? 0;
   const totalOpportunities   = stats?.totalOpportunities   ?? 0;
@@ -123,13 +125,59 @@ export default function CommandCenter() {
   const unroutedCount        = (oppFeed ?? []).filter((o: any) => o.status === "pending").length;
   const totalLeads           = trustyLeads?.length ?? 0;
   const newTrustyLeads       = (trustyLeads ?? []).filter((l: any) => l.status === "new").length;
-  // V6 real DB stats
   const homeProfiles         = (stats as any)?.totalProperties ?? Math.max(totalLeads * 3, 47);
   const totalEventDrivenLeads = (stats as any)?.totalEventDrivenLeads ?? 0;
   const totalAIPipelineRuns  = (stats as any)?.totalAIPipelineRuns  ?? 0;
   const totalEventTriggers   = (stats as any)?.totalEventTriggers   ?? 0;
   const activeRecallAlerts   = (stats as any)?.activeRecallAlerts   ?? 0;
   const platformGMV          = Math.round(totalCommissionsPaid * 18.5);
+
+  const waitlistStats = useMemo(() => {
+    const list = waitlistRaw as any[];
+    const total = list.length;
+    const pending_wl = list.filter(p => (p.status ?? "pending") === "pending").length;
+    const approved   = list.filter(p => p.status === "approved").length;
+    const rejected   = list.filter(p => p.status === "rejected").length;
+    const conversionRate = total > 0 ? Math.round((approved / total) * 100) : 0;
+
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const yesterdayStr = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    const todayCount = list.filter(p => {
+      if (!p.createdAt) return false;
+      return new Date(p.createdAt).toISOString().slice(0, 10) === todayStr;
+    }).length;
+    const yesterdayCount = list.filter(p => {
+      if (!p.createdAt) return false;
+      return new Date(p.createdAt).toISOString().slice(0, 10) === yesterdayStr;
+    }).length;
+
+    const dayMap: Record<string, number> = {};
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+      dayMap[d] = 0;
+    }
+    list.forEach(p => {
+      if (!p.createdAt) return;
+      const d = new Date(p.createdAt).toISOString().slice(0, 10);
+      if (d in dayMap) dayMap[d]++;
+    });
+    const signupsPerDay = Object.entries(dayMap).map(([date, count]) => ({
+      date: date.slice(5),
+      count,
+    }));
+
+    const tradeMap: Record<string, number> = {};
+    list.forEach(p => {
+      const trade = p.businessType || p.trades || "Other";
+      tradeMap[trade] = (tradeMap[trade] ?? 0) + 1;
+    });
+    const topTrades = Object.entries(tradeMap)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6)
+      .map(([trade, count]) => ({ trade, count }));
+
+    return { total, pending_wl, approved, rejected, conversionRate, todayCount, yesterdayCount, signupsPerDay, topTrades };
+  }, [waitlistRaw]);
 
   const growthData = useMemo(() => Array.from({ length: 12 }, (_, i) => ({
     month: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][i],
@@ -189,6 +237,90 @@ export default function CommandCenter() {
             icon={DollarSign}
             gradient={BADGE_GRADIENTS.green}
           />
+        </div>
+
+        {/* -- ROW 1.5: Waitlist Funnel + Today's Signups --------------- */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+
+          {/* Waitlist funnel */}
+          <div style={CARD_STYLE}>
+            <p style={LABEL_STYLE}>Waitlist Funnel</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 10, marginTop: 16 }}>
+              {[
+                { label: "Total Applied", value: waitlistStats.total, color: T.accent },
+                { label: "Pending",        value: waitlistStats.pending_wl, color: T.amber },
+                { label: "Approved",       value: waitlistStats.approved, color: T.green },
+                { label: "Rejected",       value: waitlistStats.rejected, color: T.red },
+                { label: "Conversion",     value: `${waitlistStats.conversionRate}%`, color: T.blue },
+              ].map(s => (
+                <div key={s.label} style={{ textAlign: "center", padding: "12px 8px", borderRadius: 10, backgroundColor: T.bg, borderTop: `3px solid ${s.color}` }}>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: s.color, fontFamily: MONO, lineHeight: 1 }}>{s.value}</div>
+                  <div style={{ fontSize: 10, color: T.muted, marginTop: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* 7-day signups bar chart */}
+            <p style={{ ...LABEL_STYLE, marginTop: 20, marginBottom: 10 }}>Signups — Last 7 Days</p>
+            <div style={{ height: 110 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={waitlistStats.signupsPerDay} margin={{ top: 0, right: 4, bottom: 0, left: -30 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
+                  <XAxis dataKey="date" tick={{ fill: T.muted, fontSize: 10, fontFamily: FONT }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fill: T.muted, fontSize: 10, fontFamily: FONT }} axisLine={false} tickLine={false} allowDecimals={false} />
+                  <Tooltip contentStyle={tooltipStyle} labelStyle={{ color: T.muted }} />
+                  <Bar dataKey="count" fill={T.accent} radius={[4, 4, 0, 0]} name="Signups" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* Today's signups + Top trades */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+
+            {/* Today vs yesterday */}
+            <div style={{ ...CARD_STYLE, display: "flex", gap: 16 }}>
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Today</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: T.accent, fontFamily: MONO, lineHeight: 1 }}>{waitlistStats.todayCount}</div>
+                <div style={{ fontSize: 11, color: T.muted, marginTop: 4 }}>new signups</div>
+              </div>
+              <div style={{ width: 1, backgroundColor: T.border }} />
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Yesterday</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: T.muted, fontFamily: MONO, lineHeight: 1 }}>{waitlistStats.yesterdayCount}</div>
+                <div style={{ fontSize: 11, color: T.muted, marginTop: 4 }}>new signups</div>
+              </div>
+              <div style={{ width: 1, backgroundColor: T.border }} />
+              <div style={{ flex: 1, textAlign: "center", padding: "12px 0" }}>
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.07em", color: T.muted, marginBottom: 6 }}>Capacity</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: waitlistStats.total >= 2125 ? T.red : T.green, fontFamily: MONO, lineHeight: 1 }}>
+                  {Math.round((waitlistStats.total / 2125) * 100)}%
+                </div>
+                <div style={{ fontSize: 11, color: T.muted, marginTop: 4 }}>{waitlistStats.total} / 2,125</div>
+              </div>
+            </div>
+
+            {/* Top trades */}
+            <div style={{ ...CARD_STYLE, flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                <Wrench style={{ width: 14, height: 14, color: T.accent }} />
+                <p style={LABEL_STYLE}>Top Trades</p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {waitlistStats.topTrades.map((t, i) => (
+                  <div key={t.trade} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: T.dim, minWidth: 16, fontFamily: MONO }}>#{i + 1}</span>
+                    <span style={{ fontSize: 12, color: T.text, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{t.trade}</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: T.accent, background: `${T.accent}18`, borderRadius: 6, padding: "2px 8px", fontFamily: MONO }}>{t.count}</span>
+                  </div>
+                ))}
+                {waitlistStats.topTrades.length === 0 && (
+                  <div style={{ color: T.muted, fontSize: 12, textAlign: "center", padding: "16px 0" }}>No waitlist data yet</div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* -- ROW 2: Growth chart + Action Items ------------------------- */}

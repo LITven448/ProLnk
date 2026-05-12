@@ -1,3 +1,4 @@
+import type React from "react";
 import { Link } from "wouter";
 import {
   BookOpen, TrendingUp, Users, Clock, ArrowRight,

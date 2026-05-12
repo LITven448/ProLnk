@@ -2,7 +2,7 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Send, DollarSign, Clock, CheckCircle, XCircle, Camera, TrendingUp, RefreshCw, Inbox } from "lucide-react";
+import { Send, DollarSign, Clock, CheckCircle, XCircle, Camera, TrendingUp, RefreshCw, Inbox, Users, Zap, MessageSquare, UserPlus } from "lucide-react";
 
 function relativeTime(d: string | Date | null) {
   if (!d) return "Unknown";
@@ -23,6 +23,19 @@ const STATUS_CONFIG: Record<string, { label: string; cls: string; icon: any }> =
   expired: { label: "Expired", cls: "bg-gray-100 text-gray-600 border-gray-200", icon: XCircle },
 };
 
+const SUBSCRIPTION_CASCADE = [
+  { level: "L1 (direct)", sub: "12%", job: "7%" },
+  { level: "L2", sub: "6%", job: "4%" },
+  { level: "L3", sub: "3%", job: "2%" },
+  { level: "L4", sub: "1.5%", job: "1%" },
+];
+
+const RECRUIT_TIPS = [
+  { icon: <MessageSquare className="w-4 h-4 text-[#0A1628]" />, tip: "Share your referral link after every job — ask 'Do you know anyone looking to grow their trades business?'" },
+  { icon: <UserPlus className="w-4 h-4 text-[#0A1628]" />, tip: "Target inspectors, realtors, and property managers — they interact with pros daily and refer often." },
+  { icon: <Zap className="w-4 h-4 text-[#0A1628]" />, tip: "Post in local trade Facebook groups with your link. A single post can recruit 5–10 pros." },
+];
+
 export default function MyReferrals() {
   const { data: referrals = [], isLoading, refetch } = trpc.partners.getOutboundReferrals.useQuery(undefined, {
     refetchInterval: 60_000,
@@ -31,6 +44,14 @@ export default function MyReferrals() {
 
   const totalEarned = (commissions as any[]).reduce((sum: number, c: any) => sum + Number(c.amount ?? 0), 0);
   const pendingEarnings = (commissions as any[]).filter((c: any) => !c.paid).reduce((sum: number, c: any) => sum + Number(c.amount ?? 0), 0);
+
+  const thisMonthEarned = (commissions as any[])
+    .filter((c: any) => {
+      const d = new Date(c.createdAt);
+      const now = new Date();
+      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+    })
+    .reduce((sum: number, c: any) => sum + Number(c.amount ?? 0), 0);
 
   return (
     <PartnerLayout>
@@ -46,6 +67,92 @@ export default function MyReferrals() {
             <RefreshCw className="w-4 h-4" />
           </button>
         </div>
+
+        {/* Referral Impact */}
+        <Card className="border border-[#0A1628]/10 bg-gradient-to-br from-[#0A1628] to-[#1a2f50] text-white">
+          <CardContent className="p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <TrendingUp className="w-5 h-5 text-[#F5E642]" />
+              <span className="font-heading font-bold text-lg">Your Referral Impact</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div className="text-center">
+                <div className="text-3xl font-heading font-bold text-[#F5E642]">${thisMonthEarned.toFixed(0)}</div>
+                <div className="text-xs text-white/60 mt-1">Earned this month</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-heading font-bold text-white">${totalEarned.toFixed(0)}</div>
+                <div className="text-xs text-white/60 mt-1">Total earned</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-heading font-bold text-amber-400">${pendingEarnings.toFixed(0)}</div>
+                <div className="text-xs text-white/60 mt-1">Pending payout</div>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-lg px-4 py-2 text-sm text-white/80">
+              Each person you recruit earns you <span className="text-[#F5E642] font-bold">12% of their $149/mo subscription — forever</span>, plus overrides on every job they log.
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* 4-Level Cascade Rates */}
+        <Card className="border border-gray-200">
+          <CardContent className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <Users className="w-5 h-5 text-[#0A1628]" />
+              <span className="font-heading font-bold text-gray-900">4-Level Network Override Rates</span>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-gray-100">
+                    <th className="text-left py-2 text-xs text-gray-500 font-medium">Network Level</th>
+                    <th className="text-center py-2 text-xs text-gray-500 font-medium">Subscription Override</th>
+                    <th className="text-center py-2 text-xs text-gray-500 font-medium">Job Override</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {SUBSCRIPTION_CASCADE.map((row, i) => (
+                    <tr key={row.level} className={i === 0 ? "bg-[#F5E642]/10" : ""}>
+                      <td className="py-2.5 font-medium text-gray-800">{row.level}</td>
+                      <td className="py-2.5 text-center">
+                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold ${i === 0 ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-700"}`}>
+                          {row.sub}
+                        </span>
+                      </td>
+                      <td className="py-2.5 text-center">
+                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-bold ${i === 0 ? "bg-emerald-600 text-white" : "bg-emerald-50 text-emerald-700"}`}>
+                          {row.job}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-400 mt-3">Subscription overrides pay monthly as long as your recruit stays active. Job overrides pay when each job in their network closes.</p>
+          </CardContent>
+        </Card>
+
+        {/* How to Recruit */}
+        <Card className="border border-gray-200">
+          <CardContent className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <UserPlus className="w-5 h-5 text-[#0A1628]" />
+              <span className="font-heading font-bold text-gray-900">How to Recruit</span>
+            </div>
+            <div className="space-y-3">
+              {RECRUIT_TIPS.map((t, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#F5E642]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {t.icon}
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">{t.tip}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Earnings Summary */}
         <div className="grid grid-cols-3 gap-4">

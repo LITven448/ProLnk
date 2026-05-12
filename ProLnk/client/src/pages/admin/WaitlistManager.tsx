@@ -162,7 +162,7 @@ export default function WaitlistManager() {
     setExportingPros(true);
     try {
       const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "pro" });
-      const rows = (data as { pro?: unknown[] }).pro ?? [];
+      const rows = (data as { pro?: any[] }).pro ?? [];
       if (!rows.length) { toast.error("No pro data to export"); return; }
       const headers = ["firstName", "lastName", "email", "phone", "trade", "primaryCity", "primaryState", "tier", "waitlistPosition", "referralCode", "referredBy", "referralCount", "status", "createdAt"];
       const csv = buildCsv(rows, headers);
@@ -179,7 +179,7 @@ export default function WaitlistManager() {
     setExportingHomes(true);
     try {
       const data = await utils.waitlistAdmin.exportWaitlist.fetch({ source: "home" });
-      const rows = (data as { home?: unknown[] }).home ?? [];
+      const rows = (data as { home?: any[] }).home ?? [];
       if (!rows.length) { toast.error("No homeowner data to export"); return; }
       const headers = ["firstName", "lastName", "email", "phone", "address", "city", "state", "homeType", "desiredProjects", "status", "createdAt"];
       const csv = buildCsv(rows, headers);

@@ -318,6 +318,116 @@ export async function runAlertTriageAgent(alerts: Array<{ type: string; content:
   });
 }
 
+// ─── Alert Triage Agent (DB-backed, no params) ────────────────────────────────
+
+export async function runAlertTriageAgentFromDb(): Promise<{
+  critical: Array<{ type: string; message: string; createdAt: string }>;
+  warning: Array<{ type: string; message: string; createdAt: string }>;
+  info: Array<{ type: string; message: string; createdAt: string }>;
+  total: number;
+}> {
+  console.log("[AlertTriageAgent] Running...");
+  const db = await getDb();
+  const empty = { critical: [], warning: [], info: [], total: 0 };
+  if (!db) return empty;
+
+  const SEVERITY_MAP: Record<string, "critical" | "warning" | "info"> = {
+    coi_expired: "critical",
+    payout_failure: "critical",
+    fraud_flag: "critical",
+    auto_suspended: "critical",
+    coi_expiring_soon: "warning",
+    license_expiring_soon: "warning",
+    background_check_stale: "warning",
+    storm_detected: "info",
+    weekly_cap_reset: "info",
+  };
+
+  try {
+    const rows = await (db as any).execute(sql`
+      SELECT alertType as type, message, createdAt
+      FROM complianceAlerts
+      WHERE resolvedAt IS NULL
+        AND createdAt > DATE_SUB(NOW(), INTERVAL 7 DAY)
+      ORDER BY createdAt DESC
+      LIMIT 50
+    `);
+    const alerts: any[] = rows.rows ?? rows ?? [];
+
+    const categorized = { critical: [] as any[], warning: [] as any[], info: [] as any[] };
+    for (const row of alerts) {
+      const severity = SEVERITY_MAP[row.type] ?? "info";
+      categorized[severity].push({ type: row.type, message: String(row.message ?? ""), createdAt: String(row.createdAt ?? "") });
+    }
+
+    return { ...categorized, total: alerts.length };
+  } catch {
+    return empty;
+  }
+}
+
+// ─── Outreach Agent (partnerId + reason signature) ────────────────────────────
+
+export async function runOutreachAgent(params: { partnerId: number; reason: string }): Promise<{
+  subject: string;
+  message: string;
+  channel: "email" | "template";
+}> {
+  console.log("[OutreachAgent] Running...");
+  const db = await getDb();
+
+  let partnerName = "Partner";
+  let trade = "home services";
+  let city = "DFW";
+  let partnerEmail = "";
+
+  if (db) {
+    try {
+      const rows = await (db as any).execute(sql`
+        SELECT fullName, trade, city, email
+        FROM proWaitlist
+        WHERE id = ${params.partnerId}
+        LIMIT 1
+      `);
+      const row = (rows.rows ?? rows)[0];
+      if (row) {
+        partnerName = row.fullName ?? partnerName;
+        trade = row.trade ?? trade;
+        city = row.city ?? city;
+        partnerEmail = row.email ?? "";
+      }
+    } catch {}
+  }
+
+  const openAiKey = process.env.OPENAI_API_KEY;
+  if (!openAiKey) {
+    const message = `Hi ${partnerName}, we noticed you joined the ProLnk waitlist as a ${trade} professional in ${city}. We wanted to personally reach out — ${params.reason}. Reply to this email and we'll get you set up as a founding partner. — Andrew, ProLnk Founder`;
+    return { subject: `${partnerName}, your ProLnk spot is waiting`, message, channel: "template" };
+  }
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${openAiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: "You write short, personalized outreach messages for ProLnk — a home services partner platform. Sound like a founder, not marketing. Be warm and specific. Max 4 sentences." },
+          { role: "user", content: `Write outreach for: ${partnerName}, a ${trade} pro in ${city}. Reason: ${params.reason}. Return JSON: { subject: string, message: string }` },
+        ],
+        response_format: { type: "json_object" },
+        max_tokens: 256,
+      }),
+    });
+    const data = await res.json() as any;
+    const parsed = JSON.parse(data.choices?.[0]?.message?.content ?? "{}");
+    return { subject: parsed.subject ?? `ProLnk — ${partnerName}`, message: parsed.message ?? "", channel: "email" };
+  } catch {
+    const message = `Hi ${partnerName}, we noticed you joined the ProLnk waitlist as a ${trade} professional in ${city}. We wanted to personally reach out — ${params.reason}. Reply to this email and we'll get you set up as a founding partner. — Andrew, ProLnk Founder`;
+    return { subject: `${partnerName}, your ProLnk spot is waiting`, message, channel: "template" };
+  }
+}
+
 // ─── Outreach Agent ───────────────────────────────────────────────────────────
 
 export async function generatePartnerOutreach(opts: {
@@ -368,6 +478,59 @@ Return JSON: { subject: string, html: string, text: string }`,
   const content = response.choices?.[0]?.message?.content;
   const parsed = typeof content === "string" ? JSON.parse(content) : content;
   return parsed;
+}
+
+// ─── Ask-a-Pro Agent (params object signature) ───────────────────────────────
+
+export async function runAskAProAgentWithParams(params: { question: string; trade: string }): Promise<{
+  answer: string;
+  recommendedTrade: string | null;
+  urgency: "immediate" | "routine" | "optional" | null;
+  estimatedCost: string | null;
+}> {
+  console.log("[AskAProAgent] Running...");
+  const openAiKey = process.env.OPENAI_API_KEY;
+
+  const fallback = {
+    answer: `For ${params.trade} questions, we recommend getting 3 quotes from licensed professionals in your area. ProLnk can connect you with verified ${params.trade} pros in DFW who offer free estimates.`,
+    recommendedTrade: params.trade,
+    urgency: "routine" as const,
+    estimatedCost: null,
+  };
+
+  if (!openAiKey) return fallback;
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${openAiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: `You are a home services expert specializing in ${params.trade}. Answer homeowner questions accurately, practically, and with DFW market awareness. Always recommend a licensed professional when actual work is involved. Be specific about costs and urgency.`,
+          },
+          {
+            role: "user",
+            content: `Homeowner question about ${params.trade}: ${params.question}\n\nReturn JSON: { answer: string, recommendedTrade: string|null, urgency: "immediate"|"routine"|"optional"|null, estimatedCost: string|null }`,
+          },
+        ],
+        response_format: { type: "json_object" },
+        max_tokens: 512,
+      }),
+    });
+    const data = await res.json() as any;
+    const parsed = JSON.parse(data.choices?.[0]?.message?.content ?? "{}");
+    return {
+      answer: parsed.answer ?? fallback.answer,
+      recommendedTrade: parsed.recommendedTrade ?? params.trade,
+      urgency: parsed.urgency ?? "routine",
+      estimatedCost: parsed.estimatedCost ?? null,
+    };
+  } catch {
+    return fallback;
+  }
 }
 
 // ─── Ask-a-Pro Agent (enhanced) ───────────────────────────────────────────────

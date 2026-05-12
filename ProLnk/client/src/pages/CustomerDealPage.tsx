@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Customer Deal Page -- /deal/:token
  *

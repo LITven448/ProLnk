@@ -313,6 +313,130 @@ export default function NetworkAnalytics() {
                 )}
               </div>
             </div>
+
+            {/* Commission Cascade + Referral Depth */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+
+              {/* Commission cascade placeholder */}
+              <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                  <DollarSign size={16} style={{ color: "#22C55E" }} />
+                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>Network Commission Flow</p>
+                </div>
+                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 16 }}>Total network commission flow this month</p>
+                <p style={{ fontSize: 36, fontWeight: 800, color: "#344767", margin: "0 0 8px" }}>$0</p>
+                <p style={{ fontSize: 12, color: "#AEAEAE", margin: "0 0 16px" }}>Live once billing starts</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {[
+                    { level: "L1 Direct (7%)", desc: "Your direct network job overrides", color: "#22C55E" },
+                    { level: "L2 Override (4%)", desc: "2nd-level network job overrides", color: "#17C1E8" },
+                    { level: "L3 Override (2%)", desc: "3rd-level network job overrides", color: "#8B5CF6" },
+                    { level: "L4 Override (1%)", desc: "4th-level network job overrides", color: "#F59E0B" },
+                  ].map(({ level, desc, color }) => (
+                    <div key={level} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div style={{ width: 10, height: 10, borderRadius: "50%", background: color, flexShrink: 0 }} />
+                      <div style={{ flex: 1 }}>
+                        <span style={{ fontSize: 12, fontWeight: 600, color: "#344767" }}>{level}</span>
+                        <span style={{ fontSize: 11, color: "#AEAEAE", marginLeft: 6 }}>{desc}</span>
+                      </div>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: "#AEAEAE" }}>$0</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Referral depth distribution */}
+              <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                  <GitBranch size={16} style={{ color: "#8B5CF6" }} />
+                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>Referral Depth Distribution</p>
+                </div>
+                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 20 }}>How deep the network tree extends</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                  {[
+                    { label: "Have Direct Recruits (L1)", value: stats.referralDepth.direct, color: "#22C55E", desc: "Partners who have referred at least 1 person" },
+                    { label: "Have L2 Network",           value: stats.referralDepth.l2,     color: "#17C1E8", desc: "Partners whose recruits have also recruited" },
+                    { label: "Have L3 Network",           value: stats.referralDepth.l3,     color: "#8B5CF6", desc: "3-level deep network chains" },
+                  ].map(({ label, value, color, desc }) => {
+                    const pct = stats.total > 0 ? Math.round((value / stats.total) * 100) : 0;
+                    return (
+                      <div key={label}>
+                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, marginBottom: 6 }}>
+                          <span style={{ color: "#344767", fontWeight: 600 }}>{label}</span>
+                          <span style={{ fontWeight: 700, color }}>{value} <span style={{ color: "#AEAEAE", fontWeight: 400 }}>({pct}%)</span></span>
+                        </div>
+                        <div style={{ height: 7, background: "#F0F2F5", borderRadius: 4, overflow: "hidden", marginBottom: 4 }}>
+                          <div style={{ height: "100%", width: `${pct}%`, background: color, borderRadius: 4, transition: "width 0.6s ease" }} />
+                        </div>
+                        <p style={{ fontSize: 11, color: "#AEAEAE", margin: 0 }}>{desc}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* DFW Market Coverage + Top Recruiters Leaderboard */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+
+              {/* DFW Market Coverage map placeholder */}
+              <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                  <MapPin size={16} style={{ color: "#F59E0B" }} />
+                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>DFW Market Coverage</p>
+                </div>
+                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 16 }}>Dallas–Fort Worth metro — primary launch market</p>
+                <div style={{ background: "#F8F9FA", borderRadius: 10, height: 180, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", border: "1px dashed #DEE2E6", gap: 10 }}>
+                  <MapPin size={28} style={{ color: "#DEE2E6" }} />
+                  <p style={{ fontSize: 13, color: "#AEAEAE", margin: 0, fontWeight: 600 }}>Interactive map coming soon</p>
+                  <p style={{ fontSize: 12, color: "#C8CBD0", margin: 0, textAlign: "center", maxWidth: 200 }}>
+                    Zip-code coverage heatmap once pros submit service area zip codes
+                  </p>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginTop: 12 }}>
+                  {[
+                    { label: "Dallas", value: stats.topCities.find(([c]) => c.toLowerCase().includes("dallas"))?.[1] ?? 0, color: "#F59E0B" },
+                    { label: "Fort Worth", value: stats.topCities.find(([c]) => c.toLowerCase().includes("fort worth"))?.[1] ?? 0, color: "#17C1E8" },
+                    { label: "Plano/Allen", value: stats.topCities.filter(([c]) => ["plano","allen","frisco","mckinney"].some(m => c.toLowerCase().includes(m))).reduce((s, [,v]) => s + v, 0), color: "#22C55E" },
+                  ].map(({ label, value, color }) => (
+                    <div key={label} style={{ background: `${color}11`, borderRadius: 8, padding: "8px 10px", border: `1px solid ${color}33` }}>
+                      <p style={{ fontSize: 18, fontWeight: 800, color, margin: 0 }}>{value}</p>
+                      <p style={{ fontSize: 11, color: "#7B809A", margin: 0 }}>{label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Top Recruiters Leaderboard */}
+              <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                  <Star size={16} style={{ color: "#F59E0B" }} />
+                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>Top Recruiters Leaderboard</p>
+                </div>
+                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 16 }}>Partners with the highest referral counts</p>
+                {stats.topReferrers.length === 0 ? (
+                  <div style={{ height: 120, display: "flex", alignItems: "center", justifyContent: "center", color: "#AEAEAE", fontSize: 13 }}>No referral data yet</div>
+                ) : (
+                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                    {stats.topReferrers.map((r, i) => {
+                      const medalColor = i === 0 ? "#F59E0B" : i === 1 ? "#94A3B8" : i === 2 ? "#CD7F32" : "#E9ECEF";
+                      const textColor = i < 3 ? "#344767" : "#7B809A";
+                      return (
+                        <div key={r.name} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: i === 0 ? "rgba(245,158,11,0.06)" : "#FAFAFA", borderRadius: 10, border: `1px solid ${i === 0 ? "rgba(245,158,11,0.2)" : "#F0F2F5"}` }}>
+                          <div style={{ width: 24, height: 24, borderRadius: "50%", background: medalColor, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                            <span style={{ fontSize: 11, fontWeight: 800, color: i < 3 ? "#fff" : "#94A3B8" }}>#{i + 1}</span>
+                          </div>
+                          <span style={{ fontSize: 13, color: textColor, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontWeight: i === 0 ? 700 : 500 }}>{r.name}</span>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                            <span style={{ fontSize: 12, fontWeight: 700, color: "#17C1E8", background: "rgba(23,193,232,0.1)", borderRadius: 6, padding: "2px 8px" }}>{r.count} refs</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </div>
           </>
         ) : (
           <div style={{ textAlign: "center", padding: "60px 0", color: "#AEAEAE" }}>No waitlist data available.</div>

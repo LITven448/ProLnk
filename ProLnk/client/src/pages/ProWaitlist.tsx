@@ -1224,11 +1224,11 @@ export default function ProWaitlist() {
         <meta property="og:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/pro-waitlist" />
-        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
         <meta name="twitter:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system." />
-        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.io/pro-waitlist" />
       </Helmet>
 

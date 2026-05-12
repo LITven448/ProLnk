@@ -64,7 +64,7 @@ export const stripeRouter = router({
   getConnectStatus: protectedProcedure.query(async ({ ctx }) => {
     const db = await getDb();
     if (!db) return null;
-    const rows = await (db as any).execute(sql`
+    const rows = await db.execute(sql`
       SELECT id, stripeConnectAccountId, stripeConnectStatus, bankAccountLast4,
              payoutReadyAt, trialStatus, trialStartedAt, trialEndsAt, subscriptionPlan
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
@@ -83,7 +83,7 @@ export const stripeRouter = router({
     .mutation(async ({ ctx, input }) => {
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT id, contactEmail, businessName, stripeConnectAccountId
         FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
@@ -102,7 +102,7 @@ export const stripeRouter = router({
           metadata: { partnerId: String(partner.id) },
         });
         accountId = account.id;
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE partners SET stripeConnectAccountId = ${accountId}, stripeConnectStatus = 'pending'
           WHERE id = ${partner.id}
         `);
@@ -122,7 +122,7 @@ export const stripeRouter = router({
   verifyConnectAccount: protectedProcedure.mutation(async ({ ctx }) => {
     const db = await getDb();
     if (!db) return { status: "not_connected" };
-    const rows = await (db as any).execute(sql`
+    const rows = await db.execute(sql`
       SELECT id, stripeConnectAccountId FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
     `);
     const partner = (rows.rows || rows)[0];
@@ -138,7 +138,7 @@ export const stripeRouter = router({
       bankLast4 = bankAccount.last4 ?? null;
     }
 
-    await (db as any).execute(sql`
+    await db.execute(sql`
       UPDATE partners SET
         stripeConnectStatus = ${status},
         bankAccountLast4 = ${bankLast4},
@@ -159,7 +159,7 @@ export const stripeRouter = router({
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
 
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT id, contactEmail, contactName, businessName, tier
         FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
       `);
@@ -225,7 +225,7 @@ export const stripeRouter = router({
   getSubscriptionInfo: protectedProcedure.query(async ({ ctx }) => {
     const db = await getDb();
     if (!db) return null;
-    const rows = await (db as any).execute(sql`
+    const rows = await db.execute(sql`
       SELECT id, tier, subscriptionPlan, trialStatus, trialStartedAt, trialEndsAt,
              isExempt, monthlyCommissionEarned
       FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
@@ -239,7 +239,7 @@ export const stripeRouter = router({
     const db = await getDb();
     if (!db) return [];
 
-    const rows = await (db as any).execute(sql`
+    const rows = await db.execute(sql`
       SELECT c.*,
         pp.businessName as payingPartnerName, pp.contactEmail as payingPartnerEmail,
         pp.stripeConnectStatus as payingPartnerStripeStatus,
@@ -264,7 +264,7 @@ export const stripeRouter = router({
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
 
-      const cRows = await (db as any).execute(sql`
+      const cRows = await db.execute(sql`
         SELECT c.*, rp.stripeConnectAccountId, rp.stripeConnectStatus
         FROM commissions c
         LEFT JOIN partners rp ON c.receivingPartnerId = rp.id
@@ -275,7 +275,7 @@ export const stripeRouter = router({
       if (commission.paid) throw new Error("Already paid");
 
       if (!commission.receivingPartnerId) {
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE commissions SET paid = 1, paidAt = NOW() WHERE id = ${input.commissionId}
         `);
         return { success: true, method: "internal" };
@@ -294,11 +294,172 @@ export const stripeRouter = router({
         metadata: { commissionId: String(input.commissionId) },
       });
 
-      await (db as any).execute(sql`
+      await db.execute(sql`
         UPDATE commissions SET paid = 1, paidAt = NOW() WHERE id = ${input.commissionId}
       `);
       return { success: true, transferId: transfer.id, method: "stripe_transfer" };
     }),
+
+  // --- Admin: trigger payout for a single partner --------------------------
+  triggerPayout: adminProcedure
+    .input(z.object({ partnerId: z.string() }))
+    .mutation(async ({ input }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const partnerRows = await db.execute(sql`
+        SELECT id, stripeConnectAccountId, stripeConnectStatus
+        FROM partners WHERE id = ${input.partnerId} LIMIT 1
+      `);
+      const partner = (partnerRows.rows || partnerRows)[0];
+      if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner not found" });
+      if (!partner.stripeConnectAccountId || partner.stripeConnectStatus !== "active") {
+        throw new TRPCError({ code: "PRECONDITION_FAILED", message: "Partner does not have an active Stripe Connect account" });
+      }
+
+      const commRows = await db.execute(sql`
+        SELECT id, amount FROM commissions
+        WHERE receivingPartnerId = ${input.partnerId} AND paid = 0
+      `);
+      const pending = commRows.rows || commRows;
+      if (pending.length === 0) throw new TRPCError({ code: "PRECONDITION_FAILED", message: "No pending commissions" });
+
+      const totalAmount = pending.reduce((sum: number, c: any) => sum + parseFloat(c.amount ?? "0"), 0);
+      if (totalAmount < 25) {
+        throw new TRPCError({ code: "PRECONDITION_FAILED", message: `Balance $${totalAmount.toFixed(2)} is below the $25 minimum payout threshold` });
+      }
+
+      const amountCents = Math.round(totalAmount * 100);
+      const commissionIds = pending.map((c: any) => c.id);
+
+      const transfer = await stripe.transfers.create({
+        amount: amountCents,
+        currency: "usd",
+        destination: partner.stripeConnectAccountId as string,
+        description: `ProLnk commission payout — partner ${input.partnerId}`,
+        metadata: { partnerId: input.partnerId, commissionCount: String(commissionIds.length) },
+      });
+
+      await db.execute(sql`
+        UPDATE commissions SET paid = 1, paidAt = NOW()
+        WHERE receivingPartnerId = ${input.partnerId} AND paid = 0
+      `);
+
+      return {
+        success: true,
+        transferId: transfer.id,
+        amountPaid: totalAmount,
+        commissionCount: commissionIds.length,
+      };
+    }),
+
+  // --- Admin: trigger monthly batch payouts --------------------------------
+  triggerMonthlyPayouts: adminProcedure
+    .mutation(async () => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const eligibleRows = await db.execute(sql`
+        SELECT c.receivingPartnerId,
+               SUM(c.amount) as totalPending,
+               COUNT(c.id) as commissionCount,
+               p.stripeConnectAccountId
+        FROM commissions c
+        JOIN partners p ON c.receivingPartnerId = p.id
+        WHERE c.paid = 0
+          AND c.receivingPartnerId IS NOT NULL
+          AND p.stripeConnectStatus = 'active'
+          AND p.stripeConnectAccountId IS NOT NULL
+        GROUP BY c.receivingPartnerId, p.stripeConnectAccountId
+        HAVING SUM(c.amount) >= 25
+      `);
+      const eligible = eligibleRows.rows || eligibleRows;
+
+      let processed = 0;
+      let totalPaid = 0;
+      const errors: string[] = [];
+
+      for (const row of eligible) {
+        try {
+          const amountCents = Math.round(parseFloat(row.totalPending) * 100);
+          const transfer = await stripe.transfers.create({
+            amount: amountCents,
+            currency: "usd",
+            destination: row.stripeConnectAccountId as string,
+            description: `ProLnk monthly commission payout`,
+            metadata: { partnerId: String(row.receivingPartnerId), batchMonth: new Date().toISOString().slice(0, 7) },
+          });
+
+          await db.execute(sql`
+            UPDATE commissions SET paid = 1, paidAt = NOW()
+            WHERE receivingPartnerId = ${row.receivingPartnerId} AND paid = 0
+          `);
+
+          await db.execute(sql`
+            INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
+            VALUES (
+              ${row.receivingPartnerId}, 'payment',
+              'Commission Payout Sent',
+              ${`$${parseFloat(row.totalPending).toFixed(2)} has been transferred to your bank account.`},
+              '/billing'
+            )
+          `);
+
+          processed++;
+          totalPaid += parseFloat(row.totalPending);
+        } catch (err: any) {
+          errors.push(`Partner ${row.receivingPartnerId}: ${err.message ?? "unknown error"}`);
+        }
+      }
+
+      return { processed, totalPaid, errors };
+    }),
+
+  // --- Protected: get current partner billing + commission summary ----------
+  getMyBilling: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) return null;
+
+    const partnerRows = await db.execute(sql`
+      SELECT id, tier, subscriptionPlan, trialStatus, trialStartedAt, trialEndsAt,
+             stripeConnectAccountId, stripeConnectStatus, bankAccountLast4,
+             payoutReadyAt, monthlyCommissionEarned
+      FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
+    `);
+    const partner = (partnerRows.rows || partnerRows)[0];
+    if (!partner) return null;
+
+    const commRows = await db.execute(sql`
+      SELECT
+        SUM(CASE WHEN paid = 0 THEN amount ELSE 0 END) as pendingBalance,
+        SUM(CASE WHEN paid = 1 THEN amount ELSE 0 END) as lifetimePaid,
+        COUNT(CASE WHEN paid = 0 THEN 1 END) as pendingCount
+      FROM commissions WHERE receivingPartnerId = ${partner.id}
+    `);
+    const commStats = (commRows.rows || commRows)[0] ?? {};
+
+    const pendingBalance = parseFloat(commStats.pendingBalance ?? "0");
+    const trialEndsAt = partner.trialEndsAt ? new Date(partner.trialEndsAt) : null;
+    const trialDaysLeft = trialEndsAt ? Math.max(0, Math.ceil((trialEndsAt.getTime() - Date.now()) / 86400000)) : null;
+
+    const TIER_AMOUNTS: Record<string, number> = { scout: 0, pro: 29, crew: 79, company: 149, enterprise: 299 };
+    const subscriptionAmount = TIER_AMOUNTS[partner.tier ?? "scout"] ?? 0;
+
+    return {
+      tier: partner.tier ?? "scout",
+      subscriptionPlan: partner.subscriptionPlan ?? null,
+      trialStatus: partner.trialStatus ?? null,
+      trialEndsAt: partner.trialEndsAt ?? null,
+      trialDaysLeft,
+      subscriptionAmount,
+      stripeConnectStatus: partner.stripeConnectStatus ?? "not_connected",
+      bankAccountLast4: partner.bankAccountLast4 ?? null,
+      pendingBalance,
+      pendingCount: parseInt(commStats.pendingCount ?? "0"),
+      lifetimePaid: parseFloat(commStats.lifetimePaid ?? "0"),
+      canRequestPayout: pendingBalance >= 25 && partner.stripeConnectStatus === "active",
+    };
+  }),
 
   // --- Admin: payout stats --------------------------------------------------
   getPayoutStats: protectedProcedure.query(async ({ ctx }) => {
@@ -306,7 +467,7 @@ export const stripeRouter = router({
     const db = await getDb();
     if (!db) return { totalPaid: 0, totalPending: 0, pendingCount: 0, connectedPartnerCount: 0 };
 
-    const statsRows = await (db as any).execute(sql`
+    const statsRows = await db.execute(sql`
       SELECT
         SUM(CASE WHEN paid = 1 THEN amount ELSE 0 END) as totalPaid,
         SUM(CASE WHEN paid = 0 THEN amount ELSE 0 END) as totalPending,
@@ -315,7 +476,7 @@ export const stripeRouter = router({
     `);
     const stats = (statsRows.rows || statsRows)[0] || {};
 
-    const connRows = await (db as any).execute(sql`
+    const connRows = await db.execute(sql`
       SELECT COUNT(*) as cnt FROM partners WHERE stripeConnectStatus = 'active'
     `);
     const connectedPartnerCount = (connRows.rows || connRows)[0]?.cnt ?? 0;
@@ -362,7 +523,7 @@ export const stripeRouter = router({
       let totalAmount = 0;
       if (db) {
         try {
-          const statsRows = await (db as any).execute(sql`
+          const statsRows = await db.execute(sql`
             SELECT COUNT(DISTINCT receivingPartnerId) as partnerCount,
                    SUM(amount) as total
             FROM commissions
@@ -425,7 +586,7 @@ export const stripeRouter = router({
       const db = await getDb();
       if (!db) throw new Error("Database unavailable");
       // Get or create Stripe customer for this user
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT stripeCustomerId FROM users WHERE id = ${ctx.user.id} LIMIT 1
       `);
       const user = (rows.rows || rows)[0];
@@ -437,7 +598,7 @@ export const stripeRouter = router({
           metadata: { userId: ctx.user.id.toString() },
         } as Stripe.CustomerCreateParams);
         customerId = customer.id;
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE users SET stripeCustomerId = ${customerId} WHERE id = ${ctx.user.id}
         `);
       }
@@ -473,7 +634,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
   const db = await getDb();
   if (db) {
     try {
-      const existing = await (db as any).execute(sql`
+      const existing = await db.execute(sql`
         SELECT id FROM processedStripeEvents WHERE eventId = ${event.id} LIMIT 1
       `);
       const rows = existing.rows || existing;
@@ -482,7 +643,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
         return res.json({ received: true, duplicate: true });
       }
       // Mark as processed
-      await (db as any).execute(sql`
+      await db.execute(sql`
         INSERT INTO processedStripeEvents (eventId, eventType) VALUES (${event.id}, ${event.type})
       `);
     } catch (e) {
@@ -499,20 +660,20 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     if (isActive) {
       const db = await getDb();
       if (db) {
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE partners SET
             stripeConnectStatus = 'active',
             payoutReadyAt = NOW(),
             updatedAt = NOW()
           WHERE stripeConnectAccountId = ${account.id}
         `);
-        const pRows = await (db as any).execute(sql`
+        const pRows = await db.execute(sql`
           SELECT id FROM partners WHERE stripeConnectAccountId = ${account.id} LIMIT 1
         `);
         const partnerId = (pRows.rows || pRows)[0]?.id;
         if (partnerId) {
           // REV-03: auto-trigger approved commissions that were waiting for Connect
-          const pendingRows = await (db as any).execute(sql`
+          const pendingRows = await db.execute(sql`
             SELECT id, amount FROM commissions
             WHERE receivingPartnerId = ${partnerId}
               AND paid = 0
@@ -530,7 +691,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
                 description: `ProLnk auto-payout commission #${comm.id}`,
                 metadata: { commissionId: String(comm.id) },
               });
-              await (db as any).execute(sql`
+              await db.execute(sql`
                 UPDATE commissions SET paid = 1, paidAt = NOW()
                 WHERE id = ${comm.id}
               `);
@@ -541,7 +702,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
             }
           }
           // Notify partner
-          await (db as any).execute(sql`
+          await db.execute(sql`
             INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
             VALUES (
               ${partnerId}, 'payment',
@@ -565,7 +726,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     const jobPaymentId = pi.metadata?.jobPaymentId;
     const milestoneType = pi.metadata?.milestoneType;
     if (jobPaymentId && db) {
-      await (db as any).execute(sql`
+      await db.execute(sql`
         UPDATE paymentMilestones
         SET status = 'completed', completedAt = NOW(), stripeIntentId = ${pi.id}
         WHERE jobPaymentId = ${parseInt(jobPaymentId)}
@@ -573,13 +734,13 @@ export async function handleStripeWebhook(req: Request, res: Response) {
           AND status = 'triggered'
       `);
       if (milestoneType === 'final_balance' || milestoneType === 'insurance_commission') {
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE jobPayments
           SET status = 'balance_charged', balanceChargedAt = NOW(), updatedAt = NOW()
           WHERE id = ${parseInt(jobPaymentId)} AND status != 'paid_out'
         `);
       } else if (milestoneType === 'deposit') {
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE jobPayments
           SET status = 'deposit_charged', depositChargedAt = NOW(), updatedAt = NOW()
           WHERE id = ${parseInt(jobPaymentId)} AND status = 'pending'
@@ -597,7 +758,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     const milestoneType = pi.metadata?.milestoneType;
     const failureMsg = pi.last_payment_error?.message ?? 'Unknown error';
     if (jobPaymentId && db) {
-      await (db as any).execute(sql`
+      await db.execute(sql`
         UPDATE paymentMilestones
         SET status = 'failed', failureReason = ${failureMsg}, retryCount = retryCount + 1
         WHERE jobPaymentId = ${parseInt(jobPaymentId)}
@@ -614,7 +775,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     const transfer = event.data.object as Stripe.Transfer;
     const jobPaymentId = transfer.metadata?.jobPaymentId;
     if (jobPaymentId && db) {
-      await (db as any).execute(sql`
+      await db.execute(sql`
         UPDATE jobPayments
         SET status = 'paid_out', stripeTransferId = ${transfer.id}, updatedAt = NOW()
         WHERE id = ${parseInt(jobPaymentId)} AND status = 'balance_charged'
@@ -630,7 +791,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     const pmId = mandate.payment_method;
     const mandateStatus = mandate.status; // active | inactive | pending
     if (pmId && db) {
-      await (db as any).execute(sql`
+      await db.execute(sql`
         UPDATE achAuthorizations
         SET status = ${mandateStatus === 'active' ? 'signed' : mandateStatus === 'inactive' ? 'revoked' : 'pending'}
         WHERE stripePaymentMethodId = ${pmId} AND status NOT IN ('used', 'revoked')
@@ -649,7 +810,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
       const db = await getDb();
       if (db) {
         const product = TIER_PRODUCTS[targetTier as keyof typeof TIER_PRODUCTS];
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE partners SET
             tier = ${targetTier},
             subscriptionPlan = ${targetTier},
@@ -659,7 +820,7 @@ export async function handleStripeWebhook(req: Request, res: Response) {
           WHERE id = ${parseInt(partnerId)}
         `);
 
-        await (db as any).execute(sql`
+        await db.execute(sql`
           INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
           VALUES (
             ${parseInt(partnerId)}, 'system',

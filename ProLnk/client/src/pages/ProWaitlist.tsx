@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";
@@ -325,7 +326,7 @@ function ROICalculator() {
           );
         })}
       </div>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="bg-gray-50 rounded-xl p-4 text-center">
           <div className="text-2xl font-heading font-bold text-gray-800">{leadsGenerated}</div>
           <div className="text-xs text-gray-500 mt-1">Leads / Month</div>
@@ -926,7 +927,7 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
             {/* Business Address */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-1">Business Address</p>
             <input placeholder="Street address *" value={form.businessAddress} onChange={set("businessAddress")} className={inputCls} />
-            <div className="grid grid-cols-3 gap-2 mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
               <input placeholder="City *" value={form.city} onChange={set("city")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 col-span-1" />
               <input placeholder="State" value={form.state} onChange={set("state")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" maxLength={2} />
               <input placeholder="ZIP *" value={form.zip} onChange={set("zip")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30" />
@@ -1079,6 +1080,20 @@ export default function ProWaitlist() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>ProLnk — Join the AI-Powered Home Services Partner Network</title>
+        <meta name="description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
+        <meta property="og:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
+        <meta property="og:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system. DFW Texas, launching nationally." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/pro-waitlist" />
+        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProLnk — The AI-Powered Home Services Partner Network" />
+        <meta name="twitter:description" content="Join 2,125 founding network partners. 72% commission keep, 4-level deep earnings, patent-pending network income system." />
+        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <link rel="canonical" href="https://prolnk.io/pro-waitlist" />
+      </Helmet>
 
       {/* -- Navigation -- */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">

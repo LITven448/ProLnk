@@ -401,7 +401,7 @@ function EarningsEstimator() {
               <Slider value={avgJobValue} onValueChange={setAvgJobValue} min={200} max={10000} step={100} className="w-full" />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
             <div className="bg-blue-50 rounded-xl p-4 text-center">
               <div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-1">Leads Generated</div>
               <div className="text-2xl font-heading font-bold text-[#0A1628]">{leadsGenerated}</div>
@@ -466,7 +466,7 @@ function EarningsEstimator() {
               <Slider value={avgJobValue} onValueChange={setAvgJobValue} min={200} max={10000} step={100} className="w-full" />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
             <div className="bg-blue-50 rounded-xl p-4 text-center">
               <div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-1">Gross Revenue</div>
               <div className="text-2xl font-heading font-bold text-[#0A1628]">${(receivedJobs[0] * avgJobValue[0]).toLocaleString()}</div>

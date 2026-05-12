@@ -30,7 +30,7 @@ async function getPlatformSnapshot() {
 
   try {
     const [partnersResult, jobsResult, oppsResult, commissionsResult, waitlistResult] = await Promise.all([
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT
           COUNT(*) as total,
           SUM(status = 'approved') as approved,
@@ -44,13 +44,13 @@ async function getPlatformSnapshot() {
           AVG(priorityScore) as avgPps
         FROM partners
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT COUNT(*) as total,
           SUM(aiAnalysisStatus = 'complete') as analyzed,
           SUM(aiAnalysisStatus = 'failed') as failed
         FROM jobs WHERE createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT COUNT(*) as total,
           SUM(status = 'converted') as converted,
           SUM(status = 'expired') as expired,
@@ -58,14 +58,14 @@ async function getPlatformSnapshot() {
           AVG(estimatedJobValue) as avgValue
         FROM opportunities WHERE createdAt > DATE_SUB(NOW(), INTERVAL 30 DAY)
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT
           COALESCE(SUM(amount), 0) as totalPaid,
           COALESCE(SUM(CASE WHEN paid = 0 THEN amount END), 0) as totalPending,
           COUNT(CASE WHEN paid = 0 THEN 1 END) as pendingCount
         FROM commissions
       `),
-      (db as any).execute(sql`
+      db.execute(sql`
         SELECT
           (SELECT COUNT(*) FROM proWaitlist) as pros,
           (SELECT COUNT(*) FROM homeWaitlist) as homeowners
@@ -157,13 +157,13 @@ export async function runCFOAgent(): Promise<{
 
   try {
     if (db) {
-      const subRows = await (db as any).execute(sql`
+      const subRows = await db.execute(sql`
         SELECT SUM(subscriptionFee) as mrr FROM partners
         WHERE status = 'approved' AND subscriptionFee > 0
       `);
       subscriptionMrr = parseFloat((subRows.rows || subRows)[0]?.mrr ?? "0");
 
-      const adRows = await (db as any).execute(sql`
+      const adRows = await db.execute(sql`
         SELECT SUM(monthlyFee) as mrr FROM featuredAdvertisers WHERE status = 'active'
       `);
       advertiserMrr = parseFloat((adRows.rows || adRows)[0]?.mrr ?? "0");
@@ -211,10 +211,10 @@ export async function runCOOAgent(): Promise<{
 
   try {
     if (db) {
-      const stuckRows = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM jobs WHERE aiAnalysisStatus = 'processing' AND updatedAt < DATE_SUB(NOW(), INTERVAL 30 MINUTE)`);
+      const stuckRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM jobs WHERE aiAnalysisStatus = 'processing' AND updatedAt < DATE_SUB(NOW(), INTERVAL 30 MINUTE)`);
       stuckJobs = parseInt((stuckRows.rows || stuckRows)[0]?.cnt ?? "0");
 
-      const reviewRows = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE adminReviewStatus = 'pending_review'`);
+      const reviewRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE adminReviewStatus = 'pending_review'`);
       pendingReview = parseInt((reviewRows.rows || reviewRows)[0]?.cnt ?? "0");
     }
   } catch {}

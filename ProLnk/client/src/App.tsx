@@ -410,6 +410,10 @@ import WaitlistStatus from "./pages/WaitlistStatus";
 import ContentLibrary from "./pages/ContentLibrary";
 import ApiKeyManagement from "./pages/admin/ApiKeyManagement";
 
+import FoundingPartnerPage from "./pages/FoundingPartnerPage";
+import PartnerBilling from "./pages/PartnerBilling";
+import JoinLanding from "./pages/JoinLanding";
+
 // Wave 31-45 Pages
 import MobileOptimization from "./pages/admin/MobileOptimization";
 import AccessibilitySettings from "./pages/admin/AccessibilitySettings";
@@ -502,7 +506,8 @@ function Router() {
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
-      <Route path="/join" component={HomeownerWaitlistForm} />
+      <Route path="/join" component={JoinLanding} />
+      <Route path="/pro/join" component={JoinLanding} />
       <Route path="/waitlist/pro" component={ProWaitlist} />
       <Route path="/waitlist/homeowner" component={TrustyProWaitlistPage} />
       <Route path="/waitlist/homeowner/status" component={TrustyProWaitlistStatus} />
@@ -920,6 +925,9 @@ function Router() {
       <Route path="/leads/:id" component={LeadDetail} />
       <Route path="/jobs/:id/document" component={JobDocumentation} />
       <Route path="/home-documentation" component={HomeDocumentation} />
+      <Route path="/founding-partner" component={FoundingPartnerPage} />
+      <Route path="/founding-network" component={FoundingPartnerPage} />
+      <Route path="/billing" component={PartnerBilling} />
       <Route path="/tier-benefits" component={TierBenefits} />
       <Route path="/waitlist-status" component={WaitlistStatus} />
       <Route path="/waitlist/status" component={WaitlistStatus} />

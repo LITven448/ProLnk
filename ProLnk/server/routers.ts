@@ -128,7 +128,7 @@ async function logAdminAction(adminUserId: number, action: string, targetType: s
   try {
     const db = await getDb();
     if (!db) return;
-    await (db as any).execute(sql`
+    await db.execute(sql`
       INSERT INTO adminAuditLog (adminUserId, action, targetType, targetId, detail)
       VALUES (${adminUserId}, ${action}, ${targetType}, ${targetId}, ${detail ? JSON.stringify(detail) : null})
     `);
@@ -1741,7 +1741,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
                 .set({ partnersReferred: (referrer.partnersReferred ?? 0) + 1 })
                 .where(eq(partners.id, referredByPartnerId));
               // Mark the referral click as converted
-              await (db as any).execute(
+              await db.execute(
                 sql`UPDATE referralClicks SET convertedAt = ${Date.now()} WHERE referralCode = ${input.referredByCode ?? ''} AND convertedAt IS NULL ORDER BY id DESC LIMIT 1`
               );
             }
@@ -1856,7 +1856,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         try {
           const db = await getDb();
           if (db) {
-            const oppRows = await (db as any).execute(sql`SELECT homeownerEmail, homeownerName, serviceType, serviceAddress FROM opportunities WHERE id = ${input.opportunityId} LIMIT 1`) as any;
+            const oppRows = await db.execute(sql`SELECT homeownerEmail, homeownerName, serviceType, serviceAddress FROM opportunities WHERE id = ${input.opportunityId} LIMIT 1`) as any;
             const opp = oppRows?.[0]?.[0] ?? oppRows?.[0];
             if (opp?.homeownerEmail) {
               const reviewUrl = `${ENV.appBaseUrl}/review/${input.opportunityId}`;
@@ -2234,12 +2234,12 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     getMyTrustyLeads: protectedProcedure.query(async ({ ctx }) => {
       const db = await getDb();
       if (!db) return [];
-      const partnerRows = await (db as any).execute(
+      const partnerRows = await db.execute(
         sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved'`
       );
       const partner = (partnerRows[0] || [])[0];
       if (!partner) return [];
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT id, homeownerName as name, homeownerEmail as email, homeownerPhone as phone, address, photoUrls, aiAnalysis, status, notes, createdAt FROM homeownerLeads WHERE matchedPartnerId = ${partner.id} ORDER BY createdAt DESC LIMIT 100`
       );
       return (rows[0] || []) as Array<{
@@ -2258,13 +2258,13 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
-        const partnerRows = await (db as any).execute(
+        const partnerRows = await db.execute(
           sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} AND status = 'approved'`
         );
         const partner = (partnerRows[0] || [])[0];
         if (!partner) throw new TRPCError({ code: 'FORBIDDEN' });
         const newStatus = input.response === 'accepted' ? 'contacted' : 'lost';
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE homeownerLeads SET status = ${newStatus}, notes = ${input.notes ?? null}, updatedAt = NOW() WHERE id = ${input.leadId} AND matchedPartnerId = ${partner.id}`
         );
         await notifyOwner({
@@ -2276,12 +2276,12 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     getPartnerReceivedReviews: protectedProcedure.query(async ({ ctx }) => {
       const db = await getDb();
       if (!db) return [];
-      const partnerRows = await (db as any).execute(
+      const partnerRows = await db.execute(
         sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`
       ) as any;
       const partner = (partnerRows[0]?.[0] ?? partnerRows[0]);
       if (!partner?.id) return [];
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT pr.id, pr.rating, pr.reviewText, pr.ratingPunctuality, pr.ratingQuality,
             pr.ratingCommunication, pr.ratingValue, pr.serviceType, pr.createdAt,
             pr.replyText, pr.repliedAt, pr.homeownerEmail
@@ -2310,12 +2310,12 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
       .mutation(async ({ input, ctx }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        const partnerRows = await (db as any).execute(
+        const partnerRows = await db.execute(
           sql`SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1`
         ) as any;
         const partner = (partnerRows[0]?.[0] ?? partnerRows[0]);
         if (!partner?.id) throw new TRPCError({ code: 'FORBIDDEN', message: 'Partner profile not found' });
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE partnerReviews SET replyText = ${input.replyText}, repliedAt = NOW()
               WHERE id = ${input.reviewId} AND partnerId = ${partner.id}`
         );
@@ -2671,7 +2671,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     getRecentHomeProfiles: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT p.id, p.address, p.city, p.state, p.zipCode,
                p.homeScore, p.createdAt,
                COUNT(DISTINCT i.id) as issueCount,
@@ -2700,7 +2700,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     getPropertyConditionReports: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT id, homeownerEmail, roomLabel, overallCondition, issueCount, upgradeCount,
                photoQualityFlag, createdAt, photoUrls, analysisJson
         FROM homeownerScanHistory
@@ -2880,7 +2880,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         const db = await getDb();
         if (!db) return [];
         const cutoff = Date.now() - input.daysSinceLastJob * 24 * 60 * 60 * 1000;
-        const rows = await (db as any).execute(sql`
+        const rows = await db.execute(sql`
           SELECT p.id, p.businessName, p.contactEmail, p.tier, p.status,
                  MAX(j.createdAt) AS lastJobDate
           FROM partners p
@@ -2897,7 +2897,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     getAllPaidCommissions: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT c.id, c.receivingPartnerId, c.payingPartnerId, c.amount, c.paid,
                c.paidAt, c.createdAt, c.description, c.disputeStatus,
                p.businessName, p.contactEmail
@@ -2918,7 +2918,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         try {
           const db = await getDb();
           if (db) {
-            const rows = await (db as any).execute(sql`
+            const rows = await db.execute(sql`
               SELECT c.amount, c.description, p.businessName, u.email, u.name
               FROM commissions c
               LEFT JOIN partners p ON p.id = c.partnerId
@@ -2959,13 +2959,13 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         if (input.channels.includes('in_app')) {
           let partnerRows: Array<{ id: number }>;
           if (input.audience === 'all') {
-            const rows = await (db as any).execute(sql`SELECT id FROM partners WHERE status = 'approved'`);
+            const rows = await db.execute(sql`SELECT id FROM partners WHERE status = 'approved'`);
             partnerRows = rows[0] || [];
           } else if (input.audience === 'pending') {
-            const rows = await (db as any).execute(sql`SELECT id FROM partners WHERE status = 'pending'`);
+            const rows = await db.execute(sql`SELECT id FROM partners WHERE status = 'pending'`);
             partnerRows = rows[0] || [];
           } else {
-            const rows = await (db as any).execute(sql`SELECT id FROM partners WHERE status = 'approved' AND tier = ${input.audience}`);
+            const rows = await db.execute(sql`SELECT id FROM partners WHERE status = 'approved' AND tier = ${input.audience}`);
             partnerRows = rows[0] || [];
           }
           for (const p of partnerRows) {
@@ -3015,7 +3015,7 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
             const alertBody = isApproved
               ? `Your commission dispute has been reviewed and approved. ${input.resolutionNote}`
               : `Your commission dispute has been reviewed. Decision: ${input.resolutionNote}`;
-            await (db as any).execute(sql`INSERT INTO partnerAlerts (partnerId, alertType, title, body, severity, isRead, isDismissed, createdAt) VALUES (${comm.receivingPartnerId}, 'dispute_resolved', ${alertTitle}, ${alertBody}, ${isApproved ? 'success' : 'info'}, 0, 0, NOW())`);
+            await db.execute(sql`INSERT INTO partnerAlerts (partnerId, alertType, title, body, severity, isRead, isDismissed, createdAt) VALUES (${comm.receivingPartnerId}, 'dispute_resolved', ${alertTitle}, ${alertBody}, ${isApproved ? 'success' : 'info'}, 0, 0, NOW())`);
           }
         } catch { /* non-fatal */ }
         return { success: true };
@@ -3190,20 +3190,20 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         const limitVal = input.limit;
         let rows: any;
         if (input.status !== "all" && input.source !== "all") {
-          rows = await (db as any).execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.status = ${input.status} AND e.source = ${input.source} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
+          rows = await db.execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.status = ${input.status} AND e.source = ${input.source} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
         } else if (input.status !== "all") {
-          rows = await (db as any).execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.status = ${input.status} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
+          rows = await db.execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.status = ${input.status} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
         } else if (input.source !== "all") {
-          rows = await (db as any).execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.source = ${input.source} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
+          rows = await db.execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id WHERE e.source = ${input.source} ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
         } else {
-          rows = await (db as any).execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
+          rows = await db.execute(sql`SELECT e.*, p.businessName as partnerName FROM fsmWebhookEvents e LEFT JOIN partners p ON e.matchedPartnerId = p.id ORDER BY e.receivedAt DESC LIMIT ${limitVal}`);
         }
         return (Array.isArray(rows) ? rows : rows.rows ?? []) as any[];
       }),
     getFsmWebhookStats: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return { total: 0, matched: 0, unmatched: 0, commissionsClosed: 0, errors: 0 };
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT
           COUNT(*) as total,
           SUM(CASE WHEN status = 'matched' THEN 1 ELSE 0 END) as matched,
@@ -3226,7 +3226,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
     getWebhookSubscriptions: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`SELECT * FROM webhookSubscriptions ORDER BY createdAt DESC`);
+      const rows = await db.execute(sql`SELECT * FROM webhookSubscriptions ORDER BY createdAt DESC`);
       return (Array.isArray(rows) ? rows : rows.rows ?? []) as any[];
     }),
     createWebhookSubscription: adminProcedure
@@ -3239,7 +3239,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           INSERT INTO webhookSubscriptions (event, url, secret, isActive, createdAt, updatedAt)
           VALUES (${input.event}, ${input.url}, ${input.secret ?? null}, ${input.isActive ? 1 : 0}, NOW(), NOW())
         `);
@@ -3256,13 +3256,13 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
         if (input.isActive !== undefined) {
-          await (db as any).execute(sql`UPDATE webhookSubscriptions SET isActive = ${input.isActive ? 1 : 0}, updatedAt = NOW() WHERE id = ${input.id}`);
+          await db.execute(sql`UPDATE webhookSubscriptions SET isActive = ${input.isActive ? 1 : 0}, updatedAt = NOW() WHERE id = ${input.id}`);
         }
         if (input.url) {
-          await (db as any).execute(sql`UPDATE webhookSubscriptions SET url = ${input.url}, updatedAt = NOW() WHERE id = ${input.id}`);
+          await db.execute(sql`UPDATE webhookSubscriptions SET url = ${input.url}, updatedAt = NOW() WHERE id = ${input.id}`);
         }
         if (input.secret !== undefined) {
-          await (db as any).execute(sql`UPDATE webhookSubscriptions SET secret = ${input.secret}, updatedAt = NOW() WHERE id = ${input.id}`);
+          await db.execute(sql`UPDATE webhookSubscriptions SET secret = ${input.secret}, updatedAt = NOW() WHERE id = ${input.id}`);
         }
         return { success: true };
       }),
@@ -3271,7 +3271,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
-        await (db as any).execute(sql`DELETE FROM webhookSubscriptions WHERE id = ${input.id}`);
+        await db.execute(sql`DELETE FROM webhookSubscriptions WHERE id = ${input.id}`);
         return { success: true };
       }),
     // Wave 23: Analytics Export
@@ -3287,23 +3287,23 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         const fromClause = input.dateFrom ? `AND createdAt >= '${input.dateFrom}'` : '';
         const toClause = input.dateTo ? `AND createdAt <= '${input.dateTo} 23:59:59'` : '';
         if (input.reportType === 'partners') {
-          const rows = await (db as any).execute(sql`SELECT id, businessName, businessType, contactName, contactEmail, contactPhone, serviceArea, tier, status, referralCount, totalJobValue, approvedAt, createdAt FROM partners ORDER BY createdAt DESC`);
+          const rows = await db.execute(sql`SELECT id, businessName, businessType, contactName, contactEmail, contactPhone, serviceArea, tier, status, referralCount, totalJobValue, approvedAt, createdAt FROM partners ORDER BY createdAt DESC`);
           return { type: 'partners', rows: rows[0] || [] };
         }
         if (input.reportType === 'opportunities') {
-          const rows = await (db as any).execute(sql`SELECT o.id, o.opportunityType, o.opportunityCategory, o.description, o.aiConfidence, o.status, o.adminReviewStatus, o.estimatedJobValue, o.actualJobValue, o.platformFeeAmount, o.referralCommissionAmount, o.createdAt, sp.businessName as sourcePartner, rp.businessName as receivingPartner FROM opportunities o LEFT JOIN partners sp ON sp.id = o.sourcePartnerId LEFT JOIN partners rp ON rp.id = o.receivingPartnerId ORDER BY o.createdAt DESC LIMIT 1000`);
+          const rows = await db.execute(sql`SELECT o.id, o.opportunityType, o.opportunityCategory, o.description, o.aiConfidence, o.status, o.adminReviewStatus, o.estimatedJobValue, o.actualJobValue, o.platformFeeAmount, o.referralCommissionAmount, o.createdAt, sp.businessName as sourcePartner, rp.businessName as receivingPartner FROM opportunities o LEFT JOIN partners sp ON sp.id = o.sourcePartnerId LEFT JOIN partners rp ON rp.id = o.receivingPartnerId ORDER BY o.createdAt DESC LIMIT 1000`);
           return { type: 'opportunities', rows: rows[0] || [] };
         }
         if (input.reportType === 'commissions') {
-          const rows = await (db as any).execute(sql`SELECT c.id, c.amount, c.commissionType, c.paid, c.paidAt, c.createdAt, p.businessName as partnerName FROM commissions c LEFT JOIN partners p ON p.id = c.receivingPartnerId ORDER BY c.createdAt DESC LIMIT 1000`);
+          const rows = await db.execute(sql`SELECT c.id, c.amount, c.commissionType, c.paid, c.paidAt, c.createdAt, p.businessName as partnerName FROM commissions c LEFT JOIN partners p ON p.id = c.receivingPartnerId ORDER BY c.createdAt DESC LIMIT 1000`);
           return { type: 'commissions', rows: rows[0] || [] };
         }
         if (input.reportType === 'jobs') {
-          const rows = await (db as any).execute(sql`SELECT j.id, j.serviceAddress, j.status, j.completedAt, j.createdAt, p.businessName as partnerName FROM jobs j LEFT JOIN partners p ON p.id = j.partnerId ORDER BY j.createdAt DESC LIMIT 1000`);
+          const rows = await db.execute(sql`SELECT j.id, j.serviceAddress, j.status, j.completedAt, j.createdAt, p.businessName as partnerName FROM jobs j LEFT JOIN partners p ON p.id = j.partnerId ORDER BY j.createdAt DESC LIMIT 1000`);
           return { type: 'jobs', rows: rows[0] || [] };
         }
         if (input.reportType === 'leads') {
-          const rows = await (db as any).execute(sql`SELECT id, homeownerName, homeownerEmail, homeownerPhone, address, city, zipCode, source, status, matchedPartnerId, createdAt FROM homeownerLeads ORDER BY createdAt DESC LIMIT 1000`);
+          const rows = await db.execute(sql`SELECT id, homeownerName, homeownerEmail, homeownerPhone, address, city, zipCode, source, status, matchedPartnerId, createdAt FROM homeownerLeads ORDER BY createdAt DESC LIMIT 1000`);
           return { type: 'leads', rows: rows[0] || [] };
         }
         return { type: input.reportType, rows: [] };
@@ -3312,7 +3312,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
     getDataExportRequests: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT der.id, der.homeownerId, der.status, der.requestedAt, der.processedAt, der.exportUrl,
                u.email as homeownerEmail
         FROM dataExportRequests der
@@ -3328,7 +3328,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE dataExportRequests
           SET status = 'completed', processedAt = ${Date.now()},
               exportUrl = ${`/api/data-export/${input.requestId}`}
@@ -3340,7 +3340,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
     getFeatureFlags: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return { homeownerSignupOpen: false, trustyProLive: false, partnerApplicationsOpen: true };
-      const rows = await (db as any).execute(sql`SELECT \`key\`, value FROM systemSettings`);
+      const rows = await db.execute(sql`SELECT \`key\`, value FROM systemSettings`);
       const settings: Record<string, string> = {};
       for (const row of (rows[0] as any[])) settings[row.key] = row.value;
       return {
@@ -3355,7 +3355,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           INSERT INTO systemSettings (\`key\`, value, description)
           VALUES (${input.key}, ${String(input.value)}, ${`Feature flag: ${input.key}`})
           ON DUPLICATE KEY UPDATE value = ${String(input.value)}, updatedAt = NOW()
@@ -3372,7 +3372,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         const db = await getDb();
         if (!db) return null;
         // Get partner basic info
-        const rows = await (db as any).execute(sql`
+        const rows = await db.execute(sql`
           SELECT p.id, p.businessName, p.businessType, p.serviceArea, p.serviceAreaLat, p.serviceAreaLng,
             p.serviceRadiusMiles, p.tier, p.website, p.description, p.referralCount, p.approvedAt,
             pv.licenseVerified, pv.insuranceVerified, pv.backgroundCheckVerified,
@@ -3386,7 +3386,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         const partner = (rows[0] || [])[0];
         if (!partner) return null;
         // Get public reviews
-        const reviewRows = await (db as any).execute(sql`
+        const reviewRows = await db.execute(sql`
           SELECT rating, reviewText, ratingPunctuality, ratingQuality, ratingCommunication, ratingValue,
             homeownerName, createdAt
           FROM partnerReviews
@@ -3403,7 +3403,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
     getSpotlightPartners: publicProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT p.id, p.businessName, p.businessType, p.serviceArea, p.tier,
           p.referralCount, p.description,
           COALESCE(pv.trustScore, 0) as trustScore,
@@ -3423,7 +3423,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
     getLeaderboard: publicProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(sql`
+      const rows = await db.execute(sql`
         SELECT p.id, p.businessName, p.businessType, p.serviceArea, p.tier,
           p.referralCount, p.jobsLogged as jobCount, p.totalCommissionEarned as totalCommissionsEarned,
           COALESCE(pv.trustScore, 0) as trustScore,
@@ -3496,7 +3496,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const alerts: Array<{ alertType: string; title: string; body: string; severity: string }> = [];
 
       // Check for unread inbound leads
-      const pendingLeads = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent'`);
+      const pendingLeads = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent'`);
       const leadCount = Number(pendingLeads[0]?.[0]?.cnt ?? 0);
       if (leadCount > 0) {
         alerts.push({ alertType: 'pending_leads', title: `${leadCount} lead${leadCount > 1 ? 's' : ''} waiting for your response`, body: `You have ${leadCount} inbound lead${leadCount > 1 ? 's' : ''} that need a response. Respond within 48 hours to maintain your response rate.`, severity: 'warning' });
@@ -3521,21 +3521,21 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       if (totalReferrals === 5) alerts.push({ alertType: 'milestone_5refs', title: '[LINK] 5 Referrals Sent!', body: 'You\'ve sent 5 referrals to the network. Partners who send 10+ referrals earn 40% more in commissions.', severity: 'success' });
 
       // Check for deals expiring within 24 hours
-      const expiringDeals = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent' AND expiresAt IS NOT NULL AND expiresAt > NOW() AND expiresAt < DATE_ADD(NOW(), INTERVAL 24 HOUR)`);
+      const expiringDeals = await db.execute(sql`SELECT COUNT(*) as cnt FROM opportunities WHERE receivingPartnerId = ${partner.id} AND status = 'sent' AND expiresAt IS NOT NULL AND expiresAt > NOW() AND expiresAt < DATE_ADD(NOW(), INTERVAL 24 HOUR)`);
       const expiringCount = Number(expiringDeals[0]?.[0]?.cnt ?? 0);
       if (expiringCount > 0) {
         alerts.push({ alertType: 'deal_expiring', title: `${expiringCount} deal${expiringCount > 1 ? 's' : ''} expiring in 24 hours`, body: `You have ${expiringCount} inbound lead${expiringCount > 1 ? 's' : ''} that will expire soon. Accept or pass now to keep your response rate high.`, severity: 'warning' });
       }
 
       // Check for pending earnings
-      const pendingEarnings = await (db as any).execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${partner.id} AND paid = 0`);
+      const pendingEarnings = await db.execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${partner.id} AND paid = 0`);
       const pending = Number(pendingEarnings[0]?.[0]?.total ?? 0);
       if (pending >= 100) {
         alerts.push({ alertType: 'payout_ready', title: `$${pending.toFixed(0)} ready for payout`, body: 'Your commission balance has reached the $100 minimum payout threshold. Your next payout will be processed on the 1st of the month.', severity: 'success' });
       }
 
       // Also fetch stored alerts from DB
-      const storedAlerts = await (db as any).execute(sql`SELECT * FROM partnerAlerts WHERE partnerId = ${partner.id} AND isDismissed = 0 ORDER BY createdAt DESC LIMIT 20`);
+      const storedAlerts = await db.execute(sql`SELECT * FROM partnerAlerts WHERE partnerId = ${partner.id} AND isDismissed = 0 ORDER BY createdAt DESC LIMIT 20`);
       const stored = storedAlerts[0] as Array<{ id: number; alertType: string; title: string; body: string; severity: string; isRead: number; createdAt: Date }>;
 
       return [
@@ -3549,7 +3549,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         if (input.alertId < 0) return { success: true }; // auto-generated alerts
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partnerAlerts SET isRead = 1 WHERE id = ${input.alertId}`);
+        await db.execute(sql`UPDATE partnerAlerts SET isRead = 1 WHERE id = ${input.alertId}`);
         return { success: true };
       }),
     dismiss: protectedProcedure
@@ -3558,7 +3558,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         if (input.alertId < 0) return { success: true };
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partnerAlerts SET isDismissed = 1 WHERE id = ${input.alertId}`);
+        await db.execute(sql`UPDATE partnerAlerts SET isDismissed = 1 WHERE id = ${input.alertId}`);
         return { success: true };
       }),
   }),
@@ -3572,7 +3572,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const pid = partner.id;
 
       // Monthly job counts (last 6 months)
-      const monthlyJobs = await (db as any).execute(sql`
+      const monthlyJobs = await db.execute(sql`
         SELECT DATE_FORMAT(createdAt, '%Y-%m') as month, COUNT(*) as count
         FROM jobs WHERE partnerId = ${pid}
         AND createdAt >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
@@ -3580,14 +3580,14 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       `);
 
       // Opportunity conversion funnel
-      const funnelRows = await (db as any).execute(sql`
+      const funnelRows = await db.execute(sql`
         SELECT status, COUNT(*) as count FROM opportunities
         WHERE receivingPartnerId = ${pid}
         GROUP BY status
       `);
 
       // Earnings by month (last 6 months)
-      const earningsByMonth = await (db as any).execute(sql`
+      const earningsByMonth = await db.execute(sql`
         SELECT DATE_FORMAT(createdAt, '%Y-%m') as month, SUM(amount) as total
         FROM commissions WHERE receivingPartnerId = ${pid}
         AND createdAt >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
@@ -3595,7 +3595,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       `);
 
       // Outbound referrals sent by month
-      const outboundByMonth = await (db as any).execute(sql`
+      const outboundByMonth = await db.execute(sql`
         SELECT DATE_FORMAT(createdAt, '%Y-%m') as month, COUNT(*) as count
         FROM opportunities WHERE sourcePartnerId = ${pid}
         AND createdAt >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
@@ -3603,10 +3603,10 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       `);
 
       // Total stats
-      const totalJobs = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM jobs WHERE partnerId = ${pid}`);
-      const totalEarnings = await (db as any).execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${pid} AND paid = 1`);
-      const pendingEarnings = await (db as any).execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${pid} AND paid = 0`);
-      const avgJobValue = await (db as any).execute(sql`SELECT COALESCE(AVG(jobValue),0) as avg FROM commissions WHERE receivingPartnerId = ${pid}`);
+      const totalJobs = await db.execute(sql`SELECT COUNT(*) as cnt FROM jobs WHERE partnerId = ${pid}`);
+      const totalEarnings = await db.execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${pid} AND paid = 1`);
+      const pendingEarnings = await db.execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${pid} AND paid = 0`);
+      const avgJobValue = await db.execute(sql`SELECT COALESCE(AVG(jobValue),0) as avg FROM commissions WHERE receivingPartnerId = ${pid}`);
 
       return {
         partner: { id: partner.id, businessName: partner.businessName, tier: partner.tier, businessType: partner.businessType },
@@ -3631,8 +3631,8 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const partner = await getPartnerByUserId(ctx.user.id);
       if (!partner) return { clicks: 0, conversions: 0, bonusEarned: 0, referredPartners: [] };
       const referralCode = `partner-${partner.id}`;
-      const clickRows = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM referralClicks WHERE referralCode = ${referralCode}`);
-      const convRows = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM referralClicks WHERE referralCode = ${referralCode} AND convertedAt IS NOT NULL`);
+      const clickRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM referralClicks WHERE referralCode = ${referralCode}`);
+      const convRows = await db.execute(sql`SELECT COUNT(*) as cnt FROM referralClicks WHERE referralCode = ${referralCode} AND convertedAt IS NOT NULL`);
       const clicks = Number(clickRows[0]?.[0]?.cnt ?? 0);
       const conversions = Number(convRows[0]?.[0]?.cnt ?? 0);
       return { clicks, conversions, bonusEarned: conversions * 25, referredPartners: [] };
@@ -3644,7 +3644,7 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const parts = input.referralCode.split("-");
         const referrerId = parseInt(parts[parts.length - 1]) || 0;
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO referralClicks (referrerId, referralCode) VALUES (${referrerId}, ${input.referralCode})`
         );
         return { success: true };
@@ -3925,7 +3925,7 @@ Return JSON only.`,
 
           if (input.userId) {
             // Logged-in homeowner — full pipeline
-            const profileRows = await (db as any).execute(
+            const profileRows = await db.execute(
               sql`SELECT hp.id, hp.phone, hp.displayName, u.email, u.name
                   FROM homeownerProfiles hp
                   JOIN users u ON u.id = hp.userId
@@ -3939,19 +3939,19 @@ Return JSON only.`,
             // Get primary property for vault linking
             let propertyId: number | null = null;
             if (profileId) {
-              const propRows = await (db as any).execute(
+              const propRows = await db.execute(
                 sql`SELECT id FROM properties WHERE ownerId = ${profileId} ORDER BY isPrimary DESC, createdAt ASC LIMIT 1`
               ) as any;
               propertyId = propRows[0]?.[0]?.id ?? propRows[0]?.id ?? null;
             }
 
             // 1. Save homeowner lead record
-            await (db as any).execute(
+            await db.execute(
               sql`INSERT INTO homeownerLeads (homeownerName, homeownerEmail, homeownerPhone, address, photoUrls, aiAnalysis, status, source) VALUES (${userName}, ${userEmail}, ${input.homeownerPhone ?? profile?.phone ?? null}, ${input.address ?? null}, ${JSON.stringify(input.photoUrls)}, ${JSON.stringify(parsed)}, 'new', 'trustypro_dashboard')`
             ).catch(() => null);
 
             // 2. Auto-create scan history record
-            await (db as any).execute(
+            await db.execute(
               sql`INSERT INTO homeownerScanHistory (homeownerProfileId, homeownerEmail, propertyId, roomLabel, photoUrls, analysisJson, overallCondition, issueCount, upgradeCount, photoQualityFlag) VALUES (${profileId ?? null}, ${userEmail}, ${propertyId}, ${roomLabel}, ${JSON.stringify(input.photoUrls)}, ${JSON.stringify(parsed)}, ${condition}, ${issueCount}, ${upgradeCount}, ${photoQualityFlag})`
             ).catch(() => null);
 
@@ -3964,7 +3964,7 @@ Return JSON only.`,
                 const healthScore = condScore[conditionVal] ?? 60;
 
                 // Upsert system health entry (create if doesn't exist for this property+systemType)
-                const existingSystem = await (db as any).execute(
+                const existingSystem = await db.execute(
                   sql`SELECT id FROM homeSystemHealth WHERE propertyId = ${propertyId} AND systemType = ${systemType} LIMIT 1`
                 ).catch(() => [[]] as any) as any;
                 let systemHealthId = existingSystem[0]?.[0]?.id ?? existingSystem[0]?.id ?? null;
@@ -3975,13 +3975,13 @@ Return JSON only.`,
                   const nums = costStr.replace(/[^0-9.,-]/g, '').split(/[-,]/).map(Number).filter(n => n > 0);
                   const costLow = nums[0] ?? null;
                   const costHigh = nums[1] ?? nums[0] ?? null;
-                  const insertResult = await (db as any).execute(
+                  const insertResult = await db.execute(
                     sql`INSERT INTO homeSystemHealth (propertyId, systemType, systemLabel, \`condition\`, conditionNotes, healthScore, aiAssessedAt, aiConditionNotes, estimatedReplacementCostLow, estimatedReplacementCostHigh, photoUrls) VALUES (${propertyId}, ${systemType}, ${issue.name}, ${conditionVal}, ${issue.description}, ${healthScore}, NOW(), ${`AI scan detected: ${issue.description}. Room: ${roomLabel ?? 'Unknown'}.`}, ${costLow}, ${costHigh}, ${JSON.stringify(input.photoUrls)})`
                   ).catch(() => [{ insertId: null }]) as any;
                   systemHealthId = insertResult[0]?.insertId ?? insertResult?.insertId ?? null;
                 } else {
                   // Update existing system health if AI found worse condition
-                  await (db as any).execute(
+                  await db.execute(
                     sql`UPDATE homeSystemHealth SET \`condition\` = IF(healthScore > ${healthScore}, ${conditionVal}, \`condition\`), healthScore = LEAST(healthScore, ${healthScore}), aiAssessedAt = NOW(), aiConditionNotes = ${`AI scan: ${issue.description}. Room: ${roomLabel ?? 'Unknown'}.`}, photoUrls = ${JSON.stringify(input.photoUrls)} WHERE id = ${systemHealthId}`
                   ).catch(() => null);
                 }
@@ -3989,7 +3989,7 @@ Return JSON only.`,
                 // Create maintenance log entry with correct columns
                 if (systemHealthId) {
                   const serviceType = mapServiceType(issue.offerTrack, issue.severity);
-                  await (db as any).execute(
+                  await db.execute(
                     sql`INSERT INTO homeMaintenanceLogs (propertyId, systemHealthId, systemType, serviceType, serviceDescription, servicedBy, servicedAt, conditionAfter, notes) VALUES (${propertyId}, ${systemHealthId}, ${systemType}, ${serviceType}, ${issue.description}, ${'TrustyPro AI Scan'}, NOW(), ${conditionVal}, ${`Estimated: ${issue.estimatedCost}. Room: ${roomLabel ?? 'Unknown'}. Detected by AI scan. Track: ${issue.offerTrack}.`})`
                   ).catch(() => null);
                 }
@@ -4003,7 +4003,7 @@ Return JSON only.`,
               const low = nums[0] ?? null;
               const high = nums[1] ?? nums[0] ?? null;
               const sev = mapSeverity(issue.severity, issue.offerTrack);
-              await (db as any).execute(
+              await db.execute(
                 sql`INSERT INTO homeownerScanOffers (homeownerProfileId, homeownerEmail, propertyId, roomLabel, issueType, issueCategory, issueDescription, severity, estimatedCostLow, estimatedCostHigh, photoUrl, status, source, offerTrack, transformationImageUrl, transformationPrompt, isInsuranceClaim) VALUES (${profileId ?? null}, ${userEmail}, ${propertyId}, ${roomLabel}, ${issue.name ?? 'Home Improvement'}, ${issue.tradeType ?? 'General'}, ${issue.description ?? ''}, ${sev}, ${low}, ${high}, ${input.photoUrls?.[0] ?? null}, 'new', 'ai_scan', ${issue.offerTrack ?? 'repair'}, ${issue.transformationImageUrl ?? null}, ${issue.transformationPrompt ?? null}, ${issue.isInsuranceClaim ? 1 : 0})`
               ).catch(() => null);
             }
@@ -4033,7 +4033,7 @@ Return JSON only.`,
               let matchedPartnerId = 0;
               if (addressZip && issue.tradeType) {
                 try {
-                  const matchRows = await (db as any).execute(
+                  const matchRows = await db.execute(
                     sql`SELECT p.id FROM partners p
                         WHERE p.status = 'approved'
                           AND JSON_CONTAINS(p.serviceCategories, ${JSON.stringify(issue.tradeType)})
@@ -4048,7 +4048,7 @@ Return JSON only.`,
                 } catch (_e) { /* auto-match is best-effort */ }
               }
 
-              await (db as any).execute(
+              await db.execute(
                 sql`INSERT INTO customerDeals (token, opportunityId, referringPartnerId, homeownerName, homeownerEmail, homeownerAddress, issueType, issueCategory, issueDescription, issueDescriptionShort, photoUrl, aiConfidence, estimatedValueLow, estimatedValueHigh, status, expiresAt) VALUES (${token}, 0, ${matchedPartnerId}, ${userName}, ${userEmail}, ${input.address ?? null}, ${issue.name}, ${issue.tradeType ?? 'General'}, ${issue.description}, ${(issue.name ?? '').slice(0, 100)}, ${input.photoUrls?.[0] ?? null}, ${confScore}, ${low}, ${high}, 'draft', ${expiresAt})`
               ).catch(() => null);
             }
@@ -4060,7 +4060,7 @@ Return JSON only.`,
 
           } else if (input.homeownerEmail || input.homeownerPhone) {
             // Public scan with contact info — save lead + scan offers for when they sign up
-            await (db as any).execute(
+            await db.execute(
               sql`INSERT INTO homeownerLeads (homeownerName, homeownerEmail, homeownerPhone, address, photoUrls, aiAnalysis, status, source) VALUES (${input.homeownerName ?? null}, ${input.homeownerEmail ?? null}, ${input.homeownerPhone ?? null}, ${input.address ?? null}, ${JSON.stringify(input.photoUrls)}, ${JSON.stringify(parsed)}, 'new', 'trustypro_scan')`
             ).catch(() => null);
 
@@ -4071,13 +4071,13 @@ Return JSON only.`,
               const low = nums[0] ?? null;
               const high = nums[1] ?? nums[0] ?? null;
               const sev = mapSeverity(issue.severity, issue.offerTrack);
-              await (db as any).execute(
+              await db.execute(
                 sql`INSERT INTO homeownerScanOffers (homeownerProfileId, homeownerEmail, roomLabel, issueType, issueCategory, issueDescription, severity, estimatedCostLow, estimatedCostHigh, photoUrl, status, source, offerTrack, transformationImageUrl, transformationPrompt, isInsuranceClaim) VALUES (${null}, ${input.homeownerEmail ?? null}, ${roomLabel}, ${issue.name ?? 'Home Improvement'}, ${issue.tradeType ?? 'General'}, ${issue.description ?? ''}, ${sev}, ${low}, ${high}, ${input.photoUrls?.[0] ?? null}, 'new', 'ai_scan', ${issue.offerTrack ?? 'repair'}, ${issue.transformationImageUrl ?? null}, ${issue.transformationPrompt ?? null}, ${issue.isInsuranceClaim ? 1 : 0})`
               ).catch(() => null);
             }
 
             // Also create scan history for email-linked retrieval
-            await (db as any).execute(
+            await db.execute(
               sql`INSERT INTO homeownerScanHistory (homeownerProfileId, homeownerEmail, roomLabel, photoUrls, analysisJson, overallCondition, issueCount, upgradeCount, photoQualityFlag) VALUES (${null}, ${input.homeownerEmail ?? null}, ${roomLabel}, ${JSON.stringify(input.photoUrls)}, ${JSON.stringify(parsed)}, ${condition}, ${issueCount}, ${upgradeCount}, ${photoQualityFlag})`
             ).catch(() => null);
 
@@ -4086,7 +4086,7 @@ Return JSON only.`,
               const nameParts = (input.homeownerName || '').split(' ');
               const firstName = nameParts[0] || null;
               const lastName = nameParts.slice(1).join(' ') || null;
-              await (db as any).execute(
+              await db.execute(
                 sql`INSERT IGNORE INTO homeWaitlist (firstName, lastName, email, phone, address, primaryPainPoint, hearAboutUs, status, source)
                     VALUES (${firstName}, ${lastName}, ${input.homeownerEmail}, ${input.homeownerPhone ?? null}, ${input.address ?? null}, ${'AI scan completed'}, ${'trustypro_scan'}, ${'pending'}, ${'trustypro_scan'})`
               ).catch(() => null);
@@ -4116,12 +4116,12 @@ Return JSON only.`,
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO homeownerLeads (homeownerName, homeownerEmail, homeownerPhone, address, photoUrls, status, source) VALUES (${input.name}, ${input.email}, ${input.phone ?? null}, ${input.address}, ${JSON.stringify(input.photoUrls ?? [])}, 'new', 'trustypro_request')`
         );
         // Bridge: auto-add to homeWaitlist so every request counts towards growth goal
         const nameParts = input.name.split(' ');
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT IGNORE INTO homeWaitlist (firstName, lastName, email, phone, address, primaryPainPoint, hearAboutUs, status, source)
               VALUES (${nameParts[0] || null}, ${nameParts.slice(1).join(' ') || null}, ${input.email}, ${input.phone ?? null}, ${input.address}, ${input.serviceType}, ${'trustypro_request'}, ${'pending'}, ${'trustypro_request'})`
         ).catch(() => null);
@@ -4131,7 +4131,7 @@ Return JSON only.`,
           content: `${input.name} (${input.email}) at ${input.address} needs ${input.serviceType}. Urgency: ${input.urgency}. Message: ${input.description}`,
         });
         // Get position for confirmation
-        const leadCountResult = await (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeownerLeads`);
+        const leadCountResult = await db.execute(sql`SELECT COUNT(*) as cnt FROM homeownerLeads`);
         const leadPosition = Number((leadCountResult?.rows?.[0] as any)?.cnt ?? 1);
         return { success: true, position: leadPosition };
       }),
@@ -4140,7 +4140,7 @@ Return JSON only.`,
     getLeads: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT id, homeownerName as name, homeownerEmail as email, homeownerPhone as phone, address, city, zipCode, photoUrls, aiAnalysis, detectedServices, matchedPartnerId, opportunityId, source, status, notes, createdAt, updatedAt FROM homeownerLeads ORDER BY createdAt DESC LIMIT 200`
       );
       return (rows[0] || []) as Array<{
@@ -4160,7 +4160,7 @@ Return JSON only.`,
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE homeownerLeads SET status = ${input.status}, notes = ${input.notes ?? null}, updatedAt = NOW() WHERE id = ${input.leadId}`
         );
         return { success: true };
@@ -4173,17 +4173,17 @@ Return JSON only.`,
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
-        const leadRows = await (db as any).execute(
+        const leadRows = await db.execute(
           sql`SELECT id, homeownerName, address FROM homeownerLeads WHERE id = ${input.leadId}`
         );
         const lead = (leadRows[0] || [])[0];
         if (!lead) throw new TRPCError({ code: 'NOT_FOUND', message: 'Lead not found' });
-        const partnerRows = await (db as any).execute(
+        const partnerRows = await db.execute(
           sql`SELECT id, businessName FROM partners WHERE id = ${input.partnerId} AND status = 'approved'`
         );
         const partner = (partnerRows[0] || [])[0];
         if (!partner) throw new TRPCError({ code: 'NOT_FOUND', message: 'Partner not found or not approved' });
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE homeownerLeads SET matchedPartnerId = ${input.partnerId}, status = 'matched', updatedAt = NOW() WHERE id = ${input.leadId}`
         );
         await createPartnerNotification({
@@ -4204,7 +4204,7 @@ Return JSON only.`,
     getPublicFlags: publicProcedure.query(async () => {
       const db = await getDb();
       if (!db) return { homeownerSignupOpen: false, trustyProLive: false };
-      const rows = await (db as any).execute(sql`SELECT \`key\`, value FROM systemSettings WHERE \`key\` IN ('homeownerSignupOpen', 'trustyProLive')`);
+      const rows = await db.execute(sql`SELECT \`key\`, value FROM systemSettings WHERE \`key\` IN ('homeownerSignupOpen', 'trustyProLive')`);
       const settings: Record<string, string> = {};
       for (const row of (rows[0] as any[])) settings[row.key] = row.value;
       return {
@@ -4222,7 +4222,7 @@ Return JSON only.`,
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR' });
         // Upsert into homeownerLeads as a waitlist entry
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO homeownerLeads (homeownerEmail, homeownerName, address, source, status, createdAt, updatedAt)
               VALUES (${input.email}, ${input.name ?? null}, 'TrustyPro Waitlist', 'trustypro-waitlist', 'new', NOW(), NOW())
               ON DUPLICATE KEY UPDATE updatedAt = NOW()`
@@ -4320,7 +4320,7 @@ Return a JSON object with:
       .query(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        const rows = await (db as any).execute(
+        const rows = await db.execute(
           sql`SELECT * FROM activityLog ORDER BY createdAt DESC LIMIT ${input.limit}`
         );
         let results = rows[0] as Array<{
@@ -4336,7 +4336,7 @@ Return a JSON object with:
     getEventTypes: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-      const rows = await (db as any).execute(sql`SELECT DISTINCT eventType, COUNT(*) as cnt FROM activityLog GROUP BY eventType ORDER BY cnt DESC`);
+      const rows = await db.execute(sql`SELECT DISTINCT eventType, COUNT(*) as cnt FROM activityLog GROUP BY eventType ORDER BY cnt DESC`);
       return (rows[0] as Array<{ eventType: string; cnt: number }>).map(r => ({ eventType: r.eventType, count: Number(r.cnt) }));
     }),
     logEvent: protectedProcedure
@@ -4351,7 +4351,7 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO activityLog (eventType, actorId, actorName, actorRole, entityType, entityId, entityName, description, metadata) VALUES (${input.eventType}, ${ctx.user.id}, ${ctx.user.name ?? null}, ${ctx.user.role}, ${input.entityType ?? null}, ${input.entityId ?? null}, ${input.entityName ?? null}, ${input.description}, ${input.metadata ? JSON.stringify(input.metadata) : null})`
         );
         return { success: true };
@@ -4365,18 +4365,18 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        const rows = await (db as any).execute(sql`SELECT strikeCount FROM partners WHERE id = ${input.partnerId}`);
+        const rows = await db.execute(sql`SELECT strikeCount FROM partners WHERE id = ${input.partnerId}`);
         const current = Number((rows[0] as any[])[0]?.strikeCount ?? 0);
         const newCount = current + 1;
         const now = new Date();
         const adminName = ctx.user.name ?? ctx.user.email ?? 'Admin';
         if (newCount >= 3) {
-          await (db as any).execute(sql`UPDATE partners SET strikeCount = ${newCount}, lastStrikeAt = ${now}, lastStrikeReason = ${input.reason}, suspendedAt = ${now}, suspensionReason = ${'3 strikes: ' + input.reason}, status = 'rejected', updatedAt = ${now} WHERE id = ${input.partnerId}`);
-          await (db as any).execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, createdAt) VALUES (${input.partnerId}, 'suspension', ${input.reason + ' (3rd strike — auto-suspended)'}, ${ctx.user.id}, ${adminName}, ${now})`);
+          await db.execute(sql`UPDATE partners SET strikeCount = ${newCount}, lastStrikeAt = ${now}, lastStrikeReason = ${input.reason}, suspendedAt = ${now}, suspensionReason = ${'3 strikes: ' + input.reason}, status = 'rejected', updatedAt = ${now} WHERE id = ${input.partnerId}`);
+          await db.execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, createdAt) VALUES (${input.partnerId}, 'suspension', ${input.reason + ' (3rd strike — auto-suspended)'}, ${ctx.user.id}, ${adminName}, ${now})`);
           return { newCount, suspended: true };
         }
-        await (db as any).execute(sql`UPDATE partners SET strikeCount = ${newCount}, lastStrikeAt = ${now}, lastStrikeReason = ${input.reason}, updatedAt = ${now} WHERE id = ${input.partnerId}`);
-        await (db as any).execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, createdAt) VALUES (${input.partnerId}, 'strike_issued', ${input.reason}, ${ctx.user.id}, ${adminName}, ${now})`);
+        await db.execute(sql`UPDATE partners SET strikeCount = ${newCount}, lastStrikeAt = ${now}, lastStrikeReason = ${input.reason}, updatedAt = ${now} WHERE id = ${input.partnerId}`);
+        await db.execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, createdAt) VALUES (${input.partnerId}, 'strike_issued', ${input.reason}, ${ctx.user.id}, ${adminName}, ${now})`);
         // Fire n8n workflow for strike issued
         n8n.partnerStrikeIssued({ partnerId: input.partnerId, partnerName: String(input.partnerId), email: '', strikeNumber: newCount, reason: input.reason, issuedByAdminId: ctx.user.id }).catch(() => {});
         return { newCount, suspended: false };
@@ -4386,12 +4386,12 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        const rows = await (db as any).execute(sql`SELECT strikeCount FROM partners WHERE id = ${input.partnerId}`);
+        const rows = await db.execute(sql`SELECT strikeCount FROM partners WHERE id = ${input.partnerId}`);
         const current = Number((rows[0] as any[])[0]?.strikeCount ?? 0);
         const newCount = Math.max(0, current - 1);
         const adminName = ctx.user.name ?? ctx.user.email ?? 'Admin';
-        await (db as any).execute(sql`UPDATE partners SET strikeCount = ${newCount}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
-        await (db as any).execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, resolutionNote, resolvedAt, createdAt) VALUES (${input.partnerId}, 'strike_resolved', ${'Strike cleared by admin'}, ${ctx.user.id}, ${adminName}, ${input.resolutionNote ?? null}, ${new Date()}, ${new Date()})`);
+        await db.execute(sql`UPDATE partners SET strikeCount = ${newCount}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
+        await db.execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, resolutionNote, resolvedAt, createdAt) VALUES (${input.partnerId}, 'strike_resolved', ${'Strike cleared by admin'}, ${ctx.user.id}, ${adminName}, ${input.resolutionNote ?? null}, ${new Date()}, ${new Date()})`);
         return { newCount };
       }),
     unsuspend: adminProcedure
@@ -4400,8 +4400,8 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const adminName = ctx.user.name ?? ctx.user.email ?? 'Admin';
-        await (db as any).execute(sql`UPDATE partners SET suspendedAt = NULL, suspensionReason = NULL, strikeCount = 0, status = 'approved', updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
-        await (db as any).execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, resolutionNote, resolvedAt, createdAt) VALUES (${input.partnerId}, 'reinstatement', ${'Partner reinstated by admin'}, ${ctx.user.id}, ${adminName}, ${input.resolutionNote ?? null}, ${new Date()}, ${new Date()})`);
+        await db.execute(sql`UPDATE partners SET suspendedAt = NULL, suspensionReason = NULL, strikeCount = 0, status = 'approved', updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
+        await db.execute(sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, resolutionNote, resolvedAt, createdAt) VALUES (${input.partnerId}, 'reinstatement', ${'Partner reinstated by admin'}, ${ctx.user.id}, ${adminName}, ${input.resolutionNote ?? null}, ${new Date()}, ${new Date()})`);
         return { success: true };
       }),
     uploadCoi: protectedProcedure
@@ -4409,7 +4409,7 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET coiUrl = ${input.coiUrl}, coiExpiresAt = ${new Date(input.expiresAt)}, coiVerifiedAt = NULL, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
+        await db.execute(sql`UPDATE partners SET coiUrl = ${input.coiUrl}, coiExpiresAt = ${new Date(input.expiresAt)}, coiVerifiedAt = NULL, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
         return { success: true };
       }),
     uploadLicense: protectedProcedure
@@ -4417,7 +4417,7 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET licenseNumber = ${input.licenseNumber}, licenseUrl = ${input.licenseUrl}, licenseVerifiedAt = NULL, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
+        await db.execute(sql`UPDATE partners SET licenseNumber = ${input.licenseNumber}, licenseUrl = ${input.licenseUrl}, licenseVerifiedAt = NULL, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
         return { success: true };
       }),
     verifyCoi: adminProcedure
@@ -4425,7 +4425,7 @@ Return a JSON object with:
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET coiVerifiedAt = ${new Date()}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
+        await db.execute(sql`UPDATE partners SET coiVerifiedAt = ${new Date()}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
         return { success: true };
       }),
     verifyLicense: adminProcedure
@@ -4433,14 +4433,14 @@ Return a JSON object with:
       .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET licenseVerifiedAt = ${new Date()}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
+        await db.execute(sql`UPDATE partners SET licenseVerifiedAt = ${new Date()}, updatedAt = ${new Date()} WHERE id = ${input.partnerId}`);
         return { success: true };
       }),
     requestDataExport: protectedProcedure
       .mutation(async ({ ctx }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET dataExportRequestedAt = ${new Date()}, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
+        await db.execute(sql`UPDATE partners SET dataExportRequestedAt = ${new Date()}, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
         await notifyOwner({ title: 'CCPA Data Export Request', content: `User ${ctx.user.id} (${ctx.user.email ?? 'unknown'}) requested data export. Fulfill within 30 days.` });
         return { success: true };
       }),
@@ -4448,7 +4448,7 @@ Return a JSON object with:
       .mutation(async ({ ctx }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        await (db as any).execute(sql`UPDATE partners SET dataDeleteRequestedAt = ${new Date()}, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
+        await db.execute(sql`UPDATE partners SET dataDeleteRequestedAt = ${new Date()}, updatedAt = ${new Date()} WHERE userId = ${ctx.user.id}`);
         await notifyOwner({ title: 'CCPA Data Deletion Request', content: `User ${ctx.user.id} (${ctx.user.email ?? 'unknown'}) requested data deletion. Fulfill within 45 days.` });
         return { success: true };
       }),
@@ -4458,13 +4458,13 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const cutoff = new Date(Date.now() - input.inactiveDays * 86400000);
-        const rows = await (db as any).execute(sql`SELECT id, businessName, contactEmail, contactPhone, jobsLogged, lastActiveAt, createdAt FROM partners WHERE status = 'approved' AND (lastActiveAt IS NULL OR lastActiveAt < ${cutoff}) ORDER BY lastActiveAt ASC LIMIT 500`);
+        const rows = await db.execute(sql`SELECT id, businessName, contactEmail, contactPhone, jobsLogged, lastActiveAt, createdAt FROM partners WHERE status = 'approved' AND (lastActiveAt IS NULL OR lastActiveAt < ${cutoff}) ORDER BY lastActiveAt ASC LIMIT 500`);
         return (rows[0] as any[]);
       }),
     getComplianceOverview: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-      const rows = await (db as any).execute(sql`SELECT SUM(CASE WHEN strikeCount >= 1 THEN 1 ELSE 0 END) as partnersWithStrikes, SUM(CASE WHEN suspendedAt IS NOT NULL THEN 1 ELSE 0 END) as suspended, SUM(CASE WHEN coiVerifiedAt IS NOT NULL THEN 1 ELSE 0 END) as coiVerified, SUM(CASE WHEN licenseVerifiedAt IS NOT NULL THEN 1 ELSE 0 END) as licenseVerified, SUM(CASE WHEN dataExportRequestedAt IS NOT NULL THEN 1 ELSE 0 END) as pendingDataExports, COUNT(*) as total FROM partners WHERE status = 'approved'`);
+      const rows = await db.execute(sql`SELECT SUM(CASE WHEN strikeCount >= 1 THEN 1 ELSE 0 END) as partnersWithStrikes, SUM(CASE WHEN suspendedAt IS NOT NULL THEN 1 ELSE 0 END) as suspended, SUM(CASE WHEN coiVerifiedAt IS NOT NULL THEN 1 ELSE 0 END) as coiVerified, SUM(CASE WHEN licenseVerifiedAt IS NOT NULL THEN 1 ELSE 0 END) as licenseVerified, SUM(CASE WHEN dataExportRequestedAt IS NOT NULL THEN 1 ELSE 0 END) as pendingDataExports, COUNT(*) as total FROM partners WHERE status = 'approved'`);
       return (rows[0] as any[])[0] ?? {};
     }),
     getAuditLog: adminProcedure
@@ -4474,11 +4474,11 @@ Return a JSON object with:
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         let rows;
         if (input.partnerId) {
-          rows = await (db as any).execute(
+          rows = await db.execute(
             sql`SELECT ce.*, p.businessName FROM complianceEvents ce LEFT JOIN partners p ON ce.partnerId = p.id WHERE ce.partnerId = ${input.partnerId} ORDER BY ce.createdAt DESC LIMIT ${input.limit}`
           );
         } else {
-          rows = await (db as any).execute(
+          rows = await db.execute(
             sql`SELECT ce.*, p.businessName FROM complianceEvents ce LEFT JOIN partners p ON ce.partnerId = p.id ORDER BY ce.createdAt DESC LIMIT ${input.limit}`
           );
         }
@@ -4490,7 +4490,7 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const adminName = ctx.user.name ?? ctx.user.email ?? 'Admin';
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO complianceEvents (partnerId, eventType, reason, adminUserId, adminName, createdAt) VALUES (${input.partnerId}, 'note', ${input.note}, ${ctx.user.id}, ${adminName}, ${new Date()})`
         );
         return { success: true };
@@ -4504,11 +4504,11 @@ Return a JSON object with:
         if (!partner) throw new TRPCError({ code: 'NOT_FOUND', message: 'Partner not found' });
         const stats = await getPartnerStats(input.partnerId);
         const earnedCommissions = await getEarnedCommissionsByPartnerId(input.partnerId);
-        const reviewRows = await (db as any).execute(
+        const reviewRows = await db.execute(
           sql`SELECT id, rating, ratingPunctuality, ratingQuality, ratingCommunication, ratingValue, reviewText, serviceType, createdAt FROM partnerReviews WHERE partnerId = ${input.partnerId} AND flagged = false ORDER BY createdAt DESC LIMIT 20`
         );
         const reviews = (reviewRows[0] as any[]) ?? [];
-        const jobRows = await (db as any).execute(
+        const jobRows = await db.execute(
           sql`SELECT id, serviceAddress, serviceType, status, createdAt FROM jobs WHERE partnerId = ${input.partnerId} ORDER BY createdAt DESC LIMIT 50`
         );
         const recentJobs = (jobRows[0] as any[]) ?? [];
@@ -4521,7 +4521,7 @@ Return a JSON object with:
     getMyThreads: protectedProcedure.query(async ({ ctx }) => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT m.thread_id as threadId, m.body, m.created_at as createdAt, m.sender_type as senderType,
             m.is_read as isRead, m.partner_id as partnerId, p.businessName, p.serviceCategory
             FROM messages m
@@ -4540,10 +4540,10 @@ Return a JSON object with:
       .query(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-        const rows = await (db as any).execute(
+        const rows = await db.execute(
           sql`SELECT * FROM messages WHERE thread_id = ${input.threadId} ORDER BY created_at ASC`
         );
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE messages SET is_read = 1 WHERE thread_id = ${input.threadId} AND recipient_user_id = ${ctx.user.id}`
         );
         return (rows[0] as any[]);
@@ -4559,7 +4559,7 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = Date.now();
-        await (db as any).execute(
+        await db.execute(
           sql`INSERT INTO messages (thread_id, sender_type, sender_user_id, recipient_user_id, homeowner_email, partner_id, body, is_read, created_at)
               VALUES (${input.threadId}, 'homeowner', ${ctx.user.id}, ${input.recipientUserId}, ${ctx.user.email ?? ''}, ${input.partnerId ?? null}, ${input.body}, 0, ${now})`
         );
@@ -4568,11 +4568,165 @@ Return a JSON object with:
     getUnreadCount: protectedProcedure.query(async ({ ctx }) => {
       const db = await getDb();
       if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT COUNT(*) as cnt FROM messages WHERE recipient_user_id = ${ctx.user.id} AND is_read = 0`
       );
       return { count: Number((rows[0] as any[])[0]?.cnt ?? 0) };
     }),
+  }),
+
+  // ── Waitlist (public namespace used by client) ────────────────────────────────
+  waitlist: router({
+    joinProWaitlist: publicProcedure
+      .input(z.object({
+        firstName: z.string().min(1).max(100).trim(),
+        lastName: z.string().min(1).max(100).trim(),
+        email: z.string().email().toLowerCase(),
+        phone: z.string().min(7).max(30),
+        trade: z.string().min(1).max(100),
+        primaryCity: z.string().min(1).max(100),
+        primaryState: z.string().min(2).max(2),
+        referredBy: z.string().max(20).optional(),
+      }))
+      .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).joinProWaitlist(input)),
+
+    joinHomeWaitlist: publicProcedure
+      .input(z.object({
+        firstName: z.string().min(1).max(100).trim(),
+        lastName: z.string().min(1).max(100).trim(),
+        email: z.string().email().toLowerCase(),
+        phone: z.string().max(30).optional(),
+        address: z.string().min(1).max(500),
+        city: z.string().min(1).max(100),
+        state: z.string().min(2).max(2),
+        zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
+        serviceNeeded: z.string().min(1).max(255),
+        referredBy: z.string().max(20).optional(),
+      }))
+      .mutation(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).joinHomeWaitlist(input)),
+
+    getWaitlistStatus: publicProcedure
+      .input(z.object({
+        email: z.string().email().optional(),
+        referralCode: z.string().optional(),
+      }))
+      .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).getWaitlistStatus(input)),
+
+    getLeaderboard: publicProcedure
+      .query(async ({ ctx }) => waitlistRouter.createCaller(ctx).getLeaderboard()),
+
+    getWaitlistMetrics: adminProcedure
+      .query(async ({ ctx }) => waitlistRouter.createCaller(ctx).getWaitlistMetrics()),
+
+    exportWaitlist: adminProcedure
+      .input(z.object({ source: z.enum(['pro', 'home', 'all']) }))
+      .query(async ({ input, ctx }) => waitlistRouter.createCaller(ctx).exportWaitlist(input)),
+
+    getPublicCounts: publicProcedure.query(async () => {
+      const pool = await getPool();
+      if (!pool) return { pros: 0, homes: 0 };
+      const [proRows] = await pool.query("SELECT COUNT(*) as cnt FROM proWaitlist");
+      const [homeRows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist");
+      return {
+        pros: Number((proRows as any[])[0]?.cnt ?? 0),
+        homes: Number((homeRows as any[])[0]?.cnt ?? 0),
+      };
+    }),
+
+    getProWaitlist: adminProcedure.query(async ({ ctx }) => waitlistAdminRouter.createCaller(ctx).getProWaitlist()),
+
+    getHomeWaitlist: adminProcedure
+      .input(z.object({ status: z.string().optional(), limit: z.number().default(200) }))
+      .query(async ({ ctx }) => waitlistAdminRouter.createCaller(ctx).getHomeWaitlist()),
+
+    getAdminList: adminProcedure
+      .input(z.object({ type: z.enum(['pro', 'homeowner']), limit: z.number().default(200) }))
+      .query(async ({ input, ctx }) => {
+        if (input.type === 'pro') return waitlistAdminRouter.createCaller(ctx).getProWaitlist();
+        return waitlistAdminRouter.createCaller(ctx).getHomeWaitlist();
+      }),
+
+    getWaitlistAnalytics: adminProcedure.query(async ({ ctx }) => {
+      const metrics = await waitlistAdminRouter.createCaller(ctx).getWaitlistMetrics();
+      return {
+        ...metrics,
+        byMarket: [] as Array<{ market: string; count: number }>,
+        byZip: [] as Array<{ zip: string; count: number }>,
+        byMotivation: [] as Array<{ motivation: string; count: number }>,
+        byUrgency: [] as Array<{ urgency: string; count: number }>,
+        topReferrers: [] as Array<{ name: string; referralCount: number; email: string }>,
+        recentSignups: [] as Array<{ firstName: string; lastName: string; city: string; createdAt: string }>,
+      };
+    }),
+
+    getHomeWaitlistCount: adminProcedure.query(async () => {
+      const pool = await getPool();
+      if (!pool) return 0;
+      const [rows] = await pool.query("SELECT COUNT(*) as cnt FROM homeWaitlist");
+      return Number((rows as any[])[0]?.cnt ?? 0);
+    }),
+
+    bulkInviteByMarket: adminProcedure
+      .input(z.object({ market: z.string().min(1), type: z.enum(['pro', 'homeowner']).optional() }))
+      .mutation(async () => ({ success: true, invited: 0 })),
+
+    submitCommercialWaitlist: publicProcedure
+      .input(z.object({
+        businessName: z.string().min(2).max(255),
+        contactName: z.string().min(2).max(255),
+        contactEmail: z.string().email().max(255),
+        contactPhone: z.string().max(30).optional(),
+        businessType: z.string().max(100),
+        portfolioSize: z.string().max(100),
+        serviceArea: z.string().max(255).optional(),
+        yearsInBusiness: z.string().max(20).optional(),
+        currentSoftware: z.string().max(255).optional(),
+        establishedJobsPerMonth: z.string().max(20).optional(),
+        notes: z.string().max(2000).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        try {
+          await db.execute(
+            sql`INSERT INTO commercialWaitlist (businessName, contactName, contactEmail, contactPhone, businessType, portfolioSize, serviceArea, yearsInBusiness, currentSoftware, establishedJobsPerMonth, notes, status, createdAt)
+                VALUES (${input.businessName}, ${input.contactName}, ${input.contactEmail}, ${input.contactPhone ?? null}, ${input.businessType}, ${input.portfolioSize}, ${input.serviceArea ?? null}, ${input.yearsInBusiness ?? null}, ${input.currentSoftware ?? null}, ${input.establishedJobsPerMonth ?? null}, ${input.notes ?? null}, 'pending', ${Date.now()})`
+          );
+        } catch (e: any) {
+          if (e?.code === 'ER_DUP_ENTRY') throw new TRPCError({ code: 'CONFLICT', message: 'This email is already on the commercial waitlist.' });
+          throw e;
+        }
+        await notifyOwner({ title: 'New Commercial Waitlist Signup', content: `${input.contactName} (${input.businessName}) joined the ProLnk Exchange commercial waitlist.` });
+        n8n.commercialWaitlistJoined({ email: input.contactEmail, name: input.contactName, company: input.businessName, phone: input.contactPhone }).catch(() => {});
+        return { success: true };
+      }),
+
+    submitAdvertiserWaitlist: publicProcedure
+      .input(z.object({
+        businessName: z.string().min(2).max(255),
+        contactName: z.string().min(2).max(255),
+        contactEmail: z.string().email().max(255),
+        contactPhone: z.string().max(30).optional(),
+        adBudget: z.string().max(50).optional(),
+        targetMarket: z.string().max(255).optional(),
+        notes: z.string().max(2000).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const pool = await getPool();
+        if (!pool) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
+        try {
+          const id = Math.floor(Math.random() * 2_000_000_000) + 1;
+          await pool.query(
+            "INSERT INTO advertiserWaitlist (id, businessName, contactName, contactEmail, contactPhone, adBudget, targetMarket, notes, status, createdAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending', NOW())",
+            [id, input.businessName, input.contactName, input.contactEmail, input.contactPhone ?? null, input.adBudget ?? null, input.targetMarket ?? null, input.notes ?? null]
+          );
+        } catch (e: any) {
+          if (e?.code === 'ER_DUP_ENTRY') throw new TRPCError({ code: 'CONFLICT', message: 'Already registered.' });
+          throw e;
+        }
+        await notifyOwner({ title: 'New Advertiser Waitlist Signup', content: `${input.contactName} (${input.businessName}) joined the ProLnk advertiser waitlist.` });
+        return { success: true };
+      }),
   }),
 
   // ── Waitlist (ProLnk Pros + TrustyPro Homeowners) ─────────────────────────────
@@ -4603,13 +4757,13 @@ Return a JSON object with:
 
         let row: any = null;
         if (input.email) {
-          const r = await (db as any).execute(
+          const r = await db.execute(
             sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE email = ${input.email.toLowerCase()} LIMIT 1`
           );
           row = (r?.[0]?.[0]) ?? (r?.[0]);
         }
         if (!row && input.referralCode) {
-          const r = await (db as any).execute(
+          const r = await db.execute(
             sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE id = ${Number(input.referralCode.replace(/\D/g, '')) || 0} LIMIT 1`
           );
           row = (r?.[0]?.[0]) ?? (r?.[0]);
@@ -4617,11 +4771,11 @@ Return a JSON object with:
         if (!row) return null;
 
         const [countResult] = await Promise.all([
-          (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt <= ${row.createdAt}`),
+          db.execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt <= ${row.createdAt}`),
         ]);
 
         const position = Number((countResult?.[0]?.[0] as any)?.cnt ?? 1);
-        const myReferralsResult = await (db as any).execute(
+        const myReferralsResult = await db.execute(
           sql`SELECT firstName, businessType FROM proWaitlist WHERE id != ${row.id} LIMIT 0`
         );
 
@@ -4653,7 +4807,7 @@ Return a JSON object with:
     getLeaderboard: publicProcedure.query(async () => {
       const db = await getDb();
       if (!db) return [];
-      const r = await (db as any).execute(
+      const r = await db.execute(
         sql`SELECT id, firstName, LEFT(lastName, 1) as lastInitial, businessType, primaryCity, primaryState FROM proWaitlist ORDER BY id ASC LIMIT 10`
       );
       const rows: any[] = r?.[0] || [];
@@ -4801,10 +4955,10 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         } else {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         }
         return rows;
@@ -4818,10 +4972,10 @@ Return a JSON object with:
         const statusFilter = input.status && input.status !== 'all' ? input.status : null;
         let rows: any[];
         if (statusFilter) {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist WHERE status = ${statusFilter} ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         } else {
-          const [r] = await (db as any).execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
+          const [r] = await db.execute(sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, homeType, desiredProjects, status, referredBy, adminNotes, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT ${input.limit}`);
           rows = Array.isArray(r) ? r : (r as any).rows ?? [];
         }
         return rows;
@@ -4834,11 +4988,11 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
-        const [[partnerRows]] = await (db as any).execute(
+        const [[partnerRows]] = await db.execute(
           sql`SELECT id, firstName, email, tier, referralCode, waitlistPosition FROM proWaitlist WHERE id = ${input.id} LIMIT 1`
         ) as any;
         const partner = Array.isArray(partnerRows) ? partnerRows[0] : partnerRows;
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE proWaitlist SET status = ${input.status}, adminNotes = ${input.adminNotes ?? null}, approvedAt = ${input.status === 'approved' ? now : null}, approvedBy = ${input.status === 'approved' ? ctx.user.id : null}, invitedAt = ${input.status === 'invited' ? now : null}, updatedAt = ${now} WHERE id = ${input.id}`
         );
         if (partner?.email) {
@@ -4875,7 +5029,7 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE homeWaitlist SET status = ${input.status}, adminNotes = ${input.adminNotes ?? null}, approvedAt = ${input.status === 'approved' ? now : null}, approvedBy = ${input.status === 'approved' ? ctx.user.id : null}, invitedAt = ${input.status === 'invited' ? now : null}, updatedAt = ${now} WHERE id = ${input.id}`
         );
         return { success: true };
@@ -4890,10 +5044,10 @@ Return a JSON object with:
         const now = new Date();
         const table = input.type === 'pros' ? 'proWaitlist' : 'homeWaitlist';
         const result = input.tier
-          ? await (db as any).execute(
+          ? await db.execute(
               sql`UPDATE ${sql.raw(table)} SET status = 'approved', approvedAt = ${now}, approvedBy = ${ctx.user.id} WHERE status = 'pending' AND tier = ${input.tier}`
             )
-          : await (db as any).execute(
+          : await db.execute(
               sql`UPDATE ${sql.raw(table)} SET status = 'approved', approvedAt = ${now}, approvedBy = ${ctx.user.id} WHERE status = 'pending'`
             );
         return { success: true, updated: result[0]?.affectedRows ?? 0 };
@@ -4903,8 +5057,8 @@ Return a JSON object with:
     getWaitlistStats: adminProcedure.query(async () => {
       const db = await getDb();
       if (!db) return { pros: { total: 0, pending: 0, approved: 0 }, homes: { total: 0, pending: 0, approved: 0 } };
-      const [proRows] = await (db as any).execute(sql`SELECT status, COUNT(*) as cnt FROM proWaitlist GROUP BY status`) as any[];
-      const [homeRows] = await (db as any).execute(sql`SELECT status, COUNT(*) as cnt FROM homeWaitlist GROUP BY status`) as any[];
+      const [proRows] = await db.execute(sql`SELECT status, COUNT(*) as cnt FROM proWaitlist GROUP BY status`) as any[];
+      const [homeRows] = await db.execute(sql`SELECT status, COUNT(*) as cnt FROM homeWaitlist GROUP BY status`) as any[];
       const tally = (rows: any[]) => {
         const r = { total: 0, pending: 0, approved: 0, rejected: 0, invited: 0 };
         for (const row of (rows || [])) { const n = Number(row.cnt); r.total += n; r[row.status as keyof typeof r] = n; }
@@ -4925,12 +5079,12 @@ Return a JSON object with:
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
         const table = input.type === 'pro' ? 'proWaitlist' : 'homeWaitlist';
-        const rows = await (db as any).execute(
+        const rows = await db.execute(
           sql`SELECT * FROM ${sql.raw(table)} WHERE id = ${input.id} LIMIT 1`
         ) as any;
         const entry = rows?.[0]?.[0] ?? rows?.[0];
         if (!entry) throw new TRPCError({ code: 'NOT_FOUND', message: 'Waitlist entry not found' });
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE ${sql.raw(table)} SET status = 'invited', invitedAt = ${now}, updatedAt = ${now} WHERE id = ${input.id}`
         );
         const origin = input.origin ?? 'https://prolnk.io';
@@ -4977,7 +5131,7 @@ Return a JSON object with:
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         try {
-          await (db as any).execute(
+          await db.execute(
             sql`INSERT INTO commercialWaitlist (businessName, contactName, contactEmail, contactPhone, businessType, portfolioSize, serviceArea, yearsInBusiness, currentSoftware, establishedJobsPerMonth, notes, status, createdAt)
                 VALUES (${input.businessName}, ${input.contactName}, ${input.contactEmail}, ${input.contactPhone ?? null}, ${input.businessType}, ${input.portfolioSize}, ${input.serviceArea ?? null}, ${input.yearsInBusiness ?? null}, ${input.currentSoftware ?? null}, ${input.establishedJobsPerMonth ?? null}, ${input.notes ?? null}, 'pending', ${Date.now()})`
           );
@@ -5197,7 +5351,7 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(
+        await db.execute(
           sql`UPDATE partners SET customCommissionRate = ${input.customRate}, customRateReason = ${input.reason} WHERE id = ${input.partnerId}`
         );
         logAdminAction(ctx.user.id, "override_commission_rate", "partner", input.partnerId, { customRate: input.customRate, reason: input.reason });
@@ -5209,7 +5363,7 @@ Return a JSON object with:
       .query(async ({ input }) => {
         const db = await getDb();
         if (!db) return [];
-        const rows = await (db as any).execute(sql`
+        const rows = await db.execute(sql`
           SELECT
             DATE_FORMAT(c.paidAt, '%Y-%m') AS month,
             COUNT(*) AS totalCommissions,
@@ -5232,7 +5386,7 @@ Return a JSON object with:
       .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           INSERT INTO aiTrainingDataset (sourcePhotoId, flagType, adminNotes, flaggedBy, createdAt)
           VALUES (${input.photoQueueItemId}, ${input.flagType}, ${input.notes ?? null}, ${ctx.user.id}, NOW())
         `);
@@ -5252,13 +5406,13 @@ Return a JSON object with:
         let affected = 0;
         for (const pid of input.partnerIds) {
           if (input.action === "approve") {
-            await (db as any).execute(sql`UPDATE partners SET status = 'approved', approvedAt = NOW() WHERE id = ${pid}`);
+            await db.execute(sql`UPDATE partners SET status = 'approved', approvedAt = NOW() WHERE id = ${pid}`);
           } else if (input.action === "suspend") {
-            await (db as any).execute(sql`UPDATE partners SET suspended = 1, suspendedAt = NOW() WHERE id = ${pid}`);
+            await db.execute(sql`UPDATE partners SET suspended = 1, suspendedAt = NOW() WHERE id = ${pid}`);
           } else if (input.action === "unsuspend") {
-            await (db as any).execute(sql`UPDATE partners SET suspended = 0, suspendedAt = NULL WHERE id = ${pid}`);
+            await db.execute(sql`UPDATE partners SET suspended = 0, suspendedAt = NULL WHERE id = ${pid}`);
           } else if (input.action === "send_message" && input.message) {
-            await (db as any).execute(sql`
+            await db.execute(sql`
               INSERT INTO partnerNotifications (partnerId, type, title, message, createdAt)
               VALUES (${pid}, 'system', 'Admin Message', ${input.message}, NOW())
             `);

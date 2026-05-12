@@ -541,8 +541,18 @@ export default function ProLnkMediaSite() {
   return (
     <div style={{ background: NAVY, fontFamily: "Inter, system-ui, sans-serif", color: CREAM, minHeight: "100vh" }}>
       <Helmet>
-        <title>ProLnk Media — Reach Home Service Professionals in DFW</title>
-        <meta name="description" content="Advertise to 100K+ verified home service professionals and 150K+ homeowners. Trade-level targeting, event-triggered ads, category exclusivity." />
+        <title>ProLnk Media — The Future of Home Services</title>
+        <meta name="description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
+        <meta property="og:title" content="ProLnk Media — The Future of Home Services" />
+        <meta property="og:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/media" />
+        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProLnk Media — The Future of Home Services" />
+        <meta name="twitter:description" content="AI-powered home service network changing how professionals earn. See the ProLnk story." />
+        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <link rel="canonical" href="https://prolnk.io/media" />
       </Helmet>
       <Nav onCta={() => setModalOpen(true)} />
       <Hero onCta={() => setModalOpen(true)} />

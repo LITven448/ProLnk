@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Loader2, Users, ChevronRight, Network, TrendingUp, DollarSign } from "lucide-react";
@@ -220,6 +221,20 @@ export default function NetworkTree() {
 
   return (
     <div className="min-h-screen" style={{ background: "#0A1628" }}>
+      <Helmet>
+        <title>ProLnk Partner Network Tree — Your Recruiting Downline</title>
+        <meta name="description" content="View your 4-level partner network tree and calculate override income potential. Track recruits and network earnings in real time." />
+        <meta property="og:title" content="ProLnk Partner Network Tree" />
+        <meta property="og:description" content="View your 4-level partner network tree and calculate override income potential. Track recruits and network earnings in real time." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/network-tree" />
+        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProLnk Partner Network Tree" />
+        <meta name="twitter:description" content="View your 4-level partner network tree and calculate override income potential." />
+        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <link rel="canonical" href="https://prolnk.io/network-tree" />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-4 py-10">
 
         {/* Header */}

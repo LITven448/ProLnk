@@ -64,8 +64,8 @@ function TierBadge({ tier }: { tier?: string }) {
 export default function Leaderboard() {
   const { data: result, isLoading } = trpc.proWaitlist.getLeaderboard.useQuery();
 
-  const leaders: any[] = Array.isArray(result) ? result : (result as any)?.leaders ?? [];
-  const totalSignups: number = (result as any)?.totalSignups ?? leaders.length;
+  const leaders = Array.isArray(result) ? result : [];
+  const totalSignups: number = leaders.length;
   const pctFilled = Math.min(Math.round((totalSignups / TOTAL_SLOTS) * 100), 100);
   const spotsLeft = Math.max(TOTAL_SLOTS - totalSignups, 0);
 

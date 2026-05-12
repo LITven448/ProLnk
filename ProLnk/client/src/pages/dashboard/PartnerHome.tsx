@@ -5,7 +5,8 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import {
   Copy, Check, Award, Users, TrendingUp, DollarSign,
   Share2, ChevronRight, Loader2, Trophy, Zap, Star,
-  ArrowUpRight, Crown, BarChart3, Gift, X, Rocket
+  ArrowUpRight, Crown, BarChart3, Gift, X, Rocket,
+  Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square
 } from "lucide-react";
 
 function OnboardingBanner() {
@@ -304,6 +305,220 @@ function EarningsCalculator({ tier }: { tier: string }) {
   );
 }
 
+function TrialBanner({ joinedAt }: { joinedAt?: string | null }) {
+  const trialDays = 90;
+  const daysElapsed = joinedAt
+    ? Math.floor((Date.now() - new Date(joinedAt).getTime()) / 86400000)
+    : 0;
+  const daysLeft = Math.max(0, trialDays - daysElapsed);
+
+  return (
+    <div
+      className="rounded-2xl px-5 py-4 flex items-center gap-4"
+      style={{
+        background: "linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.05))",
+        border: "1px solid rgba(59,130,246,0.3)",
+      }}
+    >
+      <div
+        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+        style={{ background: "rgba(59,130,246,0.15)" }}
+      >
+        <Clock size={18} style={{ color: "#3b82f6" }} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-bold text-white">
+          Your 90-day free trial — {daysLeft} days remaining
+        </p>
+        <p className="text-xs text-gray-400 mt-0.5">
+          No credit card required until your trial ends. You won't be charged automatically.
+        </p>
+      </div>
+      <div
+        className="flex-shrink-0 text-right"
+        style={{ minWidth: 48 }}
+      >
+        <p className="text-2xl font-bold" style={{ color: "#3b82f6" }}>{daysLeft}</p>
+        <p className="text-[10px] text-gray-500 uppercase tracking-wider">days left</p>
+      </div>
+    </div>
+  );
+}
+
+function EarningsSummaryCard() {
+  return (
+    <div
+      className="rounded-2xl p-6"
+      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(34,197,94,0.12)" }}>
+            <DollarSign size={18} style={{ color: "#22c55e" }} />
+          </div>
+          <div>
+            <h3 className="font-bold text-white text-sm">Your Earnings This Month</h3>
+            <p className="text-xs text-gray-400">May 2026 — trial period</p>
+          </div>
+        </div>
+        <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#22c55e", border: "1px solid rgba(34,197,94,0.25)" }}>
+          Getting Started
+        </span>
+      </div>
+      <div className="grid grid-cols-3 gap-4 mb-4">
+        {[
+          { label: "Jobs Completed", value: "$0", sub: "Log your first job →" },
+          { label: "Commissions Earned", value: "$0", sub: "Earned per job logged" },
+          { label: "Network Earnings", value: "$0", sub: "From your downline" },
+        ].map(({ label, value, sub }) => (
+          <div
+            key={label}
+            className="rounded-xl p-4 text-center"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+          >
+            <p className="text-2xl font-bold text-white mb-1">{value}</p>
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-1">{label}</p>
+            <p className="text-[10px] text-gray-600">{sub}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-xs text-gray-500 text-center">
+        Earnings activate once the platform launches. Log jobs now to build your history.
+      </p>
+    </div>
+  );
+}
+
+function QuickActionCards() {
+  const actions = [
+    { label: "Log a Job", description: "Record completed work", icon: Briefcase, href: "/job-log", color: "#F5E642", bg: "rgba(245,230,66,0.12)", border: "rgba(245,230,66,0.3)" },
+    { label: "Upload Photo", description: "Add job photos", icon: Camera, href: "/photo-upload", color: "#3b82f6", bg: "rgba(59,130,246,0.12)", border: "rgba(59,130,246,0.3)" },
+    { label: "Invite a Pro", description: "Earn override income", icon: UserPlus, href: "/dashboard/referral", color: "#22c55e", bg: "rgba(34,197,94,0.12)", border: "rgba(34,197,94,0.3)" },
+    { label: "View Network", description: "See your downline", icon: Network, href: "/network-tree", color: "#8b5cf6", bg: "rgba(139,92,246,0.12)", border: "rgba(139,92,246,0.3)" },
+  ];
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {actions.map(({ label, description, icon: Icon, href, color, bg, border }) => (
+        <Link key={label} href={href}>
+          <div
+            className="rounded-2xl p-5 flex flex-col gap-3 cursor-pointer transition-all hover:scale-[1.02]"
+            style={{ background: bg, border: `1px solid ${border}` }}
+          >
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center"
+              style={{ background: "rgba(255,255,255,0.08)" }}
+            >
+              <Icon size={20} style={{ color }} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-white">{label}</p>
+              <p className="text-xs text-gray-400 mt-0.5">{description}</p>
+            </div>
+            <ChevronRight size={14} style={{ color }} className="self-end" />
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function GettingStartedChecklist() {
+  const STORAGE_KEY = "prolnk_checklist_v1";
+
+  const [checked, setChecked] = useState<Set<string>>(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? new Set(JSON.parse(stored)) : new Set();
+    } catch {
+      return new Set();
+    }
+  });
+
+  const toggle = (key: string) => {
+    setChecked((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(next)));
+      return next;
+    });
+  };
+
+  const items = [
+    { key: "profile", label: "Complete your profile", href: "/partner-onboarding" },
+    { key: "job", label: "Log your first job", href: "/job-log" },
+    { key: "invite", label: "Invite 5 pros", href: "/dashboard/referral" },
+    { key: "home", label: "Document your first home", href: "/home-health" },
+  ];
+
+  const completedCount = items.filter((i) => checked.has(i.key)).length;
+
+  return (
+    <div
+      className="rounded-2xl p-6"
+      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
+            <CheckSquare size={18} style={{ color: "#F5E642" }} />
+          </div>
+          <div>
+            <h3 className="font-bold text-white text-sm">Getting Started</h3>
+            <p className="text-xs text-gray-400">{completedCount} of {items.length} complete</p>
+          </div>
+        </div>
+        <div className="flex gap-1">
+          {items.map((item) => (
+            <div
+              key={item.key}
+              className="w-2 h-2 rounded-full"
+              style={{ background: checked.has(item.key) ? "#22c55e" : "rgba(255,255,255,0.12)" }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="w-full h-1.5 rounded-full mb-5 overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
+        <div
+          className="h-full rounded-full transition-all duration-500"
+          style={{ width: `${(completedCount / items.length) * 100}%`, background: "linear-gradient(90deg, #22c55e, #16a34a)" }}
+        />
+      </div>
+
+      <div className="space-y-2">
+        {items.map(({ key, label, href }) => {
+          const done = checked.has(key);
+          return (
+            <div
+              key={key}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all"
+              style={{ background: done ? "rgba(34,197,94,0.06)" : "rgba(255,255,255,0.03)" }}
+            >
+              <button onClick={() => toggle(key)} className="flex-shrink-0 transition-all">
+                {done
+                  ? <CheckSquare size={18} style={{ color: "#22c55e" }} />
+                  : <Square size={18} className="text-gray-500" />}
+              </button>
+              <p className={`flex-1 text-sm font-medium ${done ? "line-through text-gray-500" : "text-white"}`}>
+                {label}
+              </p>
+              {!done && (
+                <Link href={href}>
+                  <span className="text-xs font-semibold flex items-center gap-1" style={{ color: "#F5E642" }}>
+                    Go <ChevronRight size={11} />
+                  </span>
+                </Link>
+              )}
+              {done && <Check size={14} style={{ color: "#22c55e" }} className="flex-shrink-0" />}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function PartnerHome() {
@@ -376,6 +591,9 @@ export default function PartnerHome() {
         {/* ── Onboarding Banner ──────────────────────────────────────────── */}
         <OnboardingBanner />
 
+        {/* ── Trial Status Banner ─────────────────────────────────────────── */}
+        {isFoundingNetwork && <TrialBanner joinedAt={status.createdAt} />}
+
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -434,6 +652,12 @@ export default function PartnerHome() {
             color="#22c55e"
           />
         </div>
+
+        {/* ── Earnings Summary ────────────────────────────────────────────── */}
+        <EarningsSummaryCard />
+
+        {/* ── Quick Actions ───────────────────────────────────────────────── */}
+        <QuickActionCards />
 
         {/* ── Referral Link Card ──────────────────────────────────────────── */}
         <div
@@ -726,6 +950,9 @@ export default function PartnerHome() {
             )}
           </div>
         </div>
+
+        {/* ── Getting Started Checklist ───────────────────────────────────── */}
+        <GettingStartedChecklist />
 
         {/* ── Waitlist CTA (if not in founding network) ──────────────────── */}
         {!isFoundingNetwork && (

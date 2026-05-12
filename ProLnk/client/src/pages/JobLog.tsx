@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
   CheckCircle, Loader2, MapPin, Wrench, DollarSign, FileText, Camera, ArrowLeft,
+  Network, Download, Plus, BarChart2,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -22,6 +23,12 @@ const JOB_TYPES = [
   "Other",
 ];
 
+function parseJobValueFromNotes(notes: string | null | undefined): number {
+  if (!notes) return 0;
+  const match = notes.match(/Job value: \$(\d+(?:\.\d+)?)/);
+  return match ? Number(match[1]) : 0;
+}
+
 export default function JobLog() {
   const { user, isAuthenticated, loading: authLoading } = useAuth();
   const [form, setForm] = useState({
@@ -32,6 +39,18 @@ export default function JobLog() {
     photosUploaded: false,
   });
   const [submitted, setSubmitted] = useState(false);
+
+  const myJobsQuery = trpc.partners.getMyJobs.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
+
+  const jobStats = (() => {
+    const jobList = myJobsQuery.data ?? [];
+    const totalJobs = jobList.length;
+    const totalValue = jobList.reduce((sum: number, j: { notes?: string | null }) => sum + parseJobValueFromNotes(j.notes), 0);
+    const avgJobSize = totalJobs > 0 ? totalValue / totalJobs : 0;
+    return { totalJobs, totalValue, avgJobSize };
+  })();
 
   const logJobMutation = trpc.jobs.logJob.useMutation({
     onSuccess: () => {
@@ -145,12 +164,75 @@ export default function JobLog() {
             </button>
           </Link>
 
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-white mb-2">Log a Job</h1>
-            <p className="text-white/50 text-sm">
-              Record a completed job. Upload photos separately to activate AI opportunity detection.
-            </p>
+          {/* Header row */}
+          <div className="flex items-start justify-between gap-3 mb-6 flex-wrap">
+            <div>
+              <h1 className="text-3xl font-bold text-white mb-1">Log a Job</h1>
+              <p className="text-white/50 text-sm">
+                Record a completed job. Upload photos to activate AI opportunity detection.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-white/20 text-white/60 hover:bg-white/10 text-xs gap-1.5"
+                onClick={() => {
+                  const rows = (myJobsQuery.data ?? []).map((j) => [
+                    j.serviceAddress,
+                    j.serviceType ?? "",
+                    parseJobValueFromNotes(j.notes),
+                    j.status,
+                    j.createdAt ? new Date(j.createdAt).toLocaleDateString() : "",
+                  ].join(",")).join("\n");
+                  const csv = `Address,Type,Value,Status,Date\n${rows}`;
+                  const blob = new Blob([csv], { type: "text/csv" });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = "job-log.csv";
+                  a.click();
+                  URL.revokeObjectURL(url);
+                  toast.success("Job log exported");
+                }}
+              >
+                <Download className="w-3.5 h-3.5" /> Export
+              </Button>
+              <a
+                href="/job-complete"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
+              >
+                <Network className="w-3.5 h-3.5" /> New Job + Commission
+              </a>
+            </div>
+          </div>
+
+          {/* Summary stats */}
+          <div className="grid grid-cols-3 gap-3 mb-8">
+            {[
+              {
+                label: "Total Jobs",
+                value: myJobsQuery.isLoading ? "—" : String(jobStats.totalJobs),
+                icon: <BarChart2 className="w-4 h-4 text-[#F5E642]" />,
+              },
+              {
+                label: "Total Value",
+                value: myJobsQuery.isLoading ? "—" : jobStats.totalValue > 0 ? `$${jobStats.totalValue.toLocaleString()}` : "$0",
+                icon: <DollarSign className="w-4 h-4 text-[#F5E642]" />,
+              },
+              {
+                label: "Avg Job Size",
+                value: myJobsQuery.isLoading ? "—" : jobStats.avgJobSize > 0 ? `$${Math.round(jobStats.avgJobSize).toLocaleString()}` : "—",
+                icon: <Network className="w-4 h-4 text-[#F5E642]" />,
+              },
+            ].map(({ label, value, icon }) => (
+              <div key={label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center">
+                <div className="flex justify-center mb-1">{icon}</div>
+                <p className="text-lg font-bold text-white">{value}</p>
+                <p className="text-xs text-white/40">{label}</p>
+              </div>
+            ))}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">

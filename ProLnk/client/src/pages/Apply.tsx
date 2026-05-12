@@ -275,6 +275,17 @@ export default function Apply() {
           {/* Right Column -- Form */}
           <div className="lg:col-span-3">
             <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              {/* Step indicator */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold text-[#0A1628] uppercase tracking-widest">Step 1 of 2: Tell us about your business</span>
+                  <span className="text-xs text-gray-400">Step 2: Onboarding call</span>
+                </div>
+                <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full w-1/2 bg-[#0A1628] rounded-full" />
+                </div>
+              </div>
+
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-xl bg-[#0A1628]/10 border border-[#0A1628]/20 flex items-center justify-center">
                   <Zap className="w-5 h-5 text-[#0A1628]/70" />
@@ -291,7 +302,8 @@ export default function Apply() {
                   <div className="space-y-4">
                     <div>
                       <Label htmlFor="businessName" className="text-sm font-medium text-gray-700 mb-1.5 block">Business Name <span className="text-red-400">*</span></Label>
-                      <Input id="businessName" placeholder="Your business name" {...register("businessName")} className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#0A1628]" />
+                      <Input id="businessName" placeholder="e.g. Rivera Plumbing LLC" {...register("businessName")} className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#0A1628]" />
+                      <p className="text-xs text-gray-400 mt-1">The name you operate under — this appears on your partner profile.</p>
                       {errors.businessName && <p className="text-red-400 text-xs mt-1">{errors.businessName.message}</p>}
                     </div>
                     <div>
@@ -309,10 +321,12 @@ export default function Apply() {
                           ))}
                         </SelectContent>
                       </Select>
+                      <p className="text-xs text-gray-400 mt-1">Choose your main trade — you can list additional services after joining.</p>
                       {errors.businessType && <p className="text-red-400 text-xs mt-1">{errors.businessType.message}</p>}
                     </div>
                     <div>
-                      <Label className="text-sm font-medium text-gray-700 mb-1.5 block">Business Address <span className="text-red-400">*</span></Label>
+                      <Label className="text-sm font-medium text-gray-700 mb-1.5 block">Business Address & Service Area <span className="text-red-400">*</span></Label>
+                      <p className="text-xs text-gray-400 mb-2">Where you're based and how far you're willing to travel for jobs.</p>
                       <div className="space-y-2">
                         <Input
                           placeholder="Street address"
@@ -363,14 +377,14 @@ export default function Apply() {
                       {errors.website && <p className="text-red-400 text-xs mt-1">{errors.website.message}</p>}
                     </div>
                     <div>
-                      <Label htmlFor="description" className="text-sm font-medium text-gray-700 mb-1.5 block">Tell us about your business <span className="text-gray-600 font-normal">(optional)</span></Label>
-                      <Textarea id="description" placeholder="How long have you been operating? What makes your work stand out?" rows={3} {...register("description")} className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#0A1628] resize-none" />
+                      <Label htmlFor="description" className="text-sm font-medium text-gray-700 mb-1.5 block">Tell us what makes you stand out <span className="text-gray-400 font-normal">(optional)</span></Label>
+                      <Textarea id="description" placeholder="Years in business, licenses held, what your customers say about you..." rows={3} {...register("description")} className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#0A1628] resize-none" />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-4">Your Contact Information</p>
+                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-4">Your Contact Information — We'll reach out within 24 hrs</p>
                   <div className="space-y-4">
                     <div>
                       <Label htmlFor="contactName" className="text-sm font-medium text-gray-700 mb-1.5 block">Your Full Name <span className="text-red-400">*</span></Label>

@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Bell, X, CheckCheck, Megaphone, DollarSign, UserCheck, AlertCircle, Zap } from "lucide-react";
 import { trpc } from "@/lib/trpc";

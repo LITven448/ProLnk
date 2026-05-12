@@ -65,6 +65,7 @@ import EarningsHistory from "./pages/EarningsHistory";
 // Wave pages -- Partner Portal
 import CommissionLedger from "./pages/CommissionLedger";
 import Onboarding from "./pages/Onboarding";
+import PartnerOnboarding from "./pages/PartnerOnboarding";
 import PhotoUpload from "./pages/PhotoUpload";
 import PhotoGuidelines from "./pages/PhotoGuidelines";
 import NetworkFeed from "./pages/NetworkFeed";
@@ -138,6 +139,8 @@ import CustomerDealPage from "./pages/CustomerDealPage";
 import PartnerProfile from "./pages/PartnerProfile";
 import Exchange from "./pages/Exchange";
 import ExchangeLanding from "./pages/ExchangeLanding";
+import ExchangeJobs from "./pages/ExchangeJobs";
+import ExchangePostJob from "./pages/ExchangePostJob";
 import ExchangeProfile from "./pages/ExchangeProfile";
 import PublicLeaderboard from "./pages/Leaderboard";
 import NetworkStats from "./pages/NetworkStats";
@@ -526,6 +529,7 @@ function Router() {
       <Route path="/dashboard/commissions" component={CommissionLedger} />
       <Route path="/commission-ledger" component={CommissionLedger} />
       <Route path="/onboarding" component={Onboarding} />
+      <Route path="/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/job/photo" component={PhotoUpload} />
       <Route path="/photo-upload" component={PhotoUpload} />
       <Route path="/dashboard/photo-guidelines" component={PhotoGuidelines} />
@@ -796,6 +800,8 @@ function Router() {
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/exchange" component={ExchangeLanding} />
+      <Route path="/exchange/jobs" component={ExchangeJobs} />
+      <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />

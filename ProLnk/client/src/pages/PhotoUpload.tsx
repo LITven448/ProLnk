@@ -1,6 +1,6 @@
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
-import { Camera, Upload, Zap, CheckCircle, AlertCircle, X, Image, Loader2, MapPin, Home, ClipboardList, Shield } from "lucide-react";
+import { Camera, Upload, Zap, CheckCircle, AlertCircle, X, Image, Loader2, MapPin, Home, ClipboardList, Shield, ArrowRight, Network, DollarSign } from "lucide-react";
 import { useState, useRef } from "react";
 import { toast } from "sonner";
 import { useLocation } from "wouter";
@@ -15,6 +15,18 @@ const SEVERITY_STYLES: Record<Severity, { badge: string; header: string; dot: st
 };
 
 const SEVERITY_ORDER: Record<Severity, number> = { urgent: 0, high: 1, medium: 2, low: 3 };
+
+const DETECTION_CATEGORIES = [
+  { trade: "Roofing", items: ["Shingle damage", "Missing shingles", "Flashing failure", "Moss/algae growth", "Gutter separation", "Sagging ridge", "Chimney cracks", "Fascia rot"] },
+  { trade: "HVAC", items: ["AC unit age", "Condenser condition", "Refrigerant leak signs", "Ductwork damage", "Air handler rust", "Clogged coils", "Outdoor unit debris"] },
+  { trade: "Plumbing", items: ["Pipe corrosion", "Water stains", "Drain backup signs", "Hose bib damage", "Sump pump issues", "Water heater age", "Pressure valve wear"] },
+  { trade: "Electrical", items: ["Panel age/condition", "Exposed wiring", "Meter condition", "Outdoor outlet damage", "Knob-and-tube signs", "Junction box issues"] },
+  { trade: "Structural", items: ["Foundation cracks", "Wall bowing", "Beam deterioration", "Post settling", "Crawl space moisture", "Joist damage"] },
+  { trade: "Siding", items: ["Warped panels", "Rot sections", "Paint peeling", "Caulk failure", "Impact damage", "Mold infiltration"] },
+  { trade: "Windows", items: ["Seal failure", "Frame rot", "Glazing crack", "Sash damage", "Trim deterioration"] },
+  { trade: "Landscaping", items: ["Drainage grading", "Tree proximity", "Root heave", "Erosion", "Overgrown vegetation"] },
+  { trade: "Other", items: ["Pest entry points", "Deck condition", "Driveway cracks", "Walkway hazards", "Garage door wear", "Fence damage", "Pool equipment"] },
+];
 
 const TRADE_ICONS: Record<string, string> = {
   roofing: "🏚️",
@@ -48,6 +60,7 @@ export default function PhotoUpload() {
   const [propertyAddress, setPropertyAddress] = useState("");
   const [uploading, setUploading] = useState(false);
   const [originationClaimed, setOriginationClaimed] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [, navigate] = useLocation();
 
@@ -171,6 +184,64 @@ export default function PhotoUpload() {
           ))}
         </div>
 
+        {/* Lead generation flow */}
+        {!result && (
+          <div className="bg-gradient-to-r from-[#0A1628] to-[#0d1f3a] rounded-xl p-5 text-white">
+            <div className="flex items-center gap-2 mb-4">
+              <Network className="w-4 h-4 text-[#F5E642]" />
+              <p className="text-sm font-semibold">How Photos Generate Partner Revenue</p>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              {[
+                { icon: <Camera className="w-3.5 h-3.5" />, label: "You upload photos" },
+                { icon: <Zap className="w-3.5 h-3.5" />, label: "AI analyzes 65 categories" },
+                { icon: <AlertCircle className="w-3.5 h-3.5" />, label: "Cross-trade issue detected" },
+                { icon: <Network className="w-3.5 h-3.5" />, label: "Lead routed to your network" },
+                { icon: <DollarSign className="w-3.5 h-3.5" />, label: "You earn 7% commission" },
+              ].map((step, i, arr) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 bg-white/10 rounded-lg px-2.5 py-1.5">
+                    <span className="text-[#F5E642]">{step.icon}</span>
+                    <span className="text-xs font-medium">{step.label}</span>
+                  </div>
+                  {i < arr.length - 1 && <ArrowRight className="w-3 h-3 text-white/30 flex-shrink-0" />}
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-white/50 mt-3">When AI spots a roofing issue on your electrical job, a roofing lead is auto-routed to the roofer in your network — and you earn 7% when they accept it.</p>
+          </div>
+        )}
+
+        {/* 65 detection categories */}
+        {!result && (
+          <details className="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none select-none hover:bg-gray-50 transition-colors">
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-purple-500" />
+                <p className="text-sm font-semibold text-gray-900">What ProLnk sees in your photos</p>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">65 categories</span>
+              </div>
+              <span className="text-xs text-gray-400 group-open:hidden">Show all</span>
+              <span className="text-xs text-gray-400 hidden group-open:inline">Hide</span>
+            </summary>
+            <div className="px-5 pb-5 pt-1">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {DETECTION_CATEGORIES.map(group => (
+                  <div key={group.trade} className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-xs font-semibold text-gray-700 mb-2">{group.trade}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {group.items.map(item => (
+                        <span key={item} className="text-xs px-2 py-0.5 rounded-full bg-white border border-gray-200 text-gray-600">{item}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-400 mt-3 text-center">GPT-4o Vision scans all categories simultaneously — results in under 30 seconds per photo.</p>
+            </div>
+          </details>
+        )}
+
         {/* Upload form */}
         {!result && (
           <div className="bg-white rounded-xl border border-gray-200 p-6 space-y-4">
@@ -195,17 +266,30 @@ export default function PhotoUpload() {
               <p className="text-sm font-semibold text-gray-900 mb-1.5">Job-Site Photos <span className="text-gray-400 font-normal">(up to 10)</span></p>
               <div
                 onClick={() => !isAnalyzing && fileInputRef.current?.click()}
-                onDragOver={e => e.preventDefault()}
-                onDrop={e => { e.preventDefault(); if (!isAnalyzing) handleFiles(e.dataTransfer.files); }}
-                className={`border-2 border-dashed rounded-xl p-8 text-center transition-all ${
+                onDragOver={e => { e.preventDefault(); if (!isAnalyzing) setIsDragging(true); }}
+                onDragLeave={() => setIsDragging(false)}
+                onDrop={e => { e.preventDefault(); setIsDragging(false); if (!isAnalyzing) handleFiles(e.dataTransfer.files); }}
+                className={`border-2 border-dashed rounded-xl p-10 text-center transition-all ${
                   isAnalyzing
                     ? "border-gray-100 bg-gray-50 cursor-not-allowed"
+                    : isDragging
+                    ? "border-[#0A1628] bg-[#F5E642]/10 scale-[1.01] shadow-md cursor-copy"
                     : "border-gray-200 cursor-pointer hover:border-[#0A1628]/40 hover:bg-[#F5E642]/5"
                 }`}
               >
-                <Image className="w-10 h-10 text-gray-300 mx-auto mb-3" />
-                <p className="text-sm font-medium text-gray-600">Drop photos here or click to browse</p>
-                <p className="text-xs text-gray-400 mt-1">JPG, PNG — up to 10MB each · Max 10 photos</p>
+                <div className={`w-14 h-14 rounded-2xl mx-auto mb-3 flex items-center justify-center transition-all ${isDragging ? "bg-[#F5E642]/30" : "bg-gray-50"}`}>
+                  <Upload className={`w-6 h-6 transition-colors ${isDragging ? "text-[#0A1628]" : "text-gray-300"}`} />
+                </div>
+                <p className={`text-sm font-semibold transition-colors ${isDragging ? "text-[#0A1628]" : "text-gray-600"}`}>
+                  {isDragging ? "Drop to upload" : "Drop photos here or click to browse"}
+                </p>
+                <p className="text-xs text-gray-400 mt-1">JPG, PNG, WebP — up to 10MB each · Max 10 photos</p>
+                <div className="flex items-center justify-center gap-3 mt-3 flex-wrap">
+                  {["Roof", "HVAC", "Plumbing", "Electrical", "Foundation"].map(cat => (
+                    <span key={cat} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">{cat}</span>
+                  ))}
+                  <span className="text-xs text-gray-400">+60 more categories</span>
+                </div>
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -285,37 +369,46 @@ export default function PhotoUpload() {
         {result && !isAnalyzing && (
           <div className="space-y-4">
             {/* Summary bar */}
-            <div className="bg-[#0A1628] rounded-xl p-4 text-white">
-              <div className="flex items-start justify-between mb-3">
-                <p className="text-xs text-white/60 uppercase tracking-wide font-medium">Scan Summary</p>
-                <button onClick={handleReset} className="text-xs text-white/60 hover:text-white underline">
-                  New scan
-                </button>
+            <div className="bg-[#0A1628] rounded-2xl p-5 text-white">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-medium mb-1">Analysis Complete</p>
+                  <p className="text-base font-semibold">
+                    {result.totalDetections === 0 ? "No issues found" : `${result.totalDetections} opportunit${result.totalDetections === 1 ? "y" : "ies"} across ${result.photoCount} photo${result.photoCount !== 1 ? "s" : ""}`}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 text-[#F5E642]" />
+                </div>
               </div>
-              <div className="flex items-center gap-4 flex-wrap">
-                <div>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-white/10 rounded-xl p-3 text-center">
                   <p className="text-2xl font-bold">{result.totalDetections}</p>
-                  <p className="text-xs text-white/60 mt-0.5">Opportunities detected</p>
+                  <p className="text-xs text-white/60 mt-0.5">Detections</p>
                 </div>
-                <div className="w-px h-8 bg-white/20" />
-                {highestSeverity && (
-                  <>
-                    <div>
-                      <p className="text-2xl font-bold capitalize">{highestSeverity}</p>
-                      <p className="text-xs text-white/60 mt-0.5">Highest severity</p>
-                    </div>
-                    <div className="w-px h-8 bg-white/20" />
-                  </>
-                )}
-                <div>
+                <div className="bg-white/10 rounded-xl p-3 text-center">
                   <p className="text-2xl font-bold">{result.estimatedTotalValue}</p>
-                  <p className="text-xs text-white/60 mt-0.5">Estimated total value</p>
+                  <p className="text-xs text-white/60 mt-0.5">Est. value</p>
                 </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div>
-                  <p className="text-2xl font-bold">{result.photoCount}</p>
-                  <p className="text-xs text-white/60 mt-0.5">Photos analyzed</p>
+                <div className={`rounded-xl p-3 text-center ${
+                  highestSeverity === "urgent" ? "bg-red-500/30" :
+                  highestSeverity === "high" ? "bg-orange-500/20" :
+                  highestSeverity === "medium" ? "bg-yellow-500/20" :
+                  "bg-white/10"
+                }`}>
+                  <p className="text-2xl font-bold capitalize">{highestSeverity ?? "—"}</p>
+                  <p className="text-xs text-white/60 mt-0.5">Top severity</p>
                 </div>
+              </div>
+              <div className="flex items-center gap-3 mt-4">
+                <button
+                  onClick={handleReset}
+                  className="flex items-center gap-1.5 text-xs bg-white/10 hover:bg-white/20 transition-colors rounded-lg px-3 py-2 font-medium"
+                >
+                  <Upload className="w-3.5 h-3.5" />
+                  Upload another
+                </button>
+                <p className="text-xs text-white/40 ml-auto">Leads auto-routed to your network</p>
               </div>
             </div>
 
@@ -407,12 +500,13 @@ export default function PhotoUpload() {
               </div>
             )}
 
-            <div className="flex items-center justify-between pt-1">
-              <p className="text-xs text-gray-400">
-                {sortedDetections.length} opportunit{sortedDetections.length === 1 ? "y" : "ies"} — partner leads auto-routed in your network
-              </p>
-              <button onClick={handleReset} className="text-xs text-[#0A1628] hover:underline font-medium">Analyze more photos</button>
-            </div>
+            <button
+              onClick={handleReset}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-dashed border-gray-200 text-sm font-medium text-gray-600 hover:border-[#0A1628]/40 hover:text-[#0A1628] hover:bg-[#F5E642]/5 transition-all"
+            >
+              <Upload className="w-4 h-4" />
+              Upload another set of photos
+            </button>
           </div>
         )}
 

@@ -4752,56 +4752,81 @@ Return a JSON object with:
         email: z.string().email().optional(),
       }))
       .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return null;
+        const pool = await getPool();
+        if (!pool) return null;
         if (!input.referralCode && !input.email) return null;
 
-        let row: any = null;
+        let rows: any[] = [];
         if (input.email) {
-          const r = await db.execute(
-            sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE email = ${input.email.toLowerCase()} LIMIT 1`
+          const [r] = await pool.query(
+            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE email = ? LIMIT 1",
+            [input.email.toLowerCase()]
           );
-          row = (r?.[0]?.[0]) ?? (r?.[0]);
+          rows = r as any[];
         }
-        if (!row && input.referralCode) {
-          const r = await db.execute(
-            sql`SELECT id, firstName, lastName, email, businessName, businessType, trades, primaryCity, primaryState, status, createdAt FROM proWaitlist WHERE id = ${Number(input.referralCode.replace(/\D/g, '')) || 0} LIMIT 1`
+        if (!rows[0] && input.referralCode) {
+          // Try referralCode column first, then fall back to ID
+          const [r] = await pool.query(
+            "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE referralCode = ? LIMIT 1",
+            [input.referralCode.toUpperCase()]
           );
-          row = (r?.[0]?.[0]) ?? (r?.[0]);
+          rows = r as any[];
+          if (!rows[0]) {
+            const numId = Number(input.referralCode.replace(/\D/g, '')) || 0;
+            if (numId) {
+              const [r2] = await pool.query(
+                "SELECT id, firstName, lastName, email, businessType, primaryCity, primaryState, status, referralCode, referredBy, tier, waitlistPosition, referralCount, createdAt FROM proWaitlist WHERE id = ? LIMIT 1",
+                [numId]
+              );
+              rows = r2 as any[];
+            }
+          }
         }
-        if (!row) return null;
+        if (!rows[0]) return null;
 
-        const [countResult] = await Promise.all([
-          db.execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE createdAt <= ${row.createdAt}`),
-        ]);
+        const row = rows[0];
+        const position = row.waitlistPosition || 1;
+        const referralCount = row.referralCount || 0;
+        const actualReferralCode = row.referralCode || `${row.id}`;
 
-        const position = Number((countResult?.[0]?.[0] as any)?.cnt ?? 1);
-        const myReferralsResult = await db.execute(
-          sql`SELECT firstName, businessType FROM proWaitlist WHERE id != ${row.id} LIMIT 0`
+        // Get actual referrals from DB
+        const [refRows] = await pool.query(
+          "SELECT firstName, businessType as trade, createdAt FROM proWaitlist WHERE referredBy = ? ORDER BY createdAt DESC LIMIT 20",
+          [actualReferralCode]
         );
 
-        const tier = position <= 100 ? 'Charter' : position <= 500 ? 'Founding' : position <= 1000 ? 'Growth' : 'Standard';
-        const commissionRate = position <= 100 ? 2.0 : position <= 500 ? 1.5 : position <= 1000 ? 1.0 : 0.5;
-        const overrideLevels = position <= 100 ? 4 : position <= 500 ? 3 : position <= 1000 ? 2 : 0;
+        const tier = row.tier || (position <= 25 ? 'charter' : position <= 125 ? 'founding' : position <= 525 ? 'level3' : 'level4');
+        const tierLabel = tier === 'charter' ? 'Charter Member' : tier === 'founding' ? 'Founding Member' : tier === 'level3' ? 'Level 3 Partner' : 'Level 4 Partner';
+        const keepRate = 0.72;
+        const commissionRate = 2.0;
+        const overrideLevels = 4;
+
+        const upgradeMessage = referralCount < 5 ? `Refer ${5 - referralCount} more pros to strengthen your network` : "Network building is on track!";
 
         return {
           id: row.id,
           firstName: row.firstName,
           lastName: row.lastName,
           email: row.email,
-          businessType: row.businessType,
-          trades: row.trades,
-          primaryCity: row.primaryCity,
-          primaryState: row.primaryState,
+          trade: row.businessType,
+          city: row.primaryCity,
+          state: row.primaryState,
           status: row.status,
           position,
           tier,
+          tierLabel,
           commissionRate,
           overrideLevels,
-          referralCode: `${row.id}`,
-          referrals: (myReferralsResult?.[0] || []) as Array<{ firstName: string; businessType: string }>,
-          spotsToCharter: Math.max(0, 100 - position),
-          spotsToFounding: Math.max(0, 500 - position),
+          keepRate,
+          referralCode: actualReferralCode,
+          referredBy: row.referredBy,
+          referralCount,
+          referrals: (refRows as any[]).map(r => ({ firstName: r.firstName, trade: r.trade })),
+          upgradeMessage,
+          spotsToCharter: Math.max(0, 25 - position),
+          spotsToFounding: Math.max(0, 125 - position),
+          rates: { keepRate, commissionRate, overrideLevels, label: tierLabel },
+          found: true,
         };
       }),
 

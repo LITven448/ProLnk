@@ -190,7 +190,7 @@ export default function PartnerDirectory() {
           </p>
           {(waitlistCounts?.pros ?? 0) > 0 && (
             <p className="text-xs text-gray-400 ml-11 mt-1">
-              <span className="font-semibold text-gray-600">{waitlistCounts!.pros.toLocaleString()} pros</span> on the waitlist — more partners launching at DFW go-live Sep 1, 2026
+              <span className="font-semibold text-gray-600">{(waitlistCounts!.pros ?? 0).toLocaleString()} pros</span> on the waitlist — more partners launching at DFW go-live Sep 1, 2026
             </p>
           )}
         </div>

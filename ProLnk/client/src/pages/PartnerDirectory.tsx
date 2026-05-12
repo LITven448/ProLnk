@@ -169,6 +169,25 @@ export default function PartnerDirectory() {
   return (
     <PartnerLayout>
       <div className="p-6">
+        {/* DFW Launch banner */}
+        <div className="mb-5 rounded-2xl overflow-hidden flex items-center gap-4 px-5 py-4"
+          style={{ background: "linear-gradient(90deg, #0A1628 0%, #1B4FD8 100%)" }}>
+          <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
+            <MapPin className="w-4 h-4 text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold text-white leading-snug">
+              ProLnk is launching in DFW with 25 Charter Partner spots.
+            </p>
+            <p className="text-xs text-white/70 mt-0.5">Apply before they fill — Charter Members get locked $149/mo rates &amp; priority lead routing forever.</p>
+          </div>
+          <Link href="/apply" className="flex-shrink-0">
+            <button className="text-xs font-bold px-4 py-2 rounded-xl bg-white text-[#1B4FD8] hover:bg-gray-50 transition-colors whitespace-nowrap">
+              Apply Now →
+            </button>
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-start justify-between gap-3 mb-1">

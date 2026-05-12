@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";
+import BackToTop from "@/components/BackToTop";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
 import { trpc } from "@/lib/trpc";
 import type React from "react";
@@ -706,7 +707,7 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
     onSuccess: (data, vars) => {
       const base = window.location.origin;
       // Use the server-assigned referral code if available, fallback to email slug
-      const code = (data as any)?.referralCode || btoa(vars.email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
+      const code = data?.referralCode || btoa(vars.email).replace(/[^a-zA-Z0-9]/g, "").slice(0, 8).toUpperCase();
       // Store for use across sessions
       localStorage.setItem("prolnk_referral_code", code);
       localStorage.setItem("prolnk_user_email", vars.email);
@@ -736,28 +737,28 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
             </div>
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">You're on the list!</h2>
             <div className="bg-[#F5E642]/20 border border-[#F5E642] rounded-lg px-4 py-3 mb-3 w-full">
-              <p className="text-[#0A1628] font-bold text-lg">Position: #{(join.data as any).position}</p>
-              {(join.data as any).tierLabel && (
+              <p className="text-[#0A1628] font-bold text-lg">Position: #{join.data?.position}</p>
+              {join.data?.tierLabel && (
                 <p className="text-[#0A1628] font-semibold text-sm mt-1">
-                  {(join.data as any).tierLabel} — {(((join.data as any).ownJobRate ?? 0) * 100).toFixed(1)}% commission rate
+                  {join.data.tierLabel} — {((join.data.ownJobRate ?? 0) * 100).toFixed(1)}% commission rate
                 </p>
               )}
-              {(join.data as any).spotsRemaining && (join.data as any).spotsRemaining.charter > 0 && (
+              {join.data?.spotsRemaining && join.data.spotsRemaining.charter > 0 && (
                 <p className="text-amber-700 text-xs mt-2 font-medium">
-                  Only {(join.data as any).spotsRemaining.charter} Charter Member spots remaining
+                  Only {join.data.spotsRemaining.charter} Charter Member spots remaining
                 </p>
               )}
-              {(join.data as any).spotsRemaining && (join.data as any).spotsRemaining.charter === 0 && (join.data as any).spotsRemaining.founding > 0 && (
+              {join.data?.spotsRemaining && join.data.spotsRemaining.charter === 0 && join.data.spotsRemaining.founding > 0 && (
                 <p className="text-blue-700 text-xs mt-2 font-medium">
-                  {(join.data as any).spotsRemaining.founding} Founding Member spots remaining
+                  {join.data.spotsRemaining.founding} Founding Member spots remaining
                 </p>
               )}
-              <p className="text-gray-600 text-xs mt-1">You're #{(join.data as any).position} in the ProLnk network.</p>
+              <p className="text-gray-600 text-xs mt-1">You're #{join.data?.position} in the ProLnk network.</p>
             </div>
-            {(join.data as any).referralCode && (
+            {join.data?.referralCode && (
               <div className="mb-4 w-full">
                 <a
-                  href={`/waitlist-status?ref=${(join.data as any).referralCode}`}
+                  href={`/waitlist-status?ref=${join.data.referralCode}`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0A1628] text-white rounded-lg text-sm font-semibold hover:bg-[#1a2a40] transition-colors w-full justify-center"
                 >
                   View My Referral Dashboard →
@@ -1551,12 +1552,12 @@ export default function ProWaitlist() {
               <Link href="/trustypro/waitlist" className="hover:text-white transition-colors">TrustyPro</Link>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
-              <p> 2026 ProLnk. DFW, Texas. &nbsp;&nbsp; <span className="text-[#F5E642] font-semibold">Patent Pending</span></p>
-              <div className="flex gap-4">
+              <p>&copy; 2026 ProLnk. All rights reserved. &nbsp;&nbsp; <span className="text-[#F5E642] font-semibold">Patent Pending</span></p>
+              <div className="flex gap-4 flex-wrap justify-center">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-                <Link href="/ccpa" className="hover:text-white transition-colors">CCPA Rights</Link>
-                <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+                <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+                <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
+                <a href="mailto:hello@prolnk.io" className="hover:text-white transition-colors">Contact</a>
               </div>
             </div>
           </div>
@@ -1567,6 +1568,7 @@ export default function ProWaitlist() {
       {showWaitlist && (
         <ProWaitlistModal onClose={() => setShowWaitlist(false)} />
       )}
+      <BackToTop />
     </div>
   );
 }

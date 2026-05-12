@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Admin Notification Center — The OS Dashboard
  * Route: /admin/notifications

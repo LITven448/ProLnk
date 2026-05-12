@@ -127,11 +127,11 @@ export default function FoundingPartnerPage() {
         <meta property="og:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/founding-partner" />
-        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
         <meta name="twitter:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
-        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <link rel="canonical" href="https://prolnk.io/founding-partner" />
       </Helmet>
 

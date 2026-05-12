@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Home Health Vault — Full Property History
  * Route: /my-home/vault

@@ -442,7 +442,7 @@ const ErrorMonitoring = lazy(() => import("./pages/admin/ErrorMonitoring"));
 const PerformanceMonitoring = lazy(() => import("./pages/admin/PerformanceMonitoring"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 
-// Domain-based routing: trustypro.io → /trustypro
+// Domain-based routing: trustypro.io → /trustypro experience
 function DomainRouter() {
   const [location, navigate] = useLocation();
   useEffect(() => {
@@ -452,11 +452,16 @@ function DomainRouter() {
       hostname === "www.trustypro.io" ||
       hostname.endsWith(".trustypro.io");
     if (isTrustyPro) {
-      // Allow /waitlist/* paths to work directly on trustypro.io (homeowner waitlist)
+      // trustypro.io/waitlist → homeowner waitlist
+      if (location === "/waitlist" || location === "/waitlist/") {
+        navigate("/trustypro/waitlist", { replace: true });
+        return;
+      }
+      // Allow /waitlist/* paths through
       if (location.startsWith("/waitlist")) return;
       // Allow /trustypro/* paths through
       if (location.startsWith("/trustypro")) return;
-      // Redirect root and all other paths to /trustypro
+      // trustypro.io root → full TrustyPro site
       navigate("/trustypro", { replace: true });
     }
   }, [location, navigate]);

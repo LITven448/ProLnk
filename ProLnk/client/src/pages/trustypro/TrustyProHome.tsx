@@ -1264,6 +1264,132 @@ export default function TrustyProHome() {
         </div>
       </section>
 
+      {/* -- HOME HEALTH VAULT ------------------------------------------------- */}
+      <section className="bg-white py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Home Health Vault</span>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight">
+              Your Home's Complete<br />Living Record
+            </h2>
+            <p className="mt-4 text-gray-500 text-lg max-w-2xl mx-auto">
+              Every repair, upgrade, inspection, and maintenance task — permanently logged in one secure place. When you sell, you have proof. When something breaks, you have the history.
+            </p>
+          </AnimSection>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: FileText,
+                title: "Permanent Job Records",
+                desc: "Every contractor visit, invoice, and warranty automatically saved. Your home's full service history, always available.",
+                color: ACCENT,
+                bg: "#EEF2FF",
+              },
+              {
+                icon: TrendingUp,
+                title: "Home Value Impact",
+                desc: "See how each improvement affects your resale value. Documented maintenance returns $2–4 for every $1 spent at sale time.",
+                color: "#10B981",
+                bg: "#D1FAE5",
+              },
+              {
+                icon: RefreshCw,
+                title: "Proactive Maintenance Alerts",
+                desc: "AI monitors your home's systems and alerts you before small issues become expensive problems. Stay ahead of repairs.",
+                color: "#F59E0B",
+                bg: "#FEF3C7",
+              },
+            ].map((card) => (
+              <AnimSection key={card.title} variants={fadeUp}>
+                <div className="rounded-2xl p-6 h-full border border-gray-100 bg-gray-50">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: card.bg }}>
+                    <card.icon className="w-5 h-5" style={{ color: card.color }} />
+                  </div>
+                  <h3 className="font-black text-gray-900 mb-2">{card.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
+                </div>
+              </AnimSection>
+            ))}
+          </div>
+          <AnimSection variants={fadeUp} className="text-center mt-10">
+            <motion.button
+              onClick={goToWizard}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
+              style={{ backgroundColor: ACCENT }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Start Building Your Vault — Free <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </AnimSection>
+        </div>
+      </section>
+
+      {/* -- TRUST BADGES ------------------------------------------------------ */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Verification Process</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">
+              How We Verify Every Pro
+            </h2>
+            <p className="mt-3 text-gray-500 text-lg max-w-xl mx-auto">
+              Before any professional appears on TrustyPro, they pass our 7-point verification. No shortcuts.
+            </p>
+          </AnimSection>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            {[
+              { step: "01", label: "License Verification", desc: "State contractor license confirmed active and in good standing." },
+              { step: "02", label: "Background Check", desc: "Full criminal history and identity verification completed." },
+              { step: "03", label: "Insurance Confirmation", desc: "General liability and workers' comp insurance verified." },
+              { step: "04", label: "Reference Review", desc: "Past client references checked and scored." },
+            ].map((item) => (
+              <AnimSection key={item.step} variants={fadeUp}>
+                <div className="bg-white rounded-2xl p-5 border border-gray-100 h-full">
+                  <div className="text-2xl font-black mb-3" style={{ color: ACCENT }}>{item.step}</div>
+                  <h3 className="text-sm font-black text-gray-900 mb-1.5">{item.label}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimSection>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { step: "05", label: "Portfolio Review", desc: "Past project photos reviewed for quality and craftsmanship." },
+              { step: "06", label: "Pricing Transparency Check", desc: "Quotes audited for accuracy and fair market rates." },
+              { step: "07", label: "Ongoing Rating Monitoring", desc: "Continuous review score tracking. Pros removed if quality slips." },
+            ].map((item) => (
+              <AnimSection key={item.step} variants={fadeUp}>
+                <div className="bg-white rounded-2xl p-5 border border-gray-100 h-full">
+                  <div className="text-2xl font-black mb-3" style={{ color: ACCENT }}>{item.step}</div>
+                  <h3 className="text-sm font-black text-gray-900 mb-1.5">{item.label}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimSection>
+            ))}
+          </div>
+          <AnimSection variants={fadeUp} className="mt-8">
+            <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 border border-gray-100 text-center sm:text-left">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0" style={{ backgroundColor: ACCENT }}>
+                <Award className="w-7 h-7 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-black text-gray-900 mb-1">TrustyPro Certified Badge</h3>
+                <p className="text-sm text-gray-500">Only pros who pass all 7 checks earn the TrustyPro Certified badge. If a pro loses their license or lets insurance lapse, they're removed immediately — no exceptions.</p>
+              </div>
+              <motion.button
+                onClick={goToWizard}
+                className="px-6 py-3 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity flex-shrink-0"
+                style={{ backgroundColor: ACCENT }}
+                whileHover={{ scale: 1.04 }}
+              >
+                Find Certified Pros
+              </motion.button>
+            </div>
+          </AnimSection>
+        </div>
+      </section>
+
       {/* -- FAQ --------------------------------------------------------------- */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6">

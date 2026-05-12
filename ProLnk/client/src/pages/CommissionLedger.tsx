@@ -5,9 +5,10 @@ import { trpc } from "@/lib/trpc";
 import {
   DollarSign, CheckCircle, Clock, TrendingUp, Download, Flag,
   Home, Users, Repeat, ChevronRight, Camera, UserPlus, FileText,
-  GitBranch, Wallet, CalendarClock, Network
+  GitBranch, Wallet, CalendarClock, Network, ArrowRight
 } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from "wouter";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -382,7 +383,12 @@ export default function CommissionLedger() {
                   <span className="text-xs font-medium text-blue-300">Pending Balance</span>
                 </div>
                 <p className="text-3xl font-black text-[#F5E642]">${totalPending.toFixed(2)}</p>
-                <p className="text-xs text-blue-400 mt-1">awaiting next payout cycle</p>
+                <p className="text-xs text-blue-400 mt-1 mb-3">awaiting next payout cycle</p>
+                <Link href="/billing">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F5E642] text-[#0A1628] text-xs font-bold hover:bg-[#F5E642]/90 transition-colors w-full justify-center">
+                    Request Payout <ArrowRight className="w-3 h-3" />
+                  </button>
+                </Link>
               </div>
               <div className="bg-[#F5E642]/10 rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-2">
@@ -444,7 +450,12 @@ export default function CommissionLedger() {
                   <tr className="bg-gray-50 text-left">
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">Date</th>
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">Description</th>
+                    <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">
+                      <span>Level</span>
+                      <span className="ml-1 text-[10px] font-normal text-gray-400 normal-case">7/4/2/1%</span>
+                    </th>
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">Type</th>
+                    <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">From</th>
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide">Job Value</th>
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide text-right">Amount</th>
                     <th className="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wide text-right">Status</th>
@@ -452,13 +463,32 @@ export default function CommissionLedger() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
-                  {allCommissions.map((c) => (
+                  {allCommissions.map((c) => {
+                    const networkLevel: number | null = (c as any).networkLevel ?? null;
+                    const levelColors: Record<number, { bg: string; text: string }> = {
+                      1: { bg: "bg-[#0A1628]/8", text: "text-[#0A1628]" },
+                      2: { bg: "bg-blue-50", text: "text-blue-700" },
+                      3: { bg: "bg-purple-50", text: "text-purple-700" },
+                      4: { bg: "bg-emerald-50", text: "text-emerald-700" },
+                    };
+                    const levelStyle = networkLevel ? levelColors[networkLevel] : null;
+                    const sourcePartnerName: string | null = (c as any).sourcePartnerName ?? null;
+                    return (
                     <tr key={c.id} className="hover:bg-gray-50 transition-colors">
                       <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
                         {new Date(c.createdAt).toLocaleDateString()}
                       </td>
                       <td className="px-4 py-3 text-gray-700 max-w-xs truncate">
                         {c.description ?? "Referral commission"}
+                      </td>
+                      <td className="px-4 py-3">
+                        {networkLevel && levelStyle ? (
+                          <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${levelStyle.bg} ${levelStyle.text}`}>
+                            L{networkLevel}
+                          </span>
+                        ) : (
+                          <span className="text-gray-300 text-xs">—</span>
+                        )}
                       </td>
                       <td className="px-4 py-3">
                         <span className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${
@@ -470,6 +500,9 @@ export default function CommissionLedger() {
                         }`}>
                           {c.commissionType.replace(/_/g, " ")}
                         </span>
+                      </td>
+                      <td className="px-4 py-3 text-xs text-gray-500 max-w-[120px] truncate">
+                        {sourcePartnerName ?? "—"}
                       </td>
                       <td className="px-4 py-3 text-gray-500">
                         {c.jobValue ? `$${Number(c.jobValue).toLocaleString()}` : "--"}
@@ -504,7 +537,7 @@ export default function CommissionLedger() {
                         )}
                       </td>
                     </tr>
-                  ))}
+                  ); })}
                 </tbody>
               </table>
             </div>

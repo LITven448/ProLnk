@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Admin Deal Pipeline Kanban — /admin/deal-pipeline
  * Wave 54 upgrade: stage filters, bulk select + bulk actions, inline value editor, partner filter

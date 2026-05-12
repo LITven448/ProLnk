@@ -1115,7 +1115,8 @@ export default function Home() {
   // Quick waitlist mutation removed — main site now uses direct apply flow
 
   const { data: foundingData } = trpc.directory.getFoundingPartnerCount.useQuery();
-  // Waitlist counts removed — main site uses founding partner count instead
+  const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
+  const waitlistPros = publicCounts?.pros ?? 0;
   const rawSpotsRemaining = foundingData?.spotsRemaining ?? 94;
   const spotsRemaining = rawSpotsRemaining;
   const TOTAL_NETWORK = 2125; // Charter(25) + Founding(100) + L3(400) + L4(1600)
@@ -1338,10 +1339,10 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-3 italic">DFW launch — 4-tier Founding Network: Charter(25) · Founding(100) · Level 3(400) · Level 4(1,600). 2,125 total. Lock in your rate before we open to the public.</p>
-              {foundingData && (
+              {waitlistPros > 0 && (
                 <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(245,230,66,0.12)", border: "1px solid rgba(245,230,66,0.25)", color: "#F5E642" }}>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F5E642] animate-pulse shrink-0" />
-                  {foundingData.approvedCount} pro{foundingData.approvedCount !== 1 ? "s" : ""} joined — {foundingData.spotsRemaining.toLocaleString()} spot{foundingData.spotsRemaining !== 1 ? "s" : ""} remaining
+                  {waitlistPros} pro{waitlistPros !== 1 ? "s" : ""} on the waitlist — {(2125 - waitlistPros).toLocaleString()} spots remaining
                 </div>
               )}
             </FadeIn>

@@ -1144,20 +1144,20 @@ export default function Home() {
         </div>
       )}
       <Helmet>
-        <title>ProLnk — Your Photos. Their Next Job.</title>
-        <meta name="description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission. Free for home service pros in DFW." />
-        <meta property="og:title" content="ProLnk — Your Photos. Their Next Job." />
-        <meta property="og:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
+        <title>ProLnk — The Home Services Partner Network | DFW Texas</title>
+        <meta name="description" content="Join the ProLnk Founding Network. Home service professionals earn commission from AI-detected leads at every property they document. 4-tier network, $149/mo locked rate, 90-day free trial." />
+        <meta property="og:title" content="ProLnk — Reach the Trades. Own the Neighborhood." />
+        <meta property="og:description" content="AI-powered referral commissions for home service professionals in DFW. Upload job photos, earn passive income." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://prolnk.io/" />
         <meta property="og:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ProLnk — Your Photos. Their Next Job." />
-        <meta name="twitter:description" content="ProLnk turns your job-site photos into a referral engine. AI finds the neighbors' next project and pays you a commission." />
+        <meta name="twitter:title" content="ProLnk — Reach the Trades. Own the Neighborhood." />
+        <meta name="twitter:description" content="AI-powered referral commissions for home service professionals in DFW. Upload job photos, earn passive income." />
         <meta name="twitter:image" content="https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/prolnk-hero-house_ad6a73f1.webp" />
-        <link rel="canonical" href="https://prolnk.io/" />
+        <link rel="canonical" href="https://prolnk.io" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",

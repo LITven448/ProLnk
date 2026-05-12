@@ -60,6 +60,7 @@ import PartnerProfileEditor from "./pages/PartnerProfileEditor";
 import AdminSetup from "./pages/AdminSetup";
 import JobHistory from "./pages/JobHistory";
 import PartnerReviews from "./pages/PartnerReviews";
+import EarningsHistory from "./pages/EarningsHistory";
 
 // Wave pages -- Partner Portal
 import CommissionLedger from "./pages/CommissionLedger";
@@ -534,6 +535,7 @@ function Router() {
       <Route path="/dashboard/alerts" component={PerformanceAlerts} />
       <Route path="/dashboard/ai" component={AIChatAssistant} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
+      <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />

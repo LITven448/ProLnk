@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import {
   Briefcase, MapPin, DollarSign, Clock, Filter, ChevronDown,
-  ArrowRight, Building2, Users, Bell,
+  ArrowRight, Building2, Users, Bell, Zap, CheckCircle2,
 } from "lucide-react";
 
 const TRADE_CATEGORIES = [
@@ -26,45 +26,134 @@ const PROJECT_SIZES = [
   "$100K+",
 ];
 
+const URGENCY_OPTIONS = ["All", "Urgent", "Active", "Ongoing"];
+
 const SEED_JOBS = [
   {
     id: 1,
-    title: "4-Unit Apartment HVAC Replacement",
-    posterType: "Property Manager",
+    title: "HVAC System Overhaul — 50-Unit Apartment Complex",
+    posterType: "Synergy Property Group",
     location: "Plano, TX",
-    budget: "$45,000",
-    deadline: "Bid by May 30",
+    budget: "$45,000–$65,000",
+    deadline: "Bid by May 25, 2026",
     trade: "HVAC",
     size: "$25K–$100K",
     description:
-      "Full system replacement across 4 residential units. Includes new air handlers, condensers, and ductwork inspection. All units must be completed within a 3-week window.",
-    urgency: "Active",
+      "Full HVAC replacement across a 50-unit complex. New air handlers, condensers, and ductwork inspection required. Licensed HVAC contractor with commercial multifamily experience mandatory. All units must be completed within a 4-week window with minimal tenant disruption.",
+    urgency: "Urgent",
+    applicants: 3,
   },
   {
     id: 2,
-    title: "Commercial Roof Replacement — 8,000 sq ft",
-    posterType: "HOA",
-    location: "McKinney, TX",
-    budget: "$120,000",
-    deadline: "Bid by Jun 15",
+    title: "Strip Mall Roof Replacement — 14,000 sq ft",
+    posterType: "Pinnacle Commercial Real Estate",
+    location: "Garland, TX",
+    budget: "$95,000–$130,000",
+    deadline: "Bid by Jun 1, 2026",
     trade: "Roofing",
     size: "$100K+",
     description:
-      "Full tear-off and replacement of flat commercial roof on a 12-unit HOA clubhouse and attached structures. TPO membrane preferred. Certified roofing contractors only.",
+      "Full tear-off and TPO membrane installation on a 7-tenant strip mall. Drainage system upgrade included. Work must be phased to keep tenants operational. Class-A commercial roofing license required. Bid includes 10-year workmanship warranty.",
     urgency: "Active",
+    applicants: 5,
   },
   {
     id: 3,
-    title: "Multi-building Landscaping Contract",
-    posterType: "Property Manager",
+    title: "Electrical Panel Upgrade — Industrial Warehouse",
+    posterType: "DFW Logistics Partners",
+    location: "Irving, TX",
+    budget: "$28,000–$42,000",
+    deadline: "Bid by May 31, 2026",
+    trade: "Electrical",
+    size: "$25K–$100K",
+    description:
+      "Upgrade 400A main panel to 800A 3-phase service for new equipment installation. Requires load calculations, permit pull, and inspection coordination with Oncor. Master electrician on-site throughout project. 180,000 sq ft facility, weekend work acceptable.",
+    urgency: "Urgent",
+    applicants: 2,
+  },
+  {
+    id: 4,
+    title: "Plumbing Retrofit — 12-Location Restaurant Chain",
+    posterType: "Frontier Eats Group",
+    location: "DFW Metro",
+    budget: "$6,500–$9,000 per location",
+    deadline: "Bid by Jun 10, 2026",
+    trade: "Plumbing",
+    size: "$5K–$25K",
+    description:
+      "Grease trap replacement and backflow preventer installation across 12 quick-service restaurant locations in DFW. Must be completed during non-operational hours (10PM–6AM). Commercial plumbing license required. Contractor handles permitting at each location.",
+    urgency: "Active",
+    applicants: 7,
+  },
+  {
+    id: 5,
+    title: "Commercial Exterior Painting — Office Park",
+    posterType: "Riverview Holdings LLC",
+    location: "Allen, TX",
+    budget: "$38,000–$52,000",
+    deadline: "Bid by Jun 20, 2026",
+    trade: "Painting",
+    size: "$25K–$100K",
+    description:
+      "Exterior repaint for a 4-building Class-B office park totaling 96,000 sq ft of facade. Surface prep, primer, and 2-coat elastomeric finish. Color match to existing scheme. OSHA-compliant scaffolding and lift equipment required. Phased completion over 6 weeks.",
+    urgency: "Active",
+    applicants: 4,
+  },
+  {
+    id: 6,
+    title: "Multi-Property Maintenance Contract — 8 Communities",
+    posterType: "Keystone Property Management",
+    location: "North DFW",
+    budget: "$22,000/mo",
+    deadline: "Ongoing",
+    trade: "General Contractor",
+    size: "$100K+",
+    description:
+      "Full-service maintenance and repair contract for 8 multifamily communities totaling 1,400 units across Frisco, McKinney, and Prosper. 24-hour emergency response required. Services include plumbing, HVAC filter changes, appliance repair, make-ready turns, and common area upkeep.",
+    urgency: "Ongoing",
+    applicants: 11,
+  },
+  {
+    id: 7,
+    title: "Commercial Roof Replacement — 8,000 sq ft Clubhouse",
+    posterType: "Lakewood HOA Board",
+    location: "McKinney, TX",
+    budget: "$85,000–$120,000",
+    deadline: "Bid by Jun 15, 2026",
+    trade: "Roofing",
+    size: "$100K+",
+    description:
+      "Full tear-off and replacement of flat commercial roof on a 12-unit HOA clubhouse and attached structures. TPO membrane preferred. Certified roofing contractors only. Project must complete before July 4th community events.",
+    urgency: "Active",
+    applicants: 6,
+  },
+  {
+    id: 8,
+    title: "Flooring Replacement — Corporate HQ, 3 Floors",
+    posterType: "Meridian Capital Group",
+    location: "Richardson, TX",
+    budget: "$55,000–$72,000",
+    deadline: "Bid by Jun 5, 2026",
+    trade: "Flooring",
+    size: "$25K–$100K",
+    description:
+      "LVP and carpet tile replacement across 3 floors (42,000 sq ft total) of a corporate headquarters. Phased installation to keep one floor operational at all times. Asbestos abatement completed — clean start. Commercial flooring contractor with office space experience required.",
+    urgency: "Active",
+    applicants: 4,
+  },
+  {
+    id: 9,
+    title: "Multi-Building Landscaping — 200-Unit Complex",
+    posterType: "Summit Property Group",
     location: "Frisco, TX",
     budget: "$8,000/mo",
     deadline: "Ongoing",
     trade: "Landscaping",
     size: "$5K–$25K",
     description:
-      "Monthly landscape maintenance for a 200-unit apartment complex. Includes mowing, edging, irrigation management, seasonal color rotations, and light tree work. 12-month contract.",
+      "Monthly landscape maintenance for a 200-unit apartment complex across 18 acres. Includes mowing, edging, irrigation management, seasonal color rotations, and light tree work. 12-month contract with renewal option. ISA-certified arborist on retainer preferred.",
     urgency: "Ongoing",
+    applicants: 9,
   },
 ];
 
@@ -105,30 +194,32 @@ function FilterDropdown({
   );
 }
 
+const URGENCY_STYLES: Record<string, { bg: string; color: string; icon?: boolean }> = {
+  Urgent: { bg: "rgba(239,68,68,0.12)", color: "#f87171", icon: true },
+  Active: { bg: "rgba(34,197,94,0.12)", color: "#4ade80" },
+  Ongoing: { bg: "rgba(99,102,241,0.15)", color: "#818cf8" },
+};
+
 function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
   const [expressed, setExpressed] = useState(false);
+  const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
 
   return (
     <div
       className="rounded-2xl p-6 border transition-all hover:border-amber-500/30"
       style={{
         backgroundColor: "rgba(255,255,255,0.04)",
-        borderColor: "rgba(255,255,255,0.1)",
+        borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
       }}
     >
       <div className="flex items-start justify-between gap-4 mb-3">
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1.5">
+          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
             <span
-              className="text-xs font-semibold px-2 py-0.5 rounded-full"
-              style={{
-                backgroundColor:
-                  job.urgency === "Ongoing"
-                    ? "rgba(99,102,241,0.15)"
-                    : "rgba(34,197,94,0.12)",
-                color: job.urgency === "Ongoing" ? "#818cf8" : "#4ade80",
-              }}
+              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
+              style={{ backgroundColor: urgencyStyle.bg, color: urgencyStyle.color }}
             >
+              {urgencyStyle.icon && <Zap className="w-3 h-3" />}
               {job.urgency}
             </span>
             <span
@@ -141,10 +232,28 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
             >
               {job.trade}
             </span>
+            <span
+              className="text-xs px-2 py-0.5 rounded-full"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.06)",
+                color: "rgba(255,255,255,0.45)",
+              }}
+            >
+              {job.size}
+            </span>
           </div>
           <h3 className="text-white font-bold text-base leading-tight">
             {job.title}
           </h3>
+        </div>
+        <div
+          className="flex-shrink-0 text-right hidden sm:block"
+          style={{ color: "rgba(255,255,255,0.35)" }}
+        >
+          <div className="flex items-center gap-1 justify-end text-xs">
+            <Users className="w-3.5 h-3.5" />
+            <span>{job.applicants} bid{job.applicants !== 1 ? "s" : ""}</span>
+          </div>
         </div>
       </div>
 
@@ -161,7 +270,7 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
             className="w-3.5 h-3.5 flex-shrink-0"
             style={{ color: "rgba(255,255,255,0.35)" }}
           />
-          <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <span className="text-xs truncate" style={{ color: "rgba(255,255,255,0.5)" }}>
             {job.posterType}
           </span>
         </div>
@@ -192,20 +301,36 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
         </div>
       </div>
 
-      <button
-        onClick={() => setExpressed(true)}
-        disabled={expressed}
-        className="w-full py-2.5 rounded-xl text-sm font-bold transition-all"
-        style={{
-          backgroundColor: expressed
-            ? "rgba(34,197,94,0.12)"
-            : "rgba(245,158,11,0.15)",
-          color: expressed ? "#4ade80" : "#F59E0B",
-          border: `1px solid ${expressed ? "rgba(34,197,94,0.25)" : "rgba(245,158,11,0.3)"}`,
-        }}
-      >
-        {expressed ? "Interest Expressed — We'll Follow Up" : "Express Interest"}
-      </button>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => setExpressed(true)}
+          disabled={expressed}
+          className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all inline-flex items-center justify-center gap-2"
+          style={{
+            backgroundColor: expressed
+              ? "rgba(34,197,94,0.12)"
+              : "rgba(245,158,11,0.15)",
+            color: expressed ? "#4ade80" : "#F59E0B",
+            border: `1px solid ${expressed ? "rgba(34,197,94,0.25)" : "rgba(245,158,11,0.3)"}`,
+            cursor: expressed ? "default" : "pointer",
+          }}
+        >
+          {expressed ? (
+            <>
+              <CheckCircle2 className="w-4 h-4" />
+              Bid Submitted — We'll Follow Up
+            </>
+          ) : (
+            <>Apply to Bid</>
+          )}
+        </button>
+        {!expressed && (
+          <span className="text-xs sm:hidden flex items-center gap-1" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <Users className="w-3.5 h-3.5" />
+            {job.applicants}
+          </span>
+        )}
+      </div>
     </div>
   );
 }
@@ -213,11 +338,13 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
 export default function ExchangeJobs() {
   const [tradeFilter, setTradeFilter] = useState("All Trades");
   const [sizeFilter, setSizeFilter] = useState("All Sizes");
+  const [urgencyFilter, setUrgencyFilter] = useState("All");
   const [cityFilter, setCityFilter] = useState("");
 
   const filtered = SEED_JOBS.filter((j) => {
     if (tradeFilter !== "All Trades" && j.trade !== tradeFilter) return false;
     if (sizeFilter !== "All Sizes" && j.size !== sizeFilter) return false;
+    if (urgencyFilter !== "All" && j.urgency !== urgencyFilter) return false;
     if (
       cityFilter &&
       !j.location.toLowerCase().includes(cityFilter.toLowerCase())
@@ -282,17 +409,45 @@ export default function ExchangeJobs() {
               }}
             >
               <Briefcase className="w-3.5 h-3.5" />
-              ProLnk Exchange — Job Board
+              ProLnk Exchange — Commercial Work Network
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Commercial Jobs
-            </h1>
+            <div className="flex items-center gap-3 mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold text-white">
+                Commercial Job Board
+              </h1>
+              <span
+                className="hidden md:inline-flex items-center px-3 py-1 rounded-full text-sm font-bold"
+                style={{ backgroundColor: "rgba(245,158,11,0.15)", color: "#F59E0B" }}
+              >
+                {SEED_JOBS.length} Jobs
+              </span>
+            </div>
             <p style={{ color: "rgba(255,255,255,0.5)" }} className="text-sm">
               High-value contracts from property managers, HOAs, and GCs across DFW.
               <span className="ml-1" style={{ color: "#F59E0B" }}>
                 Bidding opens Q3 2026.
               </span>
             </p>
+            <div className="flex items-center gap-4 mt-4">
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: "rgba(239,68,68,0.12)", color: "#f87171" }}
+                >
+                  <Zap className="w-3 h-3" /> Urgent
+                </span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>— deadline within 2 weeks</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: "rgba(99,102,241,0.15)", color: "#818cf8" }}
+                >
+                  Ongoing
+                </span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>— recurring contract</span>
+              </div>
+            </div>
           </div>
           <Link href="/exchange/post">
             <button
@@ -336,6 +491,12 @@ export default function ExchangeJobs() {
             value={sizeFilter}
             onChange={setSizeFilter}
           />
+          <FilterDropdown
+            label="Urgency"
+            options={URGENCY_OPTIONS}
+            value={urgencyFilter}
+            onChange={setUrgencyFilter}
+          />
           <input
             type="text"
             placeholder="City (e.g. Plano)"
@@ -351,11 +512,13 @@ export default function ExchangeJobs() {
           />
           {(tradeFilter !== "All Trades" ||
             sizeFilter !== "All Sizes" ||
+            urgencyFilter !== "All" ||
             cityFilter) && (
             <button
               onClick={() => {
                 setTradeFilter("All Trades");
                 setSizeFilter("All Sizes");
+                setUrgencyFilter("All");
                 setCityFilter("");
               }}
               className="text-xs px-3 py-2 rounded-lg transition-colors"

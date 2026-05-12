@@ -621,3 +621,76 @@ export async function sendPartnerPasswordReset(opts: {
     html: `<div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#0A1628,#00B5B8);padding:32px;text-align:center;"><div style="font-size:28px;font-weight:800;color:#fff;">ProLnk</div></div><div style="padding:32px;"><h2 style="color:#0f172a;margin:0 0 8px;">Reset Your Password</h2><p style="color:#475569;line-height:1.7;">Hi ${opts.partnerName}, we received a request to reset your ProLnk partner account password. Click the button below to set a new password.</p><div style="text-align:center;margin:24px 0;"><a href="${opts.resetUrl}" style="background:#00B5B8;color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Reset Password</a></div><p style="color:#94a3b8;font-size:13px;">This link expires in 1 hour. If you did not request a password reset, you can safely ignore this email.</p></div><div style="background:#f1f5f9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">2026 ProLnk - DFW, Texas</p></div></div>`,
   });
 }
+
+export async function sendPartnerApprovalEmail(params: {
+  to: string; firstName: string; tier: string; tierLabel: string;
+  referralCode: string; position: number;
+}): Promise<void> {
+  if (!process.env.RESEND_API_KEY) {
+    console.log("[email] RESEND_API_KEY not set — skipping approval email to", params.to);
+    return;
+  }
+  const { Resend } = await import("resend");
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const referralLink = `${process.env.APP_BASE_URL || "https://prolnk.io"}/apply?ref=${params.referralCode}`;
+  await resend.emails.send({
+    from: process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.io>",
+    to: params.to,
+    subject: `Welcome to ProLnk — You've been approved as a ${params.tierLabel}`,
+    html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0A1628;color:#F5F0E8">
+      <h1 style="color:#F5E642">You're In! 🎉</h1>
+      <p>Hi ${params.firstName},</p>
+      <p>Your ProLnk application has been approved. You are now a <strong>${params.tierLabel}</strong> — position <strong>#${params.position}</strong> in the founding network.</p>
+      <p><strong>What happens next:</strong></p>
+      <ul>
+        <li>Start your 90-day free trial at <a href="${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout" style="color:#F5E642">prolnk.io/checkout</a></li>
+        <li>Share your referral link to build your network: <a href="${referralLink}" style="color:#F5E642">${referralLink}</a></li>
+        <li>Upload job photos to start earning AI-detected commissions</li>
+      </ul>
+      <a href="${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 28px;border-radius:8px;font-weight:bold;text-decoration:none;margin-top:16px">Start Free Trial →</a>
+      <hr style="border-color:rgba(255,255,255,0.1);margin-top:32px">
+      <p style="font-size:12px;color:rgba(245,240,232,0.4)">ProLnk · DFW, Texas · Patent Pending</p>
+    </div>`,
+  }).catch(e => console.error("[email] Approval email failed:", e));
+}
+
+export async function sendPartnerRejectionEmail(params: {
+  to: string; firstName: string; reason?: string;
+}): Promise<void> {
+  if (!process.env.RESEND_API_KEY) {
+    console.log("[email] RESEND_API_KEY not set — skipping rejection email to", params.to);
+    return;
+  }
+  const { Resend } = await import("resend");
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  await resend.emails.send({
+    from: process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.io>",
+    to: params.to,
+    subject: "ProLnk Application Update",
+    html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px">
+      <p>Hi ${params.firstName},</p>
+      <p>Thank you for your interest in ProLnk. Unfortunately, we're unable to approve your application at this time${params.reason ? `: ${params.reason}` : ""}.</p>
+      <p>Our network is currently capped at 2,125 founding members. We may be able to accommodate you in a future expansion.</p>
+      <p>We appreciate your interest in ProLnk.</p>
+    </div>`,
+  }).catch(e => console.error("[email] Rejection email failed:", e));
+}
+
+export async function sendWelcomeToNetworkEmail(params: {
+  to: string; firstName: string; trade: string; tier: string; referralLink: string;
+}): Promise<void> {
+  if (!process.env.RESEND_API_KEY) return;
+  const { Resend } = await import("resend");
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  await resend.emails.send({
+    from: process.env.FROM_EMAIL || "ProLnk <noreply@prolnk.io>",
+    to: params.to,
+    subject: "Welcome to the ProLnk Founding Network!",
+    html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px">
+      <h1>Welcome, ${params.firstName}! 🎉</h1>
+      <p>You're now part of the ProLnk Founding Network as a ${params.trade} professional.</p>
+      <p>Your referral link: <a href="${params.referralLink}">${params.referralLink}</a></p>
+      <p>Share it with other qualified pros to build your passive income network.</p>
+    </div>`,
+  }).catch(e => console.error("[email] Welcome email failed:", e));
+}

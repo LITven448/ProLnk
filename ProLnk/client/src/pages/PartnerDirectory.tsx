@@ -25,14 +25,18 @@ const BUSINESS_TYPES = [
   "Gutter Cleaning", "Pet Waste Removal", "Security", "Irrigation",
 ];
 
-const TIERS = ["All", "scout", "pro", "crew", "company", "enterprise"];
+const TIERS = ["All", "charter", "founding", "l3", "l4", "scout", "pro", "crew", "company", "enterprise"];
 
 const TIER_CONFIG: Record<string, { label: string; bg: string; color: string; border: string }> = {
-  scout:      { label: "Scout",      bg: "#f8fafc", color: "#64748b", border: "#cbd5e1" },
-  pro:        { label: "Pro",        bg: "#f0fdfa", color: "#0d9488", border: "#99f6e4" },
-  crew:       { label: "Crew",       bg: "#eef2ff", color: "#6366f1", border: "#c7d2fe" },
-  company:    { label: "Company",    bg: "#fefce8", color: "#ca8a04", border: "#fde68a" },
-  enterprise: { label: "Enterprise", bg: "#1e293b", color: "#f8fafc", border: "#475569" },
+  charter:    { label: "Charter Member",  bg: "#fefce8", color: "#ca8a04", border: "#fde68a" },
+  founding:   { label: "Founding Member", bg: "#fdf4ff", color: "#9333ea", border: "#e9d5ff" },
+  l3:         { label: "L3 Member",       bg: "#eef2ff", color: "#6366f1", border: "#c7d2fe" },
+  l4:         { label: "L4 Member",       bg: "#f0fdfa", color: "#0d9488", border: "#99f6e4" },
+  scout:      { label: "Scout",           bg: "#f8fafc", color: "#64748b", border: "#cbd5e1" },
+  pro:        { label: "Pro",             bg: "#f0fdfa", color: "#0d9488", border: "#99f6e4" },
+  crew:       { label: "Crew",            bg: "#eef2ff", color: "#6366f1", border: "#c7d2fe" },
+  company:    { label: "Company",         bg: "#fefce8", color: "#ca8a04", border: "#fde68a" },
+  enterprise: { label: "Enterprise",      bg: "#1e293b", color: "#f8fafc", border: "#475569" },
 };
 
 function TierBadge({ tier }: { tier: string }) {
@@ -101,6 +105,7 @@ export default function PartnerDirectory() {
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
 
   const { data: partners, isLoading } = trpc.directory.getApprovedPartners.useQuery();
+  const { data: waitlistCounts } = trpc.waitlist.getPublicCounts.useQuery();
 
   const filtered = useMemo(() => {
     if (!partners) return [];
@@ -166,15 +171,28 @@ export default function PartnerDirectory() {
       <div className="p-6">
         {/* Header */}
         <div className="mb-6">
-          <div className="flex items-center gap-3 mb-1">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--teal)" }}>
-              <Users className="w-4 h-4 text-white" />
+          <div className="flex items-start justify-between gap-3 mb-1">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--teal)" }}>
+                <Users className="w-4 h-4 text-white" />
+              </div>
+              <h1 className="text-2xl font-bold text-gray-900">Partner Directory</h1>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">Partner Directory</h1>
+            {(partners?.length ?? 0) > 0 && (
+              <div className="flex-shrink-0 flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                {partners!.length} Partners &amp; Growing
+              </div>
+            )}
           </div>
           <p className="text-gray-500 text-sm ml-11">
-            Browse trusted home service professionals in the ProLnk network. Every partner is vetted and approved.
+            Browse trusted home service professionals in the DFW ProLnk network. Every partner is vetted and approved.
           </p>
+          {(waitlistCounts?.pros ?? 0) > 0 && (
+            <p className="text-xs text-gray-400 ml-11 mt-1">
+              <span className="font-semibold text-gray-600">{waitlistCounts!.pros.toLocaleString()} pros</span> on the waitlist — more partners launching at DFW go-live Sep 1, 2026
+            </p>
+          )}
         </div>
 
         {/* Search + view toggle */}
@@ -214,18 +232,18 @@ export default function PartnerDirectory() {
         {/* Tier filter */}
         <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1 scrollbar-hide">
           <span className="text-xs text-gray-400 font-semibold uppercase tracking-wider flex-shrink-0">Tier:</span>
-          {TIERS.map(tier => (
+          {["All", "charter", "founding", "l3", "l4"].map(tier => (
             <button
               key={tier}
               onClick={() => setSelectedTier(tier)}
-              className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all capitalize ${
+              className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                 selectedTier === tier
                   ? "text-white shadow-sm"
                   : "bg-white text-gray-600 border border-gray-200 hover:border-gray-300"
               }`}
               style={selectedTier === tier ? { backgroundColor: "var(--teal)" } : {}}
             >
-              {tier === "All" ? "All Tiers" : tier}
+              {tier === "All" ? "All Tiers" : TIER_CONFIG[tier]?.label ?? tier}
             </button>
           ))}
         </div>
@@ -293,17 +311,31 @@ export default function PartnerDirectory() {
                 ))}
               </div>
             ) : filtered.length === 0 ? (
-              <div className="py-20 text-center">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="w-8 h-8 text-gray-300" />
+              <div className="py-20 text-center max-w-md mx-auto">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0A1628]/5 to-[#00B5B8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Search className="w-8 h-8 text-[#00B5B8]/40" />
                 </div>
-                <h3 className="text-lg font-heading text-gray-700 mb-2">No Partners Found</h3>
-                <p className="text-gray-500 text-sm mb-6">
-                  {search ? `No results for "${search}"` : `No partners in the "${selectedType}" category yet.`}
-                </p>
+                {search || selectedType !== "All" || selectedTier !== "All" ? (
+                  <>
+                    <h3 className="text-lg font-heading text-gray-700 mb-2">No Partners Found</h3>
+                    <p className="text-gray-500 text-sm mb-6">
+                      {search ? `No results for "${search}"` : `No partners in the "${selectedType}" category yet.`}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-xl font-black text-[#0A1628] mb-3">Be the First in DFW</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-2">
+                      The DFW founding network is forming now. Apply for a Charter or Founding Member spot to claim your place before launch day — Sep 1, 2026.
+                    </p>
+                    <p className="text-xs text-gray-400 mb-6">
+                      Founding Members get locked rates at $149/mo, priority lead routing, and permanent origination rights.
+                    </p>
+                  </>
+                )}
                 <Link href="/apply">
                   <Button className="text-white font-heading" style={{ backgroundColor: "var(--teal)" }}>
-                    Be the First to Join
+                    Apply for the Founding Network
                   </Button>
                 </Link>
               </div>
@@ -313,7 +345,7 @@ export default function PartnerDirectory() {
                   // Derive mock rating from referralCount for display
                   const rating = Math.min(5, 3.5 + (partner.referralCount % 15) * 0.1);
                   const reviewCount = Math.max(1, Math.floor(partner.referralCount * 0.6));
-                  const isVerified = partner.tier !== "scout";
+                  const isVerified = ["founding", "charter", "l3", "l4", "pro", "crew", "company", "enterprise"].includes(partner.tier?.toLowerCase());
                   return (
                     <Link key={partner.id} href={`/partner/${partner.id}`}>
                       <Card className="border-0 shadow-sm hover:shadow-md transition-shadow bg-white group cursor-pointer h-full">

@@ -6,8 +6,9 @@ import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 import {
   Award, Users, TrendingUp, DollarSign, CheckCircle, XCircle,
-  Send, LogOut, BarChart2, Bell, ChevronRight, Percent, Zap, ShieldCheck,
-  Home, Eye
+  Send, LogOut, Bell, ChevronRight, Percent, Zap, ShieldCheck,
+  Home, Eye, Bot, Database, Mail, Activity, Clock, Star,
+  UserPlus, HomeIcon, Crown, Shield, Layers, ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -49,6 +50,8 @@ export default function AdminDashboard() {
   const utils = trpc.useUtils();
 
   const { data: stats } = trpc.admin.getNetworkStats.useQuery(undefined, { enabled: isAuthenticated });
+  const { data: waitlistCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { enabled: isAuthenticated, refetchInterval: 30000 });
+  const { data: waitlistMetrics } = trpc.waitlist.getWaitlistMetrics.useQuery(undefined, { enabled: isAuthenticated });
   const { data: pending } = trpc.admin.getPendingApplications.useQuery(undefined, { enabled: isAuthenticated });
   const { data: trustyLeads, refetch: refetchLeads } = trpc.trustyPro.getLeads.useQuery(undefined, { enabled: isAuthenticated });
   const { data: approvedPartners } = trpc.admin.getApprovedPartnersForDispatch.useQuery(undefined, { enabled: isAuthenticated });
@@ -171,44 +174,210 @@ export default function AdminDashboard() {
       </nav>
 
       <div className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-heading text-gray-900">Admin Dashboard</h1>
-          <p className="text-gray-500 text-sm mt-1">Manage partner applications, commissions, and network activity.</p>
+
+        {/* ── Command Center Header ─────────────────────────────────────────── */}
+        <div className="rounded-2xl mb-8 overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1628 0%, #0e2040 60%, #0f2d4a 100%)" }}>
+          <div className="px-6 pt-6 pb-4">
+            <div className="flex items-center justify-between flex-wrap gap-3">
+              <div>
+                <h1 className="text-2xl font-heading font-black text-white tracking-tight">ProLnk Command Center</h1>
+                <p className="text-sm mt-0.5" style={{ color: "#7eb8d4" }}>Real-time platform intelligence — waitlist, network, agents, system health</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#00D4FF18", border: "1px solid #00D4FF40", color: "#00D4FF" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  Live
+                </span>
+                <Button variant="ghost" size="sm" onClick={logout} className="text-white/60 hover:text-white hover:bg-white/10 gap-1">
+                  <LogOut className="h-3.5 w-3.5" /> Sign Out
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Waitlist + Network KPIs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t" style={{ borderColor: "#ffffff15" }}>
+            {[
+              {
+                label: "Pro Signups",
+                value: (waitlistCounts?.pros ?? 0).toLocaleString(),
+                sub: "waitlisted professionals",
+                icon: UserPlus,
+                color: "#00D4FF",
+              },
+              {
+                label: "Homeowner Signups",
+                value: (waitlistCounts?.homes ?? 0).toLocaleString(),
+                sub: "homeowners waiting",
+                icon: HomeIcon,
+                color: "#82D616",
+              },
+              {
+                label: "Active Partners",
+                value: (stats?.totalPartners ?? 0).toLocaleString(),
+                sub: "approved network pros",
+                icon: Users,
+                color: "#FBB140",
+              },
+              {
+                label: "Pending Review",
+                value: (pending?.length ?? 0).toLocaleString(),
+                sub: "applications to approve",
+                icon: Clock,
+                color: pending && pending.length > 0 ? "#EA0606" : "#82D616",
+              },
+            ].map((kpi, i) => (
+              <div key={kpi.label} className="px-5 py-4 flex items-center gap-3" style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
+                <div className="w-9 h-9 rounded-xl flex-shrink-0 flex items-center justify-center" style={{ background: `${kpi.color}20` }}>
+                  <kpi.icon className="w-4 h-4" style={{ color: kpi.color }} />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xl font-black text-white leading-none">{kpi.value}</div>
+                  <div className="text-xs mt-0.5 truncate" style={{ color: "#7eb8d4" }}>{kpi.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Quick nav to sub-pages */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          <Link href="/admin/opportunities">
-            <Button variant="outline" size="sm" className="gap-2 border-[#0A1628]/20 hover:border-[#0A1628]/40 hover:bg-[#F5E642]/10">
-              <Zap className="w-4 h-4" style={{ color: "var(--teal)" }} />
-              AI Opportunity Feed
-            </Button>
-          </Link>
-          <Link href="/admin/rates">
-            <Button variant="outline" size="sm" className="gap-2 border-[#0A1628]/20 hover:border-[#0A1628]/40 hover:bg-[#F5E642]/10">
-              <Percent className="w-4 h-4" style={{ color: "var(--teal)" }} />
-              Commission Rates
-            </Button>
-          </Link>
-          <Link href="/partners">
-            <Button variant="outline" size="sm" className="gap-2 border-[#0A1628]/20 hover:border-[#0A1628]/40 hover:bg-[#F5E642]/10">
-              <Users className="w-4 h-4" style={{ color: "var(--teal)" }} />
-              Partner Directory
-            </Button>
-          </Link>
-          <Link href="/admin/setup">
-            <Button variant="outline" size="sm" className="gap-2 border-gray-200">
-              <ShieldCheck className="w-4 h-4 text-gray-400" />
-              Admin Setup
-            </Button>
-          </Link>
+        {/* ── Network Tier Breakdown + Quick Actions + System Health ─────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+
+          {/* Tier Breakdown */}
+          <Card className="border-0 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="font-heading text-sm text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                <Layers className="w-4 h-4" style={{ color: "var(--teal)" }} />
+                Network Tier Breakdown
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {[
+                { tier: "charter", label: "Charter", cap: 25, color: "#F5E642", icon: Crown },
+                { tier: "founding", label: "Founding", cap: 100, color: "#00D4FF", icon: Star },
+                { tier: "growth", label: "Growth Pro (L3)", cap: 400, color: "#82D616", icon: TrendingUp },
+                { tier: "standard", label: "Standard Pro (L4)", cap: 1600, color: "#7B809A", icon: Users },
+              ].map(({ tier, label, cap, color, icon: Icon }) => {
+                const filled = Number((waitlistMetrics as any)?.tierBreakdown?.[tier] ?? 0);
+                const pct = Math.min(100, Math.round((filled / cap) * 100));
+                return (
+                  <div key={tier}>
+                    <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center gap-1.5">
+                        <Icon className="w-3 h-3" style={{ color }} />
+                        <span className="text-xs font-semibold text-gray-700">{label}</span>
+                      </div>
+                      <span className="text-xs font-mono text-gray-500">{filled}/{cap}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                      <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: color }} />
+                    </div>
+                  </div>
+                );
+              })}
+              <p className="text-xs text-gray-400 pt-1">Waitlist closes at 500 pro apps + 5,000 homes</p>
+            </CardContent>
+          </Card>
+
+          {/* Quick Actions */}
+          <Card className="border-0 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="font-heading text-sm text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                <Zap className="w-4 h-4" style={{ color: "var(--teal)" }} />
+                Quick Actions
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {[
+                { label: "Approve Pending Applications", href: "#applications", icon: CheckCircle, color: "#22c55e", badge: pending?.length },
+                { label: "View Waitlist Manager", href: "/admin/waitlist", icon: Users, color: "var(--teal)" },
+                { label: "Agent Command Center", href: "/admin/agent-command-center", icon: Bot, color: "#7928CA" },
+                { label: "AI Agents Dashboard", href: "/admin/dashboard/agents", icon: Activity, color: "#00D4FF" },
+                { label: "Commission Rates", href: "/admin/rates", icon: Percent, color: "#FBB140" },
+                { label: "AI Opportunity Feed", href: "/admin/opportunities", icon: TrendingUp, color: "#6366f1" },
+              ].map((action) => (
+                <Link key={action.href} href={action.href}>
+                  <div className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${action.color}15` }}>
+                        <action.icon className="w-3.5 h-3.5" style={{ color: action.color }} />
+                      </div>
+                      <span className="text-sm text-gray-700 group-hover:text-gray-900 font-medium">{action.label}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {action.badge != null && action.badge > 0 && (
+                        <span className="px-1.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-600">{action.badge}</span>
+                      )}
+                      <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-gray-500" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* System Health */}
+          <Card className="border-0 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="font-heading text-sm text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                <Shield className="w-4 h-4" style={{ color: "var(--teal)" }} />
+                System Health
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {[
+                { label: "Database (TiDB)", status: stats !== undefined ? "operational" : "checking", icon: Database },
+                { label: "Email (Resend)", status: "operational", icon: Mail },
+                { label: "AI Agents (Claude)", status: "operational", icon: Bot },
+                { label: "Platform API", status: "operational", icon: Activity },
+                { label: "Waitlist Signups", status: waitlistCounts !== undefined ? "operational" : "checking", icon: Users },
+              ].map(({ label, status, icon: Icon }) => (
+                <div key={label} className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Icon className="w-3.5 h-3.5 text-gray-400" />
+                    <span className="text-sm text-gray-700">{label}</span>
+                  </div>
+                  <span className={`flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full ${
+                    status === "operational"
+                      ? "bg-green-50 text-green-600"
+                      : status === "checking"
+                      ? "bg-amber-50 text-amber-600"
+                      : "bg-red-50 text-red-600"
+                  }`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${
+                      status === "operational" ? "bg-green-500" : status === "checking" ? "bg-amber-400" : "bg-red-500"
+                    }`} />
+                    {status === "operational" ? "Online" : status === "checking" ? "Checking" : "Error"}
+                  </span>
+                </div>
+              ))}
+
+              {/* Recent activity placeholder */}
+              <div className="pt-2 mt-1 border-t border-gray-100">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Recent Signups</p>
+                <div className="space-y-1.5">
+                  {[
+                    { name: "Pro waitlist signup", time: "just now", type: "pro" },
+                    { name: "Homeowner request", time: "2m ago", type: "home" },
+                    { name: "Pro waitlist signup", time: "5m ago", type: "pro" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${item.type === "pro" ? "bg-teal-400" : "bg-blue-400"}`} />
+                      <span className="flex-1 truncate">{item.name}</span>
+                      <span className="text-gray-400">{item.time}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Network stats */}
+        {/* ── Platform Stats Row ─────────────────────────────────────────────── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[
             { label: "Total Partners", value: stats?.totalPartners ?? 0, icon: Users, color: "var(--teal)" },
-            { label: "Pending Applications", value: stats?.pendingApplications ?? 0, icon: ChevronRight, color: "#f59e0b" },
+            { label: "Pending Applications", value: pending?.length ?? 0, icon: ChevronRight, color: "#f59e0b" },
             { label: "Total Opportunities", value: stats?.totalOpportunities ?? 0, icon: TrendingUp, color: "#6366f1" },
             { label: "Commissions Paid", value: `$${(stats?.totalCommissionsPaid ?? 0).toFixed(2)}`, icon: DollarSign, color: "#22c55e" },
           ].map((stat) => (

@@ -120,15 +120,25 @@ export default function ExchangeLanding() {
           ))}
         </div>
 
-        {/* CTA */}
-        <a href="#early-access">
-          <button
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold text-[#0A1628] transition-all hover:scale-105"
-            style={{ backgroundColor: "#F59E0B", boxShadow: "0 8px 32px rgba(245,158,11,0.35)" }}
-          >
-            Get Early Access <ArrowRight className="w-5 h-5" />
-          </button>
-        </a>
+        {/* CTAs */}
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link href="/exchange/jobs">
+            <button
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold text-[#0A1628] transition-all hover:scale-105"
+              style={{ backgroundColor: "#F59E0B", boxShadow: "0 8px 32px rgba(245,158,11,0.35)" }}
+            >
+              Browse Jobs <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
+          <Link href="/exchange/post">
+            <button
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-base font-bold border transition-all hover:scale-105"
+              style={{ borderColor: "rgba(245,158,11,0.4)", color: "#F59E0B", backgroundColor: "rgba(245,158,11,0.08)" }}
+            >
+              Post a Job
+            </button>
+          </Link>
+        </div>
       </section>
 
       {/* Feature Cards */}

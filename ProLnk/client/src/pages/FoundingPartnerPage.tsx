@@ -6,6 +6,7 @@
  */
 
 import { useLocation } from "wouter";
+import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -43,6 +44,10 @@ export default function FoundingPartnerPage() {
 
   return (
     <div className="min-h-screen bg-gray-950">
+      <Helmet>
+        <title>Founding Network — ProLnk | Charter, Founding, Level 3, Level 4</title>
+        <meta name="description" content="Join the ProLnk Founding Network. Only 2,125 spots. Charter Members: first 25. Founding Members: first 100. $149/mo locked for life. 72% commission keep rate." />
+      </Helmet>
       {/* Nav */}
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <button onClick={() => navigate("/")} className="font-black text-teal-400 text-xl">ProLnk</button>

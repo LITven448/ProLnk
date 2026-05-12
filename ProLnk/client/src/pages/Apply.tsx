@@ -16,7 +16,7 @@ import {
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { SERVICE_CATEGORIES, SERVICE_GROUPS } from "../../../shared/serviceCategories";
-import { Shield, CheckCircle2, ArrowRight, Award, Zap, DollarSign, MapPin, Users, TrendingUp, Star } from "lucide-react";
+import { Shield, CheckCircle2, ArrowRight, Award, Zap, DollarSign, MapPin, Users, TrendingUp, Star, Lock, Gift, Percent, Crown } from "lucide-react";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import { Link } from "wouter";
 
@@ -49,6 +49,13 @@ const HOW_IT_WORKS = [
   { step: "01", title: "Apply & Get Approved", desc: "Fill out this form. Our team reviews your application within 24 hours." },
   { step: "02", title: "Complete Onboarding", desc: "Set up your partner profile, connect your payout account, and get your referral link." },
   { step: "03", title: "Start Earning", desc: "Refer homeowners, receive matched leads, and earn commissions on every completed job." },
+];
+
+const FOUNDING_PERKS = [
+  { icon: Gift, title: "90-Day Free Trial", desc: "No credit card required. Full access from day one." },
+  { icon: Lock, title: "$149/mo Locked for Life", desc: "Founding rate never increases, even as we raise prices." },
+  { icon: Percent, title: "72% Commission Keep Rate", desc: "You keep 72 cents of every dollar earned through the network." },
+  { icon: Crown, title: "Founding Network Status", desc: "Permanent founding badge — priority placement, early access, network perks forever." },
 ];
 
 export default function Apply() {
@@ -135,13 +142,19 @@ export default function Apply() {
       {/* Hero Banner */}
       <div className="bg-[#0A1628] border-b border-[#0A1628]/10">
         <div className="max-w-6xl mx-auto px-6 py-14 text-center">
-          {referrerName && (
-            <div className="inline-flex items-center gap-2 bg-[#0A1628]/10 border border-[#0A1628]/30 rounded-full px-4 py-2 text-sm text-[#0A1628]/60 mb-5">
-              <Users className="w-4 h-4" /><span>Referred by <strong>{referrerName}</strong></span>
+          {referrerName ? (
+            <div className="inline-flex items-center gap-3 bg-teal-500/15 border border-teal-400/40 rounded-2xl px-6 py-3 text-sm text-teal-300 mb-5 shadow-lg">
+              <div className="w-8 h-8 rounded-full bg-teal-400/20 flex items-center justify-center flex-shrink-0">
+                <Users className="w-4 h-4 text-teal-300" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-teal-400/70 font-semibold uppercase tracking-widest mb-0.5">You were invited by</p>
+                <p className="font-bold text-teal-200 text-base">{referrerName}</p>
+              </div>
             </div>
-          )}
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 text-sm text-amber-300 mb-5">
-            <Award className="w-4 h-4" /><span>Founding Partner Applications -- DFW Launch</span>
+          ) : null}
+          <div className={`inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 text-sm text-amber-300 mb-5 ${referrerName ? "ml-3" : ""}`}>
+            <Award className="w-4 h-4" /><span>Founding Partner Applications — DFW Launch</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4 leading-tight">
             Become a <span className="text-teal-400">ProLnk Partner</span>
@@ -150,8 +163,8 @@ export default function Apply() {
             Join the DFW network of verified home service professionals. Earn commissions, receive matched leads, and get TrustyPro Certified.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-200">
-            {["Free to join", "No monthly fees to start", "24-hr approval", "DFW-focused network"].map((t, i) => (
-              <div key={i} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#0A1628]/70" /><span>{t}</span></div>
+            {["90-day free trial", "No credit card required", "24-hr approval", "Founding rate locked for life"].map((t, i) => (
+              <div key={i} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-400" /><span>{t}</span></div>
             ))}
           </div>
         </div>
@@ -162,6 +175,29 @@ export default function Apply() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Left Column -- Benefits */}
           <div className="lg:col-span-2 space-y-10">
+            {/* What you'll get */}
+            <div className="bg-gradient-to-br from-[#0A1628] to-[#0D1F3C] rounded-2xl p-6 border border-teal-400/20">
+              <p className="text-xs text-teal-400 font-semibold uppercase tracking-widest mb-5">What you'll get</p>
+              <div className="space-y-4">
+                {FOUNDING_PERKS.map((perk, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="w-9 h-9 rounded-xl bg-teal-400/15 border border-teal-400/25 flex items-center justify-center flex-shrink-0">
+                      <perk.icon className="w-4 h-4 text-teal-300" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-white text-sm mb-0.5">{perk.title}</p>
+                      <p className="text-gray-400 text-xs leading-relaxed">{perk.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 pt-5 border-t border-white/10">
+                <p className="text-xs text-amber-400 font-semibold flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5" /> Founding partner spots are limited — waitlist closes at 500 partners
+                </p>
+              </div>
+            </div>
+
             <div>
               <p className="text-xs text-[#0A1628]/70 font-semibold uppercase tracking-widest mb-6">Partner Benefits</p>
               <div className="space-y-5">

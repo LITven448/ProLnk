@@ -11,6 +11,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/_core/hooks/useAuth";
+import BackToTop from "@/components/BackToTop";
 import {
   Lock, DollarSign, RefreshCw, Calendar, Home, Zap, CheckCircle,
   Star, Users, TrendingUp, ArrowRight, Shield, Award,
@@ -45,8 +46,18 @@ export default function FoundingPartnerPage() {
   return (
     <div className="min-h-screen bg-gray-950">
       <Helmet>
-        <title>Founding Network — ProLnk | Charter, Founding, Level 3, Level 4</title>
-        <meta name="description" content="Join the ProLnk Founding Network. Only 2,125 spots. Charter Members: first 25. Founding Members: first 100. $149/mo locked for life. 72% commission keep rate." />
+        <title>Join the ProLnk Founding Network — 2,125 Spots Available</title>
+        <meta name="description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
+        <meta property="og:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
+        <meta property="og:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prolnk.io/founding-partner" />
+        <meta property="og:image" content="https://prolnk.io/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Join the ProLnk Founding Network — 2,125 Spots Available" />
+        <meta name="twitter:description" content="Charter Members, Founding Members, and Partner tiers. $149/mo locked forever. 90-day free trial. Apply before the waitlist closes." />
+        <meta name="twitter:image" content="https://prolnk.io/og-image.png" />
+        <link rel="canonical" href="https://prolnk.io/founding-partner" />
       </Helmet>
       {/* Nav */}
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
@@ -238,6 +249,7 @@ export default function FoundingPartnerPage() {
       <footer className="border-t border-gray-800 py-8 text-center text-gray-600 text-sm">
         © 2026 ProLnk LLC · DFW, Texas · <a href="/legal/terms" className="hover:text-gray-400">Terms</a> · <a href="/legal/privacy" className="hover:text-gray-400">Privacy</a>
       </footer>
+      <BackToTop />
     </div>
   );
 }

@@ -8,8 +8,8 @@ import { toast } from "sonner";
 import {
   Brain, Camera, CloudLightning, ShieldCheck, Users, RefreshCw,
   CheckCircle, AlertTriangle, Clock, Zap, Activity, Bot,
-  DollarSign, Mail, Shield, BarChart2, Cpu, Gavel, Globe,
-  TrendingUp, Search, Map, Star, HeartHandshake, Wrench,
+  DollarSign, BarChart2, Cpu, Gavel,
+  TrendingUp, Map, Star, HeartHandshake, Wrench,
 } from "lucide-react";
 
 // ─── Agent Category Definitions ───────────────────────────────────────────────

@@ -507,6 +507,27 @@ function PayoutTab() {
         </div>
       </div>
       <div>
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">Payout Setup</h3>
+        <a
+          href="/dashboard/payout-setup"
+          className="flex items-center justify-between p-3 rounded-xl border border-[#0A1628]/20 bg-[#0A1628]/5 hover:bg-[#0A1628]/10 transition-colors group mb-2"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#0A1628]">
+              <CreditCard className="w-4 h-4 text-[#F5E642]" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-[#0A1628]">Bank Account Setup</p>
+              <p className="text-xs text-gray-500">
+                {isConnected ? "Manage your connected bank account" : "Connect your bank to receive monthly payouts"}
+              </p>
+            </div>
+          </div>
+          <ChevronRight className="w-4 h-4 text-[#0A1628] group-hover:translate-x-0.5 transition-transform" />
+        </a>
+      </div>
+
+      <div>
         <h3 className="text-sm font-semibold text-gray-900 mb-3">Payout History</h3>
         <a href="/dashboard/payout-history" className="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:border-teal-300 hover:bg-teal-50/30 transition-colors group">
           <div className="flex items-center gap-3">

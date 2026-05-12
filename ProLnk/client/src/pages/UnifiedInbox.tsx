@@ -1,3 +1,4 @@
+import type React from "react";
 /**
  * Unified Inbox — /dashboard/inbox
  * Aggregates all partner notifications: new leads, commission updates,

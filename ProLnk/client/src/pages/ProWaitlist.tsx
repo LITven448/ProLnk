@@ -1204,7 +1204,6 @@ export default function ProWaitlist() {
     });
     return () => observer.disconnect();
   }, []);
-  const { data: foundingData } = trpc.directory.getFoundingPartnerCount.useQuery();
   const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60000 });
   const totalSignups = publicCounts?.pros ?? 0;
   const TOTAL_NETWORK_SPOTS = 2125;

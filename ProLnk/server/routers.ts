@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { COOKIE_NAME } from "@shared/const";
@@ -5067,14 +5068,14 @@ Return a JSON object with:
       return { pros: tally(proRows), homes: tally(homeRows) };
     }),
 
-    // --- Admin: activate waitlist entry and send invite email ---
+    // --- Admin: activate waitlist entry, create/upsert partner record, send branded activation email ---
     activateAndInvite: adminProcedure
       .input(z.object({
         id: z.number().int(),
         type: z.enum(['pro', 'home']),
         origin: z.string().url().optional(),
       }))
-      .mutation(async ({ ctx, input }) => {
+      .mutation(async ({ input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Database unavailable' });
         const now = new Date();
@@ -5082,34 +5083,94 @@ Return a JSON object with:
         const rows = await db.execute(
           sql`SELECT * FROM ${sql.raw(table)} WHERE id = ${input.id} LIMIT 1`
         ) as any;
-        const entry = rows?.[0]?.[0] ?? rows?.[0];
+        const entry = (rows?.[0] as any[])?.[0] ?? rows?.[0];
         if (!entry) throw new TRPCError({ code: 'NOT_FOUND', message: 'Waitlist entry not found' });
+
+        const origin = input.origin ?? 'https://prolnk.io';
+        const email = (entry.email ?? entry.contactEmail) as string | undefined;
+        const firstName = (entry.firstName ?? entry.contactName ?? 'Partner') as string;
+        const lastName = (entry.lastName ?? '') as string;
+        const tier = (entry.tier ?? 'founding') as string;
+
+        if (!email) throw new TRPCError({ code: 'BAD_REQUEST', message: 'Waitlist entry has no email address' });
+
+        // Mark the waitlist entry as invited
         await db.execute(
           sql`UPDATE ${sql.raw(table)} SET status = 'invited', invitedAt = ${now}, updatedAt = ${now} WHERE id = ${input.id}`
         );
-        const origin = input.origin ?? 'https://prolnk.io';
-        const email = entry.email ?? entry.contactEmail;
-        const name = entry.name ?? entry.contactName ?? 'there';
-        const signupUrl = input.type === 'pro'
-          ? `${origin}/apply?ref=invite&email=${encodeURIComponent(email ?? '')}`
-          : `${origin}/join?ref=invite&email=${encodeURIComponent(email ?? '')}`;
-        if (email && process.env.RESEND_API_KEY) {
-          try {
-            const subject = input.type === 'pro' ? "You're Invited to Join ProLnk \u2014 Your Spot is Ready" : "Your TrustyPro Home Access is Ready";
-            const body = input.type === 'pro'
-              ? `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px"><h2>Welcome to ProLnk, ${name}!</h2><p>Your 30-day free trial is ready. ProLnk connects home service pros with qualified leads from AI-powered home scans \u2014 no cold calling, no Angi fees.</p><div style="text-align:center;margin:32px 0"><a href="${signupUrl}" style="background:#f59e0b;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold">Activate My Account \u2192</a></div><p style="color:#888;font-size:13px">This invitation expires in 7 days.</p></div>`
-              : `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px"><h2>Welcome to TrustyPro, ${name}!</h2><p>Your home is ready for its first AI health scan. We'll identify repair needs and connect you with verified local pros.</p><div style="text-align:center;margin:32px 0"><a href="${signupUrl}" style="background:#f59e0b;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold">Set Up My Home \u2192</a></div><p style="color:#888;font-size:13px">This invitation expires in 7 days.</p></div>`;
-            await fetch('https://api.resend.com/emails', {
-              method: 'POST',
-              headers: { 'Authorization': `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-              body: JSON.stringify({ from: 'ProLnk <onboarding@resend.dev>', to: [email], subject, html: body }),
-            }).catch(() => {});
-          } catch (emailErr) {
-            console.error('[WaitlistInvite] Email send failed', emailErr);
-          }
+
+        if (input.type === 'pro') {
+          // Generate a secure activation token (72-hour expiry)
+          const token = crypto.randomBytes(32).toString('hex');
+          const tokenExpiry = new Date(Date.now() + 72 * 60 * 60 * 1000);
+
+          const tierLabelMap: Record<string, string> = {
+            charter: "Charter Member",
+            founding: "Founding Member",
+            level3: "Level 3 Partner",
+            level4: "Level 4 Partner",
+          };
+          const tierLabel = tierLabelMap[tier] ?? "Founding Member";
+          const referralCode = (entry.referralCode ?? String(input.id)) as string;
+          const position = Number(entry.waitlistPosition ?? input.id);
+
+          // Upsert a partners record so the token has somewhere to live
+          await db.execute(sql`
+            INSERT INTO partners (
+              businessName, businessType, contactName, contactEmail,
+              serviceArea, serviceZipCodes, maxZipCodes,
+              status, tier, commissionRate, platformFeeRate, referralCommissionRate,
+              weeklyLeadCap, passwordResetToken, passwordResetExpiresAt, appliedAt, updatedAt
+            ) VALUES (
+              ${firstName + (lastName ? ' ' + lastName : '')},
+              ${(entry.businessType ?? entry.trade ?? 'home_services') as string},
+              ${firstName + (lastName ? ' ' + lastName : '')},
+              ${email},
+              'DFW',
+              '[]',
+              5,
+              'pending', ${tier}, 0.4000, 0.1200, 0.0480, 5,
+              ${token}, ${tokenExpiry}, ${now}, ${now}
+            )
+            ON DUPLICATE KEY UPDATE
+              passwordResetToken = VALUES(passwordResetToken),
+              passwordResetExpiresAt = VALUES(passwordResetExpiresAt),
+              updatedAt = VALUES(updatedAt)
+          `);
+
+          const setupUrl = `${origin}/set-password?token=${token}`;
+
+          sendPartnerApprovalEmail({
+            to: email,
+            firstName,
+            tier,
+            tierLabel,
+            referralCode,
+            position,
+            setupUrl,
+          }).catch(err => console.error('[WaitlistInvite] Approval email failed:', err));
+
+          await notifyOwner({ title: `Partner Activated`, content: `${firstName} (${email}) \u2014 ${tierLabel} \u2014 activation email sent with setup link.` });
+          return { success: true, email, name: firstName };
         }
-        await notifyOwner({ title: `Waitlist Invite Sent`, content: `${name} (${email}) invited as ${input.type === 'pro' ? 'partner' : 'homeowner'}.` });
-        return { success: true, email, name };
+
+        // Homeowner: send a simple branded invite (no partner account needed at this stage)
+        const homeUrl = `${origin}/trustypro/join?email=${encodeURIComponent(email)}`;
+        if (process.env.RESEND_API_KEY) {
+          fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              from: 'TrustyPro <onboarding@resend.dev>',
+              to: [email],
+              subject: "Your TrustyPro Home Access is Ready",
+              html: `<div style="font-family:'Helvetica Neue',sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;"><div style="background:linear-gradient(135deg,#4F46E5,#818CF8);padding:40px 32px;text-align:center;"><div style="font-size:32px;font-weight:900;color:#fff;">TrustyPro</div><div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">Home Health Network</div></div><div style="padding:40px 36px;"><h2 style="color:#0f172a;margin:0 0 12px;">Welcome, ${firstName}!</h2><p style="color:#475569;line-height:1.7;margin:0 0 28px;">Your home has been approved for TrustyPro access. We'll help you identify repair needs, track your home's health, and connect you with verified local pros \u2014 all in one place.</p><div style="text-align:center;margin:24px 0;"><a href="${homeUrl}" style="background:#4F46E5;color:#fff;padding:16px 40px;border-radius:10px;text-decoration:none;font-weight:800;font-size:15px;display:inline-block;">Set Up My Home \u2192</a></div><p style="color:#94a3b8;font-size:13px;text-align:center;">This invitation expires in 7 days.</p></div><div style="background:#F1F5F9;padding:20px 32px;text-align:center;"><p style="color:#94a3b8;font-size:12px;margin:0;">\u00a9 2026 TrustyPro \u00b7 DFW, Texas</p></div></div>`,
+            }),
+          }).catch(err => console.error('[WaitlistInvite] Homeowner email failed:', err));
+        }
+
+        await notifyOwner({ title: `Homeowner Activated`, content: `${firstName} (${email}) \u2014 homeowner invite sent.` });
+        return { success: true, email, name: firstName };
       }),
 
     // --- Public: commercial contractor waitlist ---

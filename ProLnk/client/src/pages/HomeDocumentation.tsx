@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
+import { trpc } from "@/_core/trpc";
 
 const NAVY = "#0A1628";
 const GOLD = "#F5E642";

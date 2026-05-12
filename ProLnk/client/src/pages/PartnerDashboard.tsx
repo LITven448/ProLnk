@@ -471,14 +471,10 @@ export default function PartnerDashboard() {
   const trialEndsAt = partner.trialEndsAt ? new Date(partner.trialEndsAt) : null;
   const trialDaysLeft = trialEndsAt ? Math.max(0, Math.ceil((trialEndsAt.getTime() - now) / 86400000)) : null;
 
-  const NETWORK_TIERS: Record<string, { label: string; color: string; bg: string }> = {
-    charter:  { label: "Charter",  color: "#10B981", bg: "bg-emerald-50 border-emerald-200" },
-    founding: { label: "Founding", color: "#3B82F6", bg: "bg-blue-50 border-blue-200" },
-    l3:       { label: "Level 3",  color: "#8B5CF6", bg: "bg-purple-50 border-purple-200" },
-    l4:       { label: "Level 4",  color: "#F59E0B", bg: "bg-amber-50 border-amber-200" },
-  };
-  const networkTierKey = (partner.networkTier as string) ?? "charter";
-  const networkTierCfg = NETWORK_TIERS[networkTierKey] ?? NETWORK_TIERS.charter;
+  const isFoundingMember = !!(partner.isFoundingPartner || partner.isExempt);
+  const foundingLabel = isFoundingMember ? "Founding Member" : "Partner";
+  const foundingColor = isFoundingMember ? "#10B981" : "#6B7280";
+  const foundingBg = isFoundingMember ? "bg-emerald-50 border-emerald-200" : "bg-gray-50 border-gray-200";
 
   return (
     <PartnerLayout>
@@ -486,9 +482,9 @@ export default function PartnerDashboard() {
 
         {/* -- Quick Stats Banner ------------------------------------------------- */}
         <div className="flex flex-wrap gap-3 mb-6">
-          <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${networkTierCfg.bg}`} style={{ color: networkTierCfg.color }}>
+          <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${foundingBg}`} style={{ color: foundingColor }}>
             <Award className="w-3.5 h-3.5" />
-            {networkTierCfg.label} Member
+            {tierCfg.label} · {foundingLabel}
           </div>
           {trialDaysLeft !== null && (
             <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${trialDaysLeft > 14 ? "bg-green-50 border-green-200 text-green-700" : "bg-amber-50 border-amber-200 text-amber-700"}`}>

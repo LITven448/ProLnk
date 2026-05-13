@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
@@ -32,6 +32,35 @@ export default function PartnerProfileEditor() {
     googleReviewUrl: "",
   });
   const [dirty, setDirty] = useState(false);
+  const [serviceAreaMapUrl, setServiceAreaMapUrl] = useState<string | null>(null);
+  const [serviceAreaCity, setServiceAreaCity] = useState<string | null>(null);
+  const geocodeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const MAPBOX_TOKEN = "import.meta.env.VITE_MAPBOX_TOKEN ?? """;
+
+  const geocodeAndBuildMap = useCallback(async (query: string) => {
+    if (!query.trim()) { setServiceAreaMapUrl(null); setServiceAreaCity(null); return; }
+    try {
+      const encoded = encodeURIComponent(query.trim());
+      const res = await fetch(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${encoded}.json?types=place,district,locality&limit=1&access_token=${MAPBOX_TOKEN}`
+      );
+      const json = await res.json();
+      const feature = json.features?.[0];
+      if (!feature) { setServiceAreaMapUrl(null); setServiceAreaCity(null); return; }
+      const [lon, lat] = feature.center as [number, number];
+      const city = feature.text as string;
+      const mapUrl =
+        `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/` +
+        `pin-l-home+1B4FD8(${lon},${lat})/` +
+        `${lon},${lat},10,0/600x240@2x?access_token=${MAPBOX_TOKEN}`;
+      setServiceAreaMapUrl(mapUrl);
+      setServiceAreaCity(city);
+    } catch {
+      setServiceAreaMapUrl(null);
+      setServiceAreaCity(null);
+    }
+  }, []);
   const [coiUploading, setCoiUploading] = useState(false);
   const [coiExpiry, setCoiExpiry] = useState("");
   const coiInputRef = useRef<HTMLInputElement>(null);
@@ -76,12 +105,17 @@ export default function PartnerProfileEditor() {
         contactPhone: p.contactPhone ?? "",
         googleReviewUrl: (p as any).googleReviewUrl ?? "",
       });
+      if (p.serviceArea) geocodeAndBuildMap(p.serviceArea);
     }
-  }, [profileData]);
+  }, [profileData, geocodeAndBuildMap]);
 
   const handleChange = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     setDirty(true);
+    if (field === "serviceArea") {
+      if (geocodeTimer.current) clearTimeout(geocodeTimer.current);
+      geocodeTimer.current = setTimeout(() => geocodeAndBuildMap(value), 700);
+    }
   };
 
   const handleSave = () => {
@@ -281,6 +315,23 @@ export default function PartnerProfileEditor() {
               className="text-sm"
             />
             <p className="text-xs text-gray-400 mt-1.5">This is shown to other partners and homeowners when matching leads.</p>
+            {serviceAreaMapUrl && (
+              <div className="mt-3 rounded-xl overflow-hidden border border-gray-200 relative">
+                <img
+                  src={serviceAreaMapUrl}
+                  alt={`Map of ${serviceAreaCity ?? form.serviceArea}`}
+                  className="w-full object-cover"
+                  style={{ height: 180 }}
+                  onError={() => setServiceAreaMapUrl(null)}
+                />
+                {serviceAreaCity && (
+                  <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
+                    <MapPin className="w-3 h-3 text-[#1B4FD8]" />
+                    <span className="text-xs font-semibold text-gray-700">You cover {serviceAreaCity}</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Phone */}

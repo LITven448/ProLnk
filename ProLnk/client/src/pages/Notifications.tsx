@@ -3,10 +3,10 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import {
   Bell, CheckCircle, DollarSign, Info,
-  Clock, RefreshCw, Network, Lightbulb, PartyPopper,
+  Clock, RefreshCw, Network, Lightbulb, PartyPopper, Zap,
 } from "lucide-react";
 
-type NotifType = "commission" | "network" | "system" | "tips";
+type NotifType = "leads" | "commission" | "network" | "system" | "tips";
 type FilterKey = "all" | NotifType;
 
 interface Notification {
@@ -21,6 +21,7 @@ interface Notification {
 }
 
 function classifyEvent(eventType: string): NotifType {
+  if (eventType.includes("lead") || eventType.includes("match") || eventType.includes("referral_lead") || eventType.includes("new_lead")) return "leads";
   if (eventType.includes("commission") || eventType.includes("payout") || eventType.includes("earn")) return "commission";
   if (eventType.includes("referral") || eventType.includes("refer") || eventType.includes("network") || eventType.includes("tier")) return "network";
   if (eventType.includes("tip") || eventType.includes("suggest") || eventType.includes("hint")) return "tips";
@@ -28,6 +29,7 @@ function classifyEvent(eventType: string): NotifType {
 }
 
 function classifyAlert(alertType: string): NotifType {
+  if (alertType.includes("lead") || alertType.includes("match") || alertType.includes("new_lead")) return "leads";
   if (alertType.includes("commission") || alertType.includes("earn") || alertType.includes("payout")) return "commission";
   if (alertType.includes("network") || alertType.includes("referral") || alertType.includes("tier")) return "network";
   if (alertType.includes("tip")) return "tips";
@@ -42,12 +44,20 @@ const TYPE_CONFIG: Record<NotifType, {
   badgeText: string;
   label: string;
 }> = {
-  commission: {
-    icon: <DollarSign className="w-4 h-4" />,
+  leads: {
+    icon: <Zap className="w-4 h-4" />,
     iconBg: "rgba(34,197,94,0.15)",
     iconColor: "#22c55e",
     badgeBg: "rgba(34,197,94,0.1)",
     badgeText: "#22c55e",
+    label: "Lead",
+  },
+  commission: {
+    icon: <DollarSign className="w-4 h-4" />,
+    iconBg: "rgba(245,230,66,0.15)",
+    iconColor: "#F5E642",
+    badgeBg: "rgba(245,230,66,0.1)",
+    badgeText: "#F5E642",
     label: "Commission",
   },
   network: {
@@ -78,6 +88,7 @@ const TYPE_CONFIG: Record<NotifType, {
 
 const FILTER_EMPTY: Record<FilterKey, string> = {
   all: "No notifications yet. Activity will appear here as you use the platform.",
+  leads: "No lead notifications yet. Leads assigned to you will appear here.",
   commission: "No commission notifications yet. Start earning to see commission notifications.",
   network: "No network notifications yet. Invite pros to see your network grow.",
   system: "No system notifications right now.",
@@ -181,9 +192,10 @@ export default function Notifications() {
 
   const FILTER_TABS: { key: FilterKey; label: string }[] = [
     { key: "all", label: "All" },
-    { key: "commission", label: "Commissions" },
+    { key: "leads", label: "Leads" },
     { key: "network", label: "Network" },
     { key: "system", label: "System" },
+    { key: "commission", label: "Commissions" },
     { key: "tips", label: "Tips" },
   ];
 
@@ -225,15 +237,18 @@ export default function Notifications() {
             >
               <RefreshCw className="w-3.5 h-3.5" /> Refresh
             </button>
-            {unreadCount > 0 && (
-              <button
-                onClick={markAllRead}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.25)" }}
-              >
-                <CheckCircle className="w-3.5 h-3.5" /> Mark all read
-              </button>
-            )}
+            <button
+              onClick={markAllRead}
+              disabled={unreadCount === 0}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+              style={
+                unreadCount > 0
+                  ? { background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.25)" }
+                  : { background: "rgba(255,255,255,0.03)", color: "#4b5563", border: "1px solid rgba(255,255,255,0.06)", cursor: "default" }
+              }
+            >
+              <CheckCircle className="w-3.5 h-3.5" /> Mark all read
+            </button>
           </div>
         </div>
 

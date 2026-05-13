@@ -877,10 +877,10 @@ export default function CommandCenter() {
                   setExporting(true);
                   try {
                     const result = await exportWaitlist.refetch();
-                    const data: any = result.data ?? {};
-                    const proRows: any[] = data.pro ?? [];
-                    const homeRows: any[] = data.home ?? [];
-                    const allRows = [...proRows, ...homeRows];
+                    const raw: any = result.data ?? [];
+                    const allRows: any[] = Array.isArray(raw)
+                      ? raw
+                      : [...(raw.pro ?? []), ...(raw.home ?? [])];
                     if (allRows.length === 0) { showToast("No waitlist data to export"); return; }
                     const allKeys = Array.from(new Set(allRows.flatMap((r: any) => Object.keys(r))));
                     const headers = allKeys.join(",");

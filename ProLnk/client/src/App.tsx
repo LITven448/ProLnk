@@ -263,6 +263,7 @@ const WaitlistProLanding = lazy(() => import("./pages/WaitlistProLanding"));
 const WaitlistHomeLanding = lazy(() => import("./pages/WaitlistHomeLanding"));
 
 // TrustyPro -- Homeowner Platform (TrustyProHome kept eager above)
+const ClaimHome = lazy(() => import("./pages/trustypro/ClaimHome"));
 const TrustyProLogin = lazy(() => import("./pages/trustypro/TrustyProLogin"));
 const TrustyProWaitlist = lazy(() => import("./pages/trustypro/TrustyProWaitlist"));
 const PhotoScan = lazy(() => import("./pages/trustypro/PhotoScan"));
@@ -484,30 +485,21 @@ function DomainRouter() {
       hostname === "trustypro.io" ||
       hostname === "www.trustypro.io" ||
       hostname.endsWith(".trustypro.io");
-    if (!isTrustyPro) return;
-    // Already on a correct internal path
-    if (location.startsWith("/trustypro") || location.startsWith("/my-home")) return;
-    // Shared paths work as-is
-    if (["/privacy", "/terms", "/security", "/help", "/waitlist"].some(p => location === p || location.startsWith(p + "/"))) return;
-    // Root → render TrustyProHome at /
-    if (location === "/" || location === "") return;
-    // Map trustypro.io short paths → /trustypro/* equivalents
-    const map: Record<string, string> = {
-      "/login": "/trustypro/login",
-      "/waitlist": "/trustypro/waitlist",
-      "/scan": "/trustypro/scan",
-      "/pros": "/trustypro/pros",
-      "/gallery": "/trustypro/gallery",
-      "/home-health": "/trustypro/home-health",
-      "/dashboard": "/trustypro/dashboard",
-      "/homeowner-login": "/trustypro/homeowner-login",
-      "/partner-dashboard": "/trustypro/partner-dashboard",
-      "/property-setup": "/trustypro/property-setup",
-    };
-    const target = map[location] || map[location.replace(//+$/, "")];
-    if (target) { navigate(target, { replace: true }); return; }
-    // Unknown path → home
-    navigate("/", { replace: true });
+    if (isTrustyPro) {
+      // trustypro.io/waitlist → homeowner waitlist
+      if (location === "/waitlist" || location === "/waitlist/") {
+        navigate("/trustypro/waitlist", { replace: true });
+        return;
+      }
+      // Allow /waitlist/* paths through
+      if (location.startsWith("/waitlist")) return;
+      // Allow /trustypro/* paths through
+      if (location.startsWith("/trustypro")) return;
+      // trustypro.io root → stay at / (TrustyProHome renders via Router below)
+      if (location === "/" || location === "") return;
+      // Any unmatched trustypro.io path → redirect to root
+      navigate("/", { replace: true });
+    }
   }, [location, navigate]);
   return null;
 }
@@ -809,6 +801,7 @@ function Router() {
       <Route path="/trustypro">
         <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>
       </Route>
+      <Route path="/trustypro/claim" component={ClaimHome} />
       <Route path="/trustypro/login" component={TrustyProLogin} />
       <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
       <Route path="/trustypro/dashboard" component={TrustyProHomeownerDashboard} />

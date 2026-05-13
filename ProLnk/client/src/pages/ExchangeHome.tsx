@@ -1,8 +1,47 @@
 import { Link } from "wouter";
 import {
   Briefcase, ArrowRight, Building2, DollarSign, Zap, CheckCircle,
-  Users, TrendingUp, MapPin, Clock, Star,
+  Users, TrendingUp, MapPin, Clock, Star, ShieldCheck, Bot, BadgeDollarSign,
 } from "lucide-react";
+
+const WHY_EXCHANGE = [
+  {
+    icon: <BadgeDollarSign className="w-6 h-6 text-amber-400" />,
+    title: "No Bidding Fees",
+    desc: "Submit bids on any job at zero cost. ProLnk earns only when a contract closes — your margin stays intact.",
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6 text-amber-400" />,
+    title: "Direct Contractor-to-Contractor",
+    desc: "No layers, no middlemen. You negotiate directly with property managers, HOAs, and GCs who hold the budget.",
+  },
+  {
+    icon: <Bot className="w-6 h-6 text-amber-400" />,
+    title: "AI-Powered Matching",
+    desc: "Our matching engine surfaces jobs that fit your trade, license class, capacity, and service area — before competitors see them.",
+  },
+];
+
+const SUCCESS_STORIES = [
+  {
+    quote: "Landed a $78K roofing contract within 3 weeks of joining. The AI matched me to jobs I would have never found cold-calling.",
+    name: "Marcus T.",
+    trade: "Commercial Roofing",
+    savings: "Saved $4,200 in referral fees",
+  },
+  {
+    quote: "Exchange cut my lead acquisition cost by 60%. Every job I bid on is already scoped and budgeted — no tire kickers.",
+    name: "Diana R.",
+    trade: "HVAC — Commercial",
+    savings: "12 contracts awarded",
+  },
+  {
+    quote: "The multi-property contract I won through Exchange turned into $264K over 12 months. Best platform decision I've made.",
+    name: "James K.",
+    trade: "General Contractor",
+    savings: "$264K in recurring revenue",
+  },
+];
 
 const STATS = [
   { value: "2,847", label: "jobs posted" },
@@ -305,6 +344,88 @@ export default function ExchangeHome() {
                 <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {step.desc}
                 </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why ProLnk Exchange */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <p
+          className="text-center text-xs font-bold uppercase tracking-widest mb-3"
+          style={{ color: "rgba(255,255,255,0.3)" }}
+        >
+          Why ProLnk Exchange?
+        </p>
+        <h2 className="text-white font-bold text-2xl text-center mb-10">
+          Built for Contractors Who Mean Business
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {WHY_EXCHANGE.map((item, i) => (
+            <div
+              key={i}
+              className="rounded-2xl p-6 border flex flex-col gap-4"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.04)",
+                borderColor: "rgba(245,158,11,0.2)",
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "rgba(245,158,11,0.12)" }}
+              >
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-base mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <p
+          className="text-center text-xs font-bold uppercase tracking-widest mb-3"
+          style={{ color: "rgba(255,255,255,0.3)" }}
+        >
+          Contractor Success Stories
+        </p>
+        <h2 className="text-white font-bold text-2xl text-center mb-10">
+          Real Wins from Real Contractors
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {SUCCESS_STORIES.map((story, i) => (
+            <div
+              key={i}
+              className="rounded-2xl p-6 border flex flex-col gap-4"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.04)",
+                borderColor: "rgba(255,255,255,0.1)",
+              }}
+            >
+              <div className="flex gap-1 mb-1">
+                {[...Array(5)].map((_, s) => (
+                  <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <p className="text-sm leading-relaxed italic flex-1" style={{ color: "rgba(255,255,255,0.7)" }}>
+                "{story.quote}"
+              </p>
+              <div className="pt-3 border-t" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+                <p className="text-white font-bold text-sm">{story.name}</p>
+                <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>{story.trade}</p>
+                <span
+                  className="inline-block mt-2 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: "rgba(34,197,94,0.12)", color: "#4ade80" }}
+                >
+                  {story.savings}
+                </span>
               </div>
             </div>
           ))}

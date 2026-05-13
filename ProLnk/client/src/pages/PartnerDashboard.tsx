@@ -703,12 +703,23 @@ export default function PartnerDashboard() {
         {/* -- Quick Actions ------------------------------------------------------ */}
         <div className="grid grid-cols-2 gap-3 mb-8">
           {([
-            { icon: Camera, label: "Log a Job", sub: "Upload job photos", href: "/job-complete", color: "#0A1628" },
-            { icon: Camera, label: "Upload Photos", sub: "Add to your library", href: "/photo-upload", color: "#0A7A7C" },
-            { icon: Users, label: "Invite a Pro", sub: "Grow your network", href: "/dashboard/referral", color: "#8B5CF6" },
-            { icon: GitBranch, label: "View Network", sub: "See your 4-level tree", href: "/network-tree", color: "#1B4FD8" },
-          ] as const).map((a) => (
-            <Link key={a.label} href={a.href}>
+            { icon: Camera,     label: "Log a Job",       sub: "Record a completed job",    href: "/log-job",             color: "#0A1628" },
+            { icon: Share2,     label: "Share My Link",   sub: "Copy your referral link",   href: null,                   color: "#0A7A7C" },
+            { icon: BarChart3,  label: "View My Stats",   sub: "Analytics & performance",   href: "/dashboard/analytics", color: "#8B5CF6" },
+            { icon: Megaphone,  label: "Get More Leads",  sub: "Browse job exchange",       href: "/exchange/jobs",       color: "#1B4FD8" },
+          ] as const).map((a) => {
+            const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
+            const handleClick = a.href === null
+              ? (e: React.MouseEvent) => {
+                  e.preventDefault();
+                  navigator.clipboard.writeText(referralLink).then(() => {
+                    toast.success("Referral link copied!");
+                  }).catch(() => {
+                    toast.error("Could not copy — link: " + referralLink);
+                  });
+                }
+              : undefined;
+            const inner = (
               <div className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group flex items-center gap-4">
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
                   style={{ backgroundColor: `${a.color}15` }}>
@@ -720,8 +731,49 @@ export default function PartnerDashboard() {
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-200 group-hover:text-gray-400 ml-auto flex-shrink-0 transition-colors" />
               </div>
-            </Link>
-          ))}
+            );
+            return a.href ? (
+              <Link key={a.label} href={a.href}>{inner}</Link>
+            ) : (
+              <div key={a.label} role="button" tabIndex={0} onClick={handleClick} onKeyDown={(e) => e.key === "Enter" && handleClick?.(e as any)}>
+                {inner}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* -- Quick Actions Floating Card (mobile sticky) ----------------------- */}
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2"
+          style={{ background: "linear-gradient(to top, rgba(255,255,255,0.98) 80%, transparent)" }}>
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-xl p-3">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider text-center mb-2">Quick Actions</p>
+            <div className="grid grid-cols-4 gap-2">
+              {([
+                { icon: Camera,    label: "Log Job",     href: "/log-job",             color: "#0A1628" },
+                { icon: Share2,    label: "Share Link",  href: null,                   color: "#0A7A7C" },
+                { icon: BarChart3, label: "My Stats",    href: "/dashboard/analytics", color: "#8B5CF6" },
+                { icon: Megaphone, label: "More Leads",  href: "/exchange/jobs",       color: "#1B4FD8" },
+              ] as const).map((a) => {
+                const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
+                const handleTap = a.href === null
+                  ? () => navigator.clipboard.writeText(referralLink).then(() => toast.success("Copied!"))
+                  : undefined;
+                const content = (
+                  <div className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${a.color}15` }}>
+                      <a.icon className="w-4.5 h-4.5" style={{ color: a.color, width: "1.125rem", height: "1.125rem" }} />
+                    </div>
+                    <span className="text-[10px] font-semibold text-gray-600 text-center leading-tight">{a.label}</span>
+                  </div>
+                );
+                return a.href ? (
+                  <Link key={a.label} href={a.href}>{content}</Link>
+                ) : (
+                  <div key={a.label} role="button" tabIndex={0} onClick={handleTap} onKeyDown={(e) => e.key === "Enter" && handleTap?.()}>{content}</div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* -- W48: Smart Insights -------------------------------------------- */}

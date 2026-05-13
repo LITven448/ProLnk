@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "build": "vite build && esbuild \"server/**/*.ts\" --platform=node --packages=external --format=esm --outdir=dist --outbase=. --alias:@shared/const=./shared/const.ts --alias:@shared/types=./shared/types.ts --alias:@shared/_core/errors=./shared/_core/errors.ts",
-    "start": "NODE_ENV=production node dist/index.js",
+    "build": "vite build",
+    "start": "NODE_ENV=production tsx server/_core/index.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",

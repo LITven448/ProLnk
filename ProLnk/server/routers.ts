@@ -2117,6 +2117,8 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
         description: z.string().max(1000).optional(),
         contactPhone: z.string().optional(),
         googleReviewUrl: z.string().url().optional().or(z.literal('')),
+        licenseNumber: z.string().max(100).optional(),
+        serviceZipCodes: z.array(z.string().regex(/^\d{5}$/)).max(999).optional(),
       }))
       .mutation(async ({ ctx, input }) => {
         const partner = await getPartnerByUserId(ctx.user.id);
@@ -2130,6 +2132,8 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
           ...(input.description !== undefined && { description: input.description }),
           ...(input.contactPhone !== undefined && { contactPhone: input.contactPhone }),
           ...(input.googleReviewUrl !== undefined && { googleReviewUrl: input.googleReviewUrl || null }),
+          ...(input.licenseNumber !== undefined && { licenseNumber: input.licenseNumber || null }),
+          ...(input.serviceZipCodes !== undefined && { serviceZipCodes: input.serviceZipCodes }),
         }).where(eq(partners.id, partner.id));
         return { success: true };
       }),

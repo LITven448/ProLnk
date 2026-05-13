@@ -2149,26 +2149,40 @@ Be specific, practical, and encouraging. Format as JSON with keys: assessment, p
     askAI: protectedProcedure
       .input(z.object({ question: z.string().min(1).max(1000) }))
       .mutation(async ({ ctx, input }) => {
+        const apiKey = process.env.ANTHROPIC_API_KEY;
+        if (!apiKey) {
+          return { answer: 'The AI assistant is not configured yet. Contact your admin.' };
+        }
         const partner = await getPartnerByUserId(ctx.user.id);
-        const tierInfo = partner
-          ? `The partner's current tier is ${partner.tier}. They have sent ${partner.referralCount ?? 0} referrals, logged ${partner.jobsLogged ?? 0} jobs, and earned $${Number(partner.totalCommissionEarned ?? 0).toFixed(2)} in commissions.`
+        const partnerContext = partner
+          ? `\n\nThis partner's profile: tier=${partner.tier}, referrals sent=${partner.referralCount ?? 0}, jobs logged=${partner.jobsLogged ?? 0}, total commissions earned=$${Number(partner.totalCommissionEarned ?? 0).toFixed(2)}.`
           : '';
+        const systemPrompt = `You are ProLnk's AI assistant for home service professionals.
+
+Key facts:
+- ProLnk is an AI-powered home services referral commission network in DFW, Texas
+- Partners earn: 72% commission keep, 4-level network overrides (7/4/2/1%), subscription overrides (12/6/3/1.5%), home origination rights (1.5% perpetual)
+- Founding network: 2,125 spots (Charter 25, Founding 100, L3 400, L4 1600), all at $149/mo locked for life
+- Partners upload job photos → AI detects 65 categories → auto-routes cross-trade leads to network
+- Home origination rights: first pro to document an address gets 1.5% of every future platform fee at that home, forever
+- TrustyPro is the homeowner-facing brand; ProLnk is the partner-facing brand
+- The platform is patent pending${partnerContext}
+
+Answer concisely and helpfully. If asked about specific real-time account data (exact balances, live leads), direct them to their dashboard.`;
         try {
           const response = await invokeLLM({
+            provider: 'anthropic',
+            model: 'claude-haiku-4-5',
             messages: [
-              {
-                role: 'system',
-                content: `You are a helpful AI assistant for ProLnk, a home service partner referral network in the DFW area. ProLnk connects home service professionals (lawn care, pest control, HVAC, plumbing, etc.) who refer homeowners to other trusted pros in the network, earning commissions on closed jobs. Partners progress through configurable performance tiers -- each tier unlocks higher commission rates and priority lead routing. TrustyPro is the homeowner-facing brand where homeowners can view a trusted professional network and get matched with pros. The ProLnk Mobile App allows field technicians to log jobs and upload photos on-site from any device. The platform is patent pending. Be concise, practical, and encouraging. ${tierInfo}`,
-              },
+              { role: 'system', content: systemPrompt },
               { role: 'user', content: input.question },
             ],
+            maxTokens: 1024,
+            thinking: false,
           });
-          const answer = (response as any)?.choices?.[0]?.message?.content ?? 'I could not generate a response. Please try again.';
-          return { answer };
+          const answer = response.choices?.[0]?.message?.content ?? 'I could not generate a response. Please try again.';
+          return { answer: typeof answer === 'string' ? answer : 'I could not generate a response. Please try again.' };
         } catch (e: any) {
-          if (e.message?.includes('No LLM API key') || e.message?.includes('not set')) {
-            return { answer: 'The AI assistant is not configured yet. Ask your admin to add OPENAI_API_KEY to the environment settings.' };
-          }
           return { answer: 'Something went wrong. Please try again in a moment.' };
         }
       }),
@@ -4099,6 +4113,24 @@ Return JSON only.`,
             }).catch(() => null);
           }
         }
+        // Log to Zep property timeline when address is provided
+        if (input.address) {
+          const detectedIssues = (parsed as any)?.issues ?? [];
+          const { logPropertyEvent } = await import('./memory/zep.js');
+          await logPropertyEvent({
+            address: input.address,
+            eventType: 'photo_scan',
+            description: `AI scan detected ${detectedIssues.length} issue${detectedIssues.length !== 1 ? 's' : ''}. Overall condition: ${(parsed as any)?.overallCondition ?? 'unknown'}. Room: ${(parsed as any)?.roomLabel ?? 'unknown'}.`,
+            metadata: {
+              issues: detectedIssues.map((i: any) => ({ name: i.name, severity: i.severity, tradeType: i.tradeType })),
+              overallCondition: (parsed as any)?.overallCondition,
+              roomLabel: (parsed as any)?.roomLabel,
+              photoUrls: input.photoUrls,
+              homeownerEmail: input.homeownerEmail ?? null,
+            },
+          }).catch(() => null);
+        }
+
         return { ...parsed, photoUrls: input.photoUrls };
       }),
 

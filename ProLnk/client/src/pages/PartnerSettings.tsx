@@ -37,6 +37,10 @@ const TIER_LABELS: Record<string, string> = {
   crew: "Crew",
   company: "Company",
   enterprise: "Enterprise",
+  charter: "Charter",
+  founding: "Founding",
+  l3: "Level 3",
+  l4: "Level 4",
 };
 const TIER_COLORS: Record<string, string> = {
   scout: "#6B7280",
@@ -44,6 +48,10 @@ const TIER_COLORS: Record<string, string> = {
   crew: "#1D4ED8",
   company: "#0A1628",
   enterprise: "#7C3AED",
+  charter: "#0A1628",
+  founding: "#0A1628",
+  l3: "#0A1628",
+  l4: "#0A1628",
 };
 const COMMISSION_RATES: Record<string, number> = {
   scout: 40,
@@ -51,6 +59,19 @@ const COMMISSION_RATES: Record<string, number> = {
   crew: 65,
   company: 72,
   enterprise: 78,
+  charter: 72,
+  founding: 72,
+  l3: 72,
+  l4: 72,
+};
+
+const FOUNDING_TIERS = new Set(["charter", "founding", "l3", "l4"]);
+
+const FOUNDING_TIER_META: Record<string, { label: string; capacity: number; badge: string }> = {
+  charter:  { label: "Charter Member",  capacity: 25,   badge: "⚡ Charter" },
+  founding: { label: "Founding Member", capacity: 100,  badge: "★ Founding" },
+  l3:       { label: "Level 3 Member",  capacity: 400,  badge: "● L3" },
+  l4:       { label: "Level 4 Member",  capacity: 1600, badge: "○ L4" },
 };
 
 // ─── Partner Status Tab ────────────────────────────────────────────────────────
@@ -88,10 +109,57 @@ function PartnerStatusTab() {
   const coiVerified = !!partner?.coiVerifiedAt;
   const coiUrl = partner?.coiUrl ?? null;
 
+  const isFoundingTier = FOUNDING_TIERS.has(tier);
+  const foundingMeta = FOUNDING_TIER_META[tier];
+
   if (isLoading) return <div className="py-8 text-center text-gray-400 text-sm">Loading...</div>;
 
   return (
     <div className="space-y-6">
+      {/* ── Founding Member Status Card ──────────────────────────────── */}
+      {isFoundingTier && foundingMeta && (
+        <div
+          className="rounded-2xl p-5 text-white relative overflow-hidden"
+          style={{ backgroundColor: "#0A1628" }}
+        >
+          {/* decorative glow */}
+          <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-10" style={{ backgroundColor: "#F5E642" }} />
+          <div className="relative">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#F5E642] mb-1">
+                  Founding Network
+                </span>
+                <h3 className="text-2xl font-bold text-white">{foundingMeta.label}</h3>
+              </div>
+              <div className="flex flex-col items-end gap-1.5">
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#F5E642] text-[#0A1628]">
+                  {foundingMeta.badge}
+                </span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full border border-[#F5E642]/40 text-[#F5E642]">
+                  $149/mo locked forever
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/15">
+              <div>
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Your Position</p>
+                <p className="text-xl font-bold text-white">
+                  {waitlistData?.position ? `#${waitlistData.position}` : partner?.positionNumber ? `#${partner.positionNumber}` : "—"}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Tier Capacity</p>
+                <p className="text-xl font-bold text-[#F5E642]">{foundingMeta.capacity} spots</p>
+              </div>
+            </div>
+            <p className="mt-3 text-xs text-white/40">
+              Founding rates are grandfathered. As ProLnk scales, your $149/mo never increases.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Tier Card */}
       <div className="rounded-2xl p-5 text-white" style={{ backgroundColor: tierColor }}>
         <div className="flex items-start justify-between mb-3">
@@ -651,7 +719,7 @@ function SecurityTab() {
         <div className="space-y-2 rounded-xl border border-red-200 p-4 bg-red-50/40">
           <DangerZoneDownload />
           <a
-            href="mailto:support@prolnk.io?subject=Account%20Closure%20Request"
+            href="/account/delete"
             className="flex items-center justify-between p-3 rounded-xl border border-red-200 bg-white hover:bg-red-50 transition-colors group"
           >
             <div className="flex items-center gap-3">
@@ -659,11 +727,11 @@ function SecurityTab() {
                 <Trash2 className="w-4 h-4 text-red-500" />
               </div>
               <div>
-                <p className="text-sm font-medium text-red-700">Close Account</p>
-                <p className="text-xs text-red-400">Contact support to request account closure</p>
+                <p className="text-sm font-medium text-red-700">Delete Account</p>
+                <p className="text-xs text-red-400">Permanently delete your account and data (CCPA)</p>
               </div>
             </div>
-            <ExternalLink className="w-3.5 h-3.5 text-red-400 group-hover:text-red-600 transition-colors" />
+            <ChevronRight className="w-3.5 h-3.5 text-red-400 group-hover:text-red-600 transition-colors" />
           </a>
         </div>
       </div>

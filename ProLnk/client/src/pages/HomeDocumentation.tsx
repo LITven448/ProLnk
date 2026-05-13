@@ -13,6 +13,7 @@ export default function HomeDocumentation() {
   const [addressInput, setAddressInput] = useState("");
   const [checkedAddress, setCheckedAddress] = useState("");
   const [claimSuccess, setClaimSuccess] = useState(false);
+  const [claimedAddress, setClaimedAddress] = useState("");
 
   const checkQuery = trpc.homeDocumentation.checkAddress.useQuery(
     { address: checkedAddress },
@@ -24,12 +25,14 @@ export default function HomeDocumentation() {
   const claimMutation = trpc.homeDocumentation.claimAddress.useMutation({
     onSuccess: () => {
       setClaimSuccess(true);
+      setClaimedAddress(checkedAddress);
       myHomes.refetch();
     },
   });
 
   function handleCheck() {
     setClaimSuccess(false);
+    setClaimedAddress("");
     setCheckedAddress(addressInput.trim());
   }
 
@@ -44,6 +47,7 @@ export default function HomeDocumentation() {
   const isAvailable = checkResult && checkResult.available;
 
   const homes = myHomes.data ?? [];
+  const totalLifetimeEarnings = homes.reduce((sum: number, h: any) => sum + parseFloat(h.lifetime_earnings ?? "0"), 0);
 
   return (
     <div style={{ minHeight: "100vh", background: NAVY, color: "#e8f0fe", fontFamily: "'Inter', sans-serif", padding: "0 0 80px" }}>
@@ -67,12 +71,15 @@ export default function HomeDocumentation() {
               Enter the full service address below. If you're the first pro to document this property, you'll lock in permanent origination rights — earning <strong style={{ color: GOLD }}>1.5%</strong> of all future platform fees at that address.
             </p>
 
+            <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: TEXT_MUTED, marginBottom: "8px", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+              Enter property address to claim or check status
+            </label>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <input
                 type="text"
                 value={addressInput}
                 onChange={e => setAddressInput(e.target.value)}
-                onKeyDown={e => e.key === "Enter" && handleCheck()}
+                onKeyDown={e => e.key === "Enter" && addressInput.trim().length >= 5 && handleCheck()}
                 placeholder="e.g. 4521 Maple St, Dallas, TX 75201"
                 style={{
                   flex: "1 1 280px",
@@ -111,9 +118,9 @@ export default function HomeDocumentation() {
             )}
 
             {checkResult && !checkQuery.isLoading && (
-              <div style={{ marginTop: "20px" }}>
+              <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
                 {isAvailable && !claimSuccess && (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <>
                     <StatusBadge type="available">
                       ✓ Available — you can claim origination rights on this property
                     </StatusBadge>
@@ -138,24 +145,27 @@ export default function HomeDocumentation() {
                     {claimMutation.error && (
                       <div style={{ color: "#f87171", fontSize: "13px" }}>{claimMutation.error.message}</div>
                     )}
-                  </div>
+                  </>
                 )}
 
                 {claimSuccess && (
-                  <StatusBadge type="success">
-                    ✓ Origination rights claimed! You'll earn 1.5% of platform fees at this address forever.
-                  </StatusBadge>
+                  <>
+                    <StatusBadge type="success">
+                      ✓ Origination rights claimed on {claimedAddress}!
+                    </StatusBadge>
+                    <CommissionBreakdown />
+                  </>
                 )}
 
                 {alreadyYours && !claimSuccess && (
                   <StatusBadge type="yours">
-                    ✓ You already hold origination rights on this property
+                    ✅ You own origination rights to this address
                   </StatusBadge>
                 )}
 
                 {claimedByOther && (
                   <StatusBadge type="taken">
-                    ⚠ Already claimed by another pro — origination rights are locked
+                    This address is claimed by another partner
                   </StatusBadge>
                 )}
               </div>
@@ -163,44 +173,56 @@ export default function HomeDocumentation() {
           </div>
         </section>
 
-        {/* Section 2: My Documented Homes */}
+        {/* Section 2: My Properties */}
         <section>
-          <SectionLabel>My Documented Homes</SectionLabel>
+          <SectionLabel>My Properties</SectionLabel>
           <div style={{ background: CARD, border: `1px solid ${BORDER}`, borderRadius: "14px", overflow: "hidden" }}>
             {myHomes.isLoading ? (
-              <div style={{ padding: "32px", color: TEXT_MUTED, fontSize: "14px" }}>Loading your documented homes…</div>
+              <div style={{ padding: "32px", color: TEXT_MUTED, fontSize: "14px" }}>Loading your properties…</div>
             ) : homes.length === 0 ? (
               <div style={{ padding: "40px 32px", textAlign: "center" }}>
                 <div style={{ fontSize: "36px", marginBottom: "12px" }}>🏠</div>
-                <div style={{ color: "#fff", fontWeight: 600, marginBottom: "6px" }}>No homes documented yet</div>
+                <div style={{ color: "#fff", fontWeight: 600, marginBottom: "6px" }}>No properties claimed yet</div>
                 <div style={{ color: TEXT_MUTED, fontSize: "14px" }}>Claim your first address above to start building passive origination income.</div>
               </div>
             ) : (
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr style={{ borderBottom: `1px solid ${BORDER}`, background: "#0d1e36" }}>
-                    {["Address", "Date Claimed", "Status", "Est. Future Value"].map(h => (
-                      <th key={h} style={{ padding: "14px 20px", textAlign: "left", fontSize: "12px", fontWeight: 600, color: TEXT_MUTED, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {homes.map((home: any, i: number) => (
-                    <tr key={i} style={{ borderBottom: i < homes.length - 1 ? `1px solid ${BORDER}` : "none" }}>
-                      <td style={{ padding: "16px 20px", fontSize: "14px", color: "#fff" }}>{home.property_address}</td>
-                      <td style={{ padding: "16px 20px", fontSize: "13px", color: TEXT_MUTED, whiteSpace: "nowrap" }}>
-                        {home.created_at ? new Date(home.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "—"}
-                      </td>
-                      <td style={{ padding: "16px 20px" }}>
-                        <span style={{ background: "rgba(34,197,94,0.12)", color: "#4ade80", fontSize: "12px", fontWeight: 600, padding: "4px 10px", borderRadius: "20px", letterSpacing: "0.03em" }}>Active</span>
-                      </td>
-                      <td style={{ padding: "16px 20px", fontSize: "13px", color: GOLD_DIM }}>
-                        $7.50 / job (est.)
-                      </td>
+              <>
+                {/* Summary bar */}
+                <div style={{ padding: "16px 24px", background: "#0d1e36", borderBottom: `1px solid ${BORDER}`, display: "flex", gap: "32px", flexWrap: "wrap" }}>
+                  <StatChip label="Properties Claimed" value={String(homes.length)} />
+                  <StatChip label="Lifetime Origination Earnings" value={`$${totalLifetimeEarnings.toFixed(2)}`} highlight />
+                  <StatChip label="Est. Annual Passive (avg 4 jobs)" value={`$${(homes.length * 30).toFixed(0)}/yr`} />
+                </div>
+                <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                  <thead>
+                    <tr style={{ borderBottom: `1px solid ${BORDER}`, background: "#0d1e36" }}>
+                      {["Address", "Date Claimed", "Lifetime Earnings", "Jobs (est.)"].map(h => (
+                        <th key={h} style={{ padding: "14px 20px", textAlign: "left", fontSize: "12px", fontWeight: 600, color: TEXT_MUTED, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                      ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {homes.map((home: any, i: number) => {
+                      const earnings = parseFloat(home.lifetime_earnings ?? "0");
+                      const estimatedJobs = earnings > 0 ? Math.round(earnings / 7.5) : "—";
+                      return (
+                        <tr key={i} style={{ borderBottom: i < homes.length - 1 ? `1px solid ${BORDER}` : "none" }}>
+                          <td style={{ padding: "16px 20px", fontSize: "14px", color: "#fff" }}>{home.property_address}</td>
+                          <td style={{ padding: "16px 20px", fontSize: "13px", color: TEXT_MUTED, whiteSpace: "nowrap" }}>
+                            {home.created_at ? new Date(home.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "—"}
+                          </td>
+                          <td style={{ padding: "16px 20px", fontSize: "13px", color: earnings > 0 ? GOLD : TEXT_MUTED, fontWeight: earnings > 0 ? 600 : 400 }}>
+                            {earnings > 0 ? `$${earnings.toFixed(2)}` : "$0.00"}
+                          </td>
+                          <td style={{ padding: "16px 20px", fontSize: "13px", color: TEXT_MUTED }}>
+                            {estimatedJobs}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </>
             )}
           </div>
         </section>
@@ -254,6 +276,43 @@ export default function HomeDocumentation() {
           </div>
         </section>
       </div>
+    </div>
+  );
+}
+
+function CommissionBreakdown() {
+  return (
+    <div style={{ background: "#0d1e36", border: `1px solid rgba(245,230,66,0.25)`, borderRadius: "10px", padding: "20px 24px" }}>
+      <div style={{ fontSize: "12px", fontWeight: 700, color: GOLD, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "14px" }}>
+        Your Origination Income — Forever
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px" }}>
+          <span style={{ color: TEXT_MUTED }}>Your cut of every platform fee at this address</span>
+          <span style={{ color: GOLD, fontWeight: 700 }}>1.5%</span>
+        </div>
+        <div style={{ height: "1px", background: BORDER }} />
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px" }}>
+          <span style={{ color: TEXT_MUTED }}>Example: 4 jobs/year at $500 avg platform fee</span>
+          <span style={{ color: "#fff", fontWeight: 600 }}>$30/year passive</span>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px" }}>
+          <span style={{ color: TEXT_MUTED }}>Per job earned</span>
+          <span style={{ color: "#fff", fontWeight: 600 }}>$7.50</span>
+        </div>
+      </div>
+      <p style={{ color: TEXT_MUTED, fontSize: "12px", margin: "14px 0 0", lineHeight: "1.5" }}>
+        This right is permanent — no renewals, no expiry. Every future job at this address credits your account automatically.
+      </p>
+    </div>
+  );
+}
+
+function StatChip({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
+  return (
+    <div>
+      <div style={{ fontSize: "11px", color: TEXT_MUTED, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "4px" }}>{label}</div>
+      <div style={{ fontSize: "18px", fontWeight: 700, color: highlight ? GOLD : "#fff" }}>{value}</div>
     </div>
   );
 }

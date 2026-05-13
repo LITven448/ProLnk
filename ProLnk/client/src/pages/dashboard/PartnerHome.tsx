@@ -10,56 +10,101 @@ import {
   Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square
 } from "lucide-react";
 
+const ONBOARDING_STORAGE_KEY = "prolnk_onboarding_v2";
+const TOTAL_SETUP_STEPS = 7;
+
+function loadSetupProgress(): number {
+  try {
+    const raw = localStorage.getItem(ONBOARDING_STORAGE_KEY);
+    const parsed: string[] = raw ? JSON.parse(raw) : [];
+    const set = new Set(parsed);
+    set.add("spot");
+    return set.size;
+  } catch {
+    return 1;
+  }
+}
+
+function isNewUser(): boolean {
+  try {
+    const raw = localStorage.getItem("prolnk_joined_at");
+    if (!raw) return true;
+    const joined = new Date(raw).getTime();
+    return Date.now() - joined < 30 * 24 * 60 * 60 * 1000;
+  } catch {
+    return true;
+  }
+}
+
 function OnboardingBanner() {
   const [dismissed, setDismissed] = useState(false);
+  const [completedCount, setCompletedCount] = useState(1);
 
   useEffect(() => {
-    if (localStorage.getItem("prolnk_onboarding_complete") === "true") {
+    if (localStorage.getItem("prolnk_setup_banner_dismissed") === "true") {
       setDismissed(true);
+      return;
     }
+    setCompletedCount(loadSetupProgress());
   }, []);
 
   if (dismissed) return null;
+  if (!isNewUser()) return null;
+  if (completedCount >= TOTAL_SETUP_STEPS) return null;
+
+  const progressPct = Math.round((completedCount / TOTAL_SETUP_STEPS) * 100);
 
   const handleDismiss = () => {
-    localStorage.setItem("prolnk_onboarding_complete", "true");
+    localStorage.setItem("prolnk_setup_banner_dismissed", "true");
     setDismissed(true);
   };
 
   return (
     <div
-      className="rounded-2xl p-4 flex items-center gap-4"
+      className="rounded-2xl p-5"
       style={{
-        background: "linear-gradient(135deg, rgba(245,230,66,0.12), rgba(245,230,66,0.05))",
-        border: "1px solid rgba(245,230,66,0.3)",
+        background: "linear-gradient(135deg, rgba(245,230,66,0.1), rgba(10,22,40,0))",
+        border: "1px solid rgba(245,230,66,0.28)",
       }}
     >
-      <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-        style={{ background: "rgba(245,230,66,0.15)" }}
-      >
-        <Rocket size={20} style={{ color: "#F5E642" }} />
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-bold text-white">Complete your setup to start earning — 3 quick steps</p>
-        <p className="text-xs text-gray-400 mt-0.5">Add your service areas, business description, and payout account.</p>
-      </div>
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <Link href="/partner-onboarding">
-          <span
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-90"
-            style={{ background: "#F5E642", color: "#0A1628" }}
-          >
-            Get Started <ChevronRight size={12} />
-          </span>
-        </Link>
-        <button
-          onClick={handleDismiss}
-          className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
-          aria-label="Dismiss"
+      <div className="flex items-start gap-4">
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+          style={{ background: "rgba(245,230,66,0.15)" }}
         >
-          <X size={14} className="text-gray-500" />
-        </button>
+          <Rocket size={20} style={{ color: "#F5E642" }} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <p className="text-sm font-bold text-white">
+              Quick Setup — {completedCount} of {TOTAL_SETUP_STEPS} steps complete
+            </p>
+            <button
+              onClick={handleDismiss}
+              className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10 flex-shrink-0"
+              aria-label="Dismiss"
+            >
+              <X size={13} className="text-gray-500" />
+            </button>
+          </div>
+          <div className="w-full h-1.5 rounded-full overflow-hidden mb-3" style={{ background: "rgba(255,255,255,0.08)" }}>
+            <div
+              className="h-full rounded-full transition-all duration-500"
+              style={{ width: `${progressPct}%`, background: "linear-gradient(90deg, #F5E642, #d4af00)" }}
+            />
+          </div>
+          <p className="text-xs text-gray-400 mb-3">
+            Verify your license, set up payouts, complete your profile, and share your referral link to unlock full earnings.
+          </p>
+          <Link href="/dashboard/onboarding">
+            <span
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-90"
+              style={{ background: "#F5E642", color: "#0A1628" }}
+            >
+              Complete Setup <ChevronRight size={12} />
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

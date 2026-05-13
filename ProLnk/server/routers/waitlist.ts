@@ -4,6 +4,7 @@ import { publicProcedure, adminProcedure, router } from "../_core/trpc";
 import { getDb, getPool } from "../db";
 import { sql } from "drizzle-orm";
 import { sendProWaitlistConfirmation, sendHomeownerWaitlistConfirmation } from "../email";
+import { sendWaitlistConfirmSMS } from "../sms";
 import { automations } from "../webhooks/n8nAutomation";
 import { notifyOwner } from "../_core/notification";
 import { createLogger } from "../_core/logger";
@@ -197,6 +198,10 @@ export const waitlistRouter = router({
         }).catch((err) => {
           console.error("[waitlist] Email send failed for Pro waitlist", { email: input.email, error: err?.message });
         });
+
+        if (input.phone) {
+          sendWaitlistConfirmSMS(input.phone, input.firstName, position).catch(() => {});
+        }
 
         automations.partnerWaitlistJoined({ email: input.email, tier, position, referralCode }).catch(() => {});
 

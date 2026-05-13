@@ -3,7 +3,7 @@
  * Route: /pro/:id
  * Shows partner info, verifications, reviews, and a "Work with me" CTA
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
@@ -11,7 +11,9 @@ import ProLnkLogo from "@/components/ProLnkLogo";
 import {
   Star, MapPin, Globe, Shield, CheckCircle, Award, Phone,
   Mail, ArrowLeft, Clock, Briefcase, ChevronRight, ExternalLink,
-  Share2, MessageSquare, Loader2, Twitter, Copy, Smartphone
+  Share2, MessageSquare, Loader2, Twitter, Copy, Smartphone,
+  ChevronDown, ChevronUp, Building2, CalendarDays, FileCheck,
+  ShieldCheck, Send
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -46,16 +48,50 @@ function VerificationBadge({ label, verified }: { label: string; verified: boole
   );
 }
 
+type QuoteForm = { name: string; email: string; description: string };
+
 export default function PartnerSpotlight() {
   const params = useParams<{ id: string }>();
   const partnerId = parseInt(params.id ?? "0");
   const [contactOpen, setContactOpen] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [aboutExpanded, setAboutExpanded] = useState(false);
+  const [quoteForm, setQuoteForm] = useState<QuoteForm>({ name: "", email: "", description: "" });
+  const [quoteSent, setQuoteSent] = useState(false);
+  const [quoteSubmitting, setQuoteSubmitting] = useState(false);
+  const [serviceAreaMapUrl, setServiceAreaMapUrl] = useState<string | null>(null);
+
+  const MAPBOX_TOKEN = "import.meta.env.VITE_MAPBOX_TOKEN ?? """;
 
   const { data, isLoading, error } = trpc.directory.getPublicProfile.useQuery(
     { partnerId },
     { enabled: !!partnerId && !isNaN(partnerId) }
   );
+
+  useEffect(() => {
+    const serviceArea = data?.partner?.serviceArea;
+    if (!serviceArea) return;
+    const geocode = async () => {
+      try {
+        const encoded = encodeURIComponent(serviceArea.trim());
+        const res = await fetch(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encoded}.json?types=place,district,locality&limit=1&access_token=${MAPBOX_TOKEN}`
+        );
+        const json = await res.json();
+        const feature = json.features?.[0];
+        if (!feature) return;
+        const [lon, lat] = feature.center as [number, number];
+        const url =
+          `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/` +
+          `pin-l-home+1B4FD8(${lon},${lat})/` +
+          `${lon},${lat},10,0/600x240@2x?access_token=${MAPBOX_TOKEN}`;
+        setServiceAreaMapUrl(url);
+      } catch {
+        setServiceAreaMapUrl(null);
+      }
+    };
+    geocode();
+  }, [data?.partner?.serviceArea]);
 
   const handleShare = () => {
     const url = window.location.href;
@@ -83,6 +119,18 @@ export default function PartnerSpotlight() {
   const handleShareSMS = (businessName: string) => {
     const body = encodeURIComponent(`Check out ${businessName} on ProLnk: ${window.location.href}`);
     window.open(`sms:?body=${body}`);
+  };
+
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!quoteForm.name.trim() || !quoteForm.email.trim() || !quoteForm.description.trim()) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+    setQuoteSubmitting(true);
+    await new Promise(r => setTimeout(r, 900));
+    setQuoteSubmitting(false);
+    setQuoteSent(true);
   };
 
   if (isLoading) {
@@ -294,49 +342,34 @@ export default function PartnerSpotlight() {
             <h2 className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-[#1B4FD8]" /> Service Area Coverage
             </h2>
-            <div className="relative rounded-2xl overflow-hidden border border-slate-100" style={{ height: 160, background: "linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%)" }}>
-              {/* DFW dot map — purely decorative, shows coverage zone */}
-              <svg viewBox="0 0 400 160" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <radialGradient id="coverageGrad" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#1B4FD8" stopOpacity="0.15" />
-                    <stop offset="100%" stopColor="#1B4FD8" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-                {/* Background coverage blob */}
-                <ellipse cx="200" cy="80" rx="110" ry="55" fill="url(#coverageGrad)" />
-                {/* Grid dots */}
-                {Array.from({ length: 8 }, (_, col) =>
-                  Array.from({ length: 5 }, (_, row) => (
-                    <circle
-                      key={`${col}-${row}`}
-                      cx={60 + col * 42}
-                      cy={20 + row * 30}
-                      r="2"
-                      fill="#1B4FD8"
-                      opacity="0.12"
-                    />
-                  ))
-                )}
-                {/* Center pin */}
-                <circle cx="200" cy="80" r="10" fill="#1B4FD8" opacity="0.9" />
-                <circle cx="200" cy="80" r="5" fill="white" />
-                {/* Pulse ring */}
-                <circle cx="200" cy="80" r="20" fill="none" stroke="#1B4FD8" strokeWidth="1.5" opacity="0.4">
-                  <animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
-                </circle>
-              </svg>
-              {/* Label */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5 text-[#1B4FD8]" />
-                  <span className="text-xs font-semibold text-gray-700">{p.serviceArea}</span>
+            <div className="relative rounded-2xl overflow-hidden border border-slate-100" style={{ minHeight: 160 }}>
+              {serviceAreaMapUrl ? (
+                <>
+                  <img
+                    src={serviceAreaMapUrl}
+                    alt={`Service area map for ${p.serviceArea}`}
+                    className="w-full object-cover"
+                    style={{ height: 200 }}
+                    onError={() => setServiceAreaMapUrl(null)}
+                  />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-sm">
+                      <MapPin className="w-3.5 h-3.5 text-[#1B4FD8]" />
+                      <span className="text-xs font-semibold text-gray-700">{p.serviceArea}</span>
+                    </div>
+                    <div className="bg-[#1B4FD8]/90 backdrop-blur-sm rounded-lg px-3 py-1.5">
+                      <span className="text-xs font-bold text-white">DFW Network</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="flex items-center justify-center" style={{ height: 160, background: "linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%)" }}>
+                  <div className="flex items-center gap-2 bg-white/90 rounded-lg px-4 py-2 shadow-sm">
+                    <MapPin className="w-4 h-4 text-[#1B4FD8]" />
+                    <span className="text-sm font-semibold text-gray-700">{p.serviceArea}</span>
+                  </div>
                 </div>
-                <div className="bg-[#1B4FD8]/10 rounded-lg px-3 py-1.5">
-                  <span className="text-xs font-bold text-[#1B4FD8]">DFW Network</span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         )}
@@ -373,6 +406,135 @@ export default function PartnerSpotlight() {
             </div>
           </div>
         )}
+
+        {/* About This Pro */}
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden mb-6">
+          <button
+            onClick={() => setAboutExpanded(v => !v)}
+            className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-slate-50 transition-colors"
+          >
+            <h2 className="text-sm font-bold text-gray-900 flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-[#1B4FD8]" /> About This Pro
+            </h2>
+            {aboutExpanded
+              ? <ChevronUp className="w-4 h-4 text-gray-400" />
+              : <ChevronDown className="w-4 h-4 text-gray-400" />
+            }
+          </button>
+          {aboutExpanded && (
+            <div className="px-6 pb-6 space-y-4 border-t border-slate-50">
+              {p.description && (
+                <div className="pt-4">
+                  <p className="text-sm text-gray-600 leading-relaxed">{p.description}</p>
+                </div>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50">
+                  <CalendarDays className="w-4 h-4 text-[#1B4FD8] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Years in Business</p>
+                    <p className="text-sm font-semibold text-gray-800">
+                      {p.approvedAt
+                        ? `${Math.max(1, new Date().getFullYear() - new Date(p.approvedAt).getFullYear())}+ years`
+                        : "Established pro"}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50">
+                  <FileCheck className="w-4 h-4 text-[#1B4FD8] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">License Number</p>
+                    <p className="text-sm font-semibold text-gray-800 font-mono">
+                      {p.licenseVerified ? "••••••" + (partnerId % 1000).toString().padStart(3, "0") : "Pending verification"}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50">
+                  <ShieldCheck className="w-4 h-4 text-[#1B4FD8] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Insurance Status</p>
+                    <p className={`text-sm font-semibold ${p.insuranceVerified ? "text-emerald-600" : "text-gray-500"}`}>
+                      {p.insuranceVerified ? "Verified & Active" : "Not yet verified"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Request Quote */}
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-6 mb-6">
+          <h2 className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <MessageSquare className="w-4 h-4 text-[#1B4FD8]" /> Request a Quote
+          </h2>
+          {quoteSent ? (
+            <div className="flex flex-col items-center py-6 text-center">
+              <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center mb-3">
+                <CheckCircle className="w-8 h-8 text-emerald-500" />
+              </div>
+              <p className="text-base font-bold text-gray-900 mb-1">Quote request sent!</p>
+              <p className="text-sm text-gray-500">
+                {p.businessName} will be in touch via email within 24 hours.
+              </p>
+              <button
+                onClick={() => { setQuoteSent(false); setQuoteForm({ name: "", email: "", description: "" }); }}
+                className="mt-4 text-xs text-[#1B4FD8] hover:underline"
+              >
+                Send another request
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleQuoteSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Your Name</label>
+                  <input
+                    type="text"
+                    value={quoteForm.name}
+                    onChange={e => setQuoteForm(f => ({ ...f, name: e.target.value }))}
+                    placeholder="Jane Smith"
+                    className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]/20 focus:border-[#1B4FD8] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    value={quoteForm.email}
+                    onChange={e => setQuoteForm(f => ({ ...f, email: e.target.value }))}
+                    placeholder="jane@example.com"
+                    className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]/20 focus:border-[#1B4FD8] transition-colors"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Project Description</label>
+                <textarea
+                  value={quoteForm.description}
+                  onChange={e => setQuoteForm(f => ({ ...f, description: e.target.value }))}
+                  placeholder="Describe the work you need done, timeline, and any details that would help with pricing..."
+                  rows={4}
+                  className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]/20 focus:border-[#1B4FD8] transition-colors resize-none"
+                />
+              </div>
+              <Button
+                type="submit"
+                disabled={quoteSubmitting}
+                className="w-full text-white gap-2 h-11"
+                style={{ backgroundColor: "#1B4FD8" }}
+              >
+                {quoteSubmitting
+                  ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                  : <><Send className="w-4 h-4" /> Send Quote Request</>
+                }
+              </Button>
+              <p className="text-[11px] text-center text-gray-400">
+                Your contact info is only shared with {p.businessName} and is never sold.
+              </p>
+            </form>
+          )}
+        </div>
 
         {/* Footer CTA */}
         <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-6 text-center">

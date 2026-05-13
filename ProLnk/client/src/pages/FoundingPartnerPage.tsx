@@ -139,7 +139,7 @@ export default function FoundingPartnerPage() {
       {/* Nav */}
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <button onClick={() => navigate("/")} className="font-black text-teal-400 text-xl">ProLnk</button>
-        <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-white" onClick={() => navigate(user ? "/dashboard" : "/pro-waitlist")}>
+        <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-white" onClick={() => navigate(user ? "/dashboard" : "/partner-checkout")}>
           {user ? "My Dashboard" : "Claim Your Spot"}
         </Button>
       </nav>
@@ -181,7 +181,7 @@ export default function FoundingPartnerPage() {
         {!user ? (
           <Button
             size="lg"
-            onClick={() => navigate("/pro-waitlist")}
+            onClick={() => navigate("/partner-checkout")}
             className="bg-teal-500 hover:bg-teal-400 text-white font-black text-xl px-12 py-5 h-auto rounded-xl"
           >
             Claim Your Founding Spot
@@ -197,7 +197,7 @@ export default function FoundingPartnerPage() {
         ) : (
           <Button
             size="lg"
-            onClick={() => navigate("/pro-waitlist")}
+            onClick={() => navigate("/partner-checkout")}
             className="bg-teal-500 hover:bg-teal-400 text-white font-black text-xl px-12 py-5 h-auto rounded-xl"
           >
             Claim Your Founding Spot →
@@ -455,7 +455,7 @@ export default function FoundingPartnerPage() {
           {remaining > 0 ? (
             <Button
               size="lg"
-              onClick={() => navigate(user ? "/dashboard/onboarding" : "/pro-waitlist")}
+              onClick={() => navigate(user ? "/dashboard/onboarding" : "/partner-checkout")}
               className="bg-teal-500 hover:bg-teal-400 text-white font-black text-lg px-10 py-4 h-auto rounded-xl"
             >
               {user ? "Complete My Application" : "Claim Your Founding Spot →"}

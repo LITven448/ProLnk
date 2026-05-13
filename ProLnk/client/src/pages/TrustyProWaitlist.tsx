@@ -6,6 +6,7 @@ import { TrustyProLogo } from "@/components/TrustyProLogo";
 import { Plus, X, Star, Menu, Phone, Mail, MapPin, Shield, Clock, Award, MessageSquare, ArrowRight, Camera, CheckCircle, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { AddressAutofill } from "@/components/AddressAutofill";
 import {
   motion,
   useScroll,
@@ -328,7 +329,30 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
               {/* Step 3 — Property Basics */}
               {step === 3 && (
                 <div className="space-y-3">
-                  <input placeholder="Street address *" value={form.address} onChange={set("address")} className={inp} />
+                  <AddressAutofill
+                    value={form.address}
+                    onAddressSelect={addr => {
+                      setForm(p => ({
+                        ...p,
+                        address: addr.street,
+                        city: addr.city || p.city,
+                        state: addr.state || p.state,
+                        zipCode: addr.zip || p.zipCode,
+                        ...(addr.propertyData ? {
+                          squareFootage: addr.propertyData.squareFeet ? String(addr.propertyData.squareFeet) : p.squareFootage,
+                          yearBuilt: addr.propertyData.yearBuilt ? String(addr.propertyData.yearBuilt) : p.yearBuilt,
+                          bedrooms: addr.propertyData.bedrooms ? String(addr.propertyData.bedrooms) : p.bedrooms,
+                          bathrooms: addr.propertyData.bathrooms ? String(addr.propertyData.bathrooms) : p.bathrooms,
+                          homeType: addr.propertyData.propertyType
+                            ? (addr.propertyData.propertyType.toLowerCase().includes("condo") ? "condo"
+                              : addr.propertyData.propertyType.toLowerCase().includes("town") ? "townhouse"
+                              : addr.propertyData.propertyType.toLowerCase().includes("multi") ? "multi_family"
+                              : "single_family")
+                            : p.homeType,
+                        } : {}),
+                      }));
+                    }}
+                  />
                   <div className="grid grid-cols-2 gap-3">
                     <input placeholder="City *" value={form.city} onChange={set("city")} className={inp} />
                     <input placeholder="ZIP code *" value={form.zipCode} onChange={set("zipCode")} className={inp} />

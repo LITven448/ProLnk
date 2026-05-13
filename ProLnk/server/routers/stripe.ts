@@ -656,8 +656,8 @@ export const stripeRouter = router({
           },
           quantity: 1,
         }],
-        success_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/dashboard?checkout=success`,
-        cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout?cancelled=true`,
+        success_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/success?tier=${input.partnerId ? "founding" : "charter"}`,
+        cancel_url: `${process.env.APP_BASE_URL || "https://prolnk.io"}/checkout/cancel`,
         metadata: { partnerId: String(input.partnerId || ""), type: "founding_network" },
       });
       return { url: session.url, sessionId: session.id };

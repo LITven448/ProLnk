@@ -115,6 +115,7 @@ import { eq, sql, and, or, ne, desc } from "drizzle-orm";
 import { ENV } from "./_core/env";
 import { ONE_YEAR_MS } from "@shared/const";
 import { dispatchLeadToPartner, rejectOpportunityByAdmin, sweepExpiredLeads } from "./intake-router";
+import { sendLeadAlertSMS } from "./sms";
 import { analyzeJobPhoto } from "./photo-intelligence";
 
 // -- Admin guard --
@@ -3157,6 +3158,14 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
             estimatedJobValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : undefined,
             expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
           }).catch(() => {});
+          if (receivingPartner.contactPhone) {
+            sendLeadAlertSMS(receivingPartner.contactPhone, {
+              trade: opp.opportunityType ?? opp.opportunityCategory ?? "Service Request",
+              address: opp.serviceAddress ?? "your service area",
+              estimatedValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : 0,
+              dashboardUrl: `${process.env.APP_BASE_URL ?? "https://prolnk.io"}/dashboard/leads/${input.opportunityId}`,
+            }).catch(() => {});
+          }
         }
         return { success: true };
       }),
@@ -3623,6 +3632,31 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
       const pendingEarnings = await db.execute(sql`SELECT COALESCE(SUM(amount),0) as total FROM commissions WHERE receivingPartnerId = ${pid} AND paid = 0`);
       const avgJobValue = await db.execute(sql`SELECT COALESCE(AVG(jobValue),0) as avg FROM commissions WHERE receivingPartnerId = ${pid}`);
 
+      // Monthly income breakdown by payout type (current calendar month)
+      const uid = ctx.user.id;
+      const currentMonth = new Date().toISOString().slice(0, 7); // "YYYY-MM"
+      const incomeBreakdown = await db.execute(sql`
+        SELECT payoutType, COALESCE(SUM(amount), 0) as total
+        FROM commission_payout
+        WHERE recipientUserId = ${uid}
+          AND payoutMonth = ${currentMonth}
+          AND status IN ('approved', 'paid')
+        GROUP BY payoutType
+      `);
+      const incomeRows: Array<{ payoutType: string; total: number }> =
+        ((incomeBreakdown[0] ?? []) as Array<{ payoutType: string; total: string | number }>)
+          .map(r => ({ payoutType: r.payoutType, total: Number(r.total) }));
+      const pickIncome = (type: string) => incomeRows.find(r => r.payoutType === type)?.total ?? 0;
+
+      // Home origination rights — homes this partner was first to document
+      const originationRows = await db.execute(sql`
+        SELECT COUNT(*) as cnt, COALESCE(SUM(origination_credit_amount), 0) as lifetimeValue
+        FROM home_documentation
+        WHERE pro_user_id = ${uid} AND is_first_documentation = 1
+      `);
+      const originationCnt = Number((originationRows[0] as any)?.[0]?.cnt ?? 0);
+      const originationLifetime = Number((originationRows[0] as any)?.[0]?.lifetimeValue ?? 0);
+
       return {
         partner: { id: partner.id, businessName: partner.businessName, tier: partner.tier, businessType: partner.businessType },
         monthlyJobs: monthlyJobs[0] as Array<{ month: string; count: number }>,
@@ -3634,6 +3668,17 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
           earned: Number(totalEarnings[0]?.[0]?.total ?? 0),
           pending: Number(pendingEarnings[0]?.[0]?.total ?? 0),
           avgJobValue: Number(avgJobValue[0]?.[0]?.avg ?? 0),
+        },
+        monthlyIncomeBreakdown: {
+          currentMonth,
+          directCommissions: pickIncome('own_job'),
+          networkL1: pickIncome('network_l1'),
+          networkL2: pickIncome('network_l2'),
+          networkL3: pickIncome('network_l3'),
+          subscriptionOverrides: pickIncome('subscription_override'),
+          homeOrigination: pickIncome('photo_origination'),
+          originationRightsCount: originationCnt,
+          originationLifetimeValue: originationLifetime,
         },
       };
     }),

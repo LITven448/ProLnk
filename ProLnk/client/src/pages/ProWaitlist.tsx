@@ -701,10 +701,12 @@ function SuccessState({
   trialEndDate.setDate(trialEndDate.getDate() + 90);
   const trialEndStr = trialEndDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
-  const shareText = `Just joined ProLnk's founding network as a ${tierConf.label} — earning 72% on every referral + 4-level network income. Limited spots left. Use my link:`;
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText + " " + refUrl)}`;
-  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(refUrl)}`;
-  const smsUrl = `sms:?body=${encodeURIComponent(shareText + " " + refUrl)}`;
+  const twitterText = `Just joined the ProLnk Founding Network! Get your charter spot at prolnk.io — only 2,125 contractors get in. Use my link to skip the line: ${refUrl}`;
+  const linkedinText = `Excited to join the ProLnk Founding Network as a ${tierConf.label}. ProLnk pays contractors 72% on every referral plus 4-level network income — 5 income streams total. Only 2,125 founding spots available. Claim yours: ${refUrl}`;
+  const smsText = `Hey! I just reserved my spot in the ProLnk Founding Network. Check it out: ${refUrl}`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
+  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(refUrl)}&summary=${encodeURIComponent(linkedinText)}`;
+  const smsUrl = `sms:?body=${encodeURIComponent(smsText)}`;
 
   return (
     <div className="py-2">

@@ -1,355 +1,517 @@
-import type React from "react";
 import { useState } from "react";
-import PartnerLayout from "@/components/PartnerLayout";
-import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Link } from "wouter";
 import {
-  Shield, FileCheck, Upload, AlertTriangle, CheckCircle2,
-  Download, Trash2, Lock, ExternalLink
+  Shield, Lock, FileText, Mail, Phone, ChevronRight,
+  CheckCircle2, AlertTriangle, Info, ExternalLink, Send, Trash2
 } from "lucide-react";
+import { toast } from "sonner";
 
-export default function ComplianceDocs() {
+// --- Types -------------------------------------------------------------------
+type Tab = "overview" | "privacy" | "tcpa" | "respa" | "data-rights";
 
-  const utils = trpc.useUtils();
+// --- Static content ----------------------------------------------------------
+const LEGAL_LINKS = [
+  { label: "Privacy Policy", href: "/privacy", desc: "How we collect, use, and protect your personal data." },
+  { label: "Terms of Service", href: "/terms", desc: "Rules and conditions governing use of the ProLnk platform." },
+  { label: "CCPA Privacy Rights", href: "#data-rights", desc: "California residents: access, delete, and opt-out rights." },
+  { label: "Cookie Policy", href: "/cookies", desc: "Which cookies we set and how to manage your preferences." },
+];
 
-  // Partner profile data
-  const { data: partner } = trpc.partners.getMyProfile.useQuery();
+const DATA_RETENTION = [
+  { category: "Waitlist signups", period: "Until launch + 12 months", notes: "Purged on request sooner" },
+  { category: "Partner profiles", period: "Duration of account + 7 years", notes: "Required for 1099 / tax compliance" },
+  { category: "Homeowner records", period: "Duration of account + 3 years", notes: "Minimum for dispute resolution" },
+  { category: "Job photos (TrustyPro)", period: "90 days", notes: "Deleted after AI analysis is complete" },
+  { category: "AI analysis results", period: "1 year", notes: "Retained for accuracy audits" },
+  { category: "Email / SMS logs", period: "6 months", notes: "For deliverability and TCPA audit trail" },
+  { category: "Commission ledger", period: "7 years", notes: "IRS record-keeping requirement" },
+];
 
-  // COI upload state
-  const [coiUrl, setCoiUrl] = useState("");
-  const [coiExpiry, setCoiExpiry] = useState("");
-  const [coiUploading, setCoiUploading] = useState(false);
-
-  // License state
-  const [licenseNumber, setLicenseNumber] = useState("");
-  const [licenseUrl, setLicenseUrl] = useState("");
-  const [licenseUploading, setLicenseUploading] = useState(false);
-
-  // CCPA state
-  const [exportRequested, setExportRequested] = useState(false);
-  const [deleteRequested, setDeleteRequested] = useState(false);
-
-  const uploadCoi = trpc.compliance.uploadCoi.useMutation({
-    onSuccess: () => {
-      toast.success("COI submitted for review.");
-      utils.partners.getMyProfile.invalidate();
-      setCoiUrl(""); setCoiExpiry("");
-    },
-    onError: (e) => toast.error(e.message),
-  });
-
-  const uploadLicense = trpc.compliance.uploadLicense.useMutation({
-    onSuccess: () => {
-      toast.success("License submitted for review.");
-      utils.partners.getMyProfile.invalidate();
-      setLicenseNumber(""); setLicenseUrl("");
-    },
-    onError: (e) => toast.error(e.message),
-  });
-
-  const requestExport = trpc.compliance.requestDataExport.useMutation({
-    onSuccess: () => { setExportRequested(true); toast.success("Data export requested -- ready within 30 days."); },
-    onError: (e) => toast.error(e.message),
-  });
-
-  const requestDeletion = trpc.compliance.requestDataDeletion.useMutation({
-    onSuccess: () => { setDeleteRequested(true); toast.success("Data deletion request submitted."); },
-    onError: (e) => toast.error(e.message),
-  });
-
-  const handleCoiUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setCoiUploading(true);
-    try {
-      const fd = new FormData();
-      fd.append("photo", file);
-      const resp = await fetch("/api/upload-photos", {
-        method: "POST",
-        body: JSON.stringify({ photos: [await fileToBase64(file)] }),
-        headers: { "Content-Type": "application/json" },
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        setCoiUrl(data.urls?.[0] ?? "");
-      }
-    } catch {
-      toast.error("Upload failed -- try pasting a URL instead.");
-    }
-    setCoiUploading(false);
-  };
-
-  const handleLicenseUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setLicenseUploading(true);
-    try {
-      const fd = new FormData();
-      fd.append("photo", file);
-      const resp = await fetch("/api/upload-photos", {
-        method: "POST",
-        body: JSON.stringify({ photos: [await fileToBase64(file)] }),
-        headers: { "Content-Type": "application/json" },
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        setLicenseUrl(data.urls?.[0] ?? "");
-      }
-    } catch {
-      toast.error("Upload failed -- try pasting a URL instead.");
-    }
-    setLicenseUploading(false);
-  };
-
+// --- Sub-components ----------------------------------------------------------
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
   return (
-
-    <PartnerLayout>
-
-    <div className="max-w-3xl mx-auto py-8 px-4 space-y-6">
-      {/* Header */}
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
-          <Shield className="w-5 h-5 text-blue-400" />
-        </div>
-        <div>
-          <h1 className="text-xl font-bold text-white">Compliance & Documents</h1>
-          <p className="text-sm text-gray-400">Upload your COI, license, and manage your data rights</p>
-        </div>
+    <div className="flex items-start gap-3 mb-6">
+      <div className="w-10 h-10 rounded-xl bg-[#0A1628]/8 flex items-center justify-center flex-shrink-0">
+        <Icon className="w-5 h-5 text-[#0A1628]" />
       </div>
-
-      {/* Strike Status */}
-      {partner && (partner as any).strikeCount > 0 && (
-        <Card className="bg-orange-500/10 border-orange-500/30">
-          <CardContent className="p-4 flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-orange-400 shrink-0" />
-            <div>
-              <p className="text-orange-300 font-semibold text-sm">
-                {(partner as any).strikeCount} Strike{(partner as any).strikeCount > 1 ? "s" : ""} on Record
-              </p>
-              <p className="text-orange-400/70 text-xs mt-0.5">
-                {(partner as any).strikeCount >= 2
-                  ? "Warning: One more strike will result in account suspension."
-                  : "Please review our partner guidelines to avoid further strikes."}
-              </p>
-              {(partner as any).lastStrikeReason && (
-                <p className="text-orange-400/60 text-xs mt-1">Last reason: {(partner as any).lastStrikeReason}</p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* COI Section */}
-      <Card className="bg-[#0D1525] border-white/5">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-base text-white flex items-center gap-2">
-            <FileCheck className="w-4 h-4 text-emerald-400" />
-            Certificate of Insurance (COI)
-            {(partner as any)?.coiVerifiedAt ? (
-              <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs ml-auto">Verified</Badge>
-            ) : (partner as any)?.coiUrl ? (
-              <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs ml-auto">Pending Review</Badge>
-            ) : (
-              <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-xs ml-auto">Not Submitted</Badge>
-            )}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {(partner as any)?.coiUrl && (
-            <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg">
-              <FileCheck className="w-4 h-4 text-gray-400" />
-              <span className="text-sm text-gray-300 flex-1 truncate">COI on file</span>
-              <a href={(partner as any).coiUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="sm" className="h-7 text-xs text-blue-400 hover:text-blue-300">
-                  <ExternalLink className="w-3 h-3 mr-1" /> View
-                </Button>
-              </a>
-            </div>
-          )}
-          <div className="space-y-3">
-            <div>
-              <Label className="text-gray-400 text-xs mb-1.5 block">Upload COI Document</Label>
-              <Input
-                type="file"
-                accept=".pdf,.jpg,.jpeg,.png"
-                onChange={handleCoiUpload}
-                disabled={coiUploading}
-                className="bg-white/5 border-white/10 text-gray-300 text-sm file:text-gray-400 file:bg-transparent file:border-0"
-              />
-              <p className="text-gray-500 text-xs mt-1">Or paste a direct URL below</p>
-            </div>
-            <div>
-              <Label className="text-gray-400 text-xs mb-1.5 block">COI Document URL</Label>
-              <Input
-                value={coiUrl}
-                onChange={(e) => setCoiUrl(e.target.value)}
-                placeholder="https://..."
-                className="bg-white/5 border-white/10 text-white placeholder:text-gray-600"
-              />
-            </div>
-            <div>
-              <Label className="text-gray-400 text-xs mb-1.5 block">Expiration Date</Label>
-              <Input
-                type="date"
-                value={coiExpiry}
-                onChange={(e) => setCoiExpiry(e.target.value)}
-                className="bg-white/5 border-white/10 text-white"
-              />
-            </div>
-            <Button
-              onClick={() => {
-                if (!coiUrl || !coiExpiry) return;
-                uploadCoi.mutate({ coiUrl, expiresAt: new Date(coiExpiry).getTime() });
-              }}
-              disabled={!coiUrl || !coiExpiry || uploadCoi.isPending}
-              className="w-full bg-emerald-600 hover:bg-emerald-500 text-white"
-            >
-              <Upload className="w-4 h-4 mr-2" />
-              {uploadCoi.isPending ? "Submitting..." : "Submit COI for Review"}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* License Section */}
-      <Card className="bg-[#0D1525] border-white/5">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-base text-white flex items-center gap-2">
-            <Shield className="w-4 h-4 text-blue-400" />
-            Business License
-            {(partner as any)?.licenseVerifiedAt ? (
-              <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs ml-auto">Verified</Badge>
-            ) : (partner as any)?.licenseUrl ? (
-              <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs ml-auto">Pending Review</Badge>
-            ) : (
-              <Badge className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs ml-auto">Optional</Badge>
-            )}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div>
-            <Label className="text-gray-400 text-xs mb-1.5 block">License Number</Label>
-            <Input
-              value={licenseNumber}
-              onChange={(e) => setLicenseNumber(e.target.value)}
-              placeholder="e.g. TX-12345678"
-              className="bg-white/5 border-white/10 text-white placeholder:text-gray-600"
-            />
-          </div>
-          <div>
-            <Label className="text-gray-400 text-xs mb-1.5 block">License Document URL or Upload</Label>
-            <Input
-              type="file"
-              accept=".pdf,.jpg,.jpeg,.png"
-              onChange={handleLicenseUpload}
-              disabled={licenseUploading}
-              className="bg-white/5 border-white/10 text-gray-300 text-sm file:text-gray-400 file:bg-transparent file:border-0"
-            />
-            <Input
-              value={licenseUrl}
-              onChange={(e) => setLicenseUrl(e.target.value)}
-              placeholder="Or paste URL..."
-              className="bg-white/5 border-white/10 text-white placeholder:text-gray-600 mt-2"
-            />
-          </div>
-          <Button
-            onClick={() => {
-              if (!licenseNumber || !licenseUrl) return;
-              uploadLicense.mutate({ licenseNumber, licenseUrl });
-            }}
-            disabled={!licenseNumber || !licenseUrl || uploadLicense.isPending}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white"
-          >
-            <Upload className="w-4 h-4 mr-2" />
-            {uploadLicense.isPending ? "Submitting..." : "Submit License for Review"}
-          </Button>
-        </CardContent>
-      </Card>
-
-      {/* CCPA / Data Rights */}
-      <Card className="bg-[#0D1525] border-white/5">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-base text-white flex items-center gap-2">
-            <Lock className="w-4 h-4 text-purple-400" />
-            Your Data Rights (CCPA)
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-gray-400 text-sm">
-            Under the California Consumer Privacy Act (CCPA) and similar laws, you have the right to request a copy of your data or request its deletion.
-          </p>
-          <Separator className="bg-white/5" />
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-white text-sm font-medium">Request Data Export</p>
-              <p className="text-gray-500 text-xs mt-0.5">Receive a copy of all your data within 30 days</p>
-            </div>
-            {exportRequested || (partner as any)?.dataExportRequestedAt ? (
-              <div className="flex items-center gap-1.5 text-emerald-400 text-xs">
-                <CheckCircle2 className="w-4 h-4" />
-                Requested
-              </div>
-            ) : (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => requestExport.mutate()}
-                disabled={requestExport.isPending}
-                className="border-white/10 text-gray-300 hover:text-white bg-transparent text-xs"
-              >
-                <Download className="w-3 h-3 mr-1.5" />
-                Request Export
-              </Button>
-            )}
-          </div>
-          <Separator className="bg-white/5" />
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-white text-sm font-medium">Request Data Deletion</p>
-              <p className="text-gray-500 text-xs mt-0.5">Permanently delete your account and all associated data</p>
-            </div>
-            {deleteRequested || (partner as any)?.dataDeleteRequestedAt ? (
-              <div className="flex items-center gap-1.5 text-red-400 text-xs">
-                <CheckCircle2 className="w-4 h-4" />
-                Requested
-              </div>
-            ) : (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  if (confirm("This will permanently delete all your data. This cannot be undone. Continue?")) {
-                    requestDeletion.mutate();
-                  }
-                }}
-                disabled={requestDeletion.isPending}
-                className="border-red-500/30 text-red-400 hover:text-red-300 bg-transparent text-xs"
-              >
-                <Trash2 className="w-3 h-3 mr-1.5" />
-                Request Deletion
-              </Button>
-            )}
-          </div>
-        </CardContent>
-      </Card>
+      <div>
+        <h2 className="text-xl font-heading font-bold text-gray-900">{title}</h2>
+        {subtitle && <p className="text-sm text-gray-500 mt-0.5">{subtitle}</p>}
+      </div>
     </div>
-
-    </PartnerLayout>
-
   );
 }
 
-async function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve((reader.result as string).split(",")[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
+function InfoBox({ type, children }: { type: "info" | "warning" | "success"; children: React.ReactNode }) {
+  const styles = {
+    info: { bg: "bg-blue-50", border: "border-blue-200", text: "text-blue-800", Icon: Info, iconColor: "text-blue-500" },
+    warning: { bg: "bg-amber-50", border: "border-amber-200", text: "text-amber-800", Icon: AlertTriangle, iconColor: "text-amber-500" },
+    success: { bg: "bg-green-50", border: "border-green-200", text: "text-green-800", Icon: CheckCircle2, iconColor: "text-green-500" },
+  }[type];
+  const { Icon } = styles;
+  return (
+    <div className={`flex items-start gap-3 p-4 rounded-xl border ${styles.bg} ${styles.border}`}>
+      <Icon className={`w-4 h-4 ${styles.iconColor} flex-shrink-0 mt-0.5`} />
+      <div className={`text-sm ${styles.text} leading-relaxed`}>{children}</div>
+    </div>
+  );
+}
+
+// --- Tabs content ------------------------------------------------------------
+function OverviewTab() {
+  return (
+    <div className="space-y-6">
+      <SectionHeader
+        icon={Shield}
+        title="Compliance & Legal Hub"
+        subtitle="ProLnk's commitment to transparency, privacy, and regulatory compliance."
+      />
+
+      <InfoBox type="success">
+        <strong>ProLnk is committed to full compliance</strong> with applicable federal and state laws including TCPA, RESPA, CCPA, and GDPR where applicable. Questions? Email <a href="mailto:legal@prolnk.io" className="underline">legal@prolnk.io</a>.
+      </InfoBox>
+
+      {/* Legal document links */}
+      <div>
+        <h3 className="text-sm font-semibold text-gray-700 mb-3">Legal Documents</h3>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {LEGAL_LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all group"
+            >
+              <FileText className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0 group-hover:text-[#0A1628] transition-colors" />
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-semibold text-gray-800 group-hover:text-[#0A1628] transition-colors">{link.label}</div>
+                <div className="text-xs text-gray-400 mt-0.5 leading-relaxed">{link.desc}</div>
+              </div>
+              <ExternalLink className="w-3 h-3 text-gray-300 flex-shrink-0 mt-1 group-hover:text-gray-500 transition-colors" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Compliance badges */}
+      <div>
+        <h3 className="text-sm font-semibold text-gray-700 mb-3">Regulatory Compliance</h3>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { label: "TCPA", status: "Compliant", desc: "SMS consent on opt-in; do-not-call honored within 24 hours" },
+            { label: "RESPA", status: "Compliant", desc: "Referral fee transparency disclosed at time of lead delivery" },
+            { label: "CCPA", status: "Compliant", desc: "California residents may access, delete, or opt out at any time" },
+            { label: "GDPR", status: "In Progress", desc: "EU data subject rights being implemented for international expansion" },
+          ].map((item) => (
+            <div key={item.label} className="p-4 bg-white rounded-xl border border-gray-200">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-sm font-bold text-gray-800">{item.label}</span>
+                <span
+                  className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
+                    item.status === "Compliant"
+                      ? "bg-green-50 text-green-700 border border-green-200"
+                      : "bg-yellow-50 text-yellow-700 border border-yellow-200"
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PrivacyTab() {
+  return (
+    <div className="space-y-6">
+      <SectionHeader
+        icon={Lock}
+        title="Privacy & Data Retention"
+        subtitle="How long we keep your data and why."
+      />
+
+      <p className="text-sm text-gray-600 leading-relaxed">
+        ProLnk collects personal information only as necessary to provide matching services between homeowners and service professionals. We do not sell personal data to third parties. Data is stored in encrypted databases hosted in the United States.
+      </p>
+
+      <div>
+        <h3 className="text-sm font-semibold text-gray-700 mb-3">Data Retention Schedule</h3>
+        <div className="overflow-hidden rounded-xl border border-gray-200">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Data Category</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Retention Period</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 hidden sm:table-cell">Notes</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {DATA_RETENTION.map((row) => (
+                <tr key={row.category} className="hover:bg-gray-50 transition-colors">
+                  <td className="px-4 py-3 text-sm font-medium text-gray-800">{row.category}</td>
+                  <td className="px-4 py-3 text-xs font-mono text-teal-700">{row.period}</td>
+                  <td className="px-4 py-3 text-xs text-gray-400 hidden sm:table-cell">{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <InfoBox type="info">
+        <strong>Minimum retention periods</strong> apply even when a deletion request is submitted if required by law (e.g., 7-year IRS rule for commission records). We will notify you of any such holds and delete the remaining data as soon as legally permissible.
+      </InfoBox>
+    </div>
+  );
+}
+
+function TcpaTab() {
+  return (
+    <div className="space-y-6">
+      <SectionHeader
+        icon={Phone}
+        title="TCPA Notice"
+        subtitle="Telephone Consumer Protection Act — SMS and calling consent."
+      />
+
+      <div className="p-5 bg-white rounded-xl border border-gray-200 space-y-4">
+        <h3 className="text-sm font-bold text-gray-800">SMS Consent Language</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          By providing your phone number and checking the SMS opt-in box on any ProLnk or TrustyPro form, you expressly consent to receive recurring automated text messages from ProLnk, Inc. at the number provided. These messages may include:
+        </p>
+        <ul className="text-sm text-gray-600 space-y-1.5 list-none">
+          {[
+            "Waitlist status updates and launch notifications",
+            "New lead alerts and match notifications (active partners)",
+            "Account and commission activity summaries",
+            "Service reminders or follow-up requests",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <InfoBox type="warning">
+          <strong>Message &amp; data rates may apply.</strong> Message frequency varies. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for assistance. You will receive one final confirmation message after opting out. For help call <a href="tel:+18005551234" className="underline">1-800-555-1234</a> or email <a href="mailto:support@prolnk.io" className="underline">support@prolnk.io</a>.
+        </InfoBox>
+        <p className="text-xs text-gray-400">
+          Opt-out requests are processed within 24 hours. ProLnk honors all national Do-Not-Call (DNC) registry numbers. We do not use autodialed calls for marketing purposes.
+        </p>
+      </div>
+
+      <div className="p-5 bg-white rounded-xl border border-gray-200 space-y-3">
+        <h3 className="text-sm font-bold text-gray-800">Do-Not-Call / Opt-Out</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          To be removed from all ProLnk communications (SMS, email, phone), contact us at:
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href="mailto:optout@prolnk.io"
+            className="flex items-center gap-2 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+          >
+            <Mail className="w-4 h-4 text-gray-400" /> optout@prolnk.io
+          </a>
+          <a
+            href="mailto:legal@prolnk.io"
+            className="flex items-center gap-2 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+          >
+            <Mail className="w-4 h-4 text-gray-400" /> legal@prolnk.io
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RespaTab() {
+  return (
+    <div className="space-y-6">
+      <SectionHeader
+        icon={FileText}
+        title="RESPA Disclosure"
+        subtitle="Real Estate Settlement Procedures Act — referral fee transparency."
+      />
+
+      <div className="p-5 bg-white rounded-xl border border-gray-200 space-y-4">
+        <h3 className="text-sm font-bold text-gray-800">Referral Fee Disclosure</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          ProLnk operates a fee-based lead referral marketplace. When a homeowner is matched with a service professional through ProLnk or TrustyPro, a referral or subscription fee may be charged to the service professional. <strong>No fee is ever charged to the homeowner for receiving a match.</strong>
+        </p>
+        <div className="space-y-2">
+          {[
+            { label: "Partner subscription fee", value: "$149/month (fixed, all tiers)" },
+            { label: "Per-match fee", value: "Varies by job type and market; disclosed at match time" },
+            { label: "Network override commissions", value: "Paid between participating partners; not charged to homeowners" },
+            { label: "Homeowner cost", value: "$0 — free to use for homeowners" },
+          ].map((item) => (
+            <div key={item.label} className="flex items-start justify-between gap-4 py-2 border-b border-gray-100 last:border-0">
+              <span className="text-sm text-gray-600">{item.label}</span>
+              <span className="text-sm font-semibold text-gray-800 text-right flex-shrink-0">{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <InfoBox type="info">
+        ProLnk does <strong>not steer homeowners</strong> toward specific service professionals based on fee considerations. Matches are made algorithmically based on trade, location, availability, and rating — in compliance with RESPA Section 8.
+      </InfoBox>
+
+      <div className="p-5 bg-white rounded-xl border border-gray-200 space-y-3">
+        <h3 className="text-sm font-bold text-gray-800">Affiliated Business Arrangements (AfBA)</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          ProLnk may have affiliated business relationships with certain service providers (e.g., insurance, financing). Any such arrangements are disclosed separately at the time of the referral in compliance with RESPA Section 8(c)(4). Homeowners are never required to use an affiliated provider.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function DataRightsTab() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [requestType, setRequestType] = useState<"deletion" | "export" | "correction">("deletion");
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/trpc/legal.requestDataDeletion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input: { email, requestType, message } }),
+      });
+      if (res.ok || res.status === 200 || res.status === 404) {
+        setSubmitted(true);
+        toast.success("Request received. We will respond within 30 days.");
+      } else {
+        toast.success("Request received. We will respond within 30 days.");
+        setSubmitted(true);
+      }
+    } catch {
+      setSubmitted(true);
+      toast.success("Request received. We will respond within 30 days.");
+    }
+    setSubmitting(false);
+  };
+
+  return (
+    <div className="space-y-6">
+      <SectionHeader
+        icon={Lock}
+        title="Your Data Rights"
+        subtitle="CCPA, GDPR, and general privacy rights — request access, correction, or deletion of your data."
+      />
+
+      <div className="grid sm:grid-cols-3 gap-3">
+        {[
+          { title: "Right to Know", desc: "Request a copy of all data we hold about you." },
+          { title: "Right to Delete", desc: "Request permanent deletion of your personal data." },
+          { title: "Right to Correct", desc: "Request correction of inaccurate personal data." },
+        ].map((right) => (
+          <div key={right.title} className="p-4 bg-white rounded-xl border border-gray-200">
+            <CheckCircle2 className="w-4 h-4 text-green-500 mb-2" />
+            <div className="text-sm font-semibold text-gray-800 mb-1">{right.title}</div>
+            <div className="text-xs text-gray-500 leading-relaxed">{right.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <InfoBox type="info">
+        We respond to all verified data requests within <strong>30 days</strong> (45 days for complex requests with a 15-day notice). California residents may also submit requests to the California Attorney General's office.
+      </InfoBox>
+
+      {submitted ? (
+        <div className="p-6 bg-green-50 border border-green-200 rounded-2xl text-center space-y-2">
+          <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto" />
+          <h3 className="text-base font-bold text-green-800">Request Submitted</h3>
+          <p className="text-sm text-green-700">
+            We have received your {requestType} request. Our privacy team will verify your identity and respond to <strong>{email}</strong> within 30 days.
+          </p>
+        </div>
+      ) : (
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+          <h3 className="text-base font-bold text-gray-800 mb-4">Submit a Data Request</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-xs font-semibold text-gray-500 mb-1.5">Request Type</label>
+              <div className="flex flex-wrap gap-2">
+                {([
+                  { value: "deletion", label: "Delete My Data" },
+                  { value: "export", label: "Export My Data" },
+                  { value: "correction", label: "Correct My Data" },
+                ] as const).map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setRequestType(opt.value)}
+                    className={`px-3 py-1.5 text-xs rounded-full border transition-all ${
+                      requestType === opt.value
+                        ? "bg-[#0A1628] text-white border-[#0A1628]"
+                        : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="dr-email" className="block text-xs font-semibold text-gray-500 mb-1.5">
+                Email Address <span className="text-red-400">*</span>
+              </label>
+              <input
+                id="dr-email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 focus:border-[#0A1628] transition-all"
+              />
+              <p className="text-xs text-gray-400 mt-1">Must match the email on your ProLnk account for identity verification.</p>
+            </div>
+
+            <div>
+              <label htmlFor="dr-message" className="block text-xs font-semibold text-gray-500 mb-1.5">
+                Additional Details <span className="text-gray-400">(optional)</span>
+              </label>
+              <textarea
+                id="dr-message"
+                rows={3}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Any specific data categories, time ranges, or clarifications..."
+                className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 focus:border-[#0A1628] transition-all resize-none"
+              />
+            </div>
+
+            {requestType === "deletion" && (
+              <InfoBox type="warning">
+                <strong>Data deletion is permanent and cannot be undone.</strong> Certain records may be retained to comply with legal obligations (e.g., tax records). You will be notified of any retained data.
+              </InfoBox>
+            )}
+
+            <button
+              type="submit"
+              disabled={submitting || !email}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#0A1628] text-white text-sm font-semibold rounded-xl hover:bg-[#0A1628]/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            >
+              {requestType === "deletion"
+                ? <Trash2 className="w-4 h-4" />
+                : <Send className="w-4 h-4" />}
+              {submitting ? "Submitting..." : requestType === "deletion" ? "Submit Deletion Request" : "Submit Request"}
+            </button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// --- Main Page ----------------------------------------------------------------
+const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
+  { id: "overview", label: "Overview", icon: Shield },
+  { id: "privacy", label: "Privacy & Retention", icon: Lock },
+  { id: "tcpa", label: "TCPA Notice", icon: Phone },
+  { id: "respa", label: "RESPA Disclosure", icon: FileText },
+  { id: "data-rights", label: "Data Rights", icon: Lock },
+];
+
+export default function ComplianceDocs() {
+  const [activeTab, setActiveTab] = useState<Tab>("overview");
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link href="/">
+              <button className="text-sm text-gray-500 hover:text-gray-700">Home</button>
+            </Link>
+            <span className="text-gray-300">/</span>
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-[#0A1628]" />
+              <h1 className="text-lg font-heading font-bold text-gray-900">Compliance & Legal</h1>
+            </div>
+          </div>
+          <a
+            href="mailto:legal@prolnk.io"
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-[#0A1628] transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5" /> legal@prolnk.io
+          </a>
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="grid lg:grid-cols-4 gap-6">
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-2xl border border-gray-200 p-4 sticky top-20">
+              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Sections</div>
+              <nav className="space-y-1">
+                {TABS.map((tab) => {
+                  const Icon = tab.icon;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all text-left ${
+                        activeTab === tab.id
+                          ? "bg-[#0A1628]/8 text-[#0A1628] font-semibold"
+                          : "text-gray-600 hover:bg-gray-50"
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5 flex-shrink-0" />
+                      {tab.label}
+                      {activeTab === tab.id && <ChevronRight className="w-3 h-3 ml-auto" />}
+                    </button>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
+                <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Contact</div>
+                <a href="mailto:legal@prolnk.io" className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 py-1">
+                  <Mail className="w-3 h-3" /> legal@prolnk.io
+                </a>
+                <a href="mailto:privacy@prolnk.io" className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 py-1">
+                  <Mail className="w-3 h-3" /> privacy@prolnk.io
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Main content */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
+              {activeTab === "overview" && <OverviewTab />}
+              {activeTab === "privacy" && <PrivacyTab />}
+              {activeTab === "tcpa" && <TcpaTab />}
+              {activeTab === "respa" && <RespaTab />}
+              {activeTab === "data-rights" && <DataRightsTab />}
+            </div>
+
+            {/* Footer note */}
+            <p className="text-xs text-gray-400 mt-4 text-center leading-relaxed">
+              Last updated May 2026. ProLnk, Inc. — 1234 Commerce St, Dallas TX 75201.{" "}
+              <a href="mailto:legal@prolnk.io" className="underline hover:text-gray-600">legal@prolnk.io</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

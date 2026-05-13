@@ -265,6 +265,7 @@ const PhotoScan = lazy(() => import("./pages/trustypro/PhotoScan"));
 const HomeHealthDashboard = lazy(() => import("./pages/trustypro/HomeHealthDashboard"));
 const HomeownerLogin = lazy(() => import("./pages/trustypro/HomeownerLogin"));
 const TrustyProHomeownerDashboard = lazy(() => import("./pages/trustypro/HomeownerDashboard"));
+const PropertySetup = lazy(() => import("./pages/trustypro/PropertySetup"));
 const TrustyProDirectory = lazy(() => import("./pages/homeowner/TrustyProDirectory"));
 const HomeownerDashboard = lazy(() => import("./pages/homeowner/HomeownerDashboard"));
 const HomeownerOffers = lazy(() => import("./pages/homeowner/HomeownerOffers"));
@@ -780,6 +781,7 @@ function Router() {
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
+      <Route path="/trustypro/property-setup" component={PropertySetup} />
       <Route path="/trustypro/scan" component={PhotoScan} />
       <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />

@@ -154,6 +154,7 @@ const Exchange = lazy(() => import("./pages/Exchange"));
 const ExchangeLanding = lazy(() => import("./pages/ExchangeLanding"));
 const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
 const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
+const ExchangeContractors = lazy(() => import("./pages/ExchangeContractors"));
 const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
 const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
 const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
@@ -859,6 +860,7 @@ function Router() {
       <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />
+      <Route path="/exchange/contractors" component={ExchangeContractors} />
       <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />

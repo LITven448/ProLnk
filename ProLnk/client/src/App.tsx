@@ -80,6 +80,7 @@ const TierProgress = lazy(() => import("./pages/TierProgress"));
 const ReferralLink = lazy(() => import("./pages/ReferralLink"));
 const ReferralHub = lazy(() => import("./pages/dashboard/ReferralHub"));
 const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
+const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
 const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
 const NetworkTree = lazy(() => import("./pages/NetworkTree"));
 const TierUpgradeFlow = lazy(() => import("./pages/TierUpgradeFlow"));
@@ -582,6 +583,7 @@ function Router() {
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
+      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />

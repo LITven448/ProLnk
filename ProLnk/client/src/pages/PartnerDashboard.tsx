@@ -20,7 +20,7 @@ import {
   TrendingUp, Award, ChevronRight, MapPin, Globe, Sparkles,
   User, Star, BarChart3, ArrowUpRight, Activity,
   Radar, Eye, CloudLightning, Shield, Repeat, Megaphone,
-  Share2, MessageSquare
+  Share2, MessageSquare, Users, GitBranch
 } from "lucide-react";
 
 // ─── Account Standing Badge ──────────────────────────────────────────────────
@@ -463,6 +463,14 @@ export default function PartnerDashboard() {
   const earningsThisMonth = (earnedCommissions ?? [])
     .filter((c) => new Date(Number(c.createdAt)) >= startOfMonth)
     .reduce((s, c) => s + Number(c.amount ?? 0), 0);
+  const networkEarningsThisMonth = (earnedCommissions ?? [])
+    .filter((c) => {
+      if (new Date(Number(c.createdAt)) < startOfMonth) return false;
+      const t = (c.commissionType ?? "").toLowerCase();
+      return t.includes("network") || t.includes("override") || t.includes("cascade");
+    })
+    .reduce((s, c) => s + Number(c.amount ?? 0), 0);
+  const directEarningsThisMonth = earningsThisMonth - networkEarningsThisMonth;
   const leadsThisWeek = (inboundOpps ?? [])
     .filter((o) => new Date(Number((o as any).createdAt ?? 0)) >= startOfWeek).length;
   const jobsCompletedThisMonth = (inboundOpps ?? [])
@@ -479,6 +487,74 @@ export default function PartnerDashboard() {
   return (
     <PartnerLayout>
       <div className="p-6 max-w-7xl mx-auto">
+
+        {/* -- Trial Countdown Banner -------------------------------------------- */}
+        {trialEndsAt && trialDaysLeft !== null && trialDaysLeft >= 0 && (
+          <div className={`rounded-2xl border px-5 py-3.5 mb-5 flex items-center gap-3 ${trialDaysLeft > 14 ? "bg-emerald-50 border-emerald-200" : trialDaysLeft > 3 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200"}`}>
+            <span className="text-lg leading-none flex-shrink-0">🎉</span>
+            <div className="flex-1 min-w-0">
+              <p className={`text-sm font-semibold ${trialDaysLeft > 14 ? "text-emerald-800" : trialDaysLeft > 3 ? "text-amber-800" : "text-red-800"}`}>
+                {trialDaysLeft > 0
+                  ? `Your 90-day free trial is active — no credit card needed until ${trialEndsAt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`
+                  : "Your free trial has ended — upgrade to keep earning"}
+              </p>
+              {trialDaysLeft > 0 && (
+                <p className={`text-xs mt-0.5 ${trialDaysLeft > 14 ? "text-emerald-600" : trialDaysLeft > 3 ? "text-amber-600" : "text-red-600"}`}>
+                  {trialDaysLeft} day{trialDaysLeft !== 1 ? "s" : ""} remaining
+                </p>
+              )}
+            </div>
+            {trialDaysLeft <= 14 && (
+              <Link href="/dashboard/upgrade">
+                <button className={`flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-xl transition-all hover:opacity-90 ${trialDaysLeft > 3 ? "bg-amber-200 text-amber-800" : "bg-red-200 text-red-800"}`}>
+                  Upgrade Now
+                </button>
+              </Link>
+            )}
+          </div>
+        )}
+
+        {/* -- This Month Earnings Card ------------------------------------------ */}
+        <div className="rounded-2xl mb-6 p-6 text-white overflow-hidden relative"
+          style={{ background: "linear-gradient(135deg, #0A1628 0%, #0A3D4A 60%, #006E71 100%)" }}>
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #00B5B8 0%, transparent 50%), radial-gradient(circle at 10% 80%, #1B4FD8 0%, transparent 40%)" }} />
+          <div className="relative flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-1">This Month</p>
+              <p className="text-4xl font-black font-heading tracking-tight">
+                ${earningsThisMonth.toFixed(0)}
+              </p>
+              {earningsThisMonth === 0 && (
+                <p className="text-xs text-white/50 mt-1">Log your first job to start earning</p>
+              )}
+            </div>
+            <div className="flex gap-6 flex-wrap">
+              <div className="text-right">
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Jobs Completed</p>
+                <p className="text-2xl font-bold text-white">{jobsCompletedThisMonth}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Commission</p>
+                <p className="text-2xl font-bold text-white">${directEarningsThisMonth.toFixed(0)}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Network</p>
+                <p className="text-2xl font-bold" style={{ color: "#00E5E8" }}>${networkEarningsThisMonth.toFixed(0)}</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative mt-4 pt-4 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
+            <div className="flex items-center gap-2 text-xs text-white/40">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>All-time total: <span className="text-white/70 font-semibold">${totalEarned.toFixed(0)}</span></span>
+            </div>
+            <Link href="/dashboard/commissions">
+              <button className="text-xs font-semibold text-white/60 hover:text-white transition-colors flex items-center gap-1">
+                View all earnings <ArrowRight className="w-3 h-3" />
+              </button>
+            </Link>
+          </div>
+        </div>
 
         {/* -- Quick Stats Banner ------------------------------------------------- */}
         <div className="flex flex-wrap gap-3 mb-6">
@@ -625,42 +701,26 @@ export default function PartnerDashboard() {
         </div>
 
         {/* -- Quick Actions ------------------------------------------------------ */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-8">
-          {[
-            { icon: Camera, label: "Log a Job", sub: "Upload photos", href: "/job/new", color: "#0A1628", action: null },
-            { icon: Send, label: "Share Link", sub: "Recruit colleagues", href: "/dashboard/referral", color: "#8B5CF6", action: null },
-            { icon: Inbox, label: "View Leads", sub: `${newLeads.length} new`, href: "/dashboard/leads", color: "#3B82F6", action: null },
-            { icon: Award, label: "Leaderboard", sub: "See rankings", href: "/leaderboard", color: "#F59E0B", action: null },
-            { icon: MessageSquare, label: "Request Review", sub: "Get Google reviews", href: "/dashboard/reviews", color: "#10B981", action: null },
-            { icon: Share2, label: "Share Profile", sub: "Copy public link", href: null, color: "#1B4FD8",
-              action: () => {
-                const url = `${window.location.origin}/pro/${partner?.id}`;
-                navigator.clipboard.writeText(url).then(() => toast.success("Profile link copied to clipboard!"));
-              }
-            },
-          ].map((a) => (
-            a.action ? (
-              <div key={a.label} onClick={a.action}
-                className="bg-white rounded-2xl border border-gray-100 p-4 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
+        <div className="grid grid-cols-2 gap-3 mb-8">
+          {([
+            { icon: Camera, label: "Log a Job", sub: "Upload job photos", href: "/job-complete", color: "#0A1628" },
+            { icon: Camera, label: "Upload Photos", sub: "Add to your library", href: "/photo-upload", color: "#0A7A7C" },
+            { icon: Users, label: "Invite a Pro", sub: "Grow your network", href: "/dashboard/referral", color: "#8B5CF6" },
+            { icon: GitBranch, label: "View Network", sub: "See your 4-level tree", href: "/network-tree", color: "#1B4FD8" },
+          ] as const).map((a) => (
+            <Link key={a.label} href={a.href}>
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
                   style={{ backgroundColor: `${a.color}15` }}>
-                  <a.icon className="w-4 h-4" style={{ color: a.color }} />
+                  <a.icon className="w-5 h-5" style={{ color: a.color }} />
                 </div>
-                <div className="font-semibold text-gray-900 text-xs">{a.label}</div>
-                <div className="text-xs text-gray-400 mt-0.5">{a.sub}</div>
-              </div>
-            ) : (
-              <Link key={a.href} href={a.href!}>
-                <div className="bg-white rounded-2xl border border-gray-100 p-4 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
-                    style={{ backgroundColor: `${a.color}15` }}>
-                    <a.icon className="w-4 h-4" style={{ color: a.color }} />
-                  </div>
-                  <div className="font-semibold text-gray-900 text-xs">{a.label}</div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-gray-900 text-sm">{a.label}</div>
                   <div className="text-xs text-gray-400 mt-0.5">{a.sub}</div>
                 </div>
-              </Link>
-            )
+                <ArrowRight className="w-4 h-4 text-gray-200 group-hover:text-gray-400 ml-auto flex-shrink-0 transition-colors" />
+              </div>
+            </Link>
           ))}
         </div>
 

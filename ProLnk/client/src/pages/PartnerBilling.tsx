@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   CreditCard, ExternalLink, RefreshCw, CheckCircle,
   AlertCircle, Banknote, Clock, DollarSign, ArrowRight,
-  Wallet, CalendarDays, Layers,
+  Wallet, CalendarDays, Layers, TrendingUp,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -30,9 +30,11 @@ export default function PartnerBilling() {
 
   const { data: billing, refetch } = trpc.stripe.getMyBilling.useQuery();
   const { data: connectStatus } = trpc.stripe.getConnectStatus.useQuery();
+  const { data: history } = trpc.stripe.getPayoutHistory.useQuery();
 
   const createConnectLink = trpc.stripe.createConnectLink.useMutation();
   const createBillingPortal = trpc.stripe.createBillingPortalSession.useMutation();
+  const requestPayoutMutation = trpc.stripe.requestPayout.useMutation();
 
   const tier = billing?.tier ?? "scout";
   const tierMeta = TIER_META[tier] ?? TIER_META.scout;
@@ -44,9 +46,10 @@ export default function PartnerBilling() {
     setConnectLoading(true);
     try {
       const { url } = await createConnectLink.mutateAsync({ origin: window.location.origin });
-      window.location.href = url;
+      window.open(url, "_blank", "noopener,noreferrer");
     } catch (err: any) {
       toast.error(err?.message ?? "Could not start Stripe onboarding. Please try again.");
+    } finally {
       setConnectLoading(false);
     }
   };
@@ -68,10 +71,15 @@ export default function PartnerBilling() {
     if (!billing?.canRequestPayout) return;
     setPayoutLoading(true);
     try {
-      toast.info("Payout request submitted. Transfers are processed by an admin.");
+      const result = await requestPayoutMutation.mutateAsync();
+      toast.success(`Payout of ${fmt(result.amountPaid)} sent to your bank account.`);
       await refetch();
     } catch (err: any) {
-      toast.error(err?.message ?? "Could not submit payout request.");
+      if (!billing?.stripeConnectStatus || billing.stripeConnectStatus !== "active") {
+        toast.error("Set up your bank account first to receive payouts.");
+      } else {
+        toast.error(err?.message ?? "Could not submit payout request.");
+      }
     } finally {
       setPayoutLoading(false);
     }
@@ -263,19 +271,54 @@ export default function PartnerBilling() {
           </CardContent>
         </Card>
 
-        {/* Billing History — placeholder */}
+        {/* Payout History */}
         <Card className="border border-gray-200 shadow-sm">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base flex items-center gap-2">
-              <Clock className="w-4 h-4 text-gray-500" />
-              Billing History
-            </CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-base flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-gray-500" />
+                Payout History
+              </CardTitle>
+              {(history?.totalPaid ?? 0) > 0 && (
+                <span className="text-sm text-gray-500">
+                  Total paid: <span className="font-semibold text-gray-700">{fmt(history?.totalPaid ?? 0)}</span>
+                </span>
+              )}
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-center py-8 text-gray-400">
-              <CreditCard className="w-8 h-8 mx-auto mb-2 opacity-30" />
-              <p className="text-sm">Your billing history will appear here once you have an active paid plan.</p>
-            </div>
+            {!history || history.payouts.length === 0 ? (
+              <div className="text-center py-8 text-gray-400">
+                <Banknote className="w-8 h-8 mx-auto mb-2 opacity-30" />
+                <p className="text-sm">No payouts yet — your first will appear here</p>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {history.payouts.slice(0, 5).map((payout: any) => (
+                  <div key={payout.id} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                        <CheckCircle className="w-4 h-4 text-emerald-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-800">
+                          {payout.description ?? "Commission payout"}
+                        </p>
+                        <p className="text-xs text-gray-400">
+                          {payout.paidAt
+                            ? new Date(payout.paidAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+                            : "—"}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-emerald-700">{fmt(parseFloat(payout.amount ?? "0"))}</p>
+                      <Badge className="bg-emerald-50 text-emerald-700 border-0 text-xs px-2 py-0">Paid</Badge>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </CardContent>
         </Card>
 

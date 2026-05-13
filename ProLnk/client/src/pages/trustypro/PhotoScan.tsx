@@ -654,16 +654,110 @@ export default function PhotoScan() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {/* Header */}
-              <div className="text-center mb-8">
-                <div className="text-5xl mb-4">{conditionConfig[result.overallCondition].emoji}</div>
-                <h1 className="text-4xl font-black text-gray-900 mb-2">Your Home AI Report</h1>
-                {result.roomLabel && (
-                  <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-3">
-                    <Home className="w-4 h-4" /> {result.roomLabel}
+              {/* AI Report Hero */}
+              {(() => {
+                const healthScore = computeHealthScore(result.issues);
+                const scoreColor = healthScoreColor(healthScore);
+                const scoreLabel = healthScore >= 80 ? "Great Shape" : healthScore >= 60 ? "Fair — Action Needed" : healthScore >= 40 ? "Needs Attention" : "Critical Issues";
+                const priorityIssues = [...result.issues].sort((a, b) => {
+                  const order = { urgent: 0, moderate: 1, low: 2 };
+                  return order[a.severity] - order[b.severity];
+                }).slice(0, 3);
+
+                const handleShare = () => {
+                  const scanUrl = `${window.location.origin}/trustypro/scan`;
+                  const text = `I just got a free AI home scan from TrustyPro! My home scored ${healthScore}/100 — it found ${result.issues.length} issue${result.issues.length !== 1 ? "s" : ""}. The scan is free and takes 60 seconds:`;
+                  if (navigator.share) {
+                    navigator.share({ title: "My Home AI Report — TrustyPro", text, url: scanUrl });
+                  } else {
+                    navigator.clipboard.writeText(`${text} ${scanUrl}`);
+                    toast.success("Report link copied to clipboard!");
+                  }
+                };
+
+                return (
+                  <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-6">
+                    <div className="text-center mb-4">
+                      <h1 className="text-2xl font-black text-gray-900 mb-1">Your Home's AI Report</h1>
+                      {result.roomLabel && (
+                        <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+                          <Home className="w-3 h-3" /> {result.roomLabel}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-6 mb-5">
+                      <HealthScoreRing score={healthScore} />
+                      <div className="flex-1">
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Home Health Score</p>
+                        <p className="text-xl font-black mb-1" style={{ color: scoreColor }}>{scoreLabel}</p>
+                        <p className="text-xs text-gray-500">
+                          {result.issues.length === 0
+                            ? "No issues detected — your home looks great."
+                            : `${result.issues.filter(i => i.severity === "urgent").length} urgent · ${result.issues.filter(i => i.severity === "moderate").length} scheduled · ${result.issues.filter(i => i.severity === "low").length} monitor`}
+                        </p>
+                        <div className="flex items-center gap-1 mt-2">
+                          <TrendingUp className="w-3.5 h-3.5 text-gray-400" />
+                          <p className="text-xs text-gray-400">Score updates with each scan</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {priorityIssues.length > 0 && (
+                      <div className="border-t border-gray-100 pt-4 mb-4">
+                        <p className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-3">Top Priority Issues</p>
+                        <div className="space-y-2">
+                          {priorityIssues.map((issue, i) => {
+                            const cfg = severityConfig[issue.severity];
+                            return (
+                              <div key={i} className="flex items-center justify-between gap-3">
+                                <div className="flex items-center gap-2 flex-1 min-w-0">
+                                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${cfg.dot}`} />
+                                  <span className="text-sm text-gray-800 font-medium truncate">{issue.name}</span>
+                                </div>
+                                <div className="flex items-center gap-2 flex-shrink-0">
+                                  <span className="text-xs text-gray-400">{issue.estimatedCost}</span>
+                                  {(issue.severity === "urgent" || issue.severity === "moderate") && (
+                                    <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
+                                      <button className="text-xs font-bold text-white px-2 py-1 rounded-full transition-colors" style={{ backgroundColor: ACCENT_BTN }}>
+                                        Find a Pro
+                                      </button>
+                                    </Link>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex gap-2">
+                      <button
+                        onClick={handleShare}
+                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                      >
+                        <Share2 className="w-4 h-4" /> Share Report
+                      </button>
+                      <button
+                        onClick={() => {
+                          const scanUrl = `${window.location.origin}/trustypro/scan`;
+                          navigator.clipboard.writeText(scanUrl);
+                          toast.success("Link copied!");
+                        }}
+                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                      >
+                        <Copy className="w-4 h-4" /> Copy Link
+                      </button>
+                    </div>
                   </div>
-                )}
-                <p className="text-gray-500">
+                );
+              })()}
+
+              {/* Header (compact) */}
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-2">{conditionConfig[result.overallCondition].emoji}</div>
+                <p className="text-gray-500 text-sm">
                   {contact.name ? `${contact.name}, here` : "Here"}'s what our AI found.
                   {contact.email ? " A verified DFW pro will follow up shortly." : ""}
                 </p>
@@ -800,13 +894,24 @@ export default function PhotoScan() {
                                   {isExpanded ? "Hide Preview" : "See AI Transformation"}
                                 </button>
                               )}
-                              <button
-                                onClick={() => setRequestIssue(issue)}
-                                className="text-xs font-bold text-white px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
-                                style={{ backgroundColor: ACCENT }}
-                              >
-                                <Home className="w-3 h-3" /> Request a Pro
-                              </button>
+                              {(issue.severity === "urgent" || issue.severity === "moderate") ? (
+                                <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
+                                  <button
+                                    className="text-xs font-bold text-white px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
+                                    style={{ backgroundColor: issue.severity === "urgent" ? "#dc2626" : ACCENT_BTN }}
+                                  >
+                                    <Home className="w-3 h-3" /> {issue.severity === "urgent" ? "Find a Pro →" : "Schedule a Pro"}
+                                  </button>
+                                </Link>
+                              ) : (
+                                <button
+                                  onClick={() => setRequestIssue(issue)}
+                                  className="text-xs font-bold text-white px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
+                                  style={{ backgroundColor: ACCENT }}
+                                >
+                                  <Home className="w-3 h-3" /> Request a Pro
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -903,21 +1008,12 @@ export default function PhotoScan() {
                   >
                     Scan Another Room
                   </button>
-                  <button
-                    onClick={() => {
-                      const scanUrl = `${window.location.origin}/trustypro/scan`;
-                      const text = `I just got a free AI home scan from TrustyPro! It found ${result?.issues?.length ?? 0} issues in my home \u2014 some I didn't even know about. The scan is free and takes 60 seconds. Try it:`;
-                      if (navigator.share) {
-                        navigator.share({ title: "Free AI Home Scan \u2014 TrustyPro", text, url: scanUrl });
-                      } else {
-                        navigator.clipboard.writeText(`${text} ${scanUrl}`);
-                        toast.success("Share message copied! Send it to a neighbor.");
-                      }
-                    }}
+                  <Link
+                    href="/trustypro/dashboard"
                     className="border border-indigo-400 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-colors flex items-center gap-2 justify-center"
                   >
-                    Share Report
-                  </button>
+                    View Dashboard
+                  </Link>
                 </div>
               </div>
             </motion.div>

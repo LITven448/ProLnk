@@ -5626,13 +5626,14 @@ Return a JSON object with:
         const pool = await getPool();
         if (!pool) return { available: true, claimedBy: null };
         const normalized = input.address.toLowerCase().trim().replace(/\s+/g, " ");
+        const hash = crypto.createHash("sha256").update(normalized).digest("hex");
         const [rows]: any = await pool.query(
-          "SELECT pro_email, created_at FROM home_documentation WHERE normalized_address = ? LIMIT 1",
-          [normalized]
+          "SELECT pro_user_id, documented_at FROM home_documentation WHERE address_hash = ? LIMIT 1",
+          [hash]
         ).catch(() => [[]]);
         if ((rows as any[])[0]) {
-          const isYours = (rows as any[])[0].pro_email === (ctx.user.email ?? "");
-          return { available: false, claimedBy: isYours ? "you" : "another_pro", claimedAt: (rows as any[])[0].created_at };
+          const isYours = (rows as any[])[0].pro_user_id === String(ctx.user.id ?? "");
+          return { available: false, claimedBy: isYours ? "you" : "another_pro", claimedAt: (rows as any[])[0].documented_at };
         }
         return { available: true, claimedBy: null };
       }),
@@ -5643,13 +5644,12 @@ Return a JSON object with:
         const pool = await getPool();
         if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
         const normalized = input.address.toLowerCase().trim().replace(/\s+/g, " ");
-        const crypto = await import("crypto");
         const hash = crypto.createHash("sha256").update(normalized).digest("hex");
         const id = Math.floor(Math.random() * 2_000_000_000) + 1;
         try {
           await pool.query(
-            "INSERT INTO home_documentation (id, pro_id, pro_email, property_address, normalized_address, address_hash, is_originator) VALUES (?, ?, ?, ?, ?, ?, 1)",
-            [id, 0, ctx.user.email ?? "", input.address, normalized, hash]
+            "INSERT INTO home_documentation (id, pro_user_id, full_address, address_hash, is_first_documentation, origination_credit_earned) VALUES (?, ?, ?, ?, 1, 1)",
+            [id, String(ctx.user.id ?? ""), input.address, hash]
           );
           return { success: true, message: "Origination rights claimed!" };
         } catch (e: any) {
@@ -5662,8 +5662,8 @@ Return a JSON object with:
       const pool = await getPool();
       if (!pool) return [];
       const [rows]: any = await pool.query(
-        "SELECT property_address, created_at FROM home_documentation WHERE pro_email = ? ORDER BY created_at DESC LIMIT 100",
-        [ctx.user.email ?? ""]
+        "SELECT full_address AS property_address, documented_at AS created_at, origination_credit_amount AS lifetime_earnings FROM home_documentation WHERE pro_user_id = ? ORDER BY documented_at DESC LIMIT 100",
+        [String(ctx.user.id ?? "")]
       ).catch(() => [[]]);
       return (rows as any[]);
     }),

@@ -61,7 +61,7 @@ export default function PartnerSpotlight() {
   const [quoteSubmitting, setQuoteSubmitting] = useState(false);
   const [serviceAreaMapUrl, setServiceAreaMapUrl] = useState<string | null>(null);
 
-  const MAPBOX_TOKEN = "import.meta.env.VITE_MAPBOX_TOKEN ?? """;
+  const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN ?? "";
 
   const { data, isLoading, error } = trpc.directory.getPublicProfile.useQuery(
     { partnerId },

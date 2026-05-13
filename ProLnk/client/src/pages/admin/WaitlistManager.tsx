@@ -481,7 +481,13 @@ export default function WaitlistManager() {
                         <div className="mt-3">
                           <label className="text-xs font-semibold text-gray-600 mb-1 block">Admin Notes</label>
                           <Textarea value={editNotes[pro.id] ?? pro.adminNotes ?? ""} onChange={e => setEditNotes(n => ({ ...n, [pro.id]: e.target.value }))}
-                            className="text-xs min-h-[60px] resize-none" placeholder="Internal notes..." />
+                            onBlur={() => {
+                              const notes = editNotes[pro.id];
+                              if (notes !== undefined && notes !== (pro.adminNotes ?? "")) {
+                                updatePro.mutate({ id: pro.id, status: pro.status, adminNotes: notes });
+                              }
+                            }}
+                            className="text-xs min-h-[60px] resize-none" placeholder="Internal notes (auto-saved on blur)..." />
                         </div>
                         <div className="flex gap-2 mt-4 flex-wrap items-center">
                           <Button size="sm"
@@ -590,7 +596,13 @@ export default function WaitlistManager() {
                         <div className="mt-3">
                           <label className="text-xs font-semibold text-gray-600 mb-1 block">Admin Notes</label>
                           <Textarea value={editNotes[home.id] ?? home.adminNotes ?? ""} onChange={e => setEditNotes(n => ({ ...n, [home.id]: e.target.value }))}
-                            className="text-xs min-h-[60px] resize-none" placeholder="Internal notes..." />
+                            onBlur={() => {
+                              const notes = editNotes[home.id];
+                              if (notes !== undefined && notes !== (home.adminNotes ?? "")) {
+                                updateHome.mutate({ id: home.id, status: home.status, adminNotes: notes });
+                              }
+                            }}
+                            className="text-xs min-h-[60px] resize-none" placeholder="Internal notes (auto-saved on blur)..." />
                         </div>
                         <div className="flex gap-2 mt-4 flex-wrap items-center">
                           <Button size="sm"

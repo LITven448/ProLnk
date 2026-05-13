@@ -5396,7 +5396,7 @@ Return a JSON object with:
     sendWelcomeEmail: adminProcedure
       .input(z.object({ email: z.string().email(), name: z.string().optional() }))
       .mutation(async ({ input }) => {
-        const { sendPartnerApproved } = await import('../email');
+        const { sendPartnerApproved } = await import('./email');
         await sendPartnerApproved({ to: input.email, name: input.name ?? 'Partner', businessName: '', loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.io' });
         return { success: true };
       }),

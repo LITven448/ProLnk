@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Home, Search, ArrowRight } from "lucide-react";
+import { Home, Search, ArrowRight, Shield } from "lucide-react";
 import ProLnkLogo from "@/components/ProLnkLogo";
 
 export default function NotFound() {
@@ -64,8 +64,14 @@ export default function NotFound() {
             </Link>
             <Link href="/apply">
               <button className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold border-2 border-white/20 text-white hover:border-[#F5E642] hover:text-[#F5E642] transition-all">
-                Apply to Join
+                Join Network
                 <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
+            <Link href="/trustypro">
+              <button className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold border-2 border-white/20 text-white hover:border-teal-400 hover:text-teal-400 transition-all">
+                <Shield className="w-4 h-4" />
+                TrustyPro
               </button>
             </Link>
           </div>
@@ -75,9 +81,10 @@ export default function NotFound() {
             <p className="text-xs text-white/30 uppercase tracking-widest mb-4 font-semibold">Quick Links</p>
             <div className="flex flex-wrap gap-4 justify-center text-sm text-white/50">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <Link href="/apply" className="hover:text-white transition-colors">Apply</Link>
+              <Link href="/apply" className="hover:text-white transition-colors">Join Network</Link>
+              <Link href="/trustypro" className="hover:text-white transition-colors">TrustyPro</Link>
+              <Link href="/help" className="hover:text-white transition-colors">Help Center</Link>
               <Link href="/waitlist-status" className="hover:text-white transition-colors">Waitlist Status</Link>
-              <Link href="/media" className="hover:text-white transition-colors">ProLnk Media</Link>
             </div>
           </div>
         </div>

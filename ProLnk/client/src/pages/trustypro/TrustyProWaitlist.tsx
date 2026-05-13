@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 import { toast } from "sonner";
 import {
   CheckCircle, Shield, Star, Home, Zap, ArrowRight,
-  Users, ChevronRight, MapPin, Phone, Wrench, Camera, Lock, Menu, X,
+  Users, ChevronRight, MapPin, Phone, Wrench, Camera, Lock, Menu, X, Share2,
 } from "lucide-react";
 
 const BENEFITS = [
@@ -50,11 +50,13 @@ export default function TrustyProWaitlist() {
   const [zipCode, setZipCode] = useState("");
   const [serviceNeeded, setServiceNeeded] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [waitlistPosition, setWaitlistPosition] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const joinWaitlist = trpc.waitlist.joinHomeWaitlist.useMutation({
-    onSuccess: () => {
+    onSuccess: (data) => {
       setSubmitted(true);
+      setWaitlistPosition(data.position ?? null);
       toast.success("You're on the list! We'll reach out soon.");
     },
     onError: (e) => {
@@ -203,22 +205,56 @@ export default function TrustyProWaitlist() {
 
             {submitted ? (
               <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-10 text-center">
-                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-green-500" />
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #0891b2, #1e3a5f)" }}>
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
+
+                {waitlistPosition !== null && (
+                  <div className="mb-4">
+                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#0891b2" }}>Waitlist Position</p>
+                    <p className="text-6xl font-black text-gray-900 leading-none mt-1">#{waitlistPosition}</p>
+                  </div>
+                )}
+
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h2>
-                <p className="text-gray-500 mb-2">We'll reach out when TrustyPro is ready in your neighborhood.</p>
+                <p className="text-gray-500 mb-1">We'll reach out when TrustyPro is ready in your neighborhood.</p>
+
+                {address && (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 text-green-700 text-sm font-medium mt-3 mb-4">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span className="truncate max-w-xs">{address}{city ? `, ${city}` : ""}{state ? `, ${state}` : ""} {zipCode}</span>
+                  </div>
+                )}
+
                 <p className="text-gray-400 text-sm mb-8">Expect your invite within a few weeks. DFW area first.</p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link href="/trustypro">
-                    <Button variant="outline" className="border-gray-200">Explore TrustyPro</Button>
-                  </Link>
+
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+                  <Button
+                    variant="outline"
+                    className="border-gray-200 gap-2"
+                    onClick={() => {
+                      const shareText = `I just joined the TrustyPro waitlist — AI-matched home service pros in DFW. Free for homeowners! Join me: https://trustypro.io/waitlist`;
+                      if (navigator.share) {
+                        navigator.share({ title: "TrustyPro", text: shareText, url: "https://trustypro.io/waitlist" }).catch(() => {});
+                      } else {
+                        navigator.clipboard.writeText(shareText).then(() => toast.success("Link copied! Share with a neighbor.")).catch(() => {});
+                      }
+                    }}
+                  >
+                    <Share2 className="w-4 h-4" /> Share with a Neighbor
+                  </Button>
                   <Link href="/">
                     <Button className="bg-[#0A1628] text-white hover:bg-[#1a2a40]">
                       I'm a Pro — Join ProLnk <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
                   </Link>
                 </div>
+
+                <Link href="/trustypro">
+                  <span className="text-sm font-semibold cursor-pointer hover:opacity-80 transition-opacity" style={{ color: "#0891b2" }}>
+                    Explore TrustyPro features <ChevronRight className="w-3.5 h-3.5 inline" />
+                  </span>
+                </Link>
               </div>
             ) : (
               <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8">

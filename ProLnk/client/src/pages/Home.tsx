@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useDomain } from "@/hooks/useDomain";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";
+import PublicIncomeCalculator from "@/components/PublicIncomeCalculator";
 import BackToTop from "@/components/BackToTop";
 import ProLnkJobSiteVisual from "@/components/ProLnkJobSiteVisual";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
@@ -26,77 +27,97 @@ import { toast } from "sonner";
 // Navy: #0A1628  Yellow accent: #F5E642  Off-white bg: #FAFAF9
 // Hero/final CTA bg: #050d1a
 
-// --- Pricing — 3 residential tiers (Connect/Growth/Elite) ----------------------------
+// --- Pricing — 4 founding network tiers (Charter/Founding/L3/L4) ----------------------------
 const PRICING_TIERS = [
   {
-    name: "Connect",
-    subtitle: "Solo operators & new partners",
-    monthlyFee: 79,
-    commissionShare: 0.45,
+    name: "Charter",
+    subtitle: "First 25 founding partners",
+    monthlyFee: 149,
+    commissionShare: 0.72,
     photoCap: null,
-    zipLimit: 5,
-    weeklyLeadCap: 20,
+    zipLimit: null,
+    weeklyLeadCap: null,
     popular: false,
-    cta: "Apply Now",
+    cta: "Claim Charter Slot",
     features: [
-      "Free during beta — no credit card required",
-      "Unlimited photo uploads",
-      "AI opportunity detection on every photo",
-      "Partner profile + verification badge",
-      "Up to 20 verified leads/month",
-      "5 zip code service area",
-      "1 service category",
-      "Commission tracking dashboard",
-      "FieldOS mobile access",
-      "Email support",
+      "Locked at $149/mo — forever",
+      "72% keep on every closed job",
+      "No lead cap, no earnings cap",
+      "4-level network override income",
+      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
+      "Origination rights on referred homes",
+      "All service categories",
+      "FSM integration (Jobber, HCP, ServiceTitan)",
+      "Priority lead routing",
+      "Dedicated partner success manager",
     ],
   },
   {
-    name: "Growth",
-    subtitle: "Established businesses",
+    name: "Founding",
+    subtitle: "Next 100 founding partners",
     monthlyFee: 149,
-    commissionShare: 0.55,
+    commissionShare: 0.72,
     photoCap: null,
-    zipLimit: 15,
-    weeklyLeadCap: 60,
+    zipLimit: null,
+    weeklyLeadCap: null,
     popular: true,
-    cta: "Apply Now",
+    cta: "Claim Founding Slot",
     features: [
-      "Free during beta — no credit card required",
-      "Unlimited photo uploads",
-      "Up to 60 verified leads/month",
-      "15 zip code service area",
+      "Locked at $149/mo — forever",
+      "72% keep on every closed job",
+      "No lead cap, no earnings cap",
+      "4-level network override income",
+      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
+      "Origination rights on referred homes",
       "All service categories",
-      "Higher commission share",
       "FSM integration (Jobber, HCP, ServiceTitan)",
       "Bundle offer matching",
-      "Deal Composer access",
-      "Review management suite",
       "Priority email support",
     ],
   },
   {
-    name: "Elite",
-    subtitle: "Multi-location & high-volume",
-    monthlyFee: 249,
-    commissionShare: 0.65,
+    name: "Level 3",
+    subtitle: "Next 400 founding partners",
+    monthlyFee: 149,
+    commissionShare: 0.72,
     photoCap: null,
-    zipLimit: 30,
+    zipLimit: null,
     weeklyLeadCap: null,
     popular: false,
-    cta: "Apply Now",
+    cta: "Claim L3 Slot",
     features: [
-      "Free during beta — no credit card required",
-      "Unlimited photo uploads",
-      "Unlimited verified leads",
-      "30 zip code service area",
-      "Priority lead routing (first-look advantage)",
-      "Highest commission share",
-      "Up to 25 team seats",
-      "Multi-location management",
-      "API & webhook integrations",
-      "Dedicated partner success manager",
-      "Quarterly strategy review",
+      "Locked at $149/mo — forever",
+      "72% keep on every closed job",
+      "No lead cap, no earnings cap",
+      "4-level network override income",
+      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
+      "Origination rights on referred homes",
+      "All service categories",
+      "FSM integration (Jobber, HCP, ServiceTitan)",
+      "Deal Composer access",
+      "Priority email support",
+    ],
+  },
+  {
+    name: "Level 4",
+    subtitle: "Final 1,600 founding partners",
+    monthlyFee: 149,
+    commissionShare: 0.72,
+    photoCap: null,
+    zipLimit: null,
+    weeklyLeadCap: null,
+    popular: false,
+    cta: "Claim L4 Slot",
+    features: [
+      "Locked at $149/mo — forever",
+      "72% keep on every closed job",
+      "No lead cap, no earnings cap",
+      "4-level network override income",
+      "7% L1 / 4% L2 / 2% L3 / 1% L4 cascade",
+      "Origination rights on referred homes",
+      "All service categories",
+      "FSM integration (Jobber, HCP, ServiceTitan)",
+      "Standard email support",
     ],
   },
 ]
@@ -311,11 +332,12 @@ function EarningsEstimator() {
   const [photosPerMonth, setPhotosPerMonth] = useState([15]);
   const [avgJobValue, setAvgJobValue] = useState([1500]);
   const [receivedJobs, setReceivedJobs] = useState([5]);
-  const [tier, setTier] = useState<"Connect" | "Growth" | "Elite">("Growth");
+  const [tier, setTier] = useState<"Charter" | "Founding" | "Level 3" | "Level 4">("Founding");
   const tierData = {
-    Connect: { share: 0.45, fee: 79,  earningsCap: 500 as number | null },
-    Growth:  { share: 0.55, fee: 149, earningsCap: null as number | null },
-    Elite:   { share: 0.65, fee: 249, earningsCap: null as number | null },
+    Charter:   { share: 0.72, fee: 149, earningsCap: null as number | null },
+    Founding:  { share: 0.72, fee: 149, earningsCap: null as number | null },
+    "Level 3": { share: 0.72, fee: 149, earningsCap: null as number | null },
+    "Level 4": { share: 0.72, fee: 149, earningsCap: null as number | null },
   };
   const t = tierData[tier];
   const proLnkRate = 0.10;
@@ -341,7 +363,7 @@ function EarningsEstimator() {
           <p className="text-xs text-gray-400 mt-0.5">Model both sides of the ProLnk network</p>
         </div>
         <div className="flex gap-2">
-          {(["Connect", "Growth", "Elite"] as const).map((tName) => (
+          {(["Charter", "Founding", "Level 3", "Level 4"] as const).map((tName) => (
             <button
               key={tName}
               onClick={() => setTier(tName)}
@@ -380,17 +402,11 @@ function EarningsEstimator() {
                 <label className="text-sm font-semibold text-gray-700">Jobs completed / month</label>
                 <div className="flex items-center gap-2">
                   <span className="text-base font-heading font-bold text-[#0A1628]">{photosPerMonth[0]}</span>
-                  {atEarningsCap && (
-                    <span className="text-xs bg-amber-100 text-amber-700 font-semibold px-2 py-0.5 rounded-full">
-                      Earnings cap reached — upgrade to Pro
-                    </span>
-                  )}
                 </div>
               </div>
               <Slider value={photosPerMonth} onValueChange={setPhotosPerMonth} min={1} max={100} step={1} className="w-full" />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>~{leadsGenerated} leads detected · ~{closedJobs} jobs closed by the network</span>
-                {t.earningsCap && <span className="text-amber-600 font-medium">Connect tier earns up to ${t.earningsCap}/mo — upgrade to Growth to remove cap</span>}
               </div>
             </div>
             <div>
@@ -1700,6 +1716,32 @@ export default function Home() {
       </section>
       {/* — Why ProLnk Wins — */}
       <WhyProLnkSection />
+
+      {/* — Network Income Calculator — */}
+      <section className="py-20" style={{ background: "linear-gradient(180deg, #050d1a 0%, #0a1628 100%)" }}>
+        <div className="container">
+          <FadeUp>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4"
+                style={{ background: "rgba(23,193,232,0.12)", color: "#17C1E8" }}>
+                <TrendingUp className="w-3.5 h-3.5" /> Passive Income Engine
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+                Calculate Your Network Income
+              </h2>
+              <p className="text-white/50 max-w-xl mx-auto text-lg">
+                Drag the sliders to see how passive income compounds across 4 levels of your founding network.
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <div className="flex justify-center">
+              <PublicIncomeCalculator />
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* — 3. Who Can Join — */}
       <section id="who-can-join" className="py-20" style={{ backgroundColor: "#FAFAF9" }}>
         <div className="container">

@@ -246,7 +246,12 @@ export default function HomeHealthDashboard() {
           </div>
 
           <div className="flex items-center gap-6">
-            <ScoreRing score={HEALTH_SCORE} />
+            <div className="flex flex-col items-center gap-1">
+              <ScoreRing score={HEALTH_SCORE} />
+              <p className="text-xs font-bold text-center" style={{ color: HEALTH_SCORE >= 80 ? "#10b981" : HEALTH_SCORE >= 60 ? ACCENT : "#f59e0b" }}>
+                {HEALTH_SCORE >= 80 ? "Great Shape" : HEALTH_SCORE >= 60 ? "Fair — Action Needed" : "Needs Attention"}
+              </p>
+            </div>
             <div className="flex-1 space-y-3">
               {SCORE_CATEGORIES.map(({ label, score, icon: Icon, color, pendingIssues }) => (
                 <div key={label}>
@@ -348,12 +353,12 @@ export default function HomeHealthDashboard() {
           )}
         </div>
 
-        {/* Pending Issues from Scans */}
+        {/* Top Issues — with Book a Pro CTA per issue */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <AlertCircle className="w-4 h-4 text-red-500" />
-              <p className="font-bold text-gray-900">Pending Issues</p>
+              <p className="font-bold text-gray-900">Top Issues Detected</p>
             </div>
             <span className="text-xs font-bold text-white px-2 py-0.5 rounded-full" style={{ backgroundColor: "#ef4444" }}>
               {PENDING_ISSUES.length} found
@@ -368,7 +373,7 @@ export default function HomeHealthDashboard() {
             </div>
           ) : (
             <div className="space-y-3">
-              {PENDING_ISSUES.map((issue, i) => {
+              {PENDING_ISSUES.slice(0, 3).map((issue, i) => {
                 const sev = severityMap[issue.severity];
                 return (
                   <div key={i} className={`rounded-xl border p-4 ${sev.bg} ${sev.border}`}>
@@ -376,21 +381,27 @@ export default function HomeHealthDashboard() {
                       <p className="text-sm font-bold text-gray-900">{issue.name}</p>
                       <span className={`text-xs font-semibold whitespace-nowrap ${sev.text}`}>{sev.label}</span>
                     </div>
-                    <p className="text-xs text-gray-600 mb-2">{issue.description}</p>
-                    <div className="flex items-center justify-between">
+                    <p className="text-xs text-gray-600 mb-3">{issue.description}</p>
+                    <div className="flex items-center justify-between gap-2">
                       <span className="text-xs text-gray-500">🔧 {issue.tradeType} · {issue.estimatedCost}</span>
                       <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
                         <button
-                          className="text-xs font-bold text-white px-3 py-1 rounded-full transition-opacity hover:opacity-90"
-                          style={{ backgroundColor: PRIMARY }}
+                          className="flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1.5 rounded-full transition-opacity hover:opacity-90 whitespace-nowrap"
+                          style={{ backgroundColor: issue.severity === "urgent" ? "#dc2626" : PRIMARY }}
                         >
-                          Schedule Pro
+                          <span>Book a Pro</span>
+                          <ArrowRight className="w-3 h-3" />
                         </button>
                       </Link>
                     </div>
                   </div>
                 );
               })}
+              {PENDING_ISSUES.length > 3 && (
+                <p className="text-xs text-center text-gray-400 pt-1">
+                  +{PENDING_ISSUES.length - 3} more issues — run a new scan to see all
+                </p>
+              )}
             </div>
           )}
         </div>

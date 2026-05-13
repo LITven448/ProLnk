@@ -65,10 +65,28 @@ export default function NetworkAnalytics() {
     });
     const totalReferrals = Object.values(referralMap).reduce((s, v) => s + v, 0);
     const avgReferrals = total ? (totalReferrals / total).toFixed(2) : "0";
+
+    // Build a lookup: referralCode → pro record for enriched leaderboard
+    const codeToProMap: Record<string, any> = {};
+    raw.forEach((p: any) => {
+      if (p.referralCode) codeToProMap[p.referralCode] = p;
+    });
+
     const topReferrers = Object.entries(referralMap)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10)
-      .map(([name, count]) => ({ name, count }));
+      .map(([code, count]) => {
+        const pro = codeToProMap[code];
+        return {
+          name: pro ? `${pro.firstName ?? ""} ${pro.lastName ?? ""}`.trim() || code : code,
+          code,
+          count,
+          trade: pro?.businessType ?? pro?.trades ?? "",
+          city: pro?.primaryCity ?? "",
+          state: pro?.primaryState ?? "",
+          tier: pro?.tier ?? "",
+        };
+      });
 
     const tierCounts: Record<string, number> = { charter: 0, founding: 0, level3: 0, level4: 0 };
     raw.forEach((p: any) => {
@@ -166,7 +184,7 @@ export default function NetworkAnalytics() {
               <StatCard label="Total Waitlist" value={stats.total} sub="Pro signups all-time" icon={<Users size={16} />} color="#17C1E8" />
               <StatCard label="Total Referrals" value={stats.totalReferrals} sub="Referred member connections" icon={<Network size={16} />} color="#8B5CF6" />
               <StatCard label="Avg Referrals / Member" value={stats.avgReferrals} sub="Network density" icon={<TrendingUp size={16} />} color="#22C55E" />
-              <StatCard label="Top Referrer" value={stats.topReferrers[0]?.name ?? "—"} sub={stats.topReferrers[0] ? `${stats.topReferrers[0].count} referrals` : "No referrals yet"} icon={<Star size={16} />} color="#F59E0B" />
+              <StatCard label="Top Referrer" value={stats.topReferrers[0]?.name ?? "—"} sub={stats.topReferrers[0] ? `${stats.topReferrers[0].count} referrals${stats.topReferrers[0].trade ? ` · ${stats.topReferrers[0].trade}` : ""}` : "No referrals yet"} icon={<Star size={16} />} color="#F59E0B" />
             </div>
 
             {/* Tier fill progress */}
@@ -219,16 +237,23 @@ export default function NetworkAnalytics() {
 
               {/* Top referrers */}
               <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
-                <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", marginBottom: 16 }}>Top Referrers</p>
+                <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", marginBottom: 16 }}>Top Referring Pros</p>
                 {stats.topReferrers.length === 0 ? (
                   <div style={{ height: 120, display: "flex", alignItems: "center", justifyContent: "center", color: "#AEAEAE", fontSize: 13 }}>No referral data yet</div>
                 ) : (
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     {stats.topReferrers.map((r, i) => (
-                      <div key={r.name} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div key={r.code} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                         <span style={{ fontSize: 11, fontWeight: 700, color: "#AEAEAE", minWidth: 18 }}>#{i + 1}</span>
-                        <span style={{ fontSize: 13, color: "#344767", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</span>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: "#17C1E8", background: "rgba(23,193,232,0.1)", borderRadius: 6, padding: "2px 8px" }}>{r.count}</span>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ fontSize: 13, color: "#344767", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.name}</div>
+                          {(r.trade || r.city) && (
+                            <div style={{ fontSize: 11, color: "#AEAEAE", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                              {[r.trade, r.city && r.state ? `${r.city}, ${r.state}` : r.city].filter(Boolean).join(" · ")}
+                            </div>
+                          )}
+                        </div>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: "#17C1E8", background: "rgba(23,193,232,0.1)", borderRadius: 6, padding: "2px 8px", flexShrink: 0 }}>{r.count}</span>
                       </div>
                     ))}
                   </div>
@@ -404,13 +429,13 @@ export default function NetworkAnalytics() {
                 </div>
               </div>
 
-              {/* Top Recruiters Leaderboard */}
+              {/* Top Referring Pros Leaderboard */}
               <div style={{ background: "#FFFFFF", borderRadius: 14, padding: "20px 22px", border: "1px solid #E9ECEF" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                   <Star size={16} style={{ color: "#F59E0B" }} />
-                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>Top Recruiters Leaderboard</p>
+                  <p style={{ fontWeight: 700, fontSize: 14, color: "#344767", margin: 0 }}>Top Referring Pros</p>
                 </div>
-                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 16 }}>Partners with the highest referral counts</p>
+                <p style={{ fontSize: 12, color: "#AEAEAE", marginBottom: 16 }}>Partners driving the most signups — name, trade, market, tier</p>
                 {stats.topReferrers.length === 0 ? (
                   <div style={{ height: 120, display: "flex", alignItems: "center", justifyContent: "center", color: "#AEAEAE", fontSize: 13 }}>No referral data yet</div>
                 ) : (
@@ -418,13 +443,23 @@ export default function NetworkAnalytics() {
                     {stats.topReferrers.map((r, i) => {
                       const medalColor = i === 0 ? "#F59E0B" : i === 1 ? "#94A3B8" : i === 2 ? "#CD7F32" : "#E9ECEF";
                       const textColor = i < 3 ? "#344767" : "#7B809A";
+                      const tierColorMap: Record<string, string> = { charter: "#F59E0B", founding: "#8B5CF6", level3: "#17C1E8", level4: "#22C55E" };
+                      const tierColor = tierColorMap[r.tier] ?? "#CBD5E1";
                       return (
-                        <div key={r.name} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: i === 0 ? "rgba(245,158,11,0.06)" : "#FAFAFA", borderRadius: 10, border: `1px solid ${i === 0 ? "rgba(245,158,11,0.2)" : "#F0F2F5"}` }}>
+                        <div key={r.code} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: i === 0 ? "rgba(245,158,11,0.06)" : "#FAFAFA", borderRadius: 10, border: `1px solid ${i === 0 ? "rgba(245,158,11,0.2)" : "#F0F2F5"}` }}>
                           <div style={{ width: 24, height: 24, borderRadius: "50%", background: medalColor, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                             <span style={{ fontSize: 11, fontWeight: 800, color: i < 3 ? "#fff" : "#94A3B8" }}>#{i + 1}</span>
                           </div>
-                          <span style={{ fontSize: 13, color: textColor, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontWeight: i === 0 ? 700 : 500 }}>{r.name}</span>
-                          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ fontSize: 13, color: textColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontWeight: i === 0 ? 700 : 500 }}>{r.name}</div>
+                            <div style={{ fontSize: 11, color: "#AEAEAE", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                              {[r.trade, r.city && r.state ? `${r.city}, ${r.state}` : r.city].filter(Boolean).join(" · ")}
+                            </div>
+                          </div>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+                            {r.tier && (
+                              <span style={{ fontSize: 10, fontWeight: 700, color: tierColor, background: `${tierColor}18`, borderRadius: 5, padding: "1px 6px", textTransform: "capitalize" }}>{r.tier}</span>
+                            )}
                             <span style={{ fontSize: 12, fontWeight: 700, color: "#17C1E8", background: "rgba(23,193,232,0.1)", borderRadius: 6, padding: "2px 8px" }}>{r.count} refs</span>
                           </div>
                         </div>

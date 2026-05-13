@@ -2665,17 +2665,6 @@ Answer concisely and helpfully. If asked about specific real-time account data (
     getNetworkStats: adminProcedure.query(async () => {
       return getNetworkStats();
     }),
-    getSystemStatus: adminProcedure.query(async () => {
-      return {
-        database: !!(process.env.DATABASE_URL),
-        email: !!(process.env.RESEND_API_KEY),
-        anthropic: !!(process.env.ANTHROPIC_API_KEY),
-        openai: !!(process.env.OPENAI_API_KEY),
-        stripe: process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'live' : process.env.STRIPE_SECRET_KEY ? 'test' : 'none',
-        twilio: !!(process.env.TWILIO_ACCOUNT_SID),
-        onesignal: !!(process.env.ONESIGNAL_APP_ID),
-      };
-    }),
 
     // Admin: manually trigger PPS recalculation for all partners
     recalculatePartnerScores: adminProcedure.mutation(async () => {
@@ -2881,6 +2870,28 @@ Answer concisely and helpfully. If asked about specific real-time account data (
             }).catch(() => {});
           }
         }
+        return { success: true };
+      }),
+    activatePartner: adminProcedure
+      .input(z.object({ partnerId: z.number().int().positive() }))
+      .mutation(async ({ input }) => {
+        const pool = await getPool();
+        if (!pool) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'DB unavailable' });
+        await pool.query(
+          'UPDATE proWaitlist SET status = ?, activatedAt = NOW() WHERE id = ?',
+          ['activated', input.partnerId]
+        );
+        return { success: true };
+      }),
+    sendWelcomeEmail: adminProcedure
+      .input(z.object({ email: z.string().email(), name: z.string().optional() }))
+      .mutation(async ({ input }) => {
+        await sendPartnerApproved({
+          to: input.email,
+          name: input.name ?? 'Partner',
+          businessName: '',
+          loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.io',
+        });
         return { success: true };
       }),
     updatePartnerRates: adminProcedure
@@ -3397,6 +3408,18 @@ Respond with JSON only: { "assessment": "likely_valid" | "likely_invalid" | "unc
         `);
         return { success: true };
       }),
+
+    getSystemStatus: adminProcedure.query(async () => {
+      return {
+        database: !!(process.env.DATABASE_URL),
+        email: !!(process.env.RESEND_API_KEY),
+        anthropic: !!(process.env.ANTHROPIC_API_KEY),
+        openai: !!(process.env.OPENAI_API_KEY),
+        stripe: process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'live' : process.env.STRIPE_SECRET_KEY ? 'test' : 'none',
+        twilio: !!(process.env.TWILIO_ACCOUNT_SID),
+        onesignal: !!(process.env.ONESIGNAL_APP_ID),
+      };
+    }),
   }),
 
   // -- Public: partner directory (Wave 2) --
@@ -5328,6 +5351,44 @@ Return a JSON object with:
         }
         await notifyOwner({ title: 'New Commercial Waitlist Signup', content: `${input.contactName} (${input.businessName}) joined the ProLnk Exchange commercial waitlist.` });
         n8n.commercialWaitlistJoined({ email: input.contactEmail, name: input.contactName, company: input.businessName, phone: input.contactPhone }).catch(() => {});
+        return { success: true };
+      }),
+
+    exportWaitlist: adminProcedure
+      .input(z.object({ source: z.enum(['all', 'pro', 'home']).default('all') }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        const results: any[] = [];
+        if (input.source === 'pro' || input.source === 'all') {
+          const [rows] = await db.execute(
+            sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, primaryCity, primaryState, status, referralCode, referralCount, tier, waitlistPosition, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 2200`
+          ) as any[];
+          (Array.isArray(rows) ? rows : []).forEach((r: any) => results.push({ ...r, type: 'pro' }));
+        }
+        if (input.source === 'home' || input.source === 'all') {
+          const [rows] = await db.execute(
+            sql`SELECT id, firstName, lastName, email, phone, address, city, state, zipCode, serviceNeeded, status, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT 5000`
+          ) as any[];
+          (Array.isArray(rows) ? rows : []).forEach((r: any) => results.push({ ...r, type: 'home' }));
+        }
+        return results;
+      }),
+
+    activatePartner: adminProcedure
+      .input(z.object({ partnerId: z.number().int().positive() }))
+      .mutation(async ({ input }) => {
+        const pool = await getPool();
+        if (!pool) throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'DB unavailable' });
+        await pool.query('UPDATE proWaitlist SET status = ?, activatedAt = NOW() WHERE id = ?', ['activated', input.partnerId]);
+        return { success: true };
+      }),
+
+    sendWelcomeEmail: adminProcedure
+      .input(z.object({ email: z.string().email(), name: z.string().optional() }))
+      .mutation(async ({ input }) => {
+        const { sendPartnerApproved } = await import('../email');
+        await sendPartnerApproved({ to: input.email, name: input.name ?? 'Partner', businessName: '', loginUrl: process.env.APP_BASE_URL ?? 'https://prolnk.io' });
         return { success: true };
       }),
   }),

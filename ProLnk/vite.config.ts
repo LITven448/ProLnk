@@ -12,15 +12,22 @@ export default defineConfig({
   build: {
     outDir: '../dist/client',
     emptyOutDir: true,
-    chunkSizeWarningLimit: 1000,
+    sourcemap: false,
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 2000,
     rollupOptions: {
+      maxParallelFileOps: 2,
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/three') || id.includes('@react-three')) return 'three';
           if (id.includes('node_modules/framer-motion')) return 'framer';
-          if (id.includes('node_modules/recharts')) return 'recharts';
+          if (id.includes('node_modules/recharts') || id.includes('d3-')) return 'charts';
           if (id.includes('node_modules/@radix-ui')) return 'radix';
           if (id.includes('node_modules/@tanstack')) return 'query';
+          if (id.includes('node_modules/lucide-react')) return 'icons';
+          if (id.includes('node_modules/react-hook-form') || id.includes('node_modules/zod')) return 'forms';
+          if (id.includes('node_modules/@trpc')) return 'trpc';
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'react';
         },
       },
     },

@@ -3,7 +3,7 @@
  * Route: /pro/:id
  * Shows partner info, verifications, reviews, and a "Work with me" CTA
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { useParams, Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
@@ -121,7 +121,7 @@ export default function PartnerSpotlight() {
     window.open(`sms:?body=${body}`);
   };
 
-  const handleQuoteSubmit = async (e: React.FormEvent) => {
+  const handleQuoteSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!quoteForm.name.trim() || !quoteForm.email.trim() || !quoteForm.description.trim()) {
       toast.error("Please fill in all fields.");

@@ -2,7 +2,6 @@ import { useLocation } from "wouter";
 import { TrustyProLogo } from "@/components/TrustyProLogo";
 import {
   Camera,
-  Heart,
   Users,
   FileText,
   Star,
@@ -19,6 +18,7 @@ import {
   Wrench,
   AlertTriangle,
   Clock,
+  BookOpen,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -39,36 +39,36 @@ const PLACEHOLDER_USER = {
 
 const QUICK_ACTIONS = [
   {
-    icon: MessageSquare,
-    label: "Request a Quote",
-    desc: "Get bids from vetted pros for any project",
-    href: "/trustypro/pros",
-    color: NAVY,
-    bg: "#EFF6FF",
-  },
-  {
-    icon: Upload,
-    label: "Upload a Photo",
+    icon: Camera,
+    label: "Scan a New Room",
     desc: "AI scans your home for maintenance needs",
     href: "/trustypro/scan",
     color: CYAN,
     bg: TEAL_LIGHT,
   },
   {
-    icon: ShieldCheck,
-    label: "Check Insurance",
-    desc: "Verify a pro's license and coverage",
-    href: "/trustypro/pros",
-    color: "#10B981",
-    bg: "#D1FAE5",
-  },
-  {
-    icon: History,
-    label: "View History",
-    desc: "All repairs, photos, and invoices logged",
-    href: "/my-home/documents",
+    icon: AlertTriangle,
+    label: "View Issues",
+    desc: "See all detected issues and action items",
+    href: "/trustypro/home-health",
     color: "#F59E0B",
     bg: "#FEF3C7",
+  },
+  {
+    icon: MessageSquare,
+    label: "Book a Pro",
+    desc: "Get bids from vetted, background-checked pros",
+    href: "/trustypro/pros",
+    color: NAVY,
+    bg: "#EFF6FF",
+  },
+  {
+    icon: BookOpen,
+    label: "Home Documents",
+    desc: "All repairs, photos, and invoices logged",
+    href: "/my-home/documents",
+    color: "#10B981",
+    bg: "#D1FAE5",
   },
 ];
 
@@ -144,6 +144,38 @@ const RECENTLY_ACTIVE_PROS = [
     color: "#10B981",
   },
 ];
+
+function HealthScoreGauge({ score }: { score: number }) {
+  const radius = 52;
+  const circumference = 2 * Math.PI * radius;
+  const color = score >= 80 ? "#10B981" : score >= 60 ? "#F59E0B" : score >= 40 ? "#F97316" : "#EF4444";
+  const dashOffset = circumference - (score / 100) * circumference;
+  const label = score >= 80 ? "Great Shape" : score >= 60 ? "Fair" : "Needs Attention";
+  return (
+    <div className="relative flex items-center justify-center w-36 h-36">
+      <svg className="absolute inset-0" viewBox="0 0 120 120" style={{ transform: "rotate(-90deg)" }}>
+        <circle cx="60" cy="60" r={radius} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="9" />
+        <circle
+          cx="60"
+          cy="60"
+          r={radius}
+          fill="none"
+          stroke={color}
+          strokeWidth="9"
+          strokeDasharray={circumference}
+          strokeDashoffset={dashOffset}
+          strokeLinecap="round"
+          style={{ transition: "stroke-dashoffset 1.4s ease" }}
+        />
+      </svg>
+      <div className="text-center z-10">
+        <p className="text-4xl font-black text-white leading-none">{score}</p>
+        <p className="text-xs text-blue-300 mt-0.5">/100</p>
+        <p className="text-xs font-semibold mt-1" style={{ color }}>{label}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function HomeownerDashboard() {
   const [, navigate] = useLocation();
@@ -235,7 +267,7 @@ export default function HomeownerDashboard() {
           </div>
         </motion.section>
 
-        {/* Home Health Score */}
+        {/* Home Health Score — circular gauge */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -244,36 +276,41 @@ export default function HomeownerDashboard() {
           style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #0c2444 100%)`, borderColor: `${NAVY}40` }}
           onClick={() => navigate("/trustypro/home-health")}
         >
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex-shrink-0">
-              <p className="text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Home Health Score</p>
-              <div className="flex items-end gap-3">
-                <span className="text-7xl font-black text-white leading-none">0</span>
-                <div className="pb-1">
-                  <span className="text-blue-300 text-sm">/100</span>
-                  <p className="text-yellow-300 text-xs font-semibold mt-1">Upload photos to improve your score</p>
-                </div>
-              </div>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Circular gauge */}
+            <div className="flex-shrink-0 flex flex-col items-center gap-2">
+              <p className="text-xs font-bold text-blue-300 uppercase tracking-widest">Home Health Score</p>
+              <HealthScoreGauge score={78} />
             </div>
+
+            {/* System breakdown */}
             <div className="flex-1 w-full">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {["Roof & Gutters", "HVAC", "Plumbing", "Electrical", "Foundation", "Interior"].map((sys) => (
-                  <div key={sys} className="bg-white/10 rounded-xl p-3">
-                    <p className="text-xs text-blue-200 mb-1.5">{sys}</p>
-                    <div className="h-1 bg-white/10 rounded-full">
-                      <div className="h-full w-0 bg-blue-400 rounded-full" />
+                {[
+                  { label: "Roof & Gutters", pct: 82, color: "#10B981" },
+                  { label: "HVAC", pct: 91, color: "#10B981" },
+                  { label: "Plumbing", pct: 74, color: "#F59E0B" },
+                  { label: "Electrical", pct: 88, color: "#10B981" },
+                  { label: "Foundation", pct: 60, color: "#F97316" },
+                  { label: "Interior", pct: 78, color: "#F59E0B" },
+                ].map((sys) => (
+                  <div key={sys.label} className="bg-white/10 rounded-xl p-3">
+                    <p className="text-xs text-blue-200 mb-1.5">{sys.label}</p>
+                    <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full" style={{ width: `${sys.pct}%`, backgroundColor: sys.color }} />
                     </div>
-                    <p className="text-xs text-blue-300 mt-1">Not scanned</p>
+                    <p className="text-xs font-bold mt-1" style={{ color: sys.color }}>{sys.pct}/100</p>
                   </div>
                 ))}
               </div>
             </div>
+
             <button
               onClick={(e) => { e.stopPropagation(); navigate("/trustypro/scan"); }}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white flex-shrink-0 hover:opacity-90 transition-opacity"
               style={{ backgroundColor: CYAN }}
             >
-              <Upload className="w-4 h-4" /> Upload Photos
+              <Camera className="w-4 h-4" /> New Scan
             </button>
           </div>
         </motion.section>
@@ -483,6 +520,32 @@ export default function HomeownerDashboard() {
           >
             Browse Pros <ArrowRight className="w-4 h-4" />
           </button>
+        </motion.section>
+
+        {/* Security Badge */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.55 }}
+          className="rounded-2xl px-6 py-4 flex items-center gap-4"
+          style={{ backgroundColor: "#F0FDF4", border: "1.5px solid #BBF7D0" }}
+        >
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "#10B981" }}
+          >
+            <ShieldCheck className="w-6 h-6 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-black text-gray-900">Your home is protected</p>
+            <p className="text-xs text-gray-500 mt-0.5">
+              TrustyPro monitors your home health, verifies every pro, and keeps your records safe.
+            </p>
+          </div>
+          <div className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ backgroundColor: "#DCFCE7" }}>
+            <CheckCircle className="w-3.5 h-3.5" style={{ color: "#10B981" }} />
+            <span className="text-xs font-bold" style={{ color: "#059669" }}>Active</span>
+          </div>
         </motion.section>
 
         {/* Home Health teaser */}

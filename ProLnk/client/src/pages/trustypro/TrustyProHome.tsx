@@ -19,7 +19,7 @@ import {
 
 // --- CDN Images ----------------------------------------------------------------
 const CDN = {
-  heroModel:      "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/framer-hero-reference_949730d3.webp",
+  heroModel:      "https://prolnk-property-photos-596916982650-us-east-2-an.s3.us-east-2.amazonaws.com/assets/house-model-hand.png",
   heroExterior:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/home-exterior-modern_d492c1af.jpg",
   heroInterior:   "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
   aboutWide:      "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/living-room-luxury_9bf5543c.jpg",

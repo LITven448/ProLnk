@@ -106,13 +106,14 @@ export default function FoundingPartnerPage() {
 
   const program = trpc.foundingPartner.getProgram.useQuery();
   const enrollmentStatus = trpc.foundingPartner.getEnrollmentStatus.useQuery();
+  const publicCounts = trpc.waitlist.getPublicCounts.useQuery();
   const myStatus = trpc.foundingPartner.getMyStatus.useQuery(undefined, { enabled: !!user });
   const requirements = trpc.foundingPartner.checkMyRequirements.useQuery(undefined, { enabled: !!user });
   const earnings = trpc.foundingPartner.getEarningsBreakdown.useQuery({ period: "all" }, { enabled: !!user });
 
   const p = program.data;
   const es = enrollmentStatus.data;
-  const filled = es?.enrolled ?? 0;
+  const filled = publicCounts.data?.pros ?? es?.enrolled ?? 0;
   const remaining = TOTAL_SLOTS - filled;
   const pct = Math.min(100, (filled / TOTAL_SLOTS) * 100);
   const spotColor = getSpotColor(filled, TOTAL_SLOTS);

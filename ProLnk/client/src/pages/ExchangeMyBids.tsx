@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
 import {
   Briefcase, DollarSign, Users, Clock, CheckCircle2, XCircle,
@@ -100,7 +100,7 @@ const SEED_BIDS: MyBid[] = [
 
 const STATUS_CONFIG: Record<
   BidStatus,
-  { label: string; bg: string; color: string; icon: React.ReactNode; tab: string }
+  { label: string; bg: string; color: string; icon: ReactNode; tab: string }
 > = {
   pending: {
     label: "Awaiting Response",
@@ -231,7 +231,7 @@ function BidRow({ bid }: { bid: MyBid }) {
   );
 }
 
-function SummaryCard({ label, value, color, icon }: { label: string; value: number; color: string; icon: React.ReactNode }) {
+function SummaryCard({ label, value, color, icon }: { label: string; value: number; color: string; icon: ReactNode }) {
   return (
     <div
       className="rounded-2xl p-5 border flex items-center gap-4"

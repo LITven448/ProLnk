@@ -1,9 +1,11 @@
+import type React from "react";
 import { useState } from "react";
 import { Link } from "wouter";
 import {
   Briefcase, MapPin, DollarSign, Clock, Filter, ChevronDown,
-  ArrowRight, Building2, Users, Bell, Zap, CheckCircle2,
+  ArrowRight, Building2, Users, Bell, Zap, CheckCircle2, X,
 } from "lucide-react";
+import { trpc } from "../lib/trpc";
 
 const TRADE_CATEGORIES = [
   "All Trades",
@@ -200,138 +202,292 @@ const URGENCY_STYLES: Record<string, { bg: string; color: string; icon?: boolean
   Ongoing: { bg: "rgba(99,102,241,0.15)", color: "#818cf8" },
 };
 
-function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
-  const [expressed, setExpressed] = useState(false);
-  const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  padding: "10px 14px",
+  borderRadius: "10px",
+  fontSize: "14px",
+  color: "#fff",
+  backgroundColor: "rgba(255,255,255,0.07)",
+  border: "1px solid rgba(255,255,255,0.15)",
+  outline: "none",
+  boxSizing: "border-box",
+};
+
+function BidModal({
+  job,
+  onClose,
+  onSuccess,
+}: {
+  job: (typeof SEED_JOBS)[0];
+  onClose: () => void;
+  onSuccess: () => void;
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const submitBid = trpc.exchange.publicSubmitBid.useMutation({
+    onSuccess: () => {
+      onSuccess();
+      onClose();
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    submitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message });
+  };
 
   return (
     <div
-      className="rounded-2xl p-6 border transition-all hover:border-amber-500/30"
-      style={{
-        backgroundColor: "rgba(255,255,255,0.04)",
-        borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
-      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ backgroundColor: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)" }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="flex items-start justify-between gap-4 mb-3">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-            <span
-              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: urgencyStyle.bg, color: urgencyStyle.color }}
-            >
-              {urgencyStyle.icon && <Zap className="w-3 h-3" />}
-              {job.urgency}
-            </span>
-            <span
-              className="text-xs px-2 py-0.5 rounded-full border"
-              style={{
-                borderColor: "rgba(245,158,11,0.3)",
-                color: "#F59E0B",
-                backgroundColor: "rgba(245,158,11,0.08)",
-              }}
-            >
-              {job.trade}
-            </span>
-            <span
-              className="text-xs px-2 py-0.5 rounded-full"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.45)",
-              }}
-            >
-              {job.size}
-            </span>
-          </div>
-          <h3 className="text-white font-bold text-base leading-tight">
-            {job.title}
-          </h3>
-        </div>
-        <div
-          className="flex-shrink-0 text-right hidden sm:block"
-          style={{ color: "rgba(255,255,255,0.35)" }}
-        >
-          <div className="flex items-center gap-1 justify-end text-xs">
-            <Users className="w-3.5 h-3.5" />
-            <span>{job.applicants} bid{job.applicants !== 1 ? "s" : ""}</span>
-          </div>
-        </div>
-      </div>
-
-      <p
-        className="text-sm leading-relaxed mb-4"
-        style={{ color: "rgba(255,255,255,0.5)" }}
+      <div
+        className="w-full max-w-md rounded-2xl p-6 border"
+        style={{ backgroundColor: "#0D1F3C", borderColor: "rgba(245,158,11,0.3)" }}
       >
-        {job.description}
-      </p>
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="text-white font-bold text-base">Apply to Bid</h3>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+              {job.title}
+            </p>
+          </div>
+          <button onClick={onClose} style={{ color: "rgba(255,255,255,0.4)" }}>
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-        <div className="flex items-center gap-1.5">
-          <Building2
-            className="w-3.5 h-3.5 flex-shrink-0"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          />
-          <span className="text-xs truncate" style={{ color: "rgba(255,255,255,0.5)" }}>
-            {job.posterType}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <MapPin
-            className="w-3.5 h-3.5 flex-shrink-0"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          />
-          <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-            {job.location}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <DollarSign
-            className="w-3.5 h-3.5 flex-shrink-0"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          />
-          <span className="text-xs font-semibold text-white">{job.budget}</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <Clock
-            className="w-3.5 h-3.5 flex-shrink-0"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          />
-          <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-            {job.deadline}
-          </span>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <button
-          onClick={() => setExpressed(true)}
-          disabled={expressed}
-          className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all inline-flex items-center justify-center gap-2"
-          style={{
-            backgroundColor: expressed
-              ? "rgba(34,197,94,0.12)"
-              : "rgba(245,158,11,0.15)",
-            color: expressed ? "#4ade80" : "#F59E0B",
-            border: `1px solid ${expressed ? "rgba(34,197,94,0.25)" : "rgba(245,158,11,0.3)"}`,
-            cursor: expressed ? "default" : "pointer",
-          }}
-        >
-          {expressed ? (
-            <>
-              <CheckCircle2 className="w-4 h-4" />
-              Bid Submitted — We'll Follow Up
-            </>
-          ) : (
-            <>Apply to Bid</>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Your Name
+            </label>
+            <input
+              type="text"
+              required
+              placeholder="Jane Smith"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Email
+            </label>
+            <input
+              type="email"
+              required
+              placeholder="you@company.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Message
+            </label>
+            <textarea
+              required
+              rows={3}
+              placeholder="Briefly describe your experience and why you're a great fit for this job..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              style={{ ...inputStyle, resize: "vertical" }}
+            />
+          </div>
+          {submitBid.error && (
+            <p className="text-xs text-red-400">{submitBid.error.message || "Submission failed. Please try again."}</p>
           )}
-        </button>
-        {!expressed && (
-          <span className="text-xs sm:hidden flex items-center gap-1" style={{ color: "rgba(255,255,255,0.35)" }}>
-            <Users className="w-3.5 h-3.5" />
-            {job.applicants}
-          </span>
-        )}
+          <button
+            type="submit"
+            disabled={submitBid.isPending}
+            className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60"
+            style={{ backgroundColor: "#F59E0B" }}
+          >
+            {submitBid.isPending ? "Submitting..." : "Submit Bid Expression"}
+          </button>
+          <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
+            Bidding opens Q3 2026 — we'll follow up when it's live.
+          </p>
+        </form>
       </div>
     </div>
+  );
+}
+
+function Toast({ message, onDone }: { message: string; onDone: () => void }) {
+  return (
+    <div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-xl shadow-2xl"
+      style={{ backgroundColor: "#10b981", color: "#fff", fontWeight: 600, fontSize: "14px", minWidth: "280px" }}
+    >
+      <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+      <span>{message}</span>
+      <button onClick={onDone} className="ml-auto opacity-70 hover:opacity-100">
+        <X className="w-4 h-4" />
+      </button>
+    </div>
+  );
+}
+
+function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
+  const [expressed, setExpressed] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
+
+  return (
+    <>
+      {showModal && (
+        <BidModal
+          job={job}
+          onClose={() => setShowModal(false)}
+          onSuccess={() => {
+            setExpressed(true);
+            setShowToast(true);
+          }}
+        />
+      )}
+      {showToast && (
+        <Toast
+          message="Your bid has been submitted! The poster will be in touch."
+          onDone={() => setShowToast(false)}
+        />
+      )}
+      <div
+        className="rounded-2xl p-6 border transition-all hover:border-amber-500/30"
+        style={{
+          backgroundColor: "rgba(255,255,255,0.04)",
+          borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
+        }}
+      >
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span
+                className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
+                style={{ backgroundColor: urgencyStyle.bg, color: urgencyStyle.color }}
+              >
+                {urgencyStyle.icon && <Zap className="w-3 h-3" />}
+                {job.urgency}
+              </span>
+              <span
+                className="text-xs px-2 py-0.5 rounded-full border"
+                style={{
+                  borderColor: "rgba(245,158,11,0.3)",
+                  color: "#F59E0B",
+                  backgroundColor: "rgba(245,158,11,0.08)",
+                }}
+              >
+                {job.trade}
+              </span>
+              <span
+                className="text-xs px-2 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.06)",
+                  color: "rgba(255,255,255,0.45)",
+                }}
+              >
+                {job.size}
+              </span>
+            </div>
+            <h3 className="text-white font-bold text-base leading-tight">
+              {job.title}
+            </h3>
+          </div>
+          <div
+            className="flex-shrink-0 text-right hidden sm:block"
+            style={{ color: "rgba(255,255,255,0.35)" }}
+          >
+            <div className="flex items-center gap-1 justify-end text-xs">
+              <Users className="w-3.5 h-3.5" />
+              <span>{job.applicants} bid{job.applicants !== 1 ? "s" : ""}</span>
+            </div>
+          </div>
+        </div>
+
+        <p
+          className="text-sm leading-relaxed mb-4"
+          style={{ color: "rgba(255,255,255,0.5)" }}
+        >
+          {job.description}
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+          <div className="flex items-center gap-1.5">
+            <Building2
+              className="w-3.5 h-3.5 flex-shrink-0"
+              style={{ color: "rgba(255,255,255,0.35)" }}
+            />
+            <span className="text-xs truncate" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {job.posterType}
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <MapPin
+              className="w-3.5 h-3.5 flex-shrink-0"
+              style={{ color: "rgba(255,255,255,0.35)" }}
+            />
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {job.location}
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <DollarSign
+              className="w-3.5 h-3.5 flex-shrink-0"
+              style={{ color: "rgba(255,255,255,0.35)" }}
+            />
+            <span className="text-xs font-semibold text-white">{job.budget}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Clock
+              className="w-3.5 h-3.5 flex-shrink-0"
+              style={{ color: "rgba(255,255,255,0.35)" }}
+            />
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {job.deadline}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => !expressed && setShowModal(true)}
+            disabled={expressed}
+            className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all inline-flex items-center justify-center gap-2"
+            style={{
+              backgroundColor: expressed
+                ? "rgba(34,197,94,0.12)"
+                : "rgba(245,158,11,0.15)",
+              color: expressed ? "#4ade80" : "#F59E0B",
+              border: `1px solid ${expressed ? "rgba(34,197,94,0.25)" : "rgba(245,158,11,0.3)"}`,
+              cursor: expressed ? "default" : "pointer",
+            }}
+          >
+            {expressed ? (
+              <>
+                <CheckCircle2 className="w-4 h-4" />
+                Bid Submitted — We'll Follow Up
+              </>
+            ) : (
+              <>Apply to Bid</>
+            )}
+          </button>
+          {!expressed && (
+            <span className="text-xs sm:hidden flex items-center gap-1" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <Users className="w-3.5 h-3.5" />
+              {job.applicants}
+            </span>
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 

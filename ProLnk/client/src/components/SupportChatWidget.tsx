@@ -19,6 +19,8 @@ interface SupportChatWidgetProps {
   title?: string;
   subtitle?: string;
   suggestedQuestions?: string[];
+  forceOpen?: boolean;
+  onForcedOpenHandled?: () => void;
 }
 
 const DEFAULT_QUESTIONS: Record<ChatMode, string[]> = {
@@ -42,6 +44,8 @@ export default function SupportChatWidget({
   title = "Ask Us Anything",
   subtitle = "We typically reply instantly",
   suggestedQuestions,
+  forceOpen,
+  onForcedOpenHandled,
 }: SupportChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
@@ -50,6 +54,15 @@ export default function SupportChatWidget({
   const [hasUnread, setHasUnread] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (forceOpen) {
+      setIsOpen(true);
+      setIsMinimized(false);
+      onForcedOpenHandled?.();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [forceOpen]);
 
   const questions = suggestedQuestions ?? DEFAULT_QUESTIONS[mode];
 

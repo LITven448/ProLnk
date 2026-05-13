@@ -72,7 +72,6 @@ const JobHistory = lazy(() => import("./pages/JobHistory"));
 const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));
 const EarningsHistory = lazy(() => import("./pages/EarningsHistory"));
 const EarningsHistoryDashboard = lazy(() => import("./pages/dashboard/EarningsHistory"));
-const EarningsCalendar = lazy(() => import("./pages/dashboard/EarningsCalendar"));
 
 // Wave pages -- Partner Portal
 const CommissionLedger = lazy(() => import("./pages/CommissionLedger"));
@@ -85,7 +84,6 @@ const TierProgress = lazy(() => import("./pages/TierProgress"));
 const ReferralLink = lazy(() => import("./pages/ReferralLink"));
 const ReferralHub = lazy(() => import("./pages/dashboard/ReferralHub"));
 const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
-const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
 const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
 const NetworkTree = lazy(() => import("./pages/NetworkTree"));
 const TierUpgradeFlow = lazy(() => import("./pages/TierUpgradeFlow"));
@@ -154,7 +152,6 @@ const Exchange = lazy(() => import("./pages/Exchange"));
 const ExchangeLanding = lazy(() => import("./pages/ExchangeLanding"));
 const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
 const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
-const ExchangeContractors = lazy(() => import("./pages/ExchangeContractors"));
 const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
 const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
 const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
@@ -311,7 +308,6 @@ const PaymentFlowDiagrams = lazy(() => import("./pages/admin/PaymentFlowDiagrams
 
 // V12 + 20-feature build
 const ProjectGallery = lazy(() => import("./pages/trustypro/ProjectGallery"));
-const TrustyProPartnerDashboard = lazy(() => import("./pages/trustypro/TrustyProPartnerDashboard"));
 const ProLnkExchangeCommercial = lazy(() => import("./pages/ProLnkExchangeCommercial"));
 const AchAuthorizationPage = lazy(() => import("./pages/AchAuthorizationPage"));
 const MilestoneTracker = lazy(() => import("./pages/homeowner/MilestoneTracker"));
@@ -593,16 +589,14 @@ function Router() {
       <Route path="/dashboard/ai" component={AIChatAssistant} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
       <Route path="/dashboard/earnings-history" component={EarningsHistoryDashboard} />
-      <Route path="/dashboard/earnings-calendar" component={EarningsCalendar} />
-      <Route path="/earnings-history" component={EarningsHistory} />
+            <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
-      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
-      <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
+            <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
       <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
       <Route path="/dashboard/upgrade" component={TierUpgradeFlow} />
@@ -856,12 +850,10 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
-      <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
-      <Route path="/exchange" component={ExchangeLanding} />
+            <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />
-      <Route path="/exchange/contractors" component={ExchangeContractors} />
-      <Route path="/exchange/my-bids" component={ExchangeMyBids} />
+            <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />

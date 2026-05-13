@@ -255,15 +255,11 @@ function resolveEndpointAndKey(provider?: "forge" | "openai" | "anthropic"): { u
     return { url: "https://api.openai.com/v1/chat/completions", key };
   }
 
-  // Anthropic direct — best for text generation/report writing
-  // Anthropic API format differs significantly; for now falls back to OpenAI if Anthropic key set
+  // Anthropic direct — native Messages API
   if (provider === "anthropic") {
     const anthropicKey = process.env.ANTHROPIC_API_KEY ?? "";
-    // Anthropic uses a different wire format — route through OpenAI-compatible fallback for now
     if (anthropicKey) {
-      // TODO: implement native Anthropic API format; using OpenAI fallback until then
-      const openaiKey = process.env.OPENAI_API_KEY ?? "";
-      if (openaiKey) return { url: "https://api.openai.com/v1/chat/completions", key: openaiKey };
+      return { url: "https://api.anthropic.com/v1/messages", key: anthropicKey };
     }
   }
 
@@ -280,8 +276,9 @@ function resolveEndpointAndKey(provider?: "forge" | "openai" | "anthropic"): { u
 const assertApiKey = () => {
   const hasForge = !!ENV.forgeApiKey;
   const hasOpenAI = !!process.env.OPENAI_API_KEY;
-  if (!hasForge && !hasOpenAI) {
-    throw new Error("No LLM API key configured. Set OPENAI_API_KEY (recommended) or BUILT_IN_FORGE_API_KEY.");
+  const hasAnthropic = !!process.env.ANTHROPIC_API_KEY;
+  if (!hasForge && !hasOpenAI && !hasAnthropic) {
+    throw new Error("No LLM API key configured. Set ANTHROPIC_API_KEY, OPENAI_API_KEY, or BUILT_IN_FORGE_API_KEY.");
   }
 };
 
@@ -345,6 +342,77 @@ export async function invokeLLM(params: InvokeParams): Promise<InvokeResult> {
     response_format,
   } = params;
 
+  const { url: apiUrl, key: apiKey } = resolveEndpointAndKey(params.provider);
+  const isAnthropic = apiUrl.includes("anthropic.com");
+
+  if (isAnthropic) {
+    const resolvedMaxTokens = params.maxTokens ?? params.max_tokens ?? 1024;
+    const systemMsg = messages.find(m => m.role === "system");
+    const systemText = systemMsg
+      ? (typeof systemMsg.content === "string" ? systemMsg.content : (systemMsg.content as any[])[0]?.text ?? "")
+      : undefined;
+    const nonSystemMessages = messages
+      .filter(m => m.role !== "system")
+      .map(m => ({
+        role: m.role as "user" | "assistant",
+        content: typeof m.content === "string" ? m.content : (m.content as any[])[0]?.text ?? "",
+      }));
+
+    const anthropicPayload: Record<string, unknown> = {
+      model: model ?? "claude-haiku-4-5",
+      max_tokens: resolvedMaxTokens,
+      messages: nonSystemMessages,
+    };
+    if (systemText) {
+      anthropicPayload.system = systemText;
+    }
+
+    const anthropicResponse = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify(anthropicPayload),
+    });
+
+    if (!anthropicResponse.ok) {
+      const errorText = await anthropicResponse.text();
+      throw new Error(`Anthropic API error: ${anthropicResponse.status} ${anthropicResponse.statusText} - ${errorText}`);
+    }
+
+    const anthropicData = await anthropicResponse.json() as {
+      id: string;
+      content: Array<{ type: string; text: string }>;
+      model: string;
+      usage?: { input_tokens: number; output_tokens: number };
+    };
+
+    return {
+      id: anthropicData.id,
+      created: Math.floor(Date.now() / 1000),
+      model: anthropicData.model,
+      choices: [
+        {
+          index: 0,
+          message: {
+            role: "assistant",
+            content: anthropicData.content?.[0]?.text ?? "",
+          },
+          finish_reason: "stop",
+        },
+      ],
+      usage: anthropicData.usage
+        ? {
+            prompt_tokens: anthropicData.usage.input_tokens,
+            completion_tokens: anthropicData.usage.output_tokens,
+            total_tokens: anthropicData.usage.input_tokens + anthropicData.usage.output_tokens,
+          }
+        : undefined,
+    };
+  }
+
   const payload: Record<string, unknown> = {
     model: model ?? "gemini-2.5-flash",
     messages: messages.map(normalizeMessage),
@@ -380,8 +448,6 @@ export async function invokeLLM(params: InvokeParams): Promise<InvokeResult> {
   if (normalizedResponseFormat) {
     payload.response_format = normalizedResponseFormat;
   }
-
-  const { url: apiUrl, key: apiKey } = resolveEndpointAndKey(params.provider);
 
   const response = await fetch(apiUrl, {
     method: "POST",

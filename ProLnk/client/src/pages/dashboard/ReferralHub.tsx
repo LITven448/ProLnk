@@ -109,7 +109,7 @@ export default function ReferralHub() {
   const [tipsOpen, setTipsOpen] = useState(false);
 
   // Fetch partner data
-  const { data: partner } = trpc.partner.getMyProfile.useQuery(undefined, {
+  const { data: partner } = trpc.partners.getMyProfile.useQuery(undefined, {
     enabled: !!user,
   });
 

@@ -148,6 +148,8 @@ const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Exchange = lazy(() => import("./pages/Exchange"));
 const ExchangeLanding = lazy(() => import("./pages/ExchangeLanding"));
 const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
+const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
+const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
 const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
 const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
 const PublicLeaderboard = lazy(() => import("./pages/Leaderboard"));
@@ -229,6 +231,8 @@ const TrainingHub = lazy(() => import("./pages/TrainingHub"));
 const CommissionCalculator = lazy(() => import("./pages/CommissionCalculator"));
 const AnalyticsDeepDive = lazy(() => import("./pages/admin/AnalyticsDeepDive"));
 const HomeownerReferral = lazy(() => import("./pages/homeowner/HomeownerReferral"));
+const GetQuotes = lazy(() => import("./pages/GetQuotes"));
+const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 const HomeHealthVault = lazy(() => import("./pages/homeowner/HomeHealthVault"));
 const ScanHistory = lazy(() => import("./pages/homeowner/ScanHistory"));
 const AdminTaskList = lazy(() => import("./pages/admin/AdminTaskList"));
@@ -539,6 +543,8 @@ function Router() {
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/get-quotes" component={GetQuotes} />
+      <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />
@@ -842,6 +848,8 @@ function Router() {
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />
+      <Route path="/exchange/home" component={ExchangeHome} />
+      <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />

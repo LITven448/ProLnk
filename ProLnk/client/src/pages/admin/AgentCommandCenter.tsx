@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
-import { Brain, CheckCircle, XCircle, Play, RefreshCw, AlertTriangle, Zap } from "lucide-react";
+import { Brain, CheckCircle, XCircle, Play, RefreshCw, AlertTriangle, Zap, CloudLightning } from "lucide-react";
 import { toast } from "sonner";
 
 const TIER_COLORS: Record<string, string> = {
@@ -16,6 +16,11 @@ export default function AgentCommandCenter() {
   const { data, isLoading, refetch } = trpc.agentStatus.getAll.useQuery(undefined, { refetchInterval: 30000 });
   const runCycle = trpc.agentStatus.runMorningCycle.useMutation({
     onSuccess: (r) => { toast.success(r.message || "Cycle complete"); refetch(); },
+    onError: (e) => toast.error(e.message),
+  });
+  const [stormState, setStormState] = useState("TX");
+  const triggerStormScan = trpc.stormAgent.triggerScan.useMutation({
+    onSuccess: (r: any) => toast.success(r?.message || "Storm scan complete"),
     onError: (e) => toast.error(e.message),
   });
 
@@ -56,7 +61,7 @@ export default function AgentCommandCenter() {
         </div>
 
         {/* Run controls */}
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3 items-center">
           <button
             onClick={() => runCycle.mutate()}
             disabled={runCycle.isPending}
@@ -66,6 +71,26 @@ export default function AgentCommandCenter() {
             {runCycle.isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4" />}
             Run Morning Cycle
           </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => triggerStormScan.mutate({ state: stormState })}
+              disabled={triggerStormScan.isPending}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white"
+              style={{ background: "#D97706" }}
+            >
+              {triggerStormScan.isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <CloudLightning className="w-4 h-4" />}
+              Run Storm Scan
+            </button>
+            <select
+              value={stormState}
+              onChange={(e) => setStormState(e.target.value)}
+              className="text-xs px-2 py-1.5 rounded-lg border border-gray-200 bg-white text-gray-700 font-medium"
+            >
+              {["TX", "OK", "KS", "MO", "AR", "LA", "MS", "AL", "GA", "FL", "NC", "SC", "TN"].map(s => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+          </div>
           <button onClick={() => refetch()} className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-700">
             <RefreshCw className="w-4 h-4" /> Refresh
           </button>

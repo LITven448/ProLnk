@@ -403,6 +403,10 @@ const IntegrationWebhookDashboard = lazy(() => import("./pages/admin/Integration
 const TradeLanding = lazy(() => import("./pages/TradeLanding"));
 const TradeLandingList = lazy(() => import("./pages/TradeLandingList"));
 
+// City SEO landing pages
+const CityLanding = lazy(() => import("./pages/CityLanding"));
+const CityLandingList = lazy(() => import("./pages/CityLandingList"));
+
 // Wave 14: Content & Marketing
 const Blog = lazy(() => import("./pages/Blog"));
 const HowAIWorks = lazy(() => import("./pages/HowAIWorks"));
@@ -996,6 +1000,8 @@ function Router() {
       <Route path="/storm-alert" component={StormAlert} />
       <Route path="/trades" component={TradeLandingList} />
       <Route path="/trades/:trade" component={TradeLanding} />
+      <Route path="/cities" component={CityLandingList} />
+      <Route path="/cities/:city" component={CityLanding} />
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />

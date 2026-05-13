@@ -17,6 +17,8 @@ import { pushNetworkAlert } from "./_core/push";
 import { sendStormAlertToHomeowner, sendStormAlertToPro } from "./email";
 
 const NOAA_ALERTS_URL = "https://api.weather.gov/alerts/active";
+const TOMORROW_API_KEY = process.env.TOMORROW_IO_API_KEY;
+const DFW_COORDS = { lat: 32.7767, lon: -96.7970 }; // Dallas center
 
 // Severe weather event types that trigger lead generation
 const STORM_EVENT_TYPES = [
@@ -80,6 +82,73 @@ export interface StormScanResult {
   errors: string[];
 }
 
+export interface TomorrowAlert {
+  type: string;
+  severity: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+}
+
+export interface TomorrowForecastHour {
+  time: string;
+  temp: number;
+  precipitationProbability: number;
+  windSpeed: number;
+}
+
+/**
+ * Fetch active severe weather alerts from Tomorrow.io for DFW
+ */
+export async function checkTomorrowIoAlerts(): Promise<TomorrowAlert[]> {
+  if (!TOMORROW_API_KEY) return [];
+
+  try {
+    const res = await fetch(
+      `https://api.tomorrow.io/v4/weather/alerts?apikey=${TOMORROW_API_KEY}&location=${DFW_COORDS.lat},${DFW_COORDS.lon}`,
+    );
+    const data = await res.json() as any;
+
+    if (!data.alerts?.length) return [];
+
+    return data.alerts.map((a: any) => ({
+      type: a.eventType || "Weather Alert",
+      severity: a.severity || "moderate",
+      startTime: a.startTime,
+      endTime: a.endTime,
+      location: "DFW Metro",
+    }));
+  } catch (err) {
+    console.warn("[StormAgent] Tomorrow.io error:", err);
+    return [];
+  }
+}
+
+/**
+ * Fetch 24-hour hourly forecast from Tomorrow.io for DFW
+ */
+export async function fetchTomorrowIoForecast(): Promise<TomorrowForecastHour[]> {
+  if (!TOMORROW_API_KEY) return [];
+
+  try {
+    const res = await fetch(
+      `https://api.tomorrow.io/v4/weather/forecast?apikey=${TOMORROW_API_KEY}&location=${DFW_COORDS.lat},${DFW_COORDS.lon}&timesteps=1h&fields=temperature,precipitationProbability,windSpeed&units=imperial`,
+    );
+    const data = await res.json() as any;
+
+    const hourly: any[] = data.timelines?.hourly ?? [];
+    return hourly.slice(0, 24).map((h: any) => ({
+      time: h.time,
+      temp: Math.round(h.values?.temperature ?? 0),
+      precipitationProbability: Math.round(h.values?.precipitationProbability ?? 0),
+      windSpeed: Math.round(h.values?.windSpeed ?? 0),
+    }));
+  } catch (err) {
+    console.warn("[StormAgent] Tomorrow.io forecast error:", err);
+    return [];
+  }
+}
+
 /**
  * Fetch active severe weather alerts from NOAA for a given state
  */
@@ -141,7 +210,7 @@ async function findAffectedProperties(db: any, affectedAreas: string[]): Promise
 
   // Query properties in affected states (broad match — refine with zip/county when NOAA zone data is available)
   const stateList = Array.from(new Set(stateMatches)).map(s => `'${s}'`).join(", ");
-  const rows = await (db as any).execute(
+  const rows = await db.execute(
     sql.raw(`SELECT id, address, zip, city, state FROM properties WHERE state IN (${stateList}) LIMIT 500`)
   );
   return (rows.rows || rows) as any[];
@@ -151,13 +220,13 @@ async function findAffectedProperties(db: any, affectedAreas: string[]): Promise
  * Log a storm event to the database (creates or updates)
  */
 async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
-  const existing = await (db as any).execute(
+  const existing = await db.execute(
     sql`SELECT id FROM stormEvents WHERE eventId = ${event.id} LIMIT 1`
   );
   const row = (existing.rows || existing)[0];
 
   if (row?.id) {
-    await (db as any).execute(
+    await db.execute(
       sql`UPDATE stormEvents SET
         headline = ${event.headline},
         severity = ${event.severity},
@@ -168,7 +237,7 @@ async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
     return row.id as number;
   }
 
-  const result = await (db as any).execute(
+  const result = await db.execute(
     sql`INSERT INTO stormEvents
       (eventId, eventType, headline, description, severity, urgency, affectedZones, onset, expires, status)
     VALUES
@@ -184,8 +253,6 @@ async function upsertStormEvent(db: any, event: StormEvent): Promise<number> {
 /**
  * Main storm scan — called by background scheduler and admin manual trigger
  */
-import { notifyStormAlert } from "./agents/notificationService";
-
 export async function runStormScan(options?: { state?: string; adminUserId?: number }): Promise<StormScanResult> {
   const result: StormScanResult = {
     eventsFound: 0,
@@ -215,7 +282,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
   for (const event of alerts) {
     try {
       // Check if we've already processed this event recently (within 6 hours)
-      const recentCheck = await (db as any).execute(
+      const recentCheck = await db.execute(
         sql`SELECT id, leadsGenerated FROM stormEvents WHERE eventId = ${event.id} AND createdAt > DATE_SUB(NOW(), INTERVAL 6 HOUR) LIMIT 1`
       );
       const existing = (recentCheck.rows || recentCheck)[0];
@@ -240,7 +307,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
       let leadsForThisEvent = 0;
       for (const prop of affectedProps.slice(0, 100)) { // Cap at 100 properties per event
         for (const trade of targetTrades) {
-          await (db as any).execute(
+          await db.execute(
             sql`INSERT IGNORE INTO stormLeads
               (stormEventId, propertyId, tradeCategory, address, city, state, zip, status, priority)
             VALUES
@@ -255,7 +322,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
       result.leadsGenerated += leadsForThisEvent;
 
       // Update storm event with lead count
-      await (db as any).execute(
+      await db.execute(
         sql`UPDATE stormEvents SET leadsGenerated = ${leadsForThisEvent}, propertiesAffected = ${affectedProps.length} WHERE id = ${stormEventId}`
       );
 
@@ -275,7 +342,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
         ).catch(() => {});
 
         // Notify homeowners whose properties are affected (cap at 50 emails per event)
-        const homeownerRows = await (db as any).execute(
+        const homeownerRows = await db.execute(
           sql`SELECT DISTINCT hp.userId, hp.displayName, hp.phone, u.email, u.name,
                 p.address, p.city, p.state, p.zip
               FROM homeownerProfiles hp
@@ -306,7 +373,7 @@ export async function runStormScan(options?: { state?: string; adminUserId?: num
         const affectedZips = Array.from(new Set(affectedProps.map((p: any) => p.zip).filter(Boolean))) as string[];
         if (affectedZips.length > 0 && leadsForThisEvent > 0) {
           const zipList = affectedZips.slice(0, 20).map(z => `'${z}'`).join(',');
-          const proRows = await (db as any).execute(
+          const proRows = await db.execute(
             sql.raw(`SELECT DISTINCT p.contactName, p.contactEmail, p.businessName, p.trades
                 FROM partners p
                 WHERE p.contactEmail IS NOT NULL

@@ -35,6 +35,8 @@ const ApplicationStatus = lazy(() => import("./pages/ApplicationStatus"));
 const SetPassword = lazy(() => import("./pages/SetPassword"));
 const AccountDeletion = lazy(() => import("./pages/AccountDeletion"));
 const PartnerCheckout = lazy(() => import("./pages/PartnerCheckout"));
+const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
+const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
@@ -559,6 +561,8 @@ function Router() {
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/checkout/success" component={CheckoutSuccess} />
+      <Route path="/checkout/cancel" component={CheckoutCancel} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/get-quotes" component={GetQuotes} />
       <Route path="/quotes/compare" component={QuoteComparison} />
@@ -578,7 +582,6 @@ function Router() {
       <Route path="/login" component={LoginRedirect} />
       <Route path="/partner-login" component={PartnerLogin} />
       <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
-      <Route path="/checkout" component={PartnerCheckout} />
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />

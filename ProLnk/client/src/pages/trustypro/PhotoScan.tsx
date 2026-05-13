@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import TrustyProLogo from "@/components/TrustyProLogo";
 import { Link, useLocation } from "wouter";
-import { Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X, Plus, Home, Star } from "lucide-react";
+import { Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X, Plus, Home, Star, Copy, Share2, TrendingUp } from "lucide-react";
 
 type ScanStep = "upload" | "contact" | "analyzing" | "results";
 
@@ -57,6 +57,51 @@ const conditionConfig = {
   fair: { label: "Fair — Some Attention Needed", color: "text-amber-600", bg: "bg-amber-50 border-amber-200", emoji: "⚠️" },
   needs_attention: { label: "Needs Attention", color: "text-red-600", bg: "bg-red-50 border-red-200", emoji: "🔴" },
 };
+
+function computeHealthScore(issues: Issue[]): number {
+  if (issues.length === 0) return 95;
+  const urgentPenalty = issues.filter(i => i.severity === "urgent").length * 18;
+  const moderatePenalty = issues.filter(i => i.severity === "moderate").length * 9;
+  const lowPenalty = issues.filter(i => i.severity === "low").length * 3;
+  return Math.max(10, 100 - urgentPenalty - moderatePenalty - lowPenalty);
+}
+
+function healthScoreColor(score: number): string {
+  if (score >= 80) return "#10b981";
+  if (score >= 60) return "#f59e0b";
+  if (score >= 40) return "#f97316";
+  return "#ef4444";
+}
+
+function HealthScoreRing({ score }: { score: number }) {
+  const radius = 44;
+  const circumference = 2 * Math.PI * radius;
+  const dashOffset = circumference - (score / 100) * circumference;
+  const color = healthScoreColor(score);
+  return (
+    <div className="relative flex items-center justify-center w-28 h-28">
+      <svg className="absolute inset-0" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)" }}>
+        <circle cx="50" cy="50" r={radius} fill="none" stroke="#e5e7eb" strokeWidth="8" />
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          fill="none"
+          stroke={color}
+          strokeWidth="8"
+          strokeDasharray={circumference}
+          strokeDashoffset={dashOffset}
+          strokeLinecap="round"
+          style={{ transition: "stroke-dashoffset 1.2s ease" }}
+        />
+      </svg>
+      <div className="text-center z-10">
+        <p className="text-3xl font-black" style={{ color }}>{score}</p>
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">/ 100</p>
+      </div>
+    </div>
+  );
+}
 
 const ANALYZING_STEPS = [
   { label: "Uploading photos securely", duration: 3000 },

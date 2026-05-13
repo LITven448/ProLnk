@@ -18,8 +18,10 @@ import {
   ArrowRight,
   Clock,
   TrendingUp,
+  TrendingDown,
   Lock,
   Zap,
+  ScanLine,
 } from "lucide-react";
 
 const PRIMARY = "#1e3a5f";
@@ -39,7 +41,37 @@ const HEALTH_SCORE = Math.round(
   SCORE_CATEGORIES.reduce((sum, c) => sum + c.score, 0) / SCORE_CATEGORIES.length
 );
 
-const LAST_SCAN: Date | null = null;
+const LAST_SCAN: Date | null = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+
+const RECENT_SCANS = [
+  {
+    id: "scan-3",
+    date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+    room: "Master Bathroom",
+    issuesFound: 2,
+    scoreFrom: 45,
+    scoreTo: 67,
+    improved: true,
+  },
+  {
+    id: "scan-2",
+    date: new Date(Date.now() - 9 * 24 * 60 * 60 * 1000),
+    room: "Kitchen & Living Room",
+    issuesFound: 4,
+    scoreFrom: 72,
+    scoreTo: 45,
+    improved: false,
+  },
+  {
+    id: "scan-1",
+    date: new Date(Date.now() - 21 * 24 * 60 * 60 * 1000),
+    room: "Exterior Front",
+    issuesFound: 1,
+    scoreFrom: 68,
+    scoreTo: 72,
+    improved: true,
+  },
+];
 
 const PENDING_ISSUES = [
   {
@@ -120,6 +152,10 @@ function formatLastScan(date: Date | null): string {
   if (days === 0) return "Last scan: Today";
   if (days === 1) return "Last scan: Yesterday";
   return `Last scan: ${days} days ago`;
+}
+
+function formatScanDate(date: Date): string {
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 function ScoreRing({ score }: { score: number }) {
@@ -243,6 +279,73 @@ export default function HomeHealthDashboard() {
               Score improved <strong className="text-green-600">+6 pts</strong> since your last scan. Scan again to update.
             </p>
           </div>
+        </div>
+
+        {/* Recent Scans */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <ScanLine className="w-4 h-4" style={{ color: ACCENT }} />
+              <p className="font-bold text-gray-900">Recent Scans</p>
+            </div>
+            <Link href="/trustypro/scan">
+              <span className="text-xs font-semibold hover:underline" style={{ color: ACCENT }}>New Scan</span>
+            </Link>
+          </div>
+
+          {RECENT_SCANS.length === 0 ? (
+            <div className="text-center py-6">
+              <Camera className="w-10 h-10 text-gray-200 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-gray-500">No scans yet</p>
+              <p className="text-xs text-gray-400 mt-1">Upload photos to get your first AI home report</p>
+              <Link href="/trustypro/scan">
+                <button
+                  className="mt-4 text-xs font-bold text-white px-4 py-2 rounded-full"
+                  style={{ backgroundColor: ACCENT }}
+                >
+                  Scan Now — It's Free
+                </button>
+              </Link>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {RECENT_SCANS.map((scan) => {
+                const scoreDelta = scan.scoreTo - scan.scoreFrom;
+                const deltaColor = scan.improved ? "#10b981" : "#ef4444";
+                return (
+                  <div key={scan.id} className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-sky-100 hover:bg-sky-50/30 transition-colors">
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: `${ACCENT}20` }}
+                    >
+                      <Camera className="w-4 h-4" style={{ color: ACCENT }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-gray-900 truncate">{scan.room}</p>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-xs text-gray-400">{formatScanDate(scan.date)}</span>
+                        <span className="text-xs text-gray-300">·</span>
+                        <span className="text-xs font-semibold text-gray-600">
+                          {scan.issuesFound} issue{scan.issuesFound !== 1 ? "s" : ""} found
+                        </span>
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="flex items-center gap-1 justify-end">
+                        {scan.improved
+                          ? <TrendingUp className="w-3.5 h-3.5" style={{ color: deltaColor }} />
+                          : <TrendingDown className="w-3.5 h-3.5" style={{ color: deltaColor }} />}
+                        <span className="text-sm font-black" style={{ color: deltaColor }}>
+                          {scan.improved ? "+" : ""}{scoreDelta}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400">{scan.scoreFrom} → {scan.scoreTo}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Pending Issues from Scans */}

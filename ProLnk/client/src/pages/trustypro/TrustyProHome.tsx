@@ -446,6 +446,7 @@ export default function TrustyProHome() {
   const [mobileOpen, setMobileOpen]       = useState(false);
   const [activeService, setActiveService] = useState(0);
   const [openFaq, setOpenFaq]             = useState<number | null>(0);
+  const [chatOpen, setChatOpen]           = useState(false);
 
   // -- Intake modal state --------------------------------------------------
   const [intakeOpen, setIntakeOpen]       = useState(false);
@@ -715,9 +716,10 @@ export default function TrustyProHome() {
             <TrustyProLogo height={52} />
           </Link>
           <div className="hidden md:flex items-center gap-8">
-            {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"],["contact","Contact"]].map(([id,label]) => (
+            {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"]].map(([id,label]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{label}</button>
             ))}
+            <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</button>
           </div>
           <div className="hidden md:flex items-center gap-3">
 <button onClick={goToWizard} className="text-sm font-semibold px-4 py-1.5 rounded-full border-2 transition-colors" style={{ borderColor: ACCENT, color: ACCENT }}>Scan My Home ✦</button>
@@ -742,9 +744,10 @@ export default function TrustyProHome() {
               transition={{ duration: 0.25, ease: "easeInOut" }}
               className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 overflow-hidden"
             >
-              {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"],["contact","Contact"]].map(([id,label]) => (
+              {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"]].map(([id,label]) => (
                 <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
+              <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-left text-sm font-medium text-gray-600">Contact</button>
               <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
               <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600">My Home Login</button>
               <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
@@ -879,76 +882,6 @@ export default function TrustyProHome() {
             </div>
           </motion.div>
         </div>
-
-        {/* Animated scan preview — phone scanning a wall with AI overlay */}
-        <motion.div
-          className="mt-12 max-w-3xl mx-auto px-6"
-          initial={{ opacity: 0, y: 56 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: EASE, delay: 0.5 }}
-        >
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-            {/* AI scan overlay badge */}
-            <div
-              className="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg"
-              style={{ backgroundColor: ACCENT }}
-            >
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              AI Scanning — Live Demo
-            </div>
-            {/* Animated detection boxes */}
-            <div className="absolute inset-0 z-10 pointer-events-none">
-              <motion.div
-                className="absolute border-2 border-red-500 rounded-lg"
-                style={{ top: "28%", left: "18%", width: "22%", height: "14%" }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 0.8] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 1.5, ease: "easeInOut" }}
-              >
-                <span className="absolute -top-5 left-0 text-xs font-bold text-red-500 bg-white px-1 rounded shadow-sm whitespace-nowrap">Water Damage</span>
-              </motion.div>
-              <motion.div
-                className="absolute border-2 border-amber-400 rounded-lg"
-                style={{ top: "52%", left: "55%", width: "26%", height: "18%" }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 0.8] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 1.5, delay: 1, ease: "easeInOut" }}
-              >
-                <span className="absolute -top-5 left-0 text-xs font-bold text-amber-600 bg-white px-1 rounded shadow-sm whitespace-nowrap">Floor Wear</span>
-              </motion.div>
-              <motion.div
-                className="absolute border-2 rounded-lg"
-                style={{ top: "15%", left: "60%", width: "20%", height: "16%", borderColor: "#6366f1" }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 0.8] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 1.5, delay: 2, ease: "easeInOut" }}
-              >
-                <span className="absolute -top-5 left-0 text-xs font-bold text-indigo-600 bg-white px-1 rounded shadow-sm whitespace-nowrap">HVAC Issue</span>
-              </motion.div>
-            </div>
-            <img
-              src={CDN.heroInterior}
-              alt="AI scanning interior of home — TrustyPro detects issues"
-              className="w-full h-auto object-cover"
-              style={{ maxHeight: 420 }}
-            />
-            {/* Bottom caption strip */}
-            <div className="bg-gray-950 px-6 py-4 flex flex-wrap gap-4 items-center justify-between">
-              <p className="text-white text-sm font-semibold">AI identified 3 issues in this interior scan</p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { label: "Water Damage", color: "#ef4444" },
-                  { label: "Floor Wear", color: "#f59e0b" },
-                  { label: "HVAC Issue", color: "#6366f1" },
-                ].map(tag => (
-                  <span key={tag.label} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: tag.color + "22", border: `1px solid ${tag.color}`, color: tag.color }}>
-                    {tag.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         {/* Marquee ticker */}
         <motion.div
@@ -1676,6 +1609,8 @@ export default function TrustyProHome() {
         accentColor="#4F46E5"
         title="TrustyPro Support"
         subtitle="Ask us anything about the platform"
+        forceOpen={chatOpen}
+        onForcedOpenHandled={() => setChatOpen(false)}
       />
     </div>
   );

@@ -883,6 +883,21 @@ export default function TrustyProHome() {
           </motion.div>
         </div>
 
+        {/* Hero house model visual */}
+        <motion.div
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.55 }}
+        >
+          <img
+            src={CDN.heroModel}
+            alt="Architectural house model"
+            className="w-full max-w-2xl rounded-t-3xl shadow-2xl object-cover"
+            style={{ maxHeight: 420 }}
+          />
+        </motion.div>
+
         {/* Marquee ticker */}
         <motion.div
           className="mt-0 bg-gray-950 py-4 overflow-hidden"

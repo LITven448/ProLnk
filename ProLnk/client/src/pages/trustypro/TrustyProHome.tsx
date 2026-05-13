@@ -880,6 +880,14 @@ export default function TrustyProHome() {
                 </span>
               ))}
             </div>
+
+            {/* Claim CTA */}
+            <p className="text-sm text-gray-500">
+              Already a DFW homeowner?{" "}
+              <Link href="/trustypro/claim" className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity" style={{ color: ACCENT }}>
+                Search if your home is in our network →
+              </Link>
+            </p>
           </motion.div>
         </div>
 

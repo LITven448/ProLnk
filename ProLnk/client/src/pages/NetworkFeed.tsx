@@ -1,6 +1,6 @@
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
-import { Activity, Send, CheckCircle, DollarSign, TrendingUp, Star, Zap, Clock } from "lucide-react";
+import { Activity, Send, CheckCircle, DollarSign, TrendingUp, Star, Zap, Clock, Users, Trophy } from "lucide-react";
 
 type FeedItem = {
   id: string;
@@ -87,6 +87,56 @@ function timeAgo(date: Date): string {
 
 import React from "react";
 
+function NetworkGlanceBar({
+  networkSize,
+  monthCommissions,
+  bestPerformerName,
+  bestPerformerJobs,
+}: {
+  networkSize: number;
+  monthCommissions: number;
+  bestPerformerName: string | null;
+  bestPerformerJobs: number;
+}) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
+        <div className="w-9 h-9 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0">
+          <Users className="w-4 h-4 text-indigo-500" />
+        </div>
+        <div>
+          <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Network Size</p>
+          <p className="text-xl font-bold text-gray-900">{networkSize} <span className="text-sm font-normal text-gray-500">pros</span></p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
+        <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0">
+          <DollarSign className="w-4 h-4 text-emerald-500" />
+        </div>
+        <div>
+          <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">This Month's Network</p>
+          <p className="text-xl font-bold text-gray-900">${monthCommissions.toFixed(0)} <span className="text-sm font-normal text-gray-500">commissions</span></p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-xl border border-gray-100 px-4 py-3 flex items-center gap-3 shadow-sm">
+        <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
+          <Trophy className="w-4 h-4 text-amber-500" />
+        </div>
+        <div>
+          <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Best Performer</p>
+          {bestPerformerName ? (
+            <p className="text-sm font-bold text-gray-900 truncate">{bestPerformerName} <span className="text-xs font-normal text-gray-500">· {bestPerformerJobs} jobs</span></p>
+          ) : (
+            <p className="text-sm text-gray-400">No data yet</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function NetworkFeed() {
   const { data: outbound, isLoading: l1 } = trpc.partners.getOutboundReferrals.useQuery();
   const { data: inbound, isLoading: l2 } = trpc.partners.getInboundOpportunities.useQuery();
@@ -98,6 +148,34 @@ export default function NetworkFeed() {
     () => buildFeed(outbound ?? [], inbound ?? [], commissions ?? []),
     [outbound, inbound, commissions]
   );
+
+  const glance = React.useMemo(() => {
+    const allComms = commissions ?? [];
+    const now = new Date();
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const monthComms = allComms
+      .filter((c: any) => new Date(c.createdAt) >= monthStart)
+      .reduce((sum: number, c: any) => sum + Number(c.amount ?? 0), 0);
+
+    const partnerJobCounts: Record<string, number> = {};
+    (outbound ?? []).forEach((o: any) => {
+      if (o.receivingPartnerName) {
+        partnerJobCounts[o.receivingPartnerName] = (partnerJobCounts[o.receivingPartnerName] ?? 0) + 1;
+      }
+    });
+    const bestEntry = Object.entries(partnerJobCounts).sort((a, b) => b[1] - a[1])[0] ?? null;
+
+    const partnerNames = new Set<string>();
+    (outbound ?? []).forEach((o: any) => { if (o.receivingPartnerName) partnerNames.add(o.receivingPartnerName); });
+    (inbound ?? []).forEach((o: any) => { if (o.sourcePartnerName) partnerNames.add(o.sourcePartnerName); });
+
+    return {
+      networkSize: partnerNames.size,
+      monthCommissions: monthComms,
+      bestPerformerName: bestEntry ? bestEntry[0] : null,
+      bestPerformerJobs: bestEntry ? bestEntry[1] : 0,
+    };
+  }, [outbound, inbound, commissions]);
 
   return (
     <PartnerLayout>
@@ -112,6 +190,19 @@ export default function NetworkFeed() {
             <p className="text-sm text-gray-500">Your real-time ProLnk activity -- leads sent, accepted, jobs closed, commissions earned</p>
           </div>
         </div>
+
+        {/* At a Glance summary */}
+        {!isLoading && (
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Network At a Glance</p>
+            <NetworkGlanceBar
+              networkSize={glance.networkSize}
+              monthCommissions={glance.monthCommissions}
+              bestPerformerName={glance.bestPerformerName}
+              bestPerformerJobs={glance.bestPerformerJobs}
+            />
+          </div>
+        )}
 
         {/* Feed */}
         {isLoading ? (

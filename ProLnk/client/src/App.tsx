@@ -484,21 +484,30 @@ function DomainRouter() {
       hostname === "trustypro.io" ||
       hostname === "www.trustypro.io" ||
       hostname.endsWith(".trustypro.io");
-    if (isTrustyPro) {
-      // trustypro.io/waitlist → homeowner waitlist
-      if (location === "/waitlist" || location === "/waitlist/") {
-        navigate("/trustypro/waitlist", { replace: true });
-        return;
-      }
-      // Allow /waitlist/* paths through
-      if (location.startsWith("/waitlist")) return;
-      // Allow /trustypro/* paths through
-      if (location.startsWith("/trustypro")) return;
-      // trustypro.io root → stay at / (TrustyProHome renders via Router below)
-      if (location === "/" || location === "") return;
-      // Any unmatched trustypro.io path → redirect to root
-      navigate("/", { replace: true });
-    }
+    if (!isTrustyPro) return;
+    // Already on a correct internal path
+    if (location.startsWith("/trustypro") || location.startsWith("/my-home")) return;
+    // Shared paths work as-is
+    if (["/privacy", "/terms", "/security", "/help", "/waitlist"].some(p => location === p || location.startsWith(p + "/"))) return;
+    // Root → render TrustyProHome at /
+    if (location === "/" || location === "") return;
+    // Map trustypro.io short paths → /trustypro/* equivalents
+    const map: Record<string, string> = {
+      "/login": "/trustypro/login",
+      "/waitlist": "/trustypro/waitlist",
+      "/scan": "/trustypro/scan",
+      "/pros": "/trustypro/pros",
+      "/gallery": "/trustypro/gallery",
+      "/home-health": "/trustypro/home-health",
+      "/dashboard": "/trustypro/dashboard",
+      "/homeowner-login": "/trustypro/homeowner-login",
+      "/partner-dashboard": "/trustypro/partner-dashboard",
+      "/property-setup": "/trustypro/property-setup",
+    };
+    const target = map[location] || map[location.replace(//+$/, "")];
+    if (target) { navigate(target, { replace: true }); return; }
+    // Unknown path → home
+    navigate("/", { replace: true });
   }, [location, navigate]);
   return null;
 }

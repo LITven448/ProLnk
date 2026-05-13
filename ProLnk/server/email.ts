@@ -500,27 +500,30 @@ export async function sendProWaitlistConfirmation(opts: {
   return sendEmail({
     from: FROM_PROLNK,
     to: opts.to,
-    subject: `You're on the ProLnk Founding Network — Position #${opts.position}`,
+    subject: `Your Charter Spot is Reserved — Position #${opts.position} · ProLnk Founding Network`,
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:20px 0;background:#0f172a;">
 <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#0A1628;border-radius:16px;overflow:hidden;">
 
   <!-- Header -->
-  <div style="background:linear-gradient(160deg,#0A1628 0%,#0d1f3c 50%,#0A1628 100%);padding:48px 40px 36px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.15);">
+  <div style="background:linear-gradient(160deg,#0A1628 0%,#0d1f3c 50%,#0A1628 100%);padding:52px 40px 40px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.2);">
     <div style="font-size:34px;font-weight:900;color:#ffffff;letter-spacing:-1.5px;line-height:1;">ProLnk</div>
     <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Founding Partner Network</div>
-    <div style="display:inline-block;background:${tierBadgeColor};color:#0A1628;font-size:12px;font-weight:800;padding:7px 22px;border-radius:100px;margin-top:24px;letter-spacing:0.8px;text-transform:uppercase;">${tierLabel}</div>
+    <div style="display:inline-block;background:${tierBadgeColor};color:#0A1628;font-size:12px;font-weight:800;padding:7px 22px;border-radius:100px;margin-top:20px;letter-spacing:0.8px;text-transform:uppercase;">${tierLabel}</div>
+    <div style="color:#ffffff;font-size:28px;font-weight:900;margin-top:22px;line-height:1.2;">Your Charter Spot is Reserved</div>
+    <div style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:6px;">One of a limited number of founding professionals in DFW</div>
   </div>
 
   <!-- Body -->
   <div style="padding:40px;">
-    <h1 style="color:#ffffff;margin:0 0 10px;font-size:24px;font-weight:800;">You're in, ${opts.firstName}.</h1>
-    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;font-size:15px;">Your spot on the ProLnk Founding Network is confirmed. You're among the first service professionals in DFW to lock in founding rates — before we open to the public.</p>
+    <h1 style="color:#ffffff;margin:0 0 10px;font-size:22px;font-weight:800;">You're in, ${opts.firstName}.</h1>
+    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;font-size:15px;">Your spot on the ProLnk Founding Network is confirmed. You're among the first service professionals in DFW to lock in founding rates — before we open to the public. This position is yours and cannot be taken.</p>
 
     <!-- Position card -->
-    <div style="background:linear-gradient(135deg,#111e35,#0d2245);border:1px solid rgba(245,230,66,0.25);border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
-      <div style="color:${tierBadgeColor};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;">Your Waitlist Position</div>
-      <div style="color:#ffffff;font-size:64px;font-weight:900;line-height:1;margin:0 0 10px;">#${opts.position}</div>
+    <div style="background:linear-gradient(135deg,#111e35,#0d2245);border:2px solid ${tierBadgeColor};border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
+      <div style="color:${tierBadgeColor};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 6px;">Your Reserved Waitlist Position</div>
+      <div style="color:#ffffff;font-size:72px;font-weight:900;line-height:1;margin:0 0 10px;">#${opts.position}</div>
       <div style="color:rgba(255,255,255,0.5);font-size:13px;">${tierLabel}&nbsp;&nbsp;·&nbsp;&nbsp;${opts.trade}&nbsp;&nbsp;·&nbsp;&nbsp;${opts.city}</div>
+      <div style="display:inline-block;background:rgba(245,230,66,0.1);border:1px solid rgba(245,230,66,0.25);color:${tierBadgeColor};font-size:11px;font-weight:700;padding:5px 16px;border-radius:100px;margin-top:14px;letter-spacing:0.5px;">SPOT LOCKED</div>
     </div>
 
     <!-- Benefits checklist -->
@@ -542,8 +545,51 @@ export async function sendProWaitlistConfirmation(opts: {
       <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;margin:0 0 16px;word-break:break-all;">
         <span style="color:rgba(255,255,255,0.55);font-size:12px;font-family:'Courier New',monospace;">${refLink}</span>
       </div>
-      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0 0 16px;line-height:1.6;">Share this link with contractors. Every pro who signs up using your code becomes your Level 1 — earning you subscription overrides every month.</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0 0 16px;line-height:1.6;">Share this link with contractors. Every pro who signs up using your code becomes your Level 1 — earning you <strong style="color:rgba(255,255,255,0.75);">12% of their $149/mo subscription</strong>, recurring every month.</p>
       <a href="${refLink}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">Share Your Referral Link →</a>
+    </div>
+
+    <!-- What happens next timeline -->
+    <div style="background:#111e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:${tierBadgeColor};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 18px;">What Happens Next</div>
+      <table style="width:100%;border-collapse:collapse;">
+        <tr style="vertical-align:top;">
+          <td style="width:56px;padding:0 0 20px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,230,66,0.12);border:1.5px solid ${tierBadgeColor};text-align:center;line-height:36px;color:${tierBadgeColor};font-weight:900;font-size:14px;">1</div>
+          </td>
+          <td style="padding:0 0 20px;padding-left:4px;">
+            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Application reviewed (24–48 hrs)</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5;">Our team will verify your trade license and service area. You'll get an approval email with your activation link.</div>
+          </td>
+        </tr>
+        <tr style="vertical-align:top;">
+          <td style="width:56px;padding:0 0 20px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,230,66,0.12);border:1.5px solid rgba(245,230,66,0.3);text-align:center;line-height:36px;color:rgba(245,230,66,0.5);font-weight:900;font-size:14px;">2</div>
+          </td>
+          <td style="padding:0 0 20px;padding-left:4px;">
+            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Start your 90-day free trial</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5;">Set your service zip codes, upload your license, and you're live. $0 for 90 days — no credit card required at signup.</div>
+          </td>
+        </tr>
+        <tr style="vertical-align:top;">
+          <td style="width:56px;padding:0 0 20px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,230,66,0.12);border:1.5px solid rgba(245,230,66,0.3);text-align:center;line-height:36px;color:rgba(245,230,66,0.5);font-weight:900;font-size:14px;">3</div>
+          </td>
+          <td style="padding:0 0 20px;padding-left:4px;">
+            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Receive your first AI-matched leads</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5;">Homeowners in your zip codes will start requesting quotes. You get notified instantly — accept or pass in one tap.</div>
+          </td>
+        </tr>
+        <tr style="vertical-align:top;">
+          <td style="width:56px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(245,230,66,0.12);border:1.5px solid rgba(245,230,66,0.3);text-align:center;line-height:36px;color:rgba(245,230,66,0.5);font-weight:900;font-size:14px;">4</div>
+          </td>
+          <td style="padding-left:4px;">
+            <div style="color:#ffffff;font-size:14px;font-weight:700;margin:0 0 3px;">Invite other pros &amp; start earning passively</div>
+            <div style="color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5;">Share your referral code above. Every pro you recruit earns you 12% of their $149/mo — on autopilot, every month.</div>
+          </td>
+        </tr>
+      </table>
     </div>
 
     <!-- CTA -->
@@ -555,7 +601,7 @@ export async function sendProWaitlistConfirmation(opts: {
     <!-- TrustyPro nudge -->
     <div style="background:#0d2245;border:1px solid rgba(0,181,184,0.2);border-radius:12px;padding:20px;">
       <div style="color:#00B5B8;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;">Also for You: TrustyPro</div>
-      <p style="color:rgba(255,255,255,0.55);font-size:13px;margin:0 0 14px;line-height:1.6;">As a ProLnk pro, you get TrustyPro access for your own home — track maintenance history, document systems, and protect your home's value.</p>
+      <p style="color:rgba(255,255,255,0.55);font-size:13px;margin:0 0 14px;line-height:1.6;">As a ProLnk pro, you get TrustyPro access for your own home — AI-powered home scan, track maintenance history, document systems, and protect your home's value for resale.</p>
       <a href="${BASE_URL}/trustypro/waitlist" style="display:inline-block;background:rgba(0,181,184,0.15);color:#00B5B8;border:1px solid rgba(0,181,184,0.4);padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">Join TrustyPro Waitlist →</a>
     </div>
   </div>
@@ -580,30 +626,49 @@ export async function sendHomeownerWaitlistConfirmation(opts: {
   position: number;
   serviceNeeded: string;
 }) {
+  const confirmationNumber = `TP-${opts.position.toString().padStart(5, "0")}-${Buffer.from(opts.to).toString("base64").replace(/[^A-Z0-9]/gi, "").slice(0, 4).toUpperCase()}`;
   return sendEmail({
     from: FROM_TRUSTYPRO,
     to: opts.to,
-    subject: `Welcome to TrustyPro, ${opts.firstName} — Your home is protected`,
+    subject: `You're on the list! Confirmation #${confirmationNumber} — TrustyPro`,
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:20px 0;background:#f0fdfe;">
 <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid rgba(0,181,184,0.15);">
 
   <!-- Header -->
-  <div style="background:linear-gradient(160deg,#0a2a3a 0%,#065f6b 60%,#00B5B8 100%);padding:48px 40px 40px;text-align:center;">
+  <div style="background:linear-gradient(160deg,#062336 0%,#065f6b 60%,#007b7e 100%);padding:52px 40px 44px;text-align:center;">
     <div style="font-size:34px;font-weight:900;color:#ffffff;letter-spacing:-1.5px;">TrustyPro</div>
     <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Your Home. Protected. Smart.</div>
-    <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#ffffff;font-size:12px;font-weight:700;padding:7px 22px;border-radius:100px;margin-top:24px;letter-spacing:0.5px;">Homeowner Waitlist Confirmed</div>
+    <div style="color:#ffffff;font-size:30px;font-weight:900;margin-top:22px;line-height:1.15;">You're on the list!</div>
+    <div style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">You'll receive up to 3 verified quotes within 24 hours of launch</div>
+    <div style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:11px;font-weight:700;padding:6px 20px;border-radius:100px;margin-top:18px;letter-spacing:1px;font-family:'Courier New',monospace;">CONF# ${confirmationNumber}</div>
   </div>
 
   <!-- Body -->
   <div style="padding:40px;">
-    <h1 style="color:#0f172a;margin:0 0 10px;font-size:24px;font-weight:800;">Welcome, ${opts.firstName}!</h1>
-    <p style="color:#475569;line-height:1.7;margin:0 0 28px;font-size:15px;">You're on the TrustyPro waitlist. We're launching in DFW first and you'll be notified when your home at <strong style="color:#0f172a;">${opts.address}, ${opts.city}</strong> is ready to activate.</p>
+    <h1 style="color:#0f172a;margin:0 0 10px;font-size:22px;font-weight:800;">Welcome, ${opts.firstName}!</h1>
+    <p style="color:#475569;line-height:1.7;margin:0 0 28px;font-size:15px;">Your spot is confirmed. We're launching in DFW first — when your area activates, you'll receive up to <strong style="color:#0f172a;">3 competitive quotes from verified, licensed professionals</strong> for your home at <strong style="color:#0f172a;">${opts.address}, ${opts.city}</strong>.</p>
 
-    <!-- Position card -->
-    <div style="background:linear-gradient(135deg,#e6fafa,#f0fdfe);border:1px solid #99e6e8;border-radius:14px;padding:28px;margin:0 0 28px;text-align:center;">
-      <div style="color:#0e7490;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;">Your Waitlist Position</div>
-      <div style="color:#00B5B8;font-size:64px;font-weight:900;line-height:1;margin:0 0 10px;">#${opts.position}</div>
-      <div style="color:#0e7490;font-size:13px;">${opts.city}&nbsp;&nbsp;·&nbsp;&nbsp;${opts.serviceNeeded}</div>
+    <!-- Position + confirmation card -->
+    <div style="background:linear-gradient(135deg,#e6fafa,#f0fdfe);border:2px solid #00B5B8;border-radius:14px;padding:28px;margin:0 0 28px;text-align:center;">
+      <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+        <div>
+          <div style="color:#0e7490;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;">Waitlist Position</div>
+          <div style="color:#00B5B8;font-size:64px;font-weight:900;line-height:1;">#${opts.position}</div>
+        </div>
+        <div style="border-left:1px solid #99e6e8;padding-left:32px;">
+          <div style="color:#0e7490;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px;">Confirmation #</div>
+          <div style="color:#065f6b;font-size:18px;font-weight:900;font-family:'Courier New',monospace;margin-top:12px;">${confirmationNumber}</div>
+          <div style="color:#0e7490;font-size:12px;margin-top:6px;">Save this for your records</div>
+        </div>
+      </div>
+      <div style="color:#0e7490;font-size:13px;margin-top:16px;padding-top:16px;border-top:1px solid #99e6e8;">${opts.city}&nbsp;&nbsp;·&nbsp;&nbsp;${opts.serviceNeeded}</div>
+    </div>
+
+    <!-- 3 quotes promise -->
+    <div style="background:#0A1628;border-radius:14px;padding:24px;margin:0 0 28px;text-align:center;">
+      <div style="color:#00B5B8;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">What Happens When You Activate</div>
+      <div style="color:#ffffff;font-size:22px;font-weight:900;line-height:1.3;">Up to 3 verified quotes<br><span style="color:#00B5B8;">within 24 hours</span></div>
+      <div style="color:rgba(255,255,255,0.55);font-size:13px;margin-top:10px;line-height:1.6;">No cold calls. No searching. Our AI matches your <strong style="color:rgba(255,255,255,0.8);">${opts.serviceNeeded}</strong> request with background-checked pros in your zip code — they come to you.</div>
     </div>
 
     <!-- How it works -->
@@ -612,37 +677,44 @@ export async function sendHomeownerWaitlistConfirmation(opts: {
       <table style="width:100%;border-collapse:collapse;">
         <tr style="vertical-align:top;">
           <td style="padding:14px 16px 14px 0;border-bottom:1px solid #e2e8f0;width:40px;">
-            <div style="background:#e6fafa;border:1px solid #99e6e8;border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">1</div>
+            <div style="background:#e6fafa;border:1.5px solid #00B5B8;border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">1</div>
           </td>
           <td style="padding:14px 0;border-bottom:1px solid #e2e8f0;">
-            <div style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 3px;">Tell us what you need</div>
-            <div style="color:#64748b;font-size:13px;line-height:1.5;">You've already told us: <strong>${opts.serviceNeeded}</strong>. We'll match you with verified pros when you activate.</div>
+            <div style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 3px;">We activate your spot</div>
+            <div style="color:#64748b;font-size:13px;line-height:1.5;">You'll get an email when DFW launches. No action needed — your <strong>${opts.serviceNeeded}</strong> request is already queued.</div>
           </td>
         </tr>
         <tr style="vertical-align:top;">
           <td style="padding:14px 16px 14px 0;border-bottom:1px solid #e2e8f0;">
-            <div style="background:#e6fafa;border:1px solid #99e6e8;border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">2</div>
+            <div style="background:#e6fafa;border:1.5px solid rgba(0,181,184,0.4);border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">2</div>
           </td>
           <td style="padding:14px 0;border-bottom:1px solid #e2e8f0;">
-            <div style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 3px;">Get matched with verified pros</div>
-            <div style="color:#64748b;font-size:13px;line-height:1.5;">Our AI matches you with background-checked, licensed contractors in your area — no cold calls, no guesswork.</div>
+            <div style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 3px;">Receive up to 3 quotes in 24 hours</div>
+            <div style="color:#64748b;font-size:13px;line-height:1.5;">AI-matched, background-checked, licensed pros send you competitive quotes. Compare side-by-side and pick your favorite.</div>
           </td>
         </tr>
         <tr style="vertical-align:top;">
           <td style="padding:14px 16px 14px 0;">
-            <div style="background:#e6fafa;border:1px solid #99e6e8;border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">3</div>
+            <div style="background:#e6fafa;border:1.5px solid rgba(0,181,184,0.4);border-radius:50%;width:32px;height:32px;text-align:center;line-height:32px;color:#00B5B8;font-weight:900;font-size:14px;">3</div>
           </td>
           <td style="padding:14px 0;">
             <div style="color:#0f172a;font-weight:700;font-size:14px;margin:0 0 3px;">Build your Home Health Vault</div>
-            <div style="color:#64748b;font-size:13px;line-height:1.5;">Every repair and maintenance visit is logged permanently — protecting your home's value and making selling easier.</div>
+            <div style="color:#64748b;font-size:13px;line-height:1.5;">Every repair is permanently logged — protecting your home's value and making resale 20% faster with verified maintenance records.</div>
           </td>
         </tr>
       </table>
     </div>
 
+    <!-- TrustyPro AI scan nudge -->
+    <div style="background:linear-gradient(135deg,#e6fafa,#f0fdfe);border:1px solid #99e6e8;border-radius:14px;padding:22px;margin:0 0 28px;">
+      <div style="color:#065f6b;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">Coming Soon: TrustyPro AI Home Scan</div>
+      <p style="color:#0e7490;font-size:13px;margin:0 0 12px;line-height:1.6;">Point your phone at any part of your home. Our AI visually detects maintenance issues, estimates repair costs, and routes the right pro directly to you — before small problems become expensive ones.</p>
+      <div style="color:#065f6b;font-size:12px;font-weight:700;">As a waitlist member, you'll get early access before public launch.</div>
+    </div>
+
     <!-- Service requested highlight -->
     <div style="background:#f8fafc;border-left:4px solid #00B5B8;border-radius:0 10px 10px 0;padding:16px 20px;margin:0 0 28px;">
-      <div style="color:#0e7490;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px;">Service on Your Waitlist</div>
+      <div style="color:#0e7490;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px;">Your Queued Service Request</div>
       <div style="color:#0f172a;font-size:15px;font-weight:700;">${opts.serviceNeeded}</div>
       <div style="color:#64748b;font-size:13px;margin-top:2px;">${opts.address}, ${opts.city}</div>
     </div>
@@ -651,19 +723,19 @@ export async function sendHomeownerWaitlistConfirmation(opts: {
     <div style="text-align:center;margin:0 0 12px;">
       <a href="${BASE_URL}/join" style="display:inline-block;background:#00B5B8;color:#ffffff;padding:16px 44px;border-radius:10px;text-decoration:none;font-weight:800;font-size:16px;">View My Waitlist Status →</a>
     </div>
-    <div style="text-align:center;color:#94a3b8;font-size:12px;margin:0 0 28px;">We'll email you when your spot activates. No spam, ever.</div>
+    <div style="text-align:center;color:#94a3b8;font-size:12px;margin:0 0 28px;">We'll email you the moment your area goes live. No spam, ever.</div>
 
     <!-- Trust badge -->
     <div style="background:linear-gradient(135deg,#e6fafa,#f0fdfe);border:1px solid #99e6e8;border-radius:12px;padding:18px 20px;text-align:center;">
       <div style="color:#0e7490;font-size:13px;font-weight:700;margin:0 0 6px;">Why Homeowners Choose TrustyPro</div>
-      <div style="color:#475569;font-size:13px;line-height:1.7;">Verified &amp; licensed pros &nbsp;·&nbsp; AI-matched to your exact need &nbsp;·&nbsp; Permanent home records &nbsp;·&nbsp; Neighbor-trusted network</div>
+      <div style="color:#475569;font-size:13px;line-height:1.7;">Verified &amp; licensed pros &nbsp;·&nbsp; AI-matched to your exact need &nbsp;·&nbsp; Permanent home records &nbsp;·&nbsp; Up to 3 quotes in 24 hrs</div>
     </div>
   </div>
 
   <!-- Footer -->
   <div style="background:#f1f5f9;padding:20px 40px;text-align:center;border-top:1px solid #e2e8f0;">
     <div style="color:#94a3b8;font-size:12px;">© 2026 TrustyPro · DFW, Texas</div>
-    <div style="color:#cbd5e1;font-size:11px;margin-top:4px;">You're receiving this because you joined the TrustyPro homeowner waitlist.</div>
+    <div style="color:#cbd5e1;font-size:11px;margin-top:4px;">Confirmation #${confirmationNumber} · You're receiving this because you joined the TrustyPro homeowner waitlist.</div>
   </div>
 
 </div>
@@ -751,68 +823,73 @@ export async function sendPartnerApprovalEmail(params: {
   await sendEmail({
     from: FROM_PROLNK,
     to: params.to,
-    subject: `🎉 You're officially a ${params.tierLabel} — ProLnk Founding Network`,
+    subject: `You're In! Welcome to ProLnk Founding Network — ${params.tierLabel}`,
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:20px 0;background:#0f172a;">
 <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#0A1628;border-radius:16px;overflow:hidden;">
 
-  <!-- Hero header with confetti energy -->
-  <div style="background:linear-gradient(160deg,#0A1628 0%,#0d1f3c 40%,#0A1628 100%);padding:52px 40px 40px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.2);">
-    <div style="font-size:42px;margin:0 0 16px;">🎉</div>
+  <!-- Hero header -->
+  <div style="background:linear-gradient(160deg,#0A1628 0%,#0d1f3c 40%,#0A1628 100%);padding:52px 40px 44px;text-align:center;border-bottom:1px solid rgba(245,230,66,0.2);">
+    <div style="font-size:48px;margin:0 0 14px;">🎉</div>
     <div style="font-size:34px;font-weight:900;color:#ffffff;letter-spacing:-1.5px;line-height:1;">ProLnk</div>
     <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Founding Partner Network</div>
-    <div style="margin-top:24px;">
-      <div style="display:inline-block;background:#F5E642;color:#0A1628;font-size:14px;font-weight:900;padding:10px 28px;border-radius:100px;letter-spacing:0.5px;">APPLICATION APPROVED</div>
+    <div style="color:#F5E642;font-size:36px;font-weight:900;margin-top:20px;line-height:1.15;">You're In!</div>
+    <div style="margin-top:14px;">
+      <div style="display:inline-block;background:#F5E642;color:#0A1628;font-size:14px;font-weight:900;padding:10px 28px;border-radius:100px;letter-spacing:0.5px;">${params.tierLabel.toUpperCase()} · APPROVED</div>
     </div>
-    <div style="color:#F5E642;font-size:26px;font-weight:900;margin-top:20px;line-height:1.2;">You're officially a<br>${params.tierLabel}</div>
-    <div style="color:rgba(255,255,255,0.45);font-size:13px;margin-top:8px;">Founding Network · Position #${params.position}</div>
+    <div style="color:rgba(255,255,255,0.45);font-size:13px;margin-top:12px;">Founding Network · Position #${params.position}</div>
   </div>
 
   <!-- Body -->
   <div style="padding:40px;">
     <h2 style="color:#ffffff;margin:0 0 10px;font-size:22px;font-weight:800;">Congratulations, ${params.firstName}!</h2>
-    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 32px;font-size:15px;">Your application to join the ProLnk Founding Partner Network has been approved. You're one of a limited number of professionals who will build this network from the ground up — and earn like it.</p>
+    <p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 28px;font-size:15px;">Your application to join the ProLnk Founding Partner Network has been approved. You're one of the first professionals in DFW to get in — your rates are locked, your position is permanent, and you start earning the moment you activate.</p>
 
-    <!-- Tier + benefits table -->
+    <!-- Commission rate quick-reference -->
     <div style="background:#111e35;border:1px solid rgba(245,230,66,0.15);border-radius:14px;overflow:hidden;margin:0 0 24px;">
       <div style="background:rgba(245,230,66,0.08);padding:16px 20px;border-bottom:1px solid rgba(245,230,66,0.12);">
-        <div style="color:#F5E642;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;">Your ${params.tierLabel} Benefits</div>
+        <div style="color:#F5E642;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;">Your ${params.tierLabel} Commission Rates</div>
       </div>
       <table style="width:100%;border-collapse:collapse;">
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;width:45%;">Keep Rate</td>
-          <td style="padding:14px 20px;color:#ffffff;font-size:14px;font-weight:700;">72% of every job match</td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:18px;font-weight:900;">72%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> of every job match</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Network Job Commissions</td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:15px;font-weight:800;">7/4/2/1%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> — 4 levels deep</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Subscription Overrides</td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:15px;font-weight:800;">12/6/3/1.5%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> per $149/mo — recurring</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Origination Rights</td>
+          <td style="padding:14px 20px;"><span style="color:#F5E642;font-size:15px;font-weight:800;">1.5%</span><span style="color:rgba(255,255,255,0.5);font-size:13px;"> per documented home, forever</span></td>
         </tr>
         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
           <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Monthly Fee</td>
           <td style="padding:14px 20px;color:#ffffff;font-size:14px;font-weight:700;">$149/mo — locked in forever</td>
         </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Free Trial</td>
-          <td style="padding:14px 20px;"><span style="background:rgba(245,230,66,0.12);color:#F5E642;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;">90 days free</span></td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Network Income</td>
-          <td style="padding:14px 20px;color:#ffffff;font-size:14px;font-weight:700;">7/4/2/1% — 4 levels deep</td>
-        </tr>
         <tr>
-          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Origination Rights</td>
-          <td style="padding:14px 20px;color:#ffffff;font-size:14px;font-weight:700;">1.5% per documented home, forever</td>
+          <td style="padding:14px 20px;color:rgba(255,255,255,0.45);font-size:13px;">Free Trial</td>
+          <td style="padding:14px 20px;"><span style="background:rgba(245,230,66,0.12);color:#F5E642;font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;">90 days free — $0 today</span></td>
         </tr>
       </table>
     </div>
 
     <!-- Referral code -->
-    <div style="background:#0d2245;border:1px solid rgba(245,230,66,0.2);border-radius:14px;padding:24px;margin:0 0 28px;">
-      <div style="color:rgba(255,255,255,0.45);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 6px;">Your Referral Code</div>
+    <div style="background:#0d2245;border:1px solid rgba(245,230,66,0.2);border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:rgba(255,255,255,0.45);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 6px;">Your Referral Code — Start Earning Today</div>
       <div style="color:#F5E642;font-size:28px;font-weight:900;font-family:'Courier New',monospace;letter-spacing:4px;margin:0 0 14px;">${params.referralCode}</div>
       <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:11px 14px;margin:0 0 14px;word-break:break-all;">
         <span style="color:rgba(255,255,255,0.4);font-size:12px;font-family:'Courier New',monospace;">${referralLink}</span>
       </div>
-      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0;line-height:1.6;">Share this link with other contractors. Every pro who signs up becomes your Level 1 — earning you 12% of their $149/mo subscription every month, recurring.</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:13px;margin:0 0 16px;line-height:1.6;">Share this with other contractors <strong style="color:rgba(255,255,255,0.7);">right now</strong>. Every pro who joins under your code pays $149/mo — you earn 12% of that, recurring, every single month. Invite 10 pros = $214/mo passive income before you do a single job.</p>
+      <a href="${referralLink}" style="display:inline-block;background:#F5E642;color:#0A1628;padding:12px 26px;border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;">Share Your Referral Link →</a>
     </div>
 
     <!-- Two CTAs -->
-    <div style="margin:0 0 16px;">
+    <div style="margin:0 0 14px;">
       <a href="${primaryCtaUrl}" style="display:block;background:#F5E642;color:#0A1628;padding:17px 32px;border-radius:10px;text-decoration:none;font-weight:800;font-size:16px;text-align:center;">${primaryCtaLabel}</a>
     </div>
     <div style="margin:0 0 8px;">
@@ -820,14 +897,23 @@ export async function sendPartnerApprovalEmail(params: {
     </div>
     <div style="text-align:center;color:rgba(255,255,255,0.3);font-size:12px;margin:0 0 32px;">$149/mo after trial · Cancel anytime before day 90 · No price increases, ever</div>
 
+    <!-- Onboarding call -->
+    <div style="background:linear-gradient(135deg,#0d1f3c,#111e35);border:1px solid rgba(245,230,66,0.15);border-radius:14px;padding:22px;margin:0 0 24px;">
+      <div style="color:#F5E642;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">Book Your Free Onboarding Call</div>
+      <p style="color:rgba(255,255,255,0.6);font-size:13px;margin:0 0 16px;line-height:1.6;">Our team will walk you through setting up your profile, configuring your service zip codes, and claiming your first origination rights — in under 30 minutes. Founding members get priority scheduling.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="mailto:andrew@lit-ventures.com?subject=Onboarding Call - ${encodeURIComponent(params.firstName)} (${params.tierLabel})&body=Hi, I just got approved as a ${params.tierLabel} and would love to schedule my onboarding call." style="display:inline-block;background:rgba(245,230,66,0.12);color:#F5E642;border:1px solid rgba(245,230,66,0.3);padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">Request Onboarding Call →</a>
+      </div>
+    </div>
+
     <!-- What happens next -->
     <div style="background:#111e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px;margin:0 0 12px;">
-      <div style="color:rgba(255,255,255,0.5);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 16px;">Your First 4 Steps</div>
+      <div style="color:rgba(255,255,255,0.5);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 16px;">Your First 4 Steps to Earning</div>
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;width:28px;vertical-align:middle;">1</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Start your free trial</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — no charge for 90 days</span></td></tr>
-        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">2</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Set your service zip codes</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — define where you want leads</span></td></tr>
-        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">3</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Log your first job photo</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — claim origination rights immediately</span></td></tr>
-        <tr><td style="padding:9px 0;color:#F5E642;font-size:16px;vertical-align:middle;">4</td><td style="padding:9px 0 9px 10px;"><span style="color:#ffffff;font-size:13px;font-weight:700;">Invite 3 contractors</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — start earning subscription overrides this month</span></td></tr>
+        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;width:28px;vertical-align:middle;">1</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Start your free trial</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — no charge for 90 days, activate above</span></td></tr>
+        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">2</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Set your service zip codes</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — define exactly where you want leads</span></td></tr>
+        <tr><td style="padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#F5E642;font-size:16px;vertical-align:middle;">3</td><td style="padding:9px 0 9px 10px;border-bottom:1px solid rgba(255,255,255,0.05);"><span style="color:#ffffff;font-size:13px;font-weight:700;">Log your first job photo</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — claim 1.5% origination rights on that home, forever</span></td></tr>
+        <tr><td style="padding:9px 0;color:#F5E642;font-size:16px;vertical-align:middle;">4</td><td style="padding:9px 0 9px 10px;"><span style="color:#ffffff;font-size:13px;font-weight:700;">Invite 3 contractors this week</span><span style="color:rgba(255,255,255,0.4);font-size:13px;"> — earn $53/mo recurring before you finish your first job</span></td></tr>
       </table>
     </div>
 

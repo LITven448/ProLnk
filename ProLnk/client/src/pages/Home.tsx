@@ -585,7 +585,7 @@ function PricingSection() {
       </div>
 
       {/* Tier Cards */}
-      <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-14">
         {PRICING_TIERS.map((tier, idx) => (
           <div
             key={tier.name}
@@ -648,6 +648,19 @@ function PricingSection() {
             </Link>
           </div>
         ))}
+      </div>
+
+      {/* Tier summary */}
+      <div className="flex items-center justify-center gap-4 text-sm text-gray-500 max-w-6xl mx-auto -mt-8 mb-14 flex-wrap">
+        <span>Charter: <strong className="text-gray-700">25</strong></span>
+        <span className="text-gray-300">+</span>
+        <span>Founding: <strong className="text-gray-700">100</strong></span>
+        <span className="text-gray-300">+</span>
+        <span>Level 3: <strong className="text-gray-700">400</strong></span>
+        <span className="text-gray-300">+</span>
+        <span>Level 4: <strong className="text-gray-700">1,600</strong></span>
+        <span className="text-gray-300">=</span>
+        <span className="font-bold text-[#0A1628]">2,125 total founding spots — all locked at $149/mo</span>
       </div>
 
       {/* Add-On Modules */}

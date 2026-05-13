@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { Bell, Mail, MessageSquare, Zap, DollarSign, Star, TrendingUp, Megaphone, Calendar, Loader2, Save } from "lucide-react";
+import { Bell, Mail, MessageSquare, Zap, DollarSign, Star, TrendingUp, Megaphone, Calendar, Loader2, Save, CloudLightning } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +24,7 @@ interface NotifPrefs {
   newReview: boolean;
   broadcastMessages: boolean;
   weeklyDigest: boolean;
+  stormAlert: boolean;
   emailEnabled: boolean;
   smsEnabled: boolean;
 }
@@ -36,6 +37,7 @@ const DEFAULT_PREFS: NotifPrefs = {
   newReview: true,
   broadcastMessages: true,
   weeklyDigest: true,
+  stormAlert: true,
   emailEnabled: true,
   smsEnabled: false,
 };
@@ -90,6 +92,13 @@ const ACTIVITY_PREFS: PrefItem[] = [
     icon: <Calendar className="h-4 w-4 text-indigo-500" />,
     category: "activity",
   },
+  {
+    key: "stormAlert",
+    label: "Storm Warning Alerts",
+    description: "Instant notification when severe weather is detected in your active service area — leads auto-queue within minutes",
+    icon: <CloudLightning className="h-4 w-4 text-amber-500" />,
+    category: "activity",
+  },
 ];
 
 const CHANNEL_PREFS: PrefItem[] = [
@@ -132,6 +141,7 @@ export default function NotificationPreferences() {
         newReview: serverPrefs.newReview ?? true,
         broadcastMessages: serverPrefs.broadcastMessages ?? true,
         weeklyDigest: serverPrefs.weeklyDigest ?? true,
+        stormAlert: (serverPrefs as any).stormAlert ?? true,
         emailEnabled: serverPrefs.emailEnabled ?? true,
         smsEnabled: serverPrefs.smsEnabled ?? false,
       });
@@ -212,6 +222,9 @@ export default function NotificationPreferences() {
                       <span className="text-sm font-medium text-gray-900">{item.label}</span>
                       {item.key === "newLead" && (
                         <Badge className="bg-purple-100 text-purple-700 text-xs h-4 px-1.5">High Priority</Badge>
+                      )}
+                      {item.key === "stormAlert" && (
+                        <Badge className="bg-amber-100 text-amber-700 text-xs h-4 px-1.5">Storm Events</Badge>
                       )}
                     </div>
                     <p className="text-xs text-gray-500 mt-0.5">{item.description}</p>

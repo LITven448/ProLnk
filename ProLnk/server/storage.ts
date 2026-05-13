@@ -22,7 +22,7 @@ import {
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 const REGION = process.env.AWS_REGION ?? "us-east-1";
-const BUCKET = process.env.S3_BUCKET_NAME ?? "";
+const BUCKET = process.env.S3_BUCKET_NAME ?? process.env.AWS_S3_BUCKET ?? "";
 const CDN_BASE = (process.env.S3_CDN_BASE_URL ?? "").replace(/\/+$/, "");
 
 let _s3: S3Client | null = null;

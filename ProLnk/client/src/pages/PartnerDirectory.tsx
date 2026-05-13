@@ -16,7 +16,7 @@ import PartnerLayout from "@/components/PartnerLayout";
 import {
   Search, MapPin, Star, Users, Zap, Filter, Award,
   LayoutGrid, Map, ShieldCheck, CheckCircle2, Clock,
-  ChevronDown,
+  ChevronDown, BadgePlus,
 } from "lucide-react";
 
 const BUSINESS_TYPES = [
@@ -474,6 +474,26 @@ export default function PartnerDirectory() {
               </div>
             )}
           </>
+        )}
+
+        {/* "Not listed yet?" inline CTA for partners browsing the directory */}
+        {!isLoading && filtered.length > 0 && (
+          <div className="mt-6 rounded-xl border border-dashed border-[#1B4FD8]/30 bg-[#EFF6FF]/60 p-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-[#1B4FD8]/10 flex items-center justify-center flex-shrink-0">
+                <BadgePlus className="w-4 h-4 text-[#1B4FD8]" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-800">You're not listed yet</p>
+                <p className="text-xs text-gray-500">Complete your profile and get verified to appear in this directory.</p>
+              </div>
+            </div>
+            <Link href="/partner-verification">
+              <Button size="sm" className="text-white flex-shrink-0 text-xs" style={{ backgroundColor: "#1B4FD8" }}>
+                Get Verified
+              </Button>
+            </Link>
+          </div>
         )}
 
         {/* Bottom CTA */}

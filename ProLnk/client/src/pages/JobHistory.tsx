@@ -14,8 +14,13 @@ import PartnerLayout from "@/components/PartnerLayout";
 
 const STATUS_CONFIG = {
   logged: { label: "Logged", icon: Clock, color: "text-blue-600", bg: "bg-blue-50" },
+  open: { label: "Open", icon: Clock, color: "text-blue-600", bg: "bg-blue-50" },
   analyzed: { label: "Analyzed", icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
+  awarded: { label: "Awarded", icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
+  completed: { label: "Completed", icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
+  closed: { label: "Closed", icon: CheckCircle, color: "text-gray-600", bg: "bg-gray-100" },
   processing: { label: "Analyzing...", icon: Loader2, color: "text-yellow-600", bg: "bg-yellow-50" },
+  cancelled: { label: "Cancelled", icon: AlertCircle, color: "text-red-600", bg: "bg-red-50" },
   failed: { label: "Analysis Failed", icon: AlertCircle, color: "text-red-600", bg: "bg-red-50" },
 };
 
@@ -37,6 +42,7 @@ type Job = {
   aiAnalysisResult: unknown;
   notes: string | null;
   customerName: string | null;
+  totalValue: string | number | null;
 };
 
 function JobCard({ job }: { job: Job }) {
@@ -73,7 +79,13 @@ function JobCard({ job }: { job: Job }) {
             </div>
             <div className="text-right flex-shrink-0">
               <p className="text-xs text-gray-400">{new Date(job.createdAt).toLocaleDateString()}</p>
-              <p className={`text-xs font-medium ${aiCfg.color}`}>{aiCfg.label}</p>
+              {job.totalValue != null && Number(job.totalValue) > 0 ? (
+                <p className="text-sm font-bold text-gray-900">
+                  ${Number(job.totalValue).toLocaleString()}
+                </p>
+              ) : (
+                <p className={`text-xs font-medium ${aiCfg.color}`}>{aiCfg.label}</p>
+              )}
             </div>
           </div>
 
@@ -206,6 +218,13 @@ export default function JobHistory() {
     const result = job.aiAnalysisResult as { opportunities?: unknown[] } | null;
     return sum + (result?.opportunities?.length ?? 0);
   }, 0);
+  const totalJobValue = (jobs ?? []).reduce((sum: number, j: unknown) => {
+    return sum + Number((j as Job).totalValue ?? 0);
+  }, 0);
+  const completedCount = (jobs ?? []).filter((j: unknown) => {
+    const s = (j as Job).status;
+    return s === "completed" || s === "awarded" || s === "closed";
+  }).length;
 
   return (
     <PartnerLayout>
@@ -229,11 +248,18 @@ export default function JobHistory() {
       </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           {[
-            { label: "Total Jobs", value: jobs?.length ?? 0, icon: Camera },
-            { label: "Analyzed", value: analyzedCount, icon: CheckCircle },
-            { label: "Opportunities", value: opportunitiesCount, icon: Zap },
+            { label: "Total Jobs", value: String(jobs?.length ?? 0), icon: Camera },
+            { label: "Completed", value: String(completedCount), icon: CheckCircle },
+            { label: "Opportunities", value: String(opportunitiesCount), icon: Zap },
+            {
+              label: "Total Value",
+              value: totalJobValue > 0
+                ? `$${totalJobValue >= 1000 ? `${(totalJobValue / 1000).toFixed(1)}k` : totalJobValue.toLocaleString()}`
+                : "$0",
+              icon: AlertCircle,
+            },
           ].map((stat) => (
             <div key={stat.label} className="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
               <stat.icon className="w-4 h-4 mx-auto mb-1 text-[#0A1628]" />

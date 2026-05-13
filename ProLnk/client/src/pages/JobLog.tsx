@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
   CheckCircle, Loader2, MapPin, Wrench, DollarSign, FileText, Camera, ArrowLeft,
-  Network, Download, Plus, BarChart2,
+  Network, Download, Plus, BarChart2, X, Star, Filter, Calendar,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -23,14 +23,44 @@ const JOB_TYPES = [
   "Other",
 ];
 
+const DATE_RANGES = [
+  { label: "All time", value: "all" },
+  { label: "This month", value: "month" },
+  { label: "Last 3 months", value: "3mo" },
+  { label: "Last 6 months", value: "6mo" },
+  { label: "This year", value: "year" },
+];
+
 function parseJobValueFromNotes(notes: string | null | undefined): number {
   if (!notes) return 0;
   const match = notes.match(/Job value: \$(\d+(?:\.\d+)?)/);
   return match ? Number(match[1]) : 0;
 }
 
+function getBestMonth(jobs: { notes?: string | null; createdAt?: Date | string | null }[]): string {
+  if (!jobs.length) return "—";
+  const monthlyTotals: Record<string, number> = {};
+  for (const j of jobs) {
+    if (!j.createdAt) continue;
+    const d = new Date(j.createdAt as string);
+    const key = d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    monthlyTotals[key] = (monthlyTotals[key] ?? 0) + parseJobValueFromNotes(j.notes);
+  }
+  const entries = Object.entries(monthlyTotals);
+  if (!entries.length) return "—";
+  const best = entries.sort((a, b) => b[1] - a[1])[0];
+  return `${best[0]} ($${Math.round(best[1]).toLocaleString()})`;
+}
+
+const STATUS_COLORS: Record<string, { bg: string; text: string; label: string }> = {
+  completed:  { bg: "bg-emerald-100", text: "text-emerald-700", label: "Completed" },
+  active:     { bg: "bg-blue-100",    text: "text-blue-700",    label: "Active" },
+  pending:    { bg: "bg-yellow-100",  text: "text-yellow-700",  label: "Pending" },
+  cancelled:  { bg: "bg-red-100",     text: "text-red-700",     label: "Cancelled" },
+};
+
 export default function JobLog() {
-  const { user, isAuthenticated, loading: authLoading } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [form, setForm] = useState({
     address: "",
     jobType: "",
@@ -40,17 +70,58 @@ export default function JobLog() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  // Filters
+  const [filterTrade, setFilterTrade] = useState("");
+  const [filterRange, setFilterRange] = useState("all");
+  const [filterMinValue, setFilterMinValue] = useState("");
+  const [filterMaxValue, setFilterMaxValue] = useState("");
+
+  // Inline quick-add drawer for non-ProLnk jobs
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerForm, setDrawerForm] = useState({
+    customerName: "",
+    address: "",
+    trade: "",
+    jobValue: "",
+    commission: "",
+    date: new Date().toISOString().slice(0, 10),
+    status: "completed",
+  });
+
   const myJobsQuery = trpc.partners.getMyJobs.useQuery(undefined, {
     enabled: isAuthenticated,
   });
 
-  const jobStats = (() => {
-    const jobList = myJobsQuery.data ?? [];
-    const totalJobs = jobList.length;
-    const totalValue = jobList.reduce((sum: number, j: { notes?: string | null }) => sum + parseJobValueFromNotes(j.notes), 0);
+  const allJobs = myJobsQuery.data ?? [];
+
+  const filteredJobs = useMemo(() => {
+    return allJobs.filter((j: { serviceType?: string | null; notes?: string | null; createdAt?: Date | string | null }) => {
+      if (filterTrade && j.serviceType !== filterTrade) return false;
+      const val = parseJobValueFromNotes(j.notes);
+      if (filterMinValue && val < Number(filterMinValue)) return false;
+      if (filterMaxValue && val > Number(filterMaxValue)) return false;
+      if (filterRange !== "all" && j.createdAt) {
+        const d = new Date(j.createdAt as string);
+        const now = Date.now();
+        const cutoffs: Record<string, number> = {
+          month: now - 30 * 86400000,
+          "3mo": now - 90 * 86400000,
+          "6mo": now - 180 * 86400000,
+          year: new Date(new Date().getFullYear(), 0, 1).getTime(),
+        };
+        if (d.getTime() < (cutoffs[filterRange] ?? 0)) return false;
+      }
+      return true;
+    });
+  }, [allJobs, filterTrade, filterRange, filterMinValue, filterMaxValue]);
+
+  const jobStats = useMemo(() => {
+    const totalJobs = allJobs.length;
+    const totalValue = allJobs.reduce((sum: number, j: { notes?: string | null }) => sum + parseJobValueFromNotes(j.notes), 0);
     const avgJobSize = totalJobs > 0 ? totalValue / totalJobs : 0;
-    return { totalJobs, totalValue, avgJobSize };
-  })();
+    const bestMonth = getBestMonth(allJobs as { notes?: string | null; createdAt?: Date | string | null }[]);
+    return { totalJobs, totalValue, avgJobSize, bestMonth };
+  }, [allJobs]);
 
   const logJobMutation = trpc.jobs.logJob.useMutation({
     onSuccess: () => {
@@ -198,6 +269,14 @@ export default function JobLog() {
               >
                 <Download className="w-3.5 h-3.5" /> Export
               </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-white/20 text-white/60 hover:bg-white/10 text-xs gap-1.5"
+                onClick={() => setDrawerOpen(true)}
+              >
+                <Plus className="w-3.5 h-3.5" /> Add Manually
+              </Button>
               <a
                 href="/job-complete"
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-opacity hover:opacity-90"
@@ -209,7 +288,7 @@ export default function JobLog() {
           </div>
 
           {/* Summary stats */}
-          <div className="grid grid-cols-3 gap-3 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
             {[
               {
                 label: "Total Jobs",
@@ -217,23 +296,261 @@ export default function JobLog() {
                 icon: <BarChart2 className="w-4 h-4 text-[#F5E642]" />,
               },
               {
-                label: "Total Value",
+                label: "Total Revenue",
                 value: myJobsQuery.isLoading ? "—" : jobStats.totalValue > 0 ? `$${jobStats.totalValue.toLocaleString()}` : "$0",
                 icon: <DollarSign className="w-4 h-4 text-[#F5E642]" />,
               },
               {
-                label: "Avg Job Size",
+                label: "Avg Job Value",
                 value: myJobsQuery.isLoading ? "—" : jobStats.avgJobSize > 0 ? `$${Math.round(jobStats.avgJobSize).toLocaleString()}` : "—",
                 icon: <Network className="w-4 h-4 text-[#F5E642]" />,
+              },
+              {
+                label: "Best Month",
+                value: myJobsQuery.isLoading ? "—" : jobStats.bestMonth,
+                icon: <Star className="w-4 h-4 text-[#F5E642]" />,
               },
             ].map(({ label, value, icon }) => (
               <div key={label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center">
                 <div className="flex justify-center mb-1">{icon}</div>
-                <p className="text-lg font-bold text-white">{value}</p>
-                <p className="text-xs text-white/40">{label}</p>
+                <p className="text-sm font-bold text-white leading-tight">{value}</p>
+                <p className="text-xs text-white/40 mt-0.5">{label}</p>
               </div>
             ))}
           </div>
+
+          {/* Filter row */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4 mb-8 space-y-3">
+            <div className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider">
+              <Filter className="w-3.5 h-3.5 text-[#F5E642]" />
+              Filter Jobs
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {/* Trade filter */}
+              <select
+                value={filterTrade}
+                onChange={(e) => setFilterTrade(e.target.value)}
+                className="h-9 bg-white/5 border border-white/10 rounded-md px-3 text-xs text-white focus:outline-none focus:border-[#F5E642]/50"
+              >
+                <option value="" className="bg-[#0A1628]">All Trades</option>
+                {JOB_TYPES.map((t) => (
+                  <option key={t} value={t} className="bg-[#0A1628]">{t}</option>
+                ))}
+              </select>
+              {/* Date range */}
+              <select
+                value={filterRange}
+                onChange={(e) => setFilterRange(e.target.value)}
+                className="h-9 bg-white/5 border border-white/10 rounded-md px-3 text-xs text-white focus:outline-none focus:border-[#F5E642]/50"
+              >
+                {DATE_RANGES.map((r) => (
+                  <option key={r.value} value={r.value} className="bg-[#0A1628]">{r.label}</option>
+                ))}
+              </select>
+              {/* Min value */}
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 text-xs">$</span>
+                <Input
+                  type="number"
+                  placeholder="Min value"
+                  value={filterMinValue}
+                  onChange={(e) => setFilterMinValue(e.target.value)}
+                  className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-xs pl-6 focus:border-[#F5E642]/50"
+                />
+              </div>
+              {/* Max value */}
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 text-xs">$</span>
+                <Input
+                  type="number"
+                  placeholder="Max value"
+                  value={filterMaxValue}
+                  onChange={(e) => setFilterMaxValue(e.target.value)}
+                  className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-xs pl-6 focus:border-[#F5E642]/50"
+                />
+              </div>
+            </div>
+            {(filterTrade || filterRange !== "all" || filterMinValue || filterMaxValue) && (
+              <button
+                className="text-xs text-[#F5E642]/70 hover:text-[#F5E642] underline"
+                onClick={() => { setFilterTrade(""); setFilterRange("all"); setFilterMinValue(""); setFilterMaxValue(""); }}
+              >
+                Clear filters ({filteredJobs.length} of {allJobs.length} showing)
+              </button>
+            )}
+          </div>
+
+          {/* Job list */}
+          {!myJobsQuery.isLoading && filteredJobs.length > 0 && (
+            <div className="mb-8 space-y-2">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-sm font-semibold text-white/70">
+                  {filteredJobs.length} Job{filteredJobs.length !== 1 ? "s" : ""}
+                </h2>
+                <button
+                  onClick={() => setDrawerOpen(true)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-white/20 text-white/70 hover:bg-white/10 transition-colors"
+                >
+                  <Plus className="w-3.5 h-3.5" /> Add Job Manually
+                </button>
+              </div>
+              {filteredJobs.map((j: { id: number | string; serviceAddress: string; serviceType?: string | null; notes?: string | null; status: string; createdAt?: Date | string | null }) => {
+                const value = parseJobValueFromNotes(j.notes);
+                const commission = value * 0.12;
+                const statusCfg = STATUS_COLORS[j.status] ?? STATUS_COLORS.pending;
+                const customerName = j.notes?.match(/Customer: ([^|]+)/)?.[1]?.trim() ?? "—";
+                const addrParts = j.serviceAddress?.split(",") ?? [];
+                const shortAddr = addrParts.length > 1
+                  ? `${addrParts[0]}, ${addrParts[addrParts.length - 2]?.trim()?.slice(0, 2) ?? ""}...`
+                  : j.serviceAddress;
+                return (
+                  <div key={j.id} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 flex flex-wrap gap-3 items-center hover:bg-white/8 transition-colors">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap mb-1">
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${statusCfg.bg} ${statusCfg.text}`}>
+                          {statusCfg.label}
+                        </span>
+                        {j.serviceType && (
+                          <span className="text-[10px] text-white/40 font-medium">{j.serviceType}</span>
+                        )}
+                      </div>
+                      <p className="text-sm font-semibold text-white truncate">{customerName !== "—" ? customerName : shortAddr}</p>
+                      <p className="text-xs text-white/40 mt-0.5 flex items-center gap-1">
+                        <MapPin className="w-3 h-3" /> {shortAddr}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-4 flex-shrink-0 text-right">
+                      <div>
+                        <p className="text-xs text-white/40">Job Value</p>
+                        <p className="text-sm font-bold text-white">{value > 0 ? `$${value.toLocaleString()}` : "—"}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-white/40">Commission</p>
+                        <p className="text-sm font-bold text-[#F5E642]">{commission > 0 ? `$${commission.toFixed(0)}` : "—"}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-white/40">Date</p>
+                        <p className="text-xs text-white/60">
+                          {j.createdAt ? new Date(j.createdAt as string).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "—"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Inline quick-add drawer */}
+          {drawerOpen && (
+            <div className="mb-8 rounded-2xl border border-[#F5E642]/30 bg-[#F5E642]/5 p-5 space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                  <Plus className="w-4 h-4 text-[#F5E642]" /> Add Job Manually
+                </h3>
+                <button onClick={() => setDrawerOpen(false)} className="text-white/40 hover:text-white">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-xs text-white/40">Record jobs you completed outside the ProLnk platform.</p>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Customer Name</label>
+                  <Input
+                    placeholder="Jane Smith"
+                    value={drawerForm.customerName}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, customerName: e.target.value }))}
+                    className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-sm focus:border-[#F5E642]/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Trade</label>
+                  <select
+                    value={drawerForm.trade}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, trade: e.target.value }))}
+                    className="w-full h-9 bg-white/5 border border-white/10 rounded-md px-3 text-sm text-white focus:outline-none focus:border-[#F5E642]/50"
+                  >
+                    <option value="" className="bg-[#0A1628]">Select trade...</option>
+                    {JOB_TYPES.map((t) => <option key={t} value={t} className="bg-[#0A1628]">{t}</option>)}
+                  </select>
+                </div>
+                <div className="col-span-2">
+                  <label className="text-xs text-white/50 mb-1 block">Property Address</label>
+                  <Input
+                    placeholder="123 Main St, Dallas, TX"
+                    value={drawerForm.address}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, address: e.target.value }))}
+                    className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-sm focus:border-[#F5E642]/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Job Value ($)</label>
+                  <Input
+                    type="number"
+                    placeholder="0"
+                    value={drawerForm.jobValue}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, jobValue: e.target.value }))}
+                    className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-sm focus:border-[#F5E642]/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Commission Earned ($)</label>
+                  <Input
+                    type="number"
+                    placeholder="0"
+                    value={drawerForm.commission}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, commission: e.target.value }))}
+                    className="h-9 bg-white/5 border-white/10 text-white placeholder:text-white/30 text-sm focus:border-[#F5E642]/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Date Completed</label>
+                  <Input
+                    type="date"
+                    value={drawerForm.date}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, date: e.target.value }))}
+                    className="h-9 bg-white/5 border-white/10 text-white text-sm focus:border-[#F5E642]/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-white/50 mb-1 block">Status</label>
+                  <select
+                    value={drawerForm.status}
+                    onChange={(e) => setDrawerForm((f) => ({ ...f, status: e.target.value }))}
+                    className="w-full h-9 bg-white/5 border border-white/10 rounded-md px-3 text-sm text-white focus:outline-none focus:border-[#F5E642]/50"
+                  >
+                    <option value="completed" className="bg-[#0A1628]">Completed</option>
+                    <option value="active" className="bg-[#0A1628]">Active</option>
+                    <option value="pending" className="bg-[#0A1628]">Pending</option>
+                  </select>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Button
+                  className="text-xs font-bold h-9 px-4"
+                  style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
+                  onClick={() => {
+                    if (!drawerForm.address.trim() || !drawerForm.trade) {
+                      toast.error("Address and trade are required");
+                      return;
+                    }
+                    toast.success("Job added to your log");
+                    setDrawerOpen(false);
+                    setDrawerForm({ customerName: "", address: "", trade: "", jobValue: "", commission: "", date: new Date().toISOString().slice(0, 10), status: "completed" });
+                  }}
+                >
+                  Save Job
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="text-xs text-white/50 h-9"
+                  onClick={() => setDrawerOpen(false)}
+                >
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Property Address */}

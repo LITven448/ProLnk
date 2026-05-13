@@ -20,6 +20,8 @@ import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
 import JoinLanding from "./pages/JoinLanding";
+const GetQuotes = lazy(() => import("./pages/GetQuotes"));
+const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 // Pages -- lazy loaded (all admin, dashboard, homeowner, feature pages)
@@ -68,6 +70,7 @@ const AdminSetup = lazy(() => import("./pages/AdminSetup"));
 const JobHistory = lazy(() => import("./pages/JobHistory"));
 const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));
 const EarningsHistory = lazy(() => import("./pages/EarningsHistory"));
+const EarningsHistoryDashboard = lazy(() => import("./pages/dashboard/EarningsHistory"));
 
 // Wave pages -- Partner Portal
 const CommissionLedger = lazy(() => import("./pages/CommissionLedger"));
@@ -122,7 +125,6 @@ const JobCompletion = lazy(() => import("./pages/JobCompletion"));
 const JobComplete = lazy(() => import("./pages/JobComplete"));
 
 // New Admin Command Center pages
-const PartnerActivation = lazy(() => import("./pages/admin/PartnerActivation"));
 const CommandCenter = lazy(() => import("./pages/admin/CommandCenter"));
 const PortfolioDashboard = lazy(() => import("./pages/admin/PortfolioDashboard"));
 const StrategicOverview = lazy(() => import("./pages/admin/StrategicOverview"));
@@ -148,8 +150,8 @@ const CustomerDealPage = lazy(() => import("./pages/CustomerDealPage"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Exchange = lazy(() => import("./pages/Exchange"));
 const ExchangeLanding = lazy(() => import("./pages/ExchangeLanding"));
-const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
 const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
+const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
 const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
 const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
 const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
@@ -232,8 +234,6 @@ const TrainingHub = lazy(() => import("./pages/TrainingHub"));
 const CommissionCalculator = lazy(() => import("./pages/CommissionCalculator"));
 const AnalyticsDeepDive = lazy(() => import("./pages/admin/AnalyticsDeepDive"));
 const HomeownerReferral = lazy(() => import("./pages/homeowner/HomeownerReferral"));
-const GetQuotes = lazy(() => import("./pages/GetQuotes"));
-const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 const HomeHealthVault = lazy(() => import("./pages/homeowner/HomeHealthVault"));
 const ScanHistory = lazy(() => import("./pages/homeowner/ScanHistory"));
 const AdminTaskList = lazy(() => import("./pages/admin/AdminTaskList"));
@@ -544,9 +544,9 @@ function Router() {
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/get-quotes" component={GetQuotes} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
-      <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />
       <Route path="/waitlist/pro" component={ProWaitlist} />
@@ -585,14 +585,15 @@ function Router() {
       <Route path="/dashboard/alerts" component={PerformanceAlerts} />
       <Route path="/dashboard/ai" component={AIChatAssistant} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
+      <Route path="/dashboard/earnings-history" component={EarningsHistoryDashboard} />
       <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
-      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
+      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
       <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
@@ -848,8 +849,8 @@ function Router() {
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/exchange" component={ExchangeLanding} />
-      <Route path="/exchange/jobs" component={ExchangeJobs} />
       <Route path="/exchange/home" component={ExchangeHome} />
+      <Route path="/exchange/jobs" component={ExchangeJobs} />
       <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />

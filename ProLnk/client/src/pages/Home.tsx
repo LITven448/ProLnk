@@ -2315,8 +2315,9 @@ export default function Home() {
               <Link href="/dashboard" className="hover:text-white transition-colors">Partner Login</Link>
               <Link href="/trustypro" className="hover:text-white transition-colors">TrustyPro</Link>
               <Link href="/advertise" className="hover:text-white transition-colors">Advertise</Link>
-              <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
-              <a href="#faq" className="hover:text-white transition-colors">Resources</a>
+              <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+              <Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-3 text-xs text-gray-600">
               <div className="flex items-center gap-2 mb-1 md:mb-0">

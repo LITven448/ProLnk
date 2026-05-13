@@ -28,7 +28,14 @@ const BG = "#F7FFFE";
 const NAVY = "#1e3a5f";
 const CYAN = "#0891b2";
 
-const PLACEHOLDER_USER = { name: "Sarah" };
+const PLACEHOLDER_USER = {
+  name: "Sarah",
+  address: "4821 Maple Ridge Dr",
+  city: "Frisco",
+  state: "TX",
+  zip: "75034",
+  photoCount: 0,
+};
 
 const QUICK_ACTIONS = [
   {
@@ -188,6 +195,46 @@ export default function HomeownerDashboard() {
           </p>
         </motion.div>
 
+        {/* Your Home */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="bg-white rounded-2xl border p-6 flex flex-col md:flex-row items-start md:items-center gap-6"
+          style={{ borderColor: "#E5E7EB" }}
+        >
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+            style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${CYAN} 100%)` }}
+          >
+            <Home className="w-7 h-7 text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Your Home</p>
+            <p className="text-lg font-black text-gray-900 truncate">{PLACEHOLDER_USER.address}</p>
+            <p className="text-sm text-gray-500">
+              {PLACEHOLDER_USER.city}, {PLACEHOLDER_USER.state} {PLACEHOLDER_USER.zip}
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full md:w-auto">
+            <button
+              onClick={() => navigate("/trustypro/scan")}
+              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: CYAN }}
+            >
+              <Upload className="w-4 h-4" />
+              {PLACEHOLDER_USER.photoCount === 0 ? "Upload First Photo" : "Upload Photos"}
+            </button>
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold" style={{ backgroundColor: PLACEHOLDER_USER.photoCount > 0 ? "#D1FAE5" : "#FEF3C7", color: PLACEHOLDER_USER.photoCount > 0 ? "#059669" : "#D97706" }}>
+              {PLACEHOLDER_USER.photoCount > 0 ? (
+                <><CheckCircle className="w-4 h-4" /> AI Analysis: Ready</>
+              ) : (
+                <><Clock className="w-4 h-4" /> AI Analysis: Upload to start</>
+              )}
+            </div>
+          </div>
+        </motion.section>
+
         {/* Home Health Score */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -313,6 +360,44 @@ export default function HomeownerDashboard() {
             ))}
           </div>
         </section>
+
+        {/* Find a Pro */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.38 }}
+          className="rounded-2xl p-6 border flex flex-col md:flex-row items-start md:items-center gap-5"
+          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #0c2444 100%)`, borderColor: `${NAVY}40` }}
+        >
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: "rgba(8,145,178,0.25)" }}
+          >
+            <Users className="w-7 h-7 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Find a Pro</p>
+            <h3 className="text-lg font-black text-white">Ready to hire? Get matched now.</h3>
+            <p className="text-sm text-blue-200 mt-1 leading-relaxed">
+              Every pro is background-checked, licensed, and insured. AI matches you to the right trade for your job in hours.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full md:w-auto">
+            <button
+              onClick={() => navigate("/trustypro/pros")}
+              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: CYAN }}
+            >
+              Browse Pros <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => navigate("/trustypro/waitlist")}
+              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white border border-white/30 hover:bg-white/10 transition-colors"
+            >
+              Join Waitlist
+            </button>
+          </div>
+        </motion.section>
 
         {/* Recently Active Pros */}
         <section>

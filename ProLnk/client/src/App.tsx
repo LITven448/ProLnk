@@ -73,6 +73,7 @@ const AIChatAssistant = lazy(() => import("./pages/AIChatAssistant"));
 const EarningsTracker = lazy(() => import("./pages/EarningsTracker"));
 const WhatsNew = lazy(() => import("./pages/WhatsNew"));
 const PartnerProfileEditor = lazy(() => import("./pages/PartnerProfileEditor"));
+const PartnerVerification = lazy(() => import("./pages/PartnerVerification"));
 const AdminSetup = lazy(() => import("./pages/AdminSetup"));
 const JobHistory = lazy(() => import("./pages/JobHistory"));
 const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));
@@ -475,7 +476,7 @@ const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const HelpCenter = lazy(() => import("./pages/HelpCenter"));
 const APIGuide = lazy(() => import("./pages/APIGuide"));
 
-// Domain-based routing: trustypro.io → /trustypro experience
+// Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
   useEffect(() => {
@@ -494,8 +495,10 @@ function DomainRouter() {
       if (location.startsWith("/waitlist")) return;
       // Allow /trustypro/* paths through
       if (location.startsWith("/trustypro")) return;
-      // trustypro.io root → full TrustyPro site
-      navigate("/trustypro", { replace: true });
+      // trustypro.io root → stay at / (TrustyProHome renders via Router below)
+      if (location === "/" || location === "") return;
+      // Any unmatched trustypro.io path → redirect to root
+      navigate("/", { replace: true });
     }
   }, [location, navigate]);
   return null;
@@ -563,7 +566,9 @@ function Router() {
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
-        <SmoothScrollProvider><Home /></SmoothScrollProvider>
+        <SmoothScrollProvider>
+          {(window as any).__BRAND__ === "trustypro" ? <TrustyProHome /> : <Home />}
+        </SmoothScrollProvider>
       </Route>
       <Route path="/demo" component={Demo} />
       <Route path="/apply" component={Apply} />

@@ -252,7 +252,7 @@ export default function EarningsCalendar() {
             <div className="flex items-center gap-2 mb-2">
               <DollarSign size={15} style={{ color: ACCENT }} />
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-                This Month
+                {isCurrentMonth ? "This Month" : `${MONTHS[viewMonth]} ${viewYear}`}
               </p>
             </div>
             {isLoading ? (
@@ -264,29 +264,47 @@ export default function EarningsCalendar() {
             )}
           </div>
 
-          {isCurrentMonth && (
-            <div
-              className="rounded-2xl p-5"
-              style={{ background: CARD_BG, border: BORDER }}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <TrendingUp size={15} style={{ color: "#22c55e" }} />
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
-                  Projected
-                </p>
-              </div>
-              {isLoading ? (
-                <div className="h-7 w-24 rounded-lg bg-white/5 animate-pulse" />
-              ) : (
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: CARD_BG, border: BORDER }}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <TrendingUp size={15} style={{ color: isCurrentMonth ? "#22c55e" : ACCENT }} />
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                {isCurrentMonth ? "Projected" : "Best Day"}
+              </p>
+            </div>
+            {isLoading ? (
+              <div className="h-7 w-24 rounded-lg bg-white/5 animate-pulse" />
+            ) : isCurrentMonth ? (
+              <>
                 <p className="text-2xl font-bold" style={{ color: "#22c55e" }}>
                   ${projected.toLocaleString()}
                 </p>
-              )}
-              <p className="text-[10px] text-gray-600 mt-1">
-                Based on current pace +5%
-              </p>
-            </div>
-          )}
+                <p className="text-[10px] text-gray-600 mt-1">
+                  Based on current pace +5%
+                </p>
+              </>
+            ) : (
+              <>
+                {(() => {
+                  const bestDay = Array.from(dailyMap.entries()).sort((a, b) => b[1] - a[1])[0];
+                  return bestDay ? (
+                    <>
+                      <p className="text-2xl font-bold" style={{ color: ACCENT }}>
+                        ${Math.round(bestDay[1]).toLocaleString()}
+                      </p>
+                      <p className="text-[10px] text-gray-600 mt-1">
+                        Day {bestDay[0]} of {MONTHS[viewMonth]}
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-2xl font-bold text-gray-600">—</p>
+                  );
+                })()}
+              </>
+            )}
+          </div>
         </div>
 
         {/* Calendar or bar chart */}

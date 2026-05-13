@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
   CheckCircle, Shield, Star, Zap, ChevronDown,
-  Clock, Users, ArrowRight, Lock,
+  Clock, Users, ArrowRight, Lock, Home, BadgeCheck,
 } from "lucide-react";
 
 const SERVICE_OPTIONS = [
@@ -55,6 +55,189 @@ const STEPS = [
   },
 ];
 
+function QuoteSuccessState({
+  serviceType,
+  zipCode,
+  email,
+}: {
+  serviceType: string;
+  zipCode: string;
+  email: string;
+}) {
+  const [matchStep, setMatchStep] = useState(0);
+
+  const matchingSteps = [
+    "Scanning verified pros in your area…",
+    "Checking availability and specializations…",
+    "Matching 3 best-fit pros to your job…",
+    "Pros notified — quotes incoming!",
+  ];
+
+  useEffect(() => {
+    if (matchStep >= matchingSteps.length - 1) return;
+    const timer = setTimeout(() => setMatchStep((s) => s + 1), 900);
+    return () => clearTimeout(timer);
+  }, [matchStep]);
+
+  const trustSignals = [
+    {
+      icon: <BadgeCheck className="w-5 h-5 text-emerald-400" />,
+      title: "Licensed & Insured",
+      desc: "Every pro is verified before they can accept jobs",
+    },
+    {
+      icon: <Shield className="w-5 h-5 text-blue-400" />,
+      title: "Background-Checked",
+      desc: "State and federal checks on every professional",
+    },
+    {
+      icon: <Star className="w-5 h-5 text-amber-400" />,
+      title: "4.9/5 Average Rating",
+      desc: "Based on 10,000+ completed jobs on ProLnk",
+    },
+  ];
+
+  const isDone = matchStep >= matchingSteps.length - 1;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 flex items-center justify-center px-4 py-12">
+      <div className="max-w-lg w-full">
+        {/* Animated check + headline */}
+        <div className="text-center mb-8">
+          <div
+            className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-5 transition-all duration-700 ${
+              isDone
+                ? "bg-green-500/20 border-2 border-green-400/60 scale-110"
+                : "bg-indigo-500/20 border-2 border-indigo-400/40 animate-pulse"
+            }`}
+          >
+            <CheckCircle
+              className={`w-10 h-10 transition-colors duration-700 ${
+                isDone ? "text-green-400" : "text-indigo-400"
+              }`}
+            />
+          </div>
+
+          <h1 className="text-3xl md:text-4xl font-black text-white mb-2">
+            {isDone ? "You're all set!" : "Finding your pros…"}
+          </h1>
+          <p className="text-white/60 text-base">
+            {isDone ? (
+              <>
+                We're matching you with{" "}
+                <span className="text-indigo-300 font-semibold">3 verified pros</span> for{" "}
+                <span className="text-white/80">{serviceType}</span> in ZIP {zipCode}.
+              </>
+            ) : (
+              matchingSteps[matchStep]
+            )}
+          </p>
+        </div>
+
+        {/* Animated matching progress */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-6">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-white/70 text-sm font-medium">Matching progress</span>
+            <span className="text-indigo-300 text-sm font-bold">
+              {Math.round(((matchStep + 1) / matchingSteps.length) * 100)}%
+            </span>
+          </div>
+          <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-indigo-500 to-blue-400 rounded-full transition-all duration-700 ease-out"
+              style={{ width: `${((matchStep + 1) / matchingSteps.length) * 100}%` }}
+            />
+          </div>
+          <div className="mt-4 space-y-2">
+            {matchingSteps.map((step, i) => (
+              <div
+                key={i}
+                className={`flex items-center gap-2.5 transition-opacity duration-500 ${
+                  i <= matchStep ? "opacity-100" : "opacity-25"
+                }`}
+              >
+                <div
+                  className={`w-4 h-4 rounded-full flex-shrink-0 transition-colors duration-500 ${
+                    i < matchStep
+                      ? "bg-green-500"
+                      : i === matchStep
+                      ? "bg-indigo-400 animate-pulse"
+                      : "bg-white/20"
+                  }`}
+                />
+                <span className="text-white/70 text-xs">{step}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline callout */}
+        <div className="flex items-center gap-3 bg-amber-500/10 border border-amber-400/20 rounded-xl px-4 py-3 mb-6">
+          <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
+          <p className="text-amber-200 text-sm">
+            <span className="font-semibold">Expect quotes within 24 hours.</span> We'll notify{" "}
+            <span className="text-amber-100">{email}</span> the moment they arrive.
+          </p>
+        </div>
+
+        {/* Trust signals */}
+        <div className="grid grid-cols-1 gap-3 mb-6">
+          {trustSignals.map((s) => (
+            <div
+              key={s.title}
+              className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-4"
+            >
+              <div className="flex-shrink-0 mt-0.5">{s.icon}</div>
+              <div>
+                <p className="text-white font-semibold text-sm">{s.title}</p>
+                <p className="text-white/50 text-xs mt-0.5">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* While you wait — Scan CTA */}
+        <div className="bg-gradient-to-r from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-2xl p-5 mb-6">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center flex-shrink-0">
+              <Home className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-white font-bold text-sm mb-1">While you wait — scan your home for free</p>
+              <p className="text-white/60 text-xs mb-3 leading-relaxed">
+                Build your Home Health Vault: a digital record of every system, appliance, and repair
+                in your home. Free forever. Helps pros quote faster and more accurately.
+              </p>
+              <a
+                href="/trustypro/scan"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition-colors"
+              >
+                Start free scan <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* CTAs */}
+        <div className="flex flex-col gap-3">
+          <a
+            href="/home-waitlist"
+            className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-colors"
+          >
+            Get full homeowner access <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="/"
+            className="text-center text-white/40 hover:text-white/60 text-sm underline transition-colors"
+          >
+            Back to home
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function GetQuotes() {
   const [serviceType, setServiceType] = useState("");
   const [zipCode, setZipCode] = useState("");
@@ -101,49 +284,7 @@ export default function GetQuotes() {
   };
 
   if (submitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 flex items-center justify-center px-4">
-        <div className="max-w-md w-full text-center">
-          <div className="w-20 h-20 rounded-full bg-green-500/20 border border-green-400/30 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-green-400" />
-          </div>
-          <h1 className="text-3xl font-black text-white mb-3">Request submitted!</h1>
-          <p className="text-white/60 text-lg mb-2">
-            We're matching you with vetted pros for{" "}
-            <span className="text-indigo-300 font-medium">{serviceType}</span> in ZIP{" "}
-            <span className="text-indigo-300 font-medium">{zipCode}</span>.
-          </p>
-          <p className="text-white/40 text-sm mb-8">
-            We'll email <span className="text-white/60">{email}</span> within 24 hours with your quotes.
-          </p>
-
-          <div className="grid grid-cols-3 gap-3 mb-8">
-            {[
-              { icon: <Clock className="w-5 h-5 text-indigo-400" />, label: "24hr quotes" },
-              { icon: <Shield className="w-5 h-5 text-indigo-400" />, label: "Vetted pros" },
-              { icon: <Star className="w-5 h-5 text-indigo-400" />, label: "4.9/5 rating" },
-            ].map((item) => (
-              <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
-                <div className="flex justify-center mb-1">{item.icon}</div>
-                <p className="text-xs text-white/60">{item.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <a
-              href="/home-waitlist"
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-colors"
-            >
-              Get full access — add your home <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="/" className="text-white/40 hover:text-white/60 text-sm underline transition-colors">
-              Back to home
-            </a>
-          </div>
-        </div>
-      </div>
-    );
+    return <QuoteSuccessState serviceType={serviceType} zipCode={zipCode} email={email} />;
   }
 
   return (

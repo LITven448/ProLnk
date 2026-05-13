@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -170,7 +170,7 @@ const CONVERSION_TIPS = [
   { tip: "Highlight the $149/mo locked rate during the waitlist period — it won't stay this low forever." },
 ];
 
-type ConversionStepData = { label: string; count: number; color: string; icon: React.ReactNode };
+type ConversionStepData = { label: string; count: number; color: string; icon: ReactNode };
 
 function RecruitConversionChart({ invited, clicked, signedUp }: { invited: number; clicked: number; signedUp: number }) {
   const max = Math.max(invited, 1);

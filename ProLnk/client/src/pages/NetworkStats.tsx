@@ -318,6 +318,40 @@ export default function NetworkStats() {
           </div>
         </div>
 
+        {/* DFW Coverage Map */}
+        <div className="max-w-6xl mx-auto px-4 mb-16">
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-8 backdrop-blur-sm">
+            <h2 className="text-xl font-bold text-white mb-2">DFW Coverage Map</h2>
+            <p className="text-sm text-slate-400 mb-6">Active partner coverage across the Dallas–Fort Worth Metroplex</p>
+            <div className="relative rounded-xl overflow-hidden border border-slate-700/40" style={{ height: 340 }}>
+              <img
+                src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/pin-l-home+14b8a6(-96.7970,32.7767),pin-l-home+14b8a6(-97.3308,32.7555),pin-l-home+14b8a6(-96.9336,32.8481),pin-l-home+14b8a6(-97.1401,32.7254),pin-l-home+14b8a6(-96.6389,33.0315)/-97.0641,32.7668,9,0/1200x340@2x?access_token=${import.meta.env.VITE_MAPBOX_TOKEN || "pk.PLACEHOLDER"}`}
+                alt="DFW Coverage Map"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                  (e.currentTarget.nextElementSibling as HTMLElement | null)?.removeAttribute("hidden");
+                }}
+              />
+              <div hidden className="absolute inset-0 flex items-center justify-center bg-slate-800">
+                <div className="flex items-center gap-2 text-slate-400">
+                  <MapPin className="w-5 h-5 text-teal-400" />
+                  <span className="text-sm font-medium">Dallas–Fort Worth Metroplex</span>
+                </div>
+              </div>
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                <div className="bg-slate-900/80 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+                  <span className="text-xs font-semibold text-teal-300">5 active zones — DFW Metroplex</span>
+                </div>
+                <div className="bg-slate-900/80 backdrop-blur-sm rounded-lg px-3 py-1.5">
+                  <span className="text-xs font-bold text-slate-300">Expanding to Houston &amp; Austin 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Network perks row */}
         <div className="max-w-6xl mx-auto px-4 mb-16">
           <div className="grid sm:grid-cols-3 gap-4">

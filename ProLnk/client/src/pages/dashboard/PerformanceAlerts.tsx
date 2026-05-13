@@ -1,11 +1,12 @@
 import { useState, type ElementType, type ReactNode } from "react";
+import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
   Clock, CheckCircle, Briefcase, Award, Lightbulb,
   AlertTriangle, TrendingUp, TrendingDown, Minus, ChevronRight,
+  Flame, Users, Zap, ArrowRight, Trophy,
 } from "lucide-react";
-import { Link } from "wouter";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -42,6 +43,20 @@ const TIER_JOB_THRESHOLDS = [
   { label: "Charter", jobs: 700 },
 ];
 
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type AlertSeverity = "red" | "amber" | "green";
+
+interface PerformanceAlert {
+  id: string;
+  severity: AlertSeverity;
+  icon: ElementType;
+  title: string;
+  detail: string;
+  actionLabel?: string;
+  actionHref?: string;
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function trendIcon(value: number, target: number, lowerIsBetter = false) {
@@ -56,6 +71,76 @@ function statusColor(good: boolean, borderline: boolean) {
   if (good) return "#22c55e";
   if (borderline) return "#f59e0b";
   return "#ef4444";
+}
+
+const SEVERITY_PALETTE: Record<AlertSeverity, { bg: string; border: string; icon: string; badge: string }> = {
+  red: {
+    bg: "rgba(239,68,68,0.07)",
+    border: "rgba(239,68,68,0.25)",
+    icon: "#ef4444",
+    badge: "rgba(239,68,68,0.15)",
+  },
+  amber: {
+    bg: "rgba(245,158,11,0.07)",
+    border: "rgba(245,158,11,0.25)",
+    icon: "#f59e0b",
+    badge: "rgba(245,158,11,0.15)",
+  },
+  green: {
+    bg: "rgba(34,197,94,0.07)",
+    border: "rgba(34,197,94,0.25)",
+    icon: "#22c55e",
+    badge: "rgba(34,197,94,0.15)",
+  },
+};
+
+const SEVERITY_LABELS: Record<AlertSeverity, string> = {
+  red: "Urgent",
+  amber: "Heads Up",
+  green: "Nice Work",
+};
+
+// ─── Alert Card ───────────────────────────────────────────────────────────────
+
+function AlertCard({ alert }: { alert: PerformanceAlert }) {
+  const p = SEVERITY_PALETTE[alert.severity];
+  const Icon = alert.icon;
+  return (
+    <div
+      className="flex items-start gap-4 p-4 rounded-xl"
+      style={{ background: p.bg, border: `1px solid ${p.border}` }}
+    >
+      <div
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+        style={{ background: p.badge }}
+      >
+        <Icon size={17} style={{ color: p.icon }} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2 mb-1 flex-wrap">
+          <p className="text-sm font-bold text-white">{alert.title}</p>
+          <span
+            className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+            style={{ background: p.badge, color: p.icon }}
+          >
+            {SEVERITY_LABELS[alert.severity]}
+          </span>
+        </div>
+        <p className="text-xs text-gray-400 leading-relaxed">{alert.detail}</p>
+        {alert.actionLabel && alert.actionHref && (
+          <Link href={alert.actionHref}>
+            <span
+              className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
+              style={{ background: p.badge, color: p.icon, border: `1px solid ${p.border}` }}
+            >
+              <ArrowRight size={12} />
+              {alert.actionLabel}
+            </span>
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 }
 
 // ─── Metric Row ───────────────────────────────────────────────────────────────
@@ -92,6 +177,61 @@ function MetricRow({
         <p className="text-xs text-gray-500 mt-0.5 leading-snug">{detail}</p>
       </div>
       <div className="flex-shrink-0">{trend}</div>
+    </div>
+  );
+}
+
+// ─── Weekly Summary Card ──────────────────────────────────────────────────────
+
+function WeeklySummary({
+  jobs,
+  recruits,
+  commissionEst,
+  tierProgress,
+}: {
+  jobs: number;
+  recruits: number;
+  commissionEst: number;
+  tierProgress: number;
+}) {
+  const stats = [
+    { label: "Jobs This Week", value: jobs.toString(), icon: Briefcase, color: "#22c55e" },
+    { label: "New Recruits", value: recruits.toString(), icon: Users, color: "#3b82f6" },
+    { label: "Est. Commissions", value: `$${commissionEst.toFixed(0)}`, icon: Zap, color: "#F5E642" },
+    { label: "Tier Progress", value: `${tierProgress}%`, icon: Trophy, color: "#f59e0b" },
+  ];
+  return (
+    <div
+      className="rounded-2xl p-5"
+      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className="flex items-center gap-2.5 mb-4">
+        <div
+          className="w-8 h-8 rounded-xl flex items-center justify-center"
+          style={{ background: "rgba(245,230,66,0.12)" }}
+        >
+          <TrendingUp size={16} style={{ color: "#F5E642" }} />
+        </div>
+        <div>
+          <p className="text-sm font-bold text-white">Weekly Performance</p>
+          <p className="text-xs text-gray-500">This week at a glance</p>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        {stats.map(({ label, value, icon: Icon, color }) => (
+          <div
+            key={label}
+            className="rounded-xl p-3.5"
+            style={{ background: `${color}0d`, border: `1px solid ${color}22` }}
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <Icon size={13} style={{ color }} />
+              <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color }}>{label}</p>
+            </div>
+            <p className="text-xl font-bold text-white">{value}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -133,16 +273,59 @@ export default function PerformanceAlerts() {
 
   const jobsUp = jobsThisMonth >= jobsLastMonth;
 
+  const ALERTS: PerformanceAlert[] = [
+    {
+      id: "lead-expiry",
+      severity: "red",
+      icon: Flame,
+      title: "Lead expires in 4 hours",
+      detail: "A homeowner in your area (HVAC service, $800–$1,200 est.) has not received a response. If unclaimed it will be reassigned to the next pro in queue.",
+      actionLabel: "View Lead Now",
+      actionHref: "/leads",
+    },
+    {
+      id: "tier-upgrade",
+      severity: "amber",
+      icon: Award,
+      title: "You're 2 jobs away from Tier 3 (35% keep rate)",
+      detail: "Log 2 more completed jobs this month to unlock Level 3 status. That's a 15 percentage-point jump in your keep rate — worth ~$150/mo at current volume.",
+      actionLabel: "Log a Job",
+      actionHref: "/job-log",
+    },
+    {
+      id: "network-momentum",
+      severity: "green",
+      icon: Users,
+      title: "3 new recruits this week — network momentum high",
+      detail: "Your referral link has converted 3 new Founding Partners this week. Combined L1 override earnings are projected at $126/mo once they start logging jobs.",
+      actionLabel: "View My Network",
+      actionHref: "/network",
+    },
+  ];
+
+  const urgentCount = ALERTS.filter(a => a.severity === "red").length;
+
   return (
     <div className="min-h-screen" style={{ background: "#0A1628" }}>
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
 
         {/* Header */}
-        <div>
-          <h1 className="text-2xl font-bold text-white">Performance Alerts</h1>
-          <p className="text-gray-400 text-sm mt-1">
-            Your key metrics and what to act on this month.
-          </p>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h1 className="text-2xl font-bold text-white">Performance Alerts</h1>
+            <p className="text-gray-400 text-sm mt-1">
+              Your key metrics and what to act on this month.
+            </p>
+          </div>
+          {urgentCount > 0 && (
+            <div
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold"
+              style={{ background: "rgba(239,68,68,0.15)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.3)" }}
+            >
+              <AlertTriangle size={12} />
+              {urgentCount} urgent {urgentCount === 1 ? "alert" : "alerts"}
+            </div>
+          )}
         </div>
 
         {/* Alert banner — only if anything is off-target */}
@@ -160,6 +343,25 @@ export default function PerformanceAlerts() {
             </p>
           </div>
         )}
+
+        {/* Active Alerts */}
+        <div
+          className="rounded-2xl p-5 space-y-3"
+          style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Active Alerts</p>
+          {ALERTS.map((alert) => (
+            <AlertCard key={alert.id} alert={alert} />
+          ))}
+        </div>
+
+        {/* Weekly Summary */}
+        <WeeklySummary
+          jobs={jobsThisMonth}
+          recruits={3}
+          commissionEst={126}
+          tierProgress={Math.min(100, nextTierEntry ? Math.round((jobsThisMonth / nextTierEntry.jobs) * 100) : 100)}
+        />
 
         {/* Metrics */}
         <div

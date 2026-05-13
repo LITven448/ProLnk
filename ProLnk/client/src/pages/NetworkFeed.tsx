@@ -1,3 +1,4 @@
+import { useMemo, type ReactNode } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Activity, Send, CheckCircle, DollarSign, TrendingUp, Star, Zap, Clock, Users, Trophy } from "lucide-react";
@@ -65,7 +66,7 @@ function buildFeed(
   return items.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
 }
 
-const FEED_ICONS: Record<FeedItem["type"], { icon: React.ReactNode; bg: string; text: string }> = {
+const FEED_ICONS: Record<FeedItem["type"], { icon: ReactNode; bg: string; text: string }> = {
   lead_sent: { icon: <Send className="w-4 h-4" />, bg: "bg-blue-50", text: "text-blue-600" },
   lead_accepted: { icon: <CheckCircle className="w-4 h-4" />, bg: "bg-[#F5E642]/10", text: "text-[#0A1628]" },
   job_closed: { icon: <TrendingUp className="w-4 h-4" />, bg: "bg-green-50", text: "text-green-600" },
@@ -144,12 +145,12 @@ export default function NetworkFeed() {
 
   const isLoading = l1 || l2 || l3;
 
-  const feed = React.useMemo(
+  const feed = useMemo(
     () => buildFeed(outbound ?? [], inbound ?? [], commissions ?? []),
     [outbound, inbound, commissions]
   );
 
-  const glance = React.useMemo(() => {
+  const glance = useMemo(() => {
     const allComms = commissions ?? [];
     const now = new Date();
     const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);

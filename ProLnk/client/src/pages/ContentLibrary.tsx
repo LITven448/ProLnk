@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ElementType } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +22,7 @@ interface Asset {
   updated: string;
 }
 
-const FORMAT_ICONS: Record<AssetFormat, React.ElementType> = {
+const FORMAT_ICONS: Record<AssetFormat, ElementType> = {
   PDF: FileText,
   PNG: Image,
   DOCX: FileText,

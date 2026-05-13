@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useLocation } from "wouter";
 import {
   Check,
@@ -134,7 +134,7 @@ function ProgressBar({ step }: { step: number }) {
   );
 }
 
-function FieldLabel({ children, required }: { children: React.ReactNode; required?: boolean }) {
+function FieldLabel({ children, required }: { children: ReactNode; required?: boolean }) {
   return (
     <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: "#9ca3af" }}>
       {children} {required && <span style={{ color: "#F5E642" }}>*</span>}

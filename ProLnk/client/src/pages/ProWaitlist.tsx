@@ -1261,12 +1261,12 @@ export default function ProWaitlist() {
             ))}
           </div>
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/trustypro/waitlist">
+            <a href="https://trustypro.io">
               <Button variant="ghost" className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowners
               </Button>
-            </Link>
+            </a>
             
             <Button onClick={openWaitlist} className="text-sm font-semibold text-white rounded-none px-5" style={{ backgroundColor: "#0A1628" }}>
               Join Waitlist
@@ -1289,12 +1289,12 @@ export default function ProWaitlist() {
                 <Button className="w-full text-sm text-white rounded-none font-semibold" style={{ backgroundColor: "#0A1628" }}>Apply Now</Button>
               </span>
             </div>
-            <Link href="/trustypro/waitlist" className="block">
+            <a href="https://trustypro.io" className="block">
               <Button variant="ghost" className="w-full text-sm text-blue-600 flex items-center justify-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 TrustyPro — Homeowner Waitlist
               </Button>
-            </Link>
+            </a>
 
           </div>
         )}

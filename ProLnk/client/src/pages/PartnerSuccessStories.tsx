@@ -1,5 +1,5 @@
-import { useState, type FormEvent } from "react";
-import { Award, ArrowRight, Send, CheckCircle } from "lucide-react";
+import React, { useState, type FormEvent } from "react";
+import { Award, ArrowRight, Send, CheckCircle, Play, TrendingUp, Users, DollarSign } from "lucide-react";
 
 interface Story {
   name: string;
@@ -12,6 +12,21 @@ interface Story {
   stats: { label: string; value: string }[];
   tags: string[];
 }
+
+const FEATURED_STORY = {
+  name: "Carlos M.",
+  trade: "HVAC",
+  location: "Dallas, TX",
+  tier: "Company",
+  avatar: "CM",
+  headline: "How Carlos M. earned $8,400 passive income by recruiting 12 HVAC techs",
+  body: "I spent 11 years doing HVAC solo. Good money, but every dollar required me on a job site. When a buddy told me about ProLnk's network income, I didn't believe you could build real passive income in the trades — not without a franchise. I was wrong. I started by joining as a Company-tier partner and closed 8 matched jobs in the first month. Then I started talking to the other HVAC guys I knew. Within 6 months, 12 of them were active on ProLnk. Now every time one of my Level-1 techs closes a $3,000 job, I earn $90 automatically. Multiply that by 12 techs doing 4–6 jobs a month each and the math gets stupid fast. Last quarter I collected $8,400 in network overrides — while I was on vacation in Cabo.",
+  keyNumbers: [
+    { icon: "users", label: "Active Level-1 recruits", value: "12" },
+    { icon: "dollar", label: "Network overrides (last quarter)", value: "$8,400" },
+    { icon: "trend", label: "Direct commission rate (Company tier)", value: "25%" },
+  ],
+};
 
 const STORIES: Story[] = [
   {
@@ -82,6 +97,40 @@ const STORIES: Story[] = [
     ],
     tags: ["Seasonal Coverage", "Consistent Leads", "Crew Tier"],
   },
+  {
+    name: "James O.",
+    trade: "Plumbing",
+    location: "Irving, TX",
+    tier: "Pro",
+    avatar: "JO",
+    headline: "From solo plumber to $2,100/mo override income in 6 months",
+    quote:
+      "I tried Angi for a year. Paid $400 a month for leads that ghosted me half the time. Week one on ProLnk I closed two jobs from matched homeowners who had already confirmed they needed the work done. I canceled Angi before my next billing cycle. Six months later, three plumbers I referred are active on the platform and I'm clearing $2,100 a month in overrides on top of my regular work.",
+    stats: [
+      { label: "Months to $2,100/mo override", value: "6" },
+      { label: "Active referral network", value: "3 plumbers" },
+      { label: "Previous lead platform cost", value: "$400/mo" },
+      { label: "Week-1 close rate", value: "2/2 leads" },
+    ],
+    tags: ["Abandoned Angi", "Referral Override", "Pro Tier"],
+  },
+  {
+    name: "Derek W.",
+    trade: "General Contractor",
+    location: "Frisco, TX",
+    tier: "Company",
+    avatar: "DW",
+    headline: "My network grew to 47 contractors — here's how",
+    quote:
+      "I've been a GC for 19 years. I know everybody in the trades in north DFW. When I joined ProLnk as a Company-tier partner, I didn't just think about my own jobs — I started thinking like a network builder. I personally invited plumbers, electricians, roofers, HVAC techs, painters. I gave them the same pitch I got: better leads, guaranteed commission, passive income from your own recruits. 47 active contractors later, I get override income from four levels of my network. It's not MLM — it's just smart distribution.",
+    stats: [
+      { label: "Active network contractors", value: "47" },
+      { label: "Network levels earning overrides", value: "4" },
+      { label: "Trades represented in network", value: "8" },
+      { label: "Monthly override income", value: "$3,800+" },
+    ],
+    tags: ["Network Builder", "Multi-trade", "4-Level Cascade"],
+  },
 ];
 
 const TIER_COLORS: Record<string, string> = {
@@ -101,6 +150,12 @@ export default function PartnerSuccessStories() {
     setSubmitted(true);
   }
 
+  const iconMap: Record<string, React.ReactNode> = {
+    users: <Users className="h-5 w-5 text-teal-400" />,
+    dollar: <DollarSign className="h-5 w-5 text-teal-400" />,
+    trend: <TrendingUp className="h-5 w-5 text-teal-400" />,
+  };
+
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="container max-w-4xl mx-auto px-4 py-10 space-y-10">
@@ -114,6 +169,66 @@ export default function PartnerSuccessStories() {
           <p className="text-slate-400 mt-1">
             Real results from ProLnk Founding Network partners in the DFW market.
           </p>
+        </div>
+
+        {/* Featured Story */}
+        <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-950/60 to-slate-800/60 overflow-hidden">
+          <div className="p-6 border-b border-teal-500/20">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xs font-semibold uppercase tracking-widest text-teal-400 bg-teal-500/10 border border-teal-500/20 px-2.5 py-0.5 rounded-full">
+                Featured Story
+              </span>
+            </div>
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-400 to-teal-700 flex items-center justify-center text-white font-bold text-base shrink-0">
+                {FEATURED_STORY.avatar}
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <span className="text-white font-semibold text-lg">{FEATURED_STORY.name}</span>
+                  <span className="text-slate-500 text-sm">{FEATURED_STORY.trade} · {FEATURED_STORY.location}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${TIER_COLORS[FEATURED_STORY.tier] ?? ""}`}>
+                    {FEATURED_STORY.tier}
+                  </span>
+                </div>
+                <p className="text-teal-300 font-semibold">{FEATURED_STORY.headline}</p>
+              </div>
+            </div>
+            <p className="text-slate-300 text-sm leading-relaxed">{FEATURED_STORY.body}</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-teal-500/20">
+            {FEATURED_STORY.keyNumbers.map((kn) => (
+              <div key={kn.label} className="p-5 flex flex-col items-center text-center gap-1">
+                {iconMap[kn.icon]}
+                <div className="text-2xl font-bold text-white mt-1">{kn.value}</div>
+                <div className="text-xs text-slate-500 leading-snug">{kn.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Video Testimonial Placeholder */}
+        <div className="rounded-2xl border border-slate-700 bg-slate-800/40 overflow-hidden">
+          <div className="p-5 border-b border-slate-700/60">
+            <h2 className="text-white font-semibold text-base">Watch: Carlos explains the override model in 90 seconds</h2>
+            <p className="text-slate-500 text-sm mt-0.5">Video testimonial — DFW Founding Network Partner</p>
+          </div>
+          <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-teal-950/30 to-slate-900 flex items-center justify-center cursor-pointer group">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYgMzBMMjYgMjR2MTJ6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9nPjwvc3ZnPg==')] opacity-30" />
+            <div className="relative z-10 flex flex-col items-center gap-3">
+              <div className="w-16 h-16 rounded-full bg-teal-500/90 group-hover:bg-teal-400/90 transition-colors flex items-center justify-center shadow-xl shadow-teal-900/50">
+                <Play className="h-7 w-7 text-white fill-white ml-1" />
+              </div>
+              <span className="text-slate-400 text-sm group-hover:text-white transition-colors">Video testimonial coming soon</span>
+            </div>
+            <div className="absolute bottom-4 left-4 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-700 flex items-center justify-center text-white font-bold text-xs">CM</div>
+              <div>
+                <p className="text-white text-xs font-medium">Carlos M.</p>
+                <p className="text-slate-500 text-xs">HVAC · Dallas, TX</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Stories */}

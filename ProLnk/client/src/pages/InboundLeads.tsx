@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "wouter";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Badge } from "@/components/ui/badge";
@@ -135,7 +135,7 @@ export default function InboundLeads() {
   const [declineDialog, setDeclineDialog] = useState<{ id: number } | null>(null);
   const [declineReason, setDeclineReason] = useState("");
   const [acceptedConfirmations, setAcceptedConfirmations] = useState<Set<number>>(new Set());
-  const navigate = useNavigate();
+  const [, navigate] = useLocation();
   const utils = trpc.useUtils();
 
   const { data: leads = [], isLoading, refetch } = trpc.partners.getInboundOpportunities.useQuery(undefined, {

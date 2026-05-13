@@ -22,6 +22,7 @@ import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
 import JoinLanding from "./pages/JoinLanding";
 import ReferralLanding from "./pages/ReferralLanding";
 const GetQuotes = lazy(() => import("./pages/GetQuotes"));
+const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
 const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
@@ -559,6 +560,7 @@ function Router() {
       <Route path="/checkout" component={PartnerCheckout} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
       <Route path="/get-quotes" component={GetQuotes} />
+      <Route path="/quotes/compare" component={QuoteComparison} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />

@@ -469,6 +469,8 @@ const PerformanceMonitoring = lazy(() => import("./pages/admin/PerformanceMonito
 const Documentation = lazy(() => import("./pages/Documentation"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
+const HelpCenter = lazy(() => import("./pages/HelpCenter"));
+const APIGuide = lazy(() => import("./pages/APIGuide"));
 
 // Domain-based routing: trustypro.io → /trustypro experience
 function DomainRouter() {
@@ -982,6 +984,8 @@ function Router() {
       <Route path="/admin/performance" component={PerformanceMonitoring} />
 
       {/* Content & Marketing */}
+      <Route path="/help" component={HelpCenter} />
+      <Route path="/api-guide" component={APIGuide} />
       <Route path="/faq" component={FAQ} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/blog" component={Blog} />

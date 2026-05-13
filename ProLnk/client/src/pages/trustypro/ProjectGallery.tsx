@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Search, Star, MapPin, X, Plus, Loader2, Upload } from "lucide-react";
+import { Search, Star, MapPin, X, Plus, Loader2, ChevronRight } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
 
@@ -182,6 +182,14 @@ function BeforeAfterCard({ project, onClick }: { project: Project; onClick: () =
           )}
         </div>
         {project.businessName && <p className="text-xs text-gray-400 mt-1">by {project.businessName}</p>}
+        <button
+          className="mt-3 w-full flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
+          style={{ background: "rgba(5,150,105,0.1)", border: "1px solid rgba(5,150,105,0.3)", color: "#059669" }}
+          onClick={(e) => { e.stopPropagation(); window.location.href = `/trustypro/scan?trade=${encodeURIComponent(project.category)}`; }}
+        >
+          Request Similar Work
+          <ChevronRight size={12} />
+        </button>
       </div>
     </div>
   );
@@ -389,12 +397,20 @@ export default function ProjectGallery() {
               {selectedProject.description && (
                 <p className="text-sm text-gray-600 leading-relaxed">{selectedProject.description}</p>
               )}
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex gap-3 flex-wrap">
                 {selectedProject.category && (
                   <Badge className="bg-gray-100 text-gray-700 border-0">{selectedProject.category}</Badge>
                 )}
                 <Badge className="bg-emerald-50 text-emerald-700 border-0">TrustyPro Verified</Badge>
               </div>
+              <button
+                className="mt-5 w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-90"
+                style={{ background: "#059669", color: "#fff" }}
+                onClick={() => { window.location.href = `/trustypro/scan?trade=${encodeURIComponent(selectedProject.category)}`; }}
+              >
+                Request Similar Work
+                <ChevronRight size={14} />
+              </button>
             </div>
           </div>
         </div>

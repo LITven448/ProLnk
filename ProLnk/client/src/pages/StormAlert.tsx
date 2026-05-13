@@ -1,6 +1,7 @@
+import type React from "react";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
-import { CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp, Thermometer, Wind, Droplets } from "lucide-react";
+import { CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp, Thermometer, Wind, Droplets, Wrench, Waves, TreePine, CheckCircle2, History, Settings } from "lucide-react";
 
 interface ForecastHour {
   time: string;
@@ -70,6 +71,62 @@ const PRO_BENEFITS = [
   },
 ];
 
+interface StormOpportunity {
+  type: string;
+  icon: React.ReactNode;
+  estimatedJobs: number;
+  avgJobValue: string;
+  urgency: "Extreme" | "High" | "Medium";
+  description: string;
+}
+
+const STORM_OPPORTUNITIES: StormOpportunity[] = [
+  {
+    type: "Roof Repair & Replacement",
+    icon: <Home className="w-5 h-5 text-amber-400" />,
+    estimatedJobs: 340,
+    avgJobValue: "$4,200",
+    urgency: "Extreme",
+    description: "Hail > 1\" diameter reported across Dallas County. High density of unprotected tile roofs in affected zip codes.",
+  },
+  {
+    type: "Water Damage Mitigation",
+    icon: <Waves className="w-5 h-5 text-blue-400" />,
+    estimatedJobs: 180,
+    avgJobValue: "$2,800",
+    urgency: "High",
+    description: "Flash flood watch for Collin County. Properties in low-lying areas with documented drainage issues flagged.",
+  },
+  {
+    type: "HVAC Emergency Service",
+    icon: <Wrench className="w-5 h-5 text-red-400" />,
+    estimatedJobs: 120,
+    avgJobValue: "$1,100",
+    urgency: "High",
+    description: "High wind warning — outdoor condenser units at risk. Pro queue opens when storm passes.",
+  },
+  {
+    type: "Tree & Debris Removal",
+    icon: <TreePine className="w-5 h-5 text-green-400" />,
+    estimatedJobs: 95,
+    avgJobValue: "$850",
+    urgency: "Medium",
+    description: "Storm-force winds expected to down significant tree canopy across Tarrant County suburbs.",
+  },
+];
+
+const URGENCY_BADGE: Record<string, string> = {
+  Extreme: "bg-red-500/20 text-red-300 border border-red-500/30",
+  High: "bg-amber-500/20 text-amber-300 border border-amber-500/30",
+  Medium: "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30",
+};
+
+const HISTORICAL_STORMS = [
+  { name: "May 8 Supercell — DFW", date: "May 8, 2026", leads: 412, trades: "Roofing, HVAC, Water Damage" },
+  { name: "April 23 Hail Event — Tarrant Co.", date: "Apr 23, 2026", leads: 287, trades: "Roofing, Windows" },
+  { name: "April 11 Flash Flood — Collin Co.", date: "Apr 11, 2026", leads: 156, trades: "Water Damage, Foundation" },
+];
+
 const HOW_IT_WORKS = [
   {
     icon: <CloudLightning className="w-6 h-6 text-amber-400" />,
@@ -87,6 +144,49 @@ const HOW_IT_WORKS = [
     desc: "ProLnk partners in the affected area receive emergency lead notifications within minutes — ranked by urgency, pre-qualified, and ready to act.",
   },
 ];
+
+function StormOpportunityCard({ opp }: { opp: StormOpportunity }) {
+  const [expressed, setExpressed] = useState(false);
+  return (
+    <div className="bg-white/5 border border-white/10 hover:border-white/20 rounded-2xl p-5 transition-colors">
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
+            {opp.icon}
+          </div>
+          <p className="text-sm font-bold text-white leading-tight">{opp.type}</p>
+        </div>
+        <span className={`text-[10px] font-bold px-2 py-1 rounded-full flex-shrink-0 uppercase tracking-wide ${URGENCY_BADGE[opp.urgency]}`}>
+          {opp.urgency}
+        </span>
+      </div>
+      <p className="text-xs text-gray-400 leading-relaxed mb-4">{opp.description}</p>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex gap-4">
+          <div>
+            <p className="text-lg font-bold text-white">{opp.estimatedJobs}</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">est. jobs</p>
+          </div>
+          <div>
+            <p className="text-lg font-bold text-amber-400">{opp.avgJobValue}</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">avg value</p>
+          </div>
+        </div>
+        <button
+          onClick={() => setExpressed(true)}
+          disabled={expressed}
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all flex-shrink-0 ${
+            expressed
+              ? "bg-green-500/20 text-green-400 border border-green-500/30 cursor-default"
+              : "bg-amber-500 hover:bg-amber-400 text-black"
+          }`}
+        >
+          {expressed ? <><CheckCircle2 className="w-3.5 h-3.5" /> Interested</> : "Express Interest"}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function DFWWeatherWidget() {
   const { data, loading } = useDFWWeather();
@@ -225,6 +325,46 @@ export default function StormAlert() {
           <p className="text-xs text-gray-600 pt-1">Sample data for illustration. Live alerts sourced from <span className="text-gray-500">api.weather.gov</span>.</p>
         </div>
 
+        {/* Storm Lead Opportunity Cards */}
+        <div className="mb-14">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Storm Lead Opportunities — Active Window</p>
+            <span className="text-xs text-amber-400 font-medium">4 opportunity types detected</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {STORM_OPPORTUNITIES.map((opp, i) => (
+              <StormOpportunityCard key={i} opp={opp} />
+            ))}
+          </div>
+          <p className="text-xs text-gray-600 mt-3">Job estimates are AI projections based on storm severity and affected property count. Actual volume may vary.</p>
+        </div>
+
+        {/* Historical Storm Stats */}
+        <div className="mb-14">
+          <div className="flex items-center gap-2 mb-4">
+            <History className="w-4 h-4 text-gray-500" />
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Recent Storm Events — Lead History</p>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+            {HISTORICAL_STORMS.map((storm, i) => (
+              <div key={i} className={`flex items-center justify-between px-5 py-4 gap-4 ${i < HISTORICAL_STORMS.length - 1 ? "border-b border-white/5" : ""}`}>
+                <div>
+                  <p className="text-sm font-semibold text-white">{storm.name}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{storm.date} · {storm.trades}</p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <p className="text-lg font-bold text-amber-400">{storm.leads.toLocaleString()}</p>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-wide">leads generated</p>
+                </div>
+              </div>
+            ))}
+            <div className="px-5 py-3 bg-white/5 border-t border-white/10 flex items-center justify-between">
+              <span className="text-xs text-gray-400">Last 3 storms generated a combined <span className="text-white font-semibold">855 leads</span> across DFW</span>
+              <span className="text-xs text-amber-400 font-medium">avg $2,720 per job</span>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Banner */}
         <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/10 border border-amber-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-16">
           <div className="flex items-start gap-3">
@@ -300,8 +440,26 @@ export default function StormAlert() {
           </div>
         </div>
 
+        {/* Notification Preferences CTA */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div className="flex items-start gap-3">
+            <Settings className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="text-sm font-bold text-white">Already a ProLnk partner?</p>
+              <p className="text-xs text-gray-400 mt-0.5">Manage your storm alert preferences — SMS, email, and quiet hours in your notification settings.</p>
+            </div>
+          </div>
+          <button
+            onClick={() => navigate("/dashboard/notification-preferences")}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors flex-shrink-0 whitespace-nowrap"
+          >
+            <Bell className="w-3.5 h-3.5" />
+            Notification Settings
+          </button>
+        </div>
+
         {/* Footer CTA */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">ProLnk — Storm-responsive home service network</p>
           <div className="flex items-center gap-3">
             <button onClick={() => navigate("/")} className="text-sm text-gray-400 hover:text-white transition-colors">Home</button>

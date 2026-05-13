@@ -1,5 +1,38 @@
 import { useLocation } from "wouter";
-import { CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp } from "lucide-react";
+import { useEffect, useState } from "react";
+import { CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp, Thermometer, Wind, Droplets } from "lucide-react";
+
+interface ForecastHour {
+  time: string;
+  temp: number;
+  precipitationProbability: number;
+  windSpeed: number;
+}
+
+interface WeatherData {
+  forecast: ForecastHour[];
+  alerts: { type: string; severity: string; startTime: string; endTime: string; location: string }[];
+}
+
+function useDFWWeather() {
+  const [data, setData] = useState<WeatherData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/trpc/stormAgent.getWeatherForecast", {
+      credentials: "include",
+    })
+      .then(r => r.json())
+      .then(json => {
+        const result = json?.result?.data;
+        if (result) setData(result);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  return { data, loading };
+}
 
 const ACTIVE_ALERTS = [
   { type: "Severe Thunderstorm Watch", area: "Dallas County, TX", severity: "Severe", issued: "May 11, 2026 · 2:30 PM CDT" },
@@ -55,6 +88,74 @@ const HOW_IT_WORKS = [
   },
 ];
 
+function DFWWeatherWidget() {
+  const { data, loading } = useDFWWeather();
+
+  if (loading) {
+    return (
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-10 animate-pulse">
+        <div className="h-4 bg-white/10 rounded w-48 mb-3" />
+        <div className="flex gap-3">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="flex-1 bg-white/10 rounded-xl h-20" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  const hours = data?.forecast?.slice(0, 8) ?? [];
+  const liveAlerts = data?.alerts ?? [];
+
+  if (hours.length === 0 && liveAlerts.length === 0) return null;
+
+  return (
+    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-10">
+      <div className="flex items-center justify-between mb-4">
+        <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">Current DFW Weather — Live</p>
+        <span className="text-xs text-gray-500">Powered by Tomorrow.io</span>
+      </div>
+
+      {liveAlerts.length > 0 && (
+        <div className="space-y-2 mb-4">
+          {liveAlerts.map((a, i) => (
+            <div key={i} className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-lg px-3 py-2">
+              <AlertTriangle className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+              <span className="text-xs font-semibold text-red-300">{a.type}</span>
+              <span className="text-xs text-gray-400">· {a.location}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {hours.length > 0 && (
+        <div className="flex gap-2 overflow-x-auto pb-1">
+          {hours.map((h, i) => {
+            const label = new Date(h.time).toLocaleTimeString("en-US", { hour: "numeric", hour12: true });
+            return (
+              <div key={i} className="flex-shrink-0 flex flex-col items-center gap-1 bg-white/5 rounded-xl px-3 py-3 min-w-[64px]">
+                <span className="text-[10px] text-gray-400 font-medium">{label}</span>
+                <div className="flex items-center gap-0.5">
+                  <Thermometer className="w-3 h-3 text-amber-400" />
+                  <span className="text-sm font-bold text-white">{h.temp}°</span>
+                </div>
+                <div className="flex items-center gap-0.5">
+                  <Droplets className="w-3 h-3 text-blue-400" />
+                  <span className="text-[10px] text-gray-400">{h.precipitationProbability}%</span>
+                </div>
+                <div className="flex items-center gap-0.5">
+                  <Wind className="w-3 h-3 text-gray-400" />
+                  <span className="text-[10px] text-gray-400">{h.windSpeed}mph</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function StormAlert() {
   const [, navigate] = useLocation();
 
@@ -95,6 +196,9 @@ export default function StormAlert() {
         <p className="text-gray-400 text-base leading-relaxed max-w-2xl mb-10">
           ProLnk monitors NOAA severe weather data in real time across all active service territories. When storms hit, our AI instantly surfaces affected homes and routes emergency leads to approved service professionals — so pros can respond in minutes, not days.
         </p>
+
+        {/* Live Tomorrow.io weather widget */}
+        <DFWWeatherWidget />
 
         {/* Active alerts */}
         <div className="space-y-3 mb-12">

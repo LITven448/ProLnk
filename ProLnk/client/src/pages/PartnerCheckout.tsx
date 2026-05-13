@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
-import { CheckCircle, Zap, Shield, TrendingUp, Clock, Star } from "lucide-react";
+import { CheckCircle, Zap, Shield, TrendingUp, Clock, Star, Users, Camera, Network, CreditCard } from "lucide-react";
 
 const BENEFITS = [
   { icon: TrendingUp, title: "72% Commission Keep Rate", desc: "The highest rate on the platform — locked forever at this tier." },
@@ -9,8 +9,17 @@ const BENEFITS = [
   { icon: Clock, title: "90-Day Free Trial", desc: "Zero cost for 90 days. Full access from day one. Then $149/mo locked for life." },
   { icon: Shield, title: "1.5% Origination Rights", desc: "Earn a perpetual 1.5% on every job at every home you document — forever." },
   { icon: Star, title: "AI-Driven Lead Generation", desc: "Our AI scans your job photos across 65+ categories to generate cross-trade referral leads automatically." },
-  { icon: CheckCircle, title: "$149/mo Locked Forever", desc: "This rate never increases. Future partners will pay more. You won\'t." },
+  { icon: CheckCircle, title: "$149/mo Locked Forever", desc: "This rate never increases. Future partners will pay more. You won't." },
 ];
+
+const NEXT_STEPS = [
+  { icon: Users, day: "Day 1", title: "Access your partner dashboard", desc: "Your account is live. See your referral link, commission tracker, and network map." },
+  { icon: Camera, day: "Day 1", title: "Start uploading job photos", desc: "Each photo you tag unlocks AI analysis — turning your work history into a lead engine." },
+  { icon: Network, day: "Day 30", title: "Your referral network starts earning overrides", desc: "When the pros you recruit complete jobs, your 4-level override cascade starts paying automatically." },
+  { icon: CreditCard, day: "Day 90", title: "First billing day — cancel anytime before", desc: "$149/mo begins. No surprise fees. Cancel before day 90 and you owe nothing." },
+];
+
+const SOCIAL_AVATARS = ["AJ", "MR", "TC", "KL", "DB", "SN", "PW", "JH", "EM", "RG"];
 
 export default function PartnerCheckout() {
   const [email, setEmail] = useState("");
@@ -39,6 +48,18 @@ export default function PartnerCheckout() {
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "60px 24px", display: "grid", gridTemplateColumns: "1fr 420px", gap: 64, alignItems: "start" }}>
         {/* Left: benefits */}
         <div>
+          {/* Social proof bar */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 100, padding: "8px 16px", width: "fit-content" }}>
+            <div style={{ display: "flex" }}>
+              {SOCIAL_AVATARS.map((initials, i) => (
+                <div key={initials} style={{ width: 24, height: 24, borderRadius: "50%", background: `hsl(${i * 36}, 60%, 40%)`, border: "2px solid #0A1628", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, fontWeight: 700, marginLeft: i === 0 ? 0 : -8, zIndex: SOCIAL_AVATARS.length - i }}>
+                  {initials}
+                </div>
+              ))}
+            </div>
+            <span style={{ fontSize: 13, color: "#10B981", fontWeight: 600 }}>10 pros already on the founding network</span>
+          </div>
+
           <div style={{ display: "inline-block", border: "1px solid rgba(232,160,32,0.4)", borderRadius: 100, padding: "4px 16px", fontSize: 11, letterSpacing: "0.12em", color: "#E8A020", textTransform: "uppercase", marginBottom: 24 }}>
             ✦ Founding Network — Limited Spots
           </div>
@@ -47,10 +68,12 @@ export default function PartnerCheckout() {
             <span style={{ color: "#E8A020" }}>Lock your rate forever.</span>
           </h1>
           <p style={{ color: "rgba(245,240,232,0.65)", fontSize: 18, lineHeight: 1.6, marginBottom: 48 }}>
-            The first 2,125 approved professionals lock in $149/mo forever — regardless of future price increases. 
+            The first 2,125 approved professionals lock in $149/mo forever — regardless of future price increases.
             90 days free, then billing begins. Cancel anytime.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+
+          {/* 6 founding benefits */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 64 }}>
             {BENEFITS.map(({ icon: Icon, title, desc }) => (
               <div key={title} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "20px 18px" }}>
                 <Icon style={{ width: 20, height: 20, color: "#E8A020", marginBottom: 10 }} />
@@ -59,13 +82,43 @@ export default function PartnerCheckout() {
               </div>
             ))}
           </div>
+
+          {/* What happens next */}
+          <div>
+            <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 24 }}>What happens next</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {NEXT_STEPS.map(({ icon: Icon, day, title, desc }, idx) => (
+                <div key={day + title} style={{ display: "flex", gap: 20, position: "relative", paddingBottom: idx < NEXT_STEPS.length - 1 ? 32 : 0 }}>
+                  {/* Timeline line */}
+                  {idx < NEXT_STEPS.length - 1 && (
+                    <div style={{ position: "absolute", left: 19, top: 40, width: 2, bottom: 0, background: "rgba(255,255,255,0.07)" }} />
+                  )}
+                  {/* Icon circle */}
+                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "rgba(232,160,32,0.12)", border: "1px solid rgba(232,160,32,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Icon style={{ width: 18, height: 18, color: "#E8A020" }} />
+                  </div>
+                  <div style={{ paddingTop: 8 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#E8A020", marginBottom: 4 }}>{day}</div>
+                    <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{title}</div>
+                    <div style={{ fontSize: 13, color: "rgba(245,240,232,0.5)", lineHeight: 1.5 }}>{desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Right: checkout form */}
         <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 24, padding: "40px 32px", position: "sticky", top: 24 }}>
+          {/* Trial countdown callout */}
+          <div style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 12, padding: "14px 16px", marginBottom: 28, textAlign: "center" }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: "#10B981", marginBottom: 2 }}>90 days free, then $149/mo locked forever</div>
+            <div style={{ fontSize: 12, color: "rgba(245,240,232,0.45)" }}>No charge today. Cancel before day 90 — owe nothing.</div>
+          </div>
+
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div style={{ fontSize: 48, fontWeight: 900, color: "#E8A020" }}>$149<span style={{ fontSize: 18, color: "rgba(245,240,232,0.5)" }}>/mo</span></div>
-            <div style={{ fontSize: 14, color: "rgba(245,240,232,0.5)", marginTop: 4 }}>after 90-day free trial · locked forever</div>
+            <div style={{ fontSize: 14, color: "rgba(245,240,232,0.5)", marginTop: 4 }}>after free trial · locked for life</div>
           </div>
 
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>

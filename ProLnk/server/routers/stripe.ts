@@ -415,6 +415,90 @@ export const stripeRouter = router({
       return { processed, totalPaid, errors };
     }),
 
+  // --- Partner: self-service payout request ----------------------------------
+  requestPayout: protectedProcedure.mutation(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+    const partnerRows = await db.execute(sql`
+      SELECT id, stripeConnectAccountId, stripeConnectStatus
+      FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
+    `);
+    const partner = (partnerRows.rows || partnerRows)[0];
+    if (!partner) throw new TRPCError({ code: "NOT_FOUND", message: "Partner profile not found" });
+
+    if (!partner.stripeConnectAccountId || partner.stripeConnectStatus !== "active") {
+      throw new TRPCError({ code: "PRECONDITION_FAILED", message: "Connect your bank account before requesting a payout" });
+    }
+
+    const commRows = await db.execute(sql`
+      SELECT id, amount FROM commissions
+      WHERE receivingPartnerId = ${partner.id} AND paid = 0
+    `);
+    const pending = commRows.rows || commRows;
+    if (pending.length === 0) throw new TRPCError({ code: "PRECONDITION_FAILED", message: "No pending commissions to pay out" });
+
+    const totalAmount = pending.reduce((sum: number, c: any) => sum + parseFloat(c.amount ?? "0"), 0);
+    if (totalAmount < 25) {
+      throw new TRPCError({ code: "PRECONDITION_FAILED", message: `Balance $${totalAmount.toFixed(2)} is below the $25 minimum payout threshold` });
+    }
+
+    const amountCents = Math.round(totalAmount * 100);
+    const transfer = await stripe.transfers.create({
+      amount: amountCents,
+      currency: "usd",
+      destination: partner.stripeConnectAccountId as string,
+      description: `ProLnk commission payout — self-service`,
+      metadata: { partnerId: String(partner.id), commissionCount: String(pending.length) },
+    });
+
+    await db.execute(sql`
+      UPDATE commissions SET paid = 1, paidAt = NOW()
+      WHERE receivingPartnerId = ${partner.id} AND paid = 0
+    `);
+
+    await db.execute(sql`
+      INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
+      VALUES (
+        ${partner.id}, 'payment',
+        'Payout Sent',
+        ${`$${totalAmount.toFixed(2)} has been transferred to your bank account (${pending.length} commission${pending.length !== 1 ? "s" : ""}).`},
+        '/dashboard/billing'
+      )
+    `);
+
+    return { success: true, transferId: transfer.id, amountPaid: totalAmount, commissionCount: pending.length };
+  }),
+
+  // --- Partner: payout history (last 20 paid commissions) -------------------
+  getPayoutHistory: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) return { payouts: [], totalPaid: 0 };
+
+    const partnerRows = await db.execute(sql`
+      SELECT id FROM partners WHERE userId = ${ctx.user.id} LIMIT 1
+    `);
+    const partner = (partnerRows.rows || partnerRows)[0];
+    if (!partner) return { payouts: [], totalPaid: 0 };
+
+    const rows = await db.execute(sql`
+      SELECT id, amount, description, paidAt, createdAt
+      FROM commissions
+      WHERE receivingPartnerId = ${partner.id} AND paid = 1
+      ORDER BY paidAt DESC
+      LIMIT 20
+    `);
+    const payouts = rows.rows || rows;
+
+    const totalRows = await db.execute(sql`
+      SELECT SUM(amount) as total FROM commissions
+      WHERE receivingPartnerId = ${partner.id} AND paid = 1
+    `);
+    const totalPaid = parseFloat((totalRows.rows || totalRows)[0]?.total ?? "0");
+
+    return { payouts, totalPaid };
+  }),
+
   // --- Protected: get current partner billing + commission summary ----------
   getMyBilling: protectedProcedure.query(async ({ ctx }) => {
     const db = await getDb();

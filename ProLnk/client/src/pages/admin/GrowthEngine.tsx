@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
 import { TrendingUp, Zap, Users, RefreshCw, DollarSign, Target, ArrowRight, BarChart3 } from "lucide-react";
@@ -8,7 +9,7 @@ type LoopStep = {
   description: string;
   metric: string;
   value: string | number;
-  icon: React.ReactNode;
+  icon: ReactNode;
   color: string;
 };
 

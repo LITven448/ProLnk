@@ -1,10 +1,10 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import {
   Briefcase, MapPin, DollarSign, Clock, Filter, ChevronDown,
   ArrowRight, Building2, Users, Bell, Zap, CheckCircle2, X,
-  TrendingUp, Eye,
+  TrendingUp, Eye, Bookmark, BookmarkCheck, ArrowUpDown,
 } from "lucide-react";
 import { trpc } from "../lib/trpc";
 
@@ -30,6 +30,14 @@ const PROJECT_SIZES = [
 ];
 
 const URGENCY_OPTIONS = ["All", "Urgent", "Active", "Ongoing"];
+
+const SORT_OPTIONS = [
+  "Newest",
+  "Highest Budget",
+  "Most Bids",
+  "Closing Soon",
+] as const;
+type SortOption = (typeof SORT_OPTIONS)[number];
 
 const TIMELINE_OPTIONS = [
   "1 week",
@@ -175,6 +183,15 @@ const SEED_JOBS = [
     postedDaysAgo: 12,
   },
 ];
+
+function hoursUntilDeadline(deadlineStr: string): number | null {
+  if (!deadlineStr || deadlineStr === "Ongoing") return null;
+  const stripped = deadlineStr.replace(/^Bid by\s*/i, "");
+  const ts = Date.parse(stripped);
+  if (isNaN(ts)) return null;
+  const diff = ts - Date.now();
+  return diff > 0 ? Math.floor(diff / 3600000) : 0;
+}
 
 const LOGO_COLORS = [
   { bg: "rgba(245,158,11,0.18)", color: "#F59E0B" },
@@ -472,11 +489,22 @@ function Toast({ message, onDone }: { message: string; onDone: () => void }) {
   );
 }
 
-function JobCard({ job, onBidSubmitted }: { job: (typeof SEED_JOBS)[0]; onBidSubmitted: () => void }) {
+function JobCard({
+  job,
+  onBidSubmitted,
+  saved,
+  onToggleSave,
+}: {
+  job: (typeof SEED_JOBS)[0];
+  onBidSubmitted: () => void;
+  saved: boolean;
+  onToggleSave: () => void;
+}) {
   const [expressed, setExpressed] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
+  const hoursLeft = hoursUntilDeadline(job.deadline);
 
   const postedLabel =
     job.postedDaysAgo === 0
@@ -547,8 +575,17 @@ function JobCard({ job, onBidSubmitted }: { job: (typeof SEED_JOBS)[0]; onBidSub
               {job.title}
             </h3>
           </div>
-          {/* Applicants + Posted */}
-          <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1">
+          {/* Countdown + Applicants + Save */}
+          <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5">
+            {hoursLeft !== null && hoursLeft <= 168 && (
+              <span
+                className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
+                style={{ backgroundColor: "rgba(239,68,68,0.15)", color: "#f87171" }}
+              >
+                <Clock className="w-3 h-3" />
+                {hoursLeft < 1 ? "Closing now" : `${hoursLeft}h left`}
+              </span>
+            )}
             <div
               className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
               style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.7)" }}
@@ -643,6 +680,18 @@ function JobCard({ job, onBidSubmitted }: { job: (typeof SEED_JOBS)[0]; onBidSub
               <>Apply to Bid</>
             )}
           </button>
+          <button
+            onClick={onToggleSave}
+            title={saved ? "Remove from saved" : "Save job"}
+            className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110"
+            style={{
+              backgroundColor: saved ? "rgba(245,158,11,0.15)" : "rgba(255,255,255,0.06)",
+              border: `1px solid ${saved ? "rgba(245,158,11,0.35)" : "rgba(255,255,255,0.12)"}`,
+              color: saved ? "#F59E0B" : "rgba(255,255,255,0.4)",
+            }}
+          >
+            {saved ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+          </button>
         </div>
       </div>
     </>
@@ -711,24 +760,50 @@ function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; await
   );
 }
 
+function parseBudgetMax(budget: string): number {
+  const nums = budget.replace(/[^0-9,]/g, " ").trim().split(/\s+/).map((n) => Number(n.replace(/,/g, "")));
+  return nums.length > 0 ? Math.max(...nums.filter(Boolean)) : 0;
+}
+
 export default function ExchangeJobs() {
   const [tradeFilter, setTradeFilter] = useState("All Trades");
   const [sizeFilter, setSizeFilter] = useState("All Sizes");
   const [urgencyFilter, setUrgencyFilter] = useState("All");
   const [cityFilter, setCityFilter] = useState("");
+  const [sortBy, setSortBy] = useState<SortOption>("Newest");
+  const [savedJobs, setSavedJobs] = useState<Set<number>>(new Set());
   const [myBidsCount, setMyBidsCount] = useState(0);
 
-  const filtered = SEED_JOBS.filter((j) => {
-    if (tradeFilter !== "All Trades" && j.trade !== tradeFilter) return false;
-    if (sizeFilter !== "All Sizes" && j.size !== sizeFilter) return false;
-    if (urgencyFilter !== "All" && j.urgency !== urgencyFilter) return false;
-    if (
-      cityFilter &&
-      !j.location.toLowerCase().includes(cityFilter.toLowerCase())
-    )
-      return false;
-    return true;
-  });
+  const toggleSave = (id: number) => {
+    setSavedJobs((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const filtered = useMemo(() => {
+    const base = SEED_JOBS.filter((j) => {
+      if (tradeFilter !== "All Trades" && j.trade !== tradeFilter) return false;
+      if (sizeFilter !== "All Sizes" && j.size !== sizeFilter) return false;
+      if (urgencyFilter !== "All" && j.urgency !== urgencyFilter) return false;
+      if (cityFilter && !j.location.toLowerCase().includes(cityFilter.toLowerCase())) return false;
+      return true;
+    });
+
+    return [...base].sort((a, b) => {
+      if (sortBy === "Newest") return a.postedDaysAgo - b.postedDaysAgo;
+      if (sortBy === "Highest Budget") return parseBudgetMax(b.budget) - parseBudgetMax(a.budget);
+      if (sortBy === "Most Bids") return b.applicants - a.applicants;
+      if (sortBy === "Closing Soon") {
+        const ha = hoursUntilDeadline(a.deadline) ?? Infinity;
+        const hb = hoursUntilDeadline(b.deadline) ?? Infinity;
+        return ha - hb;
+      }
+      return 0;
+    });
+  }, [tradeFilter, sizeFilter, urgencyFilter, cityFilter, sortBy]);
 
   return (
     <div
@@ -909,12 +984,32 @@ export default function ExchangeJobs() {
               Clear
             </button>
           )}
-          <span
-            className="ml-auto text-xs"
-            style={{ color: "rgba(255,255,255,0.3)" }}
-          >
-            {filtered.length} job{filtered.length !== 1 ? "s" : ""} shown
-          </span>
+          <div className="ml-auto flex items-center gap-2">
+            <ArrowUpDown className="w-3.5 h-3.5" style={{ color: "rgba(255,255,255,0.4)" }} />
+            <div className="relative">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+                className="appearance-none pl-3 pr-8 py-2 rounded-xl text-xs font-medium border cursor-pointer outline-none"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.07)",
+                  borderColor: "rgba(255,255,255,0.15)",
+                  color: "#fff",
+                }}
+              >
+                {SORT_OPTIONS.map((o) => (
+                  <option key={o} value={o} style={{ backgroundColor: "#0D1F3C" }}>{o}</option>
+                ))}
+              </select>
+              <ChevronDown
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.4)" }}
+              />
+            </div>
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+              {filtered.length} job{filtered.length !== 1 ? "s" : ""}
+            </span>
+          </div>
         </div>
       </section>
 
@@ -947,6 +1042,8 @@ export default function ExchangeJobs() {
                 key={job.id}
                 job={job}
                 onBidSubmitted={() => setMyBidsCount((n) => n + 1)}
+                saved={savedJobs.has(job.id)}
+                onToggleSave={() => toggleSave(job.id)}
               />
             ))}
           </div>

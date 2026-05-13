@@ -6,7 +6,7 @@ import {
 } from "recharts";
 import {
   TrendingUp, DollarSign, Briefcase, Send, ArrowUpRight, ArrowDownRight,
-  Target, Clock, Star, Zap, Award, BarChart2
+  Target, Clock, Star, Zap, Award, BarChart2, Home, Network, Users, RefreshCw
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -258,6 +258,81 @@ export default function PartnerAnalytics() {
             </ResponsiveContainer>
           </div>
         </div>
+
+        {/* Monthly Income Breakdown */}
+        {(() => {
+          const bd = data?.monthlyIncomeBreakdown;
+          const direct = bd?.directCommissions ?? 0;
+          const l1 = bd?.networkL1 ?? 0;
+          const l2 = bd?.networkL2 ?? 0;
+          const l3 = bd?.networkL3 ?? 0;
+          const subscriptions = bd?.subscriptionOverrides ?? 0;
+          const origination = bd?.homeOrigination ?? 0;
+          const networkTotal = l1 + l2 + l3;
+          const monthTotal = direct + networkTotal + subscriptions + origination;
+          const originationCount = bd?.originationRightsCount ?? 0;
+          const originationLifetime = bd?.originationLifetimeValue ?? 0;
+          const monthLabel = bd?.currentMonth
+            ? new Date(bd.currentMonth + "-01").toLocaleString("default", { month: "long", year: "numeric" })
+            : new Date().toLocaleString("default", { month: "long", year: "numeric" });
+
+          const rows: Array<{ label: string; amount: number; icon: React.ReactNode; sub?: string }> = [
+            { label: "Direct commissions (72% keep)", amount: direct, icon: <Briefcase size={14} className="text-blue-500" /> },
+            { label: "L1 network overrides (7%)", amount: l1, icon: <Network size={14} className="text-purple-500" /> },
+            { label: "L2 network overrides (4%)", amount: l2, icon: <Network size={14} className="text-purple-400" /> },
+            { label: "L3 network overrides (2%)", amount: l3, icon: <Network size={14} className="text-purple-300" /> },
+            { label: "Subscription overrides (12%)", amount: subscriptions, icon: <RefreshCw size={14} className="text-teal-500" /> },
+            {
+              label: "Home origination rights",
+              amount: origination,
+              icon: <Home size={14} className="text-amber-500" />,
+              sub: originationCount > 0 ? `${originationCount} home${originationCount !== 1 ? "s" : ""} · $${originationLifetime.toFixed(2)} lifetime` : undefined,
+            },
+          ];
+
+          return (
+            <div className="bg-white rounded-xl border border-gray-100 p-5">
+              <div className="flex items-center justify-between mb-4">
+                <p className="text-sm font-semibold text-gray-900">Monthly Income Breakdown</p>
+                <span className="text-xs text-gray-400">{monthLabel}</span>
+              </div>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-gray-100">
+                    <th className="text-left text-xs font-medium text-gray-500 pb-2">Source</th>
+                    <th className="text-right text-xs font-medium text-gray-500 pb-2">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map(row => (
+                    <tr key={row.label} className="border-b border-gray-50">
+                      <td className="py-2.5">
+                        <div className="flex items-center gap-2">
+                          {row.icon}
+                          <div>
+                            <span className="text-gray-700">{row.label}</span>
+                            {row.sub && <p className="text-xs text-gray-400 mt-0.5">{row.sub}</p>}
+                          </div>
+                        </div>
+                      </td>
+                      <td className="text-right font-semibold text-gray-800 py-2.5">
+                        {isLoading ? "--" : `$${row.amount.toFixed(2)}`}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="border-t-2 border-gray-200">
+                    <td className="pt-3 font-bold text-gray-900">Total this month</td>
+                    <td className="text-right pt-3 font-bold text-gray-900">
+                      {isLoading ? "--" : `$${monthTotal.toFixed(2)}`}
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          );
+        })()}
 
         {/* Performance tips */}
         <div className="bg-[#F5E642]/10 rounded-xl p-5 border border-teal-100">

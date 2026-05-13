@@ -9,7 +9,7 @@ import {
   User, MapPin, Globe, Phone, FileText, Save, Loader2,
   CheckCircle, Building2, Star, Award, Camera, ArrowRight,
   Shield, Upload, AlertTriangle, ExternalLink, Copy, Network,
-  CalendarClock, BadgeCheck
+  CalendarClock, BadgeCheck, Hash, Tag, DollarSign, X, Plus
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -30,7 +30,85 @@ export default function PartnerProfileEditor() {
     description: "",
     contactPhone: "",
     googleReviewUrl: "",
+    licenseNumber: "",
   });
+  const [zipInput, setZipInput] = useState("");
+  const [serviceZipCodes, setServiceZipCodes] = useState<string[]>([]);
+  const [hourlyRateMin, setHourlyRateMin] = useState("");
+  const [hourlyRateMax, setHourlyRateMax] = useState("");
+  const [jobSizePref, setJobSizePref] = useState<string[]>([]);
+  const [licenseUploading, setLicenseUploading] = useState(false);
+  const [licenseExpiry, setLicenseExpiry] = useState("");
+  const [photoUploading, setPhotoUploading] = useState(false);
+  const licenseInputRef = useRef<HTMLInputElement>(null);
+  const photoInputRef = useRef<HTMLInputElement>(null);
+
+  const JOB_SIZE_OPTIONS = ["Small (< $500)", "Medium ($500–$5K)", "Large ($5K–$25K)", "Commercial ($25K+)"];
+
+  const uploadLicense = trpc.compliance.uploadCoi.useMutation({
+    onSuccess: () => {
+      toast.success("License uploaded — pending admin verification");
+      refetch();
+      setLicenseExpiry("");
+    },
+    onError: (e) => toast.error(e.message),
+    onSettled: () => setLicenseUploading(false),
+  });
+
+  const handleLicenseUpload = async (file: File) => {
+    setLicenseUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/upload", { method: "POST", body: fd });
+      const json = await res.json();
+      if (!json.url) throw new Error("Upload failed");
+      uploadLicense.mutate({ coiUrl: json.url, expiresAt: licenseExpiry ? new Date(licenseExpiry).getTime() : Date.now() + 1000 * 60 * 60 * 24 * 365 });
+    } catch {
+      toast.error("License upload failed — please try again");
+      setLicenseUploading(false);
+    }
+  };
+
+  const handlePhotoUpload = async (file: File) => {
+    setPhotoUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/upload", { method: "POST", body: fd });
+      const json = await res.json();
+      if (!json.url) throw new Error("Upload failed");
+      updateProfile.mutate({ ...form, serviceZipCodes } as any);
+      toast.success("Profile photo updated!");
+      refetch();
+    } catch {
+      toast.error("Photo upload failed — please try again");
+    } finally {
+      setPhotoUploading(false);
+    }
+  };
+
+  const addZip = () => {
+    const zip = zipInput.trim();
+    if (!/^\d{5}$/.test(zip)) { toast.error("Enter a valid 5-digit ZIP code"); return; }
+    const max = (partner as any)?.maxZipCodes ?? 5;
+    if (serviceZipCodes.length >= max) { toast.error(`Your tier allows up to ${max} ZIP codes`); return; }
+    if (serviceZipCodes.includes(zip)) { toast.error("ZIP already added"); return; }
+    const updated = [...serviceZipCodes, zip];
+    setServiceZipCodes(updated);
+    setZipInput("");
+    setDirty(true);
+  };
+
+  const removeZip = (zip: string) => {
+    setServiceZipCodes(prev => prev.filter(z => z !== zip));
+    setDirty(true);
+  };
+
+  const toggleJobSize = (size: string) => {
+    setJobSizePref(prev => prev.includes(size) ? prev.filter(s => s !== size) : [...prev, size]);
+    setDirty(true);
+  };
   const [dirty, setDirty] = useState(false);
   const [serviceAreaMapUrl, setServiceAreaMapUrl] = useState<string | null>(null);
   const [serviceAreaCity, setServiceAreaCity] = useState<string | null>(null);
@@ -104,7 +182,9 @@ export default function PartnerProfileEditor() {
         description: p.description ?? "",
         contactPhone: p.contactPhone ?? "",
         googleReviewUrl: (p as any).googleReviewUrl ?? "",
+        licenseNumber: (p as any).licenseNumber ?? "",
       });
+      if ((p as any).serviceZipCodes?.length) setServiceZipCodes((p as any).serviceZipCodes);
       if (p.serviceArea) geocodeAndBuildMap(p.serviceArea);
     }
   }, [profileData, geocodeAndBuildMap]);
@@ -119,7 +199,7 @@ export default function PartnerProfileEditor() {
   };
 
   const handleSave = () => {
-    updateProfile.mutate(form);
+    updateProfile.mutate({ ...form, serviceZipCodes });
     setDirty(false);
   };
 
@@ -160,8 +240,8 @@ export default function PartnerProfileEditor() {
     { label: "Phone number", done: !!partner.contactPhone },
     { label: "Business description", done: !!partner.description },
     { label: "Website", done: !!partner.website },
-    { label: "Service zip codes", done: !!((partner as any).serviceZipCodes?.length) },
-    { label: "License on file", done: !!((partner as any).licenseFileUrl) },
+    { label: "Service ZIP codes", done: !!(serviceZipCodes.length || (partner as any).serviceZipCodes?.length) },
+    { label: "License number", done: !!(form.licenseNumber || (partner as any).licenseNumber) },
     { label: "COI on file", done: !!((partner as any).coiUrl) },
     { label: "Google Review link", done: !!((partner as any).googleReviewUrl) },
     { label: "Profile photo", done: !!((partner as any).avatarUrl || (partner as any).profilePhotoUrl) },
@@ -468,6 +548,182 @@ export default function PartnerProfileEditor() {
               )}
               {coiUploading ? "Uploading..." : "Upload COI Document"}
             </Button>
+          </div>
+
+          {/* Profile Photo Upload */}
+          <div className="p-5">
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+              <Camera className="w-4 h-4 text-gray-400" /> Profile Photo
+            </label>
+            <p className="text-xs text-gray-400 mb-3">Upload a professional headshot or business logo. Shown in the partner directory.</p>
+            <div className="flex items-center gap-3">
+              <div className="w-14 h-14 rounded-xl flex-shrink-0 overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
+                {(partner as any).avatarUrl || (partner as any).profilePhotoUrl ? (
+                  <img src={(partner as any).avatarUrl ?? (partner as any).profilePhotoUrl} alt="Profile" className="w-full h-full object-cover" />
+                ) : (
+                  <Camera className="w-6 h-6 text-gray-300" />
+                )}
+              </div>
+              <div>
+                <input ref={photoInputRef} type="file" accept="image/*" className="hidden"
+                  onChange={e => { const f = e.target.files?.[0]; if (f) handlePhotoUpload(f); }} />
+                <Button type="button" variant="outline" size="sm" disabled={photoUploading}
+                  onClick={() => photoInputRef.current?.click()}
+                  className="gap-2 text-xs">
+                  {photoUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5" />}
+                  {photoUploading ? "Uploading..." : "Upload Photo"}
+                </Button>
+                <p className="text-xs text-gray-400 mt-1">JPG or PNG, max 5MB</p>
+              </div>
+            </div>
+          </div>
+
+          {/* License Number */}
+          <div className="p-5">
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+              <Hash className="w-4 h-4 text-gray-400" /> License Number
+            </label>
+            <p className="text-xs text-gray-400 mb-2">Your state contractor or trade license number. Required for Verified badge.</p>
+            <Input
+              value={form.licenseNumber}
+              onChange={(e) => handleChange("licenseNumber", e.target.value)}
+              placeholder="e.g. TX-CONT-123456"
+              className="text-sm"
+            />
+            {(partner as any).licenseVerifiedAt && (
+              <p className="text-xs text-green-600 mt-1.5 flex items-center gap-1">
+                <CheckCircle className="w-3 h-3" /> License verified
+              </p>
+            )}
+          </div>
+
+          {/* License File Upload */}
+          <div className="p-5">
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+              <FileText className="w-4 h-4 text-gray-400" /> License Document
+            </label>
+            <p className="text-xs text-gray-400 mb-3">Upload a copy of your contractor license (PDF, JPG, PNG — max 10MB).</p>
+            {(partner as any).licenseUrl && (
+              <div className="flex items-center gap-2 mb-3 p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                <FileText className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-medium text-gray-700">License on file</p>
+                  {(partner as any).licenseExpiresAt && (
+                    <p className="text-xs text-gray-400">Expires: {new Date((partner as any).licenseExpiresAt).toLocaleDateString()}</p>
+                  )}
+                </div>
+                {(partner as any).licenseVerifiedAt ? (
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#D1FAE5", color: "#059669" }}>
+                    <CheckCircle className="w-3 h-3" /> Verified
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>
+                    <AlertTriangle className="w-3 h-3" /> Pending Review
+                  </span>
+                )}
+                <a href={(partner as any).licenseUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5 text-gray-400 hover:text-[#1B4FD8]" />
+                </a>
+              </div>
+            )}
+            <div className="mb-2">
+              <label className="text-xs text-gray-500 mb-1 block">License Expiration Date (optional)</label>
+              <input type="date" value={licenseExpiry} onChange={e => setLicenseExpiry(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
+                className="border rounded-lg px-3 py-1.5 text-sm bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]/30 w-full" />
+            </div>
+            <input ref={licenseInputRef} type="file" accept=".pdf,image/*" className="hidden"
+              onChange={e => { const f = e.target.files?.[0]; if (f) handleLicenseUpload(f); }} />
+            <Button type="button" variant="outline" size="sm" disabled={licenseUploading}
+              onClick={() => licenseInputRef.current?.click()} className="gap-2 text-xs"
+              style={{ borderColor: "#1B4FD8", color: "#1B4FD8" }}>
+              {licenseUploading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Upload className="w-3.5 h-3.5" />}
+              {licenseUploading ? "Uploading..." : "Upload License Document"}
+            </Button>
+          </div>
+
+          {/* Service ZIP Codes */}
+          <div className="p-5">
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+              <MapPin className="w-4 h-4 text-gray-400" /> Service ZIP Codes
+            </label>
+            <p className="text-xs text-gray-400 mb-3">
+              Add the specific ZIP codes you serve. Your tier allows up to <strong>{(partner as any).maxZipCodes ?? 5}</strong> ZIP codes.
+            </p>
+            <div className="flex gap-2 mb-3">
+              <Input
+                value={zipInput}
+                onChange={e => setZipInput(e.target.value)}
+                onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); addZip(); } }}
+                placeholder="75001"
+                maxLength={5}
+                className="text-sm w-32"
+              />
+              <Button type="button" variant="outline" size="sm" onClick={addZip} className="gap-1.5 text-xs">
+                <Plus className="w-3.5 h-3.5" /> Add
+              </Button>
+            </div>
+            {serviceZipCodes.length > 0 && (
+              <div className="flex flex-wrap gap-1.5">
+                {serviceZipCodes.map(zip => (
+                  <span key={zip} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#EFF6FF] text-[#1B4FD8] text-xs font-semibold border border-[#BFDBFE]">
+                    {zip}
+                    <button type="button" onClick={() => removeZip(zip)} className="hover:text-red-500 transition-colors">
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Hourly Rate / Job Size */}
+          <div className="p-5">
+            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-1">
+              <DollarSign className="w-4 h-4 text-gray-400" /> Rate & Job Size Preference
+            </label>
+            <p className="text-xs text-gray-400 mb-3">Help homeowners understand your pricing range and ideal job sizes.</p>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="flex-1">
+                <label className="text-xs text-gray-500 mb-1 block">Min rate ($/hr)</label>
+                <Input
+                  value={hourlyRateMin}
+                  onChange={e => { setHourlyRateMin(e.target.value); setDirty(true); }}
+                  placeholder="75"
+                  type="number"
+                  min="0"
+                  className="text-sm"
+                />
+              </div>
+              <span className="text-gray-400 text-sm mt-5">–</span>
+              <div className="flex-1">
+                <label className="text-xs text-gray-500 mb-1 block">Max rate ($/hr)</label>
+                <Input
+                  value={hourlyRateMax}
+                  onChange={e => { setHourlyRateMax(e.target.value); setDirty(true); }}
+                  placeholder="150"
+                  type="number"
+                  min="0"
+                  className="text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="text-xs text-gray-500 mb-2 block">Preferred job sizes</label>
+              <div className="flex flex-wrap gap-2">
+                {JOB_SIZE_OPTIONS.map(size => (
+                  <button key={size} type="button" onClick={() => toggleJobSize(size)}
+                    className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition-all ${
+                      jobSizePref.includes(size)
+                        ? "bg-[#0A1628] text-white border-[#0A1628]"
+                        : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                    }`}>
+                    <Tag className="w-3 h-3 inline mr-1" />
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Save button */}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { CheckCircle, ChevronLeft, ChevronRight, Loader2, Palmtree } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
@@ -24,6 +24,9 @@ export default function AvailabilityCalendar() {
   const [weekOffset, setWeekOffset] = useState(0);
   const [slots, setSlots] = useState<Map<SlotKey, boolean>>(new Map());
   const [dirty, setDirty] = useState(false);
+  const [showVacation, setShowVacation] = useState(false);
+  const [vacationStart, setVacationStart] = useState("");
+  const [vacationEnd, setVacationEnd] = useState("");
 
   const { data: savedSlots, isLoading } = trpc.partnerTools.availability.get.useQuery();
   const saveMutation = trpc.partnerTools.availability.save.useMutation({
@@ -50,6 +53,23 @@ export default function AvailabilityCalendar() {
   };
 
   const clearAll = () => { setSlots(new Map()); setDirty(true); toast.info("Cleared. Save to apply."); };
+
+  const blockVacation = () => {
+    if (!vacationStart || !vacationEnd) { toast.error("Select start and end dates."); return; }
+    const start = new Date(vacationStart);
+    const end = new Date(vacationEnd);
+    if (end < start) { toast.error("End date must be after start date."); return; }
+    const next = new Map(slots);
+    const cursor = new Date(start);
+    while (cursor <= end) {
+      const dayOfWeek = cursor.getDay();
+      for (const hour of HOURS) next.set(`${dayOfWeek}-${hour}`, false);
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    setSlots(next); setDirty(true); setShowVacation(false); setVacationStart(""); setVacationEnd("");
+    const nights = Math.round((end.getTime() - start.getTime()) / 86400000) + 1;
+    toast.success(`Blocked ${nights} day${nights !== 1 ? "s" : ""} as vacation.`);
+  };
 
   const handleSave = () => {
     const payload = Array.from(slots.entries()).map(([key, isAvailable]) => {
@@ -82,13 +102,34 @@ export default function AvailabilityCalendar() {
             <h1 className="text-3xl font-bold text-slate-900">Availability Calendar</h1>
             <p className="text-slate-500 mt-1">Set your open slots so homeowners can book you directly</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
+            <Button variant="outline" onClick={() => setShowVacation(v => !v)} className="text-sm border-orange-200 text-orange-600 hover:bg-orange-50">
+              <Palmtree className="w-4 h-4 mr-1.5" />
+              Block Vacation
+            </Button>
             <Button variant="outline" onClick={clearAll} className="text-sm" disabled={saveMutation.isPending}>Clear All</Button>
             <Button onClick={handleSave} disabled={!dirty || saveMutation.isPending} className="bg-indigo-600 hover:bg-indigo-700 text-sm">
               {saveMutation.isPending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <CheckCircle className="w-4 h-4 mr-2" />}
               Save Availability
             </Button>
           </div>
+
+          {showVacation && (
+            <div className="w-full mt-3 p-4 bg-orange-50 border border-orange-200 rounded-xl flex flex-wrap items-end gap-3">
+              <div>
+                <label className="block text-xs text-orange-700 font-medium mb-1">Start date</label>
+                <input type="date" value={vacationStart} onChange={e => setVacationStart(e.target.value)}
+                  className="border border-orange-200 rounded-lg px-3 py-1.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-orange-300" />
+              </div>
+              <div>
+                <label className="block text-xs text-orange-700 font-medium mb-1">End date</label>
+                <input type="date" value={vacationEnd} onChange={e => setVacationEnd(e.target.value)}
+                  className="border border-orange-200 rounded-lg px-3 py-1.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-orange-300" />
+              </div>
+              <Button onClick={blockVacation} className="bg-orange-500 hover:bg-orange-600 text-white text-sm">Block dates</Button>
+              <button onClick={() => setShowVacation(false)} className="text-xs text-orange-400 hover:text-orange-600">Cancel</button>
+            </div>
+          )}
         </div>
 
 

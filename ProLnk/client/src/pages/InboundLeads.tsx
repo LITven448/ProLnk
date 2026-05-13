@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { useLocation } from "wouter";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
@@ -43,7 +43,7 @@ function TradeIcon({ trade, size = 16 }: { trade: string; size?: number }) {
   const bg = TRADE_BG_COLORS[trade] ?? "#EEF2FF";
   const cls = `shrink-0 rounded-lg flex items-center justify-center`;
   const style = { width: size * 2.25, height: size * 2.25, backgroundColor: bg };
-  let icon: React.ReactNode;
+  let icon: ReactNode;
   if (trade === "HVAC") icon = <Wind size={size} color={color} />;
   else if (trade === "Plumbing") icon = <Droplets size={size} color={color} />;
   else if (trade === "Electrical") icon = <Bolt size={size} color={color} />;

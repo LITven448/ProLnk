@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import {
   Inbox, MapPin, DollarSign, Clock, CheckCircle, XCircle,
   Phone, Mail, ChevronDown, ChevronUp, Zap, Timer, AlertCircle, RefreshCw,
-  Home, Eye
+  Home, Eye, Camera, Droplets, Wind, Bolt, Paintbrush, Wrench
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
@@ -26,10 +27,70 @@ const DECLINE_REASONS = [
 ];
 
 const TRADE_COLORS: Record<string, string> = {
-  "Lawn Care": "#10B981", "HVAC": "#3B82F6", "Plumbing": "#8B5CF6",
-  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1", "Roofing": "#EF4444",
-  "Electrical": "#F97316", "Cleaning": "#14B8A6", "Pool Service": "#06B6D4", "Painting": "#EC4899",
+  "Lawn Care": "#10B981", "HVAC": "#3B82F6", "Plumbing": "#14B8A6",
+  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1", "Roofing": "#F97316",
+  "Electrical": "#EAB308", "Cleaning": "#EC4899", "Pool Service": "#06B6D4", "Painting": "#8B5CF6",
 };
+
+const TRADE_BG_COLORS: Record<string, string> = {
+  "Lawn Care": "#ECFDF5", "HVAC": "#EFF6FF", "Plumbing": "#F0FDFA",
+  "Pest Control": "#FFFBEB", "Fence & Deck": "#EEF2FF", "Roofing": "#FFF7ED",
+  "Electrical": "#FEFCE8", "Cleaning": "#FDF2F8", "Pool Service": "#ECFEFF", "Painting": "#F5F3FF",
+};
+
+function TradeIcon({ trade, size = 16 }: { trade: string; size?: number }) {
+  const color = TRADE_COLORS[trade] ?? "#6366F1";
+  const bg = TRADE_BG_COLORS[trade] ?? "#EEF2FF";
+  const cls = `shrink-0 rounded-lg flex items-center justify-center`;
+  const style = { width: size * 2.25, height: size * 2.25, backgroundColor: bg };
+  let icon: React.ReactNode;
+  if (trade === "HVAC") icon = <Wind size={size} color={color} />;
+  else if (trade === "Plumbing") icon = <Droplets size={size} color={color} />;
+  else if (trade === "Electrical") icon = <Bolt size={size} color={color} />;
+  else if (trade === "Roofing") icon = <Home size={size} color={color} />;
+  else if (trade === "Painting") icon = <Paintbrush size={size} color={color} />;
+  else icon = <Wrench size={size} color={color} />;
+  return <div className={cls} style={style}>{icon}</div>;
+}
+
+function AiConfidenceBar({ confidence }: { confidence: number }) {
+  const pct = Math.min(100, Math.max(0, Math.round(confidence)));
+  const color = pct >= 85 ? "#14B8A6" : pct >= 65 ? "#3B82F6" : "#F59E0B";
+  return (
+    <div className="flex items-center gap-2">
+      <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: color }} />
+      </div>
+      <span className="text-xs font-semibold tabular-nums" style={{ color }}>{pct}% confidence</span>
+    </div>
+  );
+}
+
+function AcceptedConfirmation({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 space-y-3">
+      <div className="flex items-center gap-2">
+        <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+        <p className="font-semibold text-emerald-800 text-sm">Lead accepted — the homeowner has been notified</p>
+      </div>
+      <div className="bg-white rounded-lg border border-emerald-100 p-3 space-y-2">
+        <p className="text-xs font-bold text-gray-600 uppercase tracking-wide">Next Steps</p>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-emerald-700">1.</span> Contact the homeowner within 2 hours to maximize close rate
+        </p>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-gray-500">2.</span> Confirm job scope and schedule an estimate visit
+        </p>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-gray-500">3.</span> Mark job complete once finished to unlock your commission
+        </p>
+      </div>
+      <button onClick={onClose} className="text-xs text-emerald-600 hover:text-emerald-800 underline underline-offset-2">
+        Dismiss
+      </button>
+    </div>
+  );
+}
 
 function relativeTime(d: string | Date | null) {
   if (!d) return "Unknown";
@@ -73,6 +134,8 @@ export default function InboundLeads() {
   const [expanded, setExpanded] = useState<number | null>(null);
   const [declineDialog, setDeclineDialog] = useState<{ id: number } | null>(null);
   const [declineReason, setDeclineReason] = useState("");
+  const [acceptedConfirmations, setAcceptedConfirmations] = useState<Set<number>>(new Set());
+  const navigate = useNavigate();
   const utils = trpc.useUtils();
 
   const { data: leads = [], isLoading, refetch } = trpc.partners.getInboundOpportunities.useQuery(undefined, {
@@ -81,8 +144,12 @@ export default function InboundLeads() {
 
   const respondMutation = trpc.partners.respondToOpportunity.useMutation({
     onSuccess: (_, vars) => {
-      const action = vars.response === "accepted" ? "accepted" : "declined";
-      toast.success(`Lead ${action} successfully`);
+      if (vars.response === "accepted") {
+        setAcceptedConfirmations((prev) => new Set(prev).add(vars.opportunityId));
+        setExpanded(vars.opportunityId);
+      } else {
+        toast.success("Lead declined");
+      }
       utils.partners.getInboundOpportunities.invalidate();
     },
     onError: (err) => toast.error(`Failed: ${err.message}`),
@@ -152,15 +219,39 @@ export default function InboundLeads() {
         )}
 
         {!isLoading && leads.length === 0 && (
-          <Card className="border-dashed border-2 border-gray-200">
-            <CardContent className="flex flex-col items-center justify-center py-16 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-[#F5E642]/10 flex items-center justify-center mb-4">
-                <Inbox className="w-8 h-8 text-[#0A1628]/70" />
+          <Card className="border-dashed border-2 border-gray-200 overflow-hidden">
+            <CardContent className="p-0">
+              <div className="flex flex-col items-center justify-center pt-12 pb-8 px-6 text-center">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 border border-teal-100 flex items-center justify-center mb-5 shadow-sm">
+                  <Inbox className="w-9 h-9 text-teal-500" />
+                </div>
+                <h3 className="font-heading font-bold text-gray-800 text-xl mb-2">Your first lead will appear here</h3>
+                <p className="text-sm text-gray-500 max-w-xs mb-6">
+                  The ProLnk AI network scans job photos 24/7. When a homeowner in your area requests a quote that matches your trade, you'll get notified instantly.
+                </p>
+                <div className="w-full max-w-xs space-y-3 mb-6">
+                  <div className="flex items-start gap-3 bg-teal-50 rounded-xl p-3.5 border border-teal-100 text-left">
+                    <Camera className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">Upload job photos to trigger AI lead detection</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Our AI finds work that matches your trade</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 bg-blue-50 rounded-xl p-3.5 border border-blue-100 text-left">
+                    <MapPin className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">Or wait for homeowners in your area to request quotes</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Leads are routed based on your trade and service area</p>
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  className="bg-teal-600 hover:bg-teal-700 text-white px-6"
+                  onClick={() => navigate("/photo-upload")}
+                >
+                  <Camera className="w-4 h-4 mr-2" />Upload Photos
+                </Button>
               </div>
-              <h3 className="font-heading font-semibold text-gray-700 text-lg mb-2">No Leads Yet</h3>
-              <p className="text-sm text-gray-400 max-w-sm">
-                When other partners in the network submit photos that match your trade, leads will appear here. Make sure your trade and service area are set in your profile.
-              </p>
             </CardContent>
           </Card>
         )}
@@ -173,71 +264,118 @@ export default function InboundLeads() {
               const topOpp = aiResult?.opportunities?.[0];
               const t = timeLeft(lead.leadExpiresAt);
               const isExpiringSoon = t !== null && t.total < 4 * 3600 * 1000;
-              const tradeColor = TRADE_COLORS[lead.opportunityCategory ?? ""] ?? "#6366F1";
+              const trade = lead.opportunityCategory ?? "General";
+              const tradeColor = TRADE_COLORS[trade] ?? "#6366F1";
               const isOpen = expanded === lead.id;
+              const estimatedValue = topOpp?.estimatedValue ?? lead.estimatedValue;
+              const confidence = aiResult?.confidence ?? topOpp?.confidence ?? 87;
+              const showAccepted = acceptedConfirmations.has(lead.id);
+
+              const partialAddress = (() => {
+                const addr = lead.serviceAddress as string | undefined;
+                if (!addr) return null;
+                const parts = addr.split(",").map((s: string) => s.trim());
+                if (parts.length >= 3) return `${parts[parts.length - 2]}, ${parts[parts.length - 1]}`;
+                return addr;
+              })();
 
               return (
-                <Card key={lead.id} className={`border-2 transition-all ${isExpiringSoon ? "border-amber-300" : "border-gray-200 hover:border-[#0A1628]/30"}`}>
+                <Card key={lead.id} className={`border-2 transition-all ${isExpiringSoon ? "border-amber-300" : "border-gray-200 hover:border-teal-300"}`}>
                   <CardContent className="p-5">
-                    <div className="flex items-start justify-between gap-4">
+                    {/* Header row: trade icon + title + value */}
+                    <div className="flex items-start gap-3">
+                      <TradeIcon trade={trade} size={18} />
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className="text-xs font-bold px-2.5 py-0.5 rounded-full text-white" style={{ backgroundColor: tradeColor }}>
-                            {lead.opportunityCategory ?? "General"}
+                            {trade}
                           </span>
                           <CountdownTimer expiresAt={lead.leadExpiresAt} />
-                          {lead.status === "accepted" && (
+                          {lead.status === "accepted" && !showAccepted && (
                             <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">Accepted</Badge>
                           )}
                         </div>
-                        <p className="font-bold text-gray-900 text-base mb-1">{topOpp?.type ?? lead.opportunityType ?? "Opportunity"}</p>
-                        <p className="text-sm text-gray-600 line-clamp-2">{topOpp?.description ?? lead.description ?? "Details available -- click to expand"}</p>
-                        <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
-                          {lead.serviceAddress && <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{lead.serviceAddress}</span>}
-                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{relativeTime(lead.createdAt)}</span>
+                        <p className="font-bold text-gray-900 text-base leading-snug">
+                          {topOpp?.type ?? lead.opportunityType ?? "Service Opportunity"}
+                        </p>
+                      </div>
+                      {estimatedValue && (
+                        <div className="text-right flex-shrink-0 ml-2">
+                          <div className="text-2xl font-heading font-bold text-gray-900 leading-none">
+                            ${Number(estimatedValue).toLocaleString()}
+                          </div>
+                          <div className="text-xs text-gray-400 mt-0.5">est. value</div>
                         </div>
-                      </div>
-                      <div className="text-right flex-shrink-0">
-                        {topOpp?.estimatedValue && (
-                          <>
-                            <div className="text-xl font-heading font-bold text-gray-900">${topOpp.estimatedValue.toLocaleString()}</div>
-                            <div className="text-xs text-gray-400">est. value</div>
-                          </>
-                        )}
-                        <button
-                          className="mt-2 text-xs text-[#0A1628] flex items-center gap-1 ml-auto"
-                          onClick={() => setExpanded(isOpen ? null : lead.id)}
-                        >
-                          {isOpen ? <><ChevronUp className="w-3 h-3" />Less</> : <><ChevronDown className="w-3 h-3" />More</>}
-                        </button>
-                      </div>
+                      )}
                     </div>
 
+                    {/* AI confidence bar */}
+                    <div className="mt-3">
+                      <AiConfidenceBar confidence={confidence} />
+                    </div>
+
+                    {/* Meta row */}
+                    <div className="flex items-center gap-3 mt-2 text-xs text-gray-400 flex-wrap">
+                      {partialAddress && (
+                        <span className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />{partialAddress}
+                        </span>
+                      )}
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />Detected {relativeTime(lead.createdAt)}
+                      </span>
+                    </div>
+
+                    {/* Accept / Pass buttons — always visible for dispatched leads */}
+                    {lead.status === "dispatched" && !showAccepted && (
+                      <div className="flex gap-2 mt-4">
+                        <Button
+                          className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold shadow-sm"
+                          disabled={respondMutation.isPending}
+                          onClick={() => respondMutation.mutate({ opportunityId: lead.id, response: "accepted" })}
+                        >
+                          <CheckCircle className="w-4 h-4 mr-2" />Accept Lead
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="default"
+                          className="text-gray-500 border-gray-200 hover:bg-gray-50 px-4"
+                          disabled={respondMutation.isPending}
+                          onClick={() => { setDeclineReason(""); setDeclineDialog({ id: lead.id }); }}
+                        >
+                          Pass
+                        </Button>
+                      </div>
+                    )}
+
+                    {/* Acceptance confirmation */}
+                    {showAccepted && (
+                      <AcceptedConfirmation onClose={() => {
+                        setAcceptedConfirmations((prev) => {
+                          const next = new Set(prev);
+                          next.delete(lead.id);
+                          return next;
+                        });
+                      }} />
+                    )}
+
+                    {/* Expand toggle for extra details */}
+                    <button
+                      className="mt-3 text-xs text-gray-400 hover:text-gray-600 flex items-center gap-1"
+                      onClick={() => setExpanded(isOpen ? null : lead.id)}
+                    >
+                      {isOpen ? <><ChevronUp className="w-3 h-3" />Hide details</> : <><ChevronDown className="w-3 h-3" />More details</>}
+                    </button>
+
                     {isOpen && (
-                      <div className="mt-4 pt-4 border-t border-gray-100 space-y-3">
+                      <div className="mt-3 pt-3 border-t border-gray-100 space-y-3">
+                        {(topOpp?.description ?? lead.description) && (
+                          <p className="text-sm text-gray-600">{topOpp?.description ?? lead.description}</p>
+                        )}
                         {aiResult?.analysisNotes && (
                           <div className="bg-purple-50 border border-purple-200 rounded-xl p-3">
                             <p className="text-xs font-semibold text-purple-700 mb-1">AI Analysis Notes</p>
                             <p className="text-sm text-purple-900">{aiResult.analysisNotes}</p>
-                          </div>
-                        )}
-                        {lead.status === "dispatched" && (
-                          <div className="flex gap-3">
-                            <Button
-                              className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white"
-                              disabled={respondMutation.isPending}
-                              onClick={() => respondMutation.mutate({ opportunityId: lead.id, response: "accepted" })}
-                            >
-                              <CheckCircle className="w-4 h-4 mr-2" />Accept Lead
-                            </Button>
-                            <Button
-                              variant="outline"
-                              className="flex-1 border-red-200 text-red-600 hover:bg-red-50"
-                              disabled={respondMutation.isPending}
-                              onClick={() => { setDeclineReason(""); setDeclineDialog({ id: lead.id }); }}
-                            >
-                              <XCircle className="w-4 h-4 mr-2" />Decline
-                            </Button>
                           </div>
                         )}
                         {lead.status === "accepted" && (

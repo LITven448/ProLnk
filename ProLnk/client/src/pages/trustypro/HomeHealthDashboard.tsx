@@ -276,7 +276,7 @@ export default function HomeHealthDashboard() {
                     <p className="text-xs text-gray-600 mb-2">{issue.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-gray-500">🔧 {issue.tradeType} · {issue.estimatedCost}</span>
-                      <Link href="/trustypro/waitlist">
+                      <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
                         <button
                           className="text-xs font-bold text-white px-3 py-1 rounded-full transition-opacity hover:opacity-90"
                           style={{ backgroundColor: PRIMARY }}
@@ -329,7 +329,7 @@ export default function HomeHealthDashboard() {
                 <button
                   className="shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-full transition-opacity hover:opacity-90"
                   style={{ backgroundColor: ACCENT }}
-                  onClick={() => setScheduleModal(label)}
+                  onClick={() => setScheduleModal(id)}
                 >
                   Get a Pro
                 </button>
@@ -528,16 +528,24 @@ export default function HomeHealthDashboard() {
       {scheduleModal && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-end sm:items-center justify-center p-4" onClick={() => setScheduleModal(null)}>
           <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl" onClick={e => e.stopPropagation()}>
-            <h3 className="text-lg font-black text-gray-900 mb-1">Schedule a {scheduleModal} Pro</h3>
-            <p className="text-sm text-gray-500 mb-5">Join the waitlist and we'll match you with a background-checked, insured {scheduleModal} professional in your area.</p>
-            <Link href="/trustypro/waitlist" onClick={() => setScheduleModal(null)}>
-              <button
-                className="w-full text-white font-bold py-3 rounded-xl mb-2 transition-opacity hover:opacity-90"
-                style={{ backgroundColor: ACCENT }}
-              >
-                Join Waitlist — It's Free
-              </button>
-            </Link>
+            {(() => {
+              const cat = SCORE_CATEGORIES.find(c => c.id === scheduleModal);
+              const label = cat?.label ?? scheduleModal;
+              return (
+                <>
+                  <h3 className="text-lg font-black text-gray-900 mb-1">Schedule a {label} Pro</h3>
+                  <p className="text-sm text-gray-500 mb-5">Join the waitlist and we'll match you with a background-checked, insured {label} professional in your area.</p>
+                  <Link href={`/trustypro/waitlist?service=${encodeURIComponent(label)}`} onClick={() => setScheduleModal(null)}>
+                    <button
+                      className="w-full text-white font-bold py-3 rounded-xl mb-2 transition-opacity hover:opacity-90"
+                      style={{ backgroundColor: ACCENT }}
+                    >
+                      Join Waitlist — It's Free
+                    </button>
+                  </Link>
+                </>
+              );
+            })()}
             <button onClick={() => setScheduleModal(null)} className="w-full text-sm text-gray-400 hover:text-gray-600 py-2">
               Cancel
             </button>

@@ -81,6 +81,9 @@ const ProWaitlistSchema = z.object({
   primaryCity: z.string().min(1).max(100),
   primaryState: z.string().min(2).max(2),
   referredBy: z.string().max(20).optional(),
+  workStyle: z.enum(["solo", "owner", "scout"]).optional(),
+  employeeCount: z.string().max(20).optional(),
+  notes: z.string().max(500).optional(),
 });
 
 const HomeWaitlistSchema = z.object({
@@ -166,9 +169,9 @@ export const waitlistRouter = router({
           [
             proId,
             input.firstName, input.lastName, input.email, input.phone,
-            input.trade, input.trade, 1,
-            "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
-            input.primaryState, 25, JSON.stringify([]), "0", "0", "more_leads",
+            input.trade, input.workStyle ?? "solo", 1,
+            input.employeeCount ?? "1", 0, "varies", JSON.stringify([input.trade]), input.primaryCity, input.primaryState,
+            input.primaryState, 25, JSON.stringify([]), "0", "0", input.notes ? `more_leads|${input.notes}` : "more_leads",
             referralCode,
             input.referredBy ? input.referredBy.toUpperCase() : null,
             tier,

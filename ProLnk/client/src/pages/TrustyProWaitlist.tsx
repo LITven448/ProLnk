@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ChangeEvent, type ReactNode, type CSSProperties } from "react";
 import { Link, useLocation } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
@@ -185,7 +185,7 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
   });
 
   const set = <K extends keyof FormData>(k: K) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
       setForm(p => ({ ...p, [k]: e.target.value }));
 
   const next = () => {
@@ -715,7 +715,7 @@ const staggerItem = {
 // --- Animated Section Wrapper --------------------------------------------------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function AnimSection({ children, className, id, variants = fadeUp }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   id?: string;
   variants?: Record<string, any>;
@@ -1036,7 +1036,7 @@ export default function TrustyProHome() {
                         value={intakeForm.name}
                         onChange={e => setIntakeForm(f => ({ ...f, name: e.target.value }))}
                         className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
-                        style={{ focusRingColor: ACCENT } as React.CSSProperties}
+                        style={{ focusRingColor: ACCENT } as CSSProperties}
                       />
                     </div>
                     <div>
@@ -1180,12 +1180,6 @@ export default function TrustyProHome() {
           </div>
           <div className="hidden md:flex items-center gap-3">
             <button onClick={goToWizard} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Scan My Home</button>
-            <button
-              onClick={() => navigate("/trustypro/login")}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 px-4 py-2 rounded-full hover:border-gray-400"
-            >
-              My Home Login
-            </button>
             <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity" style={{ backgroundColor: ACCENT }}>
               Get Started
             </button>
@@ -1205,7 +1199,6 @@ export default function TrustyProHome() {
                 <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
               <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
-              <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600">My Home Login</button>
               <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
             </motion.div>
           )}

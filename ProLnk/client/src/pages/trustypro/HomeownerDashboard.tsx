@@ -19,6 +19,7 @@ import {
   AlertTriangle,
   Clock,
   BookOpen,
+  Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -35,6 +36,7 @@ const PLACEHOLDER_USER = {
   state: "TX",
   zip: "75034",
   photoCount: 0,
+  hasSetupProfile: false,
 };
 
 const QUICK_ACTIONS = [
@@ -177,6 +179,8 @@ function HealthScoreGauge({ score }: { score: number }) {
   );
 }
 
+const isNewUser = !PLACEHOLDER_USER.hasSetupProfile;
+
 export default function HomeownerDashboard() {
   const [, navigate] = useLocation();
 
@@ -227,7 +231,42 @@ export default function HomeownerDashboard() {
           </p>
         </motion.div>
 
+        {/* New User: Set Up Home Profile CTA */}
+        {isNewUser && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.07 }}
+            className="rounded-2xl p-6 border-2 flex flex-col md:flex-row items-start md:items-center gap-5"
+            style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #0c2444 100%)`, borderColor: `${TEAL}40` }}
+          >
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: "rgba(0,181,184,0.2)" }}
+            >
+              <Sparkles className="w-7 h-7" style={{ color: TEAL }} />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: TEAL }}>Get Started</p>
+              <h3 className="text-lg font-black text-white">Set Up Your Home Profile</h3>
+              <p className="text-sm text-blue-200 mt-1 leading-relaxed">
+                Add your address, property details, and systems so TrustyPro can monitor your home's health, send maintenance alerts, and match you to the right pros.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full md:w-auto">
+              <button
+                onClick={() => navigate("/trustypro/property-setup")}
+                className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: TEAL }}
+              >
+                <Home className="w-4 h-4" /> Set Up My Home <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.section>
+        )}
+
         {/* Your Home */}
+        {!isNewUser && (
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -266,16 +305,47 @@ export default function HomeownerDashboard() {
             </div>
           </div>
         </motion.section>
+        )}
 
-        {/* Home Health Score — circular gauge */}
+        {/* Home Health Score — circular gauge or empty state */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="rounded-2xl p-6 border cursor-pointer hover:shadow-md transition-shadow"
           style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #0c2444 100%)`, borderColor: `${NAVY}40` }}
-          onClick={() => navigate("/trustypro/home-health")}
+          onClick={() => navigate(isNewUser ? "/trustypro/property-setup" : "/trustypro/home-health")}
         >
+          {isNewUser ? (
+            <div className="flex flex-col md:flex-row items-center gap-6 py-2">
+              <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                <p className="text-xs font-bold text-blue-300 uppercase tracking-widest">Home Health Score</p>
+                <div className="relative flex items-center justify-center w-36 h-36">
+                  <svg className="absolute inset-0" viewBox="0 0 120 120" style={{ transform: "rotate(-90deg)" }}>
+                    <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="9" />
+                    <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="9" strokeDasharray="326.7" strokeDashoffset="326.7" strokeLinecap="round" />
+                  </svg>
+                  <div className="text-center z-10">
+                    <p className="text-3xl font-black text-white/40 leading-none">—</p>
+                    <p className="text-xs text-blue-300 mt-1">No data yet</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-lg font-black text-white">No scans yet — take your first scan!</h3>
+                <p className="text-sm text-blue-200 mt-2 leading-relaxed">
+                  Set up your home profile and upload a photo so our AI can generate your Health Score and flag maintenance needs.
+                </p>
+                <button
+                  onClick={(e) => { e.stopPropagation(); navigate("/trustypro/property-setup"); }}
+                  className="mt-4 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: TEAL }}
+                >
+                  <Home className="w-4 h-4" /> Set Up Home Profile
+                </button>
+              </div>
+            </div>
+          ) : (
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Circular gauge */}
             <div className="flex-shrink-0 flex flex-col items-center gap-2">
@@ -313,6 +383,7 @@ export default function HomeownerDashboard() {
               <Camera className="w-4 h-4" /> New Scan
             </button>
           </div>
+          )}
         </motion.section>
 
         {/* Quick Actions */}
@@ -367,6 +438,30 @@ export default function HomeownerDashboard() {
               View All <ArrowRight className="w-3 h-3" />
             </button>
           </div>
+          {isNewUser ? (
+            <div
+              className="bg-white rounded-2xl border flex flex-col items-center justify-center py-12 gap-4"
+              style={{ borderColor: "#E5E7EB" }}
+            >
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                style={{ backgroundColor: "#E0F7F7" }}
+              >
+                <Camera className="w-7 h-7" style={{ color: TEAL }} />
+              </div>
+              <div className="text-center">
+                <p className="text-sm font-bold text-gray-700">No scans yet — take your first scan!</p>
+                <p className="text-xs text-gray-400 mt-1">Activity from scans, repairs, and AI alerts will appear here.</p>
+              </div>
+              <button
+                onClick={() => navigate("/trustypro/scan")}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: TEAL }}
+              >
+                <Camera className="w-4 h-4" /> Start First Scan
+              </button>
+            </div>
+          ) : (
           <div className="space-y-3">
             {RECENT_ACTIVITY.map((item, i) => (
               <motion.div
@@ -396,6 +491,7 @@ export default function HomeownerDashboard() {
               </motion.div>
             ))}
           </div>
+          )}
         </section>
 
         {/* Find a Pro */}

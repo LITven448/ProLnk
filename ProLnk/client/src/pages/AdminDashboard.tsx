@@ -134,7 +134,8 @@ export default function AdminDashboard() {
     setExportingPros(true);
     try {
       const data = await utils.waitlist.exportWaitlist.fetch({ source: "pro" });
-      const rows = (data as { pro?: Record<string, unknown>[] }).pro ?? [];
+      const raw: any = data ?? [];
+      const rows: Record<string, unknown>[] = Array.isArray(raw) ? raw : (raw.pro ?? []);
       if (!rows.length) { toast.error("No pro records to export"); return; }
       buildCsvAndDownload(rows, `prolnk-pro-waitlist-${new Date().toISOString().slice(0, 10)}.csv`);
       toast.success(`Exported ${rows.length} pro records`);
@@ -149,7 +150,8 @@ export default function AdminDashboard() {
     setExportingHomes(true);
     try {
       const data = await utils.waitlist.exportWaitlist.fetch({ source: "home" });
-      const rows = (data as { home?: Record<string, unknown>[] }).home ?? [];
+      const raw: any = data ?? [];
+      const rows: Record<string, unknown>[] = Array.isArray(raw) ? raw : (raw.home ?? []);
       if (!rows.length) { toast.error("No homeowner records to export"); return; }
       buildCsvAndDownload(rows, `trustypro-homeowner-waitlist-${new Date().toISOString().slice(0, 10)}.csv`);
       toast.success(`Exported ${rows.length} homeowner records`);

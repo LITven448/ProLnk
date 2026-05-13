@@ -16,7 +16,8 @@ export default defineConfig({
     minify: 'esbuild',
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
-      maxParallelFileOps: 2,
+      maxParallelFileOps: 1,
+      treeshake: { preset: 'smallest' },
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/three') || id.includes('@react-three')) return 'three';
@@ -27,7 +28,7 @@ export default defineConfig({
           if (id.includes('node_modules/lucide-react')) return 'icons';
           if (id.includes('node_modules/react-hook-form') || id.includes('node_modules/zod')) return 'forms';
           if (id.includes('node_modules/@trpc')) return 'trpc';
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'react';
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) return 'react-vendor';
         },
       },
     },
@@ -41,10 +42,7 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-      },
+      '/api': { target: 'http://localhost:3000', changeOrigin: true },
     },
   },
 });

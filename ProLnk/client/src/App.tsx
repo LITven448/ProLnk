@@ -32,6 +32,7 @@ const CookiePolicy = lazy(() => import("@/pages/legal/CookiePolicy"));
 const Demo = lazy(() => import("@/pages/Demo"));
 const ApplicationStatus = lazy(() => import("./pages/ApplicationStatus"));
 const SetPassword = lazy(() => import("./pages/SetPassword"));
+const AccountDeletion = lazy(() => import("./pages/AccountDeletion"));
 const PartnerCheckout = lazy(() => import("./pages/PartnerCheckout"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
@@ -615,6 +616,7 @@ function Router() {
       <Route path="/dashboard/notification-preferences" component={NotificationPreferences} />
       <Route path="/dashboard/integrations" component={IntegrationSettings} />
       <Route path="/dashboard/settings" component={PartnerSettings} />
+      <Route path="/account/delete" component={AccountDeletion} />
       <Route path="/dashboard/inbox" component={UnifiedInbox} />
       <Route path="/dashboard/schedule" component={JobSchedule} />
       <Route path="/dashboard/commission-rates" component={CommissionRates} />

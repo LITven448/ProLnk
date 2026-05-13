@@ -10,7 +10,8 @@ import { Label } from "@/components/ui/label";
 import {
   Inbox, MapPin, DollarSign, Clock, CheckCircle, XCircle,
   Phone, Mail, ChevronDown, ChevronUp, Zap, Timer, AlertCircle, RefreshCw,
-  Home, Eye, Camera, Droplets, Wind, Bolt, Paintbrush, Wrench
+  Home, Eye, Camera, Droplets, Wind, Bolt, Paintbrush, Wrench,
+  Star, Flame, TrendingUp, ShieldCheck
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
@@ -53,17 +54,63 @@ function TradeIcon({ trade, size = 16 }: { trade: string; size?: number }) {
   return <div className={cls} style={style}>{icon}</div>;
 }
 
-function AiConfidenceBar({ confidence }: { confidence: number }) {
-  const pct = Math.min(100, Math.max(0, Math.round(confidence)));
+function AiMatchScore({ score }: { score: number }) {
+  const pct = Math.min(100, Math.max(0, Math.round(score)));
   const color = pct >= 85 ? "#14B8A6" : pct >= 65 ? "#3B82F6" : "#F59E0B";
+  const label = pct >= 85 ? "Excellent" : pct >= 65 ? "Good" : "Fair";
+  const circumference = 2 * Math.PI * 20;
+  const strokeDashoffset = circumference - (pct / 100) * circumference;
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-        <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: color }} />
+    <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
+      <div className="relative w-14 h-14">
+        <svg className="w-14 h-14 -rotate-90" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#E5E7EB" strokeWidth="4" />
+          <circle
+            cx="24" cy="24" r="20" fill="none" strokeWidth="4"
+            stroke={color}
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            strokeLinecap="round"
+            style={{ transition: "stroke-dashoffset 0.6s ease" }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-sm font-bold tabular-nums leading-none" style={{ color }}>{pct}</span>
+        </div>
       </div>
-      <span className="text-xs font-semibold tabular-nums" style={{ color }}>{pct}% confidence</span>
+      <span className="text-xs font-semibold" style={{ color }}>{label}</span>
     </div>
   );
+}
+
+function MatchReasonPills({ reasons }: { reasons: string[] }) {
+  if (!reasons.length) return null;
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-2">
+      {reasons.map((r) => (
+        <span key={r} className="inline-flex items-center gap-1 text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2 py-0.5 rounded-full font-medium">
+          <ShieldCheck className="w-3 h-3" />{r}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function deriveMatchReasons(lead: any): string[] {
+  const reasons: string[] = [];
+  const trade = lead.opportunityCategory ?? lead.opportunityType ?? "";
+  if (trade) reasons.push(`${trade} specialist match`);
+  const aiResult = lead.aiAnalysisResult as any;
+  const zipMatch = aiResult?.zipMatch ?? lead.zipMatch;
+  if (zipMatch) reasons.push("You serve this ZIP");
+  const distanceMiles = aiResult?.distanceMiles ?? lead.distanceMiles;
+  if (distanceMiles != null && Number(distanceMiles) <= 10) reasons.push(`${distanceMiles} mi away`);
+  const responseRate = aiResult?.partnerResponseRate ?? lead.partnerResponseRate;
+  if (responseRate != null && Number(responseRate) >= 80) reasons.push("High response rate");
+  if (!reasons.length) {
+    reasons.push("Trade area match");
+  }
+  return reasons.slice(0, 3);
 }
 
 function AcceptedConfirmation({ onClose }: { onClose: () => void }) {
@@ -268,7 +315,11 @@ export default function InboundLeads() {
               const tradeColor = TRADE_COLORS[trade] ?? "#6366F1";
               const isOpen = expanded === lead.id;
               const estimatedValue = topOpp?.estimatedValue ?? lead.estimatedValue;
-              const confidence = aiResult?.confidence ?? topOpp?.confidence ?? 87;
+              const matchScore = aiResult?.matchScore ?? aiResult?.confidence ?? topOpp?.confidence ?? 87;
+              const isHighValue = estimatedValue != null && Number(estimatedValue) > 2000;
+              const isUrgent = (lead.urgency ?? topOpp?.urgency ?? lead.urgencyFlag ?? "")
+                .toLowerCase().includes("asap");
+              const matchReasons = deriveMatchReasons(lead);
               const showAccepted = acceptedConfirmations.has(lead.id);
 
               const partialAddress = (() => {
@@ -282,14 +333,24 @@ export default function InboundLeads() {
               return (
                 <Card key={lead.id} className={`border-2 transition-all ${isExpiringSoon ? "border-amber-300" : "border-gray-200 hover:border-teal-300"}`}>
                   <CardContent className="p-5">
-                    {/* Header row: trade icon + title + value */}
+                    {/* Header row: AI score + trade info + value */}
                     <div className="flex items-start gap-3">
-                      <TradeIcon trade={trade} size={18} />
+                      <AiMatchScore score={matchScore} />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className="text-xs font-bold px-2.5 py-0.5 rounded-full text-white" style={{ backgroundColor: tradeColor }}>
                             {trade}
                           </span>
+                          {isHighValue && (
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />High Value
+                            </span>
+                          )}
+                          {isUrgent && (
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
+                              <Flame className="w-3 h-3" />Urgent
+                            </span>
+                          )}
                           <CountdownTimer expiresAt={lead.leadExpiresAt} />
                           {lead.status === "accepted" && !showAccepted && (
                             <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">Accepted</Badge>
@@ -298,6 +359,7 @@ export default function InboundLeads() {
                         <p className="font-bold text-gray-900 text-base leading-snug">
                           {topOpp?.type ?? lead.opportunityType ?? "Service Opportunity"}
                         </p>
+                        <MatchReasonPills reasons={matchReasons} />
                       </div>
                       {estimatedValue && (
                         <div className="text-right flex-shrink-0 ml-2">
@@ -307,11 +369,6 @@ export default function InboundLeads() {
                           <div className="text-xs text-gray-400 mt-0.5">est. value</div>
                         </div>
                       )}
-                    </div>
-
-                    {/* AI confidence bar */}
-                    <div className="mt-3">
-                      <AiConfidenceBar confidence={confidence} />
                     </div>
 
                     {/* Meta row */}

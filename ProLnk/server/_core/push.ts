@@ -54,7 +54,7 @@ export async function sendPush(payload: PushPayload): Promise<boolean> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Basic ${ONESIGNAL_REST_API_KEY}`,
+        Authorization: `Key ${ONESIGNAL_REST_API_KEY}`,
       },
       body: JSON.stringify(body),
     });
@@ -68,6 +68,63 @@ export async function sendPush(payload: PushPayload): Promise<boolean> {
     return true;
   } catch (err) {
     console.error("[Push] OneSignal fetch error:", err);
+    return false;
+  }
+}
+
+/**
+ * Named alias — send push to a specific user by userId string (external_id tag).
+ * Matches the API surface requested in server/push.ts spec.
+ */
+export async function sendPushToPartner(params: {
+  userId: string;
+  title: string;
+  message: string;
+  url?: string;
+}): Promise<boolean> {
+  return sendPush({
+    externalUserId: params.userId,
+    title: params.title,
+    body: params.message,
+    url: params.url,
+  });
+}
+
+/**
+ * Named alias — broadcast push to a segment (defaults to "All").
+ * Matches the API surface requested in server/push.ts spec.
+ */
+export async function sendPushToAll(params: {
+  title: string;
+  message: string;
+  url?: string;
+  segment?: string;
+}): Promise<boolean> {
+  if (!ONESIGNAL_APP_ID || !ONESIGNAL_REST_API_KEY) {
+    console.log(`[Push] No OneSignal credentials — would broadcast: "${params.title}"`);
+    return false;
+  }
+  try {
+    const res = await fetch("https://onesignal.com/api/v1/notifications", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Key ${ONESIGNAL_REST_API_KEY}`,
+      },
+      body: JSON.stringify({
+        app_id: ONESIGNAL_APP_ID,
+        included_segments: [params.segment ?? "All"],
+        headings: { en: params.title },
+        contents: { en: params.message },
+        ...(params.url ? { url: params.url } : {}),
+      }),
+    });
+    const data = await res.json() as { id?: string; recipients?: number };
+    if (!res.ok) { console.error(`[Push] OneSignal broadcast error ${res.status}`); return false; }
+    console.log(`[Push] Broadcast "${params.title}" — id: ${data.id}, recipients: ${data.recipients ?? "?"}`);
+    return !!data.id;
+  } catch (err) {
+    console.error("[Push] sendPushToAll error:", err);
     return false;
   }
 }

@@ -122,6 +122,7 @@ const JobCompletion = lazy(() => import("./pages/JobCompletion"));
 const JobComplete = lazy(() => import("./pages/JobComplete"));
 
 // New Admin Command Center pages
+const PartnerActivation = lazy(() => import("./pages/admin/PartnerActivation"));
 const CommandCenter = lazy(() => import("./pages/admin/CommandCenter"));
 const PortfolioDashboard = lazy(() => import("./pages/admin/PortfolioDashboard"));
 const StrategicOverview = lazy(() => import("./pages/admin/StrategicOverview"));

@@ -53,6 +53,7 @@ import { integrationWebhooksRouter } from "./routers/integrationWebhooks";
 import { mediaLibraryRouter } from "./routers/mediaLibrary";
 import { photoPipelineRouter } from "./routers/photo-pipeline";
 import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
+import { propertyEnrichmentRouter } from "./routers/propertyEnrichment";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
 import { distributeJobCommissions, distributeSubscriptionCommissions, getRecruitingChain, previewJobCommissions } from "./agents/commissionCascadeEngine";
@@ -335,6 +336,7 @@ export const appRouter = router({
   proPass: proPassRouter,
   foundingPartner: foundingPartnerRouter,
   bidBoard: bidBoardRouter,
+  propertyEnrichment: propertyEnrichmentRouter,
   smartRoute: smartRouteRouter,
   adminDisputes: adminDisputesRouter,
   adminNotifications: adminNotificationsRouter,

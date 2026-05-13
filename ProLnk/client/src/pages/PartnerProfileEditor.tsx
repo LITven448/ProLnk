@@ -36,7 +36,7 @@ export default function PartnerProfileEditor() {
   const [serviceAreaCity, setServiceAreaCity] = useState<string | null>(null);
   const geocodeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const MAPBOX_TOKEN = "import.meta.env.VITE_MAPBOX_TOKEN ?? """;
+  const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN ?? "";
 
   const geocodeAndBuildMap = useCallback(async (query: string) => {
     if (!query.trim()) { setServiceAreaMapUrl(null); setServiceAreaCity(null); return; }

@@ -2337,6 +2337,15 @@ Answer concisely and helpfully. If asked about specific real-time account data (
         );
         return { success: true };
       }),
+
+    checkApplicationStatus: publicProcedure
+      .input(z.object({ email: z.string().email() }))
+      .query(async ({ input }) => {
+        const partner = await getPartnerByEmail(input.email);
+        if (!partner) return { status: "not_found" as const };
+        const status = (partner as { status?: string }).status ?? "pending";
+        return { status: status as "pending" | "approved" | "rejected" | "not_found" };
+      }),
   }),
   // -- Jobs --
   jobs: router({

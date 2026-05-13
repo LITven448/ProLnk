@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import {
   Briefcase, CheckCircle, ArrowRight, Building2,
 } from "lucide-react";
+import { trpc } from "../lib/trpc";
 
 const TRADE_CATEGORIES = [
   "HVAC",
@@ -63,18 +64,29 @@ export default function ExchangePostJob() {
     notifyWhenLive: false,
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+
+  const postJobMutation = trpc.exchange.publicPostJob.useMutation({
+    onSuccess: () => setSubmitted(true),
+  });
 
   const set = (field: keyof typeof form, value: string | boolean) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitted(true);
-      setSubmitting(false);
-    }, 700);
+    postJobMutation.mutate({
+      title: form.title,
+      tradeCategory: form.tradeCategory,
+      description: form.description,
+      budgetRange: form.budgetRange,
+      city: form.city,
+      state: form.state,
+      zip: form.zip,
+      startDate: form.startDate || undefined,
+      bidDeadline: form.bidDeadline || undefined,
+      contactEmail: form.contactEmail,
+      notifyWhenLive: form.notifyWhenLive,
+    });
   };
 
   return (
@@ -385,13 +397,18 @@ export default function ExchangePostJob() {
                 </div>
               </label>
 
+              {postJobMutation.error && (
+                <p className="text-xs text-red-400 text-center">
+                  {postJobMutation.error.message || "Submission failed. Please try again."}
+                </p>
+              )}
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={postJobMutation.isPending}
                 className="w-full py-3.5 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 flex items-center justify-center gap-2 disabled:opacity-60"
                 style={{ backgroundColor: "#F59E0B" }}
               >
-                {submitting ? (
+                {postJobMutation.isPending ? (
                   "Submitting..."
                 ) : (
                   <>

@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
 import { BarChart3, TrendingUp, Users, DollarSign, Briefcase, Send, CheckCircle, Activity } from "lucide-react";
@@ -13,7 +14,7 @@ function MetricCard({
   label: string;
   value: string | number;
   sub?: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   trend?: string;
   color?: string;
 }) {

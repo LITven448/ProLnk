@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ElementType } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import {
@@ -75,7 +75,7 @@ function StepCard({
   num, icon: Icon, title, body, tag, accent,
 }: {
   num: string;
-  icon: React.ElementType;
+  icon: ElementType;
   title: string;
   body: string;
   tag: string;

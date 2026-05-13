@@ -35,7 +35,6 @@ const PartnerCheckout = lazy(() => import("./pages/PartnerCheckout"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
 const InboundLeads = lazy(() => import("./pages/InboundLeads"));
 const MyReferrals = lazy(() => import("./pages/MyReferrals"));
-const MatchHistory = lazy(() => import("./pages/MatchHistory"));
 const ProLnkApp = lazy(() => import("./pages/ProLnkApp"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const LogJob = lazy(() => import("./pages/LogJob"));
@@ -84,6 +83,7 @@ const TierProgress = lazy(() => import("./pages/TierProgress"));
 const ReferralLink = lazy(() => import("./pages/ReferralLink"));
 const ReferralHub = lazy(() => import("./pages/dashboard/ReferralHub"));
 const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
+const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
 const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
 const NetworkTree = lazy(() => import("./pages/NetworkTree"));
 const TierUpgradeFlow = lazy(() => import("./pages/TierUpgradeFlow"));
@@ -447,8 +447,6 @@ const AccessibilitySettings = lazy(() => import("./pages/admin/AccessibilitySett
 const ErrorMonitoring = lazy(() => import("./pages/admin/ErrorMonitoring"));
 const PerformanceMonitoring = lazy(() => import("./pages/admin/PerformanceMonitoring"));
 const Documentation = lazy(() => import("./pages/Documentation"));
-const FAQ = lazy(() => import("./pages/FAQ"));
-const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 
 // Domain-based routing: trustypro.io → /trustypro experience
 function DomainRouter() {
@@ -569,7 +567,6 @@ function Router() {
       <Route path="/dashboard" component={PartnerDashboard} />
       <Route path="/dashboard/leads" component={InboundLeads} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
-      <Route path="/match-history" component={MatchHistory} />
       <Route path="/job/new" component={LogJob} />
       <Route path="/job-log" component={JobLog} />
       <Route path="/job-complete" component={JobComplete} />
@@ -589,14 +586,15 @@ function Router() {
       <Route path="/dashboard/ai" component={AIChatAssistant} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
       <Route path="/dashboard/earnings-history" component={EarningsHistoryDashboard} />
-            <Route path="/earnings-history" component={EarningsHistory} />
+      <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
-            <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
+      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
+      <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
       <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
       <Route path="/dashboard/upgrade" component={TierUpgradeFlow} />
@@ -850,10 +848,10 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
-            <Route path="/exchange" component={ExchangeLanding} />
+      <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />
-            <Route path="/exchange/my-bids" component={ExchangeMyBids} />
+      <Route path="/exchange/my-bids" component={ExchangeMyBids} />
       <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
@@ -948,8 +946,6 @@ function Router() {
       <Route path="/admin/performance" component={PerformanceMonitoring} />
 
       {/* Content & Marketing */}
-      <Route path="/faq" component={FAQ} />
-      <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/blog" component={Blog} />
       <Route path="/how-ai-works" component={HowAIWorks} />
       <Route path="/for-real-estate-agents" component={ForRealEstateAgents} />

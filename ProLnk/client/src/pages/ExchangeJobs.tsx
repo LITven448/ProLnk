@@ -533,12 +533,24 @@ function JobCard({
         />
       )}
       <div
-        className="rounded-2xl p-6 border transition-all hover:border-amber-500/30"
+        className="rounded-2xl p-6 border transition-all hover:border-amber-500/30 overflow-hidden relative"
         style={{
           backgroundColor: "rgba(255,255,255,0.04)",
           borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
         }}
       >
+        {/* Urgency left border accent */}
+        <div
+          className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
+          style={{
+            backgroundColor:
+              job.urgency === "Urgent"
+                ? "#ef4444"
+                : job.urgency === "Active"
+                ? "#f59e0b"
+                : "#6366f1",
+          }}
+        />
         {/* Top row: logo + title + bids badge */}
         <div className="flex items-start gap-3 mb-3">
           <CompanyLogo name={job.posterType} size={42} />
@@ -1097,6 +1109,20 @@ export default function ExchangeJobs() {
         &copy; 2026 ProLnk &mdash; ProLnk Exchange is a separate commercial
         network from the residential platform.
       </div>
+
+      {/* Floating Post a Job FAB */}
+      <Link href="/exchange/post-job">
+        <button
+          className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-bold text-[#0A1628] shadow-2xl transition-all hover:scale-105 active:scale-95"
+          style={{
+            backgroundColor: "#F59E0B",
+            boxShadow: "0 8px 32px rgba(245,158,11,0.45)",
+          }}
+        >
+          <Briefcase className="w-4 h-4" />
+          Post a Job
+        </button>
+      </Link>
     </div>
   );
 }

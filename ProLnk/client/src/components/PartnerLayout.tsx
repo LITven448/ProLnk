@@ -8,7 +8,7 @@ import {
   LogOut, Menu, X, ArrowRight, ChevronLeft, ChevronRight,
   Sparkles, Search, Bell, Camera, Send, Link2,
   Activity, TrendingUp, Star, Trophy, UserPlus, Bot,
-  User, Smartphone, ClipboardList, Rss, Zap
+  User, Smartphone, ClipboardList, Rss, Zap, Briefcase, Home
 } from "lucide-react";
 import { useState } from "react";
 import { GlobalSearch } from "@/components/GlobalSearch";
@@ -392,7 +392,7 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
           )}
 
           {/* Page Content */}
-          <main className="flex-1 overflow-auto flex flex-col">
+          <main className="flex-1 overflow-auto flex flex-col pb-16 md:pb-0">
             <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
             {/* Horizontal sub-tab bar — matches admin panel pattern */}
             {activeParent?.sub && activeParent.sub.length > 1 && (
@@ -424,6 +424,35 @@ export default function PartnerLayout({ children }: PartnerLayoutProps) {
           </main>
         </div>
       </div>
+
+      {/* Mobile Bottom Navigation — shown only on screens < 768px */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 flex items-center justify-around h-16 px-2 shadow-lg">
+        {[
+          { icon: Home,       label: "Home",     href: "/dashboard/partner-home" },
+          { icon: Briefcase,  label: "Jobs",      href: "/exchange/jobs" },
+          { icon: DollarSign, label: "Earnings",  href: "/dashboard/earnings" },
+          { icon: Users,      label: "Network",   href: "/dashboard/network-directory" },
+          { icon: Settings,   label: "Settings",  href: "/partner-settings" },
+        ].map(({ icon: Icon, label, href }) => {
+          const active = location === href || location.startsWith(href + "/");
+          return (
+            <Link key={href} href={href}>
+              <div className="flex flex-col items-center gap-0.5 px-3 py-1 cursor-pointer">
+                <Icon
+                  className="w-5 h-5"
+                  style={{ color: active ? "#0A1628" : "#9CA3AF" }}
+                />
+                <span
+                  className="text-[10px] font-medium"
+                  style={{ color: active ? "#0A1628" : "#9CA3AF" }}
+                >
+                  {label}
+                </span>
+              </div>
+            </Link>
+          );
+        })}
+      </nav>
     </div>
   );
 }

@@ -411,7 +411,7 @@ function EarningsSummaryCard() {
           Getting Started
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-4 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
         {[
           { label: "Jobs Completed", value: "$0", sub: "Log your first job →" },
           { label: "Commissions Earned", value: "$0", sub: "Earned per job logged" },

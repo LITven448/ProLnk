@@ -1,13 +1,39 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { MapPin, Trophy, Calendar, Users, Star, ArrowRight, CheckCircle, Clock, Share2, Copy, Zap } from "lucide-react";
+import { MapPin, Trophy, Calendar, Users, Star, ArrowRight, CheckCircle, Clock, Share2, Copy, Zap, Flame, ChevronDown, ChevronUp, TrendingUp, Award } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 const LAUNCH_DATE = new Date("2026-09-01T00:00:00");
+const SPRINT_END = new Date("2026-06-13T23:59:59"); // 4 weeks from mid-May
 
 const SHARE_URL = "https://prolnk.io/contest";
 const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & TrustyPro and compete for $10,000 in prizes. Top 5 referrers win cash at the live launch event.";
+
+// ─── Spring Sprint data (would come from API in production) ─────────────────
+
+const SPRINT_LEADERBOARD = [
+  { rank: 1, name: "Marcus T.", initials: "MT", jobs: 38, points: 1140, delta: "+3 this week" },
+  { rank: 2, name: "Deja W.",   initials: "DW", jobs: 31, points: 930,  delta: "+5 this week" },
+  { rank: 3, name: "Carlos M.", initials: "CM", jobs: 27, points: 810,  delta: "+2 this week" },
+  { rank: 4, name: "Priya S.",  initials: "PS", jobs: 24, points: 720,  delta: "+4 this week" },
+  { rank: 5, name: "Tyrone B.", initials: "TB", jobs: 22, points: 660,  delta: "+1 this week" },
+  { rank: 6, name: "Lauren K.", initials: "LK", jobs: 19, points: 570,  delta: "+6 this week" },
+  { rank: 7, name: "Andre F.",  initials: "AF", jobs: 17, points: 510,  delta: "+2 this week" },
+  { rank: 8, name: "Sofia R.",  initials: "SR", jobs: 15, points: 450,  delta: "+3 this week" },
+];
+
+const MY_POSITION = { rank: 14, name: "You", initials: "AF", jobs: 9, points: 270, delta: "+2 this week" };
+const JOBS_TO_NEXT_RANK = 4; // jobs needed to reach rank 13
+
+const SPRINT_PRIZES = [
+  { place: "1st",   amount: "$2,500", color: "text-amber-500",  bg: "from-amber-500/10 to-yellow-500/5", border: "border-amber-500/30" },
+  { place: "2nd",   amount: "$1,500", color: "text-slate-300",  bg: "from-slate-500/10 to-slate-500/5",  border: "border-slate-500/30" },
+  { place: "3rd",   amount: "$750",   color: "text-amber-700",  bg: "from-amber-700/10 to-amber-700/5",  border: "border-amber-700/30" },
+  { place: "4–10th",amount: "$250 ea",color: "text-slate-400",  bg: "from-slate-700/20 to-slate-700/10", border: "border-slate-700/50" },
+];
+
+// ─── Shared Components ────────────────────────────────────────────────────────
 
 function ShareButtons() {
   const copyLink = () => {
@@ -52,20 +78,16 @@ function ShareButtons() {
   );
 }
 
-function Countdown() {
+function Countdown({ targetDate }: { targetDate: Date }) {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const tick = () => {
-      const now = new Date();
-      const diff = LAUNCH_DATE.getTime() - now.getTime();
-      if (diff <= 0) {
-        setTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
+      const diff = targetDate.getTime() - Date.now();
+      if (diff <= 0) { setTime({ days: 0, hours: 0, minutes: 0, seconds: 0 }); return; }
       setTime({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        days:    Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours:   Math.floor((diff / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((diff / (1000 * 60)) % 60),
         seconds: Math.floor((diff / 1000) % 60),
       });
@@ -73,13 +95,13 @@ function Countdown() {
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [targetDate]);
 
   return (
     <div className="flex items-center justify-center gap-4 my-6">
       {[
-        { label: "Days", value: time.days },
-        { label: "Hours", value: time.hours },
+        { label: "Days",    value: time.days },
+        { label: "Hours",   value: time.hours },
         { label: "Minutes", value: time.minutes },
         { label: "Seconds", value: time.seconds },
       ].map(({ label, value }) => (
@@ -94,43 +116,33 @@ function Countdown() {
   );
 }
 
-const PRIZES = [
+const LAUNCH_PRIZES = [
   {
-    place: "1st Place",
-    medal: "🥇",
-    prize: "$5,000 Cash",
+    place: "1st Place", medal: "🥇", prize: "$5,000 Cash",
     sub: "Handed to you in person at the DFW launch event",
     perks: ["Lifetime Founding Member status", "VIP reserved seat at the launch event", "Featured in ProLnk & TrustyPro marketing"],
     gold: true,
   },
   {
-    place: "2nd Place",
-    medal: "🥈",
-    prize: "$2,500 Cash",
+    place: "2nd Place", medal: "🥈", prize: "$2,500 Cash",
     sub: "Cash prize awarded at the live launch event",
     perks: ["2 years free Premium membership", "Launch event VIP invite"],
     gold: false,
   },
   {
-    place: "3rd Place",
-    medal: "🥉",
-    prize: "$1,000 Cash",
+    place: "3rd Place", medal: "🥉", prize: "$1,000 Cash",
     sub: "Cash prize awarded at the live launch event",
     perks: ["1 year free Premium membership", "Launch event invite"],
     gold: false,
   },
   {
-    place: "4th Place",
-    medal: "4️⃣",
-    prize: "$750 in ProLnk Credits",
+    place: "4th Place", medal: "4️⃣", prize: "$750 in ProLnk Credits",
     sub: "Lead credits or home improvement credits — your choice",
     perks: ["Priority matching at launch", "Launch event invite"],
     gold: false,
   },
   {
-    place: "5th Place",
-    medal: "5️⃣",
-    prize: "$750 in ProLnk Credits",
+    place: "5th Place", medal: "5️⃣", prize: "$750 in ProLnk Credits",
     sub: "Lead credits or home improvement credits — your choice",
     perks: ["Priority matching at launch", "Launch event invite"],
     gold: false,
@@ -149,16 +161,195 @@ const RULES = [
   "Winners will be contacted via the email used during waitlist signup at least 14 days before the event.",
 ];
 
-export default function Contest() {
-  const { data: counts } = trpc.waitlist.getPublicCounts.useQuery(undefined, {
-    refetchInterval: 60_000,
-  });
+const SPRINT_RULES = [
+  "Sprint runs May 13 – June 13, 2026 (4 weeks). Points are calculated on completed, verified jobs.",
+  "Each completed job = 30 points. Bonus: 5-day streak = 50 bonus points.",
+  "Points are tallied daily. Leaderboard refreshes every 24 hours.",
+  "You must have an active ProLnk partner account in good standing to participate.",
+  "Prizes are awarded as direct account credits within 14 days of sprint close.",
+  "ProLnk reserves the right to disqualify accounts with fraudulent job completions.",
+];
 
+// ─── Sprint Section ────────────────────────────────────────────────────────────
+
+function SpringSprintSection() {
+  const [rulesOpen, setRulesOpen] = useState(false);
+
+  const weeksRemaining = Math.ceil((SPRINT_END.getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 7));
+
+  return (
+    <section className="bg-gradient-to-br from-[#0A1628] via-[#0f2040] to-[#1a2d4a] py-16 px-4">
+      <div className="max-w-4xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+            <Flame className="w-4 h-4 text-emerald-400" />
+            <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Active Now</span>
+          </div>
+          <h2 className="text-4xl font-black text-white mb-2">
+            Spring Sprint
+          </h2>
+          <p className="text-white/60 text-base max-w-xl mx-auto">
+            Top 10 pros win bonus cash — complete the most jobs in 4 weeks.
+          </p>
+
+          {/* Meta stats */}
+          <div className="flex items-center justify-center gap-6 mt-5 text-sm flex-wrap">
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+              <Trophy className="w-3.5 h-3.5 text-[#F5E642]" />
+              <span className="text-white font-semibold">$5,000 prize pool</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+              <Clock className="w-3.5 h-3.5 text-blue-400" />
+              <span className="text-white">{weeksRemaining > 0 ? `${weeksRemaining} week${weeksRemaining !== 1 ? "s" : ""} remaining` : "Final week!"}</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+              <Users className="w-3.5 h-3.5 text-violet-400" />
+              <span className="text-white">87 participants</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Prize row */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+          {SPRINT_PRIZES.map(({ place, amount, color, bg, border }) => (
+            <div key={place} className={`bg-gradient-to-br ${bg} border ${border} rounded-xl p-4 text-center`}>
+              <div className={`text-2xl font-black ${color}`}>{amount}</div>
+              <div className="text-slate-400 text-xs font-semibold mt-1">{place}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* My Position */}
+        <div className="mb-8 bg-violet-600/10 border border-violet-500/30 rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <TrendingUp className="w-4 h-4 text-violet-400" />
+            <span className="text-violet-300 font-semibold text-sm">Your Current Position</span>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                {MY_POSITION.initials}
+              </div>
+              <div>
+                <div className="text-white font-bold text-lg">#{MY_POSITION.rank}</div>
+                <div className="text-slate-400 text-xs">{MY_POSITION.jobs} jobs · {MY_POSITION.points.toLocaleString()} pts</div>
+              </div>
+            </div>
+            <div className="flex-1 min-w-0 text-center sm:text-left">
+              <div className="text-emerald-400 text-sm font-semibold">{MY_POSITION.delta}</div>
+            </div>
+            <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-2 text-sm text-amber-300">
+              Complete <span className="font-black text-amber-400">{JOBS_TO_NEXT_RANK} more jobs</span> to reach rank #{MY_POSITION.rank - 1}
+            </div>
+          </div>
+          {MY_POSITION.rank > 10 && (
+            <div className="mt-3 flex items-center gap-2 text-xs text-slate-400">
+              <Award className="w-3.5 h-3.5" />
+              You need to reach top 10 to win a prize. You're {MY_POSITION.rank - 10} spots away.
+            </div>
+          )}
+        </div>
+
+        {/* Leaderboard */}
+        <div className="bg-slate-800/60 border border-slate-700 rounded-2xl overflow-hidden mb-6">
+          <div className="px-5 py-4 border-b border-slate-700 flex items-center justify-between">
+            <h3 className="text-white font-bold flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-amber-400" /> Sprint Leaderboard
+            </h3>
+            <span className="text-slate-400 text-xs">Updated daily</span>
+          </div>
+          <div className="divide-y divide-slate-700/50">
+            {SPRINT_LEADERBOARD.map((entry, i) => (
+              <div key={entry.rank} className={`flex items-center gap-3 px-5 py-3 ${i < 3 ? "bg-slate-700/20" : ""}`}>
+                <div className="w-7 text-center flex-shrink-0">
+                  {i === 0 ? <span className="text-lg">🏆</span>
+                    : i === 1 ? <span className="text-lg">🥈</span>
+                    : i === 2 ? <span className="text-lg">🥉</span>
+                    : <span className="text-slate-500 text-sm font-bold">#{entry.rank}</span>}
+                </div>
+                <div className="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                  {entry.initials}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-white text-sm font-semibold">{entry.name}</div>
+                  <div className="text-slate-400 text-xs">{entry.delta}</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-white font-bold text-sm">{entry.points.toLocaleString()} pts</div>
+                  <div className="text-slate-400 text-xs">{entry.jobs} jobs</div>
+                </div>
+              </div>
+            ))}
+            {/* My position separator */}
+            <div className="px-5 py-2 bg-slate-900/40 text-center">
+              <span className="text-slate-500 text-xs">· · · {MY_POSITION.rank - SPRINT_LEADERBOARD.length - 1} more participants · · ·</span>
+            </div>
+            <div className="flex items-center gap-3 px-5 py-3 bg-violet-600/10 border-l-2 border-violet-500">
+              <div className="w-7 text-center flex-shrink-0">
+                <span className="text-slate-400 text-sm font-bold">#{MY_POSITION.rank}</span>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                {MY_POSITION.initials}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-violet-200 text-sm font-semibold">You</div>
+                <div className="text-slate-400 text-xs">{MY_POSITION.delta}</div>
+              </div>
+              <div className="text-right">
+                <div className="text-violet-200 font-bold text-sm">{MY_POSITION.points.toLocaleString()} pts</div>
+                <div className="text-slate-400 text-xs">{MY_POSITION.jobs} jobs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Rules accordion */}
+        <div className="bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden">
+          <button
+            onClick={() => setRulesOpen(!rulesOpen)}
+            className="w-full flex items-center justify-between px-5 py-4 text-left text-white font-semibold text-sm hover:bg-slate-700/20 transition-colors"
+          >
+            <span>Sprint Rules &amp; Eligibility</span>
+            {rulesOpen ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+          </button>
+          {rulesOpen && (
+            <div className="px-5 pb-5 space-y-2">
+              {SPRINT_RULES.map((rule, i) => (
+                <div key={i} className="flex items-start gap-3 bg-slate-800/60 rounded-lg px-4 py-3">
+                  <span className="text-xs font-black text-slate-500 w-5 flex-shrink-0 pt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="text-sm text-slate-300 leading-relaxed">{rule}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+// ─── Main Page ─────────────────────────────────────────────────────────────────
+
+export default function Contest() {
+  const { data: counts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { refetchInterval: 60_000 });
   const totalParticipants = (counts?.pros ?? 0) + (counts?.homes ?? 0);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
+
+      {/* ── Spring Sprint (active, in-app contest) ── */}
+      <SpringSprintSection />
+
+      {/* ── Divider ── */}
+      <div className="bg-gray-50 border-y border-gray-100 py-6 px-4 text-center">
+        <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold">Also Happening</p>
+        <p className="text-gray-700 font-bold mt-1">DFW Launch Referral Contest — Sep 1, 2026</p>
+      </div>
+
+      {/* ── Hero ── */}
       <div className="bg-gradient-to-br from-[#0A1628] via-[#0f2040] to-[#1a2d4a] text-white py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/30 rounded-full px-4 py-1.5 mb-6">
@@ -184,35 +375,29 @@ export default function Contest() {
           )}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="/waitlist/pro"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#F5E642] text-[#0A1628] font-bold text-sm rounded-none hover:opacity-90 transition-opacity"
-            >
+            <a href="/waitlist/pro" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#F5E642] text-[#0A1628] font-bold text-sm rounded-none hover:opacity-90 transition-opacity">
               Join as a Service Pro <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href="/waitlist/homeowner"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 border border-white/20 text-white font-bold text-sm rounded-none hover:bg-white/15 transition-colors"
-            >
+            <a href="/waitlist/homeowner" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 border border-white/20 text-white font-bold text-sm rounded-none hover:bg-white/15 transition-colors">
               Join as a Homeowner <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Countdown */}
+      {/* ── Countdown ── */}
       <div className="bg-gray-50 border-b border-gray-100 py-10 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Clock className="w-4 h-4 text-gray-400" />
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Time Until DFW Launch Day — Sep 1, 2026</p>
           </div>
-          <Countdown />
+          <Countdown targetDate={LAUNCH_DATE} />
           <p className="text-xs text-gray-400 mt-2">Contest closes at launch. Refer as many people as possible before time runs out.</p>
         </div>
       </div>
 
-      {/* How to Win */}
+      {/* ── How to Win ── */}
       <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
@@ -227,29 +412,12 @@ export default function Contest() {
           <div className="bg-gradient-to-br from-[#0A1628]/5 to-[#00B5B8]/5 rounded-2xl border border-[#0A1628]/10 p-8">
             <div className="grid sm:grid-cols-3 gap-6">
               {[
-                {
-                  step: "01",
-                  title: "Sign Up",
-                  desc: "Join the ProLnk or TrustyPro waitlist. You'll receive a unique referral link immediately after signing up.",
-                  icon: <Users className="w-6 h-6" />,
-                },
-                {
-                  step: "02",
-                  title: "Refer 5+ Approved Pros",
-                  desc: "Share your link with licensed contractors and service professionals in DFW. Each referral who gets approved counts toward your total.",
-                  icon: <Star className="w-6 h-6" />,
-                },
-                {
-                  step: "03",
-                  title: "Claim Your Prize",
-                  desc: "Top 5 referrers at launch day are invited to the live event. Prizes are handed out on stage. You must attend to collect cash.",
-                  icon: <Trophy className="w-6 h-6" />,
-                },
+                { step: "01", title: "Sign Up", desc: "Join the ProLnk or TrustyPro waitlist. You'll receive a unique referral link immediately after signing up.", icon: <Users className="w-6 h-6" /> },
+                { step: "02", title: "Refer 5+ Approved Pros", desc: "Share your link with licensed contractors and service professionals in DFW. Each referral who gets approved counts toward your total.", icon: <Star className="w-6 h-6" /> },
+                { step: "03", title: "Claim Your Prize", desc: "Top 5 referrers at launch day are invited to the live event. Prizes are handed out on stage. You must attend to collect cash.", icon: <Trophy className="w-6 h-6" /> },
               ].map(({ step, title, desc, icon }) => (
                 <div key={step} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#0A1628] flex items-center justify-center mx-auto mb-4 text-white">
-                    {icon}
-                  </div>
+                  <div className="w-12 h-12 rounded-full bg-[#0A1628] flex items-center justify-center mx-auto mb-4 text-white">{icon}</div>
                   <div className="text-xs font-black text-gray-300 mb-1 tracking-widest">{step}</div>
                   <h3 className="font-bold text-[#0A1628] mb-2">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -258,30 +426,25 @@ export default function Contest() {
             </div>
             <div className="mt-8 flex items-center justify-center gap-3 bg-[#F5E642]/20 border border-[#F5E642]/40 rounded-xl px-6 py-3">
               <CheckCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-              <p className="text-sm font-semibold text-amber-800">
-                Minimum threshold: refer 5+ approved pros to be eligible for prizes
-              </p>
+              <p className="text-sm font-semibold text-amber-800">Minimum threshold: refer 5+ approved pros to be eligible for prizes</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Prize Tiers */}
+      {/* ── Prize Tiers (DFW Launch) ── */}
       <div className="py-14 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-3">
               <Trophy className="w-5 h-5 text-amber-500" />
-              <h2 className="text-2xl font-black text-[#0A1628]">Prize Breakdown</h2>
+              <h2 className="text-2xl font-black text-[#0A1628]">DFW Launch Prize Breakdown</h2>
             </div>
             <p className="text-gray-500 text-sm">Top 5 referrers win. The more approved pros you refer, the higher you finish.</p>
           </div>
           <div className="space-y-3">
-            {PRIZES.map(({ place, medal, prize, sub, perks, gold }) => (
-              <div
-                key={place}
-                className={`rounded-xl border p-5 ${gold ? "bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-300" : "bg-white border-gray-100"}`}
-              >
+            {LAUNCH_PRIZES.map(({ place, medal, prize, sub, perks, gold }) => (
+              <div key={place} className={`rounded-xl border p-5 ${gold ? "bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-300" : "bg-white border-gray-100"}`}>
                 <div className="flex items-start gap-4">
                   <div className="text-3xl flex-shrink-0">{medal}</div>
                   <div className="flex-1 min-w-0">
@@ -293,8 +456,7 @@ export default function Contest() {
                     <div className="flex flex-wrap gap-2">
                       {perks.map((perk) => (
                         <span key={perk} className={`inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium ${gold ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-600"}`}>
-                          <CheckCircle className="w-3 h-3" />
-                          {perk}
+                          <CheckCircle className="w-3 h-3" />{perk}
                         </span>
                       ))}
                     </div>
@@ -307,14 +469,14 @@ export default function Contest() {
         </div>
       </div>
 
-      {/* The Event */}
+      {/* ── The Event ── */}
       <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-[#0A1628] to-[#1a2d4a] rounded-2xl p-8 text-white text-center">
             <Calendar className="w-10 h-10 text-[#F5E642] mx-auto mb-4" />
             <h2 className="text-2xl font-black mb-3">The Launch Event — Sep 1, 2026</h2>
             <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-6">
-              When ProLnk and TrustyPro officially launch in DFW, we're hosting a live event to celebrate. The top 5 referrers will be invited as VIP guests. Prize checks are handed out on stage. We're documenting everything — this is a moment worth being part of.
+              When ProLnk and TrustyPro officially launch in DFW, we're hosting a live event to celebrate. The top 5 referrers will be invited as VIP guests. Prize checks are handed out on stage.
             </p>
             <div className="flex items-center justify-center gap-2 bg-[#F5E642]/10 border border-[#F5E642]/20 rounded-xl px-6 py-3 inline-flex">
               <MapPin className="w-4 h-4 text-[#F5E642]" />
@@ -324,7 +486,7 @@ export default function Contest() {
         </div>
       </div>
 
-      {/* Rules */}
+      {/* ── Official Rules ── */}
       <div className="bg-gray-50 py-14 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl font-black text-[#0A1628] mb-6">Official Contest Rules</h2>
@@ -339,7 +501,7 @@ export default function Contest() {
         </div>
       </div>
 
-      {/* Share Section */}
+      {/* ── Share ── */}
       <div className="py-14 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-2xl mx-auto text-center">
           <Share2 className="w-8 h-8 text-[#00B5B8] mx-auto mb-4" />
@@ -349,7 +511,7 @@ export default function Contest() {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* ── Final CTA ── */}
       <div className="py-14 px-4 text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-black text-[#0A1628] mb-3">Ready to compete?</h2>
@@ -358,22 +520,17 @@ export default function Contest() {
             <p className="text-sm text-[#00B5B8] font-semibold mb-6">{totalParticipants.toLocaleString()} people are already on the board.</p>
           )}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="/waitlist/pro"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#0A1628] text-white font-bold text-sm hover:opacity-90 transition-opacity"
-            >
+            <a href="/waitlist/pro" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#0A1628] text-white font-bold text-sm hover:opacity-90 transition-opacity">
               I'm a Service Pro <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href="/waitlist/homeowner"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-700 transition-colors"
-            >
+            <a href="/waitlist/homeowner" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-700 transition-colors">
               I'm a Homeowner <ArrowRight className="w-4 h-4" />
             </a>
           </div>
           <p className="text-xs text-gray-400 mt-4">Questions? Contact us at hello@prolnk.io</p>
         </div>
       </div>
+
     </div>
   );
 }

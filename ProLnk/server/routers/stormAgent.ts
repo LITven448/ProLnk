@@ -7,7 +7,7 @@ import { router, protectedProcedure } from "../_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { getDb } from "../db";
 import { sql } from "drizzle-orm";
-import { runStormScan, fetchStormAlerts } from "../storm-agent";
+import { runStormScan, fetchStormAlerts, checkTomorrowIoAlerts, fetchTomorrowIoForecast } from "../storm-agent";
 
 export const stormAgentRouter = router({
   // --- Get recent storm events (admin) ---
@@ -15,7 +15,7 @@ export const stormAgentRouter = router({
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const db = await getDb();
     if (!db) return [];
-    const rows = await (db as any).execute(
+    const rows = await db.execute(
       sql`SELECT * FROM stormEvents ORDER BY createdAt DESC LIMIT 50`
     );
     return (rows.rows || rows) as any[];
@@ -28,7 +28,7 @@ export const stormAgentRouter = router({
       if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
       const db = await getDb();
       if (!db) return [];
-      const rows = await (db as any).execute(
+      const rows = await db.execute(
         sql`SELECT sl.*, p.businessName as partnerName
             FROM stormLeads sl
             LEFT JOIN partners p ON p.id = sl.dispatchedToPartnerId
@@ -61,7 +61,7 @@ export const stormAgentRouter = router({
     if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
     const db = await getDb();
     if (!db) return null;
-    const [totals] = await (db as any).execute(
+    const [totals] = await db.execute(
       sql`SELECT
         COUNT(*) as totalEvents,
         SUM(leadsGenerated) as totalLeads,
@@ -78,6 +78,16 @@ export const stormAgentRouter = router({
     };
   }),
 
+  // --- Get 24-hour DFW weather forecast from Tomorrow.io ---
+  getWeatherForecast: protectedProcedure.query(async ({ ctx }) => {
+    if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+    const [forecast, alerts] = await Promise.all([
+      fetchTomorrowIoForecast(),
+      checkTomorrowIoAlerts(),
+    ]);
+    return { forecast, alerts };
+  }),
+
   // --- Dispatch a storm lead to a partner ---
   dispatchLead: protectedProcedure
     .input(z.object({ stormLeadId: z.number(), partnerId: z.number() }))
@@ -85,7 +95,7 @@ export const stormAgentRouter = router({
       if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-      await (db as any).execute(
+      await db.execute(
         sql`UPDATE stormLeads SET
           status = 'dispatched',
           dispatchedToPartnerId = ${input.partnerId},

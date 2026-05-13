@@ -76,6 +76,107 @@ function CopyButton({ text, label }: { text: string; label: string }) {
   );
 }
 
+const FOUNDING_TIERS = [
+  { name: "Charter Tier",  cap: 25,   color: "#f59e0b", barColor: "linear-gradient(90deg, #f59e0b, #d97706)" },
+  { name: "Founding Tier", cap: 100,  color: "#6366f1", barColor: "linear-gradient(90deg, #6366f1, #4f46e5)" },
+  { name: "Level 3",       cap: 400,  color: "#6b7280", barColor: "linear-gradient(90deg, #6b7280, #4b5563)" },
+  { name: "Level 4",       cap: 1600, color: "#6b7280", barColor: "linear-gradient(90deg, #6b7280, #4b5563)" },
+];
+
+const TOTAL_CAP = 500;
+
+function FoundingTierBars({ prosCount }: { prosCount: number }) {
+  let remaining = prosCount;
+  const filled = FOUNDING_TIERS.map((t) => {
+    const thisTierFilled = Math.min(remaining, t.cap);
+    remaining = Math.max(0, remaining - t.cap);
+    return thisTierFilled;
+  });
+
+  return (
+    <div className="space-y-3">
+      {FOUNDING_TIERS.map((tier, i) => {
+        const tierFilled = filled[i];
+        const pct = Math.round((tierFilled / tier.cap) * 100);
+        const isActive = i === 0 || filled[i - 1] >= FOUNDING_TIERS[i - 1].cap;
+        const isFull = tierFilled >= tier.cap;
+        const blocks = 16;
+        const filledBlocks = Math.round((pct / 100) * blocks);
+
+        return (
+          <div key={tier.name} className="space-y-1">
+            <div className="flex items-center justify-between text-xs">
+              <span className="font-semibold" style={{ color: isActive ? tier.color : "#4b5563" }}>
+                {tier.name}
+              </span>
+              <span style={{ color: isActive ? "#d1d5db" : "#4b5563" }}>
+                {tierFilled}/{tier.cap} filled
+                {!isActive && " (waiting)"}
+                {isFull && " ✓ FULL"}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="flex gap-0.5 flex-1">
+                {Array.from({ length: blocks }).map((_, b) => (
+                  <div
+                    key={b}
+                    className="h-2 flex-1 rounded-sm"
+                    style={{
+                      background: b < filledBlocks
+                        ? (isActive ? tier.color : "#4b5563")
+                        : "rgba(255,255,255,0.06)",
+                    }}
+                  />
+                ))}
+              </div>
+              {isActive && (
+                <span className="text-xs font-bold w-8 text-right" style={{ color: tier.color }}>
+                  {pct}%
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function UrgencyTimer({ prosCount }: { prosCount: number }) {
+  const pct = Math.round((prosCount / TOTAL_CAP) * 100);
+  let statusColor = "#22c55e";
+  let statusText = "Still plenty of spots";
+  if (pct >= 50) {
+    statusColor = "#ef4444";
+    statusText = "⚠️ Over halfway full";
+  } else if (pct >= 10) {
+    statusColor = "#f59e0b";
+    statusText = "Filling up — don't wait";
+  }
+
+  return (
+    <div className="p-4 rounded-xl space-y-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+      <div className="flex items-center gap-2">
+        <Zap size={14} style={{ color: statusColor }} />
+        <span className="text-xs font-bold text-white">Waitlist closes permanently at 500 applications</span>
+      </div>
+      <div className="flex items-center justify-between">
+        <span className="text-xs text-gray-400">Currently at <span className="font-bold text-white">{prosCount}</span> of 500 applications</span>
+        <span className="text-xs font-bold" style={{ color: statusColor }}>{statusText}</span>
+      </div>
+      <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: `${Math.min(100, pct)}%` }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="h-full rounded-full"
+          style={{ background: statusColor }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function TierProgressBar({ position, tier }: { position: number; tier: string }) {
   const chartSize = 100;
   const foundingSize = 500;
@@ -103,7 +204,6 @@ function TierProgressBar({ position, tier }: { position: number; tier: string })
 
   if (position <= foundingSize) {
     const progress = ((position - chartSize) / (foundingSize - chartSize)) * 100;
-    const spotsLeft = Math.max(0, chartSize - /* already filled */ 0);
     return (
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
@@ -256,6 +356,8 @@ export default function WaitlistStatus() {
     { enabled: !!(refCode || emailParam) }
   );
   const { data: leaderboard } = trpc.proWaitlist.getLeaderboard.useQuery();
+  const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery();
+  const prosCount = publicCounts?.pros ?? 0;
 
   const referralLink = status ? `https://prolnk.io/apply?ref=${status.referralCode}` : "";
   const tier = status?.tier || "Standard";
@@ -361,6 +463,12 @@ export default function WaitlistStatus() {
 
           <div className="mt-5">
             <TierProgressBar position={status.position} tier={tier} />
+          </div>
+
+          <div className="mt-5 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Founding Network — Live Tier Fill</p>
+            <FoundingTierBars prosCount={prosCount} />
+            <UrgencyTimer prosCount={prosCount} />
           </div>
         </motion.div>
 

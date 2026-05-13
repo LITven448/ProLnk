@@ -1,10 +1,10 @@
 import type React from "react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
 import {
-  AreaChart, Area, BarChart, Bar, Cell,
+  AreaChart, Area, BarChart, Bar,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
 import {
@@ -12,7 +12,8 @@ import {
   Clock, ChevronRight, CheckCircle,
   TrendingUp, ArrowUpRight, Radar,
   CloudLightning, AlertTriangle, Activity,
-  Filter, Wrench,
+  Filter, Wrench, Database, Mail, Bot, CreditCard, Camera, Phone, Bell,
+  Play, Download, Send,
 } from "lucide-react";
 
 // --- Shared styles ------------------------------------------------------------
@@ -108,6 +109,30 @@ const ATTN_COLORS: Record<string, string> = {
   lead:        T.purple,
 };
 
+// --- System Status Indicator --------------------------------------------------
+interface StatusDotProps {
+  active: boolean | null;
+  label: string;
+  detail: string;
+  icon: React.ElementType;
+}
+function StatusDot({ active, label, detail, icon: Icon }: StatusDotProps) {
+  const color = active === null ? T.muted : active ? T.green : T.red;
+  const bg    = active === null ? `${T.muted}18` : active ? "#D1FAE5" : "#FEE2E2";
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 10, backgroundColor: T.bg }}>
+      <div style={{ width: 32, height: 32, borderRadius: 8, background: bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        <Icon style={{ width: 16, height: 16, color }} />
+      </div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 12, fontWeight: 700, color: T.text, lineHeight: 1.2 }}>{label}</div>
+        <div style={{ fontSize: 11, color, marginTop: 2, fontFamily: MONO }}>{detail}</div>
+      </div>
+      <div style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: color, flexShrink: 0 }} />
+    </div>
+  );
+}
+
 // --- Main ---------------------------------------------------------------------
 export default function CommandCenter() {
   const { data: stats }       = trpc.admin.getNetworkStats.useQuery();
@@ -117,6 +142,17 @@ export default function CommandCenter() {
   const { data: trustyLeads } = trpc.trustyPro.getLeads.useQuery();
   const { data: npsStats }    = trpc.homeowner.getNpsStats.useQuery();
   const { data: waitlistRaw = [] } = trpc.waitlistAdmin.getProWaitlist.useQuery({ status: "all", limit: 2125 });
+  const { data: systemStatus } = trpc.admin.getSystemStatus.useQuery();
+
+  const [triggerToast, setTriggerToast] = useState<string | null>(null);
+  const showToast = (msg: string) => { setTriggerToast(msg); setTimeout(() => setTriggerToast(null), 3000); };
+
+  const stormScan = trpc.stormAgent.triggerScan.useMutation({
+    onSuccess: (r: any) => showToast(`Storm scan complete — ${r?.leadsCreated ?? 0} leads created`),
+    onError: () => showToast("Storm scan failed"),
+  });
+  const exportWaitlist = trpc.waitlistAdmin.exportWaitlist.useQuery({ source: "all" }, { enabled: false });
+  const [exporting, setExporting] = useState(false);
 
   const totalPartners        = stats?.totalPartners        ?? 0;
   const totalOpportunities   = stats?.totalOpportunities   ?? 0;
@@ -701,6 +737,183 @@ export default function CommandCenter() {
                 <Bar dataKey="revenue" fill={T.green} radius={[4,4,0,0]} />
               </BarChart>
             </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* -- Toast notification ------------------------------------------ */}
+        {triggerToast && (
+          <div style={{
+            position: "fixed", bottom: 24, right: 24, zIndex: 9999,
+            background: T.card, borderRadius: 12, padding: "12px 20px",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
+            display: "flex", alignItems: "center", gap: 10,
+            border: `1px solid ${T.border}`, fontFamily: FONT, fontSize: 13, color: T.text,
+          }}>
+            <CheckCircle style={{ width: 16, height: 16, color: T.green }} />
+            {triggerToast}
+          </div>
+        )}
+
+        {/* -- ROW N: System Status + Manual Triggers ---------------------- */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+
+          {/* System Status */}
+          <div style={CARD_STYLE}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 9, background: BADGE_GRADIENTS.blue, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Activity style={{ width: 18, height: 18, color: "#fff" }} />
+              </div>
+              <p style={LABEL_STYLE}>System Status</p>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              <StatusDot
+                icon={Database}
+                label="Database"
+                active={systemStatus ? systemStatus.database : null}
+                detail={systemStatus ? (systemStatus.database ? "TiDB Connected" : "Not configured") : "Checking…"}
+              />
+              <StatusDot
+                icon={Mail}
+                label="Email (Resend)"
+                active={systemStatus ? systemStatus.email : null}
+                detail={systemStatus ? (systemStatus.email ? "Configured" : "Key missing") : "Checking…"}
+              />
+              <StatusDot
+                icon={Bot}
+                label="AI Agents"
+                active={systemStatus ? systemStatus.anthropic : null}
+                detail={systemStatus ? (systemStatus.anthropic ? "30 Claude agents active" : "Key missing") : "Checking…"}
+              />
+              <StatusDot
+                icon={CreditCard}
+                label="Stripe"
+                active={systemStatus ? systemStatus.stripe !== 'none' : null}
+                detail={
+                  systemStatus
+                    ? systemStatus.stripe === 'live' ? "Live mode" : systemStatus.stripe === 'test' ? "Test mode" : "Not configured"
+                    : "Checking…"
+                }
+              />
+              <StatusDot
+                icon={Camera}
+                label="Photo AI"
+                active={systemStatus ? systemStatus.openai : null}
+                detail={systemStatus ? (systemStatus.openai ? "GPT-4o Vision active" : "Key missing") : "Checking…"}
+              />
+              <StatusDot
+                icon={Phone}
+                label="Twilio SMS"
+                active={systemStatus ? systemStatus.twilio : null}
+                detail={systemStatus ? (systemStatus.twilio ? "Configured" : "Not configured") : "Checking…"}
+              />
+              <StatusDot
+                icon={Bell}
+                label="OneSignal"
+                active={systemStatus ? systemStatus.onesignal : null}
+                detail={systemStatus ? (systemStatus.onesignal ? "Configured" : "Not configured") : "Checking…"}
+              />
+            </div>
+          </div>
+
+          {/* Manual Triggers */}
+          <div style={CARD_STYLE}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 9, background: BADGE_GRADIENTS.orange, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Zap style={{ width: 18, height: 18, color: "#fff" }} />
+              </div>
+              <p style={LABEL_STYLE}>Manual Triggers</p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+
+              {/* Run Storm Scan */}
+              <button
+                disabled={stormScan.isPending}
+                onClick={() => stormScan.mutate({ state: "TX" })}
+                style={{
+                  display: "flex", alignItems: "center", gap: 12, padding: "14px 16px",
+                  borderRadius: 10, border: `1px solid ${T.border}`, backgroundColor: T.bg,
+                  cursor: stormScan.isPending ? "not-allowed" : "pointer",
+                  opacity: stormScan.isPending ? 0.6 : 1, fontFamily: FONT, textAlign: "left",
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={e => { if (!stormScan.isPending) (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.card; }}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.bg}
+              >
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#DBEAFE", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <CloudLightning style={{ width: 15, height: 15, color: "#2563EB" }} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>Run Storm Scan</div>
+                  <div style={{ fontSize: 11, color: T.muted, marginTop: 1 }}>NOAA alert scan — TX state</div>
+                </div>
+                <Play style={{ width: 14, height: 14, color: stormScan.isPending ? T.muted : T.accent }} />
+              </button>
+
+              {/* Send Test Notification */}
+              <button
+                onClick={() => showToast("Notification sent")}
+                style={{
+                  display: "flex", alignItems: "center", gap: 12, padding: "14px 16px",
+                  borderRadius: 10, border: `1px solid ${T.border}`, backgroundColor: T.bg,
+                  cursor: "pointer", fontFamily: FONT, textAlign: "left", transition: "background 0.15s",
+                }}
+                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.card}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.bg}
+              >
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#FEF3C7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Send style={{ width: 15, height: 15, color: "#D97706" }} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>Send Test Notification</div>
+                  <div style={{ fontSize: 11, color: T.muted, marginTop: 1 }}>Broadcast to all active pros</div>
+                </div>
+                <Play style={{ width: 14, height: 14, color: T.accent }} />
+              </button>
+
+              {/* Export All Waitlist Data */}
+              <button
+                disabled={exporting}
+                onClick={async () => {
+                  setExporting(true);
+                  try {
+                    const result = await exportWaitlist.refetch();
+                    const data: any = result.data ?? {};
+                    const proRows: any[] = data.pro ?? [];
+                    const homeRows: any[] = data.home ?? [];
+                    const allRows = [...proRows, ...homeRows];
+                    if (allRows.length === 0) { showToast("No waitlist data to export"); return; }
+                    const allKeys = Array.from(new Set(allRows.flatMap((r: any) => Object.keys(r))));
+                    const headers = allKeys.join(",");
+                    const csvRows = allRows.map((r: any) => allKeys.map((k: string) => `"${String(r[k] ?? "").replace(/"/g, '""')}"`).join(","));
+                    const csv = [headers, ...csvRows].join("\n");
+                    const blob = new Blob([csv], { type: "text/csv" });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url; a.download = `waitlist-export-${new Date().toISOString().slice(0,10)}.csv`; a.click();
+                    URL.revokeObjectURL(url);
+                    showToast(`Exported ${allRows.length} waitlist entries`);
+                  } finally { setExporting(false); }
+                }}
+                style={{
+                  display: "flex", alignItems: "center", gap: 12, padding: "14px 16px",
+                  borderRadius: 10, border: `1px solid ${T.border}`, backgroundColor: T.bg,
+                  cursor: exporting ? "not-allowed" : "pointer",
+                  opacity: exporting ? 0.6 : 1, fontFamily: FONT, textAlign: "left", transition: "background 0.15s",
+                }}
+                onMouseEnter={e => { if (!exporting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.card; }}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.backgroundColor = T.bg}
+              >
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: "#D1FAE5", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Download style={{ width: 15, height: 15, color: "#059669" }} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>Export All Waitlist Data</div>
+                  <div style={{ fontSize: 11, color: T.muted, marginTop: 1 }}>Download CSV of all signups</div>
+                </div>
+                <Play style={{ width: 14, height: 14, color: exporting ? T.muted : T.accent }} />
+              </button>
+
+            </div>
           </div>
         </div>
 

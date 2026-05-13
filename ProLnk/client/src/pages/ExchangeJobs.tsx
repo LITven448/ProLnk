@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import {
   Briefcase, MapPin, DollarSign, Clock, Filter, ChevronDown,
   ArrowRight, Building2, Users, Bell, Zap, CheckCircle2, X,
+  TrendingUp, Eye,
 } from "lucide-react";
 import { trpc } from "../lib/trpc";
 
@@ -30,6 +31,13 @@ const PROJECT_SIZES = [
 
 const URGENCY_OPTIONS = ["All", "Urgent", "Active", "Ongoing"];
 
+const TIMELINE_OPTIONS = [
+  "1 week",
+  "2 weeks",
+  "1 month",
+  "Custom",
+];
+
 const SEED_JOBS = [
   {
     id: 1,
@@ -44,6 +52,7 @@ const SEED_JOBS = [
       "Full HVAC replacement across a 50-unit complex. New air handlers, condensers, and ductwork inspection required. Licensed HVAC contractor with commercial multifamily experience mandatory. All units must be completed within a 4-week window with minimal tenant disruption.",
     urgency: "Urgent",
     applicants: 3,
+    postedDaysAgo: 2,
   },
   {
     id: 2,
@@ -58,6 +67,7 @@ const SEED_JOBS = [
       "Full tear-off and TPO membrane installation on a 7-tenant strip mall. Drainage system upgrade included. Work must be phased to keep tenants operational. Class-A commercial roofing license required. Bid includes 10-year workmanship warranty.",
     urgency: "Active",
     applicants: 5,
+    postedDaysAgo: 4,
   },
   {
     id: 3,
@@ -72,6 +82,7 @@ const SEED_JOBS = [
       "Upgrade 400A main panel to 800A 3-phase service for new equipment installation. Requires load calculations, permit pull, and inspection coordination with Oncor. Master electrician on-site throughout project. 180,000 sq ft facility, weekend work acceptable.",
     urgency: "Urgent",
     applicants: 2,
+    postedDaysAgo: 1,
   },
   {
     id: 4,
@@ -86,6 +97,7 @@ const SEED_JOBS = [
       "Grease trap replacement and backflow preventer installation across 12 quick-service restaurant locations in DFW. Must be completed during non-operational hours (10PM–6AM). Commercial plumbing license required. Contractor handles permitting at each location.",
     urgency: "Active",
     applicants: 7,
+    postedDaysAgo: 5,
   },
   {
     id: 5,
@@ -100,6 +112,7 @@ const SEED_JOBS = [
       "Exterior repaint for a 4-building Class-B office park totaling 96,000 sq ft of facade. Surface prep, primer, and 2-coat elastomeric finish. Color match to existing scheme. OSHA-compliant scaffolding and lift equipment required. Phased completion over 6 weeks.",
     urgency: "Active",
     applicants: 4,
+    postedDaysAgo: 7,
   },
   {
     id: 6,
@@ -114,6 +127,7 @@ const SEED_JOBS = [
       "Full-service maintenance and repair contract for 8 multifamily communities totaling 1,400 units across Frisco, McKinney, and Prosper. 24-hour emergency response required. Services include plumbing, HVAC filter changes, appliance repair, make-ready turns, and common area upkeep.",
     urgency: "Ongoing",
     applicants: 11,
+    postedDaysAgo: 10,
   },
   {
     id: 7,
@@ -128,6 +142,7 @@ const SEED_JOBS = [
       "Full tear-off and replacement of flat commercial roof on a 12-unit HOA clubhouse and attached structures. TPO membrane preferred. Certified roofing contractors only. Project must complete before July 4th community events.",
     urgency: "Active",
     applicants: 6,
+    postedDaysAgo: 3,
   },
   {
     id: 8,
@@ -142,6 +157,7 @@ const SEED_JOBS = [
       "LVP and carpet tile replacement across 3 floors (42,000 sq ft total) of a corporate headquarters. Phased installation to keep one floor operational at all times. Asbestos abatement completed — clean start. Commercial flooring contractor with office space experience required.",
     urgency: "Active",
     applicants: 4,
+    postedDaysAgo: 6,
   },
   {
     id: 9,
@@ -156,8 +172,55 @@ const SEED_JOBS = [
       "Monthly landscape maintenance for a 200-unit apartment complex across 18 acres. Includes mowing, edging, irrigation management, seasonal color rotations, and light tree work. 12-month contract with renewal option. ISA-certified arborist on retainer preferred.",
     urgency: "Ongoing",
     applicants: 9,
+    postedDaysAgo: 12,
   },
 ];
+
+const LOGO_COLORS = [
+  { bg: "rgba(245,158,11,0.18)", color: "#F59E0B" },
+  { bg: "rgba(99,102,241,0.18)", color: "#818cf8" },
+  { bg: "rgba(34,197,94,0.18)", color: "#4ade80" },
+  { bg: "rgba(239,68,68,0.18)", color: "#f87171" },
+  { bg: "rgba(14,165,233,0.18)", color: "#38bdf8" },
+  { bg: "rgba(168,85,247,0.18)", color: "#c084fc" },
+  { bg: "rgba(251,146,60,0.18)", color: "#fb923c" },
+];
+
+function getLogoColor(name: string) {
+  const idx = name.charCodeAt(0) % LOGO_COLORS.length;
+  return LOGO_COLORS[idx];
+}
+
+function getInitials(name: string) {
+  const words = name.trim().split(/\s+/);
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[words.length > 2 ? 2 : 1][0]).toUpperCase();
+}
+
+function CompanyLogo({ name, size = 40 }: { name: string; size?: number }) {
+  const { bg, color } = getLogoColor(name);
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: 10,
+        backgroundColor: bg,
+        color,
+        fontWeight: 700,
+        fontSize: size * 0.35,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        letterSpacing: "0.03em",
+        border: `1px solid ${color}30`,
+      }}
+    >
+      {getInitials(name)}
+    </div>
+  );
+}
 
 function FilterDropdown({
   label,
@@ -225,6 +288,8 @@ function BidModal({
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [price, setPrice] = useState("");
+  const [timeline, setTimeline] = useState("");
   const [message, setMessage] = useState("");
 
   const submitBid = trpc.exchange.publicSubmitBid.useMutation({
@@ -236,81 +301,152 @@ function BidModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    submitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message });
+    const fullMessage = `Proposed Price: $${price}\nTimeline: ${timeline}\n\n${message}`;
+    submitBid.mutate({ jobId: job.id, jobTitle: job.title, name, email, message: fullMessage });
   };
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)" }}
+      style={{ backgroundColor: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
-        className="w-full max-w-md rounded-2xl p-6 border"
+        className="w-full max-w-lg rounded-2xl border overflow-hidden"
         style={{ backgroundColor: "#0D1F3C", borderColor: "rgba(245,158,11,0.3)" }}
       >
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h3 className="text-white font-bold text-base">Apply to Bid</h3>
-            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+        {/* Modal Header */}
+        <div
+          className="flex items-center gap-3 px-6 py-4 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.08)" }}
+        >
+          <CompanyLogo name={job.posterType} size={36} />
+          <div className="flex-1 min-w-0">
+            <h3 className="text-white font-bold text-sm leading-tight truncate">
               {job.title}
+            </h3>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+              {job.posterType} &middot; {job.location}
             </p>
           </div>
-          <button onClick={onClose} style={{ color: "rgba(255,255,255,0.4)" }}>
+          <button
+            onClick={onClose}
+            className="flex-shrink-0 rounded-lg p-1 transition-colors hover:bg-white/10"
+            style={{ color: "rgba(255,255,255,0.4)" }}
+          >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Your Name
-            </label>
-            <input
-              type="text"
-              required
-              placeholder="Jane Smith"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              style={inputStyle}
-            />
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          {/* Name + Email row */}
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Your Name
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Jane Smith"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={inputStyle}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Email
+              </label>
+              <input
+                type="email"
+                required
+                placeholder="you@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={inputStyle}
+              />
+            </div>
           </div>
-          <div>
-            <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Email
-            </label>
-            <input
-              type="email"
-              required
-              placeholder="you@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={inputStyle}
-            />
+
+          {/* Price + Timeline row */}
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Your Proposed Price ($)
+              </label>
+              <div className="relative">
+                <DollarSign
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
+                  style={{ color: "rgba(255,255,255,0.35)" }}
+                />
+                <input
+                  type="number"
+                  required
+                  min={0}
+                  placeholder="0"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  style={{ ...inputStyle, paddingLeft: "34px" }}
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Timeline
+              </label>
+              <div className="relative">
+                <select
+                  required
+                  value={timeline}
+                  onChange={(e) => setTimeline(e.target.value)}
+                  style={{
+                    ...inputStyle,
+                    appearance: "none",
+                    cursor: "pointer",
+                    color: timeline ? "#fff" : "rgba(255,255,255,0.35)",
+                    paddingRight: "34px",
+                  }}
+                >
+                  <option value="" disabled style={{ backgroundColor: "#0D1F3C" }}>Select</option>
+                  {TIMELINE_OPTIONS.map((t) => (
+                    <option key={t} value={t} style={{ backgroundColor: "#0D1F3C" }}>{t}</option>
+                  ))}
+                </select>
+                <ChevronDown
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
+                  style={{ color: "rgba(255,255,255,0.4)" }}
+                />
+              </div>
+            </div>
           </div>
+
+          {/* Message */}
           <div>
             <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Message
+              Message to Poster
             </label>
             <textarea
               required
               rows={3}
-              placeholder="Briefly describe your experience and why you're a great fit for this job..."
+              placeholder="Describe your experience, approach, and why you're the right fit for this project..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               style={{ ...inputStyle, resize: "vertical" }}
             />
           </div>
+
           {submitBid.error && (
             <p className="text-xs text-red-400">{submitBid.error.message || "Submission failed. Please try again."}</p>
           )}
+
           <button
             type="submit"
             disabled={submitBid.isPending}
             className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60"
             style={{ backgroundColor: "#F59E0B" }}
           >
-            {submitBid.isPending ? "Submitting..." : "Submit Bid Expression"}
+            {submitBid.isPending ? "Submitting..." : "Submit Bid"}
           </button>
           <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
             Bidding opens Q3 2026 — we'll follow up when it's live.
@@ -336,11 +472,18 @@ function Toast({ message, onDone }: { message: string; onDone: () => void }) {
   );
 }
 
-function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
+function JobCard({ job, onBidSubmitted }: { job: (typeof SEED_JOBS)[0]; onBidSubmitted: () => void }) {
   const [expressed, setExpressed] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
+
+  const postedLabel =
+    job.postedDaysAgo === 0
+      ? "Today"
+      : job.postedDaysAgo === 1
+      ? "1 day ago"
+      : `${job.postedDaysAgo} days ago`;
 
   return (
     <>
@@ -351,6 +494,7 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
           onSuccess={() => {
             setExpressed(true);
             setShowToast(true);
+            onBidSubmitted();
           }}
         />
       )}
@@ -367,8 +511,10 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
           borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
         }}
       >
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div className="flex-1">
+        {/* Top row: logo + title + bids badge */}
+        <div className="flex items-start gap-3 mb-3">
+          <CompanyLogo name={job.posterType} size={42} />
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
               <span
                 className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
@@ -401,14 +547,18 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
               {job.title}
             </h3>
           </div>
-          <div
-            className="flex-shrink-0 text-right hidden sm:block"
-            style={{ color: "rgba(255,255,255,0.35)" }}
-          >
-            <div className="flex items-center gap-1 justify-end text-xs">
+          {/* Applicants + Posted */}
+          <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1">
+            <div
+              className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
+              style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.7)" }}
+            >
               <Users className="w-3.5 h-3.5" />
-              <span>{job.applicants} bid{job.applicants !== 1 ? "s" : ""}</span>
+              {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
             </div>
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+              Posted {postedLabel}
+            </span>
           </div>
         </div>
 
@@ -456,6 +606,20 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
           </div>
         </div>
 
+        {/* Mobile: applicants + posted */}
+        <div className="flex items-center gap-3 mb-4 sm:hidden">
+          <span
+            className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
+            style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.6)" }}
+          >
+            <Users className="w-3.5 h-3.5" />
+            {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
+          </span>
+          <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+            Posted {postedLabel}
+          </span>
+        </div>
+
         <div className="flex items-center gap-3">
           <button
             onClick={() => !expressed && setShowModal(true)}
@@ -479,15 +643,71 @@ function JobCard({ job }: { job: (typeof SEED_JOBS)[0] }) {
               <>Apply to Bid</>
             )}
           </button>
-          {!expressed && (
-            <span className="text-xs sm:hidden flex items-center gap-1" style={{ color: "rgba(255,255,255,0.35)" }}>
-              <Users className="w-3.5 h-3.5" />
-              {job.applicants}
-            </span>
-          )}
         </div>
       </div>
     </>
+  );
+}
+
+function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; awaitingResponse: number }) {
+  return (
+    <div
+      className="max-w-6xl mx-auto px-6 mb-6"
+    >
+      <div
+        className="flex flex-wrap items-center gap-4 px-5 py-4 rounded-2xl border"
+        style={{
+          backgroundColor: "rgba(245,158,11,0.06)",
+          borderColor: "rgba(245,158,11,0.2)",
+        }}
+      >
+        <div className="flex items-center gap-2">
+          <TrendingUp className="w-4 h-4 text-amber-400" />
+          <span className="text-sm font-bold text-white">Your Active Bids</span>
+        </div>
+        <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-2">
+            <span
+              className="text-lg font-bold"
+              style={{ color: "#F59E0B" }}
+            >
+              {activeBids}
+            </span>
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
+              active
+            </span>
+          </div>
+          <div
+            className="w-px h-4 hidden sm:block"
+            style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
+          />
+          <div className="flex items-center gap-2">
+            <span
+              className="text-lg font-bold"
+              style={{ color: "#818cf8" }}
+            >
+              {awaitingResponse}
+            </span>
+            <span className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
+              awaiting response
+            </span>
+          </div>
+        </div>
+        <Link href="/exchange/my-bids">
+          <button
+            className="ml-auto flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
+            style={{
+              color: "#F59E0B",
+              backgroundColor: "rgba(245,158,11,0.1)",
+              border: "1px solid rgba(245,158,11,0.2)",
+            }}
+          >
+            <Eye className="w-3.5 h-3.5" />
+            Manage Bids
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 }
 
@@ -496,6 +716,7 @@ export default function ExchangeJobs() {
   const [sizeFilter, setSizeFilter] = useState("All Sizes");
   const [urgencyFilter, setUrgencyFilter] = useState("All");
   const [cityFilter, setCityFilter] = useState("");
+  const [myBidsCount, setMyBidsCount] = useState(0);
 
   const filtered = SEED_JOBS.filter((j) => {
     if (tradeFilter !== "All Trades" && j.trade !== tradeFilter) return false;
@@ -619,6 +840,11 @@ export default function ExchangeJobs() {
         </div>
       </section>
 
+      {/* My Bids Bar — shown when user has submitted at least one bid */}
+      {myBidsCount > 0 && (
+        <MyBidsBar activeBids={myBidsCount} awaitingResponse={myBidsCount} />
+      )}
+
       {/* Filters */}
       <section className="max-w-6xl mx-auto px-6 pb-6">
         <div
@@ -717,7 +943,11 @@ export default function ExchangeJobs() {
         ) : (
           <div className="flex flex-col gap-4">
             {filtered.map((job) => (
-              <JobCard key={job.id} job={job} />
+              <JobCard
+                key={job.id}
+                job={job}
+                onBidSubmitted={() => setMyBidsCount((n) => n + 1)}
+              />
             ))}
           </div>
         )}

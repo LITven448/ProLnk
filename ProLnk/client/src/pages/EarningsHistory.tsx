@@ -81,6 +81,84 @@ function SummaryCard({
   );
 }
 
+function MonthlyBarChart({ commissions }: { commissions: Array<{ createdAt?: string | Date; amount?: string | number }> }) {
+  const months: { label: string; key: string; total: number }[] = [];
+  const now = new Date();
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    months.push({
+      label: d.toLocaleDateString("en-US", { month: "short" }),
+      key: `${d.getFullYear()}-${d.getMonth()}`,
+      total: 0,
+    });
+  }
+  for (const c of commissions) {
+    if (!c.createdAt) continue;
+    const d = new Date(c.createdAt);
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
+    const bucket = months.find((m) => m.key === key);
+    if (bucket) bucket.total += Number(c.amount ?? 0);
+  }
+  const max = Math.max(...months.map((m) => m.total), 1);
+  const fmt = (n: number) =>
+    n >= 1000
+      ? `$${(n / 1000).toFixed(1)}k`
+      : `$${n.toFixed(0)}`;
+
+  return (
+    <div
+      style={{
+        background: NAV_CARD,
+        border: "1px solid #1e2e4a",
+        borderRadius: 14,
+        padding: 24,
+        marginBottom: 28,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 12,
+          fontWeight: 700,
+          color: "#94a3b8",
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+          marginBottom: 20,
+        }}
+      >
+        Monthly Earnings — Last 6 Months
+      </div>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 10, height: 120 }}>
+        {months.map((m) => {
+          const heightPct = max > 0 ? (m.total / max) * 100 : 0;
+          const isEmpty = m.total === 0;
+          return (
+            <div
+              key={m.key}
+              style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}
+            >
+              <span style={{ fontSize: 10, color: isEmpty ? "#334155" : ACCENT, fontWeight: 700 }}>
+                {isEmpty ? "" : fmt(m.total)}
+              </span>
+              <div style={{ width: "100%", background: "#1e2e4a", borderRadius: 6, height: 80, display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
+                <div
+                  style={{
+                    width: "100%",
+                    height: `${Math.max(heightPct, isEmpty ? 0 : 4)}%`,
+                    background: isEmpty ? "#1e2e4a" : `linear-gradient(to top, ${ACCENT}, ${ACCENT}99)`,
+                    borderRadius: 4,
+                    transition: "height 0.4s ease",
+                  }}
+                />
+              </div>
+              <span style={{ fontSize: 11, color: "#64748b", fontWeight: 600 }}>{m.label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function EarningsExplainer() {
   return (
     <div
@@ -360,6 +438,55 @@ export default function EarningsHistory() {
             icon={<TrendingUp style={{ width: 14, height: 14 }} />}
           />
         </div>
+
+        {/* Monthly bar chart */}
+        {allCommissions.length > 0 && (
+          <MonthlyBarChart commissions={allCommissions} />
+        )}
+
+        {/* Commission type breakdown */}
+        {allCommissions.length > 0 && (() => {
+          const byType: Record<string, number> = {};
+          for (const c of allCommissions) {
+            const t = (c as any).commissionType ?? "other";
+            byType[t] = (byType[t] ?? 0) + Number((c as any).amount ?? 0);
+          }
+          const grandTotal = Object.values(byType).reduce((s, v) => s + v, 0) || 1;
+          const typeColors: Record<string, string> = {
+            direct: "#22c55e",
+            network_override: "#3b82f6",
+            subscription_override: ACCENT,
+            origination: "#a855f7",
+          };
+          return (
+            <div style={{ background: NAV_CARD, border: "1px solid #1e2e4a", borderRadius: 14, padding: 24, marginBottom: 28 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 16 }}>
+                Commission Type Breakdown
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {Object.entries(byType).map(([type, amount]) => {
+                  const pct = Math.round((amount / grandTotal) * 100);
+                  const color = typeColors[type] ?? "#64748b";
+                  return (
+                    <div key={type}>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                        <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600 }}>
+                          {TYPE_LABELS[type] ?? type}
+                        </span>
+                        <span style={{ fontSize: 12, color, fontWeight: 700 }}>
+                          {fmt(amount)} · {pct}%
+                        </span>
+                      </div>
+                      <div style={{ height: 6, background: "#1e2e4a", borderRadius: 3, overflow: "hidden" }}>
+                        <div style={{ height: "100%", width: `${pct}%`, background: color, borderRadius: 3, transition: "width 0.4s ease" }} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Table / empty state */}
         <div

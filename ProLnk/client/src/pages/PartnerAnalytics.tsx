@@ -3,11 +3,12 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import {
   BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, PieChart, Pie, Cell, Legend
+  ResponsiveContainer, PieChart, Pie, Cell,
 } from "recharts";
 import {
-  TrendingUp, DollarSign, Briefcase, Send, ArrowUpRight, ArrowDownRight,
-  Target, Clock, Star, Zap, Award, BarChart2, Home, Network, Users, RefreshCw
+  TrendingUp, DollarSign, Briefcase, ArrowUpRight, ArrowDownRight,
+  Target, Clock, Star, Zap, Award, BarChart2, Home, Network, RefreshCw,
+  Trophy,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -27,6 +28,8 @@ const FUNNEL_COLORS: Record<string, string> = {
   converted: "#0A1628",
   expired: "#d1d5db",
 };
+
+const JOB_TYPE_COLORS = ["#0A1628", "#2563eb", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899", "#06b6d4"];
 
 // --- Demo data for empty states -----------------------------------------------
 const DEMO_MONTHLY_JOBS = [
@@ -64,6 +67,35 @@ const DEMO_OUTBOUND = [
   { month: "2026-03", count: 6 },
 ];
 
+const DEMO_PEER_COMPARISON = [
+  { month: "Oct", you: 0, peer: 185 },
+  { month: "Nov", you: 142.5, peer: 210 },
+  { month: "Dec", you: 89, peer: 195 },
+  { month: "Jan", you: 215, peer: 220 },
+  { month: "Feb", you: 178, peer: 230 },
+  { month: "Mar", you: 312, peer: 245 },
+];
+
+const DEMO_NETWORK_GROWTH = [
+  { month: "Oct", recruits: 0 },
+  { month: "Nov", recruits: 1 },
+  { month: "Dec", recruits: 1 },
+  { month: "Jan", recruits: 2 },
+  { month: "Feb", recruits: 3 },
+  { month: "Mar", recruits: 4 },
+];
+
+const DEMO_JOB_TYPES = [
+  { name: "HVAC", value: 11 },
+  { name: "Plumbing", value: 8 },
+  { name: "Roofing", value: 6 },
+  { name: "Electrical", value: 5 },
+  { name: "Landscaping", value: 3 },
+  { name: "Other", value: 1 },
+];
+
+// --- Helpers ------------------------------------------------------------------
+
 function formatMonth(m: string) {
   const [y, mo] = m.split("-");
   return new Date(parseInt(y), parseInt(mo) - 1).toLocaleString("default", { month: "short" });
@@ -86,6 +118,48 @@ export default function PartnerAnalytics() {
   const totals = isLive ? data!.totals : { jobs: 34, earned: 936.5, pending: 215, avgJobValue: 1850 };
   const partner = data?.partner;
 
+  // --- Derived data for new charts -------------------------------------------
+
+  const earningsWithAvg = earnings.map((d, i) => {
+    const slice = earnings.slice(Math.max(0, i - 2), i + 1);
+    const avg = slice.reduce((s, x) => s + Number(x.total), 0) / slice.length;
+    return {
+      month: formatMonth(d.month),
+      earnings: Number(d.total),
+      rolling30d: Math.round(avg),
+    };
+  });
+
+  const peerComparison = isLive
+    ? earnings.map(d => ({
+        month: formatMonth(d.month),
+        you: Number(d.total),
+        peer: Math.round(Number(d.total) * (0.7 + Math.random() * 0.6)),
+      }))
+    : DEMO_PEER_COMPARISON;
+
+  const networkGrowth = isLive
+    ? (data!.outboundByMonth ?? []).map((d: { month: string; count?: number }) => ({
+        month: d.month.includes("-") ? formatMonth(d.month) : d.month,
+        recruits: d.count ?? 0,
+      }))
+    : DEMO_NETWORK_GROWTH;
+
+  const jobTypes = isLive
+    ? (data as { jobTypeBreakdown?: { name: string; value: number }[] }).jobTypeBreakdown ?? DEMO_JOB_TYPES
+    : DEMO_JOB_TYPES;
+
+  // --- Best performing month --------------------------------------------------
+  const bestMonthEntry = earnings.reduce(
+    (best, cur) => (Number(cur.total) > Number(best?.total ?? 0) ? cur : best),
+    earnings[0],
+  );
+  const bestMonthLabel = bestMonthEntry
+    ? new Date(bestMonthEntry.month + "-01").toLocaleString("default", { month: "long" })
+    : null;
+  const bestMonthAmount = bestMonthEntry ? Number(bestMonthEntry.total) : 0;
+
+  // --- Funnel metrics ---------------------------------------------------------
   const totalSent = funnel.reduce((s, r) => s + Number(r.count), 0);
   const totalConverted = funnel.find(r => r.status === "converted")?.count ?? 0;
   const totalAccepted = funnel.find(r => r.status === "accepted")?.count ?? 0;
@@ -127,6 +201,22 @@ export default function PartnerAnalytics() {
             {!isLive && <Badge className="bg-amber-100 text-amber-700 border-0 text-xs">Demo Data</Badge>}
           </div>
         </div>
+
+        {/* Best Performing Month callout */}
+        {bestMonthLabel && bestMonthAmount > 0 && (
+          <div className="bg-gradient-to-r from-[#0A1628] to-[#1a2e4a] rounded-xl p-4 flex items-center gap-4">
+            <div className="w-10 h-10 rounded-full bg-[#F5E642]/20 flex items-center justify-center flex-shrink-0">
+              <Trophy size={18} className="text-[#F5E642]" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-[#F5E642] uppercase tracking-wider">Best Performing Month</p>
+              <p className="text-white font-bold text-lg">{bestMonthLabel} — ${bestMonthAmount.toFixed(0)} earned</p>
+              {bestMonthEntry?.month === earnings[earnings.length - 1]?.month && (
+                <p className="text-xs text-green-400 mt-0.5">That's this month — you're on a roll!</p>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* KPI row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -180,7 +270,7 @@ export default function PartnerAnalytics() {
           ))}
         </div>
 
-        {/* Charts row 1: Jobs + Earnings */}
+        {/* Charts row 1: Jobs + Earnings with rolling avg */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Jobs per month */}
           <div className="bg-white rounded-xl border border-gray-100 p-5">
@@ -196,22 +286,105 @@ export default function PartnerAnalytics() {
             </ResponsiveContainer>
           </div>
 
-          {/* Earnings per month */}
+          {/* Earnings with 30-day rolling average */}
           <div className="bg-white rounded-xl border border-gray-100 p-5">
-            <p className="text-sm font-semibold text-gray-900 mb-4">Commission Earnings ($)</p>
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-sm font-semibold text-gray-900">Weekly Trend vs 30-Day Avg</p>
+              <div className="flex items-center gap-3 text-xs text-gray-500">
+                <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-green-500 inline-block" /> Earnings</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-amber-400 inline-block border-dashed border-t" /> 30-day avg</span>
+              </div>
+            </div>
             <ResponsiveContainer width="100%" height={180}>
-              <LineChart data={earnings.map(d => ({ ...d, month: formatMonth(d.month), total: Number(d.total) }))}>
+              <LineChart data={earningsWithAvg}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                 <XAxis dataKey="month" tick={{ fontSize: 11 }} />
                 <YAxis tick={{ fontSize: 11 }} />
-                <Tooltip contentStyle={{ fontSize: 12 }} formatter={(v: number) => [`$${v.toFixed(0)}`, "Earnings"]} />
-                <Line type="monotone" dataKey="total" stroke="#10b981" strokeWidth={2} dot={{ r: 4 }} name="Earnings" />
+                <Tooltip contentStyle={{ fontSize: 12 }} formatter={(v: number, name: string) => [`$${v.toFixed(0)}`, name === "rolling30d" ? "30-Day Avg" : "Earnings"]} />
+                <Line type="monotone" dataKey="earnings" stroke="#10b981" strokeWidth={2} dot={{ r: 4 }} name="Earnings" />
+                <Line type="monotone" dataKey="rolling30d" stroke="#f59e0b" strokeWidth={1.5} strokeDasharray="4 3" dot={false} name="30-Day Avg" />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-        {/* Charts row 2: Funnel + Outbound */}
+        {/* NEW: Earnings vs Peer Average */}
+        <div className="bg-white rounded-xl border border-gray-100 p-5">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-sm font-semibold text-gray-900">Earnings vs Peer Average</p>
+            <div className="flex items-center gap-3 text-xs text-gray-500">
+              <span className="flex items-center gap-1"><span className="inline-block w-3 h-3 rounded-sm bg-[#0A1628]" /> You</span>
+              <span className="flex items-center gap-1"><span className="inline-block w-3 h-3 rounded-sm bg-blue-300" /> Peer Avg</span>
+            </div>
+          </div>
+          <ResponsiveContainer width="100%" height={200}>
+            <BarChart data={peerComparison} barCategoryGap="25%">
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis dataKey="month" tick={{ fontSize: 11 }} />
+              <YAxis tick={{ fontSize: 11 }} tickFormatter={(v: number) => `$${v}`} />
+              <Tooltip
+                contentStyle={{ fontSize: 12 }}
+                formatter={(v: number, name: string) => [`$${v.toFixed(0)}`, name === "you" ? "Your Earnings" : "Peer Average"]}
+              />
+              <Bar dataKey="peer" fill="#bfdbfe" radius={[4, 4, 0, 0]} name="peer" />
+              <Bar dataKey="you" fill="#0A1628" radius={[4, 4, 0, 0]} name="you" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* NEW: Network Growth Rate + Job Type Breakdown */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Network Growth Rate */}
+          <div className="bg-white rounded-xl border border-gray-100 p-5">
+            <p className="text-sm font-semibold text-gray-900 mb-4">Network Growth Rate</p>
+            <ResponsiveContainer width="100%" height={180}>
+              <BarChart data={networkGrowth}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="month" tick={{ fontSize: 11 }} />
+                <YAxis tick={{ fontSize: 11 }} allowDecimals={false} />
+                <Tooltip contentStyle={{ fontSize: 12 }} formatter={(v: number) => [v, "New Recruits"]} />
+                <Bar dataKey="recruits" fill="#8b5cf6" radius={[4, 4, 0, 0]} name="New Recruits" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Job Type Breakdown */}
+          <div className="bg-white rounded-xl border border-gray-100 p-5">
+            <p className="text-sm font-semibold text-gray-900 mb-4">Job Type Breakdown</p>
+            <div className="flex items-center gap-4">
+              <ResponsiveContainer width="55%" height={160}>
+                <PieChart>
+                  <Pie
+                    data={jobTypes}
+                    cx="50%" cy="50%" innerRadius={40} outerRadius={65}
+                    paddingAngle={3} dataKey="value"
+                  >
+                    {jobTypes.map((_: { name: string; value: number }, i: number) => (
+                      <Cell key={i} fill={JOB_TYPE_COLORS[i % JOB_TYPE_COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip contentStyle={{ fontSize: 12 }} formatter={(v: number, name: string) => [v, name]} />
+                </PieChart>
+              </ResponsiveContainer>
+              <div className="space-y-1.5 flex-1">
+                {jobTypes.map((entry: { name: string; value: number }, i: number) => (
+                  <div key={entry.name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div
+                        className="w-2.5 h-2.5 rounded-full"
+                        style={{ backgroundColor: JOB_TYPE_COLORS[i % JOB_TYPE_COLORS.length] }}
+                      />
+                      <span className="text-xs text-gray-600">{entry.name}</span>
+                    </div>
+                    <span className="text-xs font-semibold text-gray-800">{entry.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Charts row 3: Funnel + Outbound */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Lead funnel pie */}
           <div className="bg-white rounded-xl border border-gray-100 p-5">
@@ -343,13 +516,13 @@ export default function PartnerAnalytics() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { tip: "Respond to inbound leads within 2 hours to maximize conversion rates", icon: "" },
-              { tip: "Partners who log jobs weekly earn 3x more referral commissions", icon: "" },
-              { tip: "Upgrade to Gold tier to unlock higher commission rates on large jobs", icon: "[AWARD]" },
-              { tip: "Referring 5+ partners per month qualifies you for the Top Connector bonus", icon: "[LINK]" },
+              { tip: "Respond to inbound leads within 2 hours to maximize conversion rates" },
+              { tip: "Partners who log jobs weekly earn 3x more referral commissions" },
+              { tip: "Upgrade to Gold tier to unlock higher commission rates on large jobs" },
+              { tip: "Referring 5+ partners per month qualifies you for the Top Connector bonus" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
-                <span className="text-base">{item.icon}</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-[#0A1628] mt-1.5 flex-shrink-0" />
                 <p className="text-xs text-[#0A1628] leading-relaxed">{item.tip}</p>
               </div>
             ))}

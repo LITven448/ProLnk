@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Loader2, Users, ChevronRight, Network, TrendingUp, DollarSign } from "lucide-react";
+import { Loader2, Users, ChevronRight, Network, TrendingUp, DollarSign, Star, Layers } from "lucide-react";
 
 const TIER_BORDER: Record<string, string> = {
   charter:  "#F5E642",
@@ -32,6 +32,33 @@ function calcMonthlyEarnings(l1Count: number) {
   const l1JobOverride = l1Count * JOBS_PER_MONTH * feePerJob * L1_JOB_RATE;
   const l1SubOverride = l1Count * SUB_RATE * L1_SUB_RATE;
   return Math.round(l1JobOverride + l1SubOverride);
+}
+
+type ActivityStatus = "active" | "inactive30" | "inactive90";
+
+function getActivityStatus(joinedAt?: string): ActivityStatus {
+  if (!joinedAt) return "inactive90";
+  const daysSince = (Date.now() - new Date(joinedAt).getTime()) / 86_400_000;
+  if (daysSince <= 30) return "active";
+  if (daysSince <= 90) return "inactive30";
+  return "inactive90";
+}
+
+const ACTIVITY_COLOR: Record<ActivityStatus, string> = {
+  active:     "#22c55e",
+  inactive30: "#f59e0b",
+  inactive90: "#ef4444",
+};
+
+const ACTIVITY_LABEL: Record<ActivityStatus, string> = {
+  active:     "Active",
+  inactive30: "Quiet (30d)",
+  inactive90: "Inactive (90d+)",
+};
+
+function calcNetworkDepth(referrals: { firstName: string; trade: string; joinedAt?: string }[]): number {
+  if (referrals.length === 0) return 0;
+  return 1;
 }
 
 function calcFullNetworkPotential(l1Count: number) {
@@ -83,13 +110,18 @@ function UserCard({
 }
 
 function ReferralNode({
-  ref: r, index, total,
+  ref: r, index, total, isStrongest,
 }: {
   ref: { firstName: string; trade: string; joinedAt?: string };
   index: number;
   total: number;
+  isStrongest?: boolean;
 }) {
   const isLast = index === total - 1;
+  const activity = getActivityStatus(r.joinedAt);
+  const activityColor = ACTIVITY_COLOR[activity];
+  const activityLabel = ACTIVITY_LABEL[activity];
+
   return (
     <div className="flex items-start gap-0">
       <div className="flex flex-col items-center" style={{ width: 24 }}>
@@ -112,21 +144,32 @@ function ReferralNode({
           className="inline-flex flex-col px-4 py-3 rounded-xl"
           style={{
             background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.1)",
+            border: `1px solid ${activityColor}55`,
             minWidth: 220,
           }}
         >
           <div className="flex items-center gap-2 mb-1">
             <div
               className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-              style={{ background: "rgba(59,130,246,0.15)", color: "#3b82f6" }}
+              style={{ background: `${activityColor}22`, color: activityColor }}
             >
               {r.firstName?.charAt(0)?.toUpperCase() ?? "?"}
             </div>
-            <div>
-              <p className="text-sm font-semibold text-white">{r.firstName}</p>
+            <div className="flex-1">
+              <div className="flex items-center gap-1.5">
+                <p className="text-sm font-semibold text-white">{r.firstName}</p>
+                {isStrongest && (
+                  <Star size={11} style={{ color: "#F5E642" }} fill="#F5E642" />
+                )}
+              </div>
               <p className="text-xs text-gray-500">{r.trade}</p>
             </div>
+            <span
+              className="text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0"
+              style={{ background: `${activityColor}18`, color: activityColor }}
+            >
+              {activityLabel}
+            </span>
           </div>
           <div className="flex items-center gap-2 mt-1">
             <span
@@ -216,6 +259,23 @@ export default function NetworkTree() {
   const monthlyL1 = calcMonthlyEarnings(l1Count);
   const fullPotential = calcFullNetworkPotential(Math.max(l1Count, 5));
   const hasReferrals = l1Count > 0;
+  const networkDepth = calcNetworkDepth(referrals);
+
+  const activeCount = referrals.filter(r => getActivityStatus(r.joinedAt) === "active").length;
+  const inactiveCount = l1Count - activeCount;
+
+  const strongestBranch = referrals.reduce<{ firstName: string; trade: string; joinedAt?: string } | null>(
+    (best, r) => {
+      if (!best) return r;
+      const bestStatus = getActivityStatus(best.joinedAt);
+      const rStatus = getActivityStatus(r.joinedAt);
+      const rank: Record<ActivityStatus, number> = { active: 2, inactive30: 1, inactive90: 0 };
+      return rank[rStatus] >= rank[bestStatus] ? r : best;
+    },
+    null
+  );
+
+  const totalNetworkValue = calcMonthlyEarnings(l1Count);
 
   const fullName = `${status.firstName ?? ""} ${status.lastName ?? ""}`.trim() || "You";
 
@@ -238,7 +298,7 @@ export default function NetworkTree() {
       <div className="max-w-4xl mx-auto px-4 py-10">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-start justify-between mb-8 gap-4">
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-3">
               <Network size={22} style={{ color: "#F5E642" }} />
@@ -247,9 +307,34 @@ export default function NetworkTree() {
             <p className="text-gray-400 text-sm mt-1">
               Your 4-level recruiting downline and earnings potential
             </p>
+            {hasReferrals && (
+              <div className="flex flex-wrap items-center gap-3 mt-3">
+                <span
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
+                  style={{ background: "rgba(245,230,66,0.12)", color: "#F5E642" }}
+                >
+                  <Layers size={12} />
+                  Network {networkDepth === 1 ? "goes 1 level deep" : `goes ${networkDepth} levels deep`}
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
+                  style={{ background: "rgba(34,197,94,0.12)", color: "#22c55e" }}
+                >
+                  {activeCount} active
+                </span>
+                {inactiveCount > 0 && (
+                  <span
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full"
+                    style={{ background: "rgba(239,68,68,0.1)", color: "#ef4444" }}
+                  >
+                    {inactiveCount} need outreach
+                  </span>
+                )}
+              </div>
+            )}
           </div>
           <Link href="/dashboard/partner-home">
-            <span className="text-xs font-semibold flex items-center gap-1" style={{ color: "#F5E642" }}>
+            <span className="text-xs font-semibold flex items-center gap-1 shrink-0" style={{ color: "#F5E642" }}>
               Dashboard <ChevronRight size={12} />
             </span>
           </Link>
@@ -288,6 +373,7 @@ export default function NetworkTree() {
                     ref={r}
                     index={i}
                     total={referrals.length}
+                    isStrongest={strongestBranch != null && strongestBranch.firstName === r.firstName && i === referrals.indexOf(strongestBranch)}
                   />
                 ))}
               </div>
@@ -367,6 +453,74 @@ export default function NetworkTree() {
           </div>
         </div>
 
+        {/* Strongest Branch + Total Network Value */}
+        {hasReferrals && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            {/* Strongest Branch */}
+            {strongestBranch && (
+              <div
+                className="rounded-2xl p-5"
+                style={{ background: "rgba(245,230,66,0.05)", border: "1px solid rgba(245,230,66,0.2)" }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <Star size={14} style={{ color: "#F5E642" }} fill="#F5E642" />
+                  <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "#F5E642" }}>Strongest Branch</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                    style={{ background: `${ACTIVITY_COLOR[getActivityStatus(strongestBranch.joinedAt)]}22`, color: ACTIVITY_COLOR[getActivityStatus(strongestBranch.joinedAt)] }}
+                  >
+                    {strongestBranch.firstName.charAt(0).toUpperCase()}
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-white">{strongestBranch.firstName}</p>
+                    <p className="text-xs text-gray-400">{strongestBranch.trade}</p>
+                    <span
+                      className="text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1 inline-block"
+                      style={{
+                        background: `${ACTIVITY_COLOR[getActivityStatus(strongestBranch.joinedAt)]}18`,
+                        color: ACTIVITY_COLOR[getActivityStatus(strongestBranch.joinedAt)],
+                      }}
+                    >
+                      {ACTIVITY_LABEL[getActivityStatus(strongestBranch.joinedAt)]}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-3">
+                  Your most active L1 recruit — focus here for the fastest network growth.
+                </p>
+              </div>
+            )}
+
+            {/* Estimated Monthly Override Income */}
+            <div
+              className="rounded-2xl p-5"
+              style={{ background: "rgba(34,197,94,0.05)", border: "1px solid rgba(34,197,94,0.2)" }}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <DollarSign size={14} style={{ color: "#22c55e" }} />
+                <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "#22c55e" }}>Est. Monthly Override Income</p>
+              </div>
+              <p className="text-3xl font-bold" style={{ color: "#22c55e" }}>
+                ~${totalNetworkValue.toLocaleString()}
+                <span className="text-sm font-normal text-gray-400 ml-1">/mo</span>
+              </p>
+              <p className="text-xs text-gray-500 mt-2">
+                From your {l1Count} L1 recruit{l1Count !== 1 ? "s" : ""}. Add L2–L4 to multiply this.
+              </p>
+              <div className="mt-3 pt-3" style={{ borderTop: "1px solid rgba(34,197,94,0.15)" }}>
+                <p className="text-[10px] text-gray-600">
+                  Total network value at full 4-level activation:{" "}
+                  <span className="font-semibold" style={{ color: "#F5E642" }}>
+                    ${fullPotential.total.toLocaleString()}/mo
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Network Income Callout — based on real L1 data */}
         {l1Count > 0 && (
           <div
@@ -439,6 +593,19 @@ export default function NetworkTree() {
             Job estimate: avg $800 &times; 8 jobs/mo &times; 12% platform fee &times; override rate.
             Subscription overrides on $149/mo per pro.
           </p>
+
+          {/* Activity color legend */}
+          <div className="mt-5 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+            <p className="text-xs font-semibold text-gray-400 mb-2">Node activity colors</p>
+            <div className="flex flex-wrap gap-3">
+              {(["active", "inactive30", "inactive90"] as ActivityStatus[]).map(s => (
+                <div key={s} className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full" style={{ background: ACTIVITY_COLOR[s] }} />
+                  <span className="text-[10px] text-gray-500">{ACTIVITY_LABEL[s]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

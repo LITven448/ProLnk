@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ElementType, type ReactNode } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
@@ -71,9 +71,9 @@ function MetricRow({
   label: string;
   value: string;
   detail: string;
-  icon: React.ElementType;
+  icon: ElementType;
   color: string;
-  trend: React.ReactNode;
+  trend: ReactNode;
 }) {
   return (
     <div

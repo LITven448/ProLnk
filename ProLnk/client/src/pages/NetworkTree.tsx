@@ -367,29 +367,68 @@ export default function NetworkTree() {
           </div>
         </div>
 
-        {/* Earnings breakdown legend */}
+        {/* Network Income Callout — based on real L1 data */}
+        {l1Count > 0 && (
+          <div
+            className="rounded-2xl p-6 mb-6"
+            style={{ background: "linear-gradient(135deg,rgba(245,230,66,0.08),rgba(245,230,66,0.03))", border: "1px solid rgba(245,230,66,0.25)" }}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <DollarSign size={16} style={{ color: "#F5E642" }} />
+              <p className="text-xs font-bold uppercase tracking-wider" style={{ color: "#F5E642" }}>Your Network Income</p>
+            </div>
+            <p className="text-4xl font-bold mb-1" style={{ color: "#F5E642" }}>
+              ${calcMonthlyEarnings(l1Count).toLocaleString()}
+              <span className="text-base font-normal text-gray-400 ml-1">/mo</span>
+            </p>
+            <p className="text-xs text-gray-400 mb-4">
+              From {l1Count} direct L1 recruit{l1Count !== 1 ? "s" : ""} — real data.
+              Grow your tree for L2–L4 overrides on top.
+            </p>
+            <div className="grid grid-cols-2 gap-3 text-xs text-gray-400">
+              <div>
+                <span className="text-white font-semibold">${(l1Count * JOBS_PER_MONTH * AVG_JOB_VALUE * PLATFORM_FEE * L1_JOB_RATE).toFixed(0)}</span>
+                {" "}from job overrides (7% of platform fee)
+              </div>
+              <div>
+                <span className="text-white font-semibold">${(l1Count * SUB_RATE * L1_SUB_RATE).toFixed(0)}</span>
+                {" "}from subscription overrides (12% of $149/mo)
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Override Rate Legend */}
         <div
           className="rounded-2xl p-6"
           style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <h3 className="text-sm font-bold text-white mb-4">Override Rate Breakdown</h3>
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="text-sm font-bold text-white">Network Override Rate Legend</h3>
+          </div>
+          <p className="text-xs text-gray-500 mb-4">
+            You earn these % rates on platform fees whenever a pro in your network closes a job or pays their monthly subscription.
+          </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { level: "L1", jobRate: "7%", subRate: "12%", color: "#3b82f6" },
-              { level: "L2", jobRate: "4%", subRate: "6%",  color: "#22c55e" },
-              { level: "L3", jobRate: "2%", subRate: "3%",  color: "#f59e0b" },
-              { level: "L4", jobRate: "1%", subRate: "1.5%", color: "#8b5cf6" },
-            ].map(({ level, jobRate, subRate, color }) => (
+              { level: "L1", desc: "Direct recruits", jobRate: "7%", subRate: "12%", color: "#3b82f6" },
+              { level: "L2", desc: "Their recruits",  jobRate: "4%", subRate: "6%",  color: "#22c55e" },
+              { level: "L3", desc: "3 hops out",      jobRate: "2%", subRate: "3%",  color: "#f59e0b" },
+              { level: "L4", desc: "4 hops out",      jobRate: "1%", subRate: "1.5%", color: "#8b5cf6" },
+            ].map(({ level, desc, jobRate, subRate, color }) => (
               <div
                 key={level}
                 className="rounded-xl p-3"
                 style={{ background: "rgba(255,255,255,0.04)", border: `1px solid ${color}33` }}
               >
-                <div
-                  className="text-xs font-bold px-2 py-0.5 rounded-full inline-block mb-2"
-                  style={{ background: `${color}22`, color }}
-                >
-                  {level}
+                <div className="flex items-center gap-2 mb-2">
+                  <div
+                    className="text-xs font-bold px-2 py-0.5 rounded-full"
+                    style={{ background: `${color}22`, color }}
+                  >
+                    {level}
+                  </div>
+                  <span className="text-[10px] text-gray-500">{desc}</span>
                 </div>
                 <p className="text-xs text-gray-400">Job override: <span className="text-white font-semibold">{jobRate}</span></p>
                 <p className="text-xs text-gray-400">Sub override: <span className="text-white font-semibold">{subRate}</span></p>
@@ -397,7 +436,7 @@ export default function NetworkTree() {
             ))}
           </div>
           <p className="text-xs text-gray-600 mt-4">
-            Earnings estimate: avg $800 job &times; 8 jobs/mo/pro &times; 12% platform fee &times; override rate.
+            Job estimate: avg $800 &times; 8 jobs/mo &times; 12% platform fee &times; override rate.
             Subscription overrides on $149/mo per pro.
           </p>
         </div>

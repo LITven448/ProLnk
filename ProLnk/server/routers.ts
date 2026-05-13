@@ -5275,6 +5275,19 @@ Return a JSON object with:
         return { success: true, email, name: firstName };
       }),
 
+    // --- Admin: 7/30-day pro signup trend ---
+    getSignupTrends: adminProcedure.query(async () => {
+      const db = await getDb();
+      if (!db) return [] as Array<{ date: string; count: number }>;
+      const [rows] = await db.execute(
+        sql`SELECT DATE(createdAt) as date, COUNT(*) as count FROM proWaitlist WHERE createdAt >= DATE_SUB(NOW(), INTERVAL 30 DAY) GROUP BY DATE(createdAt) ORDER BY date ASC`
+      ) as any[];
+      return ((Array.isArray(rows) ? rows : []) as any[]).map((r: any) => ({
+        date: typeof r.date === 'string' ? r.date : new Date(r.date).toISOString().slice(0, 10),
+        count: Number(r.count ?? 0),
+      }));
+    }),
+
     // --- Public: commercial contractor waitlist ---
     submitCommercialWaitlist: publicProcedure
       .input(z.object({

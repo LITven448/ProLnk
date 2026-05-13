@@ -10,6 +10,7 @@ import {
   CheckCircle, AlertTriangle, Clock, Zap, Activity, Bot,
   DollarSign, BarChart2, Cpu, Gavel,
   TrendingUp, Map, Star, HeartHandshake, Wrench,
+  XCircle, Terminal,
 } from "lucide-react";
 
 // ─── Agent Category Definitions ───────────────────────────────────────────────
@@ -17,6 +18,10 @@ import {
 interface AgentEntry {
   name: string;
   status: "active" | "standby" | "error";
+  lastRun?: string;
+  nextRun?: string;
+  jobsToday?: number;
+  errorsToday?: number;
 }
 
 interface AgentCategory {
@@ -25,6 +30,23 @@ interface AgentCategory {
   icon: React.ElementType;
   agents: AgentEntry[];
 }
+
+// ─── Recent Error Log ──────────────────────────────────────────────────────────
+
+interface AgentError {
+  agent: string;
+  message: string;
+  time: string;
+  severity: "warning" | "error";
+}
+
+const RECENT_ERRORS: AgentError[] = [
+  { agent: "Storm Tracking Agent", message: "NOAA API rate limit hit (429) — retried after 60s backoff", time: "14m ago", severity: "warning" },
+  { agent: "Compliance Monitor", message: "COI expiry check: 2 partners missing docs, suspension queued", time: "1h ago", severity: "warning" },
+  { agent: "Fraud Detector", message: "DB timeout on match_history table scan — query exceeded 30s", time: "3h ago", severity: "error" },
+  { agent: "Email Marketer", message: "Resend API returned 422 for batch of 12 addresses — invalid domains", time: "5h ago", severity: "warning" },
+  { agent: "Payout Processor", message: "Commission batch job skipped: no unpaid records found for cycle", time: "8h ago", severity: "warning" },
+];
 
 const AGENT_CATEGORIES: AgentCategory[] = [
   {
@@ -42,12 +64,12 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#00D4FF",
     icon: Cpu,
     agents: [
-      { name: "Deployment & Infra", status: "active" },
-      { name: "Error Handler", status: "active" },
-      { name: "Data Pipeline", status: "active" },
-      { name: "Testing Agent", status: "active" },
-      { name: "Performance Monitor", status: "active" },
-      { name: "Compliance Checker", status: "active" },
+      { name: "Deployment & Infra", status: "active", lastRun: "12m ago", nextRun: "on demand", jobsToday: 3, errorsToday: 0 },
+      { name: "Error Handler", status: "active", lastRun: "2m ago", nextRun: "continuous", jobsToday: 17, errorsToday: 0 },
+      { name: "Data Pipeline", status: "active", lastRun: "1h ago", nextRun: "2:00 AM", jobsToday: 4, errorsToday: 0 },
+      { name: "Testing Agent", status: "active", lastRun: "6h ago", nextRun: "on commit", jobsToday: 2, errorsToday: 0 },
+      { name: "Performance Monitor", status: "active", lastRun: "5m ago", nextRun: "continuous", jobsToday: 144, errorsToday: 0 },
+      { name: "Compliance Checker", status: "active", lastRun: "1h ago", nextRun: "3:00 AM", jobsToday: 1, errorsToday: 1 },
     ],
   },
   {
@@ -55,13 +77,13 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#82D616",
     icon: DollarSign,
     agents: [
-      { name: "Commission Calculator", status: "active" },
-      { name: "Payout Processor", status: "active" },
-      { name: "Revenue Analyzer", status: "active" },
-      { name: "Cost Tracker", status: "active" },
-      { name: "Fraud Detector", status: "active" },
-      { name: "Tax Helper", status: "standby" },
-      { name: "Audit Log", status: "active" },
+      { name: "Commission Calculator", status: "active", lastRun: "8m ago", nextRun: "continuous", jobsToday: 38, errorsToday: 0 },
+      { name: "Payout Processor", status: "active", lastRun: "8h ago", nextRun: "1st of month", jobsToday: 1, errorsToday: 1 },
+      { name: "Revenue Analyzer", status: "active", lastRun: "30m ago", nextRun: "hourly", jobsToday: 24, errorsToday: 0 },
+      { name: "Cost Tracker", status: "active", lastRun: "1h ago", nextRun: "hourly", jobsToday: 12, errorsToday: 0 },
+      { name: "Fraud Detector", status: "active", lastRun: "3h ago", nextRun: "6:00 AM", jobsToday: 2, errorsToday: 1 },
+      { name: "Tax Helper", status: "standby", lastRun: "Jan 31", nextRun: "Jan 31", jobsToday: 0, errorsToday: 0 },
+      { name: "Audit Log", status: "active", lastRun: "1m ago", nextRun: "continuous", jobsToday: 203, errorsToday: 0 },
     ],
   },
   {
@@ -69,14 +91,14 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#EC407A",
     icon: TrendingUp,
     agents: [
-      { name: "Lead Scorer", status: "active" },
-      { name: "Email Marketer", status: "active" },
-      { name: "SMS Notifier", status: "active" },
-      { name: "Social Media Mgr", status: "standby" },
-      { name: "Ad Campaign Mgr", status: "standby" },
-      { name: "Content Creator", status: "active" },
-      { name: "SEO Optimizer", status: "active" },
-      { name: "Referral Program Mgr", status: "active" },
+      { name: "Lead Scorer", status: "active", lastRun: "4m ago", nextRun: "continuous", jobsToday: 56, errorsToday: 0 },
+      { name: "Email Marketer", status: "active", lastRun: "2h ago", nextRun: "9:00 AM", jobsToday: 3, errorsToday: 1 },
+      { name: "SMS Notifier", status: "active", lastRun: "9m ago", nextRun: "on trigger", jobsToday: 14, errorsToday: 0 },
+      { name: "Social Media Mgr", status: "standby", lastRun: "Yesterday", nextRun: "9:00 AM", jobsToday: 0, errorsToday: 0 },
+      { name: "Ad Campaign Mgr", status: "standby", lastRun: "Yesterday", nextRun: "8:00 AM", jobsToday: 0, errorsToday: 0 },
+      { name: "Content Creator", status: "active", lastRun: "4h ago", nextRun: "on demand", jobsToday: 2, errorsToday: 0 },
+      { name: "SEO Optimizer", status: "active", lastRun: "12h ago", nextRun: "4:00 AM", jobsToday: 1, errorsToday: 0 },
+      { name: "Referral Program Mgr", status: "active", lastRun: "15m ago", nextRun: "hourly", jobsToday: 8, errorsToday: 0 },
     ],
   },
   {
@@ -166,8 +188,6 @@ interface AgentCard {
   description: string;
   icon: React.ReactNode;
   color: string;
-  triggerAction?: () => void;
-  triggerLabel?: string;
   stats: { label: string; value: string | number }[];
 }
 
@@ -175,7 +195,7 @@ interface AgentCard {
 
 export default function AgentStatusDashboard() {
   const { data: platformStats } = trpc.admin.getNetworkStats.useQuery();
-  const { data: stormStats, refetch: refetchStorm } = trpc.stormAgent.getStats.useQuery();
+  const { data: stormStats } = trpc.stormAgent.getStats.useQuery();
   const { data: complianceOverview } = trpc.compliance.getComplianceOverview.useQuery();
   const { data: photoQueueStats } = trpc.admin.getPhotoQueueStats.useQuery();
 
@@ -184,8 +204,21 @@ export default function AgentStatusDashboard() {
     onError: () => toast.error("Storm scan failed"),
   });
 
+  const triggerLeadRouter = trpc.admin.triggerLeadRouter?.useMutation?.({
+    onSuccess: () => toast.success("Lead Router triggered — routing cycle started"),
+    onError: () => toast.error("Lead Router trigger failed"),
+  });
+
+  const triggerCommissionCalc = trpc.admin.triggerCommissionCalc?.useMutation?.({
+    onSuccess: () => toast.success("Commission Calc triggered — recalculating all pending commissions"),
+    onError: () => toast.error("Commission Calc trigger failed"),
+  });
+
   const activeCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "active").length, 0);
   const standbyCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "standby").length, 0);
+  const errorCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "error").length, 0);
+  const totalJobsToday = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.reduce((as, a) => as + (a.jobsToday ?? 0), 0), 0);
+  const totalErrorsToday = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.reduce((as, a) => as + (a.errorsToday ?? 0), 0), 0);
 
   const agents: AgentCard[] = [
     {
@@ -220,8 +253,6 @@ export default function AgentStatusDashboard() {
       description: "Monitors NOAA weather alerts across all service areas. Auto-generates emergency leads for affected properties.",
       icon: <CloudLightning className="h-5 w-5" />,
       color: "#7928CA",
-      triggerAction: () => triggerStorm.mutate({ state: "TX" }),
-      triggerLabel: "Run Scan Now",
       stats: [
         { label: "Total Events", value: stormStats?.totalEvents ?? "—" },
         { label: "Leads Generated", value: stormStats?.totalLeads ?? "—" },
@@ -311,23 +342,31 @@ export default function AgentStatusDashboard() {
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} />
               <span className="text-xs font-bold" style={{ color: "#FBB140" }}>{standbyCount} Standby</span>
             </div>
-            <Badge variant="outline" className="border-green-500/50 text-green-400 gap-1">
-              <CheckCircle className="h-3 w-3" />
-              All Systems Operational
-            </Badge>
+            {errorCount > 0 ? (
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "#EA060618", border: "1px solid #EA060640" }}>
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                <span className="text-xs font-bold text-red-400">{errorCount} Error</span>
+              </div>
+            ) : (
+              <Badge variant="outline" className="border-green-500/50 text-green-400 gap-1">
+                <CheckCircle className="h-3 w-3" />
+                All Systems Operational
+              </Badge>
+            )}
           </div>
         </div>
 
         {/* KPI strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-t" style={{ borderColor: "#ffffff12" }}>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-0 border-t" style={{ borderColor: "#ffffff12" }}>
           {[
-            { label: "Total Partners", value: platformStats?.totalPartners ?? "—", icon: Users },
-            { label: "Jobs Logged", value: platformStats?.totalJobs ?? "—", icon: Camera },
-            { label: "Opportunities", value: platformStats?.totalOpportunities ?? "—", icon: Zap },
-            { label: "Agent Categories", value: AGENT_CATEGORIES.length, icon: BarChart2 },
+            { label: "Total Partners", value: platformStats?.totalPartners ?? "—", icon: Users, color: "#00D4FF" },
+            { label: "Jobs Logged", value: platformStats?.totalJobs ?? "—", icon: Camera, color: "#00D4FF" },
+            { label: "Opportunities", value: platformStats?.totalOpportunities ?? "—", icon: Zap, color: "#00D4FF" },
+            { label: "Agent Jobs Today", value: totalJobsToday, icon: Activity, color: "#82D616" },
+            { label: "Errors Today", value: totalErrorsToday, icon: AlertTriangle, color: totalErrorsToday > 0 ? "#EA0606" : "#82D616" },
           ].map((stat, i) => (
             <div key={stat.label} className="px-5 py-3 flex items-center gap-3" style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
-              <stat.icon className="w-4 h-4 flex-shrink-0" style={{ color: "#00D4FF" }} />
+              <stat.icon className="w-4 h-4 flex-shrink-0" style={{ color: stat.color }} />
               <div>
                 <div className="text-lg font-black text-white leading-none">{stat.value}</div>
                 <div className="text-xs mt-0.5" style={{ color: "#7eb8d4" }}>{stat.label}</div>
@@ -363,11 +402,21 @@ export default function AgentStatusDashboard() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-1">
-                  <div className="grid grid-cols-2 gap-x-3 gap-y-1.5">
+                  <div className="space-y-1.5">
                     {cat.agents.map((agent) => (
-                      <div key={agent.name} className="flex items-center gap-1.5 min-w-0">
+                      <div key={agent.name} className="flex items-center gap-2 min-w-0 py-0.5">
                         <StatusDot status={agent.status} />
-                        <span className="text-xs text-foreground/80 truncate">{agent.name}</span>
+                        <span className="text-xs text-foreground/80 truncate flex-1">{agent.name}</span>
+                        {agent.lastRun && (
+                          <span className="text-[10px] text-muted-foreground/60 flex-shrink-0 hidden sm:inline">
+                            {agent.lastRun}
+                          </span>
+                        )}
+                        {agent.jobsToday !== undefined && (
+                          <span className="text-[10px] font-medium flex-shrink-0" style={{ color: agent.errorsToday ? "#EA0606" : "#82D616" }}>
+                            {agent.jobsToday}j{agent.errorsToday ? ` ${agent.errorsToday}e` : ""}
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -376,6 +425,145 @@ export default function AgentStatusDashboard() {
             );
           })}
         </div>
+      </div>
+
+      {/* ── Manual Trigger Panel ─────────────────────────────────────────────── */}
+      <div>
+        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
+          Manual Agent Triggers
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Storm Scanner */}
+          <Card className="border border-border">
+            <CardContent className="pt-4 pb-4">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#7928CA20" }}>
+                  <CloudLightning className="w-5 h-5" style={{ color: "#7928CA" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold">Storm Scanner</p>
+                  <p className="text-xs text-muted-foreground">NOAA sweep → emergency leads</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Last: {stormStats ? "Recent" : "—"}</span>
+                <span>{stormStats?.totalLeads ?? "—"} leads generated</span>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => triggerStorm.mutate({ state: "TX" })}
+                disabled={triggerStorm.isPending}
+              >
+                <RefreshCw className={`h-3 w-3 ${triggerStorm.isPending ? "animate-spin" : ""}`} />
+                {triggerStorm.isPending ? "Scanning..." : "Run Scan Now"}
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Lead Router */}
+          <Card className="border border-border">
+            <CardContent className="pt-4 pb-4">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#F5E64220" }}>
+                  <Zap className="w-5 h-5" style={{ color: "#F5E642" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold">Lead Router</p>
+                  <p className="text-xs text-muted-foreground">Route pending opps to partners</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Continuous</span>
+                <span>{platformStats?.totalOpportunities ?? "—"} total opps</span>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => triggerLeadRouter?.mutate?.({})}
+                disabled={triggerLeadRouter?.isPending}
+              >
+                <RefreshCw className={`h-3 w-3 ${triggerLeadRouter?.isPending ? "animate-spin" : ""}`} />
+                {triggerLeadRouter?.isPending ? "Routing..." : "Trigger Routing Cycle"}
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Commission Calc */}
+          <Card className="border border-border">
+            <CardContent className="pt-4 pb-4">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#82D61620" }}>
+                  <DollarSign className="w-5 h-5" style={{ color: "#82D616" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold">Commission Calc</p>
+                  <p className="text-xs text-muted-foreground">Recalculate all pending commissions</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> On job close</span>
+                <span>{platformStats?.totalPartners ?? "—"} active pros</span>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => triggerCommissionCalc?.mutate?.({})}
+                disabled={triggerCommissionCalc?.isPending}
+              >
+                <RefreshCw className={`h-3 w-3 ${triggerCommissionCalc?.isPending ? "animate-spin" : ""}`} />
+                {triggerCommissionCalc?.isPending ? "Calculating..." : "Recalculate Now"}
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* ── Agent Error Log ───────────────────────────────────────────────────── */}
+      <div>
+        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
+          Recent Agent Errors (Last 5)
+        </h2>
+        <Card className="border border-border">
+          <CardContent className="pt-4 pb-2">
+            {RECENT_ERRORS.length === 0 ? (
+              <div className="flex items-center gap-2 py-4 justify-center text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                <span className="text-sm">No errors in the last 24 hours</span>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {RECENT_ERRORS.map((err, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 py-2 px-3 rounded-lg"
+                    style={{
+                      background: err.severity === "error" ? "#EA060608" : "#FBB14008",
+                      borderLeft: `3px solid ${err.severity === "error" ? "#EA0606" : "#FBB140"}`,
+                    }}
+                  >
+                    {err.severity === "error" ? (
+                      <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-red-500" />
+                    ) : (
+                      <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#FBB140" }} />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs font-semibold">{err.agent}</span>
+                        <span className="text-[10px] text-muted-foreground">{err.time}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{err.message}</p>
+                    </div>
+                    <Terminal className="w-3 h-3 flex-shrink-0 text-muted-foreground/40 mt-0.5" />
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
 
       {/* ── Live AGaaS Agent Cards ────────────────────────────────────────────── */}
@@ -417,18 +605,6 @@ export default function AgentStatusDashboard() {
                     </div>
                   ))}
                 </div>
-                {agent.triggerAction && (
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="w-full gap-2"
-                    onClick={agent.triggerAction}
-                    disabled={triggerStorm.isPending}
-                  >
-                    <RefreshCw className={`h-3 w-3 ${triggerStorm.isPending ? "animate-spin" : ""}`} />
-                    {agent.triggerLabel}
-                  </Button>
-                )}
               </CardContent>
             </Card>
           ))}

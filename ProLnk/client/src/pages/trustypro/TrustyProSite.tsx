@@ -225,6 +225,9 @@ export default function TrustyProSite() {
             <Button variant="ghost" size="sm" onClick={() => navigate("/login?brand=trustypro")} className="text-gray-600">
               Sign In
             </Button>
+            <Button size="sm" onClick={() => navigate("/trustypro/scan")} className="bg-white border border-indigo-200 text-indigo-600 hover:bg-indigo-50">
+              Start Scan
+            </Button>
             <Button size="sm" onClick={() => navigate("/waitlist/homeowner")} className="bg-indigo-600 hover:bg-indigo-700 text-white">
               Get Early Access
             </Button>

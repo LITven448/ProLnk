@@ -579,6 +579,57 @@ export const stripeRouter = router({
       return { url: session.url, sessionId: session.id };
     }),
 
+  // --- Admin: create / ensure Stripe products exist -------------------------
+  setupStripeProducts: adminProcedure.mutation(async () => {
+    const results: Array<{ tier: string; productId: string; priceId: string; lookupKey: string; created: boolean }> = [];
+
+    for (const [tierKey, product] of Object.entries(TIER_PRODUCTS)) {
+      const prices = await stripe.prices.list({ lookup_keys: [product.lookupKey], limit: 1 });
+      if (prices.data.length > 0) {
+        results.push({ tier: tierKey, productId: String(prices.data[0].product), priceId: prices.data[0].id, lookupKey: product.lookupKey, created: false });
+        continue;
+      }
+      const stripeProduct = await stripe.products.create({
+        name: product.name,
+        description: tierKey === "company"
+          ? "$149/mo locked forever. 72% commission keep, 4-level network income, 90-day free trial."
+          : `ProLnk ${tierKey.charAt(0).toUpperCase() + tierKey.slice(1)} subscription.`,
+        metadata: { tier: tierKey },
+      });
+      const price = await stripe.prices.create({
+        product: stripeProduct.id,
+        unit_amount: product.amount,
+        currency: "usd",
+        recurring: { interval: "month" },
+        lookup_key: product.lookupKey,
+      });
+      results.push({ tier: tierKey, productId: stripeProduct.id, priceId: price.id, lookupKey: product.lookupKey, created: true });
+    }
+
+    // Also ensure the founding network product/price exists (used by createFoundingNetworkCheckout)
+    const foundingLookupKey = "prolnk_founding_network_monthly";
+    const foundingPrices = await stripe.prices.list({ lookup_keys: [foundingLookupKey], limit: 1 });
+    if (foundingPrices.data.length === 0) {
+      const foundingProduct = await stripe.products.create({
+        name: "ProLnk Founding Network — Charter Member",
+        description: "$149/mo locked forever. 72% commission keep rate · 4-level network depth · 90-day free trial.",
+        metadata: { tier: "founding_network" },
+      });
+      const foundingPrice = await stripe.prices.create({
+        product: foundingProduct.id,
+        unit_amount: 14900,
+        currency: "usd",
+        recurring: { interval: "month", trial_period_days: 90 },
+        lookup_key: foundingLookupKey,
+      });
+      results.push({ tier: "founding_network", productId: foundingProduct.id, priceId: foundingPrice.id, lookupKey: foundingLookupKey, created: true });
+    } else {
+      results.push({ tier: "founding_network", productId: String(foundingPrices.data[0].product), priceId: foundingPrices.data[0].id, lookupKey: foundingLookupKey, created: false });
+    }
+
+    return { success: true, products: results };
+  }),
+
   // --- Billing Portal: partner manages their subscription -------------------
   createBillingPortalSession: protectedProcedure
     .input(z.object({ returnUrl: z.string().url() }))
@@ -831,6 +882,76 @@ export async function handleStripeWebhook(req: Request, res: Response) {
         `);
 
         console.log(`[Stripe Webhook] Partner ${partnerId} upgraded to ${targetTier}`);
+      }
+    }
+
+    // Founding network subscription checkout completed
+    if (session.metadata?.type === "founding_network") {
+      const foundingPartnerId = session.metadata?.partnerId;
+      const subscriptionId = session.subscription as string | null;
+      const customerId = session.customer as string | null;
+      const foundingDb = await getDb();
+      if (foundingDb) {
+        // Ensure stripeSubscriptionId column exists (idempotent ALTER)
+        try {
+          await foundingDb.execute(sql`
+            ALTER TABLE partners ADD COLUMN stripeSubscriptionId varchar(255)
+          `);
+        } catch {
+          // Column already exists — safe to ignore
+        }
+
+        if (foundingPartnerId) {
+          await foundingDb.execute(sql`
+            UPDATE partners SET
+              trialStatus = 'active',
+              trialStartedAt = NOW(),
+              trialEndsAt = DATE_ADD(NOW(), INTERVAL 90 DAY),
+              subscriptionPlan = 'founding_network',
+              tier = 'company',
+              commissionKeepRate = 0.72,
+              updatedAt = NOW(),
+              stripeSubscriptionId = ${subscriptionId ?? null}
+            WHERE id = ${parseInt(foundingPartnerId)}
+          `);
+
+          if (customerId) {
+            await foundingDb.execute(sql`
+              UPDATE users u
+              JOIN partners p ON p.userId = u.id
+              SET u.stripeCustomerId = ${customerId}
+              WHERE p.id = ${parseInt(foundingPartnerId)}
+            `);
+          }
+
+          await foundingDb.execute(sql`
+            INSERT INTO partnerNotifications (partnerId, type, title, message, actionUrl)
+            VALUES (
+              ${parseInt(foundingPartnerId)}, 'system',
+              'Welcome to the Founding Network!',
+              'Your 90-day free trial is now active. You keep 72% of every referral commission at $149/mo locked for life.',
+              '/dashboard'
+            )
+          `);
+          console.log(`[Stripe Webhook] Founding network checkout complete — partner ${foundingPartnerId}, subscription ${subscriptionId}`);
+        } else if (session.customer_email) {
+          // Fallback: match by email if no partnerId in metadata
+          await foundingDb.execute(sql`
+            UPDATE partners p
+            JOIN users u ON p.userId = u.id
+            SET
+              p.trialStatus = 'active',
+              p.trialStartedAt = NOW(),
+              p.trialEndsAt = DATE_ADD(NOW(), INTERVAL 90 DAY),
+              p.subscriptionPlan = 'founding_network',
+              p.tier = 'company',
+              p.commissionKeepRate = 0.72,
+              p.updatedAt = NOW(),
+              p.stripeSubscriptionId = ${subscriptionId ?? null}
+            WHERE u.email = ${session.customer_email}
+          `);
+          console.log(`[Stripe Webhook] Founding network checkout complete — matched by email ${session.customer_email}`);
+        }
       }
     }
 

@@ -8,7 +8,7 @@ import {
   Award, Users, TrendingUp, DollarSign, CheckCircle, XCircle,
   Send, LogOut, Bell, ChevronRight, Percent, Zap, ShieldCheck,
   Home, Eye, Bot, Database, Mail, Activity, Clock, Star,
-  UserPlus, HomeIcon, Crown, Shield, Layers, ExternalLink,
+  UserPlus, HomeIcon, Crown, Shield, Layers, ExternalLink, Download, BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -47,11 +47,15 @@ export default function AdminDashboard() {
   const [broadcastSubject, setBroadcastSubject] = useState("");
   const [broadcastMessage, setBroadcastMessage] = useState("");
 
+  const [exportingPros, setExportingPros] = useState(false);
+  const [exportingHomes, setExportingHomes] = useState(false);
+
   const utils = trpc.useUtils();
 
   const { data: stats } = trpc.admin.getNetworkStats.useQuery(undefined, { enabled: isAuthenticated });
   const { data: waitlistCounts } = trpc.waitlist.getPublicCounts.useQuery(undefined, { enabled: isAuthenticated, refetchInterval: 30000 });
   const { data: waitlistMetrics } = trpc.waitlist.getWaitlistMetrics.useQuery(undefined, { enabled: isAuthenticated });
+  const { data: signupTrends } = trpc.waitlistAdmin.getSignupTrends.useQuery(undefined, { enabled: isAuthenticated });
   const { data: pending } = trpc.admin.getPendingApplications.useQuery(undefined, { enabled: isAuthenticated });
   const { data: trustyLeads, refetch: refetchLeads } = trpc.trustyPro.getLeads.useQuery(undefined, { enabled: isAuthenticated });
   const { data: approvedPartners } = trpc.admin.getApprovedPartnersForDispatch.useQuery(undefined, { enabled: isAuthenticated });
@@ -106,6 +110,55 @@ export default function AdminDashboard() {
     },
     onError: (e) => toast.error(e.message),
   });
+
+  function buildCsvAndDownload(rows: Record<string, unknown>[], filename: string) {
+    if (!rows.length) return;
+    const headers = Object.keys(rows[0]);
+    const lines = rows.map(row =>
+      headers.map(h => {
+        const v = row[h];
+        const str = v == null ? "" : Array.isArray(v) ? v.join(";") : String(v).replace(/"/g, '""');
+        return str.includes(",") || str.includes('"') || str.includes("\n") ? `"${str}"` : str;
+      }).join(",")
+    );
+    const blob = new Blob([[headers.join(","), ...lines].join("\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async function handleExportPros() {
+    setExportingPros(true);
+    try {
+      const data = await utils.waitlist.exportWaitlist.fetch({ source: "pro" });
+      const rows = (data as { pro?: Record<string, unknown>[] }).pro ?? [];
+      if (!rows.length) { toast.error("No pro records to export"); return; }
+      buildCsvAndDownload(rows, `prolnk-pro-waitlist-${new Date().toISOString().slice(0, 10)}.csv`);
+      toast.success(`Exported ${rows.length} pro records`);
+    } catch (e: unknown) {
+      toast.error(`Export failed: ${e instanceof Error ? e.message : "Unknown error"}`);
+    } finally {
+      setExportingPros(false);
+    }
+  }
+
+  async function handleExportHomes() {
+    setExportingHomes(true);
+    try {
+      const data = await utils.waitlist.exportWaitlist.fetch({ source: "home" });
+      const rows = (data as { home?: Record<string, unknown>[] }).home ?? [];
+      if (!rows.length) { toast.error("No homeowner records to export"); return; }
+      buildCsvAndDownload(rows, `trustypro-homeowner-waitlist-${new Date().toISOString().slice(0, 10)}.csv`);
+      toast.success(`Exported ${rows.length} homeowner records`);
+    } catch (e: unknown) {
+      toast.error(`Export failed: ${e instanceof Error ? e.message : "Unknown error"}`);
+    } finally {
+      setExportingHomes(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -393,6 +446,107 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* ── Export Data + 7-Day Signup Chart ──────────────────────────────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+
+          {/* Export Data */}
+          <Card className="border-0 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="font-heading text-sm text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                <Download className="w-4 h-4" style={{ color: "var(--teal)" }} />
+                Export Data
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-xs text-gray-500">
+                Download full waitlist records as CSV for email campaigns, seed-round decks, or data analysis.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  onClick={handleExportPros}
+                  disabled={exportingPros}
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-teal-200 bg-teal-50 text-sm font-semibold text-teal-700 hover:bg-teal-100 transition-colors disabled:opacity-60"
+                >
+                  {exportingPros
+                    ? <span className="w-4 h-4 inline-block animate-spin border-2 border-teal-500 border-t-transparent rounded-full" />
+                    : <Download className="w-4 h-4" />}
+                  Export Pros CSV
+                </button>
+                <button
+                  onClick={handleExportHomes}
+                  disabled={exportingHomes}
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-indigo-200 bg-indigo-50 text-sm font-semibold text-indigo-700 hover:bg-indigo-100 transition-colors disabled:opacity-60"
+                >
+                  {exportingHomes
+                    ? <span className="w-4 h-4 inline-block animate-spin border-2 border-indigo-500 border-t-transparent rounded-full" />
+                    : <Download className="w-4 h-4" />}
+                  Export Homeowners CSV
+                </button>
+              </div>
+              <div className="pt-2 border-t border-gray-100 grid grid-cols-2 gap-2 text-center">
+                <div>
+                  <div className="text-xl font-black text-gray-900">{(waitlistCounts?.pros ?? 0).toLocaleString()}</div>
+                  <div className="text-xs text-gray-400">Pro records</div>
+                </div>
+                <div>
+                  <div className="text-xl font-black text-gray-900">{(waitlistCounts?.homes ?? 0).toLocaleString()}</div>
+                  <div className="text-xs text-gray-400">Homeowner records</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 7-Day Signup Trend */}
+          <Card className="border-0 shadow-sm">
+            <CardHeader className="pb-3">
+              <CardTitle className="font-heading text-sm text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                <BarChart3 className="w-4 h-4" style={{ color: "var(--teal)" }} />
+                7-Day Pro Signup Trend
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {(() => {
+                const today = new Date();
+                const days = Array.from({ length: 7 }, (_, i) => {
+                  const d = new Date(today);
+                  d.setDate(today.getDate() - (6 - i));
+                  const key = d.toISOString().slice(0, 10);
+                  const label = d.toLocaleDateString("en-US", { weekday: "short" });
+                  const count = Number(
+                    (signupTrends ?? []).find((t: { date: string }) => t.date === key)?.count ?? 0
+                  );
+                  return { key, label, count };
+                });
+                const maxCount = Math.max(...days.map(d => d.count), 1);
+                const total7 = days.reduce((s, d) => s + d.count, 0);
+                return (
+                  <>
+                    <div className="flex items-end gap-2 h-28 mb-3">
+                      {days.map(({ key, label, count }) => (
+                        <div key={key} className="flex-1 flex flex-col items-center gap-1">
+                          <span className="text-xs font-semibold text-teal-600">{count > 0 ? count : ""}</span>
+                          <div
+                            className="w-full rounded-t-md transition-all"
+                            style={{
+                              height: `${Math.max(4, Math.round((count / maxCount) * 80))}px`,
+                              backgroundColor: count > 0 ? "var(--teal)" : "#E9ECEF",
+                            }}
+                          />
+                          <span className="text-xs text-gray-400">{label}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-100 pt-2">
+                      <span>{total7} new pro signups this week</span>
+                      <a href="/admin/network-analytics" className="text-teal-600 hover:underline font-medium">Full analytics →</a>
+                    </div>
+                  </>
+                );
+              })()}
+            </CardContent>
+          </Card>
         </div>
 
         {/* Tabs */}

@@ -13,7 +13,8 @@ import {
   Users, TrendingUp, DollarSign, Star, CheckCircle, ChevronDown, ChevronUp,
   ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck, Play,
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
-  Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar
+  Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar,
+  User, Building2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -887,6 +888,7 @@ const TRADE_OPTIONS = [
 function ProWaitlistModal({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState<"form" | "success">("form");
   const [referralLink, setReferralLink] = useState("");
+  const [workStyle, setWorkStyle] = useState<"solo" | "owner" | "scout" | "">("");
   const [form, setForm] = useState({
     firstName: "", lastName: "", email: "", phone: "",
     companyName: "", businessAddress: "", city: "", state: "TX", zip: "",
@@ -956,6 +958,82 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
             <input placeholder="Email address *" type="email" value={form.email} onChange={set("email")} className={inputCls} />
             <input placeholder="Phone number *" value={form.phone} onChange={set("phone")} className={inputCls} />
 
+            {/* How Do You Work */}
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 mt-3">How do you work? *</p>
+            <div className="grid grid-cols-1 gap-2 mb-4">
+              {([
+                {
+                  value: "solo" as const,
+                  icon: User,
+                  label: "Solo Contractor",
+                  desc: "I work independently — handyman, single-trade specialist, or solo operator",
+                },
+                {
+                  value: "owner" as const,
+                  icon: Building2,
+                  label: "Business Owner",
+                  desc: "I own a company with employees or subcontractors",
+                },
+                {
+                  value: "scout" as const,
+                  icon: Users,
+                  label: "Project Manager / Scout",
+                  desc: "I manage crews and want to build a network of pros",
+                },
+              ] as const).map(({ value, icon: Icon, label, desc }) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setWorkStyle(value)}
+                  className={`w-full flex items-start gap-3 rounded-xl border-2 px-4 py-3 text-left transition-all ${
+                    workStyle === value
+                      ? "border-[#0A1628] bg-[#0A1628]/5"
+                      : "border-gray-200 hover:border-gray-300 bg-white"
+                  }`}
+                >
+                  <div className={`mt-0.5 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${workStyle === value ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-500"}`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className={`text-sm font-semibold ${workStyle === value ? "text-[#0A1628]" : "text-gray-800"}`}>{label}</div>
+                    <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{desc}</div>
+                  </div>
+                  {workStyle === value && (
+                    <CheckCircle className="w-4 h-4 text-[#0A1628] shrink-0 ml-auto mt-1" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Employee Count — only when owner or scout */}
+            {(workStyle === "owner" || workStyle === "scout") && (
+              <div className="mb-4">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">How many people work under you?</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: "Just me (1)", value: "Just me" },
+                    { label: "2–5 people", value: "2-5" },
+                    { label: "6–15 people", value: "6-15" },
+                    { label: "16–50 people", value: "16-50" },
+                    { label: "50+ people", value: "50+" },
+                  ].map(({ label, value }) => (
+                    <button
+                      key={value}
+                      type="button"
+                      onClick={() => setForm(p => ({ ...p, employeeCount: value }))}
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                        form.employeeCount === value
+                          ? "bg-[#0A1628] text-white border-[#0A1628]"
+                          : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Company Info */}
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-2">Company Information</p>
             <input placeholder="Company name *" value={form.companyName} onChange={set("companyName")} className={inputCls} />
@@ -1015,22 +1093,14 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
             )}
 
             {/* Business Details */}
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 text-gray-700 bg-white">
+            <div className="mb-3">
+              <select value={form.yearsInBusiness} onChange={set("yearsInBusiness")} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 text-gray-700 bg-white">
                 <option value="">Years in business</option>
                 <option value="0-1">Less than 1 year</option>
                 <option value="1-3">1 - 3 years</option>
                 <option value="3-5">3 - 5 years</option>
                 <option value="5-10">5 - 10 years</option>
                 <option value="10+">10+ years</option>
-              </select>
-              <select value={form.employeeCount} onChange={set("employeeCount")} className="border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 text-gray-700 bg-white">
-                <option value="">Team size</option>
-                <option value="Just me">Just me</option>
-                <option value="2-5">2 - 5</option>
-                <option value="6-15">6 - 15</option>
-                <option value="16-50">16 - 50</option>
-                <option value="50+">50+</option>
               </select>
             </div>
             <select value={form.estimatedJobsPerMonth} onChange={set("estimatedJobsPerMonth")} className={selectCls}>
@@ -1162,6 +1232,8 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
                   primaryCity: form.city || "Not provided",
                   primaryState: form.state,
                   referredBy: inboundRefCode ?? undefined,
+                  workStyle: workStyle || undefined,
+                  employeeCount: form.employeeCount || undefined,
                 });
               }}
               disabled={join.isPending}

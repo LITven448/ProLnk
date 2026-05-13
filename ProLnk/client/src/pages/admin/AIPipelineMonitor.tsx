@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
 import {
   Camera, Filter, Cpu, Tag, CheckCircle, XCircle,
-  ArrowRight, Activity, BarChart3, Clock, Zap,
-  Eye, TrendingUp, AlertTriangle, Layers, ChevronDown
+  ArrowRight, Activity, Clock, Zap,
+  Eye, Layers, ChevronDown,
+  DollarSign, Brain, Sparkles, BarChart2,
 } from "lucide-react";
 
 // --- Pipeline Stage Definitions ----------------------------------------------
@@ -86,6 +87,61 @@ const HOURLY_DATA = [
   { hour: "3pm", processed: 94, leads: 38 },
   { hour: "4pm", processed: 76, leads: 27 },
   { hour: "5pm", processed: 43, leads: 15 },
+];
+
+// --- AI Request Volume (last 7 days) ----------------------------------------
+const WEEKLY_AI_CALLS = [
+  { day: "Wed", analyzePhotos: 312, orchestration: 28 },
+  { day: "Thu", analyzePhotos: 487, orchestration: 41 },
+  { day: "Fri", analyzePhotos: 634, orchestration: 55 },
+  { day: "Sat", analyzePhotos: 271, orchestration: 24 },
+  { day: "Sun", analyzePhotos: 198, orchestration: 17 },
+  { day: "Mon", analyzePhotos: 521, orchestration: 47 },
+  { day: "Tue", analyzePhotos: 741, orchestration: 63 },
+];
+
+// Token usage this month vs $500 budget
+const TOKEN_BUDGET = {
+  monthBudget: 500,
+  photoScansCost: 287.42,
+  leadMatchingCost: 94.18,
+  orchestrationCost: 31.77,
+  get total() { return this.photoScansCost + this.leadMatchingCost + this.orchestrationCost; },
+  get usedPct() { return Math.round((this.total / this.monthBudget) * 100); },
+};
+
+// Model registry
+const AI_MODELS = [
+  {
+    role: "Photo Analysis",
+    model: "GPT-4o Vision",
+    provider: "OpenAI",
+    color: "#10B981",
+    callsToday: 741,
+    callsWeek: 3164,
+    avgLatencyMs: 1840,
+    costPerCall: "$0.032",
+  },
+  {
+    role: "Agent Orchestration",
+    model: "Claude Sonnet",
+    provider: "Anthropic",
+    color: "#8B5CF6",
+    callsToday: 63,
+    callsWeek: 275,
+    avgLatencyMs: 920,
+    costPerCall: "$0.018",
+  },
+  {
+    role: "Lead Matching",
+    model: "Claude Haiku",
+    provider: "Anthropic",
+    color: "#3B82F6",
+    callsToday: 312,
+    callsWeek: 1840,
+    avgLatencyMs: 310,
+    costPerCall: "$0.004",
+  },
 ];
 
 function stageIndex(stage: string) {
@@ -329,6 +385,141 @@ export default function AIPipelineMonitor() {
                 );
               })}
             </div>
+          </div>
+        </div>
+
+        {/* -- AI Request Volume --------------------------------------------- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Weekly analyzePhotos call volume */}
+          <div className="rounded-2xl p-5" style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-bold text-sm" style={{ color: T.text }}>analyzePhotos Calls — Last 7 Days</h3>
+                <p className="text-xs" style={{ color: T.muted }}>GPT-4o Vision requests vs. Claude orchestration calls</p>
+              </div>
+              <BarChart2 className="w-4 h-4" style={{ color: T.muted }} />
+            </div>
+            <div className="space-y-2">
+              {WEEKLY_AI_CALLS.map((d) => {
+                const maxCalls = Math.max(...WEEKLY_AI_CALLS.map(x => x.analyzePhotos));
+                return (
+                  <div key={d.day} className="flex items-center gap-3">
+                    <span className="text-[10px] w-7 flex-shrink-0 font-medium" style={{ color: T.muted, fontFamily: MONO }}>{d.day}</span>
+                    <div className="flex-1 relative h-5 flex items-center">
+                      <div
+                        className="absolute left-0 h-3 rounded-sm"
+                        style={{ width: `${(d.analyzePhotos / maxCalls) * 100}%`, backgroundColor: "#10B981", opacity: 0.25 }}
+                      />
+                      <div
+                        className="absolute left-0 h-1.5 rounded-sm bottom-0"
+                        style={{ width: `${(d.orchestration / maxCalls) * 100}%`, backgroundColor: "#8B5CF6", opacity: 0.7 }}
+                      />
+                    </div>
+                    <span className="text-[10px] font-bold w-8 text-right" style={{ color: T.text, fontFamily: MONO }}>{d.analyzePhotos}</span>
+                    <span className="text-[10px] w-6 text-right" style={{ color: "#8B5CF6", fontFamily: MONO }}>{d.orchestration}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex items-center gap-4 mt-3 pt-3" style={{ borderTop: `1px solid ${T.border}` }}>
+              <span className="flex items-center gap-1.5 text-[10px]" style={{ color: T.muted }}>
+                <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: "#10B981", opacity: 0.5 }} /> GPT-4o Vision
+              </span>
+              <span className="flex items-center gap-1.5 text-[10px]" style={{ color: T.muted }}>
+                <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: "#8B5CF6" }} /> Claude Orchestration
+              </span>
+            </div>
+          </div>
+
+          {/* Token budget meter */}
+          <div className="rounded-2xl p-5" style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-bold text-sm" style={{ color: T.text }}>Token Budget — May 2026</h3>
+                <p className="text-xs" style={{ color: T.muted }}>Monthly AI spend vs. ${TOKEN_BUDGET.monthBudget} budget</p>
+              </div>
+              <DollarSign className="w-4 h-4" style={{ color: T.muted }} />
+            </div>
+            {/* Big spend number */}
+            <div className="mb-4">
+              <div className="flex items-end gap-2">
+                <span className="text-3xl font-black" style={{ color: TOKEN_BUDGET.usedPct > 90 ? T.red : TOKEN_BUDGET.usedPct > 75 ? T.amber : T.green }}>
+                  ${TOKEN_BUDGET.total.toFixed(2)}
+                </span>
+                <span className="text-sm mb-1" style={{ color: T.muted }}>/ ${TOKEN_BUDGET.monthBudget}</span>
+                <span className="text-sm mb-1 font-bold ml-auto" style={{ color: TOKEN_BUDGET.usedPct > 90 ? T.red : T.amber }}>
+                  {TOKEN_BUDGET.usedPct}% used
+                </span>
+              </div>
+              <div className="h-2 rounded-full mt-2 overflow-hidden" style={{ backgroundColor: `${T.border}` }}>
+                <div
+                  className="h-full rounded-full transition-all"
+                  style={{
+                    width: `${Math.min(TOKEN_BUDGET.usedPct, 100)}%`,
+                    backgroundColor: TOKEN_BUDGET.usedPct > 90 ? T.red : TOKEN_BUDGET.usedPct > 75 ? T.amber : T.green,
+                  }}
+                />
+              </div>
+              <p className="text-[10px] mt-1.5" style={{ color: T.muted }}>
+                ${(TOKEN_BUDGET.monthBudget - TOKEN_BUDGET.total).toFixed(2)} remaining — ~{Math.round((TOKEN_BUDGET.monthBudget - TOKEN_BUDGET.total) / (TOKEN_BUDGET.total / 13))} days at current burn
+              </p>
+            </div>
+            {/* Cost breakdown */}
+            <div className="space-y-2 pt-3" style={{ borderTop: `1px solid ${T.border}` }}>
+              {[
+                { label: "Photo Scans (GPT-4o Vision)", cost: TOKEN_BUDGET.photoScansCost, color: "#10B981" },
+                { label: "Lead Matching (Claude Haiku)", cost: TOKEN_BUDGET.leadMatchingCost, color: "#3B82F6" },
+                { label: "Orchestration (Claude Sonnet)", cost: TOKEN_BUDGET.orchestrationCost, color: "#8B5CF6" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
+                    <span className="text-xs" style={{ color: T.muted }}>{item.label}</span>
+                  </div>
+                  <span className="text-xs font-bold" style={{ color: T.text, fontFamily: MONO }}>${item.cost.toFixed(2)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* -- AI Model Registry --------------------------------------------- */}
+        <div className="rounded-2xl p-5" style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+          <div className="flex items-center gap-2 mb-4">
+            <Sparkles className="w-4 h-4" style={{ color: T.accent }} />
+            <h3 className="font-bold text-sm" style={{ color: T.text }}>Active AI Models</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {AI_MODELS.map((m) => (
+              <div
+                key={m.role}
+                className="rounded-xl p-4"
+                style={{ backgroundColor: T.bg, border: `1px solid ${T.border}` }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${m.color}15` }}>
+                    <Brain className="w-4 h-4" style={{ color: m.color }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold" style={{ color: T.text }}>{m.model}</p>
+                    <p className="text-[10px]" style={{ color: T.muted }}>{m.provider} · {m.role}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: "Today", value: m.callsToday.toLocaleString() },
+                    { label: "This Week", value: m.callsWeek.toLocaleString() },
+                    { label: "Avg Latency", value: `${m.avgLatencyMs}ms` },
+                    { label: "Cost/Call", value: m.costPerCall },
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <p className="text-[10px]" style={{ color: T.muted }}>{stat.label}</p>
+                      <p className="text-xs font-bold" style={{ color: T.text, fontFamily: MONO }}>{stat.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

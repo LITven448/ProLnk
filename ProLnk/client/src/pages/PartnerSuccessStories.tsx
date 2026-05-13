@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Award, ArrowRight, Send, CheckCircle } from "lucide-react";
 
 interface Story {
@@ -96,7 +96,7 @@ export default function PartnerSuccessStories() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", trade: "", story: "", email: "" });
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSubmitted(true);
   }

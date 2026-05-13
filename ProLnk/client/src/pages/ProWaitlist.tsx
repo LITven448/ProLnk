@@ -933,7 +933,7 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-5 sm:p-8 relative max-h-[90vh] overflow-y-auto">
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">×</button>
         {step === "success" && join.data ? (
           <SuccessState
@@ -1347,7 +1347,7 @@ export default function ProWaitlist() {
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <h1 className="text-6xl md:text-7xl font-heading font-bold text-white leading-[1.05] mb-6 tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.05] mb-6 tracking-tight">
                 Your Photos.<br />Their Next Job.
               </h1>
             </FadeUp>
@@ -1370,17 +1370,17 @@ export default function ProWaitlist() {
             </FadeUp>
 
             <FadeIn delay={0.6}>
-              <div className="flex items-center gap-6 mt-12 pt-10 border-t border-white/10">
+              <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-white/10">
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-white"><CountUp target={148} suffix="+" /></div>
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Active Partners</div>
                 </div>
-                <div className="w-px h-10 bg-white/10" />
+                <div className="hidden sm:block w-px h-10 bg-white/10" />
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-white"><CountUp target={820} suffix="+" /></div>
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Leads Detected</div>
                 </div>
-                <div className="w-px h-10 bg-white/10" />
+                <div className="hidden sm:block w-px h-10 bg-white/10" />
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-white">$<CountUp target={45} suffix="K+" /></div>
                   <div className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">Commissions Paid</div>

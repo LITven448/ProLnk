@@ -26,11 +26,11 @@ const OVERRIDE_RATES = [
 ];
 
 function calcNetworkIncome(l1: number, l2: number, l3: number, l4: number): number {
-  const counts = [l1, l2, l3, l4];
+  const counts = [l1, l2, l3, l4] as const;
   const feePerJob = AVG_JOB_VALUE * PLATFORM_FEE;
   return Math.round(
     counts.reduce((sum, count, i) => {
-      const r = OVERRIDE_RATES[i];
+      const r = OVERRIDE_RATES[i] ?? OVERRIDE_RATES[0];
       return sum + count * JOBS_PER_MONTH * feePerJob * r.jobRate + count * SUB_FEE * r.subRate;
     }, 0)
   );

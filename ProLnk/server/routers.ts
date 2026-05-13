@@ -2665,6 +2665,17 @@ Answer concisely and helpfully. If asked about specific real-time account data (
     getNetworkStats: adminProcedure.query(async () => {
       return getNetworkStats();
     }),
+    getSystemStatus: adminProcedure.query(async () => {
+      return {
+        database: !!(process.env.DATABASE_URL),
+        email: !!(process.env.RESEND_API_KEY),
+        anthropic: !!(process.env.ANTHROPIC_API_KEY),
+        openai: !!(process.env.OPENAI_API_KEY),
+        stripe: process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'live' : process.env.STRIPE_SECRET_KEY ? 'test' : 'none',
+        twilio: !!(process.env.TWILIO_ACCOUNT_SID),
+        onesignal: !!(process.env.ONESIGNAL_APP_ID),
+      };
+    }),
 
     // Admin: manually trigger PPS recalculation for all partners
     recalculatePartnerScores: adminProcedure.mutation(async () => {

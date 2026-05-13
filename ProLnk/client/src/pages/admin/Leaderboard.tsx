@@ -1,3 +1,4 @@
+import { useState, useMemo, type ReactNode } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
@@ -21,9 +22,9 @@ type SortKey = "referralCount" | "jobsLogged" | "totalCommissionEarned" | "leads
 
 export default function Leaderboard() {
   const { data: partners, isLoading } = trpc.admin.getAllPartners.useQuery();
-  const [sortKey, setSortKey] = React.useState<SortKey>("referralCount");
+  const [sortKey, setSortKey] = useState<SortKey>("referralCount");
 
-  const sorted = React.useMemo(() => {
+  const sorted = useMemo(() => {
     if (!partners) return [];
     return [...partners]
       .filter((p) => p.status === "approved")
@@ -35,7 +36,7 @@ export default function Leaderboard() {
       });
   }, [partners, sortKey]);
 
-  const tabs: { key: SortKey; label: string; icon: React.ReactNode }[] = [
+  const tabs: { key: SortKey; label: string; icon: ReactNode }[] = [
     { key: "referralCount", label: "Referrals Sent", icon: <Send className="w-4 h-4" /> },
     { key: "jobsLogged", label: "Jobs Logged", icon: <TrendingUp className="w-4 h-4" /> },
     { key: "leadsCount", label: "Leads Received", icon: <Star className="w-4 h-4" /> },

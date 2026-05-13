@@ -1498,6 +1498,14 @@ export default function TrustyProHome() {
                 Scan My Home Free
               </motion.button>
               <motion.button
+                onClick={() => navigate("/trustypro/waitlist")}
+                className="px-8 py-4 rounded-full text-base font-semibold text-white border border-white/30 hover:bg-white/10 transition-colors"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Join the Waitlist
+              </motion.button>
+              <motion.button
                 onClick={() => navigate("/trustypro/directory")}
                 className="px-8 py-4 rounded-full text-base font-semibold text-gray-900 bg-white hover:bg-gray-100 transition-colors"
                 whileHover={{ scale: 1.04 }}

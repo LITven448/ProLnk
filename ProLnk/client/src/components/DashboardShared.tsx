@@ -3,7 +3,7 @@
  * Shared design tokens, components, and utilities for the 7 executive dashboards.
  * Dark-mode, data-rich aesthetic inspired by premium SaaS analytics platforms.
  */
-import { ReactNode } from "react";
+import { type ReactNode, type CSSProperties } from "react";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
@@ -360,7 +360,7 @@ export function ActivityItem({ time, message, type = "info", icon }: {
 export function DCard({ children, className = "", style = {} }: {
   children: ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }) {
   return (
     <div

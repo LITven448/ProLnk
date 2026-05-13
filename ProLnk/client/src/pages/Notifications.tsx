@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "wouter";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import {
   Bell, CheckCircle, DollarSign, Info,
   Clock, RefreshCw, Network, Lightbulb, PartyPopper, Zap,
+  ArrowRight, UserPlus, Eye, ExternalLink,
 } from "lucide-react";
 
 type NotifType = "leads" | "commission" | "network" | "system" | "tips";
@@ -18,6 +20,9 @@ interface Notification {
   timestamp: Date;
   read: boolean;
   pinned?: boolean;
+  actionLabel?: string;
+  actionHref?: string;
+  meta?: string;
 }
 
 function classifyEvent(eventType: string): NotifType {
@@ -43,6 +48,7 @@ const TYPE_CONFIG: Record<NotifType, {
   badgeBg: string;
   badgeText: string;
   label: string;
+  actionIcon: React.ReactNode;
 }> = {
   leads: {
     icon: <Zap className="w-4 h-4" />,
@@ -51,6 +57,7 @@ const TYPE_CONFIG: Record<NotifType, {
     badgeBg: "rgba(34,197,94,0.1)",
     badgeText: "#22c55e",
     label: "Lead",
+    actionIcon: <Eye className="w-3 h-3" />,
   },
   commission: {
     icon: <DollarSign className="w-4 h-4" />,
@@ -59,6 +66,7 @@ const TYPE_CONFIG: Record<NotifType, {
     badgeBg: "rgba(245,230,66,0.1)",
     badgeText: "#F5E642",
     label: "Commission",
+    actionIcon: <ArrowRight className="w-3 h-3" />,
   },
   network: {
     icon: <Network className="w-4 h-4" />,
@@ -67,6 +75,7 @@ const TYPE_CONFIG: Record<NotifType, {
     badgeBg: "rgba(59,130,246,0.1)",
     badgeText: "#3b82f6",
     label: "Network",
+    actionIcon: <UserPlus className="w-3 h-3" />,
   },
   system: {
     icon: <Info className="w-4 h-4" />,
@@ -75,6 +84,7 @@ const TYPE_CONFIG: Record<NotifType, {
     badgeBg: "rgba(107,114,128,0.1)",
     badgeText: "#9ca3af",
     label: "System",
+    actionIcon: <ExternalLink className="w-3 h-3" />,
   },
   tips: {
     icon: <Lightbulb className="w-4 h-4" />,
@@ -83,6 +93,7 @@ const TYPE_CONFIG: Record<NotifType, {
     badgeBg: "rgba(245,158,11,0.1)",
     badgeText: "#f59e0b",
     label: "Tips",
+    actionIcon: <ArrowRight className="w-3 h-3" />,
   },
 };
 
@@ -121,6 +132,8 @@ const STATIC_NOTIFICATIONS: Notification[] = [
     timestamp: new Date(),
     read: false,
     pinned: true,
+    actionLabel: "Go to Dashboard",
+    actionHref: "/dashboard",
   },
   {
     id: "static-trial",
@@ -133,6 +146,42 @@ const STATIC_NOTIFICATIONS: Notification[] = [
     pinned: true,
   },
   {
+    id: "static-lead-hvac",
+    numId: -5,
+    type: "leads",
+    title: "New homeowner in your area needs HVAC service",
+    body: "Estimated job value: $800–$1,200. Homeowner in 78701 submitted a request 12 minutes ago. 3 other pros have been notified — respond fast.",
+    timestamp: new Date(Date.now() - 720000),
+    read: false,
+    meta: "$800–$1,200 est.",
+    actionLabel: "View Lead",
+    actionHref: "/leads",
+  },
+  {
+    id: "static-network-join",
+    numId: -6,
+    type: "network",
+    title: "John D. joined your network",
+    body: "John signed up as an L1 partner using your referral link. You'll earn 7% on every job commission he generates — forever.",
+    timestamp: new Date(Date.now() - 3600000),
+    read: false,
+    meta: "+7% override (L1)",
+    actionLabel: "View Network",
+    actionHref: "/network",
+  },
+  {
+    id: "static-commission",
+    numId: -7,
+    type: "commission",
+    title: "Commission credited — $84.00",
+    body: "Your L1 override from John D.'s completed HVAC job has been credited to your account. Payout processes on the 1st of next month.",
+    timestamp: new Date(Date.now() - 7200000),
+    read: false,
+    meta: "$84.00 credited",
+    actionLabel: "View Earnings",
+    actionHref: "/earnings",
+  },
+  {
     id: "static-signature-tip",
     numId: -3,
     type: "tips",
@@ -141,6 +190,8 @@ const STATIC_NOTIFICATIONS: Notification[] = [
     timestamp: new Date(Date.now() - 120000),
     read: false,
     pinned: true,
+    actionLabel: "Copy Referral Link",
+    actionHref: "/referrals",
   },
 ];
 
@@ -190,10 +241,10 @@ export default function Notifications() {
 
   const unreadCount = allNotifications.filter((n) => !n.read).length;
 
-  const FILTER_TABS: { key: FilterKey; label: string }[] = [
-    { key: "all", label: "All" },
-    { key: "leads", label: "Leads" },
-    { key: "network", label: "Network" },
+  const FILTER_TABS: { key: FilterKey; label: string; count?: number }[] = [
+    { key: "all", label: "All", count: unreadCount > 0 ? unreadCount : undefined },
+    { key: "leads", label: "Leads", count: allNotifications.filter(n => !n.read && n.type === "leads").length || undefined },
+    { key: "network", label: "Network", count: allNotifications.filter(n => !n.read && n.type === "network").length || undefined },
     { key: "system", label: "System" },
     { key: "commission", label: "Commissions" },
     { key: "tips", label: "Tips" },
@@ -260,7 +311,7 @@ export default function Notifications() {
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all"
                 style={
                   active
                     ? { background: "#F5E642", color: "#0A1628" }
@@ -268,6 +319,14 @@ export default function Notifications() {
                 }
               >
                 {f.label}
+                {f.count != null && f.count > 0 && (
+                  <span
+                    className="w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center"
+                    style={active ? { background: "#0A1628", color: "#F5E642" } : { background: "#ef4444", color: "#fff" }}
+                  >
+                    {f.count > 9 ? "9+" : f.count}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -328,7 +387,7 @@ export default function Notifications() {
                 >
                   {/* Icon */}
                   <div
-                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                     style={{ background: cfg.iconBg, color: cfg.iconColor }}
                   >
                     {n.pinned && n.id === "static-welcome"
@@ -340,7 +399,7 @@ export default function Notifications() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <div className="flex items-center gap-2 flex-wrap min-w-0">
-                        <p className={`text-sm font-semibold truncate ${isUnread ? "text-white" : "text-gray-400"}`}>
+                        <p className={`text-sm font-semibold ${isUnread ? "text-white" : "text-gray-400"}`}>
                           {n.title}
                           {isUnread && (
                             <span
@@ -369,7 +428,34 @@ export default function Notifications() {
                         {timeAgo(n.timestamp)}
                       </span>
                     </div>
+
                     <p className="text-xs text-gray-500 leading-relaxed">{n.body}</p>
+
+                    {/* Meta + Action row */}
+                    {(n.meta || n.actionLabel) && (
+                      <div className="flex items-center justify-between mt-3 gap-2 flex-wrap">
+                        {n.meta ? (
+                          <span
+                            className="text-xs font-bold px-2.5 py-1 rounded-lg"
+                            style={{ background: cfg.iconBg, color: cfg.iconColor }}
+                          >
+                            {n.meta}
+                          </span>
+                        ) : <span />}
+                        {n.actionLabel && n.actionHref && (
+                          <Link href={n.actionHref}>
+                            <span
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
+                              style={{ background: cfg.iconBg, color: cfg.iconColor, border: `1px solid ${cfg.iconColor}33` }}
+                            >
+                              {cfg.actionIcon}
+                              {n.actionLabel}
+                            </span>
+                          </Link>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               );

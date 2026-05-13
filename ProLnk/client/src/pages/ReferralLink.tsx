@@ -5,7 +5,7 @@ import { QRCodeSVG } from "qrcode.react";
 import {
   Link2, Copy, Share2, CheckCircle, TrendingUp, Users, DollarSign,
   QrCode, Download, MessageSquare, Mail, Twitter, Linkedin, Facebook,
-  ExternalLink, Sparkles, Gift, Send, Phone
+  ExternalLink, Sparkles, Gift, Send, Phone, MousePointerClick, Pencil, Globe, ChevronDown, ChevronUp
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
@@ -102,6 +102,8 @@ export default function ReferralLink() {
   const [copied, setCopied] = useState(false);
   const [copiedMsg, setCopiedMsg] = useState(false);
   const [activeTab, setActiveTab] = useState<"social" | "message" | "qr">("social");
+  const [showPresets, setShowPresets] = useState(false);
+  const [copiedPreset, setCopiedPreset] = useState<string | null>(null);
   const qrRef = useRef<SVGSVGElement>(null);
 
   const partner = profile?.partner;
@@ -124,6 +126,43 @@ export default function ReferralLink() {
   const emailBody = `Hi,\n\nI've been using ProLnk, a partner network that routes home service leads between local contractors automatically. When I finish a job, the AI scans for other services the homeowner needs and sends those leads to the right partner in the network.\n\nI thought you'd be a great fit. Use my referral link to apply:\n\n${utmEmail}\n\nLet me know if you have questions!\n\n${partnerName}\n${businessName}`;
   const linkedInText = `I've been using ProLnk to get more home service leads in DFW -- the AI automatically routes opportunities between partner businesses. If you're in home services, check it out:`;
   const twitterText = `Just joined @ProLnk -- an AI-powered partner network that automatically routes home service leads between contractors in DFW. If you're in home services, apply here:`;
+
+  const messagePresets = [
+    {
+      id: "linkedin",
+      label: "LinkedIn",
+      icon: <Linkedin size={13} />,
+      color: "#0077b5",
+      text: linkedInText + " " + utmLinkedIn,
+    },
+    {
+      id: "twitter",
+      label: "X / Twitter",
+      icon: <Twitter size={13} />,
+      color: "#000000",
+      text: twitterText + " " + utmTwitter,
+    },
+    {
+      id: "sms",
+      label: "SMS",
+      icon: <MessageSquare size={13} />,
+      color: "#22c55e",
+      text: smsMessage,
+    },
+    {
+      id: "email",
+      label: "Email",
+      icon: <Mail size={13} />,
+      color: "#3b82f6",
+      text: `Subject: ${emailSubject}\n\n${emailBody}`,
+    },
+  ];
+
+  const copyPreset = (id: string, text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedPreset(id);
+    setTimeout(() => setCopiedPreset(null), 2500);
+  };
 
   const copyLink = () => {
     navigator.clipboard.writeText(referralUrl);
@@ -186,6 +225,23 @@ export default function ReferralLink() {
             </div>
           ))}
         </div>
+
+        {/* Click count banner */}
+        {(stats?.clicks ?? 0) > 0 && (
+          <div
+            className="flex items-center gap-3 rounded-xl px-5 py-3"
+            style={{ background: "linear-gradient(90deg,rgba(59,130,246,0.08),rgba(59,130,246,0.03))", border: "1px solid rgba(59,130,246,0.2)" }}
+          >
+            <MousePointerClick className="w-4 h-4 text-blue-500 shrink-0" />
+            <p className="text-sm text-gray-700">
+              <span className="font-bold text-blue-700">{(stats?.clicks ?? 0).toLocaleString()} people</span>
+              {" "}have clicked your referral link so far.
+              {(stats?.conversions ?? 0) > 0 && (
+                <> <span className="font-semibold text-green-700">{stats?.conversions} joined.</span></>
+              )}
+            </p>
+          </div>
+        )}
 
         {/* Link card */}
         <div className="bg-white rounded-xl border border-gray-200 p-5">
@@ -371,6 +427,80 @@ export default function ReferralLink() {
                 </p>
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Customize your message presets */}
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <button
+            onClick={() => setShowPresets(v => !v)}
+            className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <Pencil size={15} className="text-[#0A1628]" />
+              <p className="text-sm font-semibold text-gray-900">Customize Your Message</p>
+              <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">4 presets</span>
+            </div>
+            {showPresets ? <ChevronUp size={15} className="text-gray-400" /> : <ChevronDown size={15} className="text-gray-400" />}
+          </button>
+
+          {showPresets && (
+            <div className="px-5 pb-5 space-y-3">
+              <p className="text-xs text-gray-500">Copy a channel-specific message with your link already embedded. Paste directly into the platform.</p>
+              {messagePresets.map(preset => (
+                <div key={preset.id} className="rounded-xl border border-gray-100 overflow-hidden">
+                  <div
+                    className="flex items-center justify-between px-4 py-2"
+                    style={{ background: `${preset.color}0d` }}
+                  >
+                    <div className="flex items-center gap-2" style={{ color: preset.color }}>
+                      {preset.icon}
+                      <span className="text-xs font-semibold">{preset.label}</span>
+                    </div>
+                    <button
+                      onClick={() => copyPreset(preset.id, preset.text)}
+                      className="flex items-center gap-1 text-xs font-medium px-3 py-1 rounded-full transition-all"
+                      style={{
+                        background: copiedPreset === preset.id ? "#10b98122" : `${preset.color}18`,
+                        color: copiedPreset === preset.id ? "#10b981" : preset.color,
+                      }}
+                    >
+                      {copiedPreset === preset.id ? <><CheckCircle size={11} /> Copied!</> : <><Copy size={11} /> Copy</>}
+                    </button>
+                  </div>
+                  <div className="px-4 py-3 bg-gray-50">
+                    <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">{preset.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Create a landing page — coming soon */}
+        <div
+          className="rounded-xl p-5 flex items-start gap-4"
+          style={{ background: "linear-gradient(135deg,rgba(245,230,66,0.06),rgba(245,230,66,0.02))", border: "1px solid rgba(245,230,66,0.2)" }}
+        >
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+            style={{ background: "rgba(245,230,66,0.12)" }}
+          >
+            <Globe size={18} style={{ color: "#F5E642" }} />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-sm font-semibold text-gray-900">Create a Personal Landing Page</p>
+              <span
+                className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                style={{ background: "rgba(245,230,66,0.2)", color: "#7a6800" }}
+              >
+                Coming Soon
+              </span>
+            </div>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Get a custom <span className="font-mono text-[#0A1628]">prolnk.io/{referralCode}</span> page you can share with a personal intro, your photo, and your referral link — no coding required.
+            </p>
           </div>
         </div>
 

@@ -8,8 +8,50 @@ import { getDb } from "../db";
 import { exchangeJobs, exchangeBids, partners, partnerNotifications } from "../../drizzle/schema";
 import { eq, desc, and, ne, sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
+import { notifyOwner } from "../_core/notification";
 
 export const exchangeRouter = router({
+  // Pre-launch public job submission — stores via owner notification, no auth required
+  publicPostJob: publicProcedure
+    .input(z.object({
+      title: z.string().min(5).max(255),
+      tradeCategory: z.string().min(1),
+      description: z.string().min(20),
+      budgetRange: z.string().min(1),
+      city: z.string().min(1),
+      state: z.string().min(2).max(2),
+      zip: z.string().min(5).max(5),
+      startDate: z.string().optional(),
+      bidDeadline: z.string().optional(),
+      contactEmail: z.string().email(),
+      notifyWhenLive: z.boolean().default(false),
+    }))
+    .mutation(async ({ input }) => {
+      const location = `${input.city}, ${input.state} ${input.zip}`;
+      await notifyOwner({
+        title: `New Exchange Job Posted: ${input.title}`,
+        content: `**Trade:** ${input.tradeCategory}\n**Location:** ${location}\n**Budget:** ${input.budgetRange}\n**Start Date:** ${input.startDate || "TBD"}\n**Bid Deadline:** ${input.bidDeadline || "TBD"}\n**Contact:** ${input.contactEmail}\n**Notify when live:** ${input.notifyWhenLive ? "Yes" : "No"}\n\n**Description:**\n${input.description}`,
+      }).catch(() => {});
+      return { success: true, jobId: `job_${Date.now()}` };
+    }),
+
+  // Pre-launch public bid expression — notify owner, no auth required
+  publicSubmitBid: publicProcedure
+    .input(z.object({
+      jobId: z.number(),
+      jobTitle: z.string(),
+      name: z.string().min(1).max(255),
+      email: z.string().email(),
+      message: z.string().min(1),
+    }))
+    .mutation(async ({ input }) => {
+      await notifyOwner({
+        title: `New Bid Expression: Job #${input.jobId}`,
+        content: `**Job:** ${input.jobTitle}\n**Bidder:** ${input.name}\n**Email:** ${input.email}\n\n**Message:**\n${input.message}`,
+      }).catch(() => {});
+      return { success: true };
+    }),
+
   // List open exchange jobs (public, paginated)
   listJobs: publicProcedure
     .input(z.object({

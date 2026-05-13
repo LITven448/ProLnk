@@ -1,12 +1,12 @@
 import { protectedProcedure, router } from "../_core/trpc";
 import { getDb } from "../db";
 import { z } from "zod";
-import { S3Client, HeadObjectCommand } from "@aws-sdk/client-s3";
-import { createPresignedPost } from "@aws-sdk/s3-request-presigner";
+import { S3Client, PutObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { v4 as uuidv4 } from "uuid";
 
 const s3Client = new S3Client({
-  region: process.env.AWS_S3_REGION || "us-east-1",
+  region: process.env.AWS_REGION || process.env.AWS_S3_REGION || "us-east-2",
   endpoint: process.env.AWS_S3_ENDPOINT,
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
@@ -50,19 +50,16 @@ export const photoUploadRouter = router({
         const uploadId = uuidv4();
         const fileKey = `photos/${proId}/${uploadId}`;
 
-        const presigned = await createPresignedPost(s3Client, {
+        const command = new PutObjectCommand({
           Bucket: S3_BUCKET,
           Key: fileKey,
-          Expires: PRESIGNED_URL_EXPIRY,
-          Conditions: [
-            ["content-length-range", 0, 10 * 1024 * 1024], // 10MB max
-            ["starts-with", "$Content-Type", "image/"],
-          ],
+          ContentType: "image/jpeg",
         });
+        const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: PRESIGNED_URL_EXPIRY });
 
         return {
-          uploadUrl: presigned.url,
-          fields: presigned.fields,
+          uploadUrl,
+          fields: {} as Record<string, string>,
           fileKey,
           expiresIn: PRESIGNED_URL_EXPIRY,
           uploadId,

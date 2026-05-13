@@ -885,7 +885,7 @@ const TRADE_OPTIONS = [
   { group: "General / Other", trades: ["General Contractor", "Other (describe below)"] },
 ];
 
-function ProWaitlistModal({ onClose }: { onClose: () => void }) {
+function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; charterCode?: string | null }) {
   const [step, setStep] = useState<"form" | "success">("form");
   const [referralLink, setReferralLink] = useState("");
   const [workStyle, setWorkStyle] = useState<"solo" | "owner" | "scout" | "">("");
@@ -946,6 +946,15 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
           />
         ) : (
           <>
+            {charterCode && (
+              <div className="mb-4 rounded-xl bg-[#0A1628] px-4 py-3 flex items-center gap-3">
+                <span className="text-xl">🏆</span>
+                <div>
+                  <div className="text-[#F5E642] text-sm font-black">Charter Member Invite</div>
+                  <div className="text-white/70 text-xs">Code: <span className="font-mono text-white/90">{charterCode}</span> — Position #1-25 reserved</div>
+                </div>
+              </div>
+            )}
             <h2 className="text-2xl font-bold text-[#0A1628] mb-1">Join the ProLnk Waitlist</h2>
             <p className="text-gray-500 text-sm mb-5">Be among the first service pros to get access when we launch in your area.</p>
 
@@ -1234,6 +1243,7 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
                   referredBy: inboundRefCode ?? undefined,
                   workStyle: workStyle || undefined,
                   employeeCount: form.employeeCount || undefined,
+                  notes: charterCode ? `Charter invite: ${charterCode}` : undefined,
                 });
               }}
               disabled={join.isPending}
@@ -1248,11 +1258,53 @@ function ProWaitlistModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+// --- Charter Codes ----------------------------------------------------------------
+const VALID_CHARTER_CODES = [
+  "CHARTER-F16F40FE", "CHARTER-F5B1F1AF", "CHARTER-839DE8B2", "CHARTER-C246539B", "CHARTER-AAB021AB",
+  "CHARTER-601B3AC9", "CHARTER-1A36E2C9", "CHARTER-A20CD22B", "CHARTER-A340874D", "CHARTER-3EDBEC0E",
+  "CHARTER-6B0E5F24", "CHARTER-82C5D09C", "CHARTER-2A0C6299", "CHARTER-B73EBBD6", "CHARTER-63DC75AE",
+  "CHARTER-58FA78E8", "CHARTER-A7BF7415", "CHARTER-4203A78A", "CHARTER-F90E151D", "CHARTER-2765498B",
+  "CHARTER-BCB57B1F", "CHARTER-13A2DA1A", "CHARTER-BA8E75A6", "CHARTER-4A37423B", "CHARTER-71DEB259",
+];
+
+// --- Charter Invite Banner --------------------------------------------------------
+function CharterInviteBanner({ code }: { code: string }) {
+  return (
+    <div className="bg-[#0A1628] border-b-4 border-[#F5E642] py-5 px-4">
+      <div className="container flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[#F5E642] text-lg">🏆</span>
+            <span className="text-[#F5E642] text-base font-black tracking-wide">You've been personally invited for a Charter Member spot</span>
+          </div>
+          <p className="text-white/80 text-sm mb-1">
+            This exclusive link reserves your position in the first 25 founding members.
+          </p>
+          <p className="text-[#F5E642]/90 text-sm font-semibold">
+            Charter members get the same $149/mo rate — locked forever with priority position #1-25
+          </p>
+        </div>
+        <div className="shrink-0 bg-[#F5E642]/10 border border-[#F5E642]/30 rounded-lg px-4 py-2 text-center">
+          <div className="text-[10px] font-black text-[#F5E642] tracking-widest uppercase mb-0.5">Invite Code</div>
+          <div className="text-[#F5E642] font-mono text-xs font-bold">{code}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // --- Main Landing Page -------------------------------------------------------------
 export default function ProWaitlist() {
   const { user } = useAuth();
   const [showWaitlist, setShowWaitlist] = useState(false);
   const openWaitlist = () => setShowWaitlist(true);
+
+  const charterCode = (() => {
+    const p = new URLSearchParams(window.location.search);
+    const code = (p.get("charter") ?? "").toUpperCase();
+    return VALID_CHARTER_CODES.includes(code) ? code : null;
+  })();
+
   useEffect(() => {
     const handler = () => setShowWaitlist(true);
     document.addEventListener("open-pro-waitlist", handler);
@@ -1397,6 +1449,9 @@ export default function ProWaitlist() {
           </span>
         </div>
       </div>
+
+      {/* -- Charter Invite Banner -- */}
+      {charterCode && <CharterInviteBanner code={charterCode} />}
 
       {/* -- 1. Hero -- */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#050d1a" }}>
@@ -1862,7 +1917,7 @@ export default function ProWaitlist() {
 
       {/* Pro Waitlist Modal */}
       {showWaitlist && (
-        <ProWaitlistModal onClose={() => setShowWaitlist(false)} />
+        <ProWaitlistModal onClose={() => setShowWaitlist(false)} charterCode={charterCode} />
       )}
       <BackToTop />
     </div>

@@ -310,6 +310,7 @@ const FeaturedAdvertisersAdmin = lazy(() => import("./pages/admin/FeaturedAdvert
 const AdvertisingPreview = lazy(() => import("./pages/admin/AdvertisingPreview"));
 const UnifiedInbox = lazy(() => import("./pages/UnifiedInbox"));
 const JobSchedule = lazy(() => import("./pages/JobSchedule"));
+const JobScheduler = lazy(() => import("./pages/JobScheduler"));
 const CommissionRates = lazy(() => import("./pages/CommissionRates"));
 const CommissionStrategy = lazy(() => import("./pages/admin/CommissionStrategy"));
 const TrustedProAlgorithm = lazy(() => import("./pages/admin/TrustedProAlgorithm"));
@@ -397,6 +398,10 @@ const AutomationRulesEngine = lazy(() => import("./pages/admin/AutomationRulesEn
 const MediaLibraryAdmin = lazy(() => import("./pages/admin/MediaLibraryAdmin"));
 const SeasonalMaintenanceAdmin = lazy(() => import("./pages/admin/SeasonalMaintenanceAdmin"));
 const IntegrationWebhookDashboard = lazy(() => import("./pages/admin/IntegrationWebhookDashboard"));
+
+// Trade SEO landing pages
+const TradeLanding = lazy(() => import("./pages/TradeLanding"));
+const TradeLandingList = lazy(() => import("./pages/TradeLandingList"));
 
 // Wave 14: Content & Marketing
 const Blog = lazy(() => import("./pages/Blog"));
@@ -630,6 +635,7 @@ function Router() {
       <Route path="/account/delete" component={AccountDeletion} />
       <Route path="/dashboard/inbox" component={UnifiedInbox} />
       <Route path="/dashboard/schedule" component={JobSchedule} />
+      <Route path="/jobs/schedule" component={JobScheduler} />
       <Route path="/dashboard/commission-rates" component={CommissionRates} />
       <Route path="/dashboard/exchange" component={Exchange} />
       <Route path="/dashboard/exchange/profile/:id" component={ExchangeProfile} />
@@ -984,6 +990,8 @@ function Router() {
       <Route path="/for-insurance-agents" component={ForInsuranceAgents} />
       <Route path="/for-property-managers" component={ForPropertyManagers} />
       <Route path="/storm-alert" component={StormAlert} />
+      <Route path="/trades" component={TradeLandingList} />
+      <Route path="/trades/:trade" component={TradeLanding} />
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />

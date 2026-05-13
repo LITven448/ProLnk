@@ -73,7 +73,6 @@ const AIChatAssistant = lazy(() => import("./pages/AIChatAssistant"));
 const EarningsTracker = lazy(() => import("./pages/EarningsTracker"));
 const WhatsNew = lazy(() => import("./pages/WhatsNew"));
 const PartnerProfileEditor = lazy(() => import("./pages/PartnerProfileEditor"));
-const PartnerVerification = lazy(() => import("./pages/PartnerVerification"));
 const AdminSetup = lazy(() => import("./pages/AdminSetup"));
 const JobHistory = lazy(() => import("./pages/JobHistory"));
 const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));

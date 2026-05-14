@@ -345,6 +345,8 @@ const PartnerLeaderboard = lazy(() => import("./pages/PartnerLeaderboard"));
 const PartnerHealthDashboard = lazy(() => import("./pages/admin/PartnerHealthDashboard"));
 const GeoExpansionMap = lazy(() => import("./pages/admin/GeoExpansionMap"));
 const RevenueForecast = lazy(() => import("./pages/admin/RevenueForecast"));
+const RevenueForecaster = lazy(() => import("./pages/admin/RevenueForecaster"));
+const NetworkGrowthDashboard = lazy(() => import("./pages/admin/NetworkGrowthDashboard"));
 const LeadQualityCenter = lazy(() => import("./pages/admin/LeadQualityCenter"));
 const HomeAssistant = lazy(() => import("./pages/homeowner/HomeAssistant"));
 const HomeDiagnostic = lazy(() => import("./pages/homeowner/HomeDiagnostic"));
@@ -940,6 +942,8 @@ function Router() {
       <Route path="/admin/media-settings" component={PlatformSettings} />
       <Route path="/admin/geo-expansion" component={GeoExpansionMap} />
       <Route path="/admin/revenue-forecast" component={RevenueForecast} />
+      <Route path="/admin/revenue-forecaster" component={RevenueForecaster} />
+      <Route path="/admin/network-growth" component={NetworkGrowthDashboard} />
       <Route path="/admin/lead-quality" component={LeadQualityCenter} />
       <Route path="/dashboard/academy" component={TrainingAcademy} />
       <Route path="/dashboard/skills" component={SkillsMarketplace} />

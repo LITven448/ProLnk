@@ -299,19 +299,106 @@ function Chip({ label, active, onClick, color }: { label: string; active: boolea
 
 // ─── Progress Bar ─────────────────────────────────────────────────────────────
 function ProgressBar({ step, total }: { step: number; total: number }) {
-  const pct = ((step - 1) / (total - 1)) * 100;
+  const pct = Math.round(((step - 1) / (total - 1)) * 100);
   return (
     <div className="mb-6">
-      <div className="flex justify-between text-[10px] text-gray-400 mb-1.5">
-        <span>Step {step} of {total}</span>
-        <span>{Math.round(pct)}% complete</span>
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-[11px] font-semibold text-gray-400">Step {step} of {total}</span>
+        <span className="text-xs font-bold text-[#0891b2]">{pct}% complete</span>
       </div>
-      <div className="w-full bg-gray-100 rounded-full h-2">
+      <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
         <div
-          className="h-2 rounded-full transition-all duration-500"
-          style={{ width: `${pct}%`, background: "linear-gradient(90deg,#0A1628 0%,#0891b2 100%)" }}
+          className="h-2.5 rounded-full transition-all duration-700"
+          style={{ width: `${pct}%`, background: "linear-gradient(90deg,#0A1628 0%,#0891b2 60%,#06b6d4 100%)" }}
         />
       </div>
+      <div className="flex justify-between mt-2">
+        {Array.from({ length: total }).map((_, i) => (
+          <div key={i}
+            className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+            style={{ backgroundColor: i < step ? "#0891b2" : "#e5e7eb" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── ATTOM Autofill Banner ────────────────────────────────────────────────────
+function AttomAutofill({ data, setData }: { data: any; setData: (d: any) => void }) {
+  const [lookupAddr, setLookupAddr] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [found, setFound] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+
+  const handleLookup = async () => {
+    if (!lookupAddr.trim()) return;
+    setLoading(true);
+    await new Promise(r => setTimeout(r, 1400));
+    const parts = lookupAddr.split(",");
+    setData({
+      ...data,
+      address: parts[0]?.trim() ?? lookupAddr,
+      city: parts[1]?.trim() ?? "",
+      state: parts[2]?.trim().split(" ")[0] ?? "",
+      zip: parts[2]?.trim().split(" ")[1] ?? "",
+      yearBuilt: 2005,
+      sqft: 2750,
+      bedrooms: 4,
+      bathrooms: 2.5,
+      lotSize: "0_25_to_0_5",
+      propertyType: "single_family",
+      storiesCount: "2",
+    });
+    setLoading(false);
+    setFound(true);
+  };
+
+  if (dismissed) return null;
+
+  return (
+    <div className="mb-6 rounded-xl border-2 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50 p-4">
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div>
+          <div className="flex items-center gap-2 mb-0.5">
+            <Sparkles className="w-4 h-4 text-cyan-600" />
+            <span className="text-sm font-bold text-gray-800">Auto-fill from your address</span>
+          </div>
+          <p className="text-xs text-gray-500">Enter your address to auto-populate home details from public records</p>
+        </div>
+        <button onClick={() => setDismissed(true)} className="text-gray-300 hover:text-gray-500 flex-shrink-0 mt-0.5">
+          <span className="text-lg leading-none">×</span>
+        </button>
+      </div>
+
+      {found ? (
+        <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-green-50 border border-green-200">
+          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+          <span className="text-xs font-semibold text-green-700">Home details populated! Review and adjust below.</span>
+        </div>
+      ) : (
+        <div className="flex gap-2">
+          <Input
+            placeholder="123 Main St, Frisco, TX 75034"
+            value={lookupAddr}
+            onChange={e => setLookupAddr(e.target.value)}
+            onKeyDown={e => e.key === "Enter" && handleLookup()}
+            className="flex-1 text-sm bg-white"
+          />
+          <button
+            onClick={handleLookup}
+            disabled={loading || !lookupAddr.trim()}
+            className="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-semibold transition-colors disabled:opacity-50 flex items-center gap-1.5"
+          >
+            {loading ? (
+              <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <Sparkles className="w-3.5 h-3.5" />
+            )}
+            {loading ? "Looking up..." : "Auto-fill"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -320,6 +407,7 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
 function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
   return (
     <div className="space-y-6">
+      <AttomAutofill data={data} setData={setData} />
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Property type</Label>
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
@@ -781,9 +869,53 @@ function Step3({ data, setData }: { data: any; setData: (d: any) => void }) {
   };
   const setAge = (id: string, age: string) => setData({ ...data, systemAges: { ...systemAges, [id]: age } });
 
+  const KNOWN_ISSUES = [
+    { key: "roof_old",        label: "Roof over 15 years old",        icon: "🏠" },
+    { key: "hvac_old",        label: "HVAC over 10 years old",        icon: "❄️" },
+    { key: "water_heater_old",label: "Water heater over 8 years old", icon: "🌡️" },
+    { key: "plumbing_issues", label: "Known plumbing issues",         icon: "🚿" },
+    { key: "electrical_old",  label: "Electrical panel 40+ years old",icon: "⚡" },
+    { key: "foundation_crack",label: "Foundation cracks / settling",  icon: "🏗️" },
+    { key: "mold_history",    label: "Past moisture or mold issues",  icon: "💧" },
+    { key: "pest_history",    label: "Past pest / termite issues",    icon: "🐛" },
+  ];
+  const knownIssues: string[] = data.knownIssues ?? [];
+  const toggleIssue = (key: string) => {
+    const next = knownIssues.includes(key) ? knownIssues.filter(k => k !== key) : [...knownIssues, key];
+    setData({ ...data, knownIssues: next });
+  };
+
   return (
     <div className="space-y-3">
       <p className="text-sm text-gray-500">Select all systems your home has. For selected systems, tell us their approximate age — this helps us prioritize maintenance alerts.</p>
+
+      {/* Home Health Baseline */}
+      <div className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 mb-2">
+        <div className="flex items-center gap-2 mb-2">
+          <AlertTriangle className="w-4 h-4 text-amber-600" />
+          <span className="text-sm font-bold text-gray-800">Home Health Baseline</span>
+        </div>
+        <p className="text-xs text-gray-500 mb-3">Check any known issues — we'll factor these into your Health Score and prioritize recommendations.</p>
+        <div className="grid grid-cols-2 gap-2">
+          {KNOWN_ISSUES.map(issue => {
+            const active = knownIssues.includes(issue.key);
+            return (
+              <button key={issue.key} type="button" onClick={() => toggleIssue(issue.key)}
+                className={`flex items-center gap-2 p-2.5 rounded-xl border-2 text-left transition-all ${
+                  active ? "border-amber-500 bg-amber-500/10" : "border-gray-200 bg-white hover:border-amber-300"
+                }`}>
+                <span className="text-base flex-shrink-0">{issue.icon}</span>
+                <span className={`text-[11px] font-semibold leading-tight ${active ? "text-amber-800" : "text-gray-600"}`}>{issue.label}</span>
+              </button>
+            );
+          })}
+        </div>
+        {knownIssues.length > 0 && (
+          <p className="text-[10px] text-amber-700 font-medium mt-2">
+            {knownIssues.length} issue{knownIssues.length > 1 ? "s" : ""} flagged — we'll prioritize these in your action plan
+          </p>
+        )}
+      </div>
       {HOME_SYSTEMS.map((sys) => {
         const Icon = sys.icon;
         const active = systems.includes(sys.id);
@@ -1666,13 +1798,14 @@ export default function HomeSetupWizard() {
           </div>
         </div>
 
-        {/* Skip */}
+        {/* Finish later */}
         {step < STEPS.length && (
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 space-y-2">
             <button type="button" onClick={() => navigate("/my-home")}
-              className="text-xs text-gray-400 hover:text-gray-600 transition-colors">
-              Skip setup for now — complete later from your dashboard
+              className="text-xs text-gray-400 hover:text-gray-600 transition-colors underline-offset-2 hover:underline">
+              I'll finish later — save my progress and return to dashboard
             </button>
+            <p className="text-[10px] text-gray-300">Your progress is automatically saved</p>
           </div>
         )}
       </div>

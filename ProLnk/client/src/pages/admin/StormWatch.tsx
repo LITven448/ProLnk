@@ -136,7 +136,7 @@ function runSimulation(cellId: number): SimResult {
     projectedRevenue: `$${(base * 3200 / 1000).toFixed(0)}K`,
     tradeBreakdown: cell.trades.map((t, i) => ({
       trade: t,
-      leads: Math.floor(base * [0.4, 0.35, 0.25][i] ?? 0.2),
+      leads: Math.floor(base * ([0.4, 0.35, 0.25][i] ?? 0.2)),
     })),
   };
 }

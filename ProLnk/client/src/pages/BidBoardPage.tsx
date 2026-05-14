@@ -1,21 +1,21 @@
 /**
  * Bid Board — Project Marketplace
  * Route: /dashboard/bid-board
- * Partners browse and bid on projects posted by Scouts and GCs.
+ * Partners browse and bid on projects. Includes status pipeline view for submitted bids.
  */
 
+import type React from "react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import PartnerLayout from "@/components/PartnerLayout";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
-  ClipboardList, DollarSign, MapPin, Clock, ArrowRight,
-  Home, Building2, Filter, Briefcase,
+  ClipboardList, MapPin, Clock, ArrowRight,
+  CheckCircle2, XCircle, Award, Star, Circle,
 } from "lucide-react";
 
 const PROPERTY_ICONS: Record<string, string> = {
@@ -23,12 +23,129 @@ const PROPERTY_ICONS: Record<string, string> = {
   school: "🏫", healthcare: "🏥", other: "📋",
 };
 
+type BidStatus = "submitted" | "under_review" | "shortlisted" | "awarded" | "declined";
+
+const PIPELINE_STAGES: { key: BidStatus; label: string; icon: React.ReactNode; color: string; bg: string }[] = [
+  {
+    key: "submitted",
+    label: "Submitted",
+    icon: <ClipboardList className="w-4 h-4" />,
+    color: "#818cf8",
+    bg: "rgba(99,102,241,0.12)",
+  },
+  {
+    key: "under_review",
+    label: "Under Review",
+    icon: <Circle className="w-4 h-4" />,
+    color: "#F59E0B",
+    bg: "rgba(245,158,11,0.12)",
+  },
+  {
+    key: "shortlisted",
+    label: "Shortlisted",
+    icon: <Star className="w-4 h-4" />,
+    color: "#38bdf8",
+    bg: "rgba(14,165,233,0.12)",
+  },
+  {
+    key: "awarded",
+    label: "Awarded",
+    icon: <Award className="w-4 h-4" />,
+    color: "#4ade80",
+    bg: "rgba(34,197,94,0.12)",
+  },
+  {
+    key: "declined",
+    label: "Declined",
+    icon: <XCircle className="w-4 h-4" />,
+    color: "#f87171",
+    bg: "rgba(239,68,68,0.12)",
+  },
+];
+
+function getBidStageIndex(status: string): number {
+  const activeStages: BidStatus[] = ["submitted", "under_review", "shortlisted", "awarded"];
+  return activeStages.indexOf(status as BidStatus);
+}
+
+function BidPipelineBar({ status }: { status: string }) {
+  const activeStages: BidStatus[] = ["submitted", "under_review", "shortlisted", "awarded"];
+  const currentIdx = getBidStageIndex(status);
+  const isDeclined = status === "declined";
+
+  if (isDeclined) {
+    return (
+      <div className="mt-3 flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
+        <XCircle className="w-4 h-4 flex-shrink-0" style={{ color: "#f87171" }} />
+        <span className="text-xs font-semibold" style={{ color: "#f87171" }}>Bid Declined</span>
+        <span className="text-xs ml-1" style={{ color: "rgba(255,255,255,0.3)" }}>— This position has been filled</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-3">
+      <div className="flex items-center gap-0">
+        {activeStages.map((stage, idx) => {
+          const stageInfo = PIPELINE_STAGES.find((s) => s.key === stage)!;
+          const isPast = idx < currentIdx;
+          const isCurrent = idx === currentIdx;
+          const isLast = idx === activeStages.length - 1;
+
+          return (
+            <div key={stage} className="flex items-center flex-1 min-w-0">
+              <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center transition-all"
+                  style={{
+                    backgroundColor: isPast || isCurrent ? stageInfo.bg : "rgba(255,255,255,0.05)",
+                    border: `2px solid ${isPast || isCurrent ? stageInfo.color : "rgba(255,255,255,0.12)"}`,
+                    color: isPast || isCurrent ? stageInfo.color : "rgba(255,255,255,0.25)",
+                  }}
+                >
+                  {isPast ? (
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  ) : (
+                    <span className="scale-75">{stageInfo.icon}</span>
+                  )}
+                </div>
+                <span
+                  className="text-xs font-medium text-center leading-tight"
+                  style={{
+                    color: isCurrent ? stageInfo.color : isPast ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.2)",
+                    fontSize: "10px",
+                    maxWidth: "52px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {stageInfo.label}
+                </span>
+              </div>
+              {!isLast && (
+                <div
+                  className="h-0.5 flex-1 mx-1 mb-4"
+                  style={{
+                    backgroundColor: isPast ? "#4ade8060" : "rgba(255,255,255,0.08)",
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function BidBoardPage() {
   const [, navigate] = useLocation();
   const [tab, setTab] = useState<"browse" | "my-bids" | "my-projects">("browse");
   const [filter, setFilter] = useState({ trade: "", zip: "" });
   const [bidAmount, setBidAmount] = useState<Record<number, string>>({});
   const [showBidForm, setShowBidForm] = useState<number | null>(null);
+  const [pipelineFilter, setPipelineFilter] = useState<BidStatus | "all">("all");
 
   const openProjects = trpc.bidBoard.listOpenProjects.useQuery({ tradeFilter: filter.trade || undefined, zipFilter: filter.zip || undefined });
   const myBids = trpc.bidBoard.getMyBids.useQuery(undefined, { enabled: tab === "my-bids" });
@@ -38,6 +155,15 @@ export default function BidBoardPage() {
     onSuccess: () => { toast.success("Bid submitted!"); setShowBidForm(null); openProjects.refetch(); },
     onError: (e) => toast.error(e.message),
   });
+
+  const filteredBids = (myBids.data ?? []).filter((bid: any) =>
+    pipelineFilter === "all" || bid.status === pipelineFilter
+  );
+
+  const statusCounts = (myBids.data ?? []).reduce((acc: Record<string, number>, bid: any) => {
+    acc[bid.status] = (acc[bid.status] ?? 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
 
   return (
     <PartnerLayout>
@@ -152,22 +278,111 @@ export default function BidBoardPage() {
         )}
 
         {tab === "my-bids" && (
-          <div className="space-y-3">
-            {myBids.data?.map((bid: any) => (
-              <div key={bid.id} className="bg-gray-800 rounded-xl p-4 border border-gray-700 flex items-center gap-4">
-                <div className="flex-1">
-                  <div className="font-semibold text-white text-sm">{bid.projectTitle}</div>
-                  <div className="text-gray-400 text-xs mt-0.5">{bid.propertyAddress}</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-lg font-bold text-teal-400">${parseFloat(bid.bidAmount).toLocaleString()}</div>
-                  <Badge className={`text-xs mt-1 ${bid.status === "awarded" ? "bg-green-500/10 text-green-400" : bid.status === "rejected" ? "bg-red-500/10 text-red-400" : "bg-gray-700 text-gray-400"}`}>
-                    {bid.status}
-                  </Badge>
-                </div>
+          <div className="space-y-4">
+            {/* Pipeline summary bar */}
+            <div className="grid grid-cols-5 gap-2">
+              {PIPELINE_STAGES.map((stage) => {
+                const count = statusCounts[stage.key] ?? 0;
+                const isActive = pipelineFilter === stage.key;
+                return (
+                  <button
+                    key={stage.key}
+                    onClick={() => setPipelineFilter(isActive ? "all" : stage.key)}
+                    className="flex flex-col items-center gap-1 px-3 py-3 rounded-xl border transition-all text-center"
+                    style={{
+                      backgroundColor: isActive ? stage.bg : "rgba(255,255,255,0.03)",
+                      borderColor: isActive ? `${stage.color}50` : "rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: stage.bg, color: stage.color }}
+                    >
+                      {stage.icon}
+                    </div>
+                    <span
+                      className="text-lg font-black"
+                      style={{ color: count > 0 ? stage.color : "rgba(255,255,255,0.2)" }}
+                    >
+                      {count}
+                    </span>
+                    <span
+                      className="text-xs font-medium leading-tight"
+                      style={{ color: isActive ? stage.color : "rgba(255,255,255,0.4)", fontSize: "10px" }}
+                    >
+                      {stage.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {pipelineFilter !== "all" && (
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">
+                  Showing <span className="text-white font-semibold">{filteredBids.length}</span> bids in{" "}
+                  <span style={{ color: PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.color }}>
+                    {PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.label}
+                  </span>
+                </span>
+                <button
+                  onClick={() => setPipelineFilter("all")}
+                  className="text-xs text-gray-500 hover:text-white transition-colors underline"
+                >
+                  Show all
+                </button>
               </div>
-            ))}
-            {!myBids.data?.length && <div className="text-center py-12 text-gray-500">No bids submitted yet</div>}
+            )}
+
+            {/* Bid cards with pipeline status */}
+            <div className="space-y-3">
+              {(myBids.isLoading ? [] : filteredBids).map((bid: any) => {
+                const stageInfo = PIPELINE_STAGES.find((s) => s.key === bid.status) ?? PIPELINE_STAGES[0];
+                return (
+                  <div
+                    key={bid.id}
+                    className="rounded-xl p-4 border transition-all"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.03)",
+                      borderColor: bid.status === "awarded"
+                        ? "rgba(34,197,94,0.25)"
+                        : bid.status === "declined"
+                        ? "rgba(239,68,68,0.15)"
+                        : "rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <div className="font-semibold text-white text-sm">{bid.projectTitle}</div>
+                            <div className="text-gray-400 text-xs mt-0.5">{bid.propertyAddress}</div>
+                          </div>
+                          <div className="text-right shrink-0">
+                            <div className="text-lg font-bold text-teal-400">${parseFloat(bid.bidAmount).toLocaleString()}</div>
+                            <div
+                              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full mt-1"
+                              style={{ backgroundColor: stageInfo.bg, color: stageInfo.color }}
+                            >
+                              {stageInfo.icon}
+                              {stageInfo.label}
+                            </div>
+                          </div>
+                        </div>
+                        <BidPipelineBar status={bid.status} />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              {!myBids.isLoading && filteredBids.length === 0 && (
+                <div className="text-center py-12 text-gray-500">
+                  {pipelineFilter === "all"
+                    ? "No bids submitted yet"
+                    : `No bids in ${PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.label} stage`}
+                </div>
+              )}
+            </div>
           </div>
         )}
 

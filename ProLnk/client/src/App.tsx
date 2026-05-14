@@ -315,6 +315,7 @@ const CommissionRates = lazy(() => import("./pages/CommissionRates"));
 const CommissionStrategy = lazy(() => import("./pages/admin/CommissionStrategy"));
 const TrustedProAlgorithm = lazy(() => import("./pages/admin/TrustedProAlgorithm"));
 const Pricing = lazy(() => import("./pages/Pricing"));
+const PostFoundingPricing = lazy(() => import("./pages/PostFoundingPricing"));
 const PhotoQueue = lazy(() => import("./pages/admin/PhotoQueue"));
 const BundleOffers = lazy(() => import("./pages/admin/BundleOffers"));
 const ApiCreditsGuide = lazy(() => import("./pages/admin/ApiCreditsGuide"));
@@ -882,6 +883,7 @@ function Router() {
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/pricing/standard" component={PostFoundingPricing} />
 
       {/* Fallback */}
       <Route path="/docs/api" component={ApiDocs} />

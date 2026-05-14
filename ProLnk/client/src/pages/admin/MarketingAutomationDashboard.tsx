@@ -3,7 +3,17 @@ import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import {
   Mail,
   Users,
@@ -19,9 +29,13 @@ import {
   Star,
   MessageSquare,
   Calendar,
+  Plus,
+  X,
+  ToggleLeft,
+  ToggleRight,
+  Eye,
 } from "lucide-react";
 
-// Campaign definitions
 const CAMPAIGNS = [
   {
     key: "seasonal",
@@ -46,7 +60,7 @@ const CAMPAIGNS = [
   {
     key: "tier_milestone",
     label: "Tier Milestone Notifications",
-    description: "Alerts partners when they're 1 job away from the next tier.",
+    description: "Alerts partners when they\'re 1 job away from the next tier.",
     icon: Trophy,
     color: "bg-amber-500",
     audience: "Partners",
@@ -66,7 +80,7 @@ const CAMPAIGNS = [
   {
     key: "referral_nudge",
     label: "Referral Nudge Engine",
-    description: "Nudges partners who haven't sent a referral in 14+ days with nearby opportunity types.",
+    description: "Nudges partners who haven\'t sent a referral in 14+ days with nearby opportunity types.",
     icon: TrendingUp,
     color: "bg-emerald-500",
     audience: "Inactive Partners",
@@ -106,7 +120,7 @@ const CAMPAIGNS = [
   {
     key: "scan_reengagement",
     label: "Scan Re-Engagement",
-    description: "Re-engages homeowners who completed an AI scan but haven't viewed offers in 3+ days.",
+    description: "Re-engages homeowners who completed an AI scan but haven\'t viewed offers in 3+ days.",
     icon: MessageSquare,
     color: "bg-teal-500",
     audience: "Homeowners w/ Unseen Scans",
@@ -117,9 +131,91 @@ const CAMPAIGNS = [
 
 type TriggerKey = "v1" | "weeklyDigest" | "referralNudge" | "dealExpiryPush" | "npsFollowUp" | "leaderboardBroadcast" | "scanReEngagement" | "allV2";
 
+const ACTIVE_FLOWS = [
+  {
+    id: "af1",
+    name: "SMS After Job Complete",
+    trigger: "Job marked complete",
+    lastRun: "Today 11:32 AM",
+    sent: 847,
+    openRate: 94,
+    type: "SMS",
+    previewText: "Hi {name}, your {trade} job with {pro} is complete! Rate your experience: {link}",
+    active: true,
+  },
+  {
+    id: "af2",
+    name: "Email Welcome Sequence",
+    trigger: "New pro signup",
+    lastRun: "Today 9:15 AM",
+    sent: 2341,
+    openRate: 61,
+    type: "Email",
+    previewText: "Welcome to ProLnk, {name}! You\'re now part of the fastest-growing network of home service pros. Here\'s how to get your first lead...",
+    active: true,
+  },
+  {
+    id: "af3",
+    name: "Storm Alert Blast",
+    trigger: "NOAA severe weather event",
+    lastRun: "May 11, 6:00 AM",
+    sent: 512,
+    openRate: 78,
+    type: "Both",
+    previewText: "⚡ Storm Alert for {zip}: High winds and hail expected tonight. ProLnk pros are standing by for emergency repairs. Tap to book now.",
+    active: true,
+  },
+  {
+    id: "af4",
+    name: "Monthly Partner Digest",
+    trigger: "1st of every month",
+    lastRun: "May 1, 7:00 AM",
+    sent: 1089,
+    openRate: 48,
+    type: "Email",
+    previewText: "Hi {name}, here\'s your April recap: {jobs} jobs completed, {commission} earned, and you\'re {tier_gap} jobs from {next_tier} tier.",
+    active: true,
+  },
+  {
+    id: "af5",
+    name: "Waitlist Nurture",
+    trigger: "Homeowner joins waitlist",
+    lastRun: "Today 2:47 PM",
+    sent: 388,
+    openRate: 55,
+    type: "Email",
+    previewText: "You\'re on the list, {name}! ProLnk launches May 6. In the meantime, complete your Home Health Profile to get matched faster.",
+    active: false,
+  },
+];
+
+const PERFORMANCE_DATA = [
+  { name: "Storm Alert", rate: 31 },
+  { name: "Welcome Seq.", rate: 24 },
+  { name: "Waitlist Nurture", rate: 19 },
+  { name: "Win-Back", rate: 17 },
+  { name: "NPS Follow-Up", rate: 14 },
+];
+
+const TRIGGER_OPTIONS = ["New signup", "Job complete", "Storm alert", "Custom"];
+const MESSAGE_TYPES = ["Email", "SMS", "Both"];
+const DELAY_OPTIONS = ["Immediate", "1 hour", "24 hours", "1 week"];
+
 export default function MarketingAutomationDashboard() {
   const [triggering, setTriggering] = useState<string | null>(null);
   const [results, setResults] = useState<Record<string, { sent?: number; success?: boolean; error?: string }>>({});
+  const [flowStates, setFlowStates] = useState<Record<string, boolean>>(
+    Object.fromEntries(ACTIVE_FLOWS.map(f => [f.id, f.active]))
+  );
+  const [hoveredFlow, setHoveredFlow] = useState<string | null>(null);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [newFlow, setNewFlow] = useState({
+    trigger: TRIGGER_OPTIONS[0],
+    messageType: MESSAGE_TYPES[0],
+    delay: DELAY_OPTIONS[0],
+    template: "",
+    name: "",
+  });
 
   const { data: summary, refetch: refetchSummary } = trpc.marketingAutomation.getAutomationSummary.useQuery();
   const { data: campaignStats, refetch: refetchStats } = trpc.marketingAutomation.getCampaignStats.useQuery();
@@ -165,6 +261,23 @@ export default function MarketingAutomationDashboard() {
     return campaignStats.find((s: { campaignKey: string }) => s.campaignKey.startsWith(key.split("_")[0]));
   };
 
+  const toggleFlow = (id: string) => {
+    setFlowStates(prev => {
+      const next = !prev[id];
+      toast.success(next ? "Flow activated" : "Flow paused");
+      return { ...prev, [id]: next };
+    });
+  };
+
+  const createFlow = () => {
+    if (!newFlow.name.trim()) { toast.error("Flow name is required"); return; }
+    toast.success("Flow created", { description: `"${newFlow.name}" is now live` });
+    setShowCreateForm(false);
+    setNewFlow({ trigger: TRIGGER_OPTIONS[0], messageType: MESSAGE_TYPES[0], delay: DELAY_OPTIONS[0], template: "", name: "" });
+  };
+
+  const previewFlow = ACTIVE_FLOWS.find(f => f.id === hoveredFlow);
+
   return (
     <div className="p-6 max-w-7xl mx-auto space-y-6">
       {/* Header */}
@@ -175,16 +288,91 @@ export default function MarketingAutomationDashboard() {
             Monitor and manually trigger all automated marketing campaigns across ProLnk and TrustyPro.
           </p>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => { refetchSummary(); refetchStats(); }}
-          className="gap-2"
-        >
-          <RefreshCw className="h-4 w-4" />
-          Refresh
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => { refetchSummary(); refetchStats(); }}
+            className="gap-2"
+          >
+            <RefreshCw className="h-4 w-4" />
+            Refresh
+          </Button>
+          <Button size="sm" className="gap-2" onClick={() => setShowCreateForm(v => !v)}>
+            <Plus className="h-4 w-4" />
+            Create Flow
+          </Button>
+        </div>
       </div>
+
+      {/* Create Flow Form */}
+      {showCreateForm && (
+        <Card className="border-2 border-primary/30 bg-primary/5">
+          <CardHeader className="pb-3 flex flex-row items-center justify-between">
+            <CardTitle className="text-base">New Automation Flow</CardTitle>
+            <button onClick={() => setShowCreateForm(false)} className="text-muted-foreground hover:text-foreground">
+              <X className="h-4 w-4" />
+            </button>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label className="text-xs text-muted-foreground font-medium">Flow Name</label>
+                <Input
+                  placeholder="e.g. Post-job review request"
+                  value={newFlow.name}
+                  onChange={e => setNewFlow(p => ({ ...p, name: e.target.value }))}
+                  className="h-9 text-sm"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-muted-foreground font-medium">Trigger</label>
+                <select
+                  className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm"
+                  value={newFlow.trigger}
+                  onChange={e => setNewFlow(p => ({ ...p, trigger: e.target.value }))}
+                >
+                  {TRIGGER_OPTIONS.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-muted-foreground font-medium">Message Type</label>
+                <select
+                  className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm"
+                  value={newFlow.messageType}
+                  onChange={e => setNewFlow(p => ({ ...p, messageType: e.target.value }))}
+                >
+                  {MESSAGE_TYPES.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-muted-foreground font-medium">Send Delay</label>
+                <select
+                  className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm"
+                  value={newFlow.delay}
+                  onChange={e => setNewFlow(p => ({ ...p, delay: e.target.value }))}
+                >
+                  {DELAY_OPTIONS.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs text-muted-foreground font-medium">Message Template</label>
+              <textarea
+                rows={3}
+                placeholder="Use {name}, {trade}, {pro}, {link} as placeholders…"
+                value={newFlow.template}
+                onChange={e => setNewFlow(p => ({ ...p, template: e.target.value }))}
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+            <div className="flex justify-end gap-2">
+              <Button variant="outline" size="sm" onClick={() => setShowCreateForm(false)}>Cancel</Button>
+              <Button size="sm" onClick={createFlow}>Launch Flow</Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -206,6 +394,86 @@ export default function MarketingAutomationDashboard() {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* Active Flows + Performance side-by-side */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+        {/* Active Flows */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base">Active Flows</CardTitle>
+            <CardDescription>Live automation sequences with real-time metrics. Hover to preview template.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3 relative">
+            {ACTIVE_FLOWS.map(flow => {
+              const isActive = flowStates[flow.id] ?? flow.active;
+              return (
+                <div
+                  key={flow.id}
+                  className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-border/50 hover:border-border transition-colors cursor-default group"
+                  onMouseEnter={() => setHoveredFlow(flow.id)}
+                  onMouseLeave={() => setHoveredFlow(null)}
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-medium text-sm text-foreground truncate">{flow.name}</span>
+                      <Badge className={`text-xs border-0 shrink-0 ${isActive ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400" : "bg-gray-500/20 text-gray-500"}`}>
+                        {isActive ? "Active" : "Paused"}
+                      </Badge>
+                      <Badge variant="outline" className="text-xs shrink-0">{flow.type}</Badge>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-1.5">Trigger: {flow.trigger}</p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{flow.lastRun}</span>
+                      <span className="flex items-center gap-1"><Mail className="h-3 w-3" />{flow.sent.toLocaleString()} sent</span>
+                      <span className="flex items-center gap-1"><Eye className="h-3 w-3" />{flow.openRate}% open</span>
+                    </div>
+                  </div>
+                  <button
+                    className="shrink-0 mt-0.5 text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => toggleFlow(flow.id)}
+                    title={isActive ? "Pause flow" : "Activate flow"}
+                  >
+                    {isActive
+                      ? <ToggleRight className="h-6 w-6 text-emerald-500" />
+                      : <ToggleLeft className="h-6 w-6" />}
+                  </button>
+                </div>
+              );
+            })}
+
+            {/* Email preview tooltip */}
+            {previewFlow && (
+              <div className="absolute right-4 -top-2 z-20 w-72 p-3 rounded-lg bg-popover border border-border shadow-xl text-xs">
+                <p className="font-semibold text-foreground mb-1">{previewFlow.name} — Preview</p>
+                <p className="text-muted-foreground leading-relaxed">{previewFlow.previewText}</p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Performance Leaderboard */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base">Top Campaigns by Conversion Rate</CardTitle>
+            <CardDescription>Percentage of recipients who completed the desired action</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={PERFORMANCE_DATA} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
+                <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
+                <XAxis type="number" domain={[0, 40]} tickFormatter={v => `${v}%`} tick={{ fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={110} tick={{ fontSize: 11 }} />
+                <Tooltip
+                  formatter={(v: number) => [`${v}%`, "Conversion"]}
+                  contentStyle={{ background: "hsl(var(--popover))", border: "1px solid hsl(var(--border))", borderRadius: 8, fontSize: 12 }}
+                />
+                <Bar dataKey="rate" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Master Trigger */}
@@ -255,34 +523,21 @@ export default function MarketingAutomationDashboard() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0 mt-auto">
-                {/* Stats */}
                 {stat && (
                   <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <Mail className="h-3 w-3" />
-                      {stat.totalSent.toLocaleString()} total
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
-                      {stat.sentThisWeek} this week
-                    </span>
+                    <span className="flex items-center gap-1"><Mail className="h-3 w-3" />{stat.totalSent.toLocaleString()} total</span>
+                    <span className="flex items-center gap-1"><Users className="h-3 w-3" />{stat.sentThisWeek} this week</span>
                     {stat.lastSentAt && (
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {new Date(stat.lastSentAt).toLocaleDateString()}
-                      </span>
+                      <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{new Date(stat.lastSentAt).toLocaleDateString()}</span>
                     )}
                   </div>
                 )}
-
-                {/* Result feedback */}
                 {result && (
                   <div className={`flex items-center gap-2 text-xs mb-3 p-2 rounded-md ${result.success ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-400"}`}>
                     {result.success ? <CheckCircle className="h-3 w-3 flex-shrink-0" /> : <AlertCircle className="h-3 w-3 flex-shrink-0" />}
                     {result.sent != null ? `${result.sent} emails sent` : result.error ?? (result.success ? "Completed" : "Failed")}
                   </div>
                 )}
-
                 <Button
                   size="sm"
                   variant="outline"
@@ -290,11 +545,7 @@ export default function MarketingAutomationDashboard() {
                   onClick={() => handleTrigger(campaign.triggerKey, campaign.label)}
                   disabled={triggering !== null}
                 >
-                  {isRunning ? (
-                    <RefreshCw className="h-3 w-3 animate-spin" />
-                  ) : (
-                    <Play className="h-3 w-3" />
-                  )}
+                  {isRunning ? <RefreshCw className="h-3 w-3 animate-spin" /> : <Play className="h-3 w-3" />}
                   {isRunning ? "Running..." : "Trigger Now"}
                 </Button>
               </CardContent>

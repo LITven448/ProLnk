@@ -1,423 +1,539 @@
-/**
- * TrustyPro Project Gallery
- * 
- * Before/after photo grid from completed jobs, filterable by category.
- * Uses real data from trpc.gallery.getProjects, falls back to demo when empty.
- */
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Search, Star, MapPin, X, Plus, Loader2, ChevronRight } from "lucide-react";
-import { useAuth } from "@/_core/hooks/useAuth";
-import { toast } from "sonner";
+import { useLocation } from "wouter";
+import {
+  Plus,
+  Star,
+  CheckCircle,
+  Filter,
+  X,
+  Wrench,
+  Zap,
+  Droplets,
+  Wind,
+  Home,
+  Shield,
+  ChevronRight,
+  Award,
+  BarChart3,
+  Calendar,
+  Camera,
+} from "lucide-react";
 
-const CATEGORIES = [
-  "All",
-  "Roofing",
-  "Landscaping",
-  "Interior",
-  "HVAC",
-  "Plumbing",
-  "Painting",
-  "Flooring",
-  "Electrical",
-  "Fencing",
+const PURPLE = "#8B5CF6";
+const GREEN = "#10B981";
+const BG = "#0A0F1E";
+const CARD_BG = "#111827";
+const BORDER = "#1F2937";
+
+const TRADES = ["All", "HVAC", "Plumbing", "Electrical", "Roofing", "General"];
+
+const TRADE_ICONS: Record<string, React.ElementType> = {
+  HVAC: Wind,
+  Plumbing: Droplets,
+  Electrical: Zap,
+  Roofing: Home,
+  General: Wrench,
+};
+
+const TRADE_COLORS: Record<string, string> = {
+  HVAC: "#06B6D4",
+  Plumbing: "#3B82F6",
+  Electrical: "#F59E0B",
+  Roofing: "#10B981",
+  General: "#8B5CF6",
+};
+
+const GRADIENT_PAIRS: [string, string][] = [
+  ["#1e1b4b", "#312e81"],
+  ["#0c4a6e", "#075985"],
+  ["#064e3b", "#065f46"],
+  ["#1c1917", "#292524"],
+  ["#1e3a5f", "#0c2444"],
+  ["#4c1d95", "#5b21b6"],
+  ["#7c2d12", "#9a3412"],
+  ["#134e4a", "#0f766e"],
 ];
 
-// Demo projects shown when gallery is empty (new network)
-const DEMO_PROJECTS = [
+const MOCK_PROJECTS = [
   {
-    id: -1,
-    partnerId: 0,
-    category: "Roofing",
-    title: "Full Roof Replacement",
-    description: "Complete tear-off and replacement with 30-year architectural shingles. Storm damage claim.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "DFW Roofing Pros",
-    tier: "Gold",
-    jobValue: "$12,400",
-    rating: 5.0,
-    location: "Plano, TX",
+    id: 1,
+    title: "Complete HVAC System Replacement",
+    trade: "HVAC",
+    projectType: "Full Replacement",
+    completionDate: "2026-04-12",
+    rating: 5,
+    description:
+      "Replaced aging 18-year-old Carrier unit with new Trane XV20i variable-speed system. Full duct inspection, sealing, and refrigerant upgrade. Homeowner reported 40% reduction in energy bills.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[0],
   },
   {
-    id: -2,
-    partnerId: 0,
-    category: "Landscaping",
-    title: "Backyard Transformation",
-    description: "Full backyard redesign with sod, irrigation system, and decorative stone border.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "Green Thumb DFW",
-    tier: "Platinum",
-    jobValue: "$8,200",
-    rating: 5.0,
-    location: "Frisco, TX",
+    id: 2,
+    title: "Main Sewer Line Repair",
+    trade: "Plumbing",
+    projectType: "Pipe Repair",
+    completionDate: "2026-03-28",
+    rating: 5,
+    description:
+      "Diagnosed and repaired 60-foot section of collapsed cast iron sewer line using trenchless pipe bursting method. No landscaping damage. Final camera inspection confirmed full flow restoration.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[1],
   },
   {
-    id: -3,
-    partnerId: 0,
-    category: "Interior",
-    title: "Kitchen Renovation",
-    description: "Complete kitchen gut renovation — new cabinets, quartz countertops, tile backsplash.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "Premier Remodeling TX",
-    tier: "Gold",
-    jobValue: "$24,000",
-    rating: 4.9,
-    location: "McKinney, TX",
+    id: 3,
+    title: "200-Amp Panel Upgrade",
+    trade: "Electrical",
+    projectType: "Panel Upgrade",
+    completionDate: "2026-03-14",
+    rating: 5,
+    description:
+      "Upgraded outdated 100-amp Federal Pacific panel to 200-amp Siemens. Added dedicated circuits for EV charger and home office. Full permit pulled and city inspection passed.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[2],
   },
   {
-    id: -4,
-    partnerId: 0,
-    category: "Painting",
-    title: "Exterior Repaint",
-    description: "Full exterior repaint with premium Sherwin-Williams Duration paint. Two coats.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "Precision Painters DFW",
-    tier: "Silver",
-    jobValue: "$4,800",
-    rating: 5.0,
-    location: "Allen, TX",
+    id: 4,
+    title: "Storm Damage Roof Replacement",
+    trade: "Roofing",
+    projectType: "Full Replacement",
+    completionDate: "2026-02-20",
+    rating: 4,
+    description:
+      "Insurance-approved full roof replacement after hail event. 40-year GAF Timberline HDZ shingles, new ice and water shield, ridge vent system. Completed in 2 days with full cleanup.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[3],
   },
   {
-    id: -5,
-    partnerId: 0,
-    category: "Flooring",
-    title: "Hardwood Floor Installation",
-    description: "Removed carpet in 3 bedrooms and hallway. Installed 5\" white oak engineered hardwood.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "Texas Floor Masters",
-    tier: "Gold",
-    jobValue: "$7,600",
-    rating: 5.0,
-    location: "Prosper, TX",
+    id: 5,
+    title: "Whole-Home Rewire",
+    trade: "Electrical",
+    projectType: "Rewire",
+    completionDate: "2026-02-05",
+    rating: 5,
+    description:
+      "Complete rewire of 1960s home with knob-and-tube wiring. 3,200 sq ft, 42 circuits, AFCI/GFCI throughout. Coordinated with homeowner to minimize wall openings. All work to current NEC code.",
+    verified: false,
+    gradient: GRADIENT_PAIRS[4],
   },
   {
-    id: -6,
-    partnerId: 0,
-    category: "Fencing",
-    title: "Cedar Privacy Fence",
-    description: "Replaced rotted chain link with 6-foot cedar privacy fence, 180 linear feet.",
-    beforeImageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    afterImageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
-    completedAt: null as Date | null,
-    createdAt: new Date(),
-    businessName: "Lone Star Fencing",
-    tier: "Silver",
-    jobValue: "$5,200",
-    rating: 4.8,
-    location: "Celina, TX",
+    id: 6,
+    title: "Bathroom Rough-in & Fixture Install",
+    trade: "Plumbing",
+    projectType: "New Construction",
+    completionDate: "2026-01-30",
+    rating: 5,
+    description:
+      "Primary bath remodel plumbing: new supply lines, PEX-A manifold system, dual-flush Toto toilets, freestanding tub rough-in, custom shower valve. Zero callbacks.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[5],
+  },
+  {
+    id: 7,
+    title: "Furnace & AC Seasonal Tune-Up",
+    trade: "HVAC",
+    projectType: "Maintenance",
+    completionDate: "2026-01-15",
+    rating: 4,
+    description:
+      "Annual tune-up for 4-zone forced air system. Cleaned heat exchanger, replaced filters, calibrated thermostats, checked refrigerant levels and safety controls. System efficiency improved.",
+    verified: true,
+    gradient: GRADIENT_PAIRS[6],
+  },
+  {
+    id: 8,
+    title: "Deck & Patio General Repair",
+    trade: "General",
+    projectType: "Repair",
+    completionDate: "2025-12-10",
+    rating: 5,
+    description:
+      "Replaced 22 rotted deck boards, resealed all joists, rebuilt stair stringers, added new composite railing system. Structural inspection completed prior to start.",
+    verified: false,
+    gradient: GRADIENT_PAIRS[7],
   },
 ];
 
-type Project = typeof DEMO_PROJECTS[0];
-
-function BeforeAfterCard({ project, onClick }: { project: Project; onClick: () => void }) {
-  const [showAfter, setShowAfter] = useState(false);
-  const img = showAfter ? project.afterImageUrl : project.beforeImageUrl;
-
+function StarRow({ rating, size = 14 }: { rating: number; size?: number }) {
   return (
-    <div
-      className="group rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all cursor-pointer"
-      onClick={onClick}
-    >
-      <div className="relative aspect-video overflow-hidden bg-gray-100">
-        {img ? (
-          <img src={img} alt={showAfter ? "After" : "Before"} className="w-full h-full object-cover transition-opacity duration-300" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">No photo</div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        <div className="absolute bottom-3 left-3 flex gap-1">
-          <button
-            className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${!showAfter ? "bg-white text-gray-900" : "bg-white/40 text-white"}`}
-            onClick={(e) => { e.stopPropagation(); setShowAfter(false); }}
-          >
-            Before
-          </button>
-          <button
-            className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${showAfter ? "bg-emerald-500 text-white" : "bg-white/40 text-white"}`}
-            onClick={(e) => { e.stopPropagation(); setShowAfter(true); }}
-          >
-            After
-          </button>
-        </div>
-        <div className="absolute top-3 right-3">
-          <Badge className="bg-white/90 text-gray-800 text-xs border-0">{project.category}</Badge>
-        </div>
-      </div>
-      <div className="p-4">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-gray-900 text-sm leading-tight">{project.title}</h3>
-          {project.jobValue && <span className="text-sm font-bold text-emerald-600 whitespace-nowrap">{project.jobValue}</span>}
-        </div>
-        <p className="text-xs text-gray-500 mb-2 line-clamp-2">{project.description}</p>
-        <div className="flex items-center justify-between">
-          {project.location && (
-            <div className="flex items-center gap-1 text-xs text-gray-500">
-              <MapPin className="w-3 h-3" />{project.location}
-            </div>
-          )}
-          {project.rating != null && (
-            <div className="flex items-center gap-1 text-xs text-amber-500">
-              <Star className="w-3 h-3 fill-amber-500" />{project.rating.toFixed(1)}
-            </div>
-          )}
-        </div>
-        {project.businessName && <p className="text-xs text-gray-400 mt-1">by {project.businessName}</p>}
-        <button
-          className="mt-3 w-full flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
-          style={{ background: "rgba(5,150,105,0.1)", border: "1px solid rgba(5,150,105,0.3)", color: "#059669" }}
-          onClick={(e) => { e.stopPropagation(); window.location.href = `/trustypro/scan?trade=${encodeURIComponent(project.category)}`; }}
-        >
-          Request Similar Work
-          <ChevronRight size={12} />
-        </button>
-      </div>
+    <div className="flex items-center gap-0.5">
+      {[1, 2, 3, 4, 5].map((s) => (
+        <Star
+          key={s}
+          style={{ width: size, height: size }}
+          className={s <= rating ? "fill-yellow-400 text-yellow-400" : "text-gray-600"}
+        />
+      ))}
     </div>
   );
 }
 
 function AddProjectModal({ onClose }: { onClose: () => void }) {
-  const utils = trpc.useUtils();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("Roofing");
-  const [beforeUrl, setBeforeUrl] = useState("");
-  const [afterUrl, setAfterUrl] = useState("");
-
-  const addMutation = trpc.gallery.addProject.useMutation({
-    onSuccess: () => {
-      toast.success("Project added to gallery!");
-      utils.gallery.getProjects.invalidate();
-      onClose();
-    },
-    onError: (err) => toast.error(err.message),
+  const [form, setForm] = useState({
+    trade: "HVAC",
+    projectType: "",
+    description: "",
+    completionDate: "",
   });
 
   return (
-    <Dialog open onOpenChange={onClose}>
-      <DialogContent className="max-w-lg">
-        <DialogHeader>
-          <DialogTitle>Add Project to Gallery</DialogTitle>
-        </DialogHeader>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ backgroundColor: "rgba(0,0,0,0.75)" }}
+    >
+      <div
+        className="w-full max-w-lg rounded-2xl border p-6"
+        style={{ backgroundColor: CARD_BG, borderColor: BORDER }}
+      >
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-lg font-black text-white">Add New Project</h3>
+          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
         <div className="space-y-4">
           <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">Category</label>
+            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+              Trade
+            </label>
             <select
-              value={category}
-              onChange={e => setCategory(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm"
+              value={form.trade}
+              onChange={(e) => setForm((f) => ({ ...f, trade: e.target.value }))}
+              className="w-full rounded-xl px-3 py-2.5 text-sm text-white border focus:outline-none focus:ring-2 focus:ring-purple-500"
+              style={{ backgroundColor: "#1F2937", borderColor: BORDER }}
             >
-              {CATEGORIES.filter(c => c !== "All").map(c => <option key={c}>{c}</option>)}
+              {TRADES.filter((t) => t !== "All").map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
             </select>
           </div>
+
           <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">Project Title</label>
-            <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Full Roof Replacement" />
+            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+              Project Type
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. Full Replacement, Repair, Maintenance"
+              value={form.projectType}
+              onChange={(e) => setForm((f) => ({ ...f, projectType: e.target.value }))}
+              className="w-full rounded-xl px-3 py-2.5 text-sm text-white placeholder-gray-500 border focus:outline-none focus:ring-2 focus:ring-purple-500"
+              style={{ backgroundColor: "#1F2937", borderColor: BORDER }}
+            />
           </div>
+
           <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">Description</label>
-            <Input value={description} onChange={e => setDescription(e.target.value)} placeholder="Brief description of the work done" />
+            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+              Completion Date
+            </label>
+            <input
+              type="date"
+              value={form.completionDate}
+              onChange={(e) => setForm((f) => ({ ...f, completionDate: e.target.value }))}
+              className="w-full rounded-xl px-3 py-2.5 text-sm text-white border focus:outline-none focus:ring-2 focus:ring-purple-500"
+              style={{ backgroundColor: "#1F2937", borderColor: BORDER }}
+            />
           </div>
+
           <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">Before Photo URL</label>
-            <Input value={beforeUrl} onChange={e => setBeforeUrl(e.target.value)} placeholder="https://..." />
+            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+              Project Description
+            </label>
+            <textarea
+              rows={4}
+              placeholder="Describe the scope, techniques used, and outcome..."
+              value={form.description}
+              onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
+              className="w-full rounded-xl px-3 py-2.5 text-sm text-white placeholder-gray-500 border focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+              style={{ backgroundColor: "#1F2937", borderColor: BORDER }}
+            />
           </div>
-          <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">After Photo URL</label>
-            <Input value={afterUrl} onChange={e => setAfterUrl(e.target.value)} placeholder="https://..." />
-          </div>
-          <div className="flex gap-3 pt-2">
-            <Button
-              onClick={() => addMutation.mutate({ title, description, category, beforeImageUrl: beforeUrl || undefined, afterImageUrl: afterUrl || undefined })}
-              disabled={!title || addMutation.isPending}
-              className="bg-emerald-600 hover:bg-emerald-700 flex-1"
-            >
-              {addMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
-              Add Project
-            </Button>
-            <Button variant="outline" onClick={onClose}>Cancel</Button>
+
+          <div
+            className="rounded-xl border border-dashed p-4 flex flex-col items-center gap-2 cursor-pointer hover:border-purple-500 transition-colors"
+            style={{ borderColor: "#374151" }}
+          >
+            <Camera className="w-6 h-6 text-gray-500" />
+            <p className="text-sm text-gray-400">Upload before &amp; after photos</p>
+            <p className="text-xs text-gray-600">PNG, JPG up to 10MB each</p>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+
+        <div className="flex gap-3 mt-6">
+          <button
+            onClick={onClose}
+            className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-gray-400 border hover:text-white transition-colors"
+            style={{ borderColor: BORDER }}
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onClose}
+            className="flex-1 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: PURPLE }}
+          >
+            Save Project
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
 export default function ProjectGallery() {
-  const { user } = useAuth();
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [search, setSearch] = useState("");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [showAdd, setShowAdd] = useState(false);
+  const [, navigate] = useLocation();
+  const [activeTrade, setActiveTrade] = useState("All");
+  const [showModal, setShowModal] = useState(false);
 
-  const { data: realProjects = [], isLoading } = trpc.gallery.getProjects.useQuery(
-    { category: selectedCategory !== "All" ? selectedCategory : undefined },
-    { refetchInterval: 60000 }
-  );
+  const filtered =
+    activeTrade === "All"
+      ? MOCK_PROJECTS
+      : MOCK_PROJECTS.filter((p) => p.trade === activeTrade);
 
-  // Use real projects if any exist, otherwise show demo
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sourceProjects: any[] = realProjects.length > 0 ? realProjects : DEMO_PROJECTS;
-
-  const isDemo = realProjects.length === 0;
-
-  const filtered = sourceProjects.filter((p) => {
-    const matchesCategory = selectedCategory === "All" || p.category === selectedCategory;
-    const matchesSearch = !search || p.title.toLowerCase().includes(search.toLowerCase()) ||
-      (p.description || "").toLowerCase().includes(search.toLowerCase()) ||
-      (p.businessName || "").toLowerCase().includes(search.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const totalProjects = MOCK_PROJECTS.length;
+  const avgRating = (
+    MOCK_PROJECTS.reduce((s, p) => s + p.rating, 0) / MOCK_PROJECTS.length
+  ).toFixed(1);
+  const verifiedCount = MOCK_PROJECTS.filter((p) => p.verified).length;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-1">
-            <h1 className="text-2xl font-bold text-gray-900">Project Gallery</h1>
-            {user && (
-              <Button onClick={() => setShowAdd(true)} size="sm" className="bg-emerald-600 hover:bg-emerald-700">
-                <Plus className="w-4 h-4 mr-1" /> Add Project
-              </Button>
-            )}
-          </div>
-          <p className="text-sm text-gray-500">
-            Real before &amp; after photos from TrustyPro verified contractors
-            {isDemo && !isLoading && <span className="ml-2 text-amber-600 font-medium">(Sample projects — be the first to add yours!)</span>}
-          </p>
+    <div className="min-h-screen" style={{ backgroundColor: BG, fontFamily: "'Inter', sans-serif" }}>
+      {showModal && <AddProjectModal onClose={() => setShowModal(false)} />}
 
-          <div className="relative mt-4 max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-            <Input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by project type, contractor..."
-              className="pl-9 bg-gray-50 border-gray-200"
-            />
+      <nav
+        className="sticky top-0 z-40 border-b backdrop-blur-sm"
+        style={{ backgroundColor: "rgba(10,15,30,0.95)", borderColor: BORDER }}
+      >
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => navigate("/trustypro/partner-dashboard")}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <ChevronRight className="w-5 h-5 rotate-180" />
+            </button>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest" style={{ color: PURPLE }}>
+                TrustyPro™
+              </p>
+              <p className="text-sm font-black text-white leading-tight">Project Gallery</p>
+            </div>
           </div>
-
-          <div className="flex gap-2 mt-4 overflow-x-auto pb-1">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-                  selectedCategory === cat
-                    ? "bg-emerald-600 text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-emerald-300"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          <button
+            onClick={() => setShowModal(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: PURPLE }}
+          >
+            <Plus className="w-4 h-4" /> Add Project
+          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Gallery Grid */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {isLoading ? (
-          <div className="flex justify-center py-16">
-            <Loader2 className="w-8 h-8 animate-spin text-emerald-500" />
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-gray-500 mb-4">No projects found for this filter.</p>
-            {user && (
-              <Button onClick={() => setShowAdd(true)} className="bg-emerald-600 hover:bg-emerald-700">
-                <Plus className="w-4 h-4 mr-2" /> Add First Project
-              </Button>
-            )}
-          </div>
-        ) : (
-          <>
-            <p className="text-sm text-gray-500 mb-4">{filtered.length} projects</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((project) => (
-                <BeforeAfterCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => setSelectedProject(project)}
-                />
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Detail Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4" onClick={() => setSelectedProject(null)}>
-          <div className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="relative aspect-video bg-gray-100">
-              <img
-                src={selectedProject.afterImageUrl || selectedProject.beforeImageUrl || ""}
-                alt="Project"
-                className="w-full h-full object-cover"
-              />
-              <button
-                className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white"
-                onClick={() => setSelectedProject(null)}
+      <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
+        <div className="grid grid-cols-3 gap-4">
+          {[
+            { icon: BarChart3, label: "Total Projects", value: totalProjects, color: PURPLE },
+            { icon: Star, label: "Avg Rating", value: avgRating, color: "#F59E0B" },
+            { icon: CheckCircle, label: "Verified", value: verifiedCount, color: GREEN },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border p-5 flex items-center gap-4"
+              style={{ backgroundColor: CARD_BG, borderColor: BORDER }}
+            >
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: `${stat.color}20` }}
               >
-                <X className="w-4 h-4 text-gray-700" />
-              </button>
+                <stat.icon className="w-5 h-5" style={{ color: stat.color }} />
+              </div>
+              <div>
+                <p className="text-2xl font-black text-white">{stat.value}</p>
+                <p className="text-xs text-gray-400 mt-0.5">{stat.label}</p>
+              </div>
             </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <h2 className="text-xl font-bold text-gray-900">{selectedProject.title}</h2>
-                  {selectedProject.businessName && (
-                    <p className="text-sm text-gray-500 mt-1">by {selectedProject.businessName}</p>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2 flex-wrap">
+          <Filter className="w-4 h-4 text-gray-500 flex-shrink-0" />
+          {TRADES.map((trade) => {
+            const active = activeTrade === trade;
+            const TradeIcon = TRADE_ICONS[trade];
+            const color = TRADE_COLORS[trade] || PURPLE;
+            return (
+              <button
+                key={trade}
+                onClick={() => setActiveTrade(trade)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+                style={{
+                  backgroundColor: active ? PURPLE : "#1F2937",
+                  color: active ? "#fff" : "#9CA3AF",
+                  border: `1px solid ${active ? PURPLE : BORDER}`,
+                }}
+              >
+                {TradeIcon && (
+                  <TradeIcon
+                    className="w-3.5 h-3.5"
+                    style={{ color: active ? "#fff" : color }}
+                  />
+                )}
+                {trade}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {filtered.map((project) => {
+            const TradeIcon = TRADE_ICONS[project.trade] || Wrench;
+            const tradeColor = TRADE_COLORS[project.trade] || PURPLE;
+            return (
+              <div
+                key={project.id}
+                className="rounded-2xl border overflow-hidden hover:border-purple-500/40 transition-colors cursor-pointer group"
+                style={{ backgroundColor: CARD_BG, borderColor: BORDER }}
+              >
+                <div
+                  className="h-40 relative"
+                  style={{
+                    background: `linear-gradient(135deg, ${project.gradient[0]} 0%, ${project.gradient[1]} 100%)`,
+                  }}
+                >
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                    <TradeIcon className="w-20 h-20 text-white" />
+                  </div>
+                  <div
+                    className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+                    style={{
+                      backgroundColor: `${tradeColor}25`,
+                      border: `1px solid ${tradeColor}40`,
+                    }}
+                  >
+                    <TradeIcon className="w-3 h-3" style={{ color: tradeColor }} />
+                    <span className="text-xs font-bold" style={{ color: tradeColor }}>
+                      {project.trade}
+                    </span>
+                  </div>
+                  {project.verified && (
+                    <div
+                      className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full"
+                      style={{
+                        backgroundColor: `${GREEN}20`,
+                        border: `1px solid ${GREEN}40`,
+                      }}
+                    >
+                      <Shield className="w-3 h-3" style={{ color: GREEN }} />
+                      <span className="text-xs font-bold" style={{ color: GREEN }}>
+                        Verified
+                      </span>
+                    </div>
                   )}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <div className="flex items-center gap-2">
+                      <div className="h-0.5 flex-1 bg-white/20 rounded-full overflow-hidden">
+                        <div className="h-full bg-white/40 rounded-full" style={{ width: "45%" }} />
+                      </div>
+                      <span className="text-white/50 text-xs">Before</span>
+                      <div className="w-px h-3 bg-white/30" />
+                      <span className="text-white/50 text-xs">After</span>
+                      <div className="h-0.5 flex-1 bg-white/20 rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full"
+                          style={{ width: "85%", backgroundColor: GREEN + "80" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                {selectedProject.jobValue && (
-                  <p className="text-lg font-bold text-emerald-600">{selectedProject.jobValue}</p>
-                )}
-              </div>
-              {selectedProject.description && (
-                <p className="text-sm text-gray-600 leading-relaxed">{selectedProject.description}</p>
-              )}
-              <div className="mt-4 flex gap-3 flex-wrap">
-                {selectedProject.category && (
-                  <Badge className="bg-gray-100 text-gray-700 border-0">{selectedProject.category}</Badge>
-                )}
-                <Badge className="bg-emerald-50 text-emerald-700 border-0">TrustyPro Verified</Badge>
-              </div>
-              <button
-                className="mt-5 w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all hover:opacity-90"
-                style={{ background: "#059669", color: "#fff" }}
-                onClick={() => { window.location.href = `/trustypro/scan?trade=${encodeURIComponent(selectedProject.category)}`; }}
-              >
-                Request Similar Work
-                <ChevronRight size={14} />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
-      {/* Add Project Modal */}
-      {showAdd && <AddProjectModal onClose={() => setShowAdd(false)} />}
+                <div className="p-4 space-y-3">
+                  <div>
+                    <h3 className="text-sm font-black text-white leading-snug group-hover:text-purple-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-0.5">{project.projectType}</p>
+                  </div>
+
+                  <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  <div
+                    className="flex items-center justify-between pt-1 border-t"
+                    style={{ borderColor: BORDER }}
+                  >
+                    <div className="flex items-center gap-2">
+                      <StarRow rating={project.rating} size={12} />
+                      <span className="text-xs font-bold text-white">{project.rating}.0</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-gray-500">
+                      <Calendar className="w-3 h-3" />
+                      <span className="text-xs">
+                        {new Date(project.completionDate).toLocaleDateString("en-US", {
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {filtered.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-16 gap-4">
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center"
+              style={{ backgroundColor: "#1F2937" }}
+            >
+              <Wrench className="w-8 h-8 text-gray-500" />
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-bold text-gray-300">No {activeTrade} projects yet</p>
+              <p className="text-xs text-gray-500 mt-1">
+                Add your first project to build your portfolio.
+              </p>
+            </div>
+            <button
+              onClick={() => setShowModal(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white"
+              style={{ backgroundColor: PURPLE }}
+            >
+              <Plus className="w-4 h-4" /> Add Project
+            </button>
+          </div>
+        )}
+
+        <div
+          className="rounded-2xl border p-5 flex items-center gap-4"
+          style={{ backgroundColor: CARD_BG, borderColor: BORDER }}
+        >
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ backgroundColor: `${PURPLE}20` }}
+          >
+            <Award className="w-6 h-6" style={{ color: PURPLE }} />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-black text-white">Boost your Trust Score</p>
+            <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">
+              Adding verified projects with photos increases your Trust Score and match rate by up to 3x.
+            </p>
+          </div>
+          <button
+            onClick={() => setShowModal(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90 flex-shrink-0"
+            style={{ backgroundColor: PURPLE }}
+          >
+            <Plus className="w-4 h-4" /> Add
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

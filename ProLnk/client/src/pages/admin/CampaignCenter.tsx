@@ -11,7 +11,7 @@ import {
   CheckCircle, Clock, AlertCircle, Leaf, Snowflake,
   Sun, CloudRain, Heart, TrendingUp, Mail, MessageSquare,
   ChevronRight, BarChart2, UserX, Zap, Trophy, Share2,
-  FlaskConical,
+  Beaker,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -332,7 +332,7 @@ export default function CampaignCenter() {
       {/* ── A/B Test Results ── */}
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
         <div className="flex items-center gap-2 mb-4">
-          <FlaskConical className="w-4 h-4 text-[#7C3AED]" />
+          <Beaker className="w-4 h-4 text-[#7C3AED]" />
           <h3 className="text-sm font-bold text-gray-900">Recent A/B Test Results</h3>
         </div>
         <div className="space-y-4">

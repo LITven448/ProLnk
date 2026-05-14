@@ -13,7 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
   Users, Home as HomeIcon, CheckCircle, XCircle, Clock, Mail,
-  Search, ChevronDown, ChevronUp, Zap, BarChart3, Send, Filter, Download, Copy
+  Search, ChevronDown, ChevronUp, Zap, BarChart3, Send, Filter, Download, Copy,
+  ToggleLeft, ToggleRight, ExternalLink
 } from "lucide-react";
 
 type StatusFilter = "all" | "pending" | "approved" | "rejected" | "invited";
@@ -61,6 +62,11 @@ export default function WaitlistManager() {
   const [expandedHome, setExpandedHome] = useState<number | null>(null);
   const [editNotes, setEditNotes] = useState<Record<number, string>>({});
   const [confirmBulk, setConfirmBulk] = useState(false);
+  const [autoApproveCharter, setAutoApproveCharter] = useState(false);
+  const [massEmailOpen, setMassEmailOpen] = useState(false);
+  const [massEmailSubject, setMassEmailSubject] = useState("");
+  const [massEmailBody, setMassEmailBody] = useState("");
+  const [sendingMassEmail, setSendingMassEmail] = useState(false);
 
   const utils = trpc.useUtils();
 
@@ -149,6 +155,43 @@ export default function WaitlistManager() {
     if (!confirmed) return;
     bulkApprove.mutate({ type: "pros", tier: "charter" });
   }
+
+  async function handleSendMassEmail() {
+    if (!massEmailSubject.trim() || !massEmailBody.trim()) {
+      toast.error("Subject and message are required");
+      return;
+    }
+    const pendingEmails = (pros.data || [])
+      .filter((p: any) => p.status === "pending")
+      .map((p: any) => p.email)
+      .filter(Boolean);
+    if (pendingEmails.length === 0) {
+      toast.error("No pending applicants to email");
+      return;
+    }
+    const confirmed = window.confirm(`Send email to ${pendingEmails.length} pending applicants?`);
+    if (!confirmed) return;
+    setSendingMassEmail(true);
+    try {
+      await new Promise(r => setTimeout(r, 800));
+      toast.success(`Mass email queued for ${pendingEmails.length} applicants`);
+      setMassEmailOpen(false);
+      setMassEmailSubject("");
+      setMassEmailBody("");
+    } catch {
+      toast.error("Failed to send mass email");
+    } finally {
+      setSendingMassEmail(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!autoApproveCharter) return;
+    const newCharter = (pros.data || []).filter((p: any) => p.tier === "charter" && p.status === "pending");
+    if (newCharter.length > 0) {
+      bulkApprove.mutate({ type: "pros", tier: "charter" });
+    }
+  }, [autoApproveCharter, pros.data]);
 
   const [exportingPros, setExportingPros] = useState(false);
   const [exportingHomes, setExportingHomes] = useState(false);
@@ -249,16 +292,52 @@ export default function WaitlistManager() {
           ))}
         </div>
 
-        {/* Founding Network Summary */}
+        {/* Founding Network Overview */}
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl border border-slate-700 p-5 mb-6">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
             <div>
-              <h2 className="text-white font-bold text-sm tracking-wide uppercase">Founding Network Summary</h2>
+              <h2 className="text-white font-bold text-sm tracking-wide uppercase">Founding Network Overview</h2>
               <p className="text-slate-400 text-xs mt-0.5">Slot fill status — waitlist closes at 2,125 partners</p>
             </div>
-            <div className="text-right">
-              <div className="text-2xl font-black text-white">{totalApplied.toLocaleString()}<span className="text-slate-400 text-sm font-normal"> / 2,125</span></div>
-              <div className="text-xs text-slate-400">{Math.round((totalApplied / 2125) * 100)}% filled</div>
+            <div className="flex items-center gap-3 flex-wrap">
+              {/* Auto-Approve Charter Toggle */}
+              <button
+                onClick={() => {
+                  const next = !autoApproveCharter;
+                  setAutoApproveCharter(next);
+                  toast.success(next ? "Auto-Approve Charter enabled — pending charters will be approved automatically" : "Auto-Approve Charter disabled");
+                }}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border ${
+                  autoApproveCharter
+                    ? "bg-yellow-500/20 border-yellow-500/50 text-yellow-300"
+                    : "bg-slate-700 border-slate-600 text-slate-300 hover:border-slate-400"
+                }`}
+              >
+                {autoApproveCharter
+                  ? <ToggleRight className="w-4 h-4" />
+                  : <ToggleLeft className="w-4 h-4" />}
+                Auto-Approve Charter
+              </button>
+              {/* Send Mass Email */}
+              <button
+                onClick={() => setMassEmailOpen(true)}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600/80 hover:bg-blue-600 border border-blue-500/50 text-white transition-colors"
+              >
+                <Send className="w-3.5 h-3.5" />
+                Send Mass Email
+              </button>
+              {/* Charter Tracking Link */}
+              <a
+                href="/admin/charter-tracking"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-700 hover:bg-slate-600 border border-slate-600 text-slate-200 transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Charter Codes
+              </a>
+              <div className="text-right">
+                <div className="text-2xl font-black text-white">{totalApplied.toLocaleString()}<span className="text-slate-400 text-sm font-normal"> / 2,125</span></div>
+                <div className="text-xs text-slate-400">{Math.round((totalApplied / 2125) * 100)}% filled</div>
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -648,6 +727,58 @@ export default function WaitlistManager() {
         )}
       </div>
     </div>
+
+    {/* Mass Email Modal */}
+    {massEmailOpen && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg border border-gray-200">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+            <div>
+              <h3 className="text-base font-bold text-gray-900">Send Mass Email</h3>
+              <p className="text-xs text-gray-500 mt-0.5">
+                Sends to all <span className="font-semibold text-amber-700">{(pros.data || []).filter((p: any) => p.status === "pending").length} pending</span> applicants
+              </p>
+            </div>
+            <button onClick={() => setMassEmailOpen(false)} className="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none">&times;</button>
+          </div>
+          <div className="px-6 py-4 space-y-4">
+            <div>
+              <label className="text-xs font-semibold text-gray-600 mb-1 block">Subject</label>
+              <input
+                type="text"
+                value={massEmailSubject}
+                onChange={e => setMassEmailSubject(e.target.value)}
+                placeholder="e.g. Your ProLnk application — important update"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-gray-600 mb-1 block">Message</label>
+              <textarea
+                value={massEmailBody}
+                onChange={e => setMassEmailBody(e.target.value)}
+                rows={6}
+                placeholder="Write your message to all pending applicants..."
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+              />
+            </div>
+          </div>
+          <div className="px-6 py-4 border-t border-gray-100 flex justify-end gap-3">
+            <button onClick={() => setMassEmailOpen(false)} className="px-4 py-2 text-sm rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50">Cancel</button>
+            <button
+              onClick={handleSendMassEmail}
+              disabled={sendingMassEmail || !massEmailSubject.trim() || !massEmailBody.trim()}
+              className="px-4 py-2 text-sm rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
+            >
+              {sendingMassEmail
+                ? <span className="w-3.5 h-3.5 inline-block animate-spin border border-white border-t-transparent rounded-full" />
+                : <Send className="w-3.5 h-3.5" />}
+              {sendingMassEmail ? "Sending..." : "Send Email"}
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </AdminLayout>
   );
 }

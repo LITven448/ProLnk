@@ -1,9 +1,4 @@
 import type React from "react";
-/**
- * W25 — Partner Settings Page
- * Unified settings hub: account info, notifications, payout, integrations, partner status.
- * Route: /dashboard/settings
- */
 import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -11,353 +6,93 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { useLocation } from "wouter";
 import {
   User, Bell, CreditCard, Link2, Shield, ChevronRight,
   Check, Save, Loader2, ExternalLink, Eye, EyeOff,
   Smartphone, Mail, MessageSquare, Zap, Lock,
   Star, Copy, FileCheck, FileX, AlertCircle,
-  Download, Trash2,
+  Download, Trash2, Camera, Phone, Globe,
+  EyeOff as EyeOffIcon, DollarSign, Key, ChevronDown, ChevronUp,
 } from "lucide-react";
 
-type Tab = "account" | "notifications" | "payout" | "integrations" | "security" | "status";
+type Tab = "profile" | "notifications" | "payment" | "privacy" | "integrations" | "account";
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
-  { id: "status",        label: "Partner Status", icon: Star },
-  { id: "account",       label: "Account",        icon: User },
+  { id: "profile",       label: "Profile",        icon: User },
   { id: "notifications", label: "Notifications",  icon: Bell },
-  { id: "payout",        label: "Payout",         icon: CreditCard },
+  { id: "payment",       label: "Payment Setup",  icon: CreditCard },
+  { id: "privacy",       label: "Privacy",        icon: Shield },
   { id: "integrations",  label: "Integrations",   icon: Link2 },
-  { id: "security",      label: "Security",       icon: Shield },
+  { id: "account",       label: "Account",        icon: Key },
 ];
 
-// ─── Tier display helpers ──────────────────────────────────────────────────────
-const TIER_LABELS: Record<string, string> = {
-  scout: "Scout",
-  pro: "Pro",
-  crew: "Crew",
-  company: "Company",
-  enterprise: "Enterprise",
-  charter: "Charter",
-  founding: "Founding",
-  l3: "Level 3",
-  l4: "Level 4",
-};
-const TIER_COLORS: Record<string, string> = {
-  scout: "#6B7280",
-  pro: "#059669",
-  crew: "#1D4ED8",
-  company: "#0A1628",
-  enterprise: "#7C3AED",
-  charter: "#0A1628",
-  founding: "#0A1628",
-  l3: "#0A1628",
-  l4: "#0A1628",
-};
-const COMMISSION_RATES: Record<string, number> = {
-  scout: 40,
-  pro: 55,
-  crew: 65,
-  company: 72,
-  enterprise: 78,
-  charter: 72,
-  founding: 72,
-  l3: 72,
-  l4: 72,
-};
-
-const FOUNDING_TIERS = new Set(["charter", "founding", "l3", "l4"]);
-
-const FOUNDING_TIER_META: Record<string, { label: string; capacity: number; badge: string }> = {
-  charter:  { label: "Charter Member",  capacity: 25,   badge: "⚡ Charter" },
-  founding: { label: "Founding Member", capacity: 100,  badge: "★ Founding" },
-  l3:       { label: "Level 3 Member",  capacity: 400,  badge: "● L3" },
-  l4:       { label: "Level 4 Member",  capacity: 1600, badge: "○ L4" },
-};
-
-// ─── Partner Status Tab ────────────────────────────────────────────────────────
-function PartnerStatusTab() {
-  const { user } = useAuth();
-  const { data: profileData, isLoading } = trpc.partners.getMyProfile.useQuery();
-  const partner = profileData?.partner as any;
-
-  const waitlistQuery = trpc.proWaitlist.getWaitlistStatus.useQuery(
-    { email: user?.email ?? "" },
-    { enabled: !!user?.email }
-  );
-  const waitlistData = waitlistQuery.data as any;
-
-  const tier = partner?.tier ?? "scout";
-  const tierLabel = TIER_LABELS[tier] ?? tier;
-  const tierColor = TIER_COLORS[tier] ?? "#6B7280";
-  const commissionKeep = COMMISSION_RATES[tier] ?? 40;
-  const referralCode = waitlistData?.referralCode ?? partner?.referralCode ?? null;
-  const referralLink = referralCode ? `${window.location.origin}/join?ref=${referralCode}` : null;
-
-  const subscriptionFee = Number(partner?.subscriptionFee ?? 0);
-  const trialStatus = partner?.trialStatus ?? "trial";
-  const subscriptionPlan = partner?.subscriptionPlan ?? null;
-
-  const subStatus = (() => {
-    if (tier === "scout" && subscriptionFee === 0) return "free";
-    if (trialStatus === "trial") return "trial";
-    if (subscriptionPlan) return "active";
-    return "none";
-  })();
-
-  const licenseVerified = !!partner?.licenseVerifiedAt;
-  const licenseUrl = partner?.licenseUrl ?? null;
-  const coiVerified = !!partner?.coiVerifiedAt;
-  const coiUrl = partner?.coiUrl ?? null;
-
-  const isFoundingTier = FOUNDING_TIERS.has(tier);
-  const foundingMeta = FOUNDING_TIER_META[tier];
-
-  if (isLoading) return <div className="py-8 text-center text-gray-400 text-sm">Loading...</div>;
-
+function SectionCard({
+  title,
+  subtitle,
+  icon: Icon,
+  children,
+  defaultOpen = true,
+}: {
+  title: string;
+  subtitle?: string;
+  icon: React.ElementType;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="space-y-6">
-      {/* ── Founding Member Status Card ──────────────────────────────── */}
-      {isFoundingTier && foundingMeta && (
-        <div
-          className="rounded-2xl p-5 text-white relative overflow-hidden"
-          style={{ backgroundColor: "#0A1628" }}
-        >
-          {/* decorative glow */}
-          <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-10" style={{ backgroundColor: "#F5E642" }} />
-          <div className="relative">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#F5E642] mb-1">
-                  Founding Network
-                </span>
-                <h3 className="text-2xl font-bold text-white">{foundingMeta.label}</h3>
-              </div>
-              <div className="flex flex-col items-end gap-1.5">
-                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#F5E642] text-[#0A1628]">
-                  {foundingMeta.badge}
-                </span>
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full border border-[#F5E642]/40 text-[#F5E642]">
-                  $149/mo locked forever
-                </span>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/15">
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Your Position</p>
-                <p className="text-xl font-bold text-white">
-                  {waitlistData?.position ? `#${waitlistData.position}` : partner?.positionNumber ? `#${partner.positionNumber}` : "—"}
-                </p>
-              </div>
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Tier Capacity</p>
-                <p className="text-xl font-bold text-[#F5E642]">{foundingMeta.capacity} spots</p>
-              </div>
-            </div>
-            <p className="mt-3 text-xs text-white/40">
-              Founding rates are grandfathered. As ProLnk scales, your $149/mo never increases.
-            </p>
+    <div className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-teal-400/10 flex items-center justify-center">
+            <Icon className="w-4 h-4 text-teal-400" />
           </div>
-        </div>
-      )}
-
-      {/* Tier Card */}
-      <div className="rounded-2xl p-5 text-white" style={{ backgroundColor: tierColor }}>
-        <div className="flex items-start justify-between mb-3">
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-white/70 mb-1">Your Partner Tier</p>
-            <h3 className="text-3xl font-bold">{tierLabel}</h3>
-            {partner?.isFoundingPartner && (
-              <span className="inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-white/20 text-white">
-                Founding Partner
-              </span>
-            )}
-          </div>
-          <div className="text-right">
-            <p className="text-xs text-white/70">You keep</p>
-            <p className="text-2xl font-bold">{commissionKeep}%</p>
-            <p className="text-xs text-white/70">of every referral</p>
+            <p className="text-sm font-semibold text-white">{title}</p>
+            {subtitle && <p className="text-xs text-white/50">{subtitle}</p>}
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-white/20">
-          <div className="text-center">
-            <p className="text-lg font-bold">{partner?.jobsLogged ?? 0}</p>
-            <p className="text-xs text-white/60">Jobs Logged</p>
-          </div>
-          <div className="text-center">
-            <p className="text-lg font-bold">{partner?.referralCount ?? 0}</p>
-            <p className="text-xs text-white/60">Referrals</p>
-          </div>
-          <div className="text-center">
-            <p className="text-lg font-bold">${Number(partner?.totalCommissionEarned ?? 0).toFixed(0)}</p>
-            <p className="text-xs text-white/60">Earned</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Commission Rates */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Commission Rates</h3>
-        <div className="space-y-2">
-          {[
-            { label: "You keep (referral commission)", value: `${commissionKeep}%` },
-            { label: "Platform fee on closed jobs", value: `${Math.round(Number(partner?.platformFeeRate ?? 0.12) * 100)}%` },
-            { label: "Referral commission rate", value: `${Math.round(Number(partner?.referralCommissionRate ?? 0.048) * 100)}%` },
-            { label: "Monthly earnings cap", value: partner?.monthlyCommissionCap ? `$${Number(partner.monthlyCommissionCap).toFixed(0)}` : "None" },
-          ].map(({ label, value }) => (
-            <div key={label} className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100">
-              <p className="text-sm text-gray-600">{label}</p>
-              <p className="text-sm font-bold text-gray-900">{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Subscription Status */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Subscription</h3>
-        <div className={`p-4 rounded-xl border ${
-          subStatus === "active" ? "border-emerald-200 bg-emerald-50" :
-          subStatus === "trial" ? "border-blue-200 bg-blue-50" :
-          subStatus === "free" ? "border-gray-200 bg-gray-50" :
-          "border-amber-200 bg-amber-50"
-        }`}>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className={`text-sm font-semibold ${
-                subStatus === "active" ? "text-emerald-700" :
-                subStatus === "trial" ? "text-blue-700" :
-                subStatus === "free" ? "text-gray-700" :
-                "text-amber-700"
-              }`}>
-                {subStatus === "active" ? "Active Subscription" :
-                 subStatus === "trial" ? "Trial Period" :
-                 subStatus === "free" ? "Free Tier (Scout)" :
-                 "No Active Subscription"}
-              </p>
-              <p className={`text-xs mt-0.5 ${
-                subStatus === "active" ? "text-emerald-600" :
-                subStatus === "trial" ? "text-blue-600" :
-                subStatus === "free" ? "text-gray-500" :
-                "text-amber-600"
-              }`}>
-                {subStatus === "active" ? `${tierLabel} — $${subscriptionFee}/mo` :
-                 subStatus === "trial" ? "Trial active — subscribe to lock in your rate" :
-                 subStatus === "free" ? "Scout plan is always free" :
-                 "Subscribe to unlock full partner benefits"}
-              </p>
-            </div>
-            {(subStatus === "none" || subStatus === "trial") && (
-              <a
-                href="/checkout"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0A1628] text-white text-xs font-semibold hover:opacity-90 transition-opacity"
-              >
-                Activate <ExternalLink className="w-3 h-3" />
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Documents */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Verification Documents</h3>
-        <div className="space-y-2">
-          {[
-            { label: "Contractor License", verified: licenseVerified, url: licenseUrl, key: "license" },
-            { label: "Certificate of Insurance (COI)", verified: coiVerified, url: coiUrl, key: "coi" },
-          ].map(({ label, verified, url, key }) => (
-            <div key={key} className={`flex items-center justify-between p-3 rounded-xl border ${
-              verified ? "border-emerald-200 bg-emerald-50" : url ? "border-amber-200 bg-amber-50" : "border-gray-200 bg-gray-50"
-            }`}>
-              <div className="flex items-center gap-2.5">
-                {verified ? (
-                  <FileCheck className="w-4 h-4 text-emerald-600" />
-                ) : url ? (
-                  <AlertCircle className="w-4 h-4 text-amber-600" />
-                ) : (
-                  <FileX className="w-4 h-4 text-gray-400" />
-                )}
-                <div>
-                  <p className={`text-sm font-medium ${verified ? "text-emerald-700" : url ? "text-amber-700" : "text-gray-600"}`}>
-                    {label}
-                  </p>
-                  <p className={`text-xs ${verified ? "text-emerald-600" : url ? "text-amber-600" : "text-gray-400"}`}>
-                    {verified ? "Verified" : url ? "Uploaded — pending review" : "Not uploaded"}
-                  </p>
-                </div>
-              </div>
-              {url && (
-                <a href={url} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-800">
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Referral Link */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Your Referral Link</h3>
-        {referralLink ? (
-          <div className="bg-[#0A1628] rounded-xl p-4">
-            <p className="text-white/70 text-xs mb-2">Share this link to earn network income when pros you refer complete jobs.</p>
-            <div className="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2">
-              <span className="text-white/80 text-xs font-mono truncate flex-1">{referralLink}</span>
-              <button
-                onClick={() => { navigator.clipboard.writeText(referralLink); toast.success("Referral link copied!"); }}
-                className="flex-shrink-0 text-[#F5E642] hover:text-white transition-colors"
-              >
-                <Copy className="w-4 h-4" />
-              </button>
-            </div>
-            {referralCode && (
-              <p className="text-white/50 text-xs mt-2">Code: <span className="text-white font-mono font-bold">{referralCode}</span></p>
-            )}
-          </div>
+        {open ? (
+          <ChevronUp className="w-4 h-4 text-white/40" />
         ) : (
-          <div className="p-4 rounded-xl border border-gray-200 bg-gray-50 text-center">
-            <p className="text-sm text-gray-500">Join the waitlist to get your referral link.</p>
-            <a href="/pro-waitlist" className="text-xs text-[#0A1628] font-semibold underline mt-1 inline-block">Join Waitlist</a>
-          </div>
+          <ChevronDown className="w-4 h-4 text-white/40" />
         )}
-      </div>
-
-      {/* Waitlist Position (if applicable) */}
-      {waitlistData && (
-        <div className="p-4 rounded-xl border border-[#F5E642]/40 bg-[#F5E642]/10">
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Waitlist Status</p>
-          <div className="grid grid-cols-3 gap-3">
-            <div className="text-center">
-              <p className="text-xl font-bold text-[#0A1628]">#{waitlistData.position}</p>
-              <p className="text-xs text-gray-500">Position</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl font-bold text-[#0A1628]">{waitlistData.referralCount ?? 0}</p>
-              <p className="text-xs text-gray-500">Referrals</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl font-bold text-[#0A1628]">{waitlistData.tier}</p>
-              <p className="text-xs text-gray-500">Tier</p>
-            </div>
-          </div>
-          <a
-            href={`/waitlist-status?ref=${waitlistData.referralCode}`}
-            className="block mt-3 text-center text-xs font-semibold text-[#0A1628] underline"
-          >
-            View Referral Dashboard →
-          </a>
+      </button>
+      {open && (
+        <div className="px-5 pb-5 pt-1 border-t border-white/10">
+          {children}
         </div>
       )}
     </div>
   );
 }
 
-// ─── Account Tab ──────────────────────────────────────────────────────────────
-function AccountTab() {
+function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <button
+      onClick={() => onChange(!checked)}
+      className={`relative w-10 h-6 rounded-full transition-colors flex-shrink-0 ${
+        checked ? "bg-teal-400" : "bg-white/20"
+      }`}
+    >
+      <span
+        className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${
+          checked ? "translate-x-5" : "translate-x-1"
+        }`}
+      />
+    </button>
+  );
+}
+
+// ─── Profile Tab ──────────────────────────────────────────────────────────────
+function ProfileTab() {
   const { data: profileData, isLoading } = trpc.partners.getMyProfile.useQuery();
   const updateProfile = trpc.partners.updateProfile.useMutation({
-    onSuccess: () => toast.success("Profile updated"),
+    onSuccess: () => toast.success("Profile saved"),
     onError: (e) => toast.error(e.message),
   });
   const partner = profileData?.partner as any;
@@ -383,13 +118,7 @@ function AccountTab() {
     }
   }, [partner]);
 
-  if (isLoading) return <div className="py-8 text-center text-gray-400 text-sm">Loading...</div>;
-  if (!partner) return (
-    <div className="py-8 text-center">
-      <User className="w-10 h-10 text-gray-300 mx-auto mb-3" />
-      <p className="text-gray-500 text-sm">No partner profile found. <a href="/apply" className="text-teal-600 underline">Apply to join</a>.</p>
-    </div>
-  );
+  if (isLoading) return <div className="py-8 text-center text-white/40 text-sm">Loading...</div>;
 
   const handleSave = () => {
     updateProfile.mutate({
@@ -403,10 +132,24 @@ function AccountTab() {
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-4">Business Information</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="space-y-5">
+      {/* Avatar placeholder */}
+      <SectionCard title="Photo" subtitle="Your profile photo shown to homeowners" icon={Camera} defaultOpen={true}>
+        <div className="flex items-center gap-4 mt-3">
+          <div className="w-16 h-16 rounded-2xl bg-white/10 border-2 border-dashed border-white/20 flex items-center justify-center">
+            <Camera className="w-6 h-6 text-white/30" />
+          </div>
+          <div>
+            <button className="text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors">
+              Upload photo
+            </button>
+            <p className="text-xs text-white/40 mt-0.5">JPG or PNG, max 5MB. Shown in directory and lead responses.</p>
+          </div>
+        </div>
+      </SectionCard>
+
+      <SectionCard title="Business Information" subtitle="Name, contact, service area" icon={User} defaultOpen={true}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
           {[
             { label: "Business Name", key: "businessName", placeholder: "Your Business LLC" },
             { label: "Phone", key: "contactPhone", placeholder: "(214) 555-0100" },
@@ -415,39 +158,38 @@ function AccountTab() {
             { label: "Google Review URL", key: "googleReviewUrl", placeholder: "https://g.page/r/..." },
           ].map(({ label, key, placeholder }) => (
             <div key={key}>
-              <label className="block text-xs font-medium text-gray-600 mb-1">{label}</label>
+              <label className="block text-xs font-medium text-white/60 mb-1">{label}</label>
               <Input
                 value={form[key as keyof typeof form]}
-                onChange={(e) => setForm(f => ({ ...f, [key]: e.target.value }))}
+                onChange={(e) => setForm((f) => ({ ...f, [key]: e.target.value }))}
                 placeholder={placeholder}
-                className="h-9 text-sm bg-white border-gray-200"
+                className="h-9 text-sm bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-teal-400"
               />
             </div>
           ))}
         </div>
         <div className="mt-4">
-          <label className="block text-xs font-medium text-gray-600 mb-1">Bio / Description</label>
+          <label className="block text-xs font-medium text-white/60 mb-1">Bio / Description</label>
           <textarea
             value={form.description}
-            onChange={(e) => setForm(f => ({ ...f, description: e.target.value }))}
+            onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
             placeholder="Tell homeowners about your business, experience, and specialties..."
             rows={3}
-            className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500"
+            className="w-full text-sm bg-white/5 border border-white/10 text-white placeholder:text-white/30 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-teal-400/30 focus:border-teal-400"
           />
-          <p className="text-xs text-gray-400 text-right mt-1">{form.description.length}/1000</p>
+          <p className="text-xs text-white/30 text-right mt-1">{form.description.length}/1000</p>
         </div>
-      </div>
-      <div className="flex justify-end">
-        <Button
-          onClick={handleSave}
-          disabled={updateProfile.isPending}
-          className="flex items-center gap-2 text-sm"
-          style={{ backgroundColor: "var(--teal)", color: "white" }}
-        >
-          {updateProfile.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-          Save Changes
-        </Button>
-      </div>
+        <div className="flex justify-end mt-4">
+          <Button
+            onClick={handleSave}
+            disabled={updateProfile.isPending}
+            className="flex items-center gap-2 text-sm bg-teal-400 hover:bg-teal-500 text-[#0A1628] font-semibold"
+          >
+            {updateProfile.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+            Save Profile
+          </Button>
+        </div>
+      </SectionCard>
     </div>
   );
 }
@@ -462,23 +204,54 @@ function NotificationsTab() {
   const partner = profileData?.partner as any;
   const prefs = (partner?.notificationPrefs ?? {}) as Record<string, boolean>;
 
-  const NOTIFICATION_OPTIONS = [
-    { key: "newLead",       icon: Zap,           label: "New Inbound Lead",        desc: "When a lead is dispatched to you" },
-    { key: "commissionPaid", icon: CreditCard,    label: "Commission Paid",         desc: "When a commission is released to your account" },
-    { key: "tierUpgrade",   icon: ChevronRight,  label: "Tier Upgrade Available",  desc: "When you qualify for the next tier" },
-    { key: "broadcastMessages", icon: MessageSquare, label: "Broadcast Messages", desc: "When admin sends you a broadcast or message" },
-    { key: "newReview",      icon: Bell,          label: "New Review",             desc: "When a homeowner leaves you a review" },
-    { key: "weeklyDigest",  icon: Mail,          label: "Weekly Digest",           desc: "Weekly summary of your earnings and activity" },
-    { key: "emailEnabled",  icon: Mail,          label: "Email Notifications",    desc: "Receive notifications via email" },
-    { key: "smsEnabled",    icon: Smartphone,    label: "SMS Notifications",      desc: "Receive notifications via text message" },
+  const SECTIONS = [
+    {
+      title: "Lead Alerts",
+      desc: "Notify me about new leads",
+      icon: Zap,
+      groups: [
+        { key: "newLead", label: "New Inbound Lead", desc: "When a lead is dispatched to you" },
+        { key: "leadExpiring", label: "Lead Expiring Soon", desc: "24-hour warning before a lead expires" },
+      ],
+    },
+    {
+      title: "Payment & Earnings",
+      desc: "Payout and commission events",
+      icon: DollarSign,
+      groups: [
+        { key: "commissionPaid", label: "Commission Paid", desc: "When a commission is released to your account" },
+        { key: "tierUpgrade", label: "Tier Upgrade Available", desc: "When you qualify for the next tier" },
+      ],
+    },
+    {
+      title: "Reviews & Feedback",
+      desc: "Homeowner reviews",
+      icon: Star,
+      groups: [
+        { key: "newReview", label: "New Review", desc: "When a homeowner leaves you a review" },
+      ],
+    },
+    {
+      title: "Communications",
+      desc: "Channels and digest",
+      icon: Bell,
+      groups: [
+        { key: "broadcastMessages", label: "Broadcast Messages", desc: "Admin messages and announcements" },
+        { key: "weeklyDigest", label: "Weekly Digest", desc: "Weekly summary of earnings and activity" },
+        { key: "emailEnabled", label: "Email Notifications", desc: "Receive all notifications via email" },
+        { key: "smsEnabled", label: "SMS Notifications", desc: "Receive urgent alerts via text message" },
+      ],
+    },
   ];
 
   const [localPrefs, setLocalPrefs] = useState<Record<string, boolean>>({});
   useEffect(() => {
     const defaults: Record<string, boolean> = {};
-    NOTIFICATION_OPTIONS.forEach(o => { defaults[o.key] = true; });
+    SECTIONS.forEach((s) => s.groups.forEach((g) => { defaults[g.key] = true; }));
     setLocalPrefs({ ...defaults, ...prefs });
   }, [partner]);
+
+  const allKeys = SECTIONS.flatMap((s) => s.groups.map((g) => g.key));
 
   const handleSave = () => {
     updatePrefs.mutate({
@@ -494,39 +267,31 @@ function NotificationsTab() {
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-1">Notification Preferences</h3>
-        <p className="text-xs text-gray-500 mb-4">Choose which events trigger in-app and push notifications.</p>
-        <div className="space-y-3">
-          {NOTIFICATION_OPTIONS.map(({ key, icon: Icon, label, desc }) => (
-            <div key={key} className="flex items-center justify-between p-3 rounded-xl border border-gray-100 bg-gray-50/50">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--teal-light)" }}>
-                  <Icon className="w-4 h-4" style={{ color: "var(--teal)" }} />
-                </div>
+    <div className="space-y-4">
+      {SECTIONS.map(({ title, desc, icon: Icon, groups }) => (
+        <SectionCard key={title} title={title} subtitle={desc} icon={Icon} defaultOpen={true}>
+          <div className="space-y-2 mt-3">
+            {groups.map(({ key, label, desc: groupDesc }) => (
+              <div key={key} className="flex items-center justify-between py-2.5 border-b border-white/5 last:border-0">
                 <div>
-                  <p className="text-sm font-medium text-gray-900">{label}</p>
-                  <p className="text-xs text-gray-500">{desc}</p>
+                  <p className="text-sm font-medium text-white">{label}</p>
+                  <p className="text-xs text-white/40">{groupDesc}</p>
                 </div>
+                <Toggle
+                  checked={!!localPrefs[key]}
+                  onChange={(v) => setLocalPrefs((p) => ({ ...p, [key]: v }))}
+                />
               </div>
-              <button
-                onClick={() => setLocalPrefs(p => ({ ...p, [key]: !p[key] }))}
-                className={`relative w-10 h-6 rounded-full transition-colors flex-shrink-0 ${localPrefs[key] ? "bg-teal-500" : "bg-gray-200"}`}
-                style={localPrefs[key] ? { backgroundColor: "var(--teal)" } : {}}
-              >
-                <span className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${localPrefs[key] ? "translate-x-5" : "translate-x-1"}`} />
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="flex justify-end">
+            ))}
+          </div>
+        </SectionCard>
+      ))}
+
+      <div className="flex justify-end pt-2">
         <Button
           onClick={handleSave}
           disabled={updatePrefs.isPending}
-          className="flex items-center gap-2 text-sm"
-          style={{ backgroundColor: "var(--teal)", color: "white" }}
+          className="flex items-center gap-2 text-sm bg-teal-400 hover:bg-teal-500 text-[#0A1628] font-semibold"
         >
           {updatePrefs.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
           Save Preferences
@@ -536,93 +301,193 @@ function NotificationsTab() {
   );
 }
 
-// ─── Payout Tab ───────────────────────────────────────────────────────────────
-function PayoutTab() {
+// ─── Payment Setup Tab ────────────────────────────────────────────────────────
+function PaymentTab() {
   const { data: stripeStatus } = trpc.stripe.getConnectStatus.useQuery();
   const createConnectLink = trpc.stripe.createConnectLink.useMutation({
     onSuccess: (data: any) => { if (data?.url) window.open(data.url, "_blank"); },
     onError: (e: any) => toast.error(e.message),
   });
   const isConnected = (stripeStatus as any)?.connected;
+  const last4 = (stripeStatus as any)?.bankAccountLast4;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-1">Stripe Payout Account</h3>
-        <p className="text-xs text-gray-500 mb-4">Connect your bank account to receive commission payouts via Stripe Connect.</p>
-        <div className={`p-4 rounded-xl border ${isConnected ? "border-emerald-200 bg-emerald-50" : "border-amber-200 bg-amber-50"}`}>
+    <div className="space-y-4">
+      <SectionCard title="Payout Method" subtitle="Bank account for receiving commissions" icon={CreditCard} defaultOpen={true}>
+        <div className={`mt-3 p-4 rounded-xl border ${isConnected ? "border-teal-400/30 bg-teal-400/5" : "border-amber-400/30 bg-amber-400/5"}`}>
           <div className="flex items-center gap-3 mb-3">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isConnected ? "bg-emerald-100" : "bg-amber-100"}`}>
-              <CreditCard className={`w-4 h-4 ${isConnected ? "text-emerald-600" : "text-amber-600"}`} />
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isConnected ? "bg-teal-400/10" : "bg-amber-400/10"}`}>
+              <CreditCard className={`w-4 h-4 ${isConnected ? "text-teal-400" : "text-amber-400"}`} />
             </div>
             <div>
-              <p className={`text-sm font-semibold ${isConnected ? "text-emerald-700" : "text-amber-700"}`}>
+              <p className={`text-sm font-semibold ${isConnected ? "text-teal-400" : "text-amber-400"}`}>
                 {isConnected ? "Bank Account Connected" : "No Bank Account Connected"}
               </p>
-              <p className={`text-xs ${isConnected ? "text-emerald-600" : "text-amber-600"}`}>
-                {isConnected ? "Payouts are enabled for your account" : "Connect your bank to receive payouts"}
-              </p>
+              {isConnected && last4 ? (
+                <p className="text-xs text-white/50 font-mono">••••{last4}</p>
+              ) : (
+                <p className="text-xs text-white/50">Add via /payout-setup to receive payouts</p>
+              )}
             </div>
           </div>
-          <Button
-            onClick={() => createConnectLink.mutate({ origin: window.location.origin })}
-            disabled={createConnectLink.isPending}
-            size="sm"
-            className="flex items-center gap-2 text-xs"
-            style={{ backgroundColor: isConnected ? "#059669" : "#d97706", color: "white" }}
+          <a
+            href="/dashboard/payout-setup"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors"
           >
-            {createConnectLink.isPending ? <Loader2 className="w-3 h-3 animate-spin" /> : <ExternalLink className="w-3 h-3" />}
-            {isConnected ? "Manage Payout Account" : "Connect Bank Account"}
-          </Button>
+            {isConnected ? "Manage payout account" : "Set up payout account"} <ChevronRight className="w-3.5 h-3.5" />
+          </a>
         </div>
-      </div>
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Payout Setup</h3>
-        <a
-          href="/dashboard/payout-setup"
-          className="flex items-center justify-between p-3 rounded-xl border border-[#0A1628]/20 bg-[#0A1628]/5 hover:bg-[#0A1628]/10 transition-colors group mb-2"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#0A1628]">
-              <CreditCard className="w-4 h-4 text-[#F5E642]" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-[#0A1628]">Bank Account Setup</p>
-              <p className="text-xs text-gray-500">
-                {isConnected ? "Manage your connected bank account" : "Connect your bank to receive monthly payouts"}
-              </p>
-            </div>
-          </div>
-          <ChevronRight className="w-4 h-4 text-[#0A1628] group-hover:translate-x-0.5 transition-transform" />
-        </a>
-      </div>
 
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Payout History</h3>
-        <a href="/dashboard/payout-history" className="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:border-teal-300 hover:bg-teal-50/30 transition-colors group">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--teal-light)" }}>
-              <CreditCard className="w-4 h-4" style={{ color: "var(--teal)" }} />
+        <div className="mt-4 flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+          <Lock className="w-4 h-4 text-white/30 mt-0.5 flex-shrink-0" />
+          <p className="text-xs text-white/40 leading-relaxed">
+            Bank account setup is handled entirely by Stripe — ProLnk never stores your banking credentials. Stripe is PCI-DSS Level 1 certified.
+          </p>
+        </div>
+      </SectionCard>
+
+      <SectionCard title="Payout History" subtitle="Past commission payouts" icon={DollarSign} defaultOpen={false}>
+        <div className="mt-3 space-y-2">
+          {[
+            { date: "May 1, 2026", amount: "$284.50", status: "paid", ref: "pyt_1abc" },
+            { date: "Apr 1, 2026", amount: "$197.00", status: "paid", ref: "pyt_2xyz" },
+            { date: "Mar 1, 2026", amount: "$143.25", status: "paid", ref: "pyt_3def" },
+          ].map((p) => (
+            <div key={p.ref} className="flex items-center justify-between py-2.5 border-b border-white/5 last:border-0">
+              <div>
+                <p className="text-sm text-white font-medium">{p.amount}</p>
+                <p className="text-xs text-white/40">{p.date}</p>
+              </div>
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400">
+                {p.status}
+              </span>
             </div>
-            <div>
-              <p className="text-sm font-medium text-gray-900">View Payout History</p>
-              <p className="text-xs text-gray-500">All past payouts and commission releases</p>
+          ))}
+          <a
+            href="/dashboard/commissions"
+            className="block mt-2 text-xs text-teal-400 hover:text-teal-300 font-medium"
+          >
+            View full commission ledger →
+          </a>
+        </div>
+      </SectionCard>
+
+      <SectionCard title="Tax Information" subtitle="1099 and tax compliance" icon={FileCheck} defaultOpen={false}>
+        <div className="mt-3 space-y-3">
+          <p className="text-sm text-white/60">
+            Partners earning over $20,000/year receive a 1099-NEC form by January 31. For full details, visit the compliance docs.
+          </p>
+          <a
+            href="/dashboard/compliance"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors"
+          >
+            View compliance docs <ChevronRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </SectionCard>
+    </div>
+  );
+}
+
+// ─── Privacy Tab ──────────────────────────────────────────────────────────────
+function PrivacyTab() {
+  const [settings, setSettings] = useState({
+    hideEarningsFromNetwork: false,
+    hidePhoneFromLeads: false,
+    hideFromDirectory: false,
+    hideJobHistory: false,
+    allowAnalytics: true,
+    marketingEmails: true,
+  });
+
+  const PRIVACY_OPTIONS = [
+    {
+      key: "hideEarningsFromNetwork",
+      label: "Hide earnings from network",
+      desc: "Your downline cannot see your commission totals",
+      icon: DollarSign,
+    },
+    {
+      key: "hidePhoneFromLeads",
+      label: "Hide phone number from leads",
+      desc: "Leads see only your name and trade until you accept",
+      icon: Phone,
+    },
+    {
+      key: "hideFromDirectory",
+      label: "Hide from partner directory",
+      desc: "Your profile won't appear in the public partner directory",
+      icon: EyeOff,
+    },
+    {
+      key: "hideJobHistory",
+      label: "Hide job history count",
+      desc: "Don't display your job count on your public profile",
+      icon: Shield,
+    },
+    {
+      key: "allowAnalytics",
+      label: "Allow usage analytics",
+      desc: "Help us improve ProLnk by sharing anonymous usage data",
+      icon: Globe,
+    },
+    {
+      key: "marketingEmails",
+      label: "Marketing emails",
+      desc: "Receive tips, ProLnk product updates, and partner news",
+      icon: Mail,
+    },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <SectionCard title="Privacy Controls" subtitle="Manage what others can see about you" icon={EyeOff} defaultOpen={true}>
+        <div className="space-y-1 mt-3">
+          {PRIVACY_OPTIONS.map(({ key, label, desc, icon: Icon }) => (
+            <div key={key} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
+              <div className="flex items-start gap-3">
+                <Icon className="w-4 h-4 text-white/30 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">{label}</p>
+                  <p className="text-xs text-white/40">{desc}</p>
+                </div>
+              </div>
+              <Toggle
+                checked={!!settings[key as keyof typeof settings]}
+                onChange={(v) => setSettings((s) => ({ ...s, [key]: v }))}
+              />
             </div>
-          </div>
-          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
-        </a>
-        <a href="/dashboard/commissions" className="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:border-teal-300 hover:bg-teal-50/30 transition-colors group mt-2">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--teal-light)" }}>
-              <Zap className="w-4 h-4" style={{ color: "var(--teal)" }} />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-900">Commission Ledger</p>
-              <p className="text-xs text-gray-500">Detailed breakdown of all commissions earned</p>
-            </div>
-          </div>
-          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
-        </a>
+          ))}
+        </div>
+      </SectionCard>
+
+      <SectionCard title="Legal & Rights" subtitle="Your data rights under CCPA/GDPR" icon={Lock} defaultOpen={false}>
+        <div className="space-y-2 mt-3">
+          {[
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms of Service", href: "/terms" },
+            { label: "CCPA Rights", href: "/ccpa" },
+          ].map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              className="flex items-center justify-between p-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors text-sm text-white/70"
+            >
+              {label}
+              <ExternalLink className="w-3.5 h-3.5 text-white/30" />
+            </a>
+          ))}
+        </div>
+      </SectionCard>
+
+      <div className="flex justify-end">
+        <Button
+          onClick={() => toast.success("Privacy settings saved")}
+          className="text-sm bg-teal-400 hover:bg-teal-500 text-[#0A1628] font-semibold"
+        >
+          <Check className="w-4 h-4 mr-1.5" />
+          Save Privacy Settings
+        </Button>
       </div>
     </div>
   );
@@ -630,118 +495,83 @@ function PayoutTab() {
 
 // ─── Integrations Tab ─────────────────────────────────────────────────────────
 function IntegrationsTab() {
-  const INTEGRATIONS = [
-    { name: "CompanyCam", desc: "Sync job photos automatically", href: "/dashboard/integrations", status: "connect" },
-    { name: "Jobber",     desc: "Import jobs and customers",     href: "/dashboard/integrations", status: "connect" },
-    { name: "Housecall Pro", desc: "Sync service history",      href: "/dashboard/integrations", status: "connect" },
-    { name: "ServiceTitan", desc: "Enterprise job management",  href: "/dashboard/integrations", status: "connect" },
+  const FSM_APPS = [
+    { name: "Jobber", desc: "Sync jobs and customers", color: "bg-green-500", status: "not_connected" },
+    { name: "Housecall Pro", desc: "Sync service history and photos", color: "bg-blue-500", status: "not_connected" },
+    { name: "ServiceTitan", desc: "Enterprise job management", color: "bg-purple-500", status: "coming_soon" },
+    { name: "Workiz", desc: "Field service and scheduling", color: "bg-orange-500", status: "not_connected" },
   ];
+
   return (
     <div className="space-y-4">
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-1">Connected Apps</h3>
-        <p className="text-xs text-gray-500 mb-4">Connect your field service software to automatically sync jobs and photos.</p>
-        <div className="space-y-2">
-          {INTEGRATIONS.map((int) => (
-            <a key={int.name} href={int.href} className="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:border-teal-300 hover:bg-teal-50/30 transition-colors group">
+      <SectionCard title="Field Service Software" subtitle="Connect your existing FSM tools" icon={Link2} defaultOpen={true}>
+        <div className="space-y-2 mt-3">
+          {FSM_APPS.map((app) => (
+            <div
+              key={app.name}
+              className="flex items-center justify-between p-3 rounded-xl border border-white/10 bg-white/5"
+            >
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gray-100">
-                  <Link2 className="w-4 h-4 text-gray-500" />
+                <div className={`w-8 h-8 rounded-lg ${app.color} flex items-center justify-center`}>
+                  <Link2 className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900">{int.name}</p>
-                  <p className="text-xs text-gray-500">{int.desc}</p>
+                  <p className="text-sm font-medium text-white">{app.name}</p>
+                  <p className="text-xs text-white/40">{app.desc}</p>
                 </div>
               </div>
-              <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-600 group-hover:bg-teal-100 group-hover:text-teal-700 transition-colors">
-                Connect →
-              </span>
-            </a>
+              {app.status === "coming_soon" ? (
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-white/10 text-white/40">
+                  Soon
+                </span>
+              ) : (
+                <a
+                  href="/dashboard/integration-settings"
+                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-teal-400/10 text-teal-400 hover:bg-teal-400/20 transition-colors"
+                >
+                  Connect →
+                </a>
+              )}
+            </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Security Tab ─────────────────────────────────────────────────────────────
-function SecurityTab() {
-  const { user } = useAuth();
-  return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-1">Account Security</h3>
-        <p className="text-xs text-gray-500 mb-4">Your account is secured via Manus OAuth. No password is stored.</p>
-        <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
-              <Shield className="w-4 h-4 text-emerald-600" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-emerald-700">Secured with OAuth</p>
-              <p className="text-xs text-emerald-600">Signed in as {user?.name ?? user?.email}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Active Sessions</h3>
-        <div className="p-3 rounded-xl border border-gray-200 bg-gray-50">
-          <div className="flex items-center gap-3">
-            <Smartphone className="w-4 h-4 text-gray-400" />
-            <div>
-              <p className="text-sm font-medium text-gray-900">Current Session</p>
-              <p className="text-xs text-gray-500">Active now · {navigator.userAgent.includes("Mobile") ? "Mobile" : "Desktop"}</p>
-            </div>
-            <span className="ml-auto text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Active</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">Privacy</h3>
-        <div className="space-y-2">
-          {[
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms of Service", href: "/terms" },
-            { label: "CCPA Rights", href: "/ccpa" },
-          ].map(({ label, href }) => (
-            <a key={label} href={href} className="flex items-center justify-between p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-sm text-gray-700">
-              {label}
-              <ExternalLink className="w-3.5 h-3.5 text-gray-400" />
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className="text-sm font-semibold text-red-600 mb-1">Danger Zone</h3>
-        <p className="text-xs text-gray-400 mb-3">These actions are permanent or may affect your account.</p>
-        <div className="space-y-2 rounded-xl border border-red-200 p-4 bg-red-50/40">
-          <DangerZoneDownload />
+        <div className="mt-3">
           <a
-            href="/account/delete"
-            className="flex items-center justify-between p-3 rounded-xl border border-red-200 bg-white hover:bg-red-50 transition-colors group"
+            href="/dashboard/integration-settings"
+            className="flex items-center gap-1.5 text-sm text-teal-400 hover:text-teal-300 font-medium"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-red-100">
-                <Trash2 className="w-4 h-4 text-red-500" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-red-700">Delete Account</p>
-                <p className="text-xs text-red-400">Permanently delete your account and data (CCPA)</p>
-              </div>
-            </div>
-            <ChevronRight className="w-3.5 h-3.5 text-red-400 group-hover:text-red-600 transition-colors" />
+            Manage all integrations <ChevronRight className="w-3.5 h-3.5" />
           </a>
         </div>
-      </div>
+      </SectionCard>
+
+      <SectionCard title="ProLnk API" subtitle="Direct API access for developers" icon={Key} defaultOpen={false}>
+        <div className="mt-3 space-y-3">
+          <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+            <p className="text-xs text-white/50 mb-1">Your API Key</p>
+            <div className="flex items-center gap-2">
+              <code className="text-sm font-mono text-teal-400 flex-1">plnk_live_••••••••••••••••</code>
+              <button
+                onClick={() => toast.info("Coming soon — API keys will be available at launch")}
+                className="text-xs text-white/40 hover:text-white/70 transition-colors"
+              >
+                <Copy className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+          <p className="text-xs text-white/40">
+            API access is available on Pro and above tiers. Keys are generated automatically when your account is activated.
+          </p>
+        </div>
+      </SectionCard>
     </div>
   );
 }
 
-function DangerZoneDownload() {
-  const { data: profileData } = trpc.partners.getMyProfile.useQuery();
+// ─── Account Tab ──────────────────────────────────────────────────────────────
+function AccountTab() {
   const { user } = useAuth();
+  const { data: profileData } = trpc.partners.getMyProfile.useQuery();
   const [downloading, setDownloading] = useState(false);
 
   const handleDownload = () => {
@@ -761,7 +591,7 @@ function DangerZoneDownload() {
       ["Total Earned", `$${Number(partner.totalCommissionEarned ?? 0).toFixed(2)}`],
       ["Member Since", partner.createdAt ? new Date(partner.createdAt).toLocaleDateString() : ""],
     ];
-    const csv = rows.map(r => r.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const csv = rows.map((r) => r.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -773,75 +603,123 @@ function DangerZoneDownload() {
   };
 
   return (
-    <button
-      onClick={handleDownload}
-      disabled={downloading}
-      className="w-full flex items-center justify-between p-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition-colors group text-left"
-    >
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gray-100">
-          <Download className={`w-4 h-4 text-gray-500 ${downloading ? "animate-bounce" : ""}`} />
+    <div className="space-y-4">
+      <SectionCard title="Change Password" subtitle="Update your login credentials" icon={Key} defaultOpen={true}>
+        <div className="mt-3 space-y-3">
+          <a
+            href="/set-password"
+            className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-teal-400/10 flex items-center justify-center">
+                <Lock className="w-4 h-4 text-teal-400" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white">Set / Change Password</p>
+                <p className="text-xs text-white/40">Update your ProLnk account password</p>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-white/60 transition-colors" />
+          </a>
         </div>
-        <div>
-          <p className="text-sm font-medium text-gray-900">Download My Data</p>
-          <p className="text-xs text-gray-500">Export your account data as CSV</p>
+      </SectionCard>
+
+      <SectionCard title="Your Data" subtitle="Export your account data" icon={Download} defaultOpen={false}>
+        <div className="mt-3">
+          <button
+            onClick={handleDownload}
+            disabled={downloading}
+            className="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group text-left"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                <Download className={`w-4 h-4 text-white/60 ${downloading ? "animate-bounce" : ""}`} />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-white">Download My Data</p>
+                <p className="text-xs text-white/40">Export your account data as CSV (CCPA)</p>
+              </div>
+            </div>
+            <span className="text-xs font-semibold text-white/40 group-hover:text-white/70 transition-colors">
+              {downloading ? "Downloading…" : "Export CSV"}
+            </span>
+          </button>
         </div>
-      </div>
-      <span className="text-xs font-semibold text-gray-400 group-hover:text-gray-700 transition-colors">
-        {downloading ? "Downloading…" : "Export CSV"}
-      </span>
-    </button>
+      </SectionCard>
+
+      <SectionCard title="Danger Zone" subtitle="Permanent actions that cannot be undone" icon={AlertCircle} defaultOpen={false}>
+        <div className="mt-3">
+          <a
+            href="/account/delete"
+            className="flex items-center justify-between p-4 rounded-xl border border-red-500/30 bg-red-500/5 hover:bg-red-500/10 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+                <Trash2 className="w-4 h-4 text-red-400" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-red-400">Delete Account</p>
+                <p className="text-xs text-red-400/50">Permanently delete your account and all data</p>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-red-400/40 group-hover:text-red-400/70 transition-colors" />
+          </a>
+        </div>
+      </SectionCard>
+    </div>
   );
 }
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function PartnerSettings() {
-  const [activeTab, setActiveTab] = useState<Tab>("status");
+  const [activeTab, setActiveTab] = useState<Tab>("profile");
 
   const TAB_CONTENT: Record<Tab, React.ReactNode> = {
-    status:        <PartnerStatusTab />,
-    account:       <AccountTab />,
+    profile:       <ProfileTab />,
     notifications: <NotificationsTab />,
-    payout:        <PayoutTab />,
+    payment:       <PaymentTab />,
+    privacy:       <PrivacyTab />,
     integrations:  <IntegrationsTab />,
-    security:      <SecurityTab />,
+    account:       <AccountTab />,
   };
 
   return (
     <PartnerLayout>
-      <div className="p-6 max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
-          <p className="text-sm text-gray-500 mt-1">Manage your account, notifications, payout, and integrations.</p>
-        </div>
+      <div className="min-h-screen bg-[#0A1628] p-4 sm:p-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-white">Settings</h1>
+            <p className="text-sm text-white/50 mt-1">
+              Manage your profile, notifications, payout, privacy, and integrations.
+            </p>
+          </div>
 
-        <div className="flex flex-col sm:flex-row gap-6">
-          {/* Sidebar tabs */}
-          <nav className="sm:w-44 flex-shrink-0">
-            <ul className="space-y-1">
-              {TABS.map(({ id, label, icon: Icon }) => (
-                <li key={id}>
-                  <button
-                    onClick={() => setActiveTab(id)}
-                    className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors text-left ${
-                      activeTab === id
-                        ? "text-white shadow-sm"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
-                    style={activeTab === id ? { backgroundColor: "var(--teal)" } : {}}
-                  >
-                    <Icon className="w-4 h-4 flex-shrink-0" />
-                    {label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="flex flex-col sm:flex-row gap-6">
+            {/* Sidebar */}
+            <nav className="sm:w-48 flex-shrink-0">
+              <ul className="space-y-1">
+                {TABS.map(({ id, label, icon: Icon }) => (
+                  <li key={id}>
+                    <button
+                      onClick={() => setActiveTab(id)}
+                      className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors text-left ${
+                        activeTab === id
+                          ? "bg-teal-400/10 text-teal-400 border border-teal-400/20"
+                          : "text-white/50 hover:text-white/80 hover:bg-white/5"
+                      }`}
+                    >
+                      <Icon className="w-4 h-4 flex-shrink-0" />
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          {/* Content */}
-          <div className="flex-1 bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
-            {TAB_CONTENT[activeTab]}
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              {TAB_CONTENT[activeTab]}
+            </div>
           </div>
         </div>
       </div>

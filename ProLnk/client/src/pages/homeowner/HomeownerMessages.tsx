@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 
-const TRADE_ICONS: Record<string, JSX.Element> = {
+const TRADE_ICONS = {
   Plumbing: <Droplets className="h-4 w-4 text-blue-400" />,
   Electrical: <Zap className="h-4 w-4 text-yellow-400" />,
   HVAC: <Wind className="h-4 w-4 text-cyan-400" />,

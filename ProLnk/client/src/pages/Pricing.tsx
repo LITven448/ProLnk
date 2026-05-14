@@ -8,6 +8,38 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// ─── Post-Founding Preview Tiers (condensed) ─────────────────────────────────
+const POST_FOUNDING_PREVIEW = [
+  {
+    name: "Starter",
+    price: "$199/mo",
+    keep: "40%",
+    levels: "2-level network",
+    rank: "Basic ranking",
+    color: "text-blue-400",
+    border: "border-blue-400/20",
+  },
+  {
+    name: "Professional",
+    price: "$279/mo",
+    keep: "55%",
+    levels: "3-level network",
+    rank: "Priority ranking",
+    color: "text-teal-400",
+    border: "border-teal-400/20",
+    popular: true,
+  },
+  {
+    name: "Elite",
+    price: "$399/mo",
+    keep: "65%",
+    levels: "4-level network",
+    rank: "Top ranking",
+    color: "text-[#F5E642]",
+    border: "border-[#F5E642]/20",
+  },
+];
+
 // ─── Founding Network Tiers ───────────────────────────────────────────────────
 const FOUNDING_TIERS = [
   {
@@ -104,8 +136,24 @@ export default function Pricing() {
   return (
     <div className="min-h-screen bg-[#060D1A] text-white">
 
+      {/* Founding Network Urgency Banner */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-[#F5E642]/25 via-teal-500/20 to-[#F5E642]/25 border-b border-[#F5E642]/40 py-2.5 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+          <div className="flex items-center gap-2">
+            <Crown className="w-4 h-4 text-[#F5E642] shrink-0" />
+            <span className="text-sm font-bold text-[#F5E642]">Founding Network spots available</span>
+            <span className="text-sm text-white/70 hidden sm:inline">— $149/mo locked forever. Closes at 500 applications.</span>
+          </div>
+          <Link href="/founding-partner">
+            <span className="inline-flex items-center gap-1.5 bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-4 py-1.5 rounded-full text-xs font-bold transition-colors cursor-pointer whitespace-nowrap">
+              Claim Your Spot <ArrowRight className="w-3 h-3" />
+            </span>
+          </Link>
+        </div>
+      </div>
+
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#060D1A]/90 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-[42px] left-0 right-0 z-50 bg-[#060D1A]/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
             <ProLnkLogo className="h-7 w-auto cursor-pointer" />
@@ -121,7 +169,7 @@ export default function Pricing() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-40 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -380,6 +428,70 @@ export default function Pricing() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Post-Launch Pricing Preview */}
+      <section className="py-16 px-6 bg-gradient-to-b from-transparent to-white/[0.02]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-xs font-bold text-white/30 uppercase tracking-widest mb-3">After the founding network closes</p>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
+              Post-Launch Pricing Preview
+            </h2>
+            <p className="text-white/40 text-sm max-w-xl mx-auto">
+              Once 500 applications are submitted, these are the tiers new members will choose from. Founding members are permanently exempt from this pricing.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 mb-8">
+            {POST_FOUNDING_PREVIEW.map((tier) => (
+              <div key={tier.name} className={`relative rounded-2xl border ${tier.border} p-5 bg-white/[0.02]`}>
+                {tier.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-teal-500/20 text-teal-300 text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+                  </div>
+                )}
+                <div className={`text-xs font-bold ${tier.color} mb-3 ${tier.popular ? "mt-2" : ""}`}>{tier.name}</div>
+                <div className={`text-2xl font-black text-white mb-4`}>{tier.price}</div>
+                <div className="space-y-2 text-xs text-white/50">
+                  <div className="flex items-center gap-2">
+                    <DollarSign className="w-3 h-3 text-white/30" />
+                    <span>{tier.keep} commission keep</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="w-3 h-3 text-white/30" />
+                    <span>{tier.levels}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-3 h-3 text-white/30" />
+                    <span>{tier.rank}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/pricing/standard">
+              <span className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer border border-white/10 hover:border-white/20 px-5 py-2.5 rounded-xl">
+                View full post-launch pricing details <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-10 bg-gradient-to-r from-[#F5E642]/10 to-teal-500/10 border border-[#F5E642]/20 rounded-2xl p-6 text-center">
+            <Crown className="w-8 h-8 text-[#F5E642] mx-auto mb-3" />
+            <p className="text-white font-bold text-lg mb-1">Founding members pay $149/mo. Forever.</p>
+            <p className="text-white/50 text-sm mb-4">
+              72% keep · 4-level network · top algorithm ranking — regardless of what standard pricing becomes.
+            </p>
+            <Link href="/partner-checkout">
+              <button className="bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] px-8 py-3 rounded-xl font-bold text-sm transition-all inline-flex items-center gap-2">
+                Claim Your Founding Spot <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </div>
         </div>
       </section>

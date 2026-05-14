@@ -1,9 +1,4 @@
-/**
- * PayoutHistory — REV-05
- * Partner payout history: timeline of commissions with pending/paid/method badges.
- * Includes Request Payout dialog and payout request history.
- */
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
 import PartnerLayout from "@/components/PartnerLayout";
 import { Badge } from "@/components/ui/badge";
@@ -13,8 +8,33 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
   CheckCircle, Clock, DollarSign, Download,
-  TrendingUp, ArrowRight, Building2, CreditCard, Send, XCircle, AlertCircle
+  TrendingUp, ArrowRight, Building2, CreditCard, Send, XCircle, AlertCircle,
+  CalendarClock, Layers,
 } from "lucide-react";
+
+const MINIMUM_PAYOUT = 50;
+
+const STREAM_LABELS: Record<string, string> = {
+  direct: "Direct Commission",
+  network: "Network Override",
+  subscription: "Subscription Override",
+  origination: "Origination Rights",
+};
+
+const STREAM_COLORS: Record<string, string> = {
+  direct: "#0A1628",
+  network: "#00B5B8",
+  subscription: "#8B5CF6",
+  origination: "#F59E0B",
+};
+
+function classifyStreamLabel(type: string | null | undefined): string {
+  const t = (type ?? "").toLowerCase();
+  if (t.includes("network") || t.includes("override") || t.includes("cascade")) return "network";
+  if (t.includes("subscription") || t.includes("recurring")) return "subscription";
+  if (t.includes("homeowner") || t.includes("origination")) return "origination";
+  return "direct";
+}
 
 const STATUS_CONFIG = {
   paid: {
@@ -79,6 +99,22 @@ export default function PayoutHistory() {
   const totalPending = (commissions as any[]).filter((c) => !c.paid).reduce((s, c) => s + Number(c.amount ?? 0), 0);
   const isConnected = connectStatus?.status === "active";
   const hasPendingRequest = (payoutRequests as any[]).some((r: any) => r.status === "pending");
+  const meetsMinimum = totalPending >= MINIMUM_PAYOUT;
+
+  const pendingByStream = useMemo(() => {
+    const streams: Record<string, number> = { direct: 0, network: 0, subscription: 0, origination: 0 };
+    (commissions as any[]).filter((c) => !c.paid).forEach((c) => {
+      const key = classifyStreamLabel(c.commissionType ?? c.opportunityType);
+      streams[key] += Number(c.amount ?? 0);
+    });
+    return streams;
+  }, [commissions]);
+
+  const nextPayoutDate = (() => {
+    const d = new Date();
+    d.setMonth(d.getMonth() + 1, 1);
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  })();
 
   const handleExport = () => {
     const rows = [
@@ -126,7 +162,7 @@ export default function PayoutHistory() {
             >
               <Download className="w-3.5 h-3.5" /> Export CSV
             </Button>
-            {totalPending > 0 && isConnected && !hasPendingRequest && (
+            {totalPending > 0 && isConnected && !hasPendingRequest && meetsMinimum && (
               <Button
                 size="sm"
                 onClick={() => setShowRequestDialog(true)}
@@ -161,6 +197,50 @@ export default function PayoutHistory() {
             </p>
           </div>
         </div>
+
+        {/* Pending Payout Detail — next payout projection */}
+        {totalPending > 0 && (
+          <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden">
+            <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-50">
+              <CalendarClock className="w-4 h-4 text-emerald-500" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Pending Payout</p>
+                <p className="text-xs text-gray-400">Estimated payment on {nextPayoutDate}</p>
+              </div>
+              <div className="ml-auto text-right">
+                <p className="text-lg font-black text-gray-900">{formatCurrency(totalPending)}</p>
+              </div>
+            </div>
+            <div className="px-5 py-4 space-y-2">
+              {Object.entries(pendingByStream).filter(([, v]) => v > 0).map(([key, val]) => (
+                <div key={key} className="flex items-center justify-between text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STREAM_COLORS[key] }} />
+                    <span className="text-gray-600 text-xs">{STREAM_LABELS[key]}</span>
+                  </div>
+                  <span className="font-semibold text-gray-900 text-xs">{formatCurrency(val)}</span>
+                </div>
+              ))}
+              {Object.values(pendingByStream).every((v) => v === 0) && (
+                <p className="text-xs text-gray-400 text-center py-2">No stream data available yet</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Minimum payout threshold notice */}
+        {totalPending > 0 && !meetsMinimum && (
+          <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 flex items-start gap-3">
+            <Layers className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-amber-800">Minimum payout threshold not yet reached</p>
+              <p className="text-xs text-amber-700 mt-0.5">
+                Your balance of {formatCurrency(totalPending)} is below the ${MINIMUM_PAYOUT} minimum. Earn{" "}
+                <span className="font-semibold">{formatCurrency(MINIMUM_PAYOUT - totalPending)}</span> more to unlock a payout request.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Pending request notice */}
         {hasPendingRequest && (
@@ -275,11 +355,24 @@ export default function PayoutHistory() {
                           <StatusIcon className={`w-4 h-4 ${cfg.iconColor}`} />
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-gray-900">
-                            {c.opportunityType
-                              ? c.opportunityType.replace(/_/g, " ").replace(/\b\w/g, (ch: string) => ch.toUpperCase())
-                              : "Commission"}
-                          </p>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <p className="text-sm font-semibold text-gray-900">
+                              {c.opportunityType
+                                ? c.opportunityType.replace(/_/g, " ").replace(/\b\w/g, (ch: string) => ch.toUpperCase())
+                                : "Commission"}
+                            </p>
+                            {(() => {
+                              const sk = classifyStreamLabel(c.commissionType ?? c.opportunityType);
+                              return (
+                                <span
+                                  className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full"
+                                  style={{ backgroundColor: STREAM_COLORS[sk] + "18", color: STREAM_COLORS[sk] }}
+                                >
+                                  {STREAM_LABELS[sk]}
+                                </span>
+                              );
+                            })()}
+                          </div>
                           <p className="text-xs text-gray-400 mt-0.5">
                             Earned {formatDate(c.createdAt)}
                             {c.paidAt ? ` · Paid ${formatDate(c.paidAt)}` : ""}

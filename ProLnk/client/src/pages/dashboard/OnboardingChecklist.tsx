@@ -4,7 +4,7 @@ import {
   CheckCircle2, Circle, ChevronRight, Rocket, Shield, CreditCard,
   User, Users, Briefcase, DollarSign, Clock, ArrowRight, Trophy,
   Camera, BookOpen, Star, MapPin,
-, LucideIcon } from "lucide-react";
+} from "lucide-react";
 
 const STORAGE_KEY = "prolnk_onboarding_v3";
 
@@ -17,7 +17,7 @@ interface Step {
   cta: string;
   href: string;
   timeEstimate: string;
-  icon: LucideIcon;
+  icon: React.ElementType;
   color: string;
   bg: string;
   border: string;
@@ -206,7 +206,7 @@ const CATEGORIES: CategoryConfig[] = [
   { id: "Network Growth", label: "Network Growth", steps: ALL_STEPS.filter(s => s.category === "Network Growth") },
 ];
 
-const CATEGORY_ICONS: Record<string, LucideIcon> = {
+const CATEGORY_ICONS: Record<string, React.ElementType> = {
   "Profile Setup": User,
   "Verification": Shield,
   "First Earnings": DollarSign,

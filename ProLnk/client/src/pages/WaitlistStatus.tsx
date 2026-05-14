@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { trpc } from "../lib/trpc";
 import { motion } from "framer-motion";
-import { Copy, Check, Share2, Users, TrendingUp, DollarSign, ChevronRight, Star, Award, Zap, ArrowRight } from "lucide-react";
+import { Copy, Check, Share2, Users, TrendingUp, DollarSign, ChevronRight, Star, Award, Zap, ArrowRight, Twitter, Linkedin, MessageCircle, Facebook, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 const TIER_CONFIG = {
@@ -472,34 +472,106 @@ export default function WaitlistStatus() {
           </div>
         </motion.div>
 
-        {/* Referral Link */}
+        {/* Referral Link — enhanced share section */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="p-5 rounded-2xl"
+          className="p-5 rounded-2xl space-y-5"
           style={{ background: "#1a1d27", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2">
             <Share2 size={18} className="text-green-400" />
-            <h2 className="font-bold text-white">Your Referral Link</h2>
+            <h2 className="font-bold text-white">Share Your Link</h2>
           </div>
-          <div className="flex items-center gap-2 p-3 rounded-xl mb-3 overflow-hidden" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+
+          {/* Link display + copy */}
+          <div className="flex items-center gap-2 p-3 rounded-xl overflow-hidden" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <span className="text-sm text-gray-300 flex-1 truncate font-mono min-w-0">{referralLink}</span>
+            <CopyButton text={referralLink} label="Copy" />
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <CopyButton text={referralLink} label="Copy Link" />
-            <CopyButton
-              text={`Hey! I just joined the ProLnk waitlist — the new network income platform for home service pros. Use my link to sign up and we both move up: ${referralLink}`}
-              label="Copy SMS Message"
-            />
-            <a
-              href={`mailto:?subject=Join me on ProLnk&body=Hey! I just joined the ProLnk waitlist — the new network income platform for home service pros. Sign up with my link to move us both up: ${referralLink}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-300"
-              style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
+
+          {/* Platform share buttons */}
+          <div>
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Share on</p>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🚀 Just locked my spot in the ProLnk founding network — home services income system for pros. Limited charter spots still open. ${referralLink}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
+                style={{ background: "rgba(29,161,242,0.15)", color: "#38bdf8", border: "1px solid rgba(29,161,242,0.25)" }}
+              >
+                <Twitter size={14} />
+                Twitter / X
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(referralLink)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
+                style={{ background: "rgba(0,119,181,0.15)", color: "#60a5fa", border: "1px solid rgba(0,119,181,0.25)" }}
+              >
+                <Linkedin size={14} />
+                LinkedIn
+              </a>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralLink)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
+                style={{ background: "rgba(24,119,242,0.15)", color: "#818cf8", border: "1px solid rgba(24,119,242,0.25)" }}
+              >
+                <Facebook size={14} />
+                Facebook
+              </a>
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent(`Hey! I just got in on the ProLnk founding network — the new income platform for home service pros. Sign up before charter spots are gone: ${referralLink}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
+                style={{ background: "rgba(37,211,102,0.15)", color: "#4ade80", border: "1px solid rgba(37,211,102,0.25)" }}
+              >
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+              <a
+                href={`sms:?body=${encodeURIComponent(`Hey! Thought you'd want in on this — ProLnk network income platform for contractors. I just locked my charter spot. Check it out: ${referralLink}`)}`}
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all hover:brightness-110"
+                style={{ background: "rgba(34,197,94,0.15)", color: "#86efac", border: "1px solid rgba(34,197,94,0.25)" }}
+              >
+                <Phone size={14} />
+                SMS
+              </a>
+            </div>
+          </div>
+
+          {/* QR code placeholder */}
+          <div
+            className="flex items-center gap-4 p-4 rounded-xl"
+            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            <div
+              className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 text-center"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px dashed rgba(255,255,255,0.15)" }}
             >
-              Email
-            </a>
+              <span className="text-[9px] text-gray-500 leading-tight">QR code<br />available<br />on request</span>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-white">QR Code</p>
+              <p className="text-xs text-gray-500 mt-0.5">Share at trade shows, job sites, or print on your vehicle wrap. Email us to get yours.</p>
+            </div>
+          </div>
+
+          {/* How sharing works */}
+          <div
+            className="p-4 rounded-xl space-y-2"
+            style={{ background: "rgba(34,197,94,0.07)", border: "1px solid rgba(34,197,94,0.18)" }}
+          >
+            <p className="text-sm font-bold text-green-300">How sharing works</p>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Each person who joins using your link goes directly below you in the network — they become your L1 and build your override income. You earn a percentage of every job they close, forever. The earlier they join, the higher their tier, and the more they earn — which means more override income flowing to you.
+            </p>
           </div>
         </motion.div>
 

@@ -5,6 +5,7 @@
  * Also serves as the partner's personal founding partner dashboard when logged in.
  */
 
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
@@ -15,9 +16,12 @@ import BackToTop from "@/components/BackToTop";
 import {
   Lock, DollarSign, RefreshCw, Calendar, Home, Zap, CheckCircle,
   Star, Users, TrendingUp, ArrowRight, Shield, Award, AlertTriangle,
+  Clock, Tag, Flame,
 } from "lucide-react";
 
 const TOTAL_SLOTS = 2125;
+const CHARTER_TOTAL = 25;
+const WAITLIST_CAPACITY = 500;
 
 const TIERS = [
   { name: "Charter Member", slots: 25, range: "Positions 1–25", color: "text-amber-400", bg: "bg-amber-400/10", border: "border-amber-400/30" },
@@ -100,9 +104,74 @@ function getSpotColor(filled: number, total: number) {
   return { bar: "bg-red-500", text: "text-red-400", label: "Almost full" };
 }
 
+function useCountdown(targetTotal: number, currentFilled: number) {
+  const spotsLeft = Math.max(0, targetTotal - currentFilled);
+  return spotsLeft;
+}
+
+function CountdownTimer() {
+  const LAUNCH_DATE = new Date("2026-06-01T00:00:00");
+  const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
+
+  useEffect(() => {
+    const tick = () => {
+      const diff = LAUNCH_DATE.getTime() - Date.now();
+      if (diff <= 0) return;
+      setTimeLeft({
+        d: Math.floor(diff / 86400000),
+        h: Math.floor((diff % 86400000) / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000),
+      });
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="flex items-center gap-3 justify-center">
+      {[
+        { label: "Days",    val: timeLeft.d },
+        { label: "Hours",   val: timeLeft.h },
+        { label: "Minutes", val: timeLeft.m },
+        { label: "Seconds", val: timeLeft.s },
+      ].map((unit, i) => (
+        <div key={i} className="text-center">
+          <div className="bg-gray-900 border border-teal-500/30 rounded-lg px-3 py-2 min-w-[52px]">
+            <div className="text-2xl font-black text-teal-400 tabular-nums">
+              {String(unit.val).padStart(2, "0")}
+            </div>
+          </div>
+          <div className="text-[10px] text-gray-500 mt-1">{unit.label}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function FoundingPartnerPage() {
   const [, navigate] = useLocation();
   const { user } = useAuth();
+  const [charterCode, setCharterCode] = useState("");
+  const [codeError, setCodeError] = useState("");
+  const [codeValid, setCodeValid] = useState(false);
+
+  const handleCodeChange = (val: string) => {
+    const upper = val.toUpperCase().trim();
+    setCharterCode(upper);
+    setCodeError("");
+    if (upper.length === 8) {
+      if (/^[A-Z0-9]{8}$/.test(upper)) {
+        setCodeValid(true);
+      } else {
+        setCodeError("Invalid code format");
+        setCodeValid(false);
+      }
+    } else {
+      setCodeValid(false);
+    }
+  };
 
   const program = trpc.foundingPartner.getProgram.useQuery();
   const enrollmentStatus = trpc.foundingPartner.getEnrollmentStatus.useQuery();
@@ -178,13 +247,50 @@ export default function FoundingPartnerPage() {
           </div>
         </div>
 
+        {/* Charter invite code */}
+        {!user && (
+          <div className="max-w-sm mx-auto mb-6">
+            <div className="bg-amber-400/5 border border-amber-400/30 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Tag className="w-4 h-4 text-amber-400" />
+                <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Charter Invite Code</span>
+                <span className="text-gray-600 text-xs">(optional)</span>
+              </div>
+              <input
+                type="text"
+                value={charterCode}
+                onChange={e => handleCodeChange(e.target.value)}
+                placeholder="e.g. CHARTER1"
+                maxLength={8}
+                className={`w-full bg-gray-900 border rounded-lg px-3 py-2 text-sm font-mono tracking-widest text-center text-white placeholder-gray-600 outline-none transition-colors ${
+                  codeValid
+                    ? "border-amber-400 ring-1 ring-amber-400/40"
+                    : codeError
+                    ? "border-red-500/60"
+                    : "border-gray-700 focus:border-amber-400/60"
+                }`}
+              />
+              {codeValid && (
+                <p className="text-amber-400 text-xs text-center mt-2 flex items-center justify-center gap-1">
+                  <CheckCircle className="w-3.5 h-3.5" />
+                  Charter code applied — you'll be placed in positions 1–25
+                </p>
+              )}
+              {codeError && <p className="text-red-400 text-xs text-center mt-2">{codeError}</p>}
+              {!codeValid && !codeError && (
+                <p className="text-gray-600 text-xs text-center mt-2">Have a personal invitation? Enter it above to claim a Charter spot.</p>
+              )}
+            </div>
+          </div>
+        )}
+
         {!user ? (
           <Button
             size="lg"
-            onClick={() => navigate("/partner-checkout")}
+            onClick={() => navigate(charterCode && codeValid ? `/partner-checkout?code=${charterCode}` : "/partner-checkout")}
             className="bg-teal-500 hover:bg-teal-400 text-white font-black text-xl px-12 py-5 h-auto rounded-xl"
           >
-            Claim Your Founding Spot
+            {codeValid ? "Claim Charter Spot" : "Claim Your Founding Spot"}
             <ArrowRight className="w-6 h-6 ml-2" />
           </Button>
         ) : myStatus.data ? (
@@ -203,6 +309,106 @@ export default function FoundingPartnerPage() {
             Claim Your Founding Spot →
           </Button>
         )}
+      </section>
+
+      {/* ── Why Join Now — Urgency Section ── */}
+      <section className="max-w-4xl mx-auto px-6 py-10">
+        <div className="bg-gradient-to-br from-gray-900 to-[#0A1628] border border-amber-400/20 rounded-3xl overflow-hidden">
+          <div className="px-8 py-6 border-b border-amber-400/20 flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-amber-400/10 flex items-center justify-center">
+              <Flame className="w-5 h-5 text-amber-400" />
+            </div>
+            <div>
+              <h2 className="text-xl font-black text-white">Why Join Now</h2>
+              <p className="text-gray-500 text-xs">These terms disappear when the waitlist closes. No exceptions.</p>
+            </div>
+          </div>
+
+          {/* Charter urgency */}
+          <div className="px-8 py-5 border-b border-gray-800 bg-amber-400/5">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <span className="text-amber-400 font-black text-sm">Charter Member</span>
+                <span className="bg-amber-400/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-400/30">Positions 1–25</span>
+              </div>
+              <div className="text-right">
+                <div className="text-amber-400 font-black text-lg">{Math.max(0, CHARTER_TOTAL - Math.min(filled, CHARTER_TOTAL))} of {CHARTER_TOTAL} left</div>
+              </div>
+            </div>
+            <div className="h-2 bg-gray-800 rounded-full overflow-hidden mb-1">
+              <div className="h-full bg-amber-400 rounded-full" style={{ width: `${Math.min(100, (Math.min(filled, CHARTER_TOTAL) / CHARTER_TOTAL) * 100)}%` }} />
+            </div>
+            <p className="text-gray-500 text-xs mt-2">Charter members get 1.5% home origination rights — a permanent revenue stream no other tier can access after the program closes.</p>
+          </div>
+
+          {/* 5 founding benefits with icons */}
+          <div className="px-8 py-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                icon: Lock,
+                color: "text-teal-400",
+                bg: "bg-teal-400/10",
+                title: "$149/mo locked forever",
+                desc: "Platform price goes to $199/mo post-launch. Yours never changes.",
+              },
+              {
+                icon: Clock,
+                color: "text-blue-400",
+                bg: "bg-blue-400/10",
+                title: "90-day free trial",
+                desc: "Start building your network before your first payment is ever due.",
+              },
+              {
+                icon: DollarSign,
+                color: "text-green-400",
+                bg: "bg-green-400/10",
+                title: "72% commission keep",
+                desc: "Highest keep rate on the platform — locked in for every job, forever.",
+              },
+              {
+                icon: Users,
+                color: "text-purple-400",
+                bg: "bg-purple-400/10",
+                title: "4-level network income",
+                desc: "Earn on every job and every subscription your recruits generate, 4 levels deep.",
+              },
+              {
+                icon: Award,
+                color: "text-amber-400",
+                bg: "bg-amber-400/10",
+                title: "Founding status — permanent",
+                desc: "Cannot be replicated, transferred, or granted to anyone after the waitlist closes.",
+              },
+              {
+                icon: Home,
+                color: "text-indigo-400",
+                bg: "bg-indigo-400/10",
+                title: "1.5% origination rights",
+                desc: "Document any home and earn forever on every job at that address.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-3">
+                <div className={`w-8 h-8 rounded-lg ${item.bg} flex items-center justify-center shrink-0 mt-0.5`}>
+                  <item.icon className={`w-4 h-4 ${item.color}`} />
+                </div>
+                <div>
+                  <div className="text-white text-sm font-semibold">{item.title}</div>
+                  <div className="text-gray-500 text-xs mt-0.5">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Countdown */}
+          <div className="px-8 py-6 border-t border-gray-800 bg-gray-900/40 text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Clock className="w-4 h-4 text-gray-500" />
+              <span className="text-gray-500 text-sm">Waitlist closes when {WAITLIST_CAPACITY} spots fill</span>
+            </div>
+            <CountdownTimer />
+            <p className="text-gray-600 text-xs mt-4">Estimated close date — exact timing depends on signup velocity</p>
+          </div>
+        </div>
       </section>
 
       {/* Tier breakdown */}

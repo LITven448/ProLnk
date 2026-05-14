@@ -3,10 +3,9 @@ import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminL
 import {
   AlertTriangle, Shield, Home, Zap, Search,
   ChevronRight, Eye, Clock, Users, ExternalLink,
-  CheckCircle, XCircle, Flame, FileText
+  CheckCircle, XCircle, Flame, FileText, Bell
 } from "lucide-react";
 
-// --- Active Recalls ----------------------------------------------------------
 const ACTIVE_RECALLS = [
   {
     id: 1,
@@ -55,12 +54,70 @@ const ACTIVE_RECALLS = [
   },
 ];
 
-// --- Recall Stats ------------------------------------------------------------
 const RECALL_STATS = [
   { month: "Jan", recalls: 2, matches: 14, leads: 14 },
   { month: "Feb", recalls: 3, matches: 18, leads: 18 },
   { month: "Mar", recalls: 2, matches: 23, leads: 23 },
 ];
+
+const NETWORK_RECALLS = [
+  {
+    id: 1,
+    product: "LG Dryer Model WM3500CW",
+    brand: "LG Electronics",
+    affectedUnits: 47,
+    notified: 34,
+    severity: "Critical" as const,
+    dateIssued: "May 1, 2026",
+    category: "Appliance",
+  },
+  {
+    id: 2,
+    product: "Kohler Kitchen Faucet K-560",
+    brand: "Kohler",
+    affectedUnits: 31,
+    notified: 31,
+    severity: "Medium" as const,
+    dateIssued: "Apr 18, 2026",
+    category: "Plumbing",
+  },
+  {
+    id: 3,
+    product: "Nest Thermostat E 3rd Gen",
+    brand: "Google Nest",
+    affectedUnits: 22,
+    notified: 18,
+    severity: "High" as const,
+    dateIssued: "Apr 10, 2026",
+    category: "Smart Home",
+  },
+  {
+    id: 4,
+    product: "Frigidaire Refrigerator FFHS2622MS",
+    brand: "Frigidaire",
+    affectedUnits: 15,
+    notified: 15,
+    severity: "Medium" as const,
+    dateIssued: "Mar 28, 2026",
+    category: "Appliance",
+  },
+  {
+    id: 5,
+    product: "Moen Garbage Disposal GX Series",
+    brand: "Moen",
+    affectedUnits: 9,
+    notified: 5,
+    severity: "High" as const,
+    dateIssued: "Mar 15, 2026",
+    category: "Plumbing",
+  },
+];
+
+const SEVERITY_STYLES: Record<string, { bg: string; text: string; dot: string }> = {
+  Critical: { bg: "#FEE2E2", text: "#DC2626", dot: "#EF4444" },
+  High: { bg: "#FEF3C7", text: "#D97706", dot: "#F59E0B" },
+  Medium: { bg: "#DBEAFE", text: "#1D4ED8", dot: "#3B82F6" },
+};
 
 function fmt$(n: number) {
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -70,10 +127,50 @@ function fmt$(n: number) {
 
 export default function SafetyRecalls() {
   const [expandedRecall, setExpandedRecall] = useState<number | null>(1);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [notifyingSent, setNotifyingSent] = useState<Set<number>>(new Set());
+
+  const totalAffected = NETWORK_RECALLS.reduce((s, r) => s + r.affectedUnits, 0);
+  const totalNotified = NETWORK_RECALLS.reduce((s, r) => s + r.notified, 0);
+  const coveragePct = Math.round((totalNotified / totalAffected) * 100);
+
+  const filteredRecalls = NETWORK_RECALLS.filter((r) => {
+    const q = searchQuery.toLowerCase();
+    return (
+      r.product.toLowerCase().includes(q) ||
+      r.brand.toLowerCase().includes(q) ||
+      r.category.toLowerCase().includes(q)
+    );
+  });
+
+  const activeCount = NETWORK_RECALLS.filter((r) => r.notified < r.affectedUnits).length;
+
+  function notifyHomeowners(id: number) {
+    setNotifyingSent((prev) => new Set(prev).add(id));
+  }
 
   return (
     <AdminLayout title="Safety Recalls" subtitle="Manufacturer Recall Engine -- Patent Claim 32">
       <div className="p-6 space-y-6" style={{ fontFamily: FONT }}>
+
+        {/* -- Active Recalls Banner ----------------------------------------- */}
+        <div className="flex items-center gap-4 p-4 rounded-2xl" style={{ backgroundColor: "#FEF2F2", border: "2px solid #FECACA" }}>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#FEE2E2" }}>
+            <Bell className="w-5 h-5" style={{ color: "#DC2626" }} />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-bold" style={{ color: "#991B1B" }}>
+              {activeCount} active recall notice{activeCount !== 1 ? "s" : ""} affecting homes in your network
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: "#B91C1C" }}>
+              {totalAffected} homeowners affected across {activeCount} product recalls &mdash; {coveragePct}% notified
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <span className="text-xs font-bold" style={{ color: "#DC2626" }}>LIVE</span>
+          </div>
+        </div>
 
         {/* -- Alert Banner -------------------------------------------------- */}
         <div className="flex items-center gap-4 p-4 rounded-2xl" style={{ backgroundColor: "#FEF2F2", border: "1px solid #FECACA" }}>
@@ -110,6 +207,117 @@ export default function SafetyRecalls() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* -- Network Recall List ------------------------------------------- */}
+        <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: T.card, boxShadow: "0 2px 12px rgba(0,0,0,0.08)" }}>
+          <div className="p-5 border-b" style={{ borderColor: T.border }}>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-sm font-bold" style={{ color: T.text }}>Recalls Affecting Your Network</h2>
+              <span className="text-xs px-2 py-1 rounded-full" style={{ backgroundColor: "#FEE2E2", color: "#DC2626" }}>
+                {NETWORK_RECALLS.length} recalls tracked
+              </span>
+            </div>
+
+            {/* Coverage progress */}
+            <div className="p-3 rounded-xl mb-4" style={{ backgroundColor: T.bg }}>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-xs font-medium" style={{ color: T.text }}>
+                  You&apos;ve notified {totalNotified} of {totalAffected} affected homeowners ({coveragePct}%)
+                </span>
+                <span className="text-xs font-bold" style={{ color: coveragePct >= 80 ? T.green : "#D97706" }}>
+                  {coveragePct}%
+                </span>
+              </div>
+              <div className="w-full rounded-full h-2" style={{ backgroundColor: T.border }}>
+                <div
+                  className="h-2 rounded-full transition-all"
+                  style={{ width: `${coveragePct}%`, backgroundColor: coveragePct >= 80 ? T.green : "#F59E0B" }}
+                />
+              </div>
+            </div>
+
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: T.muted }} />
+              <input
+                type="text"
+                placeholder="Search by product, brand, or category..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-8 pr-3 py-2 rounded-lg text-xs outline-none"
+                style={{ backgroundColor: T.bg, border: `1px solid ${T.border}`, color: T.text }}
+              />
+            </div>
+          </div>
+
+          <div className="divide-y" style={{ borderColor: T.border }}>
+            {filteredRecalls.map((recall) => {
+              const sev = SEVERITY_STYLES[recall.severity] ?? SEVERITY_STYLES.Medium;
+              const notified = notifyingSent.has(recall.id) ? recall.affectedUnits : recall.notified;
+              const pct = Math.round((notified / recall.affectedUnits) * 100);
+              return (
+                <div key={recall.id} className="p-4 hover:opacity-90 transition-opacity">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: sev.bg }}>
+                      <AlertTriangle className="w-4 h-4" style={{ color: sev.text }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-bold" style={{ color: T.text }}>{recall.product}</p>
+                          <p className="text-xs mt-0.5" style={{ color: T.muted }}>{recall.brand} &middot; {recall.category} &middot; Issued {recall.dateIssued}</p>
+                        </div>
+                        <span
+                          className="text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 flex-shrink-0"
+                          style={{ backgroundColor: sev.bg, color: sev.text }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: sev.dot }} />
+                          {recall.severity}
+                        </span>
+                      </div>
+                      <div className="mt-2 flex items-center gap-4">
+                        <div>
+                          <span className="text-xs font-bold" style={{ color: T.text }}>{recall.affectedUnits}</span>
+                          <span className="text-[10px] ml-1" style={{ color: T.muted }}>in network</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-[10px]" style={{ color: T.muted }}>
+                              {notified}/{recall.affectedUnits} notified
+                            </span>
+                            <span className="text-[10px] font-bold" style={{ color: pct === 100 ? T.green : T.muted }}>{pct}%</span>
+                          </div>
+                          <div className="w-full rounded-full h-1.5" style={{ backgroundColor: T.border }}>
+                            <div
+                              className="h-1.5 rounded-full"
+                              style={{ width: `${pct}%`, backgroundColor: pct === 100 ? T.green : "#F59E0B" }}
+                            />
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => notifyHomeowners(recall.id)}
+                          disabled={notifyingSent.has(recall.id) || recall.notified >= recall.affectedUnits}
+                          className="text-[10px] font-bold px-3 py-1.5 rounded-lg transition-all disabled:opacity-50"
+                          style={{
+                            backgroundColor: notifyingSent.has(recall.id) ? "#D1FAE5" : "#FEE2E2",
+                            color: notifyingSent.has(recall.id) ? T.green : "#DC2626",
+                          }}
+                        >
+                          {notifyingSent.has(recall.id) ? "All Notified ✓" : "Notify Affected Homeowners"}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+            {filteredRecalls.length === 0 && (
+              <div className="p-8 text-center">
+                <p className="text-sm" style={{ color: T.muted }}>No recalls match your search</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* -- Recall Cards -------------------------------------------------- */}
@@ -149,7 +357,7 @@ export default function SafetyRecalls() {
                           </span>
                         </div>
                         <p className="text-xs" style={{ color: T.muted }}>
-                          {recall.manufacturer}  Severity {recall.severity}/5  Issued {recall.dateIssued}
+                          {recall.manufacturer} &nbsp; Severity {recall.severity}/5 &nbsp; Issued {recall.dateIssued}
                         </p>
                       </div>
                       <div className="flex items-center gap-4 flex-shrink-0">
@@ -172,7 +380,6 @@ export default function SafetyRecalls() {
 
                   {isExpanded && (
                     <div className="px-5 pb-5 pt-0 space-y-4">
-                      {/* Hazard description */}
                       <div className="p-3 rounded-xl" style={{ backgroundColor: "#FEF2F2", border: "1px solid #FECACA" }}>
                         <div className="flex items-center gap-2 mb-1">
                           <Flame className="w-3 h-3" style={{ color: "#DC2626" }} />
@@ -182,7 +389,6 @@ export default function SafetyRecalls() {
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {/* Match method */}
                         <div className="rounded-xl p-4" style={{ backgroundColor: T.bg }}>
                           <h4 className="text-xs font-bold mb-2" style={{ color: T.text }}>
                             <Eye className="w-3 h-3 inline mr-1" /> How Properties Were Matched
@@ -194,7 +400,6 @@ export default function SafetyRecalls() {
                             <span className="text-[10px] px-2 py-1 rounded" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>CPSC Database</span>
                           </div>
                         </div>
-                        {/* Response stats */}
                         <div className="rounded-xl p-4" style={{ backgroundColor: T.bg }}>
                           <h4 className="text-xs font-bold mb-2" style={{ color: T.text }}>
                             <Users className="w-3 h-3 inline mr-1" /> Response Summary

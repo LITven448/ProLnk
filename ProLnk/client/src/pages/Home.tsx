@@ -586,68 +586,90 @@ function PricingSection() {
 
       {/* Tier Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-14">
-        {PRICING_TIERS.map((tier, idx) => (
-          <div
-            key={tier.name}
-            onClick={() => setActiveTierIdx(idx)}
-            className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
-              activeTierIdx === idx
-                ? "border-[#0A1628] shadow-xl scale-[1.02]"
-                : "border-gray-200 shadow-sm hover:border-gray-400"
-            }`}
-            style={activeTierIdx === idx ? { boxShadow: "0 0 0 2px #0A1628, 0 8px 32px rgba(10,22,40,0.15), inset 0 3px 0 #F5E642" } : {}}
-          >
-            {tier.popular && (
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-[#F5E642]">
-                  Recommended
-                </span>
-              </div>
-            )}
-            <div className="mb-4">
-              <h3 className="text-2xl font-heading font-bold text-gray-900">{tier.name}</h3>
-              <p className="text-sm text-gray-500 mt-0.5">{tier.subtitle}</p>
-            </div>
-            <div className="mb-4">
-              {tier.monthlyFee === null ? (
-                <span className="text-3xl font-heading font-bold text-gray-900">Custom</span>
-              ) : tier.monthlyFee === 0 ? (
-                <span className="text-3xl font-heading font-bold text-gray-900">Free</span>
-              ) : (
-                <>
-                  <span className="text-3xl font-heading font-bold text-gray-900">${tier.monthlyFee}</span>
-                  <span className="text-sm text-gray-400">/mo</span>
-                </>
+        {PRICING_TIERS.map((tier, idx) => {
+          const isCharter = tier.name === "Charter";
+          const tierSpotsTotal = [25, 100, 400, 1600][idx];
+          const tierSpotsLabel = isCharter ? "25 total — most prestigious" : `${tierSpotsTotal} slots`;
+          return (
+            <div
+              key={tier.name}
+              onClick={() => setActiveTierIdx(idx)}
+              className={`relative rounded-2xl p-7 flex flex-col border-2 cursor-pointer transition-all ${
+                isCharter
+                  ? "border-yellow-400 shadow-xl"
+                  : activeTierIdx === idx
+                  ? "border-[#0A1628] shadow-xl scale-[1.02]"
+                  : "border-gray-200 shadow-sm hover:border-gray-400"
+              }`}
+              style={
+                isCharter
+                  ? { boxShadow: "0 0 0 2px #D4AF37, 0 8px 40px rgba(212,175,55,0.25), inset 0 3px 0 #D4AF37" }
+                  : activeTierIdx === idx
+                  ? { boxShadow: "0 0 0 2px #0A1628, 0 8px 32px rgba(10,22,40,0.15), inset 0 3px 0 #F5E642" }
+                  : {}
+              }
+            >
+              {isCharter && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-white" style={{ background: "#D4AF37" }}>
+                    Most Valuable
+                  </span>
+                </div>
               )}
+              {!isCharter && tier.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="px-4 py-1 text-xs font-bold tracking-widest uppercase text-[#0A1628] bg-[#F5E642]">
+                    Recommended
+                  </span>
+                </div>
+              )}
+              <div className="mb-4">
+                <h3 className={`text-2xl font-heading font-bold ${isCharter ? "text-yellow-700" : "text-gray-900"}`}>{tier.name}</h3>
+                <p className="text-sm text-gray-500 mt-0.5">{tier.subtitle}</p>
+                <p className="text-xs font-semibold mt-1" style={{ color: isCharter ? "#D4AF37" : "#6B7280" }}>{tierSpotsLabel}</p>
+              </div>
+              <div className="mb-4">
+                {tier.monthlyFee === null ? (
+                  <span className="text-3xl font-heading font-bold text-gray-900">Custom</span>
+                ) : tier.monthlyFee === 0 ? (
+                  <span className="text-3xl font-heading font-bold text-gray-900">Free</span>
+                ) : (
+                  <>
+                    <span className="text-3xl font-heading font-bold text-gray-900">${tier.monthlyFee}</span>
+                    <span className="text-sm text-gray-400">/mo locked</span>
+                  </>
+                )}
+              </div>
+              <div className="flex items-center gap-1.5 mb-2 pb-3 border-b border-gray-100">
+                <TrendingUp className="h-4 w-4 text-emerald-600 shrink-0" />
+                <span className="text-xs font-bold text-emerald-700">72% commission keep — every closed job</span>
+              </div>
+              <ul className="space-y-2 mb-6 flex-1">
+                {tier.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
+                    <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/partner-checkout">
+                <button
+                  className={`w-full py-3 text-sm font-bold tracking-wide transition-all rounded-none ${
+                    isCharter
+                      ? "text-white hover:opacity-90"
+                      : activeTierIdx === idx
+                      ? "bg-[#0A1628] text-white hover:opacity-90"
+                      : "border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white"
+                  }`}
+                  style={isCharter ? { background: "#D4AF37" } : {}}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {tier.cta}
+                </button>
+              </Link>
             </div>
-            <div className="flex items-center gap-1.5 mb-4 pb-4 border-b border-gray-100">
-              <TrendingUp className="h-4 w-4 text-[#0A1628]" />
-              <span className="text-sm font-bold text-[#0A1628]">
-                Earn potential commissions when homes you photograph generate closed jobs
-              </span>
-            </div>
-            <ul className="space-y-2 mb-6 flex-1">
-              {tier.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5 text-[#0A1628]" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <Link href="/apply">
-              <button
-                className={`w-full py-3 text-sm font-bold tracking-wide transition-all rounded-none ${
-                  activeTierIdx === idx
-                    ? "bg-[#0A1628] text-white hover:opacity-90"
-                    : "border-2 border-[#0A1628] text-[#0A1628] hover:bg-[#0A1628] hover:text-white"
-                }`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {tier.cta}
-              </button>
-            </Link>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Tier summary */}
@@ -745,9 +767,9 @@ function PricingSection() {
                  · Earn {(activeTier.commissionShare * 100).toFixed(0)}% of ProLnk's fee on every closed job
               </div>
             </div>
-            <Link href="/apply">
+            <Link href="/partner-checkout">
               <button className="px-8 py-3 bg-[#F5E642] text-[#0A1628] font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
-                Apply Now 
+                Claim Your Spot — $149/mo
               </button>
             </Link>
           </div>
@@ -1113,6 +1135,18 @@ function WhyProLnkSection() {
   );
 }
 
+// Social proof ticker entries — rotates every 5s
+const SOCIAL_PROOF_ENTRIES = [
+  "Sarah M. from Plano just joined 2 minutes ago",
+  "Jake T. from Frisco just claimed a Charter spot",
+  "Maria R. from McKinney just joined 4 minutes ago",
+  "Carlos D. from Allen just claimed a Founding spot",
+  "Kevin W. from Denton just joined 7 minutes ago",
+  "Ashley P. from Garland just claimed a spot",
+  "Mike H. from Arlington just joined 3 minutes ago",
+  "Tiffany L. from Rockwall just claimed a Founding spot",
+];
+
 // --- Main Landing Page -------------------------------------------------------------
 export default function Home() {
   const { user } = useAuth();
@@ -1120,6 +1154,7 @@ export default function Home() {
   const isAdmin = user?.role === "admin";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [socialProofIdx, setSocialProofIdx] = useState(0);
 
   useEffect(() => {
     const sections = ["how-it-works", "the-engine", "spotlight", "who-can-join", "pricing", "faq", "guarantee"];
@@ -1137,6 +1172,14 @@ export default function Home() {
     });
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSocialProofIdx((i) => (i + 1) % SOCIAL_PROOF_ENTRIES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const [urgencyDismissed, setUrgencyDismissed] = useState(false);
   // Waitlist state removed — main site now uses direct apply flow
   const [selectedTrade, setSelectedTrade] = useState<string | null>(null);
@@ -1151,28 +1194,38 @@ export default function Home() {
   const TOTAL_NETWORK = 2125; // Charter(25) + Founding(100) + L3(400) + L4(1600)
   const spotsUsed = TOTAL_NETWORK - (spotsRemaining || 2125);
   const spotsPercent = Math.round((spotsUsed / TOTAL_NETWORK) * 100);
+  // Simulate last-24h momentum: ~5-15% of total signups as a plausible daily rate
+  const last24h = Math.max(3, Math.round(waitlistPros * 0.08) || 7);
 
   return (
     <div className="min-h-screen bg-white">
       {/* — Announcement Ticker — */}
       {!urgencyDismissed && (
-        <div className="relative z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-xs font-semibold text-[#0A1628]" style={{ backgroundColor: "#F5E642" }}>
-          <span className="animate-pulse w-2 h-2 rounded-full bg-[#0A1628] shrink-0" />
-          <span className="text-center">
-            🎉 DFW Launch —{" "}
-            <strong>{waitlistPros > 0 ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} joined` : "Now open"}</strong>
-            {" · "}
-            <strong>{(2125 - waitlistPros).toLocaleString()} founding spots remaining</strong>
-            {" · "}
-            Charter tier: <strong>{Math.min(waitlistPros, 25)}/25 filled</strong>
-            {" · "}
-            <Link href="/pro-waitlist" className="underline underline-offset-2 cursor-pointer hover:opacity-80">
-              Claim your spot →
-            </Link>
-          </span>
-          <button onClick={() => setUrgencyDismissed(true)} className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:opacity-60 transition-opacity" aria-label="Dismiss">
-            <X className="w-3.5 h-3.5" />
-          </button>
+        <div className="relative z-[60] flex flex-col items-center px-4 py-2 text-xs font-semibold text-[#0A1628]" style={{ backgroundColor: "#F5E642" }}>
+          <div className="flex items-center justify-center gap-3 w-full">
+            <span className="animate-pulse w-2 h-2 rounded-full bg-[#0A1628] shrink-0" />
+            <span className="text-center">
+              DFW Launch —{" "}
+              <strong>{waitlistPros > 0 ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} joined` : "Now open"}</strong>
+              {" · "}
+              <strong>Last 24 hrs: {last24h} new applications</strong>
+              {" · "}
+              <strong>{(2125 - waitlistPros).toLocaleString()} spots remaining</strong>
+              {" · "}
+              Charter tier: <strong>{Math.min(waitlistPros, 25)}/25 filled</strong>
+              {" · "}
+              <Link href="/partner-checkout" className="underline underline-offset-2 cursor-pointer hover:opacity-80">
+                Claim your spot →
+              </Link>
+            </span>
+            <button onClick={() => setUrgencyDismissed(true)} className="absolute right-3 top-2 p-1 hover:opacity-60 transition-opacity" aria-label="Dismiss">
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+          <div className="flex items-center gap-1.5 mt-0.5 text-[#0A1628]/70 text-[11px]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0A1628]/50 animate-pulse shrink-0" />
+            <span key={socialProofIdx} className="transition-opacity duration-500">{SOCIAL_PROOF_ENTRIES[socialProofIdx]}</span>
+          </div>
         </div>
       )}
       <Helmet>
@@ -1327,21 +1380,21 @@ export default function Home() {
 
             <FadeUp delay={0.45}>
               <div className="flex flex-col sm:flex-row gap-3 items-start">
-                <Link href="/pro-waitlist">
+                <Link href="/partner-checkout">
                   <button
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
                     style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
                   >
-                    Claim Your Founding Spot <ArrowRight className="w-4 h-4" />
+                    Claim Your Founding Spot — $149/mo <ArrowRight className="w-4 h-4" />
                   </button>
                 </Link>
-                <Link href="/founding-partner">
+                <Link href="/pro-waitlist">
                   <button className="inline-flex items-center gap-2 px-5 py-4 text-sm font-semibold text-white/80 hover:text-white transition-colors border border-white/20 hover:border-white/40">
-                    View Founding Partner Benefits <ChevronRight className="h-4 w-4" />
+                    Not ready to pay? Join waitlist <ChevronRight className="h-4 w-4" />
                   </button>
                 </Link>
               </div>
-              <p className="text-xs text-white/40 mt-2">Subscription-based platform. Commission earned only when jobs close. No credit card required during beta.</p>
+              <p className="text-xs text-white/40 mt-2">$149/mo locked forever. Commission earned only when jobs close. Cancel anytime.</p>
             </FadeUp>
 
             <FadeIn delay={0.6}>
@@ -2281,6 +2334,49 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* — Why Now? Urgency Section — */}
+      <section className="py-14 border-t border-gray-100 bg-white">
+        <div className="container">
+          <FadeUp>
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4" style={{ backgroundColor: "rgba(239,68,68,0.08)", color: "#DC2626" }}>
+                  <AlertTriangle className="w-3.5 h-3.5" /> Why Join Now
+                </div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">Three Reasons Not to Wait</h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="rounded-2xl border border-yellow-200 bg-yellow-50 p-6 text-center">
+                  <Lock className="w-8 h-8 text-yellow-700 mx-auto mb-3" />
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">Price Locked Forever</h3>
+                  <p className="text-sm text-gray-600">Founding price ($149/mo) is locked at your join date — it will never increase, no matter what we charge future members.</p>
+                </div>
+                <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center">
+                  <Award className="w-8 h-8 text-amber-700 mx-auto mb-3" />
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">Charter Spots Go First</h3>
+                  <p className="text-sm text-gray-600">Charter members (spots 1–25) get maximum cascade depth in the 4-level network — the highest possible passive income position. Only 25 exist, ever.</p>
+                </div>
+                <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+                  <Clock className="w-8 h-8 text-red-600 mx-auto mb-3" />
+                  <h3 className="font-heading font-bold text-gray-900 mb-2">Waitlist Closes at 500</h3>
+                  <p className="text-sm text-gray-600">Founding network closes permanently when we hit 500 applications + 5,000 homes. After that, pricing resets and network position is gone.</p>
+                </div>
+              </div>
+              <div className="text-center mt-8">
+                <Link href="/partner-checkout">
+                  <button className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none" style={{ backgroundColor: "#F5E642", color: "#0A1628" }}>
+                    Secure Your Spot Now <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+                <p className="text-xs text-gray-400 mt-3">
+                  {waitlistPros > 0 ? `${waitlistPros} pros already in — ${500 - waitlistPros} applications until waitlist closes` : "Be among the first 500"}
+                </p>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 

@@ -981,9 +981,10 @@ function Router() {
       <Route path="/my-home/referral" component={HomeownerReferral} />
       <Route path="/my-home/homeowner-referral" component={HomeownerReferral} />
       <Route path="/neighborhood-referral" component={NeighborhoodReferral} />
+      <Route path="/my-home/neighborhood-referral" component={NeighborhoodReferral} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/emergency" component={EmergencyServices} />
-      <Route path="/my-home/neighborhood-deals" component={TrustyProComingSoon} />
+      <Route path="/my-home/neighborhood-deals" component={NeighborhoodDeals} />
       <Route path="/my-home/favorites" component={HomeownerFavorites} />
       <Route path="/my-home/saved-pros" component={HomeownerFavorites} />
       <Route path="/my-home/property-comparison" component={TrustyProComingSoon} />

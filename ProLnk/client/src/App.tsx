@@ -25,6 +25,7 @@ const GetQuotes = lazy(() => import("./pages/GetQuotes"));
 const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
 const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import RewardfulScript from "@/components/RewardfulScript";
 
 // Pages -- lazy loaded (all admin, dashboard, homeowner, feature pages)
 const ApiDocs = lazy(() => import("./pages/ApiDocs"));
@@ -90,7 +91,9 @@ const NetworkFeed = lazy(() => import("./pages/NetworkFeed"));
 const TierProgress = lazy(() => import("./pages/TierProgress"));
 const ReferralLink = lazy(() => import("./pages/ReferralLink"));
 const ReferralHub = lazy(() => import("./pages/dashboard/ReferralHub"));
+const NetworkIncomeSummary = lazy(() => import("./pages/dashboard/NetworkIncomeSummary"));
 const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
+const FoundingNetworkDashboard = lazy(() => import("./pages/dashboard/FoundingNetworkDashboard"));
 const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
 const GoalTracker = lazy(() => import("./pages/dashboard/GoalTracker"));
 const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
@@ -631,8 +634,10 @@ function Router() {
       <Route path="/partner-verification" component={PartnerVerification} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
+      <Route path="/dashboard/founding" component={FoundingNetworkDashboard} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
+      <Route path="/dashboard/network-income" component={NetworkIncomeSummary} />
       <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
       <Route path="/dashboard/goals" component={GoalTracker} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
@@ -1056,6 +1061,7 @@ function AppContent() {
   const [location] = useLocation();
   return (
     <>
+      <RewardfulScript />
       <DomainRouter />
       <Router />
       <CookieConsentBanner />

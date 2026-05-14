@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, useRef, useEffect, type ReactNode } from "react";
 import { useLocation } from "wouter";
 import {
   Check,
@@ -10,26 +10,14 @@ import {
   FileText,
   Rocket,
   AlertCircle,
+  Search,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { SERVICE_CATEGORIES, TIER_LABELS } from "@/data/serviceCategories";
 
 const STEP_LABELS = ["Basic Info", "License & Insurance", "Services", "Review & Submit"];
 
-const TRADE_OPTIONS = [
-  "Plumbing",
-  "Electrical",
-  "HVAC",
-  "Roofing",
-  "General Contractor",
-  "Landscaping",
-  "Pest Control",
-  "Painting",
-  "Flooring",
-  "Remodeling",
-  "Appliance Repair",
-  "Pool & Spa",
-  "Other",
-];
+const TIERS_ORDERED = [1, 2, 3, 4, 5] as const;
 
 const SERVICE_CAPABILITIES = [
   "Residential Repairs",
@@ -170,6 +158,106 @@ function Input({
   );
 }
 
+function TradeDropdown({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const selected = SERVICE_CATEGORIES.find((c) => c.id === value);
+  const q = query.toLowerCase();
+  const filtered = q
+    ? SERVICE_CATEGORIES.filter((c) => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
+    : SERVICE_CATEGORIES;
+
+  const grouped = TIERS_ORDERED.map((tier) => ({
+    tier,
+    label: TIER_LABELS[tier],
+    items: filtered.filter((c) => c.tier === tier),
+  })).filter((g) => g.items.length > 0);
+
+  return (
+    <div ref={ref} className="relative">
+      <FieldLabel required>Primary Trade</FieldLabel>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full px-4 py-3 rounded-xl text-sm outline-none text-left flex items-center justify-between transition-all"
+        style={{
+          background: "rgba(255,255,255,0.05)",
+          border: `1px solid ${open ? "rgba(245,230,66,0.4)" : "rgba(255,255,255,0.1)"}`,
+          color: selected ? "#fff" : "#4b5563",
+        }}
+      >
+        <span className="flex items-center gap-2 truncate">
+          {selected ? (
+            <><span>{selected.icon}</span><span>{selected.name}</span></>
+          ) : "Select your trade"}
+        </span>
+        <ChevronRight
+          size={14}
+          style={{ color: "#6b7280", flexShrink: 0, transform: open ? "rotate(90deg)" : "none", transition: "transform 0.2s" }}
+        />
+      </button>
+
+      {open && (
+        <div
+          className="absolute z-50 mt-1 w-full rounded-xl overflow-hidden"
+          style={{ background: "#0d1f3c", border: "1px solid rgba(255,255,255,0.12)", maxHeight: 340, overflowY: "auto" }}
+        >
+          <div className="sticky top-0 p-2" style={{ background: "#0d1f3c", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: "rgba(255,255,255,0.06)" }}>
+              <Search size={13} style={{ color: "#6b7280", flexShrink: 0 }} />
+              <input
+                autoFocus
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search trades…"
+                className="flex-1 bg-transparent text-sm text-white placeholder-gray-600 outline-none"
+              />
+            </div>
+          </div>
+
+          {grouped.length === 0 && (
+            <p className="text-xs text-center py-6" style={{ color: "#6b7280" }}>No trades found</p>
+          )}
+
+          {grouped.map(({ tier, label, items }) => (
+            <div key={tier}>
+              <p className="px-4 pt-3 pb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#F5E642", opacity: 0.6 }}>
+                {label}
+              </p>
+              {items.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => { onChange(cat.id); setOpen(false); setQuery(""); }}
+                  className="w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all hover:bg-white/5"
+                  style={{ background: value === cat.id ? "rgba(245,230,66,0.08)" : "transparent" }}
+                >
+                  <span className="text-base w-6 text-center flex-shrink-0">{cat.icon}</span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium" style={{ color: value === cat.id ? "#F5E642" : "#e5e7eb" }}>{cat.name}</p>
+                    <p className="text-xs truncate" style={{ color: "#6b7280" }}>{cat.description}</p>
+                  </div>
+                  {value === cat.id && <Check size={13} style={{ color: "#F5E642", marginLeft: "auto", flexShrink: 0 }} />}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Step1BasicInfo({
   form,
   setForm,
@@ -212,24 +300,7 @@ function Step1BasicInfo({
         <Input value={form.phone} onChange={set("phone")} placeholder="(214) 555-0100" type="tel" />
       </div>
 
-      <div>
-        <FieldLabel required>Primary Trade</FieldLabel>
-        <select
-          value={form.trade}
-          onChange={(e) => set("trade")(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all"
-          style={{
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            color: form.trade ? "#fff" : "#4b5563",
-          }}
-        >
-          <option value="" disabled style={{ background: "#0A1628" }}>Select your trade</option>
-          {TRADE_OPTIONS.map((t) => (
-            <option key={t} value={t} style={{ background: "#0A1628" }}>{t}</option>
-          ))}
-        </select>
-      </div>
+      <TradeDropdown value={form.trade} onChange={(v) => setForm({ ...form, trade: v })} />
 
       <div>
         <FieldLabel>Years in Business</FieldLabel>

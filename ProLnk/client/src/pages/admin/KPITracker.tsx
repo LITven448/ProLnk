@@ -6,7 +6,7 @@ import {
 import {
   Target, TrendingUp, TrendingDown, AlertTriangle, DollarSign,
   Users, Zap, Server,
-, LucideIcon } from "lucide-react";
+} from "lucide-react";
 
 type KPI = {
   name: string;
@@ -63,7 +63,7 @@ const TREND_DATA = [
 
 const ALERT_KPIS = new Set(["Churn Rate", "Gross Margin"]);
 
-const TAB_CONFIG: { id: Tab; label: string; icon: LucideIcon }[] = [
+const TAB_CONFIG: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: "revenue", label: "Revenue", icon: DollarSign },
   { id: "partners", label: "Partners", icon: Users },
   { id: "leads", label: "Leads", icon: Zap },

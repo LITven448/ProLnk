@@ -76,20 +76,11 @@ export function serveStatic(app: Express) {
   );
 
   // Serve static files (favicon, manifest, etc.) with short cache.
-  // CRITICAL: index.html is explicitly forced to no-cache so browsers always
-  // fetch the latest HTML shell immediately after a publish -- no hard reset needed.
+  // index.html is excluded here — it's handled below with brand injection.
   app.use(
     express.static(distPath, {
       maxAge: "1h",
-      setHeaders: (res, filePath) => {
-        if (filePath.endsWith("index.html")) {
-          res.set({
-            "Cache-Control": "no-cache, no-store, must-revalidate",
-            Pragma: "no-cache",
-            Expires: "0",
-          });
-        }
-      },
+      index: false,
     })
   );
 

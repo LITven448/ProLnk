@@ -67,7 +67,7 @@ function HealthBar({ health, score }: { health: HealthKey; score: number }) {
 /* -- Stat tile -------------------------------------------------------------- */
 function StatTile({
   icon: Icon, value, label, color,
-}: { icon: React.ElementType; value: string | number; label: string; color: string }) {
+}: { icon: (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null; value: string | number; label: string; color: string }) {
   return (
     <div
       className="rounded-2xl p-4 flex flex-col gap-2"

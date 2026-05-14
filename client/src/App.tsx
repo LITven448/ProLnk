@@ -9,402 +9,498 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
 
-// Pages
+// Pages -- eager (critical path: first pages users see)
 import Home from "@/pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ApiDocs from "./pages/ApiDocs";
 import TermsOfService from "@/pages/TermsOfService";
-import CCPARights from "@/pages/legal/CCPARights";
-import CookiePolicy from "@/pages/legal/CookiePolicy";
-import Demo from "@/pages/Demo";
 import Apply from "./pages/Apply";
-import ApplicationStatus from "./pages/ApplicationStatus";
-import SetPassword from "./pages/SetPassword";
 import PartnerLogin from "./pages/PartnerLogin";
 import PartnerForgotPassword from "./pages/PartnerForgotPassword";
-import PartnerCheckout from "./pages/PartnerCheckout";
-import PartnerDashboard from "./pages/PartnerDashboard";
-import InboundLeads from "./pages/InboundLeads";
-import MyReferrals from "./pages/MyReferrals";
-import ProLnkApp from "./pages/ProLnkApp";
-import AdminDashboard from "./pages/AdminDashboard";
-import LogJob from "./pages/LogJob";
-import PartnerDirectory from "./pages/PartnerDirectory";
-import PartnerSpotlight from "./pages/PartnerSpotlight";
-import AdminCommissionRates from "./pages/AdminCommissionRates";
-import AdminOpportunityFeed from "./pages/AdminOpportunityFeed";
-import GoogleReviews from "./pages/admin/GoogleReviews";
-import Payouts from "./pages/admin/Payouts";
-import PaymentArchitecture from "./pages/admin/PaymentArchitecture";
-import PartnerVerification from "./pages/admin/PartnerVerification";
-import PlatformHealth from "./pages/admin/PlatformHealth";
-import ActivityLog from "./pages/admin/ActivityLog";
-import TrustyProLeads from "./pages/admin/TrustyProLeads";
-import TrustyProOverview from "./pages/admin/TrustyProOverview";
-import TrustyProScans from "./pages/admin/TrustyProScans";
-import KnowledgeGraph from "./pages/admin/KnowledgeGraph";
-import BusinessPacket from "./pages/admin/BusinessPacket";
-import TrustyProAgentsPage from "./pages/admin/TrustyProAgents";
-import TrustyProOrgChartPage from "./pages/admin/TrustyProOrgChart";
-import TrustyProRevenuePage from "./pages/admin/TrustyProRevenue";
-import MediaAgentsPage from "./pages/admin/MediaAgents";
-import MediaOrgChartPage from "./pages/admin/MediaOrgChart";
-import MediaRevenuePage from "./pages/admin/MediaRevenue";
-import PartnerAnalytics from "./pages/PartnerAnalytics";
-import PerformanceAlerts from "./pages/PerformanceAlerts";
-import AIChatAssistant from "./pages/AIChatAssistant";
-import EarningsTracker from "./pages/EarningsTracker";
-import WhatsNew from "./pages/WhatsNew";
-import PartnerProfileEditor from "./pages/PartnerProfileEditor";
-import AdminSetup from "./pages/AdminSetup";
-import JobHistory from "./pages/JobHistory";
-import PartnerReviews from "./pages/PartnerReviews";
+import TrustyProHome from "./pages/trustypro/TrustyProHome";
+import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
+import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
+import JoinLanding from "./pages/JoinLanding";
+import ReferralLanding from "./pages/ReferralLanding";
+const GetQuotes = lazy(() => import("./pages/GetQuotes"));
+const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
+const HomeHealthVaultLanding = lazy(() => import("./pages/HomeHealthVaultLanding"));
+import CookieConsentBanner from "@/components/CookieConsentBanner";
+import RewardfulScript from "@/components/RewardfulScript";
+
+// Pages -- lazy loaded (all admin, dashboard, homeowner, feature pages)
+const ApiDocs = lazy(() => import("./pages/ApiDocs"));
+const CCPARights = lazy(() => import("@/pages/legal/CCPARights"));
+const CookiePolicy = lazy(() => import("@/pages/legal/CookiePolicy"));
+const Demo = lazy(() => import("@/pages/Demo"));
+const ApplicationStatus = lazy(() => import("./pages/ApplicationStatus"));
+const SetPassword = lazy(() => import("./pages/SetPassword"));
+const AccountDeletion = lazy(() => import("./pages/AccountDeletion"));
+const PartnerCheckout = lazy(() => import("./pages/PartnerCheckout"));
+const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
+const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
+const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
+const InboundLeads = lazy(() => import("./pages/InboundLeads"));
+const LeadMarketplace = lazy(() => import("./pages/LeadMarketplace"));
+const MyReferrals = lazy(() => import("./pages/MyReferrals"));
+const MatchHistory = lazy(() => import("./pages/MatchHistory"));
+const ProLnkApp = lazy(() => import("./pages/ProLnkApp"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const LogJob = lazy(() => import("./pages/LogJob"));
+const JobLog = lazy(() => import("./pages/JobLog"));
+const PartnerDirectory = lazy(() => import("./pages/PartnerDirectory"));
+const PartnerSpotlight = lazy(() => import("./pages/PartnerSpotlight"));
+const AdminCommissionRates = lazy(() => import("./pages/AdminCommissionRates"));
+const AdminOpportunityFeed = lazy(() => import("./pages/AdminOpportunityFeed"));
+const GoogleReviews = lazy(() => import("./pages/admin/GoogleReviews"));
+const Payouts = lazy(() => import("./pages/admin/Payouts"));
+const PaymentArchitecture = lazy(() => import("./pages/admin/PaymentArchitecture"));
+const PartnerVerification = lazy(() => import("./pages/admin/PartnerVerification"));
+const PlatformHealth = lazy(() => import("./pages/admin/PlatformHealth"));
+const ActivityLog = lazy(() => import("./pages/admin/ActivityLog"));
+const TrustyProLeads = lazy(() => import("./pages/admin/TrustyProLeads"));
+const TrustyProOverview = lazy(() => import("./pages/admin/TrustyProOverview"));
+const TrustyProScans = lazy(() => import("./pages/admin/TrustyProScans"));
+const KnowledgeGraph = lazy(() => import("./pages/admin/KnowledgeGraph"));
+const BusinessPacket = lazy(() => import("./pages/admin/BusinessPacket"));
+const TrustyProAgentsPage = lazy(() => import("./pages/admin/TrustyProAgents"));
+const TrustyProOrgChartPage = lazy(() => import("./pages/admin/TrustyProOrgChart"));
+const TrustyProRevenuePage = lazy(() => import("./pages/admin/TrustyProRevenue"));
+const MediaAgentsPage = lazy(() => import("./pages/admin/MediaAgents"));
+const MediaOrgChartPage = lazy(() => import("./pages/admin/MediaOrgChart"));
+const MediaRevenuePage = lazy(() => import("./pages/admin/MediaRevenue"));
+const PartnerAnalytics = lazy(() => import("./pages/PartnerAnalytics"));
+const PerformanceAlerts = lazy(() => import("./pages/PerformanceAlerts"));
+const AIChatAssistant = lazy(() => import("./pages/AIChatAssistant"));
+const AIChat = lazy(() => import("./pages/dashboard/AIChat"));
+const EarningsTracker = lazy(() => import("./pages/EarningsTracker"));
+const WhatsNew = lazy(() => import("./pages/WhatsNew"));
+const PartnerProfileEditor = lazy(() => import("./pages/PartnerProfileEditor"));
+const PartnerVerificationPage = lazy(() => import("./pages/PartnerVerification"));
+const AdminSetup = lazy(() => import("./pages/AdminSetup"));
+const JobHistory = lazy(() => import("./pages/JobHistory"));
+const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));
+const EarningsHistory = lazy(() => import("./pages/EarningsHistory"));
+const EarningsHistoryDashboard = lazy(() => import("./pages/dashboard/EarningsHistory"));
+const EarningsCalendar = lazy(() => import("./pages/dashboard/EarningsCalendar"));
 
 // Wave pages -- Partner Portal
-import CommissionLedger from "./pages/CommissionLedger";
-import Onboarding from "./pages/Onboarding";
-import PhotoUpload from "./pages/PhotoUpload";
-import PhotoGuidelines from "./pages/PhotoGuidelines";
-import NetworkFeed from "./pages/NetworkFeed";
-import TierProgress from "./pages/TierProgress";
-import ReferralLink from "./pages/ReferralLink";
-import ReferralHub from "./pages/dashboard/ReferralHub";
-import PartnerHome from "./pages/dashboard/PartnerHome";
-import ReferralFunnelTracker from "./pages/ReferralFunnelTracker";
-import TierUpgradeFlow from "./pages/TierUpgradeFlow";
-import Notifications from "./pages/Notifications";
-import NotificationPreferences from "./pages/NotificationPreferences";
-import IntegrationSettings from "./pages/IntegrationSettings";
-import PartnerSettings from "./pages/PartnerSettings";
-import FieldApp from "./pages/FieldApp";
-import FieldOS from "./pages/fieldos/FieldOS";
+const CommissionLedger = lazy(() => import("./pages/CommissionLedger"));
+const Onboarding = lazy(() => import("./pages/Onboarding"));
+const PartnerOnboarding = lazy(() => import("./pages/PartnerOnboarding"));
+const PhotoUpload = lazy(() => import("./pages/PhotoUpload"));
+const PhotoGuidelines = lazy(() => import("./pages/PhotoGuidelines"));
+const NetworkFeed = lazy(() => import("./pages/NetworkFeed"));
+const TierProgress = lazy(() => import("./pages/TierProgress"));
+const ReferralLink = lazy(() => import("./pages/ReferralLink"));
+const ReferralHub = lazy(() => import("./pages/dashboard/ReferralHub"));
+const NetworkIncomeSummary = lazy(() => import("./pages/dashboard/NetworkIncomeSummary"));
+const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
+const FoundingNetworkDashboard = lazy(() => import("./pages/dashboard/FoundingNetworkDashboard"));
+const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
+const GoalTracker = lazy(() => import("./pages/dashboard/GoalTracker"));
+const CharterInvites = lazy(() => import("./pages/dashboard/CharterInvites"));
+const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
+const NetworkTree = lazy(() => import("./pages/NetworkTree"));
+const TierUpgradeFlow = lazy(() => import("./pages/TierUpgradeFlow"));
+const Notifications = lazy(() => import("./pages/Notifications"));
+const NotificationPreferences = lazy(() => import("./pages/NotificationPreferences"));
+const IntegrationSettings = lazy(() => import("./pages/IntegrationSettings"));
+const PartnerSettings = lazy(() => import("./pages/PartnerSettings"));
+const FieldApp = lazy(() => import("./pages/FieldApp"));
+const FieldOS = lazy(() => import("./pages/fieldos/FieldOS"));
 
 // Wave pages -- Admin
-import Leaderboard from "./pages/admin/Leaderboard";
-import LeadScoring from "./pages/admin/LeadScoring";
-import HeatMap from "./pages/admin/HeatMap";
-import Analytics from "./pages/admin/Analytics";
-import NetworkAnalytics from "./pages/admin/NetworkAnalytics";
-import OpportunityDetector from "./pages/admin/OpportunityDetector";
-import GrowthEngine from "./pages/admin/GrowthEngine";
+const Leaderboard = lazy(() => import("./pages/admin/Leaderboard"));
+const LeadScoring = lazy(() => import("./pages/admin/LeadScoring"));
+const HeatMap = lazy(() => import("./pages/admin/HeatMap"));
+const Analytics = lazy(() => import("./pages/admin/Analytics"));
+const NetworkAnalytics = lazy(() => import("./pages/admin/NetworkAnalytics"));
+const OpportunityDetector = lazy(() => import("./pages/admin/OpportunityDetector"));
+const GrowthEngine = lazy(() => import("./pages/admin/GrowthEngine"));
 
 // Wave 2 -- Integration & Adoption pages
-import ServiceTitanMarketplace from "./pages/admin/ServiceTitanMarketplace";
-import JobberIntegration from "./pages/admin/JobberIntegration";
-import HousecallProIntegration from "./pages/admin/HousecallProIntegration";
-import FieldAppV2 from "./pages/FieldAppV2";
-import OnboardingWizard from "./pages/OnboardingWizard";
-import AutoApproval from "./pages/admin/AutoApproval";
-import IntegrationHealth from "./pages/admin/IntegrationHealth";
-import PhotoPipeline from "./pages/admin/PhotoPipeline";
-import CompanyCamSync from "./pages/admin/CompanyCamSync";
-import MassAdoption from "./pages/admin/MassAdoption";
-import CompanyCamGuide from "./pages/admin/CompanyCamGuide";
+const ServiceTitanMarketplace = lazy(() => import("./pages/admin/ServiceTitanMarketplace"));
+const JobberIntegration = lazy(() => import("./pages/admin/JobberIntegration"));
+const HousecallProIntegration = lazy(() => import("./pages/admin/HousecallProIntegration"));
+const FieldAppV2 = lazy(() => import("./pages/FieldAppV2"));
+const OnboardingWizard = lazy(() => import("./pages/OnboardingWizard"));
+const AutoApproval = lazy(() => import("./pages/admin/AutoApproval"));
+const IntegrationHealth = lazy(() => import("./pages/admin/IntegrationHealth"));
+const PhotoPipeline = lazy(() => import("./pages/admin/PhotoPipeline"));
+const CompanyCamSync = lazy(() => import("./pages/admin/CompanyCamSync"));
+const MassAdoption = lazy(() => import("./pages/admin/MassAdoption"));
+const CompanyCamGuide = lazy(() => import("./pages/admin/CompanyCamGuide"));
 
 // Brain Trust build -- new pages
-import ReferralPipeline from "@/pages/admin/ReferralPipeline";
-import DataIntelligence from "@/pages/admin/DataIntelligence";
-import CommSequence from "./pages/admin/CommSequence";
-import InfographicShowcase from "./pages/InfographicShowcase";
-import JobCompletion from "./pages/JobCompletion";
+const ReferralPipeline = lazy(() => import("@/pages/admin/ReferralPipeline"));
+const DataIntelligence = lazy(() => import("@/pages/admin/DataIntelligence"));
+const CommSequence = lazy(() => import("./pages/admin/CommSequence"));
+const InfographicShowcase = lazy(() => import("./pages/InfographicShowcase"));
+const JobCompletion = lazy(() => import("./pages/JobCompletion"));
+const JobComplete = lazy(() => import("./pages/JobComplete"));
 
 // New Admin Command Center pages
-import CommandCenter from "./pages/admin/CommandCenter";
-import PortfolioDashboard from "./pages/admin/PortfolioDashboard";
-import StrategicOverview from "./pages/admin/StrategicOverview";
-import HomeIntelligence from "./pages/admin/HomeIntelligence";
-import NetworkMap from "./pages/admin/NetworkMap";
-import PartnerIntelligence from "./pages/admin/PartnerIntelligence";
-import AIOpportunityEngine from "./pages/admin/AIOpportunityEngine";
-import FinancialCenter from "./pages/admin/FinancialCenter";
-import ApplicationPipeline from "./pages/admin/ApplicationPipeline";
-import BroadcastCenter from "./pages/admin/BroadcastCenter";
-import MarketExpansion from "./pages/admin/MarketExpansion";
-import Integrations from "./pages/admin/Integrations";
-import IntegrationHub from "./pages/admin/IntegrationHub";
-import CommsIntegrations from "./pages/admin/CommsIntegrations";
-import BuildiumIntegration from "./pages/admin/BuildiumIntegration";
-import ProServicesAgreement from "./pages/admin/ProServicesAgreement";
-import FsmWebhookLog from "./pages/admin/FsmWebhookLog";
-import WebhookManager from "./pages/admin/WebhookManager";
-import N8nSetupGuide from "./pages/admin/N8nSetupGuide";
-import CommissionDisputes from "./pages/admin/CommissionDisputes";
-import PhotoApprovalQueue from "./pages/admin/PhotoApprovalQueue";
-import CustomerDealPage from "./pages/CustomerDealPage";
-import PartnerProfile from "./pages/PartnerProfile";
-import Exchange from "./pages/Exchange";
-import ExchangeProfile from "./pages/ExchangeProfile";
-import PublicLeaderboard from "./pages/Leaderboard";
-import NetworkStats from "./pages/NetworkStats";
-import DealManagement from "./pages/admin/DealManagement";
-import DealPipelineKanban from "./pages/admin/DealPipelineKanban";
-import DealComposer from "./pages/admin/DealComposer";
-import TrustCenter from "./pages/TrustCenter";
-import ServiceCategories from "./pages/admin/ServiceCategories";
-import MarketingKit from "./pages/MarketingKit";
-import CommsTimeline from "./pages/admin/CommsTimeline";
-import PropertyTimeline from "./pages/admin/PropertyTimeline";
-import PropertyReport from "./pages/admin/PropertyReport";
-import PartnerReport from "./pages/admin/PartnerReport";
-import SmartNotifications from "./pages/admin/SmartNotifications";
-import StrikeManagement from "./pages/admin/StrikeManagement";
-import HomeownerCRM from "./pages/admin/HomeownerCRM";
-import AnalyticsExport from "./pages/admin/AnalyticsExport";
-import ReviewPage from "./pages/ReviewPage";
+const CommandCenter = lazy(() => import("./pages/admin/CommandCenter"));
+const PortfolioDashboard = lazy(() => import("./pages/admin/PortfolioDashboard"));
+const StrategicOverview = lazy(() => import("./pages/admin/StrategicOverview"));
+const HomeIntelligence = lazy(() => import("./pages/admin/HomeIntelligence"));
+const NetworkMap = lazy(() => import("./pages/admin/NetworkMap"));
+const PartnerIntelligence = lazy(() => import("./pages/admin/PartnerIntelligence"));
+const AIOpportunityEngine = lazy(() => import("./pages/admin/AIOpportunityEngine"));
+const FinancialCenter = lazy(() => import("./pages/admin/FinancialCenter"));
+const ApplicationPipeline = lazy(() => import("./pages/admin/ApplicationPipeline"));
+const BroadcastCenter = lazy(() => import("./pages/admin/BroadcastCenter"));
+const MarketExpansion = lazy(() => import("./pages/admin/MarketExpansion"));
+const Integrations = lazy(() => import("./pages/admin/Integrations"));
+const IntegrationHub = lazy(() => import("./pages/admin/IntegrationHub"));
+const CommsIntegrations = lazy(() => import("./pages/admin/CommsIntegrations"));
+const BuildiumIntegration = lazy(() => import("./pages/admin/BuildiumIntegration"));
+const ProServicesAgreement = lazy(() => import("./pages/admin/ProServicesAgreement"));
+const FsmWebhookLog = lazy(() => import("./pages/admin/FsmWebhookLog"));
+const WebhookManager = lazy(() => import("./pages/admin/WebhookManager"));
+const N8nSetupGuide = lazy(() => import("./pages/admin/N8nSetupGuide"));
+const CommissionDisputes = lazy(() => import("./pages/admin/CommissionDisputes"));
+const PhotoApprovalQueue = lazy(() => import("./pages/admin/PhotoApprovalQueue"));
+const CustomerDealPage = lazy(() => import("./pages/CustomerDealPage"));
+const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
+const Exchange = lazy(() => import("./pages/Exchange"));
+const ExchangeLanding = lazy(() => import("./pages/ExchangeLanding"));
+const ExchangeHome = lazy(() => import("./pages/ExchangeHome"));
+const ExchangeJobs = lazy(() => import("./pages/ExchangeJobs"));
+const ExchangeMyBids = lazy(() => import("./pages/ExchangeMyBids"));
+const ExchangePostJob = lazy(() => import("./pages/ExchangePostJob"));
+const ExchangeProfile = lazy(() => import("./pages/ExchangeProfile"));
+const ExchangeContractors = lazy(() => import("./pages/ExchangeContractors"));
+const PublicLeaderboard = lazy(() => import("./pages/Leaderboard"));
+const NetworkStats = lazy(() => import("./pages/NetworkStats"));
+const DealManagement = lazy(() => import("./pages/admin/DealManagement"));
+const DealPipelineKanban = lazy(() => import("./pages/admin/DealPipelineKanban"));
+const DealComposer = lazy(() => import("./pages/admin/DealComposer"));
+const TrustCenter = lazy(() => import("./pages/TrustCenter"));
+const ServiceCategories = lazy(() => import("./pages/admin/ServiceCategories"));
+const MarketingKit = lazy(() => import("./pages/MarketingKit"));
+const CommsTimeline = lazy(() => import("./pages/admin/CommsTimeline"));
+const PropertyTimeline = lazy(() => import("./pages/admin/PropertyTimeline"));
+const PropertyReport = lazy(() => import("./pages/admin/PropertyReport"));
+const PartnerReport = lazy(() => import("./pages/admin/PartnerReport"));
+const SmartNotifications = lazy(() => import("./pages/admin/SmartNotifications"));
+const StrikeManagement = lazy(() => import("./pages/admin/StrikeManagement"));
+const HomeownerCRM = lazy(() => import("./pages/admin/HomeownerCRM"));
+const AnalyticsExport = lazy(() => import("./pages/admin/AnalyticsExport"));
+const ReviewPage = lazy(() => import("./pages/ReviewPage"));
 
 // V6 -- Predictive Engine pages
-import EventEngineDashboard from "./pages/admin/EventEngineDashboard";
-import AIPipelineMonitor from "./pages/admin/AIPipelineMonitor";
-import StormWatch from "./pages/admin/StormWatch";
-import StormDashboard from "./pages/admin/StormDashboard";
-import AgentStatusDashboard from "./pages/admin/AgentStatusDashboard";
-import AgentTracker from "./pages/admin/AgentTracker";
-import Accountability from "./pages/admin/Accountability";
-import CompanyOrgChart from "./pages/admin/CompanyOrgChart";
+const EventEngineDashboard = lazy(() => import("./pages/admin/EventEngineDashboard"));
+const AIPipelineMonitor = lazy(() => import("./pages/admin/AIPipelineMonitor"));
+const StormWatch = lazy(() => import("./pages/admin/StormWatch"));
+const StormDashboard = lazy(() => import("./pages/admin/StormDashboard"));
+const AgentStatusDashboard = lazy(() => import("./pages/admin/AgentStatusDashboard"));
+const AgentTracker = lazy(() => import("./pages/admin/AgentTracker"));
+const Accountability = lazy(() => import("./pages/admin/Accountability"));
+const CompanyOrgChart = lazy(() => import("./pages/admin/CompanyOrgChart"));
+
 // 7 Company-level Executive Dashboards (top-level)
-import ExecutiveDashboard from "./pages/admin/dashboards/ExecutiveDashboard";
-import OperationsDashboard from "./pages/admin/dashboards/OperationsDashboard";
-import SalesDashboard from "./pages/admin/dashboards/SalesDashboard";
-import MarketingDashboard from "./pages/admin/dashboards/MarketingDashboard";
-import SupportDashboard from "./pages/admin/dashboards/SupportDashboard";
-import FinancialDashboard from "./pages/admin/dashboards/FinancialDashboard";
-import AIAgentsDashboard from "./pages/admin/dashboards/AIAgentsDashboard";
+const ExecutiveDashboard = lazy(() => import("./pages/admin/dashboards/ExecutiveDashboard"));
+const OperationsDashboard = lazy(() => import("./pages/admin/dashboards/OperationsDashboard"));
+const SalesDashboard = lazy(() => import("./pages/admin/dashboards/SalesDashboard"));
+const MarketingDashboard = lazy(() => import("./pages/admin/dashboards/MarketingDashboard"));
+const SupportDashboard = lazy(() => import("./pages/admin/dashboards/SupportDashboard"));
+const FinancialDashboard = lazy(() => import("./pages/admin/dashboards/FinancialDashboard"));
+const AIAgentsDashboard = lazy(() => import("./pages/admin/dashboards/AIAgentsDashboard"));
+
 // ProLnk Residential per-company dashboards
-import { ProLnkExecutive, ProLnkOperations, ProLnkSales, ProLnkMarketing, ProLnkSupport, ProLnkFinancial, ProLnkAgents } from "./pages/admin/dashboards/prolnk";
+const ProLnkExecutive = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkExecutive }; });
+const ProLnkOperations = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkOperations }; });
+const ProLnkSales = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkSales }; });
+const ProLnkMarketing = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkMarketing }; });
+const ProLnkSupport = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkSupport }; });
+const ProLnkFinancial = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkFinancial }; });
+const ProLnkAgents = lazy(async () => { const m = await import("./pages/admin/dashboards/prolnk"); return { default: m.ProLnkAgents }; });
 // TrustyPro per-company dashboards
-import { TrustyProExecutive, TrustyProOperations, TrustyProSales, TrustyProMarketing, TrustyProSupport, TrustyProFinancial, TrustyProAgents } from "./pages/admin/dashboards/trustypro";
+const TrustyProExecutive = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProExecutive }; });
+const TrustyProOperations = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProOperations }; });
+const TrustyProSales = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProSales }; });
+const TrustyProMarketing = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProMarketing }; });
+const TrustyProSupport = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProSupport }; });
+const TrustyProFinancial = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProFinancial }; });
+const TrustyProAgents = lazy(async () => { const m = await import("./pages/admin/dashboards/trustypro"); return { default: m.TrustyProAgents }; });
 // ProLnk Media per-company dashboards
-import { MediaExecutive, MediaOperations, MediaSales, MediaMarketing, MediaSupport, MediaFinancial, MediaAgents } from "./pages/admin/dashboards/media";
-import AgentCommandCenter from "./pages/admin/AgentCommandCenter";
-import AssetAging from "./pages/admin/AssetAging";
-import SafetyRecalls from "./pages/admin/SafetyRecalls";
-import DataMarketplace from "./pages/admin/DataMarketplace";
-import PartnerIntegrationHealth from "./pages/admin/PartnerIntegrationHealth";
+const MediaExecutive = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaExecutive }; });
+const MediaOperations = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaOperations }; });
+const MediaSales = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaSales }; });
+const MediaMarketing = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaMarketing }; });
+const MediaSupport = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaSupport }; });
+const MediaFinancial = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaFinancial }; });
+const MediaAgents = lazy(async () => { const m = await import("./pages/admin/dashboards/media"); return { default: m.MediaAgents }; });
+const AgentCommandCenter = lazy(() => import("./pages/admin/AgentCommandCenter"));
+const AssetAging = lazy(() => import("./pages/admin/AssetAging"));
+const SafetyRecalls = lazy(() => import("./pages/admin/SafetyRecalls"));
+const DataMarketplace = lazy(() => import("./pages/admin/DataMarketplace"));
+const PartnerIntegrationHealth = lazy(() => import("./pages/admin/PartnerIntegrationHealth"));
 
 // Overnight Sprint -- new pages
-import CustomerSuccess from "./pages/admin/CustomerSuccess";
-import TaxReports from "./pages/admin/TaxReports";
-import DisputeCenter from "./pages/DisputeCenter";
-import PayoutSetup from "./pages/PayoutSetup";
-import PayoutHistory from "./pages/PayoutHistory";
-import UpgradeSuccess from "./pages/UpgradeSuccess";
-import ComplianceDocs from "./pages/ComplianceDocs";
-import TrainingHub from "./pages/TrainingHub";
-import CommissionCalculator from "./pages/CommissionCalculator";
-import AnalyticsDeepDive from "./pages/admin/AnalyticsDeepDive";
-import HomeownerReferral from "./pages/homeowner/HomeownerReferral";
-import HomeHealthVault from "./pages/homeowner/HomeHealthVault";
-import ScanHistory from "./pages/homeowner/ScanHistory";
-import AdminTaskList from "./pages/admin/AdminTaskList";
+const CustomerSuccess = lazy(() => import("./pages/admin/CustomerSuccess"));
+const TaxReports = lazy(() => import("./pages/admin/TaxReports"));
+const DisputeCenter = lazy(() => import("./pages/DisputeCenter"));
+const PayoutSetup = lazy(() => import("./pages/PayoutSetup"));
+const PayoutHistory = lazy(() => import("./pages/PayoutHistory"));
+const UpgradeSuccess = lazy(() => import("./pages/UpgradeSuccess"));
+const SuccessPage = lazy(() => import("./pages/SuccessPage"));
+const ComplianceDocs = lazy(() => import("./pages/ComplianceDocs"));
+const TrainingHub = lazy(() => import("./pages/TrainingHub"));
+const CommissionCalculator = lazy(() => import("./pages/CommissionCalculator"));
+const AnalyticsDeepDive = lazy(() => import("./pages/admin/AnalyticsDeepDive"));
+const HomeownerReferral = lazy(() => import("./pages/homeowner/HomeownerReferral"));
+const NeighborhoodReferral = lazy(() => import("./pages/NeighborhoodReferral"));
+const HomeHealthVault = lazy(() => import("./pages/homeowner/HomeHealthVault"));
+const ScanHistory = lazy(() => import("./pages/homeowner/ScanHistory"));
+const AdminTaskList = lazy(() => import("./pages/admin/AdminTaskList"));
 
 // Contest page
-import Contest from "./pages/Contest";
+const Contest = lazy(() => import("./pages/Contest"));
 
 // Waitlist landing pages
-import ProWaitlist from "./pages/ProWaitlist";
-import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
-import TrustyProWaitlistStatus from "./pages/TrustyProWaitlistStatus";
-import TrustyProComingSoon from "./pages/TrustyProComingSoon";
-import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
-import WaitlistManager from "./pages/admin/WaitlistManager";
-import WaitlistIntelligence from "./pages/admin/WaitlistIntelligence";
-import ReferralTree from "./pages/admin/ReferralTree";
-import WaitlistProLanding from "./pages/WaitlistProLanding";
-import WaitlistHomeLanding from "./pages/WaitlistHomeLanding";
+const ProWaitlist = lazy(() => import("./pages/ProWaitlist"));
+const TrustyProWaitlistStatus = lazy(() => import("./pages/TrustyProWaitlistStatus"));
+const TrustyProComingSoon = lazy(() => import("./pages/TrustyProComingSoon"));
+const WaitlistManager = lazy(() => import("./pages/admin/WaitlistManager"));
+const CharterTracking = lazy(() => import("./pages/admin/CharterTracking"));
+const WaitlistIntelligence = lazy(() => import("./pages/admin/WaitlistIntelligence"));
+const ReferralTree = lazy(() => import("./pages/admin/ReferralTree"));
+const WaitlistProLanding = lazy(() => import("./pages/WaitlistProLanding"));
+const WaitlistHomeLanding = lazy(() => import("./pages/WaitlistHomeLanding"));
 
-// TrustyPro -- Homeowner Platform
-import TrustyProHome from "./pages/trustypro/TrustyProHome";
-import TrustyProLogin from "./pages/trustypro/TrustyProLogin";
-import TrustyProWaitlist from "./pages/trustypro/TrustyProWaitlist";
-import PhotoScan from "./pages/trustypro/PhotoScan";
-import TrustyProDirectory from "./pages/homeowner/TrustyProDirectory";
-import HomeownerDashboard from "./pages/homeowner/HomeownerDashboard";
-import HomeownerOffers from "./pages/homeowner/HomeownerOffers";
-import HomeownerPhotos from "./pages/homeowner/HomeownerPhotos";
-import HomeownerMessages from "./pages/homeowner/HomeownerMessages";
-import HomeownerInvoices from "./pages/homeowner/HomeownerInvoices";
-import HomeownerPros from "./pages/homeowner/HomeownerPros";
-import HomeownerProperty from "./pages/homeowner/HomeownerProperty";
-import HomeownerSetup from "./pages/homeowner/HomeownerSetup";
-import HomeSetupWizard from "./pages/homeowner/HomeSetupWizard";
-import HomeownerQuickStart from "./pages/homeowner/HomeownerQuickStart";
-import HomeownerReviews from "./pages/homeowner/HomeownerReviews";
-import HomeownerProfile from "./pages/homeowner/HomeownerProfile";
-import HomeownerPrivacy from "./pages/homeowner/HomeownerPrivacy";
-import HomeownerRequestPro from "./pages/homeowner/HomeownerRequestPro";
-import HomeownerFavorites from "./pages/homeowner/HomeownerFavorites";
-import BeforeAfterGenerator from "./pages/homeowner/BeforeAfterGenerator";
-import HomeownerProjects from "./pages/homeowner/HomeownerProjects";
-import HomeownerTimeline from "./pages/homeowner/HomeownerTimeline";
-import NpsSurvey from "./pages/NpsSurvey";
+// TrustyPro -- Homeowner Platform (TrustyProHome kept eager above)
+const ClaimHome = lazy(() => import("./pages/trustypro/ClaimHome"));
+const TrustyProLogin = lazy(() => import("./pages/trustypro/TrustyProLogin"));
+const TrustyProWaitlist = lazy(() => import("./pages/trustypro/TrustyProWaitlist"));
+const PhotoScan = lazy(() => import("./pages/trustypro/PhotoScan"));
+const HomeHealthDashboard = lazy(() => import("./pages/trustypro/HomeHealthDashboard"));
+const HomeownerLogin = lazy(() => import("./pages/trustypro/HomeownerLogin"));
+const TrustyProHomeownerDashboard = lazy(() => import("./pages/trustypro/HomeownerDashboard"));
+const PropertySetup = lazy(() => import("./pages/trustypro/PropertySetup"));
+const TrustyProDirectory = lazy(() => import("./pages/homeowner/TrustyProDirectory"));
+const BookPro = lazy(() => import("./pages/trustypro/BookPro"));
+const HomeownerDashboard = lazy(() => import("./pages/homeowner/HomeownerDashboard"));
+const HomeownerOffers = lazy(() => import("./pages/homeowner/HomeownerOffers"));
+const HomeownerPhotos = lazy(() => import("./pages/homeowner/HomeownerPhotos"));
+const HomeownerMessages = lazy(() => import("./pages/homeowner/HomeownerMessages"));
+const HomeownerInvoices = lazy(() => import("./pages/homeowner/HomeownerInvoices"));
+const HomeownerPros = lazy(() => import("./pages/homeowner/HomeownerPros"));
+const HomeownerProperty = lazy(() => import("./pages/homeowner/HomeownerProperty"));
+const HomeownerSetup = lazy(() => import("./pages/homeowner/HomeownerSetup"));
+const HomeSetupWizard = lazy(() => import("./pages/homeowner/HomeSetupWizard"));
+const HomeownerQuickStart = lazy(() => import("./pages/homeowner/HomeownerQuickStart"));
+const HomeownerReviews = lazy(() => import("./pages/homeowner/HomeownerReviews"));
+const HomeownerProfile = lazy(() => import("./pages/homeowner/HomeownerProfile"));
+const HomeownerPrivacy = lazy(() => import("./pages/homeowner/HomeownerPrivacy"));
+const HomeownerRequestPro = lazy(() => import("./pages/homeowner/HomeownerRequestPro"));
+const HomeownerFavorites = lazy(() => import("./pages/homeowner/HomeownerFavorites"));
+const BeforeAfterGenerator = lazy(() => import("./pages/homeowner/BeforeAfterGenerator"));
+const HomeownerProjects = lazy(() => import("./pages/homeowner/HomeownerProjects"));
+const HomeownerTimeline = lazy(() => import("./pages/homeowner/HomeownerTimeline"));
+const NpsSurvey = lazy(() => import("./pages/NpsSurvey"));
 
-import BusinessPlan from "./pages/admin/BusinessPlan";
-import InvestorDashboard from "./pages/admin/InvestorDashboard";
-import PatentDisclosure from "./pages/admin/PatentDisclosure";
-import CampaignCenter from "./pages/admin/CampaignCenter";
-import MarketingAutomationDashboard from "./pages/admin/MarketingAutomationDashboard";
-import PlatformSettings from "./pages/admin/PlatformSettings";
-import PartnerAgreement from "./pages/PartnerAgreement";
-import TerritoryMarketplace from "./pages/admin/TerritoryMarketplace";
-import B2BDataExchange from "./pages/admin/B2BDataExchange";
-import EnterpriseIntegrations from "./pages/admin/EnterpriseIntegrations";
-import PropertyConditionReports from "./pages/admin/PropertyConditionReports";
-import AIRetraining from "./pages/admin/AIRetraining";
-import RealEstateAgents from "./pages/admin/RealEstateAgents";
-import InsuranceClaims from "./pages/admin/InsuranceClaims";
-import FeaturedAdvertisersAdmin from "./pages/admin/FeaturedAdvertisers";
-import AdvertisingPreview from "./pages/admin/AdvertisingPreview";
-import UnifiedInbox from "./pages/UnifiedInbox";
-import JobSchedule from "./pages/JobSchedule";
-import CommissionRates from "./pages/CommissionRates";
-import CommissionStrategy from "./pages/admin/CommissionStrategy";
-import TrustedProAlgorithm from "./pages/admin/TrustedProAlgorithm";
-import Pricing from "./pages/Pricing";
-import PhotoQueue from "./pages/admin/PhotoQueue";
-import BundleOffers from "./pages/admin/BundleOffers";
-import ApiCreditsGuide from "./pages/admin/ApiCreditsGuide";
-import PaymentFlowDiagrams from "./pages/admin/PaymentFlowDiagrams";
+const BusinessPlan = lazy(() => import("./pages/admin/BusinessPlan"));
+const InvestorDashboard = lazy(() => import("./pages/admin/InvestorDashboard"));
+const PatentDisclosure = lazy(() => import("./pages/admin/PatentDisclosure"));
+const CampaignCenter = lazy(() => import("./pages/admin/CampaignCenter"));
+const MarketingAutomationDashboard = lazy(() => import("./pages/admin/MarketingAutomationDashboard"));
+const PlatformSettings = lazy(() => import("./pages/admin/PlatformSettings"));
+const PartnerAgreement = lazy(() => import("./pages/PartnerAgreement"));
+const TerritoryMarketplace = lazy(() => import("./pages/admin/TerritoryMarketplace"));
+const B2BDataExchange = lazy(() => import("./pages/admin/B2BDataExchange"));
+const EnterpriseIntegrations = lazy(() => import("./pages/admin/EnterpriseIntegrations"));
+const PropertyConditionReports = lazy(() => import("./pages/admin/PropertyConditionReports"));
+const AIRetraining = lazy(() => import("./pages/admin/AIRetraining"));
+const RealEstateAgents = lazy(() => import("./pages/admin/RealEstateAgents"));
+const InsuranceClaims = lazy(() => import("./pages/admin/InsuranceClaims"));
+const FeaturedAdvertisersAdmin = lazy(() => import("./pages/admin/FeaturedAdvertisers"));
+const AdvertisingPreview = lazy(() => import("./pages/admin/AdvertisingPreview"));
+const UnifiedInbox = lazy(() => import("./pages/UnifiedInbox"));
+const JobSchedule = lazy(() => import("./pages/JobSchedule"));
+const JobScheduler = lazy(() => import("./pages/JobScheduler"));
+const CommissionRates = lazy(() => import("./pages/CommissionRates"));
+const CommissionStrategy = lazy(() => import("./pages/admin/CommissionStrategy"));
+const TrustedProAlgorithm = lazy(() => import("./pages/admin/TrustedProAlgorithm"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const PostFoundingPricing = lazy(() => import("./pages/PostFoundingPricing"));
+const PhotoQueue = lazy(() => import("./pages/admin/PhotoQueue"));
+const BundleOffers = lazy(() => import("./pages/admin/BundleOffers"));
+const ApiCreditsGuide = lazy(() => import("./pages/admin/ApiCreditsGuide"));
+const PaymentFlowDiagrams = lazy(() => import("./pages/admin/PaymentFlowDiagrams"));
 
 // V12 + 20-feature build
-import ProjectGallery from "./pages/trustypro/ProjectGallery";
-import ProLnkExchangeCommercial from "./pages/ProLnkExchangeCommercial";
-import AchAuthorizationPage from "./pages/AchAuthorizationPage";
-import MilestoneTracker from "./pages/homeowner/MilestoneTracker";
-import GrowthCalculator from "./pages/GrowthCalculator";
-import CommunityForum from "./pages/CommunityForum";
-import TrueCostGuide from "./pages/homeowner/TrueCostGuide";
-import MaintenanceSchedule from "./pages/homeowner/MaintenanceSchedule";
-import SavingsTracker from "./pages/homeowner/SavingsTracker";
-import HomeValueImpact from "./pages/homeowner/HomeValueImpact";
-import PartnerLeaderboard from "./pages/PartnerLeaderboard";
-import PartnerHealthDashboard from "./pages/admin/PartnerHealthDashboard";
-import GeoExpansionMap from "./pages/admin/GeoExpansionMap";
-import RevenueForecast from "./pages/admin/RevenueForecast";
-import LeadQualityCenter from "./pages/admin/LeadQualityCenter";
-import HomeAssistant from "./pages/homeowner/HomeAssistant";
-import HomeDiagnostic from "./pages/homeowner/HomeDiagnostic";
-import SkillsMarketplace from "./pages/SkillsMarketplace";
-import TrainingAcademy from "./pages/TrainingAcademy";
-import JobMatchingPreferences from "./pages/JobMatchingPreferences";
-import ReviewManagement from "./pages/ReviewManagement";
-import QuoteGenerator from "./pages/QuoteGenerator";
-import PerformanceReport from "./pages/PerformanceReport";
-import AvailabilityCalendar from "./pages/AvailabilityCalendar";
-import UpsellPlaybook from "./pages/UpsellPlaybook";
-import ProposalBuilder from "./pages/ProposalBuilder";
-import NetworkingEvents from "./pages/NetworkingEvents";
-import TaxEstimator from "./pages/TaxEstimator";
-import ContractorComparison from "./pages/homeowner/ContractorComparison";
-import SeasonalPrepGuide from "./pages/homeowner/SeasonalPrepGuide";
-import NotificationSettings from "./pages/homeowner/NotificationSettings";
-import DocumentVault from "./pages/homeowner/DocumentVault";
-import ReferralProgram from "./pages/homeowner/ReferralProgram";
-import EmergencyServices from "./pages/homeowner/EmergencyServices";
-import NeighborhoodDeals from "./pages/homeowner/NeighborhoodDeals";
-import PropertyComparison from "./pages/homeowner/PropertyComparison";
-import JobTimeline from "./pages/homeowner/JobTimeline";
-import ChurnPrediction from "./pages/admin/ChurnPrediction";
-import TierUpgradeCenter from "./pages/admin/TierUpgradeCenter";
-import ContentManagement from "./pages/admin/ContentManagement";
-import AdminPartnerContent from "./pages/admin/AdminPartnerContent";
-import OnboardingFunnel from "./pages/admin/OnboardingFunnel";
-import ABTestManager from "./pages/admin/ABTestManager";
-import NPSSurveyManager from "./pages/admin/NPSSurveyManager";
-import CoverageZones from "./pages/admin/FranchiseTerritories";
-import AdminPayoutHistory from "./pages/admin/PayoutHistory";
-import SeasonalCampaigns from "./pages/admin/SeasonalCampaigns";
-import PaymentMonitor from "./pages/admin/PaymentMonitor";
-import AdminCoverageMap from "./pages/admin/AdminCoverageMap";
-import PlatformIntelligence from "@/pages/admin/PlatformIntelligence";
-import CompetitorIntelligence from "@/pages/admin/CompetitorIntelligence";
-import TaskManager from "@/pages/admin/TaskManager";
-import OnboardingChecklist from "@/pages/OnboardingChecklist";
-import ServiceAreaManager from "@/pages/ServiceAreaManager";
-import QuickQuoteRequest from "@/pages/homeowner/QuickQuoteRequest";
-import RoomMakeover from "@/pages/homeowner/RoomMakeover";
-import PartnerQuoteInbox from "@/pages/PartnerQuoteInbox";
-import Partner360Profile from "@/pages/Partner360Profile";
-import Homeowner360Profile from "@/pages/homeowner/Homeowner360Profile";
-import Admin360Members from "@/pages/admin/Admin360Members";
-import AgentPortal from "@/pages/AgentPortal";
-import ResourceCenter from "@/pages/ResourceCenter";
-import BillingPortal from "@/pages/BillingPortal";
-import PartnerCheckout from "@/pages/PartnerCheckout";
-import ProLnkMedia from "@/pages/ProLnkMedia";
+const ProjectGallery = lazy(() => import("./pages/trustypro/ProjectGallery"));
+const TrustyProPartnerDashboard = lazy(() => import("./pages/trustypro/TrustyProPartnerDashboard"));
+const TrustyProApp = lazy(() => import("./pages/trustypro/TrustyProApp"));
+const ProLnkExchangeCommercial = lazy(() => import("./pages/ProLnkExchangeCommercial"));
+const AchAuthorizationPage = lazy(() => import("./pages/AchAuthorizationPage"));
+const MilestoneTracker = lazy(() => import("./pages/homeowner/MilestoneTracker"));
+const GrowthCalculator = lazy(() => import("./pages/GrowthCalculator"));
+const CommunityForum = lazy(() => import("./pages/CommunityForum"));
+const TrueCostGuide = lazy(() => import("./pages/homeowner/TrueCostGuide"));
+const MaintenanceSchedule = lazy(() => import("./pages/homeowner/MaintenanceSchedule"));
+const SavingsTracker = lazy(() => import("./pages/homeowner/SavingsTracker"));
+const HomeValueImpact = lazy(() => import("./pages/homeowner/HomeValueImpact"));
+const PartnerLeaderboard = lazy(() => import("./pages/PartnerLeaderboard"));
+const PartnerHealthDashboard = lazy(() => import("./pages/admin/PartnerHealthDashboard"));
+const GeoExpansionMap = lazy(() => import("./pages/admin/GeoExpansionMap"));
+const RevenueForecast = lazy(() => import("./pages/admin/RevenueForecast"));
+const RevenueForecaster = lazy(() => import("./pages/admin/RevenueForecaster"));
+const NetworkGrowthDashboard = lazy(() => import("./pages/admin/NetworkGrowthDashboard"));
+const LeadQualityCenter = lazy(() => import("./pages/admin/LeadQualityCenter"));
+const HomeAssistant = lazy(() => import("./pages/homeowner/HomeAssistant"));
+const HomeDiagnostic = lazy(() => import("./pages/homeowner/HomeDiagnostic"));
+const SkillsMarketplace = lazy(() => import("./pages/SkillsMarketplace"));
+const TrainingAcademy = lazy(() => import("./pages/TrainingAcademy"));
+const JobMatchingPreferences = lazy(() => import("./pages/JobMatchingPreferences"));
+const ReviewManagement = lazy(() => import("./pages/ReviewManagement"));
+const QuoteGenerator = lazy(() => import("./pages/QuoteGenerator"));
+const PerformanceReport = lazy(() => import("./pages/PerformanceReport"));
+const AvailabilityCalendar = lazy(() => import("./pages/AvailabilityCalendar"));
+const UpsellPlaybook = lazy(() => import("./pages/UpsellPlaybook"));
+const ProposalBuilder = lazy(() => import("./pages/ProposalBuilder"));
+const NetworkingEvents = lazy(() => import("./pages/NetworkingEvents"));
+const TaxEstimator = lazy(() => import("./pages/TaxEstimator"));
+const TaxCenter = lazy(() => import("./pages/dashboard/TaxCenter"));
+const ContractorComparison = lazy(() => import("./pages/homeowner/ContractorComparison"));
+const SeasonalPrepGuide = lazy(() => import("./pages/homeowner/SeasonalPrepGuide"));
+const NotificationSettings = lazy(() => import("./pages/homeowner/NotificationSettings"));
+const DocumentVault = lazy(() => import("./pages/homeowner/DocumentVault"));
+const ReferralProgram = lazy(() => import("./pages/homeowner/ReferralProgram"));
+const EmergencyServices = lazy(() => import("./pages/homeowner/EmergencyServices"));
+const NeighborhoodDeals = lazy(() => import("./pages/homeowner/NeighborhoodDeals"));
+const PropertyComparison = lazy(() => import("./pages/homeowner/PropertyComparison"));
+const JobTimeline = lazy(() => import("./pages/homeowner/JobTimeline"));
+const ChurnPrediction = lazy(() => import("./pages/admin/ChurnPrediction"));
+const TierUpgradeCenter = lazy(() => import("./pages/admin/TierUpgradeCenter"));
+const ContentManagement = lazy(() => import("./pages/admin/ContentManagement"));
+const AdminPartnerContent = lazy(() => import("./pages/admin/AdminPartnerContent"));
+const OnboardingFunnel = lazy(() => import("./pages/admin/OnboardingFunnel"));
+const ABTestManager = lazy(() => import("./pages/admin/ABTestManager"));
+const NPSSurveyManager = lazy(() => import("./pages/admin/NPSSurveyManager"));
+const CoverageZones = lazy(() => import("./pages/admin/FranchiseTerritories"));
+const AdminPayoutHistory = lazy(() => import("./pages/admin/PayoutHistory"));
+const SeasonalCampaigns = lazy(() => import("./pages/admin/SeasonalCampaigns"));
+const PaymentMonitor = lazy(() => import("./pages/admin/PaymentMonitor"));
+const AdminCoverageMap = lazy(() => import("./pages/admin/AdminCoverageMap"));
+const PlatformIntelligence = lazy(() => import("@/pages/admin/PlatformIntelligence"));
+const CompetitorIntelligence = lazy(() => import("@/pages/admin/CompetitorIntelligence"));
+const TaskManager = lazy(() => import("@/pages/admin/TaskManager"));
+const OnboardingChecklist = lazy(() => import("@/pages/OnboardingChecklist"));
+const DashboardOnboardingChecklist = lazy(() => import("@/pages/dashboard/OnboardingChecklist"));
+const FeatureDiscovery = lazy(() => import("@/pages/dashboard/FeatureDiscovery"));
+const SocialShare = lazy(() => import("@/pages/dashboard/SocialShare"));
+const ServiceAreaManager = lazy(() => import("@/pages/ServiceAreaManager"));
+const QuickQuoteRequest = lazy(() => import("@/pages/homeowner/QuickQuoteRequest"));
+const RoomMakeover = lazy(() => import("@/pages/homeowner/RoomMakeover"));
+const PartnerQuoteInbox = lazy(() => import("@/pages/PartnerQuoteInbox"));
+const Partner360Profile = lazy(() => import("@/pages/Partner360Profile"));
+const Homeowner360Profile = lazy(() => import("@/pages/homeowner/Homeowner360Profile"));
+const Admin360Members = lazy(() => import("@/pages/admin/Admin360Members"));
+const AgentPortal = lazy(() => import("@/pages/AgentPortal"));
+const ResourceCenter = lazy(() => import("@/pages/ResourceCenter"));
+const BillingPortal = lazy(() => import("@/pages/BillingPortal"));
+const ProLnkMedia = lazy(() => import("@/pages/ProLnkMedia"));
 const ProLnkMediaSite = lazy(() => import("@/pages/media/ProLnkMediaSite"));
 const MediaSiteLazy = () => <Suspense fallback={<div style={{background:"#050508",minHeight:"100vh"}} />}><ProLnkMediaSite /></Suspense>;
-import CookieConsentBanner from "@/components/CookieConsentBanner";
-import SecurityTrustCenter from "@/pages/SecurityTrustCenter";
-import PhotoAccessLog from "@/pages/admin/PhotoAccessLog";
-import PartnerCheckIns from "./pages/admin/PartnerCheckIns";
-import PartnerSpotlightsAdmin from "./pages/admin/PartnerSpotlights";
-import NotificationCenterAdmin from "./pages/admin/NotificationCenter";
-import AutomationRulesEngine from "./pages/admin/AutomationRulesEngine";
-import MediaLibraryAdmin from "./pages/admin/MediaLibraryAdmin";
-import SeasonalMaintenanceAdmin from "./pages/admin/SeasonalMaintenanceAdmin";
-import IntegrationWebhookDashboard from "./pages/admin/IntegrationWebhookDashboard";
+const SecurityTrustCenter = lazy(() => import("@/pages/SecurityTrustCenter"));
+const PhotoAccessLog = lazy(() => import("@/pages/admin/PhotoAccessLog"));
+const PartnerCheckIns = lazy(() => import("./pages/admin/PartnerCheckIns"));
+const PartnerSpotlightsAdmin = lazy(() => import("./pages/admin/PartnerSpotlights"));
+const NotificationCenterAdmin = lazy(() => import("./pages/admin/NotificationCenter"));
+const AutomationRulesEngine = lazy(() => import("./pages/admin/AutomationRulesEngine"));
+const MediaLibraryAdmin = lazy(() => import("./pages/admin/MediaLibraryAdmin"));
+const SeasonalMaintenanceAdmin = lazy(() => import("./pages/admin/SeasonalMaintenanceAdmin"));
+const IntegrationWebhookDashboard = lazy(() => import("./pages/admin/IntegrationWebhookDashboard"));
+
+// Trade SEO landing pages
+const TradeLanding = lazy(() => import("./pages/TradeLanding"));
+const TradeLandingList = lazy(() => import("./pages/TradeLandingList"));
+
+// City SEO landing pages
+const CityLanding = lazy(() => import("./pages/CityLanding"));
+const CityLandingList = lazy(() => import("./pages/CityLandingList"));
+
+// Investor & Press
+const InvestorPage = lazy(() => import("./pages/InvestorPage"));
+const PressKit = lazy(() => import("./pages/PressKit"));
 
 // Wave 14: Content & Marketing
-import Blog from "./pages/Blog";
-import HowAIWorks from "./pages/HowAIWorks";
-import ForRealEstateAgents from "./pages/ForRealEstateAgents";
-import ForInsuranceAgents from "./pages/ForInsuranceAgents";
-import ForPropertyManagers from "./pages/ForPropertyManagers";
+const Blog = lazy(() => import("./pages/Blog"));
+const HowAIWorks = lazy(() => import("./pages/HowAIWorks"));
+const ForRealEstateAgents = lazy(() => import("./pages/ForRealEstateAgents"));
+const ForInsuranceAgents = lazy(() => import("./pages/ForInsuranceAgents"));
+const ForPropertyManagers = lazy(() => import("./pages/ForPropertyManagers"));
+const StormAlert = lazy(() => import("./pages/StormAlert"));
 
 // Wave 33: Multi-Property
-import LandlordView from "./pages/homeowner/LandlordView";
-import PropertyPortfolio from "./pages/homeowner/PropertyPortfolio";
+const LandlordView = lazy(() => import("./pages/homeowner/LandlordView"));
+const PropertyPortfolio = lazy(() => import("./pages/homeowner/PropertyPortfolio"));
 
 // Wave 34: Insurance
-import InsuranceCarrierDB from "./pages/admin/InsuranceCarrierDB";
-import InsuranceClaimAssistant from "./pages/homeowner/InsuranceClaimAssistant";
-import InsuranceCoverageChecker from "./pages/homeowner/InsuranceCoverageChecker";
+const InsuranceCarrierDB = lazy(() => import("./pages/admin/InsuranceCarrierDB"));
+const InsuranceClaimAssistant = lazy(() => import("./pages/homeowner/InsuranceClaimAssistant"));
+const InsuranceCoverageChecker = lazy(() => import("./pages/homeowner/InsuranceCoverageChecker"));
 
 // Wave 35: Agent Portal
-import AgentSignup from "./pages/AgentSignup";
-import PartnerSignup from "./pages/PartnerSignup";
-import AgentDashboard from "./pages/AgentDashboard";
-import PreListingScan from "./pages/PreListingScan";
+const AgentSignup = lazy(() => import("./pages/AgentSignup"));
+const PartnerSignup = lazy(() => import("./pages/PartnerSignup"));
+const AgentDashboard = lazy(() => import("./pages/AgentDashboard"));
+const PreListingScan = lazy(() => import("./pages/PreListingScan"));
 
 // Wave 36: Warranty
-import WarrantyTracker from "./pages/homeowner/WarrantyTracker";
+const WarrantyTracker = lazy(() => import("./pages/homeowner/WarrantyTracker"));
 
 // Wave 38: Partner Training
-import PartnerResourceCenter from "./pages/PartnerResourceCenter";
-import PhotoGuide from "./pages/PhotoGuide";
-import MaximizeEarnings from "./pages/MaximizeEarnings";
-import PartnerFAQ from "./pages/PartnerFAQ";
-import PartnerSuccessStories from "./pages/PartnerSuccessStories";
+const PartnerResourceCenter = lazy(() => import("./pages/PartnerResourceCenter"));
+const PhotoGuide = lazy(() => import("./pages/PhotoGuide"));
+const MaximizeEarnings = lazy(() => import("./pages/MaximizeEarnings"));
+const PartnerFAQ = lazy(() => import("./pages/PartnerFAQ"));
+const PartnerSuccessStories = lazy(() => import("./pages/PartnerSuccessStories"));
+const ProLnkAcademy = lazy(() => import("./pages/resources/ProLnkAcademy"));
+const SuccessStoriesPage = lazy(() => import("./pages/resources/SuccessStoriesPage"));
 
 // Wave 40: Data Visualization
-import DashboardBuilder from "./pages/admin/DashboardBuilder";
-import ReportGenerator from "./pages/admin/ReportGenerator";
-import ScheduledReports from "./pages/admin/ScheduledReports";
-import KPITracker from "./pages/admin/KPITracker";
+const DashboardBuilder = lazy(() => import("./pages/admin/DashboardBuilder"));
+const ReportGenerator = lazy(() => import("./pages/admin/ReportGenerator"));
+const ScheduledReports = lazy(() => import("./pages/admin/ScheduledReports"));
+const KPITracker = lazy(() => import("./pages/admin/KPITracker"));
 
 // Wave 16-30 Pages
-import CheckInSystem from "./pages/homeowner/CheckInSystem";
-import LeadInbox from "./pages/LeadInbox";
-import LeadDetail from "./pages/LeadDetail";
-import JobDocumentation from "./pages/JobDocumentation";
-import MonthlyRevenueReport from "./pages/admin/MonthlyRevenueReport";
-import TradeRevenueBreakdown from "./pages/admin/TradeRevenueBreakdown";
-import AskAPro from "./pages/homeowner/AskAPro";
-import BulkOperations from "./pages/admin/BulkOperations";
-import ConversionFunnel from "./pages/admin/ConversionFunnel";
-import TierBenefits from "./pages/TierBenefits";
-import WaitlistStatus from "./pages/WaitlistStatus";
-import ContentLibrary from "./pages/ContentLibrary";
-import ApiKeyManagement from "./pages/admin/ApiKeyManagement";
+const CheckInSystem = lazy(() => import("./pages/homeowner/CheckInSystem"));
+const LeadInbox = lazy(() => import("./pages/LeadInbox"));
+const LeadDetail = lazy(() => import("./pages/LeadDetail"));
+const JobDocumentation = lazy(() => import("./pages/JobDocumentation"));
+const HomeDocumentation = lazy(() => import("./pages/HomeDocumentation"));
+const MonthlyRevenueReport = lazy(() => import("./pages/admin/MonthlyRevenueReport"));
+const TradeRevenueBreakdown = lazy(() => import("./pages/admin/TradeRevenueBreakdown"));
+const AskAPro = lazy(() => import("./pages/homeowner/AskAPro"));
+const BulkOperations = lazy(() => import("./pages/admin/BulkOperations"));
+const ConversionFunnel = lazy(() => import("./pages/admin/ConversionFunnel"));
+const TierBenefits = lazy(() => import("./pages/TierBenefits"));
+const WaitlistStatus = lazy(() => import("./pages/WaitlistStatus"));
+const ContentLibrary = lazy(() => import("./pages/ContentLibrary"));
+const ApiKeyManagement = lazy(() => import("./pages/admin/ApiKeyManagement"));
+
+const FoundingPartnerPage = lazy(() => import("./pages/FoundingPartnerPage"));
+const PartnerBilling = lazy(() => import("./pages/PartnerBilling"));
+const MarketIntelligence = lazy(() => import("./pages/dashboard/MarketIntelligence"));
+const CompetitiveAdvantage = lazy(() => import("./pages/resources/CompetitiveAdvantage"));
 
 // Wave 31-45 Pages
-import MobileOptimization from "./pages/admin/MobileOptimization";
-import AccessibilitySettings from "./pages/admin/AccessibilitySettings";
-import ErrorMonitoring from "./pages/admin/ErrorMonitoring";
-import PerformanceMonitoring from "./pages/admin/PerformanceMonitoring";
-import Documentation from "./pages/Documentation";
+const MobileOptimization = lazy(() => import("./pages/admin/MobileOptimization"));
+const AccessibilitySettings = lazy(() => import("./pages/admin/AccessibilitySettings"));
+const ErrorMonitoring = lazy(() => import("./pages/admin/ErrorMonitoring"));
+const PerformanceMonitoring = lazy(() => import("./pages/admin/PerformanceMonitoring"));
+const Documentation = lazy(() => import("./pages/Documentation"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const HowItWorks = lazy(() => import("./pages/HowItWorks"));
+const HelpCenter = lazy(() => import("./pages/HelpCenter"));
+const APIGuide = lazy(() => import("./pages/APIGuide"));
 
-// Domain-based routing: trustypro.io → /trustypro
+// Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
   useEffect(() => {
@@ -414,12 +510,19 @@ function DomainRouter() {
       hostname === "www.trustypro.io" ||
       hostname.endsWith(".trustypro.io");
     if (isTrustyPro) {
-      // Allow /waitlist/* paths to work directly on trustypro.io (homeowner waitlist)
+      // trustypro.io/waitlist → homeowner waitlist
+      if (location === "/waitlist" || location === "/waitlist/") {
+        navigate("/trustypro/waitlist", { replace: true });
+        return;
+      }
+      // Allow /waitlist/* paths through
       if (location.startsWith("/waitlist")) return;
       // Allow /trustypro/* paths through
       if (location.startsWith("/trustypro")) return;
-      // Redirect root and all other paths to /trustypro
-      navigate("/trustypro", { replace: true });
+      // trustypro.io root → stay at / (TrustyProHome renders via Router below)
+      if (location === "/" || location === "") return;
+      // Any unmatched trustypro.io path → redirect to root
+      navigate("/", { replace: true });
     }
   }, [location, navigate]);
   return null;
@@ -475,12 +578,21 @@ function AdminLoginForm() {
 }
 
 
+const LazyFallback = () => (
+  <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-teal-400 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
 function Router() {
   return (
+    <Suspense fallback={<LazyFallback />}>
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
-        <SmoothScrollProvider><Home /></SmoothScrollProvider>
+        <SmoothScrollProvider>
+          {(window as any).__BRAND__ === "trustypro" ? <TrustyProHome /> : <Home />}
+        </SmoothScrollProvider>
       </Route>
       <Route path="/demo" component={Demo} />
       <Route path="/apply" component={Apply} />
@@ -488,8 +600,15 @@ function Router() {
       <Route path="/set-password" component={SetPassword} />
       <Route path="/pro-waitlist" component={ProWaitlist} />
       <Route path="/checkout" component={PartnerCheckout} />
+      <Route path="/checkout/success" component={CheckoutSuccess} />
+      <Route path="/checkout/cancel" component={CheckoutCancel} />
       <Route path="/home-waitlist" component={HomeownerWaitlistForm} />
-      <Route path="/join" component={HomeownerWaitlistForm} />
+      <Route path="/get-quotes" component={GetQuotes} />
+      <Route path="/quotes/compare" component={QuoteComparison} />
+      <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
+      <Route path="/join" component={JoinLanding} />
+      <Route path="/pro/join" component={JoinLanding} />
+      <Route path="/referral" component={ReferralLanding} />
       <Route path="/waitlist/pro" component={ProWaitlist} />
       <Route path="/waitlist/homeowner" component={TrustyProWaitlistPage} />
       <Route path="/waitlist/homeowner/status" component={TrustyProWaitlistStatus} />
@@ -502,17 +621,22 @@ function Router() {
       <Route path="/login" component={LoginRedirect} />
       <Route path="/partner-login" component={PartnerLogin} />
       <Route path="/partner-forgot-password" component={PartnerForgotPassword} />
-      <Route path="/checkout" component={PartnerCheckout} />
 
       {/* Partner */}
       <Route path="/dashboard" component={PartnerDashboard} />
       <Route path="/dashboard/leads" component={InboundLeads} />
+      <Route path="/leads/marketplace" component={LeadMarketplace} />
       <Route path="/dashboard/referrals" component={MyReferrals} />
+      <Route path="/match-history" component={MatchHistory} />
       <Route path="/job/new" component={LogJob} />
+      <Route path="/job-log" component={JobLog} />
+      <Route path="/job-complete" component={JobComplete} />
       <Route path="/jobs" component={JobHistory} />
       <Route path="/dashboard/reviews" component={PartnerReviews} />
       <Route path="/dashboard/commissions" component={CommissionLedger} />
+      <Route path="/commission-ledger" component={CommissionLedger} />
       <Route path="/onboarding" component={Onboarding} />
+      <Route path="/partner-onboarding" component={PartnerOnboarding} />
       <Route path="/job/photo" component={PhotoUpload} />
       <Route path="/photo-upload" component={PhotoUpload} />
       <Route path="/dashboard/photo-guidelines" component={PhotoGuidelines} />
@@ -520,23 +644,36 @@ function Router() {
       <Route path="/dashboard/tier" component={TierProgress} />
       <Route path="/dashboard/analytics" component={PartnerAnalytics} />
       <Route path="/dashboard/alerts" component={PerformanceAlerts} />
-      <Route path="/dashboard/ai" component={AIChatAssistant} />
+      <Route path="/dashboard/ai" component={AIChat} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
+      <Route path="/dashboard/earnings-history" component={EarningsHistoryDashboard} />
+      <Route path="/dashboard/earnings-calendar" component={EarningsCalendar} />
+      <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
+      <Route path="/dashboard/market" component={MarketIntelligence} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
+      <Route path="/partner-verification" component={PartnerVerificationPage} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
+      <Route path="/dashboard/founding" component={FoundingNetworkDashboard} />
       <Route path="/dashboard/growth/referral-hub" component={ReferralHub} />
       <Route path="/dashboard/referral-hub" component={ReferralHub} />
+      <Route path="/dashboard/network-income" component={NetworkIncomeSummary} />
+      <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
+      <Route path="/dashboard/goals" component={GoalTracker} />
+      <Route path="/dashboard/charter-invites" component={CharterInvites} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
+      <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
       <Route path="/dashboard/upgrade" component={TierUpgradeFlow} />
       <Route path="/dashboard/notifications" component={Notifications} />
       <Route path="/dashboard/notification-preferences" component={NotificationPreferences} />
       <Route path="/dashboard/integrations" component={IntegrationSettings} />
       <Route path="/dashboard/settings" component={PartnerSettings} />
+      <Route path="/account/delete" component={AccountDeletion} />
       <Route path="/dashboard/inbox" component={UnifiedInbox} />
       <Route path="/dashboard/schedule" component={JobSchedule} />
+      <Route path="/jobs/schedule" component={JobScheduler} />
       <Route path="/dashboard/commission-rates" component={CommissionRates} />
       <Route path="/dashboard/exchange" component={Exchange} />
       <Route path="/dashboard/exchange/profile/:id" component={ExchangeProfile} />
@@ -585,6 +722,7 @@ function Router() {
       <Route path="/trust" component={TrustCenter} />
       <Route path="/admin/categories" component={ServiceCategories} />
       <Route path="/dashboard/marketing-kit" component={MarketingKit} />
+      <Route path="/dashboard/social" component={SocialShare} />
       <Route path="/admin/comms" component={CommsTimeline} />
       <Route path="/admin/properties" component={PropertyTimeline} />
       <Route path="/admin/properties/:address/report" component={PropertyReport} />
@@ -686,17 +824,25 @@ function Router() {
       <Route path="/deal/:token" component={CustomerDealPage} />
       <Route path="/partner/:id" component={PartnerProfile} />
       <Route path="/stats" component={NetworkStats} />
+      <Route path="/network-stats" component={NetworkStats} />
 
       {/* TrustyPro -- Homeowner Platform */}
       <Route path="/trustypro">
         <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>
       </Route>
+      <Route path="/trustypro/app" component={TrustyProApp} />
+      <Route path="/trustypro/claim" component={ClaimHome} />
       <Route path="/trustypro/login" component={TrustyProLogin} />
+      <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
+      <Route path="/trustypro/dashboard" component={TrustyProHomeownerDashboard} />
       <Route path="/trustypro/waitlist" component={TrustyProWaitlist} />
       <Route path="/pro/waitlist" component={TrustyProWaitlistPage} />
       {/* WAITLIST PHASE: /trustypro/scan and all /my-home/* routes are gated until launch */}
+      <Route path="/trustypro/property-setup" component={PropertySetup} />
       <Route path="/trustypro/scan" component={PhotoScan} />
+      <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
+      <Route path="/trustypro/book" component={BookPro} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />
@@ -722,7 +868,8 @@ function Router() {
       <Route path="/review/:token" component={ReviewPage} />
       <Route path="/onboarding/wizard" component={OnboardingWizard} />
       <Route path="/onboarding/checklist" component={OnboardingChecklist} />
-      <Route path="/dashboard/onboarding" component={OnboardingChecklist} />
+      <Route path="/dashboard/onboarding" component={DashboardOnboardingChecklist} />
+      <Route path="/dashboard/features" component={FeatureDiscovery} />
       <Route path="/dashboard/disputes" component={DisputeCenter} />
       <Route path="/dashboard/payout-setup" component={PayoutSetup} />
       <Route path="/dashboard/payout-history" component={PayoutHistory} />
@@ -730,6 +877,7 @@ function Router() {
       <Route path="/dashboard/calculator" component={CommissionCalculator} />
       <Route path="/dashboard/compliance" component={ComplianceDocs} />
       <Route path="/upgrade/success" component={UpgradeSuccess} />
+      <Route path="/success" component={SuccessPage} />
       <Route path="/admin/analytics-deep-dive" component={AnalyticsDeepDive} />
       <Route path="/admin/tasks" component={AdminTaskList} />
       <Route path="/admin/business-plan" component={BusinessPlan} />
@@ -740,6 +888,7 @@ function Router() {
       <Route path="/partner-agreement" component={PartnerAgreement} />
       <Route path="/admin/compliance" component={StrikeManagement} />
       <Route path="/admin/waitlist" component={WaitlistManager} />
+      <Route path="/admin/charter-tracking" component={CharterTracking} />
       <Route path="/admin/waitlist-intelligence" component={WaitlistIntelligence} />
       <Route path="/admin/referral-tree" component={ReferralTree} />
       <Route path="/admin/homeowners" component={HomeownerCRM} />
@@ -766,6 +915,7 @@ function Router() {
       <Route path="/admin/api-credits" component={ApiCreditsGuide} />
       <Route path="/admin/payment-flows" component={PaymentFlowDiagrams} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/pricing/standard" component={PostFoundingPricing} />
 
       {/* Fallback */}
       <Route path="/docs/api" component={ApiDocs} />
@@ -777,13 +927,21 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/gallery" component={ProjectGallery} />
+      <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
+      <Route path="/exchange" component={ExchangeLanding} />
+      <Route path="/exchange/home" component={ExchangeHome} />
+      <Route path="/exchange/jobs" component={ExchangeJobs} />
+      <Route path="/exchange/contractors" component={ExchangeContractors} />
+      <Route path="/exchange/my-bids" component={ExchangeMyBids} />
+      <Route path="/exchange/post" component={ExchangePostJob} />
       <Route path="/exchange/commercial" component={ProLnkExchangeCommercial} />
       <Route path="/ach-authorization" component={AchAuthorizationPage} />
       <Route path="/my-home/milestones" component={TrustyProComingSoon} />
       <Route path="/dashboard/growth-calculator" component={GrowthCalculator} />
       <Route path="/dashboard/community" component={CommunityForum} />
-      <Route path="/leaderboard" component={PartnerLeaderboard} />
+      <Route path="/leaderboard" component={PublicLeaderboard} />
       <Route path="/network/leaderboard" component={PublicLeaderboard} />
+      <Route path="/partner-leaderboard" component={PartnerLeaderboard} />
       <Route path="/my-home/true-cost" component={TrueCostGuide} />
       <Route path="/my-home/maintenance" component={MaintenanceSchedule} />
       <Route path="/my-home/savings" component={SavingsTracker} />
@@ -796,6 +954,8 @@ function Router() {
       <Route path="/admin/media-settings" component={PlatformSettings} />
       <Route path="/admin/geo-expansion" component={GeoExpansionMap} />
       <Route path="/admin/revenue-forecast" component={RevenueForecast} />
+      <Route path="/admin/revenue-forecaster" component={RevenueForecaster} />
+      <Route path="/admin/network-growth" component={NetworkGrowthDashboard} />
       <Route path="/admin/lead-quality" component={LeadQualityCenter} />
       <Route path="/dashboard/academy" component={TrainingAcademy} />
       <Route path="/dashboard/skills" component={SkillsMarketplace} />
@@ -808,6 +968,7 @@ function Router() {
       <Route path="/dashboard/upsell" component={UpsellPlaybook} />
       <Route path="/dashboard/events" component={NetworkingEvents} />
       <Route path="/dashboard/tax-estimator" component={TaxEstimator} />
+      <Route path="/dashboard/tax" component={TaxCenter} />
       <Route path="/my-home/compare-contractors" component={TrustyProComingSoon} />
       <Route path="/my-home/seasonal-prep" component={SeasonalPrepGuide} />
       <Route path="/my-home/notifications" component={NotificationSettings} />
@@ -816,6 +977,7 @@ function Router() {
       <Route path="/my-home/document-vault" component={DocumentVault} />
       <Route path="/my-home/referral" component={HomeownerReferral} />
       <Route path="/my-home/homeowner-referral" component={HomeownerReferral} />
+      <Route path="/neighborhood-referral" component={NeighborhoodReferral} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/emergency" component={EmergencyServices} />
       <Route path="/my-home/neighborhood-deals" component={TrustyProComingSoon} />
@@ -868,12 +1030,25 @@ function Router() {
       <Route path="/admin/error-monitoring" component={ErrorMonitoring} />
       <Route path="/admin/performance" component={PerformanceMonitoring} />
 
+      {/* Investor & Press */}
+      <Route path="/investor" component={InvestorPage} />
+      <Route path="/press" component={PressKit} />
+
       {/* Content & Marketing */}
+      <Route path="/help" component={HelpCenter} />
+      <Route path="/api-guide" component={APIGuide} />
+      <Route path="/faq" component={FAQ} />
+      <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/blog" component={Blog} />
       <Route path="/how-ai-works" component={HowAIWorks} />
       <Route path="/for-real-estate-agents" component={ForRealEstateAgents} />
       <Route path="/for-insurance-agents" component={ForInsuranceAgents} />
       <Route path="/for-property-managers" component={ForPropertyManagers} />
+      <Route path="/storm-alert" component={StormAlert} />
+      <Route path="/trades" component={TradeLandingList} />
+      <Route path="/trades/:trade" component={TradeLanding} />
+      <Route path="/cities" component={CityLandingList} />
+      <Route path="/cities/:city" component={CityLanding} />
 
       {/* Agent Portal */}
       <Route path="/agent/signup" component={AgentSignup} />
@@ -886,12 +1061,18 @@ function Router() {
       <Route path="/resources/photo-guide" component={PhotoGuide} />
       <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
       <Route path="/resources/faq" component={PartnerFAQ} />
-      <Route path="/resources/success-stories" component={PartnerSuccessStories} />
+      <Route path="/resources/success-stories" component={SuccessStoriesPage} />
+      <Route path="/resources/academy" component={ProLnkAcademy} />
+      <Route path="/resources/competitive" component={CompetitiveAdvantage} />
 
       {/* Lead Management */}
       <Route path="/leads" component={LeadInbox} />
       <Route path="/leads/:id" component={LeadDetail} />
       <Route path="/jobs/:id/document" component={JobDocumentation} />
+      <Route path="/home-documentation" component={HomeDocumentation} />
+      <Route path="/founding-partner" component={FoundingPartnerPage} />
+      <Route path="/founding-network" component={FoundingPartnerPage} />
+      <Route path="/billing" component={PartnerBilling} />
       <Route path="/tier-benefits" component={TierBenefits} />
       <Route path="/waitlist-status" component={WaitlistStatus} />
       <Route path="/waitlist/status" component={WaitlistStatus} />
@@ -909,6 +1090,7 @@ function Router() {
       <Route path="/docs" component={Documentation} />
       <Route component={NotFound} />
     </Switch>
+    </Suspense>
   );
 }
 
@@ -916,6 +1098,7 @@ function AppContent() {
   const [location] = useLocation();
   return (
     <>
+      <RewardfulScript />
       <DomainRouter />
       <Router />
       <CookieConsentBanner />

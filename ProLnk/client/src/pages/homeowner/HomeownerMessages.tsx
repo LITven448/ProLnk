@@ -33,8 +33,8 @@ const TRADE_ICONS: Record<string, React.ReactNode> = {
   Plumbing: <Droplets className="h-4 w-4 text-blue-400" />,
   Electrical: <Zap className="h-4 w-4 text-yellow-400" />,
   HVAC: <Wind className="h-4 w-4 text-cyan-400" />,
-  Landscaping: <Trees className="h-4 w-4 text-green-400" />,
-  Painting: <Brush className="h-4 w-4 text-purple-400" />,
+  Landscaping: <Leaf className="h-4 w-4 text-green-400" />,
+  Painting: <Paintbrush className="h-4 w-4 text-purple-400" />,
 };
 
 type MessageType = "quote" | "confirmation" | "checkin" | "message" | "alert";

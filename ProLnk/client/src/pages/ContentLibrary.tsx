@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Library, Download, Search, FileText, Image, Mail, Presentation, ChevronRight, Sparkles } from "lucide-react";
+import { Library, Download, Search, FileText, Image, Mail, Presentation, ChevronRight, Sparkles, Copy, CreditCard, ExternalLink, Palette } from "lucide-react";
 import { toast } from "sonner";
 
 type AssetFormat = "PDF" | "PNG" | "DOCX" | "PPTX";
@@ -35,6 +35,35 @@ const FORMAT_COLORS: Record<AssetFormat, string> = {
   DOCX: "bg-sky-500/20 text-sky-400 border-sky-500/30",
   PPTX: "bg-orange-500/20 text-orange-400 border-orange-500/30",
 };
+
+const S3_BASE = "https://prolnk-property-photos-596916982650-us-east-2-an.s3.us-east-2.amazonaws.com/assets";
+
+const BRAND_LOGOS = [
+  { name: "ProLnk Logo — Teal (PNG)", file: "prolnk-logo-teal.png", format: "PNG", bg: "#00B5B8" },
+  { name: "ProLnk Logo — White (PNG)", file: "prolnk-logo-white.png", format: "PNG", bg: "#0A1628" },
+  { name: "ProLnk Logo — Dark (SVG)", file: "prolnk-logo-dark.svg", format: "SVG", bg: "#F0F2F5" },
+  { name: "ProLnk Icon — Square (PNG)", file: "prolnk-icon-sq.png", format: "PNG", bg: "#00B5B8" },
+];
+
+const EMAIL_SIGNATURE_HTML = `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:13px;color:#344767;">
+  <tr>
+    <td style="padding-right:16px;border-right:3px solid #00B5B8;vertical-align:top;">
+      <img src="${S3_BASE}/prolnk-icon-sq.png" width="48" height="48" alt="ProLnk" style="border-radius:8px;" />
+    </td>
+    <td style="padding-left:16px;vertical-align:top;">
+      <div style="font-weight:800;color:#0A1628;">[YOUR NAME]</div>
+      <div style="color:#7B809A;font-size:12px;">[Your Trade] · ProLnk Founding Partner</div>
+      <div style="margin-top:6px;">
+        <a href="[YOUR_REFERRAL_LINK]" style="color:#00B5B8;text-decoration:none;font-size:12px;font-weight:600;">
+          prolnk.io/ref/[YOUR_CODE]
+        </a>
+      </div>
+      <div style="color:#7B809A;font-size:11px;margin-top:4px;">
+        [PHONE] · [CITY, STATE]
+      </div>
+    </td>
+  </tr>
+</table>`;
 
 const CATEGORIES = [
   { id: "all", label: "All Assets", icon: "📦" },
@@ -201,6 +230,143 @@ export default function ContentLibrary() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 py-10">
+
+          {/* Brand Assets Panel */}
+          <div className="mb-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* Logo Downloads */}
+            <div className="lg:col-span-2 bg-slate-800/60 border border-slate-700 rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-4">
+                <Palette className="w-4 h-4 text-teal-400" />
+                <h2 className="text-white font-bold text-sm">ProLnk Brand Logos</h2>
+                <Badge className="text-[10px] ml-auto bg-teal-500/20 text-teal-300 border-teal-500/30">Official Assets</Badge>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {BRAND_LOGOS.map(logo => (
+                  <div key={logo.file} className="rounded-xl border border-slate-700 overflow-hidden group hover:border-teal-500/40 transition-all">
+                    <div className="h-14 flex items-center justify-center" style={{ backgroundColor: logo.bg }}>
+                      <span className="text-[10px] font-bold opacity-50 text-center px-1">{logo.name.split("—")[0].trim()}</span>
+                    </div>
+                    <div className="bg-slate-800 px-2 py-1.5">
+                      <p className="text-[10px] text-slate-300 font-medium truncate mb-1.5">{logo.name.split("—")[1]?.trim()}</p>
+                      <Button
+                        size="sm"
+                        className="w-full h-6 text-[10px] bg-teal-600/80 hover:bg-teal-600 text-white gap-1"
+                        onClick={() => {
+                          const a = document.createElement("a");
+                          a.href = `${S3_BASE}/${logo.file}`;
+                          a.download = logo.file;
+                          a.target = "_blank";
+                          a.click();
+                          toast.success(`Downloading ${logo.name}`);
+                        }}
+                      >
+                        <Download className="w-2.5 h-2.5" />
+                        {logo.format}
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-slate-500 text-[10px] mt-3">
+                Use official logos only on approved co-branded materials. Do not alter colors, proportions, or add effects.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="flex flex-col gap-4">
+              {/* Business Card Template */}
+              <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4 flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <CreditCard className="w-4 h-4 text-indigo-400" />
+                  <h3 className="text-white font-bold text-xs">Business Card Templates</h3>
+                </div>
+                <p className="text-slate-400 text-[11px] mb-3 leading-relaxed">
+                  3.5" × 2" print-ready templates in 3 colorways. Customize with your name, trade, and referral code.
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    size="sm"
+                    className="flex-1 h-7 text-[10px] bg-indigo-600/80 hover:bg-indigo-600 text-white gap-1"
+                    onClick={() => { window.open(`${S3_BASE}/prolnk-business-card-teal.pdf`, "_blank"); toast.success("Opening business card template"); }}
+                  >
+                    <Download className="w-2.5 h-2.5" /> Teal
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="flex-1 h-7 text-[10px] bg-slate-600/80 hover:bg-slate-600 text-white gap-1"
+                    onClick={() => { window.open(`${S3_BASE}/prolnk-business-card-navy.pdf`, "_blank"); toast.success("Opening business card template"); }}
+                  >
+                    <Download className="w-2.5 h-2.5" /> Navy
+                  </Button>
+                </div>
+              </div>
+
+              {/* How ProLnk Works PDF */}
+              <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <FileText className="w-4 h-4 text-orange-400" />
+                  <h3 className="text-white font-bold text-xs">How ProLnk Works</h3>
+                </div>
+                <p className="text-slate-400 text-[11px] mb-3 leading-relaxed">
+                  1-page visual overview of the platform, income model, and homeowner flow. Perfect leave-behind.
+                </p>
+                <Button
+                  size="sm"
+                  className="w-full h-7 text-[10px] bg-orange-600/80 hover:bg-orange-600 text-white gap-1"
+                  onClick={() => { window.open(`${S3_BASE}/prolnk-how-it-works.pdf`, "_blank"); toast.success("Opening PDF"); }}
+                >
+                  <ExternalLink className="w-2.5 h-2.5" /> Open PDF
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Email Signature */}
+          <div className="mb-8 bg-slate-800/60 border border-slate-700 rounded-2xl p-5">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-sky-400" />
+                <h2 className="text-white font-bold text-sm">Email Signature Template</h2>
+              </div>
+              <Button
+                size="sm"
+                className="h-7 text-xs bg-sky-600/80 hover:bg-sky-600 text-white gap-1.5"
+                onClick={() => {
+                  navigator.clipboard.writeText(EMAIL_SIGNATURE_HTML).then(() => toast.success("HTML signature copied — paste into Gmail or Outlook signature settings"));
+                }}
+              >
+                <Copy className="w-3 h-3" /> Copy HTML
+              </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <p className="text-slate-400 text-[11px] mb-2 leading-relaxed">
+                  Paste the HTML into your email client's signature settings. Replace the bracketed placeholders with your info.
+                </p>
+                <div className="p-3 rounded-xl bg-white/5 border border-slate-700 overflow-x-auto">
+                  <pre className="text-[10px] text-slate-400 font-mono whitespace-pre-wrap leading-relaxed max-h-32 overflow-y-auto">{EMAIL_SIGNATURE_HTML.slice(0, 300)}...</pre>
+                </div>
+              </div>
+              <div className="p-4 bg-white rounded-xl">
+                <table style={{ fontFamily: "Arial, sans-serif", fontSize: "13px", color: "#344767", borderCollapse: "collapse" }}>
+                  <tbody>
+                    <tr>
+                      <td style={{ paddingRight: "16px", borderRight: "3px solid #00B5B8", verticalAlign: "top" }}>
+                        <div style={{ width: 48, height: 48, background: "#00B5B8", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 900, fontSize: 18 }}>P</div>
+                      </td>
+                      <td style={{ paddingLeft: "16px", verticalAlign: "top" }}>
+                        <div style={{ fontWeight: 800, color: "#0A1628" }}>Your Name</div>
+                        <div style={{ color: "#7B809A", fontSize: 12 }}>Plumbing · ProLnk Founding Partner</div>
+                        <div style={{ marginTop: 6 }}><span style={{ color: "#00B5B8", fontSize: 12, fontWeight: 600 }}>prolnk.io/ref/P1234</span></div>
+                        <div style={{ color: "#7B809A", fontSize: 11, marginTop: 4 }}>(555) 000-0000 · Dallas, TX</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
           {/* Search + Filter Bar */}
           <div className="flex flex-col sm:flex-row gap-3 mb-7">
             <div className="relative flex-1">

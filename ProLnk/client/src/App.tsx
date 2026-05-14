@@ -96,6 +96,7 @@ const PartnerHome = lazy(() => import("./pages/dashboard/PartnerHome"));
 const FoundingNetworkDashboard = lazy(() => import("./pages/dashboard/FoundingNetworkDashboard"));
 const NetworkPartnerDirectory = lazy(() => import("./pages/dashboard/NetworkPartnerDirectory"));
 const GoalTracker = lazy(() => import("./pages/dashboard/GoalTracker"));
+const CharterInvites = lazy(() => import("./pages/dashboard/CharterInvites"));
 const ReferralFunnelTracker = lazy(() => import("./pages/ReferralFunnelTracker"));
 const NetworkTree = lazy(() => import("./pages/NetworkTree"));
 const TierUpgradeFlow = lazy(() => import("./pages/TierUpgradeFlow"));
@@ -275,6 +276,7 @@ const HomeownerLogin = lazy(() => import("./pages/trustypro/HomeownerLogin"));
 const TrustyProHomeownerDashboard = lazy(() => import("./pages/trustypro/HomeownerDashboard"));
 const PropertySetup = lazy(() => import("./pages/trustypro/PropertySetup"));
 const TrustyProDirectory = lazy(() => import("./pages/homeowner/TrustyProDirectory"));
+const BookPro = lazy(() => import("./pages/trustypro/BookPro"));
 const HomeownerDashboard = lazy(() => import("./pages/homeowner/HomeownerDashboard"));
 const HomeownerOffers = lazy(() => import("./pages/homeowner/HomeownerOffers"));
 const HomeownerPhotos = lazy(() => import("./pages/homeowner/HomeownerPhotos"));
@@ -640,6 +642,7 @@ function Router() {
       <Route path="/dashboard/network-income" component={NetworkIncomeSummary} />
       <Route path="/dashboard/network-directory" component={NetworkPartnerDirectory} />
       <Route path="/dashboard/goals" component={GoalTracker} />
+      <Route path="/dashboard/charter-invites" component={CharterInvites} />
       <Route path="/dashboard/referral-funnel" component={ReferralFunnelTracker} />
       <Route path="/network-tree" component={NetworkTree} />
       <Route path="/dashboard/recruit" component={ReferralFunnelTracker} />
@@ -818,6 +821,7 @@ function Router() {
       <Route path="/trustypro/scan" component={PhotoScan} />
       <Route path="/trustypro/home-health" component={HomeHealthDashboard} />
       <Route path="/trustypro/pros" component={TrustyProDirectory} />
+      <Route path="/trustypro/book" component={BookPro} />
       <Route path="/my-home" component={HomeownerDashboard} />
       <Route path="/my-home/offers" component={HomeownerOffers} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />

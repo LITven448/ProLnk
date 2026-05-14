@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { trpc } from "@/lib/trpc";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,12 +9,20 @@ import { toast } from "sonner";
 import {
   Brain, Camera, CloudLightning, ShieldCheck, Users, RefreshCw,
   CheckCircle, AlertTriangle, Clock, Zap, Activity, Bot,
-  DollarSign, BarChart2, Cpu, Gavel,
+  DollarSign, Cpu, Gavel,
   TrendingUp, Map, Star, HeartHandshake, Wrench,
-  XCircle, Terminal,
+  XCircle, Terminal, ChevronDown, ChevronUp,
+  RotateCcw, FileText, Filter,
 } from "lucide-react";
 
-// ─── Agent Category Definitions ───────────────────────────────────────────────
+// ─── Types ─────────────────────────────────────────────────────────────────────
+
+interface AgentRun {
+  at: string;
+  duration: string;
+  result: "ok" | "warn" | "error";
+  message: string;
+}
 
 interface AgentEntry {
   name: string;
@@ -23,6 +31,9 @@ interface AgentEntry {
   nextRun?: string;
   jobsToday?: number;
   errorsToday?: number;
+  successRate?: number;
+  avgResponseMs?: number;
+  recentRuns?: AgentRun[];
 }
 
 interface AgentCategory {
@@ -32,22 +43,33 @@ interface AgentCategory {
   agents: AgentEntry[];
 }
 
-// ─── Recent Error Log ──────────────────────────────────────────────────────────
+// ─── Mock recent-run generator ─────────────────────────────────────────────────
 
-interface AgentError {
-  agent: string;
-  message: string;
-  time: string;
-  severity: "warning" | "error";
+function mkRuns(good: number, warn: number, bad: number): AgentRun[] {
+  const pool: AgentRun[] = [
+    { at: "2m ago",  duration: "840ms",  result: "ok",    message: "Completed normally" },
+    { at: "14m ago", duration: "1.2s",   result: "ok",    message: "Completed normally" },
+    { at: "28m ago", duration: "920ms",  result: "ok",    message: "Completed normally" },
+    { at: "42m ago", duration: "1.1s",   result: "warn",  message: "Slow response — API latency spike detected" },
+    { at: "1h ago",  duration: "880ms",  result: "ok",    message: "Completed normally" },
+    { at: "1.5h ago",duration: "2.4s",   result: "warn",  message: "Retried once before succeeding" },
+    { at: "2h ago",  duration: "—",      result: "error", message: "Timeout after 30s — DB query exceeded limit" },
+    { at: "3h ago",  duration: "760ms",  result: "ok",    message: "Completed normally" },
+  ];
+  const selected: AgentRun[] = [];
+  let i = 0;
+  while (selected.length < 5 && i < pool.length) {
+    const r = pool[i];
+    if (r.result === "ok" && good > 0) { selected.push(r); good--; }
+    else if (r.result === "warn" && warn > 0) { selected.push(r); warn--; }
+    else if (r.result === "error" && bad > 0) { selected.push(r); bad--; }
+    i++;
+  }
+  while (selected.length < 5) selected.push(pool[selected.length % pool.length]);
+  return selected.slice(0, 5);
 }
 
-const RECENT_ERRORS: AgentError[] = [
-  { agent: "Storm Tracking Agent", message: "NOAA API rate limit hit (429) — retried after 60s backoff", time: "14m ago", severity: "warning" },
-  { agent: "Compliance Monitor", message: "COI expiry check: 2 partners missing docs, suspension queued", time: "1h ago", severity: "warning" },
-  { agent: "Fraud Detector", message: "DB timeout on match_history table scan — query exceeded 30s", time: "3h ago", severity: "error" },
-  { agent: "Email Marketer", message: "Resend API returned 422 for batch of 12 addresses — invalid domains", time: "5h ago", severity: "warning" },
-  { agent: "Payout Processor", message: "Commission batch job skipped: no unpaid records found for cycle", time: "8h ago", severity: "warning" },
-];
+// ─── Agent Categories (47 agents) ─────────────────────────────────────────────
 
 const AGENT_CATEGORIES: AgentCategory[] = [
   {
@@ -55,9 +77,9 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#F5E642",
     icon: Star,
     agents: [
-      { name: "CEO Agent", status: "active" },
-      { name: "Strategy Planner", status: "active" },
-      { name: "Board Reporter", status: "standby" },
+      { name: "CEO Agent",        status: "active",  lastRun: "5m ago",  successRate: 99, avgResponseMs: 420, recentRuns: mkRuns(5,0,0) },
+      { name: "Strategy Planner", status: "active",  lastRun: "12m ago", successRate: 98, avgResponseMs: 680, recentRuns: mkRuns(4,1,0) },
+      { name: "Board Reporter",   status: "standby", lastRun: "2d ago",  successRate: 100, avgResponseMs: 910, recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -65,12 +87,12 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#00D4FF",
     icon: Cpu,
     agents: [
-      { name: "Deployment & Infra", status: "active", lastRun: "12m ago", nextRun: "on demand", jobsToday: 3, errorsToday: 0 },
-      { name: "Error Handler", status: "active", lastRun: "2m ago", nextRun: "continuous", jobsToday: 17, errorsToday: 0 },
-      { name: "Data Pipeline", status: "active", lastRun: "1h ago", nextRun: "2:00 AM", jobsToday: 4, errorsToday: 0 },
-      { name: "Testing Agent", status: "active", lastRun: "6h ago", nextRun: "on commit", jobsToday: 2, errorsToday: 0 },
-      { name: "Performance Monitor", status: "active", lastRun: "5m ago", nextRun: "continuous", jobsToday: 144, errorsToday: 0 },
-      { name: "Compliance Checker", status: "active", lastRun: "1h ago", nextRun: "3:00 AM", jobsToday: 1, errorsToday: 1 },
+      { name: "Deployment & Infra",  status: "active",  lastRun: "12m ago", nextRun: "on demand", jobsToday: 3,   errorsToday: 0, successRate: 100, avgResponseMs: 340,  recentRuns: mkRuns(5,0,0) },
+      { name: "Error Handler",       status: "active",  lastRun: "2m ago",  nextRun: "continuous", jobsToday: 17,  errorsToday: 0, successRate: 100, avgResponseMs: 120,  recentRuns: mkRuns(5,0,0) },
+      { name: "Data Pipeline",       status: "active",  lastRun: "1h ago",  nextRun: "2:00 AM",    jobsToday: 4,   errorsToday: 0, successRate: 97,  avgResponseMs: 2100, recentRuns: mkRuns(4,1,0) },
+      { name: "Testing Agent",       status: "active",  lastRun: "6h ago",  nextRun: "on commit",  jobsToday: 2,   errorsToday: 0, successRate: 96,  avgResponseMs: 4200, recentRuns: mkRuns(4,1,0) },
+      { name: "Performance Monitor", status: "active",  lastRun: "5m ago",  nextRun: "continuous", jobsToday: 144, errorsToday: 0, successRate: 100, avgResponseMs: 88,   recentRuns: mkRuns(5,0,0) },
+      { name: "Compliance Checker",  status: "active",  lastRun: "1h ago",  nextRun: "3:00 AM",    jobsToday: 1,   errorsToday: 1, successRate: 82,  avgResponseMs: 1840, recentRuns: mkRuns(3,1,1) },
     ],
   },
   {
@@ -78,13 +100,13 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#82D616",
     icon: DollarSign,
     agents: [
-      { name: "Commission Calculator", status: "active", lastRun: "8m ago", nextRun: "continuous", jobsToday: 38, errorsToday: 0 },
-      { name: "Payout Processor", status: "active", lastRun: "8h ago", nextRun: "1st of month", jobsToday: 1, errorsToday: 1 },
-      { name: "Revenue Analyzer", status: "active", lastRun: "30m ago", nextRun: "hourly", jobsToday: 24, errorsToday: 0 },
-      { name: "Cost Tracker", status: "active", lastRun: "1h ago", nextRun: "hourly", jobsToday: 12, errorsToday: 0 },
-      { name: "Fraud Detector", status: "active", lastRun: "3h ago", nextRun: "6:00 AM", jobsToday: 2, errorsToday: 1 },
-      { name: "Tax Helper", status: "standby", lastRun: "Jan 31", nextRun: "Jan 31", jobsToday: 0, errorsToday: 0 },
-      { name: "Audit Log", status: "active", lastRun: "1m ago", nextRun: "continuous", jobsToday: 203, errorsToday: 0 },
+      { name: "Commission Calculator", status: "active",  lastRun: "8m ago",  nextRun: "continuous",    jobsToday: 38,  errorsToday: 0, successRate: 100, avgResponseMs: 210,  recentRuns: mkRuns(5,0,0) },
+      { name: "Payout Processor",      status: "active",  lastRun: "8h ago",  nextRun: "1st of month",  jobsToday: 1,   errorsToday: 1, successRate: 88,  avgResponseMs: 3400, recentRuns: mkRuns(3,1,1) },
+      { name: "Revenue Analyzer",      status: "active",  lastRun: "30m ago", nextRun: "hourly",        jobsToday: 24,  errorsToday: 0, successRate: 98,  avgResponseMs: 560,  recentRuns: mkRuns(5,0,0) },
+      { name: "Cost Tracker",          status: "active",  lastRun: "1h ago",  nextRun: "hourly",        jobsToday: 12,  errorsToday: 0, successRate: 100, avgResponseMs: 310,  recentRuns: mkRuns(5,0,0) },
+      { name: "Fraud Detector",        status: "active",  lastRun: "3h ago",  nextRun: "6:00 AM",       jobsToday: 2,   errorsToday: 1, successRate: 75,  avgResponseMs: 8200, recentRuns: mkRuns(2,1,2) },
+      { name: "Tax Helper",            status: "standby", lastRun: "Jan 31",  nextRun: "Jan 31",        jobsToday: 0,   errorsToday: 0, successRate: 100, avgResponseMs: 0,    recentRuns: mkRuns(5,0,0) },
+      { name: "Audit Log",             status: "active",  lastRun: "1m ago",  nextRun: "continuous",    jobsToday: 203, errorsToday: 0, successRate: 100, avgResponseMs: 45,   recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -92,14 +114,14 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#EC407A",
     icon: TrendingUp,
     agents: [
-      { name: "Lead Scorer", status: "active", lastRun: "4m ago", nextRun: "continuous", jobsToday: 56, errorsToday: 0 },
-      { name: "Email Marketer", status: "active", lastRun: "2h ago", nextRun: "9:00 AM", jobsToday: 3, errorsToday: 1 },
-      { name: "SMS Notifier", status: "active", lastRun: "9m ago", nextRun: "on trigger", jobsToday: 14, errorsToday: 0 },
-      { name: "Social Media Mgr", status: "standby", lastRun: "Yesterday", nextRun: "9:00 AM", jobsToday: 0, errorsToday: 0 },
-      { name: "Ad Campaign Mgr", status: "standby", lastRun: "Yesterday", nextRun: "8:00 AM", jobsToday: 0, errorsToday: 0 },
-      { name: "Content Creator", status: "active", lastRun: "4h ago", nextRun: "on demand", jobsToday: 2, errorsToday: 0 },
-      { name: "SEO Optimizer", status: "active", lastRun: "12h ago", nextRun: "4:00 AM", jobsToday: 1, errorsToday: 0 },
-      { name: "Referral Program Mgr", status: "active", lastRun: "15m ago", nextRun: "hourly", jobsToday: 8, errorsToday: 0 },
+      { name: "Lead Scorer",          status: "active",  lastRun: "4m ago",     nextRun: "continuous", jobsToday: 56, errorsToday: 0, successRate: 99,  avgResponseMs: 320,  recentRuns: mkRuns(5,0,0) },
+      { name: "Email Marketer",       status: "active",  lastRun: "2h ago",     nextRun: "9:00 AM",    jobsToday: 3,  errorsToday: 1, successRate: 84,  avgResponseMs: 1200, recentRuns: mkRuns(3,1,1) },
+      { name: "SMS Notifier",         status: "active",  lastRun: "9m ago",     nextRun: "on trigger", jobsToday: 14, errorsToday: 0, successRate: 98,  avgResponseMs: 440,  recentRuns: mkRuns(5,0,0) },
+      { name: "Social Media Mgr",     status: "standby", lastRun: "Yesterday",  nextRun: "9:00 AM",    jobsToday: 0,  errorsToday: 0, successRate: 97,  avgResponseMs: 880,  recentRuns: mkRuns(5,0,0) },
+      { name: "Ad Campaign Mgr",      status: "standby", lastRun: "Yesterday",  nextRun: "8:00 AM",    jobsToday: 0,  errorsToday: 0, successRate: 95,  avgResponseMs: 1100, recentRuns: mkRuns(5,0,0) },
+      { name: "Content Creator",      status: "active",  lastRun: "4h ago",     nextRun: "on demand",  jobsToday: 2,  errorsToday: 0, successRate: 100, avgResponseMs: 2800, recentRuns: mkRuns(5,0,0) },
+      { name: "SEO Optimizer",        status: "active",  lastRun: "12h ago",    nextRun: "4:00 AM",    jobsToday: 1,  errorsToday: 0, successRate: 100, avgResponseMs: 4100, recentRuns: mkRuns(5,0,0) },
+      { name: "Referral Program Mgr", status: "active",  lastRun: "15m ago",    nextRun: "hourly",     jobsToday: 8,  errorsToday: 0, successRate: 98,  avgResponseMs: 620,  recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -107,13 +129,13 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#FBB140",
     icon: HeartHandshake,
     agents: [
-      { name: "Onboarding Flow", status: "active" },
-      { name: "Support Responder", status: "active" },
-      { name: "Feedback Collector", status: "standby" },
-      { name: "Retention Optimizer", status: "active" },
-      { name: "Upsell Manager", status: "standby" },
-      { name: "Community Builder", status: "standby" },
-      { name: "Success Tracker", status: "active" },
+      { name: "Onboarding Flow",    status: "active",  lastRun: "8m ago",    successRate: 99,  avgResponseMs: 540,  recentRuns: mkRuns(5,0,0) },
+      { name: "Support Responder",  status: "active",  lastRun: "3m ago",    successRate: 97,  avgResponseMs: 380,  recentRuns: mkRuns(5,0,0) },
+      { name: "Feedback Collector", status: "standby", lastRun: "Yesterday", successRate: 100, avgResponseMs: 720,  recentRuns: mkRuns(5,0,0) },
+      { name: "Retention Optimizer",status: "active",  lastRun: "1h ago",    successRate: 94,  avgResponseMs: 1600, recentRuns: mkRuns(4,1,0) },
+      { name: "Upsell Manager",     status: "standby", lastRun: "Yesterday", successRate: 96,  avgResponseMs: 840,  recentRuns: mkRuns(5,0,0) },
+      { name: "Community Builder",  status: "standby", lastRun: "2d ago",    successRate: 100, avgResponseMs: 960,  recentRuns: mkRuns(5,0,0) },
+      { name: "Success Tracker",    status: "active",  lastRun: "20m ago",   successRate: 100, avgResponseMs: 290,  recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -121,11 +143,11 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#7928CA",
     icon: Brain,
     agents: [
-      { name: "Market Analyzer", status: "active" },
-      { name: "User Behavior Analyzer", status: "active" },
-      { name: "Predictive Modeler", status: "standby" },
-      { name: "Recommendation Engine", status: "active" },
-      { name: "Data Warehouse", status: "active" },
+      { name: "Market Analyzer",      status: "active",  lastRun: "2h ago",  successRate: 98,  avgResponseMs: 2200, recentRuns: mkRuns(4,1,0) },
+      { name: "User Behavior Analyzer",status: "active", lastRun: "45m ago", successRate: 99,  avgResponseMs: 1400, recentRuns: mkRuns(5,0,0) },
+      { name: "Predictive Modeler",   status: "standby", lastRun: "3h ago",  successRate: 95,  avgResponseMs: 6800, recentRuns: mkRuns(5,0,0) },
+      { name: "Recommendation Engine",status: "active",  lastRun: "6m ago",  successRate: 97,  avgResponseMs: 480,  recentRuns: mkRuns(5,0,0) },
+      { name: "Data Warehouse",       status: "active",  lastRun: "30m ago", successRate: 100, avgResponseMs: 3100, recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -133,10 +155,10 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#64748b",
     icon: Gavel,
     agents: [
-      { name: "Compliance Monitor", status: "active" },
-      { name: "Contract Manager", status: "standby" },
-      { name: "Dispute Handler", status: "standby" },
-      { name: "Patent Manager", status: "standby" },
+      { name: "Compliance Monitor", status: "active",  lastRun: "1h ago",    successRate: 92,  avgResponseMs: 1800, recentRuns: mkRuns(3,2,0) },
+      { name: "Contract Manager",   status: "standby", lastRun: "Yesterday", successRate: 100, avgResponseMs: 2400, recentRuns: mkRuns(5,0,0) },
+      { name: "Dispute Handler",    status: "standby", lastRun: "3d ago",    successRate: 100, avgResponseMs: 1200, recentRuns: mkRuns(5,0,0) },
+      { name: "Patent Manager",     status: "standby", lastRun: "1w ago",    successRate: 100, avgResponseMs: 890,  recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -144,13 +166,13 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#26C6DA",
     icon: Wrench,
     agents: [
-      { name: "Code Review", status: "active" },
-      { name: "Architecture Designer", status: "active" },
-      { name: "Dependency Manager", status: "active" },
-      { name: "Database Optimizer", status: "active" },
-      { name: "API Designer", status: "active" },
-      { name: "Frontend Optimizer", status: "active" },
-      { name: "DevOps Engineer", status: "active" },
+      { name: "Code Review",           status: "active", lastRun: "22m ago", successRate: 100, avgResponseMs: 3800, recentRuns: mkRuns(5,0,0) },
+      { name: "Architecture Designer", status: "active", lastRun: "4h ago",  successRate: 100, avgResponseMs: 5100, recentRuns: mkRuns(5,0,0) },
+      { name: "Dependency Manager",    status: "active", lastRun: "6h ago",  successRate: 98,  avgResponseMs: 1600, recentRuns: mkRuns(4,1,0) },
+      { name: "Database Optimizer",    status: "active", lastRun: "2h ago",  successRate: 96,  avgResponseMs: 4200, recentRuns: mkRuns(4,1,0) },
+      { name: "API Designer",          status: "active", lastRun: "8h ago",  successRate: 100, avgResponseMs: 2900, recentRuns: mkRuns(5,0,0) },
+      { name: "Frontend Optimizer",    status: "active", lastRun: "3h ago",  successRate: 99,  avgResponseMs: 1800, recentRuns: mkRuns(5,0,0) },
+      { name: "DevOps Engineer",       status: "active", lastRun: "18m ago", successRate: 100, avgResponseMs: 640,  recentRuns: mkRuns(5,0,0) },
     ],
   },
   {
@@ -158,186 +180,111 @@ const AGENT_CATEGORIES: AgentCategory[] = [
     color: "#FF6B35",
     icon: Map,
     agents: [
-      { name: "Territory Manager", status: "active" },
-      { name: "Lead Distributor", status: "active" },
-      { name: "Performance Coach", status: "standby" },
+      { name: "Territory Manager", status: "active",  lastRun: "35m ago", successRate: 98,  avgResponseMs: 740,  recentRuns: mkRuns(5,0,0) },
+      { name: "Lead Distributor",  status: "active",  lastRun: "4m ago",  successRate: 99,  avgResponseMs: 280,  recentRuns: mkRuns(5,0,0) },
+      { name: "Performance Coach", status: "standby", lastRun: "Yesterday", successRate: 100, avgResponseMs: 1100, recentRuns: mkRuns(5,0,0) },
     ],
   },
 ];
 
 const TOTAL_AGENTS = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.length, 0);
 
-const TX_METROS = [
-  { label: "Dallas-Fort Worth", value: "TX-DFW" },
-  { label: "Houston",           value: "TX-HOU" },
-  { label: "Austin",            value: "TX-AUS" },
-  { label: "San Antonio",       value: "TX-SAT" },
-  { label: "Plano / Frisco",    value: "TX-PLN" },
-] as const;
+const RECENT_ERRORS = [
+  { agent: "Storm Tracking Agent", message: "NOAA API rate limit hit (429) — retried after 60s backoff", time: "14m ago", severity: "warning" as const },
+  { agent: "Compliance Monitor",   message: "COI expiry check: 2 partners missing docs, suspension queued", time: "1h ago", severity: "warning" as const },
+  { agent: "Fraud Detector",       message: "DB timeout on match_history table scan — query exceeded 30s", time: "3h ago", severity: "error" as const },
+  { agent: "Email Marketer",       message: "Resend API returned 422 for batch of 12 addresses — invalid domains", time: "5h ago", severity: "warning" as const },
+  { agent: "Payout Processor",     message: "Commission batch job skipped: no unpaid records found for cycle", time: "8h ago", severity: "warning" as const },
+];
 
-type TxMetro = typeof TX_METROS[number]["value"];
+// ─── Sub-components ────────────────────────────────────────────────────────────
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-function StatusDot({ status }: { status: AgentEntry["status"] }) {
-  const colors: Record<AgentEntry["status"], string> = {
-    active: "#82D616",
+function StatusDot({ status, pulse = false }: { status: AgentEntry["status"]; pulse?: boolean }) {
+  const map: Record<AgentEntry["status"], string> = {
+    active:  "#82D616",
     standby: "#FBB140",
-    error: "#EA0606",
+    error:   "#EA0606",
   };
   return (
     <span
-      className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
-      style={{ backgroundColor: colors[status] }}
+      className={`inline-block w-2 h-2 rounded-full flex-shrink-0 ${pulse && status === "active" ? "animate-pulse" : ""}`}
+      style={{ backgroundColor: map[status] }}
     />
   );
 }
 
-interface AgentCard {
-  id: string;
-  name: string;
-  description: string;
-  icon: React.ReactNode;
-  color: string;
-  stats: { label: string; value: string | number }[];
+function RunBadge({ result }: { result: AgentRun["result"] }) {
+  const map = {
+    ok:    { bg: "#82D61618", border: "#82D61640", color: "#82D616", label: "OK" },
+    warn:  { bg: "#FBB14018", border: "#FBB14040", color: "#FBB140", label: "WARN" },
+    error: { bg: "#EA060618", border: "#EA060640", color: "#EA0606", label: "ERR" },
+  };
+  const s = map[result];
+  return (
+    <span className="px-1.5 py-0.5 rounded text-[9px] font-bold" style={{ background: s.bg, border: `1px solid ${s.border}`, color: s.color }}>
+      {s.label}
+    </span>
+  );
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+function SuccessBar({ pct }: { pct: number }) {
+  const color = pct >= 95 ? "#82D616" : pct >= 85 ? "#FBB140" : "#EA0606";
+  return (
+    <div className="flex items-center gap-1.5">
+      <div className="h-1.5 w-16 rounded-full overflow-hidden" style={{ background: "#ffffff10" }}>
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: color }} />
+      </div>
+      <span className="text-[10px] font-bold" style={{ color }}>{pct}%</span>
+    </div>
+  );
+}
+
+// ─── Main ──────────────────────────────────────────────────────────────────────
 
 export default function AgentStatusDashboard() {
   const { data: platformStats } = trpc.admin.getNetworkStats.useQuery();
-  const { data: stormStats } = trpc.stormAgent.getStats.useQuery();
-  const { data: complianceOverview } = trpc.compliance.getComplianceOverview.useQuery();
-  const { data: photoQueueStats } = trpc.admin.getPhotoQueueStats.useQuery();
+  const { data: stormStats }    = trpc.stormAgent.getStats.useQuery();
 
-  const [selectedMetro, setSelectedMetro] = useState<TxMetro>("TX-DFW");
+  const [filterCat,     setFilterCat]     = useState<string>("All");
+  const [expandedAgent, setExpandedAgent] = useState<string | null>(null);
+  const [autoRefresh,   setAutoRefresh]   = useState(false);
+  const [tick,          setTick]          = useState(0);
 
-  const triggerStorm = trpc.stormAgent.triggerScan.useMutation({
-    onSuccess: (r) => toast.success(`Storm scan complete — ${r.eventsProcessed} events, ${r.leadsGenerated} leads`),
-    onError: () => toast.error("Storm scan failed"),
-  });
+  const refresh = useCallback(() => setTick(t => t + 1), []);
 
-  const triggerLeadRouter = trpc.admin.triggerLeadRouter?.useMutation?.({
-    onSuccess: () => toast.success("Lead Router triggered — routing cycle started"),
-    onError: () => toast.error("Lead Router trigger failed"),
-  });
+  useEffect(() => {
+    if (!autoRefresh) return;
+    const id = setInterval(refresh, 15000);
+    return () => clearInterval(id);
+  }, [autoRefresh, refresh]);
 
-  const triggerCommissionCalc = trpc.admin.triggerCommissionCalc?.useMutation?.({
-    onSuccess: () => toast.success("Commission Calc triggered — recalculating all pending commissions"),
-    onError: () => toast.error("Commission Calc trigger failed"),
-  });
-
-  const activeCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "active").length, 0);
+  const activeCount  = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "active").length, 0);
   const standbyCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "standby").length, 0);
-  const errorCount = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "error").length, 0);
-  const totalJobsToday = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.reduce((as, a) => as + (a.jobsToday ?? 0), 0), 0);
+  const errorCount   = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.filter(a => a.status === "error").length, 0);
+  const healthPct    = Math.round((activeCount / TOTAL_AGENTS) * 100);
+  const totalJobsToday   = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.reduce((as, a) => as + (a.jobsToday ?? 0), 0), 0);
   const totalErrorsToday = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.reduce((as, a) => as + (a.errorsToday ?? 0), 0), 0);
 
-  const agents: AgentCard[] = [
-    {
-      id: "photo-ai",
-      name: "Photo Intelligence Agent",
-      description: "Analyzes job site photos using Claude Vision to detect upsell opportunities across 22 trade categories.",
-      icon: <Camera className="h-5 w-5" />,
-      color: "#00D4FF",
-      stats: [
-        { label: "Pending Review", value: (photoQueueStats as any)?.pending ?? "—" },
-        { label: "Opportunities", value: platformStats?.totalOpportunities ?? "—" },
-        { label: "Jobs Logged", value: platformStats?.totalJobs ?? "—" },
-        { label: "Status", value: "Active" },
-      ],
-    },
-    {
-      id: "lead-router",
-      name: "Lead Routing Engine",
-      description: "Routes opportunities to highest-PPS matching partner within service area. 24-hour expiry with auto-reroute.",
-      icon: <Zap className="h-5 w-5" />,
-      color: "#F5E642",
-      stats: [
-        { label: "Total Opportunities", value: platformStats?.totalOpportunities ?? "—" },
-        { label: "Total Jobs", value: platformStats?.totalJobs ?? "—" },
-        { label: "Active Partners", value: platformStats?.totalPartners ?? "—" },
-        { label: "Status", value: "Active" },
-      ],
-    },
-    {
-      id: "storm",
-      name: "Storm Tracking Agent",
-      description: "Monitors NOAA weather alerts across all service areas. Auto-generates emergency leads for affected properties.",
-      icon: <CloudLightning className="h-5 w-5" />,
-      color: "#7928CA",
-      stats: [
-        { label: "Total Events", value: stormStats?.totalEvents ?? "—" },
-        { label: "Leads Generated", value: stormStats?.totalLeads ?? "—" },
-        { label: "Properties Affected", value: stormStats?.totalProperties ?? "—" },
-        { label: "Status", value: "Active" },
-      ],
-    },
-    {
-      id: "compliance",
-      name: "Compliance Monitor Agent",
-      description: "Daily sweep for COI expiry, background check staleness, and license renewals. Auto-suspends after 7-day grace.",
-      icon: <ShieldCheck className="h-5 w-5" />,
-      color: "#82D616",
-      stats: [
-        { label: "Suspended Partners", value: (complianceOverview as any)?.suspended ?? "—" },
-        { label: "Partners w/ Strikes", value: (complianceOverview as any)?.partnersWithStrikes ?? "—" },
-        { label: "COI Verified", value: (complianceOverview as any)?.coiVerified ?? "—" },
-        { label: "Next Run", value: "3:00 AM" },
-      ],
-    },
-    {
-      id: "circumvention",
-      name: "Circumvention Detector",
-      description: "Cross-references job logs against dispatched leads to detect off-platform transactions. Issues strikes automatically.",
-      icon: <AlertTriangle className="h-5 w-5" />,
-      color: "#EA0606",
-      stats: [
-        { label: "Open Flags", value: "—" },
-        { label: "Strikes Issued (30d)", value: "—" },
-        { label: "Auto-Suspensions", value: "—" },
-        { label: "Status", value: "Active" },
-      ],
-    },
-    {
-      id: "pps",
-      name: "Partner Priority Score Engine",
-      description: "Recalculates PPS for all partners nightly at 2 AM. Factors: tier, close rate, acceptance, photos, reviews, referrals.",
-      icon: <Brain className="h-5 w-5" />,
-      color: "#FBB140",
-      stats: [
-        { label: "Partners Scored", value: platformStats?.totalPartners ?? "—" },
-        { label: "Total Jobs", value: platformStats?.totalJobs ?? "—" },
-        { label: "Next Run", value: "2:00 AM" },
-        { label: "Status", value: "Active" },
-      ],
-    },
-  ];
+  const catLabels = ["All", ...AGENT_CATEGORIES.map(c => c.label)];
+  const visibleCats = filterCat === "All"
+    ? AGENT_CATEGORIES
+    : AGENT_CATEGORIES.filter(c => c.label === filterCat);
 
   return (
     <AdminLayout>
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6" style={{ fontFamily: "Inter, sans-serif" }}>
 
-      {/* ── Hero Banner ─────────────────────────────────────────────────────── */}
-      <div
-        className="rounded-2xl overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0A1628 0%, #0e2040 60%, #0f2d4a 100%)" }}
-      >
+      {/* ── Hero Banner ───────────────────────────────────────────────────────── */}
+      <div className="rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #0A1628 0%, #0e2040 60%, #0f2d4a 100%)" }}>
         <div className="px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(135deg, #00D4FF30, #7928CA40)" }}
-            >
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #00D4FF30, #7928CA40)" }}>
               <Bot className="w-7 h-7" style={{ color: "#00D4FF" }} />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-2xl font-black text-white tracking-tight">{TOTAL_AGENTS} Agents Deployed</h1>
-                <span
-                  className="px-2.5 py-0.5 rounded-full text-xs font-bold"
-                  style={{ background: "#82D61620", border: "1px solid #82D61650", color: "#82D616" }}
-                >
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: "#82D61620", border: "1px solid #82D61650", color: "#82D616" }}>
                   AGaaS v1.0
                 </span>
               </div>
@@ -366,17 +313,51 @@ export default function AgentStatusDashboard() {
                 All Systems Operational
               </Badge>
             )}
+            {/* Auto-refresh toggle */}
+            <button
+              onClick={() => setAutoRefresh(r => !r)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all"
+              style={{
+                background: autoRefresh ? "#00D4FF20" : "#ffffff08",
+                border: `1px solid ${autoRefresh ? "#00D4FF50" : "#ffffff18"}`,
+                color: autoRefresh ? "#00D4FF" : "#7eb8d4",
+              }}
+            >
+              <RefreshCw className={`w-3 h-3 ${autoRefresh ? "animate-spin" : ""}`} />
+              {autoRefresh ? "Live" : "Auto-Refresh"}
+            </button>
+          </div>
+        </div>
+
+        {/* Overall system health bar */}
+        <div className="px-6 pb-4">
+          <div className="flex items-center justify-between text-xs mb-1.5">
+            <span style={{ color: "#7eb8d4" }}>System Health</span>
+            <span className="font-bold" style={{ color: healthPct >= 90 ? "#82D616" : "#FBB140" }}>{healthPct}% Healthy</span>
+          </div>
+          <div className="h-2 rounded-full overflow-hidden" style={{ background: "#ffffff12" }}>
+            <div
+              className="h-full rounded-full transition-all duration-700"
+              style={{
+                width: `${healthPct}%`,
+                background: healthPct >= 90
+                  ? "linear-gradient(90deg, #82D616, #00D4FF)"
+                  : healthPct >= 75
+                  ? "linear-gradient(90deg, #FBB140, #82D616)"
+                  : "linear-gradient(90deg, #EA0606, #FBB140)",
+              }}
+            />
           </div>
         </div>
 
         {/* KPI strip */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-0 border-t" style={{ borderColor: "#ffffff12" }}>
           {[
-            { label: "Total Partners", value: platformStats?.totalPartners ?? "—", icon: Users, color: "#00D4FF" },
-            { label: "Jobs Logged", value: platformStats?.totalJobs ?? "—", icon: Camera, color: "#00D4FF" },
-            { label: "Opportunities", value: platformStats?.totalOpportunities ?? "—", icon: Zap, color: "#00D4FF" },
-            { label: "Agent Jobs Today", value: totalJobsToday, icon: Activity, color: "#82D616" },
-            { label: "Errors Today", value: totalErrorsToday, icon: AlertTriangle, color: totalErrorsToday > 0 ? "#EA0606" : "#82D616" },
+            { label: "Total Partners",    value: platformStats?.totalPartners ?? "—",      icon: Users,          color: "#00D4FF" },
+            { label: "Jobs Logged",       value: platformStats?.totalJobs ?? "—",          icon: Camera,         color: "#00D4FF" },
+            { label: "Storm Leads",       value: stormStats?.totalLeads ?? "—",             icon: CloudLightning, color: "#7928CA" },
+            { label: "Agent Jobs Today",  value: totalJobsToday,                            icon: Activity,       color: "#82D616" },
+            { label: "Errors Today",      value: totalErrorsToday,                          icon: AlertTriangle,  color: totalErrorsToday > 0 ? "#EA0606" : "#82D616" },
           ].map((stat, i) => (
             <div key={stat.label} className="px-5 py-3 flex items-center gap-3" style={{ borderLeft: i > 0 ? "1px solid #ffffff10" : undefined }}>
               <stat.icon className="w-4 h-4 flex-shrink-0" style={{ color: stat.color }} />
@@ -389,163 +370,147 @@ export default function AgentStatusDashboard() {
         </div>
       </div>
 
-      {/* ── Agent Category Grid ──────────────────────────────────────────────── */}
-      <div>
-        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
-          All {TOTAL_AGENTS} Agents by Category
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {AGENT_CATEGORIES.map((cat) => {
-            const CatIcon = cat.icon;
-            const catActive = cat.agents.filter(a => a.status === "active").length;
-            return (
-              <Card key={cat.label} className="border border-border">
-                <CardHeader className="pb-2 pt-4">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="flex items-center gap-2 text-sm font-bold">
-                      <div
-                        className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ background: `${cat.color}25` }}
-                      >
-                        <CatIcon className="w-3.5 h-3.5" style={{ color: cat.color }} />
+      {/* ── Category Filter ───────────────────────────────────────────────────── */}
+      <div className="flex items-center gap-2 flex-wrap">
+        <Filter className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "#7eb8d4" }} />
+        {catLabels.map(label => {
+          const cat = AGENT_CATEGORIES.find(c => c.label === label);
+          const active = filterCat === label;
+          return (
+            <button
+              key={label}
+              onClick={() => setFilterCat(label)}
+              className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+              style={{
+                background: active ? (cat?.color ?? "#00D4FF") + "25" : "#ffffff08",
+                border: `1px solid ${active ? (cat?.color ?? "#00D4FF") + "60" : "#ffffff15"}`,
+                color: active ? (cat?.color ?? "#00D4FF") : "#7eb8d4",
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ── Agent Grid ────────────────────────────────────────────────────────── */}
+      <div className="space-y-4">
+        {visibleCats.map((cat) => {
+          const CatIcon = cat.icon;
+          const catActive = cat.agents.filter(a => a.status === "active").length;
+          return (
+            <div key={cat.label}>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{ background: `${cat.color}22` }}>
+                  <CatIcon className="w-3.5 h-3.5" style={{ color: cat.color }} />
+                </div>
+                <h2 className="text-sm font-bold" style={{ color: cat.color }}>{cat.label}</h2>
+                <span className="text-xs text-muted-foreground">{catActive}/{cat.agents.length} active</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                {cat.agents.map((agent) => {
+                  const isExpanded = expandedAgent === `${cat.label}::${agent.name}`;
+                  return (
+                    <div
+                      key={agent.name}
+                      className="rounded-xl overflow-hidden transition-all"
+                      style={{
+                        background: "#0D1F38",
+                        border: `1px solid ${isExpanded ? cat.color + "50" : "#ffffff12"}`,
+                      }}
+                    >
+                      {/* Agent row */}
+                      <div className="flex items-center gap-3 px-4 py-3">
+                        <StatusDot status={agent.status} pulse />
+                        <span className="text-sm font-semibold text-white flex-1 truncate">{agent.name}</span>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          {agent.successRate !== undefined && (
+                            <SuccessBar pct={agent.successRate} />
+                          )}
+                          {agent.avgResponseMs !== undefined && agent.avgResponseMs > 0 && (
+                            <span className="text-[10px] font-mono" style={{ color: "#7eb8d4" }}>
+                              {agent.avgResponseMs >= 1000
+                                ? `${(agent.avgResponseMs / 1000).toFixed(1)}s`
+                                : `${agent.avgResponseMs}ms`}
+                            </span>
+                          )}
+                        </div>
+                        <button
+                          onClick={() => setExpandedAgent(isExpanded ? null : `${cat.label}::${agent.name}`)}
+                          className="flex-shrink-0 p-0.5 rounded hover:bg-white/10 transition-colors"
+                        >
+                          {isExpanded
+                            ? <ChevronUp className="w-4 h-4 text-muted-foreground" />
+                            : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
+                        </button>
                       </div>
-                      {cat.label}
-                    </CardTitle>
-                    <span className="text-xs text-muted-foreground">{catActive}/{cat.agents.length} active</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-1">
-                  <div className="space-y-1.5">
-                    {cat.agents.map((agent) => (
-                      <div key={agent.name} className="flex items-center gap-2 min-w-0 py-0.5">
-                        <StatusDot status={agent.status} />
-                        <span className="text-xs text-foreground/80 truncate flex-1">{agent.name}</span>
+
+                      {/* Meta row */}
+                      <div className="flex items-center gap-3 px-4 pb-2.5 text-[10px]" style={{ color: "#5a7a94" }}>
                         {agent.lastRun && (
-                          <span className="text-[10px] text-muted-foreground/60 flex-shrink-0 hidden sm:inline">
-                            {agent.lastRun}
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" /> {agent.lastRun}
+                          </span>
+                        )}
+                        {agent.nextRun && (
+                          <span className="flex items-center gap-1">
+                            <Zap className="w-3 h-3" /> {agent.nextRun}
                           </span>
                         )}
                         {agent.jobsToday !== undefined && (
-                          <span className="text-[10px] font-medium flex-shrink-0" style={{ color: agent.errorsToday ? "#EA0606" : "#82D616" }}>
-                            {agent.jobsToday}j{agent.errorsToday ? ` ${agent.errorsToday}e` : ""}
-                          </span>
+                          <span>{agent.jobsToday} jobs</span>
+                        )}
+                        {!!agent.errorsToday && (
+                          <span style={{ color: "#EA0606" }}>{agent.errorsToday} err</span>
                         )}
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+
+                      {/* Expandable detail */}
+                      {isExpanded && (
+                        <div className="border-t px-4 py-3 space-y-3" style={{ borderColor: "#ffffff10" }}>
+                          <p className="text-xs font-semibold" style={{ color: "#7eb8d4" }}>Last 5 Runs</p>
+                          <div className="space-y-1.5">
+                            {(agent.recentRuns ?? []).map((run, i) => (
+                              <div key={i} className="flex items-center gap-2 text-[11px]">
+                                <RunBadge result={run.result} />
+                                <span className="font-mono text-muted-foreground">{run.at}</span>
+                                <span className="font-mono" style={{ color: "#7eb8d4" }}>{run.duration}</span>
+                                <span className="flex-1 text-muted-foreground truncate">{run.message}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex items-center gap-2 pt-1">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="h-7 text-xs gap-1.5 flex-1"
+                              onClick={() => toast.success(`Restarting ${agent.name}…`)}
+                            >
+                              <RotateCcw className="w-3 h-3" />
+                              Restart Agent
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="h-7 text-xs gap-1.5 flex-1"
+                              onClick={() => toast.info(`Opening logs for ${agent.name}`)}
+                            >
+                              <FileText className="w-3 h-3" />
+                              View Logs
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* ── Manual Trigger Panel ─────────────────────────────────────────────── */}
-      <div>
-        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
-          Manual Agent Triggers
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Storm Scanner */}
-          <Card className="border border-border">
-            <CardContent className="pt-4 pb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#7928CA20" }}>
-                  <CloudLightning className="w-5 h-5" style={{ color: "#7928CA" }} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold">Storm Scanner</p>
-                  <p className="text-xs text-muted-foreground">NOAA sweep → emergency leads</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Last: {stormStats ? "Recent" : "—"}</span>
-                <span>{stormStats?.totalLeads ?? "—"} leads generated</span>
-              </div>
-              {/* Metro selector */}
-              <select
-                value={selectedMetro}
-                onChange={e => setSelectedMetro(e.target.value as TxMetro)}
-                className="w-full text-xs rounded-md border border-border bg-background px-2.5 py-1.5 mb-2 text-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-              >
-                {TX_METROS.map(m => (
-                  <option key={m.value} value={m.value}>{m.label}</option>
-                ))}
-              </select>
-              <Button
-                size="sm"
-                variant="outline"
-                className="w-full gap-2"
-                onClick={() => triggerStorm.mutate({ state: selectedMetro })}
-                disabled={triggerStorm.isPending}
-              >
-                <RefreshCw className={`h-3 w-3 ${triggerStorm.isPending ? "animate-spin" : ""}`} />
-                {triggerStorm.isPending ? "Scanning..." : "Run Scan Now"}
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Lead Router */}
-          <Card className="border border-border">
-            <CardContent className="pt-4 pb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#F5E64220" }}>
-                  <Zap className="w-5 h-5" style={{ color: "#F5E642" }} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold">Lead Router</p>
-                  <p className="text-xs text-muted-foreground">Route pending opps to partners</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Continuous</span>
-                <span>{platformStats?.totalOpportunities ?? "—"} total opps</span>
-              </div>
-              <Button
-                size="sm"
-                variant="outline"
-                className="w-full gap-2"
-                onClick={() => triggerLeadRouter?.mutate?.({})}
-                disabled={triggerLeadRouter?.isPending}
-              >
-                <RefreshCw className={`h-3 w-3 ${triggerLeadRouter?.isPending ? "animate-spin" : ""}`} />
-                {triggerLeadRouter?.isPending ? "Routing..." : "Trigger Routing Cycle"}
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Commission Calc */}
-          <Card className="border border-border">
-            <CardContent className="pt-4 pb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#82D61620" }}>
-                  <DollarSign className="w-5 h-5" style={{ color: "#82D616" }} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold">Commission Calc</p>
-                  <p className="text-xs text-muted-foreground">Recalculate all pending commissions</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> On job close</span>
-                <span>{platformStats?.totalPartners ?? "—"} active pros</span>
-              </div>
-              <Button
-                size="sm"
-                variant="outline"
-                className="w-full gap-2"
-                onClick={() => triggerCommissionCalc?.mutate?.({})}
-                disabled={triggerCommissionCalc?.isPending}
-              >
-                <RefreshCw className={`h-3 w-3 ${triggerCommissionCalc?.isPending ? "animate-spin" : ""}`} />
-                {triggerCommissionCalc?.isPending ? "Calculating..." : "Recalculate Now"}
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      {/* ── Agent Error Log ───────────────────────────────────────────────────── */}
+      {/* ── Recent Agent Errors ────────────────────────────────────────────────── */}
       <div>
         <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
           Recent Agent Errors (Last 5)
@@ -568,11 +533,9 @@ export default function AgentStatusDashboard() {
                       borderLeft: `3px solid ${err.severity === "error" ? "#EA0606" : "#FBB140"}`,
                     }}
                   >
-                    {err.severity === "error" ? (
-                      <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-red-500" />
-                    ) : (
-                      <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#FBB140" }} />
-                    )}
+                    {err.severity === "error"
+                      ? <XCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-red-500" />
+                      : <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: "#FBB140" }} />}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-xs font-semibold">{err.agent}</span>
@@ -589,65 +552,11 @@ export default function AgentStatusDashboard() {
         </Card>
       </div>
 
-      {/* ── Live AGaaS Agent Cards ────────────────────────────────────────────── */}
-      <div>
-        <h2 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
-          Live AGaaS Core Agents
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {agents.map((agent) => (
-            <Card key={agent.id} className="border border-border">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-sm">
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${agent.color}20`, color: agent.color }}
-                  >
-                    {agent.icon}
-                  </div>
-                  {agent.name}
-                </CardTitle>
-                <p className="text-xs text-muted-foreground leading-relaxed">{agent.description}</p>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="grid grid-cols-2 gap-2">
-                  {agent.stats.map((stat) => (
-                    <div key={stat.label} className="bg-muted/40 rounded-md p-2">
-                      <div className="text-xs text-muted-foreground">{stat.label}</div>
-                      <div className="font-semibold text-sm mt-0.5">
-                        {stat.label === "Status" ? (
-                          <span className="text-green-400 flex items-center gap-1">
-                            <CheckCircle className="h-3 w-3" /> {stat.value}
-                          </span>
-                        ) : stat.label === "Next Run" ? (
-                          <span className="text-muted-foreground flex items-center gap-1">
-                            <Clock className="h-3 w-3" /> {stat.value}
-                          </span>
-                        ) : stat.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Status Legend ─────────────────────────────────────────────────────── */}
+      {/* ── Legend ───────────────────────────────────────────────────────────── */}
       <div className="flex items-center gap-6 text-xs text-muted-foreground pb-2">
-        <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-green-400" />
-          Active — running, processing jobs
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} />
-          Standby — deployed, awaiting trigger
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-red-500" />
-          Error — needs attention
-        </div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400" /> Active — running, processing jobs</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#FBB140" }} /> Standby — deployed, awaiting trigger</div>
+        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-red-500" /> Error — needs attention</div>
       </div>
 
     </div>

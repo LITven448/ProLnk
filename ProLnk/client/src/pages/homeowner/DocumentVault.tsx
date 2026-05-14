@@ -321,17 +321,3 @@ function DocRow({ doc, showExpiry }: { doc: any; showExpiry?: boolean }) {
   );
 }
 
-function fmtDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-}
-
-function isExpiringSoon(doc: any): boolean {
-  if (!doc.expiresAt) return false;
-  const diff = new Date(doc.expiresAt).getTime() - Date.now();
-  return diff > 0 && diff < 90 * 24 * 60 * 60 * 1000;
-}
-
-function isExpired(doc: any): boolean {
-  if (!doc.expiresAt) return false;
-  return new Date(doc.expiresAt).getTime() < Date.now();
-}

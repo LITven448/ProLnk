@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AdminLayout from "@/components/AdminLayout";
-import { DashboardCard } from "@/components/DashboardShared";
+import { DCard } from "@/components/DashboardShared";
 import { toast } from "sonner";
 import {
   AlertTriangle, CheckCircle2, Clock, Calendar, Users,
@@ -119,10 +119,10 @@ export default function PartnerCheckIns() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-4 gap-4">
-          <DashboardCard title="Due Today" value="8" icon={<Calendar className="w-5 h-5 text-blue-500" />} />
-          <DashboardCard title="Overdue" value={String(overdue.length)} icon={<TrendingDown className="w-5 h-5 text-red-500" />} />
-          <DashboardCard title="Completed This Week" value="24" icon={<CheckCircle2 className="w-5 h-5 text-green-500" />} />
-          <DashboardCard title="Avg Response Time" value="4.2h" icon={<Clock className="w-5 h-5 text-amber-500" />} />
+          <DCard title="Due Today" value="8" icon={<Calendar className="w-5 h-5 text-blue-500" />} />
+          <DCard title="Overdue" value={String(overdue.length)} icon={<TrendingDown className="w-5 h-5 text-red-500" />} />
+          <DCard title="Completed This Week" value="24" icon={<CheckCircle2 className="w-5 h-5 text-green-500" />} />
+          <DCard title="Avg Response Time" value="4.2h" icon={<Clock className="w-5 h-5 text-amber-500" />} />
         </div>
 
         {/* Main content grid */}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FC } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,7 +30,7 @@ interface NotifItem {
 interface NotifGroup {
   key: string;
   title: string;
-  icon: React.ElementType;
+  icon: FC;
   color: string;
   items: NotifItem[];
 }
@@ -154,7 +154,7 @@ const initialGroups: NotifGroup[] = [
   },
 ];
 
-const channelIcons: Record<Channel, React.ElementType> = {
+const channelIcons: Record<Channel, FC> = {
   email: Mail,
   sms: Smartphone,
   push: MonitorSmartphone,

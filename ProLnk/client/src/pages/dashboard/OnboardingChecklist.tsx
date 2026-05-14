@@ -206,7 +206,7 @@ const CATEGORIES: CategoryConfig[] = [
   { id: "Network Growth", label: "Network Growth", steps: ALL_STEPS.filter(s => s.category === "Network Growth") },
 ];
 
-const CATEGORY_ICONS: Record<string, (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null> = {
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "Profile Setup": User,
   "Verification": Shield,
   "First Earnings": DollarSign,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ElementType, type ReactNode, type FormEvent } from "react";
 import { Link } from "wouter";
 import {
   Shield, Lock, FileText, Mail, Phone, ChevronRight,
@@ -28,7 +28,7 @@ const DATA_RETENTION = [
 ];
 
 // --- Sub-components ----------------------------------------------------------
-function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle?: string }) {
+function SectionHeader({ icon: Icon, title, subtitle }: { icon: ElementType; title: string; subtitle?: string }) {
   return (
     <div className="flex items-start gap-3 mb-6">
       <div className="w-10 h-10 rounded-xl bg-[#0A1628]/8 flex items-center justify-center flex-shrink-0">
@@ -42,7 +42,7 @@ function SectionHeader({ icon: Icon, title, subtitle }: { icon: React.ElementTyp
   );
 }
 
-function InfoBox({ type, children }: { type: "info" | "warning" | "success"; children: React.ReactNode }) {
+function InfoBox({ type, children }: { type: "info" | "warning" | "success"; children: ReactNode }) {
   const styles = {
     info: { bg: "bg-blue-50", border: "border-blue-200", text: "text-blue-800", Icon: Info, iconColor: "text-blue-500" },
     warning: { bg: "bg-amber-50", border: "border-amber-200", text: "text-amber-800", Icon: AlertTriangle, iconColor: "text-amber-500" },
@@ -277,7 +277,7 @@ function DataRightsTab() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
       toast.error("Please enter your email address.");
@@ -420,7 +420,7 @@ function DataRightsTab() {
 }
 
 // --- Main Page ----------------------------------------------------------------
-const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
+const TABS: { id: Tab; label: string; icon: ElementType }[] = [
   { id: "overview", label: "Overview", icon: Shield },
   { id: "privacy", label: "Privacy & Retention", icon: Lock },
   { id: "tcpa", label: "TCPA Notice", icon: Phone },

@@ -7,13 +7,13 @@
  * - "Nominate a Pro" CTA form
  */
 import { useState, type FormEvent } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import PartnerLayout from "@/components/PartnerLayout";
 import {
   Star, MapPin, Award, Trophy, TrendingUp, CheckCircle,
   ChevronRight, Loader2, Send, Zap, Heart, Users,
-  ShieldCheck, Quote, Crown,
+  ShieldCheck, Quote, Crown, CalendarPlus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -74,6 +74,7 @@ function ProAvatar({ name, size = "md" }: { name: string; size?: "sm" | "md" | "
 type NominateForm = { proName: string; reason: string; nominatorName: string };
 
 export default function PartnerSpotlight() {
+  const [, navigate] = useLocation();
   const [nominateForm, setNominateForm] = useState<NominateForm>({ proName: "", reason: "", nominatorName: "" });
   const [nominateSent, setNominateSent] = useState(false);
   const [nominateSubmitting, setNominateSubmitting] = useState(false);
@@ -185,12 +186,22 @@ export default function PartnerSpotlight() {
                     </div>
                   </div>
 
-                  <Link href={`/partner/${partnerOfMonth.id}`} className="flex-shrink-0">
-                    <Button size="sm" className="text-white text-xs gap-1.5"
-                      style={{ backgroundColor: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)" }}>
-                      View Profile <ChevronRight className="w-3.5 h-3.5" />
+                  <div className="flex flex-col gap-2 flex-shrink-0">
+                    <Link href={`/partner/${partnerOfMonth.id}`}>
+                      <Button size="sm" className="w-full text-white text-xs gap-1.5"
+                        style={{ backgroundColor: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)" }}>
+                        View Profile <ChevronRight className="w-3.5 h-3.5" />
+                      </Button>
+                    </Link>
+                    <Button
+                      size="sm"
+                      className="w-full text-xs gap-1.5 font-semibold"
+                      style={{ backgroundColor: "#f59e0b", color: "#fff" }}
+                      onClick={() => navigate(`/trustypro/book?pro=${partnerOfMonth.id}&service=${encodeURIComponent(partnerOfMonth.businessType)}`)}
+                    >
+                      <CalendarPlus className="w-3.5 h-3.5" /> Request Quote
                     </Button>
-                  </Link>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -219,36 +230,43 @@ export default function PartnerSpotlight() {
                   {risingStars.map((p, idx) => {
                     const stars = [4.7, 4.8, 4.9][idx] ?? 4.7;
                     return (
-                      <Link key={p.id} href={`/partner/${p.id}`}>
-                        <div className="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1B4FD8]/30 hover:shadow-md transition-all cursor-pointer group">
-                          <div className="flex items-center gap-3 mb-3">
-                            <ProAvatar name={p.businessName} size="sm" />
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-bold text-gray-900 truncate group-hover:text-[#1B4FD8] transition-colors">
-                                {p.businessName}
-                              </p>
-                              <p className="text-xs text-gray-400 truncate">{p.businessType}</p>
+                      <div key={p.id} className="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1B4FD8]/30 hover:shadow-md transition-all">
+                        <Link href={`/partner/${p.id}`}>
+                          <div className="cursor-pointer group">
+                            <div className="flex items-center gap-3 mb-3">
+                              <ProAvatar name={p.businessName} size="sm" />
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-bold text-gray-900 truncate group-hover:text-[#1B4FD8] transition-colors">
+                                  {p.businessName}
+                                </p>
+                                <p className="text-xs text-gray-400 truncate">{p.businessType}</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between mb-2">
+                              <StarRow rating={stars} />
+                              <TierBadge tier={p.tier} />
+                            </div>
+                            <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                              <MapPin className="w-3 h-3" />
+                              <span className="truncate">{p.serviceArea}</span>
                             </div>
                           </div>
-                          <div className="flex items-center justify-between mb-2">
-                            <StarRow rating={stars} />
-                            <TierBadge tier={p.tier} />
+                        </Link>
+                        <div className="flex items-center justify-between pt-3 border-t border-gray-50">
+                          <div className="flex items-center gap-1 text-xs text-emerald-600 font-semibold">
+                            <Zap className="w-3 h-3" />
+                            {p.referralCount} jobs
                           </div>
-                          <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                            <MapPin className="w-3 h-3" />
-                            <span className="truncate">{p.serviceArea}</span>
-                          </div>
-                          <div className="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between">
-                            <div className="flex items-center gap-1 text-xs text-emerald-600 font-semibold">
-                              <Zap className="w-3 h-3" />
-                              {p.referralCount} jobs
-                            </div>
-                            <span className="text-xs text-[#1B4FD8] font-semibold group-hover:underline">
-                              View →
-                            </span>
-                          </div>
+                          <Button
+                            size="sm"
+                            className="text-white text-xs gap-1 h-7 px-2.5"
+                            style={{ backgroundColor: "#1B4FD8" }}
+                            onClick={() => navigate(`/trustypro/book?pro=${p.id}&service=${encodeURIComponent(p.businessType)}`)}
+                          >
+                            <CalendarPlus className="w-3 h-3" /> Quote
+                          </Button>
                         </div>
-                      </Link>
+                      </div>
                     );
                   })}
                 </div>

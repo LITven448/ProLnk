@@ -685,6 +685,17 @@ function PricingSection() {
         <span className="font-bold text-[#0A1628]">2,125 total founding spots — all locked at $149/mo</span>
       </div>
 
+      {/* Live Network Stats link */}
+      <div className="flex justify-center mb-10 -mt-8">
+        <Link href="/network-stats">
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#0A1628]/20 bg-[#0A1628]/5 text-[#0A1628] text-sm font-semibold hover:bg-[#0A1628]/10 transition-colors cursor-pointer">
+            <BarChart3 className="w-4 h-4" />
+            View Live Network Stats
+            <ChevronRight className="w-4 h-4" />
+          </span>
+        </Link>
+      </div>
+
       {/* Add-On Modules */}
       <div className="max-w-4xl mx-auto mb-14">
         <div className="flex items-center gap-3 mb-6">

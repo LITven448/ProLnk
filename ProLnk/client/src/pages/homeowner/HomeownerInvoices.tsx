@@ -17,7 +17,7 @@ import {
   Wind,
   Paintbrush,
   TreePine,
-} from "lucide-react";
+, LucideIcon } from "lucide-react";
 
 interface Invoice {
   id: string;
@@ -29,7 +29,7 @@ interface Invoice {
   description: string;
   amount: number;
   status: "Paid" | "Pending";
-  icon: (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null;
+  icon: LucideIcon;
 }
 
 const invoices: Invoice[] = [

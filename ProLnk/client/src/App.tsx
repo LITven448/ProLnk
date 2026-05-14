@@ -390,6 +390,7 @@ const TaskManager = lazy(() => import("@/pages/admin/TaskManager"));
 const OnboardingChecklist = lazy(() => import("@/pages/OnboardingChecklist"));
 const DashboardOnboardingChecklist = lazy(() => import("@/pages/dashboard/OnboardingChecklist"));
 const FeatureDiscovery = lazy(() => import("@/pages/dashboard/FeatureDiscovery"));
+const SocialShare = lazy(() => import("@/pages/dashboard/SocialShare"));
 const ServiceAreaManager = lazy(() => import("@/pages/ServiceAreaManager"));
 const QuickQuoteRequest = lazy(() => import("@/pages/homeowner/QuickQuoteRequest"));
 const RoomMakeover = lazy(() => import("@/pages/homeowner/RoomMakeover"));
@@ -482,6 +483,8 @@ const ApiKeyManagement = lazy(() => import("./pages/admin/ApiKeyManagement"));
 
 const FoundingPartnerPage = lazy(() => import("./pages/FoundingPartnerPage"));
 const PartnerBilling = lazy(() => import("./pages/PartnerBilling"));
+const MarketIntelligence = lazy(() => import("./pages/dashboard/MarketIntelligence"));
+const CompetitiveAdvantage = lazy(() => import("./pages/resources/CompetitiveAdvantage"));
 
 // Wave 31-45 Pages
 const MobileOptimization = lazy(() => import("./pages/admin/MobileOptimization"));
@@ -644,6 +647,7 @@ function Router() {
       <Route path="/dashboard/earnings-calendar" component={EarningsCalendar} />
       <Route path="/earnings-history" component={EarningsHistory} />
       <Route path="/dashboard/whats-new" component={WhatsNew} />
+      <Route path="/dashboard/market" component={MarketIntelligence} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
       <Route path="/partner-verification" component={PartnerVerification} />
       <Route path="/dashboard/referral" component={ReferralLink} />
@@ -715,6 +719,7 @@ function Router() {
       <Route path="/trust" component={TrustCenter} />
       <Route path="/admin/categories" component={ServiceCategories} />
       <Route path="/dashboard/marketing-kit" component={MarketingKit} />
+      <Route path="/dashboard/social" component={SocialShare} />
       <Route path="/admin/comms" component={CommsTimeline} />
       <Route path="/admin/properties" component={PropertyTimeline} />
       <Route path="/admin/properties/:address/report" component={PropertyReport} />
@@ -1054,6 +1059,7 @@ function Router() {
       <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
       <Route path="/resources/faq" component={PartnerFAQ} />
       <Route path="/resources/success-stories" component={PartnerSuccessStories} />
+      <Route path="/resources/competitive" component={CompetitiveAdvantage} />
 
       {/* Lead Management */}
       <Route path="/leads" component={LeadInbox} />

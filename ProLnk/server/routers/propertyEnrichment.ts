@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { router, publicProcedure } from "../trpc";
+import { router, publicProcedure } from "../_core/trpc";
 
 export const propertyEnrichmentRouter = router({
   enrichAddress: publicProcedure

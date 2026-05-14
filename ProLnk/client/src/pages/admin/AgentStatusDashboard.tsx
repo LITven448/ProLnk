@@ -1,4 +1,5 @@
 import type React from "react";
+import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -166,6 +167,16 @@ const AGENT_CATEGORIES: AgentCategory[] = [
 
 const TOTAL_AGENTS = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.length, 0);
 
+const TX_METROS = [
+  { label: "Dallas-Fort Worth", value: "TX-DFW" },
+  { label: "Houston",           value: "TX-HOU" },
+  { label: "Austin",            value: "TX-AUS" },
+  { label: "San Antonio",       value: "TX-SAT" },
+  { label: "Plano / Frisco",    value: "TX-PLN" },
+] as const;
+
+type TxMetro = typeof TX_METROS[number]["value"];
+
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function StatusDot({ status }: { status: AgentEntry["status"] }) {
@@ -198,6 +209,8 @@ export default function AgentStatusDashboard() {
   const { data: stormStats } = trpc.stormAgent.getStats.useQuery();
   const { data: complianceOverview } = trpc.compliance.getComplianceOverview.useQuery();
   const { data: photoQueueStats } = trpc.admin.getPhotoQueueStats.useQuery();
+
+  const [selectedMetro, setSelectedMetro] = useState<TxMetro>("TX-DFW");
 
   const triggerStorm = trpc.stormAgent.triggerScan.useMutation({
     onSuccess: (r) => toast.success(`Storm scan complete — ${r.eventsProcessed} events, ${r.leadsGenerated} leads`),
@@ -449,11 +462,21 @@ export default function AgentStatusDashboard() {
                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Last: {stormStats ? "Recent" : "—"}</span>
                 <span>{stormStats?.totalLeads ?? "—"} leads generated</span>
               </div>
+              {/* Metro selector */}
+              <select
+                value={selectedMetro}
+                onChange={e => setSelectedMetro(e.target.value as TxMetro)}
+                className="w-full text-xs rounded-md border border-border bg-background px-2.5 py-1.5 mb-2 text-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+              >
+                {TX_METROS.map(m => (
+                  <option key={m.value} value={m.value}>{m.label}</option>
+                ))}
+              </select>
               <Button
                 size="sm"
                 variant="outline"
                 className="w-full gap-2"
-                onClick={() => triggerStorm.mutate({ state: "TX" })}
+                onClick={() => triggerStorm.mutate({ state: selectedMetro })}
                 disabled={triggerStorm.isPending}
               >
                 <RefreshCw className={`h-3 w-3 ${triggerStorm.isPending ? "animate-spin" : ""}`} />

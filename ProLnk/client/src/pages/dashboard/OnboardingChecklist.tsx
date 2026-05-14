@@ -17,7 +17,7 @@ interface Step {
   cta: string;
   href: string;
   timeEstimate: string;
-  icon: React.ElementType;
+  icon: (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null;
   color: string;
   bg: string;
   border: string;
@@ -206,7 +206,7 @@ const CATEGORIES: CategoryConfig[] = [
   { id: "Network Growth", label: "Network Growth", steps: ALL_STEPS.filter(s => s.category === "Network Growth") },
 ];
 
-const CATEGORY_ICONS: Record<string, React.ElementType> = {
+const CATEGORY_ICONS: Record<string, (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null> = {
   "Profile Setup": User,
   "Verification": Shield,
   "First Earnings": DollarSign,

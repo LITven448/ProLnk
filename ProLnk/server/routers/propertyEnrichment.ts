@@ -10,41 +10,47 @@ export const propertyEnrichmentRouter = router({
       zip: z.string().optional(),
     }))
     .query(async ({ input }) => {
-      const apiKey = process.env.ATTOM_API_KEY;
+      const apiKey = process.env.BATCHDATA_API_KEY;
+
       if (!apiKey) return null;
 
       try {
-        const address2 = [input.city, input.state || "TX", input.zip].filter(Boolean).join(" ");
-        const url = `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/detail?address1=${encodeURIComponent(input.address)}&address2=${encodeURIComponent(address2)}`;
-
-        const response = await fetch(url, {
-          headers: { apikey: apiKey, Accept: "application/json" },
+        const response = await fetch("https://api.batchdata.com/api/v1/property/lookup", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            requests: [{
+              address: {
+                street: input.address,
+                city: input.city || "",
+                state: input.state || "TX",
+                zip: input.zip || "",
+              },
+            }],
+          }),
         });
 
         if (!response.ok) return null;
-        const data = await response.json() as any;
-        const prop = data?.property?.[0];
+
+        const data = await response.json() as Record<string, unknown>;
+        const results = (data?.results as Record<string, unknown>[] | undefined);
+        const first = results?.[0] as Record<string, unknown> | undefined;
+        const prop = (first?.propertyInfo ?? first) as Record<string, unknown> | undefined;
         if (!prop) return null;
 
-        const building = prop.building || {};
-        const lot = prop.lot || {};
-        const summary = prop.summary || {};
-
         return {
-          squareFeet: building.size?.bldgsize || building.size?.livingsize || null,
-          yearBuilt: summary.yearbuilt || null,
-          bedrooms: building.rooms?.beds || null,
-          bathrooms: building.rooms?.bathstotal || building.rooms?.bathsfull || null,
-          propertyType: summary.proptype || null,
-          stories: building.summary?.levels || null,
-          lotSizeAcres: lot.lotsize2 || null,
-          garage: building.parking?.garagetype || null,
-          pool: building.interior?.pooltype || null,
-          // Extra ATTOM data stored but not shown to user upfront
-          assessedValue: prop.assessment?.assessed?.assdttlvalue || null,
-          marketValue: prop.assessment?.market?.mktttlvalue || null,
-          lastSalePrice: prop.sale?.amount?.saleamt || null,
-          lastSaleDate: prop.sale?.salesearchdate || null,
+          squareFeet: (prop.buildingSquareFeet ?? prop.squareFeet ?? null) as number | null,
+          yearBuilt: (prop.yearBuilt ?? null) as number | null,
+          bedrooms: (prop.bedrooms ?? null) as number | null,
+          bathrooms: (prop.bathrooms ?? null) as number | null,
+          lotSizeAcres: (prop.lotAcres ?? null) as number | null,
+          propertyType: (prop.propertyType ?? null) as string | null,
+          stories: (prop.stories ?? null) as number | null,
+          garage: (prop.garageType ?? null) as string | null,
+          pool: (prop.pool ?? null) as boolean | null,
         };
       } catch {
         return null;

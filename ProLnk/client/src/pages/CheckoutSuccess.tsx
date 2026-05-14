@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, Link } from "wouter";
 import { CheckCircle, Users, Camera, Network, CreditCard, Star, Shield, TrendingUp, Zap, Copy, Check } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 const TIER_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; spotsTotal: number }> = {
   charter:  { label: "Charter",  color: "#E8A020", bg: "rgba(232,160,32,0.1)",  border: "rgba(232,160,32,0.3)",  spotsTotal: 25   },
@@ -83,16 +84,51 @@ function ReferralCopy({ email }: { email: string }) {
   );
 }
 
+declare global {
+  interface Window {
+    rewardful?: (event: string, callback: (referral: { id: string } | null) => void) => void;
+    Rewardful?: { referral: string | null };
+  }
+}
+
 export default function CheckoutSuccess() {
   const [location] = useLocation();
 
   const params = new URLSearchParams(window.location.search);
   const rawTier = params.get("tier") || "charter";
   const email = params.get("email") || "";
+  const stripeCustomerId = params.get("customer") || "";
   const tier = TIER_CONFIG[rawTier] ? rawTier : "charter";
   const cfg = TIER_CONFIG[tier];
 
+  const trackReferral = trpc.rewardful.trackReferral.useMutation();
+
   const trialStart = new Date();
+
+  useEffect(() => {
+    const campaignId = import.meta.env.VITE_REWARDFUL_CAMPAIGN_ID as string | undefined;
+    if (!campaignId) return;
+
+    const script = document.createElement("script");
+    script.src = "https://r.wdfl.co/rw.js";
+    script.setAttribute("data-rewardful", campaignId);
+    script.async = true;
+    script.onload = () => {
+      if (typeof window.rewardful === "function") {
+        window.rewardful("ready", (referral) => {
+          if (referral?.id && email && stripeCustomerId) {
+            trackReferral.mutate({
+              referralId: referral.id,
+              stripeCustomerId,
+              email,
+            });
+          }
+        });
+      }
+    };
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
 
   return (
     <div style={{ minHeight: "100vh", background: "#0A1628", fontFamily: "'Inter', system-ui", color: "#F5F0E8" }}>

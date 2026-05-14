@@ -26,7 +26,7 @@ import {
   EyeOff,
   Zap,
   Key,
-  Webhook,
+  Globe,
   Settings,
   ChevronDown,
   ChevronUp,
@@ -483,7 +483,7 @@ export default function IntegrationSettings() {
           ))}
 
           {/* Webhook Endpoints */}
-          <SectionCard title="Webhook Endpoints" subtitle="ProLnk webhook URLs for your FSM push events" icon={Webhook} defaultOpen={false}>
+          <SectionCard title="Webhook Endpoints" subtitle="ProLnk webhook URLs for your FSM push events" icon={Globe} defaultOpen={false}>
             <div className="space-y-3 mt-3">
               {WEBHOOK_ENDPOINTS.map((ep) => (
                 <div key={ep.path} className="rounded-xl border border-white/10 bg-white/5 p-3">

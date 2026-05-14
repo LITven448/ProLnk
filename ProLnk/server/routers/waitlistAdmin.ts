@@ -13,8 +13,8 @@ export const waitlistAdminRouter = router({
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
-      const result = await (db as any).execute(
-        sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, tier, referredBy, smsOptIn, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 1000`
+      const result = await db.execute(
+        sql`SELECT id, firstName, lastName, email, phone, businessName, businessType, trades, tier, referredBy, smsOptIn, adminNotes, createdAt FROM proWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
       return (result?.[0] || []) as Array<{
@@ -29,6 +29,7 @@ export const waitlistAdminRouter = router({
         tier?: string;
         referredBy?: string;
         smsOptIn: boolean;
+        adminNotes?: string;
         createdAt: Date;
         position?: number;
       }>;
@@ -40,7 +41,7 @@ export const waitlistAdminRouter = router({
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
-      const result = await (db as any).execute(
+      const result = await db.execute(
         sql`SELECT id, firstName, lastName, email, phone, address, city, state, homeType, desiredProjects, projectTimeline, createdAt FROM homeWaitlist ORDER BY createdAt DESC LIMIT 1000`
       );
 
@@ -68,9 +69,9 @@ export const waitlistAdminRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
       const [proResult, homeResult, referralResult] = await Promise.all([
-        (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`),
-        (db as any).execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`),
-        (db as any).execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE referredBy IS NOT NULL`),
+        db.execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist`),
+        db.execute(sql`SELECT COUNT(*) as cnt FROM homeWaitlist`),
+        db.execute(sql`SELECT COUNT(*) as cnt FROM proWaitlist WHERE referredBy IS NOT NULL`),
       ]);
 
       const proSignups = Number((proResult?.[0]?.[0] as any)?.cnt ?? 0);
@@ -103,14 +104,14 @@ export const waitlistAdminRouter = router({
         const results: any[] = [];
 
         if (input.source === "pro" || input.source === "all") {
-          const proResult = await (db as any).execute(
+          const proResult = await db.execute(
             sql`SELECT 'pro' as source, id, firstName, lastName, email, businessName FROM proWaitlist WHERE firstName LIKE ${searchTerm} OR lastName LIKE ${searchTerm} OR email LIKE ${searchTerm} LIMIT 50`
           );
           if (proResult?.[0]) results.push(...proResult[0]);
         }
 
         if (input.source === "home" || input.source === "all") {
-          const homeResult = await (db as any).execute(
+          const homeResult = await db.execute(
             sql`SELECT 'home' as source, id, firstName, lastName, email, address FROM homeWaitlist WHERE firstName LIKE ${searchTerm} OR lastName LIKE ${searchTerm} OR email LIKE ${searchTerm} LIMIT 50`
           );
           if (homeResult?.[0]) results.push(...homeResult[0]);
@@ -130,14 +131,14 @@ export const waitlistAdminRouter = router({
         const results: any = {};
 
         if (input.source === "pro" || input.source === "all") {
-          const proResult = await (db as any).execute(
+          const proResult = await db.execute(
             sql`SELECT firstName, lastName, email, phone, businessName, businessType, trades, referredBy, createdAt FROM proWaitlist ORDER BY createdAt DESC`
           );
           results.pro = proResult?.[0] || [];
         }
 
         if (input.source === "home" || input.source === "all") {
-          const homeResult = await (db as any).execute(
+          const homeResult = await db.execute(
             sql`SELECT firstName, lastName, email, phone, address, city, state, homeType, desiredProjects, createdAt FROM homeWaitlist ORDER BY createdAt DESC`
           );
           results.home = homeResult?.[0] || [];
@@ -152,7 +153,7 @@ export const waitlistAdminRouter = router({
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
-      const result = await (db as any).execute(
+      const result = await db.execute(
         sql`
         SELECT
           DATE(createdAt) as date,
@@ -179,7 +180,7 @@ export const waitlistAdminRouter = router({
       return log.track("Approve Pro Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE proWaitlist SET status = 'approved', adminNotes = ${input.notes || ""}, approvedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };
@@ -192,7 +193,7 @@ export const waitlistAdminRouter = router({
       return log.track("Reject Pro Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE proWaitlist SET status = 'rejected', rejectionReason = ${input.reason || ""}, rejectedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };
@@ -205,7 +206,7 @@ export const waitlistAdminRouter = router({
       return log.track("Activate Pro Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE proWaitlist SET status = 'active', activatedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };
@@ -218,7 +219,7 @@ export const waitlistAdminRouter = router({
       return log.track("Approve Home Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE homeWaitlist SET status = 'approved', adminNotes = ${input.notes || ""}, approvedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };
@@ -231,7 +232,7 @@ export const waitlistAdminRouter = router({
       return log.track("Reject Home Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE homeWaitlist SET status = 'rejected', rejectionReason = ${input.reason || ""}, rejectedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };
@@ -244,7 +245,7 @@ export const waitlistAdminRouter = router({
       return log.track("Activate Home Waitlist", async () => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
-        await (db as any).execute(sql`
+        await db.execute(sql`
           UPDATE homeWaitlist SET status = 'active', activatedAt = NOW() WHERE id = ${input.id}
         `);
         return { success: true };

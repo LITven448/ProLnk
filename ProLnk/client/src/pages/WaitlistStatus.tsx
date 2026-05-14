@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { trpc } from "../lib/trpc";
 import { motion } from "framer-motion";
-import { Copy, Check, Share2, Users, TrendingUp, DollarSign, ChevronRight, Star, Award, Zap, ArrowRight, Twitter, Linkedin, MessageCircle, Facebook, Phone } from "lucide-react";
+import { Copy, Check, Share2, Users, TrendingUp, DollarSign, ChevronRight, Star, Award, Zap, ArrowRight, Twitter, Linkedin, MessageCircle, Facebook, Phone, Search, Mail, Hash, Bell, BellOff, AlertCircle } from "lucide-react";
 import { Link } from "wouter";
 
 const TIER_CONFIG = {
@@ -84,6 +84,7 @@ const FOUNDING_TIERS = [
 ];
 
 const TOTAL_CAP = 500;
+const HOMES_CAP = 5000;
 
 function FoundingTierBars({ prosCount }: { prosCount: number }) {
   let remaining = prosCount;
@@ -142,37 +143,63 @@ function FoundingTierBars({ prosCount }: { prosCount: number }) {
   );
 }
 
-function UrgencyTimer({ prosCount }: { prosCount: number }) {
+function UrgencyTimer({ prosCount, homesCount }: { prosCount: number; homesCount?: number }) {
   const pct = Math.round((prosCount / TOTAL_CAP) * 100);
+  const homesPct = homesCount ? Math.round((homesCount / HOMES_CAP) * 100) : 0;
   let statusColor = "#22c55e";
   let statusText = "Still plenty of spots";
-  if (pct >= 50) {
+  if (pct >= 70) {
     statusColor = "#ef4444";
-    statusText = "⚠️ Over halfway full";
-  } else if (pct >= 10) {
+    statusText = "⚠️ Almost full";
+  } else if (pct >= 40) {
     statusColor = "#f59e0b";
     statusText = "Filling up — don't wait";
   }
 
   return (
-    <div className="p-4 rounded-xl space-y-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-      <div className="flex items-center gap-2">
-        <Zap size={14} style={{ color: statusColor }} />
-        <span className="text-xs font-bold text-white">Waitlist closes permanently at 500 applications</span>
+    <div className="p-4 rounded-xl space-y-4" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+      <div>
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="flex items-center gap-2">
+            <Zap size={13} style={{ color: statusColor }} />
+            <span className="text-xs font-bold text-white">Partner slots</span>
+          </div>
+          <span className="text-xs font-bold" style={{ color: statusColor }}>
+            {prosCount} / {TOTAL_CAP} — {statusText}
+          </span>
+        </div>
+        <div className="h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${Math.min(100, pct)}%` }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="h-full rounded-full"
+            style={{ background: pct >= 70 ? "linear-gradient(90deg,#fb923c,#ef4444)" : pct >= 40 ? "linear-gradient(90deg,#fbbf24,#fb923c)" : statusColor }}
+          />
+        </div>
+        <p className="text-xs mt-1" style={{ color: "#4b5563" }}>Waitlist closes permanently at 500 partners</p>
       </div>
-      <div className="flex items-center justify-between">
-        <span className="text-xs text-gray-400">Currently at <span className="font-bold text-white">{prosCount}</span> of 500 applications</span>
-        <span className="text-xs font-bold" style={{ color: statusColor }}>{statusText}</span>
-      </div>
-      <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: `${Math.min(100, pct)}%` }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="h-full rounded-full"
-          style={{ background: statusColor }}
-        />
-      </div>
+
+      {homesCount !== undefined && (
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-xs font-bold text-white">Homes in vault</span>
+            <span className="text-xs font-bold" style={{ color: "#2dd4bf" }}>
+              {homesCount.toLocaleString()} / {HOMES_CAP.toLocaleString()}
+            </span>
+          </div>
+          <div className="h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${Math.min(100, homesPct)}%` }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              className="h-full rounded-full"
+              style={{ background: "linear-gradient(90deg, #2dd4bf, #38bdf8)" }}
+            />
+          </div>
+          <p className="text-xs mt-1" style={{ color: "#4b5563" }}>Waitlist also closes when 5,000 homes are added</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -346,6 +373,163 @@ function EarningsCalculator({ commissionRate, overrideLevels }: { commissionRate
   );
 }
 
+function EmailLookup() {
+  const [query, setQuery] = useState("");
+  const [, navigate] = useState<string | null>(null);
+  const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery();
+  const prosCount = publicCounts?.pros ?? 347;
+  const homesCount = publicCounts?.homes ?? 2841;
+  const [emailNotify, setEmailNotify] = useState(true);
+
+  const handleCheck = () => {
+    const q = query.trim();
+    if (!q) return;
+    const newParams = new URLSearchParams(window.location.search);
+    if (q.includes("@")) {
+      newParams.set("email", q);
+    } else {
+      newParams.set("ref", q.toUpperCase());
+    }
+    window.location.search = newParams.toString();
+  };
+
+  return (
+    <div className="min-h-screen pb-16" style={{ background: "#0A1628" }}>
+      {/* Header */}
+      <header
+        className="px-6 py-4 flex items-center justify-between sticky top-0 z-20"
+        style={{ background: "rgba(10,22,40,0.95)", borderBottom: "1px solid rgba(255,255,255,0.06)", backdropFilter: "blur(8px)" }}
+      >
+        <Link href="/">
+          <span className="text-lg font-black tracking-tight cursor-pointer" style={{ color: "#2dd4bf" }}>ProLnk</span>
+        </Link>
+        <Link href="/pro-waitlist">
+          <span className="text-xs px-3 py-1.5 rounded-lg font-semibold cursor-pointer" style={{ background: "rgba(45,212,191,0.12)", color: "#2dd4bf", border: "1px solid rgba(45,212,191,0.25)" }}>
+            Join Waitlist →
+          </span>
+        </Link>
+      </header>
+
+      <div className="max-w-lg mx-auto px-4 pt-6 space-y-5">
+        {/* Title */}
+        <div className="text-center">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-3"
+            style={{ background: "rgba(251,191,36,0.1)", color: "#fbbf24", border: "1px solid rgba(251,191,36,0.2)" }}
+          >
+            <Star size={11} /> ProLnk Pro Waitlist
+          </div>
+          <h1 className="text-3xl font-black text-white mb-2">Check Your Position</h1>
+          <p className="text-sm" style={{ color: "#6b7280" }}>Enter your email or referral code below</p>
+        </div>
+
+        {/* Urgency */}
+        <UrgencyTimer prosCount={prosCount} homesCount={homesCount} />
+
+        {/* Lookup form */}
+        <div
+          className="rounded-2xl p-5"
+          style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>Look up your spot</p>
+          <div className="flex gap-2">
+            <div className="flex-1 relative">
+              <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                {query.includes("@") ? <Mail size={14} style={{ color: "#4b5563" }} /> : <Hash size={14} style={{ color: "#4b5563" }} />}
+              </div>
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleCheck()}
+                placeholder="Email address or referral code"
+                className="w-full pl-9 pr-4 py-3 rounded-xl text-sm text-white placeholder-gray-600 outline-none"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(45,212,191,0.4)")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}
+              />
+            </div>
+            <button
+              onClick={handleCheck}
+              disabled={!query.trim()}
+              className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold transition-all disabled:opacity-40"
+              style={{ background: "#2dd4bf", color: "#0A1628" }}
+            >
+              <Search size={15} /> Check
+            </button>
+          </div>
+        </div>
+
+        {/* Tier overview */}
+        <div
+          className="rounded-2xl p-5"
+          style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>Tier overview</p>
+          <div className="space-y-2">
+            {[
+              { label: "Charter", color: "#fbbf24", bg: "rgba(251,191,36,0.1)", slots: "25 total", commission: "25%" },
+              { label: "Founding", color: "#2dd4bf", bg: "rgba(45,212,191,0.1)", slots: "100 total", commission: "20%" },
+              { label: "Level 3", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", slots: "400 total", commission: "15%" },
+            ].map(({ label, color, bg, slots, commission }) => (
+              <div
+                key={label}
+                className="flex items-center justify-between p-3 rounded-xl"
+                style={{ background: bg, border: `1px solid ${color}25` }}
+              >
+                <div className="flex items-center gap-3">
+                  <Star size={14} style={{ color }} />
+                  <div>
+                    <p className="text-xs font-bold" style={{ color }}>{label} Tier</p>
+                    <p className="text-xs" style={{ color: "#6b7280" }}>{slots} · {commission} commission</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs font-bold text-white">$149/mo</p>
+                  <p className="text-xs" style={{ color: "#4b5563" }}>rate locked</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Email notification toggle */}
+        <div
+          className="rounded-xl p-4 flex items-center justify-between"
+          style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          <div className="flex items-center gap-3">
+            {emailNotify ? <Bell size={16} style={{ color: "#2dd4bf" }} /> : <BellOff size={16} style={{ color: "#4b5563" }} />}
+            <div>
+              <p className="text-xs font-semibold text-white">Email notifications</p>
+              <p className="text-xs mt-0.5" style={{ color: "#4b5563" }}>Get alerted when your market opens</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setEmailNotify((v) => !v)}
+            className="relative w-11 h-6 rounded-full transition-all"
+            style={{ background: emailNotify ? "#2dd4bf" : "rgba(255,255,255,0.1)" }}
+          >
+            <div
+              className="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all"
+              style={{ left: emailNotify ? "calc(100% - 22px)" : "2px" }}
+            />
+          </button>
+        </div>
+
+        {/* Join CTA */}
+        <Link href="/pro-waitlist">
+          <button
+            className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-bold transition-all hover:opacity-90"
+            style={{ background: "linear-gradient(135deg, #2dd4bf, #38bdf8)", color: "#0A1628" }}
+          >
+            <Zap size={16} /> Join the Waitlist
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default function WaitlistStatus() {
   const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const refCode = params.get("ref") || undefined;
@@ -358,24 +542,15 @@ export default function WaitlistStatus() {
   const { data: leaderboard } = trpc.proWaitlist.getLeaderboard.useQuery();
   const { data: publicCounts } = trpc.waitlist.getPublicCounts.useQuery();
   const prosCount = publicCounts?.pros ?? 0;
+  const homesCount = publicCounts?.homes;
+  const [emailNotify, setEmailNotify] = useState(true);
 
   const referralLink = status ? `https://prolnk.io/apply?ref=${status.referralCode}` : "";
   const tier = status?.tier || "Standard";
   const tierCfg = TIER_CONFIG[tier as keyof typeof TIER_CONFIG] || TIER_CONFIG.Standard;
 
   if (!refCode && !emailParam) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "#0f1117" }}>
-        <div className="text-center max-w-md px-6">
-          <div className="text-6xl mb-4">🔍</div>
-          <h1 className="text-2xl font-bold text-white mb-3">Check Your Waitlist Status</h1>
-          <p className="text-gray-400 mb-6">Enter your email or use the link from your confirmation email to view your status.</p>
-          <Link href="/pro-waitlist" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#22c55e" }}>
-            Join the Waitlist <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-    );
+    return <EmailLookup />;
   }
 
   if (isLoading) {
@@ -468,7 +643,7 @@ export default function WaitlistStatus() {
           <div className="mt-5 space-y-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Founding Network — Live Tier Fill</p>
             <FoundingTierBars prosCount={prosCount} />
-            <UrgencyTimer prosCount={prosCount} />
+            <UrgencyTimer prosCount={prosCount} homesCount={homesCount} />
           </div>
         </motion.div>
 
@@ -700,6 +875,35 @@ export default function WaitlistStatus() {
           <div className="mt-3">
             <Link href="/tier-benefits" className="text-xs text-gray-500 hover:text-gray-400 underline">View all tier benefits →</Link>
           </div>
+        </motion.div>
+
+        {/* Notification toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="rounded-xl p-4 flex items-center justify-between"
+          style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          <div className="flex items-center gap-3">
+            {emailNotify ? <Bell size={16} style={{ color: "#2dd4bf" }} /> : <BellOff size={16} style={{ color: "#4b5563" }} />}
+            <div>
+              <p className="text-xs font-semibold text-white">Email notifications</p>
+              <p className="text-xs mt-0.5" style={{ color: "#4b5563" }}>
+                Notify me when my market opens or my position changes
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setEmailNotify((v) => !v)}
+            className="relative w-11 h-6 rounded-full transition-all flex-shrink-0"
+            style={{ background: emailNotify ? "#2dd4bf" : "rgba(255,255,255,0.1)" }}
+          >
+            <div
+              className="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all"
+              style={{ left: emailNotify ? "calc(100% - 22px)" : "2px" }}
+            />
+          </button>
         </motion.div>
 
       </div>

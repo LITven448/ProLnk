@@ -1,523 +1,453 @@
 import { useState } from "react";
-import { useLocation, Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
-import { Home, CheckCircle, ArrowRight, Search, Camera, FileText, Wrench, Loader2, Star } from "lucide-react";
-import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
-import { TrustyProLogo } from "@/components/TrustyProLogo";
+import { useLocation } from "wouter";
+import {
+  Search, Home, CheckCircle, ArrowRight, Upload, Calendar,
+  Shield, Star, Award, TrendingUp, Loader2, ChevronRight, X,
+} from "lucide-react";
 
-const ACCENT = "#4F46E5";
-const EASE = "easeOut" as const;
+const PURPLE = "#8B5CF6";
+const BG = "#0A1628";
+const CARD = "#0F1F3D";
+const BORDER = "#1E3A5F";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+const MOCK_PROPERTIES: Record<string, {
+  address: string; sqft: number; yearBuilt: number; lastService: string; healthScore: number; rooms: number;
+}> = {
+  "123 main": {
+    address: "123 Main St, Frisco, TX 75034",
+    sqft: 2840, yearBuilt: 2008, lastService: "Mar 12, 2026", healthScore: 87, rooms: 4,
+  },
+  "456 oak": {
+    address: "456 Oak Ave, Plano, TX 75023",
+    sqft: 3200, yearBuilt: 2001, lastService: "Jan 5, 2026", healthScore: 72, rooms: 5,
+  },
+  "789 elm": {
+    address: "789 Elm Blvd, McKinney, TX 75069",
+    sqft: 2100, yearBuilt: 2015, lastService: "Apr 20, 2026", healthScore: 94, rooms: 3,
+  },
 };
 
-type Screen = "search" | "found" | "verify" | "welcome";
-
-interface PropertyResult {
-  address: string;
-  squareFeet: number | null;
-  yearBuilt: number | null;
-  bedrooms: number | null;
-  bathrooms: number | null;
+function scoreColor(score: number) {
+  if (score >= 85) return "#10B981";
+  if (score >= 65) return "#F59E0B";
+  return "#EF4444";
 }
 
-function ScreenSearch({ onFound }: { onFound: (result: PropertyResult) => void }) {
+type Step = "search" | "preview" | "verify" | "success";
+
+interface Property {
+  address: string; sqft: number; yearBuilt: number; lastService: string; healthScore: number; rooms: number;
+}
+
+function StepSearch({ onFound }: { onFound: (p: Property) => void }) {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
-  const utils = trpc.useUtils();
-
-  const handleSearch = async () => {
-    const trimmed = query.trim();
-    if (trimmed.length < 8) {
-      toast.error("Please enter your full street address.");
-      return;
-    }
+  const handleSearch = () => {
+    if (!query.trim()) return;
     setLoading(true);
-    try {
-      const result = await utils.propertyEnrichment.enrichAddress.fetch({ address: trimmed, state: "TX" });
-      onFound({
-        address: trimmed,
-        squareFeet: result?.squareFeet ?? null,
-        yearBuilt: result?.yearBuilt ?? null,
-        bedrooms: result?.bedrooms ?? null,
-        bathrooms: result?.bathrooms ?? null,
-      });
-    } catch {
-      onFound({
-        address: trimmed,
-        squareFeet: null,
-        yearBuilt: null,
-        bedrooms: null,
-        bathrooms: null,
-      });
-    } finally {
+    setNotFound(false);
+    setTimeout(() => {
+      const key = Object.keys(MOCK_PROPERTIES).find((k) =>
+        query.toLowerCase().includes(k)
+      );
+      if (key) {
+        onFound(MOCK_PROPERTIES[key]);
+      } else {
+        onFound({
+          address: query.trim(),
+          sqft: 2450, yearBuilt: 2006, lastService: "Never recorded",
+          healthScore: 61, rooms: 4,
+        });
+      }
       setLoading(false);
-    }
+    }, 900);
   };
 
   return (
-    <motion.div
-      key="search"
-      variants={fadeUp}
-      initial="hidden"
-      animate="visible"
-      className="w-full max-w-lg mx-auto text-center"
-    >
-      <div
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm font-bold"
-        style={{ backgroundColor: "#ede9fe", color: ACCENT, border: `1.5px solid #c4b5fd` }}
-      >
-        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-        Over 800,000 DFW homes already have a profile
+    <div className="space-y-8">
+      <div>
+        <div
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-4"
+          style={{ backgroundColor: `${PURPLE}20`, color: PURPLE, border: `1px solid ${PURPLE}40` }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+          Pro Portfolio Tool
+        </div>
+        <h1 className="text-3xl font-black text-white mb-2">Claim a Home to Your Portfolio</h1>
+        <p className="text-slate-400 text-sm leading-relaxed max-w-lg">
+          Search any property you've serviced. Claim it to earn origination rights, lock in future lead priority, and build a permanent service history on the home.
+        </p>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight mb-4">
-        Is your home already<br />
-        <span style={{ color: ACCENT }}>in TrustyPro?</span>
-      </h1>
-      <p className="text-lg text-gray-500 mb-10 max-w-md mx-auto leading-relaxed">
-        Over 800,000 DFW homes have a profile waiting to be claimed. Search yours and see what's ready for you.
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex gap-3">
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
             placeholder="123 Main St, Frisco, TX 75034"
             value={query}
-            onChange={e => setQuery(e.target.value)}
-            onKeyDown={e => e.key === "Enter" && !loading && handleSearch()}
-            className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white shadow-sm"
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && !loading && handleSearch()}
+            className="w-full pl-11 pr-4 py-3.5 rounded-xl text-sm text-white placeholder-slate-500 border focus:outline-none focus:ring-2 focus:ring-violet-500"
+            style={{ backgroundColor: CARD, borderColor: BORDER }}
           />
         </div>
         <button
           onClick={handleSearch}
-          disabled={loading}
-          className="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-black text-white hover:opacity-90 transition-opacity shadow-lg disabled:opacity-60"
-          style={{ backgroundColor: ACCENT }}
+          disabled={loading || !query.trim()}
+          className="flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+          style={{ backgroundColor: PURPLE }}
         >
-          {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><Search className="w-5 h-5" /> Find My Home</>}
+          {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><Search className="w-4 h-4" /> Search</>}
         </button>
       </div>
 
-      <p className="text-xs text-gray-400 mt-4">
-        Searching only matches your address — we never share or sell your information.
-      </p>
-    </motion.div>
+      <div
+        className="rounded-2xl border p-5 space-y-3"
+        style={{ backgroundColor: CARD, borderColor: BORDER }}
+      >
+        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Why claim homes?</p>
+        <div className="space-y-3">
+          {[
+            { icon: TrendingUp, color: PURPLE, title: "Earn origination rights", desc: "Get a permanent share of platform revenue from every future job on this home." },
+            { icon: Star, color: "#F59E0B", title: "Get future lead priority", desc: "When this homeowner needs a pro, you show up first — every time." },
+            { icon: Shield, color: "#10B981", title: "Build home history", desc: "Your service record follows the home. It proves your work quality permanently." },
+          ].map(({ icon: Icon, color, title, desc }) => (
+            <div key={title} className="flex items-start gap-3">
+              <div
+                className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ backgroundColor: `${color}20` }}
+              >
+                <Icon className="w-4 h-4" style={{ color }} />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white">{title}</p>
+                <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
-function ScreenFound({ property, onClaim }: { property: PropertyResult; onClaim: () => void }) {
-  const hasFacts = property.squareFeet || property.yearBuilt || property.bedrooms || property.bathrooms;
-
+function StepPreview({ property, onClaim, onBack }: { property: Property; onClaim: () => void; onBack: () => void }) {
+  const sc = scoreColor(property.healthScore);
   return (
-    <motion.div
-      key="found"
-      variants={fadeUp}
-      initial="hidden"
-      animate="visible"
-      className="w-full max-w-lg mx-auto text-center"
-    >
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 240, damping: 18, delay: 0.1 }}
-        className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
-        style={{ backgroundColor: "#dcfce7", border: "2px solid #86efac" }}
-      >
-        <CheckCircle className="w-10 h-10 text-green-600" />
-      </motion.div>
-
-      <h2 className="text-3xl md:text-4xl font-black text-gray-950 mb-2">We found your home!</h2>
-      <p className="text-gray-500 mb-8 text-base">Your Home Health Vault is set up and waiting for you.</p>
+    <div className="space-y-6">
+      <div className="flex items-center gap-3">
+        <button onClick={onBack} className="text-slate-400 hover:text-white transition-colors">
+          <ChevronRight className="w-5 h-5 rotate-180" />
+        </button>
+        <div>
+          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Property Found</p>
+          <h2 className="text-xl font-black text-white">Confirm the property</h2>
+        </div>
+      </div>
 
       <div
-        className="rounded-2xl p-6 mb-8 text-left shadow-sm"
-        style={{ border: `1.5px solid rgba(79,70,229,0.2)`, backgroundColor: "#fafafa" }}
+        className="rounded-2xl border overflow-hidden"
+        style={{ backgroundColor: CARD, borderColor: BORDER }}
       >
-        <div className="flex items-start gap-3 mb-5">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#ede9fe" }}>
-            <Home className="w-5 h-5" style={{ color: ACCENT }} />
-          </div>
-          <div>
-            <p className="font-black text-gray-900 text-base leading-tight">{property.address}</p>
-            <p className="text-sm text-gray-500 mt-0.5">Dallas–Fort Worth, TX</p>
+        <div
+          className="h-32 flex items-center justify-center relative"
+          style={{ background: "linear-gradient(135deg, #1e3a5f 0%, #312e81 100%)" }}
+        >
+          <Home className="w-16 h-16 text-white/10" />
+          <div className="absolute bottom-3 left-4">
+            <p className="text-white font-black text-sm leading-tight">{property.address}</p>
           </div>
         </div>
 
-        {hasFacts && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-            {property.bedrooms != null && (
-              <div className="rounded-xl p-3 text-center" style={{ backgroundColor: "#f3f4f6" }}>
-                <p className="text-xl font-black text-gray-900">{property.bedrooms}</p>
-                <p className="text-xs text-gray-500 mt-0.5">Beds</p>
-              </div>
-            )}
-            {property.bathrooms != null && (
-              <div className="rounded-xl p-3 text-center" style={{ backgroundColor: "#f3f4f6" }}>
-                <p className="text-xl font-black text-gray-900">{property.bathrooms}</p>
-                <p className="text-xs text-gray-500 mt-0.5">Baths</p>
-              </div>
-            )}
-            {property.squareFeet != null && (
-              <div className="rounded-xl p-3 text-center" style={{ backgroundColor: "#f3f4f6" }}>
-                <p className="text-xl font-black text-gray-900">{property.squareFeet.toLocaleString()}</p>
-                <p className="text-xs text-gray-500 mt-0.5">Sq Ft</p>
-              </div>
-            )}
-            {property.yearBuilt != null && (
-              <div className="rounded-xl p-3 text-center" style={{ backgroundColor: "#f3f4f6" }}>
-                <p className="text-xl font-black text-gray-900">{property.yearBuilt}</p>
-                <p className="text-xs text-gray-500 mt-0.5">Built</p>
-              </div>
-            )}
-          </div>
-        )}
+        <div className="p-5 grid grid-cols-2 gap-4">
+          {[
+            { label: "Square Feet", value: property.sqft.toLocaleString() },
+            { label: "Year Built", value: property.yearBuilt },
+            { label: "Last Service", value: property.lastService },
+            { label: "Bedrooms", value: `${property.rooms} bd` },
+          ].map(({ label, value }) => (
+            <div key={label}>
+              <p className="text-xs text-slate-500">{label}</p>
+              <p className="text-sm font-bold text-white mt-0.5">{value}</p>
+            </div>
+          ))}
+        </div>
 
-        <div
-          className="rounded-xl p-4 flex items-center gap-3"
-          style={{ backgroundColor: "#ede9fe" }}
-        >
-          <Star className="w-5 h-5 flex-shrink-0" style={{ color: ACCENT }} />
-          <p className="text-sm font-semibold" style={{ color: ACCENT }}>
-            Your Home Health Vault is ready and waiting
-          </p>
+        <div className="px-5 pb-5">
+          <div
+            className="rounded-xl p-4 flex items-center justify-between"
+            style={{ backgroundColor: `${sc}15`, border: `1px solid ${sc}30` }}
+          >
+            <div>
+              <p className="text-xs text-slate-400">Home Health Score</p>
+              <p className="text-2xl font-black mt-0.5" style={{ color: sc }}>{property.healthScore}</p>
+            </div>
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center border-4"
+              style={{ borderColor: sc }}
+            >
+              <span className="text-lg font-black" style={{ color: sc }}>{property.healthScore}</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <button
         onClick={onClaim}
-        className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl w-full justify-center"
-        style={{ backgroundColor: ACCENT }}
+        className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white transition-opacity hover:opacity-90"
+        style={{ backgroundColor: PURPLE }}
       >
-        Claim This Home <ArrowRight className="w-5 h-5" />
+        Claim This Home <ArrowRight className="w-4 h-4" />
       </button>
-      <p className="text-xs text-gray-400 mt-3">Free to claim. Takes 30 seconds.</p>
-    </motion.div>
+    </div>
   );
 }
 
-function ScreenVerify({
-  property,
-  onClaimed,
-}: {
-  property: PropertyResult;
-  onClaimed: (name: string) => void;
-}) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [checked, setChecked] = useState(false);
+function StepVerify({ property, onDone, onBack }: { property: Property; onDone: () => void; onBack: () => void }) {
+  const [serviceDate, setServiceDate] = useState("");
+  const [hasPhoto, setHasPhoto] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const claimMutation = trpc.waitlist.joinHomeWaitlist.useMutation({
-    onSuccess: () => {
-      onClaimed(firstName);
-    },
-    onError: (err) => {
-      if (err.message?.includes("already registered")) {
-        onClaimed(firstName);
-      } else {
-        toast.error(err.message || "Something went wrong. Please try again.");
-        setLoading(false);
-      }
-    },
-  });
-
   const handleSubmit = () => {
-    if (!firstName.trim() || !lastName.trim()) { toast.error("Please enter your name."); return; }
-    if (!email.trim() || !email.includes("@")) { toast.error("Please enter a valid email."); return; }
-    if (!checked) { toast.error("Please confirm you own or live at this property."); return; }
+    if (!serviceDate || !confirmed) return;
     setLoading(true);
-    claimMutation.mutate({
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
-      email: email.trim(),
-      address: property.address,
-      city: "Dallas",
-      state: "TX",
-      zipCode: "75000",
-      serviceNeeded: "Home Health Vault Claim",
-    });
+    setTimeout(() => { setLoading(false); onDone(); }, 1200);
   };
 
   return (
-    <motion.div
-      key="verify"
-      variants={fadeUp}
-      initial="hidden"
-      animate="visible"
-      className="w-full max-w-lg mx-auto"
-    >
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-black text-gray-950 mb-2">Just confirm it's yours</h2>
-        <p className="text-gray-500 text-base">We want to make sure your vault stays private.</p>
+    <div className="space-y-6">
+      <div className="flex items-center gap-3">
+        <button onClick={onBack} className="text-slate-400 hover:text-white transition-colors">
+          <ChevronRight className="w-5 h-5 rotate-180" />
+        </button>
+        <div>
+          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Verify Service</p>
+          <h2 className="text-xl font-black text-white">Confirm you serviced this home</h2>
+        </div>
       </div>
 
       <div
-        className="rounded-2xl p-6 mb-6 text-xs text-gray-500 flex items-center gap-2"
-        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
+        className="rounded-xl px-4 py-3 flex items-center gap-2 border"
+        style={{ backgroundColor: `${PURPLE}15`, borderColor: `${PURPLE}30` }}
       >
-        <Home className="w-4 h-4 flex-shrink-0 text-gray-400" />
-        <span className="truncate">{property.address}</span>
+        <Home className="w-4 h-4 flex-shrink-0" style={{ color: PURPLE }} />
+        <p className="text-sm text-violet-300 truncate">{property.address}</p>
       </div>
 
-      <div className="space-y-4 mb-6">
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className="block text-xs font-bold text-gray-700 mb-1">First Name *</label>
-            <input
-              type="text"
-              placeholder="Jane"
-              value={firstName}
-              onChange={e => setFirstName(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-bold text-gray-700 mb-1">Last Name *</label>
-            <input
-              type="text"
-              placeholder="Smith"
-              value={lastName}
-              onChange={e => setLastName(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900"
-            />
-          </div>
-        </div>
+      <div className="space-y-4">
         <div>
-          <label className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
-          <input
-            type="email"
-            placeholder="jane@example.com"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-900"
-          />
+          <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
+            Service Date <span className="text-red-400">*</span>
+          </label>
+          <div className="relative">
+            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            <input
+              type="date"
+              value={serviceDate}
+              max={new Date().toISOString().split("T")[0]}
+              onChange={(e) => setServiceDate(e.target.value)}
+              className="w-full pl-11 pr-4 py-3 rounded-xl text-sm text-white border focus:outline-none focus:ring-2 focus:ring-violet-500"
+              style={{ backgroundColor: CARD, borderColor: BORDER }}
+            />
+          </div>
         </div>
-        <label className="flex items-start gap-3 cursor-pointer">
+
+        <div>
+          <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
+            Proof Photo (optional but recommended)
+          </label>
           <div
-            onClick={() => setChecked(!checked)}
-            className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 border-2 transition-colors cursor-pointer"
+            onClick={() => setHasPhoto(true)}
+            className="rounded-xl border-2 border-dashed p-6 flex flex-col items-center gap-2 cursor-pointer transition-colors"
             style={{
-              backgroundColor: checked ? ACCENT : "transparent",
-              borderColor: checked ? ACCENT : "#d1d5db",
+              borderColor: hasPhoto ? PURPLE : BORDER,
+              backgroundColor: hasPhoto ? `${PURPLE}10` : "transparent",
             }}
           >
-            {checked && <CheckCircle className="w-3 h-3 text-white" />}
+            {hasPhoto ? (
+              <>
+                <CheckCircle className="w-6 h-6" style={{ color: PURPLE }} />
+                <p className="text-sm font-semibold" style={{ color: PURPLE }}>Photo uploaded</p>
+              </>
+            ) : (
+              <>
+                <Upload className="w-6 h-6 text-slate-500" />
+                <p className="text-sm text-slate-400">Click to upload before/after photos</p>
+                <p className="text-xs text-slate-600">JPG, PNG up to 10 MB</p>
+              </>
+            )}
           </div>
-          <span className="text-sm text-gray-600 leading-snug">
-            I live at or own this property
+        </div>
+
+        <label className="flex items-start gap-3 cursor-pointer">
+          <div
+            onClick={() => setConfirmed(!confirmed)}
+            className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 border-2 transition-colors cursor-pointer"
+            style={{
+              backgroundColor: confirmed ? PURPLE : "transparent",
+              borderColor: confirmed ? PURPLE : "#374151",
+            }}
+          >
+            {confirmed && <CheckCircle className="w-3 h-3 text-white" />}
+          </div>
+          <span className="text-sm text-slate-400 leading-snug">
+            I confirm I personally performed service at this property and my records are accurate.
           </span>
         </label>
       </div>
 
       <button
         onClick={handleSubmit}
-        disabled={loading}
-        className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-base font-black text-white hover:opacity-90 transition-opacity shadow-lg disabled:opacity-60"
-        style={{ backgroundColor: ACCENT }}
+        disabled={!serviceDate || !confirmed || loading}
+        className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-40"
+        style={{ backgroundColor: PURPLE }}
       >
-        {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <>Claim My Home <ArrowRight className="w-5 h-5" /></>}
+        {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Submit Claim <ArrowRight className="w-4 h-4" /></>}
       </button>
-
-      <p className="text-xs text-gray-400 text-center mt-4">
-        No ID required. No payment info. We keep your data private.
-      </p>
-    </motion.div>
+    </div>
   );
 }
 
-function ScreenWelcome({ name }: { name: string }) {
+function StepSuccess({ property }: { property: Property }) {
   const [, navigate] = useLocation();
 
   return (
-    <motion.div
-      key="welcome"
-      variants={fadeUp}
-      initial="hidden"
-      animate="visible"
-      className="w-full max-w-lg mx-auto text-center"
-    >
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.05 }}
-        className="text-6xl mb-4"
-        role="img"
-        aria-label="house"
-      >
-        🏠
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.5, ease: EASE }}
-      >
-        <h2 className="text-3xl md:text-4xl font-black text-gray-950 mb-2">
-          Welcome home{name ? `, ${name}` : ""}!
-        </h2>
-        <p className="text-gray-500 text-base mb-8">
-          Your Home Health Vault is set up. The more you add, the smarter it gets.
-        </p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5, ease: EASE }}
-        className="rounded-2xl overflow-hidden mb-8 text-left"
-        style={{ border: "1.5px solid #e5e7eb" }}
-      >
-        <div className="bg-gray-50 px-5 py-3 border-b border-gray-200">
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">Your vault is empty — start filling it</p>
+    <div className="text-center space-y-6">
+      <div className="relative inline-block">
+        <div
+          className="w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+          style={{ background: `radial-gradient(circle, ${PURPLE}40 0%, ${PURPLE}10 100%)`, border: `2px solid ${PURPLE}` }}
+        >
+          <Award className="w-12 h-12" style={{ color: PURPLE }} />
         </div>
-        {[
-          {
-            icon: Camera,
-            title: "Add your first photo scan",
-            desc: "AI detects 50+ issue types from your photos",
-            href: "/trustypro/scan",
-            color: "#ede9fe",
-            iconColor: ACCENT,
-            cta: "Start scan",
-          },
-          {
-            icon: Wrench,
-            title: "Log your first maintenance record",
-            desc: "Keep a permanent history of repairs and upgrades",
-            href: "/trustypro/scan",
-            color: "#f0fdf4",
-            iconColor: "#16a34a",
-            cta: "Coming soon",
-          },
-          {
-            icon: FileText,
-            title: "Upload home documents",
-            desc: "Warranties, inspection reports, permits — all in one place",
-            href: "/trustypro/scan",
-            color: "#fefce8",
-            iconColor: "#ca8a04",
-            cta: "Coming soon",
-          },
-        ].map(({ icon: Icon, title, desc, href, color, iconColor, cta }) => (
-          <Link key={title} href={href}>
-            <div className="flex items-center gap-4 px-5 py-4 hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 last:border-0">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: color }}>
-                <Icon className="w-5 h-5" style={{ color: iconColor }} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-gray-900">{title}</p>
-                <p className="text-xs text-gray-500 mt-0.5 leading-snug">{desc}</p>
-              </div>
-              <span className="text-xs font-semibold whitespace-nowrap" style={{ color: iconColor }}>{cta} →</span>
-            </div>
-          </Link>
-        ))}
-      </motion.div>
+        <div
+          className="absolute -top-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center border-2"
+          style={{ backgroundColor: "#10B981", borderColor: BG }}
+        >
+          <CheckCircle className="w-4 h-4 text-white" />
+        </div>
+      </div>
 
-      <motion.button
-        onClick={() => navigate("/trustypro/scan")}
-        className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl w-full justify-center"
-        style={{ backgroundColor: ACCENT }}
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.55, duration: 0.4, ease: EASE }}
+      <div>
+        <h2 className="text-2xl font-black text-white mb-2">Home Claimed!</h2>
+        <p className="text-slate-400 text-sm leading-relaxed max-w-sm mx-auto">
+          You've earned origination rights on <span className="text-white font-semibold">{property.address}</span>.
+          You'll get lead priority and a share of platform fees — permanently.
+        </p>
+      </div>
+
+      <div
+        className="rounded-2xl border p-5 text-left space-y-3"
+        style={{ backgroundColor: CARD, borderColor: BORDER }}
       >
-        Start My First Scan <ArrowRight className="w-5 h-5" />
-      </motion.button>
-    </motion.div>
+        <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">What you've unlocked</p>
+        {[
+          { icon: TrendingUp, color: PURPLE, text: "Origination rights active — you earn from every future job here" },
+          { icon: Star, color: "#F59E0B", text: "Lead priority set — you're first in line when this home needs service" },
+          { icon: Shield, color: "#10B981", text: "Service record logged — visible to future homeowners" },
+        ].map(({ icon: Icon, color, text }) => (
+          <div key={text} className="flex items-center gap-3">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: `${color}20` }}
+            >
+              <Icon className="w-4 h-4" style={{ color }} />
+            </div>
+            <p className="text-sm text-slate-300">{text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex gap-3">
+        <button
+          onClick={() => navigate("/trustypro/project-gallery")}
+          className="flex-1 py-3 rounded-xl text-sm font-bold border transition-colors hover:border-violet-500 text-white"
+          style={{ borderColor: BORDER }}
+        >
+          View Portfolio
+        </button>
+        <button
+          onClick={() => window.location.reload()}
+          className="flex-1 py-3 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
+          style={{ backgroundColor: PURPLE }}
+        >
+          Claim Another Home
+        </button>
+      </div>
+    </div>
   );
 }
 
 export default function ClaimHome() {
-  const [screen, setScreen] = useState<Screen>("search");
-  const [property, setProperty] = useState<PropertyResult | null>(null);
-  const [claimedName, setClaimedName] = useState("");
   const [, navigate] = useLocation();
-
-  const handleFound = (result: PropertyResult) => {
-    setProperty(result);
-    setScreen("found");
-  };
-
-  const handleClaim = () => setScreen("verify");
-
-  const handleClaimed = (name: string) => {
-    setClaimedName(name);
-    setScreen("welcome");
-  };
+  const [step, setStep] = useState<Step>("search");
+  const [property, setProperty] = useState<Property | null>(null);
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <div className="min-h-screen" style={{ backgroundColor: BG, fontFamily: "'Inter', sans-serif" }}>
+      <nav
+        className="sticky top-0 z-40 border-b backdrop-blur-sm"
+        style={{ backgroundColor: "rgba(10,22,40,0.95)", borderColor: BORDER }}
+      >
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/trustypro">
-            <TrustyProLogo height={48} />
-          </Link>
-          <button
-            onClick={() => navigate("/trustypro")}
-            className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
-          >
-            ← Back to TrustyPro
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => navigate("/trustypro/partner-dashboard")}
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              <ChevronRight className="w-5 h-5 rotate-180" />
+            </button>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest" style={{ color: PURPLE }}>TrustyPro™</p>
+              <p className="text-sm font-black text-white leading-tight">Claim Home</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {(["search", "preview", "verify", "success"] as Step[]).map((s, i) => {
+              const steps: Step[] = ["search", "preview", "verify", "success"];
+              const cur = steps.indexOf(step);
+              const idx = steps.indexOf(s);
+              return (
+                <div key={s} className="flex items-center gap-1">
+                  <div
+                    className="w-2 h-2 rounded-full transition-all duration-300"
+                    style={{ backgroundColor: idx <= cur ? PURPLE : "#1E3A5F" }}
+                  />
+                  {i < 3 && <div className="w-6 h-px" style={{ backgroundColor: idx < cur ? PURPLE : "#1E3A5F" }} />}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </nav>
 
-      {/* Progress indicator */}
-      <div className="bg-gray-50 border-b border-gray-100 py-3">
-        <div className="max-w-lg mx-auto px-6 flex items-center gap-2">
-          {(["search", "found", "verify", "welcome"] as Screen[]).map((s, i) => {
-            const steps: Screen[] = ["search", "found", "verify", "welcome"];
-            const currentIdx = steps.indexOf(screen);
-            const stepIdx = steps.indexOf(s);
-            const isDone = stepIdx < currentIdx;
-            const isActive = stepIdx === currentIdx;
-            return (
-              <div key={s} className="flex items-center gap-2 flex-1">
-                <div
-                  className="h-1.5 flex-1 rounded-full transition-all duration-500"
-                  style={{
-                    backgroundColor: isDone || isActive ? ACCENT : "#e5e7eb",
-                    opacity: isActive ? 1 : isDone ? 0.7 : 0.3,
-                  }}
-                />
-                {i < 3 && (
-                  <div
-                    className="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-300"
-                    style={{ backgroundColor: isDone ? ACCENT : "#e5e7eb" }}
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
+      <div className="max-w-lg mx-auto px-6 py-12">
+        {step === "search" && (
+          <StepSearch onFound={(p) => { setProperty(p); setStep("preview"); }} />
+        )}
+        {step === "preview" && property && (
+          <StepPreview
+            property={property}
+            onClaim={() => setStep("verify")}
+            onBack={() => setStep("search")}
+          />
+        )}
+        {step === "verify" && property && (
+          <StepVerify
+            property={property}
+            onDone={() => setStep("success")}
+            onBack={() => setStep("preview")}
+          />
+        )}
+        {step === "success" && property && (
+          <StepSuccess property={property} />
+        )}
       </div>
-
-      {/* Content */}
-      <main className="max-w-5xl mx-auto px-6 py-16">
-        <AnimatePresence mode="wait">
-          {screen === "search" && (
-            <ScreenSearch key="search" onFound={handleFound} />
-          )}
-          {screen === "found" && property && (
-            <ScreenFound key="found" property={property} onClaim={handleClaim} />
-          )}
-          {screen === "verify" && property && (
-            <ScreenVerify key="verify" property={property} onClaimed={handleClaimed} />
-          )}
-          {screen === "welcome" && (
-            <ScreenWelcome key="welcome" name={claimedName} />
-          )}
-        </AnimatePresence>
-      </main>
     </div>
   );
 }

@@ -23,8 +23,8 @@ import {
   Zap,
   Droplets,
   Wind,
-  Trees,
-  Brush,
+  Leaf,
+  Paintbrush,
   Archive,
 } from "lucide-react";
 import { Link } from "wouter";

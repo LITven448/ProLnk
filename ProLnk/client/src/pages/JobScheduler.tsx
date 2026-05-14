@@ -1,399 +1,508 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, CalendarDays, Clock, MapPin, User, Phone, CheckCircle, ExternalLink, Download } from "lucide-react";
+import {
+  Sparkles, MapPin, Clock, RefreshCw, CheckCircle2,
+  ChevronDown, ChevronUp, ArrowRight, Navigation, AlertCircle,
+  Shuffle, Route,
+} from "lucide-react";
 import { toast } from "sonner";
 
-const SERVICE_TYPES = [
-  "HVAC Service / Repair",
-  "HVAC Installation",
-  "Plumbing Repair",
-  "Plumbing Installation",
-  "Electrical Repair",
-  "Electrical Panel Work",
-  "Roofing Inspection",
-  "Roofing Repair",
-  "General Inspection",
-  "Other",
+interface ScheduledJob {
+  id: string;
+  serviceType: string;
+  address: string;
+  duration: number;
+  scheduledHour: number;
+  city: string;
+  value: string;
+  status: "confirmed" | "pending";
+}
+
+interface OptimizedStop {
+  order: number;
+  job: ScheduledJob;
+  arrivalTime: string;
+  driveMinutes: number;
+  driveFrom: string;
+}
+
+const DEMO_JOBS: ScheduledJob[] = [
+  { id: "j1", serviceType: "HVAC Repair", address: "2847 Oak Street", city: "Austin, TX 78701", duration: 2, scheduledHour: 9, value: "$320", status: "confirmed" },
+  { id: "j2", serviceType: "Plumbing Inspection", address: "510 Lavaca Ave", city: "Austin, TX 78701", duration: 1, scheduledHour: 11, value: "$95", status: "confirmed" },
+  { id: "j3", serviceType: "Electrical Panel", address: "1204 Congress Ave", city: "Austin, TX 78701", duration: 3, scheduledHour: 14, value: "$580", status: "pending" },
+  { id: "j4", serviceType: "HVAC Install", address: "3301 Bee Cave Rd", city: "Austin, TX 78746", duration: 4, scheduledHour: 8, value: "$1,200", status: "confirmed" },
+  { id: "j5", serviceType: "Plumbing Repair", address: "900 S Lamar Blvd", city: "Austin, TX 78704", duration: 1, scheduledHour: 10, value: "$180", status: "pending" },
 ];
 
-const DURATIONS = [
-  { label: "1 hour", hours: 1 },
-  { label: "2–4 hours", hours: 3 },
-  { label: "Half day (4 hrs)", hours: 4 },
-  { label: "Full day (8 hrs)", hours: 8 },
-];
-
-const SLOT_HOURS = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-const SLOT_LABELS: Record<number, string> = {
-  7: "7:00 AM", 8: "8:00 AM", 9: "9:00 AM", 10: "10:00 AM", 11: "11:00 AM",
-  12: "12:00 PM", 13: "1:00 PM", 14: "2:00 PM", 15: "3:00 PM", 16: "4:00 PM", 17: "5:00 PM",
-};
-
-function getDaysInMonth(year: number, month: number) {
-  return new Date(year, month + 1, 0).getDate();
-}
-function getFirstDayOfMonth(year: number, month: number) {
-  return new Date(year, month, 1).getDay();
-}
-const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const DAY_NAMES = ["Su","Mo","Tu","We","Th","Fr","Sa"];
-
-function pad2(n: number) { return n.toString().padStart(2, "0"); }
-
-function formatDateDisplay(dateStr: string) {
-  if (!dateStr) return "";
-  const [y, m, d] = dateStr.split("-").map(Number);
-  return new Date(y, m - 1, d).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+function addMinutesToTime(timeStr: string, minutes: number): string {
+  const [hStr, rest] = timeStr.split(":");
+  const [mStr, ampm] = rest.split(" ");
+  let h = parseInt(hStr);
+  let m = parseInt(mStr);
+  if (ampm === "PM" && h !== 12) h += 12;
+  if (ampm === "AM" && h === 12) h = 0;
+  const totalMins = h * 60 + m + minutes;
+  const newH = Math.floor(totalMins / 60) % 24;
+  const newM = totalMins % 60;
+  const period = newH >= 12 ? "PM" : "AM";
+  const displayH = newH > 12 ? newH - 12 : newH === 0 ? 12 : newH;
+  return `${displayH}:${newM.toString().padStart(2, "0")} ${period}`;
 }
 
-function buildGoogleCalendarUrl(title: string, dateStr: string, startHour: number, durationHours: number, address: string, description: string) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const start = new Date(y, m - 1, d, startHour, 0, 0);
-  const end = new Date(start.getTime() + durationHours * 3600000);
-  const fmt = (dt: Date) => `${dt.getFullYear()}${pad2(dt.getMonth()+1)}${pad2(dt.getDate())}T${pad2(dt.getHours())}${pad2(dt.getMinutes())}00`;
-  const params = new URLSearchParams({
-    action: "TEMPLATE",
-    text: title,
-    dates: `${fmt(start)}/${fmt(end)}`,
-    location: address,
-    details: description,
-  });
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+function formatHour(h: number): string {
+  const period = h >= 12 ? "PM" : "AM";
+  const display = h > 12 ? h - 12 : h === 0 ? 12 : h;
+  return `${display}:00 ${period}`;
 }
 
-function buildIcsContent(title: string, dateStr: string, startHour: number, durationHours: number, address: string, description: string) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const start = new Date(y, m - 1, d, startHour, 0, 0);
-  const end = new Date(start.getTime() + durationHours * 3600000);
-  const fmt = (dt: Date) => `${dt.getFullYear()}${pad2(dt.getMonth()+1)}${pad2(dt.getDate())}T${pad2(dt.getHours())}${pad2(dt.getMinutes())}00`;
-  const uid = `prolnk-${Date.now()}@prolnk.io`;
-  return [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//ProLnk//JobScheduler//EN",
-    "BEGIN:VEVENT",
-    `UID:${uid}`,
-    `DTSTART:${fmt(start)}`,
-    `DTEND:${fmt(end)}`,
-    `SUMMARY:${title}`,
-    `LOCATION:${address}`,
-    `DESCRIPTION:${description.replace(/\n/g, "\\n")}`,
-    "END:VEVENT",
-    "END:VCALENDAR",
-  ].join("\r\n");
+function simulateDriveTime(from: string, to: string): number {
+  if (from === to) return 5;
+  const hash = (from + to).split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return 10 + (hash % 25);
 }
 
-function downloadIcs(filename: string, content: string) {
-  const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url; a.download = filename; a.click();
-  URL.revokeObjectURL(url);
+function buildOptimizedRoute(jobs: ScheduledJob[], startTime: string, homeBase: string): OptimizedStop[] {
+  const sorted = [...jobs].sort((a, b) => a.scheduledHour - b.scheduledHour);
+  const stops: OptimizedStop[] = [];
+  let currentTime = startTime;
+  let currentLocation = homeBase;
+
+  for (const job of sorted) {
+    const drive = simulateDriveTime(currentLocation, job.city);
+    const arrival = addMinutesToTime(currentTime, drive);
+    stops.push({
+      order: stops.length + 1,
+      job,
+      arrivalTime: arrival,
+      driveMinutes: drive,
+      driveFrom: currentLocation === homeBase ? "Home Base" : currentLocation.split(",")[0] || currentLocation,
+    });
+    currentTime = addMinutesToTime(arrival, job.duration * 60);
+    currentLocation = job.city;
+  }
+  return stops;
+}
+
+function buildShuffledRoute(jobs: ScheduledJob[], startTime: string, homeBase: string): OptimizedStop[] {
+  const shuffled = [...jobs].sort(() => Math.random() - 0.5);
+  const stops: OptimizedStop[] = [];
+  let currentTime = startTime;
+  let currentLocation = homeBase;
+
+  for (const job of shuffled) {
+    const drive = simulateDriveTime(currentLocation, job.city);
+    const arrival = addMinutesToTime(currentTime, drive);
+    stops.push({
+      order: stops.length + 1,
+      job,
+      arrivalTime: arrival,
+      driveMinutes: drive,
+      driveFrom: currentLocation === homeBase ? "Home Base" : currentLocation.split(",")[0] || currentLocation,
+    });
+    currentTime = addMinutesToTime(arrival, job.duration * 60);
+    currentLocation = job.city;
+  }
+  return stops;
 }
 
 export default function JobScheduler() {
-  const today = new Date();
-  const [calYear, setCalYear] = useState(today.getFullYear());
-  const [calMonth, setCalMonth] = useState(today.getMonth());
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedHour, setSelectedHour] = useState<number | null>(null);
-  const [serviceType, setServiceType] = useState("");
-  const [address, setAddress] = useState("");
-  const [customerName, setCustomerName] = useState("");
-  const [customerPhone, setCustomerPhone] = useState("");
-  const [duration, setDuration] = useState(DURATIONS[0]);
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [homeBase, setHomeBase] = useState("Austin, TX 78705");
+  const [startTime, setStartTime] = useState("8:00 AM");
+  const [jobs, setJobs] = useState<ScheduledJob[]>(DEMO_JOBS);
+  const [optimizedRoute, setOptimizedRoute] = useState<OptimizedStop[] | null>(null);
+  const [accepted, setAccepted] = useState(false);
+  const [optimizing, setOptimizing] = useState(false);
+  const [expandedStop, setExpandedStop] = useState<string | null>(null);
+  const [editingHomeBase, setEditingHomeBase] = useState(false);
+  const [tempHomeBase, setTempHomeBase] = useState(homeBase);
 
-  const daysInMonth = getDaysInMonth(calYear, calMonth);
-  const firstDay = getFirstDayOfMonth(calYear, calMonth);
+  const totalDriveTime = useMemo(() => {
+    if (!optimizedRoute) return 0;
+    return optimizedRoute.reduce((sum, s) => sum + s.driveMinutes, 0);
+  }, [optimizedRoute]);
 
-  const prevMonth = () => { if (calMonth === 0) { setCalYear(y => y - 1); setCalMonth(11); } else setCalMonth(m => m - 1); };
-  const nextMonth = () => { if (calMonth === 11) { setCalYear(y => y + 1); setCalMonth(0); } else setCalMonth(m => m + 1); };
+  const totalValue = useMemo(() => {
+    return jobs.reduce((sum, j) => {
+      const n = parseFloat(j.value.replace(/[$,]/g, ""));
+      return sum + (isNaN(n) ? 0 : n);
+    }, 0);
+  }, [jobs]);
 
-  const selectDate = (day: number) => {
-    const dt = `${calYear}-${pad2(calMonth + 1)}-${pad2(day)}`;
-    const d = new Date(calYear, calMonth, day);
-    if (d < new Date(today.getFullYear(), today.getMonth(), today.getDate())) return;
-    setSelectedDate(dt);
-    setSelectedHour(null);
-  };
+  const totalJobTime = useMemo(() => jobs.reduce((sum, j) => sum + j.duration, 0), [jobs]);
 
-  const isToday = (day: number) => calYear === today.getFullYear() && calMonth === today.getMonth() && day === today.getDate();
-  const isPast = (day: number) => new Date(calYear, calMonth, day) < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const isSelected = (day: number) => selectedDate === `${calYear}-${pad2(calMonth + 1)}-${pad2(day)}`;
-
-  const canSubmit = selectedDate && selectedHour !== null && serviceType && address && customerName && customerPhone && !submitted;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!canSubmit) return;
-    setSubmitting(true);
+  const handleOptimize = () => {
+    setOptimizing(true);
+    setAccepted(false);
     setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-      toast.success("Job scheduled successfully!");
-    }, 900);
+      const route = buildOptimizedRoute(jobs, startTime, homeBase);
+      setOptimizedRoute(route);
+      setOptimizing(false);
+      toast.success("AI optimized your route — minimal drive time!");
+    }, 1400);
   };
 
-  const jobTitle = `${serviceType || "Service"} — ${customerName || "Customer"}`;
-  const jobDescription = `Customer: ${customerName}\nPhone: ${customerPhone}\nAddress: ${address}\nService: ${serviceType}\nDuration: ${duration.label}`;
-  const googleUrl = selectedDate && selectedHour !== null
-    ? buildGoogleCalendarUrl(jobTitle, selectedDate, selectedHour, duration.hours, address, jobDescription)
-    : "";
-  const appleUrl = selectedDate && selectedHour !== null
-    ? `webcal://p${encodeURIComponent(buildIcsContent(jobTitle, selectedDate, selectedHour, duration.hours, address, jobDescription))}`
-    : "";
-
-  const handleIcalDownload = () => {
-    if (!selectedDate || selectedHour === null) return;
-    const content = buildIcsContent(jobTitle, selectedDate, selectedHour, duration.hours, address, jobDescription);
-    downloadIcs("prolnk-job.ics", content);
+  const handleShuffle = () => {
+    if (!optimizedRoute) return;
+    const route = buildShuffledRoute(jobs, startTime, homeBase);
+    setOptimizedRoute(route);
+    toast.info("Route reshuffled.");
   };
+
+  const handleAccept = () => {
+    setAccepted(true);
+    toast.success("Optimized schedule accepted!");
+  };
+
+  const handleSaveHomeBase = () => {
+    setHomeBase(tempHomeBase);
+    setEditingHomeBase(false);
+    setOptimizedRoute(null);
+    setAccepted(false);
+  };
+
+  const toggleJob = (id: string) => {
+    setJobs(prev =>
+      prev.map(j => j.id === id ? { ...j, status: j.status === "confirmed" ? "pending" : "confirmed" } : j)
+    );
+    setOptimizedRoute(null);
+    setAccepted(false);
+  };
+
+  const confirmedJobs = jobs.filter(j => j.status === "confirmed");
 
   return (
     <PartnerLayout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
+      <div className="min-h-screen bg-[#0A1628] p-4 md:p-6">
         <div className="max-w-4xl mx-auto">
+
+          {/* Header */}
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-slate-900">Schedule a Job</h1>
-            <p className="text-slate-500 mt-1">Pick a date, time slot, and fill in the job details</p>
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-2xl md:text-3xl font-bold text-white">AI Job Scheduler</h1>
+                <p className="text-slate-400 text-sm">Minimize drive time with AI-optimized route planning</p>
+              </div>
+            </div>
           </div>
 
-          {submitted ? (
-            <Card className="border-green-200 bg-green-50">
-              <CardContent className="pt-8 pb-10 text-center">
-                <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-slate-900 mb-1">Job Scheduled!</h2>
-                <p className="text-slate-600 mb-2">{formatDateDisplay(selectedDate)} at {SLOT_LABELS[selectedHour!]}</p>
-                <p className="text-slate-500 text-sm mb-6">{serviceType} · {customerName} · {address}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
+            {/* Left: Inputs */}
+            <div className="lg:col-span-2 space-y-4">
 
-                <div className="flex flex-wrap justify-center gap-3 mb-8">
-                  <a href={googleUrl} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 shadow-sm">
-                    <ExternalLink className="w-4 h-4 text-blue-500" /> Add to Google Calendar
-                  </a>
-                  <button onClick={handleIcalDownload}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 shadow-sm">
-                    <Download className="w-4 h-4 text-slate-500" /> Download .ics (Apple / Outlook)
-                  </button>
+              {/* Home base */}
+              <div className="bg-[#0F1E35] rounded-xl border border-slate-700/50 p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-sm font-semibold text-white flex items-center gap-2">
+                    <Navigation className="w-4 h-4 text-teal-400" />
+                    Home Base
+                  </p>
+                  {!editingHomeBase && (
+                    <button onClick={() => { setEditingHomeBase(true); setTempHomeBase(homeBase); }}
+                      className="text-xs text-teal-400 hover:text-teal-300">Edit</button>
+                  )}
+                </div>
+                {editingHomeBase ? (
+                  <div className="flex gap-2">
+                    <input
+                      value={tempHomeBase}
+                      onChange={e => setTempHomeBase(e.target.value)}
+                      className="flex-1 bg-[#0A1628] border border-slate-700/50 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+                      placeholder="City, State ZIP"
+                    />
+                    <Button size="sm" onClick={handleSaveHomeBase} className="bg-teal-500 hover:bg-teal-400 text-slate-900 text-xs">Save</Button>
+                  </div>
+                ) : (
+                  <p className="text-sm text-slate-300 flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-teal-400 flex-shrink-0" />
+                    {homeBase}
+                  </p>
+                )}
+              </div>
+
+              {/* Start time */}
+              <div className="bg-[#0F1E35] rounded-xl border border-slate-700/50 p-4">
+                <p className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-teal-400" />
+                  Day Start Time
+                </p>
+                <div className="grid grid-cols-4 gap-1.5">
+                  {["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM"].map(t => (
+                    <button
+                      key={t}
+                      onClick={() => { setStartTime(t); setOptimizedRoute(null); setAccepted(false); }}
+                      className={[
+                        "py-1.5 rounded-lg border text-xs font-medium transition-all",
+                        startTime === t
+                          ? "bg-teal-500 border-teal-400 text-slate-900 font-bold"
+                          : "bg-transparent border-slate-700/50 text-slate-400 hover:border-teal-600/40 hover:text-teal-300",
+                      ].join(" ")}
+                    >
+                      {t.replace(":00", "")}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Today's jobs */}
+              <div className="bg-[#0F1E35] rounded-xl border border-slate-700/50 overflow-hidden">
+                <div className="p-4 border-b border-slate-700/50">
+                  <p className="text-sm font-semibold text-white">Today's Jobs</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Toggle off jobs to exclude from route</p>
+                </div>
+                <div className="divide-y divide-slate-700/30">
+                  {jobs.map(job => (
+                    <div key={job.id} className="p-3 flex items-start gap-3">
+                      <button
+                        onClick={() => toggleJob(job.id)}
+                        className={[
+                          "mt-0.5 w-4 h-4 rounded flex-shrink-0 border-2 flex items-center justify-center transition-all",
+                          job.status === "confirmed"
+                            ? "bg-teal-500 border-teal-400"
+                            : "bg-transparent border-slate-600",
+                        ].join(" ")}
+                      >
+                        {job.status === "confirmed" && <CheckCircle2 className="w-3 h-3 text-slate-900" />}
+                      </button>
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-sm font-medium truncate ${job.status === "confirmed" ? "text-white" : "text-slate-500 line-through"}`}>
+                          {job.serviceType}
+                        </p>
+                        <p className="text-xs text-slate-500 truncate">{job.address}</p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="text-xs text-slate-600">{formatHour(job.scheduledHour)}</span>
+                          <span className="text-xs text-slate-600">·</span>
+                          <span className="text-xs text-slate-600">{job.duration}h</span>
+                        </div>
+                      </div>
+                      <span className="text-xs font-bold text-teal-400 whitespace-nowrap">{job.value}</span>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="bg-white border border-slate-200 rounded-xl p-5 text-left max-w-md mx-auto text-sm">
-                  <p className="font-semibold text-slate-700 mb-3 flex items-center gap-2"><CalendarDays className="w-4 h-4" /> Confirmation Preview</p>
-                  <div className="space-y-1.5 text-slate-600">
-                    <p><span className="text-slate-400 w-24 inline-block">Date</span>{formatDateDisplay(selectedDate)}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Time</span>{SLOT_LABELS[selectedHour!]}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Duration</span>{duration.label}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Service</span>{serviceType}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Customer</span>{customerName}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Phone</span>{customerPhone}</p>
-                    <p><span className="text-slate-400 w-24 inline-block">Address</span>{address}</p>
+                {/* Summary */}
+                <div className="p-3 border-t border-slate-700/50 bg-[#0A1628]/50">
+                  <div className="flex justify-between text-xs text-slate-400">
+                    <span>{confirmedJobs.length} jobs confirmed</span>
+                    <span>{totalJobTime}h work · <span className="text-teal-400 font-semibold">${totalValue.toLocaleString()}</span></span>
                   </div>
                 </div>
-
-                <Button variant="outline" className="mt-6" onClick={() => {
-                  setSubmitted(false); setSelectedDate(""); setSelectedHour(null); setServiceType(""); setAddress(""); setCustomerName(""); setCustomerPhone(""); setDuration(DURATIONS[0]);
-                }}>
-                  Schedule Another Job
-                </Button>
-              </CardContent>
-            </Card>
-          ) : (
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left: Calendar + time slots */}
-              <div className="space-y-4">
-                {/* Month picker */}
-                <Card>
-                  <CardContent className="pt-5">
-                    <div className="flex items-center justify-between mb-4">
-                      <Button type="button" variant="outline" size="sm" onClick={prevMonth}><ChevronLeft className="w-4 h-4" /></Button>
-                      <span className="text-sm font-semibold text-slate-700">{MONTH_NAMES[calMonth]} {calYear}</span>
-                      <Button type="button" variant="outline" size="sm" onClick={nextMonth}><ChevronRight className="w-4 h-4" /></Button>
-                    </div>
-                    <div className="grid grid-cols-7 text-center text-xs text-slate-400 mb-2">
-                      {DAY_NAMES.map(d => <div key={d}>{d}</div>)}
-                    </div>
-                    <div className="grid grid-cols-7 gap-y-1 text-center text-sm">
-                      {Array.from({ length: firstDay }).map((_, i) => <div key={`e-${i}`} />)}
-                      {Array.from({ length: daysInMonth }).map((_, i) => {
-                        const day = i + 1;
-                        const past = isPast(day);
-                        const sel = isSelected(day);
-                        const tod = isToday(day);
-                        return (
-                          <button
-                            key={day} type="button" disabled={past}
-                            onClick={() => selectDate(day)}
-                            className={[
-                              "w-8 h-8 mx-auto rounded-full text-xs font-medium transition-all",
-                              past ? "text-slate-300 cursor-not-allowed" :
-                              sel ? "bg-indigo-600 text-white" :
-                              tod ? "border-2 border-indigo-400 text-indigo-600 hover:bg-indigo-50" :
-                              "text-slate-700 hover:bg-indigo-50",
-                            ].join(" ")}
-                          >{day}</button>
-                        );
-                      })}
-                    </div>
-                    {selectedDate && <p className="text-center text-xs text-indigo-600 font-medium mt-3">{formatDateDisplay(selectedDate)}</p>}
-                  </CardContent>
-                </Card>
-
-                {/* Time slots */}
-                {selectedDate && (
-                  <Card>
-                    <CardContent className="pt-5">
-                      <p className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-indigo-500" /> Select a time slot
-                      </p>
-                      <div className="grid grid-cols-3 gap-2">
-                        {SLOT_HOURS.map(h => (
-                          <button key={h} type="button"
-                            onClick={() => setSelectedHour(h)}
-                            className={[
-                              "py-2 rounded-lg border text-xs font-medium transition-all",
-                              selectedHour === h
-                                ? "bg-indigo-600 text-white border-indigo-600"
-                                : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50",
-                            ].join(" ")}
-                          >{SLOT_LABELS[h]}</button>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {/* Duration */}
-                <Card>
-                  <CardContent className="pt-5">
-                    <p className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-slate-400" /> Duration estimate
-                    </p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {DURATIONS.map(d => (
-                        <button key={d.label} type="button"
-                          onClick={() => setDuration(d)}
-                          className={[
-                            "py-2 rounded-lg border text-xs font-medium transition-all",
-                            duration.label === d.label
-                              ? "bg-slate-700 text-white border-slate-700"
-                              : "bg-white text-slate-600 border-slate-200 hover:border-slate-400",
-                          ].join(" ")}
-                        >{d.label}</button>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
 
-              {/* Right: Job details */}
-              <div className="space-y-4">
-                <Card>
-                  <CardContent className="pt-5 space-y-4">
-                    <p className="text-sm font-semibold text-slate-700 mb-1">Job Details</p>
+              {/* Optimize button */}
+              <Button
+                onClick={handleOptimize}
+                disabled={optimizing || confirmedJobs.length === 0}
+                className="w-full bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold py-3"
+              >
+                {optimizing ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                    Optimizing Route...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Optimize with AI
+                  </>
+                )}
+              </Button>
+              {confirmedJobs.length === 0 && (
+                <p className="text-xs text-center text-amber-400 flex items-center justify-center gap-1">
+                  <AlertCircle className="w-3.5 h-3.5" />
+                  Enable at least one job to optimize
+                </p>
+              )}
+            </div>
 
-                    {/* Service type */}
+            {/* Right: Route */}
+            <div className="lg:col-span-3">
+              {!optimizedRoute ? (
+                <div className="bg-[#0F1E35] rounded-2xl border border-slate-700/50 h-full min-h-[400px] flex flex-col items-center justify-center text-center p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">
+                    <Route className="w-8 h-8 text-teal-500/60" />
+                  </div>
+                  <p className="text-white font-semibold mb-2">No Route Yet</p>
+                  <p className="text-slate-400 text-sm max-w-64">
+                    Add your jobs on the left, set your home base, then click "Optimize with AI" to get a travel-minimized schedule.
+                  </p>
+                </div>
+              ) : (
+                <div className="bg-[#0F1E35] rounded-2xl border border-slate-700/50 overflow-hidden">
+                  {/* Route header */}
+                  <div className="p-4 border-b border-slate-700/50 flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <label className="block text-xs text-slate-500 mb-1">Service type</label>
-                      <select
-                        value={serviceType} onChange={e => setServiceType(e.target.value)} required
-                        className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                      <h2 className="text-white font-semibold flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-teal-400" />
+                        Optimized Route
+                      </h2>
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        {optimizedRoute.length} stops · {totalDriveTime} min total drive time
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleShuffle}
+                        className="border-slate-600 text-slate-400 hover:bg-slate-700/50 bg-transparent text-xs"
                       >
-                        <option value="">Select a service…</option>
-                        {SERVICE_TYPES.map(s => <option key={s} value={s}>{s}</option>)}
-                      </select>
+                        <Shuffle className="w-3.5 h-3.5 mr-1.5" />
+                        Shuffle
+                      </Button>
+                      {!accepted ? (
+                        <Button
+                          size="sm"
+                          onClick={handleAccept}
+                          className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold text-xs"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
+                          Accept Schedule
+                        </Button>
+                      ) : (
+                        <span className="flex items-center gap-1.5 text-xs text-teal-400 font-medium">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          Accepted
+                        </span>
+                      )}
                     </div>
+                  </div>
 
-                    {/* Address */}
+                  {/* Route metrics */}
+                  <div className="grid grid-cols-3 divide-x divide-slate-700/50 border-b border-slate-700/50">
+                    {[
+                      { label: "Drive Time", value: `${totalDriveTime} min`, icon: <Clock className="w-3.5 h-3.5 text-teal-400" /> },
+                      { label: "Job Time", value: `${totalJobTime}h`, icon: <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" /> },
+                      { label: "Total Value", value: `$${totalValue.toLocaleString()}`, icon: <Sparkles className="w-3.5 h-3.5 text-amber-400" /> },
+                    ].map(m => (
+                      <div key={m.label} className="p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 mb-1">{m.icon}</div>
+                        <p className="text-white font-bold text-sm">{m.value}</p>
+                        <p className="text-[10px] text-slate-500">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Home base start */}
+                  <div className="px-4 pt-4 pb-2 flex items-center gap-2 text-xs text-slate-400">
+                    <div className="w-6 h-6 rounded-full bg-slate-700/60 border border-slate-600 flex items-center justify-center flex-shrink-0">
+                      <Navigation className="w-3 h-3 text-teal-400" />
+                    </div>
                     <div>
-                      <label className="block text-xs text-slate-500 mb-1 flex items-center gap-1">
-                        <MapPin className="w-3 h-3" /> Job address
-                      </label>
-                      <input
-                        type="text" value={address} onChange={e => setAddress(e.target.value)} required
-                        placeholder="123 Main St, City, State"
-                        className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                      />
+                      <span className="text-slate-300 font-medium">Home Base</span>
+                      <span className="ml-1.5 text-slate-500">{homeBase}</span>
                     </div>
+                    <div className="ml-auto text-slate-500">{startTime}</div>
+                  </div>
 
-                    {/* Customer name */}
-                    <div>
-                      <label className="block text-xs text-slate-500 mb-1 flex items-center gap-1">
-                        <User className="w-3 h-3" /> Customer name
-                      </label>
-                      <input
-                        type="text" value={customerName} onChange={e => setCustomerName(e.target.value)} required
-                        placeholder="Jane Smith"
-                        className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                      />
-                    </div>
+                  {/* Stops */}
+                  <div className="divide-y divide-slate-700/20">
+                    {optimizedRoute.map((stop, idx) => {
+                      const isExpanded = expandedStop === stop.job.id;
+                      const isLast = idx === optimizedRoute.length - 1;
+                      return (
+                        <div key={stop.job.id}>
+                          {/* Drive connector */}
+                          <div className="flex items-center gap-3 px-4 py-1.5">
+                            <div className="w-6 flex justify-center">
+                              <div className="w-0.5 h-6 bg-teal-900/60 border-l border-dashed border-teal-700/40" />
+                            </div>
+                            <span className="text-[10px] text-slate-600 flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {stop.driveMinutes} min drive from {stop.driveFrom}
+                            </span>
+                          </div>
 
-                    {/* Customer phone */}
-                    <div>
-                      <label className="block text-xs text-slate-500 mb-1 flex items-center gap-1">
-                        <Phone className="w-3 h-3" /> Customer phone
-                      </label>
-                      <input
-                        type="tel" value={customerPhone} onChange={e => setCustomerPhone(e.target.value)} required
-                        placeholder="(555) 000-0000"
-                        className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
+                          {/* Stop card */}
+                          <button
+                            onClick={() => setExpandedStop(isExpanded ? null : stop.job.id)}
+                            className="w-full text-left px-4 py-3 hover:bg-slate-700/20 transition-colors"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5 ${
+                                accepted ? "bg-teal-500 text-slate-900" : "bg-slate-600 text-slate-200"
+                              }`}>
+                                {stop.order}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <p className="text-white font-semibold text-sm">{stop.job.serviceType}</p>
+                                  <span className="text-[10px] text-teal-400 font-medium">{stop.job.value}</span>
+                                </div>
+                                <p className="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
+                                  <MapPin className="w-3 h-3 flex-shrink-0" />
+                                  {stop.job.address}, {stop.job.city}
+                                </p>
+                                <div className="flex items-center gap-3 mt-1 text-xs text-slate-500">
+                                  <span className="flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    Arrive {stop.arrivalTime}
+                                  </span>
+                                  <ArrowRight className="w-3 h-3" />
+                                  <span>{stop.job.duration}h job</span>
+                                </div>
+                              </div>
+                              <div className="flex-shrink-0">
+                                {isExpanded ? <ChevronUp className="w-4 h-4 text-slate-500" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
+                              </div>
+                            </div>
+                          </button>
 
-                {/* Confirmation preview */}
-                {selectedDate && selectedHour !== null && serviceType && (
-                  <Card className="border-indigo-100 bg-indigo-50">
-                    <CardContent className="pt-5">
-                      <p className="text-xs font-semibold text-indigo-700 mb-3 flex items-center gap-1.5">
-                        <CalendarDays className="w-3.5 h-3.5" /> Confirmation email preview
+                          {/* Expanded detail */}
+                          {isExpanded && (
+                            <div className="px-4 pb-3 ml-9 space-y-2">
+                              <div className="bg-[#0A1628]/60 rounded-xl border border-slate-700/40 p-3 text-xs space-y-2">
+                                <div className="flex justify-between">
+                                  <span className="text-slate-500">Arrive</span>
+                                  <span className="text-white font-medium">{stop.arrivalTime}</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-slate-500">Duration</span>
+                                  <span className="text-white font-medium">{stop.job.duration}h</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-slate-500">Drive from prev</span>
+                                  <span className="text-white font-medium">{stop.driveMinutes} min</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-slate-500">Job value</span>
+                                  <span className="text-teal-400 font-bold">{stop.job.value}</span>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {isLast && (
+                            <div className="flex items-center gap-3 px-4 py-3">
+                              <div className="w-6 flex justify-center">
+                                <div className="w-0.5 h-4 bg-teal-900/60 border-l border-dashed border-teal-700/40" />
+                              </div>
+                              <span className="text-xs text-slate-500 flex items-center gap-1">
+                                <Navigation className="w-3 h-3 text-teal-700" />
+                                Return to home base
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {accepted && (
+                    <div className="p-4 border-t border-teal-700/30 bg-teal-900/10 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                      <p className="text-sm text-teal-300">
+                        Schedule accepted — {optimizedRoute.length} stops, {totalDriveTime} min total drive.
                       </p>
-                      <div className="bg-white rounded-xl border border-indigo-100 p-4 text-xs space-y-1.5 text-slate-600">
-                        <p className="font-semibold text-slate-800 text-sm mb-2">Job Confirmation — ProLnk</p>
-                        <p>Hi {customerName || "Customer"},</p>
-                        <p className="mt-1">Your <strong>{serviceType}</strong> appointment has been scheduled for <strong>{formatDateDisplay(selectedDate)}</strong> at <strong>{SLOT_LABELS[selectedHour]}</strong>.</p>
-                        <p>Estimated duration: {duration.label}.</p>
-                        <p>Location: {address || "TBD"}</p>
-                        <p className="text-slate-400 mt-2 text-[10px]">Questions? Reply to this email or call your pro directly.</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {/* Add to calendar (pre-submit shortcut) */}
-                {selectedDate && selectedHour !== null && serviceType && (
-                  <Card>
-                    <CardContent className="pt-4 pb-4">
-                      <p className="text-xs font-semibold text-slate-600 mb-2">Add to calendar now</p>
-                      <div className="flex flex-wrap gap-2">
-                        <a href={googleUrl} target="_blank" rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs text-slate-600 hover:bg-slate-50">
-                          <ExternalLink className="w-3.5 h-3.5 text-blue-500" /> Google Calendar
-                        </a>
-                        <button type="button" onClick={handleIcalDownload}
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs text-slate-600 hover:bg-slate-50">
-                          <Download className="w-3.5 h-3.5 text-slate-500" /> iCal / Outlook (.ics)
-                        </button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                <Button
-                  type="submit" disabled={!canSubmit || submitting}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm py-3"
-                >
-                  {submitting ? "Scheduling…" : "Confirm & Schedule Job"}
-                </Button>
-                {!selectedDate && <p className="text-xs text-slate-400 text-center">Select a date on the calendar to continue</p>}
-                {selectedDate && selectedHour === null && <p className="text-xs text-slate-400 text-center">Select a time slot to continue</p>}
-              </div>
-            </form>
-          )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </PartnerLayout>

@@ -10,7 +10,7 @@ import {
   Loader2, MapPin, Shield, Search, ArrowLeft,
   Calendar, Wrench, SortAsc, Home, Users, Star,
   ChevronDown
-, LucideIcon } from "lucide-react";
+} from "lucide-react";
 
 const HEALTH_CFG = {
   excellent: { label: "Excellent",       color: FOS.teal,  score: 92 },
@@ -67,7 +67,7 @@ function HealthBar({ health, score }: { health: HealthKey; score: number }) {
 /* -- Stat tile -------------------------------------------------------------- */
 function StatTile({
   icon: Icon, value, label, color,
-}: { icon: LucideIcon; value: string | number; label: string; color: string }) {
+}: { icon: React.ElementType; value: string | number; label: string; color: string }) {
   return (
     <div
       className="rounded-2xl p-4 flex flex-col gap-2"

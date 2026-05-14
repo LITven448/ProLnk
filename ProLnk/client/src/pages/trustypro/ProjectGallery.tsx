@@ -4,7 +4,7 @@ import {
   Plus, Star, CheckCircle, Filter, X, Wrench, Zap, Droplets,
   Wind, Home, Shield, ChevronRight, Award, BarChart3, Eye,
   Calendar, Camera, Bookmark, BookmarkCheck,
-} from "lucide-react";
+, LucideIcon } from "lucide-react";
 
 const PURPLE = "#8B5CF6";
 const GREEN = "#10B981";
@@ -14,7 +14,7 @@ const BORDER = "#1E3A5F";
 
 const TRADES = ["All", "HVAC", "Plumbing", "Electrical", "Roofing", "General"];
 
-const TRADE_ICONS: Record<string, (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null> = {
+const TRADE_ICONS: Record<string, LucideIcon> = {
   HVAC: Wind, Plumbing: Droplets, Electrical: Zap, Roofing: Home, General: Wrench,
 };
 

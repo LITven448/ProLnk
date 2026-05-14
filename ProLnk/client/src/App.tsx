@@ -75,6 +75,7 @@ const AIChat = lazy(() => import("./pages/dashboard/AIChat"));
 const EarningsTracker = lazy(() => import("./pages/EarningsTracker"));
 const WhatsNew = lazy(() => import("./pages/WhatsNew"));
 const PartnerProfileEditor = lazy(() => import("./pages/PartnerProfileEditor"));
+const PartnerVerificationPage = lazy(() => import("./pages/PartnerVerification"));
 const AdminSetup = lazy(() => import("./pages/AdminSetup"));
 const JobHistory = lazy(() => import("./pages/JobHistory"));
 const PartnerReviews = lazy(() => import("./pages/PartnerReviews"));
@@ -651,7 +652,7 @@ function Router() {
       <Route path="/dashboard/whats-new" component={WhatsNew} />
       <Route path="/dashboard/market" component={MarketIntelligence} />
       <Route path="/dashboard/profile" component={PartnerProfileEditor} />
-      <Route path="/partner-verification" component={PartnerVerification} />
+      <Route path="/partner-verification" component={PartnerVerificationPage} />
       <Route path="/dashboard/referral" component={ReferralLink} />
       <Route path="/dashboard/partner-home" component={PartnerHome} />
       <Route path="/dashboard/founding" component={FoundingNetworkDashboard} />

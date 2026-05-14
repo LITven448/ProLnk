@@ -21,6 +21,8 @@ import { serveStatic, setupVite } from "./vite";
 import { webhookRouter } from "../webhooks";
 import { registerN8nWebhooks } from "../webhooks/n8n";
 import { handleStripeWebhook } from "../routers/stripe";
+import { serve } from "inngest/express";
+import { inngest, functions } from "../inngest";
 import { storagePut } from "../storage";
 import { sweepExpiredLeads } from "../intake-router";
 import { sweepExpiredDeals } from "../routers/customerDeals";
@@ -117,6 +119,7 @@ async function startServer() {
   app.use("/api/webhooks", webhookRouter);
   // n8n automation webhooks
   registerN8nWebhooks(app);
+  app.use("/api/inngest", serve({ client: inngest, functions }));
 
   // Photo upload endpoint -- accepts base64 encoded images
   app.post("/api/upload-photos", async (req, res) => {

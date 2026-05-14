@@ -15,7 +15,7 @@ import {
   Moon,
   CheckCircle,
   Calendar,
-, LucideIcon } from "lucide-react";
+} from "lucide-react";
 
 type Channel = "email" | "sms" | "push";
 
@@ -30,7 +30,7 @@ interface NotifItem {
 interface NotifGroup {
   key: string;
   title: string;
-  icon: LucideIcon;
+  icon: React.ElementType;
   color: string;
   items: NotifItem[];
 }
@@ -154,7 +154,7 @@ const initialGroups: NotifGroup[] = [
   },
 ];
 
-const channelIcons: Record<Channel, LucideIcon> = {
+const channelIcons: Record<Channel, React.ElementType> = {
   email: Mail,
   sms: Smartphone,
   push: MonitorSmartphone,

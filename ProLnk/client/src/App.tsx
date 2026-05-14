@@ -362,6 +362,7 @@ const UpsellPlaybook = lazy(() => import("./pages/UpsellPlaybook"));
 const ProposalBuilder = lazy(() => import("./pages/ProposalBuilder"));
 const NetworkingEvents = lazy(() => import("./pages/NetworkingEvents"));
 const TaxEstimator = lazy(() => import("./pages/TaxEstimator"));
+const TaxCenter = lazy(() => import("./pages/dashboard/TaxCenter"));
 const ContractorComparison = lazy(() => import("./pages/homeowner/ContractorComparison"));
 const SeasonalPrepGuide = lazy(() => import("./pages/homeowner/SeasonalPrepGuide"));
 const NotificationSettings = lazy(() => import("./pages/homeowner/NotificationSettings"));
@@ -959,6 +960,7 @@ function Router() {
       <Route path="/dashboard/upsell" component={UpsellPlaybook} />
       <Route path="/dashboard/events" component={NetworkingEvents} />
       <Route path="/dashboard/tax-estimator" component={TaxEstimator} />
+      <Route path="/dashboard/tax" component={TaxCenter} />
       <Route path="/my-home/compare-contractors" component={TrustyProComingSoon} />
       <Route path="/my-home/seasonal-prep" component={SeasonalPrepGuide} />
       <Route path="/my-home/notifications" component={NotificationSettings} />

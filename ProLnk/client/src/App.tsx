@@ -591,7 +591,7 @@ function Router() {
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
         <SmoothScrollProvider>
-          {(window as any).__BRAND__ === "trustypro" ? <TrustyProHome /> : <Home />}
+          {((window as any).__BRAND__ === "trustypro" || window.location.hostname.includes("trustypro")) ? <TrustyProHome /> : <Home />}
         </SmoothScrollProvider>
       </Route>
       <Route path="/demo" component={Demo} />

@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import {
   ArrowLeft, Download, DollarSign, TrendingUp, TrendingDown,
-  Loader2, BarChart3,
+  Loader2, BarChart3, CalendarClock, Zap,
 } from "lucide-react";
 
 const STREAM_COLORS = {
@@ -113,6 +113,18 @@ export default function EarningsHistory() {
     }));
   }, [currentYearData, priorYearData, currentYear, priorYear]);
 
+  const earnedThisMonth = useMemo(() => {
+    const now = new Date();
+    return (earnedCommissions ?? []).reduce((sum, c) => {
+      if (!c.createdAt) return sum;
+      const d = new Date(c.createdAt as string);
+      if (d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth()) {
+        return sum + Number(c.amount ?? 0);
+      }
+      return sum;
+    }, 0);
+  }, [earnedCommissions]);
+
   const handleDownloadTaxSummary = () => {
     const allRows = [currentYear, priorYear].flatMap((yr) => {
       const data = yr === currentYear ? currentYearData : priorYearData;
@@ -150,6 +162,16 @@ export default function EarningsHistory() {
     );
   }
 
+  const currentMonthIdx = new Date().getMonth();
+  const monthsElapsed = currentMonthIdx + 1;
+  const projectedAnnual = monthsElapsed > 0 ? (currentYearTotal / monthsElapsed) * 12 : 0;
+
+  const nextPayoutDate = (() => {
+    const d = new Date();
+    d.setMonth(d.getMonth() + 1, 1);
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  })();
+
   return (
     <PartnerLayout>
       <div className="max-w-5xl mx-auto px-4 py-10">
@@ -172,8 +194,68 @@ export default function EarningsHistory() {
             variant="outline"
             className="gap-2 text-sm"
           >
-            <Download className="w-4 h-4" /> Download Tax Summary
+            <Download className="w-4 h-4" /> Download Tax Summary (CSV)
           </Button>
+        </div>
+
+        {/* YTD Summary + Next Payout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {/* YTD Summary */}
+          <div className="bg-gradient-to-br from-[#0A1628] to-[#1B4FD8] rounded-2xl p-6 text-white">
+            <div className="flex items-center gap-2 mb-4">
+              <DollarSign className="w-4 h-4 text-blue-300" />
+              <span className="text-xs font-semibold text-blue-300 uppercase tracking-wider">Year-to-Date Summary</span>
+            </div>
+            <p className="text-4xl font-black mb-1">${currentYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+            <p className="text-sm text-blue-300 mb-4">
+              On pace for ${projectedAnnual.toLocaleString(undefined, { maximumFractionDigits: 0 })} this year
+            </p>
+            <div className="space-y-2">
+              {(Object.keys(STREAM_LABELS) as (keyof typeof STREAM_COLORS)[]).map((s) => (
+                <div key={s} className="flex items-center justify-between text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STREAM_COLORS[s] === "#0A1628" ? "#93c5fd" : STREAM_COLORS[s] }} />
+                    <span className="text-blue-200 text-xs">{STREAM_LABELS[s]}</span>
+                  </div>
+                  <span className="font-semibold text-white text-xs">
+                    ${streamTotals[s].toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                    {currentYearTotal > 0 && (
+                      <span className="text-blue-300 font-normal ml-1">
+                        ({((streamTotals[s] / currentYearTotal) * 100).toFixed(0)}%)
+                      </span>
+                    )}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Next Payout */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <CalendarClock className="w-4 h-4 text-emerald-500" />
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Next Payout</span>
+              </div>
+              <p className="text-4xl font-black text-gray-900 mb-1">
+                ${earnedThisMonth.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+              </p>
+              <p className="text-sm text-gray-400 mb-4">Est. payout on {nextPayoutDate}</p>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 bg-emerald-50 rounded-xl p-3">
+                <Zap className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                <p className="text-xs text-emerald-700 leading-relaxed">
+                  <span className="font-semibold">Increase this amount:</span> Add 1 more recruit to unlock $149/mo in subscription overrides. Each job logged adds to your direct commission stack.
+                </p>
+              </div>
+              <Link href="/dashboard/payout-history">
+                <button className="w-full text-xs text-[#0A1628] font-semibold border border-[#0A1628]/20 rounded-xl py-2 hover:bg-[#0A1628]/5 transition-colors">
+                  View Full Payout History →
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Year totals */}
@@ -225,8 +307,13 @@ export default function EarningsHistory() {
               <YAxis tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false}
                 tickFormatter={(v) => `$${v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v}`} />
               <Tooltip
-                contentStyle={{ borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 12 }}
-                formatter={(v: number, name: string) => [`$${v.toFixed(0)}`, STREAM_LABELS[name] ?? name]}
+                contentStyle={{ borderRadius: 12, border: "none", boxShadow: "0 4px 20px rgba(0,0,0,0.1)", fontSize: 12, padding: "10px 14px" }}
+                formatter={(v: number, name: string) => [`$${Number(v).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`, STREAM_LABELS[name] ?? name]}
+                labelFormatter={(label) => {
+                  const row = currentYearData.find((r) => r.month === label);
+                  if (!row) return label;
+                  return `${label} — Total: $${row.total.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+                }}
               />
               <Legend
                 formatter={(value) => STREAM_LABELS[value] ?? value}

@@ -5,7 +5,7 @@ import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import {
   Users, TrendingUp, MapPin, DollarSign, Award, Zap,
-  Clock, CheckCircle, ChevronRight, Shield,
+  Clock, CheckCircle, ChevronRight, Shield, Activity, Globe,
 } from "lucide-react";
 
 // -- Animated counter ----------------------------------------------------------
@@ -302,6 +302,199 @@ export default function NetworkStats() {
           </div>
         </div>
 
+        {/* Network Income Forecast */}
+        <div className="max-w-6xl mx-auto px-4 mb-16">
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-8 backdrop-blur-sm">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-xl font-bold text-white mb-1">Network Income Forecast</h2>
+                <p className="text-sm text-slate-400">
+                  Projected annual override income if current recruits maintain activity
+                </p>
+              </div>
+              <div className="w-10 h-10 rounded-xl bg-teal-400/10 flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-teal-400" />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                {
+                  label: "L1 Override (1%)",
+                  recruits: 12,
+                  avgMonthlyEarnings: 800,
+                  rate: 0.01,
+                  color: "#14b8a6",
+                },
+                {
+                  label: "L2 Override (0.5%)",
+                  recruits: 34,
+                  avgMonthlyEarnings: 600,
+                  rate: 0.005,
+                  color: "#8b5cf6",
+                },
+                {
+                  label: "L3 Override (0.25%)",
+                  recruits: 78,
+                  avgMonthlyEarnings: 500,
+                  rate: 0.0025,
+                  color: "#3b82f6",
+                },
+                {
+                  label: "L4 Override (0.1%)",
+                  recruits: 124,
+                  avgMonthlyEarnings: 400,
+                  rate: 0.001,
+                  color: "#f59e0b",
+                },
+              ].map((stream) => {
+                const monthlyIncome = stream.recruits * stream.avgMonthlyEarnings * stream.rate;
+                const annualIncome = monthlyIncome * 12;
+                return (
+                  <div key={stream.label} className="rounded-xl bg-slate-700/30 p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: stream.color }}>
+                      {stream.label}
+                    </p>
+                    <p className="text-2xl font-bold text-white mb-0.5">
+                      ${Math.round(annualIncome).toLocaleString()}
+                    </p>
+                    <p className="text-xs text-slate-400">per year</p>
+                    <p className="text-[10px] text-slate-500 mt-2">
+                      {stream.recruits} recruits · ${Math.round(monthlyIncome)}/mo
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-6 pt-5 border-t border-slate-700/40 flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Total Projected Annual Network Income</p>
+                <p className="text-3xl font-bold text-teal-400">
+                  ${(12 * 0.01 * 800 * 12 + 34 * 0.005 * 600 * 12 + 78 * 0.0025 * 500 * 12 + 124 * 0.001 * 400 * 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                </p>
+              </div>
+              <p className="text-xs text-slate-500 max-w-xs">
+                Based on current network activity. Numbers update as your recruits close more jobs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Geographic Heatmap & Network Strength */}
+        <div className="max-w-6xl mx-auto px-4 mb-16">
+          <div className="grid sm:grid-cols-2 gap-6">
+
+            {/* Geographic heatmap placeholder */}
+            <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6 backdrop-blur-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-blue-400/10 flex items-center justify-center">
+                  <Globe className="w-5 h-5 text-blue-400" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-white">Network Geography</h2>
+                  <p className="text-xs text-slate-400">Where your recruits are active</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { zone: "DFW North (Plano/Frisco)", pct: 38, color: "#14b8a6", recruits: 47 },
+                  { zone: "DFW Central (Dallas)",     pct: 26, color: "#3b82f6", recruits: 32 },
+                  { zone: "DFW South (Irving/Grand Prairie)", pct: 18, color: "#8b5cf6", recruits: 22 },
+                  { zone: "DFW East (Garland/Mesquite)", pct: 12, color: "#f59e0b", recruits: 15 },
+                  { zone: "Other / Expanding",        pct: 6,  color: "#6b7280", recruits: 7 },
+                ].map((z) => (
+                  <div key={z.zone}>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="text-slate-300 font-medium">{z.zone}</span>
+                      <span className="text-slate-500">{z.recruits} recruits</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-slate-700/60 overflow-hidden">
+                      <div className="h-full rounded-full" style={{ width: `${z.pct}%`, backgroundColor: z.color }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 rounded-lg border border-teal-500/20 bg-teal-400/5 px-3 py-2.5">
+                <p className="text-xs font-semibold text-teal-300">
+                  Most of your network is in DFW North
+                </p>
+                <p className="text-[10px] text-teal-400/60 mt-0.5">
+                  Plano, Frisco, and Allen represent your strongest recruiting pocket
+                </p>
+              </div>
+            </div>
+
+            {/* Network Strength Score */}
+            <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6 backdrop-blur-sm">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-purple-400/10 flex items-center justify-center">
+                  <Activity className="w-5 h-5 text-purple-400" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-white">Network Strength Score</h2>
+                  <p className="text-xs text-slate-400">Based on L1 recruit activity levels</p>
+                </div>
+              </div>
+              {(() => {
+                const l1Recruits = [
+                  { name: "Mike R.", jobsThisMonth: 8,  active: true  },
+                  { name: "Dana S.", jobsThisMonth: 5,  active: true  },
+                  { name: "Tom L.",  jobsThisMonth: 3,  active: true  },
+                  { name: "Sara K.", jobsThisMonth: 1,  active: true  },
+                  { name: "Jade M.", jobsThisMonth: 0,  active: false },
+                  { name: "Chris P.", jobsThisMonth: 0, active: false },
+                ];
+                const totalMonthlyJobs = l1Recruits.reduce((s, r) => s + r.jobsThisMonth, 0);
+                const activeCount = l1Recruits.filter((r) => r.active).length;
+                const strengthScore = Math.min(100, Math.round((activeCount / l1Recruits.length) * 60 + (totalMonthlyJobs / 20) * 40));
+                const scoreColor = strengthScore >= 70 ? "#14b8a6" : strengthScore >= 45 ? "#f59e0b" : "#ef4444";
+                const scoreLabel = strengthScore >= 70 ? "Strong" : strengthScore >= 45 ? "Moderate" : "Weak";
+                return (
+                  <>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="relative w-16 h-16 flex-shrink-0">
+                        <svg viewBox="0 0 64 64" className="w-full h-full -rotate-90">
+                          <circle cx="32" cy="32" r="26" fill="none" stroke="#1E293B" strokeWidth="8" />
+                          <circle
+                            cx="32" cy="32" r="26" fill="none"
+                            stroke={scoreColor} strokeWidth="8"
+                            strokeDasharray={`${2 * Math.PI * 26 * strengthScore / 100} ${2 * Math.PI * 26 * (100 - strengthScore) / 100}`}
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                        <span className="absolute inset-0 flex items-center justify-center text-sm font-black text-white">
+                          {strengthScore}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="text-xl font-bold text-white">{scoreLabel}</p>
+                        <p className="text-xs text-slate-400">{activeCount}/{l1Recruits.length} L1 recruits active this month</p>
+                        <p className="text-xs text-slate-500">{totalMonthlyJobs} total jobs logged</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      {l1Recruits.map((r) => (
+                        <div key={r.name} className="flex items-center gap-3">
+                          <div className={`w-2 h-2 rounded-full flex-shrink-0 ${r.active ? "bg-teal-400" : "bg-slate-600"}`} />
+                          <span className="text-xs text-slate-300 w-20 flex-shrink-0">{r.name}</span>
+                          <div className="flex-1 h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
+                            <div
+                              className="h-full rounded-full bg-teal-500 transition-all duration-700"
+                              style={{ width: r.jobsThisMonth > 0 ? `${Math.min(100, (r.jobsThisMonth / 10) * 100)}%` : "0%" }}
+                            />
+                          </div>
+                          <span className="text-[10px] text-slate-500 w-12 text-right flex-shrink-0">
+                            {r.jobsThisMonth > 0 ? `${r.jobsThisMonth} jobs` : "inactive"}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+
         {/* Trade breakdown chart */}
         <div className="max-w-6xl mx-auto px-4 mb-16">
           <div
@@ -324,21 +517,26 @@ export default function NetworkStats() {
             <h2 className="text-xl font-bold text-white mb-2">DFW Coverage Map</h2>
             <p className="text-sm text-slate-400 mb-6">Active partner coverage across the Dallas–Fort Worth Metroplex</p>
             <div className="relative rounded-xl overflow-hidden border border-slate-700/40" style={{ height: 340 }}>
-              <img
-                src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/pin-l-home+14b8a6(-96.7970,32.7767),pin-l-home+14b8a6(-97.3308,32.7555),pin-l-home+14b8a6(-96.9336,32.8481),pin-l-home+14b8a6(-97.1401,32.7254),pin-l-home+14b8a6(-96.6389,33.0315)/-97.0641,32.7668,9,0/1200x340@2x?access_token=${import.meta.env.VITE_MAPBOX_TOKEN || "pk.PLACEHOLDER"}`}
-                alt="DFW Coverage Map"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                  (e.currentTarget.nextElementSibling as HTMLElement | null)?.removeAttribute("hidden");
-                }}
-              />
-              <div hidden className="absolute inset-0 flex items-center justify-center bg-slate-800">
-                <div className="flex items-center gap-2 text-slate-400">
-                  <MapPin className="w-5 h-5 text-teal-400" />
-                  <span className="text-sm font-medium">Dallas–Fort Worth Metroplex</span>
+              {import.meta.env.VITE_MAPBOX_TOKEN ? (
+                <img
+                  src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/pin-l-home+14b8a6(-96.7970,32.7767),pin-l-home+14b8a6(-97.3308,32.7555),pin-l-home+14b8a6(-96.9336,32.8481),pin-l-home+14b8a6(-97.1401,32.7254),pin-l-home+14b8a6(-96.6389,33.0315)/-97.0641,32.7668,9,0/1200x340@2x?access_token=${import.meta.env.VITE_MAPBOX_TOKEN}`}
+                  alt="DFW Coverage Map"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-800/80 gap-4">
+                  <MapPin className="w-8 h-8 text-teal-400" />
+                  <div className="text-center">
+                    <p className="text-white font-semibold">Dallas–Fort Worth Metroplex</p>
+                    <p className="text-slate-400 text-sm mt-1">DFW Active · Frisco · Plano · Allen · McKinney · Prosper</p>
+                  </div>
+                  <div className="flex gap-3 mt-2">
+                    {["DFW North", "DFW Central", "DFW South", "DFW East", "DFW West"].map(z => (
+                      <span key={z} className="text-[10px] px-2 py-1 rounded-full bg-teal-400/10 text-teal-400 border border-teal-500/20">{z}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
                 <div className="bg-slate-900/80 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />

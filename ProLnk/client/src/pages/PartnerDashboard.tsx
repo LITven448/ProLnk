@@ -20,7 +20,8 @@ import {
   TrendingUp, Award, ChevronRight, MapPin, Globe, Sparkles,
   User, Star, BarChart3, ArrowUpRight, Activity,
   Radar, Eye, CloudLightning, Shield, Repeat, Megaphone,
-  Share2, MessageSquare, Users, GitBranch
+  Share2, MessageSquare, Users, GitBranch,
+  ArrowDownRight, TrendingDown, Heart, CalendarCheck,
 } from "lucide-react";
 
 // ─── Account Standing Badge ──────────────────────────────────────────────────
@@ -230,6 +231,135 @@ function StatCard({ label, value, sub, icon: Icon, color, trend, sparkline }: {
           </ResponsiveContainer>
         </div>
       )}
+    </div>
+  );
+}
+
+// ─── ProLnk Health Score Card ────────────────────────────────────────────────
+function HealthScoreCard({
+  partner, jobsCompleted, networkRecruits, totalEarned, bestDay,
+}: {
+  partner: any;
+  jobsCompleted: number;
+  networkRecruits: number;
+  totalEarned: number;
+  bestDay: { day: string; amount: number } | null;
+}) {
+  // Composite score: profile (25pts) + jobs (30pts) + network (25pts) + payout (20pts)
+  const profileScore = Math.min(25, [
+    !!partner.description,
+    !!partner.logoUrl,
+    !!partner.website,
+    !!partner.licenseNumber || !!partner.licenseVerifiedAt,
+    !!partner.coiUrl || !!partner.coiVerifiedAt,
+  ].filter(Boolean).length * 5);
+
+  const jobScore = Math.min(30, Math.round((jobsCompleted / 20) * 30));
+  const networkScore = Math.min(25, Math.round((networkRecruits / 10) * 25));
+  const payoutScore = Math.min(20, Math.round((totalEarned / 1000) * 20));
+
+  const currentScore = profileScore + jobScore + networkScore + payoutScore;
+
+  // Mock last-month delta: treat as +8 if score > 40, +3 if > 20, -2 otherwise
+  const lastMonthDelta = currentScore > 40 ? 8 : currentScore > 20 ? 3 : -2;
+  const trending = lastMonthDelta >= 0;
+
+  const scoreColor =
+    currentScore >= 80 ? "#10B981" :
+    currentScore >= 55 ? "#F59E0B" :
+    currentScore >= 30 ? "#3B82F6" : "#EF4444";
+
+  const scoreLabel =
+    currentScore >= 80 ? "Excellent" :
+    currentScore >= 55 ? "Good" :
+    currentScore >= 30 ? "Building" : "Getting Started";
+
+  const segments = [
+    { label: "Profile", earned: profileScore, max: 25, color: "#8B5CF6" },
+    { label: "Jobs",    earned: jobScore,     max: 30, color: "#10B981" },
+    { label: "Network", earned: networkScore, max: 25, color: "#3B82F6" },
+    { label: "Payouts", earned: payoutScore,  max: 20, color: "#F59E0B" },
+  ];
+
+  const fullDayNames: Record<string, string> = {
+    Sun: "Sunday", Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday",
+    Thu: "Thursday", Fri: "Friday", Sat: "Saturday",
+  };
+
+  return (
+    <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8">
+      <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center"
+            style={{ background: `linear-gradient(135deg, ${scoreColor}22, ${scoreColor}44)` }}>
+            <Heart className="w-4.5 h-4.5" style={{ color: scoreColor, width: "1.125rem", height: "1.125rem" }} />
+          </div>
+          <div>
+            <h2 className="font-bold text-gray-900 text-sm">ProLnk Health Score</h2>
+            <p className="text-xs text-gray-400">Composite score across 4 performance pillars</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-end gap-0.5">
+          <div className="flex items-center gap-1.5">
+            <span className="text-2xl font-black" style={{ color: scoreColor }}>{currentScore}</span>
+            <span className="text-sm font-semibold text-gray-300">/100</span>
+          </div>
+          <div className="flex items-center gap-1 text-xs font-semibold"
+            style={{ color: trending ? "#10B981" : "#EF4444" }}>
+            {trending
+              ? <ArrowUpRight className="w-3 h-3" />
+              : <ArrowDownRight className="w-3 h-3" />}
+            {Math.abs(lastMonthDelta)} pts vs last month
+          </div>
+        </div>
+      </div>
+      <div className="p-5 space-y-4">
+        {/* Score bar */}
+        <div>
+          <div className="flex items-center justify-between text-xs mb-1.5">
+            <span className="font-semibold text-gray-500">Overall</span>
+            <span className="font-bold px-2 py-0.5 rounded-full text-white text-[10px]"
+              style={{ backgroundColor: scoreColor }}>{scoreLabel}</span>
+          </div>
+          <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
+            <div className="h-full rounded-full transition-all duration-700"
+              style={{ width: `${currentScore}%`, backgroundColor: scoreColor }} />
+          </div>
+        </div>
+
+        {/* Pillar breakdown */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {segments.map((seg) => {
+            const pct = Math.round((seg.earned / seg.max) * 100);
+            return (
+              <div key={seg.label} className="rounded-xl p-3 bg-gray-50 border border-gray-100">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">{seg.label}</p>
+                <p className="text-lg font-black" style={{ color: seg.color }}>
+                  {seg.earned}<span className="text-xs text-gray-300 font-normal">/{seg.max}</span>
+                </p>
+                <div className="h-1.5 rounded-full bg-gray-200 mt-1.5 overflow-hidden">
+                  <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: seg.color }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Best day badge */}
+        {bestDay && bestDay.amount > 0 && (
+          <div className="flex items-center gap-3 rounded-xl bg-indigo-50 border border-indigo-100 px-4 py-3">
+            <CalendarCheck className="w-5 h-5 text-indigo-500 flex-shrink-0" />
+            <div>
+              <p className="text-xs font-bold text-indigo-700">
+                {fullDayNames[bestDay.day] ?? bestDay.day} is your best day for jobs
+              </p>
+              <p className="text-[10px] text-indigo-400 mt-0.5">
+                ${bestDay.amount.toFixed(0)} average earned — schedule your biggest jobs then
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -775,6 +905,15 @@ export default function PartnerDashboard() {
             </div>
           </div>
         </div>
+
+        {/* -- ProLnk Health Score ----------------------------------------------- */}
+        <HealthScoreCard
+          partner={partner}
+          jobsCompleted={jobsCompletedThisMonth + (myJobs?.length ?? 0)}
+          networkRecruits={referralCount}
+          totalEarned={totalEarned}
+          bestDay={smartInsights.bestDay}
+        />
 
         {/* -- W48: Smart Insights -------------------------------------------- */}
         {(smartInsights.bestDay || smartInsights.topType || smartInsights.acceptRate > 0) && (

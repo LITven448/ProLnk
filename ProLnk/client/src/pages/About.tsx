@@ -223,6 +223,40 @@ export default function About() {
           </div>
         </div>
 
+        {/* Mission */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 32px" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.3)", borderRadius: 20, padding: "6px 16px", marginBottom: 24 }}>
+              <span style={{ fontSize: 12, color: TEAL, fontWeight: 700 }}>OUR MISSION</span>
+            </div>
+            <h2 style={{ fontSize: 32, fontWeight: 900, color: "#fff", marginBottom: 20, lineHeight: 1.3 }}>
+              Connecting homeowners with trusted service professionals through AI-powered matching
+            </h2>
+            <p style={{ color: "#94a3b8", fontSize: 16, lineHeight: 1.8 }}>
+              Every homeowner deserves fast, reliable service from verified professionals. Every contractor deserves leads that convert, income that compounds, and a platform that works for them — not against them. ProLnk is how both sides win.
+            </p>
+          </div>
+        </div>
+
+        {/* Team */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 32px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 32, fontWeight: 900, color: "#fff", textAlign: "center", marginBottom: 48 }}>Our team</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, maxWidth: 640, margin: "0 auto" }}>
+              {TEAM.map(member => (
+                <div key={member.name} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: 28, textAlign: "center" }}>
+                  <div style={{ width: 60, height: 60, borderRadius: "50%", background: "rgba(20,184,166,0.15)", border: "2px solid rgba(20,184,166,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px", fontSize: 18, fontWeight: 800, color: TEAL }}>
+                    {member.initials}
+                  </div>
+                  <h3 style={{ fontSize: 18, fontWeight: 800, color: "#fff", margin: "0 0 4px" }}>{member.name}</h3>
+                  <div style={{ fontSize: 13, color: TEAL, fontWeight: 600, marginBottom: 12 }}>{member.role}</div>
+                  <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{member.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* CTA */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 32px" }}>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>

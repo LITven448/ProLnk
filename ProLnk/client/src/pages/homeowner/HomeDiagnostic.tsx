@@ -9,7 +9,8 @@ import { Progress } from "@/components/ui/progress";
 import {
   Camera, Send, Bot, User, Wrench, ShoppingCart, Users, ChevronRight,
   AlertTriangle, CheckCircle, Info, Loader2, X, ImagePlus, Sparkles,
-  DollarSign, Clock, ArrowRight, ExternalLink
+  DollarSign, Clock, ArrowRight, ExternalLink, TrendingUp, Shield,
+  Zap, Home,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -91,6 +92,47 @@ const SUGGESTED_PROMPTS = [
   "Bathroom faucet won't stop dripping",
 ];
 
+// ─── Score ring SVG ──────────────────────────────────────────────────────────
+function ScoreRing({ score, size = 88, strokeWidth = 8, color = "#14b8a6" }: {
+  score: number; size?: number; strokeWidth?: number; color?: string;
+}) {
+  const r = (size - strokeWidth) / 2;
+  const circ = 2 * Math.PI * r;
+  const offset = circ - (score / 100) * circ;
+  return (
+    <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#e5e7eb" strokeWidth={strokeWidth} />
+      <circle
+        cx={size / 2} cy={size / 2} r={r} fill="none"
+        stroke={color} strokeWidth={strokeWidth}
+        strokeDasharray={circ} strokeDashoffset={offset}
+        strokeLinecap="round"
+        style={{ transition: "stroke-dashoffset 0.8s ease" }}
+      />
+    </svg>
+  );
+}
+
+// ─── Sparkline ───────────────────────────────────────────────────────────────
+function Sparkline({ values, width = 120, height = 36 }: { values: number[]; width?: number; height?: number }) {
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = max - min || 1;
+  const pts = values.map((v, i) => {
+    const x = (i / (values.length - 1)) * width;
+    const y = height - ((v - min) / range) * (height - 6) - 3;
+    return `${x},${y}`;
+  });
+  const polyline = pts.join(" ");
+  const lastPt = pts[pts.length - 1].split(",");
+  return (
+    <svg width={width} height={height} className="overflow-visible">
+      <polyline points={polyline} fill="none" stroke="#14b8a6" strokeWidth={1.5} strokeLinejoin="round" strokeLinecap="round" />
+      <circle cx={parseFloat(lastPt[0])} cy={parseFloat(lastPt[1])} r={3} fill="#14b8a6" />
+    </svg>
+  );
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function HomeDiagnostic() {
   const [phase, setPhase] = useState<Phase>("intro");
@@ -101,6 +143,7 @@ export default function HomeDiagnostic() {
   const [result, setResult] = useState<DiagnosticResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [uploadingPhotos, setUploadingPhotos] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -267,6 +310,62 @@ export default function HomeDiagnostic() {
     setResult(null);
   };
 
+  // ─── Static diagnostic overview data ────────────────────────────────────────
+  const scoreComponents = [
+    { label: "Structure", score: 85, color: "#22c55e" },
+    { label: "Systems", score: 72, color: "#f59e0b" },
+    { label: "Safety", score: 91, color: "#14b8a6" },
+    { label: "Efficiency", score: 68, color: "#f97316" },
+  ];
+  const overallScore = Math.round(scoreComponents.reduce((s, c) => s + c.score, 0) / scoreComponents.length);
+  const historicalScores = [75, 77, 74, 79, 78, 81];
+
+  const priorityActions = [
+    {
+      title: "HVAC Filter Replacement Overdue",
+      description: "Filter hasn't been replaced in 14 months. Reduces efficiency and strains the compressor.",
+      cost: "$15–$45",
+      damage: "Up to $1,200 compressor damage if ignored",
+      urgency: "urgent",
+    },
+    {
+      title: "Caulking Failure Around Master Bath Tub",
+      description: "Cracked caulk allows moisture intrusion behind tile — early stage but accelerating.",
+      cost: "$80–$200",
+      damage: "Potential $3,500+ tile and subfloor damage",
+      urgency: "soon",
+    },
+    {
+      title: "Attic Insulation Below Code (R-19)",
+      description: "Current insulation is R-19; code recommends R-38 for your climate zone.",
+      cost: "$800–$1,400",
+      damage: "25% higher energy bills year-round",
+      urgency: "monitor",
+    },
+  ];
+
+  const rooms = [
+    { id: "living", label: "Living Room", health: "good" },
+    { id: "kitchen", label: "Kitchen", health: "good" },
+    { id: "master-bath", label: "Master Bath", health: "warn" },
+    { id: "garage", label: "Garage", health: "good" },
+    { id: "hvac", label: "HVAC Closet", health: "urgent" },
+    { id: "attic", label: "Attic", health: "warn" },
+  ];
+
+  const roomHealthDot = (health: string) => {
+    if (health === "good") return "bg-green-500";
+    if (health === "warn") return "bg-amber-400";
+    if (health === "urgent") return "bg-red-500";
+    return "bg-gray-300";
+  };
+
+  const urgencyBadge = (urgency: string) => {
+    if (urgency === "urgent") return "bg-red-100 text-red-700 border-red-200";
+    if (urgency === "soon") return "bg-orange-100 text-orange-700 border-orange-200";
+    return "bg-blue-100 text-blue-700 border-blue-200";
+  };
+
   // ─── Render ─────────────────────────────────────────────────────────────────
   return (
     <HomeownerLayout>
@@ -288,6 +387,145 @@ export default function HomeDiagnostic() {
         {/* ── INTRO PHASE ── */}
         {phase === "intro" && (
           <div className="space-y-6">
+
+            {/* Score Breakdown */}
+            <Card>
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-base">Home Health Score</CardTitle>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <TrendingUp className="h-3.5 w-3.5 text-teal-500" />
+                    <span>+6 pts last 6 months</span>
+                    <Sparkline values={historicalScores} />
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-6">
+                  <div className="relative shrink-0">
+                    <ScoreRing score={overallScore} />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="text-2xl font-bold text-gray-900">{overallScore}</span>
+                      <span className="text-xs text-muted-foreground">/ 100</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 space-y-2.5">
+                    {scoreComponents.map(comp => (
+                      <div key={comp.label}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-xs text-muted-foreground">{comp.label}</span>
+                          <span className="text-xs font-semibold" style={{ color: comp.color }}>{comp.score}</span>
+                        </div>
+                        <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all duration-700"
+                            style={{ width: `${comp.score}%`, backgroundColor: comp.color }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI Confidence */}
+                <div className="mt-4 pt-4 border-t border-dashed">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <Shield className="h-3 w-3" /> AI assessment confidence
+                    </span>
+                    <span className="text-xs font-semibold text-teal-600">87%</span>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div className="h-full rounded-full bg-teal-500 transition-all" style={{ width: "87%" }} />
+                  </div>
+                  <div className="flex gap-3 mt-2 flex-wrap">
+                    {["Photo clarity: High", "Coverage: 92%", "Model: v2.4"].map(f => (
+                      <span key={f} className="text-xs text-muted-foreground bg-gray-50 border border-gray-200 rounded-full px-2 py-0.5">{f}</span>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Priority Actions */}
+            <div className="space-y-2">
+              <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">Fix This Now</h2>
+              {priorityActions.map((action, i) => (
+                <Card key={i} className={`border ${urgencyBadge(action.urgency).includes("red") ? "border-red-200" : urgencyBadge(action.urgency).includes("orange") ? "border-orange-200" : "border-blue-200"}`}>
+                  <CardContent className="pt-3 pb-3">
+                    <div className="flex items-start gap-3">
+                      <div className={`mt-0.5 shrink-0 w-2 h-2 rounded-full ${action.urgency === "urgent" ? "bg-red-500" : action.urgency === "soon" ? "bg-orange-400" : "bg-blue-400"}`} />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2">
+                          <p className="text-sm font-semibold text-gray-900">{action.title}</p>
+                          <Badge className={`text-xs border shrink-0 ${urgencyBadge(action.urgency)}`}>
+                            {action.urgency === "urgent" ? "Urgent" : action.urgency === "soon" ? "Soon" : "Monitor"}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-gray-600 mt-1 leading-relaxed">{action.description}</p>
+                        <div className="flex items-center gap-3 mt-2 flex-wrap">
+                          <span className="flex items-center gap-1 text-xs text-green-700 font-medium">
+                            <DollarSign className="h-3 w-3" /> Fix: {action.cost}
+                          </span>
+                          <span className="flex items-center gap-1 text-xs text-red-600">
+                            <AlertTriangle className="h-3 w-3" /> {action.damage}
+                          </span>
+                        </div>
+                        <Button size="sm" className="mt-2 h-7 text-xs bg-amber-500 hover:bg-amber-600 text-white">
+                          Get Quote <ChevronRight className="h-3 w-3 ml-1" />
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Room-by-Room Scan */}
+            <div className="space-y-2">
+              <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">Room-by-Room Scan</h2>
+              <div className="grid grid-cols-3 gap-2">
+                {rooms.map(room => (
+                  <button
+                    key={room.id}
+                    onClick={() => setSelectedRoom(selectedRoom === room.id ? null : room.id)}
+                    className={`flex flex-col items-center gap-2 rounded-xl border p-3 transition-all cursor-pointer ${
+                      selectedRoom === room.id
+                        ? "border-teal-400 bg-teal-50 shadow-sm"
+                        : "border-gray-200 bg-white hover:border-teal-300 hover:bg-gray-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5">
+                      <Home className="h-3.5 w-3.5 text-muted-foreground" />
+                      <div className={`w-2 h-2 rounded-full ${roomHealthDot(room.health)}`} />
+                    </div>
+                    <span className="text-xs font-medium text-gray-700 text-center leading-tight">{room.label}</span>
+                  </button>
+                ))}
+              </div>
+              {selectedRoom && (
+                <Card className="border-teal-200 bg-teal-50/40">
+                  <CardContent className="pt-3 pb-3">
+                    <p className="text-sm font-medium text-teal-800">
+                      {rooms.find(r => r.id === selectedRoom)?.label}
+                    </p>
+                    {selectedRoom === "hvac" && (
+                      <p className="text-xs text-teal-700 mt-1">Filter overdue. Duct inspection recommended before next season.</p>
+                    )}
+                    {selectedRoom === "master-bath" && (
+                      <p className="text-xs text-teal-700 mt-1">Caulk failure detected around tub. No water intrusion yet — address soon.</p>
+                    )}
+                    {selectedRoom === "attic" && (
+                      <p className="text-xs text-teal-700 mt-1">Insulation below R-38 recommendation. No urgent risk but costing you monthly.</p>
+                    )}
+                    {!["hvac", "master-bath", "attic"].includes(selectedRoom) && (
+                      <p className="text-xs text-teal-700 mt-1">No issues detected in last scan. Looking good.</p>
+                    )}
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
             <Card className="border-amber-200 bg-amber-50">
               <CardContent className="pt-5 pb-4">
                 <p className="text-sm text-amber-800 leading-relaxed">
@@ -638,7 +876,7 @@ export default function HomeDiagnostic() {
                       </p>
                       {result.quote && (
                         <p className="text-xs text-gray-500">
-                          💡 Suggested budget: ${result.quote.min.toLocaleString()}–${result.quote.max.toLocaleString()}
+                          Suggested budget: ${result.quote.min.toLocaleString()}–${result.quote.max.toLocaleString()}
                         </p>
                       )}
                       <Link href="/dashboard/exchange">

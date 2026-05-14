@@ -9,7 +9,8 @@ import { toast } from "sonner";
 import {
   Users, Search, Mail, Phone, MapPin, Star, DollarSign, RefreshCw, Send,
   Eye, Clock, TrendingUp, ChevronRight, Home, Shield, AlertTriangle,
-  Download, MessageSquare, Activity, Calendar, Wrench, ThumbsUp, X
+  Download, MessageSquare, Activity, Calendar, Wrench, ThumbsUp, X,
+  LayoutList, Columns, CheckSquare, Square, UserPlus, Zap,
 } from "lucide-react";
 
 function fmtDate(ts: string | null) {
@@ -41,6 +42,59 @@ function healthLabel(score: number) {
   if (score >= 40) return "At Risk";
   return "Dormant";
 }
+
+function HealthSparkline({ score }: { score: number }) {
+  const segments = [
+    Math.max(20, score - 15),
+    Math.max(15, score - 22),
+    Math.max(25, score - 8),
+    Math.max(18, score - 18),
+    Math.max(30, score - 5),
+    score,
+  ];
+  const max = Math.max(...segments);
+  return (
+    <div className="flex items-end gap-0.5 h-5 w-12">
+      {segments.map((v, i) => {
+        const pct = Math.round((v / max) * 100);
+        const isLast = i === segments.length - 1;
+        const color = score >= 80 ? "bg-teal-400" : score >= 60 ? "bg-yellow-400" : score >= 40 ? "bg-orange-400" : "bg-red-400";
+        return (
+          <div
+            key={i}
+            className={`flex-1 rounded-sm ${isLast ? color : "bg-slate-600"}`}
+            style={{ height: `${Math.max(20, pct)}%` }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+type PipelineStage = "New" | "Active" | "Completed" | "Churned";
+
+const PIPELINE_STAGES: PipelineStage[] = ["New", "Active", "Completed", "Churned"];
+
+function stagForHomeowner(h: { healthScore: number; jobsCompleted: number; lastService: string | null }): PipelineStage {
+  if (h.healthScore >= 80 && h.jobsCompleted >= 5) return "Completed";
+  if (h.healthScore >= 60) return "Active";
+  if (h.healthScore < 40) return "Churned";
+  return "New";
+}
+
+const STAGE_COLORS: Record<PipelineStage, string> = {
+  New: "border-blue-500/40 bg-blue-500/5",
+  Active: "border-teal-500/40 bg-teal-500/5",
+  Completed: "border-green-500/40 bg-green-500/5",
+  Churned: "border-red-500/40 bg-red-500/5",
+};
+
+const STAGE_BADGE: Record<PipelineStage, string> = {
+  New: "bg-blue-500/20 text-blue-400",
+  Active: "bg-teal-500/20 text-teal-400",
+  Completed: "bg-green-500/20 text-green-400",
+  Churned: "bg-red-500/20 text-red-400",
+};
 
 const MOCK_HOMEOWNERS = [
   {
@@ -74,6 +128,13 @@ const MOCK_HOMEOWNERS = [
       { date: "2025-09-05", trade: "Plumbing", pro: "AquaTech Plumbing", amount: 580, status: "completed", rating: 5 },
       { date: "2025-07-14", trade: "Landscaping", pro: "Green Thumb ATX", amount: 1200, status: "completed", rating: 5 },
     ],
+    recentActivity: [
+      { date: "2026-04-28", event: "Job completed — HVAC tune-up with TexasHVAC", type: "job" },
+      { date: "2026-04-20", event: "Left 5-star review for TexasHVAC", type: "review" },
+      { date: "2026-04-10", event: "Opened email: Spring maintenance tips", type: "email" },
+      { date: "2026-03-15", event: "New lead matched — Roof inspection", type: "lead" },
+      { date: "2026-03-10", event: "Job completed — Roofing with RoofPro Austin", type: "job" },
+    ],
   },
   {
     id: "ho-002",
@@ -102,6 +163,12 @@ const MOCK_HOMEOWNERS = [
       { date: "2026-05-03", trade: "Roofing", pro: "HoustonRoof", amount: 6800, status: "completed", rating: 5 },
       { date: "2026-02-18", trade: "HVAC", pro: "Gulf Coast HVAC", amount: 1800, status: "completed", rating: 4 },
       { date: "2025-12-05", trade: "Plumbing", pro: "Premier Plumbing HTX", amount: 420, status: "completed", rating: 5 },
+    ],
+    recentActivity: [
+      { date: "2026-05-03", event: "Job completed — Roof replacement with HoustonRoof", type: "job" },
+      { date: "2026-04-25", event: "Requested quote — HVAC inspection", type: "lead" },
+      { date: "2026-04-12", event: "Pro confirmed for Roof appointment", type: "email" },
+      { date: "2026-03-30", event: "Left 4-star review for Gulf Coast HVAC", type: "review" },
     ],
   },
   {
@@ -132,6 +199,11 @@ const MOCK_HOMEOWNERS = [
       { date: "2025-10-02", trade: "HVAC", pro: "North Texas HVAC", amount: 2100, status: "completed", rating: 5 },
       { date: "2025-08-17", trade: "Roofing", pro: "DFW Roofing", amount: 9200, status: "completed", rating: 4 },
     ],
+    recentActivity: [
+      { date: "2026-01-14", event: "Job completed — Pool repair with Pool Masters", type: "job" },
+      { date: "2026-01-05", event: "Opened email: Holiday service reminder", type: "email" },
+      { date: "2025-12-20", event: "Re-engagement email sent", type: "email" },
+    ],
   },
   {
     id: "ho-004",
@@ -159,6 +231,10 @@ const MOCK_HOMEOWNERS = [
       { date: "2025-10-31", trade: "Plumbing", pro: "SA Plumbing Pro", amount: 850, status: "completed", rating: 3 },
       { date: "2025-06-12", trade: "Electrical", pro: "Alamo Electric", amount: 1000, status: "cancelled", rating: null },
     ],
+    recentActivity: [
+      { date: "2025-10-31", event: "Feedback email sent", type: "email" },
+      { date: "2025-06-12", event: "Job cancelled — Electrical with Alamo Electric", type: "job" },
+    ],
   },
   {
     id: "ho-005",
@@ -184,6 +260,10 @@ const MOCK_HOMEOWNERS = [
     ],
     jobHistory: [
       { date: "2024-12-15", trade: "Painting", pro: "FreshCoat Pros", amount: 320, status: "completed", rating: null },
+    ],
+    recentActivity: [
+      { date: "2025-01-29", event: "Welcome email sent", type: "email" },
+      { date: "2024-12-15", event: "Job completed — Painting with FreshCoat Pros", type: "job" },
     ],
   },
   {
@@ -214,17 +294,27 @@ const MOCK_HOMEOWNERS = [
       { date: "2026-04-15", trade: "HVAC", pro: "TexasHVAC", amount: 4100, status: "completed", rating: 5 },
       { date: "2026-03-01", trade: "Roofing", pro: "RoofPro Austin", amount: 12400, status: "completed", rating: 5 },
     ],
+    recentActivity: [
+      { date: "2026-05-09", event: "Job completed — Fence installation with Austin Fence Co", type: "job" },
+      { date: "2026-05-01", event: "Left 5-star review for TexasHVAC", type: "review" },
+      { date: "2026-04-30", event: "Appointment reminder sent via SMS", type: "email" },
+      { date: "2026-04-15", event: "Job completed — HVAC with TexasHVAC", type: "job" },
+      { date: "2026-04-01", event: "Opened email: April maintenance checklist", type: "email" },
+    ],
   },
 ];
 
 type FilterType = "all" | "active" | "inactive" | "high-value" | "at-risk";
+type ViewMode = "table" | "kanban";
 
 export default function HomeownerCRM() {
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+  const [viewMode, setViewMode] = useState<ViewMode>("table");
   const [selectedHomeowner, setSelectedHomeowner] = useState<typeof MOCK_HOMEOWNERS[0] | null>(null);
   const [messageTarget, setMessageTarget] = useState<typeof MOCK_HOMEOWNERS[0] | null>(null);
   const [messageText, setMessageText] = useState("");
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
 
   const filtered = useMemo(() => {
     return MOCK_HOMEOWNERS.filter((h) => {
@@ -277,6 +367,19 @@ export default function HomeownerCRM() {
     setMessageTarget(null);
   }
 
+  function toggleSelect(id: string) {
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  function clearSelection() {
+    setSelectedIds(new Set());
+  }
+
   const QUICK_FILTERS: { label: string; value: FilterType; color: string }[] = [
     { label: "All", value: "all", color: "" },
     { label: "Active", value: "active", color: "teal" },
@@ -285,10 +388,16 @@ export default function HomeownerCRM() {
     { label: "At Risk", value: "at-risk", color: "red" },
   ];
 
+  const activityIcon: Record<string, string> = {
+    job: "🔧",
+    review: "⭐",
+    email: "📧",
+    lead: "🎯",
+  };
+
   return (
     <AdminLayout>
       <div className="p-6 space-y-6 max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-2">
@@ -297,12 +406,27 @@ export default function HomeownerCRM() {
             </h1>
             <p className="text-slate-400 text-sm mt-1">Full homeowner lifecycle — history, health scores, and re-engagement</p>
           </div>
-          <Button onClick={exportCSV} className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 border border-teal-500/30">
-            <Download className="w-4 h-4 mr-2" /> Export CSV
-          </Button>
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1 p-1 rounded-lg border border-slate-700 bg-[#0A1628]">
+              <button
+                onClick={() => setViewMode("table")}
+                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "table" ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-slate-200"}`}
+              >
+                <LayoutList className="w-3.5 h-3.5" /> Table
+              </button>
+              <button
+                onClick={() => setViewMode("kanban")}
+                className={`px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 transition-all ${viewMode === "kanban" ? "bg-teal-500/20 text-teal-400" : "text-slate-400 hover:text-slate-200"}`}
+              >
+                <Columns className="w-3.5 h-3.5" /> Kanban
+              </button>
+            </div>
+            <Button onClick={exportCSV} className="bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 border border-teal-500/30">
+              <Download className="w-4 h-4 mr-2" /> Export CSV
+            </Button>
+          </div>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "Total Homeowners", value: MOCK_HOMEOWNERS.length, icon: <Users className="w-5 h-5 text-teal-400" />, color: "text-teal-400", bg: "bg-teal-500/10" },
@@ -317,7 +441,6 @@ export default function HomeownerCRM() {
           ))}
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-60">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -345,81 +468,175 @@ export default function HomeownerCRM() {
           </div>
         </div>
 
-        {/* Table */}
-        <div className="bg-[#0F1E35] rounded-xl border border-slate-700 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homeowner</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Location</th>
-                  <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homes</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Last Service</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Total Spend</th>
-                  <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Health</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Join Date</th>
-                  <th className="px-4 py-3" />
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-700/50">
-                {filtered.length === 0 ? (
-                  <tr>
-                    <td colSpan={8} className="px-4 py-12 text-center text-slate-500">No homeowners match your filters</td>
-                  </tr>
-                ) : filtered.map((h) => (
-                  <tr
-                    key={h.id}
-                    className="hover:bg-slate-700/20 cursor-pointer transition-colors"
-                    onClick={() => setSelectedHomeowner(h)}
-                  >
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-sm shrink-0">
-                          {h.name[0]}
-                        </div>
-                        <div>
-                          <div className="text-white font-medium text-sm">{h.name}</div>
-                          <div className="text-slate-400 text-xs">{h.email}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-1 text-slate-300 text-xs">
-                        <MapPin className="w-3 h-3 text-slate-500" />
-                        {h.city}, {h.state} {h.zip}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <div className="flex items-center justify-center gap-1 text-slate-300 text-sm">
-                        <Home className="w-3.5 h-3.5 text-slate-500" />
-                        {h.homes}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.lastService)}</td>
-                    <td className="px-4 py-3 text-right font-semibold text-amber-400">{fmtCurrency(h.totalSpend)}</td>
-                    <td className="px-4 py-3 text-center">
-                      <div className="flex flex-col items-center gap-0.5">
-                        <span className={`text-lg font-black ${healthColor(h.healthScore)}`}>{h.healthScore}</span>
-                        <span className={`text-xs ${healthColor(h.healthScore)}`}>{healthLabel(h.healthScore)}</span>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.joinDate)}</td>
-                    <td className="px-4 py-3">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setMessageTarget(h); }}
-                        className="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-400 text-xs transition-colors"
-                      >
-                        <MessageSquare className="w-3 h-3" /> Msg
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {selectedIds.size > 0 && (
+          <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-teal-500/30 bg-teal-500/5">
+            <span className="text-teal-400 text-sm font-semibold">{selectedIds.size} selected</span>
+            <div className="flex gap-2 ml-2">
+              <button
+                onClick={() => { toast.success(`Email sent to ${selectedIds.size} homeowners`); clearSelection(); }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/15 text-blue-400 text-xs font-medium border border-blue-500/25 hover:bg-blue-500/25 transition-colors"
+              >
+                <Mail className="w-3 h-3" /> Send Email
+              </button>
+              <button
+                onClick={() => { toast.success(`Assigning pro to ${selectedIds.size} homeowners`); clearSelection(); }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-violet-500/15 text-violet-400 text-xs font-medium border border-violet-500/25 hover:bg-violet-500/25 transition-colors"
+              >
+                <UserPlus className="w-3 h-3" /> Assign Pro
+              </button>
+              <button
+                onClick={() => { exportCSV(); clearSelection(); }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-500/15 text-slate-400 text-xs font-medium border border-slate-500/25 hover:bg-slate-500/25 transition-colors"
+              >
+                <Download className="w-3 h-3" /> Export
+              </button>
+            </div>
+            <button onClick={clearSelection} className="ml-auto text-slate-500 hover:text-slate-300">
+              <X className="w-4 h-4" />
+            </button>
           </div>
-        </div>
+        )}
 
-        {/* Detail Panel */}
+        {viewMode === "table" && (
+          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-700">
+                    <th className="px-4 py-3 w-8">
+                      <button
+                        onClick={() => {
+                          if (selectedIds.size === filtered.length) clearSelection();
+                          else setSelectedIds(new Set(filtered.map(h => h.id)));
+                        }}
+                        className="text-slate-400 hover:text-teal-400 transition-colors"
+                      >
+                        {selectedIds.size === filtered.length && filtered.length > 0
+                          ? <CheckSquare className="w-4 h-4" />
+                          : <Square className="w-4 h-4" />
+                        }
+                      </button>
+                    </th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homeowner</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Location</th>
+                    <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Homes</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Last Service</th>
+                    <th className="text-right px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Total Spend</th>
+                    <th className="text-center px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Health</th>
+                    <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">Join Date</th>
+                    <th className="px-4 py-3" />
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-700/50">
+                  {filtered.length === 0 ? (
+                    <tr>
+                      <td colSpan={9} className="px-4 py-12 text-center text-slate-500">No homeowners match your filters</td>
+                    </tr>
+                  ) : filtered.map((h) => (
+                    <tr
+                      key={h.id}
+                      className={`hover:bg-slate-700/20 cursor-pointer transition-colors ${selectedIds.has(h.id) ? "bg-teal-500/5" : ""}`}
+                      onClick={() => setSelectedHomeowner(h)}
+                    >
+                      <td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
+                        <button onClick={() => toggleSelect(h.id)} className="text-slate-400 hover:text-teal-400 transition-colors">
+                          {selectedIds.has(h.id) ? <CheckSquare className="w-4 h-4 text-teal-400" /> : <Square className="w-4 h-4" />}
+                        </button>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-sm shrink-0">
+                            {h.name[0]}
+                          </div>
+                          <div>
+                            <div className="text-white font-medium text-sm">{h.name}</div>
+                            <div className="text-slate-400 text-xs">{h.email}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-1 text-slate-300 text-xs">
+                          <MapPin className="w-3 h-3 text-slate-500" />
+                          {h.city}, {h.state} {h.zip}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-slate-300 text-sm">
+                          <Home className="w-3.5 h-3.5 text-slate-500" />
+                          {h.homes}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.lastService)}</td>
+                      <td className="px-4 py-3 text-right font-semibold text-amber-400">{fmtCurrency(h.totalSpend)}</td>
+                      <td className="px-4 py-3">
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="flex items-center gap-2">
+                            <span className={`text-lg font-black ${healthColor(h.healthScore)}`}>{h.healthScore}</span>
+                            <HealthSparkline score={h.healthScore} />
+                          </div>
+                          <span className={`text-xs ${healthColor(h.healthScore)}`}>{healthLabel(h.healthScore)}</span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-400 text-xs">{fmtDate(h.joinDate)}</td>
+                      <td className="px-4 py-3">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setMessageTarget(h); }}
+                          className="flex items-center gap-1 px-2 py-1 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-400 text-xs transition-colors"
+                        >
+                          <MessageSquare className="w-3 h-3" /> Msg
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {viewMode === "kanban" && (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {PIPELINE_STAGES.map((stage) => {
+              const stageItems = filtered.filter(h => stagForHomeowner(h) === stage);
+              return (
+                <div key={stage} className={`rounded-xl border p-4 ${STAGE_COLORS[stage]}`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${STAGE_BADGE[stage]}`}>{stage}</span>
+                    <span className="text-xs text-slate-500">{stageItems.length}</span>
+                  </div>
+                  <div className="space-y-3">
+                    {stageItems.map((h) => (
+                      <button
+                        key={h.id}
+                        onClick={() => setSelectedHomeowner(h)}
+                        className="w-full text-left rounded-lg p-3 bg-[#0A1628] border border-slate-700 hover:border-teal-500/40 transition-all"
+                      >
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-7 h-7 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 font-bold text-xs shrink-0">
+                            {h.name[0]}
+                          </div>
+                          <span className="text-white text-xs font-semibold truncate">{h.name}</span>
+                        </div>
+                        <div className="text-slate-400 text-xs truncate">{h.city}, {h.state}</div>
+                        <div className="flex items-center justify-between mt-2">
+                          <span className="text-amber-400 text-xs font-semibold">{fmtCurrency(h.totalSpend)}</span>
+                          <div className="flex items-center gap-1">
+                            <span className={`text-xs font-bold ${healthColor(h.healthScore)}`}>{h.healthScore}</span>
+                            <HealthSparkline score={h.healthScore} />
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                    {stageItems.length === 0 && (
+                      <div className="text-xs text-slate-600 text-center py-4">No homeowners</div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         <Dialog open={!!selectedHomeowner} onOpenChange={() => setSelectedHomeowner(null)}>
           <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-[#0A1628] border border-slate-700 text-white">
             {selectedHomeowner && (
@@ -433,7 +650,7 @@ export default function HomeownerCRM() {
                       <div className="text-white">{selectedHomeowner.name}</div>
                       <div className="text-sm text-slate-400 font-normal">{selectedHomeowner.address}, {selectedHomeowner.city}, {selectedHomeowner.state}</div>
                     </div>
-                    <div className="ml-auto flex gap-2">
+                    <div className="ml-auto flex gap-2 flex-wrap">
                       {selectedHomeowner.tags.map((t) => (
                         <span key={t} className="px-2 py-0.5 rounded-full text-xs font-medium bg-teal-500/20 text-teal-300">{t}</span>
                       ))}
@@ -442,7 +659,6 @@ export default function HomeownerCRM() {
                 </DialogHeader>
 
                 <div className="space-y-5 py-2">
-                  {/* Quick stats */}
                   <div className="grid grid-cols-4 gap-3">
                     {[
                       { label: "Total Spend", value: fmtCurrency(selectedHomeowner.totalSpend), color: "text-amber-400" },
@@ -457,7 +673,6 @@ export default function HomeownerCRM() {
                     ))}
                   </div>
 
-                  {/* Contact info */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="flex items-center gap-2 text-slate-300 text-sm">
                       <Mail className="w-4 h-4 text-slate-500" />{selectedHomeowner.email}
@@ -473,7 +688,6 @@ export default function HomeownerCRM() {
                     </div>
                   </div>
 
-                  {/* Pros used */}
                   {selectedHomeowner.prosUsed.length > 0 && (
                     <div>
                       <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
@@ -487,7 +701,6 @@ export default function HomeownerCRM() {
                     </div>
                   )}
 
-                  {/* Job history */}
                   <div>
                     <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
                       <Activity className="w-4 h-4 text-teal-400" /> Job History
@@ -520,7 +733,28 @@ export default function HomeownerCRM() {
                     </div>
                   </div>
 
-                  {/* Communications */}
+                  <div>
+                    <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
+                      <Zap className="w-4 h-4 text-teal-400" /> Last 30 Days Activity
+                    </h3>
+                    <div className="relative pl-5 space-y-0">
+                      {selectedHomeowner.recentActivity.map((a, i) => (
+                        <div key={i} className="relative pb-3">
+                          {i < selectedHomeowner.recentActivity.length - 1 && (
+                            <div className="absolute left-[-12px] top-5 w-px h-full bg-slate-700" />
+                          )}
+                          <div className="flex items-start gap-3">
+                            <span className="text-base leading-none mt-0.5 flex-shrink-0">{activityIcon[a.type] ?? "📌"}</span>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm text-slate-200 leading-snug">{a.event}</p>
+                              <p className="text-xs text-slate-500 mt-0.5">{fmtDate(a.date)}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   <div>
                     <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-1">
                       <MessageSquare className="w-4 h-4 text-teal-400" /> Recent Communications
@@ -558,7 +792,6 @@ export default function HomeownerCRM() {
           </DialogContent>
         </Dialog>
 
-        {/* Message Dialog */}
         <Dialog open={!!messageTarget} onOpenChange={() => { setMessageTarget(null); setMessageText(""); }}>
           <DialogContent className="max-w-md bg-[#0A1628] border border-slate-700 text-white">
             <DialogHeader>

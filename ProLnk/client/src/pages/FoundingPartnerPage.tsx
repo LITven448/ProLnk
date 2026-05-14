@@ -5,7 +5,7 @@
  * Also serves as the partner's personal founding partner dashboard when logged in.
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";

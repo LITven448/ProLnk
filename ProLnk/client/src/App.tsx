@@ -387,6 +387,7 @@ const CompetitorIntelligence = lazy(() => import("@/pages/admin/CompetitorIntell
 const TaskManager = lazy(() => import("@/pages/admin/TaskManager"));
 const OnboardingChecklist = lazy(() => import("@/pages/OnboardingChecklist"));
 const DashboardOnboardingChecklist = lazy(() => import("@/pages/dashboard/OnboardingChecklist"));
+const FeatureDiscovery = lazy(() => import("@/pages/dashboard/FeatureDiscovery"));
 const ServiceAreaManager = lazy(() => import("@/pages/ServiceAreaManager"));
 const QuickQuoteRequest = lazy(() => import("@/pages/homeowner/QuickQuoteRequest"));
 const RoomMakeover = lazy(() => import("@/pages/homeowner/RoomMakeover"));
@@ -858,6 +859,7 @@ function Router() {
       <Route path="/onboarding/wizard" component={OnboardingWizard} />
       <Route path="/onboarding/checklist" component={OnboardingChecklist} />
       <Route path="/dashboard/onboarding" component={DashboardOnboardingChecklist} />
+      <Route path="/dashboard/features" component={FeatureDiscovery} />
       <Route path="/dashboard/disputes" component={DisputeCenter} />
       <Route path="/dashboard/payout-setup" component={PayoutSetup} />
       <Route path="/dashboard/payout-history" component={PayoutHistory} />

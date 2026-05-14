@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FC } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
@@ -63,7 +63,7 @@ const TREND_DATA = [
 
 const ALERT_KPIS = new Set(["Churn Rate", "Gross Margin"]);
 
-const TAB_CONFIG: { id: Tab; label: string; icon: React.ElementType }[] = [
+const TAB_CONFIG: { id: Tab; label: string; icon: FC }[] = [
   { id: "revenue", label: "Revenue", icon: DollarSign },
   { id: "partners", label: "Partners", icon: Users },
   { id: "leads", label: "Leads", icon: Zap },

@@ -15,7 +15,7 @@ import {
   Home, Camera, Zap, Building2, DollarSign,
   WifiOff, Loader2, X, Download,
   Wrench, Droplets, Wind, Flame, Leaf, Bug,
-  MapPin, Trophy, TrendingUp, ChevronRight, Sparkles,
+  MapPin, Trophy, Sparkles,
 } from "lucide-react";
 
 type Tab = "home" | "job" | "feed" | "profiles" | "earnings";
@@ -146,7 +146,6 @@ export default function FieldOS() {
   const [queuedPhotos, setQueuedPhotos] = useState(0);
   const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallBanner, setShowInstallBanner] = useState(false);
-  const [showLeadsModal, setShowLeadsModal] = useState(false);
   const { loading, isAuthenticated } = useAuth();
 
   useEffect(() => {

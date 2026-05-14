@@ -249,6 +249,7 @@ const TrainingHub = lazy(() => import("./pages/TrainingHub"));
 const CommissionCalculator = lazy(() => import("./pages/CommissionCalculator"));
 const AnalyticsDeepDive = lazy(() => import("./pages/admin/AnalyticsDeepDive"));
 const HomeownerReferral = lazy(() => import("./pages/homeowner/HomeownerReferral"));
+const NeighborhoodReferral = lazy(() => import("./pages/NeighborhoodReferral"));
 const HomeHealthVault = lazy(() => import("./pages/homeowner/HomeHealthVault"));
 const ScanHistory = lazy(() => import("./pages/homeowner/ScanHistory"));
 const AdminTaskList = lazy(() => import("./pages/admin/AdminTaskList"));
@@ -261,6 +262,7 @@ const ProWaitlist = lazy(() => import("./pages/ProWaitlist"));
 const TrustyProWaitlistStatus = lazy(() => import("./pages/TrustyProWaitlistStatus"));
 const TrustyProComingSoon = lazy(() => import("./pages/TrustyProComingSoon"));
 const WaitlistManager = lazy(() => import("./pages/admin/WaitlistManager"));
+const CharterTracking = lazy(() => import("./pages/admin/CharterTracking"));
 const WaitlistIntelligence = lazy(() => import("./pages/admin/WaitlistIntelligence"));
 const ReferralTree = lazy(() => import("./pages/admin/ReferralTree"));
 const WaitlistProLanding = lazy(() => import("./pages/WaitlistProLanding"));
@@ -866,6 +868,7 @@ function Router() {
       <Route path="/partner-agreement" component={PartnerAgreement} />
       <Route path="/admin/compliance" component={StrikeManagement} />
       <Route path="/admin/waitlist" component={WaitlistManager} />
+      <Route path="/admin/charter-tracking" component={CharterTracking} />
       <Route path="/admin/waitlist-intelligence" component={WaitlistIntelligence} />
       <Route path="/admin/referral-tree" component={ReferralTree} />
       <Route path="/admin/homeowners" component={HomeownerCRM} />
@@ -951,6 +954,7 @@ function Router() {
       <Route path="/my-home/document-vault" component={DocumentVault} />
       <Route path="/my-home/referral" component={HomeownerReferral} />
       <Route path="/my-home/homeowner-referral" component={HomeownerReferral} />
+      <Route path="/neighborhood-referral" component={NeighborhoodReferral} />
       <Route path="/my-home/photos" component={HomeownerPhotos} />
       <Route path="/my-home/emergency" component={EmergencyServices} />
       <Route path="/my-home/neighborhood-deals" component={TrustyProComingSoon} />

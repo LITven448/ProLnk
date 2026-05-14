@@ -71,6 +71,7 @@ const MediaRevenuePage = lazy(() => import("./pages/admin/MediaRevenue"));
 const PartnerAnalytics = lazy(() => import("./pages/PartnerAnalytics"));
 const PerformanceAlerts = lazy(() => import("./pages/PerformanceAlerts"));
 const AIChatAssistant = lazy(() => import("./pages/AIChatAssistant"));
+const AIChat = lazy(() => import("./pages/dashboard/AIChat"));
 const EarningsTracker = lazy(() => import("./pages/EarningsTracker"));
 const WhatsNew = lazy(() => import("./pages/WhatsNew"));
 const PartnerProfileEditor = lazy(() => import("./pages/PartnerProfileEditor"));
@@ -636,7 +637,7 @@ function Router() {
       <Route path="/dashboard/tier" component={TierProgress} />
       <Route path="/dashboard/analytics" component={PartnerAnalytics} />
       <Route path="/dashboard/alerts" component={PerformanceAlerts} />
-      <Route path="/dashboard/ai" component={AIChatAssistant} />
+      <Route path="/dashboard/ai" component={AIChat} />
       <Route path="/dashboard/earnings" component={EarningsTracker} />
       <Route path="/dashboard/earnings-history" component={EarningsHistoryDashboard} />
       <Route path="/dashboard/earnings-calendar" component={EarningsCalendar} />

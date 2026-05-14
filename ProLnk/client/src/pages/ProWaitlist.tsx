@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, type ChangeEvent } from "react";
+import { useState, useMemo, useEffect, useRef, type ChangeEvent } from "react";
 import { Helmet } from "react-helmet-async";
 import { getLoginUrl } from "@/const";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -14,8 +14,9 @@ import {
   ArrowRight, Zap, Camera, Menu, X, Shield, BadgeCheck, Play,
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
   Copy, Share2, Twitter, Linkedin, MessageSquare, Lock, Calendar,
-  User, Building2
+  User, Building2, Search,
 } from "lucide-react";
+import { SERVICE_CATEGORIES, TIER_LABELS } from "@/data/serviceCategories";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
@@ -871,19 +872,108 @@ function SuccessState({
 }
 
 // --- Pro Waitlist Modal -------------------------------------------------------
-const TRADE_OPTIONS = [
-  { group: "Lawn & Outdoor", trades: ["Lawn Care & Mowing", "Landscaping & Design", "Tree Service & Removal", "Irrigation & Sprinkler Systems", "Drainage & Grading", "Hardscaping & Patios", "Artificial Turf Installation", "Outdoor & Landscape Lighting", "Fence Installation & Repair"] },
-  { group: "Pool & Water", trades: ["Pool Cleaning & Maintenance", "Pool Repair & Renovation", "Water Filtration & Softeners"] },
-  { group: "Pest & Wildlife", trades: ["Pest Control", "Wildlife & Rodent Removal", "Mosquito & Tick Control"] },
-  { group: "Roofing & Exterior", trades: ["Roofing & Roof Repair", "Gutter Cleaning & Guards", "Siding & Exterior Repair", "Exterior Painting", "Pressure Washing", "Window Cleaning", "Window & Door Repair"] },
-  { group: "HVAC, Plumbing & Electrical", trades: ["HVAC & Air Conditioning", "Plumbing", "Electrical Services", "Solar Panel Installation", "Insulation & Energy Efficiency", "Water Heater Installation & Repair", "EV Charging Station Installation", "Generator Installation"] },
-  { group: "Interior Remodeling", trades: ["Kitchen Remodeling", "Bathroom Remodeling", "Flooring Installation", "Interior Painting", "Handyman Services", "Garage Door Repair & Installation", "Foundation Repair", "Cabinet Refinishing & Refacing", "Closet & Storage Organization", "Tile Installation & Repair", "Drywall Repair & Finishing", "Epoxy & Garage Floor Coating"] },
-  { group: "Cleaning & Maintenance", trades: ["House Cleaning", "Carpet & Upholstery Cleaning", "Junk Removal & Hauling", "Storm Cleanup & Restoration", "Chimney Cleaning & Repair", "Air Duct & Dryer Vent Cleaning", "Concrete & Driveway Cleaning", "Mold Testing & Remediation"] },
-  { group: "Animals & Pets", trades: ["Dog Walking & Pet Sitting", "Pet Grooming", "Pet Waste Removal"] },
-  { group: "Security & Smart Home", trades: ["Home Security Systems", "Smart Home Installation"] },
-  { group: "Specialty Services", trades: ["Holiday & Event Lighting", "Dumpster Rental", "Moving Services", "Home Inspection", "Concrete & Masonry", "Deck Building & Repair", "Stucco & Exterior Plaster", "Awnings & Shade Structures", "Radon Testing & Mitigation", "Fire & Smoke Damage Restoration", "Water Damage Restoration"] },
-  { group: "General / Other", trades: ["General Contractor", "Other (describe below)"] },
-];
+const TIERS_ORDERED_PW = [1, 2, 3, 4, 5] as const;
+
+function TradeSearchDropdown({
+  selected,
+  onToggle,
+}: {
+  selected: string[];
+  onToggle: (id: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const q = query.toLowerCase();
+  const filtered = q
+    ? SERVICE_CATEGORIES.filter((c) => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
+    : SERVICE_CATEGORIES;
+
+  const grouped = TIERS_ORDERED_PW.map((tier) => ({
+    tier,
+    label: TIER_LABELS[tier],
+    items: filtered.filter((c) => c.tier === tier),
+  })).filter((g) => g.items.length > 0);
+
+  return (
+    <div ref={ref} className="mb-3 relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 bg-white text-left flex items-center justify-between"
+      >
+        <span className={selected.length > 0 ? "text-gray-900" : "text-gray-400"}>
+          {selected.length > 0
+            ? `${selected.length} trade${selected.length > 1 ? "s" : ""} selected`
+            : "Select your trades / services *"}
+        </span>
+        <svg className={`w-4 h-4 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute z-50 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-xl max-h-72 overflow-y-auto">
+          <div className="sticky top-0 bg-white border-b border-gray-100 p-2">
+            <div className="flex items-center gap-2 px-2 py-1.5 bg-gray-50 rounded-md border border-gray-200">
+              <Search size={13} className="text-gray-400 flex-shrink-0" />
+              <input
+                autoFocus
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search 93 trades…"
+                className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none"
+              />
+              {query && (
+                <button onClick={() => setQuery("")} className="text-gray-400 hover:text-gray-600 text-base leading-none">&times;</button>
+              )}
+            </div>
+          </div>
+
+          {grouped.length === 0 && (
+            <p className="text-xs text-center text-gray-400 py-6">No trades found for "{query}"</p>
+          )}
+
+          {grouped.map(({ tier, label, items }) => (
+            <div key={tier}>
+              <div className="px-3 py-1.5 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider sticky top-[52px]">
+                {label}
+              </div>
+              {items.map((cat) => {
+                const checked = selected.includes(cat.id);
+                return (
+                  <label key={cat.id} className="flex items-center gap-2.5 px-3 py-2 hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => onToggle(cat.id)}
+                      className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30 flex-shrink-0"
+                    />
+                    <span className="text-base w-5 text-center flex-shrink-0">{cat.icon}</span>
+                    <div className="min-w-0">
+                      <span className="text-sm text-gray-800 font-medium">{cat.name}</span>
+                      <p className="text-xs text-gray-400 truncate">{cat.description}</p>
+                    </div>
+                    {checked && <CheckCircle size={14} className="text-[#0A1628] ml-auto flex-shrink-0" />}
+                  </label>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; charterCode?: string | null }) {
   const [step, setStep] = useState<"form" | "success">("form");
@@ -897,12 +987,9 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
     hearAboutUs: "", currentSoftware: "",
   });
   const [selectedTrades, setSelectedTrades] = useState<string[]>([]);
-  const [tradesOpen, setTradesOpen] = useState(false);
-  const [customTradeDesc, setCustomTradeDesc] = useState("");
   const [smsOptIn, setSmsOptIn] = useState(false);
   const [licenseFile, setLicenseFile] = useState<{ url: string; name: string } | null>(null);
   const [uploading, setUploading] = useState(false);
-  const showCustomTrade = selectedTrades.includes("Other (describe below)");
 
   // Capture referral code from URL
   const inboundRefCode = (() => {
@@ -927,9 +1014,9 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
   const inputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 mb-3";
   const selectCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 mb-3 text-gray-700 bg-white";
 
-  const toggleTrade = (trade: string) => {
+  const toggleTrade = (id: string) => {
     setSelectedTrades(prev =>
-      prev.includes(trade) ? prev.filter(t => t !== trade) : [...prev, trade]
+      prev.includes(id) ? prev.filter(t => t !== id) : [...prev, id]
     );
   };
 
@@ -1048,57 +1135,19 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
             <input placeholder="Company name *" value={form.companyName} onChange={set("companyName")} className={inputCls} />
 
             {/* Trades Multi-Select */}
-            <div className="mb-3 relative">
-              <button
-                type="button"
-                onClick={() => setTradesOpen(!tradesOpen)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#0A1628]/30 bg-white text-left flex items-center justify-between"
-              >
-                <span className={selectedTrades.length > 0 ? "text-gray-900" : "text-gray-400"}>
-                  {selectedTrades.length > 0
-                    ? `${selectedTrades.length} trade${selectedTrades.length > 1 ? "s" : ""} selected`
-                    : "Select your trades / services *"}
-                </span>
-                <svg className={`w-4 h-4 text-gray-400 transition-transform ${tradesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </button>
-              {tradesOpen && (
-                <div className="absolute z-50 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-xl max-h-64 overflow-y-auto">
-                  {TRADE_OPTIONS.map(group => (
-                    <div key={group.group}>
-                      <div className="px-3 py-1.5 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider sticky top-0">{group.group}</div>
-                      {group.trades.map(trade => (
-                        <label key={trade} className="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50 cursor-pointer text-sm">
-                          <input
-                            type="checkbox"
-                            checked={selectedTrades.includes(trade)}
-                            onChange={() => toggleTrade(trade)}
-                            className="rounded border-gray-300 text-[#0A1628] focus:ring-[#0A1628]/30"
-                          />
-                          <span className="text-gray-700">{trade}</span>
-                        </label>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <TradeSearchDropdown selected={selectedTrades} onToggle={toggleTrade} />
             {selectedTrades.length > 0 && (
               <div className="flex flex-wrap gap-1.5 mb-3">
-                {selectedTrades.map(t => (
-                  <span key={t} className="inline-flex items-center gap-1 bg-[#0A1628]/10 text-[#0A1628] text-xs font-medium px-2 py-1 rounded-full">
-                    {t}
-                    <button onClick={() => toggleTrade(t)} className="hover:text-red-500 leading-none">&times;</button>
-                  </span>
-                ))}
+                {selectedTrades.map(id => {
+                  const cat = SERVICE_CATEGORIES.find(c => c.id === id);
+                  return (
+                    <span key={id} className="inline-flex items-center gap-1 bg-[#0A1628]/10 text-[#0A1628] text-xs font-medium px-2 py-1 rounded-full">
+                      {cat ? `${cat.icon} ${cat.name}` : id}
+                      <button onClick={() => toggleTrade(id)} className="hover:text-red-500 leading-none">&times;</button>
+                    </span>
+                  );
+                })}
               </div>
-            )}
-            {showCustomTrade && (
-              <input
-                placeholder="Describe your trade or specialty *"
-                value={customTradeDesc}
-                onChange={(e) => setCustomTradeDesc(e.target.value)}
-                className={inputCls}
-              />
             )}
 
             {/* Business Details */}
@@ -1229,15 +1278,12 @@ function ProWaitlistModal({ onClose, charterCode }: { onClose: () => void; chart
                 if (selectedTrades.length === 0) {
                   toast.error("Please select at least one trade or service."); return;
                 }
-                if (showCustomTrade && !customTradeDesc.trim()) {
-                  toast.error("Please describe your trade or specialty."); return;
-                }
                 join.mutate({
                   firstName: form.firstName,
                   lastName: form.lastName || "-",
                   email: form.email,
                   phone: form.phone,
-                  trade: selectedTrades[0] || "General Contractor",
+                  trade: selectedTrades[0] || "handyman",
                   primaryCity: form.city || "Not provided",
                   primaryState: form.state,
                   referredBy: inboundRefCode ?? undefined,

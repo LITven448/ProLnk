@@ -31,11 +31,16 @@ const DEFAULT_QUESTIONS: Record<ChatMode, string[]> = {
     "Can I target specific zip codes?",
   ],
   homeowner: [
-    "How does the photo analysis work?",
-    "Are the professionals vetted?",
-    "Is TrustyPro free to use?",
-    "How do I find pros near me?",
+    "Find a pro near me",
+    "Scan my home",
+    "What issues do I have?",
+    "How does TrustyPro work?",
   ],
+};
+
+const DEFAULT_GREETING: Record<ChatMode, string> = {
+  advertiser: "Hi! I'm the ProLnk AI assistant. Ask me anything about advertising, tiers, or getting more leads.",
+  homeowner: "Hi! I'm the TrustyPro AI assistant. Ask me anything about your home's health, finding pros, or using TrustyPro.",
 };
 
 export default function SupportChatWidget({
@@ -48,6 +53,7 @@ export default function SupportChatWidget({
   onForcedOpenHandled,
 }: SupportChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -61,10 +67,18 @@ export default function SupportChatWidget({
       setIsMinimized(false);
       onForcedOpenHandled?.();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [forceOpen]);
+  }, [forceOpen, onForcedOpenHandled]);
+
+  useEffect(() => {
+    if (isOpen) {
+      requestAnimationFrame(() => setIsVisible(true));
+    } else {
+      setIsVisible(false);
+    }
+  }, [isOpen]);
 
   const questions = suggestedQuestions ?? DEFAULT_QUESTIONS[mode];
+  const greeting = DEFAULT_GREETING[mode];
 
   const advertiserMutation = trpc.supportChat.advertiserChat.useMutation({
     onSuccess: (data) => {
@@ -104,7 +118,7 @@ export default function SupportChatWidget({
   useEffect(() => {
     if (isOpen && !isMinimized) {
       setHasUnread(false);
-      setTimeout(() => textareaRef.current?.focus(), 100);
+      setTimeout(() => textareaRef.current?.focus(), 150);
     }
   }, [isOpen, isMinimized]);
 
@@ -130,16 +144,28 @@ export default function SupportChatWidget({
     }
   };
 
+  const openChat = () => {
+    setIsOpen(true);
+    setHasUnread(false);
+  };
+
+  const closeChat = () => {
+    setIsVisible(false);
+    setTimeout(() => setIsOpen(false), 280);
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Chat panel */}
+      {/* Chat panel — slides up from bottom-right */}
       {isOpen && (
         <div
           className={cn(
-            "w-[360px] rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden flex flex-col transition-all duration-300",
-            isMinimized ? "h-14" : "h-[480px]"
+            "w-[360px] rounded-2xl border border-gray-200 bg-white overflow-hidden flex flex-col",
+            "transition-all duration-300 ease-out origin-bottom-right",
+            isMinimized ? "h-14" : "h-[500px]",
+            isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4",
           )}
-          style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.18)" }}
+          style={{ boxShadow: "0 12px 48px rgba(0,0,0,0.22)" }}
         >
           {/* Header */}
           <div
@@ -160,12 +186,14 @@ export default function SupportChatWidget({
               <button
                 className="text-white/70 hover:text-white p-1 rounded transition-colors"
                 onClick={(e) => { e.stopPropagation(); setIsMinimized(!isMinimized); }}
+                aria-label={isMinimized ? "Expand chat" : "Minimize chat"}
               >
-                <ChevronDown className={cn("h-4 w-4 transition-transform", isMinimized ? "rotate-180" : "")} />
+                <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", isMinimized ? "rotate-180" : "")} />
               </button>
               <button
                 className="text-white/70 hover:text-white p-1 rounded transition-colors"
-                onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
+                onClick={(e) => { e.stopPropagation(); closeChat(); }}
+                aria-label="Close chat"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -185,8 +213,8 @@ export default function SupportChatWidget({
                       >
                         AI
                       </div>
-                      <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 text-sm text-gray-700 shadow-sm border border-gray-100 max-w-[260px]">
-                        Hi! I'm here to help. What questions do you have?
+                      <div className="bg-white rounded-2xl rounded-tl-sm px-3 py-2 text-sm text-gray-700 shadow-sm border border-gray-100 max-w-[260px] leading-relaxed">
+                        {greeting}
                       </div>
                     </div>
                     <div className="pl-9 flex flex-wrap gap-2">
@@ -194,7 +222,7 @@ export default function SupportChatWidget({
                         <button
                           key={q}
                           onClick={() => sendMessage(q)}
-                          className="text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-600 transition-colors text-left"
+                          className="text-xs px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 hover:border-gray-300 text-gray-600 transition-colors text-left"
                         >
                           {q}
                         </button>
@@ -217,7 +245,7 @@ export default function SupportChatWidget({
                       )}
                       <div
                         className={cn(
-                          "rounded-2xl px-3 py-2 text-sm max-w-[260px] shadow-sm",
+                          "rounded-2xl px-3 py-2 text-sm max-w-[260px] shadow-sm leading-relaxed",
                           msg.role === "user"
                             ? "text-white rounded-tr-sm"
                             : "bg-white text-gray-700 rounded-tl-sm border border-gray-100"
@@ -280,12 +308,17 @@ export default function SupportChatWidget({
 
       {/* FAB button */}
       <button
-        onClick={() => { setIsOpen(!isOpen); setHasUnread(false); }}
+        onClick={() => isOpen ? closeChat() : openChat()}
         className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95 relative"
         style={{ background: accentColor }}
         aria-label="Open support chat"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        <span className={cn("absolute inset-0 flex items-center justify-center transition-all duration-200", isOpen ? "opacity-100 scale-100" : "opacity-0 scale-75")}>
+          <X className="h-6 w-6" />
+        </span>
+        <span className={cn("absolute inset-0 flex items-center justify-center transition-all duration-200", isOpen ? "opacity-0 scale-75" : "opacity-100 scale-100")}>
+          <MessageCircle className="h-6 w-6" />
+        </span>
         {hasUnread && !isOpen && (
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white" />
         )}

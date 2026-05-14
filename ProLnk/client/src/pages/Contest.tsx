@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 const LAUNCH_DATE = new Date("2026-09-01T00:00:00");
-const SPRINT_END = new Date("2026-06-13T23:59:59"); // 4 weeks from mid-May
+const SPRINT_END = new Date("2026-05-31T23:59:59"); // Sprint closes May 31
 
 const SHARE_URL = "https://prolnk.io/contest";
 const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & TrustyPro and compete for $10,000 in prizes. Top 5 referrers win cash at the live launch event.";
@@ -13,24 +13,24 @@ const SHARE_TEXT = "DFW homeowners & service pros — sign up for ProLnk & Trust
 // ─── Spring Sprint data (would come from API in production) ─────────────────
 
 const SPRINT_LEADERBOARD = [
-  { rank: 1, name: "Marcus T.", initials: "MT", jobs: 38, points: 1140, delta: "+3 this week" },
-  { rank: 2, name: "Deja W.",   initials: "DW", jobs: 31, points: 930,  delta: "+5 this week" },
-  { rank: 3, name: "Carlos M.", initials: "CM", jobs: 27, points: 810,  delta: "+2 this week" },
-  { rank: 4, name: "Priya S.",  initials: "PS", jobs: 24, points: 720,  delta: "+4 this week" },
-  { rank: 5, name: "Tyrone B.", initials: "TB", jobs: 22, points: 660,  delta: "+1 this week" },
-  { rank: 6, name: "Lauren K.", initials: "LK", jobs: 19, points: 570,  delta: "+6 this week" },
-  { rank: 7, name: "Andre F.",  initials: "AF", jobs: 17, points: 510,  delta: "+2 this week" },
-  { rank: 8, name: "Sofia R.",  initials: "SR", jobs: 15, points: 450,  delta: "+3 this week" },
+  { rank: 1, name: "Marcus T.", initials: "MT", recruits: 12, delta: "+3 this week", prize: "$2,500 + Charter Upgrade" },
+  { rank: 2, name: "Deja W.",   initials: "DW", recruits: 9,  delta: "+2 this week", prize: "$1,000" },
+  { rank: 3, name: "Carlos M.", initials: "CM", recruits: 8,  delta: "+1 this week", prize: "$500" },
+  { rank: 4, name: "Priya S.",  initials: "PS", recruits: 7,  delta: "+2 this week", prize: null },
+  { rank: 5, name: "Tyrone B.", initials: "TB", recruits: 6,  delta: "+1 this week", prize: null },
+  { rank: 6, name: "Lauren K.", initials: "LK", recruits: 5,  delta: "+3 this week", prize: null },
+  { rank: 7, name: "Andre F.",  initials: "AF", recruits: 4,  delta: "+1 this week", prize: null },
+  { rank: 8, name: "Sofia R.",  initials: "SR", recruits: 4,  delta: "+2 this week", prize: null },
 ];
 
-const MY_POSITION = { rank: 14, name: "You", initials: "AF", jobs: 9, points: 270, delta: "+2 this week" };
-const JOBS_TO_NEXT_RANK = 4; // jobs needed to reach rank 13
+const MY_POSITION = { rank: 9, name: "You", initials: "AF", recruits: 3, delta: "+1 this week" };
+const RECRUITS_TO_NEXT_RANK = 1; // recruits needed to reach rank 8
 
 const SPRINT_PRIZES = [
-  { place: "1st",   amount: "$2,500", color: "text-amber-500",  bg: "from-amber-500/10 to-yellow-500/5", border: "border-amber-500/30" },
-  { place: "2nd",   amount: "$1,500", color: "text-slate-300",  bg: "from-slate-500/10 to-slate-500/5",  border: "border-slate-500/30" },
-  { place: "3rd",   amount: "$750",   color: "text-amber-700",  bg: "from-amber-700/10 to-amber-700/5",  border: "border-amber-700/30" },
-  { place: "4–10th",amount: "$250 ea",color: "text-slate-400",  bg: "from-slate-700/20 to-slate-700/10", border: "border-slate-700/50" },
+  { place: "1st",   amount: "$2,500",              extra: "+ Charter Upgrade", color: "text-amber-400",  bg: "from-amber-500/10 to-yellow-500/5", border: "border-amber-500/30" },
+  { place: "2nd",   amount: "$1,000",              extra: "",                  color: "text-slate-300",  bg: "from-slate-500/10 to-slate-500/5",  border: "border-slate-500/30" },
+  { place: "3rd",   amount: "$500",                extra: "",                  color: "text-amber-700",  bg: "from-amber-700/10 to-amber-700/5",  border: "border-amber-700/30" },
+  { place: "Participation", amount: "Override income for life", extra: "", color: "text-slate-400", bg: "from-slate-700/20 to-slate-700/10", border: "border-slate-700/50" },
 ];
 
 // ─── Shared Components ────────────────────────────────────────────────────────
@@ -162,20 +162,67 @@ const RULES = [
 ];
 
 const SPRINT_RULES = [
-  "Sprint runs May 13 – June 13, 2026 (4 weeks). Points are calculated on completed, verified jobs.",
-  "Each completed job = 30 points. Bonus: 5-day streak = 50 bonus points.",
-  "Points are tallied daily. Leaderboard refreshes every 24 hours.",
-  "You must have an active ProLnk partner account in good standing to participate.",
-  "Prizes are awarded as direct account credits within 14 days of sprint close.",
-  "ProLnk reserves the right to disqualify accounts with fraudulent job completions.",
+  "Sprint runs May 13 – May 31, 2026. Rankings are based on founding network recruits brought in during this window.",
+  "A recruit counts when they complete their application and are accepted into the founding network.",
+  "Recruits must join via your unique referral link. Direct signups without your link do not count toward your total.",
+  "You must have an active ProLnk partner account in good standing to participate and claim prizes.",
+  "1st place prize includes a Charter Member tier upgrade (valued at $500/yr). 2nd and 3rd are cash credits.",
+  "Prizes are awarded within 14 days of sprint close. Charter upgrades are applied immediately to your account.",
+  "ProLnk reserves the right to disqualify accounts with fraudulent or self-referral activity.",
 ];
 
 // ─── Sprint Section ────────────────────────────────────────────────────────────
 
+function CountdownInline({ targetDate }: { targetDate: Date }) {
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const tick = () => {
+      const diff = targetDate.getTime() - Date.now();
+      if (diff <= 0) { setTime({ days: 0, hours: 0, minutes: 0, seconds: 0 }); return; }
+      setTime({
+        days:    Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours:   Math.floor((diff / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        seconds: Math.floor((diff / 1000) % 60),
+      });
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [targetDate]);
+
+  return (
+    <div className="flex items-center gap-3 justify-center">
+      {[
+        { label: "Days",    value: time.days },
+        { label: "Hrs",     value: time.hours },
+        { label: "Min",     value: time.minutes },
+        { label: "Sec",     value: time.seconds },
+      ].map(({ label, value }) => (
+        <div key={label} className="text-center">
+          <div className="bg-slate-900 text-amber-400 font-black text-xl w-14 h-14 rounded-xl flex items-center justify-center tabular-nums border border-slate-700">
+            {String(value).padStart(2, "0")}
+          </div>
+          <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">{label}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ProgressBar({ value, max, colorClass = "bg-emerald-500" }: { value: number; max: number; colorClass?: string }) {
+  const pct = Math.min(100, max === 0 ? 0 : (value / max) * 100);
+  return (
+    <div className="w-full bg-slate-700 rounded-full h-2 overflow-hidden">
+      <div className={`${colorClass} h-2 rounded-full transition-all`} style={{ width: `${pct}%` }} />
+    </div>
+  );
+}
+
 function SpringSprintSection() {
   const [rulesOpen, setRulesOpen] = useState(false);
-
-  const weeksRemaining = Math.ceil((SPRINT_END.getTime() - Date.now()) / (1000 * 60 * 60 * 24 * 7));
+  const topRecruit = SPRINT_LEADERBOARD[0]?.recruits ?? 1;
 
   return (
     <section className="bg-gradient-to-br from-[#0A1628] via-[#0f2040] to-[#1a2d4a] py-16 px-4">
@@ -185,24 +232,24 @@ function SpringSprintSection() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
             <Flame className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Active Now</span>
+            <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Active Now · Ends May 31</span>
           </div>
-          <h2 className="text-4xl font-black text-white mb-2">
-            Spring Sprint
-          </h2>
+          <h2 className="text-4xl font-black text-white mb-2">Spring Sprint</h2>
           <p className="text-white/60 text-base max-w-xl mx-auto">
-            Top 10 pros win bonus cash — complete the most jobs in 4 weeks.
+            Top 3 recruiters by May 31 win cash + prizes — bring in the most founding network members to win.
           </p>
 
+          {/* Countdown */}
+          <div className="mt-6 mb-4">
+            <p className="text-slate-500 text-xs uppercase tracking-widest mb-3 font-semibold">Contest closes in</p>
+            <CountdownInline targetDate={SPRINT_END} />
+          </div>
+
           {/* Meta stats */}
-          <div className="flex items-center justify-center gap-6 mt-5 text-sm flex-wrap">
+          <div className="flex items-center justify-center gap-4 mt-4 text-sm flex-wrap">
             <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
               <Trophy className="w-3.5 h-3.5 text-[#F5E642]" />
-              <span className="text-white font-semibold">$5,000 prize pool</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
-              <Clock className="w-3.5 h-3.5 text-blue-400" />
-              <span className="text-white">{weeksRemaining > 0 ? `${weeksRemaining} week${weeksRemaining !== 1 ? "s" : ""} remaining` : "Final week!"}</span>
+              <span className="text-white font-semibold">$4,000 prize pool</span>
             </div>
             <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
               <Users className="w-3.5 h-3.5 text-violet-400" />
@@ -213,9 +260,10 @@ function SpringSprintSection() {
 
         {/* Prize row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-          {SPRINT_PRIZES.map(({ place, amount, color, bg, border }) => (
+          {SPRINT_PRIZES.map(({ place, amount, extra, color, bg, border }) => (
             <div key={place} className={`bg-gradient-to-br ${bg} border ${border} rounded-xl p-4 text-center`}>
-              <div className={`text-2xl font-black ${color}`}>{amount}</div>
+              <div className={`text-xl font-black ${color}`}>{amount}</div>
+              {extra && <div className="text-amber-400/70 text-xs mt-0.5">{extra}</div>}
               <div className="text-slate-400 text-xs font-semibold mt-1">{place}</div>
             </div>
           ))}
@@ -223,62 +271,77 @@ function SpringSprintSection() {
 
         {/* My Position */}
         <div className="mb-8 bg-violet-600/10 border border-violet-500/30 rounded-2xl p-5">
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex items-center gap-3 mb-4">
             <TrendingUp className="w-4 h-4 text-violet-400" />
             <span className="text-violet-300 font-semibold text-sm">Your Current Position</span>
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-4 flex-wrap mb-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                 {MY_POSITION.initials}
               </div>
               <div>
                 <div className="text-white font-bold text-lg">#{MY_POSITION.rank}</div>
-                <div className="text-slate-400 text-xs">{MY_POSITION.jobs} jobs · {MY_POSITION.points.toLocaleString()} pts</div>
+                <div className="text-slate-400 text-xs">{MY_POSITION.recruits} recruits · {MY_POSITION.delta}</div>
               </div>
             </div>
-            <div className="flex-1 min-w-0 text-center sm:text-left">
-              <div className="text-emerald-400 text-sm font-semibold">{MY_POSITION.delta}</div>
-            </div>
+            <div className="flex-1 min-w-0" />
             <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-2 text-sm text-amber-300">
-              Complete <span className="font-black text-amber-400">{JOBS_TO_NEXT_RANK} more jobs</span> to reach rank #{MY_POSITION.rank - 1}
+              Recruit <span className="font-black text-amber-400">{RECRUITS_TO_NEXT_RANK} more</span> to reach rank #{MY_POSITION.rank - 1}
             </div>
           </div>
-          {MY_POSITION.rank > 10 && (
+          {/* Progress toward rank 3 prize */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>Progress toward 3rd place ({SPRINT_LEADERBOARD[2]?.recruits ?? 8} recruits needed)</span>
+              <span className="text-white font-semibold">{MY_POSITION.recruits} / {SPRINT_LEADERBOARD[2]?.recruits ?? 8}</span>
+            </div>
+            <ProgressBar value={MY_POSITION.recruits} max={SPRINT_LEADERBOARD[2]?.recruits ?? 8} colorClass="bg-violet-500" />
+          </div>
+          {MY_POSITION.rank > 3 && (
             <div className="mt-3 flex items-center gap-2 text-xs text-slate-400">
               <Award className="w-3.5 h-3.5" />
-              You need to reach top 10 to win a prize. You're {MY_POSITION.rank - 10} spots away.
+              You need to reach top 3 to win a cash prize. You're {MY_POSITION.rank - 3} spot{MY_POSITION.rank - 3 !== 1 ? "s" : ""} away.
             </div>
           )}
         </div>
 
-        {/* Leaderboard */}
+        {/* Leaderboard with progress bars */}
         <div className="bg-slate-800/60 border border-slate-700 rounded-2xl overflow-hidden mb-6">
           <div className="px-5 py-4 border-b border-slate-700 flex items-center justify-between">
             <h3 className="text-white font-bold flex items-center gap-2">
               <Trophy className="w-4 h-4 text-amber-400" /> Sprint Leaderboard
             </h3>
-            <span className="text-slate-400 text-xs">Updated daily</span>
+            <span className="text-slate-400 text-xs">Top 3 recruiters by May 31 win</span>
           </div>
           <div className="divide-y divide-slate-700/50">
             {SPRINT_LEADERBOARD.map((entry, i) => (
-              <div key={entry.rank} className={`flex items-center gap-3 px-5 py-3 ${i < 3 ? "bg-slate-700/20" : ""}`}>
-                <div className="w-7 text-center flex-shrink-0">
-                  {i === 0 ? <span className="text-lg">🏆</span>
-                    : i === 1 ? <span className="text-lg">🥈</span>
-                    : i === 2 ? <span className="text-lg">🥉</span>
-                    : <span className="text-slate-500 text-sm font-bold">#{entry.rank}</span>}
+              <div key={entry.rank} className={`px-5 py-3.5 ${i < 3 ? "bg-slate-700/20" : ""}`}>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-7 text-center flex-shrink-0">
+                    {i === 0 ? <span className="text-lg">🥇</span>
+                      : i === 1 ? <span className="text-lg">🥈</span>
+                      : i === 2 ? <span className="text-lg">🥉</span>
+                      : <span className="text-slate-500 text-sm font-bold">#{entry.rank}</span>}
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                    {entry.initials}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white text-sm font-semibold">{entry.name}</div>
+                    <div className="text-slate-400 text-xs">{entry.delta}</div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-white font-bold text-sm">{entry.recruits} recruits</div>
+                    {entry.prize && <div className="text-amber-400 text-xs font-semibold">{entry.prize}</div>}
+                  </div>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                  {entry.initials}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-white text-sm font-semibold">{entry.name}</div>
-                  <div className="text-slate-400 text-xs">{entry.delta}</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-white font-bold text-sm">{entry.points.toLocaleString()} pts</div>
-                  <div className="text-slate-400 text-xs">{entry.jobs} jobs</div>
+                <div className="pl-10">
+                  <ProgressBar
+                    value={entry.recruits}
+                    max={topRecruit}
+                    colorClass={i === 0 ? "bg-amber-400" : i === 1 ? "bg-slate-400" : i === 2 ? "bg-amber-700" : "bg-slate-600"}
+                  />
                 </div>
               </div>
             ))}
@@ -286,23 +349,39 @@ function SpringSprintSection() {
             <div className="px-5 py-2 bg-slate-900/40 text-center">
               <span className="text-slate-500 text-xs">· · · {MY_POSITION.rank - SPRINT_LEADERBOARD.length - 1} more participants · · ·</span>
             </div>
-            <div className="flex items-center gap-3 px-5 py-3 bg-violet-600/10 border-l-2 border-violet-500">
-              <div className="w-7 text-center flex-shrink-0">
-                <span className="text-slate-400 text-sm font-bold">#{MY_POSITION.rank}</span>
+            <div className="px-5 py-3.5 bg-violet-600/10 border-l-2 border-violet-500">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-7 text-center flex-shrink-0">
+                  <span className="text-slate-400 text-sm font-bold">#{MY_POSITION.rank}</span>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                  {MY_POSITION.initials}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-violet-200 text-sm font-semibold">You</div>
+                  <div className="text-slate-400 text-xs">{MY_POSITION.delta}</div>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <div className="text-violet-200 font-bold text-sm">{MY_POSITION.recruits} recruits</div>
+                </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                {MY_POSITION.initials}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-violet-200 text-sm font-semibold">You</div>
-                <div className="text-slate-400 text-xs">{MY_POSITION.delta}</div>
-              </div>
-              <div className="text-right">
-                <div className="text-violet-200 font-bold text-sm">{MY_POSITION.points.toLocaleString()} pts</div>
-                <div className="text-slate-400 text-xs">{MY_POSITION.jobs} jobs</div>
+              <div className="pl-10">
+                <ProgressBar value={MY_POSITION.recruits} max={topRecruit} colorClass="bg-violet-500" />
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Share button */}
+        <div className="mb-6 text-center">
+          <button
+            onClick={() => { navigator.clipboard.writeText("https://prolnk.io/contest"); toast.success("Contest link copied!"); }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-colors"
+          >
+            <Share2 className="w-4 h-4" />
+            Share Contest &amp; Climb the Board
+          </button>
+          <p className="text-slate-500 text-xs mt-2">Every person you recruit counts toward your rank</p>
         </div>
 
         {/* Rules accordion */}

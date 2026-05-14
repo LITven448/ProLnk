@@ -24,7 +24,7 @@ import {
   Droplets,
   Wind,
   Leaf,
-  Paintbrush,
+  Pen,
   Archive,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -34,7 +34,7 @@ const TRADE_ICONS: Record<string, React.ReactNode> = {
   Electrical: <Zap className="h-4 w-4 text-yellow-400" />,
   HVAC: <Wind className="h-4 w-4 text-cyan-400" />,
   Landscaping: <Leaf className="h-4 w-4 text-green-400" />,
-  Painting: <Paintbrush className="h-4 w-4 text-purple-400" />,
+  Painting: <Pen className="h-4 w-4 text-purple-400" />,
 };
 
 type MessageType = "quote" | "confirmation" | "checkin" | "message" | "alert";

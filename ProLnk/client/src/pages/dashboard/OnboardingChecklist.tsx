@@ -4,7 +4,7 @@ import {
   CheckCircle2, Circle, ChevronRight, Rocket, Shield, CreditCard,
   User, Users, Briefcase, DollarSign, Clock, ArrowRight, Trophy,
   Camera, BookOpen, Star, MapPin,
-} from "lucide-react";
+, LucideIcon } from "lucide-react";
 
 const STORAGE_KEY = "prolnk_onboarding_v3";
 
@@ -17,7 +17,7 @@ interface Step {
   cta: string;
   href: string;
   timeEstimate: string;
-  icon: (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null;
+  icon: LucideIcon;
   color: string;
   bg: string;
   border: string;

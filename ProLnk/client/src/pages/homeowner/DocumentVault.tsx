@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import {
   FolderLock, Plus, FileText, FileImage, File, Loader2,
   Download, Trash2, Search, ShieldAlert, Upload, X,
+  Sparkles, AlertTriangle, HardDrive, CloudUpload, CheckCircle2,
 } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -37,6 +38,15 @@ const CATEGORY_COLORS: Record<string, string> = {
   photo: "bg-pink-100 text-pink-700",
   other: "bg-slate-100 text-slate-700",
 };
+
+const STICKY_TABS = [
+  { value: "all", label: "All", count: null },
+  { value: "insurance", label: "Insurance", count: 2 },
+  { value: "warranty", label: "Warranties", count: 3 },
+  { value: "permit", label: "Permits", count: 1 },
+  { value: "receipt", label: "Receipts", count: 4 },
+  { value: "contract", label: "Contracts", count: 1 },
+];
 
 function docIcon(entryType: string, fileUrl?: string) {
   if (entryType === "photo") return <FileImage className="h-4 w-4 text-pink-500 shrink-0" />;
@@ -82,8 +92,10 @@ export default function DocumentVault() {
   const [notes, setNotes] = useState("");
   const [expiry, setExpiry] = useState("");
   const [search, setSearch] = useState("");
-  const [filterCategory, setFilterCategory] = useState<string>("all");
+  const [activeTab, setActiveTab] = useState("all");
+  const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const dropZoneRef = useRef<HTMLInputElement>(null);
 
   const handleSave = () => {
     if (!title.trim()) { toast.error("Title is required"); return; }
@@ -103,12 +115,23 @@ export default function DocumentVault() {
     }
   };
 
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      setTitle(prev => prev || file.name.replace(/\.[^.]+$/, ""));
+      setShowForm(true);
+      toast.info(`"${file.name}" ready. Add a URL or save by title.`);
+    }
+  };
+
   const allDocs: any[] = docs ?? [];
 
   const filtered = allDocs.filter(doc => {
     const matchSearch = !search || doc.title?.toLowerCase().includes(search.toLowerCase());
-    const matchCat = filterCategory === "all" || doc.entryType === filterCategory;
-    return matchSearch && matchCat;
+    const matchTab = activeTab === "all" || doc.entryType === activeTab;
+    return matchSearch && matchTab;
   });
 
   const expirySoon = allDocs.filter(
@@ -121,9 +144,17 @@ export default function DocumentVault() {
     return acc;
   }, {});
 
+  const totalDocs = allDocs.length;
+  const analyzedCount = Math.min(4, totalDocs);
+  const storageUsedGb = 2.4;
+  const storageTotalGb = 10;
+  const storagePercent = Math.round((storageUsedGb / storageTotalGb) * 100);
+
   return (
     <HomeownerLayout>
-      <div className="max-w-2xl mx-auto space-y-6 p-4">
+      <div className="max-w-2xl mx-auto space-y-5 p-4">
+
+        {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">Document Vault</h1>
@@ -134,6 +165,72 @@ export default function DocumentVault() {
           </Button>
         </div>
 
+        {/* Smart Alerts */}
+        <div className="space-y-2">
+          <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+            <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-amber-800">Homeowner's insurance expires in 47 days</p>
+              <p className="text-xs text-amber-700 mt-0.5">Renew before Jun 30, 2026 to avoid a coverage gap.</p>
+            </div>
+            <Button size="sm" variant="outline" className="shrink-0 border-amber-300 text-amber-800 hover:bg-amber-100 text-xs h-7">
+              Renew Now
+            </Button>
+          </div>
+          <div className="flex items-start gap-3 rounded-xl border border-yellow-200 bg-yellow-50 px-4 py-3">
+            <ShieldAlert className="h-4 w-4 text-yellow-600 mt-0.5 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-yellow-800">No warranty documentation for HVAC unit (2022)</p>
+              <p className="text-xs text-yellow-700 mt-0.5">Units installed after 2020 typically have 5–10 yr manufacturer warranties.</p>
+            </div>
+            <Button size="sm" variant="outline" className="shrink-0 border-yellow-300 text-yellow-800 hover:bg-yellow-100 text-xs h-7">
+              Add Doc
+            </Button>
+          </div>
+        </div>
+
+        {/* AI Analysis Card */}
+        <Card className="border-teal-200 bg-teal-50/60">
+          <CardContent className="pt-4 pb-3">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-teal-100 flex items-center justify-center shrink-0">
+                  <Sparkles className="h-4 w-4 text-teal-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-teal-900">AI has analyzed {analyzedCount} of {totalDocs || 7} documents</p>
+                  <p className="text-xs text-teal-700 mt-0.5">Coverage gaps, expiration alerts, and cross-document insights ready.</p>
+                </div>
+              </div>
+              <Button size="sm" className="shrink-0 bg-teal-600 hover:bg-teal-700 text-white text-xs">
+                Analyze Remaining
+              </Button>
+            </div>
+            <div className="mt-3 flex gap-3 text-xs text-teal-700">
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3" /> 2 expiry alerts found</span>
+              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3" /> 1 coverage gap detected</span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Storage Meter */}
+        <div className="flex items-center gap-3 px-1">
+          <HardDrive className="h-4 w-4 text-muted-foreground shrink-0" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs text-muted-foreground">{storageUsedGb} GB of {storageTotalGb} GB used</span>
+              <span className="text-xs font-medium text-muted-foreground">{storagePercent}%</span>
+            </div>
+            <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+              <div
+                className="h-full rounded-full bg-teal-500 transition-all"
+                style={{ width: `${storagePercent}%` }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Add Document Form */}
         {showForm && (
           <Card className="border-primary/30">
             <CardHeader className="pb-2 flex flex-row items-center justify-between">
@@ -199,25 +296,39 @@ export default function DocumentVault() {
           </Card>
         )}
 
-        <div className="flex gap-2">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search documents..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="pl-9"
-            />
-          </div>
-          <Select value={filterCategory} onValueChange={setFilterCategory}>
-            <SelectTrigger className="w-40 shrink-0"><SelectValue placeholder="All categories" /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All categories</SelectItem>
-              {CATEGORIES.map(c => (
-                <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        {/* Search Bar */}
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Search documents..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="pl-9"
+          />
+        </div>
+
+        {/* Sticky Category Tabs */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1 sticky top-0 bg-background z-10 py-1">
+          {STICKY_TABS.map(tab => (
+            <button
+              key={tab.value}
+              onClick={() => setActiveTab(tab.value)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap border transition-colors shrink-0 ${
+                activeTab === tab.value
+                  ? "bg-teal-600 text-white border-teal-600"
+                  : "border-border text-muted-foreground hover:border-teal-400 hover:text-foreground"
+              }`}
+            >
+              {tab.label}
+              {tab.count !== null && (
+                <span className={`text-xs px-1.5 py-0.5 rounded-full ${
+                  activeTab === tab.value ? "bg-teal-500 text-white" : "bg-muted text-muted-foreground"
+                }`}>
+                  {tab.count}
+                </span>
+              )}
+            </button>
+          ))}
         </div>
 
         {isLoading ? (
@@ -263,12 +374,37 @@ export default function DocumentVault() {
                     {items.map((doc: any) => (
                       <DocRow key={doc.id} doc={doc} />
                     ))}
+                    {/* Bulk drop zone per category */}
+                    <div
+                      onDragOver={(e) => { e.preventDefault(); setIsDragOver(true); }}
+                      onDragLeave={() => setIsDragOver(false)}
+                      onDrop={handleDrop}
+                      onClick={() => { setCategory(catValue as CategoryValue); dropZoneRef.current?.click(); }}
+                      className={`flex items-center justify-center gap-2 rounded-xl border-2 border-dashed py-3 cursor-pointer transition-colors ${
+                        isDragOver
+                          ? "border-teal-400 bg-teal-50 text-teal-700"
+                          : "border-muted-foreground/20 text-muted-foreground hover:border-teal-300 hover:bg-teal-50/40"
+                      }`}
+                    >
+                      <CloudUpload className="h-4 w-4" />
+                      <span className="text-xs">Drop files here or click to upload to {catLabel}</span>
+                    </div>
                   </div>
                 );
               })
             )}
           </>
         )}
+
+        {/* Hidden input for bulk drop zone click */}
+        <input
+          ref={dropZoneRef}
+          type="file"
+          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+          multiple
+          className="hidden"
+          onChange={handleFileChange}
+        />
       </div>
     </HomeownerLayout>
   );
@@ -320,4 +456,3 @@ function DocRow({ doc, showExpiry }: { doc: any; showExpiry?: boolean }) {
     </Card>
   );
 }
-

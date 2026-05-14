@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import TrustyProLogo from "@/components/TrustyProLogo";
 import { Link, useLocation } from "wouter";
-import { Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X, Plus, Home, Star, Copy, Share2, TrendingUp } from "lucide-react";
+import { Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X, Plus, Home, Star, Copy, Share2, TrendingUp, Vault, ExternalLink } from "lucide-react";
 
 type ScanStep = "upload" | "contact" | "analyzing" | "results";
 
@@ -60,45 +60,50 @@ const conditionConfig = {
 
 function computeHealthScore(issues: Issue[]): number {
   if (issues.length === 0) return 95;
-  const urgentPenalty = issues.filter(i => i.severity === "urgent").length * 18;
-  const moderatePenalty = issues.filter(i => i.severity === "moderate").length * 9;
+  const urgentPenalty = issues.filter(i => i.severity === "urgent").length * 20;
+  const moderatePenalty = issues.filter(i => i.severity === "moderate").length * 10;
   const lowPenalty = issues.filter(i => i.severity === "low").length * 3;
-  return Math.max(10, 100 - urgentPenalty - moderatePenalty - lowPenalty);
+  return Math.max(0, 100 - urgentPenalty - moderatePenalty - lowPenalty);
 }
 
-function healthScoreColor(score: number): string {
-  if (score >= 80) return "#10b981";
-  if (score >= 60) return "#f59e0b";
-  if (score >= 40) return "#f97316";
-  return "#ef4444";
+function healthScoreConfig(score: number): { color: string; trackColor: string; label: string; bg: string; textColor: string } {
+  if (score >= 80) return { color: "#10b981", trackColor: "#d1fae5", label: "Excellent", bg: "bg-green-50", textColor: "text-green-700" };
+  if (score >= 60) return { color: "#3b82f6", trackColor: "#dbeafe", label: "Good", bg: "bg-blue-50", textColor: "text-blue-700" };
+  if (score >= 40) return { color: "#eab308", trackColor: "#fef9c3", label: "Fair", bg: "bg-yellow-50", textColor: "text-yellow-700" };
+  return { color: "#ef4444", trackColor: "#fee2e2", label: "Needs Attention", bg: "bg-red-50", textColor: "text-red-700" };
 }
 
 function HealthScoreRing({ score }: { score: number }) {
-  const radius = 44;
+  const radius = 58;
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference - (score / 100) * circumference;
-  const color = healthScoreColor(score);
+  const { color, trackColor, label, bg, textColor } = healthScoreConfig(score);
   return (
-    <div className="relative flex items-center justify-center w-28 h-28">
-      <svg className="absolute inset-0" viewBox="0 0 100 100" style={{ transform: "rotate(-90deg)" }}>
-        <circle cx="50" cy="50" r={radius} fill="none" stroke="#e5e7eb" strokeWidth="8" />
-        <circle
-          cx="50"
-          cy="50"
-          r={radius}
-          fill="none"
-          stroke={color}
-          strokeWidth="8"
-          strokeDasharray={circumference}
-          strokeDashoffset={dashOffset}
-          strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 1.2s ease" }}
-        />
-      </svg>
-      <div className="text-center z-10">
-        <p className="text-3xl font-black" style={{ color }}>{score}</p>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">/ 100</p>
+    <div className="flex flex-col items-center gap-3">
+      <div className="relative flex items-center justify-center w-44 h-44">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 140 140" style={{ transform: "rotate(-90deg)" }}>
+          <circle cx="70" cy="70" r={radius} fill="none" stroke={trackColor} strokeWidth="12" />
+          <circle
+            cx="70"
+            cy="70"
+            r={radius}
+            fill="none"
+            stroke={color}
+            strokeWidth="12"
+            strokeDasharray={circumference}
+            strokeDashoffset={dashOffset}
+            strokeLinecap="round"
+            style={{ transition: "stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)" }}
+          />
+        </svg>
+        <div className="text-center z-10">
+          <p className="text-5xl font-black leading-none" style={{ color }}>{score}</p>
+          <p className="text-sm font-semibold text-gray-400 mt-1">out of 100</p>
+        </div>
       </div>
+      <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold ${bg} ${textColor} border border-current border-opacity-20`}>
+        {score >= 80 ? "✅" : score >= 60 ? "👍" : score >= 40 ? "⚠️" : "🔴"} {label}
+      </span>
     </div>
   );
 }
@@ -255,6 +260,7 @@ export default function PhotoScan() {
   const [dataConsent, setDataConsent] = useState(false);
   const [requestIssue, setRequestIssue] = useState<Issue | null>(null);
   const [expandedTransform, setExpandedTransform] = useState<number | null>(null);
+  const [officialScore, setOfficialScore] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const [, navigate] = useLocation();
@@ -266,10 +272,16 @@ export default function PhotoScan() {
     if (meta) meta.setAttribute("content", "Upload photos of your home and get a free AI-powered analysis in under 60 seconds. TrustyPro detects 50+ issue types and matches you with verified DFW pros.");
   }, []);
 
+  const calculateScore = trpc.homeHealthScore.calculate.useMutation({
+    onSuccess: (data) => setOfficialScore(data.score),
+  });
+
   const analyzePhotos = trpc.trustyPro.analyzePhotos.useMutation({
     onSuccess: (data) => {
-      setResult(data as AnalysisResult);
+      const analysisResult = data as AnalysisResult;
+      setResult(analysisResult);
       setStep("results");
+      calculateScore.mutate({ issues: analysisResult.issues });
     },
     onError: (err) => {
       const msg = err.message?.includes("timeout") || err.message?.includes("timed out")
@@ -654,15 +666,10 @@ export default function PhotoScan() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {/* AI Report Hero */}
+              {/* ── Hero Health Score Card ─────────────────────────────── */}
               {(() => {
-                const healthScore = computeHealthScore(result.issues);
-                const scoreColor = healthScoreColor(healthScore);
-                const scoreLabel = healthScore >= 80 ? "Great Shape" : healthScore >= 60 ? "Fair — Action Needed" : healthScore >= 40 ? "Needs Attention" : "Critical Issues";
-                const priorityIssues = [...result.issues].sort((a, b) => {
-                  const order = { urgent: 0, moderate: 1, low: 2 };
-                  return order[a.severity] - order[b.severity];
-                }).slice(0, 3);
+                const healthScore = officialScore ?? computeHealthScore(result.issues);
+                const { color: scoreColor } = healthScoreConfig(healthScore);
 
                 const handleShare = () => {
                   const scanUrl = `${window.location.origin}/trustypro/scan`;
@@ -676,66 +683,54 @@ export default function PhotoScan() {
                 };
 
                 return (
-                  <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-6">
-                    <div className="text-center mb-4">
-                      <h1 className="text-2xl font-black text-gray-900 mb-1">Your Home's AI Report</h1>
-                      {result.roomLabel && (
-                        <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
-                          <Home className="w-3 h-3" /> {result.roomLabel}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-6 mb-5">
-                      <HealthScoreRing score={healthScore} />
-                      <div className="flex-1">
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Home Health Score</p>
-                        <p className="text-xl font-black mb-1" style={{ color: scoreColor }}>{scoreLabel}</p>
-                        <p className="text-xs text-gray-500">
-                          {result.issues.length === 0
-                            ? "No issues detected — your home looks great."
-                            : `${result.issues.filter(i => i.severity === "urgent").length} urgent · ${result.issues.filter(i => i.severity === "moderate").length} scheduled · ${result.issues.filter(i => i.severity === "low").length} monitor`}
-                        </p>
-                        <div className="flex items-center gap-1 mt-2">
-                          <TrendingUp className="w-3.5 h-3.5 text-gray-400" />
-                          <p className="text-xs text-gray-400">Score updates with each scan</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {priorityIssues.length > 0 && (
-                      <div className="border-t border-gray-100 pt-4 mb-4">
-                        <p className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-3">Top Priority Issues</p>
-                        <div className="space-y-2">
-                          {priorityIssues.map((issue, i) => {
-                            const cfg = severityConfig[issue.severity];
-                            return (
-                              <div key={i} className="flex items-center justify-between gap-3">
-                                <div className="flex items-center gap-2 flex-1 min-w-0">
-                                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${cfg.dot}`} />
-                                  <span className="text-sm text-gray-800 font-medium truncate">{issue.name}</span>
-                                </div>
-                                <div className="flex items-center gap-2 flex-shrink-0">
-                                  <span className="text-xs text-gray-400">{issue.estimatedCost}</span>
-                                  {(issue.severity === "urgent" || issue.severity === "moderate") && (
-                                    <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
-                                      <button className="text-xs font-bold text-white px-2 py-1 rounded-full transition-colors" style={{ backgroundColor: ACCENT_BTN }}>
-                                        Find a Pro
-                                      </button>
-                                    </Link>
-                                  )}
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
+                  <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-8 mb-6 text-center">
+                    <h1 className="text-2xl font-black text-gray-900 mb-1">Your Home's AI Report</h1>
+                    {result.roomLabel && (
+                      <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                        <Home className="w-3 h-3" /> {result.roomLabel}
                       </div>
                     )}
 
-                    <div className="flex gap-2">
+                    {/* Large ring, centered */}
+                    <div className="flex justify-center mb-4">
+                      <HealthScoreRing score={healthScore} />
+                    </div>
+
+                    {/* Issue summary counts */}
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                      {result.issues.filter(i => i.severity === "urgent").length > 0 && (
+                        <div className="flex items-center gap-1.5 text-sm font-bold text-red-600">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
+                          {result.issues.filter(i => i.severity === "urgent").length} Urgent
+                        </div>
+                      )}
+                      {result.issues.filter(i => i.severity === "moderate").length > 0 && (
+                        <div className="flex items-center gap-1.5 text-sm font-bold text-amber-600">
+                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
+                          {result.issues.filter(i => i.severity === "moderate").length} Schedule Service
+                        </div>
+                      )}
+                      {result.issues.filter(i => i.severity === "low").length > 0 && (
+                        <div className="flex items-center gap-1.5 text-sm font-bold text-yellow-600">
+                          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block" />
+                          {result.issues.filter(i => i.severity === "low").length} Monitor
+                        </div>
+                      )}
+                      {result.issues.length === 0 && (
+                        <div className="text-sm text-green-700 font-semibold">No issues detected ✅</div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-1 justify-center mb-6 text-xs text-gray-400">
+                      <TrendingUp className="w-3.5 h-3.5" />
+                      <span>Score updates with each scan</span>
+                    </div>
+
+                    {/* Share + Copy actions */}
+                    <div className="flex gap-3">
                       <button
                         onClick={handleShare}
-                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-3 rounded-xl hover:bg-gray-50 transition-colors"
                       >
                         <Share2 className="w-4 h-4" /> Share Report
                       </button>
@@ -745,7 +740,7 @@ export default function PhotoScan() {
                           navigator.clipboard.writeText(scanUrl);
                           toast.success("Link copied!");
                         }}
-                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-3 rounded-xl hover:bg-gray-50 transition-colors"
                       >
                         <Copy className="w-4 h-4" /> Copy Link
                       </button>
@@ -754,9 +749,8 @@ export default function PhotoScan() {
                 );
               })()}
 
-              {/* Header (compact) */}
+              {/* Intro line */}
               <div className="text-center mb-6">
-                <div className="text-4xl mb-2">{conditionConfig[result.overallCondition].emoji}</div>
                 <p className="text-gray-500 text-sm">
                   {contact.name ? `${contact.name}, here` : "Here"}'s what our AI found.
                   {contact.email ? " A verified DFW pro will follow up shortly." : ""}
@@ -785,7 +779,7 @@ export default function PhotoScan() {
                 </div>
               )}
 
-              {/* Insurance alert — shown first if any insurance claims detected */}
+              {/* Insurance alert */}
               {insuranceIssues.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -818,7 +812,7 @@ export default function PhotoScan() {
                 <p className="text-gray-700 text-sm leading-relaxed">{result.summary}</p>
               </div>
 
-              {/* Issues */}
+              {/* ── Issue Cards ──────────────────────────────────────────── */}
               {result.issues.length > 0 ? (
                 <div className="space-y-4 mb-8">
                   <h2 className="text-xl font-black text-gray-900">
@@ -829,6 +823,14 @@ export default function PhotoScan() {
                     const isTransform = issue.offerTrack === "transformation";
                     const hasTransformImg = isTransform && issue.transformationImageUrl;
                     const isExpanded = expandedTransform === i;
+                    const urgencyBadgeStyle =
+                      issue.severity === "urgent"
+                        ? "bg-red-100 text-red-700 border-red-300"
+                        : issue.severity === "moderate"
+                        ? "bg-amber-100 text-amber-700 border-amber-300"
+                        : "bg-yellow-50 text-yellow-700 border-yellow-300";
+                    const urgencyBadgeLabel =
+                      issue.severity === "urgent" ? "🔴 Urgent" : issue.severity === "moderate" ? "🟠 Schedule Service" : "🟡 Monitor";
 
                     return (
                       <motion.div
@@ -839,30 +841,36 @@ export default function PhotoScan() {
                         className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
                       >
                         <div className="p-5">
-                          <div className="flex items-start justify-between gap-4 mb-3">
-                            <div className="flex items-start gap-3 flex-1">
-                              <div>
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <h3 className="font-bold text-gray-900">{issue.name}</h3>
-                                  {issue.isInsuranceClaim && (
-                                    <span className="text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">🏛️ Possible Claim</span>
-                                  )}
-                                  {isTransform && (
-                                    <span className="text-xs font-bold bg-purple-100 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full flex items-center gap-1"><Sparkles className="w-3 h-3" /> AI Preview Available</span>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                            <span className={`text-xs font-semibold px-3 py-1 rounded-full border whitespace-nowrap flex-shrink-0 ${cfg.color}`}>
-                              <span className={`inline-block w-1.5 h-1.5 rounded-full mr-1.5 ${cfg.dot}`} />
-                              {cfg.label}
+                          {/* Urgency badge row */}
+                          <div className="flex items-center justify-between gap-3 mb-3">
+                            <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${urgencyBadgeStyle}`}>
+                              {urgencyBadgeLabel}
                             </span>
+                            <div className="flex items-center gap-2">
+                              {issue.isInsuranceClaim && (
+                                <span className="text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">🏛️ Possible Claim</span>
+                              )}
+                              {isTransform && (
+                                <span className="text-xs font-bold bg-purple-100 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                  <Sparkles className="w-3 h-3" /> AI Preview
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          <p className="text-gray-600 text-sm mb-3">{issue.description}</p>
+
+                          {/* Issue name + description */}
+                          <h3 className="font-black text-gray-900 text-base mb-1">{issue.name}</h3>
+                          <p className="text-gray-600 text-sm mb-4 leading-relaxed">{issue.description}</p>
+
+                          {/* Cost + trade row */}
+                          <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                            <span className="flex items-center gap-1">🔧 <strong className="text-gray-700">{issue.tradeType}</strong></span>
+                            <span className="flex items-center gap-1">💰 Est. cost: <strong className="text-gray-800">{issue.estimatedCost}</strong></span>
+                          </div>
 
                           {/* AI Confidence Bar */}
                           {issue.confidence !== undefined && (
-                            <div className="mb-3">
+                            <div className="mb-4">
                               <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
                                 <span>AI Confidence</span>
                                 <span className="font-semibold text-gray-700">{Math.round((issue.confidence ?? 0.8) * 100)}%</span>
@@ -879,40 +887,26 @@ export default function PhotoScan() {
                             </div>
                           )}
 
-                          <div className="flex items-center justify-between flex-wrap gap-3">
-                            <div className="flex items-center gap-4 text-xs text-gray-500">
-                              <span>🔧 <strong>{issue.tradeType}</strong></span>
-                              <span>💰 Est. <strong>{issue.estimatedCost}</strong></span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              {hasTransformImg && (
-                                <button
-                                  onClick={() => setExpandedTransform(isExpanded ? null : i)}
-                                  className="text-xs font-semibold text-purple-600 border border-purple-200 bg-purple-50 px-3 py-1.5 rounded-full hover:bg-purple-100 transition-colors flex items-center gap-1"
-                                >
-                                  <Sparkles className="w-3 h-3" />
-                                  {isExpanded ? "Hide Preview" : "See AI Transformation"}
-                                </button>
-                              )}
-                              {(issue.severity === "urgent" || issue.severity === "moderate") ? (
-                                <Link href={`/trustypro/waitlist?service=${encodeURIComponent(issue.tradeType)}`}>
-                                  <button
-                                    className="text-xs font-bold text-white px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
-                                    style={{ backgroundColor: issue.severity === "urgent" ? "#dc2626" : ACCENT_BTN }}
-                                  >
-                                    <Home className="w-3 h-3" /> {issue.severity === "urgent" ? "Find a Pro →" : "Schedule a Pro"}
-                                  </button>
-                                </Link>
-                              ) : (
-                                <button
-                                  onClick={() => setRequestIssue(issue)}
-                                  className="text-xs font-bold text-white px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
-                                  style={{ backgroundColor: ACCENT }}
-                                >
-                                  <Home className="w-3 h-3" /> Request a Pro
-                                </button>
-                              )}
-                            </div>
+                          {/* Action buttons */}
+                          <div className="flex items-center gap-2 flex-wrap">
+                            {hasTransformImg && (
+                              <button
+                                onClick={() => setExpandedTransform(isExpanded ? null : i)}
+                                className="text-xs font-semibold text-purple-600 border border-purple-200 bg-purple-50 px-3 py-2 rounded-xl hover:bg-purple-100 transition-colors flex items-center gap-1"
+                              >
+                                <Sparkles className="w-3 h-3" />
+                                {isExpanded ? "Hide Preview" : "See AI Transformation"}
+                              </button>
+                            )}
+                            <Link href="/trustypro/pros">
+                              <button
+                                className="text-xs font-bold text-white px-4 py-2 rounded-xl transition-colors flex items-center gap-1.5"
+                                style={{ backgroundColor: issue.severity === "urgent" ? "#dc2626" : issue.severity === "moderate" ? ACCENT_BTN : ACCENT }}
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                                {issue.severity === "urgent" ? "Get a Quote — Urgent" : issue.severity === "moderate" ? "Get a Quote" : "Get a Quote"}
+                              </button>
+                            </Link>
                           </div>
                         </div>
 
@@ -949,7 +943,7 @@ export default function PhotoScan() {
                 </div>
               )}
 
-              {/* Transformation gallery summary */}
+              {/* Transformation gallery */}
               {transformationIssues.length > 0 && (
                 <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-100 rounded-2xl p-6 mb-8">
                   <h3 className="font-black text-gray-900 text-lg mb-1 flex items-center gap-2"><Sparkles className="w-5 h-5 text-purple-500" /> Upgrade Opportunities Found</h3>
@@ -967,40 +961,43 @@ export default function PhotoScan() {
                 </div>
               )}
 
-              {/* Save to vault prompt */}
-              <div className="bg-gray-900 rounded-2xl p-6 mb-6 flex items-center gap-4">
-                <div className="text-3xl flex-shrink-0">🔐</div>
+              {/* ── Save to Home Vault ───────────────────────────────────── */}
+              <div className="bg-gray-900 rounded-2xl p-6 mb-4 flex items-center gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                  <Vault className="w-6 h-6 text-white" />
+                </div>
                 <div className="flex-1">
-                  <h3 className="font-black text-white text-base mb-1">Save This Report to Your Home Health Vault</h3>
-                  <p className="text-gray-400 text-xs">Create a free account to store this report, track repairs over time, and get proactive maintenance alerts.</p>
+                  <h3 className="font-black text-white text-base mb-1">Save to Home Health Vault</h3>
+                  <p className="text-gray-400 text-xs">Store this report, track repairs over time, and get proactive maintenance alerts — free forever.</p>
                 </div>
                 <button
                   onClick={() => navigate("/trustypro/login")}
-                  className="flex-shrink-0 bg-white text-gray-900 font-bold text-sm px-4 py-2 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap"
+                  className="flex-shrink-0 bg-white text-gray-900 font-black text-sm px-5 py-2.5 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap"
                 >
                   Save Free →
                 </button>
               </div>
 
-              {/* CTA */}
-              <div className="rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_BTN} 100%)` }}>
+              {/* ── CTA ─────────────────────────────────────────────────── */}
+              <div className="rounded-2xl p-8 text-center text-white mb-8" style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_BTN} 100%)` }}>
                 <h2 className="text-2xl font-black mb-2">Get Quotes from Verified Pros</h2>
                 <p className="text-sky-200 mb-6 text-sm">
-                  We'll connect you with background-checked, insured professionals in your area — usually within 2 hours.
+                  Background-checked, insured professionals — matched to your exact needs, usually within 2 hours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
-                    href="/trustypro"
-                    className="bg-white font-bold px-8 py-3 rounded-xl hover:bg-sky-50 transition-colors"
+                    href="/trustypro/pros"
+                    className="bg-white font-bold px-8 py-3 rounded-xl hover:bg-sky-50 transition-colors flex items-center gap-2 justify-center"
                     style={{ color: ACCENT }}
                   >
-                    Browse Verified Pros
+                    <ExternalLink className="w-4 h-4" /> Browse Verified Pros
                   </Link>
                   <button
                     onClick={() => {
                       setStep("upload");
                       setPhotos([]);
                       setResult(null);
+                      setOfficialScore(null);
                       setContact({ name: "", email: "", phone: "", address: "" });
                       setExpandedTransform(null);
                     }}

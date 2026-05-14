@@ -2,7 +2,7 @@
  * Wave 115 — Campaign Center
  * Seasonal homeowner check-in automation + Partner win-back 60-day sequence
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -10,7 +10,8 @@ import {
   Megaphone, Calendar, Users, RefreshCw, Play, Pause,
   CheckCircle, Clock, AlertCircle, Leaf, Snowflake,
   Sun, CloudRain, Heart, TrendingUp, Mail, MessageSquare,
-  ChevronRight, BarChart2, UserX, Zap,
+  ChevronRight, BarChart2, UserX, Zap, Trophy, Share2,
+  FlaskConical,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -115,11 +116,107 @@ const STATUS_BADGE: Record<string, { label: string; color: string; bg: string }>
   draft:     { label: "Draft",      color: "#6B7280", bg: "#F9FAFB" },
 };
 
+// ── A/B Test Results ──────────────────────────────────────────────────────────
+const AB_TESTS = [
+  {
+    id: "ab1",
+    campaign: "Spring Check-In Email",
+    variantA: { name: "Subject: 'Spring is here'", openRate: 28.4 },
+    variantB: { name: "Subject: 'Your home needs attention'", openRate: 41.7 },
+    winner: "B",
+    sampleSize: 614,
+    completedDate: "Apr 3, 2025",
+  },
+  {
+    id: "ab2",
+    campaign: "Win-Back Day 14 SMS",
+    variantA: { name: "Territory urgency angle", openRate: 19.2 },
+    variantB: { name: "Earnings FOMO angle", openRate: 33.8 },
+    winner: "B",
+    sampleSize: 312,
+    completedDate: "Mar 28, 2025",
+  },
+  {
+    id: "ab3",
+    campaign: "Summer HVAC Email CTA",
+    variantA: { name: "'Book Now' button", openRate: 22.1 },
+    variantB: { name: "'Check AC Health' button", openRate: 26.5 },
+    winner: "B",
+    sampleSize: 289,
+    completedDate: "May 22, 2025",
+  },
+];
+
+// ── Audience Segments ─────────────────────────────────────────────────────────
+const AUDIENCE_CHIPS = [
+  { id: "all",       label: "All Partners",  count: 34, color: "#0A1628" },
+  { id: "hvac",      label: "HVAC Only",     count: 11, color: "#0891b2" },
+  { id: "dfw_north", label: "DFW North",     count: 18, color: "#7C3AED" },
+  { id: "at_risk",   label: "At-Risk",       count: 8,  color: "#EF4444" },
+];
+
+// ── Schedule Calendar (7-day) ─────────────────────────────────────────────────
+const TODAY = new Date();
+const SCHEDULE_BLOCKS: Array<{ dayOffset: number; time: string; campaign: string; color: string; channel: string }> = [
+  { dayOffset: 0, time: "9:00 AM", campaign: "Summer HVAC Email",     color: "#d97706", channel: "Email" },
+  { dayOffset: 1, time: "11:30 AM", campaign: "Win-Back SMS Day 7",   color: "#0891b2", channel: "SMS" },
+  { dayOffset: 2, time: "8:00 AM", campaign: "Spring Reminder",       color: "#059669", channel: "Email" },
+  { dayOffset: 4, time: "10:00 AM", campaign: "Partner Digest",       color: "#7C3AED", channel: "Email" },
+  { dayOffset: 5, time: "2:00 PM", campaign: "Win-Back Final SMS",    color: "#EF4444", channel: "SMS" },
+  { dayOffset: 6, time: "9:30 AM", campaign: "Fall Storm Preview",    color: "#6B7280", channel: "Email" },
+];
+
+const DAY_LABELS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// ── Active Campaigns Ticker ───────────────────────────────────────────────────
+const TICKER_ITEMS = [
+  "✉️ Storm Alert Email: 847 sent",
+  "📱 SMS Blast: 412 sent",
+  "🎯 Partner Digest: 112 sent",
+  "✉️ Win-Back Day 14: 67 sent",
+  "📱 Spring Check-In SMS: 289 sent",
+  "✉️ Summer HVAC Email: 203 sent",
+];
+
+function ActiveCampaignsTicker() {
+  const [offset, setOffset] = useState(0);
+  const combined = [...TICKER_ITEMS, ...TICKER_ITEMS];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOffset((prev) => (prev + 1) % TICKER_ITEMS.length);
+    }, 2200);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="bg-[#0A1628] rounded-xl px-4 py-2.5 overflow-hidden relative">
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] font-bold text-teal-400 uppercase tracking-widest flex-shrink-0">Live</span>
+        <div className="flex-1 overflow-hidden">
+          <div
+            className="flex gap-8 transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${offset * (100 / TICKER_ITEMS.length)}%)`, width: `${combined.length * (100 / TICKER_ITEMS.length)}%` }}
+          >
+            {combined.map((item, i) => (
+              <span key={i} className="text-xs text-gray-300 whitespace-nowrap flex-shrink-0" style={{ width: `${100 / combined.length}%` }}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+      </div>
+    </div>
+  );
+}
+
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function CampaignCenter() {
   const [activeTab, setActiveTab] = useState<"seasonal" | "winback">("seasonal");
   const [expandedCampaign, setExpandedCampaign] = useState<string | null>(null);
   const [winbackStatus, setWinbackStatus] = useState<"active" | "paused">("active");
+  const [selectedAudience, setSelectedAudience] = useState<Set<string>>(new Set(["all"]));
 
   // Fetch inactive partners for win-back targeting
   const { data: inactivePartners } = trpc.admin.getInactivePartners.useQuery(
@@ -141,9 +238,29 @@ export default function CampaignCenter() {
     setWinbackStatus("active");
   };
 
+  const toggleAudience = (id: string) => {
+    setSelectedAudience((prev) => {
+      const next = new Set(prev);
+      if (id === "all") return new Set(["all"]);
+      next.delete("all");
+      if (next.has(id)) { next.delete(id); if (next.size === 0) next.add("all"); }
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const audienceCount = Array.from(selectedAudience).reduce((sum, id) => {
+    const chip = AUDIENCE_CHIPS.find((c) => c.id === id);
+    return sum + (chip?.count ?? 0);
+  }, 0);
+
   return (
     <AdminLayout>
     <div className="p-6 max-w-6xl mx-auto space-y-6">
+
+      {/* Active Campaigns Ticker */}
+      <ActiveCampaignsTicker />
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -174,6 +291,141 @@ export default function CampaignCenter() {
             </div>
           );
         })}
+      </div>
+
+      {/* ── Audience Segmenter ── */}
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Users className="w-4 h-4 text-[#0A1628]" />
+          <h3 className="text-sm font-bold text-gray-900">Audience Segmenter</h3>
+          <span className="ml-auto text-xs font-semibold text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-100">
+            Audience: {audienceCount} partners
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {AUDIENCE_CHIPS.map((chip) => {
+            const active = selectedAudience.has(chip.id);
+            return (
+              <button
+                key={chip.id}
+                onClick={() => toggleAudience(chip.id)}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all border"
+                style={active
+                  ? { backgroundColor: chip.color, color: "#fff", borderColor: chip.color }
+                  : { backgroundColor: "#F9FAFB", color: "#6B7280", borderColor: "#E5E7EB" }
+                }
+              >
+                {chip.label}
+                <span
+                  className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
+                  style={active ? { backgroundColor: "rgba(255,255,255,0.2)" } : { backgroundColor: "#E5E7EB" }}
+                >
+                  {chip.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-xs text-gray-400 mt-3">Select segments to target for your next send. Combine chips to refine the audience.</p>
+      </div>
+
+      {/* ── A/B Test Results ── */}
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <FlaskConical className="w-4 h-4 text-[#7C3AED]" />
+          <h3 className="text-sm font-bold text-gray-900">Recent A/B Test Results</h3>
+        </div>
+        <div className="space-y-4">
+          {AB_TESTS.map((test) => (
+            <div key={test.id} className="rounded-xl border border-gray-100 p-4 bg-gray-50">
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <div>
+                  <p className="text-xs font-bold text-gray-700">{test.campaign}</p>
+                  <p className="text-[10px] text-gray-400 mt-0.5">{test.sampleSize.toLocaleString()} recipients • Completed {test.completedDate}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { key: "A", data: test.variantA },
+                  { key: "B", data: test.variantB },
+                ].map(({ key, data }) => {
+                  const isWinner = test.winner === key;
+                  return (
+                    <div
+                      key={key}
+                      className="rounded-lg border p-3 relative"
+                      style={isWinner
+                        ? { backgroundColor: "#ECFDF5", borderColor: "#6EE7B7" }
+                        : { backgroundColor: "#fff", borderColor: "#E5E7EB" }
+                      }
+                    >
+                      {isWinner && (
+                        <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
+                          <Trophy className="w-3 h-3 text-white" />
+                        </div>
+                      )}
+                      <div className="flex items-center gap-1 mb-1">
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={isWinner ? { backgroundColor: "#059669", color: "#fff" } : { backgroundColor: "#E5E7EB", color: "#6B7280" }}>
+                          Variant {key}
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-gray-500 mb-2 leading-relaxed">{data.name}</p>
+                      <div className="flex items-end gap-1">
+                        <span className="text-lg font-bold" style={{ color: isWinner ? "#059669" : "#374151" }}>{data.openRate}%</span>
+                        <span className="text-[10px] text-gray-400 mb-0.5">open rate</span>
+                      </div>
+                      <div className="mt-1.5 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all"
+                          style={{ width: `${(data.openRate / 50) * 100}%`, backgroundColor: isWinner ? "#059669" : "#9CA3AF" }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Schedule Calendar ── */}
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-4 h-4 text-[#0A1628]" />
+          <h3 className="text-sm font-bold text-gray-900">7-Day Send Schedule</h3>
+          <span className="ml-auto text-[10px] text-gray-400">{TODAY.toLocaleDateString("en-US", { month: "short", day: "numeric" })} – {new Date(TODAY.getTime() + 6 * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric" })}</span>
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {Array.from({ length: 7 }).map((_, i) => {
+            const date = new Date(TODAY.getTime() + i * 86400000);
+            const dayLabel = DAY_LABELS[date.getDay()];
+            const dayNum = date.getDate();
+            const blocks = SCHEDULE_BLOCKS.filter((b) => b.dayOffset === i);
+            const isToday = i === 0;
+            return (
+              <div key={i} className="flex flex-col gap-1">
+                <div className={`text-center py-1.5 rounded-lg ${isToday ? "bg-[#0A1628] text-white" : "bg-gray-50 text-gray-500"}`}>
+                  <p className="text-[10px] font-semibold uppercase tracking-wide">{dayLabel}</p>
+                  <p className="text-sm font-bold">{dayNum}</p>
+                </div>
+                <div className="space-y-1 min-h-[60px]">
+                  {blocks.map((b, bi) => (
+                    <div
+                      key={bi}
+                      className="rounded px-1.5 py-1 text-white"
+                      style={{ backgroundColor: b.color }}
+                      title={`${b.campaign} — ${b.time}`}
+                    >
+                      <p className="text-[9px] font-bold truncate leading-tight">{b.campaign}</p>
+                      <p className="text-[8px] opacity-80 leading-tight">{b.time}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Tabs */}

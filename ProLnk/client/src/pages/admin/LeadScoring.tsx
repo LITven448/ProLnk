@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import {
   Brain, Zap, MapPin, DollarSign, TrendingUp, Clock, Shield, CheckCircle,
   XCircle, AlertTriangle, Sliders, ChevronDown, ChevronUp, BarChart3, User,
-  Home, Star, Search, Filter
+  Home, Star, Search, Filter, RefreshCw, Activity,
 } from "lucide-react";
 
 function scoreColor(score: number) {
@@ -208,12 +208,32 @@ const MOCK_LEADS = [
 
 const HISTORICAL_ACCURACY = [
   { range: "90-100", predicted: 93, actual: 91, count: 28 },
-  { range: "75-89",  predicted: 82, actual: 79, count: 47 },
-  { range: "50-74",  predicted: 62, actual: 54, count: 61 },
-  { range: "0-49",   predicted: 38, actual: 32, count: 34 },
+  { range: "75-89", predicted: 82, actual: 79, count: 47 },
+  { range: "50-74", predicted: 62, actual: 54, count: 61 },
+  { range: "0-49", predicted: 38, actual: 32, count: 34 },
+];
+
+const RECENT_DECISIONS = [
+  { homeowner: "Patricia Nguyen", trade: "Roofing", score: 91, outcome: "Auto-Accept", time: "2m ago" },
+  { homeowner: "Marcus Webb", trade: "HVAC", score: 84, outcome: "Auto-Accept", time: "3h ago" },
+  { homeowner: "Sandra Kowalski", trade: "Electrical", score: 72, outcome: "Review Queue", time: "7h ago" },
+  { homeowner: "Derek Harmon", trade: "Plumbing", score: 88, outcome: "Auto-Accept", time: "1d ago" },
+  { homeowner: "Jerome Batiste", trade: "Landscaping", score: 42, outcome: "Review Queue", time: "2d ago" },
+  { homeowner: "Tiffany Odom", trade: "Painting", score: 22, outcome: "Auto-Reject", time: "3d ago" },
+  { homeowner: "Calvin Moore", trade: "Solar", score: 95, outcome: "Auto-Accept", time: "4d ago" },
+  { homeowner: "Brenda Castillo", trade: "Fencing", score: 55, outcome: "Review Queue", time: "5d ago" },
+  { homeowner: "Rick Alvarez", trade: "Plumbing", score: 38, outcome: "Auto-Reject", time: "5d ago" },
+  { homeowner: "Janet Wu", trade: "HVAC", score: 78, outcome: "Auto-Accept", time: "6d ago" },
 ];
 
 type FilterType = "all" | "accepted" | "review" | "rejected";
+
+const SIMULATOR_DEFAULTS = {
+  verification: 22,
+  budget: 20,
+  urgency: 15,
+  history: 18,
+};
 
 export default function LeadScoring() {
   const [leads, setLeads] = useState(MOCK_LEADS);
@@ -222,6 +242,11 @@ export default function LeadScoring() {
   const [overrideTarget, setOverrideTarget] = useState<typeof MOCK_LEADS[0] | null>(null);
   const [overrideValue, setOverrideValue] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [simValues, setSimValues] = useState(SIMULATOR_DEFAULTS);
+  const [rescoring, setRescoring] = useState(false);
+  const [rescoreProgress, setRescoreProgress] = useState(0);
+
+  const simulatedScore = Math.min(100, simValues.verification + simValues.budget + simValues.urgency + simValues.history);
 
   const filtered = useMemo(() => {
     return leads.filter((l) => {
@@ -260,10 +285,39 @@ export default function LeadScoring() {
     toast.success("Override cleared");
   }
 
+  function batchRescore() {
+    if (rescoring) return;
+    setRescoring(true);
+    setRescoreProgress(0);
+    const total = leads.length;
+    let done = 0;
+    const interval = setInterval(() => {
+      done += 1;
+      setRescoreProgress(Math.round((done / total) * 100));
+      if (done >= total) {
+        clearInterval(interval);
+        setLeads(prev => prev.map(l => ({ ...l, overrideScore: null })));
+        setRescoring(false);
+        setRescoreProgress(0);
+        toast.success(`Re-scored ${total} leads with latest AI model`);
+      }
+    }, 200);
+  }
+
+  function updateSim(field: keyof typeof SIMULATOR_DEFAULTS, value: number) {
+    setSimValues(prev => ({ ...prev, [field]: value }));
+  }
+
+  const SIM_FIELDS: { key: keyof typeof SIMULATOR_DEFAULTS; label: string; max: number }[] = [
+    { key: "verification", label: "Verification", max: 30 },
+    { key: "budget", label: "Budget", max: 30 },
+    { key: "urgency", label: "Urgency", max: 20 },
+    { key: "history", label: "History", max: 20 },
+  ];
+
   return (
     <AdminLayout>
       <div className="p-6 space-y-6 max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
             <Brain className="w-5 h-5 text-purple-400" />
@@ -272,9 +326,33 @@ export default function LeadScoring() {
             <h1 className="text-2xl font-bold text-white">AI Lead Scoring</h1>
             <p className="text-sm text-slate-400">Every lead scored 0–100 with breakdown, routing rules, and override capability</p>
           </div>
+          <div className="ml-auto flex items-center gap-3">
+            <button
+              onClick={batchRescore}
+              disabled={rescoring}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 text-purple-400 text-sm font-medium border border-purple-500/25 transition-colors disabled:opacity-60"
+            >
+              <RefreshCw className={`w-4 h-4 ${rescoring ? "animate-spin" : ""}`} />
+              {rescoring ? `Re-scoring... ${rescoreProgress}%` : "Batch Re-score"}
+            </button>
+          </div>
         </div>
 
-        {/* Stats */}
+        {rescoring && (
+          <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-purple-400 font-semibold">Re-scoring {leads.length} leads...</span>
+              <span className="text-sm text-purple-300 font-bold">{rescoreProgress}%</span>
+            </div>
+            <div className="h-2 rounded-full bg-slate-700">
+              <div
+                className="h-full rounded-full bg-purple-500 transition-all duration-200"
+                style={{ width: `${rescoreProgress}%` }}
+              />
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: "Avg Score", value: avgScore, icon: <Brain className="w-4 h-4 text-purple-400" />, color: "text-purple-400", bg: "bg-purple-500/10" },
@@ -289,7 +367,73 @@ export default function LeadScoring() {
           ))}
         </div>
 
-        {/* Score distribution visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+            <div className="flex items-center gap-2 mb-1">
+              <Sliders className="w-4 h-4 text-purple-400" />
+              <span className="text-sm font-semibold text-white">Live Score Simulator</span>
+            </div>
+            <p className="text-xs text-slate-500 mb-5">Adjust sliders to preview how component values affect the total score</p>
+            <div className="space-y-4">
+              {SIM_FIELDS.map(({ key, label, max }) => (
+                <div key={key}>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs text-slate-400">{label}</span>
+                    <span className={`text-xs font-bold ${scoreColor(Math.round((simValues[key] / max) * 100))}`}>
+                      {simValues[key]}/{max}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={max}
+                    value={simValues[key]}
+                    onChange={(e) => updateSim(key, parseInt(e.target.value))}
+                    className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                    style={{ accentColor: simulatedScore >= 75 ? "#22c55e" : simulatedScore >= 50 ? "#eab308" : "#ef4444" }}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 pt-4 border-t border-slate-700 flex items-center justify-between">
+              <span className="text-sm text-slate-300 font-semibold">Simulated Score</span>
+              <div className="flex items-center gap-3">
+                <div className={`text-3xl font-black ${scoreColor(simulatedScore)}`}>{simulatedScore}</div>
+                <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${scoreBadge(simulatedScore)}`}>
+                  {scoreLabel(simulatedScore)}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
+            <div className="flex items-center gap-2 mb-1">
+              <Activity className="w-4 h-4 text-teal-400" />
+              <span className="text-sm font-semibold text-white">Recent Decisions</span>
+            </div>
+            <p className="text-xs text-slate-500 mb-4">Last 10 leads scored and routed</p>
+            <div className="space-y-2 max-h-72 overflow-y-auto">
+              {RECENT_DECISIONS.map((d, i) => (
+                <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-[#0A1628] border border-slate-700/50">
+                  <div className={`text-lg font-black w-9 text-center shrink-0 ${scoreColor(d.score)}`}>{d.score}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-white text-xs font-semibold truncate">{d.homeowner}</span>
+                      <span className="text-slate-500 text-xs shrink-0">{d.trade}</span>
+                    </div>
+                    <span className={`text-xs font-medium ${
+                      d.outcome === "Auto-Accept" ? "text-green-400"
+                      : d.outcome === "Review Queue" ? "text-yellow-400"
+                      : "text-red-400"
+                    }`}>{d.outcome}</span>
+                  </div>
+                  <span className="text-xs text-slate-600 shrink-0">{d.time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
           <div className="flex items-center gap-2 mb-4">
             <BarChart3 className="w-4 h-4 text-slate-400" />
@@ -315,7 +459,6 @@ export default function LeadScoring() {
           </div>
         </div>
 
-        {/* Routing rules */}
         <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
           <div className="flex items-center gap-2 mb-3">
             <Sliders className="w-4 h-4 text-teal-400" />
@@ -335,7 +478,6 @@ export default function LeadScoring() {
           </div>
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-52">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -361,7 +503,6 @@ export default function LeadScoring() {
           </div>
         </div>
 
-        {/* Lead list */}
         <div className="space-y-3">
           {filtered.map((lead) => {
             const effectiveScore = lead.overrideScore ?? lead.score;
@@ -372,7 +513,6 @@ export default function LeadScoring() {
                   className="flex items-center gap-4 p-4 cursor-pointer"
                   onClick={() => setExpandedId(expanded ? null : lead.id)}
                 >
-                  {/* Score */}
                   <div className="flex-shrink-0 text-center w-16">
                     <div className={`text-3xl font-black ${scoreColor(effectiveScore)}`}>{effectiveScore}</div>
                     <div className={`text-xs font-medium ${scoreColor(effectiveScore)}`}>{scoreLabel(effectiveScore)}</div>
@@ -381,7 +521,6 @@ export default function LeadScoring() {
                     )}
                   </div>
 
-                  {/* Details */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-white font-semibold">{lead.homeowner}</span>
@@ -401,7 +540,6 @@ export default function LeadScoring() {
                     </div>
                   </div>
 
-                  {/* Actions */}
                   <div className="flex items-center gap-2 shrink-0">
                     <button
                       onClick={(e) => { e.stopPropagation(); setOverrideTarget(lead); setOverrideValue(String(effectiveScore)); }}
@@ -421,7 +559,6 @@ export default function LeadScoring() {
                   </div>
                 </div>
 
-                {/* Expanded: score breakdown */}
                 {expanded && (
                   <div className="border-t border-slate-700/50 p-4 space-y-4">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -460,7 +597,6 @@ export default function LeadScoring() {
           })}
         </div>
 
-        {/* Historical accuracy table */}
         <div className="bg-[#0F1E35] rounded-xl border border-slate-700 p-5">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUp className="w-4 h-4 text-teal-400" />
@@ -500,7 +636,6 @@ export default function LeadScoring() {
           </div>
         </div>
 
-        {/* Override Dialog */}
         <Dialog open={!!overrideTarget} onOpenChange={() => { setOverrideTarget(null); setOverrideValue(""); }}>
           <DialogContent className="max-w-sm bg-[#0A1628] border border-slate-700 text-white">
             <DialogHeader>

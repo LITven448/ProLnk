@@ -331,6 +331,7 @@ const PaymentFlowDiagrams = lazy(() => import("./pages/admin/PaymentFlowDiagrams
 // V12 + 20-feature build
 const ProjectGallery = lazy(() => import("./pages/trustypro/ProjectGallery"));
 const TrustyProPartnerDashboard = lazy(() => import("./pages/trustypro/TrustyProPartnerDashboard"));
+const TrustyProApp = lazy(() => import("./pages/trustypro/TrustyProApp"));
 const ProLnkExchangeCommercial = lazy(() => import("./pages/ProLnkExchangeCommercial"));
 const AchAuthorizationPage = lazy(() => import("./pages/AchAuthorizationPage"));
 const MilestoneTracker = lazy(() => import("./pages/homeowner/MilestoneTracker"));
@@ -414,6 +415,10 @@ const TradeLandingList = lazy(() => import("./pages/TradeLandingList"));
 // City SEO landing pages
 const CityLanding = lazy(() => import("./pages/CityLanding"));
 const CityLandingList = lazy(() => import("./pages/CityLandingList"));
+
+// Investor & Press
+const InvestorPage = lazy(() => import("./pages/InvestorPage"));
+const PressKit = lazy(() => import("./pages/PressKit"));
 
 // Wave 14: Content & Marketing
 const Blog = lazy(() => import("./pages/Blog"));
@@ -575,9 +580,7 @@ function Router() {
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
         <SmoothScrollProvider>
-          {(window.location.hostname.includes("trustypro") || (window as any).__BRAND__ === "trustypro") 
-            ? <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider> 
-            : <SmoothScrollProvider><Home /></SmoothScrollProvider>}
+          {(window as any).__BRAND__ === "trustypro" ? <TrustyProHome /> : <Home />}
         </SmoothScrollProvider>
       </Route>
       <Route path="/demo" component={Demo} />
@@ -814,6 +817,7 @@ function Router() {
       <Route path="/trustypro">
         <SmoothScrollProvider><TrustyProHome /></SmoothScrollProvider>
       </Route>
+      <Route path="/trustypro/app" component={TrustyProApp} />
       <Route path="/trustypro/claim" component={ClaimHome} />
       <Route path="/trustypro/login" component={TrustyProLogin} />
       <Route path="/trustypro/homeowner-login" component={HomeownerLogin} />
@@ -1008,6 +1012,10 @@ function Router() {
       <Route path="/admin/accessibility" component={AccessibilitySettings} />
       <Route path="/admin/error-monitoring" component={ErrorMonitoring} />
       <Route path="/admin/performance" component={PerformanceMonitoring} />
+
+      {/* Investor & Press */}
+      <Route path="/investor" component={InvestorPage} />
+      <Route path="/press" component={PressKit} />
 
       {/* Content & Marketing */}
       <Route path="/help" component={HelpCenter} />

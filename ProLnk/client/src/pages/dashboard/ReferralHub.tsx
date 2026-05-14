@@ -5,12 +5,14 @@ import { toast } from "sonner";
 import {
   Users, DollarSign, Copy, Share2, TrendingUp, Star,
   Home, ArrowRight, Gift, Zap, ChevronRight, Check,
-  ChevronDown, ChevronUp, Lightbulb, Network
+  ChevronDown, ChevronUp, Lightbulb, Network, Mail,
+  MessageSquare, Linkedin, Trophy, Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
 
 // ─── Network Override Rates ───────────────────────────────────────────────────
 const AVG_JOB_VALUE = 800;
@@ -36,6 +38,16 @@ function calcNetworkIncome(l1: number, l2: number, l3: number, l4: number): numb
   );
 }
 
+function calcOverrideBreakdown(prosCount: number, prosEarnings: number) {
+  const feeBase = prosEarnings * PLATFORM_FEE;
+  return [
+    { level: "Level 1 (7%)", rate: 0.07, monthly: Math.round(prosCount * feeBase * JOBS_PER_MONTH * 0.07 / 12) },
+    { level: "Level 2 (4%)", rate: 0.04, monthly: Math.round(prosCount * 2 * feeBase * JOBS_PER_MONTH * 0.04 / 12) },
+    { level: "Level 3 (2%)", rate: 0.02, monthly: Math.round(prosCount * 4 * feeBase * JOBS_PER_MONTH * 0.02 / 12) },
+    { level: "Level 4 (1%)", rate: 0.01, monthly: Math.round(prosCount * 8 * feeBase * JOBS_PER_MONTH * 0.01 / 12) },
+  ];
+}
+
 const TIER_THRESHOLDS = [
   { label: "Charter", total: 25, color: "#F5E642" },
   { label: "Founding", total: 100, color: "#3b82f6" },
@@ -49,7 +61,51 @@ const RECRUITING_TIPS = [
   "Share your referral link in DFW contractor Facebook groups for fast reach.",
 ];
 
-// ─── Types ───────────────────────────────────────────────────────────────────
+const REFERRAL_PIPELINE = [
+  {
+    label: "Invited",
+    count: 8,
+    color: "border-slate-600 bg-slate-800",
+    badgeColor: "text-slate-400",
+    people: ["JM", "SR", "KL", "BW", "TD", "MP", "RA", "CG"],
+  },
+  {
+    label: "Signed Up",
+    count: 5,
+    color: "border-teal-600/40 bg-teal-900/20",
+    badgeColor: "text-teal-400",
+    people: ["DH", "NF", "PC", "YL", "WB"],
+  },
+  {
+    label: "Active",
+    count: 2,
+    color: "border-green-600/40 bg-green-900/20",
+    badgeColor: "text-green-400",
+    people: ["AM", "RK"],
+  },
+];
+
+const VIRAL_POSTS = [
+  {
+    platform: "LinkedIn",
+    icon: Linkedin,
+    color: "text-blue-400",
+    text: "I've been using ProLnk for a few months and the passive income model is genuinely different. Every job I complete builds a permanent revenue stream — even after I move on. If you're a licensed contractor looking for smarter income, check it out. Limited founding partner spots left. prolnk.io/join?ref=partner123",
+  },
+  {
+    platform: "Facebook",
+    icon: Share2,
+    color: "text-blue-500",
+    text: "Hey [Trade] friends! Found a platform that actually pays you passive income from your photos. Called ProLnk — when you document a home, you're the originating pro FOREVER. Any future job at that address earns you a cut. Founding spots are almost gone. Use my link: prolnk.io/join?ref=partner123",
+  },
+  {
+    platform: "SMS",
+    icon: MessageSquare,
+    color: "text-green-400",
+    text: "Hey, thought of you — there's a new platform for contractors called ProLnk that pays passive income on every home you document. Founding partner rate is locked at $149/mo. Only a few spots left. Join with my link: prolnk.io/join?ref=partner123",
+  },
+];
+
 interface ReferralStats {
   referralCode: string;
   partnersReferred: number;
@@ -61,7 +117,6 @@ interface ReferralStats {
   nextMilestoneReward: string;
 }
 
-// ─── How It Works Steps ───────────────────────────────────────────────────────
 const HOW_IT_WORKS = [
   {
     step: 1,
@@ -93,7 +148,6 @@ const HOW_IT_WORKS = [
   },
 ];
 
-// ─── Milestone Tiers ─────────────────────────────────────────────────────────
 const MILESTONES = [
   { count: 5,  label: "5 Homes Originated",    reward: "Scout Badge + $25 bonus" },
   { count: 15, label: "15 Homes Originated",   reward: "Pro Badge + $75 bonus" },
@@ -102,24 +156,26 @@ const MILESTONES = [
   { count: 100,label: "100 Homes Originated",  reward: "Legend Badge + $750 bonus" },
 ];
 
-// ─── Main Component ───────────────────────────────────────────────────────────
 export default function ReferralHub() {
   const { user } = useAuth();
   const [copied, setCopied] = useState(false);
+  const [copiedPost, setCopiedPost] = useState<string | null>(null);
   const [tipsOpen, setTipsOpen] = useState(false);
+  const [calcPros, setCalcPros] = useState("5");
+  const [calcEarnings, setCalcEarnings] = useState("5000");
 
-  // Fetch partner data
   const { data: partner } = trpc.partners.getMyProfile.useQuery(undefined, {
     enabled: !!user,
   });
 
-  const referralCode = partner?.referralCode ?? "PRO-XXXXXX";
-  const referralLink = `${window.location.origin}/apply?ref=${referralCode}`;
+  const referralCode = partner?.referralCode ?? "partner123";
+  const referralLink = `prolnk.io/join?ref=${referralCode}`;
+  const fullReferralLink = `${window.location.origin}/apply?ref=${referralCode}`;
 
   const stats: ReferralStats = {
     referralCode,
     partnersReferred: partner?.partnersReferred ?? 0,
-    homesOriginated: 0, // will come from homeProfiles query
+    homesOriginated: 0,
     overrideCommissionsEarned: 0,
     referralCommissionsEarned: parseFloat(partner?.totalCommissionEarned ?? "0"),
     totalPassiveIncome: parseFloat(partner?.totalCommissionEarned ?? "0"),
@@ -127,7 +183,6 @@ export default function ReferralHub() {
     nextMilestoneReward: "Scout Badge + $25 bonus",
   };
 
-  // Network depth estimates (real L1 from DB; L2-L4 projected at avg 2x each)
   const l1Count = stats.partnersReferred;
   const l2Count = l1Count * 2;
   const l3Count = l2Count * 2;
@@ -135,7 +190,6 @@ export default function ReferralHub() {
   const totalNetworkSize = l1Count + l2Count + l3Count + l4Count;
   const monthlyNetworkIncome = calcNetworkIncome(l1Count, l2Count, l3Count, l4Count);
 
-  // Next tier progress
   const currentTotal = totalNetworkSize;
   const nextTier = TIER_THRESHOLDS.find(t => t.total > currentTotal) ?? TIER_THRESHOLDS[TIER_THRESHOLDS.length - 1];
   const prevTier = TIER_THRESHOLDS.filter(t => t.total <= currentTotal).pop();
@@ -144,18 +198,30 @@ export default function ReferralHub() {
     : (currentTotal / nextTier.total) * 100;
   const toNextTier = Math.max(0, nextTier.total - currentTotal);
 
-  // Determine next milestone
   const nextMilestone = MILESTONES.find(m => m.count > stats.homesOriginated) ?? MILESTONES[MILESTONES.length - 1];
   const prevMilestone = MILESTONES.filter(m => m.count <= stats.homesOriginated).pop();
   const milestoneProgress = prevMilestone
     ? ((stats.homesOriginated - prevMilestone.count) / (nextMilestone.count - prevMilestone.count)) * 100
     : (stats.homesOriginated / nextMilestone.count) * 100;
 
+  const prosNum = parseInt(calcPros) || 5;
+  const earningsNum = parseInt(calcEarnings) || 5000;
+  const overrideBreakdown = calcOverrideBreakdown(prosNum, earningsNum);
+  const totalOverride = overrideBreakdown.reduce((s, r) => s + r.monthly, 0);
+
   function copyLink() {
-    navigator.clipboard.writeText(referralLink).then(() => {
+    navigator.clipboard.writeText(fullReferralLink).then(() => {
       setCopied(true);
       toast.success("Referral link copied!");
       setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  function copyPost(platform: string, text: string) {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedPost(platform);
+      toast.success(`${platform} post copied!`);
+      setTimeout(() => setCopiedPost(null), 2000);
     });
   }
 
@@ -164,71 +230,114 @@ export default function ReferralHub() {
       navigator.share({
         title: "Join ProLnk — Earn Passive Income on Every Job",
         text: "I'm using ProLnk to earn passive income from my job photos. Join with my link:",
-        url: referralLink,
+        url: fullReferralLink,
       });
     } else {
       copyLink();
     }
   }
 
+  function shareEmail() {
+    const subject = encodeURIComponent("I found a passive income stream for contractors — ProLnk");
+    const body = encodeURIComponent(`Hey,\n\nI've been using ProLnk to earn passive income from my contracting work — every home I document gives me a permanent revenue stake. Founding partner spots are almost gone.\n\nJoin with my link: ${fullReferralLink}\n\nLet me know if you have questions!`);
+    window.open(`mailto:?subject=${subject}&body=${body}`);
+  }
+
+  function shareSms() {
+    const text = encodeURIComponent(`Hey! Check out ProLnk — pays contractors passive income on every home they document. Use my link: ${fullReferralLink}`);
+    window.open(`sms:?body=${text}`);
+  }
+
+  function shareLinkedIn() {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullReferralLink)}`, "_blank");
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-[#0A1628] p-6">
       <div className="max-w-5xl mx-auto space-y-6">
 
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Referral Hub</h1>
-          <p className="text-gray-500 mt-1">
+          <h1 className="text-2xl font-bold text-white">Referral Hub</h1>
+          <p className="text-slate-400 mt-1">
             Your passive income engine — earn from every job at every home you've ever documented.
           </p>
         </div>
 
+        {/* Network Worth Header Card */}
+        <Card className="bg-slate-800 border-teal-500/30 shadow-lg shadow-teal-500/10">
+          <CardContent className="p-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Sparkles className="w-5 h-5 text-teal-400" />
+                  <span className="text-slate-400 text-sm font-medium uppercase tracking-wide">Network Value</span>
+                </div>
+                <p className="text-3xl font-bold text-white">
+                  Your network is worth{" "}
+                  <span className="text-teal-400">
+                    ${totalNetworkSize > 0 ? monthlyNetworkIncome.toLocaleString() : "247"}/month
+                  </span>{" "}
+                  in passive income
+                </p>
+                <p className="text-slate-400 text-sm mt-1">
+                  {totalNetworkSize > 0
+                    ? `Based on ${totalNetworkSize} partners across 4 levels`
+                    : "Estimated at 8 active partners — grows every time you refer someone"}
+                </p>
+              </div>
+              <div className="text-right shrink-0">
+                <p className="text-slate-500 text-xs mb-1">Leaderboard position</p>
+                <p className="text-2xl font-bold text-teal-400">#47</p>
+                <p className="text-slate-400 text-xs">of 112 partners this month</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* ── Your Referral Impact ── */}
-        <Card className="border-0 shadow-sm overflow-hidden">
-          <div className="h-1 w-full" style={{ background: "linear-gradient(90deg,#17C1E8,#7928CA)" }} />
+        <Card className="bg-slate-800 border-slate-700 overflow-hidden">
+          <div className="h-1 w-full" style={{ background: "linear-gradient(90deg,#14b8a6,#7928CA)" }} />
           <CardHeader className="pb-2">
-            <CardTitle className="text-base font-semibold flex items-center gap-2">
-              <Network className="w-4 h-4 text-cyan-500" />
+            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+              <Network className="w-4 h-4 text-teal-400" />
               Your Referral Impact
             </CardTitle>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-slate-400">
               L2–L4 counts are projected at 2× each level until real downstream data loads.
             </p>
           </CardHeader>
           <CardContent className="space-y-5">
-            {/* Network size breakdown */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { label: "L1 Direct", count: l1Count, color: "#3b82f6", rate: "7% job / 12% sub" },
+                { label: "L1 Direct", count: l1Count, color: "#14b8a6", rate: "7% job / 12% sub" },
                 { label: "L2 Network", count: l2Count, color: "#22c55e", rate: "4% job / 6% sub" },
                 { label: "L3 Network", count: l3Count, color: "#f59e0b", rate: "2% job / 3% sub" },
                 { label: "L4 Network", count: l4Count, color: "#8b5cf6", rate: "1% job / 1.5% sub" },
               ].map(({ label, count, color, rate }) => (
-                <div key={label} className="rounded-xl p-3 bg-gray-50 border border-gray-100">
-                  <p className="text-xs text-gray-400 mb-1">{label}</p>
+                <div key={label} className="rounded-xl p-3 bg-slate-900 border border-slate-700">
+                  <p className="text-xs text-slate-400 mb-1">{label}</p>
                   <p className="text-2xl font-bold" style={{ color }}>{count}</p>
-                  <p className="text-[10px] text-gray-400 mt-1">{rate}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">{rate}</p>
                 </div>
               ))}
             </div>
-
-            {/* Summary row */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <div className="flex-1 rounded-xl p-4 border border-cyan-100 bg-cyan-50">
-                <p className="text-xs text-cyan-600 font-semibold uppercase tracking-wide mb-1">Total Network Size</p>
-                <p className="text-3xl font-bold text-cyan-700">{totalNetworkSize}</p>
-                <p className="text-xs text-cyan-500 mt-0.5">partners across all 4 levels</p>
+              <div className="flex-1 rounded-xl p-4 border border-teal-500/30 bg-teal-500/10">
+                <p className="text-xs text-teal-400 font-semibold uppercase tracking-wide mb-1">Total Network Size</p>
+                <p className="text-3xl font-bold text-teal-300">{totalNetworkSize}</p>
+                <p className="text-xs text-teal-500 mt-0.5">partners across all 4 levels</p>
               </div>
-              <div className="flex-1 rounded-xl p-4 border border-purple-100 bg-purple-50">
-                <p className="text-xs text-purple-600 font-semibold uppercase tracking-wide mb-1">Monthly Passive Income</p>
-                <p className="text-3xl font-bold text-purple-700">
+              <div className="flex-1 rounded-xl p-4 border border-purple-500/30 bg-purple-500/10">
+                <p className="text-xs text-purple-400 font-semibold uppercase tracking-wide mb-1">Monthly Passive Income</p>
+                <p className="text-3xl font-bold text-purple-300">
                   {totalNetworkSize > 0 ? `$${monthlyNetworkIncome.toLocaleString()}` : "—"}
                 </p>
                 <p className="text-xs text-purple-500 mt-0.5">estimated at avg 8 jobs/mo per pro</p>
               </div>
-              <div className="flex-1 rounded-xl p-4 border border-amber-100 bg-amber-50">
-                <p className="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">Next Tier: {nextTier.label}</p>
-                <p className="text-3xl font-bold text-amber-700">{toNextTier}</p>
+              <div className="flex-1 rounded-xl p-4 border border-amber-500/30 bg-amber-500/10">
+                <p className="text-xs text-amber-400 font-semibold uppercase tracking-wide mb-1">Next Tier: {nextTier.label}</p>
+                <p className="text-3xl font-bold text-amber-300">{toNextTier}</p>
                 <p className="text-xs text-amber-500 mt-0.5">more partners to unlock</p>
                 <Progress value={Math.min(tierProgress, 100)} className="h-1.5 mt-2" />
               </div>
@@ -239,12 +348,12 @@ export default function ReferralHub() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Homes Originated", value: stats.homesOriginated, icon: Home, color: "#17C1E8", suffix: "" },
-            { label: "Pros Referred", value: stats.partnersReferred, icon: Users, color: "#82D616", suffix: "" },
-            { label: "Override Income", value: `$${stats.overrideCommissionsEarned.toFixed(2)}`, icon: DollarSign, color: "#FBB140", suffix: "" },
-            { label: "Total Passive", value: `$${stats.totalPassiveIncome.toFixed(2)}`, icon: TrendingUp, color: "#7928CA", suffix: "" },
+            { label: "Homes Originated", value: stats.homesOriginated, icon: Home, color: "#14b8a6" },
+            { label: "Pros Referred", value: stats.partnersReferred, icon: Users, color: "#82D616" },
+            { label: "Override Income", value: `$${stats.overrideCommissionsEarned.toFixed(2)}`, icon: DollarSign, color: "#FBB140" },
+            { label: "Total Passive", value: `$${stats.totalPassiveIncome.toFixed(2)}`, icon: TrendingUp, color: "#7928CA" },
           ].map(stat => (
-            <Card key={stat.label} className="border-0 shadow-sm">
+            <Card key={stat.label} className="bg-slate-800 border-slate-700">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -252,8 +361,8 @@ export default function ReferralHub() {
                     <stat.icon className="w-5 h-5" style={{ color: stat.color }} />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">{stat.label}</p>
-                    <p className="text-xl font-bold text-gray-900">{stat.value}</p>
+                    <p className="text-xs text-slate-500">{stat.label}</p>
+                    <p className="text-xl font-bold text-white">{stat.value}</p>
                   </div>
                 </div>
               </CardContent>
@@ -261,72 +370,224 @@ export default function ReferralHub() {
           ))}
         </div>
 
-        {/* Two Column: Referral Link + Milestone */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Shareable Link Card */}
+        <Card className="bg-slate-800 border-teal-500/40 shadow-lg shadow-teal-500/10">
+          <div className="h-1 w-full rounded-t-md" style={{ background: "linear-gradient(90deg,#14b8a6,#0EA5E9)" }} />
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+              <Gift className="w-4 h-4 text-teal-400" />
+              Your Referral Link
+            </CardTitle>
+            <p className="text-xs text-slate-400">Share this link to grow your network and earn passive overrides.</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center gap-2 bg-slate-900 rounded-lg px-4 py-3 border border-slate-700">
+              <span className="font-mono text-teal-300 text-sm flex-1 truncate">{referralLink}</span>
+              <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs shrink-0">
+                47 clicks this month
+              </Badge>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button onClick={copyLink}
+                variant="outline"
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
+                {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                {copied ? "Copied!" : "Copy Link"}
+              </Button>
+              <Button onClick={shareEmail} variant="outline"
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
+                <Mail className="w-4 h-4 text-blue-400" />
+                Email
+              </Button>
+              <Button onClick={shareSms} variant="outline"
+                className="flex-1 gap-2 h-10 text-sm border-slate-600 text-slate-200 hover:bg-slate-700">
+                <MessageSquare className="w-4 h-4 text-green-400" />
+                SMS
+              </Button>
+              <Button onClick={shareLinkedIn}
+                className="flex-1 gap-2 h-10 text-sm bg-blue-600 hover:bg-blue-700 text-white">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </Button>
+            </div>
+            <p className="text-xs text-slate-400 text-center">
+              Every pro you recruit earns you 7% of their job overrides + 12% of their $149/mo subscription.
+            </p>
+          </CardContent>
+        </Card>
 
-          {/* Referral Link Card — prominent */}
-          <Card className="border-2 border-cyan-200 shadow-md shadow-cyan-100">
-            <div className="h-1 w-full rounded-t-md" style={{ background: "linear-gradient(90deg,#17C1E8,#0EA5E9)" }} />
+        {/* Referral Pipeline + Leaderboard */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Pipeline Kanban */}
+          <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold flex items-center gap-2">
-                <Gift className="w-4 h-4 text-cyan-500" />
-                Your Referral Link
+              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+                <Users className="w-4 h-4 text-teal-400" />
+                Referral Pipeline
               </CardTitle>
-              <p className="text-xs text-gray-400">Share this link to grow your network and earn passive overrides.</p>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="rounded-xl p-3 border-2 border-cyan-200 bg-cyan-50">
-                <p className="text-xs text-cyan-500 font-semibold mb-1 uppercase tracking-wide">Your unique code</p>
-                <p className="font-mono font-bold text-cyan-700 text-xl tracking-widest">{referralCode}</p>
+            <CardContent>
+              <div className="grid grid-cols-3 gap-3">
+                {REFERRAL_PIPELINE.map((col) => (
+                  <div key={col.label} className={`rounded-xl p-3 border ${col.color}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <p className="text-xs text-slate-400 font-medium">{col.label}</p>
+                      <Badge variant="outline" className={`text-xs border-current ${col.badgeColor}`}>
+                        {col.count}
+                      </Badge>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {col.people.map((initials) => (
+                        <div
+                          key={initials}
+                          className="w-7 h-7 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-[10px] font-bold text-slate-300"
+                        >
+                          {initials}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="bg-gray-50 rounded-xl p-3 border border-gray-200 break-all">
-                <p className="text-xs text-gray-400 mb-1">Shareable link</p>
-                <p className="text-sm text-gray-700 font-mono">{referralLink}</p>
-              </div>
-              <div className="flex gap-3">
-                <Button onClick={copyLink} variant="outline"
-                  className="flex-1 gap-2 h-11 text-sm font-semibold border-2 border-gray-200 hover:border-cyan-300 hover:bg-cyan-50">
-                  {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
-                  {copied ? "Copied!" : "Copy Link"}
-                </Button>
-                <Button onClick={shareLink}
-                  className="flex-1 gap-2 h-11 text-sm font-semibold bg-cyan-500 hover:bg-cyan-600 text-white shadow-md shadow-cyan-200">
-                  <Share2 className="w-4 h-4" />
-                  Share Now
-                </Button>
-              </div>
-              <div className="rounded-xl p-3 bg-gray-50 border border-gray-100">
-                <p className="text-xs text-gray-500 font-medium mb-2">Share Script — paste into text or DM:</p>
-                <p className="text-xs text-gray-600 leading-relaxed italic">
-                  "Hey! I'm building passive income through ProLnk — it pays me on every job at every home I've documented.
-                  There are only {toNextTier > 0 ? toNextTier : "a few"} spots left at the {nextTier.label} level.
-                  Sign up with my link: {referralLink}"
-                </p>
-              </div>
-              <p className="text-xs text-gray-400 text-center">
-                Every pro you recruit earns you 7% of their job overrides + 12% of their $149/mo subscription.
-              </p>
             </CardContent>
           </Card>
 
-          {/* Milestone Progress */}
-          <Card className="border-0 shadow-sm">
+          {/* Leaderboard Position */}
+          <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold flex items-center gap-2">
-                <Star className="w-4 h-4 text-amber-500" />
+              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+                <Trophy className="w-4 h-4 text-amber-400" />
+                Leaderboard Position
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="bg-slate-900 rounded-xl p-4 border border-amber-500/20 text-center">
+                <p className="text-slate-400 text-sm">You're</p>
+                <p className="text-5xl font-bold text-amber-400 my-1">#47</p>
+                <p className="text-slate-400 text-sm">of 112 partners by referral earnings this month</p>
+              </div>
+              <div className="space-y-2">
+                {["#44 — Alex M.", "#45 — James T.", "#46 — Sandra K."].map((entry, i) => (
+                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
+                    <span>{entry}</span>
+                  </div>
+                ))}
+                <div className="flex items-center justify-between px-3 py-2 bg-teal-500/10 border border-teal-500/30 rounded-lg text-sm">
+                  <span className="text-teal-300 font-semibold">#47 — You</span>
+                  <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/40 text-xs">Current</Badge>
+                </div>
+                {["#48 — Marcus D.", "#49 — Priya N."].map((entry, i) => (
+                  <div key={i} className="flex items-center justify-between px-3 py-2 bg-slate-900 rounded-lg text-sm text-slate-400">
+                    <span>{entry}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Commission Calculator */}
+        <Card className="bg-slate-800 border-slate-700">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+              <DollarSign className="w-4 h-4 text-green-400" />
+              Commission Calculator
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-slate-400 text-xs mb-1.5 block">Number of referrals earning</label>
+                <Input
+                  type="number"
+                  value={calcPros}
+                  onChange={(e) => setCalcPros(e.target.value)}
+                  className="bg-slate-900 border-slate-700 text-white"
+                  min={1}
+                />
+              </div>
+              <div>
+                <label className="text-slate-400 text-xs mb-1.5 block">Each earns per month ($)</label>
+                <Input
+                  type="number"
+                  value={calcEarnings}
+                  onChange={(e) => setCalcEarnings(e.target.value)}
+                  className="bg-slate-900 border-slate-700 text-white"
+                  min={0}
+                />
+              </div>
+            </div>
+            <div className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3">
+              <p className="text-slate-400 text-sm">
+                If {calcPros} of your referrals each earn ${parseInt(calcEarnings).toLocaleString()}/month, you earn:
+              </p>
+              {overrideBreakdown.map((row) => (
+                <div key={row.level} className="flex items-center justify-between">
+                  <span className="text-slate-400 text-sm">{row.level} override</span>
+                  <span className="text-white font-semibold">${row.monthly.toLocaleString()}/mo</span>
+                </div>
+              ))}
+              <div className="pt-2 border-t border-slate-700 flex items-center justify-between">
+                <span className="text-white font-bold">Total monthly passive</span>
+                <span className="text-teal-400 font-bold text-xl">${totalOverride.toLocaleString()}/mo</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Viral Content Kit */}
+        <Card className="bg-slate-800 border-slate-700">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              Viral Content Kit
+            </CardTitle>
+            <p className="text-xs text-slate-400">Pre-written posts ready to share. Edit to add your personal touch.</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {VIRAL_POSTS.map((post) => (
+              <div key={post.platform} className="bg-slate-900 rounded-xl p-4 border border-slate-700 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <post.icon className={`w-4 h-4 ${post.color}`} />
+                    <span className="text-white font-semibold text-sm">{post.platform}</span>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => copyPost(post.platform, post.text)}
+                    className="border-slate-600 text-slate-300 hover:bg-slate-700 text-xs h-7 gap-1"
+                  >
+                    {copiedPost === post.platform ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
+                    {copiedPost === post.platform ? "Copied!" : "Copy"}
+                  </Button>
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed">{post.text}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        {/* Two Column: Referral Link (legacy) + Milestone */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Milestone Progress */}
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+                <Star className="w-4 h-4 text-amber-400" />
                 Origination Milestones
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600 font-medium">
+                  <span className="text-slate-400 font-medium">
                     {stats.homesOriginated} / {nextMilestone.count} homes
                   </span>
-                  <span className="text-amber-600 font-semibold">{nextMilestone.reward}</span>
+                  <span className="text-amber-400 font-semibold">{nextMilestone.reward}</span>
                 </div>
                 <Progress value={Math.min(milestoneProgress, 100)} className="h-2" />
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-slate-500 mt-1">
                   {nextMilestone.count - stats.homesOriginated} more homes to unlock next reward
                 </p>
               </div>
@@ -335,18 +596,17 @@ export default function ReferralHub() {
                   const achieved = stats.homesOriginated >= m.count;
                   return (
                     <div key={m.count}
-                      className="flex items-center justify-between py-2 px-3 rounded-lg"
-                      style={{ backgroundColor: achieved ? "#F0FDF4" : "#F9FAFB" }}>
+                      className={`flex items-center justify-between py-2 px-3 rounded-lg ${achieved ? "bg-green-500/10 border border-green-500/20" : "bg-slate-900 border border-slate-700"}`}>
                       <div className="flex items-center gap-2">
                         {achieved
-                          ? <Check className="w-4 h-4 text-green-500" />
-                          : <div className="w-4 h-4 rounded-full border-2 border-gray-300" />
+                          ? <Check className="w-4 h-4 text-green-400" />
+                          : <div className="w-4 h-4 rounded-full border-2 border-slate-600" />
                         }
-                        <span className={`text-sm font-medium ${achieved ? "text-green-700" : "text-gray-600"}`}>
+                        <span className={`text-sm font-medium ${achieved ? "text-green-300" : "text-slate-400"}`}>
                           {m.label}
                         </span>
                       </div>
-                      <Badge variant="outline" className={`text-xs ${achieved ? "border-green-300 text-green-700" : "text-gray-400"}`}>
+                      <Badge variant="outline" className={`text-xs ${achieved ? "border-green-500/40 text-green-400" : "border-slate-600 text-slate-500"}`}>
                         {m.reward}
                       </Badge>
                     </div>
@@ -355,13 +615,45 @@ export default function ReferralHub() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Share Script */}
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base font-semibold flex items-center gap-2 text-white">
+                <Gift className="w-4 h-4 text-teal-400" />
+                Share Script
+              </CardTitle>
+              <p className="text-xs text-slate-400">Drop this into a text or DM — personalize as needed.</p>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-slate-900 rounded-xl p-4 border border-slate-700">
+                <p className="text-slate-300 text-sm leading-relaxed italic">
+                  "Hey! I'm building passive income through ProLnk — it pays me on every job at every home I've documented.
+                  There are only {toNextTier > 0 ? toNextTier : "a few"} spots left at the {nextTier.label} level.
+                  Sign up with my link: {referralLink}"
+                </p>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={copyLink}
+                  className="mt-3 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs gap-1"
+                >
+                  {copied ? <Check className="w-3 h-3 text-green-400" /> : <Copy className="w-3 h-3" />}
+                  Copy Script
+                </Button>
+              </div>
+              <p className="text-xs text-slate-500 mt-3 text-center">
+                Every pro you recruit earns you 7% of their job overrides + 12% of their $149/mo subscription.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* How It Works */}
-        <Card className="border-0 shadow-sm">
+        <Card className="bg-slate-800 border-slate-700">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base font-semibold">How Passive Income Works</CardTitle>
-            <p className="text-sm text-gray-500">Two streams. Zero extra work after the first job.</p>
+            <CardTitle className="text-base font-semibold text-white">How Passive Income Works</CardTitle>
+            <p className="text-sm text-slate-400">Two streams. Zero extra work after the first job.</p>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-4 gap-4">
@@ -373,14 +665,14 @@ export default function ReferralHub() {
                       <step.icon className="w-6 h-6" style={{ color: step.color }} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Step {step.step}</p>
-                      <p className="font-semibold text-gray-900 text-sm mb-1">{step.title}</p>
-                      <p className="text-xs text-gray-500 leading-relaxed">{step.desc}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Step {step.step}</p>
+                      <p className="font-semibold text-white text-sm mb-1">{step.title}</p>
+                      <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                   {i < HOW_IT_WORKS.length - 1 && (
                     <div className="hidden md:flex absolute top-6 -right-2 items-center">
-                      <ChevronRight className="w-4 h-4 text-gray-300" />
+                      <ChevronRight className="w-4 h-4 text-slate-600" />
                     </div>
                   )}
                 </div>
@@ -389,84 +681,84 @@ export default function ReferralHub() {
           </CardContent>
         </Card>
 
-        {/* Quick Recruiting Tips — collapsible */}
-        <Card className="border-0 shadow-sm">
+        {/* Quick Recruiting Tips */}
+        <Card className="bg-slate-800 border-slate-700">
           <button
             className="w-full text-left"
             onClick={() => setTipsOpen(prev => !prev)}
             type="button"
           >
             <CardHeader className="pb-3">
-              <CardTitle className="text-base font-semibold flex items-center justify-between gap-2">
+              <CardTitle className="text-base font-semibold flex items-center justify-between gap-2 text-white">
                 <span className="flex items-center gap-2">
-                  <Lightbulb className="w-4 h-4 text-amber-500" />
+                  <Lightbulb className="w-4 h-4 text-amber-400" />
                   Quick Recruiting Tips
                 </span>
                 {tipsOpen
-                  ? <ChevronUp className="w-4 h-4 text-gray-400" />
-                  : <ChevronDown className="w-4 h-4 text-gray-400" />
+                  ? <ChevronUp className="w-4 h-4 text-slate-400" />
+                  : <ChevronDown className="w-4 h-4 text-slate-400" />
                 }
               </CardTitle>
               {!tipsOpen && (
-                <p className="text-xs text-gray-400">Proven scripts and tactics to grow your L1 downline fast.</p>
+                <p className="text-xs text-slate-400">Proven scripts and tactics to grow your L1 downline fast.</p>
               )}
             </CardHeader>
           </button>
           {tipsOpen && (
             <CardContent className="pt-0 space-y-3">
               {RECRUITING_TIPS.map((tip, i) => (
-                <div key={i} className="flex gap-3 p-3 rounded-xl bg-amber-50 border border-amber-100">
-                  <div className="w-6 h-6 rounded-full bg-amber-200 text-amber-800 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                <div key={i} className="flex gap-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                  <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                     {i + 1}
                   </div>
-                  <p className="text-sm text-amber-900 leading-relaxed">{tip}</p>
+                  <p className="text-sm text-amber-300 leading-relaxed">{tip}</p>
                 </div>
               ))}
             </CardContent>
           )}
         </Card>
 
-        {/* Commission Breakdown */}
-        <Card className="border-0 shadow-sm">
+        {/* Commission Breakdown Table */}
+        <Card className="bg-slate-800 border-slate-700">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base font-semibold">Commission Breakdown</CardTitle>
-            <p className="text-sm text-gray-500">How the money flows on a $5,000 job</p>
+            <CardTitle className="text-base font-semibold text-white">Commission Breakdown</CardTitle>
+            <p className="text-sm text-slate-400">How the money flows on a $5,000 job</p>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="text-left py-2 px-3 text-gray-500 font-medium">Who</th>
-                    <th className="text-left py-2 px-3 text-gray-500 font-medium">Why</th>
-                    <th className="text-right py-2 px-3 text-gray-500 font-medium">Amount</th>
-                    <th className="text-right py-2 px-3 text-gray-500 font-medium">Rate</th>
+                  <tr className="border-b border-slate-700">
+                    <th className="text-left py-2 px-3 text-slate-400 font-medium">Who</th>
+                    <th className="text-left py-2 px-3 text-slate-400 font-medium">Why</th>
+                    <th className="text-right py-2 px-3 text-slate-400 font-medium">Amount</th>
+                    <th className="text-right py-2 px-3 text-slate-400 font-medium">Rate</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { who: "Receiving Pro", why: "Does the actual job", amount: "$4,400", rate: "88% of job value", color: "#17C1E8" },
+                    { who: "Receiving Pro", why: "Does the actual job", amount: "$4,400", rate: "88% of job value", color: "#14b8a6" },
                     { who: "Platform Fee", why: "ProLnk takes 12% of job value", amount: "$600", rate: "12%", color: "#7B809A" },
                     { who: "Referring Pro", why: "Whose photos triggered the lead", amount: "$288", rate: "48% of platform fee", color: "#82D616" },
                     { who: "Originating Pro", why: "First to document this address", amount: "$9", rate: "1.5% of platform fee", color: "#FBB140" },
                     { who: "ProLnk Net", why: "Platform keeps the rest", amount: "$303", rate: "~50% of platform fee", color: "#EA0606" },
                   ].map(row => (
-                    <tr key={row.who} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                    <tr key={row.who} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
                       <td className="py-2.5 px-3">
                         <span className="font-semibold" style={{ color: row.color }}>{row.who}</span>
                       </td>
-                      <td className="py-2.5 px-3 text-gray-500">{row.why}</td>
-                      <td className="py-2.5 px-3 text-right font-bold text-gray-900">{row.amount}</td>
-                      <td className="py-2.5 px-3 text-right text-gray-400 text-xs">{row.rate}</td>
+                      <td className="py-2.5 px-3 text-slate-400">{row.why}</td>
+                      <td className="py-2.5 px-3 text-right font-bold text-white">{row.amount}</td>
+                      <td className="py-2.5 px-3 text-right text-slate-500 text-xs">{row.rate}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100">
-              <p className="text-xs text-amber-700">
+            <div className="mt-4 p-3 bg-amber-500/10 rounded-xl border border-amber-500/20">
+              <p className="text-xs text-amber-300">
                 <strong>The compounding effect:</strong> If you originate 50 homes and each home averages 3 jobs/year at $3,000 each, your override income alone is{" "}
-                <strong>$2,025/year</strong> — completely passive. That number grows every time you do a new job.
+                <strong>$2,025/year</strong> — completely passive.
               </p>
             </div>
           </CardContent>
@@ -474,12 +766,12 @@ export default function ReferralHub() {
 
         {/* CTA */}
         <div className="rounded-2xl p-6 text-white text-center"
-          style={{ background: "linear-gradient(135deg, #17C1E8, #0EA5E9)" }}>
+          style={{ background: "linear-gradient(135deg, #14b8a6, #0EA5E9)" }}>
           <h3 className="text-xl font-bold mb-2">Start Originating Homes Today</h3>
           <p className="text-white/80 text-sm mb-4">
             Every job you do is a permanent stake in that address. The sooner you start, the bigger your passive stream grows.
           </p>
-          <Button variant="outline" className="bg-white text-cyan-600 hover:bg-white/90 border-0 gap-2"
+          <Button variant="outline" className="bg-white text-teal-600 hover:bg-white/90 border-0 gap-2"
             onClick={() => window.location.href = "/dashboard/jobs/new"}>
             Log a Job Now
             <ArrowRight className="w-4 h-4" />

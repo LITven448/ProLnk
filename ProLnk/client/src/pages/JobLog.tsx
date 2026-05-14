@@ -9,9 +9,12 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
   CheckCircle, Loader2, MapPin, Wrench, DollarSign, FileText, Camera, ArrowLeft,
-  Network, Download, Plus, BarChart2, X, Star, Filter, Calendar,
+  Network, Download, Plus, BarChart2, X, Star, Filter, TrendingUp, Award,
 } from "lucide-react";
 import { Link } from "wouter";
+import {
+  ResponsiveContainer, AreaChart, Area, Tooltip,
+} from "recharts";
 
 const JOB_TYPES = [
   "Roofing",
@@ -120,7 +123,37 @@ export default function JobLog() {
     const totalValue = allJobs.reduce((sum: number, j: { notes?: string | null }) => sum + parseJobValueFromNotes(j.notes), 0);
     const avgJobSize = totalJobs > 0 ? totalValue / totalJobs : 0;
     const bestMonth = getBestMonth(allJobs as { notes?: string | null; createdAt?: Date | string | null }[]);
-    return { totalJobs, totalValue, avgJobSize, bestMonth };
+
+    // Best performing trade by revenue
+    const tradeRevenue: Record<string, number> = {};
+    const tradeCount: Record<string, number> = {};
+    for (const j of allJobs as { serviceType?: string | null; notes?: string | null }[]) {
+      const trade = j.serviceType ?? "Other";
+      tradeRevenue[trade] = (tradeRevenue[trade] ?? 0) + parseJobValueFromNotes(j.notes);
+      tradeCount[trade] = (tradeCount[trade] ?? 0) + 1;
+    }
+    const bestTradeEntry = Object.entries(tradeRevenue).sort((a, b) => b[1] - a[1])[0];
+    const bestTrade = bestTradeEntry
+      ? { name: bestTradeEntry[0], revenue: bestTradeEntry[1], count: tradeCount[bestTradeEntry[0]] ?? 0 }
+      : null;
+
+    // Monthly job count trend — last 6 months
+    const monthlyJobs: Record<string, number> = {};
+    const now = new Date();
+    for (let i = 5; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const key = d.toLocaleDateString("en-US", { month: "short" });
+      monthlyJobs[key] = 0;
+    }
+    for (const j of allJobs as { createdAt?: Date | string | null }[]) {
+      if (!j.createdAt) continue;
+      const d = new Date(j.createdAt as string);
+      const key = d.toLocaleDateString("en-US", { month: "short" });
+      if (key in monthlyJobs) monthlyJobs[key] = (monthlyJobs[key] ?? 0) + 1;
+    }
+    const sparkline = Object.entries(monthlyJobs).map(([month, count]) => ({ month, count }));
+
+    return { totalJobs, totalValue, avgJobSize, bestMonth, bestTrade, sparkline };
   }, [allJobs]);
 
   const logJobMutation = trpc.jobs.logJob.useMutation({
@@ -318,6 +351,104 @@ export default function JobLog() {
               </div>
             ))}
           </div>
+
+          {/* Best trade + monthly trend row */}
+          {(jobStats.bestTrade || jobStats.sparkline.some((s) => s.count > 0)) && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              {/* Best performing trade */}
+              {jobStats.bestTrade && (
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Award className="w-4 h-4 text-[#F5E642]" />
+                    <span className="text-xs font-bold text-white/60 uppercase tracking-wider">Best Performing Trade</span>
+                  </div>
+                  <p className="text-xl font-black text-white mb-0.5">{jobStats.bestTrade.name}</p>
+                  <p className="text-sm text-[#F5E642] font-semibold">
+                    ${jobStats.bestTrade.revenue.toLocaleString()} total revenue
+                  </p>
+                  <p className="text-xs text-white/40 mt-0.5">{jobStats.bestTrade.count} job{jobStats.bestTrade.count !== 1 ? "s" : ""} logged</p>
+                </div>
+              )}
+
+              {/* Monthly job count sparkline */}
+              {jobStats.sparkline.some((s) => s.count > 0) && (
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <TrendingUp className="w-4 h-4 text-[#F5E642]" />
+                    <span className="text-xs font-bold text-white/60 uppercase tracking-wider">Monthly Job Trend</span>
+                  </div>
+                  <div className="h-16">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <AreaChart data={jobStats.sparkline} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                        <defs>
+                          <linearGradient id="jobTrendGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#F5E642" stopOpacity={0.3} />
+                            <stop offset="95%" stopColor="#F5E642" stopOpacity={0} />
+                          </linearGradient>
+                        </defs>
+                        <Area
+                          type="monotone"
+                          dataKey="count"
+                          stroke="#F5E642"
+                          strokeWidth={2}
+                          fill="url(#jobTrendGrad)"
+                          dot={false}
+                        />
+                        <Tooltip
+                          contentStyle={{ fontSize: 10, padding: "2px 6px", borderRadius: 6, border: "none", backgroundColor: "#1E3A5F", color: "#fff" }}
+                          formatter={(v: number) => [`${v} job${v !== 1 ? "s" : ""}`, ""]}
+                          labelFormatter={(l) => l}
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <div className="flex justify-between mt-1">
+                    {jobStats.sparkline.map((s) => (
+                      <span key={s.month} className="text-[9px] text-white/30">{s.month}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Jobs needed for next tier progress */}
+          {(() => {
+            const total = allJobs.length;
+            const tiers = [
+              { name: "Silver",   min: 5,   color: "#9CA3AF" },
+              { name: "Gold",     min: 25,  color: "#F59E0B" },
+              { name: "Platinum", min: 100, color: "#6366F1" },
+            ];
+            const current = [...tiers].reverse().find((t) => total >= t.min) ?? null;
+            const next = tiers.find((t) => total < t.min) ?? null;
+            if (!next) return null;
+            const prevMin = current ? current.min : 0;
+            const pct = Math.round(((total - prevMin) / (next.min - prevMin)) * 100);
+            const needed = next.min - total;
+            return (
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4 mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <Award className="w-4 h-4" style={{ color: next.color }} />
+                    <span className="text-xs font-bold text-white/60 uppercase tracking-wider">
+                      {needed} job{needed !== 1 ? "s" : ""} to {next.name} Badge
+                    </span>
+                  </div>
+                  <span className="text-xs font-bold text-white/50">{total}/{next.min}</span>
+                </div>
+                <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-700"
+                    style={{ width: `${pct}%`, backgroundColor: next.color }}
+                  />
+                </div>
+                <p className="text-[10px] text-white/30 mt-1.5">
+                  {pct}% of the way to {next.name} — keep logging jobs to unlock the next badge tier
+                </p>
+              </div>
+            );
+          })()}
 
           {/* Filter row */}
           <div className="rounded-xl border border-white/10 bg-white/5 p-4 mb-8 space-y-3">

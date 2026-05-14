@@ -14,7 +14,7 @@ const BORDER = "#1E3A5F";
 
 const TRADES = ["All", "HVAC", "Plumbing", "Electrical", "Roofing", "General"];
 
-const TRADE_ICONS: Record<string, React.ElementType> = {
+const TRADE_ICONS: Record<string, (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null> = {
   HVAC: Wind, Plumbing: Droplets, Electrical: Zap, Roofing: Home, General: Wrench,
 };
 

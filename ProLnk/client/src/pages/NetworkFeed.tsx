@@ -1,7 +1,7 @@
-import { useMemo, type ReactNode } from "react";
+import { useMemo, useState, useEffect, type ReactNode } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
-import { Activity, Send, CheckCircle, DollarSign, TrendingUp, Star, Zap, Clock, Users, Trophy } from "lucide-react";
+import { Activity, Send, CheckCircle, DollarSign, TrendingUp, Star, Zap, Clock, Users, Trophy, Home, Radio } from "lucide-react";
 
 type FeedItem = {
   id: string;
@@ -87,6 +87,127 @@ function timeAgo(date: Date): string {
 }
 
 import React from "react";
+
+type LiveActivity = {
+  id: string;
+  text: string;
+  subtext?: string;
+  icon: "join" | "earn" | "scan";
+  timestamp: number;
+};
+
+const LIVE_ACTIVITY_POOL: Omit<LiveActivity, "id" | "timestamp">[] = [
+  { text: "Sarah M. just joined your network (Level 1)", subtext: "Plumber · Austin, TX", icon: "join" },
+  { text: "Your network earned $312 in override commissions today", subtext: "3 jobs closed across your L1 network", icon: "earn" },
+  { text: "3 new homes were scanned in your area", subtext: "Dallas-Fort Worth metro", icon: "scan" },
+  { text: "Carlos R. just joined your network (Level 1)", subtext: "HVAC Tech · Phoenix, AZ", icon: "join" },
+  { text: "Your network earned $87 in override commissions today", subtext: "2 jobs closed by L2 members", icon: "earn" },
+  { text: "7 new homes were scanned in your area", subtext: "Houston metro", icon: "scan" },
+  { text: "James W. just joined your network (Level 2)", subtext: "Electrician · Denver, CO", icon: "join" },
+];
+
+const LIVE_ICON_CONFIG: Record<LiveActivity["icon"], { icon: ReactNode; bg: string; text: string; color: string }> = {
+  join:  { icon: <Users className="w-3.5 h-3.5" />, bg: "bg-green-500/10", text: "text-green-500", color: "#22c55e" },
+  earn:  { icon: <DollarSign className="w-3.5 h-3.5" />, bg: "bg-amber-500/10", text: "text-amber-500", color: "#f59e0b" },
+  scan:  { icon: <Home className="w-3.5 h-3.5" />, bg: "bg-indigo-500/10", text: "text-indigo-400", color: "#818cf8" },
+};
+
+function LiveBadge() {
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const t = setInterval(() => setVisible((v) => !v), 900);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.25)" }}>
+      <span
+        className="w-1.5 h-1.5 rounded-full bg-red-500 transition-opacity duration-300"
+        style={{ opacity: visible ? 1 : 0.3 }}
+      />
+      <span className="text-[10px] font-bold text-red-400 tracking-wider">LIVE</span>
+    </div>
+  );
+}
+
+function LiveActivityFeed({ networkSize, monthCommissions }: { networkSize: number; monthCommissions: number }) {
+  const [items, setItems] = useState<LiveActivity[]>(() => {
+    return LIVE_ACTIVITY_POOL.slice(0, 3).map((a, i) => ({
+      ...a,
+      id: `live-${i}`,
+      timestamp: Date.now() - i * 4 * 60 * 1000,
+    }));
+  });
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      const pool = LIVE_ACTIVITY_POOL;
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      const newItem: LiveActivity = { ...pick, id: `live-${Date.now()}`, timestamp: Date.now() };
+      setItems((prev) => [newItem, ...prev].slice(0, 6));
+    }, 18000);
+    return () => clearInterval(t);
+  }, []);
+
+  const todayEarnings = monthCommissions > 0 ? Math.round(monthCommissions * 0.08) : 0;
+
+  return (
+    <div className="space-y-4">
+      {/* Live summary strip */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(34,197,94,0.07)", border: "1px solid rgba(34,197,94,0.15)" }}>
+          <Users className="w-4 h-4 text-green-400 flex-shrink-0" />
+          <div>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">Network Size</p>
+            <p className="text-base font-bold text-white">{networkSize} <span className="text-xs font-normal text-gray-500">pros</span></p>
+          </div>
+        </div>
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(245,158,11,0.07)", border: "1px solid rgba(245,158,11,0.15)" }}>
+          <DollarSign className="w-4 h-4 text-amber-400 flex-shrink-0" />
+          <div>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">Network earned today</p>
+            <p className="text-base font-bold text-white">${todayEarnings.toLocaleString()} <span className="text-xs font-normal text-gray-500">overrides</span></p>
+          </div>
+        </div>
+        <div className="rounded-xl px-4 py-3 flex items-center gap-3" style={{ background: "rgba(129,140,248,0.07)", border: "1px solid rgba(129,140,248,0.15)" }}>
+          <Home className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+          <div>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">Homes scanned in area</p>
+            <p className="text-base font-bold text-white">3 <span className="text-xs font-normal text-gray-500">today</span></p>
+          </div>
+        </div>
+      </div>
+
+      {/* Live stream */}
+      <div className="space-y-2">
+        {items.map((item, i) => {
+          const cfg = LIVE_ICON_CONFIG[item.icon];
+          const minsAgo = Math.floor((Date.now() - item.timestamp) / 60000);
+          const label = minsAgo < 1 ? "just now" : minsAgo < 60 ? `${minsAgo}m ago` : `${Math.floor(minsAgo / 60)}h ago`;
+          return (
+            <div
+              key={item.id}
+              className={`flex items-start gap-3 p-3 rounded-xl transition-all ${i === 0 ? "ring-1" : ""}`}
+              style={{
+                background: i === 0 ? `rgba(34,197,94,0.04)` : "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                ringColor: i === 0 ? "rgba(34,197,94,0.2)" : undefined,
+              }}
+            >
+              <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${cfg.bg} ${cfg.text}`}>
+                {cfg.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-medium text-gray-200 leading-snug">{item.text}</p>
+                {item.subtext && <p className="text-[10px] text-gray-500 mt-0.5">{item.subtext}</p>}
+              </div>
+              <span className="text-[10px] text-gray-600 flex-shrink-0 mt-0.5">{label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 function NetworkGlanceBar({
   networkSize,
@@ -182,15 +303,29 @@ export default function NetworkFeed() {
     <PartnerLayout>
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center">
-            <Activity className="w-5 h-5 text-[#0A1628]" />
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center">
+              <Activity className="w-5 h-5 text-[#0A1628]" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Network Activity</h1>
+              <p className="text-sm text-gray-500">Your real-time ProLnk activity -- leads sent, accepted, jobs closed, commissions earned</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Network Activity</h1>
-            <p className="text-sm text-gray-500">Your real-time ProLnk activity -- leads sent, accepted, jobs closed, commissions earned</p>
-          </div>
+          <LiveBadge />
         </div>
+
+        {/* Live network activity stream */}
+        {!isLoading && (
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <Radio className="w-3 h-3" />
+              Live Network Feed
+            </p>
+            <LiveActivityFeed networkSize={glance.networkSize} monthCommissions={glance.monthCommissions} />
+          </div>
+        )}
 
         {/* At a Glance summary */}
         {!isLoading && (

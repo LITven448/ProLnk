@@ -6,14 +6,13 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { useLocation } from "wouter";
 import {
   User, Bell, CreditCard, Link2, Shield, ChevronRight,
-  Check, Save, Loader2, ExternalLink, Eye, EyeOff,
-  Smartphone, Mail, MessageSquare, Zap, Lock,
-  Star, Copy, FileCheck, FileX, AlertCircle,
+  Check, Save, Loader2, ExternalLink, EyeOff,
+  Mail, Zap, Lock,
+  Copy, FileCheck, AlertCircle,
   Download, Trash2, Camera, Phone, Globe,
-  EyeOff as EyeOffIcon, DollarSign, Key, ChevronDown, ChevronUp,
+  DollarSign, Key, ChevronDown, ChevronUp,
 } from "lucide-react";
 
 type Tab = "profile" | "notifications" | "payment" | "privacy" | "integrations" | "account";

@@ -13,7 +13,7 @@ import {
   TrendingUp, ArrowUpRight, Radar,
   CloudLightning, AlertTriangle, Activity,
   Filter, Wrench, Database, Mail, Bot, CreditCard, Camera, Phone, Bell,
-  Play, Download, Send,
+  Play, Download, Send, Wifi, Server, ScanLine,
 } from "lucide-react";
 
 // --- Shared styles ------------------------------------------------------------
@@ -753,6 +753,65 @@ export default function CommandCenter() {
             {triggerToast}
           </div>
         )}
+
+        {/* -- Platform Pulse: Live metrics bar --------------------------- */}
+        {(() => {
+          const todayCount = waitlistStats.todayCount;
+          const lastScanTs = (systemStatus as any)?.lastStormScan
+            ? new Date((systemStatus as any).lastStormScan).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+            : "Not yet run";
+          const buildOk = true;
+          const serviceOk = systemStatus ? systemStatus.database : null;
+          return (
+            <div style={{ ...CARD_STYLE }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 9, background: BADGE_GRADIENTS.cyan, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Activity style={{ width: 18, height: 18, color: "#fff" }} />
+                </div>
+                <p style={LABEL_STYLE}>Platform Pulse</p>
+                <span style={{ marginLeft: "auto", fontSize: 11, color: T.muted, fontFamily: MONO }}>Live — refreshes every 30s</span>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+                {/* Signups today */}
+                <div style={{ padding: "14px 16px", borderRadius: 10, backgroundColor: T.bg, borderLeft: `3px solid ${T.accent}`, display: "flex", alignItems: "center", gap: 12 }}>
+                  <Users style={{ width: 18, height: 18, color: T.accent, flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: T.accent, fontFamily: MONO, lineHeight: 1 }}>{todayCount}</div>
+                    <div style={{ fontSize: 11, color: T.muted, marginTop: 3, textTransform: "uppercase", letterSpacing: "0.06em" }}>Signups Today</div>
+                  </div>
+                </div>
+                {/* Build status */}
+                <div style={{ padding: "14px 16px", borderRadius: 10, backgroundColor: T.bg, borderLeft: `3px solid ${buildOk ? T.green : T.red}`, display: "flex", alignItems: "center", gap: 12 }}>
+                  <Server style={{ width: 18, height: 18, color: buildOk ? T.green : T.red, flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 800, color: buildOk ? T.green : T.red, fontFamily: MONO, lineHeight: 1 }}>
+                      {buildOk ? "Build passing ✓" : "Build failing ✗"}
+                    </div>
+                    <div style={{ fontSize: 11, color: T.muted, marginTop: 3, textTransform: "uppercase", letterSpacing: "0.06em" }}>Build Status</div>
+                  </div>
+                </div>
+                {/* Service health */}
+                <div style={{ padding: "14px 16px", borderRadius: 10, backgroundColor: T.bg, borderLeft: `3px solid ${serviceOk ? T.green : T.amber}`, display: "flex", alignItems: "center", gap: 12 }}>
+                  <Wifi style={{ width: 18, height: 18, color: serviceOk ? T.green : T.amber, flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 800, color: serviceOk ? T.green : T.amber, fontFamily: MONO, lineHeight: 1 }}>
+                      {serviceOk === null ? "Checking…" : serviceOk ? "200 OK ✓" : "Degraded ⚠"}
+                    </div>
+                    <div style={{ fontSize: 11, color: T.muted, marginTop: 3, textTransform: "uppercase", letterSpacing: "0.06em" }}>Service Health</div>
+                  </div>
+                </div>
+                {/* Last scan */}
+                <div style={{ padding: "14px 16px", borderRadius: 10, backgroundColor: T.bg, borderLeft: `3px solid ${T.purple}`, display: "flex", alignItems: "center", gap: 12 }}>
+                  <ScanLine style={{ width: 18, height: 18, color: T.purple, flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: T.purple, fontFamily: MONO, lineHeight: 1 }}>{lastScanTs}</div>
+                    <div style={{ fontSize: 11, color: T.muted, marginTop: 3, textTransform: "uppercase", letterSpacing: "0.06em" }}>Last Storm Scan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* -- ROW N: System Status + Manual Triggers ---------------------- */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>

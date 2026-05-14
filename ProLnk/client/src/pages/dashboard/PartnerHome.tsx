@@ -8,8 +8,9 @@ import {
   Share2, ChevronRight, Loader2, Trophy, Zap, Star,
   ArrowUpRight, Crown, BarChart3, Gift, X, Rocket,
   Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square,
-  Bell, Info, Lightbulb, CheckCheck, ArrowRight,
+  Bell, Info, Lightbulb, CheckCheck, ArrowRight, Map, BookOpen,
 } from "lucide-react";
+import OnboardingTour from "@/components/OnboardingTour";
 
 const ONBOARDING_STORAGE_KEY = "prolnk_onboarding_v2";
 const TOTAL_SETUP_STEPS = 7;
@@ -566,6 +567,154 @@ function GettingStartedChecklist() {
   );
 }
 
+// ─── Feature Spotlight ────────────────────────────────────────────────────────
+
+type SpotlightTip = {
+  title: string;
+  body: string;
+  icon: React.ElementType;
+  color: string;
+  bg: string;
+  href: string;
+  cta: string;
+};
+
+const SPOTLIGHT_TIPS: SpotlightTip[] = [
+  {
+    title: "Did you know? Referrals compound 4 levels deep",
+    body: "When your L1 referral recruits someone, you earn 4% on that person's jobs — and it cascades further. 10 direct referrals can easily become 120+ pros in your network.",
+    icon: Network,
+    color: "#3b82f6",
+    bg: "rgba(59,130,246,0.1)",
+    href: "/dashboard/referral",
+    cta: "Grow your network",
+  },
+  {
+    title: "Did you know? Job logs boost your match score",
+    body: "Every job you log improves your algorithm ranking for lead matching. Pros with 20+ logged jobs receive 3x more lead opportunities at launch.",
+    icon: Briefcase,
+    color: "#f59e0b",
+    bg: "rgba(245,158,11,0.1)",
+    href: "/job-log",
+    cta: "Log a job now",
+  },
+  {
+    title: "Did you know? Your $149/mo is locked in forever",
+    body: "Standard post-founding pricing will be $299/mo. Your founding subscription rate is protected for life — no price increases, ever.",
+    icon: DollarSign,
+    color: "#22c55e",
+    bg: "rgba(34,197,94,0.1)",
+    href: "/founding-partner",
+    cta: "See founding benefits",
+  },
+  {
+    title: "Did you know? Photo uploads add credibility points",
+    body: "Partners who upload before/after job photos rank higher in the homeowner-facing directory and receive preferential lead routing.",
+    icon: Camera,
+    color: "#8b5cf6",
+    bg: "rgba(139,92,246,0.1)",
+    href: "/photo-upload",
+    cta: "Upload photos",
+  },
+  {
+    title: "Did you know? The Exchange lets pros trade work",
+    body: "The ProLnk Exchange is a peer-to-peer marketplace where pros can post jobs they need help with or pick up extra work in their trade area.",
+    icon: Map,
+    color: "#F5E642",
+    bg: "rgba(245,230,66,0.1)",
+    href: "/exchange/home",
+    cta: "Explore the Exchange",
+  },
+  {
+    title: "Did you know? Training Academy boosts your score",
+    body: "Complete courses in the Training Academy to earn certifications that increase your trust score with homeowners and improve algorithm ranking.",
+    icon: BookOpen,
+    color: "#3b82f6",
+    bg: "rgba(59,130,246,0.1)",
+    href: "/dashboard/academy",
+    cta: "Start learning",
+  },
+];
+
+function getSpotlightIndex(): number {
+  try {
+    const stored = localStorage.getItem("prolnk_spotlight_idx");
+    const base = stored ? parseInt(stored, 10) : 0;
+    const today = Math.floor(Date.now() / 86400000);
+    const idx = (base + today) % SPOTLIGHT_TIPS.length;
+    return idx;
+  } catch {
+    return 0;
+  }
+}
+
+function FeatureSpotlight() {
+  const [idx, setIdx] = useState<number>(() => getSpotlightIndex());
+  const tip = SPOTLIGHT_TIPS[idx];
+  const { icon: Icon, title, body, color, bg, href, cta } = tip;
+
+  const rotate = () => {
+    setIdx((prev) => {
+      const next = (prev + 1) % SPOTLIGHT_TIPS.length;
+      try { localStorage.setItem("prolnk_spotlight_idx", String(next)); } catch {}
+      return next;
+    });
+  };
+
+  return (
+    <div
+      className="rounded-2xl p-6"
+      style={{ background: bg, border: `1px solid ${color}33` }}
+    >
+      <div className="flex items-start gap-4">
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+          style={{ background: "rgba(255,255,255,0.08)" }}
+        >
+          <Icon size={20} style={{ color }} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color }}>
+              Feature Spotlight
+            </p>
+            <button
+              onClick={rotate}
+              className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-1"
+            >
+              Next tip <ArrowRight size={10} />
+            </button>
+          </div>
+          <p className="text-sm font-bold text-white mb-1.5">{title}</p>
+          <p className="text-xs text-gray-400 leading-relaxed mb-4">{body}</p>
+          <Link href={href}>
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all hover:opacity-80"
+              style={{ color }}
+            >
+              {cta} <ChevronRight size={12} />
+            </span>
+          </Link>
+        </div>
+      </div>
+      <div className="flex items-center gap-1.5 mt-5 justify-center">
+        {SPOTLIGHT_TIPS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            className="rounded-full transition-all"
+            style={{
+              width: i === idx ? 16 : 6,
+              height: 6,
+              background: i === idx ? color : "rgba(255,255,255,0.15)",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Notification type helpers ───────────────────────────────────────────────
 
 type NotifRecord = {
@@ -841,6 +990,7 @@ export default function PartnerHome() {
 
   return (
     <div className="min-h-screen" style={{ background: "#0A1628" }}>
+      <OnboardingTour />
       <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
 
         {/* ── Onboarding Banner ──────────────────────────────────────────── */}
@@ -1206,6 +1356,9 @@ export default function PartnerHome() {
             )}
           </div>
         </div>
+
+        {/* ── Feature Spotlight ───────────────────────────────────────────── */}
+        <FeatureSpotlight />
 
         {/* ── Getting Started Checklist ───────────────────────────────────── */}
         <GettingStartedChecklist />

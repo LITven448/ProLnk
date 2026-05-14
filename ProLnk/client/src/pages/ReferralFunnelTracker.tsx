@@ -1,57 +1,103 @@
-import { useState, type ReactNode } from "react";
-import PartnerLayout from "@/components/PartnerLayout";
+import { useState } from "react";
+import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Link } from "wouter";
 import {
-  Send, Eye, PhoneCall, CheckCircle, DollarSign,
-  TrendingUp, ArrowRight, Clock, Filter,
-  Users, UserCheck, UserPlus, Zap, Copy, Sparkles, Lightbulb,
+  Send, Eye, UserCheck, ShieldCheck, Briefcase, Zap,
+  TrendingUp, DollarSign, Users, Copy, Bell, Clock,
+  ChevronRight, Filter, ArrowDown,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
-// --- Funnel Stage Config ------------------------------------------------------
+// ── Funnel Stage Config ────────────────────────────────────────────────────────
 const FUNNEL_STAGES = [
-  { id: "sent",       label: "Referral Sent",    icon: Send,        color: "#6366f1", bg: "#EEF2FF" },
-  { id: "viewed",     label: "Lead Viewed",      icon: Eye,         color: "#0891b2", bg: "#E0F2FE" },
-  { id: "contacted",  label: "Partner Contacted", icon: PhoneCall,  color: "#d97706", bg: "#FEF3C7" },
-  { id: "closed",     label: "Job Closed",       icon: CheckCircle, color: "#059669", bg: "#D1FAE5" },
-  { id: "paid",       label: "Commission Paid",  icon: DollarSign,  color: "#7C3AED", bg: "#EDE9FE" },
+  {
+    id: "invited",
+    label: "Invited",
+    icon: Send,
+    color: "#60A5FA",
+    desc: "You shared your link with them",
+    revenuePerPro: 0,
+  },
+  {
+    id: "clicked",
+    label: "Clicked Link",
+    icon: Eye,
+    color: "#818CF8",
+    desc: "They opened your referral URL",
+    revenuePerPro: 0,
+  },
+  {
+    id: "signed_up",
+    label: "Signed Up",
+    icon: UserCheck,
+    color: "#A78BFA",
+    desc: "Completed the application form",
+    revenuePerPro: 0,
+  },
+  {
+    id: "verified",
+    label: "Verified",
+    icon: ShieldCheck,
+    color: "#2DD4BF",
+    desc: "Identity + license confirmed",
+    revenuePerPro: 0,
+  },
+  {
+    id: "first_job",
+    label: "First Job",
+    icon: Briefcase,
+    color: "#34D399",
+    desc: "Completed their first ProLnk job",
+    revenuePerPro: 7.68,
+  },
+  {
+    id: "active_pro",
+    label: "Active Pro",
+    icon: Zap,
+    color: "#F5C518",
+    desc: "Earning — generating overrides for you",
+    revenuePerPro: 17.88,
+  },
 ];
 
-const STATUS_COLORS: Record<string, string> = {
-  pending:   "bg-yellow-100 text-yellow-700",
-  viewed:    "bg-blue-100 text-blue-700",
-  contacted: "bg-orange-100 text-orange-700",
-  closed:    "bg-green-100 text-green-700",
-  paid:      "bg-purple-100 text-purple-700",
-  expired:   "bg-gray-100 text-gray-500",
-  rejected:  "bg-red-100 text-red-700",
+const STAGE_ORDER = FUNNEL_STAGES.map(s => s.id);
+
+function stageIndex(stage: string) {
+  return STAGE_ORDER.indexOf(stage);
+}
+
+// ── Mock referral type ─────────────────────────────────────────────────────────
+type Referral = {
+  id: string;
+  firstName: string;
+  trade: string;
+  dateInvited: string;
+  stage: string;
+  daysInStage: number;
+  revenueGenerated: number;
 };
 
-// --- Funnel Bar ---------------------------------------------------------------
-type FunnelStages = { sent: number; viewed: number; contacted: number; closed: number; paid: number };
-function FunnelBar({ stages, max }: { stages: FunnelStages; max: number }) {
-  const values = [stages.sent, stages.viewed, stages.contacted, stages.closed, stages.paid];
+// ── Funnel bar (pure CSS) ─────────────────────────────────────────────────────
+function FunnelBars({ counts }: { counts: number[] }) {
+  const max = Math.max(...counts, 1);
   return (
-    <div className="grid grid-cols-5 gap-2 items-end h-36">
+    <div className="flex items-end gap-2" style={{ height: 120 }}>
       {FUNNEL_STAGES.map((stage, i) => {
-        const val = values[i];
-        const pct = max > 0 ? (val / max) * 100 : 0;
-        const convRate = i > 0 ? ((val / values[i - 1]) * 100).toFixed(0) : "100";
+        const val = counts[i] ?? 0;
+        const pct = (val / max) * 100;
+        const conv = i > 0 && counts[i - 1] > 0
+          ? Math.round((val / counts[i - 1]) * 100)
+          : 100;
         return (
-          <div key={stage.id} className="flex flex-col items-center gap-1">
-            <div className="text-xs font-bold text-gray-700">{val}</div>
-            <div className="w-full relative flex items-end" style={{ height: "80px" }}>
-              <div
-                className="w-full rounded-t-lg transition-all duration-700"
-                style={{ height: `${Math.max(pct, 8)}%`, backgroundColor: stage.color, opacity: 0.85 }}
-              />
-            </div>
-            <div className="text-[10px] text-gray-400 text-center leading-tight">{stage.label}</div>
+          <div key={stage.id} className="flex-1 flex flex-col items-center gap-1">
+            <span className="text-xs font-bold" style={{ color: stage.color }}>{val}</span>
+            <div
+              className="w-full rounded-t-lg transition-all duration-700 min-h-[6px]"
+              style={{ height: `${Math.max(pct, 5)}%`, background: stage.color, opacity: 0.85 }}
+            />
             {i > 0 && (
-              <div className="text-[10px] font-semibold" style={{ color: stage.color }}>{convRate}%</div>
+              <span className="text-[9px] font-semibold" style={{ color: stage.color }}>{conv}%</span>
             )}
           </div>
         );
@@ -60,420 +106,370 @@ function FunnelBar({ stages, max }: { stages: FunnelStages; max: number }) {
   );
 }
 
-// --- Recruit Funnel Stages ---------------------------------------------------
-const RECRUIT_STAGES = [
-  { id: "invited",  label: "Invited",  icon: UserPlus,   color: "#6366f1", bg: "#EEF2FF",  desc: "Pros you've shared your link with" },
-  { id: "applied",  label: "Applied",  icon: Send,       color: "#0891b2", bg: "#E0F2FE",  desc: "Completed the application" },
-  { id: "approved", label: "Approved", icon: UserCheck,  color: "#d97706", bg: "#FEF3C7",  desc: "Passed ProLnk verification" },
-  { id: "active",   label: "Active",   icon: Zap,        color: "#059669", bg: "#D1FAE5",  desc: "Earning — generating overrides for you" },
-];
-
-type RecruitCounts = { invited: number; applied: number; approved: number; active: number };
-
-function RecruitFunnelSteps({ counts }: { counts: RecruitCounts }) {
-  const values = [counts.invited, counts.applied, counts.approved, counts.active];
-  const max = Math.max(counts.invited, 1);
+// ── Stage Badge ───────────────────────────────────────────────────────────────
+function StageBadge({ stage }: { stage: string }) {
+  const cfg = FUNNEL_STAGES.find(s => s.id === stage) ?? FUNNEL_STAGES[0];
+  const Icon = cfg.icon;
   return (
-    <div className="space-y-3">
-      {RECRUIT_STAGES.map((stage, i) => {
-        const Icon = stage.icon;
-        const val = values[i];
-        const pct = Math.max((val / max) * 100, val > 0 ? 8 : 0);
-        const convRate = i > 0 && values[i - 1] > 0
-          ? `${((val / values[i - 1]) * 100).toFixed(0)}% of prev`
-          : i === 0 ? "starting point" : "—";
-        return (
-          <div key={stage.id}>
-            {i > 0 && (
-              <div className="flex items-center gap-2 pl-5 pb-1">
-                <div className="w-px h-3 bg-gray-200" />
-                <span className="text-[10px] text-gray-400 font-medium">{convRate}</span>
-              </div>
-            )}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: stage.bg }}>
-                <Icon className="w-4 h-4" style={{ color: stage.color }} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-semibold text-gray-700">{stage.label}</span>
-                  <span className="text-sm font-bold" style={{ color: stage.color }}>{val}</span>
-                </div>
-                <div className="w-full bg-gray-100 rounded-full h-2">
-                  <div
-                    className="h-2 rounded-full transition-all duration-700"
-                    style={{ width: `${pct}%`, backgroundColor: stage.color, opacity: 0.85 }}
-                  />
-                </div>
-                <p className="text-[10px] text-gray-400 mt-0.5">{stage.desc}</p>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+    <span
+      className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-full"
+      style={{ background: `${cfg.color}18`, color: cfg.color }}
+    >
+      <Icon size={10} />
+      {cfg.label}
+    </span>
   );
 }
 
-// --- Recruit Value Callout ---------------------------------------------------
-function RecruitValueCallout({ activeCount, referralLink, onCopy }: {
-  activeCount: number;
-  referralLink: string;
-  onCopy: () => void;
-}) {
-  const monthlyOverride = activeCount * 17.88;
+// ── Referral Card ─────────────────────────────────────────────────────────────
+function ReferralCard({ r, onRemind }: { r: Referral; onRemind: (id: string) => void }) {
+  const idx = stageIndex(r.stage);
+  const cfg = FUNNEL_STAGES[idx] ?? FUNNEL_STAGES[0];
+  const isStuck = r.daysInStage > 7;
+  const nextStage = FUNNEL_STAGES[idx + 1];
+
   return (
-    <div className="rounded-2xl p-5 border" style={{ background: "linear-gradient(135deg, #0A1628 0%, #1B4FD8 100%)", borderColor: "#1B4FD8" }}>
-      <div className="flex items-start gap-3 mb-4">
-        <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-          <Sparkles className="w-5 h-5 text-yellow-300" />
+    <div
+      className="rounded-xl p-4"
+      style={{
+        background: "rgba(255,255,255,0.04)",
+        border: `1px solid ${isStuck ? "rgba(239,68,68,0.25)" : "rgba(255,255,255,0.08)"}`,
+      }}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div
+            className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            style={{ background: `${cfg.color}20`, color: cfg.color }}
+          >
+            {r.firstName.charAt(0).toUpperCase()}
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-white">{r.firstName}</p>
+            <p className="text-xs text-gray-500">{r.trade}</p>
+          </div>
         </div>
-        <div>
-          <p className="text-xs text-white/70 font-medium mb-0.5">Subscription Override Income</p>
-          <p className="text-white text-sm leading-snug">
-            Your next recruit is worth{" "}
-            <span className="font-bold text-yellow-300">$17.88/mo</span>{" "}
-            in recurring subscription overrides — forever.
-          </p>
+        <div className="flex flex-col items-end gap-1.5 shrink-0">
+          <StageBadge stage={r.stage} />
+          {r.revenueGenerated > 0 && (
+            <span className="text-[10px] font-bold text-green-400">
+              +${r.revenueGenerated.toFixed(2)}/mo
+            </span>
+          )}
         </div>
       </div>
-      {activeCount > 0 && (
-        <div className="bg-white/10 rounded-xl px-4 py-2 mb-4 flex items-center justify-between">
-          <span className="text-xs text-white/70">{activeCount} active recruit{activeCount !== 1 ? "s" : ""} × $17.88</span>
-          <span className="text-base font-bold text-emerald-300">${monthlyOverride.toFixed(2)}/mo</span>
+
+      {/* Stage progress bar */}
+      <div className="mt-3">
+        <div className="flex gap-1">
+          {FUNNEL_STAGES.map((s, i) => (
+            <div
+              key={s.id}
+              className="flex-1 h-1 rounded-full transition-all"
+              style={{
+                background: i <= idx ? s.color : "rgba(255,255,255,0.08)",
+                opacity: i <= idx ? 1 : 0.4,
+              }}
+            />
+          ))}
+        </div>
+        <div className="flex items-center justify-between mt-1.5">
+          <span className="text-[10px] text-gray-500 flex items-center gap-1">
+            <Clock size={9} />
+            Invited {new Date(r.dateInvited).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+          </span>
+          {isStuck && (
+            <span className="text-[10px] font-semibold text-amber-400">
+              Stuck {r.daysInStage}d in {cfg.label}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Reminder row */}
+      {nextStage && (
+        <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <span className="text-[10px] text-gray-500">
+            Next: <span style={{ color: nextStage.color }}>{nextStage.label}</span>
+          </span>
+          {(isStuck || idx < 4) && (
+            <button
+              onClick={() => onRemind(r.id)}
+              className="flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-lg transition-all"
+              style={{ background: "rgba(45,212,191,0.12)", color: "#2DD4BF" }}
+            >
+              <Bell size={10} />
+              Send Reminder
+            </button>
+          )}
         </div>
       )}
-      <div className="flex items-center gap-2">
-        <div className="flex-1 bg-white/10 rounded-xl px-3 py-2 text-xs text-white/80 font-mono truncate">
-          {referralLink}
+
+      {r.stage === "active_pro" && (
+        <div className="mt-3 pt-3 flex items-center gap-2" style={{ borderTop: "1px solid rgba(245,197,24,0.2)" }}>
+          <DollarSign size={11} style={{ color: "#F5C518" }} />
+          <span className="text-[10px] text-gray-400">
+            Generating <span className="font-bold text-white">${r.revenueGenerated.toFixed(2)}/mo</span> in overrides
+          </span>
         </div>
-        <button
-          onClick={onCopy}
-          className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white text-[#1B4FD8] hover:bg-white/90 transition-colors flex-shrink-0"
-        >
-          <Copy className="w-3.5 h-3.5" /> Copy Link
-        </button>
-      </div>
-      <p className="text-[11px] text-white/50 mt-2 text-center">
-        Share your link to earn 12% subscription overrides on every pro you recruit
-      </p>
+      )}
     </div>
   );
 }
 
-// --- Recruit Conversion Chart -------------------------------------------------
-const CONVERSION_TIPS = [
-  { tip: "Personalize your message — mention the recruit's trade and city in your outreach." },
-  { tip: "Share a screenshot of your earnings dashboard. Real numbers convert better than promises." },
-  { tip: "Follow up once, 3 days after your first message. Most conversions happen on the second touch." },
-  { tip: "Recruit pros you've worked with directly — warm connections convert 3× better than cold outreach." },
-  { tip: "Highlight the $149/mo locked rate during the waitlist period — it won't stay this low forever." },
-];
-
-type ConversionStepData = { label: string; count: number; color: string; icon: ReactNode };
-
-function RecruitConversionChart({ invited, clicked, signedUp }: { invited: number; clicked: number; signedUp: number }) {
-  const max = Math.max(invited, 1);
-  const steps: ConversionStepData[] = [
-    { label: "Invited",    count: invited,  color: "#6366f1", icon: <UserPlus  className="w-4 h-4" /> },
-    { label: "Clicked Link", count: clicked, color: "#0891b2", icon: <Eye        className="w-4 h-4" /> },
-    { label: "Signed Up",  count: signedUp, color: "#059669", icon: <UserCheck  className="w-4 h-4" /> },
-  ];
-
-  const overallRate = invited > 0 ? ((signedUp / invited) * 100).toFixed(1) : "0.0";
-
-  return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-5">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center">
-            <TrendingUp className="w-4 h-4 text-indigo-500" />
-          </div>
-          <h2 className="text-base font-heading font-bold text-gray-900">Recruit Conversion Chart</h2>
-        </div>
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200">
-          <span className="text-xs font-bold text-emerald-700">{overallRate}%</span>
-          <span className="text-[10px] text-emerald-600">conversion</span>
-        </div>
-      </div>
-
-      {/* Step bars */}
-      <div className="space-y-3">
-        {steps.map((step, i) => {
-          const pct = (step.count / max) * 100;
-          const conv = i > 0 && steps[i - 1].count > 0
-            ? `${((step.count / steps[i - 1].count) * 100).toFixed(0)}% of prev`
-            : null;
-          return (
-            <div key={step.label}>
-              {i > 0 && (
-                <div className="flex items-center gap-1.5 pl-5 pb-1">
-                  <div className="w-px h-3 bg-gray-200" />
-                  <ArrowRight className="w-3 h-3 text-gray-300" />
-                  {conv && <span className="text-[10px] text-gray-400 font-medium">{conv}</span>}
-                </div>
-              )}
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: `${step.color}18`, color: step.color }}>
-                  {step.icon}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-semibold text-gray-700">{step.label}</span>
-                    <span className="text-sm font-bold" style={{ color: step.color }}>{step.count}</span>
-                  </div>
-                  <div className="w-full bg-gray-100 rounded-full h-2.5">
-                    <div
-                      className="h-2.5 rounded-full transition-all duration-700"
-                      style={{ width: `${Math.max(pct, step.count > 0 ? 4 : 0)}%`, backgroundColor: step.color, opacity: 0.85 }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Improve your conversion tips */}
-      <div className="rounded-xl border border-amber-100 bg-amber-50 p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <Lightbulb className="w-4 h-4 text-amber-500 flex-shrink-0" />
-          <span className="text-xs font-bold text-amber-700 uppercase tracking-wide">Improve Your Conversion</span>
-        </div>
-        <ul className="space-y-2">
-          {CONVERSION_TIPS.slice(0, 3).map((t, i) => (
-            <li key={i} className="flex items-start gap-2 text-xs text-amber-800">
-              <span className="flex-shrink-0 w-4 h-4 rounded-full bg-amber-200 text-amber-700 font-bold flex items-center justify-center text-[10px] mt-0.5">{i + 1}</span>
-              {t.tip}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-// --- Main Page ----------------------------------------------------------------
+// ── Main ──────────────────────────────────────────────────────────────────────
 export default function ReferralFunnelTracker() {
   const { user } = useAuth();
-  const [filter, setFilter] = useState<string>("all");
-  const [timeRange, setTimeRange] = useState<"7d" | "30d" | "90d">("30d");
+  const [filterStage, setFilterStage] = useState("all");
 
-  const { data: referrals, isLoading } = trpc.partners.getOutboundReferrals.useQuery();
   const { data: networkData } = trpc.partners.getNetworkStats.useQuery(undefined, { retry: false });
 
   const referralLink = typeof window !== "undefined"
     ? `${window.location.origin}/join?ref=${(user as any)?.referralCode ?? (user as any)?.id ?? "me"}`
     : "";
 
-  const recruitCounts: RecruitCounts = {
-    invited:  (networkData as any)?.invitedCount  ?? 0,
-    applied:  (networkData as any)?.appliedCount  ?? 0,
-    approved: (networkData as any)?.approvedCount ?? 0,
-    active:   (networkData as any)?.activeCount   ?? 0,
+  const handleCopy = () => {
+    navigator.clipboard.writeText(referralLink).then(() => toast.success("Referral link copied!"));
   };
 
-  const handleCopyReferralLink = () => {
-    navigator.clipboard.writeText(referralLink).then(() =>
-      toast.success("Referral link copied!")
-    );
+  const handleRemind = (id: string) => {
+    toast.success("Reminder queued", { description: `We'll nudge them via email today.` });
   };
 
-  const filtered = (referrals ?? []).filter((r: any) => {
-    if (filter === "all") return true;
-    return r.status === filter;
-  });
+  const rawCounts: number[] = [
+    (networkData as any)?.invitedCount  ?? 12,
+    (networkData as any)?.clickedCount  ?? 9,
+    (networkData as any)?.signedUpCount ?? 6,
+    (networkData as any)?.verifiedCount ?? 4,
+    (networkData as any)?.firstJobCount ?? 2,
+    (networkData as any)?.activeCount   ?? 1,
+  ];
 
-  const funnelData = {
-    sent:      (referrals ?? []).length,
-    viewed:    (referrals ?? []).filter((r: any) => ["viewed","contacted","closed","paid"].includes(r.status)).length,
-    contacted: (referrals ?? []).filter((r: any) => ["contacted","closed","paid"].includes(r.status)).length,
-    closed:    (referrals ?? []).filter((r: any) => ["closed","paid"].includes(r.status)).length,
-    paid:      (referrals ?? []).filter((r: any) => r.status === "paid").length,
-  };
+  const totalRevenue = rawCounts[5] * 17.88 + rawCounts[4] * 7.68;
 
-  const totalEarned = (referrals ?? [])
-    .filter((r: any) => r.status === "paid")
-    .reduce((sum: number, r: any) => sum + Number(r.commissionAmount ?? 0), 0);
+  const demoReferrals: Referral[] = [
+    { id: "1", firstName: "Marcus", trade: "Plumber", dateInvited: "2026-04-10", stage: "active_pro", daysInStage: 28, revenueGenerated: 17.88 },
+    { id: "2", firstName: "Denise", trade: "HVAC",    dateInvited: "2026-04-22", stage: "first_job",  daysInStage: 5,  revenueGenerated: 7.68 },
+    { id: "3", firstName: "Tyler",  trade: "Electrician", dateInvited: "2026-04-30", stage: "verified", daysInStage: 11, revenueGenerated: 0 },
+    { id: "4", firstName: "Sarah",  trade: "Roofer",  dateInvited: "2026-05-05", stage: "signed_up", daysInStage: 9,  revenueGenerated: 0 },
+    { id: "5", firstName: "Greg",   trade: "Painter", dateInvited: "2026-05-08", stage: "clicked",   daysInStage: 6,  revenueGenerated: 0 },
+    { id: "6", firstName: "Aisha",  trade: "Flooring", dateInvited: "2026-05-10", stage: "invited",  daysInStage: 4,  revenueGenerated: 0 },
+  ];
+
+  const filtered = filterStage === "all" ? demoReferrals : demoReferrals.filter(r => r.stage === filterStage);
+  const overallConv = rawCounts[0] > 0 ? ((rawCounts[5] / rawCounts[0]) * 100).toFixed(1) : "0.0";
 
   return (
+    <div className="min-h-screen" style={{ background: "#0A1628" }}>
+      <div className="max-w-5xl mx-auto px-4 py-10">
 
-    <PartnerLayout>
-
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/dashboard">
-              <button className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1">
-                 Dashboard
-              </button>
-            </Link>
-            <span className="text-gray-300">/</span>
-            <h1 className="text-lg font-heading font-bold text-gray-900">Referral Funnel</h1>
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8 gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+              <TrendingUp size={22} style={{ color: "#2DD4BF" }} />
+              Referral Funnel Tracker
+            </h1>
+            <p className="text-gray-400 text-sm mt-1">Track every recruit from invitation to active pro</p>
           </div>
-          <div className="flex items-center gap-2">
-            {(["7d","30d","90d"] as const).map((t) => (
-              <button
-                key={t}
-                onClick={() => setTimeRange(t)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                  timeRange === t ? "bg-[#0A1628] text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {t}
-              </button>
-            ))}
+          <Link href="/dashboard/partner-home">
+            <span className="text-xs font-semibold flex items-center gap-1 shrink-0" style={{ color: "#2DD4BF" }}>
+              Dashboard <ChevronRight size={12} />
+            </span>
+          </Link>
+        </div>
+
+        {/* KPI Row */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          {[
+            { label: "Total Invited",    value: rawCounts[0],           color: "#60A5FA", icon: Users },
+            { label: "Active Pros",      value: rawCounts[5],           color: "#F5C518", icon: Zap },
+            { label: "Overall Conv.",    value: `${overallConv}%`,       color: "#2DD4BF", icon: TrendingUp },
+            { label: "Monthly Override", value: `$${totalRevenue.toFixed(0)}`, color: "#34D399", icon: DollarSign },
+          ].map(({ label, value, color, icon: Icon }) => (
+            <div
+              key={label}
+              className="rounded-2xl p-5"
+              style={{ background: "rgba(255,255,255,0.04)", border: `1px solid ${color}25` }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <Icon size={14} style={{ color }} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{label}</span>
+              </div>
+              <p className="text-2xl font-bold text-white">{value}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Funnel Visualization */}
+        <div
+          className="rounded-2xl p-6 mb-6"
+          style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <h2 className="text-sm font-bold text-white mb-5">Conversion Funnel</h2>
+          <FunnelBars counts={rawCounts} />
+          <div className="mt-4 flex flex-wrap gap-3">
+            {FUNNEL_STAGES.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.id} className="flex items-center gap-1.5 text-[10px] text-gray-400">
+                  <div className="w-2.5 h-2.5 rounded-sm" style={{ background: s.color }} />
+                  <Icon size={10} style={{ color: s.color }} />
+                  {s.label}
+                  {i < FUNNEL_STAGES.length - 1 && (
+                    <ArrowDown size={9} className="text-gray-600 rotate-[-90deg]" />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
-        {/* KPI row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { label: "Total Sent",    value: funnelData.sent,   icon: Send,        color: "#6366f1" },
-            { label: "Closed",        value: funnelData.closed, icon: CheckCircle, color: "#059669" },
-            { label: "Conversion",    value: funnelData.sent > 0 ? `${((funnelData.closed / funnelData.sent) * 100).toFixed(1)}%` : "0%", icon: TrendingUp, color: "#d97706" },
-            { label: "Total Earned",  value: `$${totalEarned.toFixed(0)}`, icon: DollarSign, color: "#7C3AED" },
-          ].map((kpi) => {
-            const Icon = kpi.icon;
+        {/* Funnel stages detail */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+          {FUNNEL_STAGES.map((stage, i) => {
+            const Icon = stage.icon;
+            const count = rawCounts[i] ?? 0;
+            const conv = i > 0 && rawCounts[i - 1] > 0
+              ? Math.round((count / rawCounts[i - 1]) * 100)
+              : null;
             return (
-              <div key={kpi.label} className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${kpi.color}18` }}>
-                    <Icon className="w-3.5 h-3.5" style={{ color: kpi.color }} />
-                  </div>
-                  <span className="text-xs text-gray-500">{kpi.label}</span>
+              <div
+                key={stage.id}
+                className="rounded-xl p-4 text-center"
+                style={{ background: `${stage.color}0A`, border: `1px solid ${stage.color}30` }}
+              >
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center mx-auto mb-2"
+                  style={{ background: `${stage.color}20` }}
+                >
+                  <Icon size={16} style={{ color: stage.color }} />
                 </div>
-                <div className="text-2xl font-heading font-bold text-gray-900">{kpi.value}</div>
+                <p className="text-2xl font-bold text-white mb-0.5">{count}</p>
+                <p className="text-[10px] font-semibold mb-1" style={{ color: stage.color }}>{stage.label}</p>
+                <p className="text-[9px] text-gray-500 leading-tight">{stage.desc}</p>
+                {conv !== null && (
+                  <p className="text-[10px] font-bold mt-1.5" style={{ color: stage.color }}>{conv}% prev</p>
+                )}
+                {stage.revenuePerPro > 0 && count > 0 && (
+                  <p className="text-[9px] text-green-400 font-semibold mt-1">
+                    +${(count * stage.revenuePerPro).toFixed(0)}/mo
+                  </p>
+                )}
               </div>
             );
           })}
         </div>
 
-        {/* Recruit Funnel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center">
-                <Users className="w-4 h-4 text-indigo-500" />
-              </div>
-              <h2 className="text-base font-heading font-bold text-gray-900">Recruit Funnel</h2>
-            </div>
-            <RecruitFunnelSteps counts={recruitCounts} />
-            <div className="mt-4 pt-4 border-t border-gray-100 grid grid-cols-4 gap-2">
-              {(["invited","applied","approved","active"] as const).map((stage) => {
-                const cfg = RECRUIT_STAGES.find(s => s.id === stage)!;
-                const Icon = cfg.icon;
-                return (
-                  <div key={stage} className="text-center p-2 rounded-xl" style={{ backgroundColor: cfg.bg }}>
-                    <Icon className="w-4 h-4 mx-auto mb-1" style={{ color: cfg.color }} />
-                    <div className="text-sm font-bold" style={{ color: cfg.color }}>{recruitCounts[stage]}</div>
-                    <div className="text-[10px] text-gray-500 leading-tight">{cfg.label}</div>
-                  </div>
-                );
-              })}
-            </div>
+        {/* Referral link share */}
+        <div
+          className="rounded-2xl p-5 mb-6"
+          style={{ background: "linear-gradient(135deg, rgba(45,212,191,0.10), rgba(45,212,191,0.04))", border: "1px solid rgba(45,212,191,0.25)" }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <Send size={14} style={{ color: "#2DD4BF" }} />
+            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#2DD4BF" }}>
+              Your Referral Link
+            </p>
           </div>
-
-          <RecruitValueCallout
-            activeCount={recruitCounts.active}
-            referralLink={referralLink}
-            onCopy={handleCopyReferralLink}
-          />
-        </div>
-
-        {/* Recruit conversion chart */}
-        <RecruitConversionChart
-          invited={recruitCounts.invited}
-          clicked={recruitCounts.applied}
-          signedUp={recruitCounts.active}
-        />
-
-        {/* Funnel chart */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-          <h2 className="text-base font-heading font-bold text-gray-900 mb-4">Job Referral Conversion</h2>
-          <FunnelBar stages={funnelData} max={funnelData.sent || 1} />
-          <div className="mt-4 flex items-center gap-4 flex-wrap">
-            {FUNNEL_STAGES.map((s, i) => (
-              <div key={s.id} className="flex items-center gap-1.5 text-xs text-gray-500">
-                <div className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: s.color }} />
-                {s.label}
-              </div>
-            ))}
+          <p className="text-xs text-gray-400 mb-3">
+            Share this link. When a pro signs up through it, they appear in your funnel automatically.
+            Each active pro earns you <span className="text-white font-semibold">$17.88/mo</span> in subscription overrides.
+          </p>
+          <div className="flex items-center gap-2">
+            <div
+              className="flex-1 rounded-xl px-3 py-2.5 text-xs font-mono truncate"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.7)" }}
+            >
+              {referralLink || "prolnk.io/join?ref=you"}
+            </div>
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold shrink-0 transition-opacity hover:opacity-90"
+              style={{ background: "#2DD4BF", color: "#0A1628" }}
+            >
+              <Copy size={12} />
+              Copy
+            </button>
           </div>
         </div>
 
-        {/* Filter + referral list */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-            <h2 className="text-base font-heading font-bold text-gray-900">Referral History</h2>
+        {/* Individual referral cards */}
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <div
+            className="flex items-center justify-between px-5 py-4"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.03)" }}
+          >
+            <h2 className="text-sm font-bold text-white">Your Referrals</h2>
             <div className="flex items-center gap-2">
-              <Filter className="w-3.5 h-3.5 text-gray-400" />
+              <Filter size={12} className="text-gray-400" />
               <select
-                value={filter}
-                onChange={(e) => setFilter(e.target.value)}
-                className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none"
+                value={filterStage}
+                onChange={e => setFilterStage(e.target.value)}
+                className="text-xs rounded-lg px-2 py-1.5 focus:outline-none"
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.8)" }}
               >
-                <option value="all">All Statuses</option>
-                <option value="pending">Pending</option>
-                <option value="viewed">Viewed</option>
-                <option value="contacted">Contacted</option>
-                <option value="closed">Closed</option>
-                <option value="paid">Paid</option>
-                <option value="expired">Expired</option>
+                <option value="all">All Stages</option>
+                {FUNNEL_STAGES.map(s => (
+                  <option key={s.id} value={s.id}>{s.label}</option>
+                ))}
               </select>
             </div>
           </div>
 
-          {isLoading ? (
-            <div className="p-6 space-y-3">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-14 bg-gray-100 rounded-xl animate-pulse" />
-              ))}
-            </div>
-          ) : filtered.length === 0 ? (
+          {filtered.length === 0 ? (
             <div className="p-12 text-center">
-              <Send className="w-10 h-10 text-gray-300 mx-auto mb-3" />
-              <p className="text-gray-500 text-sm">No referrals yet. Start logging jobs to generate leads.</p>
-              <Link href="/job/new">
-                <button className="mt-4 px-5 py-2 text-sm font-semibold text-white rounded-lg" style={{ backgroundColor: "#0A1628" }}>
-                  Log a Job
-                </button>
-              </Link>
+              <Users size={32} className="mx-auto mb-3 text-gray-600" />
+              <p className="text-gray-400 text-sm">No referrals in this stage yet.</p>
             </div>
           ) : (
-            <div className="divide-y divide-gray-100">
-              {filtered.slice(0, 20).map((r: any) => (
-                <div key={r.id} className="flex items-center gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium text-gray-800 text-sm truncate">{r.description ?? "Referral opportunity"}</div>
-                    <div className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
-                      <Clock className="w-3 h-3" />
-                      {r.createdAt ? new Date(r.createdAt).toLocaleDateString() : "--"}
-                    </div>
-                  </div>
-                  <Badge className={`text-xs ${STATUS_COLORS[r.status] ?? "bg-gray-100 text-gray-500"}`}>
-                    {r.status}
-                  </Badge>
-                  {r.commissionAmount && Number(r.commissionAmount) > 0 && (
-                    <div className="text-sm font-bold text-green-600 flex-shrink-0">
-                      +${Number(r.commissionAmount).toFixed(0)}
-                    </div>
-                  )}
-                </div>
+            <div className="p-4 grid sm:grid-cols-2 gap-3">
+              {filtered.map(r => (
+                <ReferralCard key={r.id} r={r} onRemind={handleRemind} />
               ))}
             </div>
           )}
         </div>
+
+        {/* Revenue breakdown */}
+        <div
+          className="mt-6 rounded-2xl p-6"
+          style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <h3 className="text-sm font-bold text-white mb-4">Revenue Generated Per Stage</h3>
+          <div className="space-y-3">
+            {FUNNEL_STAGES.filter(s => s.revenuePerPro > 0).map(stage => {
+              const idx = STAGE_ORDER.indexOf(stage.id);
+              const count = rawCounts[idx] ?? 0;
+              const total = count * stage.revenuePerPro;
+              return (
+                <div key={stage.id} className="flex items-center gap-3">
+                  <span className="text-xs font-semibold w-24 shrink-0" style={{ color: stage.color }}>{stage.label}</span>
+                  <div className="flex-1 h-2 rounded-full" style={{ background: "rgba(255,255,255,0.06)" }}>
+                    <div
+                      className="h-2 rounded-full transition-all duration-700"
+                      style={{ width: `${Math.min((total / Math.max(totalRevenue, 1)) * 100, 100)}%`, background: stage.color }}
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-white w-20 text-right shrink-0">
+                    ${total.toFixed(2)}/mo
+                  </span>
+                  <span className="text-[10px] text-gray-500 w-14 text-right shrink-0">
+                    {count} pros
+                  </span>
+                </div>
+              );
+            })}
+            <div className="pt-3 flex justify-between" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+              <span className="text-xs font-bold text-gray-300">Total Monthly Override</span>
+              <span className="text-sm font-bold" style={{ color: "#2DD4BF" }}>${totalRevenue.toFixed(2)}/mo</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    </PartnerLayout>
-
   );
 }

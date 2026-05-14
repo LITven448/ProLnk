@@ -29,7 +29,7 @@ interface Invoice {
   description: string;
   amount: number;
   status: "Paid" | "Pending";
-  icon: React.ElementType;
+  icon: (props: { className?: string; size?: number; color?: string; strokeWidth?: number }) => JSX.Element | null;
 }
 
 const invoices: Invoice[] = [

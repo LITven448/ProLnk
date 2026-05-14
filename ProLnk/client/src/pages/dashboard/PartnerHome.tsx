@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -7,7 +7,8 @@ import {
   Copy, Check, Award, Users, TrendingUp, DollarSign,
   Share2, ChevronRight, Loader2, Trophy, Zap, Star,
   ArrowUpRight, Crown, BarChart3, Gift, X, Rocket,
-  Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square
+  Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square,
+  Bell, Info, Lightbulb, CheckCheck, ArrowRight,
 } from "lucide-react";
 
 const ONBOARDING_STORAGE_KEY = "prolnk_onboarding_v2";
@@ -565,6 +566,214 @@ function GettingStartedChecklist() {
   );
 }
 
+// ─── Notification type helpers ───────────────────────────────────────────────
+
+type NotifRecord = {
+  id: number;
+  type: string;
+  title: string;
+  message: string;
+  createdAt: string | Date | null;
+  isRead: boolean;
+  actionUrl?: string | null;
+};
+
+const NOTIF_TYPE_META: Record<string, { icon: React.ReactNode; color: string; bg: string }> = {
+  new_lead:        { icon: <Zap size={14} />,      color: "#f59e0b", bg: "rgba(245,158,11,0.15)" },
+  lead_expired:    { icon: <Info size={14} />,      color: "#ef4444", bg: "rgba(239,68,68,0.15)" },
+  commission_paid: { icon: <DollarSign size={14} />, color: "#22c55e", bg: "rgba(34,197,94,0.15)" },
+  commission:      { icon: <DollarSign size={14} />, color: "#22c55e", bg: "rgba(34,197,94,0.15)" },
+  network:         { icon: <Network size={14} />,   color: "#3b82f6", bg: "rgba(59,130,246,0.15)" },
+  tips:            { icon: <Lightbulb size={14} />, color: "#f59e0b", bg: "rgba(245,158,11,0.15)" },
+  system:          { icon: <Info size={14} />,      color: "#9ca3af", bg: "rgba(156,163,175,0.15)" },
+};
+function getNotifMeta(type: string) { return NOTIF_TYPE_META[type] ?? NOTIF_TYPE_META.system; }
+
+function NotificationPopover() {
+  const [open, setOpen] = useState(false);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const utils = trpc.useUtils();
+
+  const { data: unreadData } = trpc.notifications.getUnreadCount.useQuery(undefined, {
+    refetchInterval: 60_000,
+  });
+  const { data: rawNotifs = [] } = trpc.notifications.getMyNotifications.useQuery(
+    { limit: 5 },
+    { enabled: open }
+  );
+  const notifications = rawNotifs as NotifRecord[];
+  const unreadCount = unreadData?.count ?? 0;
+
+  const markAllRead = trpc.notifications.markAllRead.useMutation({
+    onSuccess: () => {
+      utils.notifications.getUnreadCount.invalidate();
+      utils.notifications.getMyNotifications.invalidate();
+    },
+  });
+  const markRead = trpc.notifications.markRead.useMutation({
+    onSuccess: () => {
+      utils.notifications.getUnreadCount.invalidate();
+      utils.notifications.getMyNotifications.invalidate();
+    },
+  });
+
+  useEffect(() => {
+    function onOutside(e: MouseEvent) {
+      if (popoverRef.current && !popoverRef.current.contains(e.target as Node)) setOpen(false);
+    }
+    if (open) document.addEventListener("mousedown", onOutside);
+    return () => document.removeEventListener("mousedown", onOutside);
+  }, [open]);
+
+  return (
+    <div className="relative" ref={popoverRef}>
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="relative w-9 h-9 rounded-xl flex items-center justify-center transition-all"
+        style={{ background: open ? "rgba(245,230,66,0.15)" : "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
+        aria-label="Notifications"
+      >
+        <Bell size={17} style={{ color: open ? "#F5E642" : "#9ca3af" }} />
+        {unreadCount > 0 && (
+          <span
+            className="absolute -top-1 -right-1 min-w-[16px] h-4 px-0.5 text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none"
+            style={{ background: "#ef4444" }}
+          >
+            {unreadCount > 9 ? "9+" : unreadCount}
+          </span>
+        )}
+      </button>
+
+      {open && (
+        <div
+          className="absolute right-0 top-11 w-80 rounded-2xl shadow-2xl z-50 overflow-hidden"
+          style={{ background: "#0f1e35", border: "1px solid rgba(255,255,255,0.1)" }}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="flex items-center gap-2">
+              <Bell size={14} style={{ color: "#F5E642" }} />
+              <span className="text-sm font-semibold text-white">Notifications</span>
+              {unreadCount > 0 && (
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#ef4444", color: "#fff" }}>
+                  {unreadCount}
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-2">
+              {unreadCount > 0 && (
+                <button
+                  onClick={() => markAllRead.mutate()}
+                  className="text-xs text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
+                >
+                  <CheckCheck size={12} /> All read
+                </button>
+              )}
+              <button onClick={() => setOpen(false)} className="text-gray-500 hover:text-white transition-colors">
+                <X size={15} />
+              </button>
+            </div>
+          </div>
+
+          {/* Notifications */}
+          <div className="max-h-72 overflow-y-auto">
+            {notifications.length === 0 ? (
+              <div className="py-8 text-center">
+                <Bell size={28} className="mx-auto mb-2 opacity-20 text-white" />
+                <p className="text-sm text-gray-500">No notifications yet</p>
+              </div>
+            ) : (
+              notifications.map((n) => {
+                const meta = getNotifMeta(n.type);
+                const isUnread = !n.isRead;
+                return (
+                  <div
+                    key={n.id}
+                    className="group relative flex gap-3 px-4 py-3 transition-colors hover:bg-white/5"
+                    style={{
+                      borderBottom: "1px solid rgba(255,255,255,0.05)",
+                      background: isUnread ? "rgba(245,158,11,0.04)" : "transparent",
+                    }}
+                  >
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{ background: meta.bg, color: meta.color }}
+                    >
+                      {meta.icon}
+                    </div>
+                    <div className="flex-1 min-w-0 pr-7">
+                      <p className={`text-sm font-medium truncate ${isUnread ? "text-white" : "text-gray-400"}`}>
+                        {n.title}
+                        {isUnread && (
+                          <span className="ml-1.5 inline-block w-1.5 h-1.5 rounded-full bg-amber-400 align-middle" />
+                        )}
+                      </p>
+                      <p className="text-xs text-gray-500 line-clamp-2 mt-0.5 leading-relaxed">{n.message}</p>
+                      <div className="flex items-center justify-between mt-1.5">
+                        <span className="text-[10px] text-gray-600 flex items-center gap-0.5">
+                          <Clock size={10} /> {(() => {
+                            if (!n.createdAt) return "";
+                            const diff = Math.floor((Date.now() - new Date(n.createdAt).getTime()) / 1000);
+                            if (diff < 60) return "just now";
+                            if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+                            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+                            return `${Math.floor(diff / 86400)}d ago`;
+                          })()}
+                        </span>
+                        {n.actionUrl && (
+                          <Link href={n.actionUrl}>
+                            <span
+                              className="text-[10px] font-semibold flex items-center gap-0.5 hover:opacity-80"
+                              style={{ color: meta.color }}
+                              onClick={() => setOpen(false)}
+                            >
+                              View <ArrowRight size={10} />
+                            </span>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                    {isUnread && (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); markRead.mutate({ ids: [n.id] }); }}
+                        title="Mark as read"
+                        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-md hover:bg-white/10"
+                      >
+                        <Check size={12} style={{ color: "#f59e0b" }} />
+                      </button>
+                    )}
+                  </div>
+                );
+              })
+            )}
+          </div>
+
+          {/* Footer */}
+          <div
+            className="px-4 py-2.5 flex items-center justify-between"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+          >
+            <Link href="/dashboard/notifications">
+              <span
+                className="text-xs font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity"
+                style={{ color: "#F5E642" }}
+                onClick={() => setOpen(false)}
+              >
+                View all <ArrowRight size={11} />
+              </span>
+            </Link>
+            <Link href="/dashboard/inbox">
+              <span className="text-xs text-gray-500 hover:text-gray-300 transition-colors" onClick={() => setOpen(false)}>
+                Inbox
+              </span>
+            </Link>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function PartnerHome() {
@@ -664,6 +873,7 @@ export default function PartnerHome() {
                 Active
               </span>
             )}
+            <NotificationPopover />
           </div>
         </div>
 

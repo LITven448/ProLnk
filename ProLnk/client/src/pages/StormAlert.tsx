@@ -1,6 +1,6 @@
 import type React from "react";
 import { useLocation } from "wouter";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import {
   CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp,
   Thermometer, Wind, Droplets, Wrench, Waves, TreePine, CheckCircle2,

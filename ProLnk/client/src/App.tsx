@@ -251,7 +251,7 @@ const TrainingHub = lazy(() => import("./pages/TrainingHub"));
 const CommissionCalculator = lazy(() => import("./pages/CommissionCalculator"));
 const AnalyticsDeepDive = lazy(() => import("./pages/admin/AnalyticsDeepDive"));
 const HomeownerReferral = lazy(() => import("./pages/homeowner/HomeownerReferral"));
-const NeighborhoodReferral = lazy(() => import("./pages/NeighborhoodReferral"));
+const NeighborhoodReferral = lazy(() => import("./pages/homeowner/NeighborhoodReferral"));
 const HomeHealthVault = lazy(() => import("./pages/homeowner/HomeHealthVault"));
 const ScanHistory = lazy(() => import("./pages/homeowner/ScanHistory"));
 const AdminTaskList = lazy(() => import("./pages/admin/AdminTaskList"));

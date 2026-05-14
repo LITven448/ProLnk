@@ -1,816 +1,447 @@
-import { useState, useRef, useEffect, type ReactNode } from "react";
+import { useState } from "react";
 import { useLocation } from "wouter";
 import {
-  Check,
+  CheckCircle,
+  Circle,
   ChevronRight,
-  ChevronLeft,
+  User,
+  Camera,
   MapPin,
   Shield,
-  Wrench,
-  FileText,
+  CreditCard,
+  Bell,
   Rocket,
   AlertCircle,
-  Search,
+  Clock,
+  Zap,
+  Star,
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
-import { SERVICE_CATEGORIES, TIER_LABELS } from "@/data/serviceCategories";
 
-const STEP_LABELS = ["Basic Info", "License & Insurance", "Services", "Review & Submit"];
-
-const TIERS_ORDERED = [1, 2, 3, 4, 5] as const;
-
-const SERVICE_CAPABILITIES = [
-  "Residential Repairs",
-  "Emergency / Same-Day",
-  "New Construction",
-  "Remodeling & Renovation",
-  "Inspections",
-  "Maintenance Plans",
-  "Commercial Work",
-  "Green / Energy Efficient",
-  "Historic Restoration",
-  "Custom Fabrication",
-  "Smart Home / IoT",
-  "Accessibility Upgrades",
-];
-
-const US_STATES = [
-  "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
-  "KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ",
-  "NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT",
-  "VA","WA","WV","WI","WY",
-];
-
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  trade: string;
-  yearsExperience: string;
-  serviceZip: string;
-  primaryCity: string;
-  primaryState: string;
-  licenseFile: File | null;
-  insuranceFile: File | null;
-  licenseNumber: string;
-  services: string[];
-  referredBy: string;
-}
-
-const EMPTY_FORM: FormData = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  trade: "",
-  yearsExperience: "",
-  serviceZip: "",
-  primaryCity: "",
-  primaryState: "",
-  licenseFile: null,
-  insuranceFile: null,
-  licenseNumber: "",
-  services: [],
-  referredBy: "",
-};
-
-function ProgressBar({ step }: { step: number }) {
-  const stepIcons = [MapPin, Shield, Wrench, FileText];
-  return (
-    <div className="w-full mb-8">
-      <div className="flex items-center justify-between mb-3">
-        {STEP_LABELS.map((label, i) => {
-          const Icon = stepIcons[i];
-          const done = i < step;
-          const active = i === step;
-          return (
-            <div key={label} className="flex flex-col items-center gap-1.5" style={{ flex: 1 }}>
-              <div
-                className="w-9 h-9 rounded-2xl flex items-center justify-center transition-all duration-300"
-                style={{
-                  background: done || active ? "#F5E642" : "rgba(255,255,255,0.06)",
-                  border: active ? "2px solid #F5E64260" : "2px solid transparent",
-                }}
-              >
-                {done ? (
-                  <Check size={15} style={{ color: "#0A1628" }} />
-                ) : (
-                  <Icon size={15} style={{ color: done || active ? "#0A1628" : "#4b5563" }} />
-                )}
-              </div>
-              <span
-                className="text-xs font-medium hidden sm:block text-center leading-tight"
-                style={{ color: done || active ? "#F5E642" : "#4b5563", maxWidth: 64 }}
-              >
-                {label}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-      <div className="relative h-1 rounded-full" style={{ background: "rgba(255,255,255,0.06)" }}>
-        <div
-          className="absolute h-full rounded-full transition-all duration-500"
-          style={{ width: `${(step / (STEP_LABELS.length - 1)) * 100}%`, background: "#F5E642" }}
-        />
-      </div>
-      <p className="text-xs mt-2 text-right" style={{ color: "#4b5563" }}>
-        Step {step + 1} of {STEP_LABELS.length}
-      </p>
-    </div>
-  );
-}
-
-function FieldLabel({ children, required }: { children: ReactNode; required?: boolean }) {
-  return (
-    <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: "#9ca3af" }}>
-      {children} {required && <span style={{ color: "#F5E642" }}>*</span>}
-    </label>
-  );
-}
-
-function Input({
-  value,
-  onChange,
-  placeholder,
-  type = "text",
-}: {
-  value: string;
-  onChange: (v: string) => void;
-  placeholder?: string;
-  type?: string;
-}) {
-  return (
-    <input
-      type={type}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
-      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-gray-600 outline-none transition-all"
-      style={{
-        background: "rgba(255,255,255,0.05)",
-        border: "1px solid rgba(255,255,255,0.1)",
-      }}
-      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(245,230,66,0.4)")}
-      onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}
-    />
-  );
-}
-
-function TradeDropdown({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    }
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  const selected = SERVICE_CATEGORIES.find((c) => c.id === value);
-  const q = query.toLowerCase();
-  const filtered = q
-    ? SERVICE_CATEGORIES.filter((c) => c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q))
-    : SERVICE_CATEGORIES;
-
-  const grouped = TIERS_ORDERED.map((tier) => ({
-    tier,
-    label: TIER_LABELS[tier],
-    items: filtered.filter((c) => c.tier === tier),
-  })).filter((g) => g.items.length > 0);
-
-  return (
-    <div ref={ref} className="relative">
-      <FieldLabel required>Primary Trade</FieldLabel>
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="w-full px-4 py-3 rounded-xl text-sm outline-none text-left flex items-center justify-between transition-all"
-        style={{
-          background: "rgba(255,255,255,0.05)",
-          border: `1px solid ${open ? "rgba(245,230,66,0.4)" : "rgba(255,255,255,0.1)"}`,
-          color: selected ? "#fff" : "#4b5563",
-        }}
-      >
-        <span className="flex items-center gap-2 truncate">
-          {selected ? (
-            <><span>{selected.icon}</span><span>{selected.name}</span></>
-          ) : "Select your trade"}
-        </span>
-        <ChevronRight
-          size={14}
-          style={{ color: "#6b7280", flexShrink: 0, transform: open ? "rotate(90deg)" : "none", transition: "transform 0.2s" }}
-        />
-      </button>
-
-      {open && (
-        <div
-          className="absolute z-50 mt-1 w-full rounded-xl overflow-hidden"
-          style={{ background: "#0d1f3c", border: "1px solid rgba(255,255,255,0.12)", maxHeight: 340, overflowY: "auto" }}
-        >
-          <div className="sticky top-0 p-2" style={{ background: "#0d1f3c", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: "rgba(255,255,255,0.06)" }}>
-              <Search size={13} style={{ color: "#6b7280", flexShrink: 0 }} />
-              <input
-                autoFocus
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search trades…"
-                className="flex-1 bg-transparent text-sm text-white placeholder-gray-600 outline-none"
-              />
-            </div>
-          </div>
-
-          {grouped.length === 0 && (
-            <p className="text-xs text-center py-6" style={{ color: "#6b7280" }}>No trades found</p>
-          )}
-
-          {grouped.map(({ tier, label, items }) => (
-            <div key={tier}>
-              <p className="px-4 pt-3 pb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#F5E642", opacity: 0.6 }}>
-                {label}
-              </p>
-              {items.map((cat) => (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => { onChange(cat.id); setOpen(false); setQuery(""); }}
-                  className="w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all hover:bg-white/5"
-                  style={{ background: value === cat.id ? "rgba(245,230,66,0.08)" : "transparent" }}
-                >
-                  <span className="text-base w-6 text-center flex-shrink-0">{cat.icon}</span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium" style={{ color: value === cat.id ? "#F5E642" : "#e5e7eb" }}>{cat.name}</p>
-                    <p className="text-xs truncate" style={{ color: "#6b7280" }}>{cat.description}</p>
-                  </div>
-                  {value === cat.id && <Check size={13} style={{ color: "#F5E642", marginLeft: "auto", flexShrink: 0 }} />}
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Step1BasicInfo({
-  form,
-  setForm,
-}: {
-  form: FormData;
-  setForm: (f: FormData) => void;
-}) {
-  const set = (k: keyof FormData) => (v: string) => setForm({ ...form, [k]: v });
-
-  return (
-    <div className="space-y-5">
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-          <MapPin size={18} style={{ color: "#F5E642" }} />
-        </div>
-        <div>
-          <h2 className="text-lg font-bold text-white">Tell us about your business</h2>
-          <p className="text-xs" style={{ color: "#6b7280" }}>Basic info to match you with homeowners</p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <FieldLabel required>First Name</FieldLabel>
-          <Input value={form.firstName} onChange={set("firstName")} placeholder="James" />
-        </div>
-        <div>
-          <FieldLabel required>Last Name</FieldLabel>
-          <Input value={form.lastName} onChange={set("lastName")} placeholder="Wilson" />
-        </div>
-      </div>
-
-      <div>
-        <FieldLabel required>Email</FieldLabel>
-        <Input value={form.email} onChange={set("email")} placeholder="james@wilsonplumbing.com" type="email" />
-      </div>
-
-      <div>
-        <FieldLabel required>Phone</FieldLabel>
-        <Input value={form.phone} onChange={set("phone")} placeholder="(214) 555-0100" type="tel" />
-      </div>
-
-      <TradeDropdown value={form.trade} onChange={(v) => setForm({ ...form, trade: v })} />
-
-      <div>
-        <FieldLabel>Years in Business</FieldLabel>
-        <select
-          value={form.yearsExperience}
-          onChange={(e) => set("yearsExperience")(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all"
-          style={{
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            color: form.yearsExperience ? "#fff" : "#4b5563",
-          }}
-        >
-          <option value="" disabled style={{ background: "#0A1628" }}>Select years</option>
-          {["Less than 1 year", "1-2 years", "3-5 years", "6-10 years", "11-20 years", "20+ years"].map((v) => (
-            <option key={v} value={v} style={{ background: "#0A1628" }}>{v}</option>
-          ))}
-        </select>
-      </div>
-
-      <div className="grid grid-cols-3 gap-3">
-        <div className="col-span-2">
-          <FieldLabel required>City</FieldLabel>
-          <Input value={form.primaryCity} onChange={set("primaryCity")} placeholder="Dallas" />
-        </div>
-        <div>
-          <FieldLabel required>State</FieldLabel>
-          <select
-            value={form.primaryState}
-            onChange={(e) => set("primaryState")(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none"
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: form.primaryState ? "#fff" : "#4b5563",
-            }}
-          >
-            <option value="" disabled style={{ background: "#0A1628" }}>ST</option>
-            {US_STATES.map((s) => (
-              <option key={s} value={s} style={{ background: "#0A1628" }}>{s}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <FieldLabel required>Service Area ZIP Code</FieldLabel>
-        <Input value={form.serviceZip} onChange={set("serviceZip")} placeholder="75201" />
-        <p className="text-xs mt-1" style={{ color: "#4b5563" }}>Your primary service area zip</p>
-      </div>
-
-      <div>
-        <FieldLabel>Referred by (optional)</FieldLabel>
-        <Input value={form.referredBy} onChange={set("referredBy")} placeholder="Referral code" />
-      </div>
-    </div>
-  );
-}
-
-function FileUploadRow({
-  label,
-  hint,
-  file,
-  onFile,
-}: {
+interface ProfileStep {
+  id: string;
   label: string;
-  hint: string;
-  file: File | null;
-  onFile: (f: File | null) => void;
-}) {
-  return (
-    <div
-      className="flex items-center gap-4 p-4 rounded-xl"
-      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
-    >
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-white">{label}</p>
-        <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{hint}</p>
-        {file && (
-          <p className="text-xs mt-1 truncate" style={{ color: "#22c55e" }}>{file.name}</p>
-        )}
-      </div>
-      <label
-        className="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-all hover:opacity-80"
-        style={{
-          background: file ? "rgba(34,197,94,0.15)" : "rgba(245,230,66,0.12)",
-          color: file ? "#22c55e" : "#F5E642",
-          border: `1px solid ${file ? "rgba(34,197,94,0.3)" : "rgba(245,230,66,0.25)"}`,
-        }}
-      >
-        {file ? <><Check size={11} className="inline mr-1" />Uploaded</> : "Choose File"}
-        <input
-          type="file"
-          accept=".pdf,.jpg,.jpeg,.png"
-          className="hidden"
-          onChange={(e) => onFile(e.target.files?.[0] ?? null)}
-        />
-      </label>
-    </div>
-  );
+  description: string;
+  icon: React.ComponentType<{ size?: number; style?: React.CSSProperties; className?: string }>;
+  critical: boolean;
+  route: string;
+  iconColor: string;
+  iconBg: string;
 }
 
-function Step2LicenseInsurance({ form, setForm }: { form: FormData; setForm: (f: FormData) => void }) {
-  return (
-    <div className="space-y-5">
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "rgba(59,130,246,0.12)" }}>
-          <Shield size={18} style={{ color: "#3b82f6" }} />
-        </div>
-        <div>
-          <h2 className="text-lg font-bold text-white">License & Insurance</h2>
-          <p className="text-xs" style={{ color: "#6b7280" }}>Verified pros win 2x more jobs</p>
-        </div>
-      </div>
+const ACTIVATION_STEPS: ProfileStep[] = [
+  {
+    id: "trade",
+    label: "Trade verified",
+    description: "Confirm your primary trade and license details",
+    icon: Shield,
+    critical: true,
+    route: "/settings/trade",
+    iconColor: "#38bdf8",
+    iconBg: "rgba(56,189,248,0.12)",
+  },
+  {
+    id: "photo",
+    label: "Profile photo added",
+    description: "Partners with photos win 40% more jobs",
+    icon: Camera,
+    critical: false,
+    route: "/settings/profile",
+    iconColor: "#a78bfa",
+    iconBg: "rgba(167,139,250,0.12)",
+  },
+  {
+    id: "service_area",
+    label: "Service area set",
+    description: "Define your city and radius so we route leads correctly",
+    icon: MapPin,
+    critical: true,
+    route: "/settings/service-area",
+    iconColor: "#fb923c",
+    iconBg: "rgba(251,146,60,0.12)",
+  },
+  {
+    id: "payment",
+    label: "Payout method connected",
+    description: "Add a bank account or debit card to receive commissions",
+    icon: CreditCard,
+    critical: true,
+    route: "/settings/payment",
+    iconColor: "#4ade80",
+    iconBg: "rgba(74,222,128,0.12)",
+  },
+  {
+    id: "notifications",
+    label: "Notification preferences",
+    description: "Set how you get alerted for new leads (SMS, email, push)",
+    icon: Bell,
+    critical: false,
+    route: "/settings/notifications",
+    iconColor: "#fbbf24",
+    iconBg: "rgba(251,191,36,0.12)",
+  },
+];
 
-      <div
-        className="flex items-start gap-2 p-3 rounded-xl"
-        style={{ background: "rgba(245,230,66,0.06)", border: "1px solid rgba(245,230,66,0.15)" }}
-      >
-        <AlertCircle size={13} className="flex-shrink-0 mt-0.5" style={{ color: "#F5E642" }} />
-        <p className="text-xs" style={{ color: "#d1d5db" }}>
-          Upload a PDF or photo. Files are stored securely and only reviewed by ProLnk compliance staff.
-          You can skip and upload later from your dashboard.
-        </p>
-      </div>
+function useCompletedSteps() {
+  const saved = (() => {
+    try {
+      const raw = localStorage.getItem("prolnk_activation_steps");
+      return raw ? (JSON.parse(raw) as string[]) : [];
+    } catch {
+      return [];
+    }
+  })();
 
-      <div>
-        <FieldLabel>License Number</FieldLabel>
-        <input
-          type="text"
-          value={form.licenseNumber}
-          onChange={(e) => setForm({ ...form, licenseNumber: e.target.value })}
-          placeholder="e.g. TX-PLM-12345"
-          className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-gray-600 outline-none"
-          style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
-        />
-      </div>
+  const [completed, setCompleted] = useState<string[]>(saved);
 
-      <FileUploadRow
-        label="Contractor License"
-        hint="State license, municipal license, or master trade certificate"
-        file={form.licenseFile}
-        onFile={(f) => setForm({ ...form, licenseFile: f })}
-      />
-
-      <FileUploadRow
-        label="Certificate of Insurance"
-        hint="General liability, minimum $500K coverage"
-        file={form.insuranceFile}
-        onFile={(f) => setForm({ ...form, insuranceFile: f })}
-      />
-
-      <div
-        className="p-4 rounded-xl grid grid-cols-3 gap-3"
-        style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
-      >
-        {[
-          { emoji: "🛡️", label: "Verified Badge", desc: "Shown on your profile" },
-          { emoji: "📈", label: "Priority Matching", desc: "First to see new leads" },
-          { emoji: "💰", label: "Higher Pay Rate", desc: "Up to 35% commission" },
-        ].map(({ emoji, label, desc }) => (
-          <div key={label} className="text-center">
-            <p className="text-xl mb-1">{emoji}</p>
-            <p className="text-xs font-bold text-white">{label}</p>
-            <p className="text-xs" style={{ color: "#6b7280" }}>{desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Step3Services({ form, setForm }: { form: FormData; setForm: (f: FormData) => void }) {
-  const toggle = (s: string) => {
-    const next = form.services.includes(s)
-      ? form.services.filter((x) => x !== s)
-      : [...form.services, s];
-    setForm({ ...form, services: next });
+  const toggle = (id: string) => {
+    const next = completed.includes(id) ? completed.filter((x) => x !== id) : [...completed, id];
+    setCompleted(next);
+    try {
+      localStorage.setItem("prolnk_activation_steps", JSON.stringify(next));
+    } catch {}
   };
 
-  return (
-    <div className="space-y-5">
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "rgba(139,92,246,0.12)" }}>
-          <Wrench size={18} style={{ color: "#8b5cf6" }} />
-        </div>
-        <div>
-          <h2 className="text-lg font-bold text-white">Service Capabilities</h2>
-          <p className="text-xs" style={{ color: "#6b7280" }}>Select all that apply — more = more leads</p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2">
-        {SERVICE_CAPABILITIES.map((s) => {
-          const selected = form.services.includes(s);
-          return (
-            <button
-              key={s}
-              type="button"
-              onClick={() => toggle(s)}
-              className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-left text-sm transition-all"
-              style={{
-                background: selected ? "rgba(245,230,66,0.12)" : "rgba(255,255,255,0.04)",
-                border: `1px solid ${selected ? "rgba(245,230,66,0.35)" : "rgba(255,255,255,0.08)"}`,
-                color: selected ? "#F5E642" : "#9ca3af",
-              }}
-            >
-              <div
-                className="w-4 h-4 rounded flex-shrink-0 flex items-center justify-center"
-                style={{
-                  background: selected ? "#F5E642" : "transparent",
-                  border: `1.5px solid ${selected ? "#F5E642" : "rgba(255,255,255,0.2)"}`,
-                }}
-              >
-                {selected && <Check size={10} style={{ color: "#0A1628" }} />}
-              </div>
-              <span className="text-xs font-medium leading-tight">{s}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {form.services.length > 0 && (
-        <p className="text-xs text-center" style={{ color: "#6b7280" }}>
-          {form.services.length} service{form.services.length !== 1 ? "s" : ""} selected
-        </p>
-      )}
-    </div>
-  );
-}
-
-function SummaryRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-start justify-between gap-4 py-2.5 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-      <span className="text-xs" style={{ color: "#6b7280" }}>{label}</span>
-      <span className="text-xs font-semibold text-white text-right">{value}</span>
-    </div>
-  );
-}
-
-function Step4Review({
-  form,
-  onSubmit,
-  isSubmitting,
-  error,
-}: {
-  form: FormData;
-  onSubmit: () => void;
-  isSubmitting: boolean;
-  error: string | null;
-}) {
-  return (
-    <div className="space-y-5">
-      <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-          <FileText size={18} style={{ color: "#F5E642" }} />
-        </div>
-        <div>
-          <h2 className="text-lg font-bold text-white">Review & Submit</h2>
-          <p className="text-xs" style={{ color: "#6b7280" }}>Confirm your details before joining the waitlist</p>
-        </div>
-      </div>
-
-      <div
-        className="rounded-2xl p-5"
-        style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>
-          Basic Info
-        </p>
-        <SummaryRow label="Name" value={`${form.firstName} ${form.lastName}`} />
-        <SummaryRow label="Email" value={form.email} />
-        <SummaryRow label="Phone" value={form.phone} />
-        <SummaryRow label="Trade" value={form.trade} />
-        <SummaryRow label="Experience" value={form.yearsExperience || "—"} />
-        <SummaryRow label="Location" value={`${form.primaryCity}, ${form.primaryState} ${form.serviceZip}`} />
-        {form.referredBy && <SummaryRow label="Referral Code" value={form.referredBy.toUpperCase()} />}
-      </div>
-
-      <div
-        className="rounded-2xl p-5"
-        style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>
-          License & Insurance
-        </p>
-        <SummaryRow label="License #" value={form.licenseNumber || "Not provided"} />
-        <SummaryRow label="License File" value={form.licenseFile?.name ?? "Not uploaded"} />
-        <SummaryRow label="Insurance File" value={form.insuranceFile?.name ?? "Not uploaded"} />
-      </div>
-
-      <div
-        className="rounded-2xl p-5"
-        style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#6b7280" }}>
-          Services ({form.services.length})
-        </p>
-        {form.services.length === 0 ? (
-          <p className="text-xs" style={{ color: "#6b7280" }}>None selected</p>
-        ) : (
-          <div className="flex flex-wrap gap-1.5">
-            {form.services.map((s) => (
-              <span
-                key={s}
-                className="text-xs px-2.5 py-1 rounded-full"
-                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.2)" }}
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {error && (
-        <div
-          className="flex items-start gap-2 p-3 rounded-xl"
-          style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)" }}
-        >
-          <AlertCircle size={13} className="flex-shrink-0 mt-0.5" style={{ color: "#ef4444" }} />
-          <p className="text-xs" style={{ color: "#fca5a5" }}>{error}</p>
-        </div>
-      )}
-
-      <button
-        onClick={onSubmit}
-        disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-bold transition-all"
-        style={{
-          background: isSubmitting ? "rgba(245,230,66,0.4)" : "#F5E642",
-          color: "#0A1628",
-          cursor: isSubmitting ? "not-allowed" : "pointer",
-        }}
-      >
-        {isSubmitting ? (
-          <>
-            <div className="w-4 h-4 border-2 border-[#0A1628] border-t-transparent rounded-full animate-spin" />
-            Joining waitlist...
-          </>
-        ) : (
-          <>
-            <Rocket size={16} /> Join the ProLnk Waitlist
-          </>
-        )}
-      </button>
-
-      <p className="text-xs text-center" style={{ color: "#4b5563" }}>
-        By joining you agree to our Terms of Service and Privacy Policy.
-        No credit card required.
-      </p>
-    </div>
-  );
-}
-
-function SuccessScreen({ name }: { name: string }) {
-  const [, navigate] = useLocation();
-  return (
-    <div className="text-center py-8">
-      <div
-        className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6"
-        style={{ background: "rgba(34,197,94,0.15)", border: "2px solid rgba(34,197,94,0.3)" }}
-      >
-        <Check size={36} style={{ color: "#22c55e" }} />
-      </div>
-      <h2 className="text-2xl font-bold text-white mb-2">You're on the list, {name}!</h2>
-      <p className="text-sm mb-8 max-w-xs mx-auto" style={{ color: "#6b7280" }}>
-        We'll email you as soon as your market opens. In the meantime, refer other pros to lock in a
-        higher tier and earn subscription overrides from day one.
-      </p>
-      <div className="grid grid-cols-3 gap-3 mb-8 text-center">
-        {[
-          { emoji: "📧", label: "Confirmation sent", desc: "Check your inbox" },
-          { emoji: "🎯", label: "Tier assigned", desc: "Based on position" },
-          { emoji: "🔗", label: "Referral link ready", desc: "Share & earn" },
-        ].map(({ emoji, label, desc }) => (
-          <div
-            key={label}
-            className="rounded-xl p-3"
-            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
-          >
-            <p className="text-xl mb-1">{emoji}</p>
-            <p className="text-xs font-bold text-white">{label}</p>
-            <p className="text-xs" style={{ color: "#6b7280" }}>{desc}</p>
-          </div>
-        ))}
-      </div>
-      <button
-        onClick={() => navigate("/dashboard/partner-home")}
-        className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
-        style={{ background: "#F5E642", color: "#0A1628" }}
-      >
-        Go to Dashboard <ChevronRight size={16} />
-      </button>
-    </div>
-  );
-}
-
-function isStep1Valid(form: FormData) {
-  return (
-    form.firstName.trim().length > 0 &&
-    form.lastName.trim().length > 0 &&
-    form.email.includes("@") &&
-    form.phone.trim().length >= 7 &&
-    form.trade.length > 0 &&
-    form.primaryCity.trim().length > 0 &&
-    form.primaryState.length === 2 &&
-    /^\d{5}(-\d{4})?$/.test(form.serviceZip)
-  );
+  return { completed, toggle };
 }
 
 export default function PartnerOnboarding() {
-  const [step, setStep] = useState(0);
-  const [form, setForm] = useState<FormData>(EMPTY_FORM);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [, setLocation] = useLocation();
+  const { completed, toggle } = useCompletedSteps();
 
-  const joinMutation = trpc.waitlist.joinProWaitlist.useMutation({
-    onSuccess: () => setSubmitted(true),
-    onError: (e) => setError(e.message),
-  });
+  const criticalSteps = ACTIVATION_STEPS.filter((s) => s.critical);
+  const criticalDone = criticalSteps.filter((s) => completed.includes(s.id)).length;
+  const totalDone = ACTIVATION_STEPS.filter((s) => completed.includes(s.id)).length;
+  const allCriticalDone = criticalDone === criticalSteps.length;
+  const completionPct = Math.round((totalDone / ACTIVATION_STEPS.length) * 100);
 
-  const handleSubmit = () => {
-    setError(null);
-    joinMutation.mutate({
-      firstName: form.firstName.trim(),
-      lastName: form.lastName.trim(),
-      email: form.email.trim().toLowerCase(),
-      phone: form.phone.trim(),
-      trade: form.trade,
-      primaryCity: form.primaryCity.trim(),
-      primaryState: form.primaryState,
-      referredBy: form.referredBy.trim() || undefined,
-    });
-  };
-
-  const canAdvance =
-    step === 0 ? isStep1Valid(form) :
-    step === 1 ? true :
-    step === 2 ? true :
-    false;
+  const stepsUntilFirst = criticalSteps.filter((s) => !completed.includes(s.id)).length;
 
   return (
-    <div
-      className="min-h-screen flex items-start justify-center pt-8 pb-16 px-4"
-      style={{ background: "#0A1628" }}
-    >
-      <div
-        className="w-full max-w-lg rounded-3xl p-6 sm:p-8"
+    <div className="min-h-screen flex flex-col" style={{ background: "#0A1628" }}>
+      {/* Header */}
+      <header
+        className="px-6 py-4 flex items-center justify-between sticky top-0 z-20"
         style={{
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          background: "rgba(10,22,40,0.95)",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          backdropFilter: "blur(8px)",
         }}
       >
-        <div className="flex items-center justify-between mb-6">
-          <span className="text-lg font-black tracking-tight" style={{ color: "#F5E642" }}>ProLnk</span>
-          <span className="text-xs" style={{ color: "#4b5563" }}>Partner Signup</span>
-        </div>
+        <span className="text-lg font-black tracking-tight" style={{ color: "#2dd4bf" }}>ProLnk</span>
+        <button
+          onClick={() => setLocation("/dashboard")}
+          className="text-xs hover:opacity-80 transition-opacity"
+          style={{ color: "#4b5563" }}
+        >
+          Skip for now →
+        </button>
+      </header>
 
-        {submitted ? (
-          <SuccessScreen name={form.firstName} />
-        ) : (
-          <>
-            <ProgressBar step={step} />
+      <div className="flex-1 flex items-start justify-center px-4 py-6">
+        <div className="w-full max-w-lg space-y-5">
 
-            {step === 0 && <Step1BasicInfo form={form} setForm={setForm} />}
-            {step === 1 && <Step2LicenseInsurance form={form} setForm={setForm} />}
-            {step === 2 && <Step3Services form={form} setForm={setForm} />}
-            {step === 3 && (
-              <Step4Review
-                form={form}
-                onSubmit={handleSubmit}
-                isSubmitting={joinMutation.isPending}
-                error={error}
-              />
-            )}
-
-            {step < 3 && (
-              <div className="flex items-center gap-3 mt-8">
-                {step > 0 && (
-                  <button
-                    onClick={() => setStep((s) => s - 1)}
-                    className="flex items-center gap-1.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-80"
-                    style={{
-                      background: "rgba(255,255,255,0.06)",
-                      color: "#9ca3af",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    <ChevronLeft size={15} /> Back
-                  </button>
-                )}
-                <button
-                  onClick={() => {
-                    if (canAdvance) setStep((s) => s + 1);
-                  }}
-                  disabled={!canAdvance}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all"
-                  style={{
-                    background: canAdvance ? "#F5E642" : "rgba(255,255,255,0.06)",
-                    color: canAdvance ? "#0A1628" : "#4b5563",
-                    cursor: canAdvance ? "pointer" : "not-allowed",
-                  }}
-                >
-                  Continue <ChevronRight size={15} />
-                </button>
+          {/* Hero block */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ background: "rgba(45,212,191,0.06)", border: "1px solid rgba(45,212,191,0.2)" }}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#2dd4bf", opacity: 0.7 }}>
+                  Account Activation
+                </p>
+                <h1 className="text-2xl font-black text-white">Complete your profile</h1>
+                <p className="text-sm mt-1" style={{ color: "#9ca3af" }}>
+                  {allCriticalDone
+                    ? "All critical steps done — you're ready to go live!"
+                    : `You're ${stepsUntilFirst} step${stepsUntilFirst !== 1 ? "s" : ""} from your first lead`}
+                </p>
               </div>
-            )}
-          </>
-        )}
+              <div className="flex-shrink-0">
+                <div className="relative w-16 h-16">
+                  <svg className="w-16 h-16 -rotate-90" viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="27" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="5" />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="27"
+                      fill="none"
+                      stroke="#2dd4bf"
+                      strokeWidth="5"
+                      strokeLinecap="round"
+                      strokeDasharray={`${(completionPct / 100) * 169.6} 169.6`}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-sm font-black text-white">{completionPct}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-3 mt-4">
+              {[
+                {
+                  label: "Steps done",
+                  value: `${totalDone}/${ACTIVATION_STEPS.length}`,
+                  color: "#2dd4bf",
+                },
+                {
+                  label: "Critical steps",
+                  value: `${criticalDone}/${criticalSteps.length}`,
+                  color: allCriticalDone ? "#4ade80" : "#fb923c",
+                },
+                {
+                  label: "Est. leads/wk",
+                  value: allCriticalDone ? "5–12" : "0",
+                  color: allCriticalDone ? "#4ade80" : "#4b5563",
+                },
+              ].map(({ label, value, color }) => (
+                <div
+                  key={label}
+                  className="rounded-xl p-3 text-center"
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+                >
+                  <p className="text-lg font-black" style={{ color }}>{value}</p>
+                  <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Timeline / checklist */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+          >
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#6b7280" }}>
+              Activation checklist
+            </p>
+            <div className="space-y-3">
+              {ACTIVATION_STEPS.map((step, i) => {
+                const done = completed.includes(step.id);
+                const Icon = step.icon;
+                const isLast = i === ACTIVATION_STEPS.length - 1;
+
+                return (
+                  <div key={step.id} className="relative">
+                    {/* Connecting line */}
+                    {!isLast && (
+                      <div
+                        className="absolute left-5 top-11 w-0.5 h-4"
+                        style={{ background: done ? "rgba(45,212,191,0.3)" : "rgba(255,255,255,0.06)" }}
+                      />
+                    )}
+
+                    <div
+                      className="flex items-center gap-3 p-3 rounded-xl transition-all"
+                      style={{
+                        background: done ? "rgba(45,212,191,0.05)" : "rgba(255,255,255,0.02)",
+                        border: `1px solid ${done ? "rgba(45,212,191,0.2)" : "rgba(255,255,255,0.06)"}`,
+                      }}
+                    >
+                      {/* Icon */}
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{ background: done ? "rgba(45,212,191,0.12)" : step.iconBg }}
+                      >
+                        {done ? (
+                          <CheckCircle size={18} style={{ color: "#2dd4bf" }} />
+                        ) : (
+                          <Icon size={18} style={{ color: step.iconColor }} />
+                        )}
+                      </div>
+
+                      {/* Text */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <p
+                            className="text-sm font-semibold"
+                            style={{
+                              color: done ? "#9ca3af" : "#e5e7eb",
+                              textDecoration: done ? "line-through" : "none",
+                            }}
+                          >
+                            {step.label}
+                          </p>
+                          {step.critical && !done && (
+                            <span
+                              className="text-xs px-1.5 py-0.5 rounded font-bold"
+                              style={{
+                                background: "rgba(251,146,60,0.15)",
+                                color: "#fb923c",
+                                border: "1px solid rgba(251,146,60,0.25)",
+                              }}
+                            >
+                              Required
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs mt-0.5" style={{ color: "#4b5563" }}>
+                          {step.description}
+                        </p>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <button
+                          onClick={() => toggle(step.id)}
+                          className="p-1 transition-opacity hover:opacity-70"
+                          title={done ? "Mark incomplete" : "Mark complete"}
+                        >
+                          {done ? (
+                            <CheckCircle size={18} style={{ color: "#2dd4bf" }} />
+                          ) : (
+                            <Circle size={18} style={{ color: "#374151" }} />
+                          )}
+                        </button>
+                        <button
+                          onClick={() => setLocation(step.route)}
+                          className="p-1.5 rounded-lg transition-all hover:opacity-80"
+                          style={{ background: "rgba(255,255,255,0.06)" }}
+                        >
+                          <ChevronRight size={14} style={{ color: "#6b7280" }} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* What's missing callout */}
+          {!allCriticalDone && (
+            <div
+              className="rounded-2xl p-4 flex items-start gap-3"
+              style={{ background: "rgba(251,146,60,0.08)", border: "1px solid rgba(251,146,60,0.2)" }}
+            >
+              <AlertCircle size={16} style={{ color: "#fb923c", flexShrink: 0, marginTop: 1 }} />
+              <div>
+                <p className="text-sm font-bold text-white">Missing required steps</p>
+                <p className="text-xs mt-1" style={{ color: "#9ca3af" }}>
+                  Complete the <span style={{ color: "#fb923c" }}>Required</span> steps above to receive leads.
+                  Your account is active but leads won't be assigned until these are done.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {criticalSteps
+                    .filter((s) => !completed.includes(s.id))
+                    .map((s) => (
+                      <button
+                        key={s.id}
+                        onClick={() => setLocation(s.route)}
+                        className="text-xs px-2.5 py-1 rounded-full font-semibold hover:opacity-80 transition-opacity"
+                        style={{
+                          background: "rgba(251,146,60,0.15)",
+                          color: "#fb923c",
+                          border: "1px solid rgba(251,146,60,0.3)",
+                        }}
+                      >
+                        {s.label} →
+                      </button>
+                    ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Activation CTA */}
+          {allCriticalDone ? (
+            <div
+              className="rounded-2xl p-5"
+              style={{ background: "rgba(74,222,128,0.08)", border: "1px solid rgba(74,222,128,0.2)" }}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(74,222,128,0.15)" }}
+                >
+                  <Rocket size={18} style={{ color: "#4ade80" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white">Ready to go live!</p>
+                  <p className="text-xs" style={{ color: "#6b7280" }}>All required steps are complete</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {[
+                  { emoji: "⚡", label: "First lead", sub: "Usually within 48h" },
+                  { emoji: "💰", label: "Commission", sub: "Paid 1st of month" },
+                  { emoji: "🏆", label: "Tier", sub: "Charter locked in" },
+                ].map(({ emoji, label, sub }) => (
+                  <div
+                    key={label}
+                    className="rounded-xl p-2 text-center"
+                    style={{ background: "rgba(255,255,255,0.04)" }}
+                  >
+                    <span className="text-lg">{emoji}</span>
+                    <p className="text-xs font-bold text-white mt-0.5">{label}</p>
+                    <p className="text-xs" style={{ color: "#4b5563" }}>{sub}</p>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => setLocation("/dashboard")}
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
+                style={{ background: "#4ade80", color: "#0A1628" }}
+              >
+                <Zap size={16} /> Activate My Account
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {/* Timeline estimate */}
+              <div
+                className="rounded-xl p-4 flex items-center gap-3"
+                style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                <Clock size={16} style={{ color: "#6b7280", flexShrink: 0 }} />
+                <div>
+                  <p className="text-xs font-semibold text-white">
+                    ~{stepsUntilFirst * 5} minutes to activate
+                  </p>
+                  <p className="text-xs" style={{ color: "#4b5563" }}>
+                    Complete {stepsUntilFirst} more step{stepsUntilFirst !== 1 ? "s" : ""} to start receiving leads
+                  </p>
+                </div>
+              </div>
+
+              {/* Pro benefit tease */}
+              <div
+                className="rounded-xl p-4 flex items-start gap-3"
+                style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                <Star size={14} style={{ color: "#fbbf24", flexShrink: 0, marginTop: 1 }} />
+                <div>
+                  <p className="text-xs font-semibold text-white">Charter partner benefits locked in</p>
+                  <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>
+                    25% commission rate · $149/mo rate locked · Priority lead routing · 4-level network override
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  const nextStep = ACTIVATION_STEPS.find((s) => !completed.includes(s.id));
+                  if (nextStep) setLocation(nextStep.route);
+                }}
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
+                style={{ background: "linear-gradient(135deg, #2dd4bf, #38bdf8)", color: "#0A1628" }}
+              >
+                Continue Setup <ChevronRight size={15} />
+              </button>
+
+              <button
+                onClick={() => setLocation("/dashboard")}
+                className="w-full py-3 rounded-xl text-xs font-semibold transition-opacity hover:opacity-70"
+                style={{ color: "#4b5563", background: "transparent", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                Finish later — go to dashboard
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

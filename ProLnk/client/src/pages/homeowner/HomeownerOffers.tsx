@@ -3,10 +3,11 @@ import FeaturedAdvertiserBanner from "@/components/FeaturedAdvertiserBanner";
 import { Link } from "wouter";
 import {
   Zap, Star, CheckCircle, Clock, Camera, Calendar,
-  ThumbsDown, Database, ExternalLink, Sparkles, ArrowRight
+  ThumbsDown, Database, ExternalLink, Sparkles, ArrowRight,
+  Share2, MapPin, Gift, SortAsc,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -41,6 +42,7 @@ const DEMO_OFFERS = [
     proName: "DFW Fence Masters", proRating: 4.9, proJobs: 312, proVerified: true,
     estimateRange: "Free estimate", status: "pending", expiresIn: "31 hours",
     photoUrl: null, token: null, isDemo: true,
+    neighborhoodClaims: 8, expiresMs: Date.now() + 31 * 3600 * 1000,
   },
   {
     id: 2, type: "Gutter Cleaning", trade: "Gutters", urgency: "low",
@@ -49,6 +51,7 @@ const DEMO_OFFERS = [
     proName: "Clear Flow Gutters", proRating: 4.8, proJobs: 189, proVerified: true,
     estimateRange: "$120-$180", status: "pending", expiresIn: "4 days",
     photoUrl: null, token: null, isDemo: true,
+    neighborhoodClaims: 12, expiresMs: Date.now() + 4 * 24 * 3600 * 1000,
   },
   {
     id: 3, type: "Driveway Crack Sealing", trade: "Concrete", urgency: "high",
@@ -57,6 +60,7 @@ const DEMO_OFFERS = [
     proName: "DFW Concrete Pros", proRating: 4.7, proJobs: 445, proVerified: true,
     estimateRange: "$150-$300", status: "accepted", expiresIn: null,
     photoUrl: null, token: null, isDemo: true,
+    neighborhoodClaims: 5, expiresMs: null,
   },
   {
     id: 4, type: "Window Caulking", trade: "Handyman", urgency: "low",
@@ -65,6 +69,7 @@ const DEMO_OFFERS = [
     proName: "Handy Dan's Services", proRating: 4.6, proJobs: 98, proVerified: true,
     estimateRange: "$80-$150", status: "declined", expiresIn: null,
     photoUrl: null, token: null, isDemo: true,
+    neighborhoodClaims: 3, expiresMs: null,
   },
 ];
 
@@ -73,6 +78,32 @@ const urgencyConfig: Record<string, { dot: string; label: string; text: string }
   medium: { dot: "#F59E0B", label: "Soon",   text: "#D97706" },
   low:    { dot: "#10B981", label: "When Ready", text: "#059669" },
 };
+
+// Countdown timer hook
+function useCountdown(expiresMs: number | null) {
+  const [timeLeft, setTimeLeft] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!expiresMs) return;
+    const update = () => {
+      const diff = expiresMs - Date.now();
+      if (diff <= 0) { setTimeLeft("Expired"); return; }
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      if (hours >= 24) {
+        const days = Math.floor(hours / 24);
+        setTimeLeft(`${days}d ${hours % 24}h`);
+      } else {
+        setTimeLeft(`${hours}h ${mins}m`);
+      }
+    };
+    update();
+    const id = setInterval(update, 60000);
+    return () => clearInterval(id);
+  }, [expiresMs]);
+
+  return timeLeft;
+}
 
 // Before/After slider component
 function BeforeAfterSlider({ before, after, alt }: { before: string; after: string; alt: string }) {
@@ -123,14 +154,15 @@ function BeforeAfterSlider({ before, after, alt }: { before: string; after: stri
 }
 
 function mapDbDeal(d: any) {
-  // Derive urgency from aiConfidence (0-100): >=80 = high, >=50 = medium, else low
   const conf = d.aiConfidence != null ? Number(d.aiConfidence) : 50;
   const urgency = conf >= 80 ? "high" : conf >= 50 ? "medium" : "low";
   const isPending = ["sent", "viewed", "pending"].includes(d.status);
   const isAccepted = ["accepted", "scheduled", "estimate_done", "job_closed"].includes(d.status);
   let expiresIn: string | null = null;
+  let expiresMs: number | null = null;
   if (d.expiresAt && isPending) {
     const ms = new Date(d.expiresAt).getTime() - Date.now();
+    expiresMs = new Date(d.expiresAt).getTime();
     if (ms > 0) {
       const hours = Math.floor(ms / (1000 * 60 * 60));
       expiresIn = hours < 24 ? `${hours}h` : `${Math.floor(hours / 24)}d`;
@@ -148,8 +180,167 @@ function mapDbDeal(d: any) {
       ? `$${Math.round(d.estimatedValueLow)}-$${Math.round(d.estimatedValueHigh)}`
       : "Free estimate",
     status: isPending ? "pending" : isAccepted ? "accepted" : d.status,
-    expiresIn, photoUrl: d.photoUrl || null, token: d.token, isDemo: false,
+    expiresIn, expiresMs,
+    photoUrl: d.photoUrl || null, token: d.token, isDemo: false,
+    neighborhoodClaims: null,
   };
+}
+
+// Single offer card (extracted for countdown usage)
+function OfferCard({ offer }: { offer: any }) {
+  const urg = urgencyConfig[offer.urgency] || urgencyConfig.medium;
+  const mockupUrl = TRADE_MOCKUPS[offer.trade] || TRADE_MOCKUPS.default;
+  const countdown = useCountdown(offer.expiresMs ?? null);
+
+  const handleShare = () => {
+    const text = `Check out this home improvement offer from ProLnk: ${offer.type}`;
+    if (navigator.share) {
+      navigator.share({ title: offer.type, text }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(text);
+      toast.success("Offer link copied to clipboard");
+    }
+  };
+
+  return (
+    <div
+      className={`bg-white rounded-2xl border overflow-hidden transition-all ${offer.status === "declined" ? "opacity-50" : "hover:shadow-md"}`}
+      style={{ borderColor: offer.status === "pending" ? "#E0E7FF" : "#F1F5F9" }}
+    >
+      {/* Top: detected photo OR before/after slider */}
+      <div className="relative">
+        {offer.photoUrl ? (
+          <div className="relative h-44">
+            <img src={offer.photoUrl} alt={offer.type} className="w-full h-44 object-cover" />
+            <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+              style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
+              <Camera className="w-3 h-3 text-blue-300" />
+              Photo detected
+            </div>
+          </div>
+        ) : (
+          <div className="relative">
+            <BeforeAfterSlider
+              before={TRADE_BEFORE[offer.trade] || TRADE_BEFORE.default}
+              after={mockupUrl}
+              alt={offer.type}
+            />
+            <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+              style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
+              <Sparkles className="w-3 h-3 text-indigo-300" />
+              Drag to compare
+            </div>
+          </div>
+        )}
+        {/* Share button overlay */}
+        <button
+          onClick={handleShare}
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center hover:bg-white transition-colors group"
+          title="Share this deal"
+        >
+          <Share2 className="w-3.5 h-3.5 text-gray-600 group-hover:text-teal-600 transition-colors" />
+        </button>
+      </div>
+
+      <div className="p-5 space-y-4">
+        {/* Title row */}
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: urg.dot }} />
+              <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: urg.text }}>{urg.label}</span>
+            </div>
+            <h3 className="text-base font-bold text-gray-900 leading-tight">{offer.type}</h3>
+          </div>
+          {/* Live countdown timer */}
+          {offer.status === "pending" && offer.expiresMs && countdown && (
+            <div className="flex items-center gap-1 text-xs flex-shrink-0 font-medium px-2 py-1 rounded-lg"
+              style={countdown === "Expired" ? { backgroundColor: "#FEF2F2", color: "#EF4444" } : { backgroundColor: "#FFFBEB", color: "#D97706" }}>
+              <Clock className="w-3 h-3" />
+              {countdown === "Expired" ? "Expired" : `${countdown} left`}
+            </div>
+          )}
+        </div>
+
+        {/* Description */}
+        <p className="text-sm text-gray-500 leading-relaxed">{offer.description}</p>
+
+        {/* Neighborhood popularity */}
+        {offer.neighborhoodClaims && offer.neighborhoodClaims > 0 && (
+          <div className="flex items-center gap-1.5 text-xs text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg border border-indigo-100">
+            <MapPin className="w-3 h-3 flex-shrink-0" />
+            <span className="font-medium">{offer.neighborhoodClaims} homeowners</span>
+            <span className="text-indigo-400">in your area claimed this deal</span>
+          </div>
+        )}
+
+        {/* Detected by */}
+        <div className="flex items-center gap-1.5 text-xs text-gray-400">
+          <Camera className="w-3 h-3" />
+          Spotted by <span className="font-medium text-gray-600 ml-0.5">{offer.detectedBy}</span>
+          <span className="mx-1"></span>{offer.detectedDate}
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-slate-50" />
+
+        {/* Pro row */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+              style={{ backgroundColor: "#1B4FD8" }}>
+              {(offer.proName || "P")[0]}
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-gray-900 leading-tight">{offer.proName}</div>
+              <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-0.5">
+                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                <span>{offer.proRating?.toFixed(1)}</span>
+                {offer.proJobs && <><span></span><span>{offer.proJobs} jobs</span></>}
+                {offer.proVerified && (
+                  <span className="flex items-center gap-0.5 font-medium" style={{ color: "#10B981" }}>
+                    <CheckCircle className="w-3 h-3" /> Verified
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <div className="text-xs text-gray-400">Estimate</div>
+            <div className="text-sm font-bold text-gray-900">{offer.estimateRange}</div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        {offer.status === "pending" && (
+          <div className="flex gap-2 pt-1">
+            {offer.token ? (
+              <Link href={`/deal/${offer.token}`} className="flex-1">
+                <Button className="w-full text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}>
+                  View Full Offer <ArrowRight className="w-4 h-4 ml-1.5" />
+                </Button>
+              </Link>
+            ) : (
+              <Button className="flex-1 text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}
+                onClick={() => toast.info("A pro will reach out within 24 hours to schedule your estimate.")}>
+                <Calendar className="w-4 h-4 mr-1.5" /> Schedule Estimate
+              </Button>
+            )}
+            <Button variant="outline" className="text-sm text-gray-400 border-slate-200 rounded-xl h-10 px-3">
+              <ThumbsDown className="w-4 h-4" />
+            </Button>
+          </div>
+        )}
+
+        {offer.status === "accepted" && (
+          <div className="flex items-center gap-2 text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-700">
+            <CheckCircle className="w-4 h-4 flex-shrink-0" />
+            Estimate scheduled -- the pro will contact you within 24 hours
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function HomeownerOffers() {
@@ -189,6 +380,7 @@ export default function HomeownerOffers() {
         : o.estimatedCostLow ? `From $${Number(o.estimatedCostLow).toLocaleString()}` : 'Free estimate',
       status: 'pending',
       expiresIn: null,
+      expiresMs: null,
       photoUrl: o.photoUrl,
       token: null,
       isDemo: false,
@@ -196,25 +388,51 @@ export default function HomeownerOffers() {
       scanOfferId: o.id,
       roomLabel: o.roomLabel,
       isUpgrade: o.severity === 'upgrade',
+      neighborhoodClaims: null,
     }));
-    return [...partnerOffers, ...aiOffers];
+    const base = [...partnerOffers, ...aiOffers];
+    // Sort by expiresMs ascending (soonest first), nulls last
+    return base.sort((a, b) => {
+      if (a.expiresMs && b.expiresMs) return a.expiresMs - b.expiresMs;
+      if (a.expiresMs) return -1;
+      if (b.expiresMs) return 1;
+      return 0;
+    });
   }, [dbDeals, scanOffers]);
+
   const usingRealData = (dbDeals && dbDeals.length > 0) || (scanOffers && scanOffers.length > 0);
   const filtered = filter === "all" ? allOffers : allOffers.filter(o => o.status === filter);
   const pendingCount = allOffers.filter(o => o.status === "pending").length;
+  const claimedCount = allOffers.filter(o => o.status === "accepted").length;
+  const totalAvailable = allOffers.length;
+  const claimedThisMonth = Math.min(claimedCount, 3);
+  const monthlyLimit = 3;
+
+  // Demo zip (real: pull from user profile)
+  const userZip = "75034";
+  const totalSaved = 284;
 
   return (
     <HomeownerLayout>
       <div className="p-4 md:p-8 max-w-3xl mx-auto space-y-6">
 
-        {/* Header */}
+        {/* Personalized Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-xl font-bold text-gray-900 tracking-tight">Suggestions for Your Home</h1>
-            <p className="text-sm text-gray-400 mt-0.5">
-              {(isLoading || scanLoading) ? "Loading..." : pendingCount > 0
-                ? `${pendingCount} suggestion${pendingCount > 1 ? "s" : ""} waiting -- each includes a style preview`
-                : "All caught up"}
+            <h1 className="text-xl font-bold text-gray-900 tracking-tight flex items-center gap-2">
+              {pendingCount > 0 ? (
+                <>{pendingCount} offer{pendingCount > 1 ? "s" : ""} saved for your ZIP {userZip}</>
+              ) : (
+                <>Suggestions for Your Home</>
+              )}
+            </h1>
+            <p className="text-sm text-gray-400 mt-0.5 flex items-center gap-1">
+              {(isLoading || scanLoading) ? "Loading..." : pendingCount > 0 ? (
+                <>
+                  <SortAsc className="w-3.5 h-3.5" />
+                  Sorted by expires soonest
+                </>
+              ) : "All caught up"}
             </p>
           </div>
           {usingRealData && (
@@ -222,6 +440,37 @@ export default function HomeownerOffers() {
               <Database className="w-3 h-3" /> Live
             </div>
           )}
+        </div>
+
+        {/* Loyalty Savings Banner */}
+        <div className="flex items-center gap-3 bg-teal-600 rounded-2xl px-5 py-3.5 text-white">
+          <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
+            <Gift className="w-5 h-5 text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold">You've saved <span className="text-yellow-300">${totalSaved.toLocaleString()}</span> with ProLnk offers</p>
+            <p className="text-xs text-teal-100 mt-0.5">Keep accepting deals to unlock Platinum savings tier</p>
+          </div>
+          <Zap className="w-5 h-5 text-yellow-300 flex-shrink-0" />
+        </div>
+
+        {/* Claim Tracking */}
+        <div className="bg-white rounded-xl border border-gray-200 px-4 py-3">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <p className="text-sm font-semibold text-gray-700">
+              You've claimed <span className="text-teal-600">{claimedThisMonth}</span> of <span className="text-gray-900">{monthlyLimit}</span> available deals this month
+            </p>
+            <span className="text-xs text-gray-400 flex-shrink-0">{monthlyLimit - claimedThisMonth} remaining</span>
+          </div>
+          <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-700"
+              style={{
+                width: `${(claimedThisMonth / monthlyLimit) * 100}%`,
+                backgroundColor: claimedThisMonth >= monthlyLimit ? "#EF4444" : "#0d9488",
+              }}
+            />
+          </div>
         </div>
 
         {/* Filter tabs */}
@@ -262,129 +511,9 @@ export default function HomeownerOffers() {
           </div>
         ) : (
           <div className="space-y-4">
-            {filtered.map((offer) => {
-              const urg = urgencyConfig[offer.urgency] || urgencyConfig.medium;
-              const mockupUrl = TRADE_MOCKUPS[offer.trade] || TRADE_MOCKUPS.default;
-              return (
-                <div key={offer.id}
-                  className={`bg-white rounded-2xl border overflow-hidden transition-all ${offer.status === "declined" ? "opacity-50" : "hover:shadow-md"}`}
-                  style={{ borderColor: offer.status === "pending" ? "#E0E7FF" : "#F1F5F9" }}>
-
-                  {/* Top: detected photo OR before/after slider */}
-                  <div className="relative">
-                    {offer.photoUrl ? (
-                      <div className="relative h-44">
-                        <img src={offer.photoUrl} alt={offer.type} className="w-full h-44 object-cover" />
-                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-                          style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
-                          <Camera className="w-3 h-3 text-blue-300" />
-                          Photo detected
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="relative">
-                        <BeforeAfterSlider
-                          before={TRADE_BEFORE[offer.trade] || TRADE_BEFORE.default}
-                          after={mockupUrl}
-                          alt={offer.type}
-                        />
-                        <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-                          style={{ backgroundColor: "rgba(17,24,39,0.75)", color: "#fff", backdropFilter: "blur(4px)" }}>
-                          <Sparkles className="w-3 h-3 text-indigo-300" />
-                          Drag to compare
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-5 space-y-4">
-                    {/* Title row */}
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: urg.dot }} />
-                          <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: urg.text }}>{urg.label}</span>
-                        </div>
-                        <h3 className="text-base font-bold text-gray-900 leading-tight">{offer.type}</h3>
-                      </div>
-                      {offer.expiresIn && (
-                        <div className="flex items-center gap-1 text-xs text-amber-500 flex-shrink-0 font-medium bg-amber-50 px-2 py-1 rounded-lg">
-                          <Clock className="w-3 h-3" /> {offer.expiresIn} left
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-sm text-gray-500 leading-relaxed">{offer.description}</p>
-
-                    {/* Detected by */}
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                      <Camera className="w-3 h-3" />
-                      Spotted by <span className="font-medium text-gray-600 ml-0.5">{offer.detectedBy}</span>
-                      <span className="mx-1"></span>{offer.detectedDate}
-                    </div>
-
-                    {/* Divider */}
-                    <div className="border-t border-slate-50" />
-
-                    {/* Pro row */}
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
-                          style={{ backgroundColor: "#1B4FD8" }}>
-                          {(offer.proName || "P")[0]}
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900 leading-tight">{offer.proName}</div>
-                          <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-0.5">
-                            <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-                            <span>{offer.proRating?.toFixed(1)}</span>
-                            {offer.proJobs && <><span></span><span>{offer.proJobs} jobs</span></>}
-                            {offer.proVerified && (
-                              <span className="flex items-center gap-0.5 font-medium" style={{ color: "#10B981" }}>
-                                <CheckCircle className="w-3 h-3" /> Verified
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-right flex-shrink-0">
-                        <div className="text-xs text-gray-400">Estimate</div>
-                        <div className="text-sm font-bold text-gray-900">{offer.estimateRange}</div>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    {offer.status === "pending" && (
-                      <div className="flex gap-2 pt-1">
-                        {offer.token ? (
-                          <Link href={`/deal/${offer.token}`} className="flex-1">
-                            <Button className="w-full text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}>
-                              View Full Offer <ArrowRight className="w-4 h-4 ml-1.5" />
-                            </Button>
-                          </Link>
-                        ) : (
-                          <Button className="flex-1 text-white font-semibold text-sm rounded-xl h-10" style={{ backgroundColor: "#111827" }}
-                            onClick={() => toast.info("A pro will reach out within 24 hours to schedule your estimate.")}>
-                            <Calendar className="w-4 h-4 mr-1.5" /> Schedule Estimate
-                          </Button>
-                        )}
-                        <Button variant="outline" className="text-sm text-gray-400 border-slate-200 rounded-xl h-10 px-3">
-                          <ThumbsDown className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    )}
-
-                    {offer.status === "accepted" && (
-                      <div className="flex items-center gap-2 text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-700">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                        Estimate scheduled -- the pro will contact you within 24 hours
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+            {filtered.map((offer) => (
+              <OfferCard key={offer.id} offer={offer} />
+            ))}
           </div>
         )}
 

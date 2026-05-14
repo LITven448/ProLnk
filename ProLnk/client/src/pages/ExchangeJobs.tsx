@@ -60,7 +60,9 @@ const SEED_JOBS = [
       "Full HVAC replacement across a 50-unit complex. New air handlers, condensers, and ductwork inspection required. Licensed HVAC contractor with commercial multifamily experience mandatory. All units must be completed within a 4-week window with minimal tenant disruption.",
     urgency: "Urgent",
     applicants: 3,
-    postedDaysAgo: 2,
+    postedDaysAgo: 0,
+    views: 14,
+    distanceMiles: 8.2,
   },
   {
     id: 2,
@@ -76,6 +78,8 @@ const SEED_JOBS = [
     urgency: "Active",
     applicants: 5,
     postedDaysAgo: 4,
+    views: 87,
+    distanceMiles: 22.7,
   },
   {
     id: 3,
@@ -90,7 +94,9 @@ const SEED_JOBS = [
       "Upgrade 400A main panel to 800A 3-phase service for new equipment installation. Requires load calculations, permit pull, and inspection coordination with Oncor. Master electrician on-site throughout project. 180,000 sq ft facility, weekend work acceptable.",
     urgency: "Urgent",
     applicants: 2,
-    postedDaysAgo: 1,
+    postedDaysAgo: 0,
+    views: 31,
+    distanceMiles: 15.4,
   },
   {
     id: 4,
@@ -106,6 +112,8 @@ const SEED_JOBS = [
     urgency: "Active",
     applicants: 7,
     postedDaysAgo: 5,
+    views: 112,
+    distanceMiles: 5.1,
   },
   {
     id: 5,
@@ -121,6 +129,8 @@ const SEED_JOBS = [
     urgency: "Active",
     applicants: 4,
     postedDaysAgo: 7,
+    views: 65,
+    distanceMiles: 19.3,
   },
   {
     id: 6,
@@ -136,6 +146,8 @@ const SEED_JOBS = [
     urgency: "Ongoing",
     applicants: 11,
     postedDaysAgo: 10,
+    views: 203,
+    distanceMiles: 31.8,
   },
   {
     id: 7,
@@ -151,6 +163,8 @@ const SEED_JOBS = [
     urgency: "Active",
     applicants: 6,
     postedDaysAgo: 3,
+    views: 48,
+    distanceMiles: 27.5,
   },
   {
     id: 8,
@@ -166,6 +180,8 @@ const SEED_JOBS = [
     urgency: "Active",
     applicants: 4,
     postedDaysAgo: 6,
+    views: 77,
+    distanceMiles: 11.9,
   },
   {
     id: 9,
@@ -181,6 +197,8 @@ const SEED_JOBS = [
     urgency: "Ongoing",
     applicants: 9,
     postedDaysAgo: 12,
+    views: 156,
+    distanceMiles: 24.6,
   },
 ];
 
@@ -505,6 +523,7 @@ function JobCard({
   const [showToast, setShowToast] = useState(false);
   const urgencyStyle = URGENCY_STYLES[job.urgency] ?? URGENCY_STYLES.Active;
   const hoursLeft = hoursUntilDeadline(job.deadline);
+  const isNewLead = job.postedDaysAgo === 0;
 
   const postedLabel =
     job.postedDaysAgo === 0
@@ -536,26 +555,40 @@ function JobCard({
         className="rounded-2xl p-6 border transition-all hover:border-amber-500/30 overflow-hidden relative"
         style={{
           backgroundColor: "rgba(255,255,255,0.04)",
-          borderColor: job.urgency === "Urgent" ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.1)",
+          borderColor: isNewLead
+            ? "rgba(34,197,94,0.25)"
+            : job.urgency === "Urgent"
+            ? "rgba(239,68,68,0.2)"
+            : "rgba(255,255,255,0.1)",
         }}
       >
-        {/* Urgency left border accent */}
+        {/* Left border accent */}
         <div
           className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
           style={{
-            backgroundColor:
-              job.urgency === "Urgent"
-                ? "#ef4444"
-                : job.urgency === "Active"
-                ? "#f59e0b"
-                : "#6366f1",
+            backgroundColor: isNewLead
+              ? "#4ade80"
+              : job.urgency === "Urgent"
+              ? "#ef4444"
+              : job.urgency === "Active"
+              ? "#f59e0b"
+              : "#6366f1",
           }}
         />
-        {/* Top row: logo + title + bids badge */}
+
+        {/* Top row: logo + title + badges */}
         <div className="flex items-start gap-3 mb-3">
           <CompanyLogo name={job.posterType} size={42} />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              {isNewLead && (
+                <span
+                  className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full animate-pulse"
+                  style={{ backgroundColor: "rgba(34,197,94,0.2)", color: "#4ade80" }}
+                >
+                  ● New Lead
+                </span>
+              )}
               <span
                 className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
                 style={{ backgroundColor: urgencyStyle.bg, color: urgencyStyle.color }}
@@ -587,7 +620,8 @@ function JobCard({
               {job.title}
             </h3>
           </div>
-          {/* Countdown + Applicants + Save */}
+
+          {/* Right side: countdown + stats */}
           <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5">
             {hoursLeft !== null && hoursLeft <= 168 && (
               <span
@@ -604,6 +638,13 @@ function JobCard({
             >
               <Users className="w-3.5 h-3.5" />
               {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
+            </div>
+            <div
+              className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
+              style={{ backgroundColor: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}
+            >
+              <Eye className="w-3 h-3" />
+              {job.views} viewed
             </div>
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
               Posted {postedLabel}
@@ -635,6 +676,11 @@ function JobCard({
             />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               {job.location}
+              {job.distanceMiles != null && (
+                <span className="ml-1.5 text-xs font-medium" style={{ color: "#F59E0B" }}>
+                  · {job.distanceMiles} mi away
+                </span>
+              )}
             </span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -655,14 +701,21 @@ function JobCard({
           </div>
         </div>
 
-        {/* Mobile: applicants + posted */}
-        <div className="flex items-center gap-3 mb-4 sm:hidden">
+        {/* Mobile: applicants + views + posted */}
+        <div className="flex items-center gap-3 mb-4 sm:hidden flex-wrap">
           <span
             className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
             style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.6)" }}
           >
             <Users className="w-3.5 h-3.5" />
             {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
+          </span>
+          <span
+            className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
+            style={{ backgroundColor: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}
+          >
+            <Eye className="w-3 h-3" />
+            {job.views} viewed
           </span>
           <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
             Posted {postedLabel}
@@ -689,7 +742,7 @@ function JobCard({
                 Bid Submitted — We'll Follow Up
               </>
             ) : (
-              <>Apply to Bid</>
+              <>Quick Apply — Submit Bid</>
             )}
           </button>
           <button

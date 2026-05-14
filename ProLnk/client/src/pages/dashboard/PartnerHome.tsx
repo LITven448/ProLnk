@@ -9,6 +9,7 @@ import {
   ArrowUpRight, Crown, BarChart3, Gift, X, Rocket,
   Briefcase, Camera, UserPlus, Network, Clock, CheckSquare, Square,
   Bell, Info, Lightbulb, CheckCheck, ArrowRight, Map, BookOpen,
+  AlertTriangle, CloudLightning, Target,
 } from "lucide-react";
 import OnboardingTour from "@/components/OnboardingTour";
 
@@ -923,6 +924,143 @@ function NotificationPopover() {
   );
 }
 
+// ─── Storm Opportunity Alert ──────────────────────────────────────────────────
+
+function StormOpportunityAlert() {
+  const [dismissed, setDismissed] = useState(false);
+
+  if (dismissed) return null;
+
+  return (
+    <div
+      className="relative rounded-2xl p-5 overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, rgba(220,38,38,0.15), rgba(234,88,12,0.08))",
+        border: "1px solid rgba(220,38,38,0.35)",
+        animation: "stormPulse 2.5s ease-in-out infinite",
+      }}
+    >
+      <style>{`
+        @keyframes stormPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+          50% { box-shadow: 0 0 0 4px rgba(220,38,38,0.18); }
+        }
+      `}</style>
+
+      <button
+        onClick={() => setDismissed(true)}
+        className="absolute top-3 right-3 w-6 h-6 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
+      >
+        <X size={13} className="text-gray-400" />
+      </button>
+
+      <div className="flex items-start gap-4 pr-6">
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+          style={{ background: "rgba(220,38,38,0.2)" }}
+        >
+          <CloudLightning size={20} style={{ color: "#ef4444" }} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <span
+              className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
+              style={{ background: "rgba(220,38,38,0.2)", color: "#ef4444", border: "1px solid rgba(220,38,38,0.3)" }}
+            >
+              Storm Alert
+            </span>
+            <span className="text-[10px] text-gray-500 flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse inline-block" />
+              Active now
+            </span>
+          </div>
+          <p className="text-sm font-bold text-white mb-0.5">
+            Hail alert for Frisco / Allen ZIP 75034 — 3 active leads available NOW
+          </p>
+          <p className="text-xs text-gray-400 mb-3">
+            Quarter-sized hail reported. Roofing, siding, and gutter jobs are surging in your service area.
+            Homeowners are requesting estimates right now.
+          </p>
+          <Link href="/inbound-leads">
+            <span
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all"
+              style={{ background: "#ef4444", color: "#fff" }}
+            >
+              <AlertTriangle size={12} />
+              View Active Leads <ChevronRight size={12} />
+            </span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── This Week's Goal Progress ────────────────────────────────────────────────
+
+function WeeklyGoalProgress() {
+  const goals = [
+    { label: "Jobs", current: 2, target: 5, color: "#14b8a6" },
+    { label: "Earnings", current: 780, target: 1500, color: "#14b8a6", prefix: "$", format: (v: number) => `$${v.toLocaleString()}` },
+    { label: "Referrals", current: 1, target: 3, color: "#14b8a6" },
+  ];
+
+  return (
+    <div
+      className="rounded-2xl p-5"
+      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2.5">
+          <div
+            className="w-8 h-8 rounded-xl flex items-center justify-center"
+            style={{ background: "rgba(20,184,166,0.12)" }}
+          >
+            <Target size={16} style={{ color: "#14b8a6" }} />
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-white leading-none">This Week's Goals</h3>
+            <p className="text-[11px] text-gray-500 mt-0.5">Resets every Monday</p>
+          </div>
+        </div>
+        <Link href="/job-log">
+          <span className="text-[11px] font-semibold text-gray-500 flex items-center gap-0.5 hover:text-teal-400 transition-colors">
+            Details <ChevronRight size={11} />
+          </span>
+        </Link>
+      </div>
+
+      <div className="space-y-3">
+        {goals.map((g) => {
+          const pct = Math.min(100, Math.round((g.current / g.target) * 100));
+          const display = g.format ? g.format(g.current) : g.current;
+          const targetDisplay = g.format ? g.format(g.target) : g.target;
+          return (
+            <div key={g.label}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-gray-400">{g.label}</span>
+                <span className="text-xs font-semibold text-white">
+                  {display}
+                  <span className="text-gray-600"> / {targetDisplay}</span>
+                </span>
+              </div>
+              <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
+                <div
+                  className="h-full rounded-full transition-all duration-700"
+                  style={{
+                    width: `${pct}%`,
+                    background: `linear-gradient(90deg, ${g.color}, ${g.color}99)`,
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function PartnerHome() {
@@ -999,6 +1137,9 @@ export default function PartnerHome() {
         {/* ── Trial Status Banner ─────────────────────────────────────────── */}
         {isFoundingNetwork && <TrialBanner joinedAt={(status as any).createdAt} />}
 
+        {/* ── Storm Opportunity Alert ──────────────────────────────────────── */}
+        <StormOpportunityAlert />
+
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -1058,6 +1199,9 @@ export default function PartnerHome() {
             color="#22c55e"
           />
         </div>
+
+        {/* ── Weekly Goal Progress ────────────────────────────────────────── */}
+        <WeeklyGoalProgress />
 
         {/* ── Earnings Summary ────────────────────────────────────────────── */}
         <EarningsSummaryCard />

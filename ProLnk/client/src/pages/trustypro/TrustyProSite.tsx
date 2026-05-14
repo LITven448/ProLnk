@@ -220,6 +220,15 @@ export default function TrustyProSite() {
             <a href="#features" className="hover:text-indigo-600 transition-colors">Features</a>
             <a href="#scout" className="hover:text-indigo-600 transition-colors">Home Assessment</a>
             <a href="#passport" className="hover:text-indigo-600 transition-colors">Home Passport</a>
+            <button
+              onClick={() => navigate("/trustypro/app")}
+              className="flex items-center gap-1.5 hover:text-indigo-600 transition-colors"
+            >
+              Mobile App
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-100 text-indigo-600 leading-none">
+                Soon
+              </span>
+            </button>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" onClick={() => navigate("/login?brand=trustypro")} className="text-gray-600">

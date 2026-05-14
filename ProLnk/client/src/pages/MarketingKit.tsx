@@ -112,7 +112,189 @@ const EMAIL_TEMPLATES = [
   },
 ];
 
-// ─── Social Templates ─────────────────────────────────────────────────────────
+// ─── Platform-specific Social Posts ──────────────────────────────────────────
+interface PlatformPost {
+  id: string;
+  platform: "LinkedIn" | "Twitter/X" | "Facebook" | "SMS";
+  platformIcon: string;
+  platformColor: string;
+  characterLimit: number;
+  title: string;
+  post: string;
+  tip: string;
+}
+
+const PLATFORM_POSTS: PlatformPost[] = [
+  {
+    id: "linkedin_founding",
+    platform: "LinkedIn",
+    platformIcon: "in",
+    platformColor: "#0A66C2",
+    characterLimit: 3000,
+    title: "Founding Network Announcement",
+    post: `Excited to share that I've joined the ProLnk Founding Partner Network — one of only 500 contractors nationwide to secure a founding spot before the platform opens to the public.
+
+ProLnk is an AI-powered home services marketplace that connects verified contractors with pre-qualified homeowners in their local market. As a founding member, I've locked in exclusive rates and commission structures that aren't available after launch.
+
+If you're a licensed home service contractor — HVAC, plumbing, electrical, roofing, or any other trade — I'd love to connect and share more about the network income opportunity. The referral structure is unlike anything I've seen in this industry.
+
+Learn more or apply through my link: [YOUR_REFERRAL_LINK]
+
+#HomeServices #Contractor #ProLnk #FoundingPartner #Entrepreneurship`,
+    tip: "Post on Tuesday or Wednesday morning for highest LinkedIn engagement from contractors.",
+  },
+  {
+    id: "linkedin_income",
+    platform: "LinkedIn",
+    platformIcon: "in",
+    platformColor: "#0A66C2",
+    characterLimit: 3000,
+    title: "Passive Income Story",
+    post: `Most contractors I know are trading time for money. I've been doing the same for [X] years.
+
+That changed when I joined ProLnk as a founding partner. Here's what the income model looks like:
+
+→ Direct commissions on matched jobs
+→ Override income from contractors in my network (4 levels deep)
+→ Subscription overrides from pros I refer
+→ Homeowner origination fees — permanent, recurring
+
+My goal is to build a network of [X] contractors this year. That creates passive income that doesn't stop when I put down my tools.
+
+If you want to hear more, I'm happy to connect. Link in bio.
+
+#ContractorLife #PassiveIncome #ProLnk #HomeServices`,
+    tip: "Share specific goals and numbers — LinkedIn audiences engage more with concrete data.",
+  },
+  {
+    id: "twitter_hook",
+    platform: "Twitter/X",
+    platformIcon: "𝕏",
+    platformColor: "#000000",
+    characterLimit: 280,
+    title: "Hook — Passive Income",
+    post: `Contractors: what if your network paid you while you sleep?
+
+Joined @ProLnk as a founding partner. 4-level override income. 500 founding spots left.
+
+[YOUR_REFERRAL_LINK]`,
+    tip: "Tweet in the morning between 7–9am for max reach. Pin to profile for 30 days.",
+  },
+  {
+    id: "twitter_announcement",
+    platform: "Twitter/X",
+    platformIcon: "𝕏",
+    platformColor: "#000000",
+    characterLimit: 280,
+    title: "Short Announcement",
+    post: `Just locked in my founding partner spot with @ProLnk — an AI-powered marketplace connecting licensed contractors with homeowners.
+
+Only 500 founding spots. If you're in the trades, you should see this.
+
+[YOUR_REFERRAL_LINK]`,
+    tip: "Add a screenshot of your partner dashboard for 3× more engagement.",
+  },
+  {
+    id: "facebook_community",
+    platform: "Facebook",
+    platformIcon: "f",
+    platformColor: "#1877F2",
+    characterLimit: 63206,
+    title: "Community Outreach Post",
+    post: `Hey [City] neighbors! 👋
+
+I'm part of a new home services network called ProLnk and I wanted to share it with our community.
+
+Here's how it works for homeowners:
+✅ Describe what you need (roof repair, HVAC, plumbing, etc.)
+✅ ProLnk's AI matches you with verified local contractors
+✅ Get 3 quotes — no cold calls, no strangers at your door
+✅ Everything is tracked so you have a record of every job done on your home
+
+And for any local contractors following me — there's a founding partner opportunity with income streams I've never seen in the industry before.
+
+Happy to answer questions in the comments. Or use my link to learn more: [YOUR_REFERRAL_LINK]
+
+#[City] #HomeServices #ProLnk #LocalBusiness`,
+    tip: "Post in local neighborhood Facebook groups for 5× more organic reach than your personal page.",
+  },
+  {
+    id: "facebook_story",
+    platform: "Facebook",
+    platformIcon: "f",
+    platformColor: "#1877F2",
+    characterLimit: 63206,
+    title: "My ProLnk Story",
+    post: `I want to tell you why I joined ProLnk as a founding partner.
+
+After [X] years as a [Your Trade] contractor, I was tired of slow seasons, chasing leads, and paying high fees to lead services that sent me garbage.
+
+A colleague told me about ProLnk — an AI platform that pre-screens homeowners before sending them to you, takes a fair fee on closed jobs, and pays you override income from every contractor you bring into your network.
+
+I joined as one of the 500 founding partners. It cost me [nothing / $149/mo] and I've already [referred X partners / received X leads].
+
+If you're a contractor who wants more predictable income, or a homeowner who wants better vetted professionals — use my link: [YOUR_REFERRAL_LINK]
+
+Real people. Real results. That's why I'm here.`,
+    tip: "This format (personal story → pain → solution → result → CTA) converts best on Facebook.",
+  },
+  {
+    id: "sms_colleague",
+    platform: "SMS",
+    platformIcon: "💬",
+    platformColor: "#22C55E",
+    characterLimit: 160,
+    title: "Colleague Invite",
+    post: `Hey [Name], heard of ProLnk? AI home services marketplace — founding partner spots open. Check it out: [YOUR_REFERRAL_LINK]`,
+    tip: "Text existing contractor contacts directly. 98% open rate vs 20% email.",
+  },
+  {
+    id: "sms_homeowner",
+    platform: "SMS",
+    platformIcon: "💬",
+    platformColor: "#22C55E",
+    characterLimit: 160,
+    title: "Homeowner Invite",
+    post: `Hi [Name], it's [Your Name]. Get free quotes from vetted local contractors through ProLnk — no cold callers, no guessing. [YOUR_REFERRAL_LINK]`,
+    tip: "Send to past customers who gave you 5-star reviews for best conversion.",
+  },
+];
+
+// ─── My ProLnk Story Templates ────────────────────────────────────────────────
+const STORY_TEMPLATES = [
+  {
+    id: "founding_story",
+    title: "The Founding Partner Story",
+    blanks: ["years in the trades", "your trade", "city/market", "your biggest pain point", "what changed"],
+    template: `I've been a [years in the trades]-year [your trade] contractor in [city/market]. For most of my career, [your biggest pain point].
+
+That's why when I discovered ProLnk, [what changed]. I'm now a founding partner — one of 500 nationwide.
+
+If you want to know more: [YOUR_REFERRAL_LINK]`,
+  },
+  {
+    id: "income_story",
+    title: "The Income Stream Story",
+    blanks: ["what you were doing before", "how many pros you've referred", "estimated monthly override income"],
+    template: `Before ProLnk, I was [what you were doing before] to find work.
+
+Now I've referred [how many pros you've referred] contractors into my network. That earns me ~$[estimated monthly override income]/month in override income on top of my direct job commissions.
+
+It's not magic — it's a system. Happy to explain: [YOUR_REFERRAL_LINK]`,
+  },
+  {
+    id: "homeowner_story",
+    title: "The Homeowner Value Story",
+    blanks: ["your trade", "what homeowners struggle with", "what ProLnk solves"],
+    template: `As a [your trade] contractor, I see firsthand that [what homeowners struggle with].
+
+ProLnk solves this by [what ProLnk solves]. As a verified partner, every homeowner I send gets pre-screened quotes from licensed pros.
+
+Get your free quote: [YOUR_REFERRAL_LINK]`,
+  },
+];
+
+// ─── Social Templates (legacy, kept for backward compat) ─────────────────────
 const SOCIAL_TEMPLATES = [
   {
     id: "before_after",
@@ -307,6 +489,141 @@ function SocialCard({ tpl }: { tpl: typeof SOCIAL_TEMPLATES[0] }) {
   );
 }
 
+// ─── Platform Post Card ───────────────────────────────────────────────────────
+function PlatformPostCard({ post, referralLink }: { post: PlatformPost; referralLink: string }) {
+  const [copied, setCopied] = useState(false);
+  const finalPost = post.post.replace(/\[YOUR_REFERRAL_LINK\]/g, referralLink);
+  const charCount = finalPost.length;
+  const charPct = Math.min(100, Math.round((charCount / post.characterLimit) * 100));
+  const isOver = charCount > post.characterLimit;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(finalPost).then(() => {
+      setCopied(true);
+      toast.success(`${post.platform} post copied!`);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
+      {/* Platform header */}
+      <div className="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: T.border, backgroundColor: `${post.platformColor}08` }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-black flex-shrink-0"
+          style={{ backgroundColor: post.platformColor }}>
+          {post.platformIcon}
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-bold truncate" style={{ color: T.text }}>{post.title}</p>
+          <p className="text-[10px]" style={{ color: T.muted }}>{post.platform}</p>
+        </div>
+        <div className="text-right flex-shrink-0">
+          <p className={`text-[10px] font-mono font-bold ${isOver ? "text-red-500" : ""}`} style={!isOver ? { color: T.muted } : {}}>
+            {charCount.toLocaleString()}{post.characterLimit < 63206 ? `/${post.characterLimit}` : ""}
+          </p>
+          {post.characterLimit < 63206 && (
+            <div className="w-16 h-1 rounded-full mt-0.5 overflow-hidden" style={{ backgroundColor: T.border }}>
+              <div className="h-full rounded-full transition-all" style={{ width: `${charPct}%`, backgroundColor: isOver ? "#EF4444" : post.platformColor }} />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Post preview */}
+      <div className="px-4 py-3">
+        <div className="p-3 rounded-xl text-xs leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto" style={{ backgroundColor: T.bg, color: T.muted }}>
+          {finalPost}
+        </div>
+
+        {/* Tip */}
+        <div className="flex items-start gap-1.5 mt-2.5 mb-3 p-2 rounded-lg" style={{ backgroundColor: `${post.platformColor}08` }}>
+          <Zap className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: post.platformColor }} />
+          <p className="text-[10px] leading-snug" style={{ color: post.platformColor }}>{post.tip}</p>
+        </div>
+
+        <Button
+          size="sm"
+          className="w-full gap-1.5 text-xs font-semibold text-white"
+          style={{ backgroundColor: post.platformColor }}
+          onClick={handleCopy}
+        >
+          {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? "Copied!" : `Copy + Post to ${post.platform}`}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Story Template Card ──────────────────────────────────────────────────────
+function StoryCard({ tpl, referralLink }: { tpl: typeof STORY_TEMPLATES[0]; referralLink: string }) {
+  const [values, setValues] = useState<Record<string, string>>({});
+  const [copied, setCopied] = useState(false);
+
+  const filled = tpl.template.replace(/\[YOUR_REFERRAL_LINK\]/g, referralLink).replace(
+    /\[([^\]]+)\]/g,
+    (_, key) => values[key] ? `**${values[key]}**` : `[${key}]`
+  );
+
+  const handleCopy = () => {
+    const plain = tpl.template
+      .replace(/\[YOUR_REFERRAL_LINK\]/g, referralLink)
+      .replace(/\[([^\]]+)\]/g, (_, key) => values[key] || `[${key}]`);
+    navigator.clipboard.writeText(plain).then(() => {
+      setCopied(true);
+      toast.success("Story template copied!");
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <div className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: T.border }}>
+      <div className="px-4 py-3 border-b flex items-center gap-2" style={{ borderColor: T.border, backgroundColor: `${T.teal}08` }}>
+        <Users className="w-4 h-4 flex-shrink-0" style={{ color: T.teal }} />
+        <p className="text-xs font-bold" style={{ color: T.text }}>{tpl.title}</p>
+      </div>
+      <div className="p-4">
+        {/* Fill in the blanks */}
+        <div className="space-y-2 mb-3">
+          {tpl.blanks.map(blank => (
+            <div key={blank}>
+              <label className="text-[10px] font-semibold uppercase tracking-wide mb-1 block" style={{ color: T.muted }}>{blank}</label>
+              <Input
+                placeholder={`Enter ${blank}...`}
+                value={values[blank] ?? ""}
+                onChange={e => setValues(v => ({ ...v, [blank]: e.target.value }))}
+                className="h-7 text-xs"
+                style={{ fontSize: "12px" }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Preview */}
+        <div className="p-3 rounded-xl text-xs leading-relaxed whitespace-pre-wrap mb-3 max-h-40 overflow-y-auto" style={{ backgroundColor: T.bg, color: T.muted }}>
+          {filled.split(/(\*\*[^*]+\*\*)/).map((part, i) =>
+            part.startsWith("**") ? (
+              <span key={i} className="font-bold" style={{ color: T.text }}>{part.replace(/\*\*/g, "")}</span>
+            ) : (
+              <span key={i}>{part}</span>
+            )
+          )}
+        </div>
+
+        <Button
+          size="sm"
+          className="w-full gap-1.5 text-xs text-white"
+          style={{ backgroundColor: T.teal }}
+          onClick={handleCopy}
+        >
+          {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? "Copied!" : "Copy Filled Story"}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 // ─── QR Code Section ─────────────────────────────────────────────────────────
 function QRSection({ referralLink }: { referralLink: string }) {
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(referralLink)}&color=00B5B8&bgcolor=FFFFFF`;
@@ -428,15 +745,21 @@ export default function MarketingKit() {
 
         {/* Tabs */}
         <Tabs defaultValue="print">
-          <TabsList className="mb-5 bg-white border" style={{ borderColor: T.border }}>
+          <TabsList className="mb-5 bg-white border flex-wrap h-auto gap-1 p-1" style={{ borderColor: T.border }}>
             <TabsTrigger value="print" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
               <FileText className="w-3.5 h-3.5" /> Print
             </TabsTrigger>
             <TabsTrigger value="email" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
               <Mail className="w-3.5 h-3.5" /> Email
             </TabsTrigger>
+            <TabsTrigger value="platforms" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
+              <Share2 className="w-3.5 h-3.5" /> Platform Posts
+            </TabsTrigger>
+            <TabsTrigger value="stories" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
+              <Users className="w-3.5 h-3.5" /> My Story
+            </TabsTrigger>
             <TabsTrigger value="social" className="text-xs gap-1.5 data-[state=active]:bg-teal-50 data-[state=active]:text-teal-600">
-              <Share2 className="w-3.5 h-3.5" /> Social
+              <Image className="w-3.5 h-3.5" /> Image Captions
             </TabsTrigger>
           </TabsList>
 
@@ -460,6 +783,34 @@ export default function MarketingKit() {
             <div className="grid md:grid-cols-2 gap-4">
               {EMAIL_TEMPLATES.map(tpl => (
                 <EmailCard key={tpl.id} tpl={tpl} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="platforms">
+            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2" style={{ borderColor: T.border, background: `${T.teal}08` }}>
+              <Smartphone className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+              <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
+                <strong style={{ color: T.text }}>Your referral link is embedded.</strong> Each post is tailored to the platform's tone, length, and audience. Click "Copy + Post" and paste directly into the platform.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {PLATFORM_POSTS.map(p => (
+                <PlatformPostCard key={p.id} post={p} referralLink={referralLink} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="stories">
+            <div className="mb-4 p-3 rounded-2xl border flex items-start gap-2" style={{ borderColor: T.border, background: `${T.teal}08` }}>
+              <Users className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: T.teal }} />
+              <p className="text-xs leading-relaxed" style={{ color: T.muted }}>
+                <strong style={{ color: T.text }}>Fill in the blanks, then copy your personalized story.</strong> Personal stories convert 3–5× better than generic posts. Your referral link is auto-included.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
+              {STORY_TEMPLATES.map(tpl => (
+                <StoryCard key={tpl.id} tpl={tpl} referralLink={referralLink} />
               ))}
             </div>
           </TabsContent>

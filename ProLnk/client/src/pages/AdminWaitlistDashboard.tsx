@@ -19,6 +19,13 @@ interface WaitlistSignup {
   referredBy?: string;
   referralCount?: number;
   status?: string;
+  adminNotes?: string;
+}
+
+function extractCharterCode(adminNotes?: string): string | null {
+  if (!adminNotes) return null;
+  const match = adminNotes.match(/Charter invite:\s*([A-Z0-9\-]+)/i);
+  return match ? match[1] : null;
 }
 
 const TIER_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
@@ -46,6 +53,7 @@ export default function AdminWaitlistDashboard() {
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
   const [sourceFilter, setSourceFilter] = useState<string>("all");
+  const [charterOnly, setCharterOnly] = useState(false);
   const [sortBy, setSortBy] = useState<"newest" | "oldest" | "position">("newest");
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkActionMsg, setBulkActionMsg] = useState<string | null>(null);
@@ -77,6 +85,7 @@ export default function AdminWaitlistDashboard() {
       referredBy: p.referredBy,
       referralCount: (p as any).referralCount ?? 0,
       status: (p as any).status,
+      adminNotes: (p as any).adminNotes,
     })) || []),
     ...(homeWaitlist?.map((h) => ({
       id: h.id,
@@ -104,6 +113,8 @@ export default function AdminWaitlistDashboard() {
   const conversionRate =
     allSignups.length > 0 ? Math.round((approved / allSignups.length) * 100) : 0;
 
+  const charterCount = allSignups.filter((s) => extractCharterCode(s.adminNotes) !== null).length;
+
   const filtered = allSignups.filter((signup) => {
     const q = searchTerm.toLowerCase();
     const matchesSearch =
@@ -114,7 +125,8 @@ export default function AdminWaitlistDashboard() {
       (signup.trade || "").toLowerCase().includes(q) ||
       (signup.zip || "").toLowerCase().includes(q);
     const matchesSource = sourceFilter === "all" || signup.source === sourceFilter;
-    return matchesSearch && matchesSource;
+    const matchesCharter = !charterOnly || extractCharterCode(signup.adminNotes) !== null;
+    return matchesSearch && matchesSource && matchesCharter;
   });
 
   const sorted = [...filtered].sort((a, b) => {
@@ -252,6 +264,36 @@ export default function AdminWaitlistDashboard() {
           </Card>
         </div>
 
+        {/* Charter Filter Tab */}
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={() => setCharterOnly(false)}
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+              !charterOnly
+                ? "bg-slate-900 text-white"
+                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+            }`}
+          >
+            All Members
+          </button>
+          <button
+            onClick={() => setCharterOnly(true)}
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2 ${
+              charterOnly
+                ? "bg-amber-500 text-white"
+                : "bg-white text-amber-700 border border-amber-300 hover:bg-amber-50"
+            }`}
+          >
+            <span>🏆</span>
+            Charter Members
+            {charterCount > 0 && (
+              <span className={`inline-block px-1.5 py-0.5 rounded-full text-xs font-bold ${charterOnly ? "bg-amber-700 text-white" : "bg-amber-100 text-amber-800"}`}>
+                {charterCount}
+              </span>
+            )}
+          </button>
+        </div>
+
         {/* Controls */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -387,7 +429,21 @@ export default function AdminWaitlistDashboard() {
                             #{signup.position || "—"}
                           </td>
                           <td className="px-6 py-4 text-sm font-medium text-slate-900">
-                            {signup.firstName} {signup.lastName}
+                            <span className="flex items-center gap-2">
+                              {signup.firstName} {signup.lastName}
+                              {(() => {
+                                const code = extractCharterCode(signup.adminNotes);
+                                return code ? (
+                                  <span
+                                    title={`Charter invite: ${code}`}
+                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold"
+                                    style={{ backgroundColor: "#FEF3C7", color: "#92400E", border: "1px solid #F59E0B" }}
+                                  >
+                                    🏆 {code}
+                                  </span>
+                                ) : null;
+                              })()}
+                            </span>
                           </td>
                           <td className="px-6 py-4 text-sm text-slate-600">{signup.email}</td>
                           <td className="px-6 py-4 text-sm text-slate-600">{signup.trade || "—"}</td>

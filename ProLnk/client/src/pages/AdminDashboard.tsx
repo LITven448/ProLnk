@@ -344,29 +344,55 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent className="space-y-2">
               {[
+                { label: "Export All Waitlist Data", href: "#export", icon: Download, color: "#0284c7", desc: "Download CSV for all pros + homeowners", action: "export" },
+                { label: "Send Welcome Email to Pending", href: "/admin/waitlist", icon: Mail, color: "#22c55e", desc: "Bulk action via Waitlist Manager" },
+                { label: "View Charter Invite Usage", href: "/admin/charter-tracking", icon: Crown, color: "#F5E642", desc: "25 codes — see usage and revoke" },
+                { label: "Trigger Storm Scan", href: "/admin/storm-watch", icon: Zap, color: "#f97316", desc: "Run NOAA storm agent on active regions" },
                 { label: "Approve Pending Applications", href: "#applications", icon: CheckCircle, color: "#22c55e", badge: pending?.length },
                 { label: "View Waitlist Manager", href: "/admin/waitlist", icon: Users, color: "var(--teal)" },
                 { label: "Agent Command Center", href: "/admin/agent-command-center", icon: Bot, color: "#7928CA" },
-                { label: "AI Agents Dashboard", href: "/admin/dashboard/agents", icon: Activity, color: "#00D4FF" },
-                { label: "Commission Rates", href: "/admin/rates", icon: Percent, color: "#FBB140" },
                 { label: "AI Opportunity Feed", href: "/admin/opportunities", icon: TrendingUp, color: "#6366f1" },
               ].map((action) => (
-                <Link key={action.href} href={action.href}>
-                  <div className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${action.color}15` }}>
-                        <action.icon className="w-3.5 h-3.5" style={{ color: action.color }} />
+                action.action === "export"
+                  ? (
+                    <div
+                      key={action.href}
+                      onClick={() => { handleExportPros(); handleExportHomes(); }}
+                      className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${action.color}15` }}>
+                          <action.icon className="w-3.5 h-3.5" style={{ color: action.color }} />
+                        </div>
+                        <div>
+                          <div className="text-sm text-gray-700 group-hover:text-gray-900 font-medium">{action.label}</div>
+                          {action.desc && <div className="text-xs text-gray-400">{action.desc}</div>}
+                        </div>
                       </div>
-                      <span className="text-sm text-gray-700 group-hover:text-gray-900 font-medium">{action.label}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {action.badge != null && action.badge > 0 && (
-                        <span className="px-1.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-600">{action.badge}</span>
-                      )}
                       <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-gray-500" />
                     </div>
-                  </div>
-                </Link>
+                  )
+                  : (
+                    <Link key={action.href} href={action.href}>
+                      <div className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer group transition-colors">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${action.color}15` }}>
+                            <action.icon className="w-3.5 h-3.5" style={{ color: action.color }} />
+                          </div>
+                          <div>
+                            <div className="text-sm text-gray-700 group-hover:text-gray-900 font-medium">{action.label}</div>
+                            {action.desc && <div className="text-xs text-gray-400">{action.desc}</div>}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {action.badge != null && action.badge > 0 && (
+                            <span className="px-1.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-600">{action.badge}</span>
+                          )}
+                          <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-gray-500" />
+                        </div>
+                      </div>
+                    </Link>
+                  )
               ))}
             </CardContent>
           </Card>

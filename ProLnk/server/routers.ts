@@ -35,6 +35,7 @@ import { briefcaseRouter } from "./routers/briefcase";
 import { scoutRouter } from "./routers/scout";
 import { proPassRouter } from "./routers/proPass";
 import { foundingPartnerRouter } from "./routers/foundingPartner";
+import { networkOverridesRouter } from "./routers/networkOverrides";
 import { bidBoardRouter } from "./routers/bidBoard";
 import { smartRouteRouter } from "./routers/smartRoute";
 import { adminDisputesRouter } from "./routers/adminDisputes";
@@ -44,6 +45,7 @@ import { facilityRouter } from "./routers/facility";
 import { projectBidsRouter } from "./routers/projectBids";
 import { waitlistRouter } from "./routers/waitlist";
 import { waitlistAdminRouter } from "./routers/waitlistAdmin";
+import { rewardfulRouter } from "./routers/rewardful";
 import { analyticsAdminRouter } from "./routers/analyticsAdmin";
 import { automationRulesRouter } from "./routers/automationRules";
 import { partnerAuthRouter } from "./routers/partnerAuth";
@@ -54,6 +56,7 @@ import { mediaLibraryRouter } from "./routers/mediaLibrary";
 import { photoPipelineRouter } from "./routers/photo-pipeline";
 import { seasonalMaintenanceRouter } from "./routers/seasonalMaintenance";
 import { propertyEnrichmentRouter } from "./routers/propertyEnrichment";
+import { homeHealthScoreRouter } from "./routers/homeHealthScore";
 import { runCircumventionSweep, getFlagsForAdmin, resolveFlag } from "./circumvention-detector";
 import { calculatePartnerPriorityScore, recalculateAllPartnerScores, updatePartnerResponseSpeed } from "./routers/partnerScore";
 import { distributeJobCommissions, distributeSubscriptionCommissions, getRecruitingChain, previewJobCommissions } from "./agents/commissionCascadeEngine";
@@ -335,6 +338,7 @@ export const appRouter = router({
   scout: scoutRouter,
   proPass: proPassRouter,
   foundingPartner: foundingPartnerRouter,
+  networkOverrides: networkOverridesRouter,
   bidBoard: bidBoardRouter,
   propertyEnrichment: propertyEnrichmentRouter,
   smartRoute: smartRouteRouter,
@@ -342,6 +346,7 @@ export const appRouter = router({
   adminNotifications: adminNotificationsRouter,
   checkr: checkrRouter,
   facility: facilityRouter,
+  rewardful: rewardfulRouter,
   homeowner: router({
     // -- Profile --
     saveProfile: protectedProcedure
@@ -5407,6 +5412,9 @@ Return a JSON object with:
         return { success: true };
       }),
   }),
+
+  // ── Home Health Score ────────────────────────────────────────────────────────
+  homeHealthScore: homeHealthScoreRouter,
 
   // ── Analytics Admin ─────────────────────────────────────────────────────────
   analytics: analyticsAdminRouter,

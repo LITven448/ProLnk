@@ -886,6 +886,9 @@ function Router() {
       <Route path="/admin/campaigns" component={CampaignCenter} />
       <Route path="/admin/marketing-automation" component={MarketingAutomationDashboard} />
       <Route path="/partner-agreement" component={PartnerAgreement} />
+      <Route path="/partner-faq" component={PartnerFAQ} />
+      <Route path="/partner-resources" component={PartnerResourceCenter} />
+      <Route path="/compliance" component={ComplianceDocs} />
       <Route path="/admin/compliance" component={StrikeManagement} />
       <Route path="/admin/waitlist" component={WaitlistManager} />
       <Route path="/admin/charter-tracking" component={CharterTracking} />

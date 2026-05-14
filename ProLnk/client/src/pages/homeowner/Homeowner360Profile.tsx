@@ -14,7 +14,10 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle2, ChevronRight, Home, Heart, DollarSign, Users, Star, Zap } from "lucide-react";
+import {
+  CheckCircle2, ChevronRight, Home, Heart, DollarSign, Users, Star, Zap,
+  ShieldCheck, Camera, FileText, Thermometer, Clock, Upload,
+} from "lucide-react";
 
 function ScoreRing({ score }: { score: number }) {
   const color = score >= 80 ? "text-emerald-500" : score >= 50 ? "text-amber-500" : "text-rose-500";
@@ -28,6 +31,140 @@ function ScoreRing({ score }: { score: number }) {
     </div>
   );
 }
+
+function ProfileCompletenessRing({ pct }: { pct: number }) {
+  const r = 44;
+  const circumference = 2 * Math.PI * r;
+  const dashOffset = circumference - (pct / 100) * circumference;
+  const color = pct >= 80 ? "#10B981" : pct >= 50 ? "#F59E0B" : "#EF4444";
+
+  const missing = [
+    { label: "Property photos", done: false },
+    { label: "Insurance document", done: false },
+    { label: "HVAC age", done: false },
+    { label: "Roof year", done: true },
+    { label: "Home warranty", done: true },
+  ];
+
+  return (
+    <div className="flex items-start gap-6">
+      <div className="relative flex-shrink-0">
+        <svg width="112" height="112" viewBox="0 0 112 112">
+          <circle cx="56" cy="56" r={r} fill="none" stroke="#E2E8F0" strokeWidth="10" />
+          <circle
+            cx="56" cy="56" r={r}
+            fill="none"
+            stroke={color}
+            strokeWidth="10"
+            strokeDasharray={circumference}
+            strokeDashoffset={dashOffset}
+            strokeLinecap="round"
+            transform="rotate(-90 56 56)"
+            style={{ transition: "stroke-dashoffset 0.5s ease" }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-xl font-bold" style={{ color }}>{pct}%</span>
+          <span className="text-[9px] text-muted-foreground">complete</span>
+        </div>
+      </div>
+      <div className="space-y-1.5 pt-1">
+        <p className="text-xs font-semibold text-foreground mb-2">Still needed:</p>
+        {missing.map((item) => (
+          <div key={item.label} className="flex items-center gap-2">
+            {item.done ? (
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+            ) : (
+              <div className="w-3.5 h-3.5 rounded-full border-2 border-muted-foreground/40 flex-shrink-0" />
+            )}
+            <span className={`text-xs ${item.done ? "line-through text-muted-foreground" : "text-foreground"}`}>
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const TRUST_BREAKDOWN = [
+  { label: "Identity verified", done: true, pts: 25 },
+  { label: "Property claimed", done: true, pts: 25 },
+  { label: "Documents uploaded", done: false, pts: 30 },
+  { label: "Reviews given", done: true, pts: 20 },
+];
+
+function TrustScore() {
+  const score = 87;
+  const maxPts = TRUST_BREAKDOWN.reduce((s, t) => s + t.pts, 0);
+
+  return (
+    <Card className="border-emerald-500/20 bg-emerald-500/5">
+      <CardContent className="pt-4 pb-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-500" />
+            <span className="text-sm font-semibold">TrustyPro Trust Score</span>
+          </div>
+          <span className="text-xl font-bold text-emerald-500">{score}/100</span>
+        </div>
+        <div className="space-y-2">
+          {TRUST_BREAKDOWN.map((item) => (
+            <div key={item.label} className="flex items-center gap-2">
+              {item.done ? (
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+              ) : (
+                <div className="w-3.5 h-3.5 rounded-full border-2 border-muted-foreground/40 flex-shrink-0" />
+              )}
+              <span className={`text-xs flex-1 ${item.done ? "text-foreground" : "text-muted-foreground"}`}>
+                {item.label}
+              </span>
+              <span className="text-[10px] text-muted-foreground">+{item.pts} pts</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3">
+          <Progress value={score} className="h-2" />
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+const ACTIVITY_TIMELINE = [
+  { id: 1, action: "Booked an HVAC pro", icon: "🔧", time: "2 days ago", color: "text-blue-500" },
+  { id: 2, action: "Uploaded insurance certificate", icon: "📄", time: "5 days ago", color: "text-emerald-500" },
+  { id: 3, action: "Received a product recall notice", icon: "⚠️", time: "1 week ago", color: "text-amber-500" },
+  { id: 4, action: "Completed home setup wizard", icon: "🏠", time: "2 weeks ago", color: "text-purple-500" },
+  { id: 5, action: "Added appliance warranty", icon: "🛡️", time: "3 weeks ago", color: "text-teal-500" },
+];
+
+const NEXT_STEPS = [
+  {
+    icon: "🛡️",
+    title: "Upload your insurance certificate",
+    desc: "Earn +30 trust points and unlock priority matching",
+    cta: "Upload now",
+    color: "border-blue-500/20 bg-blue-500/5",
+    ctaColor: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    icon: "❄️",
+    title: "Add HVAC service date",
+    desc: "Get proactive maintenance reminders before breakdowns",
+    cta: "Add date",
+    color: "border-teal-500/20 bg-teal-500/5",
+    ctaColor: "text-teal-600 dark:text-teal-400",
+  },
+  {
+    icon: "👥",
+    title: "Invite a neighbor",
+    desc: "Earn $25 credit when they complete their first booking",
+    cta: "Send invite",
+    color: "border-purple-500/20 bg-purple-500/5",
+    ctaColor: "text-purple-600 dark:text-purple-400",
+  },
+];
 
 function SelectField({ label, value, onChange, options, placeholder }: {
   label: string; value?: string; onChange: (v: string) => void;
@@ -120,6 +257,70 @@ export default function Homeowner360Profile() {
           </p>
         </div>
         <ScoreRing score={score} />
+      </div>
+
+      {/* ── Profile Completeness Ring ─────────────────────────────────── */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base flex items-center gap-2">
+            <Camera className="w-4 h-4 text-blue-500" />
+            Profile Completeness
+          </CardTitle>
+          <CardDescription>Complete your profile to unlock better matching and higher trust scores.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ProfileCompletenessRing pct={73} />
+        </CardContent>
+      </Card>
+
+      {/* ── Trust Score ───────────────────────────────────────────────── */}
+      <TrustScore />
+
+      {/* ── Activity Timeline ─────────────────────────────────────────── */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base flex items-center gap-2">
+            <Clock className="w-4 h-4 text-purple-500" />
+            Recent Activity
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="relative pl-5">
+            <div className="absolute left-[7px] top-0 bottom-0 w-0.5 bg-border" />
+            <div className="space-y-4">
+              {ACTIVITY_TIMELINE.map((item, i) => (
+                <div key={item.id} className="relative flex items-start gap-3">
+                  <div className="absolute -left-5 w-3 h-3 rounded-full bg-background border-2 border-muted-foreground/30 mt-0.5" />
+                  <span className="text-base">{item.icon}</span>
+                  <div>
+                    <p className="text-sm font-medium">{item.action}</p>
+                    <p className="text-xs text-muted-foreground">{item.time}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* ── Recommended Next Steps ────────────────────────────────────── */}
+      <div>
+        <h2 className="text-sm font-semibold mb-3 text-foreground">Recommended Next Steps</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {NEXT_STEPS.map((step) => (
+            <Card key={step.title} className={`border ${step.color}`}>
+              <CardContent className="pt-4 pb-4">
+                <span className="text-2xl block mb-2">{step.icon}</span>
+                <p className="text-sm font-semibold mb-1">{step.title}</p>
+                <p className="text-xs text-muted-foreground mb-3">{step.desc}</p>
+                <button className={`text-xs font-semibold flex items-center gap-1 ${step.ctaColor}`}>
+                  {step.cta}
+                  <ChevronRight className="w-3 h-3" />
+                </button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
 
       {/* Home summary strip */}

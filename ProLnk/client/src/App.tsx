@@ -458,6 +458,8 @@ const PhotoGuide = lazy(() => import("./pages/PhotoGuide"));
 const MaximizeEarnings = lazy(() => import("./pages/MaximizeEarnings"));
 const PartnerFAQ = lazy(() => import("./pages/PartnerFAQ"));
 const PartnerSuccessStories = lazy(() => import("./pages/PartnerSuccessStories"));
+const ProLnkAcademy = lazy(() => import("./pages/resources/ProLnkAcademy"));
+const SuccessStoriesPage = lazy(() => import("./pages/resources/SuccessStoriesPage"));
 
 // Wave 40: Data Visualization
 const DashboardBuilder = lazy(() => import("./pages/admin/DashboardBuilder"));
@@ -1058,7 +1060,8 @@ function Router() {
       <Route path="/resources/photo-guide" component={PhotoGuide} />
       <Route path="/resources/maximize-earnings" component={MaximizeEarnings} />
       <Route path="/resources/faq" component={PartnerFAQ} />
-      <Route path="/resources/success-stories" component={PartnerSuccessStories} />
+      <Route path="/resources/success-stories" component={SuccessStoriesPage} />
+      <Route path="/resources/academy" component={ProLnkAcademy} />
       <Route path="/resources/competitive" component={CompetitiveAdvantage} />
 
       {/* Lead Management */}

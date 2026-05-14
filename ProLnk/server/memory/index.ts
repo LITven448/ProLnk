@@ -68,6 +68,43 @@ export async function getPropertyTimelineSafe(params: {
   }
 }
 
+export async function storeHomeHealthDataSafe(
+  homeId: string,
+  scanResult: import("./homeVault.js").ScanResult,
+  propertyData: import("./homeVault.js").PropertyData,
+): Promise<void> {
+  try {
+    const { storeHomeHealthData } = await import("./homeVault.js");
+    await storeHomeHealthData(homeId, scanResult, propertyData);
+  } catch {
+    // homeVault or its deps not available — silently skip
+  }
+}
+
+export async function getHomeHistorySafe(
+  homeId: string,
+): Promise<import("./homeVault.js").HomeHealthRecord[]> {
+  try {
+    const { getHomeHistory } = await import("./homeVault.js");
+    return await getHomeHistory(homeId);
+  } catch {
+    return [];
+  }
+}
+
+export async function findHomesWithSimilarIssuesSafe(params: {
+  address: string;
+  issues: string[];
+  limit?: number;
+}): Promise<Array<{ id: string; score: number; address: string; detectedIssues: string[] }>> {
+  try {
+    const { findHomesWithSimilarIssues } = await import("./homeVault.js");
+    return await findHomesWithSimilarIssues(params);
+  } catch {
+    return [];
+  }
+}
+
 export async function runLeadRoutingPipelineSafe(params: {
   propertyAddress: string;
   photoUrl: string;

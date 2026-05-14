@@ -6,10 +6,20 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import {
   CreditCard, ExternalLink, RefreshCw, CheckCircle, AlertCircle,
-  Lock, Star, Calendar, XCircle,
+  Lock, Star, Calendar, XCircle, Users, Gift, Download, Clock,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+
+function daysUntil(dateStr: string | Date | null | undefined): number | null {
+  if (!dateStr) return null;
+  const diff = new Date(dateStr).getTime() - Date.now();
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+}
+
+function formatCurrency(n: number) {
+  return `$${n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
 
 export default function BillingPortal() {
   const [loading, setLoading] = useState(false);
@@ -18,6 +28,7 @@ export default function BillingPortal() {
 
   const { data: subInfo } = trpc.stripe.getSubscriptionInfo.useQuery();
   const { data: connectStatus } = trpc.stripe.getConnectStatus.useQuery();
+  const { data: myProfile } = trpc.partners.getMyProfile.useQuery();
   const billingPortalMutation = trpc.stripe.createBillingPortalSession.useMutation();
 
   const openBillingPortal = async () => {
@@ -51,11 +62,25 @@ export default function BillingPortal() {
   const isFoundingMember = !subInfo?.tier || subInfo.tier === "founding" || subInfo.tier === "company";
   const isTrial = subInfo?.trialStatus === "trial";
 
-  const nextBillingLabel = subInfo?.trialEndsAt && isTrial
-    ? new Date(subInfo.trialEndsAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
-    : subInfo?.nextBillingDate
-    ? new Date(subInfo.nextBillingDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+  const nextBillingRaw = (subInfo?.trialEndsAt && isTrial)
+    ? subInfo.trialEndsAt
+    : subInfo?.nextBillingDate ?? null;
+
+  const nextBillingLabel = nextBillingRaw
+    ? new Date(nextBillingRaw).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
     : null;
+
+  const daysLeft = daysUntil(nextBillingRaw);
+
+  const directRecruits: number = (myProfile as any)?.stats?.partnersReferred ?? 0;
+  const referralCreditAmount: number = directRecruits * 149 * 0.10;
+
+  const pendingProApps: number = (myProfile as any)?.stats?.referralCount ?? directRecruits;
+
+  const handleDownloadInvoice = () => {
+    toast.info("Opening last invoice… (Stripe billing portal will show full invoice history)");
+    openBillingPortal();
+  };
 
   return (
     <PartnerLayout>
@@ -108,26 +133,57 @@ export default function BillingPortal() {
               </div>
             )}
 
-            {/* Next billing date */}
+            {/* Social proof — pending pro applications */}
+            {pendingProApps > 0 && (
+              <div className="flex items-start gap-3 bg-white/10 border border-white/20 rounded-xl p-3">
+                <Users className="w-4 h-4 text-blue-300 mt-0.5 shrink-0" />
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  Your subscription supports{" "}
+                  <span className="font-bold text-white">{pendingProApps.toLocaleString()} pending pro applications</span>{" "}
+                  waiting to join the network you helped build.
+                </p>
+              </div>
+            )}
+
+            {/* Next billing date with countdown */}
             {nextBillingLabel && (
-              <div className="flex items-center gap-2 text-blue-300 text-sm">
-                <Calendar className="w-4 h-4 shrink-0" />
-                <span>Next billing date: <span className="font-semibold text-white">{nextBillingLabel}</span></span>
+              <div className="flex items-center justify-between bg-white/10 rounded-xl px-4 py-3">
+                <div className="flex items-center gap-2 text-blue-300 text-sm">
+                  <Calendar className="w-4 h-4 shrink-0" />
+                  <span>Next billing: <span className="font-semibold text-white">{nextBillingLabel}</span></span>
+                </div>
+                {daysLeft !== null && (
+                  <div className="flex items-center gap-1 text-xs text-blue-400">
+                    <Clock className="w-3 h-3" />
+                    <span>{daysLeft}d away</span>
+                  </div>
+                )}
               </div>
             )}
 
             {/* Manage button */}
-            <Button
-              onClick={openBillingPortal}
-              disabled={loading}
-              className="w-full bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] font-bold"
-            >
-              {loading ? (
-                <><RefreshCw className="w-4 h-4 mr-2 animate-spin" /> Opening portal…</>
-              ) : (
-                <><ExternalLink className="w-4 h-4 mr-2" /> Manage Payment Method</>
-              )}
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                onClick={openBillingPortal}
+                disabled={loading}
+                className="flex-1 bg-[#F5E642] hover:bg-[#F5E642]/90 text-[#0A1628] font-bold"
+              >
+                {loading ? (
+                  <><RefreshCw className="w-4 h-4 mr-2 animate-spin" /> Opening portal…</>
+                ) : (
+                  <><ExternalLink className="w-4 h-4 mr-2" /> Manage Payment</>
+                )}
+              </Button>
+              <Button
+                onClick={handleDownloadInvoice}
+                disabled={loading}
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white"
+                title="Download last invoice"
+              >
+                <Download className="w-4 h-4" />
+              </Button>
+            </div>
 
             {/* Cancel (destructive, secondary) */}
             <button
@@ -136,6 +192,42 @@ export default function BillingPortal() {
             >
               Cancel subscription
             </button>
+          </CardContent>
+        </Card>
+
+        {/* Referral Credits Card */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base flex items-center gap-2">
+              <Gift className="w-4 h-4 text-purple-500" />
+              Referral Credits
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-2xl font-bold text-gray-900">{formatCurrency(referralCreditAmount)}</p>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  From {directRecruits} direct recruit{directRecruits !== 1 ? "s" : ""} · 10% subscription override
+                </p>
+              </div>
+              <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center">
+                <Users className="w-5 h-5 text-purple-500" />
+              </div>
+            </div>
+            {directRecruits === 0 ? (
+              <div className="bg-purple-50 border border-purple-100 rounded-xl p-3">
+                <p className="text-xs text-purple-700 leading-relaxed">
+                  <span className="font-semibold">Unlock referral credits:</span> Recruit your first pro and earn 10% of their $149/mo subscription — that's $14.90/mo recurring, automatically credited each cycle.
+                </p>
+              </div>
+            ) : (
+              <div className="bg-purple-50 border border-purple-100 rounded-xl p-3">
+                <p className="text-xs text-purple-700 leading-relaxed">
+                  You earn <span className="font-semibold">{formatCurrency(directRecruits * 149 * 0.10)}/mo</span> in recurring subscription overrides from your {directRecruits} recruit{directRecruits !== 1 ? "s" : ""}. Each additional recruit adds ${(149 * 0.10).toFixed(2)}/mo.
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
 

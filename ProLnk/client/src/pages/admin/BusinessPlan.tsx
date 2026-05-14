@@ -1,487 +1,542 @@
 import { useState } from "react";
 import AdminLayout from "@/components/AdminLayout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   FileText, Download, ChevronDown, ChevronRight,
   TrendingUp, Users, DollarSign, Target, Globe,
-  Shield, Zap, BarChart3, Building2, Lightbulb
+  Shield, Zap, BarChart3, Building2, Lightbulb,
+  CheckSquare, Square, AlertTriangle, CheckCircle,
+  Calendar, Flag, Layers
 } from "lucide-react";
 
-const SECTIONS = [
+const SUMMARY_STATS = [
+  { label: "TAM", value: "$600B", sub: "US Home Services" },
+  { label: "SAM", value: "$120B", sub: "Referral-Addressable" },
+  { label: "Break-even", value: "500 Pros", sub: "$74.5K MRR" },
+  { label: "Net Margin", value: "85%", sub: "At 10K pros" },
+  { label: "LTV:CAC", value: "14.4×", sub: "Unit economics" },
+  { label: "Pre-Seed Ask", value: "$750K", sub: "SAFE, $8M cap" },
+];
+
+const GTM_TIMELINE = [
   {
-    id: "executive",
-    icon: Lightbulb,
-    title: "Executive Summary",
-    color: "text-teal-400",
-    content: `ProLnk is an AI-powered home service partner network that transforms every completed service job into a qualified lead for adjacent trades. When a lawn care technician finishes a yard, ProLnk's AI analyzes job photos to detect roofing damage, pest evidence, HVAC issues, and 50+ other service opportunities — then automatically routes those leads to vetted partner contractors in the same neighborhood.
-
-**The Problem:** Home service contractors spend 15-30% of revenue on marketing with declining ROI. Homeowners struggle to find trusted professionals for secondary needs discovered during routine service visits. The referral economy is broken — it relies on memory, business cards, and goodwill.
-
-**The Solution:** ProLnk creates a closed-loop referral network where every job generates compounding leads. Partners earn 5% commission on referred jobs they close. ProLnk earns 10-15% on every transaction. The AI does the prospecting — partners just show up and close.
-
-**Traction:** Launching in DFW with 151 vetted partners across 53 service categories. Platform is fully built with Field OS mobile app, AI opportunity detection, automated deal delivery, and Stripe commission payouts.
-
-**Ask:** Seeking $500K seed round to fund DFW market saturation (500 partners), first 3 market expansions (Houston, Austin, San Antonio), and sales team hiring.`,
+    phase: "Phase 1",
+    label: "DFW Launch",
+    period: "Months 1–6 (May–Oct 2026)",
+    color: "#22c55e",
+    goals: [
+      "Fill Charter tier (25 spots) and open Founding tier (100 spots)",
+      "Activate Home Health Vault for 10,000+ DFW homes",
+      "Deploy all 47 AI agents — autonomous ops from day one",
+      "Reach 500 active partners → breakeven at $74.5K MRR",
+      "Complete SAFE round: $750K at $8M cap",
+    ],
+    kpi: "500 partners / $74.5K MRR",
   },
   {
-    id: "problem",
-    icon: Target,
-    title: "Problem & Opportunity",
-    color: "text-red-400",
-    content: `**The $600B Home Services Market is Fragmented and Inefficient**
-
-The U.S. home services market generates $600B annually, yet the referral infrastructure connecting trades is stuck in 1995. Three compounding problems create the opportunity:
-
-**1. The Marketing Treadmill**
-The average home service contractor spends $8,000-$25,000/year on Google Ads, Yelp, and Angi leads — with conversion rates below 3%. As competition increases, CPL rises. Partners are trapped paying more for less.
-
-**2. The Invisible Opportunity**
-Every service visit surfaces 3-7 adjacent needs the homeowner doesn't know they have. A lawn care tech sees the cracked driveway, the rotting fascia board, the wasp nest under the eave — but has no system to monetize that observation. That intelligence evaporates.
-
-**3. The Trust Deficit**
-Homeowners don't trust cold referrals from strangers. They trust their existing service provider. When a vetted partner says "I noticed your gutters need attention — I know a great company," that warm referral converts at 40%+ vs. 3% for cold leads.
-
-**Market Size:**
-- TAM: $600B U.S. home services market
-- SAM: $45B referral-addressable segment (contractors who use referral networks)
-- SOM (Year 3): $12M ARR from 3,000 partners across 10 markets`,
+    phase: "Phase 2",
+    label: "Texas Expansion",
+    period: "Months 7–18 (Nov 2026–Apr 2027)",
+    color: "#3b82f6",
+    goals: [
+      "Expand to Houston, Austin, San Antonio",
+      "Hire 3 market managers (1 per city)",
+      "Scale to 2,125 total founding partners (all tiers filled)",
+      "Launch Stripe commission payouts and automated 1099 flow",
+      "Raise Seed round: $3M at $15M cap",
+    ],
+    kpi: "2,125 partners / $316K MRR",
   },
   {
-    id: "solution",
-    icon: Zap,
-    title: "Solution & Product",
-    color: "text-yellow-400",
-    content: `**ProLnk: The AI Referral OS for Home Service Professionals**
-
-ProLnk is a three-sided platform connecting partners, homeowners, and the AI detection layer:
-
-**Field OS (Partner App)**
-A mobile-first PWA where technicians log jobs, upload photos, and receive AI-detected opportunity alerts. The app includes: job logging with GPS, photo upload with AI analysis, real-time lead notifications, earnings tracker, and a leaderboard for gamified engagement.
-
-**AI Opportunity Engine**
-Proprietary computer vision + LLM pipeline that analyzes job photos to detect:
-- Structural issues (roofing, foundation, siding)
-- Mechanical systems (HVAC, plumbing, electrical)
-- Landscaping and exterior needs
-- Pest and wildlife indicators
-- Safety hazards
-
-Each detection generates a confidence score, estimated job value, and a matched partner recommendation from the local network.
-
-**Customer Deal Page**
-A no-login mobile page sent to homeowners via SMS/email. Shows the AI-detected issue with before/after photo evidence, a vetted partner's profile and reviews, transparent pricing estimate, and a one-tap scheduling CTA. Expires in 72 hours to create urgency.
-
-**Partner NetworkOS (Admin)**
-Full command center for managing the partner network: deal pipeline kanban, commission payouts, partner compliance (strikes, suspensions), analytics, broadcast messaging, and market expansion planning.
-
-**TrustyPro (Homeowner Portal)**
-Public-facing homeowner portal where residents can upload photos for AI analysis, browse the partner directory, and manage their property's service history.`,
-  },
-  {
-    id: "business-model",
-    icon: DollarSign,
-    title: "Business Model",
-    color: "text-green-400",
-    content: `**Revenue Streams**
-
-**1. Transaction Commissions (Primary — 80% of revenue)**
-ProLnk earns 10-15% on every job closed through the platform. Partners earn 5% on jobs they refer. The net spread (5-10%) is ProLnk's margin.
-
-Example: A $2,400 HVAC replacement referred by a lawn care partner generates:
-- Partner commission: $120 (5%)
-- ProLnk revenue: $240-360 (10-15%)
-- Total platform take: $360-480
-
-**2. Partner Subscriptions (Secondary — 15% of revenue)**
-Monthly SaaS fee for access to Field OS, lead routing, and analytics:
-- Scout (Free): Basic job logging, limited leads
-- Pro ($49/mo): Full Field OS, priority lead routing, analytics
-- Elite ($99/mo): Dedicated account manager, co-branded marketing, top routing priority
-- Enterprise ($299/mo): Multi-crew, API access, custom integrations
-
-**3. Premium Placement (Tertiary — 5% of revenue)**
-Partners can pay for featured placement in the partner directory and priority routing for new leads in their category.
-
-**Unit Economics:**
-- Average job value: $1,200
-- ProLnk take rate: 12% = $144/job
-- Partner LTV (Year 1): 18 referred jobs × $144 = $2,592 revenue/partner
-- Partner CAC: $180 (onboarding + marketing)
-- LTV:CAC ratio: 14.4:1
-
-**Year 3 Revenue Projection:**
-- 3,000 active partners × 18 jobs/year × $144/job = $7.8M transaction revenue
-- 1,500 Pro/Elite subscriptions × $74/mo avg × 12 = $1.3M subscription revenue
-- **Total: $9.1M ARR**`,
-  },
-  {
-    id: "market",
-    icon: Globe,
-    title: "Market Strategy",
-    color: "text-blue-400",
-    content: `**Go-To-Market: The DFW Beachhead**
-
-DFW is the ideal launch market: 7.8M population, 2.9M housing units, 85°F+ summers driving HVAC/lawn/pool demand, and a fragmented contractor market with no dominant referral network.
-
-**Phase 1: DFW Saturation (Months 1-12)**
-- Target: 500 active partners across all 53 service categories
-- Strategy: Direct outreach to top-rated Yelp/Google contractors in each category
-- Activation: Free 90-day Pro trial, co-branded marketing kit, onboarding support
-- KPI: 500 partners, 5,000 jobs logged, $500K in referred job value
-
-**Phase 2: Texas Expansion (Months 13-24)**
-- Markets: Houston, Austin, San Antonio
-- Strategy: Hire 1 market manager per city, replicate DFW playbook
-- Target: 1,500 total partners, $2M ARR
-
-**Phase 3: National Rollout (Months 25-36)**
-- Markets: Phoenix, Atlanta, Denver, Nashville, Charlotte
-- Strategy: Partner with regional contractor associations, FSM platforms (Jobber, HCP)
-- Target: 5,000 partners, $9M ARR
-
-**Partner Acquisition Channels:**
-1. Direct outreach (LinkedIn, Google Maps scraping)
-2. FSM platform integrations (Jobber, HCP, ServiceTitan webhooks)
-3. Contractor association partnerships
-4. Referral from existing partners (partner-refers-partner program)
-5. CompanyCam integration (photo upload triggers ProLnk onboarding)`,
-  },
-  {
-    id: "competition",
-    icon: Shield,
-    title: "Competitive Analysis",
-    color: "text-purple-400",
-    content: `**Competitive Landscape**
-
-| Platform | Model | Weakness | ProLnk Advantage |
-|----------|-------|----------|-----------------|
-| Angi/HomeAdvisor | Pay-per-lead marketplace | Cold leads, low conversion, expensive | Warm referrals from trusted partners |
-| Thumbtack | Bidding marketplace | Race to bottom on price | Fixed commission, no bidding |
-| Jobber | FSM software | No referral network | Integrates with Jobber, adds referral layer |
-| Yelp | Review platform | No active referral mechanism | AI-detected opportunities, not passive reviews |
-| Neighborly | Franchise network | Franchise model, slow expansion | Asset-light, any contractor can join |
-
-**Defensible Moats:**
-
-1. **Network Effects:** Each new partner makes the network more valuable for all others. A new electrician benefits every HVAC, plumbing, and roofing partner already on the platform.
-
-2. **AI Training Data:** Every job photo improves the detection model. After 500K photos, the model becomes a proprietary asset that competitors cannot replicate.
-
-3. **Partner Lock-In:** Partners who earn $2,000+/month in commissions have no incentive to leave. The earnings history, reviews, and tier status are not portable.
-
-4. **FSM Integration Depth:** Deep Jobber/HCP/ServiceTitan integrations mean job data flows automatically — no manual logging required for integrated partners.`,
-  },
-  {
-    id: "team",
-    icon: Users,
-    title: "Team",
-    color: "text-orange-400",
-    content: `**Founding Team**
-
-**Andrew Duke — Founder & CEO**
-Serial entrepreneur with 10+ years in home services. Founded multiple home service companies, DukeOS (franchise operating system), and ProLnk. Deep domain expertise in contractor operations, franchise development, and field service management. Personally manages 150+ partner relationships in DFW.
-
-**Advisory Board (Forming)**
-- Operations Advisor: Former VP Operations at ServiceMaster
-- Technology Advisor: ML engineer from Google Maps
-- Finance Advisor: PE-backed home services operator
-- Legal Advisor: IP attorney specializing in platform businesses
-
-**Key Hires (Post-Seed)**
-- CTO: Full-stack engineer with FSM integration experience
-- Head of Partner Success: 5 years at Jobber or HCP
-- Market Manager (DFW): Local contractor network relationships
-- AI/ML Engineer: Computer vision for opportunity detection`,
-  },
-  {
-    id: "financials",
-    icon: BarChart3,
-    title: "Financial Projections",
-    color: "text-teal-400",
-    content: `**5-Year Financial Model**
-
-| Metric | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 |
-|--------|--------|--------|--------|--------|--------|
-| Active Partners | 500 | 1,500 | 3,000 | 5,000 | 8,000 |
-| Jobs Logged | 9,000 | 27,000 | 54,000 | 90,000 | 144,000 |
-| Referred Jobs Closed | 1,800 | 5,400 | 10,800 | 18,000 | 28,800 |
-| Avg Job Value | $1,200 | $1,250 | $1,300 | $1,350 | $1,400 |
-| Transaction Revenue | $259K | $810K | $1.7M | $2.9M | $4.8M |
-| Subscription Revenue | $74K | $333K | $1.3M | $2.7M | $5.2M |
-| **Total Revenue** | **$333K** | **$1.1M** | **$3.0M** | **$5.6M** | **$10.0M** |
-| Gross Margin | 72% | 75% | 78% | 80% | 82% |
-| EBITDA | -$420K | -$180K | $540K | $1.7M | $4.2M |
-
-**Key Assumptions:**
-- Partner churn: 15%/year (industry standard for SaaS)
-- Referral conversion rate: 20% (conservative; warm referrals typically 35-45%)
-- Average jobs logged per partner per month: 1.5
-- Take rate: 12% blended (10% transaction + 2% subscription equivalent)
-
-**Funding Use ($500K Seed):**
-- Product & Engineering (30%): $150K — AI model improvements, mobile app, integrations
-- Sales & Marketing (40%): $200K — Partner acquisition in DFW, brand marketing
-- Operations (20%): $100K — Partner success team, onboarding infrastructure
-- G&A (10%): $50K — Legal, accounting, insurance`,
-  },
-  {
-    id: "technology",
-    icon: Building2,
-    title: "Technology Stack",
-    color: "text-cyan-400",
-    content: `**Technology Architecture**
-
-ProLnk is built on a modern, scalable stack designed for rapid iteration and enterprise reliability:
-
-**Frontend**
-- React 19 + TypeScript + Tailwind CSS 4
-- tRPC for end-to-end type-safe API layer
-- Vite for sub-second HMR development
-- PWA with service worker for offline Field OS support
-- Google Maps integration via Manus proxy (no API key required)
-
-**Backend**
-- Node.js + Express 4 + tRPC 11
-- TiDB (MySQL-compatible distributed SQL) for horizontal scaling
-- Drizzle ORM for type-safe database queries
-- Manus OAuth for partner/admin authentication
-- Stripe Connect for automated commission payouts
-
-**AI Pipeline**
-- Photo upload → S3 storage → LLM vision analysis
-- Structured JSON output with issue type, confidence score, estimated value
-- Automated deal generation and partner matching
-- n8n workflow automation for email/SMS sequences
-
-**Integrations**
-- Jobber webhook receiver (job completion events)
-- Housecall Pro API sync
-- ServiceTitan integration stub
-- CompanyCam photo import
-- Stripe Connect (partner bank accounts + automated payouts)
-- Twilio SMS (deal delivery + reminders)
-
-**Security & Compliance**
-- JWT session cookies (httpOnly, secure, sameSite)
-- Stripe PCI-DSS Level 1 compliance
-- SSL/TLS on all endpoints
-- CCPA-compliant data handling
-- SOC 2 Type II (roadmap)`,
-  },
-  {
-    id: "ip",
-    icon: Shield,
-    title: "IP & Patent Strategy",
-    color: "text-indigo-400",
-    content: `**Intellectual Property**
-
-ProLnk's core innovation — the AI-powered photo analysis → lead generation → partner routing pipeline — is a patentable business method and system.
-
-**Patent Application (In Preparation)**
-Title: "System and Method for AI-Powered Cross-Trade Referral Generation from Field Service Job Documentation"
-
-Claims:
-1. A computer-implemented method for generating service referrals from job site photographs using machine learning object detection
-2. A system for routing detected service opportunities to geographically proximate vetted service providers based on specialty matching and performance scoring
-3. A homeowner deal delivery system with time-limited acceptance windows and partner commission tracking
-
-**Trade Secrets**
-- Partner Priority Score (PPS) algorithm: 8-factor weighted scoring model for partner routing
-- AI confidence calibration model trained on 500K+ home service photos
-- Cross-trade referral conversion optimization model
-
-**Brand IP**
-- ProLnk® trademark (application filed)
-- TrustyPro® trademark (application filed)
-- Field OS™ brand
-- ProLnk Exchange™ (commercial platform)
-
-**Defensive Strategy**
-- Publish provisional patent before seed announcement
-- File continuation patents as AI model improves
-- License IP to FSM platforms (Jobber, HCP) as B2B revenue stream`,
-  },
-  {
-    id: "risks",
-    icon: Target,
-    title: "Risk Analysis",
-    color: "text-red-400",
-    content: `**Key Risks & Mitigations**
-
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Partner churn before network effects kick in | Medium | High | 90-day free trial, co-branded marketing, earnings guarantee |
-| AI false positives erode homeowner trust | Medium | High | Confidence threshold >75% required to generate deal, human review queue |
-| Large FSM platform (Jobber) builds competing feature | Low | High | Deep integration makes ProLnk additive, not competitive; patent protection |
-| Commission circumvention (partners go direct) | Medium | Medium | Stripe Connect with job verification, partner agreement with clawback clause |
-| Regulatory (contractor licensing verification) | Low | Medium | Automated license/COI verification via third-party APIs |
-| Homeowner privacy concerns (photo analysis) | Low | Medium | Explicit consent in TOS, photos stored with AES-256 encryption, no PII in AI pipeline |
-
-**Scenario Analysis:**
-- **Bear Case:** 200 partners, 15% conversion rate → $180K ARR Year 1, extend runway with subscription revenue
-- **Base Case:** 500 partners, 20% conversion rate → $333K ARR Year 1, raise Series A at $5M ARR
-- **Bull Case:** 800 partners, 30% conversion rate → $600K ARR Year 1, accelerate to 5 markets by Month 18`,
-  },
-  {
-    id: "ask",
-    icon: TrendingUp,
-    title: "The Ask",
-    color: "text-green-400",
-    content: `**Seed Round: $500,000**
-
-ProLnk is raising a $500K seed round to fund DFW market saturation and the first 3 Texas market expansions.
-
-**Use of Funds:**
-- **Partner Acquisition (40% — $200K):** Outbound sales team (2 FTEs), co-branded marketing kits, partner incentive program
-- **Product & AI (30% — $150K):** AI model improvements, Jobber/HCP deep integrations, mobile app polish
-- **Operations (20% — $100K):** Partner success manager, onboarding infrastructure, legal/compliance
-- **G&A (10% — $50K):** Accounting, insurance, IP filing
-
-**Milestones (18 months):**
-- Month 6: 500 active DFW partners, $50K MRR
-- Month 12: Houston + Austin launch, 1,200 total partners, $120K MRR
-- Month 18: San Antonio launch, 2,000 partners, $250K MRR → Series A ready
-
-**Terms:**
-- $500K SAFE note
-- $4M pre-money valuation cap
-- 20% discount on Series A
-
-**Why Now:**
-The FSM software market is maturing — Jobber, HCP, and ServiceTitan have captured the workflow layer. The referral network layer remains unbuilt. ProLnk is 18 months ahead of any potential competitor, with a working product, 151 vetted partners, and a patent-pending AI pipeline.
-
-**Contact:** Andrew Duke | andrew@prolnk.com`,
+    phase: "Phase 3",
+    label: "National Rollout",
+    period: "Months 19–36 (May 2027–Apr 2028)",
+    color: "#a855f7",
+    goals: [
+      "Expand to Phoenix, Atlanta, Denver, Nashville, Charlotte",
+      "FSM platform integrations (Jobber, HCP, ServiceTitan)",
+      "Scale to 5,000 active partners",
+      "Home Health Vault at 1M+ properties",
+      "Series A: $10M+ at $50M+ valuation",
+    ],
+    kpi: "5,000 partners / $745K MRR",
   },
 ];
 
-export default function BusinessPlan() {
-  const [expanded, setExpanded] = useState<string>("executive");
+const FINANCIALS = [
+  { metric: "Active Partners", y1: "2,125", y2: "5,000", y3: "10,000" },
+  { metric: "Monthly MRR (Subscription)", y1: "$316K", y2: "$745K", y3: "$1.49M" },
+  { metric: "Annual Subscription Revenue", y1: "$3.8M", y2: "$8.9M", y3: "$17.9M" },
+  { metric: "Match/Commission Revenue", y1: "$420K", y2: "$1.2M", y3: "$3.8M" },
+  { metric: "Total ARR", y1: "$4.2M", y2: "$10.1M", y3: "$21.7M" },
+  { metric: "Gross Margin", y1: "78%", y2: "82%", y3: "85%" },
+  { metric: "EBITDA", y1: "$820K", y2: "$3.1M", y3: "$8.9M" },
+  { metric: "Headcount", y1: "8 FTEs", y2: "22 FTEs", y3: "45 FTEs" },
+];
 
-  const handlePrint = () => {
-    window.print();
+const COMPETITIVE = [
+  { name: "Angi / HomeAdvisor", model: "Pay-per-lead", price: "$50–200/lead", network: false, aiMatch: false, dataAsset: false, incomeStreams: 0, verdict: "Commoditized leads. High cost, low conversion." },
+  { name: "Thumbtack", model: "Bidding marketplace", price: "$15–90/lead", network: false, aiMatch: false, dataAsset: false, incomeStreams: 0, verdict: "Race to bottom. No retention mechanics." },
+  { name: "HomeAdvisor (Yelp)", model: "Review platform", price: "Ad-based", network: false, aiMatch: false, dataAsset: false, incomeStreams: 0, verdict: "Passive. No active referral mechanism." },
+  { name: "Neighborly", model: "Franchise network", price: "Franchise fee", network: true, aiMatch: false, dataAsset: false, incomeStreams: 1, verdict: "Slow expansion, capital-intensive, franchise lock-in." },
+  { name: "ProLnk", model: "Network economy", price: "$149/mo locked", network: true, aiMatch: true, dataAsset: true, incomeStreams: 5, verdict: "Structural retention, data moat, AI compound effect.", isUs: true },
+];
+
+const RISK_MATRIX = [
+  { risk: "Partner churn before network effects", probability: "Medium", impact: "High", mitigation: "90-day trial, 5-stream lock-in, founding price guarantee" },
+  { risk: "AI false positives erode trust", probability: "Medium", impact: "High", mitigation: "75%+ confidence threshold, human review queue, opt-out" },
+  { risk: "FSM platform (Jobber) builds competing feature", probability: "Low", impact: "High", mitigation: "Deep integration makes us additive; patent pending" },
+  { risk: "Commission circumvention (pros go direct)", probability: "Medium", impact: "Medium", mitigation: "Stripe Connect verification, clawback clause in partner agreement" },
+  { risk: "Regulatory / contractor licensing", probability: "Low", impact: "Medium", mitigation: "Automated license/COI verification via third-party API" },
+  { risk: "Homeowner privacy (photo analysis)", probability: "Low", impact: "Medium", mitigation: "Explicit consent, AES-256 encryption, no PII in AI pipeline" },
+  { risk: "Capital constraints (runway)", probability: "Medium", impact: "High", mitigation: "Break-even at 500 pros; aggressive for AI startup credits ($1.55M available)" },
+  { risk: "Key person dependency (single founder)", probability: "Medium", impact: "High", mitigation: "Board formation, advisory hires, operations documented in AI agents" },
+  { risk: "Market timing (recession risk)", probability: "Low", impact: "Medium", mitigation: "Home services is recession-resilient; repair always needed" },
+];
+
+const MILESTONES = [
+  { id: "m1", label: "Platform launched, waitlist live", done: true, date: "May 2026" },
+  { id: "m2", label: "Charter tier (25 spots) filled", done: true, date: "May 2026" },
+  { id: "m3", label: "TrustyPro AI scan system live", done: true, date: "May 2026" },
+  { id: "m4", label: "47 AI agents deployed (autonomous ops)", done: true, date: "May 2026" },
+  { id: "m5", label: "Home Health Vault: 10,000 DFW homes", done: false, date: "Jun 2026" },
+  { id: "m6", label: "Founding tier (100 spots) filled", done: false, date: "Jul 2026" },
+  { id: "m7", label: "500 active partners — breakeven", done: false, date: "Sep 2026" },
+  { id: "m8", label: "SAFE close: $750K at $8M cap", done: false, date: "Oct 2026" },
+  { id: "m9", label: "Stripe payouts + 1099 automation live", done: false, date: "Oct 2026" },
+  { id: "m10", label: "2,125 founding partners (all tiers filled)", done: false, date: "Mar 2027" },
+  { id: "m11", label: "Texas market expansion (3 cities)", done: false, date: "Apr 2027" },
+  { id: "m12", label: "Seed round: $3M at $15M cap", done: false, date: "May 2027" },
+];
+
+function ProbBadge({ level }: { level: string }) {
+  const colors: Record<string, { bg: string; color: string }> = {
+    Low: { bg: "#22c55e18", color: "#22c55e" },
+    Medium: { bg: "#f59e0b18", color: "#f59e0b" },
+    High: { bg: "#ef444418", color: "#ef4444" },
   };
+  const c = colors[level] || colors.Medium;
+  return <span style={{ fontSize: 11, fontWeight: 700, background: c.bg, color: c.color, borderRadius: 4, padding: "2px 8px" }}>{level}</span>;
+}
+
+export default function BusinessPlan() {
+  const [activeTab, setActiveTab] = useState<"summary" | "gtm" | "financials" | "competitive" | "risks" | "milestones">("summary");
+  const [milestones, setMilestones] = useState(MILESTONES);
+  const [expandedRisk, setExpandedRisk] = useState<number | null>(null);
+
+  function toggleMilestone(id: string) {
+    setMilestones(ms => ms.map(m => m.id === id ? { ...m, done: !m.done } : m));
+  }
+
+  function handleExport() {
+    window.print();
+  }
+
+  const doneCount = milestones.filter(m => m.done).length;
+  const tabs = [
+    { id: "summary", label: "Executive Summary", icon: Lightbulb },
+    { id: "gtm", label: "Go-to-Market", icon: Calendar },
+    { id: "financials", label: "Financials", icon: BarChart3 },
+    { id: "competitive", label: "Competitive", icon: Shield },
+    { id: "risks", label: "Risk Matrix", icon: AlertTriangle },
+    { id: "milestones", label: "Milestones", icon: Flag },
+  ] as const;
 
   return (
     <AdminLayout>
-      <div className="p-6 max-w-5xl mx-auto">
+      <div className="p-6 max-w-6xl mx-auto">
+
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-2">
               <FileText className="w-6 h-6 text-teal-400" />
               ProLnk Business Plan
             </h1>
-            <p className="text-slate-400 text-sm mt-1">Confidential — For Investor Review Only</p>
+            <p className="text-slate-400 text-sm mt-1">Internal — Confidential</p>
           </div>
-          <div className="flex gap-2">
-            <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/30">Seed Stage</Badge>
-            <Badge className="bg-green-500/20 text-green-300 border-green-500/30">$500K Ask</Badge>
-            <Button
-              onClick={handlePrint}
-              className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
-            >
-              <Download className="w-4 h-4" />
-              Export PDF
+          <div className="flex items-center gap-2 flex-wrap">
+            <Badge className="bg-teal-500/20 text-teal-300 border-teal-500/30">Pre-Seed Stage</Badge>
+            <Badge className="bg-green-500/20 text-green-300 border-green-500/30">$750K Ask</Badge>
+            <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">{doneCount}/{milestones.length} Milestones</Badge>
+            <Button onClick={handleExport} className="bg-teal-600 hover:bg-teal-700 text-white gap-2 text-sm">
+              <Download className="w-4 h-4" /> Export PDF
             </Button>
           </div>
         </div>
 
         {/* Summary Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          {[
-            { label: "Market Size", value: "$600B", sub: "U.S. Home Services" },
-            { label: "Year 3 ARR", value: "$3.0M", sub: "Base Case" },
-            { label: "LTV:CAC", value: "14.4×", sub: "Unit Economics" },
-            { label: "Seed Ask", value: "$500K", sub: "$4M Cap SAFE" },
-          ].map((stat) => (
-            <Card key={stat.label} className="bg-slate-800/50 border-slate-700">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+          {SUMMARY_STATS.map(s => (
+            <Card key={s.label} className="bg-slate-800/50 border-slate-700">
               <CardContent className="p-4 text-center">
-                <div className="text-2xl font-bold text-teal-400">{stat.value}</div>
-                <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
-                <div className="text-xs text-slate-500">{stat.sub}</div>
+                <div className="text-xl font-bold text-teal-400">{s.value}</div>
+                <div className="text-xs text-slate-300 font-semibold mt-1">{s.label}</div>
+                <div className="text-xs text-slate-500">{s.sub}</div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Sections */}
-        <div className="space-y-3">
-          {SECTIONS.map((section, idx) => {
-            const Icon = section.icon;
-            const isOpen = expanded === section.id;
+        {/* Tab Nav */}
+        <div className="flex gap-1 mb-6 flex-wrap border-b border-slate-700 pb-0">
+          {tabs.map(tab => {
+            const Icon = tab.icon;
+            const active = activeTab === tab.id;
             return (
-              <Card key={section.id} className="bg-slate-800/50 border-slate-700 overflow-hidden">
-                <button
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-slate-700/30 transition-colors"
-                  onClick={() => setExpanded(isOpen ? "" : section.id)}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-slate-500 text-sm font-mono w-6">{String(idx + 1).padStart(2, "0")}</span>
-                    <Icon className={`w-5 h-5 ${section.color}`} />
-                    <span className="font-semibold text-white">{section.title}</span>
-                  </div>
-                  {isOpen ? (
-                    <ChevronDown className="w-4 h-4 text-slate-400" />
-                  ) : (
-                    <ChevronRight className="w-4 h-4 text-slate-400" />
-                  )}
-                </button>
-                {isOpen && (
-                  <CardContent className="px-6 pb-6 pt-0">
-                    <div className="border-t border-slate-700 pt-4">
-                      <div className="prose prose-invert prose-sm max-w-none">
-                        {section.content.split("\n\n").map((para, i) => {
-                          if (para.startsWith("| ")) {
-                            // Simple table rendering
-                            const rows = para.split("\n").filter(r => r.startsWith("|"));
-                            return (
-                              <div key={i} className="overflow-x-auto my-4">
-                                <table className="w-full text-sm border-collapse">
-                                  {rows.map((row, ri) => {
-                                    const cells = row.split("|").filter(c => c.trim());
-                                    if (ri === 1) return null; // separator row
-                                    return (
-                                      <tr key={ri} className={ri === 0 ? "border-b border-slate-600" : "border-b border-slate-700/50"}>
-                                        {cells.map((cell, ci) => (
-                                          ri === 0
-                                            ? <th key={ci} className="text-left px-3 py-2 text-slate-300 font-semibold">{cell.trim()}</th>
-                                            : <td key={ci} className="px-3 py-2 text-slate-400">{cell.trim()}</td>
-                                        ))}
-                                      </tr>
-                                    );
-                                  })}
-                                </table>
-                              </div>
-                            );
-                          }
-                          return (
-                            <p key={i} className="text-slate-300 leading-relaxed mb-3"
-                              dangerouslySetInnerHTML={{
-                                __html: para
-                                  .replace(/\*\*(.+?)\*\*/g, '<strong class="text-white">$1</strong>')
-                              }}
-                            />
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </CardContent>
-                )}
-              </Card>
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-t-lg transition-colors border-b-2 ${
+                  active
+                    ? "text-teal-300 border-teal-400 bg-slate-800/50"
+                    : "text-slate-500 border-transparent hover:text-slate-300 hover:border-slate-600"
+                }`}
+              >
+                <Icon className="w-4 h-4" /> {tab.label}
+              </button>
             );
           })}
         </div>
 
+        {/* Executive Summary */}
+        {activeTab === "summary" && (
+          <div className="space-y-6">
+            <Card className="bg-slate-800/50 border-slate-700">
+              <CardContent className="p-6">
+                <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-yellow-400" /> Executive Summary
+                </h2>
+                <div className="space-y-4 text-slate-300 text-sm leading-relaxed">
+                  <p>
+                    <strong className="text-white">ProLnk</strong> is an AI-powered home services network that transforms the $600B home services market's broken referral infrastructure into a self-sustaining network economy. The platform combines two brands: <strong className="text-green-400">ProLnk</strong> (the professional partner network) and <strong className="text-blue-400">TrustyPro</strong> (the homeowner platform with the Home Health Vault), connected by AI-powered lead matching and a proprietary 5-stream income model.
+                  </p>
+                  <p>
+                    <strong className="text-white">The Problem:</strong> Home service contractors spend 15–30% of revenue on marketing with declining ROI. Homeowners can't find trusted professionals. No platform owns the full relationship — and no one has built a durable data moat around the 140M homes in the US.
+                  </p>
+                  <p>
+                    <strong className="text-white">The Solution:</strong> ProLnk's Network Income System gives every partner 5 independent income streams — direct commissions (12–70%), a 4-level network cascade, recurring subscription overrides, homeowner lead fees, and permanent origination rights tied to homes in the Vault. This creates structural retention: once a partner's earnings compound across the network, switching becomes economically irrational.
+                  </p>
+                  <p>
+                    <strong className="text-white">The Moat:</strong> The Home Health Vault targets 50M+ US homes as a permanent property data asset. Structural health records, AI visual scans, and maintenance history — locked to the property, not the user. After 500K scans, the model becomes an uncopyable competitive advantage.
+                  </p>
+                  <p>
+                    <strong className="text-white">Traction:</strong> Platform is live as of May 2026. Charter tier open. 800K+ DFW homes mapped across 93 trade categories. 47 autonomous AI agents handle 80% of platform operations from day one. Break-even at 500 active partners ($74.5K MRR). Pre-seed ask: $750K SAFE at $8M cap.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardContent className="p-6">
+                  <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
+                    <DollarSign className="w-4 h-4 text-green-400" /> Revenue Model
+                  </h3>
+                  <div className="space-y-3">
+                    {[
+                      { stream: "Subscription SaaS", detail: "$149/mo × active partners", pct: "65%" },
+                      { stream: "Match Commissions", detail: "12–70% per closed job", pct: "25%" },
+                      { stream: "Network Overrides", detail: "Cascade up to 4 levels", pct: "7%" },
+                      { stream: "Data & Origination", detail: "Vault origination rights", pct: "3%" },
+                    ].map(r => (
+                      <div key={r.stream} className="flex items-center justify-between py-2 border-b border-slate-700/50 last:border-0">
+                        <div>
+                          <div className="text-sm font-semibold text-slate-200">{r.stream}</div>
+                          <div className="text-xs text-slate-500">{r.detail}</div>
+                        </div>
+                        <span className="text-sm font-bold text-teal-400">{r.pct}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardContent className="p-6">
+                  <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
+                    <Target className="w-4 h-4 text-red-400" /> Investment Ask
+                  </h3>
+                  <div className="space-y-3">
+                    {[
+                      { item: "Instrument", value: "SAFE Note" },
+                      { item: "Amount", value: "$750K" },
+                      { item: "Valuation Cap", value: "$8M pre-money" },
+                      { item: "Discount", value: "20% on Seed" },
+                      { item: "Runway", value: "18 months" },
+                      { item: "Use of Funds", value: "GTM (40%), Eng (30%), Ops (20%), G&A (10%)" },
+                    ].map(r => (
+                      <div key={r.item} className="flex items-center justify-between py-2 border-b border-slate-700/50 last:border-0">
+                        <span className="text-xs text-slate-500 uppercase tracking-wide font-semibold">{r.item}</span>
+                        <span className="text-sm font-semibold text-slate-200">{r.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+
+        {/* Go-to-Market */}
+        {activeTab === "gtm" && (
+          <div className="space-y-5">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-blue-400" /> 36-Month Go-to-Market Roadmap
+            </h2>
+            {GTM_TIMELINE.map((phase, i) => (
+              <Card key={phase.phase} className="bg-slate-800/50 border-slate-700">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-black" style={{ background: phase.color }}>
+                        {i + 1}
+                      </div>
+                      <div>
+                        <div className="text-base font-bold text-white">{phase.phase}: {phase.label}</div>
+                        <div className="text-xs text-slate-500">{phase.period}</div>
+                      </div>
+                    </div>
+                    <span className="text-sm font-bold px-3 py-1 rounded-full" style={{ background: `${phase.color}18`, color: phase.color }}>
+                      Target: {phase.kpi}
+                    </span>
+                  </div>
+                  <ul className="space-y-2">
+                    {phase.goals.map(g => (
+                      <li key={g} className="flex items-start gap-2 text-sm text-slate-300">
+                        <ChevronRight className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: phase.color }} />
+                        {g}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+
+        {/* Financials */}
+        {activeTab === "financials" && (
+          <div className="space-y-6">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-teal-400" /> Financial Projections
+            </h2>
+            <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700 bg-slate-900/50">
+                      <th className="text-left px-5 py-3 text-slate-400 font-semibold text-xs uppercase tracking-wide">Metric</th>
+                      <th className="text-right px-5 py-3 text-green-400 font-semibold text-xs uppercase tracking-wide">Year 1</th>
+                      <th className="text-right px-5 py-3 text-blue-400 font-semibold text-xs uppercase tracking-wide">Year 2</th>
+                      <th className="text-right px-5 py-3 text-purple-400 font-semibold text-xs uppercase tracking-wide">Year 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {FINANCIALS.map((row, i) => (
+                      <tr key={row.metric} className={`border-b border-slate-700/50 ${i % 2 === 0 ? "" : "bg-slate-900/30"} ${row.metric.includes("Total") || row.metric.includes("EBITDA") ? "font-bold" : ""}`}>
+                        <td className={`px-5 py-3 ${row.metric.includes("Total") || row.metric.includes("EBITDA") ? "text-white" : "text-slate-300"}`}>{row.metric}</td>
+                        <td className={`px-5 py-3 text-right ${row.metric.includes("Total") || row.metric.includes("EBITDA") ? "text-green-400" : "text-slate-300"}`}>{row.y1}</td>
+                        <td className={`px-5 py-3 text-right ${row.metric.includes("Total") || row.metric.includes("EBITDA") ? "text-blue-400" : "text-slate-300"}`}>{row.y2}</td>
+                        <td className={`px-5 py-3 text-right ${row.metric.includes("Total") || row.metric.includes("EBITDA") ? "text-purple-400" : "text-slate-300"}`}>{row.y3}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+            <p className="text-xs text-slate-600 text-center">
+              Based on $149/mo subscription × active partner count. Year 1 = Founding tiers filled (2,125 partners). Match revenue assumes 6 jobs/partner/year at 12% blended take rate.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { scenario: "Bear Case", desc: "500 partners, low match rate", arr: "$840K ARR", action: "Extend runway via subscription-only model", color: "#ef4444" },
+                { scenario: "Base Case", desc: "2,125 founders + match volume", arr: "$4.2M ARR", action: "Raise Seed at $15M cap, expand Texas", color: "#f59e0b" },
+                { scenario: "Bull Case", desc: "5,000 partners, high conversion", arr: "$12M ARR", action: "Skip Seed, go direct to Series A", color: "#22c55e" },
+              ].map(s => (
+                <Card key={s.scenario} className="bg-slate-800/50 border-slate-700">
+                  <CardContent className="p-5">
+                    <div className="text-sm font-bold mb-1" style={{ color: s.color }}>{s.scenario}</div>
+                    <div className="text-xs text-slate-500 mb-3">{s.desc}</div>
+                    <div className="text-xl font-bold text-white mb-2">{s.arr}</div>
+                    <div className="text-xs text-slate-400">{s.action}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Competitive */}
+        {activeTab === "competitive" && (
+          <div className="space-y-6">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Shield className="w-5 h-5 text-purple-400" /> Competitive Landscape
+            </h2>
+            <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700 bg-slate-900/50">
+                      {["Platform", "Model", "Price", "Network Effect", "AI Match", "Data Asset", "Income Streams", "Verdict"].map(h => (
+                        <th key={h} className="text-left px-4 py-3 text-slate-400 font-semibold text-xs uppercase tracking-wide whitespace-nowrap">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {COMPETITIVE.map(co => (
+                      <tr key={co.name} className={`border-b border-slate-700/50 ${co.isUs ? "bg-green-500/5 border-green-500/20" : ""}`}>
+                        <td className={`px-4 py-3 font-semibold whitespace-nowrap ${co.isUs ? "text-green-400" : "text-slate-200"}`}>{co.name}</td>
+                        <td className="px-4 py-3 text-slate-400 whitespace-nowrap">{co.model}</td>
+                        <td className="px-4 py-3 text-slate-300 whitespace-nowrap">{co.price}</td>
+                        <td className="px-4 py-3 text-center">
+                          {co.network ? <CheckCircle className="w-4 h-4 text-green-400 mx-auto" /> : <span className="text-slate-600 text-xs">—</span>}
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          {co.aiMatch ? <CheckCircle className="w-4 h-4 text-green-400 mx-auto" /> : <span className="text-slate-600 text-xs">—</span>}
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          {co.dataAsset ? <CheckCircle className="w-4 h-4 text-green-400 mx-auto" /> : <span className="text-slate-600 text-xs">—</span>}
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          <span className={`font-bold ${co.incomeStreams >= 5 ? "text-green-400" : "text-slate-500"}`}>{co.incomeStreams}</span>
+                        </td>
+                        <td className="px-4 py-3 text-slate-400 text-xs max-w-[180px]">{co.verdict}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "Why We Win", icon: Zap, color: "text-green-400", points: ["5-stream income model creates structural lock-in — rational economics prevent churn", "AI feedback loop compounds: more jobs → better model → better matches → more retention", "Home Health Vault builds permanent data moat tied to 50M+ properties, not users", "Patent-pending network income system protects core IP from replication"] },
+                { title: "Nearest Threat", icon: AlertTriangle, color: "text-yellow-400", points: ["Jobber could add referral features — mitigated by deep integration making us additive", "Thumbtack could add income streams — but lacks the Vault data asset and AI layer", "New entrant would need 3+ years to match our data moat and agent infrastructure", "Our biggest risk is execution speed, not competition"] },
+              ].map(card => {
+                const Icon = card.icon;
+                return (
+                  <Card key={card.title} className="bg-slate-800/50 border-slate-700">
+                    <CardContent className="p-5">
+                      <h3 className={`text-sm font-bold mb-3 flex items-center gap-2 ${card.color}`}>
+                        <Icon className="w-4 h-4" /> {card.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {card.points.map(p => (
+                          <li key={p} className="text-sm text-slate-300 flex items-start gap-2">
+                            <ChevronRight className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${card.color}`} />
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Risk Matrix */}
+        {activeTab === "risks" && (
+          <div className="space-y-5">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-red-400" /> Risk Matrix
+              </h2>
+              <div className="flex items-center gap-3 text-xs text-slate-500">
+                <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" /> Low</span>
+                <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-yellow-500 inline-block" /> Medium</span>
+                <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500 inline-block" /> High</span>
+              </div>
+            </div>
+            <div className="space-y-2">
+              {RISK_MATRIX.map((risk, i) => (
+                <Card key={risk.risk} className="bg-slate-800/50 border-slate-700 overflow-hidden">
+                  <button
+                    className="w-full flex items-center justify-between p-4 text-left hover:bg-slate-700/30 transition-colors"
+                    onClick={() => setExpandedRisk(expandedRisk === i ? null : i)}
+                  >
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <ProbBadge level={risk.probability} />
+                        <ProbBadge level={risk.impact} />
+                      </div>
+                      <span className="text-sm font-medium text-slate-200 truncate">{risk.risk}</span>
+                    </div>
+                    {expandedRisk === i ? <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0" /> : <ChevronRight className="w-4 h-4 text-slate-500 flex-shrink-0" />}
+                  </button>
+                  {expandedRisk === i && (
+                    <div className="px-4 pb-4 border-t border-slate-700">
+                      <div className="mt-3 text-xs text-slate-400 uppercase tracking-wide font-semibold mb-2">Mitigation</div>
+                      <p className="text-sm text-slate-300 leading-relaxed">{risk.mitigation}</p>
+                    </div>
+                  )}
+                </Card>
+              ))}
+            </div>
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              {[
+                { label: "Low Probability", count: RISK_MATRIX.filter(r => r.probability === "Low").length, color: "text-green-400 bg-green-500/10 border-green-500/20" },
+                { label: "Medium Probability", count: RISK_MATRIX.filter(r => r.probability === "Medium").length, color: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20" },
+                { label: "High Impact", count: RISK_MATRIX.filter(r => r.impact === "High").length, color: "text-red-400 bg-red-500/10 border-red-500/20" },
+              ].map(s => (
+                <div key={s.label} className={`rounded-lg border p-4 text-center ${s.color}`}>
+                  <div className="text-2xl font-bold">{s.count}</div>
+                  <div className="text-xs mt-1 opacity-70">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Milestones */}
+        {activeTab === "milestones" && (
+          <div className="space-y-5">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <Flag className="w-5 h-5 text-teal-400" /> Milestones Tracker
+              </h2>
+              <div className="text-sm text-slate-400">
+                <span className="text-teal-400 font-bold">{doneCount}</span> / {milestones.length} complete
+              </div>
+            </div>
+            <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden mb-2">
+              <div className="h-full bg-teal-500 rounded-full transition-all" style={{ width: `${(doneCount / milestones.length) * 100}%` }} />
+            </div>
+            <div className="space-y-2">
+              {milestones.map(m => (
+                <div
+                  key={m.id}
+                  className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-colors ${
+                    m.done ? "bg-green-500/5 border-green-500/20" : "bg-slate-800/50 border-slate-700 hover:border-slate-600"
+                  }`}
+                  onClick={() => toggleMilestone(m.id)}
+                >
+                  {m.done
+                    ? <CheckSquare className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    : <Square className="w-5 h-5 text-slate-500 flex-shrink-0" />
+                  }
+                  <span className={`flex-1 text-sm ${m.done ? "text-green-300 line-through opacity-70" : "text-slate-200"}`}>{m.label}</span>
+                  <span className="text-xs text-slate-500 flex-shrink-0">{m.date}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-600 text-center pt-2">Click a milestone to toggle its completion status.</p>
+          </div>
+        )}
+
         {/* Footer */}
         <div className="mt-8 p-4 bg-slate-800/30 rounded-lg border border-slate-700 text-center">
           <p className="text-slate-500 text-xs">
-            This document contains confidential and proprietary information of ProLnk Inc.
-            Unauthorized disclosure is prohibited. © 2026 ProLnk Inc. All rights reserved.
+            Confidential and proprietary information of ProLnk Inc. Unauthorized disclosure is prohibited.
+            Last updated: May 2026 · Contact: <a href="mailto:andrew@lit-ventures.com" className="text-teal-400">andrew@lit-ventures.com</a>
           </p>
         </div>
+
       </div>
     </AdminLayout>
   );

@@ -5,9 +5,15 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import TrustyProLogo from "@/components/TrustyProLogo";
 import { Link, useLocation } from "wouter";
-import { Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X, Plus, Home, Star, Copy, Share2, TrendingUp, Vault, ExternalLink } from "lucide-react";
+import {
+  Shield, Camera, CheckCircle, AlertTriangle, Sparkles, ArrowRight, X,
+  Plus, Home, Star, Copy, Share2, TrendingUp, ExternalLink, ZoomIn,
+  Image, BookOpen, ChevronRight, Vault,
+} from "lucide-react";
 
-type ScanStep = "upload" | "contact" | "analyzing" | "results";
+// ─── Types ───────────────────────────────────────────────────────────────────
+
+type ScanStep = "area" | "upload" | "contact" | "analyzing" | "results";
 
 interface Issue {
   name: string;
@@ -32,31 +38,67 @@ interface AnalysisResult {
   photoQualityNote?: string;
 }
 
-const ACCENT = "#1e3a5f";
-const ACCENT_BTN = "#0891b2";
+// ─── Constants ───────────────────────────────────────────────────────────────
 
-const severityConfig = {
-  urgent: { label: "🔴 Urgent", color: "bg-red-100 text-red-700 border-red-200", dot: "bg-red-500", icon: AlertTriangle },
-  moderate: { label: "🟠 Schedule Service", color: "bg-amber-100 text-amber-700 border-amber-200", dot: "bg-amber-500", icon: AlertTriangle },
-  low: { label: "🟡 Monitor", color: "bg-yellow-50 text-yellow-700 border-yellow-200", dot: "bg-yellow-400", icon: CheckCircle },
-};
+const VIOLET = "#7c3aed";
+const VIOLET_LIGHT = "#8b5cf6";
+const VIOLET_DIM = "rgba(124,58,237,0.15)";
+const DARK_BG = "#0A1628";
+const CARD_BG = "#0f1f3d";
+const CARD_BORDER = "rgba(124,58,237,0.25)";
 
-const DETECTED_CATEGORIES = [
-  { icon: "❄️", label: "HVAC & Air Quality" },
-  { icon: "🚿", label: "Plumbing" },
-  { icon: "⚡", label: "Electrical" },
-  { icon: "🏠", label: "Roofing" },
-  { icon: "🌿", label: "Landscaping" },
-  { icon: "🛋️", label: "Interior Conditions" },
-  { icon: "⚠️", label: "Safety Hazards" },
+const SCAN_AREAS = [
+  { id: "exterior", icon: "🏠", label: "Exterior", desc: "Siding, windows, driveway" },
+  { id: "roof", icon: "🏗️", label: "Roof", desc: "Shingles, gutters, flashing" },
+  { id: "hvac", icon: "❄️", label: "HVAC", desc: "A/C unit, vents, ductwork" },
+  { id: "electrical", icon: "⚡", label: "Electrical", desc: "Panel, outlets, wiring" },
+  { id: "plumbing", icon: "🚿", label: "Plumbing", desc: "Pipes, fixtures, water heater" },
+  { id: "bathroom", icon: "🛁", label: "Bathroom", desc: "Tile, grout, fixtures" },
+  { id: "kitchen", icon: "🍳", label: "Kitchen", desc: "Cabinets, appliances, counters" },
+  { id: "basement", icon: "🔦", label: "Basement", desc: "Foundation, moisture, framing" },
 ];
 
-const conditionConfig = {
-  excellent: { label: "Excellent Condition", color: "text-green-600", bg: "bg-green-50 border-green-200", emoji: "✅" },
-  good: { label: "Good Condition", color: "text-blue-600", bg: "bg-blue-50 border-blue-200", emoji: "👍" },
-  fair: { label: "Fair — Some Attention Needed", color: "text-amber-600", bg: "bg-amber-50 border-amber-200", emoji: "⚠️" },
-  needs_attention: { label: "Needs Attention", color: "text-red-600", bg: "bg-red-50 border-red-200", emoji: "🔴" },
+const ANALYZING_STEPS = [
+  { label: "Uploading photos securely", duration: 3000 },
+  { label: "Scanning for structural issues", duration: 5000 },
+  { label: "Identifying maintenance needs", duration: 5000 },
+  { label: "Detecting improvement opportunities", duration: 4000 },
+  { label: "Generating transformation previews", duration: 6000 },
+  { label: "Matching with verified pros", duration: 3000 },
+];
+
+const severityConfig = {
+  urgent: {
+    label: "Urgent",
+    badge: "bg-red-500/20 text-red-400 border-red-500/30",
+    dot: "bg-red-500",
+    ring: "border-red-500/40",
+    btn: "#dc2626",
+  },
+  moderate: {
+    label: "Schedule Service",
+    badge: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+    dot: "bg-amber-500",
+    ring: "border-amber-500/40",
+    btn: "#d97706",
+  },
+  low: {
+    label: "Monitor",
+    badge: "bg-yellow-500/15 text-yellow-400 border-yellow-500/25",
+    dot: "bg-yellow-400",
+    ring: "border-yellow-500/30",
+    btn: VIOLET,
+  },
 };
+
+const conditionConfig = {
+  excellent: { label: "Excellent Condition", color: "text-green-400", bg: "bg-green-500/10 border-green-500/20", emoji: "✅" },
+  good: { label: "Good Condition", color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", emoji: "👍" },
+  fair: { label: "Fair — Some Attention Needed", color: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/20", emoji: "⚠️" },
+  needs_attention: { label: "Needs Attention", color: "text-red-400", bg: "bg-red-500/10 border-red-500/20", emoji: "🔴" },
+};
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function computeHealthScore(issues: Issue[]): number {
   if (issues.length === 0) return 95;
@@ -66,30 +108,30 @@ function computeHealthScore(issues: Issue[]): number {
   return Math.max(0, 100 - urgentPenalty - moderatePenalty - lowPenalty);
 }
 
-function healthScoreConfig(score: number): { color: string; trackColor: string; label: string; bg: string; textColor: string } {
-  if (score >= 80) return { color: "#10b981", trackColor: "#d1fae5", label: "Excellent", bg: "bg-green-50", textColor: "text-green-700" };
-  if (score >= 60) return { color: "#3b82f6", trackColor: "#dbeafe", label: "Good", bg: "bg-blue-50", textColor: "text-blue-700" };
-  if (score >= 40) return { color: "#eab308", trackColor: "#fef9c3", label: "Fair", bg: "bg-yellow-50", textColor: "text-yellow-700" };
-  return { color: "#ef4444", trackColor: "#fee2e2", label: "Needs Attention", bg: "bg-red-50", textColor: "text-red-700" };
+function healthScoreConfig(score: number) {
+  if (score >= 80) return { color: "#10b981", trackColor: "rgba(16,185,129,0.15)", label: "Excellent", textColor: "text-green-400" };
+  if (score >= 60) return { color: "#3b82f6", trackColor: "rgba(59,130,246,0.15)", label: "Good", textColor: "text-blue-400" };
+  if (score >= 40) return { color: "#eab308", trackColor: "rgba(234,179,8,0.15)", label: "Fair", textColor: "text-yellow-400" };
+  return { color: "#ef4444", trackColor: "rgba(239,68,68,0.15)", label: "Needs Attention", textColor: "text-red-400" };
 }
 
-function HealthScoreRing({ score }: { score: number }) {
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+function HealthScoreRing({ score, prevScore }: { score: number; prevScore?: number }) {
   const radius = 58;
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference - (score / 100) * circumference;
-  const { color, trackColor, label, bg, textColor } = healthScoreConfig(score);
+  const { color, trackColor, label, textColor } = healthScoreConfig(score);
+  const delta = prevScore !== undefined ? score - prevScore : null;
+
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="relative flex items-center justify-center w-44 h-44">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 140 140" style={{ transform: "rotate(-90deg)" }}>
           <circle cx="70" cy="70" r={radius} fill="none" stroke={trackColor} strokeWidth="12" />
           <circle
-            cx="70"
-            cy="70"
-            r={radius}
-            fill="none"
-            stroke={color}
-            strokeWidth="12"
+            cx="70" cy="70" r={radius}
+            fill="none" stroke={color} strokeWidth="12"
             strokeDasharray={circumference}
             strokeDashoffset={dashOffset}
             strokeLinecap="round"
@@ -98,32 +140,67 @@ function HealthScoreRing({ score }: { score: number }) {
         </svg>
         <div className="text-center z-10">
           <p className="text-5xl font-black leading-none" style={{ color }}>{score}</p>
-          <p className="text-sm font-semibold text-gray-400 mt-1">out of 100</p>
+          <p className="text-xs font-semibold text-slate-400 mt-1">out of 100</p>
         </div>
       </div>
-      <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold ${bg} ${textColor} border border-current border-opacity-20`}>
-        {score >= 80 ? "✅" : score >= 60 ? "👍" : score >= 40 ? "⚠️" : "🔴"} {label}
-      </span>
+      <div className="flex items-center gap-2">
+        <span className={`text-sm font-bold ${textColor}`}>{label}</span>
+        {delta !== null && (
+          <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${delta >= 0 ? "bg-green-500/15 text-green-400" : "bg-red-500/15 text-red-400"}`}>
+            {delta >= 0 ? "+" : ""}{delta} pts
+          </span>
+        )}
+      </div>
     </div>
   );
 }
 
-const ANALYZING_STEPS = [
-  { label: "Uploading photos securely", duration: 3000 },
-  { label: "Scanning for structural issues", duration: 5000 },
-  { label: "Identifying maintenance needs", duration: 5000 },
-  { label: "Detecting improvement opportunities", duration: 4000 },
-  { label: "Generating transformation previews", duration: 6000 },
-  { label: "Matching with DFW verified pros", duration: 3000 },
-];
+function ScannerOverlay() {
+  return (
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-6xl opacity-20">🏠</div>
+      </div>
+      {/* Corner brackets */}
+      {[
+        "top-3 left-3 border-t-2 border-l-2 rounded-tl-lg",
+        "top-3 right-3 border-t-2 border-r-2 rounded-tr-lg",
+        "bottom-3 left-3 border-b-2 border-l-2 rounded-bl-lg",
+        "bottom-3 right-3 border-b-2 border-r-2 rounded-br-lg",
+      ].map((cls, i) => (
+        <div key={i} className={`absolute w-6 h-6 ${cls}`} style={{ borderColor: VIOLET }} />
+      ))}
+      {/* Animated scan line */}
+      <motion.div
+        className="absolute left-3 right-3 h-0.5 opacity-80"
+        style={{ background: `linear-gradient(90deg, transparent, ${VIOLET}, transparent)` }}
+        animate={{ top: ["12%", "88%", "12%"] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+      />
+      {/* Pulse rings */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        {[0, 0.4, 0.8].map((delay, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full border"
+            style={{ borderColor: `${VIOLET}60`, width: 48 + i * 32, height: 48 + i * 32 }}
+            animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, delay, ease: "easeOut" }}
+          />
+        ))}
+        <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: VIOLET }}>
+          <Sparkles className="w-5 h-5 text-white" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function AnalyzingScreen({ uploading }: { uploading: boolean }) {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(uploading ? 0 : 1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
 
   useEffect(() => {
-    let idx = uploading ? 0 : 1;
-    setCurrentStep(idx);
     const timers: ReturnType<typeof setTimeout>[] = [];
     let elapsed = 0;
     ANALYZING_STEPS.forEach((step, i) => {
@@ -144,43 +221,62 @@ function AnalyzingScreen({ uploading }: { uploading: boolean }) {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100"
+      className="rounded-2xl p-8 border"
+      style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}
     >
-      <div className="relative w-24 h-24 mx-auto mb-8">
-        <div className="absolute inset-0 rounded-full border-4 border-sky-100" />
-        <div className="absolute inset-0 rounded-full border-4 border-[#0891b2] border-t-transparent animate-spin" />
-        <div className="absolute inset-3 rounded-full bg-sky-50 flex items-center justify-center text-3xl">🏠</div>
+      <ScannerOverlay />
+
+      <div className="mt-8 text-center">
+        <h2 className="text-2xl font-black text-white mb-2">
+          {uploading ? "Uploading Photos..." : "AI is Scanning Your Home..."}
+        </h2>
+        <p className="text-slate-400 text-sm max-w-sm mx-auto mb-8">
+          Our AI is analyzing every detail — structural issues, maintenance needs, and upgrade opportunities.
+        </p>
       </div>
-      <h2 className="text-2xl font-black text-gray-900 mb-3">
-        {uploading ? "Uploading Photos..." : "AI is Scanning Your Home..."}
-      </h2>
-      <p className="text-gray-500 mb-8 text-sm max-w-sm mx-auto">
-        Our AI is analyzing every detail — structural issues, maintenance needs, upgrade opportunities, and potential insurance claims.
-      </p>
-      <div className="space-y-3 text-left max-w-sm mx-auto">
+
+      <div className="space-y-3 max-w-sm mx-auto">
         {ANALYZING_STEPS.map((step, i) => {
           const isDone = completedSteps.includes(i);
           const isActive = currentStep === i && !isDone;
           return (
-            <div key={i} className={`flex items-center gap-3 transition-opacity duration-300 ${i > currentStep ? "opacity-30" : "opacity-100"}`}>
+            <div
+              key={i}
+              className={`flex items-center gap-3 transition-opacity duration-300 ${i > currentStep ? "opacity-25" : "opacity-100"}`}
+            >
               <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0 transition-all duration-500 ${
-                isDone ? "bg-green-500 text-white" : isActive ? "bg-[#0891b2] text-white" : "bg-gray-100 text-gray-400"
-              }`}>
+                isDone
+                  ? "bg-green-500 text-white"
+                  : isActive
+                  ? "text-white"
+                  : "bg-slate-700 text-slate-500"
+              }`} style={isActive ? { backgroundColor: VIOLET } : {}}>
                 {isDone ? "✓" : isActive ? <span className="w-2 h-2 bg-white rounded-full animate-pulse" /> : "○"}
               </div>
-              <span className={`text-sm transition-all duration-300 ${isDone ? "text-green-700 font-medium" : isActive ? "text-[#1e3a5f] font-semibold" : "text-gray-400"}`}>
+              <span className={`text-sm transition-all duration-300 ${
+                isDone ? "text-green-400 font-medium" : isActive ? "text-white font-semibold" : "text-slate-500"
+              }`}>
                 {step.label}
               </span>
             </div>
           );
         })}
       </div>
-      <p className="text-xs text-gray-400 mt-8">This usually takes 15–30 seconds. Please don't close this tab.</p>
+
+      <p className="text-xs text-slate-500 mt-8 text-center">This usually takes 15–30 seconds. Please don't close this tab.</p>
     </motion.div>
   );
 }
 
-function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: { name: string; email: string; phone: string; address: string }; onClose: () => void }) {
+function RequestProModal({
+  issue,
+  contact,
+  onClose,
+}: {
+  issue: Issue;
+  contact: { name: string; email: string; phone: string; address: string };
+  onClose: () => void;
+}) {
   const [sent, setSent] = useState(false);
   const submitRequest = trpc.trustyPro.submitRequest.useMutation({
     onSuccess: () => setSent(true),
@@ -204,41 +300,65 @@ function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
+        className="rounded-2xl p-8 max-w-md w-full shadow-2xl border"
+        style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}
         onClick={e => e.stopPropagation()}
       >
         {sent ? (
           <div className="text-center">
             <div className="text-5xl mb-4">✅</div>
-            <h3 className="text-2xl font-black text-gray-900 mb-2">Request Sent!</h3>
-            <p className="text-gray-500 mb-6">A verified DFW pro specializing in <strong>{issue.tradeType}</strong> will reach out within 2 hours.</p>
-            <button onClick={onClose} className="w-full text-white font-bold py-3 rounded-xl transition-colors" style={{ backgroundColor: "#0891b2" }}>Done</button>
+            <h3 className="text-2xl font-black text-white mb-2">Request Sent!</h3>
+            <p className="text-slate-400 mb-6">
+              A verified pro specializing in <strong className="text-white">{issue.tradeType}</strong> will reach out within 2 hours.
+            </p>
+            <button
+              onClick={onClose}
+              className="w-full text-white font-bold py-3 rounded-xl transition-colors"
+              style={{ backgroundColor: VIOLET }}
+            >
+              Done
+            </button>
           </div>
         ) : (
           <>
             <div className="flex items-start justify-between mb-6">
               <div>
-                <h3 className="text-xl font-black text-gray-900">Request a Pro</h3>
-                <p className="text-gray-500 text-sm mt-1">For: <strong>{issue.name}</strong></p>
+                <h3 className="text-xl font-black text-white">Request a Pro</h3>
+                <p className="text-slate-400 text-sm mt-1">For: <strong className="text-slate-200">{issue.name}</strong></p>
               </div>
-              <button onClick={onClose} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5" /></button>
+              <button onClick={onClose} className="text-slate-500 hover:text-slate-300">
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            <div className="bg-gray-50 rounded-xl p-4 mb-6 text-sm">
-              <div className="flex items-center gap-2 mb-1"><span className="font-semibold text-gray-700">Trade needed:</span><span className="font-bold" style={{ color: "#0891b2" }}>{issue.tradeType}</span></div>
-              <div className="flex items-center gap-2"><span className="font-semibold text-gray-700">Est. cost:</span><span className="text-gray-600">{issue.estimatedCost}</span></div>
+            <div className="rounded-xl p-4 mb-6 text-sm border" style={{ backgroundColor: "#0A1628", borderColor: CARD_BORDER }}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-semibold text-slate-400">Trade needed:</span>
+                <span className="font-bold" style={{ color: VIOLET_LIGHT }}>{issue.tradeType}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-slate-400">Est. cost:</span>
+                <span className="text-slate-300">{issue.estimatedCost}</span>
+              </div>
             </div>
-            <p className="text-sm text-gray-500 mb-6">We'll match you with a background-checked, insured {issue.tradeType} professional in your area. No commitment required.</p>
+            <p className="text-sm text-slate-400 mb-6">
+              We'll match you with a background-checked, insured {issue.tradeType} professional in your area. No commitment required.
+            </p>
             <div className="flex gap-3">
-              <button onClick={onClose} className="flex-1 border border-gray-200 text-gray-600 font-semibold py-3 rounded-xl hover:bg-gray-50 transition-colors">Cancel</button>
+              <button
+                onClick={onClose}
+                className="flex-1 border border-slate-600 text-slate-400 font-semibold py-3 rounded-xl hover:bg-slate-700/40 transition-colors"
+              >
+                Cancel
+              </button>
               <button
                 onClick={handleSubmit}
                 disabled={submitRequest.isPending}
                 className="flex-[2] text-white font-bold py-3 rounded-xl disabled:opacity-50 transition-colors"
-                style={{ backgroundColor: "#0891b2" }}
+                style={{ backgroundColor: VIOLET }}
               >
                 {submitRequest.isPending ? "Sending..." : "Connect Me with a Pro →"}
               </button>
@@ -250,8 +370,11 @@ function RequestProModal({ issue, contact, onClose }: { issue: Issue; contact: {
   );
 }
 
+// ─── Main Component ──────────────────────────────────────────────────────────
+
 export default function PhotoScan() {
-  const [step, setStep] = useState<ScanStep>("upload");
+  const [step, setStep] = useState<ScanStep>("area");
+  const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [contact, setContact] = useState({ name: "", email: "", phone: "", address: "" });
@@ -261,15 +384,16 @@ export default function PhotoScan() {
   const [requestIssue, setRequestIssue] = useState<Issue | null>(null);
   const [expandedTransform, setExpandedTransform] = useState<number | null>(null);
   const [officialScore, setOfficialScore] = useState<number | null>(null);
+  const [savedToVault, setSavedToVault] = useState<number[]>([]);
+  const [compareIndex, setCompareIndex] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const [, navigate] = useLocation();
 
-  // SEO meta
   useEffect(() => {
     document.title = "Free AI Home Scan — TrustyPro | Find Issues Before They Cost You";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Upload photos of your home and get a free AI-powered analysis in under 60 seconds. TrustyPro detects 50+ issue types and matches you with verified DFW pros.");
+    if (meta) meta.setAttribute("content", "Upload photos of any area of your home and get a free AI-powered analysis in under 60 seconds.");
   }, []);
 
   const calculateScore = trpc.homeHealthScore.calculate.useMutation({
@@ -297,9 +421,7 @@ export default function PhotoScan() {
   const addPhotos = useCallback((files: FileList | null) => {
     if (!files) return;
     const oversized = Array.from(files).filter(f => f.size > 16 * 1024 * 1024);
-    if (oversized.length > 0) {
-      toast.error(`${oversized.length} photo(s) exceed the 16MB limit and were skipped.`);
-    }
+    if (oversized.length > 0) toast.error(`${oversized.length} photo(s) exceed 16MB and were skipped.`);
     const newPhotos = Array.from(files)
       .filter(f => f.type.startsWith("image/") && f.size <= 16 * 1024 * 1024)
       .slice(0, 5 - photos.length)
@@ -313,9 +435,7 @@ export default function PhotoScan() {
     addPhotos(e.dataTransfer.files);
   }, [addPhotos]);
 
-  const removePhoto = (idx: number) => {
-    setPhotos(prev => prev.filter((_, i) => i !== idx));
-  };
+  const removePhoto = (idx: number) => setPhotos(prev => prev.filter((_, i) => i !== idx));
 
   const handleAnalyze = async (anonymous = false) => {
     if (photos.length === 0) { toast.error("Please upload at least one photo."); return; }
@@ -326,14 +446,14 @@ export default function PhotoScan() {
     setUploading(true);
 
     try {
-      const base64Photos = await Promise.all(photos.map(async ({ file }) => {
-        return new Promise<{ data: string; type: string; name: string }>((resolve, reject) => {
+      const base64Photos = await Promise.all(photos.map(({ file }) =>
+        new Promise<{ data: string; type: string; name: string }>((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = () => resolve({ data: reader.result as string, type: file.type, name: file.name });
           reader.onerror = reject;
           reader.readAsDataURL(file);
-        });
-      }));
+        })
+      ));
 
       const uploadRes = await fetch("/api/upload-photos", {
         method: "POST",
@@ -355,69 +475,189 @@ export default function PhotoScan() {
       });
     } catch (err: unknown) {
       setUploading(false);
-      const msg = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      toast.error(msg);
+      toast.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setStep("contact");
     }
   };
 
+  const resetScan = () => {
+    setStep("area");
+    setSelectedArea(null);
+    setPhotos([]);
+    setResult(null);
+    setOfficialScore(null);
+    setContact({ name: "", email: "", phone: "", address: "" });
+    setExpandedTransform(null);
+    setSavedToVault([]);
+  };
+
+  const handleShare = () => {
+    const healthScore = officialScore ?? (result ? computeHealthScore(result.issues) : 0);
+    const url = `${window.location.origin}/trustypro/scan`;
+    const text = `I got a free AI home scan from TrustyPro! My home scored ${healthScore}/100 — found ${result?.issues.length ?? 0} issue(s). Try it free:`;
+    if (navigator.share) {
+      navigator.share({ title: "My Home AI Report — TrustyPro", text, url });
+    } else {
+      navigator.clipboard.writeText(`${text} ${url}`);
+      toast.success("Link copied to clipboard!");
+    }
+  };
+
+  const STEPS: ScanStep[] = ["area", "upload", "contact", "analyzing", "results"];
+  const stepIndex = STEPS.indexOf(step);
+
+  const areaInfo = SCAN_AREAS.find(a => a.id === selectedArea);
   const insuranceIssues = result?.issues.filter(i => i.isInsuranceClaim) ?? [];
   const transformationIssues = result?.issues.filter(i => i.offerTrack === "transformation" && i.transformationImageUrl) ?? [];
-
-  const stepIndex = ["upload", "contact", "analyzing", "results"].indexOf(step);
+  const healthScore = officialScore ?? (result ? computeHealthScore(result.issues) : 0);
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen" style={{ backgroundColor: DARK_BG }}>
       {/* Nav */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="sticky top-0 z-50 border-b" style={{ backgroundColor: "#080f1e", borderColor: "rgba(124,58,237,0.2)" }}>
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/trustypro">
             <TrustyProLogo height={52} />
           </Link>
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-2 text-sm text-green-700 font-semibold bg-green-50 border border-green-200 px-3 py-1.5 rounded-full">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              100% Free — No Credit Card
+            <div className="hidden sm:flex items-center gap-2 text-xs text-green-400 font-semibold px-3 py-1.5 rounded-full border border-green-500/20" style={{ backgroundColor: "rgba(16,185,129,0.1)" }}>
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              100% Free
             </div>
-            <Link href="/trustypro" className="text-sm text-gray-600 hover:text-gray-900 font-medium">← Back to Home</Link>
+            <Link href="/trustypro/dashboard" className="text-sm text-slate-400 hover:text-white font-medium transition-colors flex items-center gap-1.5">
+              <BookOpen className="w-4 h-4" /> View All Scans
+            </Link>
+            <Link href="/trustypro" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">← Back</Link>
           </div>
         </div>
       </nav>
 
-      <div className="max-w-3xl mx-auto px-4 py-12">
-        {/* Header */}
-        <AnimatePresence mode="wait">
-          {step !== "results" && step !== "analyzing" && (
-            <motion.div
-              key="header"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="text-center mb-10"
-            >
-              <h1 className="text-4xl font-black text-gray-900 mb-3">
-                {step === "upload" && "Upload Your Home Photos"}
-                {step === "contact" && "Almost There — Tell Us Where to Send Results"}
-              </h1>
-              <p className="text-gray-500 text-lg">
-                {step === "upload" && "Upload up to 5 photos of any area of your home — exterior, interior, yard, roof, or garage."}
-                {step === "contact" && "We'll send your full AI report and match you with a verified DFW pro."}
-              </p>
+      <div className="max-w-3xl mx-auto px-4 py-10">
 
-              {/* Progress bar */}
-              <div className="flex items-center justify-center gap-2 mt-6">
-                {["upload", "contact", "analyzing", "results"].map((s, i) => (
-                  <div key={s} className={`h-1.5 rounded-full transition-all duration-500 ${
-                    stepIndex >= i ? "w-12" : "bg-gray-200 w-8"
-                  }`} style={stepIndex >= i ? { backgroundColor: ACCENT_BTN } : {}} />
-                ))}
+        {/* ── Progress indicator (non-results) ─────────────────────── */}
+        <AnimatePresence mode="wait">
+          {step !== "analyzing" && step !== "results" && (
+            <motion.div
+              key="progress"
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              className="mb-8"
+            >
+              {/* Step labels */}
+              <div className="flex items-center justify-center gap-2 mb-4 overflow-x-auto">
+                {[
+                  { key: "area", label: "Select Area" },
+                  { key: "upload", label: "Add Photos" },
+                  { key: "contact", label: "Your Info" },
+                ].map(({ key, label }, i) => {
+                  const idx = STEPS.indexOf(key as ScanStep);
+                  const isActive = step === key;
+                  const isDone = stepIndex > idx;
+                  return (
+                    <div key={key} className="flex items-center gap-2 flex-shrink-0">
+                      {i > 0 && <ChevronRight className="w-4 h-4 text-slate-600 flex-shrink-0" />}
+                      <div className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
+                        isActive
+                          ? "text-white border-violet-500/50"
+                          : isDone
+                          ? "text-green-400 border-green-500/30 bg-green-500/10"
+                          : "text-slate-500 border-slate-700 bg-transparent"
+                      }`} style={isActive ? { backgroundColor: VIOLET_DIM, borderColor: VIOLET } : {}}>
+                        <span className={`w-4 h-4 rounded-full text-xs flex items-center justify-center font-bold ${
+                          isActive ? "bg-violet-600 text-white" : isDone ? "bg-green-500 text-white" : "bg-slate-700 text-slate-400"
+                        }`}>
+                          {isDone ? "✓" : i + 1}
+                        </span>
+                        {label}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Header text */}
+              <div className="text-center">
+                <h1 className="text-3xl font-black text-white mb-2">
+                  {step === "area" && "What area do you want to scan?"}
+                  {step === "upload" && `Scanning: ${areaInfo?.label ?? "Your Home"}`}
+                  {step === "contact" && "Almost there — where do we send your report?"}
+                </h1>
+                <p className="text-slate-400 text-base">
+                  {step === "area" && "Choose a specific area for a more precise AI analysis."}
+                  {step === "upload" && `Upload up to 5 photos of your ${areaInfo?.label.toLowerCase() ?? "home"}. ${areaInfo?.desc ?? ""}`}
+                  {step === "contact" && "We'll send your full AI report and match you with a verified pro."}
+                </p>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Step: Upload */}
         <AnimatePresence mode="wait">
+
+          {/* ════════ STEP 1: AREA SELECTOR ════════ */}
+          {step === "area" && (
+            <motion.div
+              key="area"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                {SCAN_AREAS.map(area => (
+                  <button
+                    key={area.id}
+                    onClick={() => setSelectedArea(area.id)}
+                    className={`flex flex-col items-center gap-2 p-5 rounded-2xl border-2 transition-all active:scale-95 ${
+                      selectedArea === area.id
+                        ? "border-violet-500 text-white"
+                        : "border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200"
+                    }`}
+                    style={{
+                      backgroundColor: selectedArea === area.id ? VIOLET_DIM : CARD_BG,
+                    }}
+                  >
+                    <span className="text-3xl">{area.icon}</span>
+                    <span className="font-bold text-sm text-center leading-tight">{area.label}</span>
+                    <span className="text-xs text-slate-500 text-center leading-tight hidden sm:block">{area.desc}</span>
+                    {selectedArea === area.id && (
+                      <span className="text-xs font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: VIOLET }}>
+                        Selected
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+
+              {/* Social proof */}
+              <div className="rounded-xl p-4 mb-6 flex items-center gap-4 border" style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}>
+                <div className="flex -space-x-2 flex-shrink-0">
+                  {["👩", "👨", "👩‍🦳", "👨‍🦱"].map((e, i) => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-violet-900 flex items-center justify-center text-sm border-2" style={{ borderColor: DARK_BG }}>{e}</div>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex items-center gap-0.5 mb-0.5">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
+                  </div>
+                  <p className="text-xs text-slate-400">2,400+ homeowners scanned — avg. 3.2 issues found per scan</p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  if (!selectedArea) { toast.error("Please select an area to scan first."); return; }
+                  setStep("upload");
+                }}
+                className="w-full text-white font-black py-4 rounded-2xl text-lg transition-all active:scale-98 flex items-center justify-center gap-2"
+                style={{ background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)` }}
+              >
+                Continue <ArrowRight className="w-5 h-5" />
+              </button>
+            </motion.div>
+          )}
+
+          {/* ════════ STEP 2: UPLOAD ════════ */}
           {step === "upload" && (
             <motion.div
               key="upload"
@@ -425,54 +665,61 @@ export default function PhotoScan() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
             >
+              {/* Area badge */}
+              {areaInfo && (
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="text-2xl">{areaInfo.icon}</span>
+                  <div>
+                    <span className="text-white font-bold">{areaInfo.label}</span>
+                    <span className="text-slate-400 text-sm ml-2">— {areaInfo.desc}</span>
+                  </div>
+                  <button
+                    onClick={() => setStep("area")}
+                    className="ml-auto text-xs text-violet-400 hover:text-violet-300 border border-violet-500/30 px-3 py-1 rounded-full transition-colors"
+                  >
+                    Change
+                  </button>
+                </div>
+              )}
+
               {/* Drop zone */}
               <div
                 onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
                 onDragLeave={() => setIsDragging(false)}
                 onDrop={handleDrop}
-                className={`border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 ${
-                  isDragging ? "border-[#0891b2] bg-sky-50" : "border-gray-300 bg-white"
+                className={`border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 cursor-pointer ${
+                  isDragging ? "border-violet-500" : "border-slate-600 hover:border-slate-500"
                 }`}
+                style={{ backgroundColor: isDragging ? VIOLET_DIM : CARD_BG }}
               >
-                <Camera className="w-12 h-12 text-indigo-400 mx-auto mb-3" />
-                <p className="text-xl font-bold text-gray-800 mb-1">Add photos of your home</p>
-                <p className="text-gray-500 text-sm mb-5">JPG, PNG, WEBP — up to 5 photos, 16MB each</p>
-                {/* Dual buttons: camera (mobile-first) + library */}
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                  <div className="absolute inset-0 rounded-full animate-pulse" style={{ backgroundColor: VIOLET_DIM }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Camera className="w-8 h-8" style={{ color: VIOLET_LIGHT }} />
+                  </div>
+                </div>
+                <p className="text-lg font-bold text-white mb-1">Add photos</p>
+                <p className="text-slate-400 text-sm mb-5">JPG, PNG, WEBP — up to 5 photos, 16MB each</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     type="button"
-                    onClick={() => cameraInputRef.current?.click()}
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-bold active:scale-95 transition-all"
-                    style={{ backgroundColor: ACCENT_BTN }}
+                    onClick={(e) => { e.stopPropagation(); cameraInputRef.current?.click(); }}
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-bold active:scale-95 transition-all min-h-[48px]"
+                    style={{ background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)` }}
                   >
                     <Camera className="w-4 h-4" /> Take Photo
                   </button>
                   <button
                     type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-gray-300 bg-white text-gray-700 text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 active:scale-95 transition-all"
+                    onClick={(e) => { e.stopPropagation(); fileInputRef.current?.click(); }}
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-slate-400 hover:text-white active:scale-95 transition-all min-h-[48px]"
                   >
-                    <Plus className="w-4 h-4" /> Choose from Library
+                    <Image className="w-4 h-4" /> Choose from Library
                   </button>
                 </div>
-                <p className="text-gray-400 text-xs mt-4 hidden sm:block">or drag &amp; drop photos here</p>
-                {/* Hidden inputs */}
-                <input
-                  ref={cameraInputRef}
-                  type="file"
-                  accept="image/*"
-                  capture="environment"
-                  className="hidden"
-                  onChange={(e) => addPhotos(e.target.files)}
-                />
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  className="hidden"
-                  onChange={(e) => addPhotos(e.target.files)}
-                />
+                <p className="text-slate-600 text-xs mt-4 hidden sm:block">or drag &amp; drop photos here</p>
+                <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={(e) => addPhotos(e.target.files)} />
+                <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={(e) => addPhotos(e.target.files)} />
               </div>
 
               {/* Photo previews */}
@@ -480,14 +727,21 @@ export default function PhotoScan() {
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
-                  className="mt-6 grid grid-cols-3 sm:grid-cols-5 gap-3"
+                  className="mt-5 grid grid-cols-3 sm:grid-cols-5 gap-3"
                 >
                   {photos.map((p, i) => (
-                    <div key={i} className="relative group aspect-square rounded-xl overflow-hidden bg-gray-100">
+                    <div
+                      key={i}
+                      className="relative group aspect-square rounded-xl overflow-hidden cursor-pointer border border-slate-700"
+                      onClick={() => setCompareIndex(compareIndex === i ? null : i)}
+                    >
                       <img src={p.preview} alt="" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <ZoomIn className="w-5 h-5 text-white" />
+                      </div>
                       <button
                         onClick={(e) => { e.stopPropagation(); removePhoto(i); }}
-                        className="absolute top-1 right-1 bg-black/60 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-1 right-1 bg-black/70 text-white rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -496,7 +750,7 @@ export default function PhotoScan() {
                   {photos.length < 5 && (
                     <button
                       onClick={() => fileInputRef.current?.click()}
-                      className="aspect-square rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400 hover:border-indigo-400 hover:text-indigo-500 transition-colors"
+                      className="aspect-square rounded-xl border-2 border-dashed border-slate-600 flex items-center justify-center text-slate-500 hover:border-violet-500 hover:text-violet-400 transition-colors"
                     >
                       <Plus className="w-6 h-6" />
                     </button>
@@ -504,142 +758,101 @@ export default function PhotoScan() {
                 </motion.div>
               )}
 
-              {/* Tip cards */}
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { icon: "🏠", title: "Exterior", desc: "Roof, siding, gutters, driveway, fence" },
-                  { icon: "🛁", title: "Interior", desc: "Kitchen, bathrooms, floors, walls, ceilings" },
-                  { icon: "🌿", title: "Yard & Garage", desc: "Landscaping, deck, patio, garage door" },
-                ].map(tip => (
-                  <div key={tip.title} className="bg-white rounded-xl p-4 border border-gray-100">
-                    <div className="text-2xl mb-2">{tip.icon}</div>
-                    <div className="font-semibold text-gray-800 text-sm">{tip.title}</div>
-                    <div className="text-gray-500 text-xs mt-1">{tip.desc}</div>
-                  </div>
-                ))}
-              </div>
+              {/* Full-size photo preview */}
+              <AnimatePresence>
+                {compareIndex !== null && photos[compareIndex] && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="mt-4 overflow-hidden rounded-2xl border border-slate-700"
+                  >
+                    <img src={photos[compareIndex].preview} alt="Preview" className="w-full object-contain max-h-72" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-              {/* What gets detected */}
-              <div className="mt-6 bg-white rounded-xl border border-gray-100 p-5">
-                <p className="text-sm font-bold text-gray-800 mb-3">What our AI detects</p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {DETECTED_CATEGORIES.map(cat => (
-                    <div key={cat.label} className="flex items-center gap-2 text-xs text-gray-600">
-                      <span className="text-base leading-none">{cat.icon}</span>
-                      <span>{cat.label}</span>
-                    </div>
-                  ))}
-                </div>
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={() => setStep("area")}
+                  className="flex-1 border border-slate-600 text-slate-400 font-semibold py-4 rounded-2xl hover:bg-slate-700/30 transition-colors"
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={() => {
+                    if (photos.length === 0) { toast.error("Please upload at least one photo first."); return; }
+                    setStep("contact");
+                  }}
+                  className="flex-[2] text-white font-black py-4 rounded-2xl text-lg transition-all active:scale-98 flex items-center justify-center gap-2"
+                  style={{ background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)` }}
+                >
+                  Continue <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
-
-              {/* Social proof */}
-              <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center gap-4">
-                <div className="flex -space-x-2">
-                  {["👩", "👨", "👩‍🦳", "👨‍🦱"].map((e, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-indigo-200 flex items-center justify-center text-sm border-2 border-white">{e}</div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex items-center gap-1 mb-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
-                  </div>
-                  <p className="text-xs text-[#1e3a5f] font-medium">2,400+ DFW homeowners have scanned their homes — average 3.2 issues found per scan</p>
-                </div>
-              </div>
-
-              <button
-                onClick={() => {
-                  if (photos.length === 0) { toast.error("Please upload at least one photo first."); return; }
-                  setStep("contact");
-                }}
-                className="mt-8 w-full text-white font-bold py-4 rounded-2xl text-lg transition-colors flex items-center justify-center gap-2"
-                style={{ backgroundColor: ACCENT_BTN }}
-              >
-                Analyze My Home <ArrowRight className="w-5 h-5" />
-              </button>
             </motion.div>
           )}
 
-          {/* Step: Contact */}
+          {/* ════════ STEP 3: CONTACT ════════ */}
           {step === "contact" && (
             <motion.div
               key="contact"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+              className="rounded-2xl p-8 border"
+              style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
-                  <input
-                    type="text"
-                    placeholder="Jane Smith"
-                    value={contact.name}
-                    onChange={e => setContact(p => ({ ...p, name: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Email Address *</label>
-                  <input
-                    type="email"
-                    placeholder="jane@example.com"
-                    value={contact.email}
-                    onChange={e => setContact(p => ({ ...p, email: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    placeholder="(214) 555-0100"
-                    value={contact.phone}
-                    onChange={e => setContact(p => ({ ...p, phone: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Property Address</label>
-                  <input
-                    type="text"
-                    placeholder="1234 Oak St, Frisco TX 75034"
-                    value={contact.address}
-                    onChange={e => setContact(p => ({ ...p, address: e.target.value }))}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0891b2]"
-                  />
-                </div>
+                {[
+                  { field: "name", label: "Your Name", placeholder: "Jane Smith", type: "text" },
+                  { field: "email", label: "Email Address *", placeholder: "jane@example.com", type: "email" },
+                  { field: "phone", label: "Phone Number", placeholder: "(214) 555-0100", type: "tel" },
+                  { field: "address", label: "Property Address", placeholder: "1234 Oak St, Frisco TX 75034", type: "text" },
+                ].map(({ field, label, placeholder, type }) => (
+                  <div key={field}>
+                    <label className="block text-sm font-semibold text-slate-300 mb-1">{label}</label>
+                    <input
+                      type={type}
+                      placeholder={placeholder}
+                      value={contact[field as keyof typeof contact]}
+                      onChange={e => setContact(p => ({ ...p, [field]: e.target.value }))}
+                      className="w-full border border-slate-600 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all"
+                      style={{ backgroundColor: DARK_BG }}
+                    />
+                  </div>
+                ))}
               </div>
 
-              <label className="flex items-start gap-2 mt-4 cursor-pointer">
+              <label className="flex items-start gap-3 mt-5 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={dataConsent}
                   onChange={(e) => setDataConsent(e.target.checked)}
-                  className="mt-0.5 rounded border-gray-300"
+                  className="mt-0.5 rounded border-slate-600 accent-violet-600"
                 />
-                <span className="text-xs text-gray-500">
-                  I consent to TrustyPro analyzing my uploaded photos using AI. My photos and contact information will be used to generate a home health report and may be shared with verified service professionals if I request a quote. <a href="/privacy" className="text-indigo-600 underline">Privacy Policy</a>
+                <span className="text-xs text-slate-400">
+                  I consent to TrustyPro analyzing my photos using AI. My photos and contact info may be shared with verified pros only if I request a quote.{" "}
+                  <a href="/privacy" className="underline" style={{ color: VIOLET_LIGHT }}>Privacy Policy</a>
                 </span>
               </label>
 
-              <p className="text-xs text-gray-400 mt-3 flex items-center gap-1.5">
-                <Shield className="w-3 h-3" /> Your information is private. We never sell your data or share it with third parties.
+              <p className="text-xs text-slate-600 mt-2 flex items-center gap-1.5">
+                <Shield className="w-3 h-3" /> We never sell your data or share it without your permission.
               </p>
 
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setStep("upload")}
-                  className="flex-1 border border-gray-200 text-gray-600 font-semibold py-4 rounded-2xl hover:bg-gray-50 transition-colors"
+                  className="flex-1 border border-slate-600 text-slate-400 font-semibold py-4 rounded-2xl hover:bg-slate-700/30 transition-colors"
                 >
                   ← Back
                 </button>
                 <button
                   onClick={() => handleAnalyze(false)}
                   disabled={!dataConsent}
-                  className={`flex-[2] font-bold py-4 rounded-2xl text-lg transition-colors ${dataConsent ? "text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
-                style={dataConsent ? { backgroundColor: ACCENT_BTN } : {}}
+                  className={`flex-[2] font-black py-4 rounded-2xl text-lg transition-all ${dataConsent ? "text-white" : "text-slate-500 cursor-not-allowed"}`}
+                  style={dataConsent ? { background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)` } : { backgroundColor: "rgba(100,116,139,0.15)" }}
                 >
                   Run AI Scan — It's Free
                 </button>
@@ -649,173 +862,149 @@ export default function PhotoScan() {
                   setContact(p => ({ ...p, name: p.name || "Anonymous" }));
                   handleAnalyze(true);
                 }}
-                className="w-full mt-2 text-xs text-gray-400 hover:text-gray-600 transition-colors py-2"
+                className="w-full mt-2 text-xs text-slate-600 hover:text-slate-400 transition-colors py-2"
               >
                 Skip — view results anonymously (report won't be saved)
               </button>
             </motion.div>
           )}
 
-          {/* Step: Analyzing */}
+          {/* ════════ STEP 4: ANALYZING ════════ */}
           {step === "analyzing" && <AnalyzingScreen uploading={uploading} />}
 
-          {/* Step: Results */}
+          {/* ════════ STEP 5: RESULTS ════════ */}
           {step === "results" && result && (
-            <motion.div
-              key="results"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              {/* ── Hero Health Score Card ─────────────────────────────── */}
-              {(() => {
-                const healthScore = officialScore ?? computeHealthScore(result.issues);
-                const { color: scoreColor } = healthScoreConfig(healthScore);
+            <motion.div key="results" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
 
-                const handleShare = () => {
-                  const scanUrl = `${window.location.origin}/trustypro/scan`;
-                  const text = `I just got a free AI home scan from TrustyPro! My home scored ${healthScore}/100 — it found ${result.issues.length} issue${result.issues.length !== 1 ? "s" : ""}. The scan is free and takes 60 seconds:`;
-                  if (navigator.share) {
-                    navigator.share({ title: "My Home AI Report — TrustyPro", text, url: scanUrl });
-                  } else {
-                    navigator.clipboard.writeText(`${text} ${scanUrl}`);
-                    toast.success("Report link copied to clipboard!");
-                  }
-                };
-
-                return (
-                  <div className="bg-white rounded-3xl border border-gray-100 shadow-md p-8 mb-6 text-center">
-                    <h1 className="text-2xl font-black text-gray-900 mb-1">Your Home's AI Report</h1>
-                    {result.roomLabel && (
-                      <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                        <Home className="w-3 h-3" /> {result.roomLabel}
-                      </div>
-                    )}
-
-                    {/* Large ring, centered */}
-                    <div className="flex justify-center mb-4">
-                      <HealthScoreRing score={healthScore} />
-                    </div>
-
-                    {/* Issue summary counts */}
-                    <div className="flex items-center justify-center gap-4 mb-6">
-                      {result.issues.filter(i => i.severity === "urgent").length > 0 && (
-                        <div className="flex items-center gap-1.5 text-sm font-bold text-red-600">
-                          <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
-                          {result.issues.filter(i => i.severity === "urgent").length} Urgent
-                        </div>
-                      )}
-                      {result.issues.filter(i => i.severity === "moderate").length > 0 && (
-                        <div className="flex items-center gap-1.5 text-sm font-bold text-amber-600">
-                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
-                          {result.issues.filter(i => i.severity === "moderate").length} Schedule Service
-                        </div>
-                      )}
-                      {result.issues.filter(i => i.severity === "low").length > 0 && (
-                        <div className="flex items-center gap-1.5 text-sm font-bold text-yellow-600">
-                          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block" />
-                          {result.issues.filter(i => i.severity === "low").length} Monitor
-                        </div>
-                      )}
-                      {result.issues.length === 0 && (
-                        <div className="text-sm text-green-700 font-semibold">No issues detected ✅</div>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-1 justify-center mb-6 text-xs text-gray-400">
-                      <TrendingUp className="w-3.5 h-3.5" />
-                      <span>Score updates with each scan</span>
-                    </div>
-
-                    {/* Share + Copy actions */}
-                    <div className="flex gap-3">
-                      <button
-                        onClick={handleShare}
-                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-3 rounded-xl hover:bg-gray-50 transition-colors"
-                      >
-                        <Share2 className="w-4 h-4" /> Share Report
-                      </button>
-                      <button
-                        onClick={() => {
-                          const scanUrl = `${window.location.origin}/trustypro/scan`;
-                          navigator.clipboard.writeText(scanUrl);
-                          toast.success("Link copied!");
-                        }}
-                        className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-700 font-semibold text-sm py-3 rounded-xl hover:bg-gray-50 transition-colors"
-                      >
-                        <Copy className="w-4 h-4" /> Copy Link
-                      </button>
-                    </div>
+              {/* ── Hero Health Score ─────────────────────────────────── */}
+              <div className="rounded-3xl p-8 mb-6 text-center border" style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}>
+                <h1 className="text-2xl font-black text-white mb-1">Your Home's AI Report</h1>
+                {(result.roomLabel || areaInfo) && (
+                  <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full mb-4 border" style={{ backgroundColor: VIOLET_DIM, borderColor: `${VIOLET}50`, color: VIOLET_LIGHT }}>
+                    <Home className="w-3 h-3" /> {result.roomLabel ?? areaInfo?.label}
                   </div>
-                );
-              })()}
+                )}
 
-              {/* Intro line */}
-              <div className="text-center mb-6">
-                <p className="text-gray-500 text-sm">
-                  {contact.name ? `${contact.name}, here` : "Here"}'s what our AI found.
-                  {contact.email ? " A verified DFW pro will follow up shortly." : ""}
-                </p>
+                <div className="flex justify-center mb-4">
+                  <HealthScoreRing score={healthScore} />
+                </div>
+
+                {/* Issue summary counts */}
+                <div className="flex items-center justify-center gap-4 mb-5 flex-wrap">
+                  {result.issues.filter(i => i.severity === "urgent").length > 0 && (
+                    <div className="flex items-center gap-1.5 text-sm font-bold text-red-400">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
+                      {result.issues.filter(i => i.severity === "urgent").length} Urgent
+                    </div>
+                  )}
+                  {result.issues.filter(i => i.severity === "moderate").length > 0 && (
+                    <div className="flex items-center gap-1.5 text-sm font-bold text-amber-400">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
+                      {result.issues.filter(i => i.severity === "moderate").length} Schedule
+                    </div>
+                  )}
+                  {result.issues.filter(i => i.severity === "low").length > 0 && (
+                    <div className="flex items-center gap-1.5 text-sm font-bold text-yellow-400">
+                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block" />
+                      {result.issues.filter(i => i.severity === "low").length} Monitor
+                    </div>
+                  )}
+                  {result.issues.length === 0 && (
+                    <div className="text-sm text-green-400 font-semibold">No issues detected ✅</div>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-1 justify-center mb-6 text-xs text-slate-500">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  <span>Score updates with each scan</span>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleShare}
+                    className="flex-1 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 font-semibold text-sm py-3 rounded-xl hover:bg-slate-700/40 transition-colors min-h-[48px]"
+                  >
+                    <Share2 className="w-4 h-4" /> Share
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(`${window.location.origin}/trustypro/scan`);
+                      toast.success("Link copied!");
+                    }}
+                    className="flex-1 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 font-semibold text-sm py-3 rounded-xl hover:bg-slate-700/40 transition-colors min-h-[48px]"
+                  >
+                    <Copy className="w-4 h-4" /> Copy Link
+                  </button>
+                  <Link
+                    href="/trustypro/dashboard"
+                    className="flex-1 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 font-semibold text-sm py-3 rounded-xl hover:bg-slate-700/40 transition-colors min-h-[48px]"
+                  >
+                    <BookOpen className="w-4 h-4" /> All Scans
+                  </Link>
+                </div>
               </div>
 
-              {/* Disclaimer */}
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 mb-6 text-xs text-gray-500 flex items-start gap-2">
-                <Shield className="w-4 h-4 flex-shrink-0 mt-0.5 text-gray-400" />
+              {/* ── Disclaimer ───────────────────────────────────────── */}
+              <div className="rounded-xl p-3 mb-5 text-xs text-slate-500 flex items-start gap-2 border border-slate-700">
+                <Shield className="w-4 h-4 flex-shrink-0 mt-0.5 text-slate-600" />
                 <span>
-                  This AI analysis is for informational purposes only and is <strong>not a substitute for a professional home inspection</strong>. Always consult a licensed inspector for real estate transactions or structural concerns. Results are based on visible photo analysis and may not detect hidden issues.
+                  This AI analysis is for informational purposes only and is <strong className="text-slate-400">not a substitute for a professional home inspection</strong>. Always consult a licensed inspector for real estate transactions or structural concerns.
                 </span>
               </div>
 
-              {/* Photo quality warning */}
+              {/* ── Photo quality warning ─────────────────────────────── */}
               {result.photoQualityFlag && result.photoQualityFlag !== "ok" && result.photoQualityNote && (
-                <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 mb-6 flex items-start gap-3">
+                <div className="rounded-2xl p-4 mb-5 flex items-start gap-3 border border-amber-500/30" style={{ backgroundColor: "rgba(245,158,11,0.08)" }}>
                   <div className="text-2xl flex-shrink-0">
                     {result.photoQualityFlag === "too_dark" ? "💡" : result.photoQualityFlag === "too_blurry" ? "📷" : "🔍"}
                   </div>
                   <div>
-                    <h4 className="font-black text-amber-900 text-sm mb-0.5">Photo Quality Note</h4>
-                    <p className="text-amber-800 text-sm">{result.photoQualityNote}</p>
-                    <p className="text-amber-600 text-xs mt-1">Retaking this photo will improve the accuracy of your analysis.</p>
+                    <h4 className="font-black text-amber-400 text-sm mb-0.5">Photo Quality Note</h4>
+                    <p className="text-amber-300/70 text-sm">{result.photoQualityNote}</p>
+                    <p className="text-amber-500/50 text-xs mt-1">Retaking this photo will improve analysis accuracy.</p>
                   </div>
                 </div>
               )}
 
-              {/* Insurance alert */}
+              {/* ── Insurance alert ───────────────────────────────────── */}
               {insuranceIssues.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-5 mb-6 flex items-start gap-4"
+                  className="rounded-2xl p-5 mb-5 flex items-start gap-4 border border-amber-500/30"
+                  style={{ backgroundColor: "rgba(245,158,11,0.08)" }}
                 >
                   <div className="text-3xl flex-shrink-0">🏛️</div>
                   <div>
-                    <h3 className="font-black text-amber-900 text-lg mb-1">Potential Insurance Claim Detected</h3>
-                    <p className="text-amber-800 text-sm leading-relaxed">
-                      Our AI detected {insuranceIssues.length === 1 ? "an issue" : `${insuranceIssues.length} issues`} that may be caused by storm, hail, wind, or water damage — which could be covered by your homeowner's insurance policy. A TrustyPro-verified contractor can document the damage and help you file a claim.
+                    <h3 className="font-black text-amber-400 text-base mb-1">Potential Insurance Claim Detected</h3>
+                    <p className="text-amber-300/70 text-sm leading-relaxed">
+                      Our AI detected {insuranceIssues.length === 1 ? "an issue" : `${insuranceIssues.length} issues`} that may be covered by homeowner's insurance — potentially storm, hail, or water damage. A TrustyPro-verified contractor can document and help you file.
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {insuranceIssues.map((issue, i) => (
-                        <span key={i} className="bg-amber-200 text-amber-900 text-xs font-semibold px-3 py-1 rounded-full">{issue.name}</span>
+                        <span key={i} className="bg-amber-500/20 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full">{issue.name}</span>
                       ))}
                     </div>
                   </div>
                 </motion.div>
               )}
 
-              {/* Overall condition */}
-              <div className={`rounded-2xl border p-6 mb-6 ${conditionConfig[result.overallCondition].bg}`}>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-bold text-gray-800">Overall Condition</span>
-                  <span className={`font-black text-lg ${conditionConfig[result.overallCondition].color}`}>
-                    {conditionConfig[result.overallCondition].label}
+              {/* ── Overall condition ─────────────────────────────────── */}
+              <div className={`rounded-2xl border p-5 mb-6 ${conditionConfig[result.overallCondition].bg}`}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-slate-300 text-sm">Overall Condition</span>
+                  <span className={`font-black ${conditionConfig[result.overallCondition].color}`}>
+                    {conditionConfig[result.overallCondition].emoji} {conditionConfig[result.overallCondition].label}
                   </span>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">{result.summary}</p>
+                <p className="text-slate-400 text-sm leading-relaxed">{result.summary}</p>
               </div>
 
-              {/* ── Issue Cards ──────────────────────────────────────────── */}
+              {/* ── Issue Cards ───────────────────────────────────────── */}
               {result.issues.length > 0 ? (
                 <div className="space-y-4 mb-8">
-                  <h2 className="text-xl font-black text-gray-900">
+                  <h2 className="text-xl font-black text-white">
                     {result.issues.length} Issue{result.issues.length !== 1 ? "s" : ""} Detected
                   </h2>
                   {result.issues.map((issue, i) => {
@@ -823,14 +1012,7 @@ export default function PhotoScan() {
                     const isTransform = issue.offerTrack === "transformation";
                     const hasTransformImg = isTransform && issue.transformationImageUrl;
                     const isExpanded = expandedTransform === i;
-                    const urgencyBadgeStyle =
-                      issue.severity === "urgent"
-                        ? "bg-red-100 text-red-700 border-red-300"
-                        : issue.severity === "moderate"
-                        ? "bg-amber-100 text-amber-700 border-amber-300"
-                        : "bg-yellow-50 text-yellow-700 border-yellow-300";
-                    const urgencyBadgeLabel =
-                      issue.severity === "urgent" ? "🔴 Urgent" : issue.severity === "moderate" ? "🟠 Schedule Service" : "🟡 Monitor";
+                    const isSaved = savedToVault.includes(i);
 
                     return (
                       <motion.div
@@ -838,50 +1020,53 @@ export default function PhotoScan() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.08 }}
-                        className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+                        className="rounded-2xl border overflow-hidden"
+                        style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}
                       >
                         <div className="p-5">
-                          {/* Urgency badge row */}
-                          <div className="flex items-center justify-between gap-3 mb-3">
-                            <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${urgencyBadgeStyle}`}>
-                              {urgencyBadgeLabel}
+                          {/* Severity + badges */}
+                          <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                            <span className={`text-xs font-bold px-3 py-1.5 rounded-full border ${cfg.badge}`}>
+                              {issue.severity === "urgent" ? "🔴" : issue.severity === "moderate" ? "🟠" : "🟡"} {cfg.label}
                             </span>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 flex-wrap">
                               {issue.isInsuranceClaim && (
-                                <span className="text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">🏛️ Possible Claim</span>
+                                <span className="text-xs font-bold bg-amber-500/15 text-amber-400 border border-amber-500/25 px-2 py-0.5 rounded-full">
+                                  🏛️ Possible Claim
+                                </span>
                               )}
                               {isTransform && (
-                                <span className="text-xs font-bold bg-purple-100 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <span className="text-xs font-bold bg-violet-500/15 text-violet-400 border border-violet-500/25 px-2 py-0.5 rounded-full flex items-center gap-1">
                                   <Sparkles className="w-3 h-3" /> AI Preview
                                 </span>
                               )}
                             </div>
                           </div>
 
-                          {/* Issue name + description */}
-                          <h3 className="font-black text-gray-900 text-base mb-1">{issue.name}</h3>
-                          <p className="text-gray-600 text-sm mb-4 leading-relaxed">{issue.description}</p>
+                          {/* Name + desc */}
+                          <h3 className="font-black text-white text-base mb-1">{issue.name}</h3>
+                          <p className="text-slate-400 text-sm mb-4 leading-relaxed">{issue.description}</p>
 
-                          {/* Cost + trade row */}
-                          <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
-                            <span className="flex items-center gap-1">🔧 <strong className="text-gray-700">{issue.tradeType}</strong></span>
-                            <span className="flex items-center gap-1">💰 Est. cost: <strong className="text-gray-800">{issue.estimatedCost}</strong></span>
+                          {/* Cost + trade */}
+                          <div className="flex items-center gap-4 text-xs text-slate-500 mb-4 flex-wrap">
+                            <span className="flex items-center gap-1">🔧 <strong className="text-slate-300">{issue.tradeType}</strong></span>
+                            <span className="flex items-center gap-1">💰 Est.: <strong className="text-slate-200">{issue.estimatedCost}</strong></span>
                           </div>
 
-                          {/* AI Confidence Bar */}
+                          {/* Confidence bar */}
                           {issue.confidence !== undefined && (
                             <div className="mb-4">
-                              <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+                              <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
                                 <span>AI Confidence</span>
-                                <span className="font-semibold text-gray-700">{Math.round((issue.confidence ?? 0.8) * 100)}%</span>
+                                <span className="font-semibold text-slate-300">{Math.round((issue.confidence ?? 0.8) * 100)}%</span>
                               </div>
-                              <div className="w-full bg-gray-100 rounded-full h-1.5">
+                              <div className="w-full rounded-full h-1.5" style={{ backgroundColor: "rgba(148,163,184,0.15)" }}>
                                 <div
-                                  className={`h-1.5 rounded-full transition-all duration-700 ${
-                                    (issue.confidence ?? 0.8) >= 0.85 ? "bg-red-500" :
-                                    (issue.confidence ?? 0.8) >= 0.65 ? "bg-amber-500" : "bg-blue-400"
-                                  }`}
-                                  style={{ width: `${Math.round((issue.confidence ?? 0.8) * 100)}%` }}
+                                  className="h-1.5 rounded-full transition-all duration-700"
+                                  style={{
+                                    width: `${Math.round((issue.confidence ?? 0.8) * 100)}%`,
+                                    backgroundColor: (issue.confidence ?? 0.8) >= 0.85 ? "#ef4444" : (issue.confidence ?? 0.8) >= 0.65 ? "#f59e0b" : VIOLET_LIGHT,
+                                  }}
                                 />
                               </div>
                             </div>
@@ -892,41 +1077,62 @@ export default function PhotoScan() {
                             {hasTransformImg && (
                               <button
                                 onClick={() => setExpandedTransform(isExpanded ? null : i)}
-                                className="text-xs font-semibold text-purple-600 border border-purple-200 bg-purple-50 px-3 py-2 rounded-xl hover:bg-purple-100 transition-colors flex items-center gap-1"
+                                className="text-xs font-semibold px-3 py-2 rounded-xl transition-colors flex items-center gap-1 border min-h-[40px]"
+                                style={{
+                                  backgroundColor: VIOLET_DIM,
+                                  borderColor: `${VIOLET}40`,
+                                  color: VIOLET_LIGHT,
+                                }}
                               >
                                 <Sparkles className="w-3 h-3" />
-                                {isExpanded ? "Hide Preview" : "See AI Transformation"}
+                                {isExpanded ? "Hide Preview" : "See AI Preview"}
                               </button>
                             )}
-                            <Link href="/trustypro/pros">
-                              <button
-                                className="text-xs font-bold text-white px-4 py-2 rounded-xl transition-colors flex items-center gap-1.5"
-                                style={{ backgroundColor: issue.severity === "urgent" ? "#dc2626" : issue.severity === "moderate" ? ACCENT_BTN : ACCENT }}
-                              >
-                                <ExternalLink className="w-3 h-3" />
-                                {issue.severity === "urgent" ? "Get a Quote — Urgent" : issue.severity === "moderate" ? "Get a Quote" : "Get a Quote"}
-                              </button>
-                            </Link>
+                            <button
+                              onClick={() => setRequestIssue(issue)}
+                              className="text-xs font-bold text-white px-4 py-2 rounded-xl transition-colors flex items-center gap-1.5 min-h-[40px]"
+                              style={{ backgroundColor: cfg.btn }}
+                            >
+                              <ExternalLink className="w-3 h-3" />
+                              {issue.severity === "urgent" ? "Get Quote — Urgent" : "Get Quote"}
+                            </button>
+                            <button
+                              onClick={() => {
+                                setSavedToVault(prev => isSaved ? prev.filter(x => x !== i) : [...prev, i]);
+                                if (!isSaved) toast.success("Saved to Home Vault!");
+                              }}
+                              className={`text-xs font-semibold px-3 py-2 rounded-xl transition-colors flex items-center gap-1 border min-h-[40px] ${
+                                isSaved
+                                  ? "text-green-400 border-green-500/30 bg-green-500/10"
+                                  : "text-slate-400 border-slate-600 hover:border-slate-500 hover:text-slate-200"
+                              }`}
+                            >
+                              <Vault className="w-3 h-3" />
+                              {isSaved ? "Saved" : "Save to Vault"}
+                            </button>
                           </div>
                         </div>
 
-                        {/* Transformation image reveal */}
+                        {/* Transformation image */}
                         <AnimatePresence>
                           {isExpanded && hasTransformImg && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
-                              className="border-t border-purple-100 bg-purple-50 overflow-hidden"
+                              className="border-t overflow-hidden"
+                              style={{ borderColor: `${VIOLET}30`, backgroundColor: VIOLET_DIM }}
                             >
                               <div className="p-5">
-                                <p className="text-xs font-semibold text-purple-700 mb-3 flex items-center gap-1.5"><Sparkles className="w-3 h-3" /> AI-Generated Transformation Preview</p>
+                                <p className="text-xs font-semibold mb-3 flex items-center gap-1.5" style={{ color: VIOLET_LIGHT }}>
+                                  <Sparkles className="w-3 h-3" /> AI-Generated Transformation Preview
+                                </p>
                                 <img
                                   src={issue.transformationImageUrl}
-                                  alt={`AI transformation preview for ${issue.name}`}
-                                  className="w-full rounded-xl shadow-md object-cover max-h-64"
+                                  alt={`AI transformation for ${issue.name}`}
+                                  className="w-full rounded-xl shadow-lg object-cover max-h-64"
                                 />
-                                <p className="text-xs text-purple-600 mt-2 text-center">This is an AI-generated visualization of what this area could look like after professional work.</p>
+                                <p className="text-xs text-slate-500 mt-2 text-center">AI visualization of what this area could look like after professional work.</p>
                               </div>
                             </motion.div>
                           )}
@@ -936,23 +1142,27 @@ export default function PhotoScan() {
                   })}
                 </div>
               ) : (
-                <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center mb-8">
+                <div className="rounded-2xl p-8 text-center mb-8 border border-green-500/20" style={{ backgroundColor: "rgba(16,185,129,0.08)" }}>
                   <div className="text-4xl mb-3">🎉</div>
-                  <h3 className="font-black text-green-800 text-xl mb-2">Your Home Looks Great!</h3>
-                  <p className="text-green-700 text-sm">No major issues detected. We recommend a routine check-up in 6 months.</p>
+                  <h3 className="font-black text-green-400 text-xl mb-2">Your Home Looks Great!</h3>
+                  <p className="text-green-400/60 text-sm">No major issues detected. We recommend a routine check-up in 6 months.</p>
                 </div>
               )}
 
-              {/* Transformation gallery */}
+              {/* ── Transformation gallery ────────────────────────────── */}
               {transformationIssues.length > 0 && (
-                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-100 rounded-2xl p-6 mb-8">
-                  <h3 className="font-black text-gray-900 text-lg mb-1 flex items-center gap-2"><Sparkles className="w-5 h-5 text-purple-500" /> Upgrade Opportunities Found</h3>
-                  <p className="text-gray-500 text-sm mb-4">Your home has {transformationIssues.length} area{transformationIssues.length > 1 ? "s" : ""} with upgrade potential. Click "See AI Transformation" on any issue above to see what it could look like.</p>
+                <div className="rounded-2xl p-6 mb-8 border" style={{ backgroundColor: CARD_BG, borderColor: `${VIOLET}30` }}>
+                  <h3 className="font-black text-white text-lg mb-1 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5" style={{ color: VIOLET_LIGHT }} /> Upgrade Opportunities
+                  </h3>
+                  <p className="text-slate-400 text-sm mb-4">
+                    {transformationIssues.length} area{transformationIssues.length > 1 ? "s" : ""} with upgrade potential. Click "See AI Preview" on any issue above.
+                  </p>
                   <div className="grid grid-cols-3 gap-2">
                     {transformationIssues.slice(0, 3).map((issue, i) => (
                       <div key={i} className="relative rounded-xl overflow-hidden aspect-square">
                         <img src={issue.transformationImageUrl} alt={issue.name} className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-2">
                           <span className="text-white text-xs font-bold leading-tight">{issue.name}</span>
                         </div>
                       </div>
@@ -961,70 +1171,61 @@ export default function PhotoScan() {
                 </div>
               )}
 
-              {/* ── Save to Home Vault ───────────────────────────────────── */}
-              <div className="bg-gray-900 rounded-2xl p-6 mb-4 flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                  <Vault className="w-6 h-6 text-white" />
+              {/* ── Save to Home Vault ────────────────────────────────── */}
+              <div className="rounded-2xl p-6 mb-4 flex items-center gap-4 border" style={{ backgroundColor: CARD_BG, borderColor: CARD_BORDER }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: VIOLET_DIM }}>
+                  <Vault className="w-6 h-6" style={{ color: VIOLET_LIGHT }} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-black text-white text-base mb-1">Save to Home Health Vault</h3>
-                  <p className="text-gray-400 text-xs">Store this report, track repairs over time, and get proactive maintenance alerts — free forever.</p>
+                  <h3 className="font-black text-white text-base mb-1">Save Full Report to Home Health Vault</h3>
+                  <p className="text-slate-400 text-xs">Store this report, track repairs over time, and get proactive maintenance alerts — free forever.</p>
                 </div>
                 <button
                   onClick={() => navigate("/trustypro/login")}
-                  className="flex-shrink-0 bg-white text-gray-900 font-black text-sm px-5 py-2.5 rounded-xl hover:bg-gray-100 transition-colors whitespace-nowrap"
+                  className="flex-shrink-0 font-black text-sm px-5 py-2.5 rounded-xl transition-colors whitespace-nowrap min-h-[44px]"
+                  style={{ background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)`, color: "white" }}
                 >
                   Save Free →
                 </button>
               </div>
 
-              {/* ── CTA ─────────────────────────────────────────────────── */}
-              <div className="rounded-2xl p-8 text-center text-white mb-8" style={{ background: `linear-gradient(135deg, ${ACCENT} 0%, ${ACCENT_BTN} 100%)` }}>
-                <h2 className="text-2xl font-black mb-2">Get Quotes from Verified Pros</h2>
-                <p className="text-sky-200 mb-6 text-sm">
+              {/* ── CTA ──────────────────────────────────────────────── */}
+              <div className="rounded-2xl p-8 text-center mb-8 border" style={{ background: `linear-gradient(135deg, ${VIOLET} 0%, #9333ea 100%)`, borderColor: "transparent" }}>
+                <h2 className="text-2xl font-black text-white mb-2">Get Quotes from Verified Pros</h2>
+                <p className="text-violet-200 mb-6 text-sm">
                   Background-checked, insured professionals — matched to your exact needs, usually within 2 hours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href="/trustypro/pros"
-                    className="bg-white font-bold px-8 py-3 rounded-xl hover:bg-sky-50 transition-colors flex items-center gap-2 justify-center"
-                    style={{ color: ACCENT }}
+                    className="bg-white font-bold px-8 py-3 rounded-xl hover:bg-violet-50 transition-colors flex items-center gap-2 justify-center min-h-[48px]"
+                    style={{ color: VIOLET }}
                   >
                     <ExternalLink className="w-4 h-4" /> Browse Verified Pros
                   </Link>
                   <button
-                    onClick={() => {
-                      setStep("upload");
-                      setPhotos([]);
-                      setResult(null);
-                      setOfficialScore(null);
-                      setContact({ name: "", email: "", phone: "", address: "" });
-                      setExpandedTransform(null);
-                    }}
-                    className="border border-indigo-400 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
+                    onClick={resetScan}
+                    className="border border-violet-300/40 text-white font-bold px-8 py-3 rounded-xl hover:bg-violet-700/30 transition-colors min-h-[48px]"
                   >
-                    Scan Another Room
+                    Scan Another Area
                   </button>
                   <Link
                     href="/trustypro/dashboard"
-                    className="border border-indigo-400 text-white font-bold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-colors flex items-center gap-2 justify-center"
+                    className="border border-violet-300/40 text-white font-bold px-8 py-3 rounded-xl hover:bg-violet-700/30 transition-colors flex items-center gap-2 justify-center min-h-[48px]"
                   >
-                    View Dashboard
+                    <BookOpen className="w-4 h-4" /> View All Scans
                   </Link>
                 </div>
               </div>
             </motion.div>
           )}
+
         </AnimatePresence>
       </div>
 
       {/* Request Pro Modal */}
       {requestIssue && (
-        <RequestProModal
-          issue={requestIssue}
-          contact={contact}
-          onClose={() => setRequestIssue(null)}
-        />
+        <RequestProModal issue={requestIssue} contact={contact} onClose={() => setRequestIssue(null)} />
       )}
     </div>
   );

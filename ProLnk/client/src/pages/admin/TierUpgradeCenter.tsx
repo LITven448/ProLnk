@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import {
   ArrowUpCircle, Star, Trophy, Zap, Crown, CheckCircle, Send, Users,
+  TrendingUp, Bell,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -61,6 +62,98 @@ const MOCK_PROS: TierPro[] = [
   { id: 9, name: "Lisa Jordan", trade: "Roofing", currentTier: "Pro", jobsCompleted: 98, jobsNeeded: 100, rating: 4.4, inviteSent: false },
 ];
 
+const NEAR_THRESHOLD_PROS = [
+  { id: 1, name: "Wendy Park", trade: "Plumbing", currentTier: "New" as Tier, pct: 90 },
+  { id: 2, name: "Tariq Hassan", trade: "Electrical", currentTier: "Rising" as Tier, pct: 94 },
+  { id: 3, name: "Lisa Jordan", trade: "Roofing", currentTier: "Pro" as Tier, pct: 98 },
+  { id: 4, name: "Marcus Reyes", trade: "HVAC", currentTier: "New" as Tier, pct: 85 },
+  { id: 5, name: "Sophie Kim", trade: "Painting", currentTier: "Rising" as Tier, pct: 88 },
+  { id: 6, name: "James Obinna", trade: "Electrical", currentTier: "Pro" as Tier, pct: 92 },
+  { id: 7, name: "Cynthia Brooks", trade: "Landscaping", currentTier: "New" as Tier, pct: 80 },
+  { id: 8, name: "Derek Tan", trade: "Plumbing", currentTier: "Rising" as Tier, pct: 96 },
+  { id: 9, name: "Nadia Flores", trade: "General", currentTier: "Pro" as Tier, pct: 87 },
+  { id: 10, name: "Alvin Wu", trade: "HVAC", currentTier: "Elite" as Tier, pct: 83 },
+];
+
+const UPGRADE_VELOCITY = [
+  { month: "Dec", upgrades: 4 },
+  { month: "Jan", upgrades: 7 },
+  { month: "Feb", upgrades: 5 },
+  { month: "Mar", upgrades: 9 },
+  { month: "Apr", upgrades: 12 },
+  { month: "May", upgrades: 8 },
+];
+
+const ONE_JOB_AWAY = [
+  { id: 1, name: "Derek Tan", currentTier: "Rising" as Tier, trade: "Plumbing", jobsNeeded: 1 },
+  { id: 2, name: "Lisa Jordan", currentTier: "Pro" as Tier, trade: "Roofing", jobsNeeded: 2 },
+  { id: 3, name: "Tariq Hassan", currentTier: "Rising" as Tier, trade: "Electrical", jobsNeeded: 3 },
+  { id: 4, name: "Wendy Park", currentTier: "New" as Tier, trade: "Plumbing", jobsNeeded: 1 },
+  { id: 5, name: "James Obinna", currentTier: "Pro" as Tier, trade: "Electrical", jobsNeeded: 2 },
+];
+
+const CELEBRATION_LOG = [
+  { id: 1, name: "Maria Santos", newTier: "Rising" as Tier, date: "May 12, 2026" },
+  { id: 2, name: "Devon Clarke", newTier: "Rising" as Tier, date: "May 10, 2026" },
+  { id: 3, name: "Aisha Patel", newTier: "Pro" as Tier, date: "May 8, 2026" },
+  { id: 4, name: "Roberto Vega", newTier: "Pro" as Tier, date: "May 5, 2026" },
+  { id: 5, name: "Christine Lee", newTier: "Elite" as Tier, date: "May 2, 2026" },
+];
+
+const TIER_DONUT_DATA: { tier: Tier; count: number; color: string }[] = [
+  { tier: "New", count: 142, color: "#64748B" },
+  { tier: "Rising", count: 87, color: "#3B82F6" },
+  { tier: "Pro", count: 43, color: "#14B8A6" },
+  { tier: "Elite", count: 18, color: "#A855F7" },
+  { tier: "Legend", count: 4, color: "#EAB308" },
+];
+
+function DonutChart() {
+  const total = TIER_DONUT_DATA.reduce((s, d) => s + d.count, 0);
+  let cumulative = 0;
+  const cx = 60, cy = 60, r = 48, stroke = 14;
+  const circumference = 2 * Math.PI * r;
+
+  return (
+    <div className="flex items-center gap-6">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        {TIER_DONUT_DATA.map((d) => {
+          const pct = d.count / total;
+          const offset = circumference - pct * circumference;
+          const rotation = (cumulative / total) * 360 - 90;
+          cumulative += d.count;
+          return (
+            <circle
+              key={d.tier}
+              cx={cx} cy={cy} r={r}
+              fill="none"
+              stroke={d.color}
+              strokeWidth={stroke}
+              strokeDasharray={`${pct * circumference} ${circumference}`}
+              strokeDashoffset={0}
+              transform={`rotate(${rotation} ${cx} ${cy})`}
+              style={{ transition: "stroke-dasharray 0.3s" }}
+            />
+          );
+        })}
+        <text x={cx} y={cy - 6} textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">{total}</text>
+        <text x={cx} y={cy + 10} textAnchor="middle" fontSize="8" fill="#94A3B8">total</text>
+      </svg>
+      <div className="space-y-1.5">
+        {TIER_DONUT_DATA.map((d) => (
+          <div key={d.tier} className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: d.color }} />
+            <span className="text-xs text-slate-300">{d.tier}</span>
+            <span className="text-xs font-bold text-white ml-auto pl-3">{d.count}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const BAR_MAX = Math.max(...UPGRADE_VELOCITY.map((d) => d.upgrades));
+
 function nextTier(current: Tier): Tier | null {
   const idx = TIER_ORDER.indexOf(current);
   return idx < TIER_ORDER.length - 1 ? TIER_ORDER[idx + 1] : null;
@@ -73,6 +166,7 @@ function isEligible(pro: TierPro): boolean {
 export default function TierUpgradeCenter() {
   const [pros, setPros] = useState<TierPro[]>(MOCK_PROS);
   const [sending, setSending] = useState<number | null>(null);
+  const [nudgeSent, setNudgeSent] = useState<Set<number>>(new Set());
 
   const eligible = pros.filter(isEligible);
   const inProgress = pros.filter((p) => !isEligible(p));
@@ -96,6 +190,11 @@ export default function TierUpgradeCenter() {
     if (pending.length === 0) { toast.info("All invites already sent"); return; }
     setPros((prev) => prev.map((p) => isEligible(p) ? { ...p, inviteSent: true } : p));
     toast.success(`${pending.length} upgrade invites sent`);
+  }
+
+  function sendNudge(id: number, name: string) {
+    setNudgeSent((prev) => new Set(prev).add(id));
+    toast.success(`Motivational nudge sent to ${name}!`);
   }
 
   return (
@@ -135,6 +234,159 @@ export default function TierUpgradeCenter() {
             );
           })}
         </div>
+
+        {/* ── Upgrade Pipeline: near threshold ─────────────────────────────── */}
+        <Card className="bg-slate-800/60 border-amber-700/40 border">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base text-white flex items-center gap-2">
+              <Bell className="h-4 w-4 text-amber-400" />
+              Upgrade Pipeline — Almost There
+              <Badge className="bg-amber-500/20 text-amber-400 border-0 text-xs ml-auto">{ONE_JOB_AWAY.length} partners</Badge>
+            </CardTitle>
+            <p className="text-xs text-slate-400">Partners who are 1–3 jobs away from their next tier upgrade</p>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {ONE_JOB_AWAY.map((p) => {
+              const next = nextTier(p.currentTier);
+              return (
+                <div key={p.id} className="flex items-center justify-between py-2 px-3 rounded-lg bg-slate-900/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-white">
+                      {p.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white">{p.name}</p>
+                      <p className="text-xs text-slate-400">{p.trade}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Badge className={`text-xs border-0 ${TIER_COLORS[p.currentTier]}`}>{p.currentTier}</Badge>
+                    <ArrowUpCircle className="h-3 w-3 text-amber-400" />
+                    {next && <Badge className={`text-xs border-0 ${TIER_COLORS[next]}`}>{next}</Badge>}
+                    <span className="text-xs text-amber-400 font-bold w-20 text-right">
+                      {p.jobsNeeded} job{p.jobsNeeded > 1 ? "s" : ""} away
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="h-7 text-xs border-amber-700/50 text-amber-400 hover:bg-amber-500/10"
+                      disabled={nudgeSent.has(p.id)}
+                      onClick={() => sendNudge(p.id, p.name)}
+                    >
+                      {nudgeSent.has(p.id) ? "Sent ✓" : "Nudge"}
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </CardContent>
+        </Card>
+
+        {/* ── Tier Distribution + Upgrade Velocity ─────────────────────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <Card className="bg-slate-800/60 border-slate-700">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base text-white flex items-center gap-2">
+                <Users className="h-4 w-4 text-teal-400" />
+                Tier Distribution
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <DonutChart />
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-800/60 border-slate-700">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base text-white flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-blue-400" />
+                Upgrade Velocity — Last 6 Months
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-end gap-2 h-28">
+                {UPGRADE_VELOCITY.map((d) => (
+                  <div key={d.month} className="flex flex-col items-center flex-1 gap-1">
+                    <span className="text-xs font-bold text-white">{d.upgrades}</span>
+                    <div
+                      className="w-full rounded-t bg-teal-500/80 transition-all"
+                      style={{ height: `${(d.upgrades / BAR_MAX) * 72}px` }}
+                    />
+                    <span className="text-[10px] text-slate-400">{d.month}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* ── Upgrade Eligibility Table ─────────────────────────────────── */}
+        <Card className="bg-slate-800/60 border-slate-700">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base text-white flex items-center gap-2">
+              <Star className="h-4 w-4 text-purple-400" />
+              Upgrade Eligibility — Partners Near Threshold
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {NEAR_THRESHOLD_PROS.map((p) => {
+                const next = nextTier(p.currentTier);
+                return (
+                  <div key={p.id} className="flex items-center gap-3">
+                    <div className="w-28 truncate text-sm text-white">{p.name}</div>
+                    <span className="text-xs text-slate-400 w-20 truncate">{p.trade}</span>
+                    <Badge className={`text-xs border-0 ${TIER_COLORS[p.currentTier]} w-16 justify-center`}>{p.currentTier}</Badge>
+                    <div className="flex-1 flex items-center gap-2">
+                      <Progress value={p.pct} className="h-2 flex-1 bg-slate-700 [&>div]:bg-teal-400" />
+                      <span className="text-xs text-slate-300 w-9 text-right">{p.pct}%</span>
+                    </div>
+                    {next && (
+                      <div className="flex items-center gap-1 w-24">
+                        <ArrowUpCircle className="h-3 w-3 text-teal-400" />
+                        <Badge className={`text-[10px] border-0 ${TIER_COLORS[next]}`}>{next}</Badge>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Celebration Log ───────────────────────────────────────────── */}
+        <Card className="bg-slate-800/60 border-slate-700">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base text-white flex items-center gap-2">
+              \u{1F389} Recent Tier Upgrades
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              {CELEBRATION_LOG.map((entry) => {
+                const Icon = TIER_ICONS[entry.newTier];
+                return (
+                  <div key={entry.id} className="flex items-center justify-between py-2 px-3 rounded-lg bg-slate-900/50">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">\u{1F38A}</span>
+                      <div>
+                        <p className="text-sm font-medium text-white">{entry.name}</p>
+                        <p className="text-xs text-slate-400">{entry.date}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-slate-400 text-xs">upgraded to</span>
+                      <Badge className={`text-xs border-0 ${TIER_COLORS[entry.newTier]} flex items-center gap-1`}>
+                        <Icon className="h-3 w-3" />
+                        {entry.newTier}
+                      </Badge>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
 
         {eligible.length > 0 && (
           <div>

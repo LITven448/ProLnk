@@ -1,342 +1,434 @@
-import type React from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import {
-  BookOpen, TrendingUp, Users, Clock, ArrowRight,
-  Rocket, DollarSign, Star, ChevronRight, Play,
-  FileText, BarChart2, Share2, Target, Zap, CheckCircle2,
+  BookOpen, Play, Download, ExternalLink, Rocket, DollarSign,
+  Network, Wrench, Megaphone, GraduationCap, FileText, Image,
+  LayoutTemplate, ArrowRight, Star,
 } from "lucide-react";
 
-interface ResourceCard {
-  icon: React.ReactNode;
+type Resource = {
   title: string;
   description: string;
-  readTime: string;
-  tag: string;
-  href: string;
-  featured?: boolean;
-}
+  type: "download" | "guide";
+  badge?: string;
+};
 
-function ResourceCardItem({ card }: { card: ResourceCard }) {
-  return (
-    <div
-      className="rounded-2xl p-6 border flex flex-col gap-4 transition-all hover:border-amber-500/30 hover:-translate-y-0.5 cursor-pointer group"
-      style={{
-        backgroundColor: card.featured ? "rgba(245,158,11,0.06)" : "rgba(255,255,255,0.04)",
-        borderColor: card.featured ? "rgba(245,158,11,0.25)" : "rgba(255,255,255,0.08)",
-      }}
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: card.featured ? "rgba(245,158,11,0.15)" : "rgba(255,255,255,0.08)" }}
-        >
-          {card.icon}
-        </div>
-        <span
-          className="text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
-          style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.5)" }}
-        >
-          {card.tag}
-        </span>
-      </div>
-      <div className="flex-1">
-        <h3 className="text-white font-bold text-sm leading-snug mb-1.5">{card.title}</h3>
-        <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-          {card.description}
-        </p>
-      </div>
-      <div className="flex items-center justify-between pt-1">
-        <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-          <Clock className="w-3.5 h-3.5" />
-          <span className="text-xs">{card.readTime}</span>
-        </div>
-        <span
-          className="text-xs font-semibold flex items-center gap-1 transition-all group-hover:gap-2"
-          style={{ color: "#F59E0B" }}
-        >
-          Read guide <ChevronRight className="w-3.5 h-3.5" />
-        </span>
-      </div>
-    </div>
-  );
-}
+type Category = {
+  id: string;
+  label: string;
+  icon: typeof Rocket;
+  color: string;
+  bg: string;
+  resources: Resource[];
+};
 
-const GETTING_STARTED: ResourceCard[] = [
+const CATEGORIES: Category[] = [
   {
-    icon: <Rocket className="w-5 h-5 text-amber-400" />,
-    title: "Your First 30 Days: ProLnk Partner Quickstart",
-    description:
-      "Step-by-step walkthrough for new partners. Learn how to optimize your profile, respond to leads, and close your first 5 jobs on the platform.",
-    readTime: "12 min read",
-    tag: "Beginner",
-    href: "/resources",
-    featured: true,
+    id: "getting-started",
+    label: "Getting Started",
+    icon: Rocket,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10 border-blue-500/20",
+    resources: [
+      {
+        title: "Partner Activation Checklist",
+        description: "Step-by-step guide to complete your profile, upload credentials, and receive your first lead.",
+        type: "download",
+        badge: "PDF",
+      },
+      {
+        title: "Field OS Quick Start Guide",
+        description: "How to log jobs, upload photos, and use the mobile app in under 10 minutes.",
+        type: "guide",
+        badge: "Interactive",
+      },
+      {
+        title: "ProLnk Glossary",
+        description: "Definitions for all platform terms: PPS, Deal, Opportunity, Origination Rights, and more.",
+        type: "guide",
+      },
+      {
+        title: "Platform Walkthrough Video",
+        description: "12-minute video tour of the full partner portal — dashboard, leads, earnings, and settings.",
+        type: "guide",
+        badge: "Video",
+      },
+    ],
   },
   {
-    icon: <Target className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "Setting Up Your Service Area for Maximum Leads",
-    description:
-      "Geographic targeting is the #1 factor in lead volume. This guide shows you how to configure your coverage zones to capture jobs without overstretching.",
-    readTime: "8 min read",
-    tag: "Setup",
-    href: "/resources",
+    id: "fsm",
+    label: "FSM Integration",
+    icon: Wrench,
+    color: "text-orange-400",
+    bg: "bg-orange-500/10 border-orange-500/20",
+    resources: [
+      {
+        title: "Jobber Integration Guide",
+        description: "Connect your Jobber account to ProLnk in 5 minutes for automatic job sync.",
+        type: "guide",
+        badge: "Jobber",
+      },
+      {
+        title: "Housecall Pro Integration Guide",
+        description: "OAuth setup, field mapping, and photo sync for HCP users.",
+        type: "guide",
+        badge: "HCP",
+      },
+      {
+        title: "ServiceTitan Integration Guide",
+        description: "Enterprise-level sync for ServiceTitan — includes dispatch and invoice sync.",
+        type: "guide",
+        badge: "ServiceTitan",
+      },
+      {
+        title: "Manual Job Logging Template",
+        description: "Spreadsheet template for partners logging jobs manually until FSM is connected.",
+        type: "download",
+        badge: "CSV",
+      },
+    ],
   },
   {
-    icon: <FileText className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "Photo Best Practices: Win Homeowners Before You Arrive",
-    description:
-      "Partners with 5+ job photos convert 3x more leads. Learn the exact shots to take on every job and how to organize your portfolio for maximum impact.",
-    readTime: "6 min read",
-    tag: "Profile",
-    href: "/resources/photo-guide",
+    id: "commission",
+    label: "Commission Guide",
+    icon: DollarSign,
+    color: "text-teal-400",
+    bg: "bg-teal-500/10 border-teal-500/20",
+    resources: [
+      {
+        title: "Founding Member Commission Deep Dive",
+        description: "Complete breakdown of the 72% keep rate, how fees are calculated, and payout timelines.",
+        type: "download",
+        badge: "PDF",
+      },
+      {
+        title: "Commission Calculator Worksheet",
+        description: "Excel model to project your annual earnings based on job volume and network size.",
+        type: "download",
+        badge: "Excel",
+      },
+      {
+        title: "How to Read Your Commission Ledger",
+        description: "Video walkthrough explaining every field, filter, and export option in the Ledger.",
+        type: "guide",
+        badge: "Video",
+      },
+      {
+        title: "Dispute Resolution Guide",
+        description: "Step-by-step process for submitting, tracking, and escalating commission disputes.",
+        type: "guide",
+      },
+    ],
+  },
+  {
+    id: "network",
+    label: "Network Building",
+    icon: Network,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10 border-purple-500/20",
+    resources: [
+      {
+        title: "Network Income Playbook",
+        description: "Strategies for recruiting quality partners, maximizing override earnings, and growing your tree.",
+        type: "download",
+        badge: "PDF",
+      },
+      {
+        title: "Origination Rights Guide",
+        description: "How to enroll homeowners in the Home Health Vault and lock in permanent 1.5% origination rights.",
+        type: "guide",
+        badge: "Important",
+      },
+      {
+        title: "Referral Link Setup",
+        description: "Generate your custom referral link and track clicks, signups, and conversion rates.",
+        type: "guide",
+      },
+      {
+        title: "Network Tree Visual Guide",
+        description: "How to read and interpret your 4-level network visualization and earnings reports.",
+        type: "guide",
+        badge: "Video",
+      },
+    ],
+  },
+  {
+    id: "marketing",
+    label: "Marketing Tools",
+    icon: Megaphone,
+    color: "text-pink-400",
+    bg: "bg-pink-500/10 border-pink-500/20",
+    resources: [
+      {
+        title: "ProLnk Partner Logo Pack",
+        description: "SVG, PNG, and white/color variants of the ProLnk 'Trusted Partner' badge for your website.",
+        type: "download",
+        badge: "Logos",
+      },
+      {
+        title: "Branded Email Templates",
+        description: "Co-branded HTML email templates for recruiting partners and referring homeowners.",
+        type: "download",
+        badge: "HTML",
+      },
+      {
+        title: "Partner One-Pager",
+        description: "Print-ready one-pager explaining the ProLnk Network Income opportunity to recruit partners.",
+        type: "download",
+        badge: "PDF",
+      },
+      {
+        title: "Social Media Asset Kit",
+        description: "Instagram, LinkedIn, and Facebook post templates sized and designed for partner promotion.",
+        type: "download",
+        badge: "PNG/MP4",
+      },
+    ],
   },
 ];
 
-const EARNINGS_OPT: ResourceCard[] = [
+const VIDEOS = [
   {
-    icon: <BarChart2 className="w-5 h-5 text-amber-400" />,
-    title: "The Tier Acceleration Playbook",
-    description:
-      "How top partners reach Founding Tier in 60 days or less. Covers job cadence, seasonal demand patterns, and the compounding effect of early tier advancement.",
-    readTime: "15 min read",
-    tag: "Earnings",
-    href: "/resources/maximize-earnings",
-    featured: true,
+    title: "How ProLnk's AI Opportunity Engine Works",
+    duration: "8 min",
+    desc: "See how photos from your jobs are analyzed to detect adjacent service opportunities.",
   },
   {
-    icon: <DollarSign className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "Understanding Your 5 Income Streams",
-    description:
-      "ProLnk partners earn from direct commissions, network overrides, subscription referrals, homeowner sourcing, and home origination rights. This guide breaks down each stream with real dollar examples.",
-    readTime: "10 min read",
-    tag: "Commission",
-    href: "/resources",
+    title: "Building Your Network: A Founding Member Story",
+    duration: "14 min",
+    desc: "Watch how a plumber built a 40-partner network in 6 months and what it earns monthly.",
   },
   {
-    icon: <Zap className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "Seasonal Surge Strategy: Q3 & Q4 DFW Demand",
-    description:
-      "HVAC and roofing demand spikes 300% in summer in North Texas. Plan your capacity, raise your close rate, and position for the highest-value jobs before the season hits.",
-    readTime: "9 min read",
-    tag: "Strategy",
-    href: "/resources",
+    title: "TrustyPro Profile Optimization",
+    duration: "6 min",
+    desc: "How to improve your public TrustyPro profile to rank higher and close more leads.",
   },
 ];
 
-const RECRUITING: ResourceCard[] = [
+const DOWNLOADS = [
   {
-    icon: <Share2 className="w-5 h-5 text-amber-400" />,
-    title: "How to Build a 10-Person Network in 90 Days",
-    description:
-      "Your Level 1 network earns you 7% of every job your recruits close — forever. This guide covers the exact outreach scripts, timing, and positioning that convert fellow tradespeople into your network.",
-    readTime: "14 min read",
-    tag: "Recruiting",
-    href: "/resources",
-    featured: true,
+    title: "ProLnk Logo Pack",
+    icon: Image,
+    size: "2.4 MB",
+    format: "ZIP (SVG + PNG)",
+    desc: "Official logos, badges, and brand colors for partner use.",
   },
   {
-    icon: <Users className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "The 4-Level Network Math: Why Early Recruiting Pays Forever",
-    description:
-      "With a 4-level override cascade, one Charter-tier partner with 5 direct recruits who each recruit 5 more generates $3,200/mo in passive overrides. Run the numbers here.",
-    readTime: "7 min read",
-    tag: "Network Math",
-    href: "/resources",
+    title: "Partner One-Pager",
+    icon: FileText,
+    size: "1.1 MB",
+    format: "PDF",
+    desc: "Print-ready document to share the ProLnk opportunity with other trades.",
   },
   {
-    icon: <Star className="w-5 h-5" style={{ color: "rgba(255,255,255,0.6)" }} />,
-    title: "Home Origination Rights: The Long Game Asset",
-    description:
-      "Every home you bring into the Home Health Vault generates a permanent revenue share for the life of that home on the platform. Learn how to originate homes and why it matters at scale.",
-    readTime: "11 min read",
-    tag: "Advanced",
-    href: "/resources",
+    title: "Branded Templates Pack",
+    icon: LayoutTemplate,
+    size: "3.8 MB",
+    format: "ZIP (HTML + PNG)",
+    desc: "Email, social, and print templates with ProLnk branding.",
   },
 ];
-
-interface SectionProps {
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
-  cards: ResourceCard[];
-  accentColor: string;
-}
-
-function ResourceSection({ icon, title, subtitle, cards, accentColor }: SectionProps) {
-  return (
-    <section className="mb-14">
-      <div className="flex items-start gap-3 mb-6">
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-          style={{ backgroundColor: `${accentColor}18` }}
-        >
-          {icon}
-        </div>
-        <div>
-          <h2 className="text-white font-bold text-xl">{title}</h2>
-          <p className="text-sm mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>
-            {subtitle}
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {cards.map((card) => (
-          <Link key={card.title} href={card.href}>
-            <ResourceCardItem card={card} />
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function PartnerResourceCenter() {
   return (
-    <div
-      className="min-h-screen"
-      style={{
-        backgroundColor: "#0A1628",
-        fontFamily: "'Inter', system-ui, sans-serif",
-      }}
-    >
-      {/* Nav */}
-      <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10 max-w-6xl mx-auto">
-        <Link href="/">
-          <span className="text-white font-bold text-lg tracking-tight cursor-pointer">ProLnk</span>
-        </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/partner/profile">
-            <span className="text-sm cursor-pointer" style={{ color: "rgba(255,255,255,0.5)" }}>
-              My Profile
-            </span>
-          </Link>
-          <Link href="/resources/faq">
-            <span
-              className="text-sm cursor-pointer px-4 py-2 rounded-xl border transition-all hover:border-amber-500/40"
-              style={{ color: "#F59E0B", borderColor: "rgba(245,158,11,0.3)" }}
-            >
-              FAQ
-            </span>
-          </Link>
-        </div>
-      </nav>
+    <>
+      <Helmet>
+        <title>Partner Resource Center | ProLnk</title>
+        <meta name="description" content="Guides, downloads, video tutorials, and marketing tools for ProLnk service professional partners." />
+      </Helmet>
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 pt-12 pb-10">
-        <div
-          className="rounded-2xl px-8 py-10 border flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-          style={{
-            background: "linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(10,22,40,0) 60%)",
-            borderColor: "rgba(245,158,11,0.2)",
-          }}
-        >
-          <div>
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 border"
-              style={{
-                backgroundColor: "rgba(245,158,11,0.1)",
-                color: "#F59E0B",
-                borderColor: "rgba(245,158,11,0.3)",
-              }}
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              Partner Resource Center
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Everything you need to win on ProLnk
-            </h1>
-            <p className="text-sm max-w-lg" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Guides written by partners earning at Founding Tier. From first lead to 5-stream passive income — the full playbook is here.
-            </p>
-            <div className="flex items-center gap-5 mt-5">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" style={{ color: "#4ade80" }} />
-                <span className="text-xs text-white/60">9 guides</span>
+      <div className="min-h-screen bg-[#0A1628] text-white">
+        {/* Hero */}
+        <div className="bg-slate-900 border-b border-slate-800">
+          <div className="max-w-6xl mx-auto px-6 py-12">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-1.5 mb-4">
+                  <BookOpen className="w-4 h-4 text-teal-400" />
+                  <span className="text-sm text-teal-300 font-medium">Partner Resource Center</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">Everything You Need to Succeed</h1>
+                <p className="text-slate-400 text-lg">
+                  Guides, integrations, commission tools, and marketing assets — all in one place.
+                </p>
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" style={{ color: "#4ade80" }} />
-                <span className="text-xs text-white/60">Real earnings data</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" style={{ color: "#4ade80" }} />
-                <span className="text-xs text-white/60">Updated weekly</span>
-              </div>
+              <Link href="/resources/academy">
+                <button className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl text-sm transition-colors">
+                  <GraduationCap className="w-4 h-4" />
+                  ProLnk Academy
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
-          <Link href="/resources/success-stories">
-            <button
-              className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all hover:scale-105"
-              style={{
-                backgroundColor: "#F59E0B",
-                color: "#0A1628",
-                boxShadow: "0 4px 20px rgba(245,158,11,0.3)",
-              }}
-            >
-              <Play className="w-4 h-4" />
-              Success Stories
-            </button>
-          </Link>
         </div>
-      </section>
 
-      {/* Sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-16">
-        <ResourceSection
-          icon={<Rocket className="w-5 h-5 text-amber-400" />}
-          title="Getting Started"
-          subtitle="Set up your profile, understand the lead flow, and close your first jobs."
-          cards={GETTING_STARTED}
-          accentColor="#F59E0B"
-        />
-        <ResourceSection
-          icon={<TrendingUp className="w-5 h-5" style={{ color: "#34d399" }} />}
-          title="Earnings Optimization"
-          subtitle="Tier advancement, commission mechanics, and seasonal strategy."
-          cards={EARNINGS_OPT}
-          accentColor="#34d399"
-        />
-        <ResourceSection
-          icon={<Users className="w-5 h-5" style={{ color: "#818cf8" }} />}
-          title="Recruiting Guide"
-          subtitle="Build your network, activate passive income, and earn overrides across 4 levels."
-          cards={RECRUITING}
-          accentColor="#818cf8"
-        />
+        <div className="max-w-6xl mx-auto px-6 py-10 space-y-14">
 
-        {/* Bottom CTA */}
-        <div
-          className="rounded-2xl p-8 border text-center"
-          style={{
-            backgroundColor: "rgba(255,255,255,0.03)",
-            borderColor: "rgba(255,255,255,0.08)",
-          }}
-        >
-          <h2 className="text-white font-bold text-xl mb-2">Have a question not covered here?</h2>
-          <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.45)" }}>
-            The partner FAQ has answers to 80+ common questions about leads, commissions, disputes, and platform features.
-          </p>
-          <Link href="/resources/faq">
-            <button
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold border transition-all hover:border-amber-500/50"
-              style={{
-                color: "#F59E0B",
-                borderColor: "rgba(245,158,11,0.3)",
-                backgroundColor: "rgba(245,158,11,0.08)",
-              }}
-            >
-              Browse the FAQ <ArrowRight className="w-4 h-4" />
-            </button>
-          </Link>
+          {/* Resource categories */}
+          {CATEGORIES.map((cat) => {
+            const Icon = cat.icon;
+            return (
+              <section key={cat.id}>
+                <div className="flex items-center gap-2 mb-5">
+                  <div className={`p-2 rounded-lg border ${cat.bg}`}>
+                    <Icon className={`w-4 h-4 ${cat.color}`} />
+                  </div>
+                  <h2 className="text-xl font-bold text-white">{cat.label}</h2>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {cat.resources.map((res) => (
+                    <div
+                      key={res.title}
+                      className="group flex flex-col bg-slate-800/50 border border-slate-700/60 rounded-xl p-5 hover:border-teal-500/40 hover:bg-slate-800/80 transition-all"
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex-1">
+                          <h3 className="text-sm font-semibold text-white leading-snug">{res.title}</h3>
+                        </div>
+                        {res.badge && (
+                          <span className="ml-2 flex-shrink-0 text-xs px-2 py-0.5 bg-slate-700 text-slate-300 rounded-full border border-slate-600">
+                            {res.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed flex-1">{res.description}</p>
+                      <button className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-teal-400 hover:text-teal-300 transition-colors self-start">
+                        {res.type === "download" ? (
+                          <>
+                            <Download className="w-3.5 h-3.5" />
+                            Download
+                          </>
+                        ) : (
+                          <>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            View Guide
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+
+          {/* Video tutorials */}
+          <section>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="p-2 rounded-lg bg-red-500/10 border border-red-500/20">
+                <Play className="w-4 h-4 text-red-400" />
+              </div>
+              <h2 className="text-xl font-bold text-white">Video Tutorials</h2>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {VIDEOS.map((video) => (
+                <div
+                  key={video.title}
+                  className="group relative bg-slate-800/50 border border-slate-700/60 rounded-xl overflow-hidden hover:border-teal-500/40 transition-all cursor-pointer"
+                >
+                  {/* Thumbnail placeholder */}
+                  <div className="relative bg-gradient-to-br from-slate-700 to-slate-900 h-36 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-teal-500/30 group-hover:border-teal-400/50 transition-all">
+                      <Play className="w-5 h-5 text-white ml-0.5" />
+                    </div>
+                    <span className="absolute bottom-2 right-2 text-xs bg-black/60 text-white px-2 py-0.5 rounded">
+                      {video.duration}
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold text-white mb-1 leading-snug">{video.title}</h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">{video.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Downloads */}
+          <section>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="p-2 rounded-lg bg-slate-700 border border-slate-600">
+                <Download className="w-4 h-4 text-slate-300" />
+              </div>
+              <h2 className="text-xl font-bold text-white">Quick Downloads</h2>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4">
+              {DOWNLOADS.map((dl) => {
+                const Icon = dl.icon;
+                return (
+                  <div
+                    key={dl.title}
+                    className="flex items-start gap-4 bg-slate-800/50 border border-slate-700/60 rounded-xl p-5 hover:border-teal-500/40 transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-slate-700 border border-slate-600 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-teal-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-semibold text-white">{dl.title}</div>
+                      <div className="text-xs text-slate-400 mt-0.5">{dl.desc}</div>
+                      <div className="flex items-center gap-2 mt-2">
+                        <span className="text-xs text-slate-500">{dl.format}</span>
+                        <span className="text-slate-600">·</span>
+                        <span className="text-xs text-slate-500">{dl.size}</span>
+                      </div>
+                    </div>
+                    <button className="flex-shrink-0 p-1.5 rounded-lg bg-teal-600/20 border border-teal-600/30 hover:bg-teal-600/40 transition-all">
+                      <Download className="w-4 h-4 text-teal-400" />
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* ProLnk Academy promo */}
+          <section className="bg-gradient-to-br from-teal-900/40 via-slate-800/60 to-slate-900/80 border border-teal-700/30 rounded-2xl p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-3 py-1 mb-3">
+                  <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
+                  <span className="text-xs text-teal-300 font-medium">Coming Soon</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">ProLnk Academy</h3>
+                <p className="text-slate-400 leading-relaxed mb-3">
+                  Structured courses for service professionals: lead conversion tactics, job photo best practices,
+                  network building strategies, and AI opportunity recognition. Earn certifications that boost your
+                  Partner Priority Score.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {["Lead Conversion", "Photo Best Practices", "Network Building", "AI Opportunity Mastery"].map((tag) => (
+                    <span key={tag} className="flex items-center gap-1 text-xs text-slate-300 bg-slate-700/60 border border-slate-600/50 rounded-full px-3 py-1">
+                      <Star className="w-3 h-3 text-teal-400" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex-shrink-0">
+                <Link href="/resources/academy">
+                  <button className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl text-sm transition-colors">
+                    <GraduationCap className="w-4 h-4" />
+                    Visit ProLnk Academy
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer nav */}
+          <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-800 text-sm text-slate-500">
+            <Link href="/partner-faq"><span className="hover:text-teal-400 cursor-pointer transition-colors">Partner FAQ</span></Link>
+            <Link href="/partner-agreement"><span className="hover:text-teal-400 cursor-pointer transition-colors">Partner Agreement</span></Link>
+            <Link href="/compliance"><span className="hover:text-teal-400 cursor-pointer transition-colors">Compliance & Legal</span></Link>
+            <a href="mailto:support@prolnk.io" className="hover:text-teal-400 transition-colors">support@prolnk.io</a>
+          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <div
-        className="border-t text-center py-8 text-xs"
-        style={{ borderColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.25)" }}
-      >
-        &copy; 2026 ProLnk &mdash; Resource center content is for partner use only.
-      </div>
-    </div>
+    </>
   );
 }

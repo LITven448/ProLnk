@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   ClipboardList, Plus, ChevronDown, ChevronUp,
-  Phone, ExternalLink, CheckCircle2, Clock, AlertCircle,
+  Phone, ExternalLink, CheckCircle, Clock, AlertCircle,
   XCircle, Calendar, Building2, User, X,
 } from "lucide-react";
 
@@ -76,7 +76,7 @@ const permitCategories = [
 function statusConfig(status: PermitStatus) {
   switch (status) {
     case "Issued":
-      return { color: GREEN, bg: "#22C55E18", border: "#22C55E44", icon: <CheckCircle2 size={13} /> };
+      return { color: GREEN, bg: "#22C55E18", border: "#22C55E44", icon: <CheckCircle size={13} /> };
     case "Under Review":
       return { color: AMBER, bg: "#F59E0B18", border: "#F59E0B44", icon: <Clock size={13} /> };
     case "Final Inspection Needed":
@@ -253,7 +253,7 @@ export default function PermitTracker() {
                   color: p.result === "Passed" ? GREEN : RED,
                   fontSize: 12, fontWeight: 600,
                 }}>
-                  {p.result === "Passed" ? <CheckCircle2 size={13} /> : <XCircle size={13} />}
+                  {p.result === "Passed" ? <CheckCircle size={13} /> : <XCircle size={13} />}
                   {p.result}
                 </div>
               </div>

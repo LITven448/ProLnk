@@ -5,7 +5,7 @@ import {
   PieChart, Pie, Cell, Legend,
 } from "recharts";
 import {
-  TrendingUp, Users, ArrowDown, Clock, CheckCircle2, Zap, BarChart2,
+  TrendingUp, Users, ArrowDown, Clock, CheckCircle, Zap, BarChart2,
 } from "lucide-react";
 
 const D = {
@@ -332,7 +332,7 @@ export default function FunnelAnalyticsDashboard() {
           {/* A/B tests */}
           <div style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 16, padding: "20px 22px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <CheckCircle2 style={{ width: 15, height: 15, color: D.green }} />
+              <CheckCircle style={{ width: 15, height: 15, color: D.green }} />
               <h2 style={{ fontSize: 14, fontWeight: 700, color: D.text, margin: 0 }}>A/B Test Impact</h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>

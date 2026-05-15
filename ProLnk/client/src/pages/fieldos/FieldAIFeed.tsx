@@ -7,7 +7,7 @@ import { trpc } from "@/lib/trpc";
 import { FOS } from "./fosTokens";
 import { toast } from "sonner";
 import {
-  Zap, CheckCircle2, Clock, ChevronRight,
+  Zap, CheckCircle, Clock, ChevronRight,
   Loader2, Sparkles, TrendingUp
 } from "lucide-react";
 
@@ -226,13 +226,13 @@ export default function FieldAIFeed() {
                     >
                       {isAccepting
                         ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        : <><CheckCircle2 className="w-3.5 h-3.5" /> Accept</>}
+                        : <><CheckCircle className="w-3.5 h-3.5" /> Accept</>}
                     </button>
                   )}
 
                   {status === "accepted" && (
                     <div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: FOS.green }}>
-                      <CheckCircle2 className="w-4 h-4" />Accepted
+                      <CheckCircle className="w-4 h-4" />Accepted
                     </div>
                   )}
 

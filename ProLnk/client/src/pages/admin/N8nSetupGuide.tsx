@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Zap, Download, CheckCircle2, Copy, ExternalLink,
+  Zap, Download, CheckCircle, Copy, ExternalLink,
   MessageSquare, Mail, Users, DollarSign, RotateCcw,
   Bell, Calendar, Star, ChevronRight, Info,
 } from "lucide-react";
@@ -229,7 +229,7 @@ export default function N8nSetupGuide() {
                         className="text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {copiedStep === wf.trigger
-                          ? <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+                          ? <CheckCircle className="w-3.5 h-3.5 text-green-500" />
                           : <Copy className="w-3.5 h-3.5" />
                         }
                       </button>

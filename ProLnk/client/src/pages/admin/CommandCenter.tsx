@@ -1,4 +1,3 @@
-import type React from "react";
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";

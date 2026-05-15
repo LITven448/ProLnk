@@ -607,7 +607,7 @@ const TABS = [
   { id: "affiliate", label: "Affiliate", icon: ShoppingBag },
 ] as const;
 
-type TabId = (typeof TABS)[number]["id"];
+type TabId = (any)[number]["id"];
 
 export default function StrategicOverview() {
   const [activeTab, setActiveTab] = useState<TabId>("daily-ops");

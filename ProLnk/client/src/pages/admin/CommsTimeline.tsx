@@ -9,7 +9,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Mail, MessageSquare, Bell, CheckCircle2, Clock, Send,
+  Mail, MessageSquare, Bell, CheckCircle, Clock, Send,
   Edit2, X, Save, Copy, Eye, Sparkles, User, Home, Briefcase,
   RefreshCw, Search, ChevronDown, ChevronUp, ExternalLink
 } from "lucide-react";

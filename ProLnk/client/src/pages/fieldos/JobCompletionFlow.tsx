@@ -10,7 +10,7 @@ import {
   Plus,
   Image,
   DollarSign,
-  CheckCircle2,
+  CheckCircle,
   Sparkles,
   ChevronRight,
 } from "lucide-react";
@@ -74,7 +74,7 @@ export default function JobCompletionFlow() {
             className="w-24 h-24 rounded-full flex items-center justify-center"
             style={{ background: "rgba(16,185,129,0.15)", border: `2px solid ${FOS.green}` }}
           >
-            <CheckCircle2 size={48} color={FOS.green} />
+            <CheckCircle size={48} color={FOS.green} />
           </div>
           <div>
             <p className="text-2xl font-black">Job Complete!</p>

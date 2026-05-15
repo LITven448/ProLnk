@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
   Shield, Database, Eye, Brain, Phone, Save, Loader2,
-  CheckCircle2, Info, Lock, ExternalLink, AlertTriangle
+  CheckCircle, Info, Lock, ExternalLink, AlertTriangle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -146,7 +146,7 @@ export default function HomeownerPrivacy() {
           <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${activeCount === 3 ? "bg-green-600" : activeCount === 0 ? "bg-gray-300" : "bg-blue-600"}`}>
             {activeCount === 0
               ? <Lock className="w-5 h-5 text-white" />
-              : <CheckCircle2 className="w-5 h-5 text-white" />
+              : <CheckCircle className="w-5 h-5 text-white" />
             }
           </div>
           <div>
@@ -213,7 +213,7 @@ export default function HomeownerPrivacy() {
               "Store raw photos beyond the AI analysis window",
             ].map(item => (
               <li key={item} className="flex items-start gap-2 text-xs text-gray-600">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
                 {item}
               </li>
             ))}

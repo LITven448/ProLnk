@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import {
-  Send, Copy, CheckCircle2, Sparkles, User, Home, DollarSign,
+  Send, Copy, CheckCircle, Sparkles, User, Home, DollarSign,
   ChevronDown, ExternalLink, Loader2, AlertCircle, X, Plus,
   Wrench, Zap, RefreshCw
 } from "lucide-react";
@@ -44,7 +44,7 @@ function StepDot({ n, current, label }: { n: number; current: number; label: str
         active ? "bg-[#0A1628] text-white" :
                  "bg-gray-100 text-gray-400"
       }`}>
-        {done ? <CheckCircle2 className="w-4 h-4" /> : n}
+        {done ? <CheckCircle className="w-4 h-4" /> : n}
       </div>
       <span className={`text-[10px] font-medium ${active ? "text-[#0A1628]" : "text-gray-400"}`}>{label}</span>
     </div>
@@ -310,7 +310,7 @@ export default function DealComposer() {
                         <p className="text-sm font-semibold text-gray-800 truncate">{p.businessName || p.name}</p>
                         <p className="text-xs text-gray-400 truncate">{p.serviceType} · {p.tier}</p>
                       </div>
-                      {fieldPartnerId === p.id && <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />}
+                      {fieldPartnerId === p.id && <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0" />}
                     </button>
                   ))}
                 </div>
@@ -332,7 +332,7 @@ export default function DealComposer() {
                       <Plus className="w-4 h-4 text-gray-400" />
                     </div>
                     <span className="text-sm text-gray-500">Assign Later (Auto-route)</span>
-                    {receivingPartnerId === null && <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 ml-auto" />}
+                    {receivingPartnerId === null && <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 ml-auto" />}
                   </button>
                   {(partners ?? []).filter((p: any) => p.id !== fieldPartnerId).map((p: any) => (
                     <button
@@ -351,7 +351,7 @@ export default function DealComposer() {
                         <p className="text-sm font-semibold text-gray-800 truncate">{p.businessName || p.name}</p>
                         <p className="text-xs text-gray-400 truncate">{p.serviceType} · {p.tier}</p>
                       </div>
-                      {receivingPartnerId === p.id && <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />}
+                      {receivingPartnerId === p.id && <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />}
                     </button>
                   ))}
                 </div>
@@ -429,7 +429,7 @@ export default function DealComposer() {
           {step === 4 && createdDeal && (
             <div className="max-w-lg space-y-5">
               <div className="flex items-center gap-3 p-4 bg-green-50 rounded-xl border border-green-200">
-                <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0" />
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-bold text-green-800">Deal Page Created!</p>
                   <p className="text-xs text-green-600 mt-0.5">The homeowner deal page is ready to share.</p>

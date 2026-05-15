@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import {
   CloudLightning, AlertTriangle, Zap, MapPin, Wind, Droplets,
   Play, ToggleLeft, ToggleRight, Home, Wrench, TreePine, Waves,
-  BarChart3, ArrowUpRight, Radio, Clock, CheckCircle2, RefreshCw,
+  BarChart3, ArrowUpRight, Radio, Clock, CheckCircle, RefreshCw,
   Thermometer, Activity,
 } from "lucide-react";
 
@@ -192,7 +192,7 @@ export default function StormWatch() {
             { label: "Active Events", value: stats?.activeEvents ?? ACTIVE_CELLS.length, icon: AlertTriangle, color: "text-red-500" },
             { label: "Total Events", value: stats?.totalEvents ?? HISTORICAL.length, icon: CloudLightning, color: "text-blue-400" },
             { label: "Leads Generated", value: stats?.totalLeads ?? HISTORICAL.reduce((a, s) => a + s.leads, 0).toLocaleString(), icon: Zap, color: "text-amber-400" },
-            { label: "Avg Acceptance", value: `${Math.round(HISTORICAL.reduce((a, s) => a + s.acceptRate, 0) / HISTORICAL.length)}%`, icon: CheckCircle2, color: "text-green-400" },
+            { label: "Avg Acceptance", value: `${Math.round(HISTORICAL.reduce((a, s) => a + s.acceptRate, 0) / HISTORICAL.length)}%`, icon: CheckCircle, color: "text-green-400" },
           ].map(s => (
             <Card key={s.label} className={s.label === "Active Events" && (stats?.activeEvents ?? ACTIVE_CELLS.length) > 0 ? "border-red-500/30" : ""}>
               <CardContent className="pt-5 pb-4">
@@ -407,7 +407,7 @@ export default function StormWatch() {
               {simResult && (
                 <div className="rounded-xl border border-teal-500/30 bg-teal-500/5 p-4 space-y-3">
                   <div className="flex items-center gap-2 mb-1">
-                    <CheckCircle2 className="w-4 h-4 text-teal-400" />
+                    <CheckCircle className="w-4 h-4 text-teal-400" />
                     <p className="text-sm font-semibold text-teal-300">Simulation Results — {simResult.stormType}</p>
                   </div>
                   <div className="grid grid-cols-2 gap-3">

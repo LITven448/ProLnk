@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from "wouter";
-import { AlertTriangle, Shield, Phone, ChevronDown, ChevronUp, CheckCircle2, XCircle, ExternalLink } from "lucide-react";
+import { AlertTriangle, Shield, Phone, ChevronDown, ChevronUp, CheckCircle, XCircle, ExternalLink } from "lucide-react";
 
 const SCAMS = [
   {
@@ -243,7 +243,7 @@ export default function DFWHomeRepairScams() {
                       <ul className="space-y-2">
                         {scam.protection.map((tip, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#4B5563" }}>
-                            <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} />
+                            <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} />
                             <span>{tip}</span>
                           </li>
                         ))}
@@ -271,7 +271,7 @@ export default function DFWHomeRepairScams() {
             {HOW_PROLNK_HELPS.map((item, i) => (
               <div key={i} className="rounded-2xl p-5" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#F5E642" }} />
+                  <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#F5E642" }} />
                   <div>
                     <div className="font-bold text-sm text-white mb-1">{item.point}</div>
                     <div className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{item.detail}</div>

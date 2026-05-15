@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Bid Board — Project Marketplace
  * Route: /dashboard/bid-board

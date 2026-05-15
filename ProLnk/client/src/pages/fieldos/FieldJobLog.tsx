@@ -11,7 +11,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import imageCompression from "browser-image-compression";
 import { FOS } from "./fosTokens";
 import {
-  Camera, MapPin, ChevronDown, X, CheckCircle2,
+  Camera, MapPin, ChevronDown, X, CheckCircle,
   Loader2, AlertCircle, Zap, Plus, WifiOff, RefreshCw,
   Clock, TrendingUp,
 } from "lucide-react";
@@ -138,7 +138,7 @@ function AIResultsScreen({
           className="w-16 h-16 rounded-full flex items-center justify-center"
           style={{ background: `${FOS.green}15`, border: `1px solid ${FOS.green}30` }}
         >
-          <CheckCircle2 className="w-8 h-8" style={{ color: FOS.green }} />
+          <CheckCircle className="w-8 h-8" style={{ color: FOS.green }} />
         </div>
         <div>
           <h2 className="text-white text-2xl font-black">Job Logged!</h2>
@@ -376,7 +376,7 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
         )}
         {job.aiAnalysisStatus === "complete" && opps.length === 0 && (
           <div className="rounded-2xl px-4 py-5 text-center" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-            <CheckCircle2 className="w-6 h-6 mx-auto mb-2" style={{ color: FOS.green }} />
+            <CheckCircle className="w-6 h-6 mx-auto mb-2" style={{ color: FOS.green }} />
             <p className="text-white text-sm font-bold">No Issues Detected</p>
             <p className="text-xs mt-1" style={{ color: FOS.muted }}>AI scanned the photos — property looks good!</p>
           </div>
@@ -734,7 +734,7 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
                   background: job.aiAnalysisStatus === "complete" ? "rgba(16,185,129,0.15)" : "rgba(245,158,11,0.15)"
                 }}>
                   {job.aiAnalysisStatus === "complete"
-                    ? <CheckCircle2 className="w-4 h-4" style={{ color: FOS.green }} />
+                    ? <CheckCircle className="w-4 h-4" style={{ color: FOS.green }} />
                     : <Clock className="w-4 h-4" style={{ color: FOS.amber }} />
                   }
                 </div>

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2, XCircle, Clock, AlertTriangle, FileText,
+  CheckCircle, XCircle, Clock, AlertTriangle, FileText,
   User, MapPin, Calendar, Shield, Camera, Zap, ChevronRight,
   RotateCcw, Star
 } from "lucide-react";
@@ -75,7 +75,7 @@ function CheckRow({ label, ok }: { label: string; ok: boolean }) {
   return (
     <div className="flex items-center gap-2 text-sm">
       {ok
-        ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+        ? <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
         : <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />}
       <span className={ok ? "text-slate-300" : "text-amber-400"}>{label}</span>
     </div>
@@ -121,7 +121,7 @@ export default function PartnerVerificationQueue() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "Pending Review", value: "12", icon: Clock, color: "text-amber-400" },
-            { label: "Approved Today", value: "4", icon: CheckCircle2, color: "text-emerald-400" },
+            { label: "Approved Today", value: "4", icon: CheckCircle, color: "text-emerald-400" },
             { label: "Avg Review Time", value: "2.1 days", icon: Calendar, color: "text-blue-400" },
             { label: "Auto-Approved", value: "8", icon: Zap, color: "text-violet-400" },
           ].map(stat => (
@@ -178,7 +178,7 @@ export default function PartnerVerificationQueue() {
           {visible.length === 0 && (
             <Card className="bg-slate-800/40 border-slate-700">
               <CardContent className="p-8 text-center">
-                <CheckCircle2 className="w-10 h-10 text-emerald-400 mx-auto mb-2" />
+                <CheckCircle className="w-10 h-10 text-emerald-400 mx-auto mb-2" />
                 <p className="text-slate-300 font-medium">No applications in this category</p>
               </CardContent>
             </Card>
@@ -243,7 +243,7 @@ export default function PartnerVerificationQueue() {
                       className="flex-1 lg:flex-none bg-emerald-600 hover:bg-emerald-500 text-white text-xs"
                       onClick={() => approve(app.id, app.name)}
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 mr-1" /> Approve
+                      <CheckCircle className="w-3.5 h-3.5 mr-1" /> Approve
                     </Button>
                     <Button
                       size="sm"
@@ -280,7 +280,7 @@ export default function PartnerVerificationQueue() {
                 <div key={i} className="flex items-center justify-between py-2 border-b border-slate-700/50 last:border-0">
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-emerald-900/40 flex items-center justify-center">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">{a.name}</p>

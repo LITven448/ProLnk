@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import {
-  ClipboardCheck, CheckCircle2, Circle, Phone, MessageSquare,
+  ClipboardCheck, CheckCircle, Circle, Phone, MessageSquare,
   AlertTriangle, Star, Camera, Clock, ChevronDown, ChevronUp,
 } from "lucide-react";
 
@@ -118,7 +118,7 @@ export default function CheckInSystem() {
                 <div key={step} className="flex flex-col items-center gap-1 flex-1">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all
                     ${done ? "bg-teal-500 text-white" : active ? "bg-teal-400 text-white ring-4 ring-teal-400/30" : "bg-gray-700 text-gray-500"}`}>
-                    {done ? <CheckCircle2 className="w-4 h-4" /> : <Circle className="w-4 h-4" />}
+                    {done ? <CheckCircle className="w-4 h-4" /> : <Circle className="w-4 h-4" />}
                   </div>
                   <span className={`text-[10px] text-center leading-tight ${active ? "text-teal-300 font-semibold" : done ? "text-gray-400" : "text-gray-600"}`}>
                     {step}
@@ -213,7 +213,7 @@ export default function CheckInSystem() {
           </div>
         ) : (
           <div className="bg-teal-900/30 border border-teal-500/40 rounded-2xl p-6 text-center space-y-2">
-            <CheckCircle2 className="w-10 h-10 text-teal-400 mx-auto" />
+            <CheckCircle className="w-10 h-10 text-teal-400 mx-auto" />
             <p className="text-white font-bold">Check-in submitted!</p>
             <p className="text-gray-400 text-sm">We&apos;ll notify you when the job moves to the next stage.</p>
           </div>

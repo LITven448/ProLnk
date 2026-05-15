@@ -1188,18 +1188,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* — Announcement Ticker — */}
-      {!urgencyDismissed && (
-        <div className="relative z-[60] flex flex-col items-center px-4 py-2 text-xs font-semibold text-[#0A1628]" style={{ backgroundColor: "#F5E642" }}>
-          <div className="flex items-center justify-center gap-3 w-full">
-            <span className="animate-pulse w-2 h-2 rounded-full bg-[#0A1628] shrink-0" />
-            <span className="text-center">
-              DFW Launch —{" "}
-              <strong>{waitlistPros > 0 ? `${waitlistPros} pro${waitlistPros !== 1 ? "s" : ""} joined` : "Now open"}</strong>
-              {" · "}
-              <strong>Last 24 hrs: {last24h} new applications</strong>
-              {" · "}
-              <strong>{(2125 - waitlistPros).toLocaleString()} spots remaining</strong>
               {" · "}
               Charter tier: <strong>{Math.min(waitlistPros, 25)}/25 filled</strong>
               {" · "}

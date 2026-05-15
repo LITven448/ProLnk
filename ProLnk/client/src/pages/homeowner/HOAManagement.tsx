@@ -2,7 +2,7 @@ import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import { Button } from "@/components/ui/button";
 import {
-  Building2, CheckCircle2, Clock, AlertTriangle, Download,
+  Building2, CheckCircle, Clock, AlertTriangle, Download,
   Phone, Calendar, FileText, DollarSign, Shield, ChevronRight,
 } from "lucide-react";
 
@@ -15,10 +15,10 @@ const CARD_BG = "#0F1D2E";
 const BG = "#0A1628";
 
 const approvalHistory = [
-  { item: "Landscaping change",    status: "Approved", date: "Mar 2026",  icon: CheckCircle2, color: GREEN },
+  { item: "Landscaping change",    status: "Approved", date: "Mar 2026",  icon: CheckCircle, color: GREEN },
   { item: "Fence painting",        status: "Pending",  date: "Submitted May 2026", icon: Clock, color: AMBER },
-  { item: "Window replacement",    status: "Approved", date: "Nov 2024",  icon: CheckCircle2, color: GREEN },
-  { item: "HVAC unit replacement", status: "Approved", date: "Aug 2023",  icon: CheckCircle2, color: GREEN },
+  { item: "Window replacement",    status: "Approved", date: "Nov 2024",  icon: CheckCircle, color: GREEN },
+  { item: "HVAC unit replacement", status: "Approved", date: "Aug 2023",  icon: CheckCircle, color: GREEN },
 ];
 
 const documents = [
@@ -168,7 +168,7 @@ export default function HOAManagement() {
         {/* Approval Tracker */}
         <div style={{ background: CARD_BG, border: `1px solid ${BORDER}` }} className="rounded-xl p-5">
           <div className="flex items-center gap-2 mb-4">
-            <CheckCircle2 size={16} style={{ color: TEAL }} />
+            <CheckCircle size={16} style={{ color: TEAL }} />
             <span className="text-white font-semibold text-sm">Approval Tracker</span>
           </div>
           <div className="space-y-2">
@@ -239,7 +239,7 @@ export default function HOAManagement() {
             <p style={{ color: GREEN }} className="text-sm font-semibold">No fines on record</p>
             <p style={{ color: DIM }} className="text-xs">Your account has a clean violation history since 2019</p>
           </div>
-          <CheckCircle2 size={20} style={{ color: GREEN }} className="ml-auto" />
+          <CheckCircle size={20} style={{ color: GREEN }} className="ml-auto" />
         </div>
 
         {/* Upcoming Meetings */}

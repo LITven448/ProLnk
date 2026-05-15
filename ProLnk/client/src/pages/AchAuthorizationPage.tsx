@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * ACH Authorization Signing Page
  * 

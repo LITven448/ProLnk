@@ -1084,6 +1084,10 @@ function Router() {
       <Route path="/trustypro/university-park" component={TrustyProUniversityPark} />
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
+      <Route path="/trustypro/cedar-hill" component={TrustyProCedarHill} />
+      <Route path="/trustypro/desoto" component={TrustyProDeSoto} />
+      <Route path="/trustypro/duncanville" component={TrustyProDuncanville} />
+      <Route path="/trustypro/lancaster" component={TrustyProLancaster} />
       <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />

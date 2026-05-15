@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
-  CheckCircle2, ExternalLink, Zap, Shield, ArrowRight,
+  CheckCircle, ExternalLink, Zap, Shield, ArrowRight,
   Users, TrendingUp, Clock, Code2, Copy, CheckCheck
 } from "lucide-react";
 import { useState } from "react";
@@ -111,7 +111,7 @@ export default function JobberIntegration() {
               <div key={s.step}>
                 <div className="flex items-start gap-4">
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${s.done ? "bg-green-500" : "bg-gray-200"}`}>
-                    {s.done ? <CheckCircle2 className="h-4 w-4 text-white" /> : <span className="text-xs font-bold text-gray-600">{s.step}</span>}
+                    {s.done ? <CheckCircle className="h-4 w-4 text-white" /> : <span className="text-xs font-bold text-gray-600">{s.step}</span>}
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-800 text-sm mb-1">{s.title}</p>

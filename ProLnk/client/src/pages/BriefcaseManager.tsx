@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * Partner Briefcase Manager
  * Route: /dashboard/briefcase

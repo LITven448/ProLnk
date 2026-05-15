@@ -15,7 +15,7 @@ import {
   Radar, CloudLightning, Clock, AlertTriangle, Home as HomeIcon, Eye, Repeat,
   XCircle, Award, Target, Lock, RefreshCw, BarChart3, Megaphone, Wrench, Plug,
   Bot, Brain, CalendarDays, PieChart, MessageSquare, Sparkles,
-  MapPin, Layers, TrendingDown, CheckCircle2, ChevronRight, Play, Pause, Briefcase,
+  MapPin, Layers, TrendingDown, CheckCircle, ChevronRight, Play, Pause, Briefcase,
   Hammer, TreePine
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

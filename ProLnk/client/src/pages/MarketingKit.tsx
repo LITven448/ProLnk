@@ -14,7 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import {
   Download, Copy, QrCode, Mail, Share2, Megaphone,
-  Image, FileText, Smartphone, Star, CheckCircle2,
+  Image, FileText, Smartphone, Star, CheckCircle,
   ExternalLink, Palette, Zap, Users, TrendingUp,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -547,7 +547,7 @@ function PlatformPostCard({ post, referralLink }: { post: PlatformPost; referral
           style={{ backgroundColor: post.platformColor }}
           onClick={handleCopy}
         >
-          {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copied!" : `Copy + Post to ${post.platform}`}
         </Button>
       </div>
@@ -616,7 +616,7 @@ function StoryCard({ tpl, referralLink }: { tpl: typeof STORY_TEMPLATES[0]; refe
           style={{ backgroundColor: T.teal }}
           onClick={handleCopy}
         >
-          {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copied!" : "Copy Filled Story"}
         </Button>
       </div>

@@ -610,6 +610,10 @@ const TrustyProWylie = lazy(() => import("./pages/trustypro/TrustyProWylie"));
 const TrustyProForney = lazy(() => import("./pages/trustypro/TrustyProForney"));
 const TrustyProMansfield = lazy(() => import("./pages/trustypro/TrustyProMansfield"));
 const TrustyProBurleson = lazy(() => import("./pages/trustypro/TrustyProBurleson"));
+const TrustyProFlowerMound = lazy(() => import("./pages/trustypro/TrustyProFlowerMound"));
+const TrustyProHighlandVillage = lazy(() => import("./pages/trustypro/TrustyProHighlandVillage"));
+const TrustyProLittleElm = lazy(() => import("./pages/trustypro/TrustyProLittleElm"));
+const TrustyProTheColony = lazy(() => import("./pages/trustypro/TrustyProTheColony"));
 
 // App preview mockup screens
 const ProLnkHomePreview = lazy(() => import("./pages/app-preview/HomeScreen"));
@@ -1336,6 +1340,10 @@ function Router() {
       <Route path="/trustypro/forney" component={TrustyProForney} />
       <Route path="/trustypro/mansfield" component={TrustyProMansfield} />
       <Route path="/trustypro/burleson" component={TrustyProBurleson} />
+      <Route path="/trustypro/flower-mound" component={TrustyProFlowerMound} />
+      <Route path="/trustypro/highland-village" component={TrustyProHighlandVillage} />
+      <Route path="/trustypro/little-elm" component={TrustyProLittleElm} />
+      <Route path="/trustypro/the-colony" component={TrustyProTheColony} />
 
       
       <Route path="/trustypro/denton" component={TrustyProDenton} />

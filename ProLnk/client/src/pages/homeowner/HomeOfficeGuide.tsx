@@ -10,7 +10,7 @@ interface UpgradeItem {
   detail: string;
   cost: string;
   priority: "high" | "medium" | "low";
-  icon: typeof Zap;
+  icon: any;
   color: string;
   cta?: { label: string; href: string };
 }

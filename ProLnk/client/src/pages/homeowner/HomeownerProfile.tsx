@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
   User, Phone, Bell, Save, Loader2, Home, ArrowRight, Shield,
-  Database, Eye, Brain, CheckCircle2, Plus, Trash2, Mail,
+  Database, Eye, Brain, CheckCircle, Plus, Trash2, Mail,
   MessageSquare, Smartphone, CreditCard, Star, Wrench, Droplets,
   Wind, Zap, Paintbrush, Leaf, Settings, ChevronDown,
 } from "lucide-react";
@@ -471,7 +471,7 @@ export default function HomeownerProfile() {
             </h2>
             {activeConsents > 0 && (
               <span className="flex items-center gap-1 text-xs font-medium text-teal-400 bg-teal-500/10 border border-teal-500/20 rounded-full px-2.5 py-0.5">
-                <CheckCircle2 className="w-3 h-3" /> {activeConsents} active
+                <CheckCircle className="w-3 h-3" /> {activeConsents} active
               </span>
             )}
           </div>

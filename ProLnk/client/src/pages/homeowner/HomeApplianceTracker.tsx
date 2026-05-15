@@ -3,7 +3,7 @@ import HomeownerLayout from "@/components/HomeownerLayout";
 import {
   Wind, Droplets, Utensils, ShoppingCart,
   WashingMachine, CarFront, Microwave, Flame,
-  AlertTriangle, Plus, X, CheckCircle2, Calendar,
+  AlertTriangle, Plus, X, CheckCircle, Calendar,
   Shield, Wrench,
 } from "lucide-react";
 
@@ -158,7 +158,7 @@ export default function HomeApplianceTracker() {
                       <span>Last: {a.lastService}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <CheckCircle2 size={12} color="#0D9488" />
+                      <CheckCircle size={12} color="#0D9488" />
                       <span>Next: {a.nextService}</span>
                     </div>
                   </div>

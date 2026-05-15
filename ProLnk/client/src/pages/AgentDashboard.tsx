@@ -2,7 +2,7 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import {
-  Briefcase, DollarSign, Zap, Clock, CheckCircle2, Circle,
+  Briefcase, DollarSign, Zap, Clock, CheckCircle, Circle,
   AlertCircle, ChevronRight, PlusCircle, LayoutDashboard, MapPin, Phone,
   User, ArrowUpRight, Star, Layers,
 } from "lucide-react";
@@ -86,7 +86,7 @@ const STATUS_CONFIG: Record<Lead["status"], { label: string; color: string; icon
   new: { label: "New", color: "#3b82f6", icon: <Zap size={12} /> },
   in_progress: { label: "In Progress", color: "#f59e0b", icon: <Clock size={12} /> },
   quoted: { label: "Quoted", color: "#8b5cf6", icon: <Layers size={12} /> },
-  won: { label: "Won", color: "#10b981", icon: <CheckCircle2 size={12} /> },
+  won: { label: "Won", color: "#10b981", icon: <CheckCircle size={12} /> },
   lost: { label: "Lost", color: "#ef4444", icon: <AlertCircle size={12} /> },
 };
 
@@ -110,7 +110,7 @@ function LogJobModal({ onClose }: { onClose: () => void }) {
         {submitted ? (
           <div className="text-center py-8">
             <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
-              <CheckCircle2 size={28} className="text-green-600" />
+              <CheckCircle size={28} className="text-green-600" />
             </div>
             <p className="text-lg font-bold text-gray-900">Job Logged!</p>
             <p className="text-sm text-gray-500 mt-1">Your earnings will update shortly.</p>

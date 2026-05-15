@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 import {
   Bell, DollarSign, Zap, AlertTriangle, MessageSquare,
-  CheckCircle2, Clock, Search, RefreshCw, Inbox,
+  CheckCircle, Clock, Search, RefreshCw, Inbox,
   Star, Shield, X, ChevronRight, PenSquare, ArrowLeft,
   Send, Network, Briefcase, CreditCard, Filter,
 } from "lucide-react";
@@ -382,7 +382,7 @@ function ThreadDetail({
             className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all flex-shrink-0"
             style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf", border: "1px solid rgba(45,212,191,0.2)" }}
           >
-            <CheckCircle2 size={12} className="inline mr-1" />
+            <CheckCircle size={12} className="inline mr-1" />
             Mark read
           </button>
         )}
@@ -556,7 +556,7 @@ export default function UnifiedInbox() {
                       className="p-1.5 rounded-lg transition-colors hover:bg-white/10 text-gray-400 hover:text-white"
                       title="Mark all read"
                     >
-                      <CheckCircle2 size={14} />
+                      <CheckCircle size={14} />
                     </button>
                   )}
                   <button onClick={() => refetch()} className="p-1.5 rounded-lg transition-colors hover:bg-white/10 text-gray-400 hover:text-white" title="Refresh">

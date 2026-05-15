@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
-import { Star, Trophy, Edit3, CheckCircle2, Users, Sparkles } from "lucide-react";
+import { Star, Trophy, Edit3, CheckCircle, Users, Sparkles } from "lucide-react";
 
 interface PendingReview {
   id: number;
@@ -179,7 +179,7 @@ export default function ProReviewCenter() {
                       className="rounded-2xl p-4 flex items-center gap-3"
                       style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.20)" }}
                     >
-                      <CheckCircle2 size={20} color="#10B981" />
+                      <CheckCircle size={20} color="#10B981" />
                       <div>
                         <p className="text-sm font-bold text-white">Review submitted!</p>
                         <p className="text-xs" style={{ color: "#10B981" }}>+50 points earned 🎉</p>

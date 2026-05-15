@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Network, RefreshCw, ZoomIn, ZoomOut, Maximize2,
-  CheckCircle2, Clock, Zap, AlertTriangle, Bot,
+  CheckCircle, Clock, Zap, AlertTriangle, Bot,
   DollarSign, GitBranch, Shield, TrendingUp, Users,
 } from "lucide-react";
 
@@ -632,7 +632,7 @@ export default function KnowledgeGraph() {
                       {selected.type}
                     </Badge>
                     <div className="flex items-center gap-1 text-[10px] font-medium" style={{ color: STATUS_COLOR[selected.status] }}>
-                      {selected.status === "active" && <CheckCircle2 className="w-3 h-3" />}
+                      {selected.status === "active" && <CheckCircle className="w-3 h-3" />}
                       {selected.status === "in-dev" && <Zap className="w-3 h-3" />}
                       {selected.status === "planned" && <Clock className="w-3 h-3" />}
                       {selected.status === "error" && <AlertTriangle className="w-3 h-3" />}

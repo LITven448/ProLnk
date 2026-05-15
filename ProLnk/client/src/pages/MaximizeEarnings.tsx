@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import {
   Camera, MapPin, Users, Home, Share2, Star, Clock, Zap, DollarSign, Award,
   ChevronDown, ChevronUp, TrendingUp, CheckCircle, Lock, Target, BarChart3,
-  ArrowRight, Calendar, BookOpen, Layers,
+  ArrowRight, Calendar, BookOpen, Layers, Network,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -186,6 +186,17 @@ const INCOME_STREAMS = [
   { label: "Home Origination Rights", desc: "Permanent share of platform fees on vaulted homes", rates: ["1.5% of all future platform fees per home", "Permanent once logged"], color: "#ec4899" },
 ];
 
+const FIRST_30_STEPS = [
+  { day: "Day 1", action: "Complete profile to 100%", impact: "3× match rate", color: "#22c55e" },
+  { day: "Day 2", action: "Enable push notifications", impact: "15-min response = 60% conversion", color: "#22c55e" },
+  { day: "Day 3", action: "Send referral link to 3 contacts", impact: "$53.64/mo passive if all activate", color: "#3b82f6" },
+  { day: "Day 4", action: "Accept your first lead", impact: "Starts your job counter toward Tier 2", color: "#3b82f6" },
+  { day: "Day 7", action: "Log first home to vault", impact: "Permanent 1.5% origination right", color: "#a855f7" },
+  { day: "Day 10", action: "Request 3 homeowner reviews", impact: "+15% match volume per 0.5 stars", color: "#a855f7" },
+  { day: "Day 20", action: "Post referral link to Facebook group", impact: "Avg 1–2 signups per post", color: "#f59e0b" },
+  { day: "Day 30", action: "Track: jobs logged, recruits, homes vaulted", impact: "Sets your Month 2 baseline", color: "#f59e0b" },
+];
+
 function IncomeCalculator() {
   const [directJobs, setDirectJobs] = useState(15);
   const [avgJobValue, setAvgJobValue] = useState(800);
@@ -238,7 +249,7 @@ function IncomeCalculator() {
         <div>
           <div style={{ color: "#6b7280", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>Projected Monthly Total</div>
           <div style={{ fontSize: 36, fontWeight: 800, color: "#22c55e" }}>${Math.round(total).toLocaleString()}</div>
-          <div style={{ color: "#4b5563", fontSize: 11, marginTop: 2 }}>${Math.round(total * 12).toLocaleString()}/yr • ${Math.round((total - 149) * 12).toLocaleString()}/yr net after subscription</div>
+          <div style={{ color: "#4b5563", fontSize: 11, marginTop: 2 }}>${Math.round(total * 12).toLocaleString()}/yr</div>
         </div>
         <div style={{ textAlign: "right" }}>
           <div style={{ color: "#6b7280", fontSize: 12, marginBottom: 4 }}>Passive income (overrides + orig)</div>
@@ -331,6 +342,96 @@ function MilestoneCard({ milestone, color, accent }: { milestone: Milestone; col
   );
 }
 
+function NetworkMultiplier() {
+  const [recruits, setRecruits] = useState(10);
+  const subOverride = recruits * 149 * 0.07;
+  const jobOverride = recruits * 4 * 800 * 0.01;
+  const l2Est = recruits * 3;
+  const l2Override = l2Est * 3 * 800 * 0.005;
+  const total = subOverride + jobOverride + l2Override;
+
+  return (
+    <div style={{ background: "#1a1d27", borderRadius: 16, border: "1px solid rgba(168,85,247,0.3)", padding: 28 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+        <Network size={18} color="#a855f7" />
+        <h3 style={{ margin: 0, fontSize: 17, fontWeight: 700, color: "#fff" }}>Network Multiplier</h3>
+      </div>
+      <p style={{ color: "#6b7280", fontSize: 13, marginBottom: 24 }}>
+        See exactly how adding recruits changes your passive income — independent of your own job volume.
+      </p>
+
+      <div style={{ marginBottom: 24 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+          <span style={{ color: "#9ca3af", fontSize: 13 }}>Active L1 recruits</span>
+          <span style={{ color: "#a855f7", fontSize: 14, fontWeight: 800 }}>{recruits}</span>
+        </div>
+        <input type="range" min={1} max={100} value={recruits} onChange={e => setRecruits(Number(e.target.value))}
+          style={{ width: "100%", accentColor: "#a855f7" }} />
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
+          <span style={{ color: "#374151", fontSize: 11 }}>1 recruit</span>
+          <span style={{ color: "#374151", fontSize: 11 }}>100 recruits</span>
+        </div>
+      </div>
+
+      {/* Visual network diagram */}
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20, overflowX: "auto", paddingBottom: 8 }}>
+        <div style={{ textAlign: "center", flexShrink: 0 }}>
+          <div style={{
+            width: 44, height: 44, borderRadius: "50%",
+            background: "rgba(168,85,247,0.2)", border: "2px solid #a855f7",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 18, margin: "0 auto 4px",
+          }}>You</div>
+          <div style={{ fontSize: 10, color: "#6b7280" }}>You</div>
+        </div>
+        <div style={{ color: "#374151", fontSize: 18 }}>→</div>
+        <div style={{ textAlign: "center", flexShrink: 0 }}>
+          <div style={{
+            width: 44, height: 44, borderRadius: "50%",
+            background: "rgba(59,130,246,0.15)", border: "2px solid #3b82f6",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 13, fontWeight: 800, color: "#3b82f6", margin: "0 auto 4px",
+          }}>{recruits}</div>
+          <div style={{ fontSize: 10, color: "#6b7280" }}>L1</div>
+        </div>
+        <div style={{ color: "#374151", fontSize: 18 }}>→</div>
+        <div style={{ textAlign: "center", flexShrink: 0 }}>
+          <div style={{
+            width: 44, height: 44, borderRadius: "50%",
+            background: "rgba(34,197,94,0.15)", border: "2px solid #22c55e",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 13, fontWeight: 800, color: "#22c55e", margin: "0 auto 4px",
+          }}>{l2Est}</div>
+          <div style={{ fontSize: 10, color: "#6b7280" }}>L2 est.</div>
+        </div>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px,1fr))", gap: 12, marginBottom: 20 }}>
+        {[
+          { label: "Subscription overrides", value: `$${Math.round(subOverride).toLocaleString()}`, color: "#3b82f6", note: `${recruits} × $149 × 7%` },
+          { label: "L1 job overrides", value: `$${Math.round(jobOverride).toLocaleString()}`, color: "#a855f7", note: `${recruits} × 4 jobs × $800 × 1%` },
+          { label: "L2 job overrides", value: `$${Math.round(l2Override).toLocaleString()}`, color: "#22c55e", note: `${l2Est} × 3 jobs × $800 × 0.5%` },
+        ].map(s => (
+          <div key={s.label} style={{ background: "#141720", borderRadius: 10, border: "1px solid #1e2330", padding: "14px 16px" }}>
+            <div style={{ color: "#6b7280", fontSize: 11, marginBottom: 6 }}>{s.label}</div>
+            <div style={{ fontSize: 20, fontWeight: 800, color: s.color }}>{s.value}/mo</div>
+            <div style={{ color: "#374151", fontSize: 10, marginTop: 4 }}>{s.note}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        background: "rgba(168,85,247,0.1)", border: "1px solid rgba(168,85,247,0.25)",
+        borderRadius: 12, padding: "16px 20px", textAlign: "center",
+      }}>
+        <div style={{ color: "#9ca3af", fontSize: 12, marginBottom: 4 }}>Total passive income from {recruits} recruits</div>
+        <div style={{ fontSize: 34, fontWeight: 800, color: "#a855f7" }}>${Math.round(total).toLocaleString()}/mo</div>
+        <div style={{ color: "#6b7280", fontSize: 12, marginTop: 4 }}>not counting your own direct job income</div>
+      </div>
+    </div>
+  );
+}
+
 export default function MaximizeEarnings() {
   const [activePhase, setActivePhase] = useState<Phase>("week1");
 
@@ -350,14 +451,12 @@ export default function MaximizeEarnings() {
       <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "32px 20px 64px" }}>
 
-          {/* Breadcrumb */}
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
             <Link href="/resources" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>Resources</Link>
             <span style={{ color: "#374151" }}>›</span>
             <span style={{ color: "#e5e7eb", fontSize: 13 }}>Earnings Playbook</span>
           </div>
 
-          {/* Hero */}
           <div style={{ marginBottom: 40 }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 6,
@@ -374,6 +473,34 @@ export default function MaximizeEarnings() {
               Select your phase below. Each milestone shows the exact action, the expected outcome, and the income increase you can project. Top partners combine every phase — average Year-1 income: $48K–$102K.
             </p>
           </div>
+
+          {/* ── YOUR FIRST 30 DAYS ── */}
+          <section style={{ marginBottom: 44 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }}>
+              <Target size={18} color="#22c55e" /> Your First 30 Days — 8 Specific Actions
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: 12 }}>
+              {FIRST_30_STEPS.map((step, i) => (
+                <div key={i} style={{
+                  background: "#1a1d27", borderRadius: 12, border: `1px solid ${step.color}25`,
+                  padding: "16px 18px", display: "flex", gap: 14, alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+                    background: `${step.color}15`, border: `1px solid ${step.color}30`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 11, fontWeight: 800, color: step.color,
+                  }}>
+                    {step.day.replace("Day ", "D")}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#e5e7eb", marginBottom: 4 }}>{step.action}</div>
+                    <div style={{ fontSize: 11, color: step.color, fontWeight: 600 }}>{step.impact}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Phase Selector */}
           <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
@@ -397,7 +524,6 @@ export default function MaximizeEarnings() {
             ))}
           </div>
 
-          {/* Phase Header */}
           <div style={{
             background: phase.accent,
             border: `1px solid ${phase.color}30`,
@@ -417,14 +543,17 @@ export default function MaximizeEarnings() {
             </div>
           </div>
 
-          {/* Milestones */}
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 40 }}>
             {milestones.map((m, i) => (
               <MilestoneCard key={i} milestone={m} color={phase.color} accent={phase.accent} />
             ))}
           </div>
 
-          {/* 5 Income Streams Reference */}
+          {/* ── NETWORK MULTIPLIER ── */}
+          <section style={{ marginBottom: 40 }}>
+            <NetworkMultiplier />
+          </section>
+
           <section style={{ marginBottom: 40 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <Layers size={18} color="#22c55e" /> Your 5 Income Streams
@@ -445,12 +574,10 @@ export default function MaximizeEarnings() {
             </div>
           </section>
 
-          {/* Income Calculator */}
           <section style={{ marginBottom: 40 }}>
             <IncomeCalculator />
           </section>
 
-          {/* Quick Tips */}
           <section style={{ marginBottom: 40 }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
               <Zap size={18} color="#f59e0b" /> Fastest Wins Right Now
@@ -483,7 +610,6 @@ export default function MaximizeEarnings() {
             </div>
           </section>
 
-          {/* CTA */}
           <div style={{
             background: "linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(59,130,246,0.08) 100%)",
             border: "1px solid rgba(34,197,94,0.25)",

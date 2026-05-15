@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Search, ShieldCheck, AlertTriangle, TrendingDown, DollarSign, ExternalLink, CheckCircle2, CircleDot } from "lucide-react";
+import { Search, ShieldCheck, AlertTriangle, TrendingDown, DollarSign, ExternalLink, CheckCircle, CircleDot } from "lucide-react";
 import { useLocation } from "wouter";
 
 interface CoverageItem {
@@ -149,7 +149,7 @@ export default function InsuranceCoverageChecker() {
                 <div className="flex items-start gap-3">
                   {underinsured
                     ? <AlertTriangle className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
-                    : <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    : <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
                   }
                   <div>
                     <p className={`font-semibold text-sm ${underinsured ? "text-red-300" : "text-green-300"}`}>
@@ -188,7 +188,7 @@ export default function InsuranceCoverageChecker() {
                     onClick={() => toggleItem(item.id)}
                     className={`flex-shrink-0 mt-0.5 ${item.checked ? "text-teal-400" : "text-slate-500 hover:text-slate-300"}`}
                   >
-                    {item.checked ? <CheckCircle2 className="h-5 w-5" /> : <CircleDot className="h-5 w-5" />}
+                    {item.checked ? <CheckCircle className="h-5 w-5" /> : <CircleDot className="h-5 w-5" />}
                   </button>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 flex-wrap">

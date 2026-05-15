@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2,
+  CheckCircle,
   Copy,
   Check,
   ArrowRight,
@@ -41,7 +41,7 @@ function AnimatedCheck() {
         visible ? "scale-100 opacity-100" : "scale-50 opacity-0"
       }`}
     >
-      <CheckCircle2 className="w-10 h-10 text-emerald-600" />
+      <CheckCircle className="w-10 h-10 text-emerald-600" />
     </div>
   );
 }
@@ -199,7 +199,7 @@ function HomeSignupContent({ code, email }: { code: string; email: string }) {
             <span className="text-sm text-blue-800">We'll notify you when pros are available in your area</span>
           </div>
           <div className="flex items-start gap-2.5">
-            <CheckCircle2 className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
+            <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
             <span className="text-sm text-blue-800">You'll receive up to 3 competitive quotes from vetted pros</span>
           </div>
         </div>
@@ -246,7 +246,7 @@ function CheckoutContent({ name }: { name: string }) {
         <div className="space-y-4">
           {[
             { icon: <Mail className="w-4 h-4 text-purple-500" />, label: "Now", text: "Check your email for account activation" },
-            { icon: <CheckCircle2 className="w-4 h-4 text-purple-500" />, label: "Day 1", text: "Complete your profile and set your service area" },
+            { icon: <CheckCircle className="w-4 h-4 text-purple-500" />, label: "Day 1", text: "Complete your profile and set your service area" },
             { icon: <Users className="w-4 h-4 text-purple-500" />, label: "Day 3", text: "Your first lead opportunities appear in your feed" },
             { icon: <Star className="w-4 h-4 text-purple-500" />, label: "Day 90", text: "Founding rate locked in — your network income activates" },
           ].map(({ icon, label, text }) => (

@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
 import {
-  Briefcase, DollarSign, Users, Clock, CheckCircle2, XCircle,
+  Briefcase, DollarSign, Users, Clock, CheckCircle, XCircle,
   AlertCircle, ArrowRight, Building2, MapPin, TrendingUp,
 } from "lucide-react";
 
@@ -113,7 +113,7 @@ const STATUS_CONFIG: Record<
     label: "Contract Awarded",
     bg: "rgba(34,197,94,0.12)",
     color: "#4ade80",
-    icon: <CheckCircle2 className="w-3.5 h-3.5" />,
+    icon: <CheckCircle className="w-3.5 h-3.5" />,
     tab: "Won",
   },
   lost: {
@@ -339,7 +339,7 @@ export default function ExchangeMyBids() {
             label="Won Contracts"
             value={won.length}
             color="#4ade80"
-            icon={<CheckCircle2 className="w-5 h-5" />}
+            icon={<CheckCircle className="w-5 h-5" />}
           />
           <div
             className="rounded-2xl p-5 border flex items-center gap-4"

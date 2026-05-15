@@ -1,310 +1,262 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import {
-  Key, Shield, Clock, RotateCcw, Plus, Copy, Trash2, CheckCircle,
-  AlertTriangle, XCircle, CreditCard, Brain, Mail, Server
-} from "lucide-react";
 import AdminLayout from "@/components/AdminLayout";
+import { D, DCard, SectionHeader, StatusBadge } from "@/components/DashboardShared";
+import { Key, RotateCcw, Trash2, Plus, AlertTriangle, Globe, Zap } from "lucide-react";
 
-const API_KEYS = [
-  { id: 1, name: "Stripe Live", service: "Stripe", category: "payment", created: "2026-01-12", lastUsed: "2 min ago", permissions: "Write", status: "active" },
-  { id: 2, name: "Stripe Webhook", service: "Stripe", category: "payment", created: "2026-01-12", lastUsed: "5 min ago", permissions: "Read", status: "active" },
-  { id: 3, name: "Anthropic Claude", service: "Anthropic", category: "ai", created: "2026-02-01", lastUsed: "1 min ago", permissions: "Write", status: "active" },
-  { id: 4, name: "OpenAI Embeddings", service: "OpenAI", category: "ai", created: "2026-02-15", lastUsed: "8 hrs ago", permissions: "Read", status: "active" },
-  { id: 5, name: "Resend Email", service: "Resend", category: "comms", created: "2026-01-20", lastUsed: "12 min ago", permissions: "Write", status: "active" },
-  { id: 6, name: "Twilio SMS", service: "Twilio", category: "comms", created: "2026-02-10", lastUsed: "2 days ago", permissions: "Write", status: "active" },
-  { id: 7, name: "AWS S3 Storage", service: "AWS", category: "infra", created: "2026-01-08", lastUsed: "1 hr ago", permissions: "Admin", status: "active" },
-  { id: 8, name: "Cloudflare CDN", service: "Cloudflare", category: "infra", created: "2026-01-08", lastUsed: "3 hrs ago", permissions: "Write", status: "active" },
+type KeyStatus = "active" | "expiring" | "revoked";
+
+interface ApiKey {
+  service: string;
+  masked: string;
+  lastUsed: string;
+  created: string;
+  status: KeyStatus;
+  daysLeft?: number;
+  color: string;
+}
+
+interface Webhook {
+  name: string;
+  url: string;
+  events: string[];
+  lastTriggered: string;
+  status: "active" | "error";
+}
+
+const API_KEYS: ApiKey[] = [
+  { service: "Stripe",          masked: "sk_live_••••••••••••3k9f",   lastUsed: "2 min ago",    created: "Jan 12, 2026", status: "active",   color: D.purple  },
+  { service: "Twilio",          masked: "AC••••••••••••4e2a",         lastUsed: "14 min ago",   created: "Jan 12, 2026", status: "active",   color: D.blue    },
+  { service: "Resend",          masked: "re_••••••••••••7bx1",        lastUsed: "1 hour ago",   created: "Feb 3, 2026",  status: "active",   color: D.cyan    },
+  { service: "Anthropic",       masked: "sk-ant-••••••••••••9ZkP",    lastUsed: "3 hours ago",  created: "Feb 14, 2026", status: "expiring", daysLeft: 7,  color: D.amber  },
+  { service: "ATTOM Data",      masked: "att_••••••••••••2mB7",       lastUsed: "Yesterday",    created: "Mar 1, 2026",  status: "expiring", daysLeft: 12, color: D.orange },
+  { service: "Smarty Streets",  masked: "ss_••••••••••••Xq9c",        lastUsed: "3 days ago",   created: "Mar 1, 2026",  status: "expiring", daysLeft: 18, color: D.teal   },
 ];
 
-const ROTATION_DUE = [
-  { name: "Stripe Live", service: "Stripe", dueIn: "3 days", risk: "high" },
-  { name: "AWS S3 Storage", service: "AWS", dueIn: "5 days", risk: "high" },
-  { name: "Anthropic Claude", service: "Anthropic", dueIn: "12 days", risk: "medium" },
-  { name: "Twilio SMS", service: "Twilio", dueIn: "18 days", risk: "low" },
+const WEBHOOKS: Webhook[] = [
+  {
+    name: "Stripe Payment Events",
+    url: "https://prolnk.io/api/webhooks/stripe/••••••••",
+    events: ["payment_intent.succeeded", "customer.subscription.updated"],
+    lastTriggered: "2 min ago",
+    status: "active",
+  },
+  {
+    name: "n8n Commission Trigger",
+    url: "https://n8n.prolnk.io/webhook/••••••••/commission",
+    events: ["match.completed", "commission.approved"],
+    lastTriggered: "18 min ago",
+    status: "active",
+  },
+  {
+    name: "Twilio SMS Inbound",
+    url: "https://prolnk.io/api/webhooks/twilio/••••••••",
+    events: ["message.received"],
+    lastTriggered: "47 min ago",
+    status: "active",
+  },
+  {
+    name: "ATTOM Property Data",
+    url: "https://prolnk.io/api/webhooks/attom/••••••••",
+    events: ["property.updated", "valuation.refreshed"],
+    lastTriggered: "6 hours ago",
+    status: "error",
+  },
+  {
+    name: "Resend Delivery Events",
+    url: "https://prolnk.io/api/webhooks/resend/••••••••",
+    events: ["email.delivered", "email.bounced", "email.opened"],
+    lastTriggered: "1 hour ago",
+    status: "active",
+  },
 ];
 
-const AUDIT_LOG = [
-  { event: "Key rotated", key: "OpenAI Embeddings", user: "andrew@lit-ventures.com", time: "2 hrs ago", type: "rotation" },
-  { event: "Key created", key: "Qdrant Vector DB", user: "andrew@lit-ventures.com", time: "1 day ago", type: "create" },
-  { event: "Key revoked", key: "Mapbox Legacy", user: "system", time: "3 days ago", type: "revoke" },
-  { event: "Key used", key: "Stripe Live", user: "api-service", time: "3 days ago", type: "use" },
-  { event: "Key expired", key: "N8N Webhook v1", user: "system", time: "7 days ago", type: "expire" },
-];
-
-const categoryIcon = (cat: string) => {
-  if (cat === "payment") return <CreditCard className="h-4 w-4 text-emerald-400" />;
-  if (cat === "ai") return <Brain className="h-4 w-4 text-purple-400" />;
-  if (cat === "comms") return <Mail className="h-4 w-4 text-blue-400" />;
-  return <Server className="h-4 w-4 text-orange-400" />;
-};
-
-const statusBadge = (status: string) => {
-  if (status === "active") return <Badge className="bg-emerald-500/20 text-emerald-400 border-0 text-xs">Active</Badge>;
-  if (status === "expired") return <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">Expired</Badge>;
-  return <Badge className="bg-slate-600/40 text-slate-400 border-0 text-xs">Revoked</Badge>;
-};
-
-const riskBadge = (risk: string) => {
-  if (risk === "high") return <Badge className="bg-red-500/20 text-red-400 border-0 text-xs">High</Badge>;
-  if (risk === "medium") return <Badge className="bg-amber-500/20 text-amber-400 border-0 text-xs">Medium</Badge>;
-  return <Badge className="bg-slate-600/40 text-slate-400 border-0 text-xs">Low</Badge>;
-};
-
-const auditIcon = (type: string) => {
-  if (type === "create") return <Plus className="h-3.5 w-3.5 text-emerald-400" />;
-  if (type === "revoke") return <Trash2 className="h-3.5 w-3.5 text-red-400" />;
-  if (type === "rotation") return <RotateCcw className="h-3.5 w-3.5 text-blue-400" />;
-  if (type === "expire") return <Clock className="h-3.5 w-3.5 text-amber-400" />;
-  return <Key className="h-3.5 w-3.5 text-slate-400" />;
-};
+const SCOPE_OPTIONS = ["read:partners", "write:partners", "read:leads", "write:leads", "read:commissions", "write:commissions", "admin:all"];
 
 export default function ApiKeyManagement() {
-  const [copied, setCopied] = useState<number | null>(null);
-  const [newKeyName, setNewKeyName] = useState("");
-  const [newService, setNewService] = useState("");
-  const [newPermission, setNewPermission] = useState("");
-  const [newExpiry, setNewExpiry] = useState("");
+  const [showRotateConfirm, setShowRotateConfirm] = useState<string | null>(null);
+  const [showNewKey, setShowNewKey] = useState(false);
+  const [selectedScopes, setSelectedScopes] = useState<string[]>(["read:partners"]);
 
-  const handleCopy = (id: number) => {
-    setCopied(id);
-    setTimeout(() => setCopied(null), 1500);
-  };
+  const expiringCount = API_KEYS.filter(k => k.status === "expiring").length;
+
+  function toggleScope(s: string) {
+    setSelectedScopes(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
+  }
 
   return (
     <AdminLayout>
-      <div className="space-y-6">
+      <div className="p-6 space-y-6" style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Key className="h-6 w-6 text-teal-400" />
+            <h1 className="text-2xl font-black flex items-center gap-2" style={{ color: D.text }}>
+              <Key className="w-6 h-6" style={{ color: D.amber }} />
               API Key Management
             </h1>
-            <p className="text-slate-400 mt-1">Manage and rotate API keys for all third-party integrations</p>
+            <p className="text-sm mt-1" style={{ color: D.muted }}>Manage third-party API keys and inbound webhook endpoints</p>
           </div>
-          <Button className="bg-teal-600 hover:bg-teal-500 text-white gap-2">
-            <Plus className="h-4 w-4" /> Add Key
-          </Button>
+          <button
+            onClick={() => setShowNewKey(!showNewKey)}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all"
+            style={{ backgroundColor: `${D.cyan}20`, color: D.cyan, border: `1px solid ${D.cyan}40` }}
+          >
+            <Plus className="w-4 h-4" />
+            Generate New Key
+          </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="pt-5 pb-4">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400">Total Keys</span>
-                <Key className="h-4 w-4 text-teal-400" />
-              </div>
-              <div className="text-2xl font-bold text-white">14</div>
-              <div className="text-xs text-slate-400 mt-0.5">across 6 services</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="pt-5 pb-4">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400">Expiring Soon</span>
-                <AlertTriangle className="h-4 w-4 text-amber-400" />
-              </div>
-              <div className="text-2xl font-bold text-amber-400">2</div>
-              <div className="text-xs text-slate-400 mt-0.5">within 5 days</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="pt-5 pb-4">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400">Last Rotation</span>
-                <RotateCcw className="h-4 w-4 text-blue-400" />
-              </div>
-              <div className="text-2xl font-bold text-white">7d</div>
-              <div className="text-xs text-slate-400 mt-0.5">ago</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardContent className="pt-5 pb-4">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs text-slate-400">Security Score</span>
-                <Shield className="h-4 w-4 text-emerald-400" />
-              </div>
-              <div className="text-2xl font-bold text-emerald-400">A+</div>
-              <div className="text-xs text-slate-400 mt-0.5">excellent</div>
-            </CardContent>
-          </Card>
-        </div>
+        {expiringCount > 0 && (
+          <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ backgroundColor: `${D.amber}12`, border: `1px solid ${D.amber}40` }}>
+            <AlertTriangle className="w-4 h-4 flex-shrink-0" style={{ color: D.amber }} />
+            <p className="text-sm" style={{ color: D.amber }}>
+              <strong>Key Rotation Policy:</strong> Rotate every 90 days — <strong>{expiringCount} keys expiring soon</strong>. Schedule rotation to avoid service disruption.
+            </p>
+          </div>
+        )}
 
-        <Card className="bg-slate-800/60 border-slate-700">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-white text-base flex items-center gap-2">
-              <Key className="h-4 w-4 text-teal-400" /> Active API Keys
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-700">
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Name</th>
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Service</th>
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Created</th>
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Last Used</th>
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Permissions</th>
-                    <th className="text-left text-slate-400 font-medium pb-2 pr-4">Status</th>
-                    <th className="text-left text-slate-400 font-medium pb-2">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {API_KEYS.map((k) => (
-                    <tr key={k.id} className="border-b border-slate-700/50 hover:bg-slate-700/20 transition-colors">
-                      <td className="py-3 pr-4">
-                        <div className="flex items-center gap-2">
-                          {categoryIcon(k.category)}
-                          <span className="text-white font-medium">{k.name}</span>
-                        </div>
-                      </td>
-                      <td className="py-3 pr-4 text-slate-300">{k.service}</td>
-                      <td className="py-3 pr-4 text-slate-400">{k.created}</td>
-                      <td className="py-3 pr-4 text-slate-400">{k.lastUsed}</td>
-                      <td className="py-3 pr-4">
-                        <Badge className={
-                          k.permissions === "Admin" ? "bg-red-500/20 text-red-400 border-0 text-xs" :
-                          k.permissions === "Write" ? "bg-amber-500/20 text-amber-400 border-0 text-xs" :
-                          "bg-slate-600/40 text-slate-400 border-0 text-xs"
-                        }>{k.permissions}</Badge>
-                      </td>
-                      <td className="py-3 pr-4">{statusBadge(k.status)}</td>
-                      <td className="py-3">
-                        <div className="flex items-center gap-1.5">
-                          <button
-                            onClick={() => handleCopy(k.id)}
-                            className="p-1.5 rounded hover:bg-slate-700 text-slate-400 hover:text-teal-400 transition-colors"
-                            title="Copy key"
-                          >
-                            {copied === k.id ? <CheckCircle className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
-                          </button>
-                          <button className="p-1.5 rounded hover:bg-slate-700 text-slate-400 hover:text-red-400 transition-colors" title="Revoke">
-                            <XCircle className="h-3.5 w-3.5" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-white text-base flex items-center gap-2">
-                <RotateCcw className="h-4 w-4 text-amber-400" /> Rotation Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {ROTATION_DUE.map((item) => (
-                  <div key={item.name} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <Clock className="h-4 w-4 text-amber-400 flex-shrink-0" />
-                      <div>
-                        <div className="text-sm text-white font-medium">{item.name}</div>
-                        <div className="text-xs text-slate-400">{item.service} · due in {item.dueIn}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {riskBadge(item.risk)}
-                      <Button size="sm" className="h-7 text-xs bg-teal-600/80 hover:bg-teal-600 text-white border-0 gap-1">
-                        <RotateCcw className="h-3 w-3" /> Rotate
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-800/60 border-slate-700">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-white text-base flex items-center gap-2">
-                <Plus className="h-4 w-4 text-teal-400" /> Add New Key
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <Input
-                  placeholder="Key name (e.g. Stripe Test)"
-                  value={newKeyName}
-                  onChange={(e) => setNewKeyName(e.target.value)}
-                  className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-500 h-9 text-sm"
+        {showNewKey && (
+          <DCard>
+            <SectionHeader title="Generate New API Key" subtitle="Select scopes and assign a service name" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div>
+                <label className="text-xs font-bold uppercase tracking-widest" style={{ color: D.muted }}>Service Name</label>
+                <input
+                  className="mt-2 w-full px-3 py-2 rounded-lg text-sm"
+                  placeholder="e.g. Mapbox Integration"
+                  style={{ backgroundColor: D.surface, color: D.text, border: `1px solid ${D.border}` }}
                 />
-                <Select value={newService} onValueChange={setNewService}>
-                  <SelectTrigger className="bg-slate-700/50 border-slate-600 text-white h-9 text-sm">
-                    <SelectValue placeholder="Select service" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-700">
-                    <SelectItem value="stripe" className="text-white hover:bg-slate-700">Stripe</SelectItem>
-                    <SelectItem value="anthropic" className="text-white hover:bg-slate-700">Anthropic</SelectItem>
-                    <SelectItem value="openai" className="text-white hover:bg-slate-700">OpenAI</SelectItem>
-                    <SelectItem value="resend" className="text-white hover:bg-slate-700">Resend</SelectItem>
-                    <SelectItem value="twilio" className="text-white hover:bg-slate-700">Twilio</SelectItem>
-                    <SelectItem value="aws" className="text-white hover:bg-slate-700">AWS</SelectItem>
-                    <SelectItem value="cloudflare" className="text-white hover:bg-slate-700">Cloudflare</SelectItem>
-                    <SelectItem value="qdrant" className="text-white hover:bg-slate-700">Qdrant</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select value={newPermission} onValueChange={setNewPermission}>
-                  <SelectTrigger className="bg-slate-700/50 border-slate-600 text-white h-9 text-sm">
-                    <SelectValue placeholder="Permission level" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-slate-800 border-slate-700">
-                    <SelectItem value="read" className="text-white hover:bg-slate-700">Read</SelectItem>
-                    <SelectItem value="write" className="text-white hover:bg-slate-700">Write</SelectItem>
-                    <SelectItem value="admin" className="text-white hover:bg-slate-700">Admin</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Input
-                  type="date"
-                  placeholder="Expiry date (optional)"
-                  value={newExpiry}
-                  onChange={(e) => setNewExpiry(e.target.value)}
-                  className="bg-slate-700/50 border-slate-600 text-white h-9 text-sm"
-                />
-                <Button className="w-full bg-teal-600 hover:bg-teal-500 text-white gap-2 h-9 text-sm">
-                  <Plus className="h-4 w-4" /> Generate API Key
-                </Button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card className="bg-slate-800/60 border-slate-700">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-white text-base flex items-center gap-2">
-              <Shield className="h-4 w-4 text-teal-400" /> Audit Log
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              {AUDIT_LOG.map((entry, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 bg-slate-700/20 rounded-lg">
-                  <div className="p-1.5 rounded bg-slate-700/60">
-                    {auditIcon(entry.type)}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <span className="text-sm text-white">{entry.event}</span>
-                    <span className="text-sm text-teal-400 mx-1.5">·</span>
-                    <span className="text-sm text-slate-300">{entry.key}</span>
-                  </div>
-                  <div className="text-xs text-slate-500 shrink-0">{entry.user}</div>
-                  <div className="text-xs text-slate-500 shrink-0">{entry.time}</div>
+              <div>
+                <label className="text-xs font-bold uppercase tracking-widest" style={{ color: D.muted }}>Scopes</label>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {SCOPE_OPTIONS.map(s => {
+                    const active = selectedScopes.includes(s);
+                    return (
+                      <button
+                        key={s}
+                        onClick={() => toggleScope(s)}
+                        className="px-2 py-1 rounded-md text-xs font-semibold"
+                        style={{
+                          backgroundColor: active ? `${D.cyan}25` : D.surface,
+                          color: active ? D.cyan : D.muted,
+                          border: `1px solid ${active ? D.cyan + "50" : D.border}`,
+                        }}
+                      >
+                        {s}
+                      </button>
+                    );
+                  })}
                 </div>
-              ))}
+              </div>
             </div>
-          </CardContent>
-        </Card>
+            <div className="flex gap-3 mt-4">
+              <button className="px-4 py-2 rounded-lg text-sm font-bold" style={{ backgroundColor: D.cyan, color: D.bg }}>
+                Generate Key
+              </button>
+              <button onClick={() => setShowNewKey(false)} className="px-4 py-2 rounded-lg text-sm font-bold" style={{ backgroundColor: D.surface, color: D.muted, border: `1px solid ${D.border}` }}>
+                Cancel
+              </button>
+            </div>
+          </DCard>
+        )}
+
+        <DCard>
+          <SectionHeader title="API Keys" subtitle="6 configured integrations" />
+          <div className="mt-3 overflow-x-auto rounded-xl" style={{ border: `1px solid ${D.border}` }}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ borderBottom: `1px solid ${D.border}`, backgroundColor: D.surface }}>
+                  {["Service", "Key", "Last Used", "Created", "Status", "Actions"].map((h, i) => (
+                    <th key={i} className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-left" style={{ color: D.muted }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {API_KEYS.map((k, i) => (
+                  <tr key={k.service} style={{ borderBottom: i < API_KEYS.length - 1 ? `1px solid ${D.border}` : "none", backgroundColor: i % 2 === 0 ? D.card : D.surface }}>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: k.color }} />
+                        <span className="font-bold text-sm" style={{ color: D.text }}>{k.service}</span>
+                      </div>
+                    </td>
+                    <td className="px-4 py-3 font-mono text-xs" style={{ color: D.dim }}>{k.masked}</td>
+                    <td className="px-4 py-3 text-xs" style={{ color: D.muted }}>{k.lastUsed}</td>
+                    <td className="px-4 py-3 text-xs" style={{ color: D.dim }}>{k.created}</td>
+                    <td className="px-4 py-3">
+                      {k.status === "expiring" ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold" style={{ backgroundColor: `${D.amber}20`, color: D.amber }}>
+                          <AlertTriangle className="w-3 h-3" />
+                          {k.daysLeft}d left
+                        </span>
+                      ) : (
+                        <StatusBadge status={k.status === "active" ? "success" : "error"} />
+                      )}
+                    </td>
+                    <td className="px-4 py-3">
+                      {showRotateConfirm === k.service ? (
+                        <div className="flex items-center gap-1">
+                          <button
+                            onClick={() => setShowRotateConfirm(null)}
+                            className="px-2 py-1 rounded text-xs font-bold"
+                            style={{ backgroundColor: D.amber, color: D.bg }}
+                          >
+                            Confirm
+                          </button>
+                          <button onClick={() => setShowRotateConfirm(null)} className="px-2 py-1 rounded text-xs" style={{ color: D.muted }}>Cancel</button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <button onClick={() => setShowRotateConfirm(k.service)} className="p-1.5 rounded-lg transition-colors" style={{ color: D.amber, backgroundColor: `${D.amber}10` }} title="Rotate key">
+                            <RotateCcw className="w-3.5 h-3.5" />
+                          </button>
+                          <button className="p-1.5 rounded-lg transition-colors" style={{ color: D.red, backgroundColor: `${D.red}10` }} title="Revoke key">
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </DCard>
+
+        <DCard>
+          <SectionHeader title="Webhook Endpoints" subtitle="5 configured inbound webhooks" />
+          <div className="mt-3 space-y-3">
+            {WEBHOOKS.map(wh => (
+              <div key={wh.name} className="rounded-xl p-4" style={{ backgroundColor: D.surface, border: `1px solid ${wh.status === "error" ? D.red + "40" : D.border}` }}>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: wh.status === "error" ? `${D.red}20` : `${D.blue}20` }}>
+                      {wh.status === "error" ? <AlertTriangle className="w-4 h-4" style={{ color: D.red }} /> : <Globe className="w-4 h-4" style={{ color: D.blue }} />}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold" style={{ color: D.text }}>{wh.name}</span>
+                        <StatusBadge status={wh.status} />
+                      </div>
+                      <code className="text-xs mt-0.5 block" style={{ color: D.dim }}>{wh.url}</code>
+                    </div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-xs" style={{ color: D.dim }}>Last triggered</div>
+                    <div className="text-xs font-semibold mt-0.5" style={{ color: D.muted }}>{wh.lastTriggered}</div>
+                  </div>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {wh.events.map(ev => (
+                    <span key={ev} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-mono" style={{ backgroundColor: `${D.cyan}10`, color: D.cyan, border: `1px solid ${D.cyan}20` }}>
+                      <Zap className="w-2.5 h-2.5" />
+                      {ev}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </DCard>
       </div>
     </AdminLayout>
   );

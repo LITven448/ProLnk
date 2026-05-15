@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";

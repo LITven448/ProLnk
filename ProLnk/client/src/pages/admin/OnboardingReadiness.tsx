@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import {
-  Users, CheckCircle2, Clock, TrendingDown, Zap,
+  Users, CheckCircle, Clock, TrendingDown, Zap,
   AlertTriangle, ChevronRight, Bell, Award,
 } from "lucide-react";
 import {
@@ -117,7 +117,7 @@ export default function OnboardingReadiness() {
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-1">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${D.cyan}20` }}>
-              <CheckCircle2 className="w-5 h-5" style={{ color: D.cyan }} />
+              <CheckCircle className="w-5 h-5" style={{ color: D.cyan }} />
             </div>
             <div>
               <h1 className="text-2xl font-black" style={{ color: D.text }}>Onboarding Readiness</h1>
@@ -130,7 +130,7 @@ export default function OnboardingReadiness() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
             { label: "Total Applicants", value: "412", color: D.blue, icon: Users },
-            { label: "Fully Onboarded", value: "147", color: D.green, icon: CheckCircle2 },
+            { label: "Fully Onboarded", value: "147", color: D.green, icon: CheckCircle },
             { label: "End-to-End CR", value: `${overallCR}%`, color: D.cyan, icon: TrendingDown },
             { label: "Avg Days to First Job", value: "6.4d", color: D.amber, icon: Clock },
           ].map(kpi => {

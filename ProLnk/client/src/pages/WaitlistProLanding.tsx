@@ -37,6 +37,24 @@ export default function WaitlistProLanding() {
         description="Apply to join the ProLnk partner network. AI-powered lead routing, earn commissions on every referral, and grow your home service business."
         path="/waitlist/pro"
       />
+      {/* Real-data announcement bar — only renders when we have actual signups */}
+      {proCount > 0 && (
+        <div className="w-full bg-yellow-400 py-2 px-4 text-center text-xs font-bold text-gray-900">
+          <span className="animate-pulse inline-block w-1.5 h-1.5 rounded-full bg-gray-900 mr-2 align-middle" />
+          DFW Launch —{" "}
+          <strong>{proCount} pro{proCount !== 1 ? "s" : ""} joined</strong>
+          {" · "}
+          <strong>{spotsLeft.toLocaleString()} of 1,000 spots remaining</strong>
+          {" · "}
+          <button
+            onClick={() => { const el = document.getElementById("waitlist-form"); el?.scrollIntoView({ behavior: "smooth" }); }}
+            className="underline underline-offset-2 hover:opacity-70 ml-1"
+          >
+            Apply now →
+          </button>
+        </div>
+      )}
+
       {/* Nav */}
       <nav className="px-6 py-5 flex items-center justify-between max-w-6xl mx-auto">
         <ProLnkLogo height={32} />

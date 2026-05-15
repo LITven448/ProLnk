@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  AlertTriangle, CheckCircle2, XCircle, Bug, Calendar,
+  AlertTriangle, CheckCircle, XCircle, Bug, Calendar,
   DollarSign, ShieldCheck, Phone, ChevronDown, ChevronUp,
 } from "lucide-react";
 
@@ -40,7 +40,7 @@ const CHECKLIST: CheckItem[] = [
 ];
 
 const STATUS_ICON = {
-  ok: { Icon: CheckCircle2, color: D.green, label: "Done" },
+  ok: { Icon: CheckCircle, color: D.green, label: "Done" },
   warn: { Icon: AlertTriangle, color: D.amber, label: "Attention" },
   bad: { Icon: XCircle, color: D.red, label: "Action Needed" },
 };

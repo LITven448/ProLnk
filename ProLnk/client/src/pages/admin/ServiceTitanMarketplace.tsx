@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import {
-  CheckCircle2, Circle, Clock, ExternalLink, AlertTriangle,
+  CheckCircle, Circle, Clock, ExternalLink, AlertTriangle,
   FileText, Shield, Code2, Building2, Zap, ArrowRight, Copy
 } from "lucide-react";
 import { toast } from "sonner";
@@ -96,7 +96,7 @@ export default function ServiceTitanMarketplace() {
   };
 
   const statusIcon = (status: string) => {
-    if (status === "completed") return <CheckCircle2 className="h-5 w-5 text-green-500" />;
+    if (status === "completed") return <CheckCircle className="h-5 w-5 text-green-500" />;
     if (status === "in_progress") return <Clock className="h-5 w-5 text-yellow-500" />;
     return <Circle className="h-5 w-5 text-gray-300" />;
   };
@@ -239,7 +239,7 @@ export default function ServiceTitanMarketplace() {
                   <div key={scope} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2">
                     <code className="text-xs font-mono text-gray-700">{scope}</code>
                     <button onClick={() => copyScope(scope)} className="text-gray-400 hover:text-gray-600">
-                      {copiedScope === scope ? <CheckCircle2 className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+                      {copiedScope === scope ? <CheckCircle className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
                     </button>
                   </div>
                 ))}

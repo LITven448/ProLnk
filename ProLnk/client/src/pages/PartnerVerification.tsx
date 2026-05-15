@@ -4,7 +4,7 @@ import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import {
-  ShieldCheck, Clock, CheckCircle2, XCircle, Loader2,
+  ShieldCheck, Clock, CheckCircle, XCircle, Loader2,
   ArrowRight, Building2, FileText, UserCheck, Star,
   BadgeCheck, AlertTriangle, Lock, ChevronRight,
 } from "lucide-react";
@@ -23,7 +23,7 @@ interface VerificationItem {
 }
 
 function statusIcon(status: VerificationStatus) {
-  if (status === "verified") return <CheckCircle2 className="w-5 h-5 text-emerald-500" />;
+  if (status === "verified") return <CheckCircle className="w-5 h-5 text-emerald-500" />;
   if (status === "pending" || status === "submitted") return <Clock className="w-5 h-5 text-amber-400" />;
   if (status === "failed" || status === "expired") return <XCircle className="w-5 h-5 text-red-400" />;
   return <div className="w-5 h-5 rounded-full border-2 border-gray-300" />;
@@ -32,7 +32,7 @@ function statusIcon(status: VerificationStatus) {
 function statusBadge(status: VerificationStatus) {
   if (status === "verified") return (
     <span className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-      <CheckCircle2 className="w-3 h-3" /> Verified
+      <CheckCircle className="w-3 h-3" /> Verified
     </span>
   );
   if (status === "submitted") return (
@@ -255,7 +255,7 @@ export default function PartnerVerification() {
                   {isFullyVerified ? "Active · Shown in directory" : "Locked until verification complete"}
                 </p>
               </div>
-              {isFullyVerified && <CheckCircle2 className="w-4 h-4 text-emerald-500 ml-1" />}
+              {isFullyVerified && <CheckCircle className="w-4 h-4 text-emerald-500 ml-1" />}
               {!isFullyVerified && <Lock className="w-4 h-4 text-gray-300 ml-1" />}
             </div>
             <div className="flex-1">

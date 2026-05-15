@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import {
-  Activity, CheckCircle2, XCircle, AlertTriangle, RefreshCw,
+  Activity, CheckCircle, XCircle, AlertTriangle, RefreshCw,
   Zap, Camera, Database, Clock, TrendingUp, Wifi, Package
 } from "lucide-react";
 import { toast } from "sonner";
@@ -30,7 +30,7 @@ const INTEGRATION_LABELS: Record<string, string> = {
 };
 
 const statusBadge = (status: string) => {
-  if (status === "healthy") return <Badge className="bg-green-100 text-green-700 gap-1"><CheckCircle2 className="h-3 w-3" />Healthy</Badge>;
+  if (status === "healthy") return <Badge className="bg-green-100 text-green-700 gap-1"><CheckCircle className="h-3 w-3" />Healthy</Badge>;
   if (status === "degraded") return <Badge className="bg-yellow-100 text-yellow-700 gap-1"><AlertTriangle className="h-3 w-3" />Degraded</Badge>;
   if (status === "down") return <Badge className="bg-red-100 text-red-700 gap-1"><XCircle className="h-3 w-3" />Down</Badge>;
   return <Badge className="bg-gray-100 text-gray-600 gap-1"><Clock className="h-3 w-3" />Pending</Badge>;

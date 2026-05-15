@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  Waves, CheckCircle2, AlertTriangle, XCircle, ChevronRight,
+  Waves, CheckCircle, AlertTriangle, XCircle, ChevronRight,
   Droplets, Thermometer, FlaskConical, Calendar, DollarSign,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -118,8 +118,8 @@ const COSTS = [
   { label: "Pool heater install",    range: "$1,500 – $3,000",  color: D.purple },
 ];
 
-const STATUS_CFG: Record<CheckStatus, { icon: typeof CheckCircle2; color: string; label: string }> = {
-  done:   { icon: CheckCircle2,  color: D.green, label: "Done" },
+const STATUS_CFG: Record<CheckStatus, { icon: typeof CheckCircle; color: string; label: string }> = {
+  done:   { icon: CheckCircle,  color: D.green, label: "Done" },
   warn:   { icon: AlertTriangle, color: D.amber, label: "Due" },
   missed: { icon: XCircle,       color: D.red,   label: "Missed" },
 };

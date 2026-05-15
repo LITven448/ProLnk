@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { Button } from "@/components/ui/button";
 import {
-  Sparkles, MapPin, Clock, RefreshCw, CheckCircle2,
+  Sparkles, MapPin, Clock, RefreshCw, CheckCircle,
   ChevronDown, ChevronUp, ArrowRight, Navigation, AlertCircle,
   Shuffle, Route,
 } from "lucide-react";
@@ -265,7 +265,7 @@ export default function JobScheduler() {
                             : "bg-transparent border-slate-600",
                         ].join(" ")}
                       >
-                        {job.status === "confirmed" && <CheckCircle2 className="w-3 h-3 text-slate-900" />}
+                        {job.status === "confirmed" && <CheckCircle className="w-3 h-3 text-slate-900" />}
                       </button>
                       <div className="flex-1 min-w-0">
                         <p className={`text-sm font-medium truncate ${job.status === "confirmed" ? "text-white" : "text-slate-500 line-through"}`}>
@@ -359,12 +359,12 @@ export default function JobScheduler() {
                           onClick={handleAccept}
                           className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold text-xs"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
+                          <CheckCircle className="w-3.5 h-3.5 mr-1.5" />
                           Accept Schedule
                         </Button>
                       ) : (
                         <span className="flex items-center gap-1.5 text-xs text-teal-400 font-medium">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <CheckCircle className="w-3.5 h-3.5" />
                           Accepted
                         </span>
                       )}
@@ -375,7 +375,7 @@ export default function JobScheduler() {
                   <div className="grid grid-cols-3 divide-x divide-slate-700/50 border-b border-slate-700/50">
                     {[
                       { label: "Drive Time", value: `${totalDriveTime} min`, icon: <Clock className="w-3.5 h-3.5 text-teal-400" /> },
-                      { label: "Job Time", value: `${totalJobTime}h`, icon: <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" /> },
+                      { label: "Job Time", value: `${totalJobTime}h`, icon: <CheckCircle className="w-3.5 h-3.5 text-blue-400" /> },
                       { label: "Total Value", value: `$${totalValue.toLocaleString()}`, icon: <Sparkles className="w-3.5 h-3.5 text-amber-400" /> },
                     ].map(m => (
                       <div key={m.label} className="p-3 text-center">
@@ -493,7 +493,7 @@ export default function JobScheduler() {
 
                   {accepted && (
                     <div className="p-4 border-t border-teal-700/30 bg-teal-900/10 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-teal-400 flex-shrink-0" />
                       <p className="text-sm text-teal-300">
                         Schedule accepted — {optimizedRoute.length} stops, {totalDriveTime} min total drive.
                       </p>

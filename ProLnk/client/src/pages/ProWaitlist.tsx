@@ -6,7 +6,6 @@ import ProLnkLogo from "@/components/ProLnkLogo";
 import BackToTop from "@/components/BackToTop";
 import { FadeUp, FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/ScrollAnimations";
 import { trpc } from "@/lib/trpc";
-import type React from "react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 import {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import HomeownerLayout from "@/components/HomeownerLayout";
-import { Wind, Calendar, CheckCircle2, ChevronDown, ChevronUp, TrendingDown, Home } from "lucide-react";
+import { Wind, Calendar, CheckCircle, ChevronDown, ChevronUp, TrendingDown, Home } from "lucide-react";
 import { Link } from "wouter";
 
 const D = {
@@ -204,7 +204,7 @@ export default function DFWAllergiesHomeGuide() {
 
           {/* CTA */}
           <div className="rounded-2xl p-8 text-center" style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.15), rgba(20,184,166,0.05))", border: "1px solid rgba(20,184,166,0.3)" }}>
-            <CheckCircle2 className="w-10 h-10 mx-auto mb-4" style={{ color: D.teal }} />
+            <CheckCircle className="w-10 h-10 mx-auto mb-4" style={{ color: D.teal }} />
             <h2 className="text-2xl font-black mb-3">Schedule HVAC Air Quality Service</h2>
             <p className="text-sm mb-6 leading-relaxed" style={{ color: D.muted }}>
               A licensed HVAC technician can assess your system's allergen load, replace filters, clean coils, and recommend upgrades specific to your DFW home.

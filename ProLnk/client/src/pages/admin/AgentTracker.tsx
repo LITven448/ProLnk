@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useEffect } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { T } from "@/components/AdminLayout";

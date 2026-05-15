@@ -2,7 +2,7 @@ import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Leaf, Sun, Snowflake, Cloud, Wrench, ThermometerSun, Droplets, Zap, Bug, Home, Paintbrush, Fan, Calendar, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
+import { Leaf, Sun, Snowflake, Cloud, Wrench, ThermometerSun, Droplets, Zap, Bug, Home, Paintbrush, Fan, Calendar, CheckCircle, Clock, AlertTriangle } from "lucide-react";
 
 const SEASON_CONFIG = {
   spring: { icon: Leaf, color: "text-green-400", bg: "bg-green-500/20", label: "Spring", months: "Mar - May" },
@@ -151,7 +151,7 @@ export default function SeasonalMaintenanceAdmin() {
                                   Auto-sent 14 days before due
                                 </span>
                                 <span className="flex items-center gap-1">
-                                  <CheckCircle2 className="h-3 w-3" />
+                                  <CheckCircle className="h-3 w-3" />
                                   Connects to ProLnk leads
                                 </span>
                               </div>
@@ -178,7 +178,7 @@ export default function SeasonalMaintenanceAdmin() {
                 { step: "1", title: "Auto-Generate", desc: "Tasks are auto-created for each property based on home profile data", icon: Calendar },
                 { step: "2", title: "Notify", desc: "Homeowners receive email reminders 14 days before each task is due", icon: AlertTriangle },
                 { step: "3", title: "Connect", desc: "Each task includes a 'Hire a Pro' button that creates a ProLnk lead", icon: Wrench },
-                { step: "4", title: "Track", desc: "Completion is tracked in the Home Health Vault for long-term home health scoring", icon: CheckCircle2 },
+                { step: "4", title: "Track", desc: "Completion is tracked in the Home Health Vault for long-term home health scoring", icon: CheckCircle },
               ].map((item) => {
                 const Icon = item.icon;
                 return (

@@ -1,4 +1,3 @@
-import type React from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";
 import { QRCodeSVG } from "qrcode.react";

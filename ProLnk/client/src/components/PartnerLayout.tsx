@@ -1,4 +1,3 @@
-import type React from "react";
 import { Link, useLocation } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import ProLnkLogo from "@/components/ProLnkLogo";

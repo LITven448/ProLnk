@@ -6,7 +6,7 @@ import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { FOS } from "./fosTokens";
 import {
-  DollarSign, Clock, CheckCircle2,
+  DollarSign, Clock, CheckCircle,
   Loader2, Flame, Calendar, Zap, Users,
   TrendingUp, ArrowUpRight, AlertCircle,
   Wrench, Home, Bolt

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useRef, useEffect, useState, useRef as _useRef } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";

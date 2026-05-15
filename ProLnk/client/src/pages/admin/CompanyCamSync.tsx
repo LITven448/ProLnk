@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import {
-  Camera, CheckCircle2, Settings, Zap, Link, RefreshCw,
+  Camera, CheckCircle, Settings, Zap, Link, RefreshCw,
   Building2, Users, TrendingUp, AlertTriangle, Copy
 } from "lucide-react";
 import { toast } from "sonner";
@@ -63,7 +63,7 @@ export default function CompanyCamSync() {
             </div>
           </div>
           <Badge className="bg-green-100 text-green-700 text-sm px-3 py-1 gap-1">
-            <CheckCircle2 className="h-3.5 w-3.5" /> Live  3 Partners
+            <CheckCircle className="h-3.5 w-3.5" /> Live  3 Partners
           </Badge>
         </div>
 
@@ -109,7 +109,7 @@ export default function CompanyCamSync() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="text-base flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-green-500" />
+              <CheckCircle className="h-4 w-4 text-green-500" />
               Integration Setup Status
             </CardTitle>
           </CardHeader>
@@ -118,7 +118,7 @@ export default function CompanyCamSync() {
               <div key={step.step}>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
+                    <CheckCircle className="h-3.5 w-3.5 text-green-600" />
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-gray-800">{step.title}</p>

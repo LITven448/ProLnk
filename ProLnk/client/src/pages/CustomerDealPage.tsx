@@ -25,7 +25,7 @@ import { Badge } from "@/components/ui/badge";
 import { SurgicalFixPanel } from "@/components/SurgicalFixPanel";
 import { HomeownerCardOnFileModalPublic } from "@/components/HomeownerCardOnFileModalPublic";
 import {
-  Star, Shield, Clock, CheckCircle2, XCircle, Phone, Globe,
+  Star, Shield, Clock, CheckCircle, XCircle, Phone, Globe,
   MapPin, Camera, Wrench, AlertTriangle, ChevronDown, ChevronUp,
   Award, ThumbsUp, Calendar, ArrowRight, Loader2, ChevronLeft, ChevronRight as ChevronRightIcon,
   PenLine, RotateCcw
@@ -303,7 +303,7 @@ function ReviewForm({ token, onSuccess }: { token: string; onSuccess: () => void
   if (submitted) {
     return (
       <div className="text-center py-8">
-        <CheckCircle2 size={48} className="text-[#0A1628] mx-auto mb-3" />
+        <CheckCircle size={48} className="text-[#0A1628] mx-auto mb-3" />
         <h3 className="font-semibold text-gray-900 mb-1">Thank you for your review!</h3>
         <p className="text-sm text-gray-600">Your feedback helps other homeowners in the network.</p>
       </div>
@@ -614,7 +614,7 @@ export default function CustomerDealPage() {
         {(isScheduled || signatureDone) && (
           <div className="bg-[#F5E642]/10 border border-[#0A1628]/20 rounded-xl px-4 py-4">
             <div className="flex items-start gap-3">
-              <CheckCircle2 size={20} className="text-[#0A1628] mt-0.5 shrink-0" />
+              <CheckCircle size={20} className="text-[#0A1628] mt-0.5 shrink-0" />
               <div>
                 <p className="font-semibold text-teal-900">{signatureDone ? 'Request Signed & Confirmed' : 'Estimate Request Confirmed'}</p>
                 <p className="text-sm text-[#0A1628] mt-0.5">
@@ -799,7 +799,7 @@ export default function CustomerDealPage() {
           {[
             { icon: Shield, label: "Verified Pro", sub: "Background checked" },
             { icon: Award, label: "Trusted Network", sub: "ProLnk certified" },
-            { icon: CheckCircle2, label: "Free Estimate", sub: "No obligation" },
+            { icon: CheckCircle, label: "Free Estimate", sub: "No obligation" },
           ].map(({ icon: Icon, label, sub }) => (
             <div key={label} className="bg-white rounded-xl p-3 text-center shadow-sm border border-gray-100">
               <Icon size={20} className="text-[#0A1628] mx-auto mb-1.5" />
@@ -924,7 +924,7 @@ export default function CustomerDealPage() {
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
             <div className="flex items-start gap-3 mb-3">
               <div className="w-9 h-9 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
-                <CheckCircle2 size={18} className="text-emerald-600" />
+                <CheckCircle size={18} className="text-emerald-600" />
               </div>
               <div>
                 <h3 className="font-bold text-emerald-900 text-sm">Did the job get done?</h3>
@@ -936,7 +936,7 @@ export default function CustomerDealPage() {
                 onClick={() => setShowConfirmJobDone(true)}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm"
               >
-                <CheckCircle2 size={16} className="mr-2" />
+                <CheckCircle size={16} className="mr-2" />
                 Yes, the job is complete
               </Button>
             ) : (
@@ -981,7 +981,7 @@ export default function CustomerDealPage() {
         {/* -- Job confirmed banner --------------------------------------------- */}
         {jobConfirmed && (
           <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3">
-            <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" />
+            <CheckCircle size={20} className="text-emerald-500 shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-emerald-800 text-sm">Job Complete — Thank You!</p>
               <p className="text-xs text-emerald-700 mt-0.5">Your confirmation helps keep the ProLnk network accountable and ensures fair commission tracking.</p>

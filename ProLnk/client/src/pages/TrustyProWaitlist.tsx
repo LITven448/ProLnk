@@ -14,7 +14,6 @@ import {
   useInView,
   AnimatePresence,
 } from "framer-motion";
-import type React from "react";
 
 // ---------------------------------------------------------------------------
 // Deep 7-Step Homeowner Waitlist Modal

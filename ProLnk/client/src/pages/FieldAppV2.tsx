@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * FieldAppV2 — ProLnk Field OS Quick Scan
  * Real AI pipeline: photos → S3 upload → logJob tRPC → AI analysis → real opportunities

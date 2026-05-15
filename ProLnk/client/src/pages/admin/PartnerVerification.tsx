@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Partner Verification -- /admin/verification
  * Admin reviews and approves 7-point trust checkpoints for each partner.

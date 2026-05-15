@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { Copy, CheckCircle2, Zap, MessageSquare, Share2, ArrowRight } from "lucide-react";
+import { Copy, CheckCircle, Zap, MessageSquare, Share2, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -276,7 +276,7 @@ function PostCard({ post }: { post: Post }) {
           style={{ backgroundColor: post.platformColor }}
           onClick={handleCopy}
         >
-          {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <CheckCircle className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
           {copied ? "Copied! Now open " + post.platform : `Copy + Post to ${post.platform}`}
         </Button>
       </div>

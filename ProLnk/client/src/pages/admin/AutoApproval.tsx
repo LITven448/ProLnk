@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import {
-  Zap, CheckCircle2, XCircle, Clock, Shield, AlertTriangle,
+  Zap, CheckCircle, XCircle, Clock, Shield, AlertTriangle,
   Settings, TrendingUp, Users, Building2, Loader2
 } from "lucide-react";
 import { toast } from "sonner";
@@ -56,7 +56,7 @@ export default function AutoApproval() {
   };
 
   const statusBadge = (status: string) => {
-    if (status === "approved") return <Badge className="bg-green-100 text-green-700 gap-1"><CheckCircle2 className="h-3 w-3" />Approved</Badge>;
+    if (status === "approved") return <Badge className="bg-green-100 text-green-700 gap-1"><CheckCircle className="h-3 w-3" />Approved</Badge>;
     if (status === "rejected") return <Badge className="bg-red-100 text-red-700 gap-1"><XCircle className="h-3 w-3" />Rejected</Badge>;
     return <Badge className="bg-yellow-100 text-yellow-700 gap-1"><Clock className="h-3 w-3" />Pending Review</Badge>;
   };
@@ -104,7 +104,7 @@ export default function AutoApproval() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card><CardContent className="p-4 flex items-center gap-3"><CheckCircle2 className="h-8 w-8 shrink-0 text-green-500" /><div><div className="text-2xl font-bold text-gray-800">--</div><div className="text-xs text-gray-500">Auto-Approved Today</div></div></CardContent></Card>
+          <Card><CardContent className="p-4 flex items-center gap-3"><CheckCircle className="h-8 w-8 shrink-0 text-green-500" /><div><div className="text-2xl font-bold text-gray-800">--</div><div className="text-xs text-gray-500">Auto-Approved Today</div></div></CardContent></Card>
           <Card><CardContent className="p-4 flex items-center gap-3"><Clock className="h-8 w-8 shrink-0 text-yellow-500" /><div><div className="text-2xl font-bold text-gray-800">{applicants.length}</div><div className="text-xs text-gray-500">Pending Review</div></div></CardContent></Card>
           <Card><CardContent className="p-4 flex items-center gap-3"><XCircle className="h-8 w-8 shrink-0 text-red-500" /><div><div className="text-2xl font-bold text-gray-800">--</div><div className="text-xs text-gray-500">Auto-Rejected</div></div></CardContent></Card>
           <Card><CardContent className="p-4 flex items-center gap-3"><TrendingUp className="h-8 w-8 shrink-0 text-blue-500" /><div><div className="text-2xl font-bold text-gray-800">85%</div><div className="text-xs text-gray-500">Auto-Approve Rate</div></div></CardContent></Card>
@@ -169,7 +169,7 @@ export default function AutoApproval() {
             )}
             {!isLoading && applicants.length === 0 && (
               <div className="text-center py-8">
-                <CheckCircle2 className="h-10 w-10 text-green-400 mx-auto mb-2" />
+                <CheckCircle className="h-10 w-10 text-green-400 mx-auto mb-2" />
                 <p className="text-gray-500 font-medium">All caught up!</p>
                 <p className="text-gray-400 text-sm">No pending applications at this time.</p>
               </div>

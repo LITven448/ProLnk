@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   ExternalLink, Zap, ArrowRight, Users, TrendingUp,
-  Clock, Home, CheckCircle2, AlertCircle
+  Clock, Home, CheckCircle, AlertCircle
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -148,7 +148,7 @@ export default function HousecallProIntegration() {
                   <div>
                     <p className="text-sm font-medium text-gray-700">{lim.issue}</p>
                     <p className="text-xs text-gray-500 mt-0.5 flex items-start gap-1">
-                      <CheckCircle2 className="h-3 w-3 text-green-500 mt-0.5 shrink-0" />
+                      <CheckCircle className="h-3 w-3 text-green-500 mt-0.5 shrink-0" />
                       {lim.workaround}
                     </p>
                   </div>

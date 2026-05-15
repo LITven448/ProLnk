@@ -3,7 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  MessageSquare, Mail, Zap, CheckCircle2, AlertCircle, Copy, CheckCheck,
+  MessageSquare, Mail, Zap, CheckCircle, AlertCircle, Copy, CheckCheck,
   ExternalLink, Users, Clock, Shield, ArrowRight, Settings2, Bell,
   Phone, Send, Activity, Globe, TrendingUp, Code2
 } from "lucide-react";
@@ -151,7 +151,7 @@ export default function CommsIntegrations() {
                 { label: "Open Rate (SMS vs Email)", value: "98% vs 20%", icon: TrendingUp, color: "#DC2626" },
                 { label: "Avg Response Time", value: "90 seconds", icon: Clock, color: "#D97706" },
                 { label: "Cost per SMS", value: "$0.0079", icon: Activity, color: "#059669" },
-                { label: "Delivery Rate", value: "99.9%", icon: CheckCircle2, color: "#0284C7" },
+                { label: "Delivery Rate", value: "99.9%", icon: CheckCircle, color: "#0284C7" },
               ].map(s => {
                 const Icon = s.icon;
                 return (

@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Bell, Send, Users, Zap, TrendingUp, Award, Star,
-  ChevronDown, Loader2, CheckCircle2, AlertCircle, Megaphone,
+  ChevronDown, Loader2, CheckCircle, AlertCircle, Megaphone,
 } from "lucide-react";
 
 const NOTIFICATION_TYPES = [
@@ -310,7 +310,7 @@ export default function SmartNotifications() {
 
         {/* Info */}
         <div className="flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700">
-          <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+          <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
           <div>
             Notifications appear in the partner's in-app notification bell. Partners with email notifications enabled will also receive an email.
             Use the <strong>Smart Templates</strong> above for pre-written, high-converting messages.

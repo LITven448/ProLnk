@@ -579,6 +579,19 @@ const RenovationFinancingGuide = lazy(() => import("./pages/homeowner/Renovation
 const AICommandCenter = lazy(() => import("./pages/admin/AICommandCenter"));
 const SystemHealthDashboard = lazy(() => import("./pages/admin/SystemHealthDashboard"));
 
+
+// App preview mockup screens
+const ProLnkHomePreview = lazy(() => import("./pages/app-preview/HomeScreen"));
+const ProLnkLeadPreview = lazy(() => import("./pages/app-preview/LeadDetailScreen"));
+const ProLnkEarningsPreview = lazy(() => import("./pages/app-preview/EarningsScreen"));
+const ProLnkNetworkPreview = lazy(() => import("./pages/app-preview/NetworkScreen"));
+const ProLnkFieldPreview = lazy(() => import("./pages/app-preview/JobDocScreen"));
+const TPHomePreview = lazy(() => import("./pages/trustypro/app-preview/HomeScreen"));
+const TPScanPreview = lazy(() => import("./pages/trustypro/app-preview/ScanScreen"));
+const TPPropertyPreview = lazy(() => import("./pages/trustypro/app-preview/PropertyScreen"));
+const TPFindProPreview = lazy(() => import("./pages/trustypro/app-preview/FindProScreen"));
+const TPAlertsPreview = lazy(() => import("./pages/trustypro/app-preview/AlertsScreen"));
+
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
@@ -1242,6 +1255,18 @@ function Router() {
       <Route path="/admin/tier-breakdown" component={TierBreakdownDashboard} />
       <Route path="/my-home/financing" component={RenovationFinancingGuide} />
       <Route path="/docs" component={Documentation} />
+      
+      {/* ── App Preview Screens (mobile mockups) ── */}
+      <Route path="/app-preview/home" component={ProLnkHomePreview} />
+      <Route path="/app-preview/lead" component={ProLnkLeadPreview} />
+      <Route path="/app-preview/earnings" component={ProLnkEarningsPreview} />
+      <Route path="/app-preview/network" component={ProLnkNetworkPreview} />
+      <Route path="/app-preview/field" component={ProLnkFieldPreview} />
+      <Route path="/trustypro/app-preview/home" component={TPHomePreview} />
+      <Route path="/trustypro/app-preview/scan" component={TPScanPreview} />
+      <Route path="/trustypro/app-preview/property" component={TPPropertyPreview} />
+      <Route path="/trustypro/app-preview/find-pro" component={TPFindProPreview} />
+      <Route path="/trustypro/app-preview/alerts" component={TPAlertsPreview} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>

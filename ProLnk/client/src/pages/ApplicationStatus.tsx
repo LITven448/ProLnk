@@ -6,7 +6,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  CheckCircle2,
+  CheckCircle,
   Clock,
   XCircle,
   Search,
@@ -66,7 +66,7 @@ const STATUS_CONFIG: Record<
     ],
   },
   approved: {
-    icon: <CheckCircle2 className="w-10 h-10 text-emerald-600" />,
+    icon: <CheckCircle className="w-10 h-10 text-emerald-600" />,
     bg: "bg-emerald-50",
     border: "border-emerald-200",
     badge: "bg-emerald-100 text-emerald-700",

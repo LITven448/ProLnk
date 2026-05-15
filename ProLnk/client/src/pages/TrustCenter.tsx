@@ -6,7 +6,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import {
-  ShieldCheck, CheckCircle2, Star, Building2, FileText,
+  ShieldCheck, CheckCircle, Star, Building2, FileText,
   Award, Lock, Eye, Phone, Zap, Users, TrendingUp,
   ChevronDown, ChevronUp, ExternalLink, BadgeCheck
 } from "lucide-react";
@@ -228,7 +228,7 @@ export default function TrustCenter() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { label: "Job Completion Rate",   weight: "30%", desc: "Percentage of accepted jobs that are completed on time", icon: CheckCircle2, color: "#10B981" },
+              { label: "Job Completion Rate",   weight: "30%", desc: "Percentage of accepted jobs that are completed on time", icon: CheckCircle, color: "#10B981" },
               { label: "Homeowner Reviews",      weight: "25%", desc: "Average rating from verified homeowner reviews post-job", icon: Star,         color: "#F59E0B" },
               { label: "Response Time",          weight: "20%", desc: "Average time to respond to new lead notifications", icon: Phone,        color: "#3B82F6" },
               { label: "Referral Conversion",    weight: "15%", desc: "Percentage of referred leads that convert to closed jobs", icon: TrendingUp,   color: "#8B5CF6" },

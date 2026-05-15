@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-  CheckCircle2, ArrowRight, ArrowLeft, Building2, MapPin,
+  CheckCircle, ArrowRight, ArrowLeft, Building2, MapPin,
   Zap, DollarSign, Sparkles, Users, Star, CreditCard, Lock, ShieldCheck
 } from "lucide-react";
 import { toast } from "sonner";
@@ -223,7 +223,7 @@ export default function OnboardingWizard() {
               </div>
               {formData.software && formData.software !== "I don't use software" && (
                 <div className="bg-[#F5E642]/10 rounded-xl p-3 flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#0A1628] mt-0.5 shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-[#0A1628] mt-0.5 shrink-0" />
                   <p className="text-xs text-[#0A1628]">
                     ProLnk integrates directly with {formData.software}. Once approved, your job photos will sync automatically -- no extra steps required.
                   </p>
@@ -534,7 +534,7 @@ export default function OnboardingWizard() {
           <Card className="border-[#0A1628]/20">
             <CardContent className="p-8 flex flex-col items-center gap-5 text-center">
               <div className="w-16 h-16 rounded-full bg-[#0A1628]/10 flex items-center justify-center">
-                <CheckCircle2 className="h-9 w-9 text-[#0A1628]" />
+                <CheckCircle className="h-9 w-9 text-[#0A1628]" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-gray-900 mb-1">Application Submitted!</h2>

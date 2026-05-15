@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { MapPin, Search, CheckCircle2, Lock, TrendingUp, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react";
+import { MapPin, Search, CheckCircle, Lock, TrendingUp, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react";
 
 const TIER_COLORS: Record<string, string> = {
   scout: "bg-gray-100 text-gray-700 border-gray-300",
@@ -267,7 +267,7 @@ export default function ServiceAreaManager() {
                         allSmSelected ? "bg-blue-600 border-blue-600" : smSelected > 0 ? "bg-blue-200 border-blue-400" : "border-gray-300"
                       }`}
                     >
-                      {allSmSelected && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+                      {allSmSelected && <CheckCircle className="w-3.5 h-3.5 text-white" />}
                       {!allSmSelected && smSelected > 0 && <div className="w-2 h-2 rounded-sm bg-blue-600" />}
                     </button>
                     <span className="font-semibold text-gray-800">{sm}</span>
@@ -299,7 +299,7 @@ export default function ServiceAreaManager() {
                           <div className="flex items-center justify-between w-full">
                             <span className="font-mono font-bold text-sm">{z.zip}</span>
                             {atLimit && !selected && <Lock className="w-3 h-3" />}
-                            {selected && <CheckCircle2 className="w-3.5 h-3.5" />}
+                            {selected && <CheckCircle className="w-3.5 h-3.5" />}
                           </div>
                           <span className={`text-xs mt-0.5 truncate w-full ${selected ? "text-blue-100" : "text-gray-500"}`}>{z.city}</span>
                           <span className={`text-xs ${selected ? "text-blue-200" : "text-gray-400"}`}>

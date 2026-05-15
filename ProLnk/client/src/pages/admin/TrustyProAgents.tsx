@@ -2,7 +2,7 @@ import type React from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Bot, Clock, CheckCircle2, AlertTriangle, Zap, Camera, Home, Brain, Shield, TrendingUp } from "lucide-react";
+import { Bot, Clock, CheckCircle, AlertTriangle, Zap, Camera, Home, Brain, Shield, TrendingUp } from "lucide-react";
 
 const TP_AGENTS = [
   {
@@ -58,7 +58,7 @@ const TP_AGENTS = [
 ];
 
 const STATUS_MAP: Record<string, { label: string; color: string; icon: React.ElementType }> = {
-  "active":  { label: "Active",    color: "text-green-600",  icon: CheckCircle2 },
+  "active":  { label: "Active",    color: "text-green-600",  icon: CheckCircle },
   "in-dev":  { label: "In Dev",    color: "text-yellow-600", icon: Zap },
   "planned": { label: "Planned",   color: "text-zinc-400",   icon: Clock },
   "error":   { label: "Error",     color: "text-red-600",    icon: AlertTriangle },
@@ -82,7 +82,7 @@ export default function TrustyProAgents() {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardContent className="p-4 flex items-center gap-3">
-              <CheckCircle2 className="w-8 h-8 text-green-500 shrink-0" />
+              <CheckCircle className="w-8 h-8 text-green-500 shrink-0" />
               <div>
                 <div className="text-2xl font-bold text-green-600">{TP_AGENTS.filter(a => a.status === "active").length}</div>
                 <div className="text-xs text-[#7B809A]">Active</div>

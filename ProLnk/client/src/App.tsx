@@ -623,6 +623,13 @@ const TPPropertyPreview = lazy(() => import("./pages/trustypro/app-preview/Prope
 const TPFindProPreview = lazy(() => import("./pages/trustypro/app-preview/FindProScreen"));
 const TPAlertsPreview = lazy(() => import("./pages/trustypro/app-preview/AlertsScreen"));
 
+
+// Additional TrustyPro city pages
+const TrustyProDenton = lazy(() => import("./pages/TrustyProDenton"));
+const TrustyProArlington = lazy(() => import("./pages/TrustyProArlington"));
+const TrustyProGrandPrairie = lazy(() => import("./pages/TrustyProGrandPrairie"));
+const TrustyProRockwall = lazy(() => import("./pages/TrustyProRockwall"));
+
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
@@ -1330,6 +1337,11 @@ function Router() {
       <Route path="/trustypro/mansfield" component={TrustyProMansfield} />
       <Route path="/trustypro/burleson" component={TrustyProBurleson} />
 
+      
+      <Route path="/trustypro/denton" component={TrustyProDenton} />
+      <Route path="/trustypro/arlington" component={TrustyProArlington} />
+      <Route path="/trustypro/grand-prairie" component={TrustyProGrandPrairie} />
+      <Route path="/trustypro/rockwall" component={TrustyProRockwall} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>

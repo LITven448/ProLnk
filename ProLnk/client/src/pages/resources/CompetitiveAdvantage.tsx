@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import {
   Check, X, DollarSign, TrendingUp, Star, Users, Zap,

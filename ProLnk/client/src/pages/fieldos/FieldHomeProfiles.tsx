@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Field OS -- Home Profiles Tab (v4)
  * Design system: Teal #0D9488 (actions) | Lime #E8FF47 (money) | Navy #070D1A (bg)

@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import {
   Search, Star, MapPin, Briefcase, Clock, TrendingUp,
-  CheckCircle2, Filter, ChevronDown, Users, Send,
+  CheckCircle, Filter, ChevronDown, Users, Send,
   ArrowRight, BadgeCheck,
 } from "lucide-react";
 
@@ -248,7 +248,7 @@ function InviteModal({
               className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: "rgba(34,197,94,0.12)" }}
             >
-              <CheckCircle2 className="w-7 h-7 text-emerald-400" />
+              <CheckCircle className="w-7 h-7 text-emerald-400" />
             </div>
             <h3 className="text-white font-bold text-lg mb-2">Invite Sent!</h3>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Helmet } from "react-helmet-async";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

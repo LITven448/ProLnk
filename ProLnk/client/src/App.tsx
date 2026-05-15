@@ -638,6 +638,13 @@ const TrustyProArlington = lazy(() => import("./pages/TrustyProArlington"));
 const TrustyProGrandPrairie = lazy(() => import("./pages/TrustyProGrandPrairie"));
 const TrustyProRockwall = lazy(() => import("./pages/TrustyProRockwall"));
 
+
+// Wave N: DFW City Pages
+const TrustyProCoppell = lazy(() => import('./pages/trustypro/TrustyProCoppell'));
+const TrustyProAddison = lazy(() => import('./pages/trustypro/TrustyProAddison'));
+const TrustyProFarmersBranch = lazy(() => import('./pages/trustypro/TrustyProFarmersBranch'));
+const TrustyProUniversityPark = lazy(() => import('./pages/trustypro/TrustyProUniversityPark'));
+
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
@@ -1071,6 +1078,10 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/scans" component={TrustyProScanHistory} />
+            <Route path="/trustypro/coppell" component={TrustyProCoppell} />
+      <Route path="/trustypro/addison" component={TrustyProAddison} />
+      <Route path="/trustypro/farmers-branch" component={TrustyProFarmersBranch} />
+      <Route path="/trustypro/university-park" component={TrustyProUniversityPark} />
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
       <Route path="/exchange" component={ExchangeLanding} />

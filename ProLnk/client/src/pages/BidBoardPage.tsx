@@ -4,7 +4,6 @@
  * Partners browse and bid on projects. Includes status pipeline view for submitted bids.
  */
 
-import type React from "react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";

@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { Webhook, CheckCircle2, XCircle, Clock, Camera, Wrench, Building2, Zap, FileText, ArrowRight, ExternalLink, Shield, RefreshCw } from "lucide-react";
+import { Webhook, CheckCircle, XCircle, Clock, Camera, Wrench, Building2, Zap, FileText, ArrowRight, ExternalLink, Shield, RefreshCw } from "lucide-react";
 
 const INTEGRATION_ICONS: Record<string, any> = {
   companyCam: Camera,
@@ -73,7 +73,7 @@ export default function IntegrationWebhookDashboard() {
                       <div>
                         <h3 className="font-medium text-white">{integration.name}</h3>
                         <Badge className={status.badge + " text-xs mt-1"}>
-                          {integration.status === "configured" ? <CheckCircle2 className="h-3 w-3 mr-1" /> : <Clock className="h-3 w-3 mr-1" />}
+                          {integration.status === "configured" ? <CheckCircle className="h-3 w-3 mr-1" /> : <Clock className="h-3 w-3 mr-1" />}
                           {status.text}
                         </Badge>
                       </div>
@@ -134,7 +134,7 @@ export default function IntegrationWebhookDashboard() {
                 { step: "1", title: "Get API Keys", desc: "Sign up for the integration platform and generate API credentials", icon: Shield },
                 { step: "2", title: "Configure Webhook", desc: "Add the webhook URL to the platform's webhook settings", icon: Webhook },
                 { step: "3", title: "Test Connection", desc: "Send a test event to verify the webhook is working", icon: RefreshCw },
-                { step: "4", title: "Go Live", desc: "Enable the integration and start syncing data automatically", icon: CheckCircle2 },
+                { step: "4", title: "Go Live", desc: "Enable the integration and start syncing data automatically", icon: CheckCircle },
               ].map((item) => {
                 const Icon = item.icon;
                 return (

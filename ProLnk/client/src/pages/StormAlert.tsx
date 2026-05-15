@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import {
   CloudLightning, Zap, Home, Bell, AlertTriangle, TrendingUp,
-  Thermometer, Wind, Droplets, Wrench, Waves, TreePine, CheckCircle2,
+  Thermometer, Wind, Droplets, Wrench, Waves, TreePine, CheckCircle,
   History, Settings, Activity, ArrowUpRight, Eye, Radio,
 } from "lucide-react";
 
@@ -263,7 +263,7 @@ function StormBurstBanner({ wind, precip, code }: { wind: number; precip: number
                 : "bg-red-500 hover:bg-red-400 text-white shadow-red-500/30"
             }`}
           >
-            {activated ? <><CheckCircle2 className="w-4 h-4" /> Storm Mode Activated</> : <><Radio className="w-4 h-4" /> Activate Storm Mode</>}
+            {activated ? <><CheckCircle className="w-4 h-4" /> Storm Mode Activated</> : <><Radio className="w-4 h-4" /> Activate Storm Mode</>}
           </button>
         </div>
         <div className="flex gap-6 mt-4 flex-wrap">
@@ -327,7 +327,7 @@ function StormOpportunityCard({ opp }: { opp: StormOpportunity }) {
               : "bg-white/10 text-gray-500 cursor-not-allowed"
           }`}
         >
-          {expressed ? <><CheckCircle2 className="w-3.5 h-3.5" /> Interested</> : opp.active ? "Express Interest" : "Inactive"}
+          {expressed ? <><CheckCircle className="w-3.5 h-3.5" /> Interested</> : opp.active ? "Express Interest" : "Inactive"}
         </button>
       </div>
     </div>

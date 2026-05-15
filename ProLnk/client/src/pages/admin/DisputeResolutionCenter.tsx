@@ -2,7 +2,7 @@ import { useState } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { D, DFONT, MetricCard, DataTable } from "@/components/DashboardShared";
 import {
-  Scale, Clock, CheckCircle2, Star, ChevronDown, ChevronUp,
+  Scale, Clock, CheckCircle, Star, ChevronDown, ChevronUp,
   AlertTriangle, CreditCard, UserX, HelpCircle, Shield,
   TrendingUp, MessageSquare, ThumbsUp, ThumbsDown, Split,
 } from "lucide-react";
@@ -255,7 +255,7 @@ function DisputeCard({ dispute }: { dispute: Dispute }) {
           color: D.green, fontSize: 13, fontWeight: 600,
           display: "flex", alignItems: "center", gap: 6,
         }}>
-          <CheckCircle2 size={14} />
+          <CheckCircle size={14} />
           Resolution applied: {resolved}
         </div>
       ) : (
@@ -281,7 +281,7 @@ export default function DisputeResolutionCenter() {
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 32 }}>
           <MetricCard label="Active Disputes" value="3" trend={0} color={D.amber} gradient={D.gradAmber} icon={<Scale size={18} color={D.amber} />} />
-          <MetricCard label="Resolved This Month" value="8" trend={14} color={D.green} gradient={D.gradGreen} icon={<CheckCircle2 size={18} color={D.green} />} />
+          <MetricCard label="Resolved This Month" value="8" trend={14} color={D.green} gradient={D.gradGreen} icon={<CheckCircle size={18} color={D.green} />} />
           <MetricCard label="Avg Resolution Time" value="2.4 days" sub="target: 5 days" trend={8} color={D.cyan} gradient={D.gradCyan} icon={<Clock size={18} color={D.cyan} />} />
           <MetricCard label="Customer Satisfaction" value="4.7 / 5" trend={3} color={D.purple} gradient={D.gradPurple} icon={<Star size={18} color={D.purple} />} />
         </div>
@@ -318,7 +318,7 @@ export default function DisputeResolutionCenter() {
         {/* Resolution History */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-            <CheckCircle2 size={18} color={D.green} />
+            <CheckCircle size={18} color={D.green} />
             <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: D.text }}>Resolution History</h2>
             <span style={{ fontSize: 13, color: D.muted }}>Last 10 resolved</span>
           </div>

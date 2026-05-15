@@ -644,6 +644,10 @@ const TrustyProCoppell = lazy(() => import('./pages/trustypro/TrustyProCoppell')
 const TrustyProAddison = lazy(() => import('./pages/trustypro/TrustyProAddison'));
 const TrustyProFarmersBranch = lazy(() => import('./pages/trustypro/TrustyProFarmersBranch'));
 const TrustyProUniversityPark = lazy(() => import('./pages/trustypro/TrustyProUniversityPark'));
+const TrustyProSachse = lazy(() => import('./pages/trustypro/TrustyProSachse'));
+const TrustyProRowlett = lazy(() => import('./pages/trustypro/TrustyProRowlett'));
+const TrustyProBalchSprings = lazy(() => import('./pages/trustypro/TrustyProBalchSprings'));
+const TrustyProSunnyvale = lazy(() => import('./pages/trustypro/TrustyProSunnyvale'));
 const TrustyProNorthDallas = lazy(() => import('./pages/trustypro/TrustyProNorthDallas'));
 const TrustyProPrestonHollow = lazy(() => import('./pages/trustypro/TrustyProPrestonHollow'));
 const TrustyProLakeHighlands = lazy(() => import('./pages/trustypro/TrustyProLakeHighlands'));
@@ -1092,6 +1096,10 @@ function Router() {
       <Route path="/trustypro/desoto" component={TrustyProDeSoto} />
       <Route path="/trustypro/duncanville" component={TrustyProDuncanville} />
       <Route path="/trustypro/lancaster" component={TrustyProLancaster} />
+      <Route path="/trustypro/sachse" component={TrustyProSachse} />
+      <Route path="/trustypro/rowlett" component={TrustyProRowlett} />
+      <Route path="/trustypro/balch-springs" component={TrustyProBalchSprings} />
+      <Route path="/trustypro/sunnyvale" component={TrustyProSunnyvale} />
       <Route path="/trustypro/north-dallas" component={TrustyProNorthDallas} />
       <Route path="/trustypro/preston-hollow" component={TrustyProPrestonHollow} />
       <Route path="/trustypro/lake-highlands" component={TrustyProLakeHighlands} />

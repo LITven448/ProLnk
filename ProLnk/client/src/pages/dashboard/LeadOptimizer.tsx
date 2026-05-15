@@ -5,7 +5,7 @@ import {
 } from "recharts";
 import {
   Zap, Clock, TrendingUp, Camera, Bell, Target,
-  CheckCircle2, ChevronRight, Star, MessageSquare,
+  CheckCircle, ChevronRight, Star, MessageSquare,
   Calendar, MapPin, AlertCircle,
 } from "lucide-react";
 
@@ -311,7 +311,7 @@ export default function LeadOptimizer() {
                 transition: "background 0.2s",
               }}
             >
-              {notifEnabled ? <><CheckCircle2 size={14} /> Enabled</> : <>Enable</>}
+              {notifEnabled ? <><CheckCircle size={14} /> Enabled</> : <>Enable</>}
             </button>
           </div>
         </div>

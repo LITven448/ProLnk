@@ -1,241 +1,213 @@
-import type React from "react";
 import { useState } from "react";
-import AdminLayout, { T, BADGE_GRADIENTS, FONT } from "@/components/AdminLayout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
-  PieChart, Pie, Cell,
-} from "recharts";
-import { Filter, TrendingDown, Users, MousePointer, CheckCircle, Activity, Eye } from "lucide-react";
+import AdminLayout from "@/components/AdminLayout";
+import { D, DCard, MetricCard, SectionHeader, BarChart, DonutChart, StatusBadge } from "@/components/DashboardShared";
+import { Filter, TrendingDown, ArrowRight, Beaker, Users } from "lucide-react";
 
 const FUNNEL_STAGES = [
-  { label: "Site Visitors",    value: 12400, icon: Eye,          color: T.accent },
-  { label: "Waitlist Signups", value: 847,   icon: MousePointer, color: T.blue },
-  { label: "Applications",     value: 412,   icon: Users,        color: T.purple },
-  { label: "Onboarded",        value: 198,   icon: CheckCircle,  color: T.green },
-  { label: "Active",           value: 147,   icon: Activity,     color: T.amber },
+  { stage: "Visitor",   count: 18420, color: D.blue   },
+  { stage: "Waitlist",  count: 4127,  color: D.cyan   },
+  { stage: "Applied",   count: 1863,  color: D.teal   },
+  { stage: "Approved",  count: 892,   color: D.green  },
+  { stage: "Active",    count: 614,   color: D.lime   },
 ];
 
 const DROPOFF = [
-  { from: "Visitors → Signups",      lost: 11553, pct: "93.2%", reason: "Low intent / just browsing" },
-  { from: "Signups → Applications",  lost: 435,   pct: "51.4%", reason: "Application friction / form length" },
-  { from: "Applications → Onboarded",lost: 214,   pct: "51.9%", reason: "Awaiting approval / slow review" },
-  { from: "Onboarded → Active",       lost: 51,    pct: "25.8%", reason: "No first job posted yet" },
+  { from: "Visitor → Waitlist",  entered: 18420, dropped: 14293, cr: 22.4, delta: 3.1  },
+  { from: "Waitlist → Applied",  entered: 4127,  dropped: 2264,  cr: 45.1, delta: -1.8 },
+  { from: "Applied → Approved",  entered: 1863,  dropped: 971,   cr: 47.9, delta: 5.4  },
+  { from: "Approved → Active",   entered: 892,   dropped: 278,   cr: 68.8, delta: 2.2  },
 ];
 
-const TRAFFIC_SOURCES = [
-  { name: "Organic",  value: 44, color: T.green },
-  { name: "Referral", value: 28, color: T.accent },
-  { name: "Direct",   value: 18, color: T.blue },
-  { name: "Paid",     value: 10, color: T.amber },
+const AB_TESTS = [
+  {
+    name: "Waitlist CTA Copy",
+    variantA: { label: "Join Waitlist", cr: 19.2 },
+    variantB: { label: "Claim Your Spot", cr: 23.8 },
+    winner: "B",
+    lift: 24,
+    status: "Complete",
+    n: "6,240 visitors",
+  },
+  {
+    name: "Signup Form Length",
+    variantA: { label: "5-field form", cr: 44.2 },
+    variantB: { label: "3-field form", cr: 51.7 },
+    winner: "B",
+    lift: 17,
+    status: "Complete",
+    n: "3,812 waitlist",
+  },
+  {
+    name: "Email Subject Line",
+    variantA: { label: "Confirmation email", cr: 34.1 },
+    variantB: { label: "Personalized subject", cr: 38.6 },
+    winner: "B",
+    lift: 13,
+    status: "Running",
+    n: "1,940 signups",
+  },
 ];
 
-const WEEKLY_TREND = [
-  { week: "Mar 24", conversions: 48 },
-  { week: "Mar 31", conversions: 61 },
-  { week: "Apr 7",  conversions: 55 },
-  { week: "Apr 14", conversions: 72 },
-  { week: "Apr 21", conversions: 84 },
-  { week: "Apr 28", conversions: 91 },
-  { week: "May 5",  conversions: 103 },
-  { week: "May 12", conversions: 118 },
+const CHANNEL_DATA = [
+  { label: "Organic Search", value: 38, color: D.cyan   },
+  { label: "Direct",         value: 24, color: D.blue   },
+  { label: "Referral",       value: 18, color: D.green  },
+  { label: "Social",         value: 13, color: D.purple },
+  { label: "Paid",           value: 7,  color: D.amber  },
 ];
-
-const CARD: React.CSSProperties = {
-  background: T.surface,
-  borderRadius: 16,
-  border: `1px solid ${T.border}`,
-  boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-  fontFamily: FONT,
-};
-
-function conversionRate(from: number, to: number) {
-  return ((to / from) * 100).toFixed(1) + "%";
-}
-
-const MAX_VAL = FUNNEL_STAGES[0].value;
 
 export default function ConversionFunnel() {
-  const [hoveredStage, setHoveredStage] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
+  const maxCount = FUNNEL_STAGES[0].count;
 
   return (
     <AdminLayout>
-      <div style={{ background: T.bg, minHeight: "100vh", padding: "24px 32px", fontFamily: FONT }}>
-
-        {/* Header */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
-          <div style={{ width: 44, height: 44, borderRadius: 12, background: BADGE_GRADIENTS.cyan, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Filter style={{ color: "#fff", width: 20, height: 20 }} />
-          </div>
+      <div className="p-6 space-y-6" style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
+        <div className="flex items-center justify-between">
           <div>
-            <h1 style={{ fontSize: 22, fontWeight: 700, color: T.text, margin: 0 }}>Conversion Funnel</h1>
-            <p style={{ fontSize: 13, color: T.muted, margin: 0 }}>End-to-end conversion analytics · Last 90 days</p>
+            <h1 className="text-2xl font-black flex items-center gap-2" style={{ color: D.text }}>
+              <Filter className="w-6 h-6" style={{ color: D.cyan }} />
+              Conversion Funnel
+            </h1>
+            <p className="text-sm mt-1" style={{ color: D.muted }}>Visitor → Waitlist → Applied → Approved → Active</p>
+          </div>
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold" style={{ backgroundColor: `${D.cyan}15`, color: D.cyan, border: `1px solid ${D.cyan}30` }}>
+            <Users className="w-3.5 h-3.5" />
+            Live Data · May 2026
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 24 }}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricCard label="Total Visitors"    value="18,420"  sub="Last 30 days" trend={14}  color={D.blue}  icon={<Users className="w-4 h-4" />} sparkline={[12,14,15,16,17,18]} />
+          <MetricCard label="Waitlist Signups"  value="4,127"   sub="22.4% CVR"    trend={8}   color={D.cyan}  icon={<Filter className="w-4 h-4" />} />
+          <MetricCard label="Active Partners"   value="614"     sub="68.8% close"  trend={22}  color={D.green} icon={<TrendingDown className="w-4 h-4" />} />
+          <MetricCard label="Overall CVR"       value="3.3%"    sub="Visitor→Active" trend={5}  color={D.lime}  icon={<ArrowRight className="w-4 h-4" />} />
+        </div>
 
-          {/* LEFT: Funnel + dropoff */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-
-            {/* Funnel visualization */}
-            <div style={{ ...CARD, padding: 28 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 24 }}>Partner Acquisition Funnel</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {FUNNEL_STAGES.map((stage, i) => {
-                  const pct = (stage.value / MAX_VAL) * 100;
-                  const convRate = i > 0 ? conversionRate(FUNNEL_STAGES[i - 1].value, stage.value) : null;
-                  const Icon = stage.icon;
-                  return (
-                    <div key={stage.label}>
-                      {convRate && (
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 0 6px 20px" }}>
-                          <TrendingDown style={{ width: 14, height: 14, color: T.muted }} />
-                          <span style={{ fontSize: 12, color: T.muted }}>
-                            {convRate} conversion rate
-                          </span>
-                          <span style={{ fontSize: 11, color: T.dim, marginLeft: "auto", paddingRight: 4 }}>
-                            −{(FUNNEL_STAGES[i-1].value - stage.value).toLocaleString()} dropped
-                          </span>
-                        </div>
-                      )}
-                      <div
-                        style={{ cursor: "pointer" }}
-                        onMouseEnter={() => setHoveredStage(i)}
-                        onMouseLeave={() => setHoveredStage(null)}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
-                          <Icon style={{ width: 16, height: 16, color: stage.color, flexShrink: 0 }} />
-                          <span style={{ fontSize: 13, fontWeight: 600, color: T.text, minWidth: 140 }}>{stage.label}</span>
-                          <span style={{ fontSize: 18, fontWeight: 800, color: stage.color, marginLeft: "auto" }}>
-                            {stage.value.toLocaleString()}
-                          </span>
-                        </div>
-                        <div style={{ background: T.bg, borderRadius: 8, height: 32, overflow: "hidden" }}>
-                          <div style={{
-                            width: `${pct}%`,
-                            height: "100%",
-                            background: stage.color,
-                            borderRadius: 8,
-                            opacity: hoveredStage === i ? 1 : 0.8,
-                            transition: "width 0.6s ease, opacity 0.2s",
-                            display: "flex",
-                            alignItems: "center",
-                            paddingLeft: 12,
-                          }}>
-                            <span style={{ fontSize: 12, fontWeight: 700, color: "#fff" }}>
-                              {pct.toFixed(1)}% of visitors
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+        {/* Funnel visualization */}
+        <DCard>
+          <SectionHeader title="Funnel Stages" subtitle="Count and width proportional to stage volume" />
+          <div className="space-y-3 mt-4">
+            {FUNNEL_STAGES.map((s, i) => {
+              const width = (s.count / maxCount) * 100;
+              const prevCount = i > 0 ? FUNNEL_STAGES[i - 1].count : s.count;
+              const dropPct = i > 0 ? (((prevCount - s.count) / prevCount) * 100).toFixed(1) : null;
+              const isHovered = hovered === i;
+              return (
+                <div key={s.stage}>
+                  {i > 0 && (
+                    <div className="flex items-center gap-2 py-1 px-2" style={{ color: D.red }}>
+                      <TrendingDown className="w-3 h-3" />
+                      <span className="text-xs font-semibold">−{dropPct}% drop-off ({(prevCount - s.count).toLocaleString()} lost)</span>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                  )}
+                  <div
+                    className="cursor-pointer rounded-xl transition-all"
+                    style={{
+                      width: `${Math.max(width, 20)}%`,
+                      minWidth: 120,
+                      backgroundColor: isHovered ? `${s.color}30` : `${s.color}18`,
+                      border: `1px solid ${isHovered ? s.color + "80" : s.color + "30"}`,
+                      padding: "12px 16px",
+                    }}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold" style={{ color: s.color }}>{s.stage}</span>
+                      <span className="text-lg font-black" style={{ color: D.text }}>{s.count.toLocaleString()}</span>
+                    </div>
+                    <div className="mt-1 h-1.5 rounded-full" style={{ backgroundColor: `${s.color}20` }}>
+                      <div className="h-full rounded-full" style={{ width: "100%", backgroundColor: s.color, opacity: 0.6 }} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </DCard>
 
-            {/* Drop-off table */}
-            <div style={{ ...CARD, padding: 0, overflow: "hidden" }}>
-              <div style={{ padding: "20px 24px 12px", borderBottom: `1px solid ${T.border}` }}>
-                <div style={{ fontSize: 15, fontWeight: 700, color: T.text }}>Drop-off Analysis</div>
-              </div>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Drop-off table */}
+          <DCard>
+            <SectionHeader title="Drop-off Analysis" subtitle="Conversion rate by transition step" />
+            <div className="mt-3 overflow-x-auto rounded-xl" style={{ border: `1px solid ${D.border}` }}>
+              <table className="w-full text-sm">
                 <thead>
-                  <tr style={{ background: T.bg }}>
-                    {["Transition", "Lost", "Drop Rate", "Top Reason"].map(h => (
-                      <th key={h} style={{ padding: "10px 16px", textAlign: "left", fontSize: 11, fontWeight: 700, color: T.muted, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                  <tr style={{ borderBottom: `1px solid ${D.border}`, backgroundColor: D.surface }}>
+                    {["Transition", "Entered", "Dropped", "CR%", "Δ30d"].map((h, i) => (
+                      <th key={i} className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-left" style={{ color: D.muted }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {DROPOFF.map((row, i) => (
-                    <tr key={i} style={{ borderTop: `1px solid ${T.border}` }}>
-                      <td style={{ padding: "12px 16px", fontSize: 13, fontWeight: 600, color: T.text }}>{row.from}</td>
-                      <td style={{ padding: "12px 16px", fontSize: 13, color: T.red, fontWeight: 700 }}>−{row.lost.toLocaleString()}</td>
-                      <td style={{ padding: "12px 16px" }}>
-                        <span style={{ background: "#FFF0F0", color: T.red, padding: "2px 10px", borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{row.pct}</span>
+                    <tr key={i} style={{ borderBottom: i < DROPOFF.length - 1 ? `1px solid ${D.border}` : "none", backgroundColor: i % 2 === 0 ? D.card : D.surface }}>
+                      <td className="px-4 py-3 text-xs font-medium" style={{ color: D.text }}>{row.from}</td>
+                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.muted }}>{row.entered.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-xs font-mono" style={{ color: D.red }}>{row.dropped.toLocaleString()}</td>
+                      <td className="px-4 py-3 text-xs font-bold" style={{ color: D.green }}>{row.cr}%</td>
+                      <td className="px-4 py-3 text-xs font-semibold" style={{ color: row.delta >= 0 ? D.green : D.red }}>
+                        {row.delta >= 0 ? "+" : ""}{row.delta}%
                       </td>
-                      <td style={{ padding: "12px 16px", fontSize: 12, color: T.muted }}>{row.reason}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          </DCard>
 
-            {/* Weekly trend */}
-            <div style={{ ...CARD, padding: 24 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 20 }}>Weekly Conversions (Last 8 Weeks)</div>
-              <ResponsiveContainer width="100%" height={200}>
-                <BarChart data={WEEKLY_TREND} margin={{ top: 0, right: 4, bottom: 0, left: -20 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
-                  <XAxis dataKey="week" tick={{ fontSize: 11, fill: T.muted }} />
-                  <YAxis tick={{ fontSize: 11, fill: T.muted }} />
-                  <Tooltip
-                    contentStyle={{ background: T.surface, border: `1px solid ${T.border}`, borderRadius: 8, fontSize: 12 }}
-                    cursor={{ fill: T.accentBg }}
-                  />
-                  <Bar dataKey="conversions" fill={T.blue} radius={[4, 4, 0, 0]} name="Conversions" />
-                </BarChart>
-              </ResponsiveContainer>
+          {/* Channel attribution donut */}
+          <DCard>
+            <SectionHeader title="Channel Attribution" subtitle="Waitlist signups by traffic source" />
+            <DonutChart data={CHANNEL_DATA} size={160} />
+            <div className="mt-3 space-y-2">
+              {CHANNEL_DATA.map(ch => (
+                <div key={ch.label} className="flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: ch.color }} />
+                    <span style={{ color: D.muted }}>{ch.label}</span>
+                  </div>
+                  <span className="font-bold" style={{ color: D.text }}>{ch.value}%</span>
+                </div>
+              ))}
             </div>
-          </div>
+          </DCard>
+        </div>
 
-          {/* RIGHT: Traffic sources donut + summary stats */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-
-            {/* Summary stat cards */}
-            {[
-              { label: "Overall Conversion", value: "1.19%", sub: "Visitors → Active", color: T.green },
-              { label: "Avg Time to Active", value: "11 days", sub: "From signup to first job", color: T.blue },
-              { label: "Waitlist → App Rate", value: "48.6%", sub: "Strong intent signal", color: T.accent },
-              { label: "Onboard → Active",    value: "74.2%", sub: "Final activation rate", color: T.amber },
-            ].map(s => (
-              <div key={s.label} style={{ ...CARD, padding: "20px 24px" }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: T.muted, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 6 }}>{s.label}</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: 12, color: T.dim, marginTop: 2 }}>{s.sub}</div>
+        {/* A/B Tests */}
+        <DCard>
+          <SectionHeader title="A/B Test Results" subtitle="Last 3 experiments — conversion rate lift" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            {AB_TESTS.map(test => (
+              <div key={test.name} className="rounded-xl p-4 space-y-3" style={{ backgroundColor: D.surface, border: `1px solid ${D.border}` }}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Beaker className="w-4 h-4" style={{ color: D.purple }} />
+                    <span className="text-sm font-bold" style={{ color: D.text }}>{test.name}</span>
+                  </div>
+                  <StatusBadge status={test.status === "Complete" ? "success" : "pending"} />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {[test.variantA, test.variantB].map((v, vi) => {
+                    const isWinner = (vi === 0 ? "A" : "B") === test.winner;
+                    return (
+                      <div key={vi} className="rounded-lg p-3" style={{ backgroundColor: isWinner ? `${D.green}15` : D.card, border: `1px solid ${isWinner ? D.green + "40" : D.border}` }}>
+                        <div className="text-xs font-bold mb-1" style={{ color: isWinner ? D.green : D.muted }}>Variant {vi === 0 ? "A" : "B"} {isWinner ? "✓" : ""}</div>
+                        <div className="text-xs" style={{ color: D.dim }}>{v.label}</div>
+                        <div className="text-lg font-black mt-1" style={{ color: isWinner ? D.green : D.text }}>{v.cr}%</div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span style={{ color: D.muted }}>{test.n}</span>
+                  <span className="font-bold" style={{ color: D.lime }}>+{test.lift}% lift</span>
+                </div>
               </div>
             ))}
-
-            {/* Traffic source donut */}
-            <div style={{ ...CARD, padding: 24 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: T.text, marginBottom: 16 }}>Traffic Sources</div>
-              <ResponsiveContainer width="100%" height={200}>
-                <PieChart>
-                  <Pie
-                    data={TRAFFIC_SOURCES}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={55}
-                    outerRadius={80}
-                    paddingAngle={3}
-                    dataKey="value"
-                  >
-                    {TRAFFIC_SOURCES.map((entry, i) => (
-                      <Cell key={i} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip
-                    formatter={(v: number) => [`${v}%`, ""]}
-                    contentStyle={{ background: T.surface, border: `1px solid ${T.border}`, borderRadius: 8, fontSize: 12 }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 8 }}>
-                {TRAFFIC_SOURCES.map(s => (
-                  <div key={s.name} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <div style={{ width: 10, height: 10, borderRadius: 3, background: s.color, flexShrink: 0 }} />
-                    <span style={{ fontSize: 13, color: T.text, flex: 1 }}>{s.name}</span>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{s.value}%</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
-        </div>
+        </DCard>
       </div>
     </AdminLayout>
   );

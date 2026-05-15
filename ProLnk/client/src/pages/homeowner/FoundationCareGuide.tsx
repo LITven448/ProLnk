@@ -3,7 +3,7 @@ import HomeownerLayout from "@/components/HomeownerLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  Home, CheckCircle2, AlertTriangle, XCircle, ChevronDown, ChevronUp,
+  Home, CheckCircle, AlertTriangle, XCircle, ChevronDown, ChevronUp,
   Droplets, Sun, Leaf, Snowflake, DoorOpen, Layers, MoveHorizontal,
   Hammer, TreeDeciduous, Shield, TrendingDown,
 } from "lucide-react";
@@ -117,7 +117,7 @@ const SEVERITY_COLORS: Record<string, string> = {
 };
 
 function StatusIcon({ status }: { status: "ok" | "warn" | "fail" }) {
-  if (status === "ok") return <CheckCircle2 size={20} color="#22C55E" />;
+  if (status === "ok") return <CheckCircle size={20} color="#22C55E" />;
   if (status === "warn") return <AlertTriangle size={20} color="#F59E0B" />;
   return <XCircle size={20} color="#EF4444" />;
 }
@@ -190,7 +190,7 @@ export default function FoundationCareGuide() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                  <CheckCircle2 size={20} color="#16A34A" />
+                  <CheckCircle size={20} color="#16A34A" />
                   <span style={{ fontWeight: 700, color: "#15803D", fontSize: 16 }}>Foundation Status: Good</span>
                 </div>
                 <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>

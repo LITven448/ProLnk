@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   CheckSquare, Clock, AlertTriangle, Plus, Bot,
-  CheckCircle2, Circle, Loader2, Zap, User, X,
+  CheckCircle, Circle, Loader2, Zap, User, X,
 } from "lucide-react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
@@ -64,7 +64,7 @@ const INIT_TASKS: Task[] = [
 const COLUMNS: { key: Status; label: string; icon: React.ElementType; accent: string }[] = [
   { key: "todo",       label: "Todo",        icon: Circle,       accent: T.muted  },
   { key: "inprogress", label: "In Progress", icon: Loader2,      accent: T.blue   },
-  { key: "done",       label: "Done",        icon: CheckCircle2, accent: T.green  },
+  { key: "done",       label: "Done",        icon: CheckCircle, accent: T.green  },
 ];
 
 const FILTERS = ["All", "Critical", "High Priority", "Automated", "Overdue"] as const;
@@ -295,7 +295,7 @@ export default function TaskManager() {
                           onClick={() => completeTask(task.id)}
                           style={{ flex: 1, padding: "5px 0", borderRadius: 8, border: `1px solid ${T.green}40`, background: `${T.green}10`, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.green, fontFamily: FONT }}
                         >
-                          <CheckCircle2 style={{ width: 12, height: 12 }} /> Complete
+                          <CheckCircle style={{ width: 12, height: 12 }} /> Complete
                         </button>
                         <Link href="/admin/agents">
                           <button style={{ flex: 1, padding: "5px 0", borderRadius: 8, border: `1px solid ${T.border}`, background: T.bg, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4, fontSize: 11, fontWeight: 600, color: T.muted, fontFamily: FONT }}>

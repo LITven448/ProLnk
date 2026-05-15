@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  Shield, CheckCircle2, AlertTriangle, XCircle, ChevronRight,
+  Shield, CheckCircle, AlertTriangle, XCircle, ChevronRight,
   Lock, Camera, DoorOpen, Bell, Zap, ExternalLink,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -113,7 +113,7 @@ const RECOMMENDATIONS: Recommendation[] = [
 ];
 
 const STATUS_CONFIG: Record<CheckStatus, { icon: JSX.Element; color: string; label: string }> = {
-  ok: { icon: <CheckCircle2 className="w-4 h-4" />, color: D.green, label: "Good" },
+  ok: { icon: <CheckCircle className="w-4 h-4" />, color: D.green, label: "Good" },
   warn: { icon: <AlertTriangle className="w-4 h-4" />, color: D.amber, label: "Partial" },
   missing: { icon: <XCircle className="w-4 h-4" />, color: D.red, label: "Missing" },
 };

@@ -598,6 +598,10 @@ const TrustyProDallas = lazy(() => import("./pages/TrustyProDallas"));
 const TrustyProGarland = lazy(() => import("./pages/TrustyProGarland"));
 const TrustyProProsper = lazy(() => import("./pages/TrustyProProsper"));
 const TrustyProCelina = lazy(() => import("./pages/TrustyProCelina"));
+const TrustyProLewisville = lazy(() => import("./pages/TrustyProLewisville"));
+const TrustyProCarrollton = lazy(() => import("./pages/TrustyProCarrollton"));
+const TrustyProRichardson = lazy(() => import("./pages/TrustyProRichardson"));
+const TrustyProMesquite = lazy(() => import("./pages/TrustyProMesquite"));
 const TrustyProEuless = lazy(() => import("./pages/trustypro/TrustyProEuless"));
 const TrustyProBedford = lazy(() => import("./pages/trustypro/TrustyProBedford"));
 const TrustyProHurst = lazy(() => import("./pages/trustypro/TrustyProHurst"));
@@ -1313,6 +1317,10 @@ function Router() {
       <Route path="/trustypro/garland" component={TrustyProGarland} />
       <Route path="/trustypro/prosper" component={TrustyProProsper} />
       <Route path="/trustypro/celina" component={TrustyProCelina} />
+      <Route path="/trustypro/lewisville" component={TrustyProLewisville} />
+      <Route path="/trustypro/carrollton" component={TrustyProCarrollton} />
+      <Route path="/trustypro/richardson" component={TrustyProRichardson} />
+      <Route path="/trustypro/mesquite" component={TrustyProMesquite} />
       <Route path="/trustypro/euless" component={TrustyProEuless} />
       <Route path="/trustypro/bedford" component={TrustyProBedford} />
       <Route path="/trustypro/hurst" component={TrustyProHurst} />

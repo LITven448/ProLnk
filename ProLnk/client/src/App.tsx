@@ -644,6 +644,10 @@ const TrustyProCoppell = lazy(() => import('./pages/trustypro/TrustyProCoppell')
 const TrustyProAddison = lazy(() => import('./pages/trustypro/TrustyProAddison'));
 const TrustyProFarmersBranch = lazy(() => import('./pages/trustypro/TrustyProFarmersBranch'));
 const TrustyProUniversityPark = lazy(() => import('./pages/trustypro/TrustyProUniversityPark'));
+const TrustyProNorthDallas = lazy(() => import('./pages/trustypro/TrustyProNorthDallas'));
+const TrustyProPrestonHollow = lazy(() => import('./pages/trustypro/TrustyProPrestonHollow'));
+const TrustyProLakeHighlands = lazy(() => import('./pages/trustypro/TrustyProLakeHighlands'));
+const TrustyProOakCliff = lazy(() => import('./pages/trustypro/TrustyProOakCliff'));
 
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
@@ -1088,6 +1092,10 @@ function Router() {
       <Route path="/trustypro/desoto" component={TrustyProDeSoto} />
       <Route path="/trustypro/duncanville" component={TrustyProDuncanville} />
       <Route path="/trustypro/lancaster" component={TrustyProLancaster} />
+      <Route path="/trustypro/north-dallas" component={TrustyProNorthDallas} />
+      <Route path="/trustypro/preston-hollow" component={TrustyProPrestonHollow} />
+      <Route path="/trustypro/lake-highlands" component={TrustyProLakeHighlands} />
+      <Route path="/trustypro/oak-cliff" component={TrustyProOakCliff} />
       <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />

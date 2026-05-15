@@ -2,7 +2,7 @@
  * Wave 115 — Campaign Center
  * Seasonal homeowner check-in automation + Partner win-back 60-day sequence
  */
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -10,7 +10,8 @@ import {
   Megaphone, Calendar, Users, RefreshCw, Play, Pause,
   CheckCircle, Clock, AlertCircle, Leaf, Snowflake,
   Sun, CloudRain, Heart, TrendingUp, Mail, MessageSquare,
-  ChevronRight, BarChart2, UserX, Zap,
+  ChevronRight, BarChart2, UserX, Zap, Trophy, Star,
+  ChevronDown, PlusCircle, Send, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -91,13 +92,13 @@ const SEASONAL_CAMPAIGNS = [
 
 // ── Win-Back Sequence Config ──────────────────────────────────────────────────
 const WINBACK_SEQUENCE = [
-  { day: 0,  channel: "Email", icon: Mail,         color: "#6B7280", subject: "We miss you, {name}",                  preview: "It's been 60 days since your last job on ProLnk. Here's what you've been missing…" },
+  { day: 0,  channel: "Email", icon: Mail,          color: "#6B7280", subject: "We miss you, {name}",                  preview: "It's been 60 days since your last job on ProLnk. Here's what you've been missing…" },
   { day: 7,  channel: "SMS",   icon: MessageSquare, color: "#0891b2", subject: "Quick check-in",                       preview: "Hey {name} — any questions about ProLnk? Reply and we'll help you get back on track." },
-  { day: 14, channel: "Email", icon: Mail,         color: "#6B7280", subject: "Your territory is heating up",          preview: "{count} new leads in {city} this week. Your competitors are claiming them. Here's how to get back in." },
+  { day: 14, channel: "Email", icon: Mail,          color: "#6B7280", subject: "Your territory is heating up",          preview: "{count} new leads in {city} this week. Your competitors are claiming them. Here's how to get back in." },
   { day: 21, channel: "SMS",   icon: MessageSquare, color: "#0891b2", subject: "Exclusive offer for you",              preview: "We're waiving your next month's Pro fee if you complete 1 job this week. Tap to activate." },
-  { day: 30, channel: "Email", icon: Mail,         color: "#6B7280", subject: "ROI snapshot: what you've left behind", preview: "Based on your service area, you've missed an estimated ${amount} in commissions. Here's how to recover." },
+  { day: 30, channel: "Email", icon: Mail,          color: "#6B7280", subject: "ROI snapshot: what you've left behind", preview: "Based on your service area, you've missed an estimated ${amount} in commissions. Here's how to recover." },
   { day: 45, channel: "SMS",   icon: MessageSquare, color: "#0891b2", subject: "Final check-in",                       preview: "Last message from us — we'd love to have you back. Reply STOP to unsubscribe, or RESUME to reactivate." },
-  { day: 60, channel: "Email", icon: Mail,         color: "#6B7280", subject: "Account paused — reactivate anytime",  preview: "Your ProLnk account has been paused. Click here to reactivate and reclaim your territory." },
+  { day: 60, channel: "Email", icon: Mail,          color: "#6B7280", subject: "Account paused — reactivate anytime",  preview: "Your ProLnk account has been paused. Click here to reactivate and reclaim your territory." },
 ];
 
 // ── Campaign Stats (mock from DB) ─────────────────────────────────────────────
@@ -115,11 +116,84 @@ const STATUS_BADGE: Record<string, { label: string; color: string; bg: string }>
   draft:     { label: "Draft",      color: "#6B7280", bg: "#F9FAFB" },
 };
 
+// ── Live ticker items ─────────────────────────────────────────────────────────
+const TICKER_ITEMS = [
+  "🟢 Summer HVAC campaign sent 289 messages today",
+  "📈 Spring Check-In: 34% open rate — above industry avg",
+  "🔥 23 win-back candidates eligible now",
+  "⚡ DFW North segment: 94 active homeowners",
+  "✅ A/B Test: Subject line B wins — 41% vs 29% open rate",
+  "📬 Win-back Day-7 SMS batch delivered to 18 partners",
+  "🌡️ Heat advisory detected in Dallas — HVAC campaign primed",
+  "🏆 HVAC Only segment: 67 partners, 78% engagement",
+];
+
+// ── Audience segments ─────────────────────────────────────────────────────────
+const AUDIENCE_SEGMENTS = [
+  { label: "All Partners",  count: 214, color: "#0891b2" },
+  { label: "HVAC Only",     count: 67,  color: "#7C3AED" },
+  { label: "DFW North",     count: 94,  color: "#059669" },
+  { label: "At-Risk",       count: 23,  color: "#d97706" },
+];
+
+// ── A/B Test results ──────────────────────────────────────────────────────────
+const AB_TESTS = [
+  {
+    name: "Summer HVAC Subject Line",
+    variantA: { label: "\"Is your AC ready?\"",             openRate: 29, sent: 145 },
+    variantB: { label: "\"Beat the Texas heat — act now\"", openRate: 41, sent: 144 },
+    winner: "B",
+    status: "complete",
+  },
+  {
+    name: "Win-Back Day-0 CTA",
+    variantA: { label: "\"See what you missed\"",           openRate: 22, sent: 52 },
+    variantB: { label: "\"Reclaim your territory\"",        openRate: 31, sent: 51 },
+    winner: "B",
+    status: "complete",
+  },
+  {
+    name: "Fall Storm Prep SMS Timing",
+    variantA: { label: "8 AM send",                         openRate: 36, sent: 98 },
+    variantB: { label: "12 PM send",                        openRate: 44, sent: 99 },
+    winner: "B",
+    status: "complete",
+  },
+];
+
+// ── 7-day schedule (campaign blocks) ─────────────────────────────────────────
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const SCHEDULE_BLOCKS: Record<string, { label: string; color: string }[]> = {
+  Mon: [{ label: "Summer HVAC Email", color: "#d97706" }, { label: "Win-Back Day-0", color: "#6B7280" }],
+  Tue: [],
+  Wed: [{ label: "Win-Back Day-7 SMS", color: "#0891b2" }],
+  Thu: [{ label: "Referral Nudge", color: "#7C3AED" }],
+  Fri: [{ label: "Summer HVAC SMS", color: "#d97706" }],
+  Sat: [],
+  Sun: [{ label: "Weekly Digest", color: "#059669" }],
+};
+
+// ── Flow templates ────────────────────────────────────────────────────────────
+const FLOW_TEMPLATES = [
+  "Seasonal Check-In (3-touch)",
+  "Win-Back Re-Engagement (7-touch)",
+  "Tier Milestone Congrats",
+  "Referral Nudge (2-touch)",
+  "NPS Follow-Up",
+];
+
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function CampaignCenter() {
-  const [activeTab, setActiveTab] = useState<"seasonal" | "winback">("seasonal");
+  const [activeTab, setActiveTab]             = useState<"seasonal" | "winback" | "tools">("seasonal");
   const [expandedCampaign, setExpandedCampaign] = useState<string | null>(null);
-  const [winbackStatus, setWinbackStatus] = useState<"active" | "paused">("active");
+  const [winbackStatus, setWinbackStatus]     = useState<"active" | "paused">("active");
+  const [activeSegment, setActiveSegment]     = useState(0);
+  const [showFlowForm, setShowFlowForm]       = useState(false);
+  const [flowTrigger, setFlowTrigger]         = useState("homeowner_signup");
+  const [flowMsgType, setFlowMsgType]         = useState("email");
+  const [flowDelay, setFlowDelay]             = useState("0");
+  const [flowTemplate, setFlowTemplate]       = useState(FLOW_TEMPLATES[0]);
+  const tickerRef = useRef<HTMLDivElement>(null);
 
   // Fetch inactive partners for win-back targeting
   const { data: inactivePartners } = trpc.admin.getInactivePartners.useQuery(
@@ -141,9 +215,37 @@ export default function CampaignCenter() {
     setWinbackStatus("active");
   };
 
+  const handleCreateFlow = () => {
+    toast.success("Automation flow created", {
+      description: `"${flowTemplate}" flow queued — trigger: ${flowTrigger}, delay: ${flowDelay}d, channel: ${flowMsgType}`,
+    });
+    setShowFlowForm(false);
+  };
+
   return (
     <AdminLayout>
     <div className="p-6 max-w-6xl mx-auto space-y-6">
+
+      {/* ── Live Ticker ────────────────────────────────────────────────────── */}
+      <div className="bg-[#0A1628] rounded-xl overflow-hidden flex items-center gap-0">
+        <div className="bg-[#1e3a5f] px-3 py-2 flex items-center gap-1.5 flex-shrink-0">
+          <Zap className="w-3.5 h-3.5 text-yellow-400" />
+          <span className="text-[10px] font-bold text-yellow-300 uppercase tracking-wider">Live</span>
+        </div>
+        <div className="flex-1 overflow-hidden">
+          <div
+            ref={tickerRef}
+            className="flex gap-12 py-2 px-4 text-xs text-gray-300 whitespace-nowrap"
+            style={{ animation: "marquee 40s linear infinite" }}
+          >
+            {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+              <span key={i}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style>{`@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }`}</style>
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -176,9 +278,40 @@ export default function CampaignCenter() {
         })}
       </div>
 
+      {/* ── Audience Segmenter ─────────────────────────────────────────────── */}
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">Audience Segment</p>
+        <div className="flex flex-wrap gap-2">
+          {AUDIENCE_SEGMENTS.map((seg, i) => (
+            <button
+              key={seg.label}
+              onClick={() => setActiveSegment(i)}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border transition-all ${
+                activeSegment === i
+                  ? "text-white border-transparent shadow"
+                  : "bg-gray-50 text-gray-600 border-gray-200 hover:border-gray-300"
+              }`}
+              style={activeSegment === i ? { backgroundColor: seg.color, borderColor: seg.color } : {}}
+            >
+              {seg.label}
+              <span
+                className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+                  activeSegment === i ? "bg-white/20 text-white" : "bg-gray-200 text-gray-600"
+                }`}
+              >
+                {seg.count}
+              </span>
+            </button>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-2">
+          Targeting <span className="font-semibold text-gray-700">{AUDIENCE_SEGMENTS[activeSegment].count} partners</span> in the <span className="font-semibold text-gray-700">{AUDIENCE_SEGMENTS[activeSegment].label}</span> segment
+        </p>
+      </div>
+
       {/* Tabs */}
       <div className="flex gap-1 bg-gray-100 rounded-xl p-1 w-fit">
-        {(["seasonal", "winback"] as const).map((t) => (
+        {(["seasonal", "winback", "tools"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setActiveTab(t)}
@@ -186,7 +319,7 @@ export default function CampaignCenter() {
               activeTab === t ? "bg-white shadow text-gray-900" : "text-gray-500 hover:text-gray-700"
             }`}
           >
-            {t === "seasonal" ? "Seasonal Check-Ins" : "Partner Win-Back"}
+            {t === "seasonal" ? "Seasonal Check-Ins" : t === "winback" ? "Partner Win-Back" : "A/B Tests & Schedule"}
           </button>
         ))}
       </div>
@@ -421,6 +554,182 @@ export default function CampaignCenter() {
               <p className="text-sm text-emerald-600">No partners have been inactive for 60+ days. Win-back sequence is standing by.</p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* ── A/B Tests & Schedule ── */}
+      {activeTab === "tools" && (
+        <div className="space-y-8">
+
+          {/* A/B Test results */}
+          <div>
+            <h3 className="text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-amber-500" /> A/B Test Results
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {AB_TESTS.map((test) => (
+                <div key={test.name} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <p className="text-xs font-bold text-gray-700">{test.name}</p>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">Complete</span>
+                  </div>
+                  {[test.variantA, test.variantB].map((v, vi) => {
+                    const letter = vi === 0 ? "A" : "B";
+                    const isWinner = test.winner === letter;
+                    return (
+                      <div
+                        key={letter}
+                        className={`mb-2 p-3 rounded-xl border ${isWinner ? "border-emerald-300 bg-emerald-50" : "border-gray-100 bg-gray-50"}`}
+                      >
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-1.5">
+                            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isWinner ? "bg-emerald-500 text-white" : "bg-gray-300 text-gray-600"}`}>
+                              {letter}
+                            </span>
+                            {isWinner && <Star className="w-3 h-3 text-amber-500 fill-amber-400" />}
+                            {isWinner && <span className="text-[10px] font-bold text-emerald-700">Winner</span>}
+                          </div>
+                          <span className={`text-sm font-bold ${isWinner ? "text-emerald-700" : "text-gray-500"}`}>{v.openRate}%</span>
+                        </div>
+                        <p className="text-[11px] text-gray-500 italic">{v.label}</p>
+                        <div className="mt-1.5 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                          <div
+                            className={`h-full rounded-full ${isWinner ? "bg-emerald-500" : "bg-gray-400"}`}
+                            style={{ width: `${v.openRate * 2}%` }}
+                          />
+                        </div>
+                        <p className="text-[10px] text-gray-400 mt-1">{v.sent} recipients</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 7-day schedule mini calendar */}
+          <div>
+            <h3 className="text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-[#0891b2]" /> 7-Day Campaign Schedule
+            </h3>
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <div className="grid grid-cols-7 border-b border-gray-100">
+                {DAYS.map((day) => (
+                  <div key={day} className="px-2 py-2.5 text-center text-xs font-bold text-gray-500 border-r last:border-r-0 border-gray-100">
+                    {day}
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-7 divide-x divide-gray-100 min-h-[80px]">
+                {DAYS.map((day) => (
+                  <div key={day} className="p-2 flex flex-col gap-1.5">
+                    {SCHEDULE_BLOCKS[day].map((block, i) => (
+                      <div
+                        key={i}
+                        className="px-1.5 py-1 rounded text-[10px] font-semibold text-white leading-tight"
+                        style={{ backgroundColor: block.color }}
+                      >
+                        {block.label}
+                      </div>
+                    ))}
+                    {SCHEDULE_BLOCKS[day].length === 0 && (
+                      <div className="text-[10px] text-gray-300 text-center mt-2">—</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Create Flow inline form */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                <PlusCircle className="w-4 h-4 text-[#7C3AED]" /> Create Automation Flow
+              </h3>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setShowFlowForm(!showFlowForm)}
+                className="text-xs gap-1"
+              >
+                {showFlowForm ? <><X className="w-3.5 h-3.5" /> Cancel</> : <><PlusCircle className="w-3.5 h-3.5" /> New Flow</>}
+              </Button>
+            </div>
+
+            {showFlowForm && (
+              <div className="bg-white rounded-2xl border border-[#7C3AED]/30 shadow-sm p-5 space-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <label className="text-xs font-semibold text-gray-600 block mb-1">Trigger Event</label>
+                    <select
+                      value={flowTrigger}
+                      onChange={(e) => setFlowTrigger(e.target.value)}
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                    >
+                      <option value="homeowner_signup">Homeowner Signup</option>
+                      <option value="partner_inactive_60">Partner Inactive 60d</option>
+                      <option value="job_completed">Job Completed</option>
+                      <option value="tier_milestone">Tier Milestone</option>
+                      <option value="nps_response">NPS Response</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-gray-600 block mb-1">Message Type</label>
+                    <select
+                      value={flowMsgType}
+                      onChange={(e) => setFlowMsgType(e.target.value)}
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                    >
+                      <option value="email">Email</option>
+                      <option value="sms">SMS</option>
+                      <option value="both">Email + SMS</option>
+                      <option value="push">Push Notification</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-gray-600 block mb-1">Delay (days)</label>
+                    <select
+                      value={flowDelay}
+                      onChange={(e) => setFlowDelay(e.target.value)}
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                    >
+                      {["0","1","3","7","14","21","30"].map((d) => (
+                        <option key={d} value={d}>{d === "0" ? "Immediately" : `${d} days`}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-gray-600 block mb-1">Template</label>
+                    <select
+                      value={flowTemplate}
+                      onChange={(e) => setFlowTemplate(e.target.value)}
+                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40"
+                    >
+                      {FLOW_TEMPLATES.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="bg-gray-50 rounded-xl p-3 text-xs text-gray-500">
+                  <span className="font-semibold text-gray-700">Preview: </span>
+                  When a <span className="font-semibold text-[#7C3AED]">{flowTrigger.replace(/_/g, " ")}</span> event fires,
+                  send a <span className="font-semibold text-[#0891b2]">{flowMsgType}</span> using the{" "}
+                  <span className="font-semibold text-gray-700">"{flowTemplate}"</span> template{" "}
+                  {flowDelay === "0" ? "immediately" : `after ${flowDelay} days`}.
+                </div>
+                <div className="flex justify-end">
+                  <Button
+                    onClick={handleCreateFlow}
+                    className="bg-[#7C3AED] hover:bg-[#6d28d9] text-white gap-2"
+                  >
+                    <Send className="w-3.5 h-3.5" /> Create Flow
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

@@ -901,8 +901,8 @@ export default function TrustyProHome() {
           <img
             src={CDN.heroModel}
             alt="Architectural house model"
-            className="w-full max-w-2xl rounded-t-3xl shadow-2xl object-cover"
-            style={{ maxHeight: 420 }}
+            className="w-full max-w-2xl object-contain"
+            style={{ maxHeight: 460, mixBlendMode: "multiply", filter: "drop-shadow(0 8px 32px rgba(79,70,229,0.10))" }}
           />
         </motion.div>
 

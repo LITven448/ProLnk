@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  AlertTriangle, CheckCircle2, XCircle, ChevronDown, ChevronUp,
+  AlertTriangle, CheckCircle, XCircle, ChevronDown, ChevronUp,
   Wrench, Calendar, Zap, DollarSign, ExternalLink, Info,
 } from "lucide-react";
 
@@ -55,7 +55,7 @@ const WARNING_SIGNS = [
 ];
 
 const STATUS_ICON: Record<SafeStatus, JSX.Element> = {
-  ok:   <CheckCircle2 style={{ width: 18, height: 18, color: D.green }} />,
+  ok:   <CheckCircle style={{ width: 18, height: 18, color: D.green }} />,
   warn: <AlertTriangle style={{ width: 18, height: 18, color: D.amber }} />,
   fail: <XCircle style={{ width: 18, height: 18, color: D.red }} />,
 };
@@ -123,7 +123,7 @@ export default function GarageDoorGuide() {
         {/* Safety checklist */}
         <div style={{ marginBottom: 24 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-            <CheckCircle2 style={{ width: 16, height: 16, color: D.cyan }} />
+            <CheckCircle style={{ width: 16, height: 16, color: D.cyan }} />
             <h2 style={{ fontSize: 15, fontWeight: 700, color: D.text, margin: 0 }}>Safety Test Checklist</h2>
             <span style={{ fontSize: 12, color: D.muted, marginLeft: 4 }}>Click status to update</span>
           </div>

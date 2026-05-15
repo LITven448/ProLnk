@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { MapPin, DollarSign, TrendingUp, Users, CheckCircle2, Lock, Search, Star, Building2, Zap } from "lucide-react";
+import { MapPin, DollarSign, TrendingUp, Users, CheckCircle, Lock, Search, Star, Building2, Zap } from "lucide-react";
 import { toast } from "sonner";
 
 // --- Territory Data -----------------------------------------------------------
@@ -269,7 +269,7 @@ const TIER_CONFIG = {
 };
 
 const STATUS_CONFIG = {
-  owned:     { label: "Owned",     color: "bg-green-100 text-green-700",  icon: CheckCircle2 },
+  owned:     { label: "Owned",     color: "bg-green-100 text-green-700",  icon: CheckCircle },
   reserved:  { label: "Reserved",  color: "bg-yellow-100 text-yellow-700", icon: Lock },
   available: { label: "Available", color: "bg-blue-100 text-blue-700",    icon: Zap },
 };
@@ -355,7 +355,7 @@ function TerritoryCard({ t, onSelect }: { t: typeof TERRITORIES[0]; onSelect: (t
           </Button>
         ) : t.status === "owned" ? (
           <div className="flex items-center gap-1.5 text-green-600">
-            <CheckCircle2 className="w-4 h-4" />
+            <CheckCircle className="w-4 h-4" />
             <span className="text-sm font-semibold">Active</span>
           </div>
         ) : (
@@ -553,7 +553,7 @@ export default function TerritoryMarketplace() {
                       </>
                     ) : selected.status === "owned" ? (
                       <div className="flex items-center gap-3 bg-green-50 border border-green-200 rounded-xl p-4">
-                        <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0" />
+                        <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                         <div>
                           <p className="font-semibold text-green-800">Territory Active</p>
                           <p className="text-sm text-green-600">Owned by: {selected.owner}</p>
@@ -571,7 +571,7 @@ export default function TerritoryMarketplace() {
                   </div>
                 ) : (
                   <div className="text-center py-8">
-                    <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-4" />
+                    <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Interest Submitted!</h3>
                     <p className="text-gray-500 text-sm">We'll reach out to <strong>{buyerEmail}</strong> within 24 hours to discuss the <strong>{selected.name}</strong> territory.</p>
                   </div>

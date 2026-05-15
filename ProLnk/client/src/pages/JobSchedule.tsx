@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Calendar, ChevronLeft, ChevronRight, Clock, MapPin,
-  DollarSign, CheckCircle2, AlertCircle, Plus, Wrench, X,
+  DollarSign, CheckCircle, AlertCircle, Plus, Wrench, X,
   User, Phone, FileText, LayoutList, Grid3x3, CalendarDays,
 } from "lucide-react";
 import { Link } from "wouter";

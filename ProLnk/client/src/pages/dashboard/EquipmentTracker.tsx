@@ -9,7 +9,7 @@ import {
   Plus,
   X,
   AlertTriangle,
-  CheckCircle2,
+  CheckCircle,
   Clock,
   Hammer,
 } from "lucide-react";
@@ -314,7 +314,7 @@ export default function EquipmentTracker() {
 
           {/* Tax deduction note */}
           <div className="flex items-center gap-3 mt-4 p-3 rounded-xl" style={{ background: D.green + "10", border: `1px solid ${D.green}25` }}>
-            <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: D.green }} />
+            <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: D.green }} />
             <p className="text-xs" style={{ color: D.green }}>
               <strong>Equipment total: ${ytdDeductible.toLocaleString()}</strong> in deductible tools this year
               {ytdDeductible === 0 && (

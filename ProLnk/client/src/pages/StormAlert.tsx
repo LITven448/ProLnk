@@ -1,4 +1,3 @@
-import type React from "react";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import {

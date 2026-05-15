@@ -4,7 +4,7 @@ import AdminLayout from "@/components/AdminLayout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  CheckCircle2, Circle, ExternalLink, Settings2, Zap, Mail, MessageSquare,
+  CheckCircle, Circle, ExternalLink, Settings2, Zap, Mail, MessageSquare,
   BarChart3, Brain, Users, CreditCard, Webhook, Database, Smartphone,
   Search, ChevronRight, AlertCircle, Activity, RefreshCw
 } from "lucide-react";
@@ -252,7 +252,7 @@ function StatusBadge({ status }: { status: IntegrationStatus }) {
   if (status === "connected") {
     return (
       <span className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-        <CheckCircle2 className="w-3 h-3" /> Connected
+        <CheckCircle className="w-3 h-3" /> Connected
       </span>
     );
   }
@@ -296,7 +296,7 @@ function IntegrationCard({ integration }: { integration: Integration }) {
           <div className="grid grid-cols-2 gap-1.5">
             {integration.features.map((f) => (
               <div key={f} className="flex items-center gap-1.5 text-xs text-gray-600">
-                <CheckCircle2 className="w-3 h-3 flex-shrink-0 text-teal-500" />
+                <CheckCircle className="w-3 h-3 flex-shrink-0 text-teal-500" />
                 {f}
               </div>
             ))}
@@ -409,7 +409,7 @@ export default function Integrations() {
           {/* Stats */}
           <div className="flex gap-4 mt-5">
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <CheckCircle className="w-4 h-4 text-emerald-600" />
               <span className="text-sm font-semibold text-emerald-700">{connected} Connected</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-200">

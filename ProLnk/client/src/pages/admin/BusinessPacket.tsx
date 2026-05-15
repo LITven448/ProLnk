@@ -12,7 +12,7 @@ import {
   Users,
   TrendingUp,
   Shield,
-  CheckCircle2,
+  CheckCircle,
   Circle,
   AlertCircle,
   Download,
@@ -212,7 +212,7 @@ export default function BusinessPacket() {
   const tabs = [
     { id: "overview" as const, label: "Overview", icon: <BarChart3 className="w-4 h-4" /> },
     { id: "vault" as const, label: "Document Vault", icon: <FileText className="w-4 h-4" /> },
-    { id: "checklist" as const, label: "Transfer Checklist", icon: <CheckCircle2 className="w-4 h-4" /> },
+    { id: "checklist" as const, label: "Transfer Checklist", icon: <CheckCircle className="w-4 h-4" /> },
     { id: "runbook" as const, label: "Technical Runbook", icon: <Cpu className="w-4 h-4" /> },
   ];
 
@@ -467,7 +467,7 @@ export default function BusinessPacket() {
                         onClick={() => toggleChecklistItem(item.id)}
                       >
                         {item.completed ? (
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                         ) : (
                           <Circle className="w-4 h-4 text-slate-600 flex-shrink-0 mt-0.5 group-hover:text-slate-400 transition-colors" />
                         )}

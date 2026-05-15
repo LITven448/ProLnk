@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

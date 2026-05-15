@@ -24,7 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   MapPin,
   Camera,
-  CheckCircle2,
+  CheckCircle,
   Loader2,
   X,
   ChevronRight,
@@ -462,7 +462,7 @@ export default function FieldApp() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
       <div className="bg-teal-700 text-white px-4 py-4 flex items-center gap-3">
-        <CheckCircle2 className="w-5 h-5" />
+        <CheckCircle className="w-5 h-5" />
         <h1 className="font-semibold text-lg">Job Submitted!</h1>
       </div>
 
@@ -470,7 +470,7 @@ export default function FieldApp() {
         {/* Success Card */}
         <Card className="border-green-200 bg-green-50">
           <CardContent className="p-4 flex items-start gap-3">
-            <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+            <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-green-800">Photos received and analyzed</p>
               <p className="text-sm text-green-600 mt-0.5">{address}</p>

@@ -9,7 +9,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { MapView } from "@/components/Map";
 import { FOS } from "./fosTokens";
 import {
-  Camera, Zap, MapPin, TrendingUp, CheckCircle2,
+  Camera, Zap, MapPin, TrendingUp, CheckCircle,
   Flame, ChevronRight, ArrowUpRight, Trophy, Sparkles,
   DollarSign, Navigation, Loader2
 } from "lucide-react";
@@ -226,7 +226,7 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
           <div className="flex-1 flex flex-col gap-2">
             <div className="flex gap-2">
               <MiniStat icon={Camera}       value={photosToday}        label="Photos today" color={FOS.teal} bg={FOS.tealDim} />
-              <MiniStat icon={CheckCircle2} value={jobsToday}          label="Jobs logged"  color={FOS.green} bg="rgba(16,185,129,0.10)" />
+              <MiniStat icon={CheckCircle} value={jobsToday}          label="Jobs logged"  color={FOS.green} bg="rgba(16,185,129,0.10)" />
             </div>
             <div className="flex gap-2">
               <MiniStat icon={Zap}          value={pendingOpps.length} label="AI leads"     color={FOS.lime} bg={FOS.limeDim} />
@@ -364,7 +364,7 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
           {checkInState === "loading" ? (
             <Loader2 className="w-5 h-5 animate-spin" style={{ color: FOS.teal }} />
           ) : checkInState === "done" ? (
-            <CheckCircle2 className="w-5 h-5" style={{ color: FOS.green }} />
+            <CheckCircle className="w-5 h-5" style={{ color: FOS.green }} />
           ) : checkInState === "error" ? (
             <MapPin className="w-5 h-5" style={{ color: "#EF4444" }} />
           ) : (
@@ -398,7 +398,7 @@ export default function FieldHome({ onNavigate }: FieldHomeProps) {
         <p className="text-[10px] uppercase tracking-widest font-semibold mb-3" style={{ color: FOS.muted }}>Today</p>
         <div className="rounded-2xl overflow-hidden" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
           {[
-            { icon: CheckCircle2, color: FOS.green, label: "Jobs Logged",      value: jobsToday },
+            { icon: CheckCircle, color: FOS.green, label: "Jobs Logged",      value: jobsToday },
             { icon: Camera,       color: FOS.teal,  label: "Photos Submitted", value: photosToday },
             { icon: Zap,          color: FOS.lime,  label: "AI Opportunities", value: pendingOpps.length },
           ].map(({ icon: Icon, color, label, value }, idx) => (

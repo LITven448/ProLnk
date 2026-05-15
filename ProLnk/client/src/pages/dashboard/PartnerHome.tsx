@@ -1,3 +1,4 @@
+import React from 'react';
 import type React from "react";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "wouter";

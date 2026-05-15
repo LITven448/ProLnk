@@ -590,14 +590,14 @@ const DFWPestControlNetwork = lazy(() => import("./pages/DFWPestControlNetwork")
 const DFWLandscaperNetwork = lazy(() => import("./pages/DFWLandscaperNetwork"));
 
 // TrustyPro City landing pages
-const TrustyProFrisco = lazy(() => import("./pages/trustypro/TrustyProFrisco"));
-const TrustyProPlano = lazy(() => import("./pages/trustypro/TrustyProPlano"));
-const TrustyProMcKinney = lazy(() => import("./pages/trustypro/TrustyProMcKinney"));
-const TrustyProAllen = lazy(() => import("./pages/trustypro/TrustyProAllen"));
-const TrustyProDallas = lazy(() => import("./pages/trustypro/TrustyProDallas"));
-const TrustyProGarland = lazy(() => import("./pages/trustypro/TrustyProGarland"));
-const TrustyProProsper = lazy(() => import("./pages/trustypro/TrustyProProsper"));
-const TrustyProCelina = lazy(() => import("./pages/trustypro/TrustyProCelina"));
+const TrustyProFrisco = lazy(() => import("./pages/TrustyProFrisco"));
+const TrustyProPlano = lazy(() => import("./pages/TrustyProPlano"));
+const TrustyProMcKinney = lazy(() => import("./pages/TrustyProMcKinney"));
+const TrustyProAllen = lazy(() => import("./pages/TrustyProAllen"));
+const TrustyProDallas = lazy(() => import("./pages/TrustyProDallas"));
+const TrustyProGarland = lazy(() => import("./pages/TrustyProGarland"));
+const TrustyProProsper = lazy(() => import("./pages/TrustyProProsper"));
+const TrustyProCelina = lazy(() => import("./pages/TrustyProCelina"));
 const TrustyProEuless = lazy(() => import("./pages/trustypro/TrustyProEuless"));
 const TrustyProBedford = lazy(() => import("./pages/trustypro/TrustyProBedford"));
 const TrustyProHurst = lazy(() => import("./pages/trustypro/TrustyProHurst"));

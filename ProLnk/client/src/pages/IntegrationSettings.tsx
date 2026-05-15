@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import {
-  CheckCircle2,
+  CheckCircle,
   XCircle,
   Link2,
   Unlink,
@@ -277,7 +277,7 @@ function IntegrationCard({
               )}
               {connected && (
                 <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400">
-                  <CheckCircle2 className="w-3 h-3" /> Connected
+                  <CheckCircle className="w-3 h-3" /> Connected
                 </span>
               )}
             </div>

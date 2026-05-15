@@ -89,7 +89,7 @@ const UPGRADES: Upgrade[] = [
   },
 ];
 
-const STATUS_CONFIG: Record<CheckStatus, { icon: typeof CheckCircle; color: string; label: string }> = {
+const STATUS_CONFIG: Record<CheckStatus, { icon: any; color: string; label: string }> = {
   ok: { icon: CheckCircle, color: D.green, label: "Good" },
   warn: { icon: AlertTriangle, color: D.amber, label: "Warning" },
   na: { icon: Minus, color: D.dim, label: "N/A" },

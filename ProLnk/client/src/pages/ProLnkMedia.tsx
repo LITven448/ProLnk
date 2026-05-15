@@ -12,7 +12,7 @@ import {
   Bot,
   Building2,
   Calculator,
-  CheckCircle2,
+  CheckCircle,
   DollarSign,
   FileText,
   Home,
@@ -525,7 +525,7 @@ export default function ProLnkMedia() {
                   "Brand safety — every placement reviewed before going live",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-sky-500 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
                     <span className="text-slate-700">{item}</span>
                   </div>
                 ))}
@@ -781,7 +781,7 @@ export default function ProLnkMedia() {
                 <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-center gap-2">
-                      <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${tier.featured ? "text-sky-200" : "text-sky-500"}`} />
+                      <CheckCircle className={`w-4 h-4 flex-shrink-0 ${tier.featured ? "text-sky-200" : "text-sky-500"}`} />
                       <span className={`text-sm ${tier.featured ? "text-sky-50" : "text-slate-700"}`}>{f}</span>
                     </li>
                   ))}
@@ -818,7 +818,7 @@ export default function ProLnkMedia() {
 
           {submitted ? (
             <div className="bg-sky-500/20 border border-sky-500/40 rounded-3xl p-12 text-center">
-              <CheckCircle2 className="w-16 h-16 text-sky-400 mx-auto mb-4" />
+              <CheckCircle className="w-16 h-16 text-sky-400 mx-auto mb-4" />
               <h3 className="text-2xl font-black text-white mb-2">Application Received!</h3>
               <p className="text-slate-300">
                 Our team will review your application and reach out within 48 business hours to discuss your campaign goals and available inventory.

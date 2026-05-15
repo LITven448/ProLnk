@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import PartnerLayout from "@/components/PartnerLayout";
 import { trpc } from "@/lib/trpc";

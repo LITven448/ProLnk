@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * Admin Commission Dispute Center
  * Route: /admin/commission-disputes

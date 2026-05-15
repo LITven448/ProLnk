@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  AlertTriangle, CheckCircle2, XCircle, Clock, TrendingUp,
+  AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp,
   TrendingDown, Users, DollarSign, Zap, Shield, BarChart3,
   Activity, Target, Star, ShoppingBag, Eye, MousePointerClick,
   CloudLightning, Home, Wrench, Package, ArrowRight, RefreshCw,
@@ -127,7 +127,7 @@ function DailyOpsTab() {
             <CardTitle className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Action Required</CardTitle>
             {totalActions === 0 ? (
               <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">
-                <CheckCircle2 className="w-3 h-3 mr-1" />All Clear
+                <CheckCircle className="w-3 h-3 mr-1" />All Clear
               </Badge>
             ) : (
               <Badge className="bg-amber-100 text-amber-700 border-amber-200">
@@ -146,7 +146,7 @@ function DailyOpsTab() {
                   <div className="flex items-center gap-2.5">
                     {item.urgent
                       ? <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                      : <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />}
+                      : <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />}
                     <span className="text-sm">{item.label}</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -274,7 +274,7 @@ function ProLnkTab() {
           <CardContent>
             <div className="space-y-2">
               {[
-                { label: "Healthy", value: data?.health.healthy ?? 0, color: "text-emerald-600", icon: CheckCircle2 },
+                { label: "Healthy", value: data?.health.healthy ?? 0, color: "text-emerald-600", icon: CheckCircle },
                 { label: "1 Strike", value: data?.health.oneStrike ?? 0, color: "text-amber-600", icon: AlertTriangle },
                 { label: "2 Strikes", value: data?.health.twoStrikes ?? 0, color: "text-orange-600", icon: AlertTriangle },
                 { label: "Suspended", value: data?.health.suspended ?? 0, color: "text-red-600", icon: XCircle },
@@ -558,7 +558,7 @@ function AffiliateTab() {
                     {cat.hasAffiliateUrl < cat.active ? (
                       <Badge className="bg-amber-100 text-amber-700 border-amber-200 text-xs">{cat.active - cat.hasAffiliateUrl} missing URL</Badge>
                     ) : cat.active > 0 ? (
-                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 text-xs"><CheckCircle2 className="w-3 h-3 mr-1" />All set</Badge>
+                      <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 text-xs"><CheckCircle className="w-3 h-3 mr-1" />All set</Badge>
                     ) : null}
                   </div>
                 </div>

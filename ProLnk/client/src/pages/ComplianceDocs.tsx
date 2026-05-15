@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import {
   Shield, Lock, FileText, Mail, Phone, ChevronRight,
-  CheckCircle2, AlertTriangle, Info, ExternalLink, Send, Trash2, DollarSign,
+  CheckCircle, AlertTriangle, Info, ExternalLink, Send, Trash2, DollarSign,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -47,7 +47,7 @@ function InfoBox({ type, children }: { type: "info" | "warning" | "success"; chi
   const styles = {
     info: { bg: "bg-blue-900/30", border: "border-blue-700/40", text: "text-blue-200", Icon: Info, iconColor: "text-blue-400" },
     warning: { bg: "bg-amber-900/30", border: "border-amber-700/40", text: "text-amber-200", Icon: AlertTriangle, iconColor: "text-amber-400" },
-    success: { bg: "bg-teal-900/30", border: "border-teal-700/40", text: "text-teal-200", Icon: CheckCircle2, iconColor: "text-teal-400" },
+    success: { bg: "bg-teal-900/30", border: "border-teal-700/40", text: "text-teal-200", Icon: CheckCircle, iconColor: "text-teal-400" },
   }[type];
   const { Icon } = styles;
   return (
@@ -190,7 +190,7 @@ function TcpaTab() {
             "Service reminders or follow-up requests",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
               <span>{item}</span>
             </li>
           ))}
@@ -292,7 +292,7 @@ function Tax1099Tab() {
             "Origination right payouts from the Home Health Vault",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
-              <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
               {item}
             </li>
           ))}
@@ -386,7 +386,7 @@ function CcpaTab() {
             "Legal compliance and dispute resolution",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
-              <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-3.5 h-3.5 text-teal-400 flex-shrink-0 mt-0.5" />
               {item}
             </li>
           ))}
@@ -412,7 +412,7 @@ function CcpaTab() {
             { title: "Non-Discrimination", desc: "You will not be denied services or charged different rates for exercising your CCPA rights." },
           ].map((right) => (
             <div key={right.title} className="p-4 bg-slate-700/40 rounded-xl border border-slate-600/50">
-              <CheckCircle2 className="w-4 h-4 text-teal-400 mb-2" />
+              <CheckCircle className="w-4 h-4 text-teal-400 mb-2" />
               <div className="text-sm font-semibold text-white mb-1">{right.title}</div>
               <div className="text-xs text-slate-400 leading-relaxed">{right.desc}</div>
             </div>
@@ -478,7 +478,7 @@ function DataRightsTab() {
           { title: "Right to Correct", desc: "Request correction of inaccurate personal data." },
         ].map((right) => (
           <div key={right.title} className="p-4 bg-slate-700/40 rounded-xl border border-slate-600/50">
-            <CheckCircle2 className="w-4 h-4 text-teal-400 mb-2" />
+            <CheckCircle className="w-4 h-4 text-teal-400 mb-2" />
             <div className="text-sm font-semibold text-white mb-1">{right.title}</div>
             <div className="text-xs text-slate-400 leading-relaxed">{right.desc}</div>
           </div>
@@ -491,7 +491,7 @@ function DataRightsTab() {
 
       {submitted ? (
         <div className="p-6 bg-teal-900/30 border border-teal-700/50 rounded-2xl text-center space-y-2">
-          <CheckCircle2 className="w-10 h-10 text-teal-400 mx-auto" />
+          <CheckCircle className="w-10 h-10 text-teal-400 mx-auto" />
           <h3 className="text-base font-bold text-white">Request Submitted</h3>
           <p className="text-sm text-teal-200">
             We have received your {requestType} request. Our privacy team will verify your identity and respond to{" "}

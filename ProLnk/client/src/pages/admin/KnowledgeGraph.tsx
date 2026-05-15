@@ -1,4 +1,3 @@
-import type React from "react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import AdminLayout from "@/components/AdminLayout";
 import { Badge } from "@/components/ui/badge";

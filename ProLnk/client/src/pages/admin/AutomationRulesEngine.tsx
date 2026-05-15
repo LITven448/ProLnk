@@ -9,13 +9,13 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import {
   Zap, Plus, Trash2, Mail, Bell, Webhook, UserPlus, Star, CloudLightning,
-  Wrench, Camera, TrendingDown, BarChart3, AlertTriangle, Clock, CheckCircle2,
+  Wrench, Camera, TrendingDown, BarChart3, AlertTriangle, Clock, CheckCircle,
   ChevronRight, Play, History, Settings2, Filter, X, ArrowRight
 } from "lucide-react";
 
 const TRIGGER_ICONS: Record<string, any> = {
   new_signup: UserPlus, referral_milestone: Star, photo_uploaded: Camera,
-  analysis_complete: CheckCircle2, score_below_threshold: TrendingDown,
+  analysis_complete: CheckCircle, score_below_threshold: TrendingDown,
   storm_detected: CloudLightning, maintenance_due: Wrench,
   commission_earned: BarChart3, review_received: Star,
   partner_inactive: AlertTriangle, homeowner_inactive: AlertTriangle,
@@ -41,7 +41,7 @@ const ACTION_LABELS: Record<string, string> = {
 };
 
 const ACTION_ICONS: Record<string, any> = {
-  send_email: Mail, send_sms: Bell, send_notification: Bell, assign_task: CheckCircle2,
+  send_email: Mail, send_sms: Bell, send_notification: Bell, assign_task: CheckCircle,
   create_lead: UserPlus, update_score: BarChart3, trigger_webhook: Webhook,
   notify_admin: AlertTriangle, schedule_followup: Clock, award_points: Star, flag_for_review: AlertTriangle,
 };

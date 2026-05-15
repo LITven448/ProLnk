@@ -1,9 +1,9 @@
-import React from 'react';
 /**
  * PriorityScoreCard
  * Displays a partner's Partner Priority Score (PPS) with a full signal breakdown.
  * Used on the partner dashboard (own score) and admin dashboard (any partner's score).
  */
+import type React from "react";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

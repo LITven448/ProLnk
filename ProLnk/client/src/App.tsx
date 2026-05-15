@@ -799,6 +799,8 @@ function Router() {
       <Route path="/admin/org-chart" component={CompanyOrgChart} />
       <Route path="/admin/accountability" component={Accountability} />
       <Route path="/admin/agent-command-center" component={AgentCommandCenter} />
+      <Route path="/admin/ai-command-center" component={AICommandCenter} />
+      <Route path="/admin/system-health" component={SystemHealthDashboard} />
       <Route path="/admin/asset-aging" component={AssetAging} />
       <Route path="/admin/recalls" component={SafetyRecalls} />
       <Route path="/admin/data-marketplace" component={DataMarketplace} />

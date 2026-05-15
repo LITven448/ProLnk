@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import {
-  Database, AlertTriangle, CheckCircle2, RefreshCw, Search,
+  Database, AlertTriangle, CheckCircle, RefreshCw, Search,
   ChevronRight, Clock, Zap,
 } from "lucide-react";
 
@@ -165,7 +165,7 @@ export default function DataQualityMonitor() {
               ))}
               {dismissed.length === ISSUES.length && (
                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-3">
-                  <CheckCircle2 size={18} className="text-emerald-500" />
+                  <CheckCircle size={18} className="text-emerald-500" />
                   <span className="text-emerald-700 text-sm font-medium">All issues resolved or dismissed.</span>
                 </div>
               )}

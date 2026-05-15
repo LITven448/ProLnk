@@ -1340,6 +1340,10 @@ function Router() {
       <Route path="/trustypro/forney" component={TrustyProForney} />
       <Route path="/trustypro/mansfield" component={TrustyProMansfield} />
       <Route path="/trustypro/burleson" component={TrustyProBurleson} />
+      <Route path="/trustypro/irving" component={TrustyProIrving} />
+      <Route path="/trustypro/grapevine" component={TrustyProGrapevine} />
+      <Route path="/trustypro/southlake" component={TrustyProSouthlake} />
+      <Route path="/trustypro/colleyville" component={TrustyProColleyville} />
       <Route path="/trustypro/flower-mound" component={TrustyProFlowerMound} />
       <Route path="/trustypro/highland-village" component={TrustyProHighlandVillage} />
       <Route path="/trustypro/little-elm" component={TrustyProLittleElm} />

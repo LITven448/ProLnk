@@ -1,3 +1,4 @@
+import React from 'react';
 import type React from "react";
 /**
  * Field OS -- Job Log Tab (v4 -- Unified FOS Design System)

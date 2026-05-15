@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from "react";
 /**
  * NetworkParticles — Three.js particle network for hero background.
  * Renders a living web of nodes and connections that react to mouse movement.

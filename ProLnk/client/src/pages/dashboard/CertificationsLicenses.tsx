@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  ShieldCheck, Upload, Download, AlertTriangle, CheckCircle2,
+  ShieldCheck, Upload, Download, AlertTriangle, CheckCircle,
   Clock, FileText, Zap, Info, X, ChevronDown,
 } from "lucide-react";
 
@@ -82,7 +82,7 @@ function StatusPill({ status, badge }: { status: Credential["status"]; badge: st
   };
   return (
     <span className={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full border ${styles[status]}`}>
-      {status === "verified" && <CheckCircle2 className="w-3 h-3" />}
+      {status === "verified" && <CheckCircle className="w-3 h-3" />}
       {status === "expiring" && <AlertTriangle className="w-3 h-3" />}
       {status === "expired" && <X className="w-3 h-3" />}
       {badge}
@@ -159,7 +159,7 @@ export default function CertificationsLicenses() {
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <CheckCircle className="w-4 h-4 text-emerald-400" />
                 </div>
                 <p className="text-slate-300 text-sm">Verified profiles show a trust badge and achieve <span className="text-emerald-300 font-bold">94% higher conversion</span></p>
               </div>

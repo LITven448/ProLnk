@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FOS } from "./fosTokens";
 import {
-  MapPin, Phone, MessageSquare, Camera, CheckCircle2,
+  MapPin, Phone, MessageSquare, Camera, CheckCircle,
   ChevronRight, DollarSign, Clock, Wrench, Flame,
   Droplets, Wind, Zap, Navigation, Image,
 } from "lucide-react";
@@ -132,7 +132,7 @@ export default function FieldJobDetails() {
                       boxShadow: active ? `0 0 12px ${FOS.tealGlow}` : "none",
                     }}
                   >
-                    {done ? <CheckCircle2 size={14} color={FOS.white} /> : (
+                    {done ? <CheckCircle size={14} color={FOS.white} /> : (
                       <div
                         className="w-2.5 h-2.5 rounded-full"
                         style={{ background: active ? FOS.white : FOS.faint }}
@@ -195,7 +195,7 @@ export default function FieldJobDetails() {
               className="w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-sm font-bold"
               style={{ background: "rgba(16,185,129,0.15)", color: FOS.green }}
             >
-              <CheckCircle2 size={18} />
+              <CheckCircle size={18} />
               Job Completed!
             </div>
           ) : (

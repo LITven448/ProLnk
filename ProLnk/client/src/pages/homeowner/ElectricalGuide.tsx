@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  Zap, CheckCircle2, AlertTriangle, XCircle, ChevronRight,
+  Zap, CheckCircle, AlertTriangle, XCircle, ChevronRight,
   Shield, Minus, ExternalLink,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -89,8 +89,8 @@ const UPGRADES: Upgrade[] = [
   },
 ];
 
-const STATUS_CONFIG: Record<CheckStatus, { icon: typeof CheckCircle2; color: string; label: string }> = {
-  ok: { icon: CheckCircle2, color: D.green, label: "Good" },
+const STATUS_CONFIG: Record<CheckStatus, { icon: typeof CheckCircle; color: string; label: string }> = {
+  ok: { icon: CheckCircle, color: D.green, label: "Good" },
   warn: { icon: AlertTriangle, color: D.amber, label: "Warning" },
   na: { icon: Minus, color: D.dim, label: "N/A" },
 };

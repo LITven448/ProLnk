@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT } from "@/components/AdminLayout";

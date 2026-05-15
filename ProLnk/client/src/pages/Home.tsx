@@ -1188,23 +1188,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-              {" · "}
-              Charter tier: <strong>{Math.min(waitlistPros, 25)}/25 filled</strong>
-              {" · "}
-              <Link href="/partner-checkout" className="underline underline-offset-2 cursor-pointer hover:opacity-80">
-                Claim your spot →
-              </Link>
-            </span>
-            <button onClick={() => setUrgencyDismissed(true)} className="absolute right-3 top-2 p-1 hover:opacity-60 transition-opacity" aria-label="Dismiss">
-              <X className="w-3.5 h-3.5" />
-            </button>
-          </div>
-          <div className="flex items-center gap-1.5 mt-0.5 text-[#0A1628]/70 text-[11px]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0A1628]/50 animate-pulse shrink-0" />
-            <span key={socialProofIdx} className="transition-opacity duration-500">{SOCIAL_PROOF_ENTRIES[socialProofIdx]}</span>
-          </div>
-        </div>
-      )}
       <Helmet>
         <title>ProLnk — The Home Services Partner Network | DFW Texas</title>
         <meta name="description" content="Join the ProLnk Founding Network. Home service professionals earn commission from AI-detected leads at every property they document. 4-tier network, $149/mo locked rate, 90-day free trial." />

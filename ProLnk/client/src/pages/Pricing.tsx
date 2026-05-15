@@ -4,11 +4,10 @@ import { ProLnkLogo } from "@/components/ProLnkLogo";
 import {
   Check, ArrowRight, Zap, Shield, TrendingUp, DollarSign,
   Star, ChevronDown, ChevronUp, Sparkles, Crown, Lock,
-  Users, Home, Bolt, MapPin, Smartphone, AlertTriangle
+  Users, Home, Bolt, MapPin, Smartphone, AlertTriangle, CheckCircle2
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ─── Post-Founding Preview Tiers (condensed) ─────────────────────────────────
 const POST_FOUNDING_PREVIEW = [
   {
     name: "Starter",
@@ -40,31 +39,32 @@ const POST_FOUNDING_PREVIEW = [
   },
 ];
 
-// ─── Founding Network Tiers ───────────────────────────────────────────────────
 const FOUNDING_TIERS = [
   {
     id: "charter",
     name: "Charter",
     range: "Spots 1–25",
     spotsLabel: "25 spots",
-    description: "First 25 founding members. Position 1 in the cascade.",
+    description: "First 25 founding members. Position 1 in the cascade — every member below you contributes to your override income.",
     color: "#F5E642",
     borderColor: "border-[#F5E642]/40",
     accentBg: "from-[#F5E642]/10 to-[#F5E642]/5",
     badgeColor: "bg-[#F5E642]/20 text-[#F5E642]",
     icon: Crown,
+    cascadeAdvantage: "Sits above all 2,100 members below",
   },
   {
     id: "founding",
     name: "Founding",
     range: "Spots 26–125",
     spotsLabel: "100 spots",
-    description: "Core founding cohort. Level 2 in the cascade.",
+    description: "Core founding cohort. Level 2 in the cascade — earns overrides from Levels 3 and 4 below.",
     color: "#14b8a6",
     borderColor: "border-teal-500/40",
     accentBg: "from-teal-500/10 to-teal-600/5",
     badgeColor: "bg-teal-500/20 text-teal-300",
     icon: Star,
+    cascadeAdvantage: "Sits above 2,000 members below",
   },
   {
     id: "level3",
@@ -77,22 +77,23 @@ const FOUNDING_TIERS = [
     accentBg: "from-blue-500/10 to-blue-600/5",
     badgeColor: "bg-blue-500/20 text-blue-300",
     icon: TrendingUp,
+    cascadeAdvantage: "Sits above 1,600 members below",
   },
   {
     id: "level4",
     name: "Level 4",
     range: "Spots 526–2,125",
     spotsLabel: "1,600 spots",
-    description: "Final founding tier. Level 4 in the cascade.",
+    description: "Final founding tier. Level 4 in the cascade — still earns overrides from all post-founding members they recruit.",
     color: "#a78bfa",
     borderColor: "border-violet-400/40",
     accentBg: "from-violet-500/10 to-violet-600/5",
     badgeColor: "bg-violet-500/20 text-violet-300",
     icon: Zap,
+    cascadeAdvantage: "First founding tier — still earns from post-founding recruits",
   },
 ];
 
-// ─── All features every tier gets ────────────────────────────────────────────
 const FOUNDING_FEATURES = [
   { label: "72% of every job you close stays with you", icon: DollarSign, highlight: true },
   { label: "AI matching to homeowner leads in your service area", icon: Sparkles, highlight: true },
@@ -105,11 +106,21 @@ const FOUNDING_FEATURES = [
   { label: "Mobile app (coming Q3 2026)", icon: Smartphone },
 ];
 
-// ─── FAQ ──────────────────────────────────────────────────────────────────────
+const UNIVERSAL_BENEFITS = [
+  { label: "72% commission keep rate", detail: "Every tier, every job, forever" },
+  { label: "$149/mo locked for life", detail: "Never increases regardless of market pricing" },
+  { label: "4-level network income cascade", detail: "All tiers participate in the full cascade" },
+  { label: "All platform features included", detail: "No feature gating — zero tiers get more features" },
+  { label: "90-day free trial", detail: "No payment until Day 91 — no credit card required" },
+  { label: "Priority algorithm ranking", detail: "Founding members get top placement over post-founding" },
+  { label: "Same homeowner lead access", detail: "Every tier competes for the same high-quality leads" },
+  { label: "Founding badge on profile", detail: "Permanent credential showing you were first" },
+];
+
 const FAQS = [
   {
     q: "Can the price ever change?",
-    a: "Never for founding members. Your $149/mo is locked for life — regardless of what happens to market pricing after the founding network closes. This is a permanent founding member benefit, contractually guaranteed.",
+    a: "Never for founding members. Your $149/mo is locked for life — regardless of what happens to market pricing after the founding network closes. This is a permanent founding member benefit, contractually guaranteed in your membership agreement.",
   },
   {
     q: "What if I cancel?",
@@ -117,11 +128,22 @@ const FAQS = [
   },
   {
     q: "When does the 90-day free trial end?",
-    a: "Day 90 from the date you complete signup. You won't be charged until day 91. We'll send you reminders at day 75 and day 87 so you're never caught off guard. No credit card is required to start — you only add payment details when you decide to stay.",
+    a: "Day 90 from the date you complete signup. You won't be charged until day 91. We'll send you reminders at day 75 and day 87 so you're never caught off guard. No credit card is required to start.",
+  },
+  {
+    q: "Why does my position in the network matter if the price is the same?",
+    a: "Your network position determines how far your override income reaches down the cascade. A Charter member (spot 1–25) earns overrides from every Level 2, 3, and 4 member who joins below them. A Level 4 member still earns overrides from everyone they personally recruit and their recruits recruit — but doesn't reach as far up in the cascade. The price and features are identical; position only affects override depth.",
+  },
+  {
+    q: "What happens to my position when the founding network closes?",
+    a: "Your position is permanently fixed from the moment you join. When the founding network closes at 500 applications + 5,000 homes, no new founding members are accepted. All members who join after that point are 'post-founding' and pay market rates. Your position and locked pricing are yours forever.",
+  },
+  {
+    q: "Why is the founding rate $149 and not higher or lower?",
+    a: "$149/mo was set to be accessible to working contractors while being sustainable for the platform. At 500 founding members, the platform reaches break-even. At 1,000 members, it's highly profitable. The founding rate is low because early members take the most risk — they're betting on a platform that hasn't proven itself yet. That risk deserves a permanent reward.",
   },
 ];
 
-// ─── Network cascade table data ───────────────────────────────────────────────
 const CASCADE_ROWS = [
   { level: "L1 (Your direct recruit)", jobOverride: "7%", subOverride: "12%", origination: "1.5%" },
   { level: "L2 (Their recruit)", jobOverride: "4%", subOverride: "6%", origination: "1.5%" },
@@ -129,7 +151,13 @@ const CASCADE_ROWS = [
   { level: "L4 (L3's recruit)", jobOverride: "1%", subOverride: "1.5%", origination: "1.5%" },
 ];
 
-// ─── Main Page ────────────────────────────────────────────────────────────────
+const LOCKING_MECHANISM = [
+  { step: "1", title: "You Join", detail: "When you complete signup, your spot number is permanently assigned. Spot numbers are sequential and never reassigned." },
+  { step: "2", title: "Membership Agreement Signed", detail: "Your $149/mo rate is contractually locked in your membership agreement. Price increases require your written consent — which you're under no obligation to give." },
+  { step: "3", title: "As Long As You Remain Active", detail: "Your locked rate holds indefinitely. If you cancel, the rate is forfeited. If you remain active — even during a low job month — the rate stays locked." },
+  { step: "4", title: "Network Closes, Rate Stays", detail: "When the founding network closes at 500 applications, new members pay market rate. Your $149 does not change. This is a permanent competitive advantage." },
+];
+
 export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -215,7 +243,7 @@ export default function Pricing() {
             transition={{ delay: 0.25 }}
             className="text-white/50 text-lg max-w-2xl mx-auto mb-10"
           >
-            All 2,125 founding members pay the same price, get the same features, and keep the same rate forever. The only difference is your position in the network cascade — which is determined by when you join.
+            All 2,125 founding members pay the same price, get the same features, and keep the same rate forever. The only difference is your position in the network cascade — determined by when you join.
           </motion.p>
 
           <motion.div
@@ -234,7 +262,7 @@ export default function Pricing() {
       </section>
 
       {/* Single Plan Card */}
-      <section className="pb-20 px-6">
+      <section className="pb-16 px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -282,7 +310,31 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Tier comparison */}
+      {/* What You Get at Every Tier */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-3">Universal Benefits</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              What Every Founding Member Gets
+            </h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              Charter, Founding, Level 3, and Level 4 all receive the same plan. No feature gating. No upsells. These are the benefits every founding member gets, period.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {UNIVERSAL_BENEFITS.map((b, i) => (
+              <div key={i} className="rounded-2xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <CheckCircle2 className="w-5 h-5 text-teal-400" />
+                <div className="font-bold text-sm text-white">{b.label}</div>
+                <div className="text-xs text-white/40">{b.detail}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tier Comparison */}
       <section className="py-16 px-6 bg-gradient-to-b from-transparent to-white/[0.02]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -292,7 +344,7 @@ export default function Pricing() {
               <span className="text-[#F5E642]">Different position.</span>
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">
-              Charter, Founding, Level 3, and Level 4 are not pricing tiers. They are network positions. Earlier members sit higher in the cascade and earn overrides from more of the network below them.
+              Charter, Founding, Level 3, and Level 4 are not pricing tiers — they are network positions. Earlier members sit higher in the cascade and earn overrides from more of the network below them.
             </p>
           </div>
 
@@ -312,8 +364,11 @@ export default function Pricing() {
                     {tier.name}
                   </div>
                   <p className="text-white font-semibold text-sm mb-1">{tier.range}</p>
-                  <p className="text-white/30 text-xs mb-4">{tier.spotsLabel}</p>
-                  <p className="text-white/50 text-xs leading-relaxed">{tier.description}</p>
+                  <p className="text-white/30 text-xs mb-3">{tier.spotsLabel}</p>
+                  <p className="text-white/50 text-xs leading-relaxed mb-3">{tier.description}</p>
+                  <div className="text-xs font-semibold px-2 py-1.5 rounded-lg" style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                    {tier.cascadeAdvantage}
+                  </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <div className="flex items-end gap-1">
                       <span className="text-2xl font-black text-white">$149</span>
@@ -378,8 +433,38 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* Why Founding Rates Never Increase */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-3">The Locking Mechanism</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              Why Founding Rates <span className="text-teal-400">Never Increase</span>
+            </h2>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              This isn't a marketing promise — it's a contractual guarantee built into how the platform works. Here's exactly how it works.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {LOCKING_MECHANISM.map((step, i) => (
+              <div key={i} className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm mb-4" style={{ background: "rgba(20,184,166,0.2)", color: "#14B8A6" }}>
+                  {step.step}
+                </div>
+                <div className="font-bold text-white mb-2">{step.title}</div>
+                <p className="text-sm text-white/50 leading-relaxed">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 bg-gradient-to-r from-[#F5E642]/10 to-teal-500/10 border border-[#F5E642]/20 rounded-2xl p-6 text-center">
+            <Lock className="w-6 h-6 text-[#F5E642] mx-auto mb-3" />
+            <p className="text-white font-bold">Bottom line: as long as you remain an active member, $149/mo is your price — forever.</p>
+          </div>
+        </div>
+      </section>
+
       {/* After founding closes */}
-      <section className="py-20 px-6">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-[#F5E642]/5 to-transparent border border-[#F5E642]/20 rounded-3xl p-10 md:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -454,7 +539,7 @@ export default function Pricing() {
                   </div>
                 )}
                 <div className={`text-xs font-bold ${tier.color} mb-3 ${tier.popular ? "mt-2" : ""}`}>{tier.name}</div>
-                <div className={`text-2xl font-black text-white mb-4`}>{tier.price}</div>
+                <div className="text-2xl font-black text-white mb-4">{tier.price}</div>
                 <div className="space-y-2 text-xs text-white/50">
                   <div className="flex items-center gap-2">
                     <DollarSign className="w-3 h-3 text-white/30" />
@@ -471,14 +556,6 @@ export default function Pricing() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/pricing/standard">
-              <span className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer border border-white/10 hover:border-white/20 px-5 py-2.5 rounded-xl">
-                View full post-launch pricing details <ArrowRight className="w-4 h-4" />
-              </span>
-            </Link>
           </div>
 
           <div className="mt-10 bg-gradient-to-r from-[#F5E642]/10 to-teal-500/10 border border-[#F5E642]/20 rounded-2xl p-6 text-center">
@@ -499,7 +576,10 @@ export default function Pricing() {
       {/* FAQ */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-10">Pricing questions</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-white mb-3">Pricing Questions</h2>
+            <p className="text-white/40 text-sm">Everything you need to know about founding member pricing.</p>
+          </div>
           <div className="space-y-3">
             {FAQS.map((faq, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
@@ -555,7 +635,7 @@ export default function Pricing() {
                 Claim Your Founding Spot <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
-            <p className="text-white/30 text-sm mt-4">No credit card required · Cancel anytime</p>
+            <p className="text-white/30 text-sm mt-4">No credit card required · Cancel anytime · Lock your rate today</p>
           </div>
         </div>
       </section>

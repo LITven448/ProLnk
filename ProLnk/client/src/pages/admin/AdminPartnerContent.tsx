@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * AdminPartnerContent.tsx
  * Admin UI to manage partner-facing content:

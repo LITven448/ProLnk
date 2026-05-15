@@ -14,7 +14,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import {
-  DollarSign, CreditCard, Clock, CheckCircle2, AlertCircle,
+  DollarSign, CreditCard, Clock, CheckCircle, AlertCircle,
   Search, RefreshCw, Zap, TrendingUp, Users, ArrowUpRight,
   Download, Filter, ChevronDown, ChevronUp, Loader2, Inbox, XCircle, Send,
 } from "lucide-react";
@@ -221,7 +221,7 @@ export default function Payouts() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Total Paid Out",     value: formatCurrency(stats?.totalPaid ?? 0),   icon: CheckCircle2, color: "text-emerald-600", bg: "bg-emerald-50" },
+            { label: "Total Paid Out",     value: formatCurrency(stats?.totalPaid ?? 0),   icon: CheckCircle, color: "text-emerald-600", bg: "bg-emerald-50" },
             { label: "Pending Payouts",    value: formatCurrency(stats?.totalPending ?? 0), icon: Clock,        color: "text-amber-600",   bg: "bg-amber-50" },
             { label: "Pending Count",      value: stats?.pendingCount ?? 0,                 icon: DollarSign,   color: "text-blue-600",    bg: "bg-blue-50" },
             { label: "Stripe Connected",   value: stats?.connectedPartnerCount ?? 0,        icon: Users,        color: "text-teal-600",    bg: "bg-teal-50" },
@@ -324,7 +324,7 @@ export default function Payouts() {
               </div>
             ) : filtered.length === 0 ? (
               <div className="text-center py-12">
-                <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
+                <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
                 <p className="text-gray-700 font-medium">All caught up!</p>
                 <p className="text-slate-500 text-sm">No pending commissions to pay out.</p>
               </div>

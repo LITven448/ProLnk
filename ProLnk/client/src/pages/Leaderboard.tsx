@@ -1,427 +1,405 @@
-import { trpc } from "@/lib/trpc";
-import ProLnkLogo from "@/components/ProLnkLogo";
-import { Link } from "wouter";
-import { Trophy, Star, TrendingUp, Users, Crown, Medal, Award, DollarSign } from "lucide-react";
+import { useState } from "react";
+import {
+  Trophy, Crown, Medal, Star, TrendingUp, TrendingDown,
+  Minus, Share2, Zap, DollarSign, Briefcase, Users, Award
+} from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-const TOTAL_SLOTS = 2125;
+type Period = "week" | "month" | "alltime";
+type Category = "earnings" | "jobs" | "referrals" | "rating";
 
-const TIER_META: Record<string, { color: string; label: string; bg: string; border: string; subCaption: string }> = {
-  charter:  { color: "#F59E0B", label: "Charter",  bg: "#F59E0B20", border: "#F59E0B40", subCaption: "Slot 1–25"      },
-  founding: { color: "#8B5CF6", label: "Founding", bg: "#8B5CF620", border: "#8B5CF640", subCaption: "Slot 26–125"    },
-  l3:       { color: "#17C1E8", label: "L3",       bg: "#17C1E820", border: "#17C1E840", subCaption: "Slot 126–525"   },
-  l4:       { color: "#22C55E", label: "L4",       bg: "#22C55E20", border: "#22C55E40", subCaption: "Slot 526–2125"  },
-};
+function formatCurrency(n: number) {
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+}
 
-const RANK_BADGE_STYLES = [
-  { bg: "linear-gradient(135deg, #D4AF37 0%, #F5D060 100%)", icon: Trophy, shadow: "0 0 24px #D4AF3750", border: "#D4AF37" },
-  { bg: "linear-gradient(135deg, #8A8B8F 0%, #C0C1C5 100%)", icon: Medal,  shadow: "0 0 16px #A8A9AD40", border: "#A8A9AD" },
-  { bg: "linear-gradient(135deg, #8B4513 0%, #CD7F32 100%)", icon: Award,  shadow: "0 0 16px #CD7F3240", border: "#CD7F32" },
+function getInitials(name: string) {
+  return name.split(/\s+/).slice(0, 2).map((w) => w[0]?.toUpperCase() ?? "").join("");
+}
+
+const AVATAR_PALETTE = [
+  "#6D28D9", "#2563EB", "#059669", "#DC2626", "#D97706",
+  "#0891B2", "#7C3AED", "#DB2777", "#0D9488", "#4338CA",
 ];
 
-const PODIUM_ORDER = [1, 0, 2]; // silver left, gold center, bronze right
+function avatarBg(name: string) {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  return AVATAR_PALETTE[h % AVATAR_PALETTE.length];
+}
 
-function RankBadge({ rank }: { rank: number }) {
-  if (rank > 3) {
-    return (
-      <div style={{
-        width: 36, height: 36, borderRadius: "50%",
-        background: "rgba(255,255,255,0.06)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 13, fontWeight: 700, color: "#94A3B8", flexShrink: 0,
-      }}>
-        #{rank}
-      </div>
-    );
-  }
-  const s = RANK_BADGE_STYLES[rank - 1];
-  const Icon = s.icon;
+const TRADES: Record<string, string> = {
+  HVAC: "#EF4444", Electrical: "#F59E0B", Plumbing: "#3B82F6",
+  Roofing: "#8B5CF6", Landscaping: "#22C55E", Painting: "#EC4899",
+  Carpentry: "#F97316", Flooring: "#14B8A6", Insulation: "#6366F1",
+  "General Contractor": "#0EA5E9",
+};
+
+const TIER_STYLES: Record<string, { label: string; color: string; bg: string }> = {
+  charter:  { label: "Charter",  color: "#FFD700", bg: "rgba(255,215,0,0.12)" },
+  founding: { label: "Founding", color: "#C0C0C0", bg: "rgba(192,192,192,0.10)" },
+  l3:       { label: "Level 3",  color: "#CD7F32", bg: "rgba(205,127,50,0.10)" },
+  l4:       { label: "Level 4",  color: "#67E8F9", bg: "rgba(103,232,249,0.10)" },
+};
+
+interface Entry {
+  id: string;
+  name: string;
+  trade: string;
+  city: string;
+  tier: string;
+  earnings: number;
+  jobs: number;
+  referrals: number;
+  rating: number;
+  change: number;
+}
+
+const MOCK: Entry[] = [
+  { id: "1",  name: "Marcus Thompson",    trade: "HVAC",          city: "Dallas",              tier: "charter",  earnings: 14820, jobs: 38, referrals: 12, rating: 4.97, change:  2 },
+  { id: "2",  name: "Deja Williams",       trade: "Electrical",    city: "Fort Worth",          tier: "charter",  earnings: 12340, jobs: 31, referrals: 9,  rating: 4.95, change:  0 },
+  { id: "3",  name: "Carlos Mendoza",      trade: "Plumbing",      city: "Frisco",              tier: "charter",  earnings: 11200, jobs: 29, referrals: 8,  rating: 4.92, change: -1 },
+  { id: "4",  name: "Priya Sharma",        trade: "Roofing",       city: "McKinney",            tier: "founding", earnings:  9850, jobs: 26, referrals: 7,  rating: 4.90, change:  1 },
+  { id: "5",  name: "Tyrone Benson",       trade: "Landscaping",   city: "Plano",               tier: "founding", earnings:  8760, jobs: 23, referrals: 6,  rating: 4.88, change:  3 },
+  { id: "6",  name: "Lauren Kim",          trade: "Painting",      city: "Garland",             tier: "founding", earnings:  7940, jobs: 21, referrals: 6,  rating: 4.87, change: -2 },
+  { id: "7",  name: "Andre Franklin",      trade: "Carpentry",     city: "Irving",              tier: "founding", earnings:  7120, jobs: 19, referrals: 5,  rating: 4.85, change:  1 },
+  { id: "8",  name: "Sofia Reyes",         trade: "Flooring",      city: "Arlington",           tier: "founding", earnings:  6580, jobs: 17, referrals: 5,  rating: 4.84, change:  0 },
+  { id: "9",  name: "Kevin Okafor",        trade: "HVAC",          city: "Denton",              tier: "l3",       earnings:  5940, jobs: 16, referrals: 4,  rating: 4.82, change:  2 },
+  { id: "10", name: "Tamara Nguyen",       trade: "Electrical",    city: "Lewisville",          tier: "l3",       earnings:  5320, jobs: 14, referrals: 4,  rating: 4.80, change: -1 },
+  { id: "11", name: "James Whitfield",     trade: "Plumbing",      city: "Mesquite",            tier: "l3",       earnings:  4890, jobs: 13, referrals: 3,  rating: 4.79, change:  0 },
+  { id: "12", name: "Alicia Torres",       trade: "Insulation",    city: "Carrollton",          tier: "l3",       earnings:  4450, jobs: 12, referrals: 3,  rating: 4.78, change:  1 },
+  { id: "13", name: "Robert Chen",         trade: "Roofing",       city: "Richardson",          tier: "l3",       earnings:  4120, jobs: 11, referrals: 3,  rating: 4.76, change: -1 },
+  { id: "14", name: "You",                trade: "HVAC",          city: "Allen",               tier: "l3",       earnings:  3780, jobs: 10, referrals: 2,  rating: 4.74, change:  0 },
+  { id: "15", name: "Monica Davis",        trade: "HVAC",          city: "Euless",              tier: "l4",       earnings:  3440, jobs:  9, referrals: 2,  rating: 4.72, change:  2 },
+  { id: "16", name: "Derek Patel",         trade: "Electrical",    city: "Bedford",             tier: "l4",       earnings:  3100, jobs:  8, referrals: 2,  rating: 4.71, change: -1 },
+  { id: "17", name: "Cassandra Lee",       trade: "Painting",      city: "Grapevine",           tier: "l4",       earnings:  2870, jobs:  8, referrals: 1,  rating: 4.70, change:  1 },
+  { id: "18", name: "Omar Jackson",        trade: "Landscaping",   city: "Southlake",           tier: "l4",       earnings:  2540, jobs:  7, referrals: 1,  rating: 4.68, change:  0 },
+  { id: "19", name: "Fatima Hassan",       trade: "Flooring",      city: "Colleyville",         tier: "l4",       earnings:  2210, jobs:  6, referrals: 1,  rating: 4.67, change: -2 },
+  { id: "20", name: "Brandon Scott",       trade: "Carpentry",     city: "Keller",              tier: "l4",       earnings:  1980, jobs:  5, referrals: 1,  rating: 4.65, change:  1 },
+  { id: "21", name: "Naomi Wright",        trade: "Roofing",       city: "Flower Mound",        tier: "l4",       earnings:  1750, jobs:  5, referrals: 0,  rating: 4.63, change:  0 },
+  { id: "22", name: "Tyler Morrison",      trade: "HVAC",          city: "Hurst",               tier: "l4",       earnings:  1520, jobs:  4, referrals: 0,  rating: 4.61, change:  3 },
+  { id: "23", name: "Jasmine Flores",      trade: "Electrical",    city: "North Richland Hills", tier: "l4",      earnings:  1290, jobs:  4, referrals: 0,  rating: 4.59, change: -1 },
+  { id: "24", name: "Samuel Griffin",      trade: "Plumbing",      city: "Grand Prairie",       tier: "l4",       earnings:  1060, jobs:  3, referrals: 0,  rating: 4.57, change:  0 },
+  { id: "25", name: "Christina Park",      trade: "Painting",      city: "Mansfield",           tier: "l4",       earnings:   830, jobs:  2, referrals: 0,  rating: 4.55, change: -1 },
+];
+
+const CURRENT_ID = "14";
+
+function sortList(list: Entry[], cat: Category): Entry[] {
+  return [...list].sort((a, b) => {
+    if (cat === "earnings") return b.earnings - a.earnings;
+    if (cat === "jobs") return b.jobs - a.jobs;
+    if (cat === "referrals") return b.referrals - a.referrals;
+    return b.rating - a.rating;
+  });
+}
+
+function metricVal(e: Entry, cat: Category) {
+  if (cat === "earnings") return formatCurrency(e.earnings);
+  if (cat === "jobs") return `${e.jobs} jobs`;
+  if (cat === "referrals") return `${e.referrals} refs`;
+  return `${e.rating.toFixed(2)} ★`;
+}
+
+function ChangeChip({ change }: { change: number }) {
+  if (change === 0) return (
+    <span style={{ color: "#6B7280", fontSize: 11, display: "flex", alignItems: "center", gap: 2 }}>
+      <Minus size={10} /> Same
+    </span>
+  );
+  if (change > 0) return (
+    <span style={{ color: "#22C55E", fontSize: 11, display: "flex", alignItems: "center", gap: 2 }}>
+      <TrendingUp size={10} /> +{change}
+    </span>
+  );
+  return (
+    <span style={{ color: "#EF4444", fontSize: 11, display: "flex", alignItems: "center", gap: 2 }}>
+      <TrendingDown size={10} /> {change}
+    </span>
+  );
+}
+
+function PodiumCard({ entry, position, isMe, cat }: { entry: Entry; position: 0 | 1 | 2; isMe: boolean; cat: Category }) {
+  const medals = ["🥇", "🥈", "🥉"];
+  const glows = [
+    "0 0 24px 4px rgba(255,215,0,0.18)",
+    "0 0 16px 2px rgba(192,192,192,0.14)",
+    "0 0 14px 2px rgba(205,127,50,0.14)",
+  ];
+  const borders = ["rgba(255,215,0,0.40)", "rgba(192,192,192,0.25)", "rgba(205,127,50,0.25)"];
+  const offsets = [0, 32, 56];
+  const tierInfo = TIER_STYLES[entry.tier] ?? TIER_STYLES.l4;
+
   return (
     <div style={{
-      width: 36, height: 36, borderRadius: "50%",
-      background: s.bg, boxShadow: s.shadow,
-      display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+      background: "rgba(255,255,255,0.04)",
+      border: `1.5px solid ${borders[position]}`,
+      borderRadius: 20,
+      padding: "20px 16px 16px",
+      marginTop: offsets[position],
+      boxShadow: glows[position],
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: 6,
+      position: "relative",
     }}>
-      <Icon style={{ width: 16, height: 16, color: "#fff" }} />
+      {isMe && (
+        <div style={{
+          position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
+          background: "#14B8A6", color: "#fff", fontSize: 10, fontWeight: 700,
+          padding: "3px 10px", borderRadius: 99, whiteSpace: "nowrap",
+        }}>YOU</div>
+      )}
+      <div style={{ fontSize: 32 }}>{medals[position]}</div>
+      <div style={{
+        width: position === 0 ? 56 : 44, height: position === 0 ? 56 : 44,
+        borderRadius: "50%", background: avatarBg(entry.name),
+        display: "flex", alignItems: "center", justifyContent: "center",
+        fontWeight: 800, color: "#fff", fontSize: position === 0 ? 20 : 15,
+      }}>{getInitials(entry.name)}</div>
+      <div style={{ fontWeight: 700, color: "#F0F4FF", fontSize: 13, textAlign: "center", maxWidth: 120 }}>{entry.name}</div>
+      <div style={{ fontSize: 11, color: TRADES[entry.trade] ?? "#9CA3AF", fontWeight: 600 }}>{entry.trade}</div>
+      <div style={{ fontSize: 11, color: "#6B7280" }}>{entry.city}</div>
+      <div style={{
+        marginTop: 4, padding: "2px 10px", borderRadius: 99,
+        background: tierInfo.bg, color: tierInfo.color, fontSize: 10, fontWeight: 700,
+      }}>{tierInfo.label}</div>
+      <div style={{ marginTop: 4, fontWeight: 800, color: "#67E8F9", fontSize: 15 }}>{metricVal(entry, cat)}</div>
     </div>
   );
 }
 
-function TierBadge({ tier }: { tier?: string }) {
-  if (!tier) return null;
-  const key = tier.toLowerCase();
-  const meta = TIER_META[key];
-  if (!meta) return null;
-  return (
-    <span style={{
-      fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 20,
-      background: meta.bg, color: meta.color, border: `1px solid ${meta.border}`,
-      letterSpacing: "0.04em",
-    }}>
-      {meta.label}
-    </span>
-  );
-}
-
-function OverrideEst({ referralCount }: { referralCount: number }) {
-  const avgSubOverride = Math.round(referralCount * 199 * 0.12);
-  return (
-    <span style={{ fontSize: 11, color: "#17C1E8", fontWeight: 600 }}>
-      ~${avgSubOverride.toLocaleString()}/mo override est.
-    </span>
-  );
-}
-
 export default function Leaderboard() {
-  const { data: result, isLoading } = trpc.proWaitlist.getLeaderboard.useQuery();
+  const [period, setPeriod] = useState<Period>("month");
+  const [cat, setCat] = useState<Category>("earnings");
 
-  const leaders: any[] = Array.isArray((result as any)?.leaders)
-    ? (result as any).leaders
-    : Array.isArray(result)
-    ? (result as any[])
+  const sorted = sortList(MOCK, cat);
+  const top3 = sorted.slice(0, 3);
+  const rest = sorted.slice(3);
+  const myIdx = sorted.findIndex((e) => e.id === CURRENT_ID);
+  const myEntry = myIdx >= 0 ? sorted[myIdx] : null;
+
+  const podiumOrder: Array<{ e: Entry; pos: 0 | 1 | 2 }> = top3.length === 3
+    ? [{ e: top3[1], pos: 1 }, { e: top3[0], pos: 0 }, { e: top3[2], pos: 2 }]
     : [];
-  const totalSignups: number = (result as any)?.totalSignups ?? leaders.length;
-  const pctFilled = Math.min(Math.round((totalSignups / TOTAL_SLOTS) * 100), 100);
-  const spotsLeft = Math.max(TOTAL_SLOTS - totalSignups, 0);
+
+  const PERIODS: { key: Period; label: string }[] = [
+    { key: "week", label: "This Week" },
+    { key: "month", label: "This Month" },
+    { key: "alltime", label: "All Time" },
+  ];
+
+  const CATS: { key: Category; label: string; icon: typeof DollarSign }[] = [
+    { key: "earnings",  label: "Earnings",  icon: DollarSign },
+    { key: "jobs",      label: "Jobs",      icon: Briefcase  },
+    { key: "referrals", label: "Referrals", icon: Users      },
+    { key: "rating",    label: "Rating",    icon: Star       },
+  ];
+
+  const rankBadgeStyle = (i: number) => {
+    if (i === 0) return { background: "rgba(255,215,0,0.15)", color: "#FFD700", border: "1px solid rgba(255,215,0,0.4)" };
+    if (i === 1) return { background: "rgba(192,192,192,0.10)", color: "#C0C0C0", border: "1px solid rgba(192,192,192,0.3)" };
+    if (i === 2) return { background: "rgba(205,127,50,0.10)", color: "#CD7F32", border: "1px solid rgba(205,127,50,0.3)" };
+    return { background: "rgba(255,255,255,0.06)", color: "#9CA3AF", border: "1px solid rgba(255,255,255,0.08)" };
+  };
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #050d1a 0%, #0a1628 55%, #0d1f3c 100%)" }}>
-      <style>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 24px #D4AF3730; } 50% { box-shadow: 0 0 40px #D4AF3760; } }
-      `}</style>
+    <div style={{ minHeight: "100vh", background: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif", paddingBottom: 120 }}>
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "32px 20px 0" }}>
 
-      {/* SEO */}
-      <title>Network Income Leaderboard — ProLnk Partner Network</title>
-      <meta name="description" content="See who's building the ProLnk founding network fastest. Top partner recruiters earn the most in subscription override income across 4 network levels." />
-
-      {/* Header nav */}
-      <div style={{ borderBottom: "1px solid #1E3A5F" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/">
-            <ProLnkLogo height={32} variant="dark" className="shrink-0 cursor-pointer" />
-          </Link>
-          <Link href="/apply">
-            <button style={{
-              padding: "8px 20px", borderRadius: 10, fontSize: 13, fontWeight: 700,
-              background: "linear-gradient(135deg, #D4AF37, #F5D060)",
-              color: "#1a1000", border: "none", cursor: "pointer",
-            }}>
-              Join the Network
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px 80px" }}>
-
-        {/* Hero section */}
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: 28 }}>
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "6px 16px", borderRadius: 999, marginBottom: 16,
-            background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.3)",
-            color: "#D4AF37", fontSize: 12, fontWeight: 700, letterSpacing: "0.06em",
+            background: "rgba(103,232,249,0.08)", border: "1px solid rgba(103,232,249,0.2)",
+            borderRadius: 99, padding: "6px 16px", marginBottom: 14,
           }}>
-            <Crown style={{ width: 13, height: 13 }} />
-            FOUNDING NETWORK LEADERBOARD
+            <Trophy size={15} color="#67E8F9" />
+            <span style={{ color: "#67E8F9", fontSize: 13, fontWeight: 600 }}>ProLnk Leaderboard</span>
           </div>
-          <h1 style={{ fontSize: 38, fontWeight: 800, color: "#FFFFFF", margin: "0 0 10px", letterSpacing: "-0.02em" }}>
-            Network Income Leaderboard
+          <h1 style={{ fontSize: 34, fontWeight: 800, color: "#F0F4FF", margin: 0, lineHeight: 1.2 }}>
+            Top Performers <span style={{ color: "#67E8F9" }}>This Month</span>
           </h1>
-          <p style={{ fontSize: 15, color: "#4A6FA5", margin: "0 auto", maxWidth: 560, lineHeight: 1.6 }}>
-            Partners who recruit the most pro network members earn the most in subscription overrides.
-            Every partner you bring in pays 12% recurring on their $149/mo — across 4 network levels.
-          </p>
+          <p style={{ color: "#6B7280", fontSize: 14, marginTop: 8 }}>Compete, rise, and earn your place among ProLnk's elite pros.</p>
+        </div>
 
-          {/* Override rate pills */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 10, marginTop: 20, flexWrap: "wrap" }}>
-            {[
-              { level: "L1 Direct", rate: "12%", color: "#17C1E8" },
-              { level: "L2 Network", rate: "6%",  color: "#8B5CF6" },
-              { level: "L3 Network", rate: "3%",  color: "#F59E0B" },
-              { level: "L4 Network", rate: "1.5%",color: "#22C55E" },
-            ].map(({ level, rate, color }) => (
-              <div key={level} style={{
-                padding: "6px 14px", borderRadius: 999,
-                background: `${color}15`, border: `1px solid ${color}30`,
+        {/* Period Tabs */}
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 12, flexWrap: "wrap" }}>
+          {PERIODS.map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => setPeriod(key)}
+              style={{
+                padding: "7px 18px", borderRadius: 99, fontSize: 13, fontWeight: 600, cursor: "pointer",
+                background: period === key ? "#67E8F9" : "rgba(255,255,255,0.05)",
+                color: period === key ? "#0A1628" : "#9CA3AF",
+                border: period === key ? "none" : "1px solid rgba(255,255,255,0.09)",
+                transition: "all 0.15s",
+              }}
+            >{label}</button>
+          ))}
+        </div>
+
+        {/* Category Tabs */}
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 36, flexWrap: "wrap" }}>
+          {CATS.map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              onClick={() => setCat(key)}
+              style={{
+                padding: "7px 16px", borderRadius: 10, fontSize: 13, fontWeight: 600, cursor: "pointer",
                 display: "flex", alignItems: "center", gap: 6,
-              }}>
-                <span style={{ fontSize: 13, fontWeight: 800, color }}>{rate}</span>
-                <span style={{ fontSize: 11, color: "#4A6FA5", fontWeight: 500 }}>{level}</span>
-              </div>
-            ))}
-          </div>
+                background: cat === key ? "rgba(103,232,249,0.12)" : "rgba(255,255,255,0.04)",
+                color: cat === key ? "#67E8F9" : "#6B7280",
+                border: cat === key ? "1px solid rgba(103,232,249,0.35)" : "1px solid rgba(255,255,255,0.07)",
+                transition: "all 0.15s",
+              }}
+            >
+              <Icon size={13} />
+              {label}
+            </button>
+          ))}
         </div>
 
-        {/* Slot fill bar */}
+        {/* Podium */}
+        {podiumOrder.length === 3 && (
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 36, alignItems: "end" }}>
+            {podiumOrder.map(({ e, pos }) => (
+              <PodiumCard key={e.id} entry={e} position={pos} isMe={e.id === CURRENT_ID} cat={cat} />
+            ))}
+          </div>
+        )}
+
+        {/* Full rankings table */}
         <div style={{
-          background: "#0F1F35", border: "1px solid #1E3A5F", borderRadius: 14,
-          padding: "20px 24px", marginBottom: 40,
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: 16,
+          overflow: "hidden",
+          marginBottom: 20,
         }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 10 }}>
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#FFFFFF", display: "flex", alignItems: "center", gap: 8 }}>
-              <Users style={{ width: 15, height: 15, color: "#D4AF37" }} />
-              {totalSignups.toLocaleString()} of {TOTAL_SLOTS.toLocaleString()} founding slots filled
-            </span>
-            <span style={{ fontSize: 12, color: "#D4AF37", fontWeight: 700 }}>
-              {spotsLeft.toLocaleString()} remaining
-            </span>
-          </div>
-          <div style={{ height: 8, background: "rgba(255,255,255,0.08)", borderRadius: 6, overflow: "hidden" }}>
-            <div style={{
-              height: "100%",
-              width: `${pctFilled}%`,
-              background: "linear-gradient(90deg, #D4AF37, #F5D060)",
-              borderRadius: 6,
-              transition: "width 0.8s ease",
-            }} />
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 8, fontSize: 10, color: "#4A6FA5", flexWrap: "wrap", gap: 4 }}>
-            {Object.entries(TIER_META).map(([, m]) => (
-              <span key={m.label} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                <span style={{ width: 8, height: 8, borderRadius: "50%", background: m.color, display: "inline-block" }} />
-                {m.label} — {m.subCaption}
-              </span>
+          <div style={{
+            display: "grid", gridTemplateColumns: "40px 1fr 90px 80px 90px 70px",
+            gap: "0 12px", padding: "10px 16px",
+            borderBottom: "1px solid rgba(255,255,255,0.07)",
+          }}>
+            {["#", "Partner", "Trade", "Metric", "Tier", "Chg"].map((h) => (
+              <div key={h} style={{ fontSize: 10, fontWeight: 700, color: "#4B5563", textTransform: "uppercase", letterSpacing: "0.06em", textAlign: h === "#" ? "center" : "left" }}>{h}</div>
             ))}
           </div>
+          {sorted.map((entry, i) => {
+            const isMe = entry.id === CURRENT_ID;
+            const tierInfo = TIER_STYLES[entry.tier] ?? TIER_STYLES.l4;
+            return (
+              <div
+                key={entry.id}
+                style={{
+                  display: "grid", gridTemplateColumns: "40px 1fr 90px 80px 90px 70px",
+                  gap: "0 12px", alignItems: "center",
+                  padding: "10px 16px",
+                  borderBottom: "1px solid rgba(255,255,255,0.04)",
+                  background: isMe ? "rgba(20,184,166,0.07)" : "transparent",
+                  borderLeft: isMe ? "2px solid #14B8A6" : "2px solid transparent",
+                  transition: "background 0.12s",
+                }}
+              >
+                <div style={{ textAlign: "center" }}>
+                  <div style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 24, height: 24, borderRadius: 6, fontSize: 12, fontWeight: 700,
+                    ...rankBadgeStyle(i),
+                  }}>{i + 1}</div>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
+                  <div style={{
+                    width: 32, height: 32, borderRadius: "50%", background: avatarBg(entry.name),
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontWeight: 700, color: "#fff", fontSize: 12, flexShrink: 0,
+                  }}>{getInitials(entry.name)}</div>
+                  <div style={{ minWidth: 0 }}>
+                    <div style={{ fontWeight: 600, color: isMe ? "#5EEAD4" : "#E5E7EB", fontSize: 13, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {entry.name}{isMe && <span style={{ color: "#14B8A6", fontSize: 11, marginLeft: 4 }}>(you)</span>}
+                    </div>
+                    <div style={{ fontSize: 11, color: "#6B7280" }}>{entry.city}</div>
+                  </div>
+                </div>
+
+                <div>
+                  <span style={{
+                    display: "inline-block", padding: "2px 7px", borderRadius: 6, fontSize: 10, fontWeight: 700,
+                    background: `${TRADES[entry.trade] ?? "#6B7280"}18`,
+                    color: TRADES[entry.trade] ?? "#9CA3AF",
+                    border: `1px solid ${TRADES[entry.trade] ?? "#6B7280"}33`,
+                  }}>{entry.trade}</span>
+                </div>
+
+                <div style={{ fontWeight: 700, color: "#67E8F9", fontSize: 13 }}>{metricVal(entry, cat)}</div>
+
+                <div>
+                  <span style={{
+                    display: "inline-block", padding: "2px 8px", borderRadius: 99, fontSize: 10, fontWeight: 700,
+                    background: tierInfo.bg, color: tierInfo.color,
+                  }}>{tierInfo.label}</span>
+                </div>
+
+                <ChangeChip change={entry.change} />
+              </div>
+            );
+          })}
         </div>
 
-        {isLoading ? (
-          <div style={{ display: "flex", justifyContent: "center", padding: "80px 0" }}>
-            <div style={{ width: 44, height: 44, borderRadius: "50%", border: "2px solid #1E3A5F", borderTopColor: "#D4AF37", animation: "spin 0.8s linear infinite" }} />
-          </div>
-        ) : leaders.length === 0 ? (
-          <div style={{ textAlign: "center", padding: "80px 0", color: "#4A6FA5" }}>
-            <Trophy style={{ width: 48, height: 48, margin: "0 auto 16px", opacity: 0.3 }} />
-            <p style={{ margin: "0 0 8px", fontSize: 16, fontWeight: 600, color: "#FFFFFF" }}>No entries yet</p>
-            <p style={{ margin: 0, fontSize: 14 }}>Be the first to climb the leaderboard.</p>
-          </div>
-        ) : (
-          <>
-            {/* ── TOP 3 PODIUM ── */}
-            {leaders.length >= 1 && (
-              <div style={{ marginBottom: 48 }}>
-                <div style={{ textAlign: "center", marginBottom: 24 }}>
-                  <h2 style={{ fontSize: 13, fontWeight: 700, color: "#4A6FA5", letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
-                    Top Recruiters This Period
-                  </h2>
-                </div>
-
-                {/* Podium layout: 2nd | 1st | 3rd */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, alignItems: "end", maxWidth: 720, margin: "0 auto" }}>
-                  {PODIUM_ORDER.map((idx) => {
-                    const p = leaders[idx];
-                    if (!p) return <div key={idx} />;
-                    const rank = idx + 1;
-                    const s = RANK_BADGE_STYLES[idx];
-                    const Icon = s.icon;
-                    const isFirst = idx === 0;
-                    const tierKey = (p.tier ?? "").toLowerCase();
-                    const tierMeta = TIER_META[tierKey];
-
-                    return (
-                      <div key={idx} style={{
-                        background: "#0F1F35",
-                        border: `1.5px solid ${s.border}`,
-                        borderRadius: 18,
-                        padding: isFirst ? "32px 20px 24px" : "24px 20px 20px",
-                        textAlign: "center",
-                        boxShadow: isFirst ? `${s.shadow}, 0 20px 60px rgba(0,0,0,0.3)` : s.shadow,
-                        position: "relative",
-                        overflow: "hidden",
-                        animation: isFirst ? "pulse-glow 3s ease-in-out infinite" : undefined,
-                        transform: isFirst ? "scale(1.04)" : undefined,
-                      }}>
-                        {/* Top accent bar */}
-                        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: s.bg }} />
-
-                        {/* Rank label */}
-                        <div style={{
-                          position: "absolute", top: 10, right: 12,
-                          fontSize: 10, fontWeight: 700, color: s.border, letterSpacing: "0.06em",
-                        }}>
-                          #{rank}
-                        </div>
-
-                        {/* Medal icon */}
-                        <div style={{
-                          width: isFirst ? 60 : 52, height: isFirst ? 60 : 52,
-                          borderRadius: "50%", margin: "0 auto 14px",
-                          background: s.bg, boxShadow: s.shadow,
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                        }}>
-                          <Icon style={{ width: isFirst ? 26 : 22, height: isFirst ? 26 : 22, color: "#fff" }} />
-                        </div>
-
-                        {/* Name */}
-                        <div style={{ fontSize: isFirst ? 16 : 14, fontWeight: 700, color: "#FFFFFF", marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                          {p.name}
-                        </div>
-
-                        {/* Trade / location */}
-                        <div style={{ fontSize: 11, color: "#4A6FA5", marginBottom: 10, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                          {p.trade}{p.city ? ` · ${p.city}` : ""}{p.state ? `, ${p.state}` : ""}
-                        </div>
-
-                        {/* Tier badge */}
-                        {tierMeta && (
-                          <div style={{ marginBottom: 12 }}>
-                            <TierBadge tier={p.tier} />
-                          </div>
-                        )}
-
-                        {/* Recruit count — primary metric */}
-                        <div style={{
-                          background: "rgba(255,255,255,0.04)", borderRadius: 10,
-                          padding: "10px 8px", marginBottom: 8,
-                        }}>
-                          <div style={{ fontSize: isFirst ? 36 : 28, fontWeight: 800, color: "#D4AF37", fontVariantNumeric: "tabular-nums", lineHeight: 1 }}>
-                            {p.referralCount ?? 0}
-                          </div>
-                          <div style={{ fontSize: 9, color: "#4A6FA5", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 3 }}>
-                            recruits
-                          </div>
-                        </div>
-
-                        {/* Override estimate */}
-                        <OverrideEst referralCount={p.referralCount ?? 0} />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* ── RANKS 4–20 TABLE ── */}
-            {leaders.length > 3 && (
-              <div style={{ background: "#0F1F35", border: "1px solid #1E3A5F", borderRadius: 16, overflow: "hidden", marginBottom: 40 }}>
-                {/* Table header */}
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "52px 1fr 100px 90px 90px 110px",
-                  padding: "10px 20px",
-                  background: "#0A1628",
-                  fontSize: 10, fontWeight: 700, color: "#4A6FA5",
-                  textTransform: "uppercase", letterSpacing: "0.07em",
-                  borderBottom: "1px solid #1E3A5F",
-                }}>
-                  <span>Rank</span>
-                  <span>Partner</span>
-                  <span>Tier</span>
-                  <span>Trade</span>
-                  <span style={{ textAlign: "center" }}>Recruits</span>
-                  <span style={{ textAlign: "right" }}>Est. Override</span>
-                </div>
-
-                {leaders.slice(3, 20).map((p: any, i: number) => {
-                  const rank = i + 4;
-                  const tierKey = (p.tier ?? "").toLowerCase();
-                  const tierMeta = TIER_META[tierKey];
-                  const recruits = p.referralCount ?? 0;
-                  const overrideEst = Math.round(recruits * 199 * 0.12);
-
-                  return (
-                    <div
-                      key={i}
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "52px 1fr 100px 90px 90px 110px",
-                        padding: "13px 20px",
-                        borderTop: "1px solid #1E3A5F",
-                        alignItems: "center",
-                        transition: "background 0.15s",
-                        cursor: "default",
-                      }}
-                      onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.03)"}
-                      onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.background = "transparent"}
-                    >
-                      <RankBadge rank={rank} />
-
-                      <div style={{ minWidth: 0, paddingRight: 8 }}>
-                        <div style={{ fontSize: 13, fontWeight: 600, color: "#FFFFFF", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                          {p.name}
-                        </div>
-                        {p.city && (
-                          <div style={{ fontSize: 11, color: "#4A6FA5", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                            {p.city}{p.state ? `, ${p.state}` : ""}
-                          </div>
-                        )}
-                      </div>
-
-                      <div>
-                        {tierMeta ? (
-                          <span style={{
-                            fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 20,
-                            background: tierMeta.bg, color: tierMeta.color, border: `1px solid ${tierMeta.border}`,
-                            letterSpacing: "0.04em", whiteSpace: "nowrap",
-                          }}>
-                            {tierMeta.label}
-                          </span>
-                        ) : (
-                          <span style={{ fontSize: 11, color: "#4A6FA5" }}>—</span>
-                        )}
-                      </div>
-
-                      <div style={{ fontSize: 12, color: "#4A6FA5", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                        {p.trade ?? "—"}
-                      </div>
-
-                      <div style={{ textAlign: "center" }}>
-                        <span style={{
-                          display: "inline-flex", alignItems: "center", justifyContent: "center",
-                          minWidth: 32, height: 24, borderRadius: 8,
-                          background: recruits > 0 ? "rgba(212,175,55,0.12)" : "rgba(255,255,255,0.04)",
-                          fontSize: 13, fontWeight: 700,
-                          color: recruits > 0 ? "#D4AF37" : "#4A6FA5",
-                          fontVariantNumeric: "tabular-nums",
-                        }}>
-                          {recruits}
-                        </span>
-                      </div>
-
-                      <div style={{ textAlign: "right", fontSize: 12, color: "#17C1E8", fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
-                        {overrideEst > 0 ? `~$${overrideEst.toLocaleString()}/mo` : "—"}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
-            {/* ── CTA ── */}
-            <div style={{
-              background: "linear-gradient(135deg, #0F1F35 0%, #0d2040 100%)",
-              border: "1px solid #1E3A5F",
-              borderRadius: 18, padding: "32px 32px",
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              gap: 24, flexWrap: "wrap",
-            }}>
+        {/* My Rank sticky footer */}
+        {myEntry && (
+          <div style={{
+            position: "fixed", bottom: 0, left: 0, right: 0,
+            background: "rgba(10,22,40,0.95)",
+            borderTop: "1px solid rgba(20,184,166,0.25)",
+            padding: "14px 20px",
+            display: "flex", alignItems: "center", gap: 16,
+            backdropFilter: "blur(12px)",
+            zIndex: 50,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1 }}>
+              <div style={{
+                width: 40, height: 40, borderRadius: "50%", background: avatarBg(myEntry.name),
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontWeight: 700, color: "#fff", fontSize: 15, flexShrink: 0,
+              }}>{getInitials(myEntry.name)}</div>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                  <DollarSign style={{ width: 18, height: 18, color: "#17C1E8" }} />
-                  <span style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF" }}>
-                    Every recruit compounds your income
-                  </span>
+                <div style={{ color: "#14B8A6", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>Your Rank</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 1 }}>
+                  <span style={{ color: "#F0F4FF", fontWeight: 800, fontSize: 18 }}>#{myIdx + 1} overall</span>
+                  <span style={{ color: "#6B7280", fontSize: 12 }}>•</span>
+                  <span style={{ color: "#9CA3AF", fontSize: 12 }}>#12 among HVAC pros in DFW</span>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: "#4A6FA5", maxWidth: 400, lineHeight: 1.5 }}>
-                  Each partner you recruit pays 12% of their $149/mo subscription to you — forever.
-                  10 recruits = ~$179/mo in overrides before you close a single job.
-                </p>
               </div>
-              <Link href="/apply">
-                <button style={{
-                  padding: "14px 32px", borderRadius: 12, fontSize: 14, fontWeight: 700,
-                  background: "linear-gradient(135deg, #D4AF37, #F5D060)",
-                  color: "#1a1000", border: "none", cursor: "pointer",
-                  boxShadow: "0 0 30px rgba(212,175,55,0.3)",
-                  whiteSpace: "nowrap",
-                  transition: "opacity 0.2s",
-                }}>
-                  Join — {spotsLeft.toLocaleString()} Slots Left
-                </button>
-              </Link>
             </div>
-          </>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+              <div style={{ color: "#9CA3AF", fontSize: 11 }}>
+                <Zap size={11} color="#F59E0B" style={{ display: "inline", marginRight: 4 }} />
+                3 more jobs to reach top 40
+              </div>
+              <button
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({ title: `I'm ranked #${myIdx + 1} on ProLnk!`, text: `Check out my ProLnk ranking — I'm in the top performers!`, url: window.location.href });
+                  } else {
+                    navigator.clipboard.writeText(`I'm ranked #${myIdx + 1} on ProLnk! ${window.location.href}`);
+                  }
+                }}
+                style={{
+                  display: "flex", alignItems: "center", gap: 6,
+                  background: "#14B8A6", color: "#0A1628",
+                  border: "none", borderRadius: 8, padding: "6px 14px",
+                  fontWeight: 700, fontSize: 12, cursor: "pointer",
+                }}
+              >
+                <Share2 size={12} /> Share My Rank
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>

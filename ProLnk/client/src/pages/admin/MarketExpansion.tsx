@@ -9,7 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   MapPin, TrendingUp, Users, Target, Building2, ChevronRight,
-  Globe, Star, Zap, DollarSign, BarChart3, CheckCircle2
+  Globe, Star, Zap, DollarSign, BarChart3, CheckCircle
 } from "lucide-react";
 import { SERVICE_GROUPS, SERVICE_CATEGORIES } from "../../../../shared/serviceCategories";
 
@@ -522,7 +522,7 @@ export default function MarketExpansion() {
                     { task: "Expand to 20+ partners", done: false },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-2 p-2 rounded-lg hover:bg-slate-700/40 transition-colors">
-                      <CheckCircle2 className={`w-4 h-4 mt-0.5 flex-shrink-0 ${item.done ? "text-teal-400" : "text-slate-600"}`} />
+                      <CheckCircle className={`w-4 h-4 mt-0.5 flex-shrink-0 ${item.done ? "text-teal-400" : "text-slate-600"}`} />
                       <span className={`text-xs ${item.done ? "text-slate-500 line-through" : "text-slate-300"}`}>
                         {item.task}
                       </span>

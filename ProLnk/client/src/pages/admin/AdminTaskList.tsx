@@ -9,7 +9,7 @@ import { trpc } from "@/lib/trpc";
 import { useState, useMemo } from "react";
 import { toast } from "sonner";
 import {
-  CheckCircle2, Circle, AlertCircle, Clock, Zap, Users, DollarSign,
+  CheckCircle, Circle, AlertCircle, Clock, Zap, Users, DollarSign,
   Shield, BarChart3, Settings, ChevronDown, ChevronUp, RefreshCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -92,7 +92,7 @@ function TaskCard({ task, onToggle }: { task: Task; onToggle: (id: string) => vo
           onClick={e => { e.stopPropagation(); onToggle(task.id); }}
         >
           {isDone
-            ? <CheckCircle2 className="w-5 h-5 text-green-500" />
+            ? <CheckCircle className="w-5 h-5 text-green-500" />
             : <Circle className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
           }
         </button>
@@ -199,7 +199,7 @@ export default function AdminTaskList() {
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 text-[#00B5B8]" />
+              <CheckCircle className="w-6 h-6 text-[#00B5B8]" />
               Action Items
             </h1>
             <p className="text-muted-foreground text-sm mt-1">

@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * InsuranceJobCompletionModal — REV-01
  * Partner-side modal for completing an insurance-funded job.

@@ -415,6 +415,45 @@ const MediaLibraryAdmin = lazy(() => import("./pages/admin/MediaLibraryAdmin"));
 const SeasonalMaintenanceAdmin = lazy(() => import("./pages/admin/SeasonalMaintenanceAdmin"));
 const IntegrationWebhookDashboard = lazy(() => import("./pages/admin/IntegrationWebhookDashboard"));
 
+// New admin pages
+const IntegrationsDashboard = lazy(() => import("./pages/admin/IntegrationsDashboard"));
+const BackgroundChecks = lazy(() => import("./pages/admin/BackgroundChecks"));
+const PartnerVerificationQueue = lazy(() => import("./pages/admin/PartnerVerificationQueue"));
+const PaymentMonitorDashboard = lazy(() => import("./pages/admin/PaymentMonitorDashboard"));
+const TaxReportingCenter = lazy(() => import("./pages/admin/TaxReportingCenter"));
+const AddressValidationLog = lazy(() => import("./pages/admin/AddressValidationLog"));
+const PartnerPerformanceCoach = lazy(() => import("./pages/admin/PartnerPerformanceCoach"));
+const ProspectPipeline = lazy(() => import("./pages/admin/ProspectPipeline"));
+const MarketExpansionPlanner = lazy(() => import("./pages/admin/MarketExpansionPlanner"));
+const RevenueAnalytics = lazy(() => import("./pages/admin/RevenueAnalytics"));
+
+// New homeowner pages
+const NeighborhoodInsights = lazy(() => import("./pages/homeowner/NeighborhoodInsights"));
+const DigitalHomeRecord = lazy(() => import("./pages/homeowner/DigitalHomeRecord"));
+const HomeMaintenanceBudget = lazy(() => import("./pages/homeowner/HomeMaintenanceBudget"));
+const HomeApplianceTracker = lazy(() => import("./pages/homeowner/HomeApplianceTracker"));
+const EmergencyResponsePlan = lazy(() => import("./pages/homeowner/EmergencyResponsePlan"));
+const InsuranceVault = lazy(() => import("./pages/homeowner/InsuranceVault"));
+const SmartAlerts = lazy(() => import("./pages/homeowner/SmartAlerts"));
+const ImprovementPlanner = lazy(() => import("./pages/homeowner/ImprovementPlanner"));
+const HomeValueTracker = lazy(() => import("./pages/homeowner/HomeValueTracker"));
+const LocalServiceAlerts = lazy(() => import("./pages/homeowner/LocalServiceAlerts"));
+const HomeownerOnboarding = lazy(() => import("./pages/homeowner/HomeownerOnboarding"));
+
+// New dashboard pages
+const EarningsForecast = lazy(() => import("./pages/dashboard/EarningsForecast"));
+const EarningsDeepDive = lazy(() => import("./pages/dashboard/EarningsDeepDive"));
+const NetworkVisualization = lazy(() => import("./pages/dashboard/NetworkVisualization"));
+const ReferralContest = lazy(() => import("./pages/dashboard/ReferralContest"));
+const JobPipeline = lazy(() => import("./pages/dashboard/JobPipeline"));
+const CertificationsLicenses = lazy(() => import("./pages/dashboard/CertificationsLicenses"));
+
+// New top-level pages
+const CommissionCalculatorAdvanced = lazy(() => import("./pages/CommissionCalculatorAdvanced"));
+
+// New TrustyPro pages
+const TrustyProScanHistory = lazy(() => import("./pages/trustypro/ScanHistory"));
+
 // Trade SEO landing pages
 const TradeLanding = lazy(() => import("./pages/TradeLanding"));
 const TradeLandingList = lazy(() => import("./pages/TradeLandingList"));
@@ -877,6 +916,7 @@ function Router() {
       <Route path="/dashboard/payout-history" component={PayoutHistory} />
       <Route path="/dashboard/training" component={TrainingHub} />
       <Route path="/dashboard/calculator" component={CommissionCalculator} />
+      <Route path="/commission-calculator" component={CommissionCalculatorAdvanced} />
       <Route path="/dashboard/compliance" component={ComplianceDocs} />
       <Route path="/upgrade/success" component={UpgradeSuccess} />
       <Route path="/success" component={SuccessPage} />
@@ -931,6 +971,7 @@ function Router() {
       <Route path="/security" component={SecurityTrustCenter} />
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
+      <Route path="/trustypro/scans" component={TrustyProScanHistory} />
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
       <Route path="/exchange" component={ExchangeLanding} />
@@ -1005,6 +1046,12 @@ function Router() {
       <Route path="/admin/payment-monitor" component={PaymentMonitor} />
       <Route path="/admin/coverage-map" component={AdminCoverageMap} />
       <Route path="/dashboard/service-area" component={ServiceAreaManager} />
+      <Route path="/dashboard/forecast" component={EarningsForecast} />
+      <Route path="/dashboard/earnings-detail" component={EarningsDeepDive} />
+      <Route path="/dashboard/network" component={NetworkVisualization} />
+      <Route path="/dashboard/contest" component={ReferralContest} />
+      <Route path="/dashboard/jobs" component={JobPipeline} />
+      <Route path="/dashboard/credentials" component={CertificationsLicenses} />
       <Route path="/dashboard/quote-inbox" component={PartnerQuoteInbox} />
       <Route path="/dashboard/billing" component={BillingPortal} />
       <Route path="/my-home/quick-quote" component={QuickQuoteRequest} />
@@ -1035,6 +1082,16 @@ function Router() {
       <Route path="/admin/accessibility" component={AccessibilitySettings} />
       <Route path="/admin/error-monitoring" component={ErrorMonitoring} />
       <Route path="/admin/performance" component={PerformanceMonitoring} />
+      <Route path="/admin/integrations-dashboard" component={IntegrationsDashboard} />
+      <Route path="/admin/background-checks" component={BackgroundChecks} />
+      <Route path="/admin/verification-queue" component={PartnerVerificationQueue} />
+      <Route path="/admin/payment-monitor-dashboard" component={PaymentMonitorDashboard} />
+      <Route path="/admin/tax-reporting" component={TaxReportingCenter} />
+      <Route path="/admin/address-validation" component={AddressValidationLog} />
+      <Route path="/admin/performance-coach" component={PartnerPerformanceCoach} />
+      <Route path="/admin/prospect-pipeline" component={ProspectPipeline} />
+      <Route path="/admin/market-expansion" component={MarketExpansionPlanner} />
+      <Route path="/admin/revenue-analytics" component={RevenueAnalytics} />
 
       {/* Investor & Press */}
       <Route path="/investor" component={InvestorPage} />
@@ -1092,6 +1149,17 @@ function Router() {
       <Route path="/my-home/insurance-claim" component={InsuranceClaimAssistant} />
       <Route path="/my-home/insurance-coverage" component={InsuranceCoverageChecker} />
       <Route path="/my-home/warranties" component={WarrantyTracker} />
+      <Route path="/my-home/neighborhood" component={NeighborhoodInsights} />
+      <Route path="/my-home/record" component={DigitalHomeRecord} />
+      <Route path="/my-home/budget" component={HomeMaintenanceBudget} />
+      <Route path="/my-home/appliances" component={HomeApplianceTracker} />
+      <Route path="/my-home/emergency-plan" component={EmergencyResponsePlan} />
+      <Route path="/my-home/insurance" component={InsuranceVault} />
+      <Route path="/my-home/alerts" component={SmartAlerts} />
+      <Route path="/my-home/improvements" component={ImprovementPlanner} />
+      <Route path="/my-home/value" component={HomeValueTracker} />
+      <Route path="/my-home/local-alerts" component={LocalServiceAlerts} />
+      <Route path="/welcome" component={HomeownerOnboarding} />
 
       <Route path="/docs" component={Documentation} />
       <Route component={NotFound} />

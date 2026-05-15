@@ -16,7 +16,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Building2, Target, Users, Wrench, TrendingUp, Share2, Star, CheckCircle2, ChevronRight,
+  Building2, Target, Users, Wrench, TrendingUp, Share2, Star, CheckCircle, ChevronRight,
 } from "lucide-react";
 
 const SECTION_ICONS: Record<string, React.ReactNode> = {
@@ -339,7 +339,7 @@ export default function Partner360Profile() {
           {upsert.isPending ? (
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
           ) : (
-            <CheckCircle2 className="w-4 h-4" />
+            <CheckCircle className="w-4 h-4" />
           )}
           Save 360° Profile
         </Button>

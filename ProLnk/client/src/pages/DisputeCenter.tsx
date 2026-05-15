@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Partner -- Dispute Center
  * File a commission dispute, upload evidence, track status.

@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from "react";
 /**
  * SurgicalFixPanel — Wave 11: Visual Fix Generator
  *

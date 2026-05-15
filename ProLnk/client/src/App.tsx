@@ -580,45 +580,6 @@ const AICommandCenter = lazy(() => import("./pages/admin/AICommandCenter"));
 const SystemHealthDashboard = lazy(() => import("./pages/admin/SystemHealthDashboard"));
 
 
-// DFW Trade Network landing pages
-const DFWPlumberNetwork = lazy(() => import("./pages/DFWPlumberNetwork"));
-const DFWHVACNetwork = lazy(() => import("./pages/DFWHVACNetwork"));
-const DFWRooferNetwork = lazy(() => import("./pages/DFWRooferNetwork"));
-const DFWElectricianNetwork = lazy(() => import("./pages/DFWElectricianNetwork"));
-const DFWFoundationNetwork = lazy(() => import("./pages/DFWFoundationNetwork"));
-const DFWPestControlNetwork = lazy(() => import("./pages/DFWPestControlNetwork"));
-const DFWLandscaperNetwork = lazy(() => import("./pages/DFWLandscaperNetwork"));
-
-// TrustyPro City landing pages
-const TrustyProFrisco = lazy(() => import("./pages/TrustyProFrisco"));
-const TrustyProPlano = lazy(() => import("./pages/TrustyProPlano"));
-const TrustyProMcKinney = lazy(() => import("./pages/TrustyProMcKinney"));
-const TrustyProAllen = lazy(() => import("./pages/TrustyProAllen"));
-const TrustyProDallas = lazy(() => import("./pages/TrustyProDallas"));
-const TrustyProGarland = lazy(() => import("./pages/TrustyProGarland"));
-const TrustyProProsper = lazy(() => import("./pages/TrustyProProsper"));
-const TrustyProCelina = lazy(() => import("./pages/TrustyProCelina"));
-const TrustyProLewisville = lazy(() => import("./pages/TrustyProLewisville"));
-const TrustyProCarrollton = lazy(() => import("./pages/TrustyProCarrollton"));
-const TrustyProRichardson = lazy(() => import("./pages/TrustyProRichardson"));
-const TrustyProMesquite = lazy(() => import("./pages/TrustyProMesquite"));
-const TrustyProEuless = lazy(() => import("./pages/trustypro/TrustyProEuless"));
-const TrustyProBedford = lazy(() => import("./pages/trustypro/TrustyProBedford"));
-const TrustyProHurst = lazy(() => import("./pages/trustypro/TrustyProHurst"));
-const TrustyProKeller = lazy(() => import("./pages/trustypro/TrustyProKeller"));
-const TrustyProWylie = lazy(() => import("./pages/trustypro/TrustyProWylie"));
-const TrustyProForney = lazy(() => import("./pages/trustypro/TrustyProForney"));
-const TrustyProMansfield = lazy(() => import("./pages/trustypro/TrustyProMansfield"));
-const TrustyProBurleson = lazy(() => import("./pages/trustypro/TrustyProBurleson"));
-const TrustyProIrving = lazy(() => import("./pages/trustypro/TrustyProIrving"));
-const TrustyProGrapevine = lazy(() => import("./pages/trustypro/TrustyProGrapevine"));
-const TrustyProSouthlake = lazy(() => import("./pages/trustypro/TrustyProSouthlake"));
-const TrustyProColleyville = lazy(() => import("./pages/trustypro/TrustyProColleyville"));
-const TrustyProFlowerMound = lazy(() => import("./pages/trustypro/TrustyProFlowerMound"));
-const TrustyProHighlandVillage = lazy(() => import("./pages/trustypro/TrustyProHighlandVillage"));
-const TrustyProLittleElm = lazy(() => import("./pages/trustypro/TrustyProLittleElm"));
-const TrustyProTheColony = lazy(() => import("./pages/trustypro/TrustyProTheColony"));
-
 // App preview mockup screens
 const ProLnkHomePreview = lazy(() => import("./pages/app-preview/HomeScreen"));
 const ProLnkLeadPreview = lazy(() => import("./pages/app-preview/LeadDetailScreen"));
@@ -630,32 +591,6 @@ const TPScanPreview = lazy(() => import("./pages/trustypro/app-preview/ScanScree
 const TPPropertyPreview = lazy(() => import("./pages/trustypro/app-preview/PropertyScreen"));
 const TPFindProPreview = lazy(() => import("./pages/trustypro/app-preview/FindProScreen"));
 const TPAlertsPreview = lazy(() => import("./pages/trustypro/app-preview/AlertsScreen"));
-
-
-// Additional TrustyPro city pages
-const TrustyProDenton = lazy(() => import("./pages/TrustyProDenton"));
-const TrustyProArlington = lazy(() => import("./pages/TrustyProArlington"));
-const TrustyProGrandPrairie = lazy(() => import("./pages/TrustyProGrandPrairie"));
-const TrustyProRockwall = lazy(() => import("./pages/TrustyProRockwall"));
-
-
-// Wave N: DFW City Pages
-const TrustyProCoppell = lazy(() => import('./pages/trustypro/TrustyProCoppell'));
-const TrustyProAddison = lazy(() => import('./pages/trustypro/TrustyProAddison'));
-const TrustyProFarmersBranch = lazy(() => import('./pages/trustypro/TrustyProFarmersBranch'));
-const TrustyProUniversityPark = lazy(() => import('./pages/trustypro/TrustyProUniversityPark'));
-const TrustyProSachse = lazy(() => import('./pages/trustypro/TrustyProSachse'));
-const TrustyProRowlett = lazy(() => import('./pages/trustypro/TrustyProRowlett'));
-const TrustyProBalchSprings = lazy(() => import('./pages/trustypro/TrustyProBalchSprings'));
-const TrustyProSunnyvale = lazy(() => import('./pages/trustypro/TrustyProSunnyvale'));
-const TrustyProNorthDallas = lazy(() => import('./pages/trustypro/TrustyProNorthDallas'));
-const TrustyProPrestonHollow = lazy(() => import('./pages/trustypro/TrustyProPrestonHollow'));
-const TrustyProLakeHighlands = lazy(() => import('./pages/trustypro/TrustyProLakeHighlands'));
-const TrustyProOakCliff = lazy(() => import('./pages/trustypro/TrustyProOakCliff'));
-const TrustyProEastDallas = lazy(() => import('./pages/trustypro/TrustyProEastDallas'));
-const TrustyProMidtown = lazy(() => import('./pages/trustypro/TrustyProMidtown'));
-const TrustyProDeSotoLancaster = lazy(() => import('./pages/trustypro/TrustyProDeSotoLancaster'));
-const TrustyProForestHill = lazy(() => import('./pages/trustypro/TrustyProForestHill'));
 
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
@@ -1090,24 +1025,8 @@ function Router() {
       <Route path="/404" component={NotFound} />
       {/* V12 + 20-feature routes */}
       <Route path="/trustypro/scans" component={TrustyProScanHistory} />
-            <Route path="/trustypro/coppell" component={TrustyProCoppell} />
-      <Route path="/trustypro/addison" component={TrustyProAddison} />
-      <Route path="/trustypro/farmers-branch" component={TrustyProFarmersBranch} />
-      <Route path="/trustypro/university-park" component={TrustyProUniversityPark} />
       <Route path="/trustypro/gallery" component={ProjectGallery} />
       <Route path="/trustypro/partner-dashboard" component={TrustyProPartnerDashboard} />
-      <Route path="/trustypro/cedar-hill" component={TrustyProCedarHill} />
-      <Route path="/trustypro/desoto" component={TrustyProDeSoto} />
-      <Route path="/trustypro/duncanville" component={TrustyProDuncanville} />
-      <Route path="/trustypro/lancaster" component={TrustyProLancaster} />
-      <Route path="/trustypro/sachse" component={TrustyProSachse} />
-      <Route path="/trustypro/rowlett" component={TrustyProRowlett} />
-      <Route path="/trustypro/balch-springs" component={TrustyProBalchSprings} />
-      <Route path="/trustypro/sunnyvale" component={TrustyProSunnyvale} />
-      <Route path="/trustypro/north-dallas" component={TrustyProNorthDallas} />
-      <Route path="/trustypro/preston-hollow" component={TrustyProPrestonHollow} />
-      <Route path="/trustypro/lake-highlands" component={TrustyProLakeHighlands} />
-      <Route path="/trustypro/oak-cliff" component={TrustyProOakCliff} />
       <Route path="/exchange" component={ExchangeLanding} />
       <Route path="/exchange/home" component={ExchangeHome} />
       <Route path="/exchange/jobs" component={ExchangeJobs} />
@@ -1348,55 +1267,6 @@ function Router() {
       <Route path="/trustypro/app-preview/property" component={TPPropertyPreview} />
       <Route path="/trustypro/app-preview/find-pro" component={TPFindProPreview} />
       <Route path="/trustypro/app-preview/alerts" component={TPAlertsPreview} />
-
-      {/* DFW Trade Network landing pages */}
-      <Route path="/dfw-plumber" component={DFWPlumberNetwork} />
-      <Route path="/dfw-hvac" component={DFWHVACNetwork} />
-      <Route path="/dfw-roofer" component={DFWRooferNetwork} />
-      <Route path="/dfw-electrician" component={DFWElectricianNetwork} />
-      <Route path="/dfw-foundation" component={DFWFoundationNetwork} />
-      <Route path="/dfw-pest-control" component={DFWPestControlNetwork} />
-      <Route path="/dfw-landscaping" component={DFWLandscaperNetwork} />
-
-      {/* TrustyPro City landing pages */}
-      <Route path="/trustypro/frisco" component={TrustyProFrisco} />
-      <Route path="/trustypro/plano" component={TrustyProPlano} />
-      <Route path="/trustypro/mckinney" component={TrustyProMcKinney} />
-      <Route path="/trustypro/allen" component={TrustyProAllen} />
-      <Route path="/trustypro/dallas" component={TrustyProDallas} />
-      <Route path="/trustypro/garland" component={TrustyProGarland} />
-      <Route path="/trustypro/prosper" component={TrustyProProsper} />
-      <Route path="/trustypro/celina" component={TrustyProCelina} />
-      <Route path="/trustypro/lewisville" component={TrustyProLewisville} />
-      <Route path="/trustypro/carrollton" component={TrustyProCarrollton} />
-      <Route path="/trustypro/richardson" component={TrustyProRichardson} />
-      <Route path="/trustypro/mesquite" component={TrustyProMesquite} />
-      <Route path="/trustypro/euless" component={TrustyProEuless} />
-      <Route path="/trustypro/bedford" component={TrustyProBedford} />
-      <Route path="/trustypro/hurst" component={TrustyProHurst} />
-      <Route path="/trustypro/keller" component={TrustyProKeller} />
-      <Route path="/trustypro/wylie" component={TrustyProWylie} />
-      <Route path="/trustypro/forney" component={TrustyProForney} />
-      <Route path="/trustypro/mansfield" component={TrustyProMansfield} />
-      <Route path="/trustypro/burleson" component={TrustyProBurleson} />
-      <Route path="/trustypro/irving" component={TrustyProIrving} />
-      <Route path="/trustypro/grapevine" component={TrustyProGrapevine} />
-      <Route path="/trustypro/southlake" component={TrustyProSouthlake} />
-      <Route path="/trustypro/colleyville" component={TrustyProColleyville} />
-      <Route path="/trustypro/flower-mound" component={TrustyProFlowerMound} />
-      <Route path="/trustypro/highland-village" component={TrustyProHighlandVillage} />
-      <Route path="/trustypro/little-elm" component={TrustyProLittleElm} />
-      <Route path="/trustypro/the-colony" component={TrustyProTheColony} />
-
-      
-      <Route path="/trustypro/denton" component={TrustyProDenton} />
-      <Route path="/trustypro/arlington" component={TrustyProArlington} />
-      <Route path="/trustypro/grand-prairie" component={TrustyProGrandPrairie} />
-      <Route path="/trustypro/rockwall" component={TrustyProRockwall} />
-      <Route path="/trustypro/east-dallas" component={TrustyProEastDallas} />
-      <Route path="/trustypro/midtown" component={TrustyProMidtown} />
-      <Route path="/trustypro/desoto-lancaster" component={TrustyProDeSotoLancaster} />
-      <Route path="/trustypro/forest-hill" component={TrustyProForestHill} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>

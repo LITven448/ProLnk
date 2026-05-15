@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from "react";
 import { Link, useLocation } from "wouter";
 import { useState, useEffect, useRef } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";

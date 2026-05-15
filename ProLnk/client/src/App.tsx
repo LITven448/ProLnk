@@ -576,6 +576,9 @@ const PlatformHealthSummary = lazy(() => import("./pages/admin/PlatformHealthSum
 const MarketIntelligenceFeed = lazy(() => import("./pages/dashboard/MarketIntelligenceFeed"));
 const TierBreakdownDashboard = lazy(() => import("./pages/admin/TierBreakdownDashboard"));
 const RenovationFinancingGuide = lazy(() => import("./pages/homeowner/RenovationFinancingGuide"));
+const AICommandCenter = lazy(() => import("./pages/admin/AICommandCenter"));
+const SystemHealthDashboard = lazy(() => import("./pages/admin/SystemHealthDashboard"));
+
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();

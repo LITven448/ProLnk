@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useRef, useMemo, useEffect } from "react";
 import { useLocation } from "wouter";
 import InsuranceJobCompletionModal from "@/components/InsuranceJobCompletionModal";

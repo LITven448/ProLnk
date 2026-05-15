@@ -1577,3 +1577,89 @@ TiDB Cloud serverless auto-scales by default. Ensure:
 **Key findings for the engineering team:**
 
 The foundational data model is exceptionally well-designed. The commission cascade, photo pipeline, and upline chain tables are all built correctly. The primary gaps before Phase 2 launch are: (1) connecting all routers to the main `appRouter`, (2) moving photo AI processing to Inngest for reliability, (3) enforcing Stripe webhook idempotency universally, and (4) completing the Stripe Connect payout sweep. The commission math in `commissions.ts` using `Decimal.js` is correct and should be treated as the canonical reference implementation. The `proUplineChain` pre-computation pattern is the right architecture and must be protected — never replace it with a recursive query at runtime.
+---
+
+## 22. Platform-Level Revenue Streams (Beyond Partner Commissions)
+
+The 5 partner income streams (job commission, network override, subscription override, per-lead fee, origination rights) fund the partner network. The following are **platform-level** revenue streams that flow directly to ProLnk/TrustyPro — separate from partner payouts.
+
+### 22.1 Home Warranty Affiliate Revenue
+
+**Model:** When the Home Health Vault identifies aging systems (HVAC >10 years, water heater >8 years, roof >15 years), surface a contextual home warranty offer. ProLnk earns a referral fee per policy sold.
+
+**Partners:** American Home Shield, First American Home Warranty, AFC Home Club, Cinch
+**Fee structure:** $100–$300 per funded policy, ~8–12% of first-year premium
+**Implementation:**
+- `warrantyRecommendations` table: `homeId`, `systemType`, `ageYears`, `partnerCode`, `offerShownAt`, `convertedAt`, `affiliateFee`
+- Trigger: when `homeSystemAge > threshold` in AI scan or maintenance record
+- Display: contextual card in HomeHealthDashboard and MaintenanceSchedule
+- Tracking: affiliate links with UTM + conversion webhook from warranty partner
+
+### 22.2 Insurance Data Partnership Revenue
+
+**Model:** Two sub-models:
+1. **Risk intelligence licensing** — aggregate (anonymized) home health data sold to insurers for underwriting
+2. **Lead referral** — when AI scan detects elevated risk (hail damage, aging roof, foundation shift), surface an insurance review prompt. Earn per quote request or policy bind.
+
+**Partners:** State Farm, Allstate, Hippo, Kin (digital-first), local independent agents
+**Fee structure:** $50–200 per insurance lead, $0.10–$0.50 per home for bulk data licensing
+**Implementation:**
+- `insuranceLeads` table: `homeId`, `riskType`, `riskScore`, `carrierCode`, `leadSentAt`, `quotedAt`, `boundAt`, `fee`
+- Aggregate data endpoint requires explicit homeowner consent (CCPA)
+- `homeownerConsent` table: `homeId`, `consentType` (data_sharing, insurance_referral), `consentedAt`, `revokedAt`
+- Data export: anonymized ZIP-level risk aggregates for insurer APIs
+
+### 22.3 Home Equity / Lending Referral Revenue
+
+**Model:** When a homeowner completes a major improvement (roof, HVAC, kitchen remodel), surface a home equity loan or HELOC offer to fund it or consolidate it. ProLnk earns referral fees from lending partners.
+
+**Partners:** LendingTree, Rocket Mortgage, local credit unions, Figure (HELOC specialist)
+**Fee structure:** $200–$500 per funded loan, 0.5–1.0% of loan origination on some partners
+**Triggers:**
+- Estimated improvement cost > $5,000 in project planner
+- Homeowner completes a deal with a high job value (>$8,000)
+- Home equity estimated > $100,000 (via ATTOM data)
+**Implementation:**
+- `lendingReferrals` table: `homeId`, `partnerId`, `triggerType`, `estimatedEquity`, `referralSentAt`, `fundedAt`, `fee`
+- Contextual placement: ImprovementPlanner, TrueCostGuide, post-deal confirmation screen
+
+### 22.4 Sponsored Product Recommendations
+
+**Model:** When AI recommendations reference specific materials, products, or brands (paint, HVAC filters, fertilizer, weatherstripping), those recommendations can be sponsored placements. Earn affiliate commissions or flat placement fees.
+
+**Partners:** Home Depot (affiliate), Lowe's (affiliate), Amazon (affiliate), specific brand deals (Behr paint, Carrier HVAC, Kohler plumbing)
+**Fee structure:** 3–8% affiliate commission, or $5,000–$50,000/month flat brand placement
+**Rules:**
+- Sponsored recommendations must be labeled "Sponsored" (FTC compliance)
+- Organic recommendations are never overridden by sponsored ones — sponsored appear as alternatives
+- `sponsoredRecommendations` table: `productId`, `brandPartnerId`, `placementType`, `revenueModel`, `cpm`, `cpc`, `conversionFee`, `impressions`, `clicks`, `conversions`
+
+### 22.5 B2B Data Licensing / Enterprise API
+
+**Model:** License the Home Health Vault intelligence layer to property management companies, HOAs, real estate brokerages, and institutional investors. They pay for access to aggregated property condition data, maintenance history, and AI risk scores.
+
+**Pricing tiers:**
+- HOA / Small property manager (<100 units): $299/mo
+- Regional property manager (100–1,000 units): $1,500/mo
+- Enterprise / REIT (1,000+ units): Custom, $10,000+/mo
+- Real estate brokerage: Per-agent seat, $49/agent/mo
+
+**Implementation:**
+- `b2bClients` table: `orgId`, `orgName`, `tier`, `unitsLicensed`, `apiKey`, `monthlyFee`, `contractStart`, `contractEnd`
+- `b2bApiUsage` table: `orgId`, `endpoint`, `propertyCount`, `requestedAt`, `tokensUsed`
+- Separate rate-limited API surface: `/api/b2b/properties/{zip}/risk-summary`, `/api/b2b/homes/{attomId}/health-score`
+- Data shared: aggregated/anonymized ZIP-level risk, individual home health scores (with homeowner consent)
+- Requires explicit opt-in from homeowner (`homeownerConsent.data_sharing = true`)
+
+### 22.6 Revenue Summary Table
+
+| Stream | Model | Avg Unit Revenue | Phase |
+|--------|-------|-----------------|-------|
+| Job Commission (partner share) | 28% of job fee | $312/job | Live |
+| Partner Subscription | $149/mo × partners | $149/mo | Live |
+| Home Warranty Affiliate | Per policy sold | $150–300 | Phase 2C |
+| Insurance Lead Referral | Per lead/policy | $50–200 | Phase 2D |
+| Lending Referral | Per funded loan | $200–500 | Phase 2D |
+| Sponsored Recommendations | Affiliate + placement | 3–8% or flat | Phase 2E |
+| B2B Data Licensing | SaaS subscription | $299–$10K+/mo | Phase 3 |
+

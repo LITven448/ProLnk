@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { Search, X, ArrowRight, Users, Briefcase, DollarSign, Activity, BarChart2, Settings, Home, Zap, Camera, FileText } from "lucide-react";

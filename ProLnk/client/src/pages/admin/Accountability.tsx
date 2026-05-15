@@ -2,7 +2,7 @@ import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Target, TrendingUp, TrendingDown, Minus, CheckCircle2, AlertCircle, Clock } from "lucide-react";
+import { Target, TrendingUp, TrendingDown, Minus, CheckCircle, AlertCircle, Clock } from "lucide-react";
 
 const GOALS = [
   {
@@ -52,7 +52,7 @@ const WEEKLY_ACTIONS = [
 ];
 
 function getStatusIcon(status: string) {
-  if (status === "done") return <CheckCircle2 className="w-4 h-4 text-emerald-400" />;
+  if (status === "done") return <CheckCircle className="w-4 h-4 text-emerald-400" />;
   if (status === "overdue") return <AlertCircle className="w-4 h-4 text-red-400" />;
   return <Clock className="w-4 h-4 text-yellow-400" />;
 }

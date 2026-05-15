@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState } from "react";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
 import {

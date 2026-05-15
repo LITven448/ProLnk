@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import {
-  Home, DollarSign, TrendingDown, CheckCircle2, Circle,
+  Home, DollarSign, TrendingDown, CheckCircle, Circle,
   ChevronDown, ChevronUp, ExternalLink, AlertTriangle, Info,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -203,7 +203,7 @@ export default function PropertyTaxGuide() {
               >
                 <div className="flex items-start gap-3">
                   {ex.status === "applied"
-                    ? <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: D.green }} />
+                    ? <CheckCircle className="w-5 h-5 mt-0.5 shrink-0" style={{ color: D.green }} />
                     : <Circle className="w-5 h-5 mt-0.5 shrink-0" style={{ color: D.dim }} />
                   }
                   <div>

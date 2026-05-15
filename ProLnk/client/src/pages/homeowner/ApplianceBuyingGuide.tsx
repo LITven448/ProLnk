@@ -3,7 +3,7 @@ import HomeownerLayout from "@/components/HomeownerLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  ShoppingCart, Calendar, CheckCircle2, XCircle, AlertTriangle,
+  ShoppingCart, Calendar, CheckCircle, XCircle, AlertTriangle,
   Thermometer, Refrigerator, Wind, Droplets, Zap, Star, ExternalLink,
 } from "lucide-react";
 
@@ -60,7 +60,7 @@ const RELIABILITY = [
 ];
 
 const STATUS_ICON = {
-  ok:   <CheckCircle2 size={18} className="text-emerald-400" />,
+  ok:   <CheckCircle size={18} className="text-emerald-400" />,
   warn: <AlertTriangle size={18} className="text-amber-400" />,
   bad:  <XCircle size={18} className="text-red-400" />,
 };

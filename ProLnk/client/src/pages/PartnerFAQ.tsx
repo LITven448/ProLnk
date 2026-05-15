@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import {
   ChevronDown, ChevronUp, Search, MessageCircle,
-  Rocket, DollarSign, Network, Wrench, Star, HelpCircle,
+  Rocket, DollarSign, Network, Wrench, Star, HelpCircle, ShieldAlert, Users,
 } from "lucide-react";
 
 type FAQ = {
@@ -14,7 +14,7 @@ type FAQ = {
 type Category = {
   id: string;
   label: string;
-  icon: typeof Rocket;
+  icon: any;
   color: string;
   faqs: FAQ[];
 };
@@ -137,6 +137,50 @@ const CATEGORIES: Category[] = [
       {
         q: "How are TrustyPro reviews handled?",
         a: "Homeowners who receive service from you can leave a verified review on TrustyPro after job completion. Reviews are tied to confirmed jobs in the system — no anonymous or unverified reviews are allowed. You can respond publicly to any review from your Partner Portal. Reviews factor into your Partner Priority Score (PPS), which determines your lead routing priority.",
+      },
+    ],
+  },
+  {
+    id: "objections",
+    label: "Common Objections",
+    icon: ShieldAlert,
+    color: "text-rose-400",
+    faqs: [
+      {
+        q: "I tried Angi and it didn't work. Why would ProLnk be different?",
+        a: "This is the most common thing we hear — and it's a fair concern. Angi sells the same lead to multiple contractors simultaneously, creating a race to the bottom on price. ProLnk matches one contractor to one homeowner based on trade, availability, certifications, and location — and only after the homeowner has confirmed the specific service they need. You're not bidding against five other people for a lead that may have already booked someone. The model is structurally different. If Angi burned you, we understand — but the reason it burned you is exactly what ProLnk was built to fix.",
+      },
+      {
+        q: "I don't have time to upload photos between jobs. Is this really worth the effort?",
+        a: "The photo documentation process takes 60–90 seconds per job using the Field OS mobile app. You tap three buttons: start job, take photos, submit. The AI Opportunity Engine processes them automatically — you don't write descriptions or tag items. The 90 seconds on each job creates a documented record that: (1) improves your match quality over time, (2) generates Home Origination Rights that pay you permanently, and (3) builds a competitive photo portfolio that homeowners see before choosing you. The return on 90 seconds compounds significantly.",
+      },
+      {
+        q: "Is this MLM?",
+        a: "No — and here's the clear distinction: In an MLM, you pay to join, and your income comes primarily from recruiting other people who also pay to join. ProLnk's network income is derived entirely from real job completions and actual paid subscriptions — not from recruitment fees. There is no recruitment fee. You can earn your full 72% direct commission without ever recruiting a single person. The 4-level override is a bonus structure available to Founding Members on top of their direct earnings. ProLnk publishes an annual income disclosure statement in compliance with FTC guidelines. If someone in your circle raises the MLM concern, share that disclosure — it answers the question with data.",
+      },
+      {
+        q: "What if I recruit someone who outcompetes me for leads in my area?",
+        a: "ProLnk's matching algorithm routes leads based on Partner Priority Score (PPS), availability, and specialization — not arbitrary selection. If you recruit a competitor in your exact trade and zip code, you will both be matched to different homeowners based on your respective scores. There is no scenario where recruiting a partner causes your lead volume to drop — the homeowner pool is far larger than the partner pool in every DFW market. More partners in your network = more override income for you, not fewer leads. The platform is designed with this tension in mind: your recruits help you, not hurt you.",
+      },
+    ],
+  },
+  {
+    id: "partner-qa",
+    label: "Real Partner Q&A",
+    icon: Users,
+    color: "text-teal-400",
+    faqs: [
+      {
+        q: "\"I'm a licensed plumber in Frisco but I also do some HVAC work. Can I list both trades?\" — James O., Irving TX",
+        a: "Yes. You can list up to three primary trades on your ProLnk profile, and each trade requires separate license verification. If you hold a plumbing license and a Type A HVAC license, you can be matched as both a plumber and an HVAC tech — independently. Your Partner Priority Score is calculated per trade, so strong reviews in plumbing won't drag down your HVAC score if you're newer to that trade on the platform. You can add or remove trades at any time from Partner Settings.",
+      },
+      {
+        q: "\"My wife handles our admin. Can she access my partner dashboard without having her own account?\" — Marcus T., DFW",
+        a: "Yes. ProLnk supports up to 3 authorized admin users per partner account. You can grant your spouse, office manager, or bookkeeper 'Admin Access' from the Team tab in your Partner Settings. Admins can view commission ledgers, run reports, upload documents, and manage job logs — but cannot change banking information or commission splits without the primary account holder's verification. This is designed specifically for husband-wife operations and small business teams.",
+      },
+      {
+        q: "\"I'm close to the 500-application limit. What happens if I apply but there's no spot left?\" — Elena P., Dallas",
+        a: "If the Founding Network waitlist closes before your application is fully processed, you will be placed on the Standard Partner waitlist and notified when Standard Partner enrollment opens (estimated Q3 2026). Standard Partners receive 65% direct commission (vs. 72% for Founding Members) and do not have access to the 4-level network income override. However, if you applied before the 500-application cutoff — even if your documents aren't fully uploaded — your application date is locked and you retain Founding Member pricing. File early, complete documents later.",
       },
     ],
   },

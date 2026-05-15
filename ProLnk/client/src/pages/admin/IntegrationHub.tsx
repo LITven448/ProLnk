@@ -5,7 +5,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  Zap, CheckCircle2, AlertCircle, Clock, RefreshCw, ExternalLink,
+  Zap, CheckCircle, AlertCircle, Clock, RefreshCw, ExternalLink,
   Activity, Database, Users, Camera, Wrench, MessageSquare, Mail,
   CreditCard, BarChart3, Webhook, ChevronRight, Plus, Shield,
   TrendingUp, Globe, FileText, ArrowRight, Settings2, Eye,
@@ -240,7 +240,7 @@ const INTEGRATIONS: IntegDef[] = [
 ];
 
 const STATUS_CONFIG = {
-  live:          { label: "Live",           color: "#059669", bg: "#ECFDF5", icon: CheckCircle2 },
+  live:          { label: "Live",           color: "#059669", bg: "#ECFDF5", icon: CheckCircle },
   configured:    { label: "Configured",     color: "#0284C7", bg: "#F0F9FF", icon: Settings2 },
   available:     { label: "Available",      color: "#D97706", bg: "#FFFBEB", icon: Circle },
   co_marketing:  { label: "Co-Marketing",   color: "#7C3AED", bg: "#F5F3FF", icon: TrendingUp },
@@ -317,7 +317,7 @@ function IntegCard({ integ }: { integ: IntegDef }) {
         <div className="mt-4 flex items-center gap-2">
           {isLive ? (
             <span className="flex items-center gap-1.5 text-xs text-green-700 font-medium">
-              <CheckCircle2 className="w-4 h-4" /> Active
+              <CheckCircle className="w-4 h-4" /> Active
             </span>
           ) : integ.status === "available" ? (
             <Button size="sm" className="text-xs bg-blue-600 hover:bg-blue-700 text-white h-7 px-3">
@@ -381,7 +381,7 @@ export default function IntegrationHub() {
         {/* ── Stats Row ── */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
-            { label: "Live Integrations", value: liveCount, color: "#059669", bg: "#ECFDF5", icon: CheckCircle2 },
+            { label: "Live Integrations", value: liveCount, color: "#059669", bg: "#ECFDF5", icon: CheckCircle },
             { label: "Configured", value: configuredCount, color: "#0284C7", bg: "#F0F9FF", icon: Settings2 },
             { label: "Available", value: availableCount, color: "#D97706", bg: "#FFFBEB", icon: Circle },
             { label: "Partners Connected", value: connectedPartners, color: "#7C3AED", bg: "#F5F3FF", icon: Users },

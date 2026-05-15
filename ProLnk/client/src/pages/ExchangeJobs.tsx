@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import {

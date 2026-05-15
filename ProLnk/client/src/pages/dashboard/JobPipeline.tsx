@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   Briefcase, DollarSign, Clock, MapPin, TrendingUp,
-  ChevronRight, Plus, Calendar, CheckCircle2, AlertCircle,
+  ChevronRight, Plus, Calendar, CheckCircle, AlertCircle,
   Hammer, BarChart3, Star, Zap,
 } from "lucide-react";
 
@@ -220,7 +220,7 @@ export default function JobPipeline() {
         {/* Recent Wins */}
         <div className="bg-[#0F2040] border border-slate-700/50 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-4">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <CheckCircle className="w-4 h-4 text-emerald-400" />
             <h3 className="text-white font-semibold text-sm">Recent Wins This Week</h3>
           </div>
           <div className="flex flex-col gap-3 mb-4">
@@ -258,7 +258,7 @@ export default function JobPipeline() {
             <Calendar className="w-4 h-4" /> Schedule Job
           </button>
           <button className="flex items-center gap-2 px-4 py-2.5 bg-[#1A3050] hover:bg-[#1E3860] text-slate-200 border border-slate-600 rounded-xl font-medium text-sm transition-colors">
-            <CheckCircle2 className="w-4 h-4" /> Log Completion
+            <CheckCircle className="w-4 h-4" /> Log Completion
           </button>
         </div>
       </div>

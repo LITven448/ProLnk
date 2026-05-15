@@ -15,7 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import PartnerLayout from "@/components/PartnerLayout";
 import {
   Search, MapPin, Star, Users, Zap, Filter, Award,
-  LayoutGrid, Map, ShieldCheck, CheckCircle2, Clock,
+  LayoutGrid, Map, ShieldCheck, CheckCircle, Clock,
   ChevronDown, BadgePlus,
 } from "lucide-react";
 
@@ -459,7 +459,7 @@ export default function PartnerDirectory() {
                           {/* Footer */}
                           <div className="flex items-center justify-between pt-3 border-t border-gray-50 mt-auto">
                             <div className="flex items-center gap-1 text-xs text-gray-400">
-                              <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                              <CheckCircle className="w-3 h-3 text-emerald-500" />
                               <span>{partner.referralCount} jobs</span>
                             </div>
                             <span className="flex items-center gap-1 text-xs font-semibold text-[#1B4FD8] group-hover:underline">

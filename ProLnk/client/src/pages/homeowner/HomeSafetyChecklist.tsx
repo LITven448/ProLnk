@@ -5,7 +5,7 @@ import {
   Droplets,
   PersonStanding,
   Baby,
-  CheckCircle2,
+  CheckCircle,
   AlertTriangle,
   XCircle,
   Minus,
@@ -49,8 +49,8 @@ interface CheckGroup {
   items: CheckItem[];
 }
 
-const STATUS_CONFIG: Record<CheckStatus, { icon: typeof CheckCircle2; color: string; label: string }> = {
-  ok: { icon: CheckCircle2, color: D.green, label: "Done" },
+const STATUS_CONFIG: Record<CheckStatus, { icon: typeof CheckCircle; color: string; label: string }> = {
+  ok: { icon: CheckCircle, color: D.green, label: "Done" },
   warn: { icon: AlertTriangle, color: D.amber, label: "Partial" },
   missing: { icon: XCircle, color: D.red, label: "Missing" },
   na: { icon: Minus, color: D.dim, label: "N/A" },
@@ -323,7 +323,7 @@ export default function HomeSafetyChecklist() {
                   "Inspect under-sink pipes for drips",
                 ].map((tip, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: D.dim }} />
+                    <CheckCircle className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: D.dim }} />
                     <span className="text-xs" style={{ color: D.muted }}>{tip}</span>
                   </div>
                 ))}

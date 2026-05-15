@@ -19,7 +19,19 @@ import {
   Star,
   MessageSquare,
   Calendar,
+  ToggleLeft,
+  ToggleRight,
+  Eye,
 } from "lucide-react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
 
 // Campaign definitions
 const CAMPAIGNS = [
@@ -32,6 +44,10 @@ const CAMPAIGNS = [
     audience: "Homeowners",
     frequency: "Quarterly",
     triggerKey: "v1" as const,
+    lastRun: "May 12, 2026",
+    sent: 289,
+    openRate: 34,
+    template: "Hi {name}! It's that time of year — your seasonal home check-in is ready. Based on your home at {address}, here are the top 3 things to address this season...",
   },
   {
     key: "winback",
@@ -42,6 +58,10 @@ const CAMPAIGNS = [
     audience: "Inactive Homeowners",
     frequency: "Daily sweep",
     triggerKey: "v1" as const,
+    lastRun: "May 14, 2026",
+    sent: 47,
+    openRate: 28,
+    template: "Hey {name} — we miss you! It's been {days} days since you last logged in. Your ProLnk partner has new availability in {city} this week...",
   },
   {
     key: "tier_milestone",
@@ -52,6 +72,10 @@ const CAMPAIGNS = [
     audience: "Partners",
     frequency: "Daily sweep",
     triggerKey: "v1" as const,
+    lastRun: "May 13, 2026",
+    sent: 12,
+    openRate: 61,
+    template: "You're SO close, {name}! Complete just 1 more job to unlock {next_tier} and increase your commission rate to {rate}%. Your current pipeline has {leads} leads waiting...",
   },
   {
     key: "weekly_digest",
@@ -62,6 +86,10 @@ const CAMPAIGNS = [
     audience: "All Partners",
     frequency: "Every Monday",
     triggerKey: "weeklyDigest" as const,
+    lastRun: "May 12, 2026",
+    sent: 214,
+    openRate: 52,
+    template: "Good morning {name} — here's your ProLnk weekly snapshot. This week: {leads_available} leads available in {city}, {commission_total} in pending commissions, tier progress {tier_pct}%...",
   },
   {
     key: "referral_nudge",
@@ -72,6 +100,10 @@ const CAMPAIGNS = [
     audience: "Inactive Partners",
     frequency: "Every Monday",
     triggerKey: "referralNudge" as const,
+    lastRun: "May 12, 2026",
+    sent: 38,
+    openRate: 31,
+    template: "Hey {name} — there are {count} homeowners in {city} looking for {trade} services right now. Your referral link is ready to share. Every referral earns you a $25 bonus...",
   },
   {
     key: "deal_expiry",
@@ -82,6 +114,10 @@ const CAMPAIGNS = [
     audience: "Homeowners w/ Active Deals",
     frequency: "Daily sweep",
     triggerKey: "dealExpiryPush" as const,
+    lastRun: "May 15, 2026",
+    sent: 8,
+    openRate: 74,
+    template: "⏰ Your offer from {partner_name} expires in 6 hours, {name}. This {trade} quote for {address} is locked at {price} — after tonight, pricing resets. Click to confirm now...",
   },
   {
     key: "nps_followup",
@@ -92,6 +128,10 @@ const CAMPAIGNS = [
     audience: "Post-Survey Homeowners",
     frequency: "Daily sweep",
     triggerKey: "npsFollowUp" as const,
+    lastRun: "May 11, 2026",
+    sent: 23,
+    openRate: 44,
+    template: "Thanks for your feedback, {name}! Since you loved your experience, would you mind leaving a quick Google review? It helps {partner_name} grow their business and takes 30 seconds...",
   },
   {
     key: "leaderboard",
@@ -102,6 +142,10 @@ const CAMPAIGNS = [
     audience: "All Partners",
     frequency: "Every Monday",
     triggerKey: "leaderboardBroadcast" as const,
+    lastRun: "May 12, 2026",
+    sent: 214,
+    openRate: 38,
+    template: "🏆 This week's ProLnk leaderboard is live! Top performer: {leader_name} with {leader_jobs} jobs completed. You're currently ranked #{rank} — here's what it takes to move up...",
   },
   {
     key: "scan_reengagement",
@@ -112,26 +156,52 @@ const CAMPAIGNS = [
     audience: "Homeowners w/ Unseen Scans",
     frequency: "Daily sweep",
     triggerKey: "scanReEngagement" as const,
+    lastRun: "May 14, 2026",
+    sent: 19,
+    openRate: 48,
+    template: "Your AI Home Scan for {address} found {issue_count} items that need attention, {name}. 3 certified pros in {city} are ready to provide quotes — results expire in 48 hours...",
   },
+];
+
+// Audience segments
+const AUDIENCE_SEGMENTS = [
+  { label: "All Partners",  count: 214, color: "#0891b2" },
+  { label: "HVAC Only",     count: 67,  color: "#7C3AED" },
+  { label: "DFW North",     count: 94,  color: "#059669" },
+  { label: "At-Risk",       count: 23,  color: "#d97706" },
+];
+
+// Top 5 campaigns by conversion for BarChart
+const TOP_CAMPAIGNS_CHART = [
+  { name: "Deal Expiry",       conversion: 74, color: "#ef4444" },
+  { name: "Tier Milestone",    conversion: 61, color: "#f59e0b" },
+  { name: "Weekly Digest",     conversion: 52, color: "#6366f1" },
+  { name: "Scan Re-Engage",    conversion: 48, color: "#14b8a6" },
+  { name: "NPS Follow-Up",     conversion: 44, color: "#eab308" },
 ];
 
 type TriggerKey = "v1" | "weeklyDigest" | "referralNudge" | "dealExpiryPush" | "npsFollowUp" | "leaderboardBroadcast" | "scanReEngagement" | "allV2";
 
 export default function MarketingAutomationDashboard() {
-  const [triggering, setTriggering] = useState<string | null>(null);
-  const [results, setResults] = useState<Record<string, { sent?: number; success?: boolean; error?: string }>>({});
+  const [triggering, setTriggering]     = useState<string | null>(null);
+  const [results, setResults]           = useState<Record<string, { sent?: number; success?: boolean; error?: string }>>({});
+  const [flowToggles, setFlowToggles]   = useState<Record<string, boolean>>(
+    Object.fromEntries(CAMPAIGNS.map((c) => [c.key, c.key !== "winback"]))
+  );
+  const [hoveredFlow, setHoveredFlow]   = useState<string | null>(null);
+  const [activeSegment, setActiveSegment] = useState(0);
 
   const { data: summary, refetch: refetchSummary } = trpc.marketingAutomation.getAutomationSummary.useQuery();
   const { data: campaignStats, refetch: refetchStats } = trpc.marketingAutomation.getCampaignStats.useQuery();
 
-  const triggerV1 = trpc.marketingAutomation.triggerV1Campaigns.useMutation();
-  const triggerWeeklyDigest = trpc.marketingAutomation.triggerWeeklyDigest.useMutation();
-  const triggerReferralNudge = trpc.marketingAutomation.triggerReferralNudge.useMutation();
-  const triggerDealExpiryPush = trpc.marketingAutomation.triggerDealExpiryPush.useMutation();
-  const triggerNpsFollowUp = trpc.marketingAutomation.triggerNpsFollowUp.useMutation();
+  const triggerV1               = trpc.marketingAutomation.triggerV1Campaigns.useMutation();
+  const triggerWeeklyDigest     = trpc.marketingAutomation.triggerWeeklyDigest.useMutation();
+  const triggerReferralNudge    = trpc.marketingAutomation.triggerReferralNudge.useMutation();
+  const triggerDealExpiryPush   = trpc.marketingAutomation.triggerDealExpiryPush.useMutation();
+  const triggerNpsFollowUp      = trpc.marketingAutomation.triggerNpsFollowUp.useMutation();
   const triggerLeaderboardBroadcast = trpc.marketingAutomation.triggerLeaderboardBroadcast.useMutation();
   const triggerScanReEngagement = trpc.marketingAutomation.triggerScanReEngagement.useMutation();
-  const triggerAllV2 = trpc.marketingAutomation.triggerAllV2.useMutation();
+  const triggerAllV2            = trpc.marketingAutomation.triggerAllV2.useMutation();
 
   const handleTrigger = async (triggerKey: TriggerKey, label: string) => {
     setTriggering(triggerKey);
@@ -163,6 +233,16 @@ export default function MarketingAutomationDashboard() {
   const getStatForCampaign = (key: string) => {
     if (!campaignStats) return null;
     return campaignStats.find((s: { campaignKey: string }) => s.campaignKey.startsWith(key.split("_")[0]));
+  };
+
+  const toggleFlow = (key: string) => {
+    setFlowToggles((prev) => {
+      const next = !prev[key];
+      toast[next ? "success" : "info"](next ? "Flow enabled" : "Flow paused", {
+        description: `${CAMPAIGNS.find((c) => c.key === key)?.label} is now ${next ? "active" : "paused"}.`,
+      });
+      return { ...prev, [key]: next };
+    });
   };
 
   return (
@@ -208,6 +288,77 @@ export default function MarketingAutomationDashboard() {
         ))}
       </div>
 
+      {/* ── Audience Segmenter ─────────────────────────────────────────────── */}
+      <Card>
+        <CardContent className="p-4">
+          <p className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-3">Target Audience Segment</p>
+          <div className="flex flex-wrap gap-2">
+            {AUDIENCE_SEGMENTS.map((seg, i) => (
+              <button
+                key={seg.label}
+                onClick={() => setActiveSegment(i)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border transition-all ${
+                  activeSegment === i
+                    ? "text-white border-transparent shadow"
+                    : "bg-muted/50 text-muted-foreground border-border hover:border-foreground/30"
+                }`}
+                style={activeSegment === i ? { backgroundColor: seg.color, borderColor: seg.color } : {}}
+              >
+                {seg.label}
+                <span
+                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+                    activeSegment === i ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {seg.count}
+                </span>
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            All triggered campaigns will target the{" "}
+            <span className="font-semibold text-foreground">{AUDIENCE_SEGMENTS[activeSegment].label}</span> segment
+            ({AUDIENCE_SEGMENTS[activeSegment].count} recipients)
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* ── Performance BarChart ───────────────────────────────────────────── */}
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Top 5 Campaigns by Open Rate</CardTitle>
+          <CardDescription>Last 30 days — % of recipients who opened the message</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={180}>
+            <BarChart data={TOP_CAMPAIGNS_CHART} barCategoryGap="30%">
+              <XAxis
+                dataKey="name"
+                tick={{ fontSize: 11, fill: "#6B7280" }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <YAxis
+                domain={[0, 100]}
+                tick={{ fontSize: 11, fill: "#6B7280" }}
+                axisLine={false}
+                tickLine={false}
+                tickFormatter={(v) => `${v}%`}
+              />
+              <Tooltip
+                formatter={(value: number) => [`${value}%`, "Open Rate"]}
+                contentStyle={{ borderRadius: 8, border: "1px solid #E5E7EB", fontSize: 12 }}
+              />
+              <Bar dataKey="conversion" radius={[4, 4, 0, 0]}>
+                {TOP_CAMPAIGNS_CHART.map((entry, i) => (
+                  <Cell key={i} fill={entry.color} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
+
       {/* Master Trigger */}
       <Card className="border-2 border-dashed border-primary/30 bg-primary/5">
         <CardContent className="p-5 flex items-center justify-between">
@@ -226,81 +377,131 @@ export default function MarketingAutomationDashboard() {
         </CardContent>
       </Card>
 
-      {/* Campaign Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {CAMPAIGNS.map(campaign => {
-          const stat = getStatForCampaign(campaign.key);
-          const result = results[campaign.triggerKey];
-          const isRunning = triggering === campaign.triggerKey || (campaign.triggerKey === "v1" && triggering === "v1");
+      {/* ── Automation Flow Cards with toggles ────────────────────────────── */}
+      <div>
+        <h2 className="text-base font-semibold text-foreground mb-3">Automation Flows</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {CAMPAIGNS.map(campaign => {
+            const stat = getStatForCampaign(campaign.key);
+            const result = results[campaign.triggerKey];
+            const isRunning = triggering === campaign.triggerKey || (campaign.triggerKey === "v1" && triggering === "v1");
+            const isOn = flowToggles[campaign.key];
+            const isHovered = hoveredFlow === campaign.key;
 
-          return (
-            <Card key={campaign.key} className="flex flex-col">
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${campaign.color} bg-opacity-10`}>
-                      <campaign.icon className={`h-5 w-5 ${campaign.color.replace("bg-", "text-")}`} />
-                    </div>
-                    <div>
-                      <CardTitle className="text-sm font-semibold leading-tight">{campaign.label}</CardTitle>
-                      <div className="flex items-center gap-2 mt-1">
-                        <Badge variant="secondary" className="text-xs py-0">{campaign.audience}</Badge>
-                        <span className="text-xs text-muted-foreground">{campaign.frequency}</span>
+            return (
+              <div key={campaign.key} className="relative">
+                <Card className={`flex flex-col transition-all ${!isOn ? "opacity-60" : ""}`}>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-lg ${campaign.color} bg-opacity-10`}>
+                          <campaign.icon className={`h-5 w-5 ${campaign.color.replace("bg-", "text-")}`} />
+                        </div>
+                        <div>
+                          <button
+                            className="text-sm font-semibold leading-tight text-left hover:text-primary transition-colors flex items-center gap-1"
+                            onMouseEnter={() => setHoveredFlow(campaign.key)}
+                            onMouseLeave={() => setHoveredFlow(null)}
+                          >
+                            {campaign.label}
+                            <Eye className="w-3 h-3 text-muted-foreground/50 ml-0.5" />
+                          </button>
+                          <div className="flex items-center gap-2 mt-1">
+                            <Badge variant="secondary" className="text-xs py-0">{campaign.audience}</Badge>
+                            <span className="text-xs text-muted-foreground">{campaign.frequency}</span>
+                          </div>
+                        </div>
                       </div>
+                      {/* Toggle */}
+                      <button
+                        onClick={() => toggleFlow(campaign.key)}
+                        className="flex-shrink-0 mt-0.5"
+                        title={isOn ? "Pause flow" : "Enable flow"}
+                      >
+                        {isOn
+                          ? <ToggleRight className="w-7 h-7 text-emerald-500" />
+                          : <ToggleLeft className="w-7 h-7 text-muted-foreground/40" />
+                        }
+                      </button>
+                    </div>
+                    <CardDescription className="text-xs leading-relaxed mt-2">
+                      {campaign.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0 mt-auto">
+                    {/* Flow metrics */}
+                    <div className="flex items-center gap-3 mb-3 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" /> {campaign.lastRun}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Mail className="h-3 w-3" /> {campaign.sent.toLocaleString()} sent
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <TrendingUp className="h-3 w-3" /> {campaign.openRate}% open
+                      </span>
+                    </div>
+
+                    {/* Live open rate bar */}
+                    <div className="h-1.5 rounded-full bg-muted overflow-hidden mb-3">
+                      <div
+                        className="h-full rounded-full bg-emerald-500 transition-all"
+                        style={{ width: `${campaign.openRate}%` }}
+                      />
+                    </div>
+
+                    {/* DB stats */}
+                    {stat && (
+                      <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Mail className="h-3 w-3" />
+                          {stat.totalSent.toLocaleString()} all-time
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Users className="h-3 w-3" />
+                          {stat.sentThisWeek} this week
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Result feedback */}
+                    {result && (
+                      <div className={`flex items-center gap-2 text-xs mb-3 p-2 rounded-md ${result.success ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-400"}`}>
+                        {result.success ? <CheckCircle className="h-3 w-3 flex-shrink-0" /> : <AlertCircle className="h-3 w-3 flex-shrink-0" />}
+                        {result.sent != null ? `${result.sent} emails sent` : result.error ?? (result.success ? "Completed" : "Failed")}
+                      </div>
+                    )}
+
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="w-full gap-2"
+                      onClick={() => handleTrigger(campaign.triggerKey, campaign.label)}
+                      disabled={triggering !== null || !isOn}
+                    >
+                      {isRunning ? (
+                        <RefreshCw className="h-3 w-3 animate-spin" />
+                      ) : (
+                        <Play className="h-3 w-3" />
+                      )}
+                      {isRunning ? "Running..." : isOn ? "Trigger Now" : "Paused"}
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Template preview tooltip */}
+                {isHovered && (
+                  <div className="absolute z-20 left-0 right-0 -bottom-1 translate-y-full pointer-events-none">
+                    <div className="bg-gray-900 text-gray-100 text-[11px] rounded-xl p-3 shadow-xl border border-gray-700 mx-1 mt-1">
+                      <p className="font-bold text-gray-400 mb-1 uppercase tracking-wide text-[9px]">Template Preview</p>
+                      <p className="leading-relaxed italic">"{campaign.template}"</p>
                     </div>
                   </div>
-                </div>
-                <CardDescription className="text-xs leading-relaxed mt-2">
-                  {campaign.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0 mt-auto">
-                {/* Stats */}
-                {stat && (
-                  <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <Mail className="h-3 w-3" />
-                      {stat.totalSent.toLocaleString()} total
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
-                      {stat.sentThisWeek} this week
-                    </span>
-                    {stat.lastSentAt && (
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {new Date(stat.lastSentAt).toLocaleDateString()}
-                      </span>
-                    )}
-                  </div>
                 )}
-
-                {/* Result feedback */}
-                {result && (
-                  <div className={`flex items-center gap-2 text-xs mb-3 p-2 rounded-md ${result.success ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400" : "bg-red-50 text-red-700 dark:bg-red-950/30 dark:text-red-400"}`}>
-                    {result.success ? <CheckCircle className="h-3 w-3 flex-shrink-0" /> : <AlertCircle className="h-3 w-3 flex-shrink-0" />}
-                    {result.sent != null ? `${result.sent} emails sent` : result.error ?? (result.success ? "Completed" : "Failed")}
-                  </div>
-                )}
-
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="w-full gap-2"
-                  onClick={() => handleTrigger(campaign.triggerKey, campaign.label)}
-                  disabled={triggering !== null}
-                >
-                  {isRunning ? (
-                    <RefreshCw className="h-3 w-3 animate-spin" />
-                  ) : (
-                    <Play className="h-3 w-3" />
-                  )}
-                  {isRunning ? "Running..." : "Trigger Now"}
-                </Button>
-              </CardContent>
-            </Card>
-          );
-        })}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Campaign Log Table */}

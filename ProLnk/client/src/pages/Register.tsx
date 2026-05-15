@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * Register Page — Email/Password Account Creation
  * Route: /register

@@ -16,7 +16,7 @@ import {
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { SERVICE_CATEGORIES, SERVICE_GROUPS } from "../../../shared/serviceCategories";
-import { Shield, CheckCircle2, ArrowRight, Award, Zap, DollarSign, MapPin, Users, TrendingUp, Star, Lock, Gift, Percent, Crown } from "lucide-react";
+import { Shield, CheckCircle, ArrowRight, Award, Zap, DollarSign, MapPin, Users, TrendingUp, Star, Lock, Gift, Percent, Crown } from "lucide-react";
 import ProLnkLogo from "@/components/ProLnkLogo";
 import { Link } from "wouter";
 
@@ -105,7 +105,7 @@ export default function Apply() {
       <div className="min-h-screen bg-[#F0F2F5] flex items-center justify-center px-4">
         <div className="text-center max-w-lg">
           <div className="w-20 h-20 rounded-full bg-[#0A1628]/20 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-10 h-10 text-[#0A1628]/70" />
+            <CheckCircle className="w-10 h-10 text-[#0A1628]/70" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Application Received!</h1>
           <p className="text-gray-600 text-lg mb-3">
@@ -116,7 +116,7 @@ export default function Apply() {
             <p className="text-xs text-[#0A1628]/70 font-semibold uppercase tracking-widest mb-4">What happens next</p>
             {["Application review (within 24 hrs)", "Onboarding call with your ProLnk rep", "Partner dashboard access + referral link", "TrustyPro Certified badge (after verification)"].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#0A1628]/70 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-[#0A1628]/70 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{item}</span>
               </div>
             ))}
@@ -164,7 +164,7 @@ export default function Apply() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-200">
             {["90-day free trial", "No credit card required", "24-hr approval", "Founding rate locked for life"].map((t, i) => (
-              <div key={i} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-400" /><span>{t}</span></div>
+              <div key={i} className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-400" /><span>{t}</span></div>
             ))}
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function Apply() {
               </p>
               {["Background check passed", "License & insurance verified", "3+ completed jobs on platform", "4.5+ star rating maintained"].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 text-xs text-gray-600 mb-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" /><span>{item}</span>
+                  <CheckCircle className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" /><span>{item}</span>
                 </div>
               ))}
             </div>
@@ -428,7 +428,7 @@ export default function Apply() {
                 <div className="flex items-center justify-center gap-6 pt-2">
                   {["Secure & encrypted", "Free to apply", "24-hr response"].map((label, i) => (
                     <div key={i} className="flex items-center gap-1.5 text-xs text-gray-600">
-                      <CheckCircle2 className="w-3.5 h-3.5" /><span>{label}</span>
+                      <CheckCircle className="w-3.5 h-3.5" /><span>{label}</span>
                     </div>
                   ))}
                 </div>

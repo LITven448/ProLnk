@@ -10,7 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { toast } from "sonner";
 import {
   MessageSquare, Clock, MapPin, Phone, Mail, AlertTriangle,
-  CloudLightning, CheckCircle2, XCircle, DollarSign, Inbox, RefreshCw
+  CloudLightning, CheckCircle, XCircle, DollarSign, Inbox, RefreshCw
 } from "lucide-react";
 
 const URGENCY_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
@@ -195,7 +195,7 @@ export default function PartnerQuoteInbox() {
                       ? "bg-green-500/10 text-green-400 border-green-500/30"
                       : "bg-slate-500/10 text-slate-400 border-slate-500/30"}>
                       {req.status === "quoted" ? (
-                        <><CheckCircle2 className="w-3 h-3 mr-1" />Quoted</>
+                        <><CheckCircle className="w-3 h-3 mr-1" />Quoted</>
                       ) : (
                         <><XCircle className="w-3 h-3 mr-1" />Declined</>
                       )}

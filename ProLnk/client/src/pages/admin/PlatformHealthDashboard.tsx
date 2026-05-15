@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Admin Platform Health Dashboard
  * Real-time platform metrics — replaces the static stub.

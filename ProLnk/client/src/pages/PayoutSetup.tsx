@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * PayoutSetup — REV-02
  * Bank account and payout configuration via Stripe Connect.

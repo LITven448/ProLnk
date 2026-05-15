@@ -9,7 +9,7 @@ import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
 import {
-  CheckCircle2, XCircle, AlertTriangle, RefreshCw, Search,
+  CheckCircle, XCircle, AlertTriangle, RefreshCw, Search,
   Wifi, WifiOff, Clock, Camera, Wrench, Zap, Home, Activity,
   ChevronDown, ChevronUp, Bell, Filter, Download,
 } from "lucide-react";
@@ -77,7 +77,7 @@ const PLATFORM_ICON: Record<Platform, React.ReactNode> = {
 };
 
 const STATUS_CONFIG: Record<SyncStatus, { label: string; color: string; icon: React.ReactNode }> = {
-  healthy:      { label: "Healthy",      color: "#22c55e", icon: <CheckCircle2 size={14} /> },
+  healthy:      { label: "Healthy",      color: "#22c55e", icon: <CheckCircle size={14} /> },
   degraded:     { label: "Degraded",     color: "#f59e0b", icon: <AlertTriangle size={14} /> },
   disconnected: { label: "Disconnected", color: "#ef4444", icon: <XCircle size={14} /> },
   never:        { label: "Not Connected",color: "#94a3b8", icon: <WifiOff size={14} /> },

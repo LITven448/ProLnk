@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * Login Page — Email/Password + Google OAuth
  * Route: /login

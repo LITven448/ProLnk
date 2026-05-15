@@ -8,7 +8,7 @@ import {
   PieChart, Pie, Cell, Legend,
 } from "recharts";
 import {
-  Link2, Copy, CheckCircle2, TrendingUp, Users, DollarSign,
+  Link2, Copy, CheckCircle, TrendingUp, Users, DollarSign,
   Plus, Share2, BarChart3, Zap, Home,
 } from "lucide-react";
 
@@ -156,7 +156,7 @@ export default function ReferralLinkManager() {
                     <button onClick={() => copyLink(link.url, i)}
                       className="shrink-0 text-slate-400 hover:text-white transition-colors">
                       {copiedIdx === i
-                        ? <CheckCircle2 size={15} className="text-emerald-400" />
+                        ? <CheckCircle size={15} className="text-emerald-400" />
                         : <Copy size={15} />}
                     </button>
                   </div>
@@ -286,7 +286,7 @@ export default function ReferralLinkManager() {
           <p className="text-slate-300 text-sm italic mb-4">"{SHARE_POST}"</p>
           <Button onClick={copySharePost}
             variant="outline" className="border-white/20 text-white hover:bg-white/10 gap-2 rounded-xl">
-            {shareCopied ? <CheckCircle2 size={15} className="text-emerald-400" /> : <Copy size={15} />}
+            {shareCopied ? <CheckCircle size={15} className="text-emerald-400" /> : <Copy size={15} />}
             {shareCopied ? "Copied!" : "Copy Post"}
           </Button>
         </section>

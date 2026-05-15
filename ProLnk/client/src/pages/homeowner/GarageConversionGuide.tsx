@@ -9,14 +9,14 @@ interface ConversionType {
   description: string;
   costRange: string;
   valueAdd: string;
-  icon: typeof Home;
+  icon: any;
   color: string;
 }
 
 interface PermitItem {
   category: string;
   items: string[];
-  icon: typeof Wrench;
+  icon: any;
   color: string;
 }
 

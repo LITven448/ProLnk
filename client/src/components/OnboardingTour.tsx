@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { X, ChevronRight, Share2, DollarSign, Briefcase, Zap, ArrowRight } from "lucide-react";

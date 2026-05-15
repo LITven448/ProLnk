@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  ExternalLink, Copy, CheckCircle2, Clock, Eye, Calendar,
+  ExternalLink, Copy, CheckCircle, Clock, Eye, Calendar,
   XCircle, DollarSign, Sparkles, RefreshCw,
   Send, TrendingUp, Filter, Search, ChevronDown,
   CheckSquare, Square, Trash2, Mail, Download,
@@ -25,7 +25,7 @@ const STAGES = [
   { key: "viewed",        label: "Viewed",    color: "#8B5CF6", bg: "#F5F3FF", icon: Eye          },
   { key: "scheduled",     label: "Scheduled", color: "#10B981", bg: "#ECFDF5", icon: Calendar     },
   { key: "estimate_done", label: "Quoted",    color: "#F59E0B", bg: "#FFFBEB", icon: DollarSign   },
-  { key: "accepted",      label: "Accepted",  color: "#059669", bg: "#D1FAE5", icon: CheckCircle2 },
+  { key: "accepted",      label: "Accepted",  color: "#059669", bg: "#D1FAE5", icon: CheckCircle },
   { key: "job_closed",    label: "Closed",    color: "#00B5B8", bg: "#E0FAFA", icon: TrendingUp   },
   { key: "declined",      label: "Declined",  color: "#EF4444", bg: "#FEF2F2", icon: XCircle      },
 ] as const;
@@ -166,7 +166,7 @@ function DealCard({
             className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1"
             style={{ backgroundColor: "#059669" }}
           >
-            <CheckCircle2 className="w-3 h-3" /> Close
+            <CheckCircle className="w-3 h-3" /> Close
           </button>
         )}
         <a

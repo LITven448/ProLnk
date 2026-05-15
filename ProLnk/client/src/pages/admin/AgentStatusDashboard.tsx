@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { trpc } from "@/lib/trpc";
 import AdminLayout from "@/components/AdminLayout";

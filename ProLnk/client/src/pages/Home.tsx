@@ -1147,17 +1147,6 @@ function WhyProLnkSection() {
 }
 
 // Social proof ticker entries — rotates every 5s
-const SOCIAL_PROOF_ENTRIES = [
-  "Sarah M. from Plano just joined 2 minutes ago",
-  "Jake T. from Frisco just claimed a Charter spot",
-  "Maria R. from McKinney just joined 4 minutes ago",
-  "Carlos D. from Allen just claimed a Founding spot",
-  "Kevin W. from Denton just joined 7 minutes ago",
-  "Ashley P. from Garland just claimed a spot",
-  "Mike H. from Arlington just joined 3 minutes ago",
-  "Tiffany L. from Rockwall just claimed a Founding spot",
-];
-
 // --- Main Landing Page -------------------------------------------------------------
 export default function Home() {
   const { user } = useAuth();
@@ -1165,7 +1154,6 @@ export default function Home() {
   const isAdmin = user?.role === "admin";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [socialProofIdx, setSocialProofIdx] = useState(0);
 
   useEffect(() => {
     const sections = ["how-it-works", "the-engine", "spotlight", "who-can-join", "pricing", "faq", "guarantee"];
@@ -1184,14 +1172,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSocialProofIdx((i) => (i + 1) % SOCIAL_PROOF_ENTRIES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const [urgencyDismissed, setUrgencyDismissed] = useState(false);
   // Waitlist state removed — main site now uses direct apply flow
   const [selectedTrade, setSelectedTrade] = useState<string | null>(null);
 
@@ -1205,8 +1185,6 @@ export default function Home() {
   const TOTAL_NETWORK = 2125; // Charter(25) + Founding(100) + L3(400) + L4(1600)
   const spotsUsed = TOTAL_NETWORK - (spotsRemaining || 2125);
   const spotsPercent = Math.round((spotsUsed / TOTAL_NETWORK) * 100);
-  // Simulate last-24h momentum: ~5-15% of total signups as a plausible daily rate
-  const last24h = Math.max(3, Math.round(waitlistPros * 0.08) || 7);
 
   return (
     <div className="min-h-screen bg-white">

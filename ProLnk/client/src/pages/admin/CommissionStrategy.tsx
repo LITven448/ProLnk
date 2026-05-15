@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import AdminLayout, { T, BADGE_GRADIENTS, FONT, MONO } from "@/components/AdminLayout";
 import { Lock, Crown, DollarSign, Users, Network, TrendingUp, Info } from "lucide-react";

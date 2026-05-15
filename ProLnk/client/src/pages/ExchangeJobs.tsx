@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import {
   Briefcase, MapPin, DollarSign, Clock, Filter, ChevronDown,
-  ArrowRight, Building2, Users, Bell, Zap, CheckCircle2, X,
+  ArrowRight, Building2, Users, Bell, Zap, CheckCircle, X,
   TrendingUp, Eye, Bookmark, BookmarkCheck, ArrowUpDown,
 } from "lucide-react";
 import { trpc } from "../lib/trpc";
@@ -498,7 +498,7 @@ function Toast({ message, onDone }: { message: string; onDone: () => void }) {
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-xl shadow-2xl"
       style={{ backgroundColor: "#10b981", color: "#fff", fontWeight: 600, fontSize: "14px", minWidth: "280px" }}
     >
-      <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
       <span>{message}</span>
       <button onClick={onDone} className="ml-auto opacity-70 hover:opacity-100">
         <X className="w-4 h-4" />
@@ -738,7 +738,7 @@ function JobCard({
           >
             {expressed ? (
               <>
-                <CheckCircle2 className="w-4 h-4" />
+                <CheckCircle className="w-4 h-4" />
                 Bid Submitted — We'll Follow Up
               </>
             ) : (

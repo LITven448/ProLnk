@@ -7,15 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Activity, RefreshCw, Search, Filter, User, Shield, Home, Cpu,
-  CheckCircle2, DollarSign, Star, Bell, LogIn, Settings, Zap,
+  CheckCircle, DollarSign, Star, Bell, LogIn, Settings, Zap,
 } from "lucide-react";
 
 // --- Event type config --------------------------------------------------------
 const EVENT_CONFIG: Record<string, { label: string; icon: React.ReactNode; color: string; bg: string }> = {
-  partner_approved:   { label: "Partner Approved",   icon: <CheckCircle2 size={14} />, color: "text-emerald-700", bg: "bg-emerald-50" },
+  partner_approved:   { label: "Partner Approved",   icon: <CheckCircle size={14} />, color: "text-emerald-700", bg: "bg-emerald-50" },
   partner_rejected:   { label: "Partner Rejected",   icon: <Shield size={14} />,       color: "text-red-700",     bg: "bg-red-50" },
   deal_created:       { label: "Deal Created",        icon: <Zap size={14} />,          color: "text-blue-700",    bg: "bg-blue-50" },
-  deal_accepted:      { label: "Deal Accepted",       icon: <CheckCircle2 size={14} />, color: "text-teal-700",    bg: "bg-teal-50" },
+  deal_accepted:      { label: "Deal Accepted",       icon: <CheckCircle size={14} />, color: "text-teal-700",    bg: "bg-teal-50" },
   deal_declined:      { label: "Deal Declined",       icon: <Shield size={14} />,       color: "text-orange-700",  bg: "bg-orange-50" },
   payout_processed:   { label: "Payout Processed",   icon: <DollarSign size={14} />,   color: "text-purple-700",  bg: "bg-purple-50" },
   review_submitted:   { label: "Review Submitted",   icon: <Star size={14} />,          color: "text-yellow-700",  bg: "bg-yellow-50" },

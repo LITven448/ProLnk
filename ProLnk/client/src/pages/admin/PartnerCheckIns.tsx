@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
-import { MapPin, Camera, Clock, CheckCircle2, XCircle, Star, Filter, Download, AlertTriangle, Calendar, Users } from "lucide-react";
+import { MapPin, Camera, Clock, CheckCircle, XCircle, Star, Filter, Download, AlertTriangle, Calendar, Users } from "lucide-react";
 import { toast } from "sonner";
 import { DCard } from "@/components/DashboardShared";
 
@@ -120,7 +120,7 @@ export default function PartnerCheckIns() {
         </DCard>
         <DCard className="p-4">
           <div className="flex items-center gap-2 mb-1">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            <CheckCircle className="w-4 h-4 text-green-600" />
             <span className="text-xs text-gray-500">Completed This Week</span>
           </div>
           <div className="text-2xl font-bold text-gray-900">24</div>
@@ -187,7 +187,7 @@ export default function PartnerCheckIns() {
           {RECENT_COMPLETED.map(item => (
             <div key={item.id} className="px-4 py-3 flex items-center gap-4">
               <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-4 h-4 text-gray-400" />
+                <CheckCircle className="w-4 h-4 text-gray-400" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
@@ -265,12 +265,12 @@ export default function PartnerCheckIns() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-gray-600 max-w-[200px] truncate">{c.address}</td>
-                <td className="px-4 py-3 text-center">{c.verifiedByGeo ? <CheckCircle2 className="w-4 h-4 text-green-600 mx-auto" /> : <XCircle className="w-4 h-4 text-gray-300 mx-auto" />}</td>
-                <td className="px-4 py-3 text-center">{c.verifiedByPhoto ? <CheckCircle2 className="w-4 h-4 text-green-600 mx-auto" /> : <XCircle className="w-4 h-4 text-gray-300 mx-auto" />}</td>
+                <td className="px-4 py-3 text-center">{c.verifiedByGeo ? <CheckCircle className="w-4 h-4 text-green-600 mx-auto" /> : <XCircle className="w-4 h-4 text-gray-300 mx-auto" />}</td>
+                <td className="px-4 py-3 text-center">{c.verifiedByPhoto ? <CheckCircle className="w-4 h-4 text-green-600 mx-auto" /> : <XCircle className="w-4 h-4 text-gray-300 mx-auto" />}</td>
                 <td className="px-4 py-3 text-center">
                   {c.verifiedByHomeowner ? (
                     <div className="flex items-center justify-center gap-1">
-                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       {c.homeownerRating && <span className="text-xs text-amber-600">{c.homeownerRating}★</span>}
                     </div>
                   ) : <XCircle className="w-4 h-4 text-gray-300 mx-auto" />}

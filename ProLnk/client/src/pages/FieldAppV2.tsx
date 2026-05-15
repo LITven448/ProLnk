@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Camera, MapPin, CheckCircle2, Loader2, Sparkles, ArrowRight,
+  Camera, MapPin, CheckCircle, Loader2, Sparkles, ArrowRight,
   Home, Zap, DollarSign, Clock, Upload, X, Star, AlertCircle
 } from "lucide-react";
 import { toast } from "sonner";
@@ -439,7 +439,7 @@ export default function FieldAppV2() {
             <Card className={opportunities.length > 0 ? "border-[#0A1628]/20 bg-[#F5E642]/10" : "border-gray-200 bg-gray-50"}>
               <CardContent className="p-4 flex items-center gap-3">
                 {opportunities.length > 0 ? (
-                  <CheckCircle2 className="h-6 w-6 text-teal-600 shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-teal-600 shrink-0" />
                 ) : (
                   <AlertCircle className="h-6 w-6 text-gray-400 shrink-0" />
                 )}

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle2, ChevronRight, Home, Heart, DollarSign, Users, Star, Zap } from "lucide-react";
+import { CheckCircle, ChevronRight, Home, Heart, DollarSign, Users, Star, Zap } from "lucide-react";
 
 function ScoreRing({ score }: { score: number }) {
   const color = score >= 80 ? "text-emerald-500" : score >= 50 ? "text-amber-500" : "text-rose-500";
@@ -325,7 +325,7 @@ export default function Homeowner360Profile() {
           {upsert.isPending ? (
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
           ) : (
-            <CheckCircle2 className="w-4 h-4" />
+            <CheckCircle className="w-4 h-4" />
           )}
           Save My Profile
         </Button>

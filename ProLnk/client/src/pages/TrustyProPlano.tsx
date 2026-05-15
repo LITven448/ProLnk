@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const INDIGO = '#4F46E5';
 const AMBER  = '#f59e0b';

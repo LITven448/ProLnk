@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 
 const steps = [
   { icon: "📸", label: "Upload job photos", detail: "Take photos at the property during any service visit." },

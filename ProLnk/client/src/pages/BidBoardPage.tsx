@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import {
   ClipboardList, MapPin, Clock, ArrowRight,
-  CheckCircle2, XCircle, Award, Star, Circle,
+  CheckCircle, XCircle, Award, Star, Circle,
 } from "lucide-react";
 
 const PROPERTY_ICONS: Record<string, string> = {
@@ -104,7 +104,7 @@ function BidPipelineBar({ status }: { status: string }) {
                   }}
                 >
                   {isPast ? (
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <CheckCircle className="w-3.5 h-3.5" />
                   ) : (
                     <span className="scale-75">{stageInfo.icon}</span>
                   )}

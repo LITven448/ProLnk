@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { CheckCircle, Zap, Shield, TrendingUp, Clock, Star, Users, Camera, Network, CreditCard } from "lucide-react";

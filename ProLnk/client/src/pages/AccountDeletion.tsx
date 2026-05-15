@@ -13,7 +13,7 @@ import {
   DollarSign,
   Users,
   Star,
-  CheckCircle2,
+  CheckCircle,
 } from "lucide-react";
 
 const CONSEQUENCES = [
@@ -72,7 +72,7 @@ export default function AccountDeletion() {
       <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 text-center">
           <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-5">
-            <CheckCircle2 className="w-9 h-9 text-gray-400" />
+            <CheckCircle className="w-9 h-9 text-gray-400" />
           </div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">Deletion Request Received</h2>
           <p className="text-gray-500 text-sm leading-relaxed mb-6">

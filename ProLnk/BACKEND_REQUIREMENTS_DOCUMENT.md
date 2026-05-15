@@ -473,33 +473,61 @@ Calculation:
 From `shared/const.ts: NETWORK_RATES`:
 
 ```
-Network Levels: 1=Charter, 2=Founding, 3=Growth Pro, 4=Standard Pro
-Own-job rates: L1=2.0%, L2=1.5%, L3=1.0%, L4=0.5% of job value
-Network income depth:
-  L1 Charter earns on 3 levels below them (L2, L3, L4)
-  L2 Founding earns on 2 levels below (L3, L4)
-  L3 Growth earns on 1 level below (L4)
-  L4 Standard earns nothing on downline
+Network Levels (tiers): Charter (25 slots) / Founding (100) / L3 (400) / L4 (1,600) = 2,125 total
+All tiers: $149/month subscription (locked), 72% commission keep rate
+
+Network job override rates — applied to the PRO'S EARNED COMMISSION (not job value):
+  Depth 1 (direct recruits' jobs):    7% of the pro's commission
+  Depth 2 (2 levels below):           4% of the pro's commission
+  Depth 3:                            2% of the pro's commission
+  Depth 4:                            1% of the pro's commission
 ```
 
-**Cascade calculation on a $10,000 job:**
+**Cascade calculation — $10,000 job example:**
 ```
-Receiving partner (L4 Standard): earns 0.5% = $50 own-job commission
-Their upline L3: earns 1.0% = $100 network income
-Their upline L2: earns 1.5% = $150 network income  
-Their upline L1: earns 2.0% = $200 network income
-Total cascade payout: $500 from platform
+Job value:                $10,000
+ProLnk commission (10%):  $1,000
+Pro keeps 72%:            $720       ← this is the cascade basis
+
+Upline depth-1 earns:     7% × $720 = $50.40
+Upline depth-2 earns:     4% × $720 = $28.80
+Upline depth-3 earns:     2% × $720 = $14.40
+Upline depth-4 earns:     1% × $720 = $7.20
+Total cascade payout:     $100.80
+
+ProLnk net retained:      $1,000 - $720 - $100.80 = $179.20
 ```
 
-**Subscription Override Rates:**
+**Key principle:** Upline partners earn a percentage of what the pro ACTUALLY EARNED — not a percentage of the raw job value. Early partners earn because they built the network, not because they get a cut of every large job.
+
+**Activity requirement:** Partners must log minimum 2 jobs/month to earn network income. `NETWORK_RATES.minimumJobsPerMonth = 2`.
+
+### 9.3.1 Home Origination Rights
+
+A separate, permanent income stream for partners who add homes to the Home Health Vault. This is independent of the network job override cascade.
+
 ```
-Partner at L1 earns 12% of $149/mo on every L2 they recruited directly
-Partner at L2 earns 6% on L3 they recruited
-Partner at L3 earns 3% on L4 they recruited
-Partner at L4 earns 1.5% on anyone they recruited
+Origination rates — applied to ProLnk's commission on ALL future jobs at that home, forever:
+  Charter (L1):   1.5% of ProLnk's commission
+  Founding (L2):  1.0% of ProLnk's commission
+  L3:             0% (no origination rights)
+  L4:             0% (no origination rights)
 ```
 
-**Activity requirement:** L1, L2, L3 must log minimum 2 jobs/month to earn network income. `NETWORK_RATES.minimumJobsPerMonth = 2`.
+**Origination example — $10,000 job at a Charter-originated home:**
+```
+ProLnk commission (10%):   $1,000
+Charter originator earns:  1.5% × $1,000 = $15.00   (permanent, every job, forever)
+Founding originator earns: 1.0% × $1,000 = $10.00   (permanent, every job, forever)
+```
+
+**Implementation requirements:**
+- `properties` table must store `originatingPartnerId` (FK to `partners.id`)
+- `originatingPartnerTier` stored at time of origination (locked — tier changes after the fact don't affect origination rate)
+- `originationRightPct` stored as decimal (0.015 or 0.010) to avoid recalculation
+- Every `jobCommissionEvent` must check for an originating partner and insert a separate `commissions` row for the origination payout
+- Origination rights survive partner subscription lapses — they are permanent once earned
+- `proNetworkProfile.originatedHomeCount` tracks how many homes each partner has originated
 
 ### 9.4 Upline Chain Materialization
 

@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * Admin Strike Management — Wave 62
  * Issue strikes, clear strikes, suspend/unsuspend partners, review COI docs.

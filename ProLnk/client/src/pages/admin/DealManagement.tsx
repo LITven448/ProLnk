@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  ExternalLink, Copy, CheckCircle2, Clock, Eye, Calendar,
+  ExternalLink, Copy, CheckCircle, Clock, Eye, Calendar,
   XCircle, DollarSign, Plus, RefreshCw, BarChart3,
   AlertTriangle, TrendingUp
 } from "lucide-react";
@@ -25,8 +25,8 @@ const STATUS_CONFIG: Record<string, { label: string; color: string; icon: any }>
   viewed:        { label: "Viewed",      color: "bg-purple-100 text-purple-700", icon: Eye },
   scheduled:     { label: "Scheduled",   color: "bg-green-100 text-green-700",   icon: Calendar },
   estimate_done: { label: "Quoted",      color: "bg-yellow-100 text-yellow-700", icon: DollarSign },
-  accepted:      { label: "Accepted",    color: "bg-emerald-100 text-emerald-700", icon: CheckCircle2 },
-  job_closed:    { label: "Closed",      color: "bg-teal-100 text-teal-700",     icon: CheckCircle2 },
+  accepted:      { label: "Accepted",    color: "bg-emerald-100 text-emerald-700", icon: CheckCircle },
+  job_closed:    { label: "Closed",      color: "bg-teal-100 text-teal-700",     icon: CheckCircle },
   declined:      { label: "Declined",    color: "bg-red-100 text-red-700",       icon: XCircle },
   expired:       { label: "Expired",     color: "bg-gray-100 text-gray-500",     icon: Clock },
 };
@@ -138,7 +138,7 @@ function DealRow({ deal, onCopyLink, onCloseJob }: {
               title="Mark job closed"
               className="p-1.5 hover:bg-teal-50 rounded-lg transition-colors text-teal-600 hover:text-teal-700"
             >
-              <CheckCircle2 size={14} />
+              <CheckCircle size={14} />
             </button>
           )}
         </div>
@@ -389,7 +389,7 @@ export default function DealManagement() {
         {/* Copy success toast */}
         {copiedToken && (
           <div className="fixed bottom-6 right-6 bg-white text-white text-sm px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 z-50">
-            <CheckCircle2 size={14} className="text-teal-400" />
+            <CheckCircle size={14} className="text-teal-400" />
             Deal link copied to clipboard
           </div>
         )}

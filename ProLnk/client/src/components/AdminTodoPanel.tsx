@@ -1,4 +1,3 @@
-import type React from "react";
 import { useState, useMemo } from "react";
 import {
   CheckCircle2, Circle, Clock, AlertCircle, ChevronDown, ChevronRight,

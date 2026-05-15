@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * ACH Authorization Signing Page
  * 

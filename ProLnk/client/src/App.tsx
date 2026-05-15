@@ -539,6 +539,43 @@ const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const HelpCenter = lazy(() => import("./pages/HelpCenter"));
 const APIGuide = lazy(() => import("./pages/APIGuide"));
 
+
+// Wave 50: New feature pages
+const CheckrIntegration = lazy(() => import("./pages/admin/CheckrIntegration"));
+const IncomeStreamsExplainer = lazy(() => import("./pages/IncomeStreamsExplainer"));
+const FirstTimeBuyerGuide = lazy(() => import("./pages/homeowner/FirstTimeBuyerGuide"));
+const NeighborhoodSafetyMap = lazy(() => import("./pages/homeowner/NeighborhoodSafetyMap"));
+const SocialSharingKit = lazy(() => import("./pages/dashboard/SocialSharingKit"));
+const SchoolDistrictGuide = lazy(() => import("./pages/homeowner/SchoolDistrictGuide"));
+const LeadHeatMap = lazy(() => import("./pages/admin/LeadHeatMap"));
+const DIYVsProCalculator = lazy(() => import("./pages/homeowner/DIYVsProCalculator"));
+const SpotlightCreator = lazy(() => import("./pages/admin/SpotlightCreator"));
+const IncomeComparison = lazy(() => import("./pages/IncomeComparison"));
+const NetworkIncomeCalculator = lazy(() => import("./pages/NetworkIncomeCalculator"));
+const PoolSpaGuide = lazy(() => import("./pages/homeowner/PoolSpaGuide"));
+const WebhookMonitor = lazy(() => import("./pages/admin/WebhookMonitor"));
+const FunnelAnalyticsDashboard = lazy(() => import("./pages/admin/FunnelAnalyticsDashboard"));
+const GarageDoorGuide = lazy(() => import("./pages/homeowner/GarageDoorGuide"));
+const PhotoTipsGuide = lazy(() => import("./pages/dashboard/PhotoTipsGuide"));
+const WindowGuide = lazy(() => import("./pages/homeowner/WindowGuide"));
+const DailyBriefing = lazy(() => import("./pages/dashboard/DailyBriefing"));
+const AirQualityGuide = lazy(() => import("./pages/homeowner/AirQualityGuide"));
+const PartnerCommunicationHub = lazy(() => import("./pages/admin/PartnerCommunicationHub"));
+const MilestoneSystem = lazy(() => import("./pages/dashboard/MilestoneSystem"));
+const PestControlGuide = lazy(() => import("./pages/homeowner/PestControlGuide"));
+const IncomeStatement = lazy(() => import("./pages/dashboard/IncomeStatement"));
+const HomeMaintenanceCalendar = lazy(() => import("./pages/homeowner/HomeMaintenanceCalendar"));
+const LeaderboardAdmin = lazy(() => import("./pages/admin/LeaderboardAdmin"));
+const MorningChecklist = lazy(() => import("./pages/dashboard/MorningChecklist"));
+const DeepCleaningGuide = lazy(() => import("./pages/homeowner/DeepCleaningGuide"));
+const AnnouncementCenter = lazy(() => import("./pages/admin/AnnouncementCenter"));
+const IncomeGoals = lazy(() => import("./pages/dashboard/IncomeGoals"));
+const WinRateOptimizer = lazy(() => import("./pages/dashboard/WinRateOptimizer"));
+const SmartBudgetPlanner = lazy(() => import("./pages/homeowner/SmartBudgetPlanner"));
+const PlatformHealthSummary = lazy(() => import("./pages/admin/PlatformHealthSummary"));
+const MarketIntelligenceFeed = lazy(() => import("./pages/dashboard/MarketIntelligenceFeed"));
+const TierBreakdownDashboard = lazy(() => import("./pages/admin/TierBreakdownDashboard"));
+const RenovationFinancingGuide = lazy(() => import("./pages/homeowner/RenovationFinancingGuide"));
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
   const [location, navigate] = useLocation();
@@ -1161,6 +1198,46 @@ function Router() {
       <Route path="/my-home/local-alerts" component={LocalServiceAlerts} />
       <Route path="/welcome" component={HomeownerOnboarding} />
 
+
+      {/* Wave 50: New feature routes */}
+      <Route path="/admin/checkr" component={CheckrIntegration} />
+      <Route path="/income-streams" component={IncomeStreamsExplainer} />
+      <Route path="/homeowner/first-time-guide" component={FirstTimeBuyerGuide} />
+      <Route path="/my-home/neighborhood-map" component={NeighborhoodSafetyMap} />
+      <Route path="/dashboard/social-sharing" component={SocialSharingKit} />
+      <Route path="/dashboard/social-kit" component={SocialSharingKit} />
+      <Route path="/my-home/school-districts" component={SchoolDistrictGuide} />
+      <Route path="/admin/lead-heat-map" component={LeadHeatMap} />
+      <Route path="/my-home/diy-calculator" component={DIYVsProCalculator} />
+      <Route path="/admin/spotlight-creator" component={SpotlightCreator} />
+      <Route path="/income-comparison" component={IncomeComparison} />
+      <Route path="/network-income-calculator" component={NetworkIncomeCalculator} />
+      <Route path="/my-home/pool-spa" component={PoolSpaGuide} />
+      <Route path="/admin/webhook-monitor" component={WebhookMonitor} />
+      <Route path="/admin/funnel-analytics" component={FunnelAnalyticsDashboard} />
+      <Route path="/my-home/garage-door" component={GarageDoorGuide} />
+      <Route path="/dashboard/photo-tips" component={PhotoTipsGuide} />
+      <Route path="/my-home/windows" component={WindowGuide} />
+      <Route path="/dashboard/daily-briefing" component={DailyBriefing} />
+      <Route path="/dashboard/briefing" component={DailyBriefing} />
+      <Route path="/my-home/air-quality" component={AirQualityGuide} />
+      <Route path="/admin/partner-comms" component={PartnerCommunicationHub} />
+      <Route path="/dashboard/milestones" component={MilestoneSystem} />
+      <Route path="/my-home/pest-control" component={PestControlGuide} />
+      <Route path="/dashboard/income-statement" component={IncomeStatement} />
+      <Route path="/my-home/maintenance-calendar" component={HomeMaintenanceCalendar} />
+      <Route path="/admin/leaderboard-admin" component={LeaderboardAdmin} />
+      <Route path="/dashboard/morning-checklist" component={MorningChecklist} />
+      <Route path="/dashboard/morning" component={MorningChecklist} />
+      <Route path="/my-home/cleaning" component={DeepCleaningGuide} />
+      <Route path="/admin/announcements" component={AnnouncementCenter} />
+      <Route path="/dashboard/income-goals" component={IncomeGoals} />
+      <Route path="/dashboard/win-rate" component={WinRateOptimizer} />
+      <Route path="/my-home/budget-planner" component={SmartBudgetPlanner} />
+      <Route path="/admin/platform-health-summary" component={PlatformHealthSummary} />
+      <Route path="/dashboard/market-intel" component={MarketIntelligenceFeed} />
+      <Route path="/admin/tier-breakdown" component={TierBreakdownDashboard} />
+      <Route path="/my-home/financing" component={RenovationFinancingGuide} />
       <Route path="/docs" component={Documentation} />
       <Route component={NotFound} />
     </Switch>

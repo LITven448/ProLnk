@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Zap, CloudLightning, CheckCircle2, Upload, X, Home } from "lucide-react";
+import { Zap, CloudLightning, CheckCircle, Upload, X, Home } from "lucide-react";
 
 const SERVICE_CATEGORIES = [
   "Roof Repair / Inspection", "HVAC / AC Repair", "Plumbing Emergency",
@@ -119,7 +119,7 @@ export default function QuickQuoteRequest() {
       <HomeownerLayout>
         <div className="max-w-lg mx-auto px-4 py-16 text-center">
           <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-10 h-10 text-green-600" />
+            <CheckCircle className="w-10 h-10 text-green-600" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Quote Request Sent!</h1>
           <p className="text-gray-500 mb-6">

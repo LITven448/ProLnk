@@ -580,6 +580,25 @@ const AICommandCenter = lazy(() => import("./pages/admin/AICommandCenter"));
 const SystemHealthDashboard = lazy(() => import("./pages/admin/SystemHealthDashboard"));
 
 
+// DFW Trade Network landing pages
+const DFWPlumberNetwork = lazy(() => import("./pages/DFWPlumberNetwork"));
+const DFWHVACNetwork = lazy(() => import("./pages/DFWHVACNetwork"));
+const DFWRooferNetwork = lazy(() => import("./pages/DFWRooferNetwork"));
+const DFWElectricianNetwork = lazy(() => import("./pages/DFWElectricianNetwork"));
+const DFWFoundationNetwork = lazy(() => import("./pages/DFWFoundationNetwork"));
+const DFWPestControlNetwork = lazy(() => import("./pages/DFWPestControlNetwork"));
+const DFWLandscaperNetwork = lazy(() => import("./pages/DFWLandscaperNetwork"));
+
+// TrustyPro City landing pages
+const TrustyProFrisco = lazy(() => import("./pages/trustypro/TrustyProFrisco"));
+const TrustyProPlano = lazy(() => import("./pages/trustypro/TrustyProPlano"));
+const TrustyProMcKinney = lazy(() => import("./pages/trustypro/TrustyProMcKinney"));
+const TrustyProAllen = lazy(() => import("./pages/trustypro/TrustyProAllen"));
+const TrustyProDallas = lazy(() => import("./pages/trustypro/TrustyProDallas"));
+const TrustyProGarland = lazy(() => import("./pages/trustypro/TrustyProGarland"));
+const TrustyProProsper = lazy(() => import("./pages/trustypro/TrustyProProsper"));
+const TrustyProCelina = lazy(() => import("./pages/trustypro/TrustyProCelina"));
+
 // App preview mockup screens
 const ProLnkHomePreview = lazy(() => import("./pages/app-preview/HomeScreen"));
 const ProLnkLeadPreview = lazy(() => import("./pages/app-preview/LeadDetailScreen"));
@@ -1267,6 +1286,26 @@ function Router() {
       <Route path="/trustypro/app-preview/property" component={TPPropertyPreview} />
       <Route path="/trustypro/app-preview/find-pro" component={TPFindProPreview} />
       <Route path="/trustypro/app-preview/alerts" component={TPAlertsPreview} />
+
+      {/* DFW Trade Network landing pages */}
+      <Route path="/dfw-plumber" component={DFWPlumberNetwork} />
+      <Route path="/dfw-hvac" component={DFWHVACNetwork} />
+      <Route path="/dfw-roofer" component={DFWRooferNetwork} />
+      <Route path="/dfw-electrician" component={DFWElectricianNetwork} />
+      <Route path="/dfw-foundation" component={DFWFoundationNetwork} />
+      <Route path="/dfw-pest-control" component={DFWPestControlNetwork} />
+      <Route path="/dfw-landscaping" component={DFWLandscaperNetwork} />
+
+      {/* TrustyPro City landing pages */}
+      <Route path="/trustypro/frisco" component={TrustyProFrisco} />
+      <Route path="/trustypro/plano" component={TrustyProPlano} />
+      <Route path="/trustypro/mckinney" component={TrustyProMcKinney} />
+      <Route path="/trustypro/allen" component={TrustyProAllen} />
+      <Route path="/trustypro/dallas" component={TrustyProDallas} />
+      <Route path="/trustypro/garland" component={TrustyProGarland} />
+      <Route path="/trustypro/prosper" component={TrustyProProsper} />
+      <Route path="/trustypro/celina" component={TrustyProCelina} />
+
       <Route component={NotFound} />
     </Switch>
     </Suspense>

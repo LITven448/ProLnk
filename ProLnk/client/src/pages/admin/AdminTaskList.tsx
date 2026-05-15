@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Admin Task List / Action Items
  * Live checklist of platform action items with priority, category, and agent status.

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   MapPin, Clock, Camera, Zap, TrendingUp, ChevronRight, ArrowLeft,
-  Home, User, Phone, Mail, CheckCircle2, AlertCircle, Loader2, FileText,
+  Home, User, Phone, Mail, CheckCircle, AlertCircle, Loader2, FileText,
   X, ChevronLeft, ChevronRight as ChevronRightIcon, Images, History,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -30,7 +30,7 @@ function timeAgo(d: Date | string | null): string {
 function AiStatusBadge({ status }: { status: string | null }) {
   if (status === "complete") return (
     <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/30 text-xs gap-1">
-      <CheckCircle2 className="w-3 h-3" /> AI Complete
+      <CheckCircle className="w-3 h-3" /> AI Complete
     </Badge>
   );
   if (status === "processing") return (

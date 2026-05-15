@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import {
   Target, Trophy, Star, Users, Briefcase, TrendingUp,
-  Plus, CheckCircle2, Calendar, Zap, Award,
+  Plus, CheckCircle, Calendar, Zap, Award,
   Clock, Flag, X, DollarSign, Flame,
 } from "lucide-react";
 
@@ -306,7 +306,7 @@ export default function GoalTracker() {
             {COMPLETED_GOALS.map(cg => (
               <div key={cg.id} className="flex items-center gap-3">
                 <div className="w-7 h-7 rounded-full bg-green-500/15 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 size={14} className="text-green-400" />
+                  <CheckCircle size={14} className="text-green-400" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-semibold text-white line-through decoration-slate-600">{cg.label}</p>
@@ -492,7 +492,7 @@ export default function GoalTracker() {
           </div>
           {weeklySubmitted ? (
             <div className="flex items-center gap-3 py-2">
-              <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
               <div>
                 <p className="text-sm font-semibold text-white">Check-in complete for this week</p>
                 <p className="text-xs text-slate-500 mt-0.5">Your progress has been updated. See you next week!</p>

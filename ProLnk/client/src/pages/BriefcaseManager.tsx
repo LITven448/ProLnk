@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Partner Briefcase Manager
  * Route: /dashboard/briefcase

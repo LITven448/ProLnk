@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import {
   Star, Clock, Shield, BadgeCheck, ArrowRight,

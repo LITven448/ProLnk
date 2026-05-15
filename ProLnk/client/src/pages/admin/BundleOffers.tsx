@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
 import {
-  Package, Users, TrendingUp, Zap, CheckCircle2, AlertCircle,
+  Package, Users, TrendingUp, Zap, CheckCircle, AlertCircle,
   Home, Wrench, Layers, ArrowRight, RefreshCw, DollarSign,
   Target, Shield, Clock, Star, ChevronDown, ChevronUp,
 } from "lucide-react";
@@ -195,7 +195,7 @@ export default function BundleOffers() {
         {[
           { label: "Active Partners", value: stats?.activePartners ?? 0, icon: Users, color: "text-blue-400" },
           { label: "Bundles Generated", value: stats?.total ?? 0, icon: Package, color: "text-emerald-400" },
-          { label: "Accepted", value: stats?.accepted ?? 0, icon: CheckCircle2, color: "text-green-400" },
+          { label: "Accepted", value: stats?.accepted ?? 0, icon: CheckCircle, color: "text-green-400" },
           { label: "Est. Value Bundled", value: `$${((stats?.totalEstimatedValue ?? 0) / 1000).toFixed(1)}k`, icon: DollarSign, color: "text-amber-400" },
         ].map((stat) => (
           <Card key={stat.label} className="bg-zinc-900 border-zinc-800">
@@ -248,7 +248,7 @@ export default function BundleOffers() {
               <p className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Rate Limiting Rules</p>
               <div className="space-y-1 text-xs text-zinc-400">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                  <CheckCircle className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                   <span><strong className="text-white">Homeowner-initiated:</strong> No limits — surface everything, always</span>
                 </div>
                 <div className="flex items-center gap-2">

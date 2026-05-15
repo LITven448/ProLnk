@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import {
   CloudLightning, RefreshCw, Zap, MapPin, Users, AlertTriangle,
-  Clock, CheckCircle2, Wind, Droplets, Thermometer, Bell, BarChart3,
+  Clock, CheckCircle, Wind, Droplets, Thermometer, Bell, BarChart3,
   TrendingUp, Activity, Radio, Settings, ArrowUpRight, Eye,
 } from "lucide-react";
 
@@ -259,7 +259,7 @@ export default function StormDashboard() {
         {/* Scan result banner */}
         {lastRunResult && (
           <div className="flex items-center gap-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg px-4 py-3">
-            <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
             <p className="text-sm text-green-800 dark:text-green-300 font-medium">
               Scan complete — {lastRunResult.eventsProcessed} events · {lastRunResult.leadsGenerated} leads · {lastRunResult.propertiesAffected} properties
               {lastRunResult.affectedZips?.length ? ` · ${lastRunResult.affectedZips.length} zip codes` : ""}

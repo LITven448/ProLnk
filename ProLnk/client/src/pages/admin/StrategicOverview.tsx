@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * StrategicOverview.tsx — ProLnk OS Strategic Monitoring Dashboard
  * 5-tab breakdown: Daily Ops | ProLnk | TrustyPro | Advertisers | Affiliate

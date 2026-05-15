@@ -5,11 +5,11 @@ import AdminLayout from "@/components/AdminLayout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { RefreshCw, Webhook, CheckCircle2, XCircle, AlertCircle, Clock, DollarSign } from "lucide-react";
+import { RefreshCw, Webhook, CheckCircle, XCircle, AlertCircle, Clock, DollarSign } from "lucide-react";
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; icon: React.ReactNode }> = {
   received:          { label: "Received",          color: "bg-blue-100 text-blue-700",   icon: <Clock className="w-3 h-3" /> },
-  matched:           { label: "Matched",            color: "bg-yellow-100 text-yellow-700", icon: <CheckCircle2 className="w-3 h-3" /> },
+  matched:           { label: "Matched",            color: "bg-yellow-100 text-yellow-700", icon: <CheckCircle className="w-3 h-3" /> },
   unmatched:         { label: "Unmatched",          color: "bg-gray-100 text-gray-600",   icon: <XCircle className="w-3 h-3" /> },
   commission_closed: { label: "Commission Closed",  color: "bg-green-100 text-green-700", icon: <DollarSign className="w-3 h-3" /> },
   error:             { label: "Error",              color: "bg-red-100 text-red-700",     icon: <AlertCircle className="w-3 h-3" /> },

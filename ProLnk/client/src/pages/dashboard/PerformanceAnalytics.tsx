@@ -4,7 +4,7 @@ import {
   ResponsiveContainer, ReferenceLine,
 } from "recharts";
 import {
-  TrendingUp, Target, Star, Clock, CheckCircle2,
+  TrendingUp, Target, Star, Clock, CheckCircle,
   DollarSign, Zap, Camera, MessageSquare, BarChart3,
   ChevronUp, Award,
 } from "lucide-react";
@@ -27,7 +27,7 @@ const benchmarks = [
     youNum: 87,
     avgNum: 71,
     topNum: 94,
-    icon: <CheckCircle2 size={16} />,
+    icon: <CheckCircle size={16} />,
     unit: "%",
   },
   {
@@ -50,7 +50,7 @@ const benchmarks = [
     youNum: 96,
     avgNum: 91,
     topNum: 99,
-    icon: <CheckCircle2 size={16} />,
+    icon: <CheckCircle size={16} />,
     unit: "%",
   },
   {

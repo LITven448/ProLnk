@@ -2,7 +2,7 @@ import { useState } from "react";
 import HomeownerLayout from "@/components/HomeownerLayout";
 import { Link } from "wouter";
 import {
-  CheckCircle2, Circle, Home, Calendar, ShieldCheck,
+  CheckCircle, Circle, Home, Calendar, ShieldCheck,
   AlertTriangle, Activity,
 } from "lucide-react";
 
@@ -187,7 +187,7 @@ export default function FirstTimeBuyerGuide() {
                         }}
                       >
                         {isChecked
-                          ? <CheckCircle2 size={18} color={D.green} style={{ flexShrink: 0 }} />
+                          ? <CheckCircle size={18} color={D.green} style={{ flexShrink: 0 }} />
                           : <Circle size={18} color={D.muted} style={{ flexShrink: 0 }} />
                         }
                         <div style={{ flex: 1 }}>

@@ -1,3 +1,4 @@
+import React from 'react';
 import type React from "react";
 /**
  * Home Health Vault — Full Property History

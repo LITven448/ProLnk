@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Sparkles, Upload, X, ChevronRight, ChevronLeft, Wand2, Loader2, CheckCircle2, Camera, Home, Sofa, BedDouble, ChefHat, Bath, Dumbbell } from "lucide-react";
+import { Sparkles, Upload, X, ChevronRight, ChevronLeft, Wand2, Loader2, CheckCircle, Camera, Home, Sofa, BedDouble, ChefHat, Bath, Dumbbell } from "lucide-react";
 
 // ── Room Types ──────────────────────────────────────────────────────────────
 const ROOM_TYPES = [

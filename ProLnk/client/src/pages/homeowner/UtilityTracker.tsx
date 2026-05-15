@@ -3,7 +3,7 @@ import HomeownerLayout from "@/components/HomeownerLayout";
 import {
   Zap, Flame, Droplets, Wifi, Trash2, Building2,
   CreditCard, Plus, X, ChevronDown, TrendingDown, TrendingUp,
-  AlertCircle, CheckCircle2,
+  AlertCircle, CheckCircle,
 } from "lucide-react";
 
 interface Utility {
@@ -284,7 +284,7 @@ export default function UtilityTracker() {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   {u.autopay
-                    ? <><CheckCircle2 size={13} color="#10B981" /><span style={{ color: "#10B981", fontSize: 12 }}>Autopay on</span></>
+                    ? <><CheckCircle size={13} color="#10B981" /><span style={{ color: "#10B981", fontSize: 12 }}>Autopay on</span></>
                     : <><AlertCircle size={13} color="#F59E0B" /><span style={{ color: "#F59E0B", fontSize: 12 }}>Manual pay</span></>}
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>

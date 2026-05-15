@@ -442,6 +442,26 @@ const ErrorMonitoring = lazy(() => import("./pages/admin/ErrorMonitoring"));
 const PerformanceMonitoring = lazy(() => import("./pages/admin/PerformanceMonitoring"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 
+const CharterNetworkGuide = lazy(() => import("./pages/CharterNetworkGuide"));
+const DFWElectricalCostGuide = lazy(() => import("./pages/DFWElectricalCostGuide"));
+const DFWElectricianNetwork = lazy(() => import("./pages/DFWElectricianNetwork"));
+const DFWFoundationCostGuide = lazy(() => import("./pages/DFWFoundationCostGuide"));
+const DFWFoundationNetwork = lazy(() => import("./pages/DFWFoundationNetwork"));
+const DFWHVACCostGuide = lazy(() => import("./pages/DFWHVACCostGuide"));
+const DFWHVACNetwork = lazy(() => import("./pages/DFWHVACNetwork"));
+const DFWHandymanNetwork = lazy(() => import("./pages/DFWHandymanNetwork"));
+const DFWHomeBuyerGuide = lazy(() => import("./pages/DFWHomeBuyerGuide"));
+const DFWHomeRepairScams = lazy(() => import("./pages/DFWHomeRepairScams"));
+const DFWHomeSaleTimeline = lazy(() => import("./pages/DFWHomeSaleTimeline"));
+const DFWHousingAffordability = lazy(() => import("./pages/DFWHousingAffordability"));
+const DFWLandscaperNetwork = lazy(() => import("./pages/DFWLandscaperNetwork"));
+const DFWMarketIntelligence = lazy(() => import("./pages/DFWMarketIntelligence"));
+const DFWPestControlNetwork = lazy(() => import("./pages/DFWPestControlNetwork"));
+const DFWPlumberNetwork = lazy(() => import("./pages/DFWPlumberNetwork"));
+const DFWPlumbingCostGuide = lazy(() => import("./pages/DFWPlumbingCostGuide"));
+const DFWPopulationGrowth = lazy(() => import("./pages/DFWPopulationGrowth"));
+const DFWRealEstateMarket2026 = lazy(() => import("./pages/DFWRealEstateMarket2026"));
+const DFWRooferNetwork = lazy(() => import("./pages/DFWRooferNetwork"));
 // Domain-based routing: trustypro.io → /trustypro
 function DomainRouter() {
   const [location, navigate] = useLocation();
@@ -971,6 +991,26 @@ function Router() {
       <Route path="/my-home/warranties" component={WarrantyTracker} />
 
       <Route path="/docs" component={Documentation} />
+      <Route path="/charter-network" component={CharterNetworkGuide} />
+      <Route path="/guides/dfw-electrical-cost" component={DFWElectricalCostGuide} />
+      <Route path="/dfw-electrician" component={DFWElectricianNetwork} />
+      <Route path="/guides/dfw-foundation-cost" component={DFWFoundationCostGuide} />
+      <Route path="/dfw-foundation" component={DFWFoundationNetwork} />
+      <Route path="/guides/dfw-hvac-cost" component={DFWHVACCostGuide} />
+      <Route path="/dfw-hvac" component={DFWHVACNetwork} />
+      <Route path="/dfw-handyman" component={DFWHandymanNetwork} />
+      <Route path="/dfw-homebuyer-guide" component={DFWHomeBuyerGuide} />
+      <Route path="/dfw-home-repair-scams" component={DFWHomeRepairScams} />
+      <Route path="/dfw-home-sale-timeline" component={DFWHomeSaleTimeline} />
+      <Route path="/dfw-housing-affordability" component={DFWHousingAffordability} />
+      <Route path="/dfw-landscaping" component={DFWLandscaperNetwork} />
+      <Route path="/dfw-market-intel" component={DFWMarketIntelligence} />
+      <Route path="/dfw-pest-control" component={DFWPestControlNetwork} />
+      <Route path="/dfw-plumber" component={DFWPlumberNetwork} />
+      <Route path="/guides/dfw-plumbing-cost" component={DFWPlumbingCostGuide} />
+      <Route path="/dfw-population-growth" component={DFWPopulationGrowth} />
+      <Route path="/dfw-real-estate-2026" component={DFWRealEstateMarket2026} />
+      <Route path="/dfw-roofer" component={DFWRooferNetwork} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>

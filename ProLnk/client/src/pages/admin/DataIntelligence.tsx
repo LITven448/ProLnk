@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import {
   Database, Brain, TrendingUp, Map, Network, BarChart3, Target,
-  DollarSign, Users, Home, Activity, Zap, Shield, Award, Trash2, Download, Clock, CheckCircle2, AlertTriangle
+  DollarSign, Users, Home, Activity, Zap, Shield, Award, Trash2, Download, Clock, CheckCircle, AlertTriangle
 } from "lucide-react";
 
 const MILESTONE_LABELS: Record<string, { label: string; color: string }> = {
@@ -551,7 +551,7 @@ export default function DataIntelligence() {
                   </span>
                 ) : (
                   <span className="flex items-center gap-1 text-xs text-emerald-600">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Permanent
+                    <CheckCircle className="w-3.5 h-3.5" /> Permanent
                   </span>
                 )}
               </div>
@@ -598,7 +598,7 @@ function DataExportQueue() {
       <CardContent>
         {requests.length === 0 ? (
           <div className="text-center py-8">
-            <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
+            <CheckCircle className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
             <p className="text-sm font-semibold text-gray-700">No pending export requests</p>
             <p className="text-xs text-muted-foreground mt-1">All homeowner data export requests have been fulfilled.</p>
           </div>
@@ -612,7 +612,7 @@ function DataExportQueue() {
                   }`}>
                     {req.status === 'pending' ? <Clock className="w-4 h-4 text-amber-600" /> :
                      req.status === 'processing' ? <Activity className="w-4 h-4 text-blue-600" /> :
-                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />}
+                     <CheckCircle className="w-4 h-4 text-emerald-600" />}
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{req.homeownerEmail || `Homeowner #${req.homeownerId}`}</p>

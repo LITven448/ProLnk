@@ -1,4 +1,3 @@
-import type React from "react";
 /**
  * ProLnk Field OS
  *

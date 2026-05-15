@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Camera, Zap, CheckCircle2, Clock, XCircle, Eye,
+  Camera, Zap, CheckCircle, Clock, XCircle, Eye,
   Filter, RefreshCw, TrendingUp, AlertTriangle, Loader2
 } from "lucide-react";
 import { toast } from "sonner";
@@ -16,8 +16,8 @@ type PipelineStatus = "pending" | "processing" | "completed" | "failed" | "skipp
 const statusConfig: Record<string, { label: string; color: string; icon: React.ElementType }> = {
   pending: { label: "Queued", color: "bg-gray-100 text-gray-600", icon: Clock },
   processing: { label: "Scanning...", color: "bg-blue-100 text-blue-700", icon: Zap },
-  completed: { label: "Processed", color: "bg-green-100 text-green-700", icon: CheckCircle2 },
-  skipped: { label: "No Opportunity", color: "bg-gray-100 text-gray-500", icon: CheckCircle2 },
+  completed: { label: "Processed", color: "bg-green-100 text-green-700", icon: CheckCircle },
+  skipped: { label: "No Opportunity", color: "bg-gray-100 text-gray-500", icon: CheckCircle },
   failed: { label: "Failed", color: "bg-red-100 text-red-700", icon: XCircle },
 };
 

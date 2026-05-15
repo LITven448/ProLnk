@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import HomeownerLayout from "@/components/HomeownerLayout";
-import { AlertTriangle, CheckCircle2, DollarSign, Wrench, ChevronDown, ChevronUp, Droplets } from "lucide-react";
+import { AlertTriangle, CheckCircle, DollarSign, Wrench, ChevronDown, ChevronUp, Droplets } from "lucide-react";
 import { Link } from "wouter";
 
 const D = {
@@ -220,7 +220,7 @@ export default function SepticSystemGuide() {
 
           {/* CTA */}
           <div className="rounded-2xl p-8 text-center" style={{ background: "linear-gradient(135deg, rgba(20,184,166,0.15), rgba(20,184,166,0.05))", border: `1px solid rgba(20,184,166,0.3)` }}>
-            <CheckCircle2 className="w-10 h-10 mx-auto mb-4" style={{ color: D.teal }} />
+            <CheckCircle className="w-10 h-10 mx-auto mb-4" style={{ color: D.teal }} />
             <h2 className="text-2xl font-black mb-3">Find a Verified Septic Specialist</h2>
             <p className="text-sm mb-6 leading-relaxed" style={{ color: D.muted }}>
               ProLnk connects DFW homeowners with licensed, insured septic contractors — no door-to-door, no scams, verified credentials only.

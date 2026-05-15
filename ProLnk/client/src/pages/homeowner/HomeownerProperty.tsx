@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * My Home Profile Summary — real data from wizard
  */

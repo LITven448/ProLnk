@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
-  CheckCircle2, Circle, ChevronRight, Rocket, Shield, CreditCard,
+  CheckCircle, Circle, ChevronRight, Rocket, Shield, CreditCard,
   User, Users, Briefcase, DollarSign, Clock, ArrowRight, Trophy,
   Camera, BookOpen, Star, MapPin,
 } from "lucide-react";
@@ -387,7 +387,7 @@ export default function OnboardingChecklist() {
                   }}
                 >
                   {catComplete
-                    ? <CheckCircle2 size={10} />
+                    ? <CheckCircle size={10} />
                     : <CatIcon size={10} />
                   }
                   {cat.label} {catDone}/{catTotal}
@@ -418,7 +418,7 @@ export default function OnboardingChecklist() {
                   }}
                 >
                   {catComplete
-                    ? <CheckCircle2 size={13} style={{ color: catColor }} />
+                    ? <CheckCircle size={13} style={{ color: catColor }} />
                     : <CatIcon size={13} style={{ color: catComplete ? catColor : "#475569" }} />
                   }
                 </div>
@@ -474,7 +474,7 @@ export default function OnboardingChecklist() {
                         aria-label={done ? "Mark incomplete" : "Mark complete"}
                       >
                         {done
-                          ? <CheckCircle2 size={22} className="text-green-400" />
+                          ? <CheckCircle size={22} className="text-green-400" />
                           : <Circle size={22} className="text-slate-600" />
                         }
                       </button>
@@ -557,7 +557,7 @@ export default function OnboardingChecklist() {
               border: "1px solid rgba(34,197,94,0.3)",
             }}
           >
-            <CheckCircle2 size={32} className="text-green-400 mx-auto mb-3" />
+            <CheckCircle size={32} className="text-green-400 mx-auto mb-3" />
             <h3 className="text-lg font-bold text-white mb-1">You're fully activated!</h3>
             <p className="text-sm text-slate-400 mb-4">
               Your profile is live, payouts are ready, and your network is growing. Go earn.

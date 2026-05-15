@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  DollarSign, AlertCircle, CheckCircle2, Clock, CreditCard,
+  DollarSign, AlertCircle, CheckCircle, Clock, CreditCard,
   RefreshCw, Zap, Shield, User, Calendar, XCircle,
   RotateCcw, Phone, Activity
 } from "lucide-react";
@@ -112,7 +112,7 @@ export default function PaymentMonitorDashboard() {
         {/* Health metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Payment Success Rate", value: "98.4%", icon: CheckCircle2, color: "text-emerald-400", bg: "bg-emerald-900/20 border-emerald-700/40" },
+            { label: "Payment Success Rate", value: "98.4%", icon: CheckCircle, color: "text-emerald-400", bg: "bg-emerald-900/20 border-emerald-700/40" },
             { label: "Failed This Week", value: "3", icon: XCircle, color: "text-red-400", bg: "bg-red-900/20 border-red-700/40" },
             { label: "Held Funds", value: "$12,400", icon: DollarSign, color: "text-amber-400", bg: "bg-amber-900/20 border-amber-700/40" },
             { label: "Next Payout Sweep", value: "Tonight 2:00 AM", icon: Clock, color: "text-blue-400", bg: "bg-blue-900/20 border-blue-700/40" },

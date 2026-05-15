@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import {
   FolderLock, Plus, FileText, FileImage, File, Loader2,
   Download, Trash2, Search, ShieldAlert, Upload, X,
-  Sparkles, AlertTriangle, HardDrive, CloudUpload, CheckCircle2,
+  Sparkles, AlertTriangle, HardDrive, CloudUpload, CheckCircle,
 } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -207,8 +207,8 @@ export default function DocumentVault() {
               </Button>
             </div>
             <div className="mt-3 flex gap-3 text-xs text-teal-700">
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3" /> 2 expiry alerts found</span>
-              <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3" /> 1 coverage gap detected</span>
+              <span className="flex items-center gap-1"><CheckCircle className="h-3 w-3" /> 2 expiry alerts found</span>
+              <span className="flex items-center gap-1"><CheckCircle className="h-3 w-3" /> 1 coverage gap detected</span>
             </div>
           </CardContent>
         </Card>

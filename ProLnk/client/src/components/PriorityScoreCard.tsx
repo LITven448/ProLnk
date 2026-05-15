@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * PriorityScoreCard
  * Displays a partner's Partner Priority Score (PPS) with a full signal breakdown.

@@ -1,126 +1,85 @@
 import { useState } from 'react';
 
-const coolingCenters = [
-  'Dallas City Hall – 1500 Marilla St',
-  'Dallas Public Library – multiple branches',
-  'Tarrant County cooling centers – tarrantcounty.com',
-  'Collin County Community Center – check county site',
-  'Irving – Heritage Senior Center, 200 Jefferson St',
-  'Frisco – Frisco Public Library branches',
+const homeFeatures = [
+  { id: 'gas', label: 'Gas furnace' },
+  { id: 'electric', label: 'All-electric HVAC' },
+  { id: 'older', label: 'System 10+ years old' },
+  { id: 'pool', label: 'Pool or outdoor water features' },
+  { id: 'attic', label: 'Attic air handler' },
+  { id: 'pets', label: 'Pets in the home' },
 ];
 
-const fanRecommendations: Record<string, { fans: string; battery: string }> = {
-  small: { fans: '2 box fans + 1 tower fan', battery: '1 rechargeable 10" desk fan' },
-  medium: { fans: '4 box fans + 2 tower fans', battery: '2 rechargeable 10" desk fans' },
-  large: { fans: '6 box fans + 3 tower fans', battery: '3 rechargeable 10" desk fans' },
+const baseKit = [
+  { item: '📦 2 backup air filters (your size)', reason: 'Replace immediately if system stops moving air' },
+  { item: '📞 HVAC emergency contact card', reason: 'Saved in phone AND posted by thermostat' },
+  { item: '💊 Condensate tablets (6-pack)', reason: 'Drop in drain pan to prevent clogs all summer' },
+  { item: '🔦 Flashlight + headlamp', reason: 'Attic and utility closet work in the dark' },
+  { item: '🌡️ Indoor thermometer/hygrometer', reason: 'Know if HVAC is struggling before it fully fails' },
+];
+
+const addons: Record<string, { item: string; reason: string }> = {
+  gas: { item: '🔴 Gas shutoff wrench', reason: 'If you smell gas, shut off before calling' },
+  electric: { item: '⚡ Non-contact voltage tester', reason: 'Verify power before touching any components' },
+  older: { item: '🧰 Capacitor tester kit ($25)', reason: 'Old capacitors fail every summer — check first' },
+  pool: { item: '💧 Hose washdown nozzle', reason: 'Clean outdoor condenser coils without a pro' },
+  attic: { item: '🪜 6-ft folding step ladder', reason: 'Safe attic access for filter changes and checks' },
+  pets: { item: '🐾 Extra HEPA pre-filter', reason: 'Pet dander clogs filters 2x faster in DFW heat' },
 };
 
-const petTips = [
-  '🐾 Keep pets in coolest room with water and wet towels',
-  '🐾 Never leave pets in cars — temps exceed 130°F in DFW summer',
-  '🐾 Wet a towel and drape over kennels for evaporative cooling',
-  '🐾 Dogs pant — ensure fresh water every 2 hours',
-  '🐾 Know nearest 24-hr emergency vet location',
-];
-
 export default function DFWHVACEmergencyKit() {
-  const [homeSize, setHomeSize] = useState('');
-  const [residents, setResidents] = useState('');
-  const [showKit, setShowKit] = useState(false);
+  const [selected, setSelected] = useState<string[]>([]);
+  const [kit, setKit] = useState<null | { item: string; reason: string }[]>(null);
 
-  const fanRec = fanRecommendations[homeSize] || null;
+  const toggle = (id: string) => setSelected(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
 
-  const kitItems = [
-    `🌀 Box fans: ${fanRec ? fanRec.fans : 'select home size above'}`,
-    `🔋 Battery fans: ${fanRec ? fanRec.battery : 'select home size above'}`,
-    '🪟 Blackout curtains or thermal shades for south/west windows',
-    '🧊 Freeze 2-liter bottles — place behind box fans for cool air',
-    '💧 Coolers with ice — rotate 24-hr supply per person',
-    '🛏️ Cotton sheets only — no synthetic, no heavy blankets',
-    '🥶 Cooling towels (1 per resident) — reusable evaporative towels',
-    `💊 Hydration electrolyte packets — ${residents ? Math.ceil(Number(residents) * 3) : '9'}+ packets minimum`,
-    '📱 Portable phone charger (20,000+ mAh) — charged and ready',
-    '📋 Cooling center locations saved to phone',
-  ];
+  const buildKit = () => {
+    const extras = selected.map(id => addons[id]).filter(Boolean);
+    setKit([...baseKit, ...extras]);
+  };
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '24px' }}>
-      <div style={{ maxWidth: 700, margin: '0 auto' }}>
-        <div style={{ marginBottom: 8, color: '#F5E642', fontWeight: 700, fontSize: 13, letterSpacing: 2 }}>
-          DFW HOMEOWNER GUIDE
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EEF4', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+          <span style={{ fontSize: '2rem' }}>🧰</span>
+          <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW HVAC Emergency Kit</h1>
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>
-          🌡️ HVAC Emergency Kit
-        </h1>
-        <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.6 }}>
-          When your AC fails during a DFW summer, indoor temps can hit 100°F within hours. 
-          This kit helps you stay safe until repairs are made.
-        </p>
+        <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>When DFW temps hit 105°F and your HVAC stops, you have hours — not days — to respond. A prepared DFW homeowner keeps the right items on hand so a minor problem doesn't become a major emergency.</p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
-          <strong>⚠️ DFW Average July High: 96°F — heat index frequently 105–115°F</strong>
-        </div>
-
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏠 Tell Us About Your Home</h2>
-          <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 13 }}>HOME SIZE</label>
-            <select
-              value={homeSize}
-              onChange={e => setHomeSize(e.target.value)}
-              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #2a4a7f', fontSize: 15 }}
-            >
-              <option value=''>Select home size</option>
-              <option value='small'>Small (under 1,500 sq ft)</option>
-              <option value='medium'>Medium (1,500–3,000 sq ft)</option>
-              <option value='large'>Large (3,000+ sq ft)</option>
-            </select>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.5rem' }}>🏠 Tell Me About Your Home</h2>
+          <p style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '1rem' }}>Select all that apply — I'll build your custom HVAC emergency kit.</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.25rem' }}>
+            {homeFeatures.map(f => (
+              <button key={f.id} onClick={() => toggle(f.id)}
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected.includes(f.id) ? '#F5E642' : '#1E3A5F', background: selected.includes(f.id) ? '#F5E642' : 'transparent', color: selected.includes(f.id) ? '#0A1628' : '#E8EEF4', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                {f.label}
+              </button>
+            ))}
           </div>
-          <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 13 }}>NUMBER OF RESIDENTS</label>
-            <input
-              type='number'
-              min='1'
-              value={residents}
-              onChange={e => setResidents(e.target.value)}
-              placeholder='e.g. 3'
-              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #2a4a7f', fontSize: 15, boxSizing: 'border-box' }}
-            />
-          </div>
-          <button
-            onClick={() => setShowKit(true)}
-            style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 24px', fontSize: 15, cursor: 'pointer' }}
-          >
-            Build My Emergency Kit →
+          <button onClick={buildKit}
+            style={{ width: '100%', padding: '0.85rem', borderRadius: 10, background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: '1rem', border: 'none', cursor: 'pointer' }}>
+            Build My HVAC Emergency Kit
           </button>
         </div>
 
-        {showKit && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📦 Your Emergency Cooling Kit</h2>
-            {kitItems.map((item, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14 }}>{item}</div>
-            ))}
+        {kit && (
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+            <h3 style={{ color: '#F5E642', margin: '0 0 0.25rem' }}>Your DFW HVAC Emergency Kit</h3>
+            <p style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '1.25rem' }}>{kit.length} items — store in a labeled bin near your air handler</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {kit.map((entry, i) => (
+                <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.85rem' }}>
+                  <div style={{ fontWeight: 600, marginBottom: '0.2rem' }}>{entry.item}</div>
+                  <div style={{ color: '#94A3B8', fontSize: '0.82rem' }}>{entry.reason}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: '1.25rem', padding: '0.75rem', background: '#1a2f50', borderRadius: 8 }}>
+              <p style={{ margin: 0, color: '#94A3B8', fontSize: '0.85rem' }}>🔧 For anything beyond your kit, ProLnk connects you with emergency-ready DFW HVAC pros — free quotes, verified techs.</p>
+            </div>
           </div>
         )}
-
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🏛️ DFW Cooling Centers</h2>
-          {coolingCenters.map((c, i) => (
-            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1' }}>📍 {c}</div>
-          ))}
-        </div>
-
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🐾 Pet Heat Safety</h2>
-          {petTips.map((t, i) => (
-            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1' }}>{t}</div>
-          ))}
-        </div>
-
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', color: '#0A1628', textAlign: 'center' }}>
-          <strong>🔧 Need HVAC repair? ProLnk connects you to vetted DFW HVAC pros — fast.</strong>
-        </div>
       </div>
     </div>
   );

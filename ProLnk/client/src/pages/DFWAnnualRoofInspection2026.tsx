@@ -1,30 +1,48 @@
 import { useState } from 'react';
 
-const roofTypes = ['Asphalt Shingles', 'Metal Roof', 'Tile Roof', 'Flat/TPO'];
-const ageRanges = ['0-5 years', '6-12 years', '13-20 years', '20+ years'];
+const roofTypes = ['Asphalt Shingles', 'Metal Roof', 'Tile Roof', 'Flat/TPO Roof'];
+const roofAges = ['Under 5 years', '5-10 years', '11-20 years', '20+ years'];
 
 const baseChecklist = [
-  '🔍 Binoculars scan: missing, lifted, or cracked shingles/panels',
-  '🔩 Check flashing at all penetrations (chimney, vents, skylights)',
-  '🏔️ Inspect ridge cap condition and alignment',
-  '🍂 Clear gutters and inspect for granule accumulation',
-  '💧 Check downspouts — verify extension away from foundation',
-  '🌿 Remove any tree limbs within 6 feet of roof surface',
-  '🕳️ Check fascia and soffit for rot, gaps, or pest entry points',
+  '🔍 Look for missing, lifted, or curling shingles/panels',
+  '🔩 Inspect flashing at all roof penetrations (vents, chimney, skylights)',
+  '🏠 Check ridge cap for gaps or displacement',
+  '💧 Inspect gutters for granule accumulation (wear indicator)',
+  '🍃 Clear gutters and downspouts of debris',
+  '📐 Verify downspouts extend 6ft or more from foundation',
+  '🌳 Trim branches within 6 feet of roof surface',
+  '🕳️ Check fascia and soffits for rot or pest entry points',
 ];
 
-const priorityMap: Record<string, string[]> = {
-  'Asphalt Shingles': ['📊 Measure granule loss in gutters — heavy loss signals end of life', '🔵 Check for cupping or curling shingles (moisture damage sign)', '🟡 Spot check nail pops — reseal exposed nail heads'],
-  'Metal Roof': ['🔩 Check exposed fastener panels for backed-out screws', '🔩 Inspect lap seams and ridge cap seals for separation', '🟡 Look for rust staining at seams or fasteners'],
-  'Tile Roof': ['🔴 Walk inspection by professional only — tiles crack under foot traffic', '🔴 Check for cracked or slipped tiles at valleys and hips', '🟡 Inspect underlayment condition at any lifted tiles'],
-  'Flat/TPO': ['🔴 Check all seams and flashings after every hail event', '💧 Look for standing water (ponding) — improper drainage accelerates failure', '🟡 Inspect roof penetrations and pipe boots for seal condition'],
+const typeExtras: Record<string, string[]> = {
+  'Asphalt Shingles': [
+    '📊 Check for granule loss in gutters (major wear indicator)',
+    '🔄 Look for blistering or cupping on shingle surfaces',
+    '📅 Confirm age — DFW shingles average 15-20 years in heat/hail cycle',
+  ],
+  'Metal Roof': [
+    '🔩 Check all fasteners and screws for backing out',
+    '🦀 Inspect seams and overlaps for rust or separation',
+    '🔊 Verify ridge cap screws are sealed with butyl tape',
+  ],
+  'Tile Roof': [
+    '🧩 Look for cracked or missing tiles (walk from ground with binoculars)',
+    '🔲 Check underlayment exposure at any broken tile locations',
+    '🏗️ Inspect mortar at ridge tiles and hip caps',
+  ],
+  'Flat/TPO Roof': [
+    '💧 Check for ponding water (should drain within 48 hours)',
+    '🔗 Inspect seams and termination bars for separation',
+    '🏗️ Check flashing at all curbs, drains, and HVAC equipment bases',
+    '🌡️ Look for bubbles or blisters in membrane surface',
+  ],
 };
 
 const ageNotes: Record<string, string> = {
-  '0-5 years': 'Biannual inspection is preventive — document condition for warranty claims.',
-  '6-12 years': 'Mid-life inspection critical. First signs of wear appear. Check warranty status.',
-  '13-20 years': 'Asphalt shingles average 20-25 yr lifespan in DFW heat. Start planning replacement budget.',
-  '20+ years': 'Full replacement assessment recommended. Insurance companies may require updates.',
+  'Under 5 years': 'Your roof is in the early phase — focus on storm damage after each hail event.',
+  '5-10 years': 'Mid-life — watch flashing carefully and track granule loss in gutters.',
+  '11-20 years': 'Late-life asphalt shingles enter high-risk zone in DFW. Budget for replacement.',
+  '20+ years': 'Roof replacement likely overdue. Get a full inspection and written report from a roofer.',
 };
 
 export default function DFWAnnualRoofInspection2026() {
@@ -32,63 +50,68 @@ export default function DFWAnnualRoofInspection2026() {
   const [roofAge, setRoofAge] = useState('');
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
-  const toggle = (item: string) =>
-    setChecked(prev => ({ ...prev, [item]: !prev[item] }));
-
-  const extraItems = roofType ? priorityMap[roofType] : [];
+  const toggleItem = (item: string) => setChecked(prev => ({ ...prev, [item]: !prev[item] }));
+  const extraItems = roofType ? typeExtras[roofType] : [];
   const allItems = [...baseChecklist, ...extraItems];
-  const done = allItems.filter(i => checked[i]).length;
+  const doneCount = allItems.filter(i => checked[i]).length;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'sans-serif', color: '#E8F4FD' }}>
-      <div style={{ maxWidth: 700, margin: '0 auto' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: 26, fontWeight: 700, margin: '8px 0 4px' }}>DFW Annual Roof Inspection Checklist 2026</h1>
-          <p style={{ color: '#8BA3BC', fontSize: 14 }}>Biannual inspection recommended in DFW (spring after hail season + fall before winter)</p>
+          <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '8px 0 4px' }}>DFW Annual Roof Inspection Checklist 2026</h1>
+          <p style={{ color: '#94A3B8', fontSize: 15 }}>DFW hail season (March-June) demands biannual roof checks — spring and fall at minimum.</p>
         </div>
 
-        <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
-          <label style={{ color: '#F5E642', fontWeight: 600, display: 'block', marginBottom: 10 }}>Roof Type</label>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <label style={{ display: 'block', color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 15 }}>Select Your Roof Type</label>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {roofTypes.map(t => (
               <button key={t} onClick={() => { setRoofType(t); setChecked({}); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roofType === t ? '#F5E642' : '#1E3A5F', background: roofType === t ? '#F5E642' : 'transparent', color: roofType === t ? '#0A1628' : '#E8F4FD', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roofType === t ? '#F5E642' : '#1E3A5F', background: roofType === t ? '#F5E642' : 'transparent', color: roofType === t ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                 {t}
               </button>
             ))}
           </div>
-        </div>
-
-        <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <label style={{ color: '#F5E642', fontWeight: 600, display: 'block', marginBottom: 10 }}>Roof Age</label>
+          <label style={{ display: 'block', color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 15 }}>Roof Age</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-            {ageRanges.map(a => (
+            {roofAges.map(a => (
               <button key={a} onClick={() => setRoofAge(a)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roofAge === a ? '#F5E642' : '#1E3A5F', background: roofAge === a ? '#F5E642' : 'transparent', color: roofAge === a ? '#0A1628' : '#E8F4FD', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roofAge === a ? '#F5E642' : '#1E3A5F', background: roofAge === a ? '#F5E642' : 'transparent', color: roofAge === a ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                 {a}
               </button>
             ))}
           </div>
-          {roofAge && <p style={{ color: '#8BA3BC', fontSize: 13, marginTop: 12, marginBottom: 0 }}>💡 {ageNotes[roofAge]}</p>}
         </div>
 
-        {(roofType || allItems.length > 0) && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-              <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: 0 }}>Inspection Checklist</h2>
-              <span style={{ color: done === allItems.length ? '#4ADE80' : '#8BA3BC', fontWeight: 600 }}>{done}/{allItems.length} ✓</span>
+        {roofAge && (
+          <div style={{ background: '#1E3A5F', borderRadius: 10, padding: 16, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
+            <span style={{ color: '#F5E642', fontWeight: 700 }}>Age Note: </span>
+            <span style={{ color: '#CBD5E1', fontSize: 14 }}>{ageNotes[roofAge]}</span>
+          </div>
+        )}
+
+        {roofType && (
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 700, margin: 0 }}>{roofType} Checklist</h2>
+              <span style={{ background: doneCount === allItems.length ? '#16A34A' : '#1E3A5F', color: doneCount === allItems.length ? '#fff' : '#94A3B8', borderRadius: 20, padding: '4px 12px', fontSize: 13, fontWeight: 600 }}>{doneCount}/{allItems.length}</span>
             </div>
             {allItems.map(item => (
-              <div key={item} onClick={() => toggle(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
-                <div style={{ width: 22, height: 22, borderRadius: 4, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#1E3A5F', background: checked[item] ? '#F5E642' : 'transparent', flexShrink: 0 }} />
-                <span style={{ color: checked[item] ? '#8BA3BC' : '#E8F4FD', textDecoration: checked[item] ? 'line-through' : 'none', fontSize: 14 }}>{item}</span>
+              <div key={item} onClick={() => toggleItem(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
+                <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#334155', background: checked[item] ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  {checked[item] && <span style={{ color: '#0A1628', fontSize: 13, fontWeight: 900 }}>✓</span>}
+                </div>
+                <span style={{ color: checked[item] ? '#64748B' : '#E2E8F0', fontSize: 14, textDecoration: checked[item] ? 'line-through' : 'none' }}>{item}</span>
               </div>
             ))}
           </div>
         )}
 
-        <p style={{ textAlign: 'center', color: '#3D5A80', fontSize: 12, marginTop: 24 }}>ProLnk · DFW Roof Inspection Guide 2026</p>
+        <div style={{ textAlign: 'center', marginTop: 8 }}>
+          <p style={{ color: '#475569', fontSize: 13 }}>ProLnk connects you with vetted DFW roofing pros — prolnk.io</p>
+        </div>
       </div>
     </div>
   );

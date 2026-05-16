@@ -603,6 +603,13 @@ const GarageOrganizationGuide = lazy(() => import('./pages/homeowner/GarageOrgan
 const HomeTheaterGuide = lazy(() => import('./pages/homeowner/HomeTheaterGuide'));
 const PartnerWeekendWarriorGuide = lazy(() => import('./pages/PartnerWeekendWarriorGuide'));
 const TrustyProPricingExplainer = lazy(() => import('./pages/TrustyProPricingExplainer'));
+const PartnerFirst30Days = lazy(() => import('./pages/partner/PartnerFirst30Days'));
+const PartnerAnnualIncomeForecaster = lazy(() => import('./pages/partner/PartnerAnnualIncomeForecaster'));
+const PartnerFAQ = lazy(() => import('./pages/partner/PartnerFAQ'));
+const PartnerTaxGuide = lazy(() => import('./pages/partner/PartnerTaxGuide'));
+const CharterVsFoundingComparison = lazy(() => import('./pages/partner/CharterVsFoundingComparison'));
+const PartnerMarketingKit = lazy(() => import('./pages/partner/PartnerMarketingKit'));
+const ReferralNetworkCalculator = lazy(() => import('./pages/partner/ReferralNetworkCalculator'));
 
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
@@ -1292,6 +1299,13 @@ function Router() {
       <Route path="/trustypro/app-preview/find-pro" component={TPFindProPreview} />
       <Route path="/trustypro/app-preview/alerts" component={TPAlertsPreview} />
       <Route component={NotFound} />
+      <Route path="/resources/partner-first-30-days" component={PartnerFirst30Days} />
+      <Route path="/resources/income-forecaster" component={PartnerAnnualIncomeForecaster} />
+      <Route path="/resources/partner-faq" component={PartnerFAQ} />
+      <Route path="/resources/partner-tax-guide" component={PartnerTaxGuide} />
+      <Route path="/resources/charter-vs-founding" component={CharterVsFoundingComparison} />
+      <Route path="/resources/marketing-kit" component={PartnerMarketingKit} />
+      <Route path="/resources/referral-calculator" component={ReferralNetworkCalculator} />
     </Switch>
     </Suspense>
   );

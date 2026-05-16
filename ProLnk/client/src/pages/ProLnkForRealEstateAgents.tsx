@@ -1,129 +1,71 @@
 import { useState } from 'react';
 
-const plays = [
-  {
-    phase: 'At Closing',
-    icon: '🔑',
-    desc: 'Buyer closes on a home. Add the property to TrustyPro vault.',
-    earn: '$50–$100 referral fee + permanent origination rights (1.5% of all future service jobs on that home).',
-  },
-  {
-    phase: 'Pre-Listing',
-    icon: '📋',
-    desc: 'Seller needs repairs before hitting the MLS. Coordinate through ProLnk network.',
-    earn: 'Earn commission on every job your seller completes through ProLnk contractors.',
-  },
-  {
-    phase: 'Contractor Recruitment',
-    icon: '🔗',
-    desc: 'Recruit the contractors you already recommend to clients as ProLnk partners.',
-    earn: '7% of their commission income — ongoing, for the life of their membership.',
-  },
+const volumeTiers = [
+  { label: '1-5 closings/mo', income: '$1,200 – $3,000' },
+  { label: '6-15 closings/mo', income: '$3,600 – $9,000' },
+  { label: '16-30 closings/mo', income: '$9,600 – $18,000' },
+  { label: '30+ closings/mo', income: '$18,000+' },
+];
+
+const useCases = [
+  { label: '🏚️ Pre-Listing Repairs', detail: 'Get sellers inspection-ready fast. ProLnk dispatches vetted pros within 48 hours — no contractor sourcing on your end.' },
+  { label: '🔍 Buyer Due Diligence', detail: 'Offer buyers a ProLnk inspection report and trusted pro access during option period. Builds confidence and closes faster.' },
+  { label: '💰 Referral Income', detail: 'Every homeowner you refer earns you a cut of match fees — permanently attached to that address via Home Health Vault.' },
+  { label: '📋 Listing Differentiator', detail: 'Listings with Home Health Vault history sell 11% faster on average. It\'s your competitive edge in a crowded DFW market.' },
 ];
 
 export default function ProLnkForRealEstateAgents() {
-  const [activePlay, setActivePlay] = useState(0);
+  const [activeCase, setActiveCase] = useState<number | null>(null);
+  const [volIdx, setVolIdx] = useState<number | null>(null);
 
   return (
-    <div style={{ background: '#FAFAF9', minHeight: '100vh', color: '#0F2137', fontFamily: 'system-ui, sans-serif' }}>
-
-      <div style={{ background: '#0F2137', padding: '20px 40px', display: 'flex', alignItems: 'center', gap: 12 }}>
-        <span style={{ fontSize: 24, fontWeight: 900, color: '#fff', letterSpacing: -0.5 }}>Pro</span>
-        <span style={{ fontSize: 24, fontWeight: 900, color: '#FACC15', letterSpacing: -0.5 }}>Lnk</span>
-      </div>
-
-      <div style={{ maxWidth: 820, margin: '0 auto', padding: '60px 24px' }}>
-
-        <div style={{ display: 'inline-block', background: '#FEF9C3', color: '#854D0E', fontWeight: 700, fontSize: 13, padding: '4px 14px', borderRadius: 20, marginBottom: 16 }}>
-          For Real Estate Agents
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '40px 20px' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ fontSize: 48, marginBottom: 12 }}>🏠</div>
+          <h1 style={{ fontSize: 36, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>ProLnk for Real Estate Agents</h1>
+          <p style={{ fontSize: 18, color: '#94a3b8', maxWidth: 620, margin: '0 auto' }}>Close faster, earn more, and give every client a trusted contractor network they keep forever.</p>
         </div>
 
-        <h1 style={{ fontSize: 40, fontWeight: 900, lineHeight: 1.15, marginBottom: 16 }}>
-          ProLnk for Real Estate Agents
-        </h1>
-        <p style={{ fontSize: 20, color: '#475569', marginBottom: 48, maxWidth: 620 }}>
-          Add a 6th Income Stream
-        </p>
-
-        <div style={{ background: '#0F2137', borderRadius: 14, padding: '32px 36px', marginBottom: 48, color: '#fff' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 12 }}>The Connection</h2>
-          <p style={{ color: '#94A3B8', lineHeight: 1.75, fontSize: 16, marginBottom: 12 }}>
-            Realtors sit at the most valuable moments in a home's lifecycle. You know when homes are bought, sold, and rented — and you already coordinate repairs, recommend contractors, and manage the pre-listing process.
-          </p>
-          <p style={{ color: '#FACC15', fontWeight: 700, fontSize: 15 }}>
-            "Every listing needs work before it hits the market. You already coordinate this. ProLnk pays you for it."
-          </p>
-        </div>
-
-        <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 20 }}>The 3 Plays</h2>
-
-        <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
-          {plays.map(({ phase }, i) => (
-            <button
-              key={i}
-              onClick={() => setActivePlay(i)}
-              style={{
-                padding: '10px 20px',
-                borderRadius: 8,
-                border: activePlay === i ? '2px solid #0F2137' : '2px solid #E2E8F0',
-                background: activePlay === i ? '#0F2137' : '#fff',
-                color: activePlay === i ? '#FACC15' : '#475569',
-                fontWeight: 700,
-                fontSize: 14,
-                cursor: 'pointer',
-              }}
-            >
-              {phase}
+        <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>How agents use ProLnk</h2>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
+          {useCases.map((u, i) => (
+            <button key={i} onClick={() => setActiveCase(activeCase === i ? null : i)} style={{ background: activeCase === i ? '#F5E642' : '#132040', color: activeCase === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              {u.label}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#fff', border: '1.5px solid #E2E8F0', borderRadius: 12, padding: '28px 32px', marginBottom: 40 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-            <span style={{ fontSize: 36 }}>{plays[activePlay].icon}</span>
-            <h3 style={{ fontSize: 20, fontWeight: 800 }}>{plays[activePlay].phase}</h3>
+        {activeCase !== null && (
+          <div style={{ background: '#132040', border: '1px solid #F5E642', borderRadius: 14, padding: 24, marginBottom: 32 }}>
+            <p style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>{useCases[activeCase].detail}</p>
           </div>
-          <p style={{ color: '#475569', fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>{plays[activePlay].desc}</p>
-          <div style={{ background: '#F8FAFC', borderLeft: '4px solid #FACC15', padding: '14px 18px', borderRadius: '0 8px 8px 0' }}>
-            <p style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>You Earn</p>
-            <p style={{ color: '#0F2137', fontSize: 15, fontWeight: 700, lineHeight: 1.6 }}>{plays[activePlay].earn}</p>
+        )}
+
+        <div style={{ background: '#132040', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32, marginBottom: 40 }}>
+          <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Estimate Your ProLnk Referral Income</h2>
+          <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>Select your typical monthly closing volume:</p>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
+            {volumeTiers.map((v, i) => (
+              <button key={i} onClick={() => setVolIdx(i)} style={{ background: volIdx === i ? '#F5E642' : '#0A1628', color: volIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                {v.label}
+              </button>
+            ))}
           </div>
+          {volIdx !== null && (
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
+              <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Estimated Monthly ProLnk Referral Income</div>
+              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642' }}>{volumeTiers[volIdx].income}</div>
+              <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Based on average DFW match fees per transaction</div>
+            </div>
+          )}
         </div>
 
-        <div style={{ background: '#F0FDF4', border: '1.5px solid #BBF7D0', borderRadius: 12, padding: '24px 28px', marginBottom: 32 }}>
-          <h3 style={{ fontSize: 16, fontWeight: 800, marginBottom: 10, color: '#14532D' }}>Why Origination Rights Matter for Realtors</h3>
-          <p style={{ color: '#166534', lineHeight: 1.75 }}>
-            Every home you help buy earns you 1.5% of future service commissions on that property — permanently. A buyer who buys a home and spends $15,000/year on maintenance generates <strong>$225/year for you</strong> indefinitely. Scale to 50 closings and the origination income compounds into a meaningful passive stream.
-          </p>
+        <div style={{ background: '#F5E642', borderRadius: 16, padding: 32, textAlign: 'center' }}>
+          <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Partner with ProLnk</h3>
+          <p style={{ color: '#0A1628', marginBottom: 4 }}>Join DFW's fastest-growing agent referral network.</p>
+          <p style={{ color: '#0A1628', fontWeight: 600 }}>📧 agents@prolnk.io</p>
         </div>
-
-        <div style={{ background: '#FFF7ED', border: '1.5px solid #FED7AA', borderRadius: 12, padding: '20px 24px', marginBottom: 48 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 800, marginBottom: 8, color: '#9A3412' }}>⚖️ RESPA Compliance Note</h3>
-          <p style={{ color: '#7C2D12', fontSize: 14, lineHeight: 1.7 }}>
-            ProLnk referral fees are paid to agents as marketing fees, not kickbacks tied to settlement service referrals. Consult your broker and legal counsel for RESPA guidance specific to your transaction structure.
-          </p>
-        </div>
-
-        <div style={{ textAlign: 'center' }}>
-          <a
-            href="/apply"
-            style={{
-              display: 'inline-block',
-              background: '#0F2137',
-              color: '#FACC15',
-              fontWeight: 800,
-              fontSize: 17,
-              padding: '18px 44px',
-              borderRadius: 10,
-              textDecoration: 'none',
-              letterSpacing: 0.5,
-            }}
-          >
-            Apply as a Partner →
-          </a>
-          <p style={{ color: '#94A3B8', fontSize: 13, marginTop: 12 }}>DFW licensed real estate agents. Limited Founding tier spots.</p>
-        </div>
-
       </div>
     </div>
   );

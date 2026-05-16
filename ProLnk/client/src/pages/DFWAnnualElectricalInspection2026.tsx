@@ -1,110 +1,117 @@
 import { useState } from 'react';
 
-const homeAges = ['0-15 years', '16-30 years', '31-50 years', '50+ years'];
+const homeAges = ['Under 10 years', '10-25 years', '26-40 years', '40+ years'];
 
-const checklistMap: Record<string, string[]> = {
-  '0-15 years': [
-    '✅ Test all GFCI outlets (monthly recommended — press test/reset)',
-    '✅ Test all smoke detectors (replace batteries semi-annually)',
-    '✅ Test all CO detectors (replace units every 5-7 years)',
-    '✅ Check panel for any tripped breakers or signs of heat',
-    '✅ Look for warm cover plates or outlets (sign of overload)',
-    '✅ Check outdoor outlets and garage GFCIs',
-    '✅ Verify exterior light fixtures for moisture intrusion',
+const checklists: Record<string, { label: string; items: string[] }[]> = {
+  'Under 10 years': [
+    { label: '✅ Standard Annual Safety Checks', items: [
+      '🔌 Test all GFCI outlets (press Test then Reset)',
+      '🔥 Test smoke detectors (all levels)',
+      '☁️ Test CO detectors (near bedrooms and gas appliances)',
+      '📋 Check panel — any tripping patterns or warm breakers?',
+      '🌡️ Check outlet cover plates for warmth (indicator of overload)',
+    ]},
   ],
-  '16-30 years': [
-    '🔴 Schedule panel inspection — AFCI breakers recommended for bedrooms',
-    '🔴 Replace smoke detectors if over 10 years old',
-    '🔴 Test all GFCI outlets (press test/reset on every outlet)',
-    '🟡 Check bathroom and kitchen outlets for proper GFCI protection',
-    '🟡 Look for aluminum wiring on 15/20A circuits (common 1970s-80s)',
-    '🟡 Check panel for signs of heat or corrosion',
-    '✅ Test CO detectors and verify placement near sleeping areas',
-    '✅ Verify all exterior outlets have weatherproof covers',
+  '10-25 years': [
+    { label: '⚠️ Priority Safety Checks', items: [
+      '🔌 Test all GFCI outlets and replace any that fail to trip',
+      '🔥 Replace smoke detector batteries; replace units over 10 years old',
+      '☁️ Test CO detectors — replace units over 7 years old',
+      '📋 Panel review — watch for double-tapped breakers',
+      '🌡️ Inspect cover plates at switches and outlets for heat or discoloration',
+      '💡 Check for any flickering lights (loose connections)',
+      '🏠 Verify bathroom and kitchen GFCI protection is complete',
+    ]},
   ],
-  '31-50 years': [
-    '🔴 Panel inspection and potential upgrade assessment (100A may be undersized)',
-    '🔴 Check for Federal Pacific or Zinsco panels — known failure risk',
-    '🔴 Aluminum wiring inspection if 1970s-era home',
-    '🔴 GFCI retrofit for all wet area outlets if not already done',
-    '🟡 Check for 2-prong ungrounded outlets — assess for update',
-    '🟡 Look for knob and tube wiring in attic or crawl space',
-    '🟡 Test smoke detectors — replace if over 10 years old',
-    '✅ Test CO detectors near all sleeping areas',
+  '26-40 years': [
+    { label: '🚨 Elevated Risk Checks', items: [
+      '🔌 Full GFCI audit — many homes this age lack full coverage',
+      '🔥 Replace all smoke detectors if original (unit life is 10 years)',
+      '☁️ Replace CO detectors if original',
+      '📋 Panel inspection by electrician — Federal Pacific and Zinsco panels are fire hazards',
+      '🌡️ Inspect for aluminum branch wiring (common 1965-1973) — requires CO/ALR devices',
+      '💡 Check for two-prong ungrounded outlets — update to GFCI type or ground',
+      '🏠 Verify AFCI protection in bedrooms per current code',
+    ]},
   ],
-  '50+ years': [
-    '🔴 Full electrical inspection by licensed electrician strongly recommended',
-    '🔴 Panel replacement likely needed (200A service standard)',
-    '🔴 Knob and tube wiring assessment and replacement plan',
-    '🔴 Aluminum wiring remediation (COPALUM connectors or replacement)',
-    '🔴 GFCI protection installation throughout',
-    '🔴 Smoke detector installation in all required locations',
-    '🟡 Arc fault protection assessment for bedrooms',
-    '🟡 Review home insurance — many carriers require electrical update',
+  '40+ years': [
+    { label: '🔴 Critical Inspection Items', items: [
+      '🔌 Full electrical inspection by licensed electrician strongly recommended',
+      '🔥 Replace all smoke and CO detectors — likely original or outdated',
+      '📋 Panel replacement evaluation — 150A minimum for modern loads',
+      '🌡️ Knob-and-tube wiring assessment if pre-1950s home',
+      '💡 Aluminum wiring inspection and pigtailing where needed',
+      '🏠 GFCI and AFCI upgrade throughout — required by current NEC',
+      '🔧 Service entrance inspection (weatherhead, mast, meter base)',
+      '⚡ Whole-home surge protector installation recommended',
+    ]},
   ],
 };
 
-const monthlies = [
-  '🔲 Press test button on every GFCI outlet',
-  '🔲 Test smoke detector in each zone',
-  '🔲 Verify CO detector LED/display is active',
-  '🔲 Check breaker panel — any tripped breakers?',
-];
-
 export default function DFWAnnualElectricalInspection2026() {
-  const [age, setAge] = useState('');
+  const [selected, setSelected] = useState('');
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
-  const toggle = (item: string) =>
-    setChecked(prev => ({ ...prev, [item]: !prev[item] }));
-
-  const items = age ? checklistMap[age] : [];
-  const done = items.filter(i => checked[i]).length;
+  const toggleItem = (item: string) => setChecked(prev => ({ ...prev, [item]: !prev[item] }));
+  const groups = selected ? checklists[selected] : [];
+  const allItems = groups.flatMap(g => g.items);
+  const doneCount = allItems.filter(i => checked[i]).length;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'sans-serif', color: '#E8F4FD' }}>
-      <div style={{ maxWidth: 700, margin: '0 auto' }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E2E8F0' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: 26, fontWeight: 700, margin: '8px 0 4px' }}>DFW Annual Electrical Safety Inspection 2026</h1>
-          <p style={{ color: '#8BA3BC', fontSize: 14 }}>Select your home age for a priority-ranked electrical safety checklist</p>
+          <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '8px 0 4px' }}>DFW Annual Electrical Safety Checklist 2026</h1>
+          <p style={{ color: '#94A3B8', fontSize: 15 }}>Electrical fires are largely preventable — here is what to check every year in your DFW home.</p>
         </div>
 
-        <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <label style={{ color: '#F5E642', fontWeight: 600, display: 'block', marginBottom: 10 }}>Home Age</label>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <label style={{ display: 'block', color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 15 }}>Select Your Home Age</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {homeAges.map(a => (
-              <button key={a} onClick={() => { setAge(a); setChecked({}); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642' : '#1E3A5F', background: age === a ? '#F5E642' : 'transparent', color: age === a ? '#0A1628' : '#E8F4FD', fontWeight: 600, cursor: 'pointer' }}>
+              <button key={a} onClick={() => { setSelected(a); setChecked({}); }}
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === a ? '#F5E642' : '#1E3A5F', background: selected === a ? '#F5E642' : 'transparent', color: selected === a ? '#0A1628' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                 {a}
               </button>
             ))}
           </div>
         </div>
 
-        {age && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-              <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: 0 }}>Annual Checklist — {age} Home</h2>
-              <span style={{ color: done === items.length ? '#4ADE80' : '#8BA3BC', fontWeight: 600 }}>{done}/{items.length} ✓</span>
+        {selected && (
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 700, margin: 0 }}>Checklist — {selected}</h2>
+              <span style={{ background: doneCount === allItems.length && allItems.length > 0 ? '#16A34A' : '#1E3A5F', color: doneCount === allItems.length && allItems.length > 0 ? '#fff' : '#94A3B8', borderRadius: 20, padding: '4px 12px', fontSize: 13, fontWeight: 600 }}>{doneCount}/{allItems.length}</span>
             </div>
-            {items.map(item => (
-              <div key={item} onClick={() => toggle(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
-                <div style={{ width: 22, height: 22, borderRadius: 4, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#1E3A5F', background: checked[item] ? '#F5E642' : 'transparent', flexShrink: 0 }} />
-                <span style={{ color: checked[item] ? '#8BA3BC' : '#E8F4FD', textDecoration: checked[item] ? 'line-through' : 'none', fontSize: 14 }}>{item}</span>
+            {groups.map(group => (
+              <div key={group.label} style={{ marginBottom: 20 }}>
+                <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 10 }}>{group.label}</div>
+                {group.items.map(item => (
+                  <div key={item} onClick={() => toggleItem(item)} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E3A5F', cursor: 'pointer' }}>
+                    <div style={{ width: 22, height: 22, borderRadius: 6, border: '2px solid', borderColor: checked[item] ? '#F5E642' : '#334155', background: checked[item] ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      {checked[item] && <span style={{ color: '#0A1628', fontSize: 13, fontWeight: 900 }}>✓</span>}
+                    </div>
+                    <span style={{ color: checked[item] ? '#64748B' : '#E2E8F0', fontSize: 14, textDecoration: checked[item] ? 'line-through' : 'none' }}>{item}</span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ background: '#0F2240', borderRadius: 12, padding: 20 }}>
-          <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 14 }}>📅 Monthly Safety Checks</h2>
-          {monthlies.map((m, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: i < monthlies.length - 1 ? '1px solid #1E3A5F' : 'none', color: '#E8F4FD', fontSize: 14 }}>{m}</div>
-          ))}
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <h3 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10, fontSize: 15 }}>⚡ Monthly Tasks (Takes 2 Minutes)</h3>
+          <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7 }}>
+            <div>Press Test on every GFCI outlet — verify it trips and resets</div>
+            <div>Press Test on smoke detectors (chirp = working)</div>
+            <div>Look at panel — any breaker in the middle (tripped) position?</div>
+          </div>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#3D5A80', fontSize: 12, marginTop: 24 }}>ProLnk · DFW Electrical Safety Guide 2026</p>
+        <div style={{ textAlign: 'center', marginTop: 8 }}>
+          <p style={{ color: '#475569', fontSize: 13 }}>ProLnk connects you with vetted DFW electricians — prolnk.io</p>
+        </div>
       </div>
     </div>
   );

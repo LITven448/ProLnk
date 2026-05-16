@@ -610,6 +610,15 @@ const PartnerTaxGuide = lazy(() => import('./pages/partner/PartnerTaxGuide'));
 const CharterVsFoundingComparison = lazy(() => import('./pages/partner/CharterVsFoundingComparison'));
 const PartnerMarketingKit = lazy(() => import('./pages/partner/PartnerMarketingKit'));
 const ReferralNetworkCalculator = lazy(() => import('./pages/partner/ReferralNetworkCalculator'));
+const SidingReplacementGuide = lazy(() => import('./pages/homeowner/SidingReplacementGuide'));
+const ElectricalPanelUpgradeGuide = lazy(() => import('./pages/homeowner/ElectricalPanelUpgradeGuide'));
+const CarpetVsHardwoodGuide = lazy(() => import('./pages/homeowner/CarpetVsHardwoodGuide'));
+const MoldRemediationGuide = lazy(() => import('./pages/homeowner/MoldRemediationGuide'));
+const DFWBackyardRemodelGuide = lazy(() => import('./pages/homeowner/DFWBackyardRemodelGuide'));
+const HomeEquityGuide = lazy(() => import('./pages/homeowner/HomeEquityGuide'));
+const DFWPermitGuide = lazy(() => import('./pages/homeowner/DFWPermitGuide'));
+const ExteriorPaintGuide = lazy(() => import('./pages/homeowner/ExteriorPaintGuide'));
+const TreeServiceGuide = lazy(() => import('./pages/homeowner/TreeServiceGuide'));
 
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
@@ -1306,6 +1315,15 @@ function Router() {
       <Route path="/resources/charter-vs-founding" component={CharterVsFoundingComparison} />
       <Route path="/resources/marketing-kit" component={PartnerMarketingKit} />
       <Route path="/resources/referral-calculator" component={ReferralNetworkCalculator} />
+      <Route path="/my-home/siding" component={SidingReplacementGuide} />
+      <Route path="/my-home/electrical-panel" component={ElectricalPanelUpgradeGuide} />
+      <Route path="/my-home/flooring" component={CarpetVsHardwoodGuide} />
+      <Route path="/my-home/mold-remediation" component={MoldRemediationGuide} />
+      <Route path="/my-home/backyard-remodel" component={DFWBackyardRemodelGuide} />
+      <Route path="/my-home/home-equity" component={HomeEquityGuide} />
+      <Route path="/my-home/permits" component={DFWPermitGuide} />
+      <Route path="/my-home/exterior-paint" component={ExteriorPaintGuide} />
+      <Route path="/my-home/tree-service" component={TreeServiceGuide} />
     </Switch>
     </Suspense>
   );

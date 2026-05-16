@@ -1,271 +1,190 @@
-import { useState } from "react";
-import HomeownerLayout from "@/components/HomeownerLayout";
-import {
-  AlertTriangle, CheckCircle, XCircle, ChevronDown, ChevronUp,
-  Wrench, Calendar, Zap, DollarSign, ExternalLink, Info,
-} from "lucide-react";
+import { useState } from 'react';
 
-const D = {
-  bg: "#0D0F14",
-  surface: "#13161E",
-  card: "#1A1E2A",
-  border: "#252A3A",
-  text: "#F0F2FF",
-  muted: "#8B91A8",
-  dim: "#555B72",
-  cyan: "#00D4FF",
-  green: "#00E676",
-  amber: "#FFB300",
-  red: "#FF4444",
-  teal: "#14B8A6",
-  purple: "#A855F7",
-};
-
-type SafeStatus = "ok" | "warn" | "fail";
-
-interface SafeItem {
-  id: string;
-  label: string;
-  detail: string;
-  status: SafeStatus;
-}
-
-const INITIAL_CHECKS: SafeItem[] = [
-  { id: "c1", label: "Auto-reverse test", detail: "Place 2×4 on ground — door should reverse on contact", status: "ok" },
-  { id: "c2", label: "Photo-eye sensors aligned", detail: "Indicator light should be solid green on both units", status: "ok" },
-  { id: "c3", label: "Manual release cord accessible", detail: "Red cord should hang clearly and pull freely", status: "ok" },
-  { id: "c4", label: "Balance test", detail: "Disconnect opener, lift manually — should stay at 3 ft", status: "warn" },
-  { id: "c5", label: "Springs show no gaps or corrosion", detail: "Inspect torsion springs above door for rust or separation", status: "ok" },
-  { id: "c6", label: "All hardware tight", detail: "Check hinges, roller brackets, and track bolts for looseness", status: "fail" },
+const doorTypes = [
+  { name: 'Steel', pros: 'Durable, low maintenance, insulates well', cons: 'Can dent, may rust without coating', cost: '$800–$1,800' },
+  { name: 'Wood', pros: 'Classic look, customizable', cons: 'High maintenance, warps in DFW humidity', cost: '$1,200–$4,000' },
+  { name: 'Aluminum', pros: 'Rust-proof, lightweight', cons: 'Dents easily, poor insulation', cost: '$700–$2,000' },
+  { name: 'Glass', pros: 'Modern aesthetic, natural light', cons: 'No privacy, expensive', cost: '$1,500–$4,500' },
 ];
 
-const MAINTENANCE = [
-  { task: "Spring checkup", frequency: "Annually", cost: "$75–$150", diy: false, color: D.cyan },
-  { task: "Lubrication (white lithium grease)", frequency: "Every 6 months", cost: "DIY ~$8", diy: true, color: D.green },
-  { task: "Track cleaning", frequency: "Quarterly", cost: "DIY free", diy: true, color: D.teal },
-  { task: "Full safety inspection", frequency: "Annual", cost: "$50–$100", diy: false, color: D.purple },
+const motorTypes = [
+  { type: 'Chain Drive', noise: 'Loud', cost: '$150–$250', best: 'Detached garages' },
+  { type: 'Belt Drive', noise: 'Quiet', cost: '$200–$350', best: 'Attached garages' },
+  { type: 'Screw Drive', noise: 'Moderate', cost: '$170–$300', best: 'Low-maintenance climates' },
+  { type: 'Direct Drive', noise: 'Very Quiet', cost: '$250–$400', best: 'Premium installs' },
 ];
 
-const WARNING_SIGNS = [
-  { title: "Loud grinding noise", body: "Grinding when operating usually signals worn rollers, loose hardware, or a failing opener motor. Continued use will accelerate damage — schedule service within 7 days." },
-  { title: "Slow movement", body: "A door that takes 15+ seconds to open or close likely has a weak battery, misaligned tracks, or insufficient lubrication. Check the opener battery first, then lubricate all moving parts." },
-  { title: "Door reverses randomly", body: "Unexpected reversal indicates a photo-eye obstruction, misaligned sensors, or a faulty control board. Clean sensors with a dry cloth and verify alignment before calling a tech." },
-  { title: "Gap at bottom", body: "A visible light gap along the bottom seal means the rubber weatherstrip has hardened or the floor is uneven. Replacement weatherstrip costs $20–$50 at hardware stores." },
-  { title: "Sagging sections", body: "Sagging panels indicate broken springs or damaged hinges. Do not attempt spring repair yourself — springs are under extreme tension and are a common cause of serious injury. Call a pro." },
-];
-
-const STATUS_ICON: Record<SafeStatus, JSX.Element> = {
-  ok:   <CheckCircle style={{ width: 18, height: 18, color: D.green }} />,
-  warn: <AlertTriangle style={{ width: 18, height: 18, color: D.amber }} />,
-  fail: <XCircle style={{ width: 18, height: 18, color: D.red }} />,
-};
-
-const STATUS_LABEL: Record<SafeStatus, string> = {
-  ok: "Pass",
-  warn: "Attention",
-  fail: "Fail",
-};
+const symptoms = ['Noisy operation', 'Slow movement', 'Won\'t open fully', 'Visible rust/rot', 'Broken springs', 'Panels dented'];
 
 export default function GarageDoorGuide() {
-  const [checks, setChecks] = useState<SafeItem[]>(INITIAL_CHECKS);
-  const [openWarning, setOpenWarning] = useState<number | null>(null);
+  const [age, setAge] = useState('');
+  const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
+  const [recommendation, setRecommendation] = useState('');
 
-  function cycleStatus(id: string) {
-    setChecks(prev => prev.map(c => {
-      if (c.id !== id) return c;
-      const next: Record<SafeStatus, SafeStatus> = { ok: "warn", warn: "fail", fail: "ok" };
-      return { ...c, status: next[c.status] };
-    }));
-  }
+  const toggleSymptom = (s: string) => {
+    setSelectedSymptoms(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
+  };
 
-  const passCount = checks.filter(c => c.status === "ok").length;
-  const score = Math.round((passCount / checks.length) * 100);
+  const analyze = () => {
+    const ageNum = parseInt(age) || 0;
+    const severe = selectedSymptoms.some(s => ['Visible rust/rot', 'Broken springs', 'Panels dented'].includes(s));
+    if (ageNum >= 20 || (ageNum >= 15 && severe)) {
+      setRecommendation('🔁 REPLACE — Your door is aging and showing significant issues. A new door pays off in energy savings and safety.');
+    } else if (severe) {
+      setRecommendation('⚠️ PROFESSIONAL REPAIR NEEDED — Serious symptoms detected. Get a pro assessment before costs escalate.');
+    } else if (ageNum < 10 && selectedSymptoms.length <= 1) {
+      setRecommendation('✅ REPAIR — Door is relatively young with minor issues. A tune-up or part replacement should do it.');
+    } else {
+      setRecommendation('🔍 GET A QUOTE — Mixed signals. Have a DFW pro inspect it — repair vs. replace cost comparison will guide you.');
+    }
+  };
 
   return (
-    <HomeownerLayout>
-      <div style={{ background: D.bg, minHeight: "100vh", padding: "28px 24px", fontFamily: "'Inter', system-ui, sans-serif", color: D.text }}>
-
-        {/* Header */}
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-            <div style={{ width: 36, height: 36, borderRadius: 10, background: D.cyan + "22", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <Wrench style={{ width: 18, height: 18, color: D.cyan }} />
-            </div>
-            <div>
-              <h1 style={{ fontSize: 22, fontWeight: 700, color: D.text, margin: 0 }}>Garage Door Guide</h1>
-              <p style={{ fontSize: 13, color: D.muted, margin: 0 }}>Your home's largest moving part</p>
-            </div>
-          </div>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🏠</div>
+          <h1 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
+            DFW Garage Door Guide
+          </h1>
+          <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>
+            Everything DFW homeowners need to know — types, insulation, motors, smart openers & costs
+          </p>
         </div>
 
-        {/* Door stats card */}
-        <div style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 14, padding: "18px 20px", marginBottom: 20, display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <div>
-            <p style={{ fontSize: 11, color: D.dim, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Door Type</p>
-            <p style={{ fontSize: 14, fontWeight: 600, color: D.text, margin: 0 }}>2-car insulated steel</p>
-          </div>
-          <div>
-            <p style={{ fontSize: 11, color: D.dim, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Installed</p>
-            <p style={{ fontSize: 14, fontWeight: 600, color: D.amber, margin: 0 }}>2015 — 10 years old</p>
-          </div>
-          <div>
-            <p style={{ fontSize: 11, color: D.dim, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Last Service</p>
-            <p style={{ fontSize: 14, fontWeight: 600, color: D.red, margin: 0 }}>Unknown</p>
-          </div>
-          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: score >= 80 ? D.green : score >= 60 ? D.amber : D.red }}>{score}%</div>
-              <p style={{ fontSize: 11, color: D.muted, margin: 0 }}>Safety Score</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Safety checklist */}
-        <div style={{ marginBottom: 24 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-            <CheckCircle style={{ width: 16, height: 16, color: D.cyan }} />
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: D.text, margin: 0 }}>Safety Test Checklist</h2>
-            <span style={{ fontSize: 12, color: D.muted, marginLeft: 4 }}>Click status to update</span>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {checks.map(item => (
-              <div key={item.id} style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 12, padding: "14px 16px", display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <button
-                  onClick={() => cycleStatus(item.id)}
-                  style={{ background: "none", border: "none", cursor: "pointer", padding: 0, marginTop: 1, flexShrink: 0 }}
-                  title="Click to update"
-                >
-                  {STATUS_ICON[item.status]}
-                </button>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <p style={{ fontSize: 14, fontWeight: 600, color: D.text, margin: 0 }}>{item.label}</p>
-                    <span style={{
-                      fontSize: 10,
-                      fontWeight: 700,
-                      padding: "2px 7px",
-                      borderRadius: 20,
-                      background: item.status === "ok" ? D.green + "22" : item.status === "warn" ? D.amber + "22" : D.red + "22",
-                      color: item.status === "ok" ? D.green : item.status === "warn" ? D.amber : D.red,
-                    }}>{STATUS_LABEL[item.status]}</span>
-                  </div>
-                  <p style={{ fontSize: 12, color: D.muted, margin: "4px 0 0" }}>{item.detail}</p>
+        <section style={{ marginBottom: '2.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>🌡️ R-Value & DFW Heat</h2>
+          <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem' }}>
+            <p style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
+              DFW summers routinely hit <strong style={{ color: '#F5E642' }}>105°F+</strong>. An uninsulated garage door lets brutal heat into your attached garage, raising AC costs by up to 20%. The industry measures insulation with <strong style={{ color: '#F5E642' }}>R-value</strong> — the higher, the better.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+              {[['R-0 to R-6', 'Basic / No insulation', '#ef4444'], ['R-7 to R-12', 'Good for DFW', '#f59e0b'], ['R-13 to R-18', 'Excellent for DFW heat', '#22c55e'], ['R-19+', 'Premium, max savings', '#3b82f6']].map(([r, label, color]) => (
+                <div key={r} style={{ flex: '1', minWidth: '140px', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: `4px solid ${color}` }}>
+                  <div style={{ color: color as string, fontWeight: 700 }}>{r}</div>
+                  <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{label}</div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '2.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>🚪 Door Types Compared</h2>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ background: '#1e2d45' }}>
+                  {['Material', 'Pros', 'Cons', 'Typical Cost'].map(h => (
+                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58' }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {doorTypes.map((d, i) => (
+                  <tr key={d.name} style={{ background: i % 2 === 0 ? '#111f36' : '#0A1628' }}>
+                    <td style={{ padding: '0.75rem 1rem', color: '#fff', fontWeight: 600 }}>{d.name}</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#86efac', fontSize: '0.9rem' }}>{d.pros}</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#fca5a5', fontSize: '0.9rem' }}>{d.cons}</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#F5E642', fontWeight: 600 }}>{d.cost}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '2.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>⚙️ Motor Types</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+            {motorTypes.map(m => (
+              <div key={m.type} style={{ background: '#1e2d45', borderRadius: '10px', padding: '1.2rem' }}>
+                <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.4rem' }}>{m.type}</div>
+                <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.3rem' }}>Noise: {m.noise}</div>
+                <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.3rem' }}>Cost: {m.cost}</div>
+                <div style={{ color: '#60a5fa', fontSize: '0.85rem' }}>Best for: {m.best}</div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Maintenance guide */}
-        <div style={{ marginBottom: 24 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-            <Calendar style={{ width: 16, height: 16, color: D.teal }} />
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: D.text, margin: 0 }}>Maintenance Guide</h2>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 12 }}>
-            {MAINTENANCE.map(m => (
-              <div key={m.task} style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 12, padding: "16px" }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: m.color, marginBottom: 10 }} />
-                <p style={{ fontSize: 14, fontWeight: 600, color: D.text, margin: "0 0 4px" }}>{m.task}</p>
-                <p style={{ fontSize: 12, color: D.muted, margin: "0 0 8px" }}>{m.frequency}</p>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: m.color }}>{m.cost}</span>
-                  <span style={{
-                    fontSize: 10,
-                    fontWeight: 700,
-                    padding: "2px 8px",
-                    borderRadius: 20,
-                    background: m.diy ? D.green + "22" : D.amber + "22",
-                    color: m.diy ? D.green : D.amber,
-                  }}>{m.diy ? "DIY" : "Pro"}</span>
+        <section style={{ marginBottom: '2.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>📱 Smart Openers</h2>
+          <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem' }}>
+            <p style={{ color: '#cbd5e1', marginBottom: '1rem' }}>Smart openers add Wi-Fi + app control. Top picks for DFW homeowners:</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[['Chamberlain myQ', '$30 add-on', 'Works with most existing openers, free app monitoring'],
+                ['LiftMaster 87504', '$300+', 'Built-in camera, battery backup (great for DFW power outages)'],
+                ['Genie ChainMax', '$200', 'Budget smart opener, Alexa/Google compatible'],
+              ].map(([name, price, desc]) => (
+                <div key={name} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ color: '#F5E642', fontSize: '1.2rem' }}>✓</div>
+                  <div>
+                    <span style={{ color: '#fff', fontWeight: 600 }}>{name}</span>
+                    <span style={{ color: '#F5E642', marginLeft: '0.5rem', fontSize: '0.85rem' }}>{price}</span>
+                    <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{desc}</div>
+                  </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '2.5rem' }}>
+          <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>🔧 Repair vs Replace Quiz</h2>
+          <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem' }}>
+            <div style={{ marginBottom: '1.2rem' }}>
+              <label style={{ color: '#cbd5e1', display: 'block', marginBottom: '0.5rem' }}>Door age (years):</label>
+              <input
+                type="number"
+                value={age}
+                onChange={e => setAge(e.target.value)}
+                placeholder="e.g. 12"
+                style={{ background: '#0A1628', border: '1px solid #2d3f58', borderRadius: '6px', padding: '0.5rem 0.75rem', color: '#fff', width: '120px' }}
+              />
+            </div>
+            <div style={{ marginBottom: '1.2rem' }}>
+              <label style={{ color: '#cbd5e1', display: 'block', marginBottom: '0.5rem' }}>Select symptoms:</label>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {symptoms.map(s => (
+                  <button
+                    key={s}
+                    onClick={() => toggleSymptom(s)}
+                    style={{
+                      padding: '0.4rem 0.9rem',
+                      borderRadius: '20px',
+                      border: '1px solid',
+                      borderColor: selectedSymptoms.includes(s) ? '#F5E642' : '#2d3f58',
+                      background: selectedSymptoms.includes(s) ? '#F5E642' : 'transparent',
+                      color: selectedSymptoms.includes(s) ? '#0A1628' : '#cbd5e1',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem',
+                      fontWeight: selectedSymptoms.includes(s) ? 700 : 400,
+                    }}
+                  >{s}</button>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Warning signs */}
-        <div style={{ marginBottom: 24 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-            <AlertTriangle style={{ width: 16, height: 16, color: D.amber }} />
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: D.text, margin: 0 }}>Warning Signs</h2>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {WARNING_SIGNS.map((w, i) => (
-              <div key={w.title} style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 12, overflow: "hidden" }}>
-                <button
-                  onClick={() => setOpenWarning(openWarning === i ? null : i)}
-                  style={{ width: "100%", background: "none", border: "none", cursor: "pointer", padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", color: D.text }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <AlertTriangle style={{ width: 14, height: 14, color: D.amber, flexShrink: 0 }} />
-                    <span style={{ fontSize: 14, fontWeight: 600 }}>{w.title}</span>
-                  </div>
-                  {openWarning === i
-                    ? <ChevronUp style={{ width: 16, height: 16, color: D.muted }} />
-                    : <ChevronDown style={{ width: 16, height: 16, color: D.muted }} />
-                  }
-                </button>
-                {openWarning === i && (
-                  <div style={{ padding: "0 16px 14px", borderTop: `1px solid ${D.border}` }}>
-                    <p style={{ fontSize: 13, color: D.muted, margin: "12px 0 0", lineHeight: 1.6 }}>{w.body}</p>
-                  </div>
-                )}
+            </div>
+            <button
+              onClick={analyze}
+              style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.6rem 1.5rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '0.95rem' }}
+            >
+              Get Recommendation
+            </button>
+            {recommendation && (
+              <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#F5E642', fontWeight: 600, fontSize: '1rem' }}>
+                {recommendation}
               </div>
-            ))}
+            )}
           </div>
+        </section>
+
+        <div style={{ textAlign: 'center', padding: '1.5rem', background: '#1e2d45', borderRadius: '12px' }}>
+          <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🏗️</div>
+          <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>Get quotes from vetted DFW garage door pros</p>
+          <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>ProLnk matches you with licensed, background-checked local contractors</p>
         </div>
-
-        {/* Replacement guide */}
-        <div style={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 14, padding: "20px", marginBottom: 20 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-            <Info style={{ width: 16, height: 16, color: D.purple }} />
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: D.text, margin: 0 }}>Replacement Guide</h2>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
-            <div>
-              <p style={{ fontSize: 12, color: D.muted, marginBottom: 4 }}>When to Replace</p>
-              <p style={{ fontSize: 13, fontWeight: 600, color: D.text, margin: 0 }}>10–15 years of age or repeated costly repairs</p>
-            </div>
-            <div>
-              <p style={{ fontSize: 12, color: D.muted, marginBottom: 4 }}>Installed Cost</p>
-              <p style={{ fontSize: 16, fontWeight: 800, color: D.cyan, margin: 0 }}>$800–$3,500</p>
-            </div>
-            <div>
-              <p style={{ fontSize: 12, color: D.muted, marginBottom: 4 }}>Insulation (DFW Climate)</p>
-              <p style={{ fontSize: 13, fontWeight: 600, color: D.text, margin: 0 }}>R-13 or higher recommended for DFW heat</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Smart upgrade */}
-        <div style={{ background: D.teal + "18", border: `1px solid ${D.teal}44`, borderRadius: 14, padding: "16px 20px", marginBottom: 24, display: "flex", alignItems: "center", gap: 14 }}>
-          <Zap style={{ width: 22, height: 22, color: D.teal, flexShrink: 0 }} />
-          <div>
-            <p style={{ fontSize: 14, fontWeight: 700, color: D.text, margin: "0 0 3px" }}>Smart Upgrade Available</p>
-            <p style={{ fontSize: 13, color: D.muted, margin: 0 }}>Smart garage door opener: <strong style={{ color: D.teal }}>$250–$400</strong> — adds remote access, activity alerts, and package delivery notifications.</p>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <button style={{
-          background: `linear-gradient(135deg, ${D.cyan}, ${D.teal})`,
-          color: "#000",
-          border: "none",
-          borderRadius: 12,
-          padding: "14px 28px",
-          fontSize: 15,
-          fontWeight: 700,
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          gap: 8,
-        }}>
-          <ExternalLink style={{ width: 16, height: 16 }} />
-          Schedule Service
-        </button>
-
       </div>
-    </HomeownerLayout>
+    </div>
   );
 }

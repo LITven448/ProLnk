@@ -1,138 +1,86 @@
 import { useState } from 'react';
 
-const situationData: Record<string, { impact: string[]; action: string[] }> = {
-  buying_soon: {
-    impact: [
-      "DFW job growth of 85,000+ new positions expected in 2026–2027 sustains demand — prices unlikely to fall significantly",
-      "Rate forecast: 30-year fixed projected at 5.8–6.4% by Q1 2027 — modest improvement from current levels",
-      "New construction pipeline adds 42,000 homes in 2026 — Frisco, McKinney, Celina, Prosper getting most supply",
-      "Best value windows: January–February when volume is low and sellers are more negotiable",
-      "Suburbs along 121 corridor (Allen, Prosper, Little Elm) show strongest appreciation projections",
-    ],
-    action: [
-      "Get pre-approved now — rate lock options extend to 90 days at many lenders",
-      "Target areas with infrastructure investment (DART expansion, highway widening) for future appreciation",
-      "Budget 2–2.2% of purchase price for annual property taxes — they will reset on purchase",
-      "New construction offers concessions now — builders carrying unsold inventory in some submarkets",
-      "Avoid overextending on rate assumption — stress test your payment at 7% just in case",
-    ],
-  },
-  owning: {
-    impact: [
-      "DFW home values projected to appreciate 4–6% annually through 2027 — slower than 2021–2022 but steady",
-      "Equity position strengthening for owners who bought before 2023 — significant paper gains",
-      "Insurance costs rising 8–12% annually — factor into monthly carrying cost calculations",
-      "Property tax appraisals continuing to rise — protest your appraisal every year without exception",
-      "Home services demand accelerating — aging housing stock driving maintenance and renovation activity",
-    ],
-    action: [
-      "Protest your property tax appraisal every year — even if you think you will lose, file the protest",
-      "Review your homeowners insurance annually — rates are rising faster than inflation in Texas",
-      "Invest in energy efficiency upgrades now — solar incentives and HVAC efficiency standards tightening",
-      "Document all improvements meticulously — affects both resale value and tax basis",
-      "Build a maintenance reserve of 1–2% of home value annually for upcoming system replacements",
-    ],
-  },
-  selling_soon: {
-    impact: [
-      "Spring 2027 window (March–May) forecast as strongest seller market in DFW based on migration trends",
-      "Luxury segment above $900K showing softening — move-up buyers squeezed by rate environment",
-      "Entry-level and mid-market homes under $500K remain highly competitive with multiple offers common",
-      "New construction competition is real — buyers can often get incentives from builders you cannot match",
-      "Days on market rising from 2022 lows but still below historical averages in most DFW submarkets",
-    ],
-    action: [
-      "Invest in strategic pre-listing upgrades — kitchen and primary bath updates yield highest ROI in DFW",
-      "Price aggressively from day one — overpriced listings sit and carry stigma in current market",
-      "Stage professionally — DFW buyers expect model-home presentation in most price ranges",
-      "Time your listing for late February or early March to capture peak spring buyer traffic",
-      "Consider lease-back negotiation if you need time to find your next home before closing",
-    ],
-  },
-};
-
-const factors = [
-  { name: "Employment Growth", value: "+85,000 jobs", trend: "up", note: "Tech, financial services, and healthcare driving DFW expansion through 2027" },
-  { name: "Net Migration", value: "+95,000 residents/yr", trend: "up", note: "California and Northeast exodus continuing — DFW remains top destination" },
-  { name: "Interest Rates", value: "5.8–6.4% by 2027", trend: "neutral", note: "Fed signaling gradual cuts — not returning to 3% era anytime soon" },
-  { name: "New Construction", value: "42,000 units in pipeline", trend: "up", note: "Supply relief concentrated in outer suburbs — core markets still constrained" },
-  { name: "Inventory", value: "2.4 months supply", trend: "neutral", note: "Rising from historic lows but still below balanced market threshold of 6 months" },
-];
-
 export default function DFWHousingForecast2027() {
-  const [situation, setSituation] = useState<string>("");
-  const [showForecast, setShowForecast] = useState(false);
+  const [horizon, setHorizon] = useState(3);
 
-  const situations = [
-    { value: "buying_soon", label: "🏠 Buying in Next 12 Months" },
-    { value: "owning", label: "🔑 Current DFW Homeowner" },
-    { value: "selling_soon", label: "🏷️ Planning to Sell by 2027" },
-  ];
+  const getAnalysis = () => {
+    if (horizon <= 1) return { rec: "Rent", reason: "Short horizon — avoid transaction costs. Rates still normalizing.", color: "#f97316" };
+    if (horizon <= 3) return { rec: "Buy (Cautiously)", reason: "3-5% appreciation likely. Lock in rate now, refinance when rates drop.", color: "#F5E642" };
+    return { rec: "Buy Now", reason: "Long horizon captures full appreciation + tech corridor premium. Strong buy.", color: "#4ade80" };
+  };
 
-  const selected = situationData[situation];
+  const analysis = getAnalysis();
+  const projectedAppreciation = (385000 * Math.pow(1.04, horizon)).toFixed(0);
 
   return (
-    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK MARKET FORECAST — DFW</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8 }}>DFW Housing Market Forecast 2027 🔮</h1>
-        <p style={{ color: "#8899AA", fontSize: 16, marginBottom: 40 }}>Economic drivers, migration trends, and expert consensus on where DFW real estate is heading.</p>
-
-        <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📊 Key Economic Factors Driving DFW in 2027</h2>
-          {factors.map((f) => (
-            <div key={f.name} style={{ display: "flex", gap: 16, marginBottom: 18, paddingBottom: 18, borderBottom: "1px solid #1E2D42", alignItems: "flex-start" }}>
-              <div style={{ minWidth: 32, textAlign: "center", fontSize: 18 }}>
-                {f.trend === "up" ? "📈" : f.trend === "down" ? "📉" : "➡️"}
-              </div>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                  <span style={{ fontWeight: 700 }}>{f.name}</span>
-                  <span style={{ color: "#F5E642", fontWeight: 700 }}>{f.value}</span>
-                </div>
-                <div style={{ color: "#8899AA", fontSize: 13 }}>{f.note}</div>
-              </div>
-            </div>
-          ))}
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 40 }}>
+          <div style={{ fontSize: 48 }}>🔮</div>
+          <h1 style={{ color: "#F5E642", fontSize: 32, fontWeight: 800, margin: "8px 0" }}>DFW Housing Forecast 2027</h1>
+          <p style={{ color: "#94a3b8", fontSize: 16 }}>Expert predictions and investment analysis for Dallas-Fort Worth real estate</p>
         </div>
 
-        <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🏙️ Expert Consensus on DFW 2027</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 40 }}>
           {[
-            "DFW will remain one of the top 3 performing housing markets in the US through 2027 — Moody Analytics",
-            "Price appreciation expected at 4–6% annually — slower than peak years but well above national average",
-            "Suburbs within 30 miles of Dallas or Fort Worth CBDs will outperform the metro average",
-            "Affordability pressure will continue pushing buyers further from core — 40+ mile commutes becoming normal",
-            "Luxury market correction likely — top 10% of price range most vulnerable to rate sensitivity",
-            "Rental market remains tight — vacancy under 6% expected to persist through 2027",
-          ].map((point, i) => (
-            <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: "2px solid #F5E642" }}>{point}</div>
+            { label: "2027 Appreciation", value: "3-5%", sub: "Expert consensus range", emoji: "📈" },
+            { label: "Rate Forecast", value: "5.8-6.2%", sub: "30yr fixed by Q4 2027", emoji: "💵" },
+            { label: "Tech Corridor", value: "+8-12%", sub: "Plano/Allen premium", emoji: "💻" },
+          ].map((stat) => (
+            <div key={stat.label} style={{ background: "#112240", borderRadius: 12, padding: "20px 16px", textAlign: "center", border: "1px solid #1e3a5f" }}>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>{stat.emoji}</div>
+              <div style={{ color: "#F5E642", fontSize: 22, fontWeight: 700 }}>{stat.value}</div>
+              <div style={{ color: "#fff", fontSize: 13, marginTop: 4 }}>{stat.label}</div>
+              <div style={{ color: "#64748b", fontSize: 12, marginTop: 4 }}>{stat.sub}</div>
+            </div>
           ))}
         </div>
 
-        <div style={{ background: "#111D2E", borderRadius: 12, padding: 28 }}>
-          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🎯 How the 2027 Forecast Affects You</h2>
-          <p style={{ color: "#8899AA", fontSize: 14, marginBottom: 16 }}>Select your current situation to see personalized forecast implications and action steps.</p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 20 }}>
-            {situations.map((s) => (
-              <button key={s.value} onClick={() => { setSituation(s.value); setShowForecast(true); }}
-                style={{ background: situation === s.value ? "#F5E642" : "#1E2D42", color: situation === s.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "10px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
-                {s.label}
-              </button>
-            ))}
+        <div style={{ background: "#112240", borderRadius: 16, padding: 28, marginBottom: 32, border: "1px solid #1e3a5f" }}>
+          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🧮 Buy vs Rent Analyzer</h2>
+          <div style={{ marginBottom: 20 }}>
+            <label style={{ color: "#94a3b8", fontSize: 14 }}>Investment Horizon: <span style={{ color: "#F5E642", fontWeight: 700 }}>{horizon} year{horizon !== 1 ? "s" : ""}</span></label>
+            <input type="range" min={1} max={10} step={1} value={horizon} onChange={(e) => setHorizon(Number(e.target.value))}
+              style={{ width: "100%", marginTop: 8, accentColor: "#F5E642" }} />
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#64748b", fontSize: 12 }}>
+              <span>1 yr</span><span>10 yrs</span>
+            </div>
           </div>
-          {showForecast && selected && (
-            <div style={{ display: "grid", gap: 20, gridTemplateColumns: "1fr 1fr" }}>
-              <div>
-                <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10 }}>📌 Forecast Impact on Your Situation</div>
-                {selected.impact.map((imp, i) => <div key={i} style={{ color: "#CBD5E1", fontSize: 13, marginBottom: 8 }}>• {imp}</div>)}
+          <div style={{ background: "#0A1628", borderRadius: 12, padding: 20, border: `2px solid ${analysis.color}` }}>
+            <div style={{ fontSize: 32, marginBottom: 8 }}>🏡</div>
+            <div style={{ color: analysis.color, fontSize: 24, fontWeight: 800 }}>{analysis.rec}</div>
+            <div style={{ color: "#94a3b8", fontSize: 14, marginTop: 8 }}>{analysis.reason}</div>
+            <div style={{ marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div style={{ background: "#112240", borderRadius: 8, padding: 12 }}>
+                <div style={{ color: "#64748b", fontSize: 12 }}>Projected Home Value</div>
+                <div style={{ color: "#F5E642", fontSize: 20, fontWeight: 700 }}>${Number(projectedAppreciation).toLocaleString()}</div>
+                <div style={{ color: "#64748b", fontSize: 11 }}>From $385K median in {horizon}yr{horizon !== 1 ? "s" : ""}</div>
               </div>
-              <div>
-                <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10 }}>✅ Recommended Actions Now</div>
-                {selected.action.map((a, i) => <div key={i} style={{ color: "#CBD5E1", fontSize: 13, marginBottom: 8 }}>• {a}</div>)}
+              <div style={{ background: "#112240", borderRadius: 8, padding: 12 }}>
+                <div style={{ color: "#64748b", fontSize: 12 }}>Equity Gain at 4%/yr</div>
+                <div style={{ color: "#4ade80", fontSize: 20, fontWeight: 700 }}>+${(Number(projectedAppreciation) - 385000).toLocaleString()}</div>
+                <div style={{ color: "#64748b", fontSize: 11 }}>Before transaction costs</div>
               </div>
             </div>
-          )}
+          </div>
+        </div>
+
+        <div style={{ background: "#112240", borderRadius: 16, padding: 24, marginBottom: 24, border: "1px solid #1e3a5f" }}>
+          <h2 style={{ color: "#F5E642", fontSize: 18, fontWeight: 700, marginBottom: 16 }}>💻 Tech Corridor Growth Drivers</h2>
+          {[
+            { co: "Toyota HQ", city: "Plano", jobs: "4,000+", impact: "High" },
+            { co: "JPMorgan Chase", city: "Plano", jobs: "6,000+", impact: "Very High" },
+            { co: "Liberty Mutual", city: "Plano", jobs: "3,000+", impact: "High" },
+            { co: "Samsung Austin", city: "Allen/McKinney", jobs: "2,000+", impact: "High" },
+            { co: "Raytheon", city: "McKinney", jobs: "3,500+", impact: "High" },
+          ].map((item) => (
+            <div key={item.co} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 0", borderBottom: "1px solid #1e3a5f" }}>
+              <span style={{ color: "#fff", fontWeight: 600 }}>{item.co}</span>
+              <span style={{ color: "#94a3b8", fontSize: 14 }}>{item.city}</span>
+              <span style={{ color: "#4ade80", fontSize: 14 }}>{item.jobs} jobs</span>
+              <span style={{ background: "#F5E642", color: "#0A1628", borderRadius: 6, padding: "2px 8px", fontSize: 12, fontWeight: 700 }}>{item.impact}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

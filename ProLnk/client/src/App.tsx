@@ -591,6 +591,18 @@ const TPScanPreview = lazy(() => import("./pages/trustypro/app-preview/ScanScree
 const TPPropertyPreview = lazy(() => import("./pages/trustypro/app-preview/PropertyScreen"));
 const TPFindProPreview = lazy(() => import("./pages/trustypro/app-preview/FindProScreen"));
 const TPAlertsPreview = lazy(() => import("./pages/trustypro/app-preview/AlertsScreen"));
+const FenceInstallationGuide = lazy(() => import('./pages/homeowner/FenceInstallationGuide'));
+const PoolMaintenanceGuide = lazy(() => import('./pages/homeowner/PoolMaintenanceGuide'));
+const NetworkGrowthPlaybook = lazy(() => import('./pages/partner/NetworkGrowthPlaybook'));
+const DrainageAndGradingGuide = lazy(() => import('./pages/homeowner/DrainageAndGradingGuide'));
+const ProLnkVsGoingAlone = lazy(() => import('./pages/partner/ProLnkVsGoingAlone'));
+const KitchenRemodelGuide = lazy(() => import('./pages/homeowner/KitchenRemodelGuide'));
+const RoofInspectionGuide = lazy(() => import('./pages/homeowner/RoofInspectionGuide'));
+const DrivewayMaintenanceGuide = lazy(() => import('./pages/homeowner/DrivewayMaintenanceGuide'));
+const GarageOrganizationGuide = lazy(() => import('./pages/homeowner/GarageOrganizationGuide'));
+const HomeTheaterGuide = lazy(() => import('./pages/homeowner/HomeTheaterGuide'));
+const PartnerWeekendWarriorGuide = lazy(() => import('./pages/PartnerWeekendWarriorGuide'));
+const TrustyProPricingExplainer = lazy(() => import('./pages/TrustyProPricingExplainer'));
 
 // Domain-based routing: trustypro.io → TrustyPro experience at root /
 function DomainRouter() {
@@ -1238,6 +1250,18 @@ function Router() {
       <Route path="/dashboard/briefing" component={DailyBriefing} />
       <Route path="/my-home/air-quality" component={AirQualityGuide} />
       <Route path="/admin/partner-comms" component={PartnerCommunicationHub} />
+      <Route path="/my-home/fence-installation" component={FenceInstallationGuide} />
+      <Route path="/my-home/pool-maintenance" component={PoolMaintenanceGuide} />
+      <Route path="/my-home/kitchen-remodel" component={KitchenRemodelGuide} />
+      <Route path="/my-home/roof-inspection" component={RoofInspectionGuide} />
+      <Route path="/my-home/drainage-grading" component={DrainageAndGradingGuide} />
+      <Route path="/my-home/driveway-maintenance" component={DrivewayMaintenanceGuide} />
+      <Route path="/my-home/garage-organization" component={GarageOrganizationGuide} />
+      <Route path="/my-home/home-theater" component={HomeTheaterGuide} />
+      <Route path="/resources/network-growth-playbook" component={NetworkGrowthPlaybook} />
+      <Route path="/resources/prolnk-vs-going-alone" component={ProLnkVsGoingAlone} />
+      <Route path="/resources/weekend-warrior" component={PartnerWeekendWarriorGuide} />
+      <Route path="/trustypro/pricing" component={TrustyProPricingExplainer} />
       <Route path="/dashboard/milestones" component={MilestoneSystem} />
       <Route path="/my-home/pest-control" component={PestControlGuide} />
       <Route path="/dashboard/income-statement" component={IncomeStatement} />

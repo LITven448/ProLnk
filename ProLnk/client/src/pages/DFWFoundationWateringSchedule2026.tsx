@@ -1,74 +1,82 @@
 import { useState } from 'react';
 
-const monthlyGuide = [
-  { months: 'Jan – Mar', emoji: '🌧️', label: 'Minimal', desc: 'DFW rain usually adequate. Water only if 2+ dry weeks and ground pulling away from foundation.', freq: '0–1x/week' },
-  { months: 'April – May', emoji: '🌤️', label: 'Moderate', desc: 'Temps rising, rain inconsistent. Monitor soil moisture. Begin slow-soak perimeter watering.', freq: '2–3x/week' },
-  { months: 'June – Aug', emoji: '🔥', label: 'Daily Drought Mode', desc: 'Critical period. Black clay shrinks fast. Maintain consistent moisture — not wet, not dry. Gaps at foundation = emergency.', freq: 'Daily or every other day' },
-  { months: 'Sep – Oct', emoji: '🍂', label: 'Taper Down', desc: 'Temps falling, rain returns. Reduce frequency. Watch for continued dry spells through October.', freq: '1–2x/week' },
-  { months: 'Nov – Dec', emoji: '❄️', label: 'Minimal', desc: 'Cool temps + winter rains handle moisture. Water only during extended dry spells (10+ days no rain).', freq: '0–1x/week' },
+const months = [
+  { month: "January", freq: "1x/week if no rain", duration: "10-15 min/zone", icon: "❄️", note: "Soil dormant but can crack if completely dry. Skip if ground is frozen.", urgency: "low" },
+  { month: "February", freq: "1x/week", duration: "10-15 min/zone", icon: "🌥️", note: "Watch for late winter dry spells. DFW can have warm dry stretches in February.", urgency: "low" },
+  { month: "March", freq: "2x/week", duration: "15-20 min/zone", icon: "🌱", note: "Clay begins to expand with spring moisture. Establish consistent watering now.", urgency: "medium" },
+  { month: "April", freq: "2-3x/week", duration: "20 min/zone", icon: "🌸", note: "Rain is variable — supplement when no significant rain for 4+ days.", urgency: "medium" },
+  { month: "May", freq: "3-4x/week", duration: "20-25 min/zone", icon: "☀️", note: "Heat rising. Monitor soil 6 inches from foundation — should feel slightly moist.", urgency: "high" },
+  { month: "June", freq: "4-5x/week", duration: "25-30 min/zone", icon: "🌡️", note: "DFW drought risk peaks. Clay shrinkage danger high. Do not miss watering days.", urgency: "critical" },
+  { month: "July", freq: "Daily if drought", duration: "30 min/zone", icon: "🔥", note: "Hottest month. Drought index most critical. Foundation movement most active.", urgency: "critical" },
+  { month: "August", freq: "Daily or near-daily", duration: "30 min/zone", icon: "🌵", note: "Sustained heat. Use soaker hoses or drip 6-18 inches from foundation edge.", urgency: "critical" },
+  { month: "September", freq: "3-4x/week", duration: "25 min/zone", icon: "🍂", note: "Temperatures drop but soil is still depleted. Taper gradually, not abruptly.", urgency: "high" },
+  { month: "October", freq: "2x/week", duration: "20 min/zone", icon: "🍁", note: "Fall rains returning. Supplement only during dry stretches.", urgency: "medium" },
+  { month: "November", freq: "1x/week", duration: "15 min/zone", icon: "🌨️", note: "Growth slowing. Maintain moisture to prevent winter clay contraction cracks.", urgency: "low" },
+  { month: "December", freq: "1x/week if dry", duration: "10-15 min/zone", icon: "❄️", note: "Skip before freezes. Resume once temps rise above 35°F for the day.", urgency: "low" },
 ];
 
-const soilTypes = ['Black clay (expansive) — most DFW', 'Sandy loam', 'Caliche/rocky', 'Mixed clay-loam'];
-const rainfallLevels = ['Normal (40+ in/yr)', 'Below normal (drought year)', 'Above normal (wet year)'];
+const urgencyColor: Record<string, string> = { low: "#22c55e", medium: "#f59e0b", high: "#f97316", critical: "#ef4444" };
 
 export default function DFWFoundationWateringSchedule2026() {
-  const [soil, setSoil] = useState('Black clay (expansive) — most DFW');
-  const [rainfall, setRainfall] = useState('Normal (40+ in/yr)');
-  const [expanded, setExpanded] = useState<string | null>(null);
+  const currentMonth = new Date().getMonth();
+  const [selectedMonth, setSelectedMonth] = useState<number>(currentMonth);
 
-  const isExpansive = soil.includes('Black clay');
-  const isDrought = rainfall.includes('Below normal');
-  const isWet = rainfall.includes('Above normal');
-
-  const getRec = () => {
-    if (isDrought && isExpansive) return '🚨 Drought + clay = highest risk. Add 20% more frequency June–Aug. Consider soaker hose on timer.';
-    if (isWet && isExpansive) return '✅ Wet year helps clay stay stable. Still monitor summer gaps and do visual check monthly.';
-    if (!isExpansive) return '💡 Non-clay soils drain faster. Water more deeply but less frequently. Foundation risk lower but still monitor.';
-    return '📋 Standard DFW clay schedule applies. Follow monthly guide below closely during summer.';
-  };
+  const m = months[selectedMonth];
+  const uc = urgencyColor[m.urgency];
 
   return (
-    <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
-      <div style={{ maxWidth: 700, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.5rem' }}>🏗️💧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Foundation Watering Schedule 2026</h1>
-          <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Black clay soil = the #1 foundation threat in DFW. Moisture consistency is everything.</p>
-        </div>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ marginBottom: 8, fontSize: 13, color: "#F5E642", letterSpacing: 2, textTransform: "uppercase" }}>🏠 DFW Foundation Guide 2026</div>
+        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Foundation Watering Schedule by Month</h1>
+        <p style={{ color: "#94a3b8", marginBottom: 32 }}>DFW expansive clay shrinks when dry and swells when wet. Consistent moisture around your foundation prevents 70% of preventable foundation damage. Calibrated for DFW climate.</p>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem' }}>🔍 Your Soil + Conditions</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div>
-              <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Soil Type</label>
-              <select value={soil} onChange={e => setSoil(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem', fontSize: '0.85rem' }}>
-                {soilTypes.map(s => <option key={s}>{s}</option>)}
-              </select>
-            </div>
-            <div>
-              <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>2026 Rainfall</label>
-              <select value={rainfall} onChange={e => setRainfall(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem', fontSize: '0.85rem' }}>
-                {rainfallLevels.map(r => <option key={r}>{r}</option>)}
-              </select>
-            </div>
-          </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#cbd5e1' }}>{getRec()}</div>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-          {monthlyGuide.map(m => (
-            <div key={m.months} onClick={() => setExpanded(expanded === m.months ? null : m.months)} style={{ background: '#132040', borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '1rem' }}>{m.emoji} <strong>{m.months}</strong> — <span style={{ color: '#F5E642' }}>{m.label}</span></span>
-                <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{m.freq}</span>
-              </div>
-              {expanded === m.months && <p style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '0.6rem', lineHeight: 1.5 }}>{m.desc}</p>}
-            </div>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F5E642", marginBottom: 16 }}>📅 Select Month</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 24 }}>
+          {months.map((mo, i) => (
+            <button key={i} onClick={() => setSelectedMonth(i)}
+              style={{ background: selectedMonth === i ? "#F5E642" : "#0f1f3a", color: selectedMonth === i ? "#0A1628" : "#fff",
+                border: `2px solid ${selectedMonth === i ? "#F5E642" : urgencyColor[mo.urgency]}`,
+                borderRadius: 8, padding: "8px 4px", cursor: "pointer", fontSize: 11, fontWeight: 700, textAlign: "center" }}>
+              {mo.icon}<br />{mo.month.slice(0,3)}
+            </button>
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>🏠 <strong style={{ color: '#F5E642' }}>ProLnk Vault</strong> tracks foundation service history, soil reports, and watering logs — all tied to your home's permanent record.</p>
+        <div style={{ background: "#0f1f3a", borderRadius: 14, padding: 24, marginBottom: 32, borderLeft: `5px solid ${uc}` }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+            <div>
+              <div style={{ fontSize: 32 }}>{m.icon}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, marginTop: 4 }}>{m.month}</div>
+            </div>
+            <span style={{ background: uc, color: "#0A1628", padding: "4px 10px", borderRadius: 20, fontSize: 11, fontWeight: 800, textTransform: "uppercase" }}>{m.urgency} priority</span>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 12 }}>
+              <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Frequency</div>
+              <div style={{ fontWeight: 700, color: "#F5E642" }}>{m.freq}</div>
+            </div>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 12 }}>
+              <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", marginBottom: 4 }}>Duration</div>
+              <div style={{ fontWeight: 700, color: "#F5E642" }}>{m.duration}</div>
+            </div>
+          </div>
+          <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.7 }}>{m.note}</div>
+        </div>
+
+        <div style={{ background: "#0f1f3a", borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: 10 }}>💡 DFW Pro Tips</div>
+          <ul style={{ margin: 0, paddingLeft: 20, color: "#94a3b8", fontSize: 14, lineHeight: 1.9 }}>
+            <li>Place soaker hose 6–18 inches from foundation edge, not against it</li>
+            <li>Water at dawn to minimize evaporation in DFW summer heat</li>
+            <li>Soil probe test: insert screwdriver 6 inches — should meet moderate resistance</li>
+            <li>Automatic drip systems on timer outperform manual watering for consistency</li>
+            <li>During NTMWD restrictions, prioritize foundation zones over lawn</li>
+          </ul>
+        </div>
+
+        <div style={{ padding: 16, background: "#0f1f3a", borderRadius: 10, fontSize: 13, color: "#64748b", textAlign: "center" }}>
+          ProLnk connects DFW homeowners with certified foundation pros • prolnk.io
         </div>
       </div>
     </div>

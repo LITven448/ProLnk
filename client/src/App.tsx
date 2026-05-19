@@ -585,9 +585,35 @@ const LazyFallback = () => (
   </div>
 );
 
+const WAITLIST_ALLOWED = new Set([
+  "/", "/apply", "/join", "/pro-waitlist", "/home-waitlist", "/referral",
+  "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
+  "/waitlist-status", "/waitlist/status", "/success",
+  "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",
+  "/privacy", "/terms", "/ccpa", "/cookies", "/security",
+  "/trustypro", "/trustypro/waitlist", "/trustypro/app",
+  "/login", "/partner-login", "/partner-forgot-password",
+  "/set-password", "/pricing", "/pricing/standard",
+  "/partner-agreement", "/ach-authorization",
+]);
+
+function WaitlistGuard() {
+  const [location, navigate] = useLocation();
+  useEffect(() => {
+    if (location.startsWith("/admin")) return;
+    if (location.startsWith("/join/")) return;
+    if (location.startsWith("/trustypro/")) return;
+    if (WAITLIST_ALLOWED.has(location)) return;
+    const isTrustyPro = (window as any).__BRAND__ === "trustypro";
+    navigate(isTrustyPro ? "/trustypro/waitlist" : "/apply", { replace: true });
+  }, [location, navigate]);
+  return null;
+}
+
 function Router() {
   return (
     <Suspense fallback={<LazyFallback />}>
+    <WaitlistGuard />
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">

@@ -598,8 +598,8 @@ const ProLnkVsGoingAlone = lazy(() => import('./pages/partner/ProLnkVsGoingAlone
 const KitchenRemodelGuide = lazy(() => import('./pages/homeowner/KitchenRemodelGuide'));
 const RoofInspectionGuide = lazy(() => import('./pages/homeowner/RoofInspectionGuide'));
 const DrivewayMaintenanceGuide = lazy(() => import('./pages/homeowner/DrivewayMaintenanceGuide'));
-const GarageOrganizationGuide = lazy(() => import('./pages/homeowner/GarageOrganizationGuide'));
-const HomeTheaterGuide = lazy(() => import('./pages/homeowner/HomeTheaterGuide'));
+// const GarageOrganizationGuide = lazy(() => import('./pages/homeowner/GarageOrganizationGuide'));  // QUARANTINED: build error
+// const HomeTheaterGuide = lazy(() => import('./pages/homeowner/HomeTheaterGuide'));  // QUARANTINED: build error
 const PartnerWeekendWarriorGuide = lazy(() => import('./pages/PartnerWeekendWarriorGuide'));
 const TrustyProPricingExplainer = lazy(() => import('./pages/TrustyProPricingExplainer'));
 const PartnerFirst30Days = lazy(() => import('./pages/partner/PartnerFirst30Days'));
@@ -1271,8 +1271,8 @@ function Router() {
       <Route path="/my-home/roof-inspection" component={RoofInspectionGuide} />
       <Route path="/my-home/drainage-grading" component={DrainageAndGradingGuide} />
       <Route path="/my-home/driveway-maintenance" component={DrivewayMaintenanceGuide} />
-      <Route path="/my-home/garage-organization" component={GarageOrganizationGuide} />
-      <Route path="/my-home/home-theater" component={HomeTheaterGuide} />
+// <Route path="/my-home/garage-organization" component={GarageOrganizationGuide} />  // QUARANTINED: build error
+// <Route path="/my-home/home-theater" component={HomeTheaterGuide} />  // QUARANTINED: build error
       <Route path="/resources/network-growth-playbook" component={NetworkGrowthPlaybook} />
       <Route path="/resources/prolnk-vs-going-alone" component={ProLnkVsGoingAlone} />
       <Route path="/resources/weekend-warrior" component={PartnerWeekendWarriorGuide} />

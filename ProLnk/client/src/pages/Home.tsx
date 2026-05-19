@@ -778,9 +778,9 @@ function PricingSection() {
                  · Earn {(activeTier.commissionShare * 100).toFixed(0)}% of ProLnk's fee on every closed job
               </div>
             </div>
-            <Link href="/partner-checkout">
+            <Link href="/apply">
               <button className="px-8 py-3 bg-[#F5E642] text-[#0A1628] font-bold text-sm tracking-wide hover:opacity-90 transition-all rounded-none shrink-0">
-                Claim Your Spot — $149/mo
+                Join the Waitlist
               </button>
             </Link>
           </div>
@@ -1340,21 +1340,16 @@ export default function Home() {
 
             <FadeUp delay={0.45}>
               <div className="flex flex-col sm:flex-row gap-3 items-start">
-                <Link href="/partner-checkout">
+                <Link href="/apply">
                   <button
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold tracking-wide transition-all hover:brightness-110 rounded-none"
                     style={{ backgroundColor: "#F5E642", color: "#0A1628" }}
                   >
-                    Claim Your Founding Spot — $149/mo <ArrowRight className="w-4 h-4" />
-                  </button>
-                </Link>
-                <Link href="/pro-waitlist">
-                  <button className="inline-flex items-center gap-2 px-5 py-4 text-sm font-semibold text-white/80 hover:text-white transition-colors border border-white/20 hover:border-white/40">
-                    Not ready to pay? Join waitlist <ChevronRight className="h-4 w-4" />
+                    Join the Founding Network <ArrowRight className="w-4 h-4" />
                   </button>
                 </Link>
               </div>
-              <p className="text-xs text-white/40 mt-2">$149/mo locked forever. Commission earned only when jobs close. Cancel anytime.</p>
+              <p className="text-xs text-white/40 mt-2">No payment required. Lock in your founding spot — pricing & activation details coming soon.</p>
             </FadeUp>
 
             <FadeIn delay={0.6}>
@@ -2247,7 +2242,7 @@ export default function Home() {
                 </ul>
                 <Link href="/apply">
                   <button className="w-full py-3 text-sm font-bold bg-[#F5E642] text-[#0A1628] hover:opacity-90 transition-all rounded-none">
-                    Claim Your Spot 
+                    Join the Waitlist
                   </button>
                 </Link>
               </div>

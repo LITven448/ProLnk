@@ -20,6 +20,7 @@ import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
 import JoinLanding from "./pages/JoinLanding";
+import JoinBySlug from "./pages/JoinBySlug";
 import ReferralLanding from "./pages/ReferralLanding";
 const GetQuotes = lazy(() => import("./pages/GetQuotes"));
 const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
@@ -703,9 +704,40 @@ const LazyFallback = () => (
   </div>
 );
 
+const WAITLIST_ALLOWED = new Set([
+  "/apply", "/join", "/pro-waitlist", "/home-waitlist", "/referral",
+  "/waitlist/pro", "/waitlist/homeowner", "/waitlist/homeowner/status",
+  "/waitlist-status", "/waitlist/status", "/success",
+  "/founding-partner", "/founding-network", "/leaderboard", "/network/leaderboard",
+  "/privacy", "/terms", "/ccpa", "/cookies", "/security",
+  "/trustypro", "/trustypro/waitlist", "/trustypro/app",
+  "/login", "/partner-login", "/partner-forgot-password",
+  "/set-password", "/pricing", "/pricing/standard",
+  "/partner-agreement", "/ach-authorization",
+]);
+
+function WaitlistGuard() {
+  const [location, navigate] = useLocation();
+  useEffect(() => {
+    if (location === "/") {
+      const isTrustyPro = (window as any).__BRAND__ === "trustypro";
+      navigate(isTrustyPro ? "/trustypro/waitlist" : "/apply", { replace: true });
+      return;
+    }
+    if (location.startsWith("/admin")) return;
+    if (location.startsWith("/join/")) return;
+    if (location.startsWith("/trustypro/")) return;
+    if (WAITLIST_ALLOWED.has(location)) return;
+    const isTrustyPro = (window as any).__BRAND__ === "trustypro";
+    navigate(isTrustyPro ? "/trustypro/waitlist" : "/apply", { replace: true });
+  }, [location, navigate]);
+  return null;
+}
+
 function Router() {
   return (
     <Suspense fallback={<LazyFallback />}>
+    <WaitlistGuard />
     <Switch>
       {/* Public -- smooth scroll landing pages */}
       <Route path="/">
@@ -725,6 +757,7 @@ function Router() {
       <Route path="/get-quotes" component={GetQuotes} />
       <Route path="/quotes/compare" component={QuoteComparison} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
+      <Route path="/join/:slug" component={JoinBySlug} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />
       <Route path="/referral" component={ReferralLanding} />

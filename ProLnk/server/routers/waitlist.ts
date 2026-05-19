@@ -72,6 +72,13 @@ function generateReferralCode(length = 7): string {
   return code;
 }
 
+const SLUG_REGEX = /^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/;
+const RESERVED_SLUGS = new Set([
+  "admin", "api", "app", "apply", "blog", "dashboard", "help", "home",
+  "join", "login", "pro", "settings", "signup", "status", "support",
+]);
+
+
 const ProWaitlistSchema = z.object({
   firstName: z.string().min(1).max(100).trim(),
   lastName: z.string().min(1).max(100).trim(),
@@ -147,7 +154,7 @@ export const waitlistRouter = router({
         // Validate referredBy code if provided
         let referrerId: number | null = null;
         if (input.referredBy) {
-          const [refRows] = await pool.query("SELECT id FROM proWaitlist WHERE referralCode = ? LIMIT 1", [input.referredBy.toUpperCase()]);
+          const [refRows] = await pool.query("SELECT id FROM proWaitlist WHERE referralCode = ? OR customSlug = ? LIMIT 1", [input.referredBy.toUpperCase(), input.referredBy.toLowerCase()]);
           if ((refRows as any[])[0]) {
             referrerId = (refRows as any[])[0].id;
           }
@@ -431,4 +438,49 @@ export const waitlistRouter = router({
     );
     return rows as any[];
   }),
+
+  claimSlug: publicProcedure
+    .input(z.object({
+      email: z.string().email().toLowerCase(),
+      slug: z.string().min(3).max(30),
+    }))
+    .mutation(async ({ input }) => {
+      const pool = await getPool();
+      if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+      const slug = input.slug.toLowerCase();
+      if (!SLUG_REGEX.test(slug)) {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "Slug must be 3-30 characters, lowercase alphanumeric and hyphens only, no leading/trailing hyphens." });
+      }
+      if (RESERVED_SLUGS.has(slug)) {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "This slug is reserved. Please choose another." });
+      }
+
+      const [userRows] = await pool.query("SELECT id, customSlug FROM proWaitlist WHERE email = ? LIMIT 1", [input.email]);
+      if (!(userRows as any[])[0]) {
+        throw new TRPCError({ code: "NOT_FOUND", message: "Email not found on waitlist. Sign up first." });
+      }
+
+      try { await pool.query("ALTER TABLE proWaitlist ADD COLUMN customSlug VARCHAR(64) UNIQUE", []); } catch {}
+
+      const [existing] = await pool.query("SELECT id FROM proWaitlist WHERE customSlug = ? LIMIT 1", [slug]);
+      if ((existing as any[])[0]) {
+        throw new TRPCError({ code: "CONFLICT", message: "This slug is already taken. Try another." });
+      }
+
+      await pool.query("UPDATE proWaitlist SET customSlug = ? WHERE email = ?", [slug, input.email]);
+      return { success: true as const, slug, shareUrl: `https://prolnk.io/join/${slug}` };
+    }),
+
+  resolveSlug: publicProcedure
+    .input(z.object({ slug: z.string().min(1).max(30) }))
+    .query(async ({ input }) => {
+      const pool = await getPool();
+      if (!pool) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+      const [rows] = await pool.query("SELECT firstName, businessType, referralCode FROM proWaitlist WHERE customSlug = ? LIMIT 1", [input.slug.toLowerCase()]);
+      const row = (rows as any[])[0];
+      if (!row) return { found: false as const };
+      return { found: true as const, firstName: row.firstName as string, businessType: row.businessType as string, referralCode: row.referralCode as string };
+    }),
+
 });

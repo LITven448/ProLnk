@@ -22,8 +22,8 @@ const concerns = [
   {
     label: 'Pre-Purchase Inspection Finding',
     vetting: ['Independent structural engineer (not the foundation company) should assess first', 'Get 2–3 foundation company bids based on engineer report', 'Negotiate repair cost into purchase price or seller concession'],
-    warnings: ['Only one company\'s opinion before making purchase decision', 'Foundation company diagnosis without independent engineer first', 'Seller insisting on specific contractor'],
-    contract: ['Full repair scope tied to engineer\'s findings', 'Warranty transferable to you as new owner — confirmed before close', 'Right to re-inspect after repair before purchase closes'],
+    warnings: ['Only one company\’s opinion before making purchase decision', 'Foundation company diagnosis without independent engineer first', 'Seller insisting on specific contractor'],
+    contract: ['Full repair scope tied to engineer\’s findings', 'Warranty transferable to you as new owner — confirmed before close', 'Right to re-inspect after repair before purchase closes'],
   },
 ];
 

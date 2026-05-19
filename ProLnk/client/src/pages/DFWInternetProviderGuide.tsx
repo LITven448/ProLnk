@@ -11,7 +11,7 @@ function getRec(suburb: string, usage: string) {
   if (outer && !wfh && !gaming) return { provider: 'T-Mobile 5G Home Internet', speed: '100–400 Mbps', cost: '~$50/mo', note: 'No contract, no data caps. Good for outer DFW where fiber is sparse. Latency ~30–60ms — fine for streaming, borderline for competitive gaming.' };
   if (gaming) return { provider: 'AT&T Fiber (if available) → Frontier Fiber → Spectrum', speed: '500 Mbps–2 Gbps fiber / 300–1000 Mbps cable', cost: '$55–80/mo fiber, $50–70/mo cable', note: 'Fiber wins on latency (5–15ms vs 15–30ms). Check AT&T availability first at att.com/internet, then Frontier. Spectrum is cable (higher latency but widely available).' };
   if (wfh) return { provider: 'AT&T Fiber or Frontier Fiber', speed: '1 Gbps symmetric recommended', cost: '$65–80/mo', note: 'Symmetric speeds matter for video calls and uploads. AT&T Fiber has the best reliability in DFW core. Frontier is expanding fast in 2025–2026 suburbs.' };
-  if (basic) return { provider: 'Spectrum or T-Mobile 5G', speed: '100–300 Mbps is plenty', cost: '$40–55/mo', note: 'Don\'t overbuy speed for basic use. Spectrum\'s introductory rate is often lowest. T-Mobile has no-contract flexibility.' };
+  if (basic) return { provider: 'Spectrum or T-Mobile 5G', speed: '100–300 Mbps is plenty', cost: '$40–55/mo', note: 'Don\’t overbuy speed for basic use. Spectrum\’s introductory rate is often lowest. T-Mobile has no-contract flexibility.' };
   return { provider: 'AT&T Fiber or Spectrum', speed: '300–500 Mbps', cost: '$55–70/mo', note: 'Good middle-ground for mixed household streaming. Fiber preferred for reliability during DFW thunderstorms.' };
 }
 

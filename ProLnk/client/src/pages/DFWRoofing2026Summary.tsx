@@ -28,11 +28,11 @@ export default function DFWRoofing2026Summary() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🌩️', title: 'Hail Alley Impact', body: 'DFW sits in the nation\'s top hail zone. Average 7 hail events/year. Class 4 impact-resistant shingles can save 15–30% on insurance premiums and are required by many carriers.' },
+            { icon: '🌩️', title: 'Hail Alley Impact', body: 'DFW sits in the nation\’s top hail zone. Average 7 hail events/year. Class 4 impact-resistant shingles can save 15–30% on insurance premiums and are required by many carriers.' },
             { icon: '🔄', title: 'Transferable Warranties', body: 'GAF, Owens Corning, and CertainTeed offer transferable warranties. A 50-year transferable warranty adds $3K–$8K to resale value. Must register within 30 days of install.' },
             { icon: '💨', title: 'Venting Requirements', body: 'TX code: 1 sq ft of ventilation per 150 sq ft of attic space. DFW heat makes proper ventilation critical — poor venting shortens shingle life by 30% and voids most warranties.' },
-            { icon: '📋', title: 'Insurance Claim Process', body: 'Document damage immediately. Never sign AOB forms. Get 3 bids before accepting adjuster\'s estimate. TX law gives you 2 years to file a storm damage claim.' },
-            { icon: '🔍', title: 'Vetting Contractors', body: 'Require: TX contractor license, general liability ($1M+), workers\' comp, local references, no door-to-door solicitation. Avoid storm chasers — use established DFW companies.' },
+            { icon: '📋', title: 'Insurance Claim Process', body: 'Document damage immediately. Never sign AOB forms. Get 3 bids before accepting adjuster\’s estimate. TX law gives you 2 years to file a storm damage claim.' },
+            { icon: '🔍', title: 'Vetting Contractors', body: 'Require: TX contractor license, general liability ($1M+), workers\’ comp, local references, no door-to-door solicitation. Avoid storm chasers — use established DFW companies.' },
             { icon: '📅', title: 'When to Replace', body: 'Replace at 20–25 years for 3-tab, 25–30 for architectural. Immediate replacement: granule loss, curling edges, daylight in attic, multiple leaks, storm damage >30% of surface.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>

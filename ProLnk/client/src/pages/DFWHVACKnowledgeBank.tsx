@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const concerns = [
   { value: 'scattered', label: '📂 Records scattered across email, paper, phone' },
-  { value: 'lost', label: '🗑️ I\'ve lost records after a contractor change' },
+  { value: 'lost', label: '🗑️ I\’ve lost records after a contractor change' },
   { value: 'unsure', label: '🤷 Not sure what I should even be keeping' },
-  { value: 'organized', label: '✅ I have a system but it\'s not digital' },
+  { value: 'organized', label: '✅ I have a system but it\’s not digital' },
 ];
 
 const vaultFeatures = [
@@ -22,9 +22,9 @@ export default function DFWHVACKnowledgeBank() {
   function assess() {
     if (!concern) { setResult('⚠️ Select your knowledge management situation first.'); return; }
     const responses: Record<string, string> = {
-      scattered: '📦 The scattered records problem is the #1 issue DFW homeowners face after 5+ years in a home. Start with a simple consolidation: one folder (physical or digital) labeled by year. ProLnk\'s Home Health Vault then becomes the permanent home — it ingests photos of paper records and organizes them automatically.',
-      lost: '🔄 Lost records don\'t mean starting from scratch. Your contractor keeps records too — call and request a service history. For equipment specs, the model number on your outdoor unit unlocks manufacturer records. ProLnk can help you reconstruct your knowledge bank from these sources.',
-      unsure: '📋 Here\'s the minimum viable DFW HVAC knowledge bank: (1) equipment installation date, (2) model/serial numbers, (3) refrigerant type, (4) last tune-up date, (5) filter size. That\'s it. Everything else builds from there. ProLnk\'s vault guides you through each item.',
+      scattered: '📦 The scattered records problem is the #1 issue DFW homeowners face after 5+ years in a home. Start with a simple consolidation: one folder (physical or digital) labeled by year. ProLnk\’s Home Health Vault then becomes the permanent home — it ingests photos of paper records and organizes them automatically.',
+      lost: '🔄 Lost records don\’t mean starting from scratch. Your contractor keeps records too — call and request a service history. For equipment specs, the model number on your outdoor unit unlocks manufacturer records. ProLnk can help you reconstruct your knowledge bank from these sources.',
+      unsure: '📋 Here\’s the minimum viable DFW HVAC knowledge bank: (1) equipment installation date, (2) model/serial numbers, (3) refrigerant type, (4) last tune-up date, (5) filter size. That\’s it. Everything else builds from there. ProLnk\’s vault guides you through each item.',
       organized: '⚡ Great foundation. Digitizing your existing system unlocks everything: remote access, contractor sharing, buyer transfer at closing. The Home Health Vault imports from common formats and adds the structure that makes your records actionable vs. just stored.',
     };
     setResult(responses[concern] || '');

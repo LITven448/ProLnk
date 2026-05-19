@@ -16,13 +16,13 @@ const preferences = [
   {
     id: 'maintenance',
     label: '🛠️ Reliable Maintenance Contracts',
-    safeChoice: 'In DFW's extreme duty cycle, the most reliable HVAC outcome comes from a consistent maintenance relationship. Annual bi-annual tune-ups (before April and before October), filter replacements, and condensate drain clearing prevent 90% of summer emergency failures. Consistency beats technology.',
+    safeChoice: 'In DFW’s extreme duty cycle, the most reliable HVAC outcome comes from a consistent maintenance relationship. Annual bi-annual tune-ups (before April and before October), filter replacements, and condensate drain clearing prevent 90% of summer emergency failures. Consistency beats technology.',
     matching: 'ProLnk matches conservative owners with pros who offer structured maintenance agreements with price guarantees — not just reactive repair services.',
   },
   {
     id: 'proven-tech',
     label: '📋 When Reliability Beats Innovation',
-    safeChoice: 'For DFW homeowners with children, elderly family, or health conditions — reliability is non-negotiable. If your 2-year-old system fails at 105°F, an innovative but less field-proven system's superior EER rating is irrelevant. Choose proven equipment, established contractors, and structured service agreements over cutting-edge innovation.',
+    safeChoice: 'For DFW homeowners with children, elderly family, or health conditions — reliability is non-negotiable. If your 2-year-old system fails at 105°F, an innovative but less field-proven system’s superior EER rating is irrelevant. Choose proven equipment, established contractors, and structured service agreements over cutting-edge innovation.',
     matching: 'ProLnk understands reliability priorities. Your match profile lets you flag reliability-first criteria, and ProLnk filters for contractors with the lowest emergency callback rates in DFW.',
   },
   {

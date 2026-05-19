@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const situations = [
-  { label: 'I\'m in Hail Alley (Collin, Denton, Tarrant, Dallas)', icon: '⛈️', rec: 'Class 4 Impact-Resistant Minimum', detail: 'DFW sits in one of the most hail-active corridors in North America. Class 4 (UL 2218) shingles resist golf-ball-size hail and qualify for 20-30% insurance discounts with most TX carriers. Anything less is insuring against damage you\'re inviting.' },
+  { label: 'I\’m in Hail Alley (Collin, Denton, Tarrant, Dallas)', icon: '⛈️', rec: 'Class 4 Impact-Resistant Minimum', detail: 'DFW sits in one of the most hail-active corridors in North America. Class 4 (UL 2218) shingles resist golf-ball-size hail and qualify for 20-30% insurance discounts with most TX carriers. Anything less is insuring against damage you\’re inviting.' },
   { label: 'Standard DFW home, no special concerns', icon: '🏠', rec: 'Architectural Shingles (30-Year)', detail: 'Dimensional architectural shingles at 30-year warranty are the baseline for DFW. They handle 130 mph wind ratings, UV resistance for 100°F+ heat, and cost $4–6/sqft installed. Avoid 3-tab shingles — too thin for DFW weather exposure.' },
   { label: 'Long-term stay, want maximum durability', icon: '🏡', rec: 'Metal or Class 4 Shingles', detail: 'Standing seam metal roofs last 40–70 years in DFW and reflect summer heat (10–15% cooling savings). Class 4 shingles are the high-value middle ground: near-metal durability at 40–60% lower cost. Best ROI for homeowners staying 10+ years.' },
-  { label: 'Selling in 3–5 years', icon: '🏷️', rec: 'Standard Architectural Shingles', detail: 'For resale, a clean 30-year architectural roof is all the market expects. Don\'t over-invest in metal or premium Class 4 if you won\'t recoup it. Focus on a clean install, proper flashing, and a transferable warranty to pass to the buyer.' },
+  { label: 'Selling in 3–5 years', icon: '🏷️', rec: 'Standard Architectural Shingles', detail: 'For resale, a clean 30-year architectural roof is all the market expects. Don\’t over-invest in metal or premium Class 4 if you won\’t recoup it. Focus on a clean install, proper flashing, and a transferable warranty to pass to the buyer.' },
 ];
 
 export default function DFWRoofingGoodChoice2026() {

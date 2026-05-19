@@ -6,7 +6,7 @@ const priorities = [
     label: 'Kids walking or biking to school daily is essential',
     neighborhoods: [
       { name: 'Lakewood / East Dallas', city: 'Dallas', school: 'Lakewood Elementary (DISD)', premium: '+12–18%', note: 'True walkable elementary — sidewalks, low traffic, neighborhood grid' },
-      { name: 'Munger Place / Peak\'s Addition', city: 'Dallas', school: 'Geneva Heights Elementary', premium: '+10–15%', note: 'Historic grid streets, bikeable to school, strong neighborhood association' },
+      { name: 'Munger Place / Peak\’s Addition', city: 'Dallas', school: 'Geneva Heights Elementary', premium: '+10–15%', note: 'Historic grid streets, bikeable to school, strong neighborhood association' },
       { name: 'University Park', city: 'Highland Park ISD', school: 'Multiple walkable elementaries', premium: '+25–40%', note: 'Top-rated district with genuine walk-to-school infrastructure' },
       { name: 'Downtown Fort Worth Near Magnolia', city: 'Fort Worth', school: 'Limited — verify current year', premium: '+5–10%', note: 'Some urban elementaries accessible on foot — confirm enrollment zones' },
     ],
@@ -52,7 +52,7 @@ export default function DFWWalkToSchoolGuide() {
             { icon: '🚗', title: 'DFW Reality: Driving Is the Default', body: 'The vast majority of DFW suburbs — Plano, Frisco, McKinney, Allen, Mansfield, Arlington — were designed with cars in mind. Sidewalks are often absent near schools, arterial roads are too dangerous to bike across, and school boundaries span miles.' },
             { icon: '🏙️', title: 'Where Walk-to-School Actually Exists', body: 'Older, urban-grid neighborhoods in Dallas proper (Lakewood, Munger Place) and the Highland Park / University Park enclave are the main exceptions. Fort Worth has pockets near Magnolia. Suburban cities almost universally require driving.' },
             { icon: '💵', title: 'The Walkability Premium', body: 'Homes within a 0.5-mile walk of a well-rated elementary school command 10–25% premiums over comparable homes requiring driving. In Highland Park ISD, that premium can reach 30–40%. Walkability + school quality is the most powerful value combination in DFW real estate.' },
-            { icon: '📍', title: 'How to Verify Walk Route Safety', body: 'Use the district\'s "Safe Routes to School" maps (available on most district websites). Walk the route yourself before buying — Google Maps doesn\'t account for missing sidewalks, drainage ditches, or 5-lane arterial crossings common in DFW suburbia.' },
+            { icon: '📍', title: 'How to Verify Walk Route Safety', body: 'Use the district\’s "Safe Routes to School" maps (available on most district websites). Walk the route yourself before buying — Google Maps doesn\’t account for missing sidewalks, drainage ditches, or 5-lane arterial crossings common in DFW suburbia.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>

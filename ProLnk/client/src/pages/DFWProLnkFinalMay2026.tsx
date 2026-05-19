@@ -3,7 +3,7 @@ import { useState } from 'react';
 const roles = [
   { id: 'homeowner', label: 'Homeowner needing services', status: 'Join the ProLnk homeowner waitlist now. Add your home to Health Vault. When DFW launches, you get first access to verified pros at pre-launch rates.' },
   { id: 'pro', label: 'Home service professional', status: 'Charter tier is filling fast — only 500 spots. At $149/mo locked forever, you get 72% job revenue share + 4-level network income. Waitlist closes at 500 apps.' },
-  { id: 'neighbor', label: 'Just heard about ProLnk', status: 'You\'re early. That\'s an advantage. Charter members who join before May close get locked rates and network income from everyone they refer. Go to prolnk.io.' },
+  { id: 'neighbor', label: 'Just heard about ProLnk', status: 'You\’re early. That\’s an advantage. Charter members who join before May close get locked rates and network income from everyone they refer. Go to prolnk.io.' },
   { id: 'investor', label: 'Considering investing or partnering', status: 'Waitlist approaching 500 Pros. DFW is the beachhead market. 85% margins at scale. Seed round open. Reach out via prolnk.io/contact.' },
   { id: 'skeptic', label: 'Skeptical — seen this before', status: 'Fair. ProLnk is waitlist-only right now — no money changes hands until matching goes live. Join free, get matched when we launch, decide then. Zero risk to try.' },
 ];
@@ -29,7 +29,7 @@ export default function DFWProLnkFinalMay2026() {
         <div style={{ display: 'grid', gap: 12, marginBottom: 40 }}>
           {[
             { icon: '📋', title: 'Waitlist Approaching 500', body: 'Charter tier closes at 500 Pro applications. When it closes, the founding rate of $149/mo locks in permanently for those members. New Pros will pay more.' },
-            { icon: '🏙️', title: 'DFW Launch Preparation', body: 'Dallas-Fort Worth is ProLnk\'s first market. Territory mapping, Pro verification workflows, and first homeowner matches are in final build.' },
+            { icon: '🏙️', title: 'DFW Launch Preparation', body: 'Dallas-Fort Worth is ProLnk\’s first market. Territory mapping, Pro verification workflows, and first homeowner matches are in final build.' },
             { icon: '💛', title: 'Charter Tier Benefits Locked', body: 'Charter members: $149/mo forever, 72% job revenue, 4-level network income cascade, 1.5% origination rights on homes you add to Health Vault.' },
             { icon: '🏠', title: 'Home Health Vault Open', body: 'Homeowners can add their home now. Structural data, HVAC history, appliance records. Your data stays private but unlocks better matching when we go live.' },
           ].map(card => (

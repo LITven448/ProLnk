@@ -19,7 +19,7 @@ const safetyItems: SafetyItem[] = [
   { id: 's8', category: 'Fire Extinguishers', label: 'Kitchen has Type K or ABC extinguisher', detail: 'Grease fires need Type K or ABC — NEVER use water. Mount within reach but away from stove.', points: 8 },
   { id: 's9', category: 'Fire Extinguishers', label: 'Extinguishers inspected in last 12 months', detail: 'Check pressure gauge is in green zone. Replace any extinguisher over 12 years old.', points: 5 },
   { id: 's10', category: 'Escape Plan', label: '2 exits identified for each bedroom', detail: 'Every bedroom should have a window as secondary exit. Test that it opens fully.', points: 10 },
-  { id: 's11', category: 'Escape Plan', label: 'Outdoor meeting point established', detail: 'Everyone in the household knows the designated meeting spot — neighbor's mailbox, street sign, etc.', points: 7 },
+  { id: 's11', category: 'Escape Plan', label: 'Outdoor meeting point established', detail: 'Everyone in the household knows the designated meeting spot — neighbor’s mailbox, street sign, etc.', points: 7 },
   { id: 's12', category: 'Escape Plan', label: 'Escape plan practiced in last 12 months', detail: 'Walk through the plan at night (eyes closed or blindfolded) — smoke reduces visibility to near zero.', points: 8 },
   { id: 's13', category: 'Electrical', label: 'No overloaded power strips or extension cords', detail: 'Extension cords are temporary — not permanent wiring. Never daisy-chain power strips.', points: 8 },
   { id: 's14', category: 'Electrical', label: 'GFCI outlets in kitchen, bathrooms, garage', detail: 'GFCI protects against shock and arc faults. Test monthly by pressing the test button.', points: 7 },

@@ -9,8 +9,8 @@ const benefits = [
   { icon: '📊', title: 'Community-Wide Health Monitoring', desc: 'Anonymized, aggregate data across your community shows health trends — aging roofs, HVAC system age, deferred maintenance patterns — so you can get ahead of community-wide issues before they become emergencies.' },
   { icon: '🏘️', title: 'Exterior Compliance Assistance', desc: "TrustyPro's AI detects exterior issues — paint condition, roof wear, landscaping violations, gutter issues — during property scans. HOAs get a compliance flag queue, not a lawsuit." },
   { icon: '🔧', title: 'Preferred Contractor Network', desc: 'List your HOA-approved contractors as TrustyPro Preferred Vendors. When homeowners search for service in your community, your vetted list appears first.' },
-  { icon: '🤝', title: 'Group Deal Coordination', desc: 'Coordinate community-wide services — bulk roof inspections, pest control contracts, exterior painting bids. TrustyPro's platform handles scheduling coordination and homeowner opt-in.' },
-  { icon: '💰', title: 'Property Value Protection', desc: 'Homes with TrustyPro health records sell faster and for measurably more. When even 20% of homes in your community carry verified health records, the whole community's comp values improve.' },
+  { icon: '🤝', title: 'Group Deal Coordination', desc: 'Coordinate community-wide services — bulk roof inspections, pest control contracts, exterior painting bids. TrustyPro’s platform handles scheduling coordination and homeowner opt-in.' },
+  { icon: '💰', title: 'Property Value Protection', desc: 'Homes with TrustyPro health records sell faster and for measurably more. When even 20% of homes in your community carry verified health records, the whole community’s comp values improve.' },
 ];
 
 export default function TrustyProForHOAs() {

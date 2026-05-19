@@ -3,7 +3,7 @@ import { useState } from 'react';
 const techniques = [
   { size: 'Nail Pop', label: '🔩 Nail Pop', steps: ['Drive nail deeper with hammer', 'Drive new nail 2" above/below', 'Apply two coats spackle over both', 'Sand smooth when dry', 'Prime + paint to match'], difficulty: 'Easy', time: '30 min + dry time' },
   { size: 'Small Hole', label: '🕳️ Small Hole (< 1")', steps: ['Clean edges of hole', 'Fill with lightweight spackle', 'Smooth with putty knife', 'Let dry 2-4 hours', 'Sand with 120-grit', 'Prime + paint'], difficulty: 'Easy', time: '1-2 hours' },
-  { size: 'Medium Hole', label: 🔲 Medium Hole (1-6")', steps: ['Apply self-adhesive mesh patch', 'Cover with joint compound', 'Feather edges 6-8" out', 'Let dry 24 hours', 'Apply second coat', 'Sand, prime, texture, paint'], difficulty: 'Moderate', time: '2-3 days' },
+  { size: 'Medium Hole', label: 🔲 Medium Hole (1-6")', steps: ['Apply self-adhesive mesh patch', 'Cover with joint compound', 'Feather edges 6-8" out', ’Let dry 24 hours', 'Apply second coat', 'Sand, prime, texture, paint'], difficulty: 'Moderate', time: '2-3 days' },
   { size: 'Large Hole', label: '🪚 Large Hole (6"+)', steps: ['Cut to nearest studs (California patch or backing board)', 'Install backing board if no studs', 'Cut drywall patch to fit', 'Tape all seams with paper tape', 'Apply 3 coats compound', 'Sand, prime, texture, paint'], difficulty: 'Advanced', time: '3-5 days' },
 ];
 

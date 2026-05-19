@@ -17,12 +17,12 @@ const sections = [
   },
   {
     id: 'dont',
-    label: '🚫 What We Don't Do',
+    label: '🚫 What We Don’t Do',
     icon: '🚫',
   },
   {
     id: 'use',
-    label: '⚙️ How It's Used',
+    label: '⚙️ How It’s Used',
     icon: '⚙️',
   },
   {

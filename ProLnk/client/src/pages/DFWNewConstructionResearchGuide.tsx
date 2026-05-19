@@ -14,7 +14,7 @@ const checklistItems = [
     'Verify TRCC (Texas Residential Construction Commission) builder registration — search at trcc.state.tx.us',
     'Check TDLR (Texas Department of Licensing and Regulation) for any disciplinary actions',
     'Search builder name + "lawsuit" or "BBB" — look at the last 24 months specifically',
-    'Verify builder\'s general contractor license with Texas Department of Licensing',
+    'Verify builder\’s general contractor license with Texas Department of Licensing',
   ]},
   { category: 'Financial Stability', emoji: '💰', items: [
     'Search for builder UCC filings or mechanics liens on their active DFW projects via county clerk records',
@@ -25,11 +25,11 @@ const checklistItems = [
   { category: 'MUD Tax Districts', emoji: '🏛️', items: [
     'Ask the sales agent for the MUD (Municipal Utility District) tax rate — some DFW MUDs add $3,000–8,000/year to your tax bill',
     'Request the MUD bond authorization amount — tells you how much debt the district can issue',
-    'Check TCEQ\'s MUD database (tceq.texas.gov) for the district\'s current bond balance and tax rate history',
+    'Check TCEQ\’s MUD database (tceq.texas.gov) for the district\’s current bond balance and tax rate history',
     'Ask: "When does the MUD tax phase out?" — some districts reduce rates once bonds are retired (10–20 year horizon)',
   ]},
   { category: 'Permit & Build Quality', emoji: '🔍', items: [
-    'Pull the city\'s permit portal and look at how many failed inspections builder has on record for other lots in the community',
+    'Pull the city\’s permit portal and look at how many failed inspections builder has on record for other lots in the community',
     'Find buyer Facebook groups: "[Builder] [Community Name] Owners" — people post photos of construction defects',
     'Visit the community during framing stage — look for proper moisture barriers, straight framing, and correct spacing',
     'Ask what warranty is provided: 1-year workmanship, 2-year mechanical, 10-year structural is Texas standard minimum',

@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
 const components = [
-  { id: 'grille', icon: '🔳', name: 'Return Grille', desc: 'The large grille (often in a hallway ceiling) where air is drawn back from your living spaces.', problem: 'Most DFW homes built before 2000 have a single central return — grossly undersized for today's high-efficiency systems.' },
+  { id: 'grille', icon: '🔳', name: 'Return Grille', desc: 'The large grille (often in a hallway ceiling) where air is drawn back from your living spaces.', problem: 'Most DFW homes built before 2000 have a single central return — grossly undersized for today’s high-efficiency systems.' },
   { id: 'plenum', icon: '📡', name: 'Return Plenum', desc: 'The duct section or open space between the return grille and the air handler filter rack.', problem: 'Leaky return plenums in DFW attics pull unconditioned 150°F air in, destroying efficiency and creating humidity problems.' },
   { id: 'filter', icon: '🧹', name: 'Filter Rack', desc: 'Where your air filter sits — captures dust, pollen, and allergens before air reaches the blower.', problem: 'Undersized filter racks create static pressure spikes that make DFW systems work harder in summer peak loads.' },
 ];
 
 const symptoms = [
   { symptom: 'Doors slam or pop open on their own', diagnosis: 'Positive pressure in rooms — insufficient return air creating pressure imbalance.', options: ['Add transfer grilles between rooms', 'Install additional return grille in affected area', 'Undercut interior doors 3/4 inch'], cost: '$150–$800 depending on solution' },
-  { symptom: 'System runs constantly but can't keep up', diagnosis: 'Return air starvation — blower is pulling harder than the return can supply, reducing effective airflow.', options: ['Add dedicated return duct to each zone', 'Upgrade central return to proper CFM size', 'Install return air pathway via attic bypass'], cost: '$400–$1,800' },
+  { symptom: 'System runs constantly but can’t keep up', diagnosis: 'Return air starvation — blower is pulling harder than the return can supply, reducing effective airflow.', options: ['Add dedicated return duct to each zone', 'Upgrade central return to proper CFM size', 'Install return air pathway via attic bypass'], cost: '$400–$1,800' },
   { symptom: 'Filter gets dirty in 2–3 weeks', diagnosis: 'Return air is pulling dust from attic or wall cavities — duct leaks in return system.', options: ['Seal all return duct joints with mastic', 'Inspect filter rack for air bypass gaps', 'Install high-efficiency media filter cabinet'], cost: '$200–$600' },
-  { symptom: 'High humidity even when AC runs all day', diagnosis: 'Leaky return plenum pulling humid attic air into system — common in DFW's 70%+ summer humidity.', options: ['Seal return plenum with mastic and foil tape', 'Add dehumidification to system', 'Evaluate for proper duct design'], cost: '$250–$1,500' },
+  { symptom: 'High humidity even when AC runs all day', diagnosis: 'Leaky return plenum pulling humid attic air into system — common in DFW’s 70%+ summer humidity.', options: ['Seal return plenum with mastic and foil tape', 'Add dehumidification to system', 'Evaluate for proper duct design'], cost: '$250–$1,500' },
 ];
 
 export default function DFWHVACReturnAirSystem() {

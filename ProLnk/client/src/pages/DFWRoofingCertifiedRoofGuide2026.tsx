@@ -14,18 +14,18 @@ const guides: Record<string, { title: string; detail: string; steps?: string[] }
     steps: ['Confirm contractor is factory-certified installer', 'Specify matching manufacturer components in contract', 'Request certification documentation at completion', 'Register warranty with manufacturer within 45 days'],
   },
   replace: {
-    title: 'Don\'t Mix Brands — Void Your Certification',
+    title: 'Don\’t Mix Brands — Void Your Certification',
     detail: 'Many DFW homeowners lose certification by allowing contractors to substitute off-brand components. Even one non-matching accessory can void the system certification. Verify every component before work begins.',
     steps: ['Get component list in writing before work starts', 'Verify all materials on delivery before install', 'Photograph product labels on all materials', 'Confirm certification number before final payment'],
   },
   insurance: {
     title: 'WindProven = Maximum Insurance Benefit',
-    detail: 'GAF\'s WindProven certification is the highest level — unlimited wind speed coverage with no maximum wind speed exclusion. Many DFW insurers offer 10–15% premium discounts for WindProven certified roofs. Ask your insurer before signing next renewal.',
+    detail: 'GAF\’s WindProven certification is the highest level — unlimited wind speed coverage with no maximum wind speed exclusion. Many DFW insurers offer 10–15% premium discounts for WindProven certified roofs. Ask your insurer before signing next renewal.',
     steps: ['Get WindProven certificate from contractor', 'Submit to insurer before renewal date', 'Ask specifically about wind-rated roof discounts', 'Keep certificate in home file for future claims'],
   },
   maintain: {
     title: 'Maintenance Rules to Keep Certification Active',
-    detail: 'GAF System Plus and WindProven warranties have maintenance requirements. Failure to follow them can void coverage. DFW\'s hail season makes this especially important — document every inspection.',
+    detail: 'GAF System Plus and WindProven warranties have maintenance requirements. Failure to follow them can void coverage. DFW\’s hail season makes this especially important — document every inspection.',
     steps: ['Annual roof inspection by certified contractor', 'Document any storm events (photos + date)', 'Only use manufacturer-approved sealants for repairs', 'Never allow non-certified contractors to make repairs'],
   },
   default: { title: 'Select Your Roof Situation', detail: 'Choose the option that matches your DFW roof situation to get your certified system guide.' },

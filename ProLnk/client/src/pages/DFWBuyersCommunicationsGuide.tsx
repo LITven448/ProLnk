@@ -18,7 +18,7 @@ function getGuidance(situation: string) {
     'I want to ask the seller why they are moving': {
       channel: '📞 Through your agent only',
       canSay: 'Nothing directly. Your agent can ask the listing agent, who may or may not share. Motivation is legitimately private.',
-      askAgent: 'Ask your agent to find out the seller's timeline and motivation. Agents share what their client allows — sometimes the listing agent reveals divorce, job relocation, or financial pressure, which is valuable intel.',
+      askAgent: 'Ask your agent to find out the seller’s timeline and motivation. Agents share what their client allows — sometimes the listing agent reveals divorce, job relocation, or financial pressure, which is valuable intel.',
       warning: 'Direct contact to ask personal questions is inappropriate and could be seen as pressure. Let your agent handle this.'
     },
     'I want to tell the seller how much I love the house': {
@@ -119,7 +119,7 @@ export default function DFWBuyersCommunicationsGuide() {
         )}
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-          {[['✅ Always Allowed', 'Neighbors, city offices, HOA management companies, title company (about your own file), your lender'],['🚫 Route Through Agent', 'Seller, listing agent, seller's attorney, any party to the contract on the other side']].map(([label, text]) => (
+          {[['✅ Always Allowed', 'Neighbors, city offices, HOA management companies, title company (about your own file), your lender'],['🚫 Route Through Agent', 'Seller, listing agent, seller’s attorney, any party to the contract on the other side']].map(([label, text]) => (
             <div key={label as string} style={{ background: '#fff', border: '1.5px solid #E2E8F0', borderRadius: 4, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.05)' }}>
               <div style={{ fontWeight: 700, marginBottom: 8, fontSize: 15, color: '#1A2B3C' }}>{label}</div>
               <div style={{ fontSize: 13, color: '#4A5568', lineHeight: 1.6 }}>{text}</div>

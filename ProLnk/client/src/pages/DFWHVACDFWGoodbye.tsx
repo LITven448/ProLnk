@@ -3,8 +3,8 @@ import { useState } from 'react';
 const roles = [
   { label: 'Homeowner', msg: 'Thank you for trusting ProLnk with your home. The DFW HVAC knowledge you carry will protect your family for decades. Your home deserves the best — and now you know how to get it.' },
   { label: 'HVAC Pro', msg: 'You helped build something extraordinary. Every contractor tip, every seasonal guide, every emergency protocol — it reflects the craft you practice every day in DFW homes. Thank you.' },
-  { label: 'Neighbor / Friend', msg: 'You\'re the reason this knowledge spreads. Sharing what you\'ve learned turns one prepared homeowner into an entire prepared community. DFW is stronger because of you.' },
-  { label: 'Just Exploring', msg: 'Curiosity brought you here. Now you leave with a library\'s worth of DFW HVAC wisdom. Come back whenever you need it — ProLnk will be here.' },
+  { label: 'Neighbor / Friend', msg: 'You\’re the reason this knowledge spreads. Sharing what you\’ve learned turns one prepared homeowner into an entire prepared community. DFW is stronger because of you.' },
+  { label: 'Just Exploring', msg: 'Curiosity brought you here. Now you leave with a library\’s worth of DFW HVAC wisdom. Come back whenever you need it — ProLnk will be here.' },
 ];
 
 export default function DFWHVACDFWGoodbye() {

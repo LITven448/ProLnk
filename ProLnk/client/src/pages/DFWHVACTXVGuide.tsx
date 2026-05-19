@@ -3,7 +3,7 @@ import { useState } from 'react';
 const symptomSets = [
   { label: 'Unit runs but barely cools', value: 'low_cool', likelihood: 55, note: 'TXV starving the evaporator — very common in DFW heat extremes' },
   { label: 'System freezes up then defrosts, cycles', value: 'freeze', likelihood: 70, note: 'TXV hunting or stuck closed — refrigerant not metering evenly' },
-  { label: 'High superheat, correct charge', value: 'high_sh', likelihood: 75, note: 'Classic TXV restriction: charge is fine but valve won't open fully' },
+  { label: 'High superheat, correct charge', value: 'high_sh', likelihood: 75, note: 'Classic TXV restriction: charge is fine but valve won’t open fully' },
   { label: 'Low superheat flooding compressor', value: 'flood', likelihood: 65, note: 'TXV stuck open — liquid refrigerant entering compressor' },
   { label: 'System short-cycles on high-pressure cutout', value: 'trip', likelihood: 60, note: 'TXV restriction causing head pressure spike in DFW summer heat' },
 ];

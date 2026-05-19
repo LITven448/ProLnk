@@ -51,7 +51,7 @@ const templates: Record<string, string[]> = {
   foundation: [
     'What method are you proposing — piers, pilings, mudjacking?',
     'How many piers and where will they be placed?',
-    'What is the engineer\'s involvement in the repair plan?',
+    'What is the engineer\’s involvement in the repair plan?',
     'Does the quote include a post-repair elevation certificate?',
     'What is the warranty on the foundation work?',
     'What happens if the repair requires additional piers?',
@@ -125,8 +125,8 @@ export default function HowToGetHomeRepairQuotes() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📝 What to Include in Your Quote Request</h2>
           {[
             ['📐 Exact scope', 'Write down exactly what you want done. Vague requests get vague quotes. "Fix my roof" gets a ballpark. "Replace shingles on 2,200 sq ft 4/12 pitch roof including drip edge and ice & water shield" gets an apples-to-apples bid.'],
-            ['📸 Photos', 'Send photos of the problem area, access points, and any existing damage. Contractors who can\'t quote from photos will waste your time on-site.'],
-            ['📅 Timeline', 'Tell them your target start date. Backlogged contractors won\'t admit it upfront — but it\'ll surface when you ask.'],
+            ['📸 Photos', 'Send photos of the problem area, access points, and any existing damage. Contractors who can\’t quote from photos will waste your time on-site.'],
+            ['📅 Timeline', 'Tell them your target start date. Backlogged contractors won\’t admit it upfront — but it\’ll surface when you ask.'],
             ['🏠 Property details', 'Stories, square footage, age of home, HOA restrictions. These affect material and labor costs significantly.'],
           ].map(([icon, text]) => (
             <div key={icon as string} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
@@ -140,9 +140,9 @@ export default function HowToGetHomeRepairQuotes() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🚩 Quote Red Flags</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              ['Too low (>30% under others)', 'They\'re cutting corners on materials, skipping permits, or using unlicensed subs. You\'ll pay double to fix it.'],
-              ['Too high (>40% over others)', 'Either they don\'t want the job or they\'re padding heavily. Ask them to itemize labor vs materials.'],
-              ['Verbal only', 'No written quote = no accountability. Walk away from any contractor who won\'t put it in writing.'],
+              ['Too low (>30% under others)', 'They\’re cutting corners on materials, skipping permits, or using unlicensed subs. You\’ll pay double to fix it.'],
+              ['Too high (>40% over others)', 'Either they don\’t want the job or they\’re padding heavily. Ask them to itemize labor vs materials.'],
+              ['Verbal only', 'No written quote = no accountability. Walk away from any contractor who won\’t put it in writing.'],
               ['No license or insurance', 'Texas requires TDLR licensing for most trades. Ask for their license number before they set foot on your property.'],
               ['Pressure to decide today', 'Urgency tactics are a scam signal. Any legitimate contractor will give you time to compare.'],
               ['No itemization', 'A single lump-sum number tells you nothing. Require labor, materials, permits, and markup broken out separately.'],

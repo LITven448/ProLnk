@@ -3,7 +3,7 @@ import { useState } from 'react';
 const eligibilityTypes = [
   { id: 'veteran', label: '🎖️ Veteran / Military', programs: [
     { name: 'VA SAH Grant (Specially Adapted Housing)', desc: 'Up to $109,986 (2026 limit) for veterans with severe service-connected disabilities to build or modify a home for independent living.', amt: 'Up to $109,986' },
-    { name: 'VA SHA Grant (Special Housing Adaptation)', desc: 'Up to $21,997 (2026 limit) for veterans adapting a family member's home. Covers ramps, widened doorways, roll-in showers.', amt: 'Up to $21,997' },
+    { name: 'VA SHA Grant (Special Housing Adaptation)', desc: 'Up to $21,997 (2026 limit) for veterans adapting a family member’s home. Covers ramps, widened doorways, roll-in showers.', amt: 'Up to $21,997' },
     { name: 'VA TRA Grant (Temporary Residence Adaptation)', desc: 'SAH-eligible veterans: up to $43,462. SHA-eligible: up to $7,748. Temporary modifications while permanent housing is arranged.', amt: 'Up to $43,462' },
   ]},
   { id: 'lowincome', label: '💼 Low Income', programs: [

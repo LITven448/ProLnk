@@ -38,10 +38,10 @@ export default function DFWOutdoorShowerGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🌡️ DFW-Specific Outdoor Shower Considerations</h2>
           {[
             ['Hot Water Necessity', 'DFW summer — a cold-only shower is refreshing. DFW winter — a cold-only shower is brutal. Most DFW homeowners regret not running hot water within 2 years.'],
-            ['Water Pressure', 'Most DFW suburbs (Frisco, Allen, McKinney, Plano) have excellent municipal pressure. A direct hot/cold extension from your home\'s plumbing delivers great pressure without boosters.'],
+            ['Water Pressure', 'Most DFW suburbs (Frisco, Allen, McKinney, Plano) have excellent municipal pressure. A direct hot/cold extension from your home\’s plumbing delivers great pressure without boosters.'],
             ['Freeze Protection', 'February freeze events (2021, 2023) damaged hundreds of outdoor plumbing lines. DFW outdoor shower plumbing MUST have a freeze-proof shutoff valve — no exceptions.'],
             ['HOA Approval', 'Many DFW HOAs (especially Southlake, Westlake, Frisco) require approval for outdoor structures. Get approval before starting — violations can require demolition.'],
-            ['Drainage Code', 'Most DFW cities require outdoor shower water to drain to the sanitary sewer — not to the yard. A licensed plumber knows your city\'s specific code.'],
+            ['Drainage Code', 'Most DFW cities require outdoor shower water to drain to the sanitary sewer — not to the yard. A licensed plumber knows your city\’s specific code.'],
           ].map(([title, desc]) => (
             <div key={title as string} style={{ borderBottom: '1px solid #1e3a5f', paddingBottom: 12, marginBottom: 12 }}>
               <p style={{ color: '#F5E642', fontWeight: 700, margin: '0 0 4px', fontSize: 14 }}>{title as string}</p>

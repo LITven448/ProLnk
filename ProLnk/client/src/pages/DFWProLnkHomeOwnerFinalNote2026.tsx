@@ -13,12 +13,12 @@ const situations = [
     id: 'need-repair', icon: '🔧', label: 'Need a Home Repair',
     help: [
       { title: 'Fast DFW Pro Matching', desc: 'Describe your issue, get matched with available local pros — not a national call center. Real DFW contractors who know local codes.' },
-      { title: 'Transparent Pricing', desc: 'Compare quotes from multiple pros. No surprise fees. DFW-calibrated pricing so you know what's fair.' },
+      { title: 'Transparent Pricing', desc: 'Compare quotes from multiple pros. No surprise fees. DFW-calibrated pricing so you know what’s fair.' },
       { title: 'Service History Tracking', desc: 'Every repair logged in your Home Health Vault. Know exactly what was done, who did it, and what it cost — forever.' },
     ]
   },
   {
-    id: 'contractor', icon: '👷', label: 'I'm a DFW Contractor',
+    id: 'contractor', icon: '👷', label: 'I’m a DFW Contractor',
     help: [
       { title: 'Vetted Lead Flow', desc: 'Stop chasing Yelp and Angi leads. ProLnk sends you homeowners who are ready to book — matched by trade, service area, and availability.' },
       { title: '5-Stream Income', desc: 'Earn from direct jobs, referrals from your network of pros, homeowner referrals, and origination rights on homes you bring in.' },

@@ -11,7 +11,7 @@ const summaryFacts = [
   { icon: '🌿', title: 'Clay Soil = Water Is King', body: 'DFW sits on expansive clay. Dry clay shrinks; wet clay swells. Inconsistent moisture is the #1 cause of foundation movement in Texas.' },
   { icon: '💧', title: 'Water Daily in July & August', body: 'The two hottest months bake DFW soil into concrete. Daily foundation watering during peak drought prevents $8K–$25K in damage.' },
   { icon: '📸', title: 'Document Every Repair', body: 'Documented repairs with engineer sign-off add value at resale. Undocumented repairs raise red flags and kill deals. Use Home Health Vault.' },
-  { icon: '🏗️', title: 'Engineer First, Repair Company Second', body: 'Foundation repair companies get paid to recommend repairs. Engineers get paid to be right. Always get an engineer's assessment first.' },
+  { icon: '🏗️', title: 'Engineer First, Repair Company Second', body: 'Foundation repair companies get paid to recommend repairs. Engineers get paid to be right. Always get an engineer’s assessment first.' },
   { icon: '🌧️', title: 'Drain Away From Foundation', body: 'Every roof downspout should extend 6+ feet away. Every yard should slope away. Water pooling at your foundation = guaranteed future problems.' },
 ];
 

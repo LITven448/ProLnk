@@ -14,10 +14,10 @@ const plans: Record<string, { title: string; steps: string[] }> = {
     steps: [
       '📊 Target: Keep indoor humidity 45–55% (DFW summer averages 65–80%)',
       '🔄 Replace AC filter monthly — dirty filter reduces dehumidification',
-      '❄️ Ensure AC is sized correctly — oversized units don\'t dehumidify',
+      '❄️ Ensure AC is sized correctly — oversized units don\’t dehumidify',
       '💧 Consider whole-home dehumidifier ($1,500–$3,000 installed)',
       '🪟 Run bathroom/kitchen exhaust fans during and 20min after use',
-      '📞 If AC isn\'t dehumidifying: ProLnk tech can check coil and refrigerant',
+      '📞 If AC isn\’t dehumidifying: ProLnk tech can check coil and refrigerant',
     ],
   },
   winter_dry: {

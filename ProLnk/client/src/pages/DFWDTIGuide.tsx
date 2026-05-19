@@ -44,7 +44,7 @@ export default function DFWDTIGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
           {[
             { label: 'What is DTI?', icon: '📊', body: 'DTI = your monthly debt payments ÷ gross monthly income. Lenders use it to assess how much of your income goes to debt repayment.' },
-            { label: 'Why DFW Is Different', icon: '🏛️', body: 'Texas property taxes (avg 2.0–2.5%) are included in your housing payment. On a $390K home, that\'s $650–$813/mo extra — dramatically affecting your front-end DTI.' },
+            { label: 'Why DFW Is Different', icon: '🏛️', body: 'Texas property taxes (avg 2.0–2.5%) are included in your housing payment. On a $390K home, that\’s $650–$813/mo extra — dramatically affecting your front-end DTI.' },
           ].map(c => (
             <div key={c.label} style={{ background: '#fff', borderRadius: 12, padding: 22, border: '1px solid #e2e8f0' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>

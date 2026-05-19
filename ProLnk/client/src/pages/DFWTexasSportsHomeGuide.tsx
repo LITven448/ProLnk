@@ -4,7 +4,7 @@ const sportSetups: Record<string, { setup: string[]; cost: string; vibe: string 
   Cowboys: {
     setup: ['85"+ 4K TV minimum — anything smaller is disrespectful', 'AT&T Stadium blue and silver accent wall', 'Surround sound 7.1 — you need to hear the crowd', 'Bar fridge with draft tap — game day requires real beer', 'Recliner sectional with cup holders for everyone'],
     cost: '$8,000–18,000 full build-out',
-    vibe: 'America\'s Team requires America\'s Man Cave'
+    vibe: 'America\’s Team requires America\’s Man Cave'
   },
   Rangers: {
     setup: ['65"+ TV positioned for full light control — day games matter', 'Baseball card display case — Rangers memorabilia wall', 'Outdoor TV setup for warm weather games on the patio', 'Ice maker — baseball is a summer sport', 'Scoreboard clock display for pitch count tracking'],
@@ -17,7 +17,7 @@ const sportSetups: Record<string, { setup: string[]; cost: string; vibe: string 
     vibe: 'Stars fans are the most passionate in DFW — prove it'
   },
   Mavs: {
-    setup: ['Hardwood floor detail in media room — basketball aesthetic', '75"+ TV for half-court visibility', 'Signed jersey display wall', 'NBA League Pass second screen setup', 'Standing room space — Mavs fans don\'t sit'],
+    setup: ['Hardwood floor detail in media room — basketball aesthetic', '75"+ TV for half-court visibility', 'Signed jersey display wall', 'NBA League Pass second screen setup', 'Standing room space — Mavs fans don\’t sit'],
     cost: '$5,500–11,000 full build-out',
     vibe: 'Post-Luka era building — room needs championship energy'
   },
@@ -78,7 +78,7 @@ export default function DFWTexasSportsHomeGuide() {
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginTop: 8 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 12 }}>📺 DFW Man Cave Rules</div>
-          {['TV size is a status symbol — upgrade to what makes you proud', 'Outdoor TV is non-negotiable in DFW climate', 'Game day is community — room must fit at least 12 people', 'Bar fridge + ice maker: water breaks don\'t interrupt the game'].map((rule, i) => (
+          {['TV size is a status symbol — upgrade to what makes you proud', 'Outdoor TV is non-negotiable in DFW climate', 'Game day is community — room must fit at least 12 people', 'Bar fridge + ice maker: water breaks don\’t interrupt the game'].map((rule, i) => (
             <div key={i} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642' }}>{rule}</div>
           ))}
         </div>

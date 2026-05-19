@@ -52,7 +52,7 @@ export default function TreeServiceGuide() {
     if (city === 'Dallas' && d >= 19 && ['Live Oak', 'Bur Oak'].includes(species)) {
       setPermitResult('📋 PERMIT LIKELY REQUIRED — Dallas protected tree ordinance applies to large oak trees. Contact Dallas Urban Forestry before any work.');
     } else if (city === 'Frisco' && d >= 6 && ['Live Oak', 'Cedar Elm', 'Pecan', 'Bur Oak'].includes(species)) {
-      setPermitResult('📋 PERMIT MAY BE REQUIRED — Frisco\'s heritage tree ordinance could apply. Confirm with the city before removal.');
+      setPermitResult('📋 PERMIT MAY BE REQUIRED — Frisco\’s heritage tree ordinance could apply. Confirm with the city before removal.');
     } else if (city === 'McKinney' && d >= 8) {
       setPermitResult('⚠️ CHECK REQUIRED — McKinney heritage tree rules may apply at this diameter. Get a city review first.');
     } else {
@@ -112,7 +112,7 @@ export default function TreeServiceGuide() {
                 ['🚨', 'Safety first', 'If a tree has fallen on a structure or is near power lines, call 911 and your utility company — not a tree service — first'],
                 ['📸', 'Document everything', 'Photograph all damage before any cleanup for insurance claims'],
                 ['⏰', 'Act within 24–48 hours', 'Exposed wood and damaged roots begin to fail quickly in DFW heat'],
-                ['🌳', 'Don\'t assume it\'s dead', 'A professional arborist can assess whether storm-damaged trees can be saved'],
+                ['🌳', 'Don\’t assume it\’s dead', 'A professional arborist can assess whether storm-damaged trees can be saved'],
                 ['🔍', 'Watch for storm chasers', 'After major storms, unlicensed crews flood DFW — always check license and insurance'],
               ].map(([icon, title, desc]) => (
                 <div key={title} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

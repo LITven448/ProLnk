@@ -23,7 +23,7 @@ export default function PartnerCharter500Guide() {
   const urgency = weeksLeft !== null
     ? weeksLeft <= 2 ? '🔴 Critical — likely closes within 2 weeks. Apply today.'
     : weeksLeft <= 5 ? '🟡 Elevated — roughly 5 weeks remaining at current pace.'
-    : '🟢 Some runway — but momentum is accelerating. Don't wait.'
+    : '🟢 Some runway — but momentum is accelerating. Don’t wait.'
     : null;
 
   return (

@@ -10,7 +10,7 @@ const improvements = [
   { rank: 7, name: 'Bathroom Remodel (Minor)', roi: 68, cost: '$8,000–$15,000', recovered: '$5,440–$10,200', why: 'Updated bathrooms are table stakes in DFW buyer expectations. Focus on fixtures, lighting, and tile — not moving plumbing. Keep it minor, ROI collapses on full gut jobs.' },
   { rank: 8, name: 'Deck Addition', roi: 65, cost: '$15,000–$28,000', recovered: '$9,750–$18,200', why: 'DFW outdoor living obsession is real. A well-designed deck extends living space and is heavily valued in spring/summer markets. Composite materials hold up better in DFW heat.' },
   { rank: 9, name: 'Window Replacement', roi: 62, cost: '$10,000–$18,000', recovered: '$6,200–$11,160', why: 'DFW energy bills are brutal with single-pane windows. Low-E double-pane windows cut cooling costs 15-25%, qualify for federal tax credits, and are required by savvy buyers.' },
-  { rank: 10, name: 'Foundation Drainage System', roi: 58, cost: '$2,000–$5,000', recovered: '$1,160–$2,900', why: 'Every DFW buyer\'s inspector checks drainage. Poor drainage causes foundation issues — the #1 DFW buyer walkaway. Fixing it proactively eliminates the biggest inspection red flag.' },
+  { rank: 10, name: 'Foundation Drainage System', roi: 58, cost: '$2,000–$5,000', recovered: '$1,160–$2,900', why: 'Every DFW buyer\’s inspector checks drainage. Poor drainage causes foundation issues — the #1 DFW buyer walkaway. Fixing it proactively eliminates the biggest inspection red flag.' },
 ];
 
 export default function DFWTop10Improvements() {

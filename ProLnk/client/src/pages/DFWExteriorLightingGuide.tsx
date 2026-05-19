@@ -7,7 +7,7 @@ type LightingPlan = { zone: string; fixture: string; type: string; note: string 
 
 const securityPlans: LightingPlan = [
   { zone: 'Entry / front door', fixture: 'Motion-activated floodlight (2,000+ lumens)', type: 'Wired preferred', note: 'DFW installers run conduit to existing porch outlet — $200–$400 labor' },
-  { zone: 'Driveway / garage', fixture: 'Dusk-to-dawn LED wall pack', type: 'Wired', note: 'Photocell sensor — no timer needed, auto-adjusts for DFW\'s long summer days' },
+  { zone: 'Driveway / garage', fixture: 'Dusk-to-dawn LED wall pack', type: 'Wired', note: 'Photocell sensor — no timer needed, auto-adjusts for DFW\’s long summer days' },
   { zone: 'Side gates / alleys', fixture: 'Motion floodlight on eave corner', type: 'Wired or solar (with 8hr+ backup)', note: 'DFW sun provides excellent solar charging 9 months/year — adequate for security fixtures' },
   { zone: 'Backyard perimeter', fixture: 'Low-voltage path lights + corner floods', type: 'Low-voltage transformer', note: 'Keep bollard lights low-profile — DFW lawn mowers will destroy taller fixtures at property edges' },
 ];

@@ -14,7 +14,7 @@ const mistakes = [
     icon: '💸',
     title: 'Replacing Before Diagnosing',
     cost: '$5,000–$8,000 wasted',
-    detail: 'Many DFW homeowners replace entire systems when a $150 part fix would have worked. A bad capacitor, contactor, or refrigerant charge looks like system failure but isn\'t.',
+    detail: 'Many DFW homeowners replace entire systems when a $150 part fix would have worked. A bad capacitor, contactor, or refrigerant charge looks like system failure but isn\’t.',
     fix: 'Always get a second opinion before replacing. A diagnostic from a ProLnk Charter Pro takes 30 minutes and costs $75–$150.',
   },
   {
@@ -22,7 +22,7 @@ const mistakes = [
     icon: '📐',
     title: 'Buying an Oversized System',
     cost: 'Humidity problems + early failure',
-    detail: 'Bigger is not better. An oversized system short-cycles — cools too fast, shuts off, never removes DFW\'s brutal humidity. You\'re left with a cold, clammy house and a system that fails in 8 years instead of 15.',
+    detail: 'Bigger is not better. An oversized system short-cycles — cools too fast, shuts off, never removes DFW\’s brutal humidity. You\’re left with a cold, clammy house and a system that fails in 8 years instead of 15.',
     fix: 'Require a Manual J load calculation before any installation quote. Any pro who skips it is guessing.',
   },
   {
@@ -30,7 +30,7 @@ const mistakes = [
     icon: '📄',
     title: 'Not Registering the Warranty',
     cost: 'Loses 5 years of coverage',
-    detail: 'Most HVAC manufacturers require registration within 60–90 days of installation for the full 10-year parts warranty. Without it, you get 5 years. That\'s thousands in unprotected exposure.',
+    detail: 'Most HVAC manufacturers require registration within 60–90 days of installation for the full 10-year parts warranty. Without it, you get 5 years. That\’s thousands in unprotected exposure.',
     fix: 'Register on the manufacturer website the same week as installation. Your installer should hand you the model and serial numbers.',
   },
   {
@@ -38,7 +38,7 @@ const mistakes = [
     icon: '🌬️',
     title: 'Ignoring the Filter for Months',
     cost: '15–25% efficiency loss',
-    detail: 'A clogged filter in a DFW summer forces your system to work 25% harder. That\'s higher electric bills, faster wear, and potential coil freeze-up. Most DFW homes need filter changes every 30–45 days in peak season.',
+    detail: 'A clogged filter in a DFW summer forces your system to work 25% harder. That\’s higher electric bills, faster wear, and potential coil freeze-up. Most DFW homes need filter changes every 30–45 days in peak season.',
     fix: 'Set a phone reminder for the 1st of every month. Keep a 3-pack under the HVAC closet. Takes 2 minutes.',
   },
 ];

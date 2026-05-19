@@ -5,7 +5,7 @@ const situations = [
     id: 'new_homeowner',
     label: '🏠 New DFW homeowner — just moved in',
     pages: [
-      { title: 'DFW HVAC System Age Tracker', path: '/dfw-hvac-system-age', why: 'Know your inherited system's true remaining life before committing to maintenance plans' },
+      { title: 'DFW HVAC System Age Tracker', path: '/dfw-hvac-system-age', why: 'Know your inherited system’s true remaining life before committing to maintenance plans' },
       { title: 'DFW Summer HVAC Check Guide', path: '/dfw-hvac-summer-check', why: '10 steps to verify your system before your first DFW summer' },
       { title: 'DFW HVAC Maintenance Cost Calculator', path: '/dfw-hvac-maintenance-cost', why: 'Budget accurately for what DFW HVAC ownership actually costs' },
     ],
@@ -14,7 +14,7 @@ const situations = [
     id: 'system_issues',
     label: '⚠️ My system seems to be struggling',
     pages: [
-      { title: 'DFW Heat Pump Performance Review', path: '/dfw-hvac-heat-pump-review', why: 'Assess whether your system's performance issues are serious or normal DFW wear' },
+      { title: 'DFW Heat Pump Performance Review', path: '/dfw-hvac-heat-pump-review', why: 'Assess whether your system’s performance issues are serious or normal DFW wear' },
       { title: 'DFW Summer HVAC Check Guide', path: '/dfw-hvac-summer-check', why: 'Walk through the 10-step diagnostic homeowners can do themselves' },
       { title: 'DFW HVAC System Age Tracker', path: '/dfw-hvac-system-age', why: 'Determine if repair or replacement makes more economic sense' },
     ],

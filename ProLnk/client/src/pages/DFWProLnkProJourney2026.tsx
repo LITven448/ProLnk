@@ -22,7 +22,7 @@ const stages = [
     label: '⭐ Month 1: First Review + Network',
     timeline: 'Day 25–35',
     income: 'Commissions + first network override',
-    detail: 'Your first homeowner review posts to your Vault-linked profile. You\'ve also referred your first pro — their $149/mo subscription earns you 12% recurring. Network income has begun.',
+    detail: 'Your first homeowner review posts to your Vault-linked profile. You\’ve also referred your first pro — their $149/mo subscription earns you 12% recurring. Network income has begun.',
     milestones: ['✅ First homeowner review logged', '✅ Profile star rating initiated', '✅ First network referral commission', '✅ Subscription override: $17.88/mo passive'],
   },
   {
@@ -30,7 +30,7 @@ const stages = [
     label: '📈 Year 1: Tier 2-3 + Growing Network',
     timeline: 'Month 12',
     income: '$3,000–$8,000/mo total',
-    detail: 'At 10-50 matches you\'ve hit Tier 2-3 commission rates. Your network has 5-15 pros you\'ve referred. Subscription overrides, job overrides, and origination rights all compound monthly.',
+    detail: 'At 10-50 matches you\’ve hit Tier 2-3 commission rates. Your network has 5-15 pros you\’ve referred. Subscription overrides, job overrides, and origination rights all compound monthly.',
     milestones: ['✅ Commission rate: 20–35%', '✅ 5–15 pros in your network', '✅ Passive income: $300–$900/mo', '✅ Origination rights: 8–20 DFW homes'],
   },
   {
@@ -38,7 +38,7 @@ const stages = [
     label: '💰 Year 3: Substantial Passive Income',
     timeline: 'Year 3',
     income: '$8,000–$22,000/mo total',
-    detail: 'Your network has grown 3 levels deep. Second-level pros are producing income you\'ve never had to service. Origination rights on 30-60 homes generate permanent recurring revenue independent of your own job volume.',
+    detail: 'Your network has grown 3 levels deep. Second-level pros are producing income you\’ve never had to service. Origination rights on 30-60 homes generate permanent recurring revenue independent of your own job volume.',
     milestones: ['✅ 3-level network: 20–80 pros', '✅ Passive override income: $1,500–$5,000/mo', '✅ Origination rights: 30–60 DFW homes', '✅ Total income exceeds W-2 replacement'],
   },
   {

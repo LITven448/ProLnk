@@ -5,7 +5,7 @@ const INFO_SECTIONS = [
   { id: 'protest', label: '⚖️ Property Tax Protest', content: 'DFW appraisal districts (DCAD, TCAD, Tarrant CAD) send notices in April. You have until May 15 — or 30 days after notice — to protest. Gather comparable sales data from Zillow/Redfin for homes sold within 1 mile in the last 6 months.' },
   { id: 'homeoffice', label: '🖥️ Home Office Deduction', content: 'Exclusively used space qualifies: divide office sq ft by total home sq ft. A 150 sq ft office in a 2,000 sq ft home = 7.5% deduction on mortgage interest, utilities, insurance, and repairs.' },
   { id: 'improvements', label: '🔨 Improvement Records', content: 'Track all capital improvements — they increase your cost basis and reduce taxable gain when you sell. Keep receipts for roofs, HVAC systems, additions, kitchen remodels, and landscaping projects over $500.' },
-  { id: 'credits', label: '✅ 25C Energy Credits', content: 'Federal 25C credit: 30% of cost for qualifying heat pumps, insulation, and ENERGY STAR windows (up to $3,200/year). DFW\'s hot summers make heat pump upgrades especially valuable for both comfort and tax savings.' },
+  { id: 'credits', label: '✅ 25C Energy Credits', content: 'Federal 25C credit: 30% of cost for qualifying heat pumps, insulation, and ENERGY STAR windows (up to $3,200/year). DFW\’s hot summers make heat pump upgrades especially valuable for both comfort and tax savings.' },
 ];
 
 type Situation = 'protest' | 'homeoffice' | 'sold' | 'improvements' | '';

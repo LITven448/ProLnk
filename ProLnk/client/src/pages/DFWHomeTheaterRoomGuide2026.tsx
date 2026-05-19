@@ -7,7 +7,7 @@ export default function DFWHomeTheaterRoomGuide2026() {
 
   const designs: Record<string, Record<string, string>> = {
     small: {
-      low: '📺 Small Room Budget Build (,500-3,500): 75" 4K QLED TV (Samsung QN75Q80C, ,200) — DFW rooms under 16ft don\'t benefit from projectors. Denon AVR-X1800H 7.2 receiver () + Klipsch Reference Theater Pack 5.0 () + single 10" subwoofer. Acoustic treatment: 2 corner bass traps ( each) + 4 first-reflection foam panels ( each). Dedicated 20A circuit for receiver is a must in DFW older homes.',
+      low: '📺 Small Room Budget Build (,500-3,500): 75" 4K QLED TV (Samsung QN75Q80C, ,200) — DFW rooms under 16ft don\’t benefit from projectors. Denon AVR-X1800H 7.2 receiver () + Klipsch Reference Theater Pack 5.0 () + single 10" subwoofer. Acoustic treatment: 2 corner bass traps ( each) + 4 first-reflection foam panels ( each). Dedicated 20A circuit for receiver is a must in DFW older homes.',
       mid: '⭐ Small Room Mid-Range (,000-8,000): 85" Sony Bravia XR A95L OLED (,800) + Marantz Cinema 60 receiver (,100) + Monitor Audio Bronze 500 7.1 system (,200). 2" Rockwool acoustic panels at first reflection points. Add DFW electrician for dedicated 20A circuit + HDMI 2.1 conduit run. Result: reference-grade audio in compact DFW media room.',
       high: '🏆 Small Room Premium (,000-15,000): Epson LS11000 4K laser projector (,500) on 120" ALR screen. Even in DFW bright rooms, Ambient Light Rejecting screen handles afternoon sun through plantation shutters. Anthem MRX 1140 (,800) + Paradigm Founder Series 7.1 (,200). GIK Acoustics full room treatment package (). Lutron Caseta scene control.',
     },

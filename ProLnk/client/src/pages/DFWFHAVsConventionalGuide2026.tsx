@@ -63,7 +63,7 @@ export default function DFWFHAVsConventionalGuide2026() {
           </div>
           <div style={{ color: '#94A3B8', marginTop: 8, fontSize: 14 }}>
             {recommendation === 'CONVENTIONAL' ? 'Your credit + down payment qualify for better conventional terms. PMI drops off at 80% LTV.'
-              : recommendation === 'FHA' ? 'FHA\'s lower credit threshold and flexible underwriting makes this the smart choice.'
+              : recommendation === 'FHA' ? 'FHA\’s lower credit threshold and flexible underwriting makes this the smart choice.'
               : 'Run both scenarios with a DFW lender — the rate difference could go either way.'}
           </div>
         </div>

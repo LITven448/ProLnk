@@ -23,7 +23,7 @@ const REQUIREMENTS = [
   'Depth markers and "No Diving" signage required where depth < 5ft',
   'Life ring or reaching pole must be poolside and visible',
   'Self-closing/latching gate to pool area required in Texas',
-  'Notify your homeowner\'s insurer before first booking',
+  'Notify your homeowner\’s insurer before first booking',
 ];
 
 const TAX_NOTES = [

@@ -15,7 +15,7 @@ const wdoVsGeneral = [
 const redFlags = [
   'Mud tubes in crawl space, garage, or behind drywall — active subterranean termite travel highways',
   '"No access" notations for areas like attic or crawl space — insist on access or ask why',
-  'Prior treatment disclosure without evidence of repair — prior activity doesn\'t mean past activity',
+  'Prior treatment disclosure without evidence of repair — prior activity doesn\’t mean past activity',
   'Inspector refuses to go into attic, crawl, or under deck — those are primary inspection areas',
   'Report that says "no evidence" without noting areas that were inaccessible — incomplete inspection',
 ];

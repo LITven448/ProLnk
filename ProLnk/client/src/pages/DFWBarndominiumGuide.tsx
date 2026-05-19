@@ -50,7 +50,7 @@ export default function DFWBarndominiumGuide() {
           {[
             { icon: '🏗️', title: 'Steel Shell First', desc: 'Erect the metal building, then finish interior to any spec. Faster and cheaper than framing.' },
             { icon: '💰', title: '$95–$185/sq ft', desc: 'All-in construction cost. Land, well, and septic add $30–60K.' },
-            { icon: '🏦', title: 'Financing Challenge', desc: 'Most big banks won\'t lend. Ag lenders and community banks specialize in barndo loans.' },
+            { icon: '🏦', title: 'Financing Challenge', desc: 'Most big banks won\’t lend. Ag lenders and community banks specialize in barndo loans.' },
             { icon: '☀️', title: 'Insulation Critical', desc: 'DFW summers destroy uninsulated metal. Spray foam closed-cell is the only viable option.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>

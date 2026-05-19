@@ -11,7 +11,7 @@ const BRANDS = [
 ];
 
 const MODEL_AGE: Record<string, string> = {
-  '0-5': '✅ Full warranty likely active — register if you haven\'t. Keep maintenance logs.',
+  '0-5': '✅ Full warranty likely active — register if you haven\’t. Keep maintenance logs.',
   '6-10': '🟡 Warranty active but verify registration. Schedule annual tune-up now.',
   '11-15': '🟠 Warranty expired on most parts. Budget for repair vs. replace analysis.',
   '16+': '🔴 Beyond typical lifespan. Replacement planning recommended.',

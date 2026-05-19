@@ -10,7 +10,7 @@ const materials = [
     replacements: 3,
     maintenance50: 4500,
     insuranceSavings: 0,
-    note: 'Cheapest upfront, most expensive over 50 years. Fails more frequently in DFW hail events. Most insurers won\'t add discounts.',
+    note: 'Cheapest upfront, most expensive over 50 years. Fails more frequently in DFW hail events. Most insurers won\’t add discounts.',
   },
   {
     id: 'architectural',

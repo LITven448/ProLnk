@@ -32,7 +32,7 @@ const GUIDE: Record<string, { title: string; sections: { heading: string; points
     title: '10+ Year System Replacement Plan',
     sections: [
       { heading: '⏳ DFW Lifespan Reality', points: ['DFW units last 13–16 yrs (vs 18–22 in northern states)', '10 yrs in DFW = ~27,000 hours of runtime', 'Efficiency drops 2–5% annually after year 10', 'R-22 refrigerant systems cannot be recharged (illegal)'] },
-      { heading: '📐 Right Sizing for DFW', points: ['Don\'t replace with same size if home has changed', 'Manual J calculation required for accurate sizing', 'Bigger is NOT better — oversized = humidity problems', 'SEER2 rating: 15+ recommended for DFW energy costs'] },
+      { heading: '📐 Right Sizing for DFW', points: ['Don\’t replace with same size if home has changed', 'Manual J calculation required for accurate sizing', 'Bigger is NOT better — oversized = humidity problems', 'SEER2 rating: 15+ recommended for DFW energy costs'] },
       { heading: '🛒 Buying Tips', points: ['Get 3 bids — DFW prices vary $3,000–$6,000 for same unit', 'Compare: equipment brand, SEER2, warranty, labor warranty', 'Ask about Oncor rebates ($150–$500 for high-efficiency)', 'Install in fall or spring — not peak summer (lower prices, faster scheduling)'] },
     ],
     action: 'Get 3 bids for a new system now — before it fails in a 105°F DFW heat wave.',
@@ -50,7 +50,7 @@ const GUIDE: Record<string, { title: string; sections: { heading: string; points
     title: 'DFW Summer Heat Season Prep',
     sections: [
       { heading: '📅 Before April', points: ['Schedule spring tune-up (refrigerant check, coil cleaning)', 'Install or replace programmable thermostat', 'Clean condenser coils and clear debris 2 ft around unit', 'Inspect ductwork for disconnects or leaks in attic'] },
-      { heading: '🌡️ Peak Heat (June–August)', points: ['Replace filter every 4 weeks (not 90 days — DFW heat)', 'System running 24/7 at 105°F is normal — not a malfunction', 'If home can\'t reach set temp: raise thermostat 2°F to prevent shutdown', 'Ice on coils = restricted airflow or low refrigerant — call tech'] },
+      { heading: '🌡️ Peak Heat (June–August)', points: ['Replace filter every 4 weeks (not 90 days — DFW heat)', 'System running 24/7 at 105°F is normal — not a malfunction', 'If home can\’t reach set temp: raise thermostat 2°F to prevent shutdown', 'Ice on coils = restricted airflow or low refrigerant — call tech'] },
       { heading: '⚡ Demand Management', points: ['Pre-cool to 70°F by 2pm before peak rates (3–7pm Oncor)', 'Use TXU/Oncor free night plans to pre-cool after 9pm', 'Close blinds on south and west windows by 10am', 'Avoid heat-generating appliances 2–7pm (oven, dryer)'] },
     ],
     action: 'Book your spring tune-up in March — slots fill up by April in DFW.',

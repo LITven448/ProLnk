@@ -10,7 +10,7 @@ const LOCATIONS = [
 ];
 
 const CAULK_TYPES = {
-  bathtub: { type: '100% Silicone', brand: 'GE Supreme or DAP 3.0', reason: 'DFW humidity and constant water contact — silicone won\'t shrink or mold' },
+  bathtub: { type: '100% Silicone', brand: 'GE Supreme or DAP 3.0', reason: 'DFW humidity and constant water contact — silicone won\’t shrink or mold' },
   windows: { type: 'Paintable Latex Acrylic', brand: 'DAP Alex Plus', reason: 'Needs to flex with DFW temp swings; must be paintable for trim match' },
   doors: { type: 'Paintable Latex Acrylic', brand: 'DAP Alex Flex', reason: 'DFW heat warps door frames — flexible formula handles movement' },
   baseboards: { type: 'Paintable Latex Acrylic', brand: 'DAP Alex Plus', reason: 'Paintable, sandable, easy cleanup — floors move with DFW humidity' },

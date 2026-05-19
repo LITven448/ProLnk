@@ -32,7 +32,7 @@ const checklists: Record<SystemType, Record<Timing, { task: string; why: string;
     ],
     'winter': [
       { task: 'Know your emergency shutoff locations', why: 'If a pipe bursts, you need to shut off water and HVAC fast.', priority: 'critical' },
-      { task: 'Keep thermostat at 68°F+ during freeze events', why: 'DFW homes are not insulated for sustained sub-freezing — don\'t let it drop.', priority: 'critical' },
+      { task: 'Keep thermostat at 68°F+ during freeze events', why: 'DFW homes are not insulated for sustained sub-freezing — don\’t let it drop.', priority: 'critical' },
       { task: 'Open cabinet doors under sinks during freeze', why: 'Interior plumbing in DFW homes runs near exterior walls.', priority: 'important' },
     ],
   },
@@ -64,7 +64,7 @@ const checklists: Record<SystemType, Record<Timing, { task: string; why: string;
     ],
     'winter': [
       { task: 'Monitor which mode is active during cold snaps', why: 'Gas backup should engage automatically below balance point. Verify during first hard freeze.', priority: 'important' },
-      { task: 'Keep gas supply valve open to furnace', why: 'Some homeowners close gas seasonally — verify it\'s open before cold weather.', priority: 'critical' },
+      { task: 'Keep gas supply valve open to furnace', why: 'Some homeowners close gas seasonally — verify it\’s open before cold weather.', priority: 'critical' },
     ],
   },
 };

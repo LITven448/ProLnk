@@ -4,7 +4,7 @@ export default function DFWRoofingNewsBriefing2026() {
   const [situation, setSituation] = useState('');
 
   const stories = [
-    { emoji: '⛈️', title: 'April 2026 Hail Season Was Active — Check Your Roof Now', body: 'Multiple severe hail events hit north and east DFW in April 2026. Hailstones up to 2.5" were reported in Plano, Garland, and Rowlett. If you haven\'t inspected your roof since April, now is the time.', tag: 'hail' },
+    { emoji: '⛈️', title: 'April 2026 Hail Season Was Active — Check Your Roof Now', body: 'Multiple severe hail events hit north and east DFW in April 2026. Hailstones up to 2.5" were reported in Plano, Garland, and Rowlett. If you haven\’t inspected your roof since April, now is the time.', tag: 'hail' },
     { emoji: '🏷️', title: 'Class 4 Insurance Discounts Now 25–30% with Most DFW Carriers', body: 'Impact-resistant Class 4 roofing now qualifies for 25–30% premium discounts with most major Texas carriers — up from 20% in 2024. Upgrading at next replacement pays back within 4–6 years for most DFW homeowners.', tag: 'insurance' },
     { emoji: '🚨', title: 'Storm Chaser Activity High Post-April Storms', body: 'Out-of-state contractors flooded DFW after April storms. Watch for door-knockers asking for insurance assignment of benefits. Always verify license and local references before signing anything.', tag: 'safety' },
     { emoji: '📋', title: 'Supplement Claims Taking Longer with Major Carriers', body: 'State Farm and Allstate DFW adjusters are backed up 4–6 weeks post-storm. A licensed public adjuster or roofing contractor experienced with supplements can significantly speed the process.', tag: 'insurance' },

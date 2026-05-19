@@ -18,7 +18,7 @@ const labs = [
 const useCases = [
   { id: 'garden', label: '🥕 Vegetable Garden' },
   { id: 'lawn', label: '🌿 Lawn / Grass' },
-  { id: 'play', label: '🧒 Children\'s Play Area' },
+  { id: 'play', label: '🧒 Children\’s Play Area' },
   { id: 'landscape', label: '🌳 Trees & Landscape' },
   { id: 'foundation', label: '🏠 Foundation Concern' },
 ];
@@ -34,7 +34,7 @@ export default function DFWSoilTestingGuide() {
 
   const getRecommendation = () => {
     const recs: string[] = [];
-    if (intendedUse.includes('play')) recs.push('🔴 URGENT: Heavy metals panel required for children\'s play areas. Lead, arsenic, cadmium testing mandatory.');
+    if (intendedUse.includes('play')) recs.push('🔴 URGENT: Heavy metals panel required for children\’s play areas. Lead, arsenic, cadmium testing mandatory.');
     if (intendedUse.includes('garden')) recs.push('🟡 Full nutrient panel + pH. Texas A&M AgriLife lab is the most cost-effective option at $12–$25.');
     if (intendedUse.includes('foundation')) recs.push('🟡 Expansive clay index test helps predict foundation movement risk. Consider geotechnical engineer.');
     if (lotHistory === 'industrial') recs.push('🔴 Certified heavy metals panel required. Prior industrial use is a significant contamination risk.');

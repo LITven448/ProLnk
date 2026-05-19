@@ -74,7 +74,7 @@ export default function DFWRentVsBuyGuide2026() {
 
         <div style={{ background: '#1E293B', borderRadius: 12, padding: 24 }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>💡 DFW Buying Advantages</h2>
-          {['No state income tax in Texas — your housing dollar goes further', 'DFW population growth driving consistent 5%+ annual appreciation', 'Strong rental market means buying now = future passive income', 'Building equity beats paying landlord\'s mortgage long-term'].map(tip => (
+          {['No state income tax in Texas — your housing dollar goes further', 'DFW population growth driving consistent 5%+ annual appreciation', 'Strong rental market means buying now = future passive income', 'Building equity beats paying landlord\’s mortgage long-term'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#CBD5E1', fontSize: 14 }}>
               <span style={{ color: '#F5E642' }}>→</span> {tip}
             </div>

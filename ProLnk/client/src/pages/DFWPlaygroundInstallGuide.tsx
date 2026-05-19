@@ -7,7 +7,7 @@ const EQUIPMENT_TYPES = [
 ];
 
 const GROUND_COVERS = [
-  { id: 'rubber', label: '🔴 Rubber Mulch', costPer100sqft: 220, note: 'Best for DFW — doesn\'t decompose in heat, won\'t wash in flash floods, ASTM F1292 impact rated' },
+  { id: 'rubber', label: '🔴 Rubber Mulch', costPer100sqft: 220, note: 'Best for DFW — doesn\’t decompose in heat, won\’t wash in flash floods, ASTM F1292 impact rated' },
   { id: 'peagravel', label: '🪨 Pea Gravel', costPer100sqft: 80, note: 'Affordable but migrates in rain, can be a tripping hazard, requires edging containment' },
   { id: 'woodmulch', label: '🟫 Wood Mulch', costPer100sqft: 60, note: 'Cheapest option — decomposes faster in DFW heat, harbors insects, requires annual top-up' },
   { id: 'turf', label: '🟩 Artificial Turf', costPer100sqft: 380, note: 'Premium look, stays in place, but surface temps reach 150°F+ — shade is non-negotiable with turf' },

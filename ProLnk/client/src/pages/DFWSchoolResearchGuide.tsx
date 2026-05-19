@@ -14,7 +14,7 @@ const ratingPlatforms = [
     emoji: '🏛️',
     what: 'Official state accountability ratings (A–F). Based on student achievement, growth, and closing gaps.',
     strengths: 'Most objective — tied to actual test scores and graduation rates.',
-    limits: 'Lags 1–2 years. Doesn\'t capture culture, safety, or teacher quality.',
+    limits: 'Lags 1–2 years. Doesn\’t capture culture, safety, or teacher quality.',
     url: 'tea.texas.gov',
   },
   {
@@ -38,8 +38,8 @@ const ratingPlatforms = [
 const beyondRatings = [
   { emoji: '🚶', tip: 'Visit in person during school hours — watch how teachers interact with students in hallways.' },
   { emoji: '💬', tip: 'Find local Facebook parent groups (search "[City] Moms" or "[ISD] Parents") — raw, unfiltered opinions.' },
-  { emoji: '📋', tip: 'Ask: What AP/IB courses are offered? What\'s the participation rate? What\'s the passing rate?' },
-  { emoji: '🎨', tip: 'Look up the school\'s UIL participation — competitive arts, academics, and athletics all appear here.' },
+  { emoji: '📋', tip: 'Ask: What AP/IB courses are offered? What\’s the participation rate? What\’s the passing rate?' },
+  { emoji: '🎨', tip: 'Look up the school\’s UIL participation — competitive arts, academics, and athletics all appear here.' },
   { emoji: '👩‍🏫', tip: 'Check teacher tenure data. High turnover often signals administrative or culture problems.' },
   { emoji: '🏫', tip: 'Drive the actual bus route or carpool path — pickup time and logistics matter daily.' },
 ];

@@ -40,8 +40,8 @@ const guides: Record<string, { title: string; steps: string[]; callProLnk: strin
     steps: [
       '🏷️ Get a written condition report from a Charter-certified HVAC pro',
       '💰 Compare repair cost vs. replacement — use the 50% rule as a guide',
-      '⚡ Audit your system\'s SEER rating — new 2026 units are 20–22 SEER',
-      '🌡️ Note any rooms that don\'t cool/heat evenly — sign of declining capacity',
+      '⚡ Audit your system\’s SEER rating — new 2026 units are 20–22 SEER',
+      '🌡️ Note any rooms that don\’t cool/heat evenly — sign of declining capacity',
       '📋 Document all repairs made — this affects your Home Health Vault score',
       '🔮 Start budgeting for replacement: DFW installs avg $8,000–$14,000 in 2026',
     ],

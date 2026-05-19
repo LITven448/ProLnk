@@ -63,7 +63,7 @@ const EDGE_PLANS: Record<string, Record<string, EdgePlan>> = {
       tips: [
         'Concrete edges do NOT stop Bermuda — it grows right over them',
         'Weekly stick edging during summer is necessary for clean appearance',
-        'Bermuda overgrowing driveway cracks is a DFW-specific problem — don\'t let it get ahead',
+        'Bermuda overgrowing driveway cracks is a DFW-specific problem — don\’t let it get ahead',
         'Blade edging creates a 1/4" gap that slows regrowth vs trimmer against concrete',
       ],
     },
@@ -78,7 +78,7 @@ const EDGE_PLANS: Record<string, Record<string, EdgePlan>> = {
       ],
     },
     Zoysia: { frequency: 'Every 4 weeks', method: 'Stick edger', cost: '$20–$35', tips: ['Zoysia grows slower — 4-week cycle is usually sufficient for concrete edges', 'Creates a beautiful clean edge once maintained consistently'] },
-    'Tall Fescue': { frequency: 'Every 3–4 weeks in growing season', method: 'Stick edger', cost: '$20–$35', tips: ['Fescue against concrete is straightforward — bunch grass doesn\'t creep as aggressively', 'Fall and spring are primary maintenance windows'] },
+    'Tall Fescue': { frequency: 'Every 3–4 weeks in growing season', method: 'Stick edger', cost: '$20–$35', tips: ['Fescue against concrete is straightforward — bunch grass doesn\’t creep as aggressively', 'Fall and spring are primary maintenance windows'] },
   },
 };
 

@@ -40,8 +40,8 @@ export default function DFWGardenIrrigationRepairGuide() {
         <div style={{ display: 'grid', gap: '1.5rem', marginBottom: '2rem' }}>
           {[
             { icon: '🔩', title: 'Broken Heads', desc: 'Clay soil movement shifts head alignment. Look for wet spots, tilted heads, or arcs that miss their target zone.' },
-            { icon: '🔧', title: 'Valve Failure', desc: 'A stuck-open valve floods one zone; stuck-closed starves it. Listen for chattering solenoids or zones that won\'t shut off.' },
-            { icon: '🖥️', title: 'Controller Issues', desc: 'Lightning surges are common in DFW. A dead zone that won\'t respond often traces back to a burned controller board or wiring fault.' },
+            { icon: '🔧', title: 'Valve Failure', desc: 'A stuck-open valve floods one zone; stuck-closed starves it. Listen for chattering solenoids or zones that won\’t shut off.' },
+            { icon: '🖥️', title: 'Controller Issues', desc: 'Lightning surges are common in DFW. A dead zone that won\’t respond often traces back to a burned controller board or wiring fault.' },
             { icon: '📊', title: 'Zone Pressure Problems', desc: 'Low pressure causes poor coverage; high pressure causes misting and drift. DFW municipal pressure can spike — add a pressure regulator.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#111e35', borderRadius: 12, padding: '1.25rem', display: 'flex', gap: '1rem' }}>

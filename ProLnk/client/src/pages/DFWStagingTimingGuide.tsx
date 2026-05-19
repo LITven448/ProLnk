@@ -31,7 +31,7 @@ const timingPlans: Record<TimelineKey, Record<MarketKey, TimingPlan>> = {
       seasonalNote: 'Hot DFW markets (Feb–May, Sept–Oct): Days on market average 8–14. Speed to market is the most important factor.',
     },
     balanced: {
-      stagingStart: 'Today — you have time but shouldn\'t wait',
+      stagingStart: 'Today — you have time but shouldn\’t wait',
       photographyDate: '7–10 days out',
       listingDate: '10–14 days out',
       dfwMarketNote: 'Balanced DFW market means buyers have options — staging quality matters more than speed.',
@@ -68,7 +68,7 @@ const timingPlans: Record<TimelineKey, Record<MarketKey, TimingPlan>> = {
       stagingStart: 'Week 1 — you have ideal runway in a hot market',
       photographyDate: 'Day 24–26',
       listingDate: 'Day 26–28',
-      dfwMarketNote: '4 weeks is ideal preparation time for a DFW hot market. Use every day — don\'t let the timeline slip.',
+      dfwMarketNote: '4 weeks is ideal preparation time for a DFW hot market. Use every day — don\’t let the timeline slip.',
       schedule: [
         { week: 'Week 1', action: 'Declutter entire home, rent storage unit, first deep clean', priority: '🔴 Critical' },
         { week: 'Week 2', action: 'Repairs, touch-up paint, deep clean kitchen and bathrooms', priority: '🔴 Critical' },
@@ -84,7 +84,7 @@ const timingPlans: Record<TimelineKey, Record<MarketKey, TimingPlan>> = {
       stagingStart: 'Week 1 — ideal timeline for balanced market',
       photographyDate: 'Day 22–24',
       listingDate: 'Day 25–28',
-      dfwMarketNote: '4 weeks gives you time to do this right in a balanced DFW market. Don\'t compress the schedule.',
+      dfwMarketNote: '4 weeks gives you time to do this right in a balanced DFW market. Don\’t compress the schedule.',
       schedule: [
         { week: 'Week 1', action: 'Declutter, storage, pre-inspection if budget allows', priority: '🔴 Critical' },
         { week: 'Week 2', action: 'Repairs from inspection, paint, replace dated hardware', priority: '🔴 Critical' },

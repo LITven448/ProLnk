@@ -16,10 +16,10 @@ export default function DFWHomeServiceMarketGuide2026() {
   ];
 
   const opportunityMap: Record<string, string> = {
-    hvac: 'HVAC is ProLnk's #1 category. DFW has 2.8M homes — at 1 tune-up/year, that is a $11.8B addressable market. ProLnk targets 0.5% = $59M/year opportunity.',
+    hvac: 'HVAC is ProLnk’s #1 category. DFW has 2.8M homes — at 1 tune-up/year, that is a $11.8B addressable market. ProLnk targets 0.5% = $59M/year opportunity.',
     plumbing: 'Plumbing is volume-driven. High frequency, lower ticket but consistent demand. ProLnk captures recurring homeowner relationships across freeze events and remodels.',
-    foundation: 'Foundation has the highest average ticket in DFW at $8,500. Clay soil issues affect 40% of DFW homes. ProLnk's match algorithm prioritizes high-value structural leads.',
-    roofing: 'Roofing spikes after every hail event — DFW averages 4 hail events/year. ProLnk's verified-only roster eliminates storm chasers and captures homeowner trust.',
+    foundation: 'Foundation has the highest average ticket in DFW at $8,500. Clay soil issues affect 40% of DFW homes. ProLnk’s match algorithm prioritizes high-value structural leads.',
+    roofing: 'Roofing spikes after every hail event — DFW averages 4 hail events/year. ProLnk’s verified-only roster eliminates storm chasers and captures homeowner trust.',
     electrical: 'Electrical demand is steady year-round. EV charger installs are driving a new growth wave. ProLnk connects licensed master electricians to this emerging demand.',
     windows: 'Windows and doors trend with home improvement cycles. ProLnk targets renovation-stage homeowners via Home Health Vault data signals.',
     landscaping: 'Landscaping is the most competitive category. ProLnk differentiates by requiring insurance and licensing — filtering out the low-quality providers.',

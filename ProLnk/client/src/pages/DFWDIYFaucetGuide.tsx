@@ -22,7 +22,7 @@ function getRecommendation(faucetType: string, hardness: string, experience: str
   const isCompression = faucetType.startsWith('Compression');
 
   const action = isFirst && isBall ? 'replace' : isCompression && isHigh ? 'repair' : 'repair';
-  const parts = isBall ? ['Ball faucet rebuild kit (Delta/Moen brand specific)', 'Adjustable pliers', 'Hex key set', 'Plumber\'s grease', 'Bucket'] : ['Replacement cartridge (brand + model specific)', 'Cartridge puller tool', 'Needle-nose pliers', 'Teflon tape', 'Bucket'];
+  const parts = isBall ? ['Ball faucet rebuild kit (Delta/Moen brand specific)', 'Adjustable pliers', 'Hex key set', 'Plumber\’s grease', 'Bucket'] : ['Replacement cartridge (brand + model specific)', 'Cartridge puller tool', 'Needle-nose pliers', 'Teflon tape', 'Bucket'];
   const hours = isFirst ? 2.5 : 1.5;
   const cost = action === 'replace' ? 120 : isHigh ? 45 : 30;
   const callPro = isFirst && isHigh;

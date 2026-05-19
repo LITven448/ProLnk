@@ -9,7 +9,7 @@ const symptoms = [
     solutions: [
       { name: 'Zoning Dampers', effectiveness: 92, cost: '$2,200–3,800', description: 'Electronic dampers redirect airflow based on zone demand. Most effective single fix for existing systems.' },
       { name: 'Dedicated Upstairs System', effectiveness: 97, cost: '$6,500–9,500', description: 'Separate system for upstairs. Gold standard — each zone sized independently for its actual load.' },
-      { name: 'Variable-Speed Upgrade', effectiveness: 75, cost: '$3,500–5,500', description: 'Allows system to run longer at lower capacity, improving distribution. Helps but doesn't solve zone separation.' },
+      { name: 'Variable-Speed Upgrade', effectiveness: 75, cost: '$3,500–5,500', description: 'Allows system to run longer at lower capacity, improving distribution. Helps but doesn’t solve zone separation.' },
       { name: 'Damper Manual Adjustment', effectiveness: 40, cost: '$0–200', description: 'Close some downstairs registers. Temporary relief only — causes high static pressure and efficiency loss.' },
     ],
     accent: '#ef4444',
@@ -18,7 +18,7 @@ const symptoms = [
     symptom: 'Upstairs OK, downstairs cold',
     icon: '❄️',
     cause: 'Over-cooling downstairs due to single thermostat placement',
-    detail: 'Thermostat placed downstairs runs system until downstairs reaches setpoint. Upstairs then gets over-cooled or refrigerant isn't reaching full coil. Common in open floor plan two-stories.',
+    detail: 'Thermostat placed downstairs runs system until downstairs reaches setpoint. Upstairs then gets over-cooled or refrigerant isn’t reaching full coil. Common in open floor plan two-stories.',
     solutions: [
       { name: 'Relocate Thermostat', effectiveness: 60, cost: '$150–400', description: 'Move thermostat to average-temperature location, often a hallway. Quick fix with moderate results.' },
       { name: 'Zoning with Dual Thermostats', effectiveness: 88, cost: '$2,000–3,200', description: 'Independent thermostats for each floor with motorized dampers. Eliminates the core problem.' },
@@ -44,7 +44,7 @@ const symptoms = [
     symptom: 'Master bedroom too warm at night',
     icon: '🛏️',
     cause: 'Bedroom wing loses heat to attic after system cycles off evening cooling',
-    detail: 'DFW attics reach 140–160°F in summer. Even well-insulated ceilings allow heat transfer at night when the system isn't running continuously. Master bedrooms farthest from supply trunk get lowest airflow.',
+    detail: 'DFW attics reach 140–160°F in summer. Even well-insulated ceilings allow heat transfer at night when the system isn’t running continuously. Master bedrooms farthest from supply trunk get lowest airflow.',
     solutions: [
       { name: 'Attic Insulation to R-49+', effectiveness: 70, cost: '$2,500–4,500', description: 'Reduces radiant heat gain through ceiling. Most cost-effective long-term investment for DFW homes.' },
       { name: 'Mini-Split for Master Suite', effectiveness: 94, cost: '$2,800–4,500', description: 'Independent ductless system for master only. Allows personalized temperature 24/7 without affecting main system.' },

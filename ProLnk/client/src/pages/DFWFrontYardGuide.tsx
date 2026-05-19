@@ -25,7 +25,7 @@ function getPlan(hoaStatus: string, budget: string): ImprovementPlan {
 
 const dfwSeasonalNotes = [
   { season: '🌱 Spring (Mar–May)', note: 'Best time to plant annuals and refresh beds. St. Augustine and Bermuda lawns green up — fertilize in late March.' },
-  { season: '☀️ Summer (Jun–Aug)', note: 'Lawn stress is real at 105°F. Don\'t overseed in summer. Focus on irrigation, mulching beds to retain moisture.' },
+  { season: '☀️ Summer (Jun–Aug)', note: 'Lawn stress is real at 105°F. Don\’t overseed in summer. Focus on irrigation, mulching beds to retain moisture.' },
   { season: '🍂 Fall (Sep–Nov)', note: 'Prime planting season for trees and shrubs. Overseed with ryegrass for winter color if HOA permits.' },
   { season: '❄️ Winter (Dec–Feb)', note: 'Bermuda and St. Augustine go dormant and turn brown. This is normal — plan for it visually with evergreen shrubs and hardscape.' },
 ];
@@ -62,7 +62,7 @@ export default function DFWFrontYardGuide() {
             {[
               { rank: '1', item: 'Lawn condition', note: 'Dead patches or overgrowth signals deferred maintenance — buyers discount accordingly' },
               { rank: '2', item: 'Front door', note: 'Color, condition, and hardware are the focal point of every listing photo' },
-              { rank: '3', item: 'Driveway condition', note: 'Cracks and stains read as age — a clean or fresh driveway reads as \'well-maintained\'' },
+              { rank: '3', item: 'Driveway condition', note: 'Cracks and stains read as age — a clean or fresh driveway reads as \’well-maintained\’' },
               { rank: '4', item: 'Exterior paint / color', note: 'Faded or chipped paint is the #1 objection in DFW buyer feedback on listing tours' },
               { rank: '5', item: 'Landscaping / beds', note: 'Mulched, defined beds signal pride of ownership even with minimal plants' },
             ].map(item => (

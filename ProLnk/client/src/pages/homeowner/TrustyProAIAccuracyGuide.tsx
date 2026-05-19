@@ -15,7 +15,7 @@ const accuracyData = [
 const interpretations: Record<FindingType extends '' ? never : FindingType, Record<ConfidenceLevel extends '' ? never : ConfidenceLevel, { label: string; action: string; detail: string }>> = {
   hvac: {
     high: { label: 'High confidence — HVAC age finding', action: 'Plan for replacement within the AI-estimated timeline.', detail: 'At 94% accuracy for HVAC age, a high-confidence finding is very reliable. If the AI says your unit is 14 years old, budget for replacement within 1–3 years.' },
-    medium: { label: 'Medium confidence — HVAC age finding', action: 'Get a licensed HVAC tech to confirm the unit's manufacture date.', detail: 'The manufacture date is printed on the nameplate inside the unit. Confirmation takes 5 minutes and costs nothing if done during a tune-up.' },
+    medium: { label: 'Medium confidence — HVAC age finding', action: 'Get a licensed HVAC tech to confirm the unit’s manufacture date.', detail: 'The manufacture date is printed on the nameplate inside the unit. Confirmation takes 5 minutes and costs nothing if done during a tune-up.' },
     low: { label: 'Low confidence — HVAC age finding', action: 'Do not act on this finding without professional confirmation.', detail: 'Low confidence usually means the photo was taken at an angle, in poor light, or the nameplate was partially obscured. Retake the photo or have a tech confirm.' },
   },
   roof: {
@@ -24,7 +24,7 @@ const interpretations: Record<FindingType extends '' ? never : FindingType, Reco
     low: { label: 'Low confidence — roof condition finding', action: 'Retake photos from different angles or hire a roofer to inspect.', detail: 'Roof photos taken from ground level at steep angles produce lower confidence scores. Drone photos or close-up shots of shingle condition improve accuracy significantly.' },
   },
   electrical: {
-    high: { label: 'High confidence — electrical panel finding', action: 'Take this seriously. At 97% accuracy, this is highly reliable.', detail: 'Panel identification is the AI's strongest capability. If flagged, verify the panel brand (Federal Pacific and Zinsco panels have known safety concerns) and consult an electrician.' },
+    high: { label: 'High confidence — electrical panel finding', action: 'Take this seriously. At 97% accuracy, this is highly reliable.', detail: 'Panel identification is the AI’s strongest capability. If flagged, verify the panel brand (Federal Pacific and Zinsco panels have known safety concerns) and consult an electrician.' },
     medium: { label: 'Medium confidence — electrical panel finding', action: 'Have a licensed electrician inspect the panel label directly.', detail: 'The electrician can read the panel label, check breaker condition, and verify the amperage capacity — all things the AI cannot assess through photos.' },
     low: { label: 'Low confidence — electrical panel finding', action: 'Retake the photo with the panel door fully open, lights on, direct angle.', detail: 'Good electrical panel photos require the door open, direct head-on angle, and adequate lighting. Shadows over the label significantly reduce confidence.' },
   },
@@ -39,9 +39,9 @@ const interpretations: Record<FindingType extends '' ? never : FindingType, Reco
     low: { label: 'Low confidence — water damage indicator', action: 'Retake photos and check the area during or after rain.', detail: 'Low confidence on water damage often means the discoloration pattern was ambiguous. Photographing the area during active rain events can confirm the source.' },
   },
   plumbing: {
-    high: { label: 'High confidence — plumbing age indicator', action: 'If flagged as galvanized or polybutylene, get a plumber's assessment.', detail: 'At 83% accuracy, high-confidence findings on older pipe materials (galvanized steel, polybutylene) are actionable. Both have known failure modes and are flagged by insurers in DFW.' },
+    high: { label: 'High confidence — plumbing age indicator', action: 'If flagged as galvanized or polybutylene, get a plumber’s assessment.', detail: 'At 83% accuracy, high-confidence findings on older pipe materials (galvanized steel, polybutylene) are actionable. Both have known failure modes and are flagged by insurers in DFW.' },
     medium: { label: 'Medium confidence — plumbing age indicator', action: 'Have a plumber inspect accessible pipes under sinks and in the attic.', detail: 'Accessible plumbing is easy to inspect. A plumber can identify the pipe material definitively and assess overall system condition in 30–60 minutes.' },
-    low: { label: 'Low confidence — plumbing age indicator', action: 'Do not act on this finding. Plumbing age is difficult to confirm from photos alone.', detail: 'Plumbing identification from photos is the AI's most difficult task. Low confidence means the AI didn't have enough visual information. A professional inspection is the right path.' },
+    low: { label: 'Low confidence — plumbing age indicator', action: 'Do not act on this finding. Plumbing age is difficult to confirm from photos alone.', detail: 'Plumbing identification from photos is the AI’s most difficult task. Low confidence means the AI didn’t have enough visual information. A professional inspection is the right path.' },
   },
 };
 

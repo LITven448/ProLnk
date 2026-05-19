@@ -19,7 +19,7 @@ const journeys = [
   {
     id: 'innovator-journey',
     label: '💡 Innovation Explorer',
-    commitment: 'ProLnk commits to you: As DFW HVAC technology matures, ProLnk will maintain a current, honest database of which technologies are proven vs. maturing in DFW conditions — so you always know when it's time to adopt and who can do it right.',
+    commitment: 'ProLnk commits to you: As DFW HVAC technology matures, ProLnk will maintain a current, honest database of which technologies are proven vs. maturing in DFW conditions — so you always know when it’s time to adopt and who can do it right.',
   },
   {
     id: 'conservative-journey',

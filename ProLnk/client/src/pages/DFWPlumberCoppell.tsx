@@ -139,7 +139,7 @@ export default function DFWPlumberCoppell() {
           <h3 style={{ marginTop: 0, marginBottom: 16, color: '#F5E642' }}>Why Coppell Homeowners Choose Premium</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16 }}>
             {[
-              { icon: '🏠', text: 'Your home\'s value justifies doing it right the first time' },
+              { icon: '🏠', text: 'Your home\’s value justifies doing it right the first time' },
               { icon: '📋', text: 'Better materials mean fewer service calls over 10+ years' },
               { icon: '🔒', text: 'Warranty transfers to buyers — a real selling point' },
             ].map((item) => (

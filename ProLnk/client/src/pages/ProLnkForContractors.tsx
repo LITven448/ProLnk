@@ -11,7 +11,7 @@ const differentiators = [
 const testimonials = [
   { name: 'Marcus T.', trade: 'Master Plumber, Dallas TX', quote: 'I was spending $800/month on Angi leads and closing maybe 20%. ProLnk sends me jobs I actually win.', stars: 5 },
   { name: 'Renee S.', trade: 'HVAC Contractor, Fort Worth', quote: 'The network income surprised me. I brought 3 friends on and now I earn from their jobs too. Game changer.', stars: 5 },
-  { name: 'DeShawn P.', trade: 'Licensed Electrician, Frisco', quote: 'Closed my first ProLnk job within 48 hours of joining. Haven\'t looked back.', stars: 5 },
+  { name: 'DeShawn P.', trade: 'Licensed Electrician, Frisco', quote: 'Closed my first ProLnk job within 48 hours of joining. Haven\’t looked back.', stars: 5 },
 ];
 
 export default function ProLnkForContractors() {

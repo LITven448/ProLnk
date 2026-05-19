@@ -9,7 +9,7 @@ const rustSituations = [
 
 const urgencyMap: Record<string, string> = {
   drain: '🔴 Act within 1–2 weeks — drain pan rust leads to ceiling leaks',
-  cabinet: '🟡 Act within 30 days — cabinet rust is cosmetic until it isn\'t',
+  cabinet: '🟡 Act within 30 days — cabinet rust is cosmetic until it isn\’t',
   outdoor: '🟡 Act before summer — corrosion reduces efficiency by 10–20%',
   none: '🟢 Annual maintenance keeps rust off indefinitely',
 };

@@ -25,7 +25,7 @@ const nextSteps: Record<string, string[]> = {
   '3': ['Consider first major improvement for ROI', 'Review property tax appraisal — protest if over market', 'Explore ProLnk network for long-term contractor relationships'],
   '5': ['Mid-decade home audit — roof, HVAC, plumbing', 'Revisit homeowner insurance — your home is worth more now', 'Consider equity access for strategic improvements'],
   '10': ['Major systems approaching replacement age — plan ahead', 'Re-landscape for mature DFW aesthetic + water savings', 'Consider Home Health Vault to document and protect your asset'],
-  '15': ['Legacy planning — estate, transfer, or major renovation decision', 'Full systems audit before any major transaction', 'You\'ve built serious wealth — protect and leverage it'],
+  '15': ['Legacy planning — estate, transfer, or major renovation decision', 'Full systems audit before any major transaction', 'You\’ve built serious wealth — protect and leverage it'],
 };
 
 export default function DFWHomeownerWins() {
@@ -100,7 +100,7 @@ export default function DFWHomeownerWins() {
             <div style={{ fontSize: 28, marginBottom: 8 }}>🎉</div>
             <div style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>{yearsOwned} Years of DFW Homeownership — That's Real.</div>
             <div style={{ marginBottom: 16 }}>
-              <div style={{ fontSize: 15, opacity: 0.85, marginBottom: 8 }}>You've checked off {selected.length} major win{selected.length !== 1 ? 's' : ''}:</div>
+              <div style={{ fontSize: 15, opacity: 0.85, marginBottom: 8 }}>You've checked off {selected.length} major win{selected.length !== 1 ? ’s' : ''}:</div>
               {selected.map(m => <div key={m} style={{ fontSize: 14, padding: '4px 0', opacity: 0.9 }}>✅ {m}</div>)}
             </div>
             <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 10, padding: 16 }}>

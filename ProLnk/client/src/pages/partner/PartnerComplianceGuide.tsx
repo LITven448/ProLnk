@@ -11,14 +11,14 @@ const situations = [
   {
     id: 'recruiting',
     label: 'Recruiting a new partner',
-    compliant: 'I want to share an opportunity. There\'s no obligation and I\'ll show you exactly how it works before you decide.',
-    avoid: 'You\'d be crazy not to join. Everyone who signs up makes money.',
+    compliant: 'I want to share an opportunity. There\’s no obligation and I\’ll show you exactly how it works before you decide.',
+    avoid: 'You\’d be crazy not to join. Everyone who signs up makes money.',
     rule: 'Full disclosure required: explain the structure, costs, and realistic expectations upfront.',
   },
   {
     id: 'testimonial',
     label: 'Sharing your own results',
-    compliant: 'Here\'s what I\'ve personally earned in my first 3 months — my experience may not be typical.',
+    compliant: 'Here\’s what I\’ve personally earned in my first 3 months — my experience may not be typical.',
     avoid: 'I made $3,000 last month and you can too.',
     rule: 'Personal testimonials must include "results not typical" or equivalent disclaimer.',
   },

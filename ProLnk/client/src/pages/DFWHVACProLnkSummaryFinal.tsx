@@ -7,7 +7,7 @@ const roles = [
     desc: 'Own your home, need HVAC service or replacement',
     scenarios: [
       { icon: '🔍', title: 'Find Vetted HVAC Techs', detail: 'ProLnk matches you with pre-screened, licensed DFW HVAC contractors — no random Google searches, no risk.' },
-      { icon: '🚨', title: 'Emergency HVAC Service', detail: '105°F DFW day and your AC died? ProLnk\'s emergency match connects you to available techs within hours.' },
+      { icon: '🚨', title: 'Emergency HVAC Service', detail: '105°F DFW day and your AC died? ProLnk\’s emergency match connects you to available techs within hours.' },
       { icon: '🏦', title: 'Home Health Vault', detail: 'Document your HVAC system — model, age, service history — in your permanent Home Health Vault. Increases home value.' },
       { icon: '💰', title: 'Compare Multiple Quotes', detail: 'Get 3 competitive quotes from vetted DFW pros. Never overpay for HVAC work again.' },
     ],
@@ -18,9 +18,9 @@ const roles = [
     desc: 'DFW HVAC professional seeking qualified leads',
     scenarios: [
       { icon: '📋', title: 'Receive Qualified DFW Leads', detail: 'Get matched with homeowners in your DFW territory who need your exact services — no cold calling, no bidding wars.' },
-      { icon: '🌐', title: 'Partner Network Access', detail: 'Join ProLnk\'s vetted HVAC contractor network. Build reputation through verified reviews and job history.' },
+      { icon: '🌐', title: 'Partner Network Access', detail: 'Join ProLnk\’s vetted HVAC contractor network. Build reputation through verified reviews and job history.' },
       { icon: '📈', title: '5-Stream Income System', detail: 'Earn commissions on matches, referrals, and subscription overrides. HVAC techs in the network average $2,400+/mo additional income.' },
-      { icon: '🗂️', title: 'Vault-Documented Jobs', detail: 'Every job you complete gets logged in the homeowner\'s Vault — builds your track record automatically.' },
+      { icon: '🗂️', title: 'Vault-Documented Jobs', detail: 'Every job you complete gets logged in the homeowner\’s Vault — builds your track record automatically.' },
     ],
   },
   {

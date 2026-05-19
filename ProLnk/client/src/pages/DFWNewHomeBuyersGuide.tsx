@@ -80,8 +80,8 @@ export default function DFWNewHomeBuyersGuide() {
   const allAnswered = Object.keys(answers).length === quizQuestions.length;
 
   const getRecommendation = () => {
-    if (totalScore >= 8) return { type: 'New Construction', color: '#F5E642', emoji: '🏗️', reason: 'You value peace of mind, modern layouts, and are willing to wait for the right build. DFW\'s builder market is ideal for you — consider Frisco, Celina, or Prosper master-planned communities.' };
-    if (totalScore >= 2) return { type: 'Either Could Work', color: '#60A5FA', emoji: '⚖️', reason: 'You\'re flexible. Compare specific homes rather than categories. New construction in outer suburbs vs. resale in established Plano or Richardson corridors could both fit your needs.' };
+    if (totalScore >= 8) return { type: 'New Construction', color: '#F5E642', emoji: '🏗️', reason: 'You value peace of mind, modern layouts, and are willing to wait for the right build. DFW\’s builder market is ideal for you — consider Frisco, Celina, or Prosper master-planned communities.' };
+    if (totalScore >= 2) return { type: 'Either Could Work', color: '#60A5FA', emoji: '⚖️', reason: 'You\’re flexible. Compare specific homes rather than categories. New construction in outer suburbs vs. resale in established Plano or Richardson corridors could both fit your needs.' };
     return { type: 'Resale', color: '#34D399', emoji: '🏡', reason: 'You want established neighborhoods, larger lots, mature trees, and/or a faster move-in. Target University Park, Lakewood, Kessler Park, or inner-ring suburbs like Richardson and Garland.' };
   };
 
@@ -130,7 +130,7 @@ export default function DFWNewHomeBuyersGuide() {
                 </div>
                 <div>
                   <h3 style={{ color: '#F87171', fontSize: 15, marginBottom: 10 }}>❌ Cons</h3>
-                  {['Smaller lots (zero or 6,000 sqft common)', 'No mature trees — you\'re starting bare', '6–18 month build timeline', 'Outer suburbs only (Celina, Prosper, Forney)', 'Builder incentives can mask inflated price', 'HOA fees and restrictions common', 'Community feels generic initially'].map(c => (
+                  {['Smaller lots (zero or 6,000 sqft common)', 'No mature trees — you\’re starting bare', '6–18 month build timeline', 'Outer suburbs only (Celina, Prosper, Forney)', 'Builder incentives can mask inflated price', 'HOA fees and restrictions common', 'Community feels generic initially'].map(c => (
                     <div key={c} style={{ display: 'flex', gap: 8, marginBottom: 8, color: '#CBD5E1', fontSize: 14 }}>
                       <span style={{ color: '#F87171', flexShrink: 0 }}>✗</span> {c}
                     </div>
@@ -273,7 +273,7 @@ export default function DFWNewHomeBuyersGuide() {
             </div>
             <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28 }}>
               <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>💡 Builder Negotiation Tips</h3>
-              {['Builders rarely cut price — negotiate upgrades, lot premiums, and closing cost credits instead', 'Ask about inventory homes (completed but unsold) for faster close and better deals', 'Get your own agent — builder\'s rep works for the builder, not you', 'Compare the true cost: base price + upgrades + lot premium + HOA', 'Builder incentives (rate buydowns, appliance packages) expire — lock them in writing', 'Hire an independent inspector even on new construction — defects are common'].map(tip => (
+              {['Builders rarely cut price — negotiate upgrades, lot premiums, and closing cost credits instead', 'Ask about inventory homes (completed but unsold) for faster close and better deals', 'Get your own agent — builder\’s rep works for the builder, not you', 'Compare the true cost: base price + upgrades + lot premium + HOA', 'Builder incentives (rate buydowns, appliance packages) expire — lock them in writing', 'Hire an independent inspector even on new construction — defects are common'].map(tip => (
                 <div key={tip} style={{ display: 'flex', gap: 12, marginBottom: 12, color: '#CBD5E1', fontSize: 14 }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span> {tip}
                 </div>

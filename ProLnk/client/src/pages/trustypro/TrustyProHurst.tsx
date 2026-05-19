@@ -21,7 +21,7 @@ const pros = [
 
 const testimonials = [
   { name: 'Betty R.', neighborhood: 'Hurst, TX', quote: 'Our 1968 home had knob-and-tube in one wing. Al handled it safely and pulled permits. The peace of mind was worth every dollar.' },
-  { name: 'Darren K.', neighborhood: 'NE Mall Area', quote: 'The drains were backing up constantly — 50-year-old cast iron. Nina replaced the entire drain stack and we haven't had an issue since.' },
+  { name: 'Darren K.', neighborhood: 'NE Mall Area', quote: 'The drains were backing up constantly — 50-year-old cast iron. Nina replaced the entire drain stack and we haven’t had an issue since.' },
   { name: 'Lisa F.', neighborhood: 'Hurst, TX', quote: 'Hard water destroyed two water heaters in 8 years. Nina finally explained the root cause and installed a softener. Game changer.' },
 ];
 

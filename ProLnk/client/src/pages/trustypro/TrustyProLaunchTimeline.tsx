@@ -18,7 +18,7 @@ const phases = [
     timing: 'Summer 2026',
     status: 'upcoming',
     icon: '🔬',
-    description: 'The first 500 waitlist homeowners get access to TrustyPro's beta scanning tool. Real scans. Real AI analysis. Zero cost during beta.',
+    description: 'The first 500 waitlist homeowners get access to TrustyPro’s beta scanning tool. Real scans. Real AI analysis. Zero cost during beta.',
     forHomeowner: 'You scan your home using the app. AI generates your first Health Report. You give feedback that shapes the product.',
     forPro: 'Beta pros receive scan reports on properties in their service area. First look at the data before the full platform launches.',
     forInvestor: 'Beta data validates scan accuracy, user engagement, and report utility. Key milestone before Series A.',

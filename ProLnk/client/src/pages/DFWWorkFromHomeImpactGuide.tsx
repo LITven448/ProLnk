@@ -33,7 +33,7 @@ const profiles = [
     origin: 'Northeast / Midwest',
     neighborhoods: ['Southlake', 'Keller', 'Flower Mound', 'Coppell'],
     features: ['5-bedroom minimum (office + bedrooms)', 'Pool (DFW summers mandate it)', 'Top-rated school district', 'Neighborhood with sidewalks and parks'],
-    avoid: 'Properties without room for both adult work zone and children\'s activity space. Noise management is critical for video calls.',
+    avoid: 'Properties without room for both adult work zone and children\’s activity space. Noise management is critical for video calls.',
     budget: '$500K-$900K',
     reason: 'Top-tier schools + large lots + pool + dedicated office — all achievable under $800K in DFW. Impossible on the coasts.',
   },

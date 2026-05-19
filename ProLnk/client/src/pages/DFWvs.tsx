@@ -41,7 +41,7 @@ export default function DFWvs() {
     {
       icon: '🏗️',
       title: 'Blackland Prairie Clay Soil',
-      detail: 'DFW sits on some of the most expansive clay soil in North America. It absorbs water and swells significantly, then shrinks dramatically when dry. This constant movement is the #1 cause of foundation damage in North Texas. Homes in other markets simply don't face this level of soil-driven structural risk.'
+      detail: 'DFW sits on some of the most expansive clay soil in North America. It absorbs water and swells significantly, then shrinks dramatically when dry. This constant movement is the #1 cause of foundation damage in North Texas. Homes in other markets simply don’t face this level of soil-driven structural risk.'
     },
     {
       icon: '⛈️',
@@ -61,7 +61,7 @@ export default function DFWvs() {
     {
       icon: '🧊',
       title: 'Freeze Events (Winter Storm Uri Legacy)',
-      detail: 'After Winter Storm Uri in 2021, the Texas freeze risk is well documented. DFW homes — many built without pipe insulation for extreme cold — remain vulnerable. Smart shutoff valves, pipe insulation, and drip protocols are not optional maintenance items. They're preparation for events that happen every 3–7 years.'
+      detail: 'After Winter Storm Uri in 2021, the Texas freeze risk is well documented. DFW homes — many built without pipe insulation for extreme cold — remain vulnerable. Smart shutoff valves, pipe insulation, and drip protocols are not optional maintenance items. They’re preparation for events that happen every 3–7 years.'
     },
   ];
 

@@ -6,7 +6,7 @@ const promises = [
     icon: '🎓',
     title: 'Only NATE-Certified or Equivalent Technicians',
     commitment: 'Every HVAC professional ProLnk matches you with in DFW holds NATE certification, TACL license, or equivalent verified credential — no exceptions.',
-    howToHold: 'Request the technician's NATE certificate number before work begins. ProLnk's match profile includes credential verification date. If credentials can't be verified, you pay nothing.',
+    howToHold: 'Request the technician’s NATE certificate number before work begins. ProLnk’s match profile includes credential verification date. If credentials can’t be verified, you pay nothing.',
     concern: 'certification',
   },
   {
@@ -14,7 +14,7 @@ const promises = [
     icon: '💰',
     title: 'Transparent Pricing — No Surprise Charges',
     commitment: 'Your matched DFW HVAC pro provides a written estimate before any work begins. Final invoice cannot exceed estimate by more than 10% without your written approval.',
-    howToHold: 'All estimates are documented in ProLnk's platform. If your invoice exceeds the estimate without approval, ProLnk's dispute process triggers a mandatory review within 24 hours.',
+    howToHold: 'All estimates are documented in ProLnk’s platform. If your invoice exceeds the estimate without approval, ProLnk’s dispute process triggers a mandatory review within 24 hours.',
     concern: 'pricing',
   },
   {
@@ -29,7 +29,7 @@ const promises = [
     id: 'vault',
     icon: '🏠',
     title: 'HVAC History Stored in Home Health Vault',
-    commitment: 'Every service visit, part replaced, refrigerant charge, and system reading is stored in your home's permanent record in the ProLnk Home Health Vault.',
+    commitment: 'Every service visit, part replaced, refrigerant charge, and system reading is stored in your home’s permanent record in the ProLnk Home Health Vault.',
     howToHold: 'Your Home Health Vault is yours — portable, exportable, and survives any pro relationship. If a tech claims they "did the work" without logging it, that service has no record in your Vault.',
     concern: 'records',
   },

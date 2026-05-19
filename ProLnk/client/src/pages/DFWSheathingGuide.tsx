@@ -22,7 +22,7 @@ function getSheathingAssessment(material: string, issue: string) {
     return {
       rating: material === 'OSB (oriented strand board)' ? 'HIGH RISK' : 'MODERATE RISK',
       color: material === 'OSB (oriented strand board)' ? '#FF4444' : '#FF8C00',
-      assessment: 'OSB is highly moisture-sensitive. DFW\'s humidity (averaging 60–70% RH) combined with inadequate house wrap or failed window flashing causes OSB to swell, delaminate, and lose shear strength. Plywood is more forgiving due to cross-laminated layers.',
+      assessment: 'OSB is highly moisture-sensitive. DFW\’s humidity (averaging 60–70% RH) combined with inadequate house wrap or failed window flashing causes OSB to swell, delaminate, and lose shear strength. Plywood is more forgiving due to cross-laminated layers.',
       performance: 'Water infiltration behind cladding is a primary cause of wall sheathing failure in DFW. Often invisible until re-siding.',
       recommendation: 'Inspect sheathing condition whenever re-siding. Any soft, dark, or crumbling panels must be replaced before new siding application.',
     };
@@ -31,7 +31,7 @@ function getSheathingAssessment(material: string, issue: string) {
     return {
       rating: 'INVESTIGATE',
       color: '#FF8C00',
-      assessment: 'DFW\'s expansive clay soils cause foundation movement that translates to wall racking forces. Sheathing that was properly installed can still show distress after significant foundation shift.',
+      assessment: 'DFW\’s expansive clay soils cause foundation movement that translates to wall racking forces. Sheathing that was properly installed can still show distress after significant foundation shift.',
       performance: 'Sheathing performance after foundation movement depends on severity of racking. Look for fastener pull-through and panel joint gaps.',
       recommendation: 'Address foundation first. After stabilization, assess sheathing for racking damage. Re-nailing or panel replacement may be required after major repairs.',
     };
@@ -50,7 +50,7 @@ function getSheathingAssessment(material: string, issue: string) {
     color: '#00AAFF',
     assessment: 'Wall sheathing is the hidden backbone of DFW home energy performance. Air infiltration through sheathing joints and penetrations is a major source of energy loss.',
     performance: 'OSB with taped seams or a quality house wrap dramatically reduces air infiltration. Board sheathing without wrap is highly air-leaky.',
-    recommendation: 'Consider a blower door test to quantify air leakage. Sealing sheathing joints and ensuring continuous house wrap delivers measurable energy savings in DFW\'s extreme climate.',
+    recommendation: 'Consider a blower door test to quantify air leakage. Sealing sheathing joints and ensuring continuous house wrap delivers measurable energy savings in DFW\’s extreme climate.',
   };
 }
 
@@ -71,7 +71,7 @@ export default function DFWSheathingGuide() {
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🧱', title: 'What Wall Sheathing Does', body: 'Sheathing panels nailed to wall studs create the lateral load (racking) resistance that keeps DFW homes standing in high-wind events. They also provide a substrate for house wrap and siding, and contribute to air sealing.' },
-            { icon: '🌧️', title: 'House Wrap in DFW', body: 'Texas residential code requires a weather-resistive barrier (WRB) behind most siding types. Tyvek and similar wraps allow vapor transmission while blocking liquid water — critical in DFW\'s mixed-humid climate.' },
+            { icon: '🌧️', title: 'House Wrap in DFW', body: 'Texas residential code requires a weather-resistive barrier (WRB) behind most siding types. Tyvek and similar wraps allow vapor transmission while blocking liquid water — critical in DFW\’s mixed-humid climate.' },
             { icon: '🌪️', title: 'DFW Wind & Sheathing', body: 'DFW sits in a high-wind zone. Sheathing nail pattern (spacing and penetration depth) is as critical as sheathing thickness. Under-nailed OSB is one of the most common wind damage amplifiers found in post-storm inspections.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#0F2040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>

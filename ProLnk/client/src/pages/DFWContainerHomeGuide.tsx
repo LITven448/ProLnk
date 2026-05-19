@@ -23,7 +23,7 @@ const containerCosts = {
   engineering: () => 4500,
 };
 
-const heatWarning = '⚠️ DFW summers hit 105°F+. Bare steel containers reach 140°F+ interior. Closed-cell spray foam insulation (minimum 3") on all surfaces is not optional — it\'s a survival requirement.';
+const heatWarning = '⚠️ DFW summers hit 105°F+. Bare steel containers reach 140°F+ interior. Closed-cell spray foam insulation (minimum 3") on all surfaces is not optional — it\’s a survival requirement.';
 
 export default function DFWContainerHomeGuide() {
   const [containerCount, setContainerCount] = useState<ContainerCount>(2);
@@ -59,7 +59,7 @@ export default function DFWContainerHomeGuide() {
             { icon: '🏗️', title: 'Steel Structure', desc: 'Containers are ISO-certified steel boxes. Strong, stackable, and fast to erect.' },
             { icon: '🔥', title: 'Insulation First', desc: 'Spray foam closed-cell is the only viable option. Budget $7–10K per container.' },
             { icon: '📋', title: 'Engineering Stamp', desc: 'Most DFW cities require a PE-stamped structural plan for container structures.' },
-            { icon: '🎨', title: 'Artistic Trend', desc: 'Deep Ellum and Bishop Arts in Dallas lead DFW\'s container architecture scene.' },
+            { icon: '🎨', title: 'Artistic Trend', desc: 'Deep Ellum and Bishop Arts in Dallas lead DFW\’s container architecture scene.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>

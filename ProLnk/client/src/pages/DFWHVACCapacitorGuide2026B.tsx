@@ -28,7 +28,7 @@ export default function DFWHVACCapacitorGuide2026B() {
   ];
 
   const symptoms = [
-    { id: 'click', label: 'AC clicks but won't start', answer: 'Classic failed capacitor — compressor trying to start but can't. System needs capacitor test immediately. Do not run unit.', urgency: 'high' },
+    { id: 'click', label: 'AC clicks but won’t start', answer: 'Classic failed capacitor — compressor trying to start but can’t. System needs capacitor test immediately. Do not run unit.', urgency: 'high' },
     { id: 'hum', label: 'Loud humming from outdoor unit', answer: 'Capacitor may be weak — compressor humming but not starting. Can cause compressor damage if ignored in DFW heat.', urgency: 'high' },
     { id: 'slow', label: 'Fan spinning slowly', answer: 'Dual run capacitor likely weakening. Fan side failing first is common. Check for bulging cap top.', urgency: 'medium' },
     { id: 'warm', label: 'Blowing slightly warm air', answer: 'Weak capacitor causes compressor to run inefficiently. System runs but struggles — increased energy bills follow.', urgency: 'medium' },

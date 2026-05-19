@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const scenarios = [
   { trade: 'Foundation Pro', example: 'Every foundation job reveals soil conditions — adjacent homes are scan opportunities.' },
-  { trade: 'HVAC Pro', example: 'Every job in a neighborhood = chance to scan neighbor's aging unit while you're there.' },
+  { trade: 'HVAC Pro', example: 'Every job in a neighborhood = chance to scan neighbor’s aging unit while you’re there.' },
   { trade: 'Pest Control', example: '4 visits/year per home = 4 photo upload opportunities at the same address.' },
-  { trade: 'General Inspector', example: 'Every inspection is an origination opportunity — you're already inside.' },
+  { trade: 'General Inspector', example: 'Every inspection is an origination opportunity — you’re already inside.' },
   { trade: 'Plumber', example: 'Under-slab jobs require full home documentation — photos are already part of your workflow.' },
 ];
 

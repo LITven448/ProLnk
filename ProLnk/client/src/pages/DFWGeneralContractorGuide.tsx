@@ -56,7 +56,7 @@ export default function DFWGeneralContractorGuide() {
             <div style={{ color: '#78350f', fontSize: 14, lineHeight: 1.6 }}>Unlike California or Florida, Texas has no statewide GC license. However, Dallas, Fort Worth, Plano, Arlington, and other DFW cities have their own contractor registration or permit-pulling requirements. Always verify at your specific city's building department.</div>
           </div>
           {[
-            ['What to Verify', 'City contractor registration (check your city\'s building department), general liability insurance ($1M minimum), workers\' compensation coverage for all employees and subs, and references from comparable local projects.'],
+            ['What to Verify', 'City contractor registration (check your city\’s building department), general liability insurance ($1M minimum), workers\’ compensation coverage for all employees and subs, and references from comparable local projects.'],
             ['Bonding', 'A surety bond protects you if the GC abandons the project. For projects over $50K, require the GC to carry a bond. Ask for the bond number and verify it is current.'],
           ].map(([title, desc]) => (
             <div key={title} style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: 14, marginBottom: 14 }}>

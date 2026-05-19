@@ -7,7 +7,7 @@ const counties = [
     details: [
       '✅ School District Exemption: $100,000 off appraised value (state law, all districts)',
       '✅ Senior Exemption: Additional $10,000 off for 65+ (most Dallas ISD districts)',
-      '❄️ Tax Freeze: School taxes FROZEN at age 65 — value increases don\'t raise your school tax',
+      '❄️ Tax Freeze: School taxes FROZEN at age 65 — value increases don\’t raise your school tax',
       '🏠 Additional Freeze: Dallas County offers tax ceiling for 65+ on county portion',
       '📋 Apply at: Dallas Central Appraisal District (DCAD) — dcad.org',
       '📅 Deadline: April 30 each year (or within 1 year of turning 65)',

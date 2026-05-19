@@ -13,7 +13,7 @@ const projectData: Record<string, {
     questions: [
       'What specific defects does your workmanship warranty cover?',
       'Is the manufacturer warranty transferable if I sell the home?',
-      'Who do I call first — you or the manufacturer — if there\'s a leak?',
+      'Who do I call first — you or the manufacturer — if there\’s a leak?',
       'Does your warranty cover flashing, valleys, and penetrations?',
       'What voids your workmanship warranty?',
     ],
@@ -41,7 +41,7 @@ const projectData: Record<string, {
       'Is this a factory-authorized installation for manufacturer warranty?',
     ],
     redFlags: [
-      'Contractor won\'t register the equipment with manufacturer',
+      'Contractor won\’t register the equipment with manufacturer',
       'Warranty is verbal only — not in writing',
       'No mention of maintenance requirements to keep warranty active',
       'Labor warranty is under 1 year on a full system replacement',
@@ -112,7 +112,7 @@ const projectData: Record<string, {
     redFlags: [
       'Warranty only covers leaks visible at the time of installation',
       'No warranty on fittings or connection points',
-      'Contractor won\'t cover consequential water damage from their work',
+      'Contractor won\’t cover consequential water damage from their work',
       'Labor warranty under 1 year on a whole-house repipe',
     ],
     requireInWriting: [
@@ -223,7 +223,7 @@ export default function ContractorWarrantyGuide() {
           {[
             ['Document the defect', 'Take dated photos or video as soon as you notice a problem. Include wide shots showing location and close-ups showing the defect.'],
             ['Notify in writing', 'Email or certified letter only — no verbal claims. Include the project date, contract number, and description of the defect.'],
-            ['Reference your warranty', 'Attach a copy of the warranty document to your claim notification. This prevents "I don\'t have a record of that" responses.'],
+            ['Reference your warranty', 'Attach a copy of the warranty document to your claim notification. This prevents "I don\’t have a record of that" responses.'],
             ['Set a response deadline', 'Request written confirmation within 5 business days and a repair timeline. Document if they miss it.'],
             ['Get the repair in writing', 'When they fix it, get a written confirmation of what was repaired and whether the warranty clock resets on the repaired section.'],
           ].map(([step, detail]) => (

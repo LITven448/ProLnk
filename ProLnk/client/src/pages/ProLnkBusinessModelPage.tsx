@@ -28,7 +28,7 @@ const stakeholders = [
     revenue: [
       'You keep 72% of your direct match earnings. ProLnk retains 28% for platform operations.',
       'Network overrides flow from the 28% ProLnk retains — you are paid from platform margin, not from other partners.',
-      'Subscription overrides: 12% of referred pro\'s $149/mo for as long as they remain active.',
+      'Subscription overrides: 12% of referred pro\’s $149/mo for as long as they remain active.',
     ],
   },
   {

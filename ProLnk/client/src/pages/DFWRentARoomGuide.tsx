@@ -17,12 +17,12 @@ const INCOME_MAP: Record<string, Record<string, number>> = {
 const CHECKLIST = [
   'Written lease agreement (month-to-month recommended)',
   'Background & credit check on tenant',
-  'Proof of renter\'s insurance requirement',
+  'Proof of renter\’s insurance requirement',
   'Document home condition with photos before move-in',
   'Separate key and access protocols',
   'Report rental income on Schedule E (IRS Form 1040)',
   'Homestead exemption: primary residence rules still apply',
-  'Notify homeowner\'s insurance carrier',
+  'Notify homeowner\’s insurance carrier',
 ];
 
 export default function DFWRentARoomGuide() {

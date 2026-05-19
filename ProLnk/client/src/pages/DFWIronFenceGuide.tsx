@@ -42,9 +42,9 @@ export default function DFWIronFenceGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginTop: 36 }}>
           {[
-            { icon: '🏡', title: 'DFW Front Yard Appeal', body: 'Ornamental iron is dominant in DFW\'s higher-end residential neighborhoods like Highland Park, Southlake, and Westlake. It signals permanence and security without blocking curb views.' },
-            { icon: '💧', title: 'DFW Humidity & Rust', body: 'DFW\'s spring humidity combined with clay soil moisture accelerates rust at post bases. Powder coating is not optional — bare iron in DFW will show rust within one season without it.' },
-            { icon: '🎨', title: 'Powder Coat Durability', body: 'Premium powder coat adds $3–5/ft but doubles the time before touch-up is needed. In DFW\'s UV-intense summers, the color bonding matters as much as rust protection.' },
+            { icon: '🏡', title: 'DFW Front Yard Appeal', body: 'Ornamental iron is dominant in DFW\’s higher-end residential neighborhoods like Highland Park, Southlake, and Westlake. It signals permanence and security without blocking curb views.' },
+            { icon: '💧', title: 'DFW Humidity & Rust', body: 'DFW\’s spring humidity combined with clay soil moisture accelerates rust at post bases. Powder coating is not optional — bare iron in DFW will show rust within one season without it.' },
+            { icon: '🎨', title: 'Powder Coat Durability', body: 'Premium powder coat adds $3–5/ft but doubles the time before touch-up is needed. In DFW\’s UV-intense summers, the color bonding matters as much as rust protection.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0D1F3C', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>

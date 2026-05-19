@@ -8,7 +8,7 @@ const ASSESSMENT: Record<string, Record<string, { risk: string; factors: string;
   },
   new: {
     pier: { risk: 'Low', factors: 'Modern pier-and-beam construction in Sunnyvale uses deeper footings that account for clay expansion. Monitor during first 3 years.', action: 'Builder warranty review. Monitor for door/window sticking as settlement indicator.' },
-    slab: { risk: 'Low-Moderate', factors: 'New construction slabs are engineered for local soil, but Sunnyvale\'s semi-rural character means varying lot conditions.', action: 'Post-tension slab inspection at year 3 and year 7. Watch for diagonal cracks at door corners.' },
+    slab: { risk: 'Low-Moderate', factors: 'New construction slabs are engineered for local soil, but Sunnyvale\’s semi-rural character means varying lot conditions.', action: 'Post-tension slab inspection at year 3 and year 7. Watch for diagonal cracks at door corners.' },
     crawl: { risk: 'Low', factors: 'New crawlspace construction is rare in Sunnyvale. If present, it should have modern vapor barrier and support system.', action: 'Annual moisture check. Ensure vapor barrier integrity.' },
   },
   mixed: {
@@ -42,7 +42,7 @@ export default function DFWFoundationRepairSunnyvale() {
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🌍 Why Sunnyvale Soil Is Different</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
-              { icon: '🏕️', label: 'Semi-Rural Large Lots', desc: 'Sunnyvale\'s acreage properties have more drainage variability, mature trees, and soil depth differences than typical DFW subdivisions' },
+              { icon: '🏕️', label: 'Semi-Rural Large Lots', desc: 'Sunnyvale\’s acreage properties have more drainage variability, mature trees, and soil depth differences than typical DFW subdivisions' },
               { icon: '🪨', label: 'Dallas County Clay Soil', desc: 'Expansive clay (Vertisol) swells 30–40% when wet and contracts significantly when dry — the primary driver of Dallas-area foundation movement' },
               { icon: '🏗️', label: 'Old + New Construction Mix', desc: 'Sunnyvale has rural farmhouses, 1980s–90s suburban tracts, and 2010s+ new builds — each requires a different foundation approach' },
             ].map((item) => (

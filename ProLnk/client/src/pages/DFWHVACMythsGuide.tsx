@@ -10,7 +10,7 @@ const myths = [
   {
     belief: 'A bigger HVAC unit will cool my home faster and better',
     verdict: 'MYTH',
-    reality: 'Oversized HVAC systems in DFW short-cycle — cooling too fast without completing a full run cycle. This means the system never runs long enough to dehumidify, leaving your home feeling clammy even at 72°F. Proper sizing is critical in DFW\'s humid heat.',
+    reality: 'Oversized HVAC systems in DFW short-cycle — cooling too fast without completing a full run cycle. This means the system never runs long enough to dehumidify, leaving your home feeling clammy even at 72°F. Proper sizing is critical in DFW\’s humid heat.',
     icon: '📦',
   },
   {
@@ -26,7 +26,7 @@ const myths = [
     icon: '🗓️',
   },
   {
-    belief: 'If the AC is running, it\'s working fine',
+    belief: 'If the AC is running, it\’s working fine',
     verdict: 'MYTH',
     reality: 'A running system is not necessarily an efficient one. In DFW summers, a system may run continuously yet barely keep pace — a sign of low refrigerant, dirty coils, or inadequate insulation. Annual tune-ups catch issues before they cascade into failures during peak heat.',
     icon: '⚠️',

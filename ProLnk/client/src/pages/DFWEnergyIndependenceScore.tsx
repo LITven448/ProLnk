@@ -3,7 +3,7 @@ import { useState } from 'react';
 type Question = { id: string; text: string; options: { label: string; points: number }[] };
 
 const questions: Question[] = [
-  { id: 'solar', text: '☀️ Do you have rooftop solar panels?', options: [{ label: 'Yes, grid-tied (no battery)', points: 8 }, { label: 'Yes, with battery storage', points: 18 }, { label: 'No, but I\'m planning to install', points: 3 }, { label: 'No solar at all', points: 0 }] },
+  { id: 'solar', text: '☀️ Do you have rooftop solar panels?', options: [{ label: 'Yes, grid-tied (no battery)', points: 8 }, { label: 'Yes, with battery storage', points: 18 }, { label: 'No, but I\’m planning to install', points: 3 }, { label: 'No solar at all', points: 0 }] },
   { id: 'battery', text: '🔋 Do you have home battery storage?', options: [{ label: 'Yes, 10+ kWh (e.g. Powerwall)', points: 18 }, { label: 'Yes, under 10 kWh', points: 10 }, { label: 'No, but planning to add', points: 3 }, { label: 'No battery storage', points: 0 }] },
   { id: 'generator', text: '⛽ Do you have a backup generator?', options: [{ label: 'Yes, whole-home standby (natural gas/propane)', points: 10 }, { label: 'Yes, portable generator', points: 5 }, { label: 'No generator', points: 0 }] },
   { id: 'ev', text: '🚗 Do you have an electric vehicle?', options: [{ label: 'Yes, with V2H (Vehicle-to-Home) capability', points: 10 }, { label: 'Yes, standard EV', points: 5 }, { label: 'Planning to get one', points: 2 }, { label: 'No EV', points: 0 }] },

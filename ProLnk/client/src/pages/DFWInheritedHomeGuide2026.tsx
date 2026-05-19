@@ -40,7 +40,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
   },
   multiple: {
     steps: [
-      '⚖️ All heirs must agree on disposition — majority can't force a sale in TX',
+      '⚖️ All heirs must agree on disposition — majority can’t force a sale in TX',
       '📋 Partition lawsuit is last resort but forces sale via court',
       '💰 Buyout option: one heir purchases others' shares at appraised value',
       '🔧 ProLnk manages repairs when heirs are remote or disagree on scope',

@@ -4,20 +4,20 @@ const painPoints = [
   {
     id: 'emergency',
     label: '🚨 Emergency breakdown — need someone NOW',
-    before: 'Panic-Googling contractors at midnight. First result is a $250 diagnostic fee. Tech arrives 6 hours late. Quote for $4,200. You have no idea if that's fair.',
+    before: 'Panic-Googling contractors at midnight. First result is a $250 diagnostic fee. Tech arrives 6 hours late. Quote for $4,200. You have no idea if that’s fair.',
     after: 'ProLnk surfaces vetted DFW techs with availability. You see ratings, response time, and price ranges before you call. Matched pros compete — you choose with confidence.',
   },
   {
     id: 'maintenance',
     label: '🔧 Annual tune-up — nothing urgent',
-    before: 'Call 5 companies. 2 don't answer. 1 won't come for 3 weeks. 1 quotes $299. 1 quotes $89 with a $500 upsell waiting inside your home.',
-    after: 'ProLnk matches you to rated DFW HVAC pros who've done tune-ups in your zip code. Transparent pricing upfront. No upsell bait-and-switch.',
+    before: 'Call 5 companies. 2 don’t answer. 1 won’t come for 3 weeks. 1 quotes $299. 1 quotes $89 with a $500 upsell waiting inside your home.',
+    after: 'ProLnk matches you to rated DFW HVAC pros who’ve done tune-ups in your zip code. Transparent pricing upfront. No upsell bait-and-switch.',
   },
   {
     id: 'replacement',
     label: '💸 Full system replacement quote',
-    before: 'Get 3 quotes. One ghosted you. One gave a lump-sum with no itemization. One was $4K higher but seemed more professional. You're guessing.',
-    after: 'ProLnk requests itemized quotes from multiple vetted pros. You compare labor vs. equipment costs side by side. ProLnk's HVAC data tells you if the quote is fair for DFW.',
+    before: 'Get 3 quotes. One ghosted you. One gave a lump-sum with no itemization. One was $4K higher but seemed more professional. You’re guessing.',
+    after: 'ProLnk requests itemized quotes from multiple vetted pros. You compare labor vs. equipment costs side by side. ProLnk’s HVAC data tells you if the quote is fair for DFW.',
   },
   {
     id: 'vetting',
@@ -27,8 +27,8 @@ const painPoints = [
   },
   {
     id: 'pricing',
-    label: '❓ No idea if I'm being overcharged',
-    before: 'HVAC pricing is completely opaque. Techs know you can't walk away in July. Markups of 200-400% on parts are standard. You have no baseline.',
+    label: '❓ No idea if I’m being overcharged',
+    before: 'HVAC pricing is completely opaque. Techs know you can’t walk away in July. Markups of 200-400% on parts are standard. You have no baseline.',
     after: 'ProLnk uses market data from thousands of DFW jobs to flag outlier quotes. You see what comparable jobs cost in your zip code before you commit.',
   },
 ];
@@ -39,7 +39,7 @@ const vaultBenefits = [
   { icon: '⭐', text: 'Real ratings from verified DFW homeowners — no fake reviews' },
   { icon: '💲', text: 'Market pricing data so you know if a quote is fair' },
   { icon: '📞', text: 'Matched to pros who work in your zip code and trade' },
-  { icon: '🏠', text: 'Your home's HVAC history builds equity documentation' },
+  { icon: '🏠', text: 'Your home’s HVAC history builds equity documentation' },
 ];
 
 export default function DFWHVACProLnkDifference() {

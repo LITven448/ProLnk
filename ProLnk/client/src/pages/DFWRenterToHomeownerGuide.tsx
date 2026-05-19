@@ -12,7 +12,7 @@ const monthlyPlan = [
   { month: '3–4', task: '💰 Open dedicated savings account. Automate transfer = 5% of income weekly.' },
   { month: '5–6', task: '📄 Get pre-qualified (not pre-approved). Learn your real number from a lender.' },
   { month: '7–8', task: '🗺️ Research DFW target areas. Compare property taxes by city (Frisco vs McKinney vs Arlington).' },
-  { month: '9–10', task: '🤝 Meet a DFW buyer\'s agent. They\'re free for buyers. Interview 2–3.' },
+  { month: '9–10', task: '🤝 Meet a DFW buyer\’s agent. They\’re free for buyers. Interview 2–3.' },
   { month: '11', task: '✅ Get formal pre-approval letter. Have your down payment fully saved.' },
   { month: '12', task: '🏡 Start making offers. Budget for inspection ($400–$600) and closing costs (2–4%).' },
 ];

@@ -12,8 +12,8 @@ export default function DFWHVACContactorGuide2026() {
 
   const diagSteps = [
     { id: 'chatter', label: 'Chattering / buzzing noise from outdoor unit', diagnosis: 'Failing contactor — contacts bouncing instead of holding firm. Often caused by weak coil or pitted contacts from DFW surge history. Replace soon.' },
-    { id: 'stuck', label: 'AC won't shut off — runs continuously', diagnosis: 'Contactor stuck closed (welded contacts). Compressor runs nonstop — will freeze coil and damage compressor. Shut system off immediately.' },
-    { id: 'nostart', label: 'Outdoor unit won't turn on at all', diagnosis: 'Contactor may be stuck open or coil failed. 24V control voltage should pull contactor in — if it doesn't, contactor or thermostat wiring issue.' },
+    { id: 'stuck', label: 'AC won’t shut off — runs continuously', diagnosis: 'Contactor stuck closed (welded contacts). Compressor runs nonstop — will freeze coil and damage compressor. Shut system off immediately.' },
+    { id: 'nostart', label: 'Outdoor unit won’t turn on at all', diagnosis: 'Contactor may be stuck open or coil failed. 24V control voltage should pull contactor in — if it doesn’t, contactor or thermostat wiring issue.' },
     { id: 'burn', label: 'Burn marks or pitting visible on contacts', diagnosis: 'Replace immediately — pitted contacts restrict current, overheat, and can weld shut. Visual inspection is the easiest way to catch this.' },
     { id: 'intermit', label: 'System starts and stops randomly', diagnosis: 'Weak contactor coil or marginal contacts. Drops out under heat load in DFW summer. Replace before it fails completely mid-heat wave.' },
   ];

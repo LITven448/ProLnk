@@ -17,7 +17,7 @@ const trees = [
     name: 'Cedar Elm',
     icon: '🍂',
     timing: 'Fall or Winter (October – February)',
-    detail: 'Cedar elm is DFW's most common native elm. Prune in fall or winter when the tree is dormant and Dutch elm disease pressure is lowest. Remove deadwood and crossing branches. Cedar elms are tough — they tolerate significant pruning.'
+    detail: 'Cedar elm is DFW’s most common native elm. Prune in fall or winter when the tree is dormant and Dutch elm disease pressure is lowest. Remove deadwood and crossing branches. Cedar elms are tough — they tolerate significant pruning.'
   },
   {
     name: 'Crepe Myrtle',

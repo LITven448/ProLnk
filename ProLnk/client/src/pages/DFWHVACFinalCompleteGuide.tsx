@@ -24,9 +24,9 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
     ]
   },
   'My system is struggling this summer': {
-    headline: '🔴 Diagnosing Your DFW System\'s Struggle',
+    headline: '🔴 Diagnosing Your DFW System\’s Struggle',
     items: [
-      ['Check the filter first', 'A clogged filter causes 80% of "struggling" symptoms. Replace if you haven\'t in 45 days.'],
+      ['Check the filter first', 'A clogged filter causes 80% of "struggling" symptoms. Replace if you haven\’t in 45 days.'],
       ['Inspect outdoor unit', 'Clear debris from around condenser. Coils should be clean — dirty coils = 30% efficiency loss.'],
       ['Check for ice on lines', 'Frost on refrigerant lines = airflow problem or refrigerant issue. Shut down and call a pro.'],
       ['Measure supply air temp', 'Put thermometer at a vent. Should read 15-20°F below thermostat setpoint. Less = problem.'],
@@ -39,7 +39,7 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
     items: [
       ['Get Manual J load calculation', 'Never accept "same size as old system" — proper sizing requires math. Insist on it.'],
       ['Target 18+ SEER2', 'Texas heat means efficiency pays off faster than northern states. Higher SEER2 = faster ROI.'],
-      ['Variable speed is worth it in DFW', 'DFW\'s 7-month season makes variable speed payback 4-6 years — better than most markets.'],
+      ['Variable speed is worth it in DFW', 'DFW\’s 7-month season makes variable speed payback 4-6 years — better than most markets.'],
       ['Check rebates first', 'Oncor offers $200-500 rebates on high-efficiency systems. Manufacturer rebates often stack.'],
       ['Consider dual-fuel heat pump', 'Heat pump down to 30°F, gas backup below that — optimal for DFW winters.'],
       ['Plan for summer installation', 'If possible, install in spring before peak demand. Better pricing, better scheduling.'],
@@ -48,10 +48,10 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
   'Getting quotes from contractors': {
     headline: '💼 What to Look for in DFW HVAC Quotes',
     items: [
-      ['Did they do a load calc?', 'If they measured your home and calculated heat gain/loss, that\'s a good sign. If not, red flag.'],
+      ['Did they do a load calc?', 'If they measured your home and calculated heat gain/loss, that\’s a good sign. If not, red flag.'],
       ['Is the brand reputable?', 'Carrier, Lennox, Trane, Rheem all have DFW dealer networks. Beware obscure brands.'],
       ['What SEER2 rating?', 'Texas minimum is 15 SEER2. Good DFW quotes show 17-21 SEER2 options.'],
-      ['What\'s the warranty?', '10-year parts, 1-year labor minimum. Some manufacturers offer 12-year with registration.'],
+      ['What\’s the warranty?', '10-year parts, 1-year labor minimum. Some manufacturers offer 12-year with registration.'],
       ['Is the contractor NATE certified?', 'North American Technician Excellence certification = proper training. Ask to see it.'],
       ['What does removal include?', 'Old system disposal, permits, and inspection should be included. Confirm in writing.'],
     ]
@@ -62,7 +62,7 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
       ['Register your warranty immediately', 'Most manufacturers require registration within 60-90 days for extended warranty. Do it today.'],
       ['Set your first filter reminder', 'DFW: 45-60 days, not 90. Set a phone reminder. This is the single biggest maintenance item.'],
       ['Learn your thermostat', 'Program setback schedules. 78°F when home, 82°F when away in summer. Saves 10-15%.'],
-      ['Document everything', 'Photo your unit\'s model/serial numbers, system diagram, and installation paperwork.'],
+      ['Document everything', 'Photo your unit\’s model/serial numbers, system diagram, and installation paperwork.'],
       ['Check your first electric bill', 'Compare to same month last year. A properly sized, efficient new system should show improvement.'],
       ['Schedule first annual tune-up', 'For 12 months out. Catching early issues under warranty is free — after warranty, you pay.'],
     ]
@@ -93,7 +93,7 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
     headline: '🔍 Evaluating HVAC When Buying a DFW Home',
     items: [
       ['Ask for the age and service history', 'A seller should have service records. No records = inspect more carefully.'],
-      ['Have inspector run it on hottest day possible', 'Ask inspection to be done midday. Can it maintain setpoint? That\'s the real test.'],
+      ['Have inspector run it on hottest day possible', 'Ask inspection to be done midday. Can it maintain setpoint? That\’s the real test.'],
       ['Check the outdoor unit condition', 'Dented fins, rust, or debris around unit = deferred maintenance. Factor in $500-2,000 cleanup.'],
       ['Budget for age', 'System 10+ years old: budget $500-1,000/year for repairs. Over 15: budget for full replacement.'],
       ['Ask about refrigerant type', 'R-22 system = replacement is imminent and expensive ($4,500-9,000). Factor into offer.'],

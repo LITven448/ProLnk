@@ -8,7 +8,7 @@ const diagnoses: Record<string, { cause: string; trade: string; script: string; 
     urgency: '⚠️ Medium — fix before summer peaks',
   },
   humidity: {
-    cause: 'Oversized AC (short-cycles, doesn\'t dehumidify), infiltration through attic/crawl, or failed vapor barrier — DFW humidity is a serious comfort killer',
+    cause: 'Oversized AC (short-cycles, doesn\’t dehumidify), infiltration through attic/crawl, or failed vapor barrier — DFW humidity is a serious comfort killer',
     trade: 'HVAC Technician + Insulation Contractor',
     script: 'My home feels clammy and humid even when the AC is running. I want my AC runtime checked and a Manual J load calculation.',
     urgency: '🔴 High — mold risk within 30-60 days',

@@ -143,7 +143,7 @@ export default function ProLnkDataPrivacy() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {[
               { icon: '🔐', title: 'Encryption in Transit', detail: 'All data transmitted between your browser and ProLnk servers is encrypted with TLS 1.3. Your connection is always HTTPS.' },
-              { icon: '💾', title: 'Encryption at Rest', detail: 'All data stored in ProLnk\'s database is encrypted at rest using AES-256. Even if hardware were compromised, your data cannot be read.' },
+              { icon: '💾', title: 'Encryption at Rest', detail: 'All data stored in ProLnk\’s database is encrypted at rest using AES-256. Even if hardware were compromised, your data cannot be read.' },
               { icon: '🏛️', title: 'SOC 2 Infrastructure', detail: 'ProLnk is hosted on infrastructure providers that maintain SOC 2 Type II certification. Data centers have physical access controls, redundancy, and 24/7 monitoring.' },
               { icon: '📋', title: 'Annual Security Audits', detail: 'We conduct annual third-party security audits and penetration tests. Critical findings are addressed within 30 days.' },
               { icon: '🚨', title: 'Breach Notification', detail: 'In the unlikely event of a data breach affecting your account, we will notify you within 72 hours per GDPR requirements and within legally required windows per state law.' },

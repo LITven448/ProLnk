@@ -135,7 +135,7 @@ export default function CondensationMoistureGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
             {[
               { icon: '🏠', title: 'Proper Ventilation', desc: 'Ensure kitchen and bath fans exhaust outside, not into attic. Run them during and 20 min after use.' },
-              { icon: '❄️', title: 'HVAC Sizing', desc: 'Oversized units cool fast but don't run long enough to dehumidify. A Manual J load calc ensures correct sizing.' },
+              { icon: '❄️', title: 'HVAC Sizing', desc: 'Oversized units cool fast but don’t run long enough to dehumidify. A Manual J load calc ensures correct sizing.' },
               { icon: '🧱', title: 'Vapor Barriers', desc: 'Crawl spaces and unfinished basements need 6-mil poly sheeting covering 100% of ground surface.' },
               { icon: '📉', title: 'Dehumidifiers', desc: 'Standalone units in basements and crawlspaces reduce moisture load. Target 45–55% relative humidity indoors.' },
             ].map(item => (

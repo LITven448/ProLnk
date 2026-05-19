@@ -7,9 +7,9 @@ const goals = [
 ];
 
 const stakeholderImpact: Record<string, string> = {
-  'Homeowner': 'When you join the waitlist, add your home to the Health Vault, and hire through ProLnk, you protect your home\'s value, save money on every service call, and contribute verified demand that brings better contractors to your neighborhood.',
+  'Homeowner': 'When you join the waitlist, add your home to the Health Vault, and hire through ProLnk, you protect your home\’s value, save money on every service call, and contribute verified demand that brings better contractors to your neighborhood.',
   'Contractor': 'When a quality contractor joins ProLnk, they raise the bar for everyone. Their verified presence creates competitive pressure that improves outcomes for homeowners across DFW — and earns them better jobs.',
-  'Referrer': 'When you refer a homeowner or contractor to ProLnk, you\'re not just earning — you\'re building the network that makes your neighborhood more protected. Every referral compounds.',
+  'Referrer': 'When you refer a homeowner or contractor to ProLnk, you\’re not just earning — you\’re building the network that makes your neighborhood more protected. Every referral compounds.',
   'Community Leader': 'When you advocate for ProLnk in your HOA, neighborhood association, or business community, you accelerate the trust network. Community credibility is how we reach every home, not just digitally-connected ones.',
 };
 

@@ -22,7 +22,7 @@ const neighborhoodData: Record<Lifestyle, { neighborhoods: { name: string; trail
   Family: {
     neighborhoods: [
       { name: 'Frisco / Little Elm', trails: 'Community parks every 0.5 mi, splash pads', premium: '+5–8%', note: 'Most new master plans require 10% park land' },
-      { name: 'Coppell', trails: 'Andrew Brown Park, 25+ mi of trails', premium: '+6–10%', note: 'One of DFW\'s highest trail-to-resident ratios' },
+      { name: 'Coppell', trails: 'Andrew Brown Park, 25+ mi of trails', premium: '+6–10%', note: 'One of DFW\’s highest trail-to-resident ratios' },
       { name: 'Prosper / Celina', trails: 'New community parks, future trail plans', premium: '+3–6%', note: 'Growing trail network, buy early for appreciation' },
       { name: 'Grapevine', trails: 'Lake Grapevine, Dove Creek trails', premium: '+5–9%', note: 'Water access plus trails unusual combination' },
     ],

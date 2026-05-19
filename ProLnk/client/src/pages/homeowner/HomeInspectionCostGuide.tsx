@@ -63,7 +63,7 @@ export default function HomeInspectionCostGuide() {
               { icon: '🏗️', label: 'Foundation elevation survey', cost: '$350–600', note: 'Critical in DFW — expansive clay soil' },
               { icon: '🚿', label: 'Sewer camera scope', cost: '$250–400', note: 'Recommended for pre-2000 DFW homes' },
               { icon: '🏊', label: 'Pool / spa inspection', cost: '$150–300', note: 'Separate from general inspection' },
-              { icon: '🏠', label: 'Roof specialist', cost: '$150–400', note: 'When inspector won't walk the roof' },
+              { icon: '🏠', label: 'Roof specialist', cost: '$150–400', note: 'When inspector won’t walk the roof' },
               { icon: '💧', label: 'Sprinkler system', cost: '$100–200', note: 'Optional but common in DFW' },
               { icon: '🐛', label: 'Wood-destroying insects (termites)', cost: '$75–150', note: 'Often included in general inspection' },
             ].map(item => (

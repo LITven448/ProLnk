@@ -7,9 +7,9 @@ export default function DFWProLnkStayConnected2026() {
     homeowner: {
       label: '🏠 Homeowner',
       steps: [
-        { emoji: '📋', title: 'Join the Waitlist at prolnk.io', body: 'Takes 2 minutes. Name, address, service type, contact info. You\'ll receive a confirmation and Charter tier status update when full launch begins.' },
+        { emoji: '📋', title: 'Join the Waitlist at prolnk.io', body: 'Takes 2 minutes. Name, address, service type, contact info. You\’ll receive a confirmation and Charter tier status update when full launch begins.' },
         { emoji: '📚', title: 'Explore the DFW Home Content Library', body: 'Over 5,300 pages of DFW-specific home service content — HVAC, roofing, foundation, plumbing. Bookmark pages relevant to your home.' },
-        { emoji: '👥', title: 'Refer a Pro You Trust', body: 'Know a great local contractor? Refer them to ProLnk\'s Charter pro program. When they join, your network income from their activity starts on day 1.' },
+        { emoji: '👥', title: 'Refer a Pro You Trust', body: 'Know a great local contractor? Refer them to ProLnk\’s Charter pro program. When they join, your network income from their activity starts on day 1.' },
         { emoji: '🔔', title: 'Watch for Launch Notification', body: 'Full matching and lead delivery launches in summer 2026. Waitlist members get 48-hour early access before public opening.' },
       ],
     },
@@ -19,7 +19,7 @@ export default function DFWProLnkStayConnected2026() {
         { emoji: '📋', title: 'Apply for Charter Pro Status', body: 'Charter tier closes at 500 applications. Apply now at prolnk.io/pro — provide license number, trade, and service area. $149/mo locked rate when activated.' },
         { emoji: '💰', title: 'Understand Your 5 Income Streams', body: 'Charter pros earn job commissions, subscription overrides on referred pros (12% recurring), homeowner origination rights, and network cascade income up to 4 levels deep.' },
         { emoji: '👥', title: 'Start Referring Now — Network Income Begins at Launch', body: 'Every pro you refer who joins Charter tier generates subscription override income for you from day 1 of launch. Build your network now while Charter tier is still open.' },
-        { emoji: '📊', title: 'Follow the DFW Trade Content for Authority Positioning', body: 'ProLnk\'s 5,300+ DFW content pages mention and reference Charter pros. Being in the network positions you as a DFW authority before the matching algorithm goes live.' },
+        { emoji: '📊', title: 'Follow the DFW Trade Content for Authority Positioning', body: 'ProLnk\’s 5,300+ DFW content pages mention and reference Charter pros. Being in the network positions you as a DFW authority before the matching algorithm goes live.' },
       ],
     },
     investor: {

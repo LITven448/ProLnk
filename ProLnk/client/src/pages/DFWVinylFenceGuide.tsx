@@ -40,7 +40,7 @@ export default function DFWVinylFenceGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginTop: 36 }}>
           {[
-            { icon: '☀️', title: 'DFW Heat Performance', body: 'Modern vinyl is UV-stabilized and handles DFW\'s intense heat well. Quality PVC fences don\'t yellow or warp even in 110°F summers when properly installed with expansion gaps.' },
+            { icon: '☀️', title: 'DFW Heat Performance', body: 'Modern vinyl is UV-stabilized and handles DFW\’s intense heat well. Quality PVC fences don\’t yellow or warp even in 110°F summers when properly installed with expansion gaps.' },
             { icon: '🏘️', title: 'HOA Acceptance', body: 'Most DFW HOAs explicitly allow white vinyl privacy and picket fences. Always verify your CC&Rs — some require specific heights or prohibit wood-look vinyl. Get written approval before ordering.' },
             { icon: '🔧', title: 'True Zero Maintenance', body: 'Unlike wood, vinyl never needs staining, sealing, or painting. Occasional rinse with garden hose removes DFW clay dust. Budget $0 annually vs $500–$900/yr for equivalent wood fence.' },
           ].map(card => (
@@ -101,7 +101,7 @@ export default function DFWVinylFenceGuide() {
           {[
             'Expansion gaps (1/8") are mandatory in DFW — vinyl expands significantly in summer heat. Installers who skip this cause buckling.',
             'Avoid thin-wall vinyl (under 0.12" wall thickness) — it cracks in DFW hail storms. Ask for Grade 5 or commercial-grade panels.',
-            'Vinyl can\'t be cut easily after install — measure and plan gate locations carefully before ordering.',
+            'Vinyl can\’t be cut easily after install — measure and plan gate locations carefully before ordering.',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, marginTop: 1 }}>→</span>

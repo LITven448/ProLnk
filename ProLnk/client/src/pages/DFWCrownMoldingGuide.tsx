@@ -6,7 +6,7 @@ const dfwConcerns = ['Seasonal gaps at seams', 'Humidity swelling', 'Paint adhes
 function getCrownAssessment(room: string, concern: string) {
   if (concern.includes('gaps at seams')) return {
     cause: 'DFW Winter Dry Season (10–25% humidity)',
-    fix: 'Paintable latex caulk in gaps — do NOT use silicone (won\'t take paint)',
+    fix: 'Paintable latex caulk in gaps — do NOT use silicone (won\’t take paint)',
     prevention: 'Install in fall when humidity is stable; leave 1/16" gap at coped joints',
     finish: 'Satin or semi-gloss — wipes clean, shows gaps less than flat',
     color: '#F5A623'

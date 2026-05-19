@@ -7,7 +7,7 @@ const mistakes = [
     title: 'Hiring a Storm Chaser',
     cost: 'Bad work + zero recourse',
     detail: 'After DFW hailstorms, out-of-state contractors flood neighborhoods. They rush jobs, use cheap materials, and are gone before problems appear. Your 10-year warranty is from a company that no longer exists.',
-    fix: 'Only hire contractors with a permanent Texas address and verifiable local references. Check TDLR registration. If they knocked on your door right after a storm, that\'s a red flag.',
+    fix: 'Only hire contractors with a permanent Texas address and verifiable local references. Check TDLR registration. If they knocked on your door right after a storm, that\’s a red flag.',
   },
   {
     id: 'aob',
@@ -21,8 +21,8 @@ const mistakes = [
     id: 'permit',
     icon: '🏗️',
     title: 'Skipping the Permit',
-    cost: 'Can\'t sell home + forced tear-off',
-    detail: 'Unpermitted roofing work in DFW municipalities (Dallas, Fort Worth, Plano, Frisco) can block your home sale, trigger forced removal, and void homeowner\'s insurance on future claims.',
+    cost: 'Can\’t sell home + forced tear-off',
+    detail: 'Unpermitted roofing work in DFW municipalities (Dallas, Fort Worth, Plano, Frisco) can block your home sale, trigger forced removal, and void homeowner\’s insurance on future claims.',
     fix: 'Require a permit number before work begins. Any legitimate DFW roofer pulls permits automatically. If they ask you to skip it to "save time," walk away.',
   },
   {
@@ -38,7 +38,7 @@ const mistakes = [
     icon: '⏳',
     title: 'Waiting Too Long After Damage',
     cost: 'Mold + structural damage compounds fast',
-    detail: 'DFW spring rain is relentless. A compromised roof that\'s ignored for 30 days can develop attic mold ($8,000+), wet insulation (full replacement), and rotted decking — turning a $12,000 job into a $25,000 one.',
+    detail: 'DFW spring rain is relentless. A compromised roof that\’s ignored for 30 days can develop attic mold ($8,000+), wet insulation (full replacement), and rotted decking — turning a $12,000 job into a $25,000 one.',
     fix: 'Inspect your attic the day after any major storm. If you see daylight or wet insulation, call a roofer within 48 hours. Insurance adjusters also document delay as a coverage issue.',
   },
 ];

@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 const questions = [
   { q: 'Do you have a current foundation inspection letter from a licensed engineer?', options: ['No', 'Seller disclosure only', 'Inspection done, no letter', 'Yes, letter in hand'], answer: 3 },
-  { q: 'What is your home\'s current condition compared to comparable sales?', options: ['Needs major work', 'Dated but functional', 'Updated key areas', 'Move-in ready throughout'], answer: 3 },
+  { q: 'What is your home\’s current condition compared to comparable sales?', options: ['Needs major work', 'Dated but functional', 'Updated key areas', 'Move-in ready throughout'], answer: 3 },
   { q: 'Do you have permits for all improvements made to the home?', options: ['No improvements made', 'Done work, no permits', 'Some permitted', 'All work fully permitted'], answer: 3 },
   { q: 'How familiar are you with current DFW market pricing in your zip code?', options: ['No idea', 'Rough estimate', 'Checked Zillow/Redfin', 'Reviewed agent CMA reports'], answer: 3 },
   { q: 'What is your timeline to close?', options: ['Under 30 days', '30-45 days', '45-60 days', 'Flexible, 60+ days'], answer: 3 },
   { q: 'Is your home professionally staged or decluttered for photos?', options: ['No plans', 'Cleaned up', 'Decluttered and painted', 'Professional staging done'], answer: 3 },
-  { q: 'Do you have a plan if your home doesn\'t sell in 30 days?', options: ['No', 'Drop price immediately', 'Review strategy with agent', 'Pre-planned price and incentive steps'], answer: 3 },
+  { q: 'Do you have a plan if your home doesn\’t sell in 30 days?', options: ['No', 'Drop price immediately', 'Review strategy with agent', 'Pre-planned price and incentive steps'], answer: 3 },
   { q: 'Are all HVAC systems serviced and documented?', options: ['Unknown status', 'Working but unserviced', 'Recent service, no records', 'Serviced and documented'], answer: 3 },
-  { q: 'How will you handle simultaneous buy/sell timing?', options: ['Haven\'t thought about it', 'Bridge loan maybe', 'Sale contingency plan', 'Full plan with agent and lender'], answer: 3 },
+  { q: 'How will you handle simultaneous buy/sell timing?', options: ['Haven\’t thought about it', 'Bridge loan maybe', 'Sale contingency plan', 'Full plan with agent and lender'], answer: 3 },
   { q: 'Have you completed a pre-listing inspection?', options: ['No — buyers can inspect', 'Planning to', 'Inspected, not addressed', 'Inspected and addressed issues'], answer: 3 },
   { q: 'How do you plan to select a listing agent?', options: ['Family friend', 'Lowest commission', 'Online reviews only', 'Interview 3+ agents with CMA review'], answer: 3 },
   { q: 'Do you understand your net proceeds after fees and mortgage payoff?', options: ['No', 'Rough guess', 'Estimated with online tool', 'Detailed net sheet from agent/title'], answer: 3 },

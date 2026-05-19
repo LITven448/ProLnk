@@ -12,7 +12,7 @@ export default function DFWSodInstallGuide2026() {
         spring: '🌱 Ideal! Install Bermuda sod April–June. Till 4–6 inches, add 2 inches compost for DFW clay. Water 3x daily first 2 weeks.',
         summer: '☀️ Viable but demanding. Water 4x daily in DFW heat. Install before 10am. Bermuda establishes fast — stay off grass 3 weeks.',
         fall: '🍂 Marginal. Bermuda goes dormant by November. Consider St. Augustine for better fall establishment. Water daily first 2 weeks.',
-        winter: '❄️ Not recommended Dec–Feb. Bermuda won\'t root in cold DFW soil. Wait until March soil temps hit 65°F+.',
+        winter: '❄️ Not recommended Dec–Feb. Bermuda won\’t root in cold DFW soil. Wait until March soil temps hit 65°F+.',
       },
       patchy: {
         spring: '🌿 Great timing. Remove dead patches, till 4 inches, level with sandy loam. Match existing grass type for seamless look.',
@@ -57,7 +57,7 @@ export default function DFWSodInstallGuide2026() {
         {result && <div style={{ padding: 20, background: '#0d1f3c', border: '1px solid #F5E642', borderRadius: 8, lineHeight: 1.7 }}>{result}</div>}
 
         <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-          {[['🪱 Soil Prep', 'Till 4–6 inches deep. Amend DFW clay with 2–3 inches of compost. Grade away from structures.'],['💧 First 2 Weeks', 'Water 3x daily minimum. Keep sod moist — never soggy. DFW summer may require 4x daily.'],['🧪 Fertilizer', 'Wait 4–6 weeks post-install. Use slow-release 15-5-10 starter fertilizer for DFW clay soil.'],['🚶 Traffic', 'Stay off new sod 3 weeks. Roots need time to anchor into DFW\'s dense clay substrate.']].map(([title, desc]) => (
+          {[['🪱 Soil Prep', 'Till 4–6 inches deep. Amend DFW clay with 2–3 inches of compost. Grade away from structures.'],['💧 First 2 Weeks', 'Water 3x daily minimum. Keep sod moist — never soggy. DFW summer may require 4x daily.'],['🧪 Fertilizer', 'Wait 4–6 weeks post-install. Use slow-release 15-5-10 starter fertilizer for DFW clay soil.'],['🚶 Traffic', 'Stay off new sod 3 weeks. Roots need time to anchor into DFW\’s dense clay substrate.']].map(([title, desc]) => (
             <div key={title as string} style={{ padding: 16, background: '#0d1f3c', borderRadius: 8, border: '1px solid #1e3a5f' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>

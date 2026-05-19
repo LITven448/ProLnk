@@ -36,7 +36,7 @@ export default function WinterPipeGuide() {
 
   const prepSteps =
     riskLevel === 'High'
-      ? ['Install pipe insulation on all exterior-adjacent pipes', 'Know location of main water shutoff', 'Drip all faucets on exterior walls when <28°F', 'Consider whole-home pipe heating tape', 'Pre-save a plumber's number']
+      ? ['Install pipe insulation on all exterior-adjacent pipes', 'Know location of main water shutoff', 'Drip all faucets on exterior walls when <28°F', 'Consider whole-home pipe heating tape', 'Pre-save a plumber’s number']
       : riskLevel === 'Moderate'
       ? ['Insulate exposed pipes in garage/crawl space', 'Open cabinet doors under sinks during freezes', 'Drip exterior faucets when sustained <28°F', 'Keep heat at 55°F+ when away']
       : ['Know your shutoff location', 'Disconnect hose bibs before first freeze', 'Keep interior temp above 55°F'];

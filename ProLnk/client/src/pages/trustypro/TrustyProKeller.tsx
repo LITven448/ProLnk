@@ -21,14 +21,14 @@ const pros = [
 
 const testimonials = [
   { name: 'Robert H.', neighborhood: 'Keller, TX', quote: 'Our 2005 home had the original Trane system. Steven replaced it with a two-stage unit sized perfectly for the layout. First summer with real comfort control.' },
-  { name: 'Amanda W.', neighborhood: 'Eagle Mountain Area', quote: 'Lake proximity meant moisture crept into our crawl space every spring. Diane found the issue and waterproofed correctly. Haven't had moisture since.' },
+  { name: 'Amanda W.', neighborhood: 'Eagle Mountain Area', quote: 'Lake proximity meant moisture crept into our crawl space every spring. Diane found the issue and waterproofed correctly. Haven’t had moisture since.' },
   { name: 'Chris T.', neighborhood: 'Keller, TX', quote: 'Selling a $600K home means buyers scrutinize everything. Patrick replaced our gutters and documented it all. Made the inspection easy.' },
 ];
 
 const faqs = [
   {
     q: 'Why are Keller HVAC systems hitting failure age now?',
-    a: 'The bulk of Keller's housing stock was built between 2000 and 2015. Standard residential HVAC systems are rated for 15–20 years under normal conditions. North Texas summers push systems hard — 95°F+ days for 3–4 months mean compressors and heat exchangers degrade faster than in milder climates. Many Keller systems are entering or past their reliable service window.',
+    a: 'The bulk of Keller’s housing stock was built between 2000 and 2015. Standard residential HVAC systems are rated for 15–20 years under normal conditions. North Texas summers push systems hard — 95°F+ days for 3–4 months mean compressors and heat exchangers degrade faster than in milder climates. Many Keller systems are entering or past their reliable service window.',
   },
   {
     q: 'Does Eagle Mountain Lake proximity cause real moisture problems?',

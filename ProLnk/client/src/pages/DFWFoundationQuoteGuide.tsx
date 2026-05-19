@@ -38,7 +38,7 @@ const symptomSets = [
     symptoms: 'Sloping floors + cracks at corners',
     severity: 'Significant',
     notes: 'Differential settlement. Engineer involvement required. Do not delay.',
-    mustHave: ['Independent engineer evaluation — not contractor\'s in-house engineer', 'Soil report or moisture barrier assessment', 'All above items from moderate symptoms', 'Post-repair elevation certificate'],
+    mustHave: ['Independent engineer evaluation — not contractor\’s in-house engineer', 'Soil report or moisture barrier assessment', 'All above items from moderate symptoms', 'Post-repair elevation certificate'],
   },
   {
     symptoms: 'Gaps at roofline + exterior brick cracking',

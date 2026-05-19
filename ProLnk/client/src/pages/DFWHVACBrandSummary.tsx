@@ -23,7 +23,7 @@ const brands = [
     price: '$$$',
     reliability: 'Excellent',
     warrantyYears: '10 yr parts + 12 yr compressor',
-    dfwNotes: '"It\'s Hard to Stop a Trane." Built for extreme heat. XR and XV series excel in DFW summers.',
+    dfwNotes: '"It\’s Hard to Stop a Trane." Built for extreme heat. XR and XV series excel in DFW summers.',
   },
   {
     id: 'lennox',

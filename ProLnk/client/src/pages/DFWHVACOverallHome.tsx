@@ -70,7 +70,7 @@ export default function DFWHVACOverallHome() {
 
         <div style={{ background: '#0d2137', borderRadius: 10, padding: '14px 16px', marginBottom: 24, border: '1px solid #1e3a5f' }}>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0, lineHeight: 1.7 }}>
-            In DFW, HVAC controls temperature, humidity, and air quality — all three directly affect your home's structure and your family's health. A failing HVAC doesn't just mean discomfort; it means <span style={{ color: '#F5E642' }}>moisture damage, mold, and degraded air</span>.
+            In DFW, HVAC controls temperature, humidity, and air quality — all three directly affect your home's structure and your family’s health. A failing HVAC doesn’t just mean discomfort; it means <span style={{ color: '#F5E642' }}>moisture damage, mold, and degraded air</span>.
           </p>
         </div>
 

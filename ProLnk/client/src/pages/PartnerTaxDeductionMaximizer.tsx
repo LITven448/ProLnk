@@ -50,7 +50,7 @@ export default function PartnerTaxDeductionMaximizer() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#1565c0', marginBottom: 16 }}>📊 How Self-Employment Changes Your Taxes</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 16 }}>
             {[
-              { icon: '⚠️', title: 'Self-Employment Tax', desc: 'You pay BOTH employee and employer Social Security/Medicare — that's 15.3% on top of income tax.' },
+              { icon: '⚠️', title: 'Self-Employment Tax', desc: 'You pay BOTH employee and employer Social Security/Medicare — that’s 15.3% on top of income tax.' },
               { icon: '✅', title: 'SE Tax Deduction', desc: 'You can deduct half of your SE tax from gross income. This reduces your overall taxable income.' },
               { icon: '💡', title: 'Business Deductions', desc: 'Significant deductions W-2 employees cannot take. The ProLnk deduction stack below can save $5,000–$20,000+ per year.' },
             ].map(c => (

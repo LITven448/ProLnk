@@ -7,16 +7,16 @@ const STORY: Record<Perspective, { title: string; paragraphs: string[] }> = {
     title: 'You hired the wrong contractor. Again.',
     paragraphs: [
       'You found someone on a directory. They had reviews — some you later realized were fake. They showed up late, gave you a price, then revised it twice. The job took three visits. You were never sure if the work was done right.',
-      'That's the DFW homeowner experience for 70% of service calls. Not because bad contractors dominate — but because bad contractors dominate advertising.',
-      'ProLnk was built because the problem isn't finding contractors. It's knowing which ones you can trust. Every contractor in ProLnk is vetted before you ever see their name. The match is based on your job, your location, and their verified specialty — not who paid the most for an ad.',
+      'That’s the DFW homeowner experience for 70% of service calls. Not because bad contractors dominate — but because bad contractors dominate advertising.',
+      'ProLnk was built because the problem isn’t finding contractors. It’s knowing which ones you can trust. Every contractor in ProLnk is vetted before you ever see their name. The match is based on your job, your location, and their verified specialty — not who paid the most for an ad.',
       'The Home Health Vault stores the complete record of your home. Future contractors arrive knowing your system specs, past service history, and known issues. No more starting from scratch every time.',
     ],
   },
   contractor: {
     title: 'You do great work. Nobody knows you exist.',
     paragraphs: [
-      'You've been doing this for 15 years. Your customers love you. Your repeat rate is high. But when a new homeowner searches DFW HVAC, they find the companies with the biggest ad budgets — not the best technicians.',
-      'Lead generation platforms charge you -200 per lead regardless of outcome. You bid against five other contractors for the same homeowner. Half the leads ghost. The math doesn't work.',
+      'You’ve been doing this for 15 years. Your customers love you. Your repeat rate is high. But when a new homeowner searches DFW HVAC, they find the companies with the biggest ad budgets — not the best technicians.',
+      'Lead generation platforms charge you -200 per lead regardless of outcome. You bid against five other contractors for the same homeowner. Half the leads ghost. The math doesn’t work.',
       'ProLnk inverts this. Instead of paying to be discovered, you are verified — and the platform brings you the homeowners your credentials match. You pay only when the match converts. No wasted spend. No bidding wars. Just work.',
       'Your reputation compounds. Every completed job updates your DFW score. In three years, that score is your moat — no new competitor can buy their way past it.',
     ],
@@ -24,10 +24,10 @@ const STORY: Record<Perspective, { title: string; paragraphs: string[] }> = {
   partner: {
     title: 'You saw the opportunity before anyone else.',
     paragraphs: [
-      'You know both sides of this market. You know the contractors who are great but invisible. You know the homeowners who are frustrated but don't know where to look. You've been the informal bridge for years.',
+      'You know both sides of this market. You know the contractors who are great but invisible. You know the homeowners who are frustrated but don’t know where to look. You’ve been the informal bridge for years.',
       'ProLnk formalizes that bridge — and pays you permanently for building it. Every contractor you bring into the network generates income across four levels. Every home you originate generates income for the life of that home on the platform.',
       'The Charter rate locks your economics at the founding tier. As ProLnk scales from DFW to Texas to national, your income scales with it — at the rate you locked in on day one.',
-      'You didn't just join a platform. You built a position in the infrastructure of DFW home services.',
+      'You didn’t just join a platform. You built a position in the infrastructure of DFW home services.',
     ],
   },
 };
@@ -35,7 +35,7 @@ const STORY: Record<Perspective, { title: string; paragraphs: string[] }> = {
 export default function DFWProLnkOriginStory() {
   const [perspective, setPerspective] = useState<Perspective>('homeowner');
 
-  const labels: Record<Perspective, string> = { homeowner: 'I'm a Homeowner', contractor: 'I'm a Contractor', partner: 'I'm a Partner' };
+  const labels: Record<Perspective, string> = { homeowner: 'I’m a Homeowner', contractor: 'I’m a Contractor', partner: 'I’m a Partner' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 24px', fontFamily: 'sans-serif', color: '#fff' }}>

@@ -69,7 +69,7 @@ export default function DFWWaterBasinGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🌵 Drought & Conservation</h2>
-          {[['📊 Check Levels', 'TWDB.texas.gov shows current reservoir levels across Texas — updated weekly'], ['🚿 Stage Restrictions', 'DFW utilities issue watering stage restrictions in drought — check your city utility's site'], ['💧 Hard Water', 'High hardness requires water softeners for appliances — reduces scale buildup by 70%'], ['📋 Annual Report', 'Your utility publishes a free Consumer Confidence Report (CCR) each July — request it']].map(([icon, desc]) => (
+          {[['📊 Check Levels', 'TWDB.texas.gov shows current reservoir levels across Texas — updated weekly'], ['🚿 Stage Restrictions', 'DFW utilities issue watering stage restrictions in drought — check your city utility’s site'], ['💧 Hard Water', 'High hardness requires water softeners for appliances — reduces scale buildup by 70%'], ['📋 Annual Report', 'Your utility publishes a free Consumer Confidence Report (CCR) each July — request it']].map(([icon, desc]) => (
             <div key={icon} style={{ display: 'flex', gap: '1rem', padding: '0.75rem 0', borderBottom: '1px solid #1E3A5F' }}>
               <span>{icon}</span>
               <span style={{ color: '#9BA3B8', fontSize: '0.9rem' }}>{desc}</span>

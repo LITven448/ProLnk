@@ -70,7 +70,7 @@ export default function DFWOncorRebateGuide() {
 
         <div style={{ background: '#111D2E', border: '1px solid #1E2D42', borderRadius: 12, padding: 24 }}>
           <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12 }}>📋 How to Apply for Oncor Rebates</h3>
-          {['Use an Oncor-approved contractor — they submit rebates on your behalf','Contractor must be registered in Oncor's Trade Ally Network','Equipment must meet minimum efficiency ratings (verified at time of install)','Rebate submitted within 90 days of installation','Allow 6–8 weeks for rebate processing and payment'].map((s, i) => (
+          {['Use an Oncor-approved contractor — they submit rebates on your behalf','Contractor must be registered in Oncor’s Trade Ally Network','Equipment must meet minimum efficiency ratings (verified at time of install)','Rebate submitted within 90 days of installation','Allow 6–8 weeks for rebate processing and payment'].map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, fontSize: 14 }}>
               <span style={{ color: '#F5E642', marginTop: 1 }}>✓</span><span style={{ color: '#9BA8B8' }}>{s}</span>
             </div>

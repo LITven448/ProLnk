@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const actions = [
-  { id: 'join-waitlist', label: 'Join the waitlist as a Pro', how: 'Go to prolnk.io/pro-signup. Fill in your trade, service area, and contact info. You\'re in. Charter tier locks your rate at $149/mo forever. Waitlist closes at 500 — don\'t wait.' },
-  { id: 'homeowner-signup', label: 'Join as a homeowner', how: 'Go to prolnk.io/homeowner-signup. Add your address, the service you need, and your contact. When we go live in DFW, you\'re first in queue for a verified pro match.' },
-  { id: 'schedule-hvac', label: 'Schedule an HVAC match through ProLnk', how: 'Join the homeowner waitlist and select HVAC as your service need. ProLnk\'s beta matching will connect you with a verified DFW HVAC pro before the summer rush hits.' },
+  { id: 'join-waitlist', label: 'Join the waitlist as a Pro', how: 'Go to prolnk.io/pro-signup. Fill in your trade, service area, and contact info. You\’re in. Charter tier locks your rate at $149/mo forever. Waitlist closes at 500 — don\’t wait.' },
+  { id: 'homeowner-signup', label: 'Join as a homeowner', how: 'Go to prolnk.io/homeowner-signup. Add your address, the service you need, and your contact. When we go live in DFW, you\’re first in queue for a verified pro match.' },
+  { id: 'schedule-hvac', label: 'Schedule an HVAC match through ProLnk', how: 'Join the homeowner waitlist and select HVAC as your service need. ProLnk\’s beta matching will connect you with a verified DFW HVAC pro before the summer rush hits.' },
   { id: 'health-vault', label: 'Add my home to Health Vault', how: 'After joining as a homeowner, go to your dashboard and select "Add Home to Health Vault." Enter your address, HVAC system age, and any known issues. This stays private to you.' },
   { id: 'refer-pro', label: 'Refer a pro or neighbor', how: 'Share your ProLnk referral link (found in your dashboard after signup). If they join as a Charter Pro, you earn 12% subscription override monthly — permanently.' },
 ];
@@ -30,7 +30,7 @@ export default function DFWProLnkMayAction() {
           {[
             { icon: '⏳', title: 'Charter Closes at 500 Pro Apps', body: 'Once 500 Pros are on the Charter waitlist, the $149/mo locked rate disappears. New Pros pay market rate. This is a hard cap — not a soft deadline.' },
             { icon: '🏡', title: 'Homeowner Waitlist Is Free', body: 'Join now, get matched when DFW goes live. No payment required. No obligation. First in, first matched.' },
-            { icon: '💰', title: 'Network Income Starts Day 1', body: 'Every Pro or homeowner you refer before Charter closes earns you ongoing income through ProLnk\'s 4-level cascade. Referral rights are locked to your account permanently.' },
+            { icon: '💰', title: 'Network Income Starts Day 1', body: 'Every Pro or homeowner you refer before Charter closes earns you ongoing income through ProLnk\’s 4-level cascade. Referral rights are locked to your account permanently.' },
             { icon: '🔒', title: 'Health Vault Data Is Yours', body: 'Adding your home is free and private. Your data is never sold. It improves your match quality when ProLnk launches full matching in DFW.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0f2040', borderRadius: 12, padding: '20px 24px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>

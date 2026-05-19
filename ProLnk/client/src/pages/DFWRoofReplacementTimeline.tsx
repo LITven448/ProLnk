@@ -13,7 +13,7 @@ const phases = [
     days: 'Day 4–7',
     title: 'Insurance Approval',
     icon: '📋',
-    steps: ['Insurance adjuster schedules and completes inspection', 'Adjuster\'s estimate issued — compare with your roofer\'s', 'Negotiate discrepancies; roofer submits supplemental if needed'],
+    steps: ['Insurance adjuster schedules and completes inspection', 'Adjuster\’s estimate issued — compare with your roofer\’s', 'Negotiate discrepancies; roofer submits supplemental if needed'],
     risks: ['Can extend 10+ days if adjuster is backed up post-storm', 'First offer is rarely the final offer — always push back'],
     color: '#8B5CF6',
   },

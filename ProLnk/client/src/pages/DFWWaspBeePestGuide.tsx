@@ -100,7 +100,7 @@ const RECS: Record<string, Record<string, { approach: string; timing: string; ca
     },
     tree: { approach: 'Mud daubers on trees or structures are low risk. Remove tubes if aesthetically undesirable. Leave if out of sight.',
       timing: 'Any time.',
-      callPro: false, note: 'No action required for distant mud dauber tubes. They are DFW\'s free spider control service.',
+      callPro: false, note: 'No action required for distant mud dauber tubes. They are DFW\’s free spider control service.',
     },
   },
   honeybee: {

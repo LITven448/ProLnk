@@ -30,7 +30,7 @@ export default function DFWHVACDFWLegacy() {
     const count = Object.values(checked).filter(Boolean).length;
     if (!status) { setResult('⚠️ Select your documentation status first.'); return; }
     if (status === 'none') {
-      setResult('📋 Start with the basics: locate your equipment tags and photograph model/serial numbers today. Then contact your HVAC contractor for a history pull — most DFW contractors keep records 5–10 years. ProLnk\'s Home Health Vault auto-organizes everything you collect.');
+      setResult('📋 Start with the basics: locate your equipment tags and photograph model/serial numbers today. Then contact your HVAC contractor for a history pull — most DFW contractors keep records 5–10 years. ProLnk\’s Home Health Vault auto-organizes everything you collect.');
     } else if (status === 'partial') {
       setResult(`🗂️ You have a foundation. You\'ve checked ${count} of ${legacyItems.length} legacy items. Fill gaps by calling your contractor and checking your email for old invoices. Once complete, your HVAC legacy adds measurable value at resale — DFW buyers increasingly request it.`);
     } else {

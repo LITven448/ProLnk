@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const interests = [
   { label: 'Old Home History', key: 'history', context: 'Pre-AC DFW homes used sleeping porches, attic fans, and thick masonry walls to survive summers. Homes before 1960 were often designed around airflow — tall ceilings, cross ventilation, shaded porches.', today: 'These homes often have unusual duct layouts or no ducts at all. A skilled DFW HVAC pro can assess the best modern retrofit.' },
-  { label: 'Swamp Coolers', key: 'swamp', context: 'Swamp coolers (evaporative coolers) failed in DFW because humidity averages 65–80% in summer — they only work in dry climates under 50% humidity. DFW tried them briefly in the 1940s–50s and abandoned them fast.', today: 'DFW's humidity makes dehumidification essential. Modern systems with variable-speed blowers manage humidity much better than older single-stage units.' },
-  { label: 'Ceiling Fan Role', key: 'fans', context: 'Ceiling fans were essential pre-AC and still matter. In 1920s–50s DFW, fans ran constantly. They don't cool air — they create a wind-chill effect, making 80°F feel like 74°F.', today: 'Running fans with AC lets you raise the thermostat 4°F with the same comfort — saving 10–15% on cooling bills in DFW summers.' },
+  { label: 'Swamp Coolers', key: 'swamp', context: 'Swamp coolers (evaporative coolers) failed in DFW because humidity averages 65–80% in summer — they only work in dry climates under 50% humidity. DFW tried them briefly in the 1940s–50s and abandoned them fast.', today: 'DFW’s humidity makes dehumidification essential. Modern systems with variable-speed blowers manage humidity much better than older single-stage units.' },
+  { label: 'Ceiling Fan Role', key: 'fans', context: 'Ceiling fans were essential pre-AC and still matter. In 1920s–50s DFW, fans ran constantly. They don’t cool air — they create a wind-chill effect, making 80°F feel like 74°F.', today: 'Running fans with AC lets you raise the thermostat 4°F with the same comfort — saving 10–15% on cooling bills in DFW summers.' },
   { label: 'Sleeping Porches', key: 'porches', context: 'Many 1900–1940s DFW homes had sleeping porches — screened outdoor rooms where families slept in summer. When window AC arrived in the 1950s, sleeping porches were often enclosed, becoming rooms with unusual ventilation.', today: 'Converted sleeping porches often lack proper insulation or ductwork. DFW HVAC pros frequently find these spots are the hardest to condition in older homes.' },
-  { label: 'AC Cultural Shift', key: 'culture', context: 'Before AC, DFW had a slower summer pace — midday breaks, evening socializing outdoors, architecture shaped by shade. AC in the 1960s enabled DFW's population explosion: the metro grew from 900K in 1960 to 5M+ today.', today: 'DFW HVAC demand is directly tied to this growth. More homes, more systems, more maintenance needs — and an industry built around keeping it all running.' },
+  { label: 'AC Cultural Shift', key: 'culture', context: 'Before AC, DFW had a slower summer pace — midday breaks, evening socializing outdoors, architecture shaped by shade. AC in the 1960s enabled DFW’s population explosion: the metro grew from 900K in 1960 to 5M+ today.', today: 'DFW HVAC demand is directly tied to this growth. More homes, more systems, more maintenance needs — and an industry built around keeping it all running.' },
 ];
 
 export default function DFWHVACCoolingHistory() {
@@ -37,9 +37,9 @@ export default function DFWHVACCoolingHistory() {
 
         <div style={{ display: 'grid', gap: '1rem' }}>
           {[
-            { icon: '🪟', title: 'Window Units Arrived (1950s)', desc: 'First room AC units appeared in DFW. Wealthy homes got them first at $350+ — over $4,000 in today's dollars.' },
-            { icon: '🏠', title: 'Central AC Goes Mass Market (1960s–70s)', desc: 'DFW's postwar building boom made central AC standard. Builders bundled it in — and the city's growth exploded.' },
-            { icon: '🌀', title: 'Humidity Management Becomes Critical', desc: 'DFW's humid summers mean cooling alone is not enough. Modern systems with dehumidification are designed specifically for this climate.' },
+            { icon: '🪟', title: 'Window Units Arrived (1950s)', desc: 'First room AC units appeared in DFW. Wealthy homes got them first at $350+ — over $4,000 in today’s dollars.' },
+            { icon: '🏠', title: 'Central AC Goes Mass Market (1960s–70s)', desc: 'DFW’s postwar building boom made central AC standard. Builders bundled it in — and the city’s growth exploded.' },
+            { icon: '🌀', title: 'Humidity Management Becomes Critical', desc: 'DFW’s humid summers mean cooling alone is not enough. Modern systems with dehumidification are designed specifically for this climate.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', display: 'flex', gap: '1rem' }}>
               <div style={{ fontSize: '1.8rem' }}>{card.icon}</div>

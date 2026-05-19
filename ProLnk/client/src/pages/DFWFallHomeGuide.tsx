@@ -27,7 +27,7 @@ export default function DFWFallHomeGuide() {
   const tasks = features.filter(f => selected.includes(f.id));
   const totalCost = tasks.reduce((sum, t) => sum + t.cost, 0);
 
-  const liveOakNote = yard === 'live_oak' ? '🌳 Live Oak note: DFW live oaks hold their leaves until March. Don\'t wait for leaf drop — gutters may be fine until spring.' : '';
+  const liveOakNote = yard === 'live_oak' ? '🌳 Live Oak note: DFW live oaks hold their leaves until March. Don\’t wait for leaf drop — gutters may be fine until spring.' : '';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>

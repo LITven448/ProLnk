@@ -30,7 +30,7 @@ export default function DFWRoofingCottonwoodGuide2026() {
         </p>
 
         {[
-          { icon: '❄️', title: 'May Cottonwood Blizzard', desc: 'Eastern cottonwood trees (common in DFW creek corridors and older neighborhoods) release seeds for 2–4 weeks in May. Wind carries them miles — you don't need a cottonwood tree to be affected.' },
+          { icon: '❄️', title: 'May Cottonwood Blizzard', desc: 'Eastern cottonwood trees (common in DFW creek corridors and older neighborhoods) release seeds for 2–4 weeks in May. Wind carries them miles — you don’t need a cottonwood tree to be affected.' },
           { icon: '❄️', title: 'AC Condenser Vulnerability', desc: 'Seeds enter condenser fins within hours of peak release. A clogged condenser causes compressor stress and efficiency loss — check every 3–4 days during peak season.' },
           { icon: '🍂', title: 'Gutter Fill Speed', desc: 'Unlike leaves, cottonwood seeds are light and fluffy but compress into a dense mat when wet. A single DFW May rain event can fully clog previously clean gutters.' },
           { icon: '🏠', title: 'Home Entry Points', desc: 'Unsealed attic vents, soffit gaps, and open whole-house fan openings allow seeds inside. Once in the attic, seeds become fire fuel and moisture traps.' },

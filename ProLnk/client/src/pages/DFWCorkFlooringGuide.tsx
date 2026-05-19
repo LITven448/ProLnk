@@ -32,7 +32,7 @@ function getResult(room: string, climate: string): Result | null {
     return { feasibility: '✅ Excellent DFW Application', humidity: 'Bedrooms have stable humidity — use bedroom humidifier for extra protection in DFW winters', cost: '$4–$8/sq ft installed', vs: 'Cork is quieter and warmer underfoot than hardwood — ideal for DFW bedrooms', note: 'Bedrooms are the lowest-risk cork application in DFW — consistent occupancy helps moderate humidity swings' };
   }
   if (room === 'Home Office' && goodClimate) {
-    return { feasibility: '✅ Good DFW Choice', humidity: 'Office equipment and occupancy help stabilize humidity — supplement with a desk humidifier in DFW winters', cost: '$3–$7/sq ft installed', vs: 'Cork reduces fatigue from standing and dampens echo — practical benefits for DFW home offices', note: 'Cork\'s anti-fatigue properties make it popular for home offices. Computer equipment also helps regulate room climate' };
+    return { feasibility: '✅ Good DFW Choice', humidity: 'Office equipment and occupancy help stabilize humidity — supplement with a desk humidifier in DFW winters', cost: '$3–$7/sq ft installed', vs: 'Cork reduces fatigue from standing and dampens echo — practical benefits for DFW home offices', note: 'Cork\’s anti-fatigue properties make it popular for home offices. Computer equipment also helps regulate room climate' };
   }
   return { feasibility: '✅ Feasible With Proper HVAC', humidity: 'Maintain 35–55% RH year-round — DFW winters drop humidity fast, summers spike it', cost: '$3–$8/sq ft installed', vs: 'Cork is viable in DFW with disciplined HVAC and humidity control', note: 'Cork is a sustainable, comfortable flooring choice for DFW interiors — the only requirement is consistent climate control' };
 }

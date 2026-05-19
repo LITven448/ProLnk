@@ -72,7 +72,7 @@ export default function DFWFireplaceHeatingGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
             { icon: '🌡️', title: 'DFW Usage Reality', desc: 'DFW homeowners use fireplaces 10–20 evenings per year on average. At this usage level, even an inefficient fireplace has minimal impact on annual heating costs — comfort and ambiance drive the purchase decision more than economics.' },
-            { icon: '💨', title: 'Chimney Draft Issues', desc: 'Open wood fireplaces in DFW often have draft issues in mild weather — the temperature differential isn\'t strong enough to create good chimney draw. Result: smoke in the room. A gas insert eliminates this problem entirely.' },
+            { icon: '💨', title: 'Chimney Draft Issues', desc: 'Open wood fireplaces in DFW often have draft issues in mild weather — the temperature differential isn\’t strong enough to create good chimney draw. Result: smoke in the room. A gas insert eliminates this problem entirely.' },
           ].map((card, i) => (
             <div key={i} style={{ background: '#112240', borderRadius: 12, padding: '1.25rem', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{card.icon}</div>

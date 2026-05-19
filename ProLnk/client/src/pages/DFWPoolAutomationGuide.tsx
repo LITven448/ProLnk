@@ -10,7 +10,7 @@ const platforms = {
     compatibility: 'Best with Pentair pumps, lights, heaters',
     strengths: ['Industry-leading freeze protection (critical DFW Feb 2021 event)', 'Most reliable automation in DFW market', 'Large local dealer network in DFW', 'Works with all major Pentair equipment'],
     weaknesses: ['More expensive', 'Clunky older app UI', 'Limited 3rd-party integration'],
-    dfwNote: 'The DFW installer favorite. After the February 2021 freeze, Pentair\'s freeze protection automation became the DFW default. Most DFW pool builders spec Pentair.',
+    dfwNote: 'The DFW installer favorite. After the February 2021 freeze, Pentair\’s freeze protection automation became the DFW default. Most DFW pool builders spec Pentair.',
     best_for: 'New DFW pools, full Pentair equipment setups',
   },
   jandy: {

@@ -16,9 +16,9 @@ export default function DFWFoundationConcreteCarbon2026() {
   const result = ages.find(a => a.id === selected);
 
   const facts = [
-    { icon: '🧪', title: 'What is Carbonation', body: 'CO2 reacts with calcium hydroxide in concrete, forming calcium carbonate. This lowers concrete pH from ~12.5 to ~8, removing rebar\'s chemical corrosion protection.' },
+    { icon: '🧪', title: 'What is Carbonation', body: 'CO2 reacts with calcium hydroxide in concrete, forming calcium carbonate. This lowers concrete pH from ~12.5 to ~8, removing rebar\’s chemical corrosion protection.' },
     { icon: '🌧️', title: 'DFW Accelerants', body: 'DFW humidity and rainfall carry dissolved CO2 (carbonic acid). High moisture cycles in DFW clay soils increase carbonation rate vs dry climates.' },
-    { icon: '📏', title: 'Carbonation Depth', body: 'Advances ~1mm/year in exposed concrete. DFW\'s wet-dry cycles can push 1.5-2mm/year on uncoated or cracked surfaces.' },
+    { icon: '📏', title: 'Carbonation Depth', body: 'Advances ~1mm/year in exposed concrete. DFW\’s wet-dry cycles can push 1.5-2mm/year on uncoated or cracked surfaces.' },
     { icon: '⚠️', title: 'When It Matters', body: 'Problem begins when carbonation front reaches rebar (typically 20-40mm cover). Rebar then corrodes, expanding and cracking the concrete above it.' },
     { icon: '🏠', title: 'DFW Older Homes', body: 'Pre-1980 DFW foundations used lower concrete cover specs. 50+ year foundations in Oak Cliff, East Dallas, and older suburbs are most at risk.' },
     { icon: '🛡️', title: 'Prevention', body: 'Silane/siloxane penetrating sealers slow carbonation. Crack sealing is highest priority — cracks allow deep CO2 penetration in DFW weather cycles.' },

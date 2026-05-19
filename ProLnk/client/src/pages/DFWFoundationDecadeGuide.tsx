@@ -64,7 +64,7 @@ const decades = [
       'Root barriers around large trees within 20 feet of foundation',
     ],
     budget: '$500–$5,000 for minor adjustments; larger repairs uncommon in this era',
-    note: 'DFW\'s 2022–2023 drought years caused significant foundation movement even in newer homes. Consistent perimeter irrigation is the best preventive investment.',
+    note: 'DFW\’s 2022–2023 drought years caused significant foundation movement even in newer homes. Consistent perimeter irrigation is the best preventive investment.',
   },
   {
     label: '2010s–Present',

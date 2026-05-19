@@ -10,7 +10,7 @@ const solarData: Record<string, Record<string, { systemSize: string; timeline: s
       { phase: 'System Design', duration: '1–2 weeks', action: 'Engineer produces layout, single-line diagram, and production model. You review and approve.' },
       { phase: 'Permit Filing', duration: '2–4 weeks', action: 'Filed with your city (Dallas, Fort Worth, Plano, etc.). Most DFW cities 2–3 weeks. Frisco averages 3 weeks.' },
       { phase: 'Installation', duration: '1–2 days', action: 'Crew mounts racking, panels, and inverter. Electrician wires to your panel. Minimal interior work.' },
-      { phase: 'Inspection', duration: '1–2 weeks', action: 'City inspector signs off on permits. Schedule through your city's portal after installer notifies you.' },
+      { phase: 'Inspection', duration: '1–2 weeks', action: 'City inspector signs off on permits. Schedule through your city’s portal after installer notifies you.' },
       { phase: 'Oncor Interconnection', duration: '6–10 weeks', action: 'Oncor reviews, approves, and upgrades your meter to net metering. Longest step — plan accordingly.' },
     ]},
     '$150–$250/mo': { systemSize: '6–8 kW', timeline: '16–22 weeks', monthlyOffset: '90–110%', steps: [

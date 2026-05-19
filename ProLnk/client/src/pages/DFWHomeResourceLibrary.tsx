@@ -14,9 +14,9 @@ const categories = [
 const situations = [
   { label: 'I have an urgent repair need', value: 'urgent', start: 'Go directly to your service category → find the diagnostic guide → get a ProLnk quote with vetted pros ready today.' },
   { label: 'I want to prep my home for DFW summer', value: 'summer_prep', start: 'Start with HVAC seasonal prep, then roofing/insulation, then irrigation — all covered in the library.' },
-  { label: 'A contractor gave me a quote I'm unsure about', value: 'quote', start: 'Find the relevant guide, read the diagnostic section, then use ProLnk to get a second opinion from a vetted pro.' },
-  { label: 'I'm a new DFW homeowner', value: 'new', start: 'Start with the Foundation guide (DFW clay soil is unique), then HVAC, then Plumbing — the three highest-cost DFW systems.' },
-  { label: 'I'm planning a home renovation', value: 'renovation', start: 'Check Electrical first (panel capacity), then Plumbing and Structural — then use ProLnk to match with vetted trade pros.' },
+  { label: 'A contractor gave me a quote I’m unsure about', value: 'quote', start: 'Find the relevant guide, read the diagnostic section, then use ProLnk to get a second opinion from a vetted pro.' },
+  { label: 'I’m a new DFW homeowner', value: 'new', start: 'Start with the Foundation guide (DFW clay soil is unique), then HVAC, then Plumbing — the three highest-cost DFW systems.' },
+  { label: 'I’m planning a home renovation', value: 'renovation', start: 'Check Electrical first (panel capacity), then Plumbing and Structural — then use ProLnk to match with vetted trade pros.' },
 ];
 
 export default function DFWHomeResourceLibrary() {

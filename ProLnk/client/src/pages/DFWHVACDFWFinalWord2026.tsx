@@ -4,20 +4,20 @@ const situations = [
   { value: 'aging', label: '🏚️ My system is 10+ years old' },
   { value: 'highbill', label: '💸 I want to lower my energy bills' },
   { value: 'newbuyer', label: '🏡 I just bought or am buying a DFW home' },
-  { value: 'selling', label: '📋 I\'m planning to sell in 1–3 years' },
+  { value: 'selling', label: '📋 I\’m planning to sell in 1–3 years' },
   { value: 'comfortable', label: '✅ My system works but I want to stay ahead' },
-  { value: 'worried', label: '😰 I\'m worried about summer 2026' },
+  { value: 'worried', label: '😰 I\’m worried about summer 2026' },
 ];
 
 const finalWords: Record<string, { headline: string; body: string; cta: string }> = {
   aging: {
     headline: '2026 is a decision year for aging DFW systems.',
-    body: 'A 10+ year DFW HVAC system has survived north Texas summers. That\'s no small thing. But 2026 brings higher electricity prices, a likely hot summer, and rising R-22 refrigerant costs. The math on repair vs. replace shifts this year. ProLnk can connect you with a DFW specialist for an honest assessment — no up-sell pressure, just the real numbers.',
+    body: 'A 10+ year DFW HVAC system has survived north Texas summers. That\’s no small thing. But 2026 brings higher electricity prices, a likely hot summer, and rising R-22 refrigerant costs. The math on repair vs. replace shifts this year. ProLnk can connect you with a DFW specialist for an honest assessment — no up-sell pressure, just the real numbers.',
     cta: 'Get a replacement assessment from a vetted DFW pro',
   },
   highbill: {
     headline: 'Your 2026 DFW electric bill is negotiable.',
-    body: 'DFW homeowners average $200–$320/month in peak summer. The gap between best and worst performers is almost entirely execution: pre-cool strategies, filter choices, attic insulation, and system tune-up timing. ProLnk\'s Home Health Vault tracks your usage over time so you can see what interventions actually work. This is data-driven efficiency — not guesswork.',
+    body: 'DFW homeowners average $200–$320/month in peak summer. The gap between best and worst performers is almost entirely execution: pre-cool strategies, filter choices, attic insulation, and system tune-up timing. ProLnk\’s Home Health Vault tracks your usage over time so you can see what interventions actually work. This is data-driven efficiency — not guesswork.',
     cta: 'Start tracking and find your biggest efficiency win',
   },
   newbuyer: {
@@ -27,17 +27,17 @@ const finalWords: Record<string, { headline: string; body: string; cta: string }
   },
   selling: {
     headline: 'HVAC documentation is a DFW selling advantage.',
-    body: 'DFW buyers increasingly ask for HVAC records at inspection. Sellers who can produce service history, warranty documents, and maintenance logs close faster and with fewer concessions. ProLnk\'s Home Health Vault makes this turnkey — one link to share with your agent, one document that transfers at closing. Start building your record now, while you have time.',
+    body: 'DFW buyers increasingly ask for HVAC records at inspection. Sellers who can produce service history, warranty documents, and maintenance logs close faster and with fewer concessions. ProLnk\’s Home Health Vault makes this turnkey — one link to share with your agent, one document that transfers at closing. Start building your record now, while you have time.',
     cta: 'Build your HVAC legacy document before you list',
   },
   comfortable: {
     headline: 'Ahead of it is the only way to win in DFW.',
-    body: 'A working DFW HVAC system in May doesn\'t guarantee July. The difference between homeowners who sail through DFW summers and those who panic-call contractors at 5pm on a 105°F Friday is one thing: scheduled maintenance in March, documented in a system that sends reminders. That\'s what ProLnk\'s Home Health Vault is built for.',
+    body: 'A working DFW HVAC system in May doesn\’t guarantee July. The difference between homeowners who sail through DFW summers and those who panic-call contractors at 5pm on a 105°F Friday is one thing: scheduled maintenance in March, documented in a system that sends reminders. That\’s what ProLnk\’s Home Health Vault is built for.',
     cta: 'Schedule your spring tune-up and start your vault record',
   },
   worried: {
     headline: '2026 DFW summer readiness starts with knowledge.',
-    body: 'Worry is a signal, not a verdict. The homeowners who know their system — refrigerant type, last service date, filter size, age — make faster decisions when something goes wrong. The ones who don\'t spend 3 hours on hold with contractors in July. ProLnk exists to flip that equation: vetted DFW pros, your home\'s full HVAC history, and a network that responds.',
+    body: 'Worry is a signal, not a verdict. The homeowners who know their system — refrigerant type, last service date, filter size, age — make faster decisions when something goes wrong. The ones who don\’t spend 3 hours on hold with contractors in July. ProLnk exists to flip that equation: vetted DFW pros, your home\’s full HVAC history, and a network that responds.',
     cta: 'Get ready for summer 2026 — join ProLnk today',
   },
 };

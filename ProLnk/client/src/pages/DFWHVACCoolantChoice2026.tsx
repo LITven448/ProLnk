@@ -14,7 +14,7 @@ export default function DFWHVACCoolantChoice2026() {
   const guide: Record<string, string> = {
     'old-r22': 'Replace with R-454B or R-32. R-22 is fully phased out — refrigerant is scarce and expensive. Modern A2L systems are safe, efficient, and SEER2 compliant. Carrier Puron Advance (R-454B) is a top pick for DFW.',
     'r410a-working': 'Keep running until failure. R-410A inventory still available for repairs. When replacement comes, move to R-32 or R-454B. No urgency to replace a functioning system just for refrigerant concerns.',
-    'new-install': 'Choose R-32 or R-454B — both are A2L (mildly flammable, safe with proper handling). R-32 has better global availability; R-454B is Carrier's proprietary blend. Both exceed SEER2 15 minimum required in Texas.',
+    'new-install': 'Choose R-32 or R-454B — both are A2L (mildly flammable, safe with proper handling). R-32 has better global availability; R-454B is Carrier’s proprietary blend. Both exceed SEER2 15 minimum required in Texas.',
     'budget-tight': 'Look for R-410A systems from existing inventory — manufacturers can sell existing stock. Often 10-20% cheaper than new A2L equipment. Still SEER2 compliant. Just verify your contractor stocks the refrigerant for future service.',
   };
 

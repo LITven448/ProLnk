@@ -3,16 +3,16 @@ import { useState } from 'react';
 const questions = [
   { id: 1, text: 'Do you actively water your foundation perimeter during dry months?', emoji: '🌊', options: ['No, never heard of this', 'Not consistently', 'Sometimes in summer', 'Yes, on a schedule'], scores: [0, 1, 2, 3] },
   { id: 2, text: 'When did you last water your foundation?', emoji: '📅', options: ['Never / Unknown', 'More than 6 months ago', '1-6 months ago', 'Within the last month'], scores: [0, 1, 2, 3] },
-  { id: 3, text: 'Do you know where your home\'s main water shutoff is located?', emoji: '🚿', options: ['No idea', 'I think I know', 'I know roughly', 'Yes, confirmed location'], scores: [0, 1, 2, 3] },
+  { id: 3, text: 'Do you know where your home\’s main water shutoff is located?', emoji: '🚿', options: ['No idea', 'I think I know', 'I know roughly', 'Yes, confirmed location'], scores: [0, 1, 2, 3] },
   { id: 4, text: 'When was your last professional foundation inspection?', emoji: '🔍', options: ['Never', 'More than 5 years', '2-5 years ago', 'Within the last 2 years'], scores: [0, 1, 2, 3] },
-  { id: 5, text: 'Do you have a current elevation survey / engineer\'s report for your foundation?', emoji: '📐', options: ['What\'s that?', 'No', 'Old one somewhere', 'Yes, on file'], scores: [0, 1, 2, 3] },
+  { id: 5, text: 'Do you have a current elevation survey / engineer\’s report for your foundation?', emoji: '📐', options: ['What\’s that?', 'No', 'Old one somewhere', 'Yes, on file'], scores: [0, 1, 2, 3] },
 ];
 
 const getResult = (score: number) => {
-  if (score <= 4) return { label: 'High Foundation Risk', color: '#ef4444', tip: 'DFW\'s expansive clay soil is the #1 cause of foundation damage in Texas. Without watering and monitoring, you could face a $15K–$80K repair. Act now.' };
-  if (score <= 8) return { label: 'Foundation Risk Present', color: '#f97316', tip: 'You\'re aware but not protected. Get an elevation survey this season — it\'s the only way to know if you have movement.' };
+  if (score <= 4) return { label: 'High Foundation Risk', color: '#ef4444', tip: 'DFW\’s expansive clay soil is the #1 cause of foundation damage in Texas. Without watering and monitoring, you could face a $15K–$80K repair. Act now.' };
+  if (score <= 8) return { label: 'Foundation Risk Present', color: '#f97316', tip: 'You\’re aware but not protected. Get an elevation survey this season — it\’s the only way to know if you have movement.' };
   if (score <= 11) return { label: 'Foundation Conscious', color: '#eab308', tip: 'Good habits forming. Get a current survey if yours is over 2 years old — DFW clay shifts every drought cycle.' };
-  return { label: 'DFW Foundation Expert', color: '#22c55e', tip: 'You\'re doing it right. Log your survey and inspection history in ProLnk Vault so future owners (and your insurance) can see your diligence.' };
+  return { label: 'DFW Foundation Expert', color: '#22c55e', tip: 'You\’re doing it right. Log your survey and inspection history in ProLnk Vault so future owners (and your insurance) can see your diligence.' };
 };
 
 export default function DFWFoundationQuiz2026() {
@@ -64,7 +64,7 @@ export default function DFWFoundationQuiz2026() {
                 {score < 5 && '✅ Install a soaker hose system around perimeter this week\n✅ Get a free foundation estimate from a ProLnk certified engineer\n✅ Locate and tag your main water shutoff\n✅ Log all foundation info in ProLnk Vault'}
                 {score >= 5 && score < 9 && '✅ Set up a consistent watering schedule (Apr–Oct)\n✅ Order a new elevation survey — last one is outdated\n✅ Confirm shutoff location and label it\n✅ Store survey in ProLnk Vault'}
                 {score >= 9 && score < 12 && '✅ Update your elevation survey this season\n✅ Set watering reminders before summer drought\n✅ Share foundation records with ProLnk Vault for resale value\n✅ Connect with a ProLnk foundation specialist'}
-                {score >= 12 && '✅ You\'re a DFW foundation champion!\n✅ Digitize all reports in ProLnk Vault\n✅ Schedule annual elevation check\n✅ Refer ProLnk to your neighbors for their protection'}
+                {score >= 12 && '✅ You\’re a DFW foundation champion!\n✅ Digitize all reports in ProLnk Vault\n✅ Schedule annual elevation check\n✅ Refer ProLnk to your neighbors for their protection'}
               </p>
             </div>
             <button onClick={() => { setAnswers({}); setSubmitted(false); }}

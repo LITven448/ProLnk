@@ -45,7 +45,7 @@ const profiles: Record<string, MigrantProfile> = {
       { area: 'Richardson / Garland', reason: 'Value-oriented, Midwestern sensibility fits here' },
       { area: 'Fort Worth West Side', reason: 'More affordable, relaxed pace appeals to Illinois small-city migrants' },
     ],
-    culturalNote: 'Illinois migrants are often pragmatic buyers focused on value and tax savings. They\'re less flashy than California migrants but very quality-conscious. Property tax comparison is the #1 closing conversation for this group.',
+    culturalNote: 'Illinois migrants are often pragmatic buyers focused on value and tax savings. They\’re less flashy than California migrants but very quality-conscious. Property tax comparison is the #1 closing conversation for this group.',
   },
   'New York': {
     rank: '#3 Source State',
@@ -88,11 +88,11 @@ const profiles: Record<string, MigrantProfile> = {
   },
   Florida: {
     rank: 'Top 8 Source',
-    whyComing: ['Ironically escaping Florida\'s booming prices and overcrowding', 'Florida insurance crisis pushing homeowners to Texas', 'No income tax in both states — no tax incentive, but DFW prices often lower than South Florida', 'Job market competition (DFW more diverse employers than Florida tourism-heavy economy)'],
+    whyComing: ['Ironically escaping Florida\’s booming prices and overcrowding', 'Florida insurance crisis pushing homeowners to Texas', 'No income tax in both states — no tax incentive, but DFW prices often lower than South Florida', 'Job market competition (DFW more diverse employers than Florida tourism-heavy economy)'],
     typicalIncome: '$80,000 — $160,000 HHI',
     homeExpectations: ['Used to hurricane prep — want solid construction, no basement concerns', 'Pool is often a baseline expectation (Florida standard)', 'Open layout, indoor-outdoor flow preference', 'Warm weather adapted — will be fine with Texas heat, may miss Florida humidity oddly', 'HOA-comfortable (used to Florida strict HOA culture)'],
     neighborhoods: [
-      { area: 'Arlington / Grand Prairie', reason: 'Affordable, established, sports/entertainment nearby (reminds of Florida\'s activity culture)' },
+      { area: 'Arlington / Grand Prairie', reason: 'Affordable, established, sports/entertainment nearby (reminds of Florida\’s activity culture)' },
       { area: 'Fort Worth Suburbs', reason: 'Value pricing with quality neighborhoods' },
       { area: 'Mansfield / Burleson', reason: 'Growing areas with Florida-comparable price points' },
       { area: 'Carrollton / Farmers Branch', reason: 'Established, diverse, central DFW access' },
@@ -110,11 +110,11 @@ const profiles: Record<string, MigrantProfile> = {
       { area: 'North Richland Hills / Haltom City', reason: 'Fort Worth metro affordable options' },
       { area: 'Mesquite / Balch Springs', reason: 'Entry-level DFW market, Midwest pricing familiarity' },
     ],
-    culturalNote: 'Ohio and Midwest migrants are easy to work with and do what they say. They appreciate straightforward communication and don\'t over-negotiate. Strong word-of-mouth referral culture within Midwest transplant communities.',
+    culturalNote: 'Ohio and Midwest migrants are easy to work with and do what they say. They appreciate straightforward communication and don\’t over-negotiate. Strong word-of-mouth referral culture within Midwest transplant communities.',
   },
   Michigan: {
     rank: 'Top 10 Source',
-    whyComing: ['Auto industry pivot and corporate moves out of Detroit metro', 'Michigan 4.25% income tax vs Texas 0%', 'Lower overall tax burden including property (Michigan has high effective rates)', 'DFW\'s Toyota and automotive supplier ecosystem appeals to auto industry workers'],
+    whyComing: ['Auto industry pivot and corporate moves out of Detroit metro', 'Michigan 4.25% income tax vs Texas 0%', 'Lower overall tax burden including property (Michigan has high effective rates)', 'DFW\’s Toyota and automotive supplier ecosystem appeals to auto industry workers'],
     typicalIncome: '$80,000 — $160,000 HHI',
     homeExpectations: ['Quality construction matters — Michigan buyers check everything after dealing with older Michigan homes', 'Garages are sacred — oversized two-car minimum expected', 'Finished square footage is valued over land (Michigan lots often small)', 'School district is major driver (Michigan public schools vary wildly)', 'Winter weather comfort — Texas storms are surprising but less severe'],
     neighborhoods: [
@@ -123,7 +123,7 @@ const profiles: Record<string, MigrantProfile> = {
       { area: 'Wylie / Murphy', reason: 'Value-priced with good schools, Michigan-comparable suburban feel' },
       { area: 'Keller / Hurst / Euless', reason: 'Mid-tier Fort Worth suburbs, auto industry access via highways' },
     ],
-    culturalNote: 'Michigan migrants from auto industry backgrounds have specific home quality standards. They know construction — don\'t oversell spec homes. Authenticity and detailed inspection results matter to this group.',
+    culturalNote: 'Michigan migrants from auto industry backgrounds have specific home quality standards. They know construction — don\’t oversell spec homes. Authenticity and detailed inspection results matter to this group.',
   },
 };
 

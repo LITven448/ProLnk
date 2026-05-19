@@ -5,7 +5,7 @@ const issues = [
   { issue: 'Outdated HVAC (10+ years)', impact: -15000, range: '$10K-$20K', icon: '❄️', detail: 'Buyers price in replacement cost. DFW heat makes HVAC a dealbreaker, not a negotiation point.' },
   { issue: 'Damaged/Aging Roof', impact: -18000, range: '$12K-$25K', icon: '🏠', detail: 'Instant red flag in inspections. Most buyers demand replacement or credit before close.' },
   { issue: 'Poor Curb Appeal', impact: -14000, range: '$8K-$20K', icon: '🌿', detail: 'Online listings die in the thumbnail. DFW buyers prescreen on Zillow photos before visiting.' },
-  { issue: 'Outdated Electrical Panel', impact: -8000, range: '$5K-$12K', icon: '⚡', detail: 'Pre-2000 panels raise insurance flags. Some buyers can\'t get coverage, killing the deal.' },
+  { issue: 'Outdated Electrical Panel', impact: -8000, range: '$5K-$12K', icon: '⚡', detail: 'Pre-2000 panels raise insurance flags. Some buyers can\’t get coverage, killing the deal.' },
   { issue: 'No Insulation / Poor Energy Score', impact: -6000, range: '$4K-$8K', icon: '🌡️', detail: 'DFW utility bills are high. Buyers factor monthly cost into their max offer.' },
   { issue: 'Outdated Kitchen (20+ years)', impact: -12000, range: '$8K-$16K', icon: '🍳', detail: 'Laminate counters and drop ceilings still visible in older DFW homes — priced in.' },
   { issue: 'HOA Violations / Liens', impact: -20000, range: '$10K-$30K+', icon: '📋', detail: 'Title issues and pending violations can make home unfinanceable without resolution.' },

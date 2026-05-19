@@ -9,14 +9,14 @@ const situations = [
 
 const resources: Record<string, { headline: string; programs: { name: string; what: string; amount: string; how: string }[]; parentGap: string; action: string }> = {
   'no-model': {
-    headline: 'You\'re learning what your parents couldn\'t teach you — that\'s normal and fixable',
+    headline: 'You\’re learning what your parents couldn\’t teach you — that\’s normal and fixable',
     programs: [
       { name: 'HUD-Approved Counseling (FREE)', what: 'One-on-one homebuyer education from certified counselors — they explain every step', amount: 'Free', how: 'Find via hud.gov/counseling' },
       { name: 'TSAHC First-Time Homebuyer', what: 'TX State Affordable Housing Corp — education + down payment assistance combo', amount: 'Up to 5% down payment help', how: 'tsahc.org — apply through approved lenders' },
       { name: 'Framework Homebuyer Course', what: 'Self-paced online education — covers everything from credit to closing', amount: '$75 one-time fee', how: 'frameworkhomeownership.org' },
     ],
-    parentGap: 'Your parents may not know: you don\'t need 20% down, your credit score can be built in 12 months, and there are programs specifically for people like you.',
-    action: 'Start with HUD counseling. It\'s free, unbiased, and will answer every question without pressure to buy anything.',
+    parentGap: 'Your parents may not know: you don\’t need 20% down, your credit score can be built in 12 months, and there are programs specifically for people like you.',
+    action: 'Start with HUD counseling. It\’s free, unbiased, and will answer every question without pressure to buy anything.',
   },
   'limited-credit': {
     headline: 'Credit can be built intentionally in 12–18 months — you have more control than you think',
@@ -39,14 +39,14 @@ const resources: Record<string, { headline: string; programs: { name: string; wh
     action: 'Contact a HUD-approved housing counselor in DFW to identify all programs you qualify for simultaneously. You may be able to stack multiple.',
   },
   'process-confused': {
-    headline: 'The homebuying process has 12 steps — here\'s exactly what happens in order',
+    headline: 'The homebuying process has 12 steps — here\’s exactly what happens in order',
     programs: [
       { name: 'Step 1–3: Financial Prep', what: 'Check credit, save for down payment, get pre-approved by a lender', amount: 'Takes 2–6 months to prepare', how: 'Pre-approval letter is your shopping permission slip — get it first' },
-      { name: 'Step 4–7: Find & Offer', what: 'Hire a buyer\'s agent (free to you — seller pays), tour homes, make an offer, negotiate', amount: 'Buyer agent = free', how: 'Your agent writes the offer. Earnest money (1–2%) holds the home during inspection.' },
+      { name: 'Step 4–7: Find & Offer', what: 'Hire a buyer\’s agent (free to you — seller pays), tour homes, make an offer, negotiate', amount: 'Buyer agent = free', how: 'Your agent writes the offer. Earnest money (1–2%) holds the home during inspection.' },
       { name: 'Step 8–12: Close', what: 'Inspection, appraisal, final approval, walk-through, closing day — you get keys', amount: 'Closing costs: 2–5% of home price', how: 'Closing day: sign documents, pay closing costs, receive keys. It takes about 30–45 days from accepted offer.' },
     ],
-    parentGap: 'Your parents may not know: buyer\'s agents are free to you (seller pays commission). You don\'t need to navigate this alone. A good agent explains every step and advocates for you.',
-    action: 'Interview 2–3 buyer\'s agents in DFW. Ask: "Have you worked with first-generation homebuyers?" Their answer tells you everything.',
+    parentGap: 'Your parents may not know: buyer\’s agents are free to you (seller pays commission). You don\’t need to navigate this alone. A good agent explains every step and advocates for you.',
+    action: 'Interview 2–3 buyer\’s agents in DFW. Ask: "Have you worked with first-generation homebuyers?" Their answer tells you everything.',
   },
 };
 
@@ -106,7 +106,7 @@ export default function DFWFirstGenerationHomeownerGuide() {
         <div style={{ background: '#FFFFFF', border: '1px solid #E0E8F0', borderRadius: 12, padding: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', marginTop: 0, fontSize: '1.1rem' }}>📍 DFW First-Gen Friendly Neighborhoods</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.7rem' }}>
-            {[['Grand Prairie', '$295–340K median, culturally diverse, DPA eligible'],['Garland', '$280–320K median, strong community orgs, TDHCA area'],['DeSoto', '$310–370K, excellent schools, Black homeownership community'],['Mesquite', '$265–310K, DFW\'s most affordable near-suburb, growing'],['Fort Worth (76112)', '$230–280K, Fort Worth DPA program eligible, improving'],['Irving', '$320–375K, diverse, Las Colinas jobs nearby, programs available']].map(([city, desc]) => (
+            {[['Grand Prairie', '$295–340K median, culturally diverse, DPA eligible'],['Garland', '$280–320K median, strong community orgs, TDHCA area'],['DeSoto', '$310–370K, excellent schools, Black homeownership community'],['Mesquite', '$265–310K, DFW\’s most affordable near-suburb, growing'],['Fort Worth (76112)', '$230–280K, Fort Worth DPA program eligible, improving'],['Irving', '$320–375K, diverse, Las Colinas jobs nearby, programs available']].map(([city, desc]) => (
               <div key={city} style={{ background: '#F8F9FA', borderRadius: 8, padding: '0.8rem' }}>
                 <div style={{ color: '#0A1628', fontWeight: 700, fontSize: '0.85rem' }}>🏘️ {city}</div>
                 <div style={{ color: '#5A7090', fontSize: '0.78rem', marginTop: 2 }}>{desc}</div>

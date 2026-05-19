@@ -76,7 +76,7 @@ export default function DFWRoofUnderlaymentGuide() {
         <div style={{ display: 'grid', gap: '16px' }}>
           {[
             { icon: '🌡️', title: 'Synthetic vs Felt in DFW Heat', body: 'DFW roof surfaces reach 160–180°F in summer. Traditional #15 felt becomes brittle and fails within a few years. Synthetic underlayment maintains flexibility and integrity across DFW temperature extremes.' },
-            { icon: '🌧️', title: 'DFW Storm Protection', body: 'DFW receives intense convective thunderstorms with high wind-driven rain. Synthetic underlayment\'s overlapping design and superior adhesion prevent water infiltration during severe events.' },
+            { icon: '🌧️', title: 'DFW Storm Protection', body: 'DFW receives intense convective thunderstorms with high wind-driven rain. Synthetic underlayment\’s overlapping design and superior adhesion prevent water infiltration during severe events.' },
             { icon: '❄️', title: 'Ice & Water Shield for Valleys', body: 'Even in DFW, valleys and eaves benefit from self-adhering ice and water shield. These zones concentrate runoff and are the first to leak when underlayment degrades.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#111E35', borderRadius: '10px', padding: '20px', border: '1px solid #1E3A5F' }}>

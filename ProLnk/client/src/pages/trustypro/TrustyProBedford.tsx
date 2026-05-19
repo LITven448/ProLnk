@@ -28,7 +28,7 @@ const testimonials = [
 const faqs = [
   {
     q: 'Why do Bedford homes experience more foundation movement?',
-    a: 'Central Tarrant County sits on expansive clay soil that shrinks dramatically during drought and swells with heavy rain. After 40 years, original concrete slabs that weren't engineered for deep Texas clay movement develop consistent settling patterns — especially near irrigation zones and tree roots.',
+    a: 'Central Tarrant County sits on expansive clay soil that shrinks dramatically during drought and swells with heavy rain. After 40 years, original concrete slabs that weren’t engineered for deep Texas clay movement develop consistent settling patterns — especially near irrigation zones and tree roots.',
   },
   {
     q: 'My HVAC is original to the house. When should I replace it?',

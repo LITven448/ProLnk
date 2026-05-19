@@ -20,11 +20,11 @@ const sections = [
         heading: '5 Phrases That Kill Deals',
         type: 'donts',
         items: [
-          '"We'll get back to you." — Sets no expectation. You lose to the next pro who calls now.',
+          '"We’ll get back to you." — Sets no expectation. You lose to the next pro who calls now.',
           '"It depends." — Homeowners hate uncertainty. Give a range, not a non-answer.',
-          '"We're really busy right now." — Signals you don't value their job.',
-          '"I'll have someone call you." — They called you. Own the relationship.',
-          '"That's not really our thing but..." — Never qualify yourself down before a sale.'
+          '"We’re really busy right now." — Signals you don’t value their job.',
+          '"I’ll have someone call you." — They called you. Own the relationship.',
+          '"That’s not really our thing but..." — Never qualify yourself down before a sale.'
         ]
       }
     ]
@@ -32,16 +32,16 @@ const sections = [
   {
     id: 'estimate',
     title: 'Section 2 — During the Estimate',
-    subtitle: 'The estimate is not a formality. It's the moment you win or lose the job.',
+    subtitle: 'The estimate is not a formality. It’s the moment you win or lose the job.',
     content: [
       {
         heading: 'Building Trust — Walk Through Your Findings',
         type: 'tips',
         items: [
-          'Narrate what you're doing: "I'm checking the capacitor because that's the first thing to fail in heat..."',
-          'Show, don't just tell. Point at the problem while you explain it.',
+          'Narrate what you’re doing: "I’m checking the capacitor because that’s the first thing to fail in heat..."',
+          'Show, don’t just tell. Point at the problem while you explain it.',
           'Use comparison language: "This is similar to a transmission — if you wait, the engine goes next."',
-          'Acknowledge what they've maintained well — don't only point out problems.'
+          'Acknowledge what they’ve maintained well — don’t only point out problems.'
         ]
       },
       {
@@ -49,8 +49,8 @@ const sections = [
         type: 'objections',
         items: [
           {
-            q: '"It's too expensive."',
-            a: '"I hear you — and I want to make sure we're comparing the same thing. My price includes [specific items]. Can I ask what the other quote looked like?'
+            q: '"It’s too expensive."',
+            a: '"I hear you — and I want to make sure we’re comparing the same thing. My price includes [specific items]. Can I ask what the other quote looked like?'
           },
           {
             q: '"I need to think about it."',
@@ -58,7 +58,7 @@ const sections = [
           },
           {
             q: '"I have another quote."',
-            a: '"That's smart — you should get multiple opinions. Just make sure they're including [key scope items] because that's where the difference usually is."'
+            a: '"That’s smart — you should get multiple opinions. Just make sure they’re including [key scope items] because that’s where the difference usually is."'
           }
         ]
       },
@@ -77,7 +77,7 @@ const sections = [
   {
     id: 'during-job',
     title: 'Section 3 — During the Job',
-    subtitle: 'Most contractors disappear once the job starts. That's your competitive advantage.',
+    subtitle: 'Most contractors disappear once the job starts. That’s your competitive advantage.',
     content: [
       {
         heading: 'Daily Progress Updates',
@@ -99,7 +99,7 @@ const sections = [
         type: 'tips',
         items: [
           'Send before/during/after photos via text — homeowners love this.',
-          '"Here's the old [part] we pulled out vs the new one going in."',
+          '"Here’s the old [part] we pulled out vs the new one going in."',
           'Photos reduce disputes, increase reviews, and generate referrals.',
           'Always ask permission before posting any home photos publicly.'
         ]
@@ -109,7 +109,7 @@ const sections = [
   {
     id: 'after-job',
     title: 'Section 4 — After the Job',
-    subtitle: 'The job isn't over when the work is done. The relationship has just begun.',
+    subtitle: 'The job isn’t over when the work is done. The relationship has just begun.',
     content: [
       {
         heading: 'The Follow-Up Call Script',

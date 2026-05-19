@@ -116,7 +116,7 @@ const SYSTEMS = [
     items: [
       'Inspect perimeter for new cracks',
       'Measure and document existing cracks',
-      'Check for doors that stick or won\'t latch',
+      'Check for doors that stick or won\’t latch',
       'Inspect crawl space for moisture',
       'Verify proper grading away from house',
       'Check window frames for gaps',

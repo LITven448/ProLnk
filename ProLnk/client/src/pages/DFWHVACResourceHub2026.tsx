@@ -11,7 +11,7 @@ const categories = [
 const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
   emergency: [
     { title: 'AC Not Cooling in DFW Summer', desc: 'Step-by-step emergency diagnosis when temps hit 105°F.', tag: 'Most Viewed' },
-    { title: 'Furnace Won\'t Start in DFW Winter', desc: 'Immediate steps before calling a pro.', tag: 'Critical' },
+    { title: 'Furnace Won\’t Start in DFW Winter', desc: 'Immediate steps before calling a pro.', tag: 'Critical' },
     { title: 'Refrigerant Leak Detection Guide', desc: 'Signs, risks, and emergency response.', tag: 'Safety' },
     { title: 'Frozen AC Coil Troubleshooting', desc: 'Causes, fixes, and prevention for DFW heat.', tag: 'Common' },
   ],
@@ -25,12 +25,12 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
     { title: 'HVAC Brand Comparison 2026', desc: 'Carrier vs Trane vs Lennox vs Goodman for DFW.', tag: 'Top Guide' },
     { title: 'When to Replace vs Repair Your HVAC', desc: 'The 5,000 rule and DFW-specific factors.', tag: 'Decision Guide' },
     { title: 'HVAC Sizing Guide for DFW Homes', desc: 'Manual J calculations for North Texas climate.', tag: 'Technical' },
-    { title: 'Heat Pump vs Gas Furnace in DFW', desc: 'Best choice for DFW\'s mild winters.', tag: 'Comparison' },
+    { title: 'Heat Pump vs Gas Furnace in DFW', desc: 'Best choice for DFW\’s mild winters.', tag: 'Comparison' },
   ],
   financing: [
     { title: 'HVAC Financing Options in DFW 2026', desc: 'Manufacturer programs, PACE loans, and local lenders.', tag: 'Financial' },
     { title: 'Texas HVAC Tax Credits & Rebates', desc: 'Federal IRA credits + Oncor and Atmos rebates.', tag: 'Save Money' },
-    { title: 'HVAC Home Warranty Guide for DFW', desc: 'What\'s covered and what\'s not in Texas policies.', tag: 'Protection' },
+    { title: 'HVAC Home Warranty Guide for DFW', desc: 'What\’s covered and what\’s not in Texas policies.', tag: 'Protection' },
     { title: 'Leasing vs Buying HVAC in Texas', desc: 'Pros, cons, and what to watch out for.', tag: 'Decision' },
   ],
   career: [

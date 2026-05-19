@@ -122,9 +122,9 @@ export default function DFWCommuteResearchGuide() {
           {[
             { emoji: '📅', tip: 'Test the commute on a Tuesday/Wednesday at exact peak time — not weekends, not school holidays.' },
             { emoji: '📻', tip: 'Download Waze and check "traffic" overlay for your route before buying. Look at historical reports.' },
-            { emoji: '🛤️', tip: 'Check TxDOT\'s upcoming construction projects — 5-year plans are public and show where lanes will close.' },
+            { emoji: '🛤️', tip: 'Check TxDOT\’s upcoming construction projects — 5-year plans are public and show where lanes will close.' },
             { emoji: '🎒', tip: 'Research school start times near your home — school zones and carpool backup can add 10–20 min.' },
-            { emoji: '💻', tip: 'Confirm your employer\'s actual hybrid policy in writing — DFW traffic changes the math dramatically at 5 vs 3 days.' },
+            { emoji: '💻', tip: 'Confirm your employer\’s actual hybrid policy in writing — DFW traffic changes the math dramatically at 5 vs 3 days.' },
           ].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
               <span style={{ fontSize: 22 }}>{item.emoji}</span>

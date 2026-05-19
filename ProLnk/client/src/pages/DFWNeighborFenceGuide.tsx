@@ -29,7 +29,7 @@ const disputes = [
     type: 'Fence height or style dispute',
     law: 'City ordinance (varies by DFW city) + HOA CC&Rs',
     detail: 'Most DFW cities allow 6 ft fences in residential backyards and 4 ft in front yards. HOA may be stricter. Neighbor preferences alone are not enforceable — only code violations are.',
-    steps: ['Look up your city's fence ordinance (search "[city name] fence permit ordinance")', 'Check HOA CC&Rs for height, material, and style restrictions', 'If city/HOA rules are met, neighbor cannot force changes', 'If code violation exists, report to city code enforcement'],
+    steps: ['Look up your city’s fence ordinance (search "[city name] fence permit ordinance")', 'Check HOA CC&Rs for height, material, and style restrictions', 'If city/HOA rules are met, neighbor cannot force changes', 'If code violation exists, report to city code enforcement'],
     hoa: 'HOA style rules override personal preferences — enforce through HOA complaint process',
     legal: 'City code enforcement for ordinance violations; HOA dispute process for CC&R violations',
   },

@@ -12,7 +12,7 @@ const systems: Record<GarageSize, Record<GarageUse, { system: string; why: strin
   },
   '2car': {
     cars: { system: 'Gladiator GearWall + Ceiling Track', why: 'Best for car-first garages; overhead tracks use dead ceiling space.', heatNote: 'Steel GearWall safe in DFW heat; ceiling tracks — use metal, not plastic brackets.', difficulty: 'Medium (4–6 hrs)', costEstimate: '$400–$700', panels: '4 GearWall panels + 2 ceiling tracks' },
-    workshop: { system: 'Wall Control 16 Gauge Steel Panels', why: 'Industrial grade — handles DFW contractors and serious DIYers.', heatNote: 'Full steel — no heat concerns. Powder coat won\'t fade in DFW UV.', difficulty: 'Medium (4–5 hrs)', costEstimate: '$350–$600', panels: '4 panels, 32+ hooks' },
+    workshop: { system: 'Wall Control 16 Gauge Steel Panels', why: 'Industrial grade — handles DFW contractors and serious DIYers.', heatNote: 'Full steel — no heat concerns. Powder coat won\’t fade in DFW UV.', difficulty: 'Medium (4–5 hrs)', costEstimate: '$350–$600', panels: '4 panels, 32+ hooks' },
     storage: { system: 'Proslat 8-Panel System + Ceiling Shelf', why: 'Most storage capacity per sq ft; ceiling adds 40–60 cu ft in DFW 2-car.', heatNote: 'Shade wall install required; ceiling storage ideal for DFW seasonal (holiday decor, camping).', difficulty: 'Medium (5–7 hrs)', costEstimate: '$500–$900', panels: '8 Proslat + 2 ceiling units' },
     mixed: { system: 'Husky Steel Cabinet + Wall Control Panels', why: 'Cabinets for valuables (AC protected); panels for tools and sports gear.', heatNote: 'Cabinets protect items from DFW heat; steel panels for wall-mount.', difficulty: 'Medium-Hard (6–8 hrs)', costEstimate: '$800–$1,500', panels: '2 Husky cabinets + 4 Wall Control' },
   },

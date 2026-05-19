@@ -48,7 +48,7 @@ const recommendations: Record<SituationKey, Record<BudgetKey, StagingRec>> = {
         { name: 'Staged by Cindy (Plano/Frisco)', cost: '$1,800–3,500', dfwRating: '⭐⭐⭐⭐⭐' },
         { name: 'Refresh Staging (Dallas)', cost: '$2,500–5,000', dfwRating: '⭐⭐⭐⭐' },
       ],
-      disclosure: 'Physical staging requires no disclosure — it\'s actual furniture.',
+      disclosure: 'Physical staging requires no disclosure — it\’s actual furniture.',
       roi: 'Physical staging ROI in DFW: avg $4 return per $1 spent for homes over $450K.',
     },
   },
@@ -56,7 +56,7 @@ const recommendations: Record<SituationKey, Record<BudgetKey, StagingRec>> = {
     minimal: {
       recommendation: '✅ Virtual Staging — Overlay dated rooms with updated virtual furniture',
       rationale: 'Virtual staging can digitally remove dated furniture and replace it — showing buyers what the space could look like updated without expensive physical changes.',
-      approach: ['Request "virtual renovation" option — some services digitally update finishes', 'Stage empty-looking photos from rooms you\'ve decluttered heavily', 'Combine with real minor updates: paint, hardware, light fixtures'],
+      approach: ['Request "virtual renovation" option — some services digitally update finishes', 'Stage empty-looking photos from rooms you\’ve decluttered heavily', 'Combine with real minor updates: paint, hardware, light fixtures'],
       services: [
         { name: 'BoxBrownie Virtual Renovation', cost: '$68/photo', dfwRating: '⭐⭐⭐⭐⭐ — Can digitally update counters, flooring, walls' },
         { name: 'Stuccco', cost: '$29/room', dfwRating: '⭐⭐⭐⭐' },
@@ -67,7 +67,7 @@ const recommendations: Record<SituationKey, Record<BudgetKey, StagingRec>> = {
     moderate: {
       recommendation: '⚖️ Physical Staging Consultation + Selected Virtual',
       rationale: 'A professional stager will tell you exactly what to do — worth $200–300 for their consultation alone.',
-      approach: ['Book a $200–300 staging consultation first', 'Make the 3–5 highest ROI physical changes they recommend', 'Use virtual staging for any rooms that can\'t be physically updated'],
+      approach: ['Book a $200–300 staging consultation first', 'Make the 3–5 highest ROI physical changes they recommend', 'Use virtual staging for any rooms that can\’t be physically updated'],
       services: [
         { name: 'Staging consultation (Dallas)', cost: '$200–350', dfwRating: '⭐⭐⭐⭐⭐ — Any top DFW stager offers this' },
         { name: 'BoxBrownie for remaining rooms', cost: '$32/room', dfwRating: '⭐⭐⭐⭐⭐' },
@@ -78,7 +78,7 @@ const recommendations: Record<SituationKey, Record<BudgetKey, StagingRec>> = {
     full: {
       recommendation: '🏆 Full Physical Staging — Move out or work with stager to replace furniture',
       rationale: 'Dated occupied homes need physical transformation for top-dollar DFW results. Full staging is the answer.',
-      approach: ['Move dated furniture to storage', 'Bring in stager\'s inventory furniture', 'Professional photography after staging complete'],
+      approach: ['Move dated furniture to storage', 'Bring in stager\’s inventory furniture', 'Professional photography after staging complete'],
       services: [
         { name: 'At Home Staging (DFW)', cost: '$2,200–4,500', dfwRating: '⭐⭐⭐⭐⭐' },
         { name: 'Staged by Cindy', cost: '$1,800–3,500', dfwRating: '⭐⭐⭐⭐⭐' },
@@ -88,13 +88,13 @@ const recommendations: Record<SituationKey, Record<BudgetKey, StagingRec>> = {
     },
   },
   'occupied-fine': {
-    minimal: { recommendation: '✅ No Staging Needed — Focus budget on photography quality', rationale: 'Well-furnished occupied homes in good condition don\'t need staging investment — invest in professional photography instead.', approach: ['Hire top DFW real estate photographer ($200–400)', 'Deep declutter and style existing furniture', 'Professional photos will carry the listing'], services: [{ name: 'Professional Photography', cost: '$200–400', dfwRating: '⭐⭐⭐⭐⭐ — Best ROI for your situation' }], disclosure: 'No staging to disclose.', roi: 'Great photography on an already well-furnished home = full market value, no staging spend needed.' },
+    minimal: { recommendation: '✅ No Staging Needed — Focus budget on photography quality', rationale: 'Well-furnished occupied homes in good condition don\’t need staging investment — invest in professional photography instead.', approach: ['Hire top DFW real estate photographer ($200–400)', 'Deep declutter and style existing furniture', 'Professional photos will carry the listing'], services: [{ name: 'Professional Photography', cost: '$200–400', dfwRating: '⭐⭐⭐⭐⭐ — Best ROI for your situation' }], disclosure: 'No staging to disclose.', roi: 'Great photography on an already well-furnished home = full market value, no staging spend needed.' },
     moderate: { recommendation: '✅ Light Accessory Refresh + Professional Photography', rationale: 'Small investments in accessories can refresh a well-furnished home without full staging cost.', approach: ['Buy 5–8 new accessories: throw pillows, vase, candles, artwork', 'Replace any dated or mismatched smaller items', 'Professional photography to capture the updated look'], services: [{ name: 'Accessories budget', cost: '$200–400', dfwRating: '⭐⭐⭐⭐⭐ — TJ Maxx, HomeGoods are best value in DFW' }, { name: 'Professional Photography', cost: '$200–400', dfwRating: '⭐⭐⭐⭐⭐' }], disclosure: 'No staging to disclose.', roi: '$400–800 investment, $2,000–5,000 return in DFW.' },
     full: { recommendation: '⚖️ Optional: Staging Consultation for Refinement', rationale: 'Even great homes can be refined by a pro eye. With full budget, a consultation is worth it.', approach: ['Book staging consultation ($200–300)', 'Implement their recommendations', 'Consider adding one or two furniture pieces they suggest'], services: [{ name: 'Staging Consultation', cost: '$200–350', dfwRating: '⭐⭐⭐⭐⭐' }], disclosure: 'No disclosure required.', roi: 'Marginal improvements on already great homes — set realistic expectations.' },
   },
   'new-construction': {
-    minimal: { recommendation: '✅ Virtual Staging — New construction without furniture needs virtual', rationale: 'New construction in DFW is nearly always vacant. Virtual staging is the fastest and cheapest way to show the space\'s potential.', approach: ['Order virtual staging for all main rooms + primary', 'Builder-grade finishes photograph well — virtual furniture elevates the look', 'Include with MLS from day one'], services: [{ name: 'BoxBrownie', cost: '$32/room', dfwRating: '⭐⭐⭐⭐⭐' }, { name: 'VHT Studios', cost: '$50–75/room', dfwRating: '⭐⭐⭐⭐⭐ — Premium option for luxury new construction' }], disclosure: 'Disclose: "Photos include virtual staging."', roi: 'Virtual staging on new construction increases buyer appointments by 35–50% in DFW communities.' },
-    moderate: { recommendation: '🏆 Model Home Staging — If community allows, fully stage the unit', rationale: 'DFW new construction communities that stage model units sell faster across the entire community.', approach: ['Full physical staging of key spaces', 'Professional photography and video tour', 'Coordinate with builder\'s preferred stager if available'], services: [{ name: 'Model home staging (DFW builders)', cost: '$3,500–8,000', dfwRating: '⭐⭐⭐⭐⭐ — Standard in DFW communities' }], disclosure: 'No disclosure needed for physical staging.', roi: 'Model staged DFW communities sell 40% faster than unstaged.' },
+    minimal: { recommendation: '✅ Virtual Staging — New construction without furniture needs virtual', rationale: 'New construction in DFW is nearly always vacant. Virtual staging is the fastest and cheapest way to show the space\’s potential.', approach: ['Order virtual staging for all main rooms + primary', 'Builder-grade finishes photograph well — virtual furniture elevates the look', 'Include with MLS from day one'], services: [{ name: 'BoxBrownie', cost: '$32/room', dfwRating: '⭐⭐⭐⭐⭐' }, { name: 'VHT Studios', cost: '$50–75/room', dfwRating: '⭐⭐⭐⭐⭐ — Premium option for luxury new construction' }], disclosure: 'Disclose: "Photos include virtual staging."', roi: 'Virtual staging on new construction increases buyer appointments by 35–50% in DFW communities.' },
+    moderate: { recommendation: '🏆 Model Home Staging — If community allows, fully stage the unit', rationale: 'DFW new construction communities that stage model units sell faster across the entire community.', approach: ['Full physical staging of key spaces', 'Professional photography and video tour', 'Coordinate with builder\’s preferred stager if available'], services: [{ name: 'Model home staging (DFW builders)', cost: '$3,500–8,000', dfwRating: '⭐⭐⭐⭐⭐ — Standard in DFW communities' }], disclosure: 'No disclosure needed for physical staging.', roi: 'Model staged DFW communities sell 40% faster than unstaged.' },
     full: { recommendation: '🏆 Full Physical Model Staging + Virtual for Pre-Sales', rationale: 'For builders selling pre-construction, virtual staging of architectural renderings drives reservations.', approach: ['Physical staging for completed units', 'Virtual staging on architectural renderings for pre-sales', 'Professional photography + video + 3D tour'], services: [{ name: 'Full staging package', cost: '$5,000–12,000', dfwRating: '⭐⭐⭐⭐⭐' }], disclosure: 'Disclose "rendering" vs "photo" clearly in all marketing.', roi: 'Full model programs in DFW: 60–80% faster sell-through for communities.' },
   },
 };

@@ -11,7 +11,7 @@ const factors = [
 const projects = [
   { type: '1,500 sq ft single-story, standard pitch', insight: '10–11 squares. 1 day for average DFW crew in spring. Labor typically $1,800–$2,800. Verify tear-off and haul-away are included.' },
   { type: '2,400 sq ft two-story, moderate pitch', insight: '18–22 squares. 1.5–2 days. Pitch factor adds 15–25% to labor. Ask about safety equipment costs — steep pitch surcharges are legitimate.' },
-  { type: '3,500 sq ft with multiple valleys', insight: '28–35 squares with waste factor. 2–3 days. Valley flashing labor is time-intensive — verify it's itemized, not buried in a flat rate.' },
+  { type: '3,500 sq ft with multiple valleys', insight: '28–35 squares with waste factor. 2–3 days. Valley flashing labor is time-intensive — verify it’s itemized, not buried in a flat rate.' },
   { type: 'DFW summer replacement', insight: 'Add 20–30% time buffer for heat restrictions. Crew size matters more in summer — larger crews complete before peak heat. Ask planned start time explicitly.' },
   { type: 'Insurance claim replacement', insight: 'Xactimate labor rates are regional benchmarks. DFW contractor bids should be within 10–15% of Xactimate. Major gaps signal either padding or scope cuts.' },
 ];

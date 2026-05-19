@@ -3,9 +3,9 @@ import { useState } from 'react';
 const projects = [
   { id: 'patio', name: 'Covered Patio / Pergola', icon: '🌿', low: 8000, high: 25000, roi: 55, desc: 'Most popular DFW upgrade. Shade is critical — DFW summers exceed 100°F for weeks. Pergola with shade cloth or insulated cover dramatically extends outdoor usability.' },
   { id: 'kitchen', name: 'Outdoor Kitchen', icon: '🍖', low: 12000, high: 50000, roi: 65, desc: 'BBQ is Texas culture. Built-in grills, counter space, and mini-fridges add serious resale appeal. Budget $12K for basic; $50K+ for full kitchen buildout.' },
-  { id: 'pool', name: 'Swimming Pool', icon: '🏊', low: 40000, high: 80000, roi: 60, desc: 'DFW\'s long summers make pools highly desirable. Gunite pools average $60K. Note: pools require ongoing maintenance ($2,000–4,000/yr) and may increase insurance.' },
+  { id: 'pool', name: 'Swimming Pool', icon: '🏊', low: 40000, high: 80000, roi: 60, desc: 'DFW\’s long summers make pools highly desirable. Gunite pools average $60K. Note: pools require ongoing maintenance ($2,000–4,000/yr) and may increase insurance.' },
   { id: 'putting', name: 'Putting Green', icon: '⛳', low: 5000, high: 20000, roi: 50, desc: 'Low maintenance, no water required. Popular in Plano, Frisco, and Southlake neighborhoods. Artificial turf holds up in DFW heat better than natural grass.' },
-  { id: 'fire', name: 'Fire Pit / Fireplace', icon: '🔥', low: 2500, high: 12000, roi: 45, desc: 'Extends outdoor season into DFW\'s mild winters. Gas fire pits require permits in most DFW cities. Wood-burning may face restrictions in some HOAs.' },
+  { id: 'fire', name: 'Fire Pit / Fireplace', icon: '🔥', low: 2500, high: 12000, roi: 45, desc: 'Extends outdoor season into DFW\’s mild winters. Gas fire pits require permits in most DFW cities. Wood-burning may face restrictions in some HOAs.' },
   { id: 'turf', name: 'Artificial Turf / Landscaping', icon: '🌱', low: 3000, high: 15000, roi: 40, desc: 'Drought-tolerant landscaping is a DFW priority. Artificial turf saves $800–1,500/yr in water costs and survives Stage 4 water restrictions.' },
 ];
 

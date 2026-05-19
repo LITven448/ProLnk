@@ -8,7 +8,7 @@ const checklist = [
   { id: 5, label: 'Emergency heat (backup heat strips) confirmed functional', tip: 'If your heat pump freezes, backup strips are your only fallback.' },
   { id: 6, label: 'Smart thermostat set to hold 68°F minimum during freezes', tip: 'Never let your home drop below 55°F even when away during a freeze event.' },
   { id: 7, label: 'Attic hatch sealed and weatherstripped', tip: 'An unsealed attic hatch can drop your home temp 10°F overnight in a DFW freeze.' },
-  { id: 8, label: 'ProLnk emergency HVAC contact confirmed and ready', tip: 'DFW pros get booked within hours of a freeze warning — don't wait.' },
+  { id: 8, label: 'ProLnk emergency HVAC contact confirmed and ready', tip: 'DFW pros get booked within hours of a freeze warning — don’t wait.' },
 ];
 
 export default function DFWHVACWinterReady() {

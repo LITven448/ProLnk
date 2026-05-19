@@ -30,7 +30,7 @@ const confidenceLevels = [
     actions: [
       '→ Always get quotes in writing before approving any repair',
       '→ Use ProLnk to compare quotes from 2–3 vetted DFW contractors',
-      '→ Ask: "What happens if I don\'t do this repair right now?"',
+      '→ Ask: "What happens if I don\’t do this repair right now?"',
     ],
   },
   {
@@ -79,7 +79,7 @@ export default function DFWHVACDFWConfidence() {
             }}>
               <div style={{ fontWeight: 700, fontSize: 14 }}>{stage}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 6 }}>
-                {i === 0 ? 'Where most start' : i === 1 ? 'Where most stay' : 'Where you\'re going'}
+                {i === 0 ? 'Where most start' : i === 1 ? 'Where most stay' : 'Where you\’re going'}
               </div>
             </div>
           ))}

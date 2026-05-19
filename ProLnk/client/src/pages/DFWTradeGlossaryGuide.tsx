@@ -5,7 +5,7 @@ const trades = ['HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Foundation', 'Gene
 const terms: Record<string, { term: string; def: string; tip: string }[]> = {
   HVAC: [
     { term: 'Manual J', def: 'ACCA-standard load calculation determining correct HVAC system size for a home.', tip: 'Always demand a Manual J before any DFW HVAC replacement — oversizing is rampant.' },
-    { term: 'Load Calculation', def: 'Engineering process to determine heating and cooling requirements based on home size, insulation, and climate.', tip: 'DFW\'s extreme summers (100°F+) and mild winters require precise calculations for efficiency.' },
+    { term: 'Load Calculation', def: 'Engineering process to determine heating and cooling requirements based on home size, insulation, and climate.', tip: 'DFW\’s extreme summers (100°F+) and mild winters require precise calculations for efficiency.' },
     { term: 'Commissioning', def: 'The process of verifying a newly installed HVAC system operates per design specifications.', tip: 'Requires refrigerant charge verification and airflow testing — insist on this after any DFW install.' },
     { term: 'SEER2', def: 'Updated efficiency metric (2023+) for cooling equipment; replaced SEER.', tip: 'Texas minimum for new installs is SEER2 14.3; higher ratings save on Oncor summer bills.' },
     { term: 'Refrigerant Charge', def: 'The precise amount of refrigerant in an HVAC system required for efficient operation.', tip: 'Low charge is the #1 cause of AC failure in DFW summers — verify annually.' },
@@ -28,7 +28,7 @@ const terms: Record<string, { term: string; def: string; tip: string }[]> = {
     { term: 'Drip Edge', def: 'Metal flashing installed at roof edges to direct water away from fascia.', tip: 'Missing drip edge causes fascia rot — extremely common on DFW homes after hail damage repairs.' },
     { term: 'Decking (Sheathing)', def: 'The wood panels (typically OSB or plywood) nailed to roof rafters as the base layer.', tip: 'Hail damage often requires decking replacement in DFW — inspect before reroofing.' },
     { term: 'Ice and Water Shield', def: 'A waterproof membrane applied to vulnerable roof areas before shingles.', tip: 'Required in DFW in valleys and eaves; prevents leaks from wind-driven rain and rare ice events.' },
-    { term: 'Soffit', def: 'The underside of the roof overhang connecting the exterior wall to the roofline.', tip: 'Soffit vents provide attic airflow critical in DFW summers — ensure they\'re not blocked by insulation.' },
+    { term: 'Soffit', def: 'The underside of the roof overhang connecting the exterior wall to the roofline.', tip: 'Soffit vents provide attic airflow critical in DFW summers — ensure they\’re not blocked by insulation.' },
     { term: 'Fascia', def: 'The horizontal board running along the lower edge of the roof, supporting the gutters.', tip: 'Wood fascia rots quickly in DFW weather; fiber cement or aluminum-wrapped is the better choice.' },
   ],
   Foundation: [
@@ -43,7 +43,7 @@ const terms: Record<string, { term: string; def: string; tip: string }[]> = {
     { term: 'Lien Waiver', def: 'A document from a contractor or supplier releasing their right to file a mechanics lien.', tip: 'Collect from every DFW sub-contractor and material supplier before final payment.' },
     { term: 'Punch List', def: 'A final list of incomplete or deficient items a contractor must address before final payment.', tip: 'Walk your DFW new build with a licensed inspector for the punch list — builders miss things.' },
     { term: 'Tuckpointing', def: 'Replacing deteriorated mortar in brick joints with fresh mortar.', tip: 'DFW clay soil movement cracks mortar joints; inspect brick homes every 5–7 years.' },
-    { term: 'Rafter vs Truss', def: 'Rafters are individual cut lumber pieces; trusses are engineered pre-built triangular assemblies.', tip: 'Most DFW homes built after 1980 use trusses — never cut a truss without an engineer\'s approval.' },
+    { term: 'Rafter vs Truss', def: 'Rafters are individual cut lumber pieces; trusses are engineered pre-built triangular assemblies.', tip: 'Most DFW homes built after 1980 use trusses — never cut a truss without an engineer\’s approval.' },
   ],
 };
 

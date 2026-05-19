@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const acronyms = [
   { acronym: 'TREC', full: 'Texas Real Estate Commission', meaning: 'State agency regulating real estate brokers, agents, and inspectors.', when: 'License verification, filing complaints, or reviewing inspector standards.' },
-  { acronym: 'TRELA', full: 'Texas Real Estate License Act', meaning: 'The law governing real estate licensing and practice in Texas.', when: 'Understanding your agent\'s legal obligations during a transaction.' },
+  { acronym: 'TRELA', full: 'Texas Real Estate License Act', meaning: 'The law governing real estate licensing and practice in Texas.', when: 'Understanding your agent\’s legal obligations during a transaction.' },
   { acronym: 'TDHCA', full: 'Texas Department of Housing and Community Affairs', meaning: 'State agency managing affordable housing programs and mortgage assistance.', when: 'First-time buyer programs, low-income tax credits, and rental assistance.' },
   { acronym: 'TSAHC', full: 'Texas State Affordable Housing Corporation', meaning: 'Provides down payment assistance and mortgage programs for DFW buyers.', when: 'Applying for down payment assistance or low-interest first-time buyer loans.' },
   { acronym: 'NTREIS', full: 'North Texas Real Estate Information Systems', meaning: 'The MLS (Multiple Listing Service) used by agents in the DFW market.', when: 'Every time an agent pulls listings or comps in the DFW metro area.' },
@@ -11,8 +11,8 @@ const acronyms = [
   { acronym: 'DTI', full: 'Debt-to-Income Ratio', meaning: 'Monthly debt obligations divided by gross monthly income; key lending metric.', when: 'Mortgage pre-approval; most DFW lenders require DTI below 43%.' },
   { acronym: 'LTV', full: 'Loan-to-Value Ratio', meaning: 'Loan amount divided by property value; determines mortgage terms and PMI.', when: 'Every mortgage application; drives interest rate, PMI requirement, and max loan.' },
   { acronym: 'PMI', full: 'Private Mortgage Insurance', meaning: 'Insurance protecting lenders when borrowers put less than 20% down.', when: 'Conventional loans with less than 20% down payment in DFW.' },
-  { acronym: 'MIP', full: 'Mortgage Insurance Premium', meaning: 'FHA\'s version of PMI — both upfront and annual premiums.', when: 'FHA loan applications; common for DFW first-time buyers using FHA financing.' },
-  { acronym: 'PITI', full: 'Principal, Interest, Taxes, Insurance', meaning: 'The four components making up a total monthly mortgage payment.', when: 'Budget planning; DFW\'s high property taxes make the T especially large.' },
+  { acronym: 'MIP', full: 'Mortgage Insurance Premium', meaning: 'FHA\’s version of PMI — both upfront and annual premiums.', when: 'FHA loan applications; common for DFW first-time buyers using FHA financing.' },
+  { acronym: 'PITI', full: 'Principal, Interest, Taxes, Insurance', meaning: 'The four components making up a total monthly mortgage payment.', when: 'Budget planning; DFW\’s high property taxes make the T especially large.' },
   { acronym: 'HVAC', full: 'Heating, Ventilation, and Air Conditioning', meaning: 'The system controlling climate, air quality, and ventilation in a building.', when: 'Home inspections, system replacements, and energy efficiency discussions.' },
   { acronym: 'SEER', full: 'Seasonal Energy Efficiency Ratio', meaning: 'Measures how efficiently an air conditioner cools relative to energy used.', when: 'AC replacement quotes; older DFW systems run SEER 10–12, new min is SEER2 14.3.' },
   { acronym: 'SEER2', full: 'Seasonal Energy Efficiency Ratio 2 (updated standard)', meaning: 'Updated SEER calculation method effective 2023; replaces the original SEER.', when: 'All new DFW HVAC equipment since January 2023; required on all new installs.' },
@@ -28,7 +28,7 @@ const acronyms = [
   { acronym: 'ARM', full: 'Adjustable-Rate Mortgage', meaning: 'A mortgage where the interest rate changes after an initial fixed period.', when: 'Shopping mortgages; 5/1 and 7/1 ARMs popular in DFW during high-rate periods.' },
   { acronym: 'APR', full: 'Annual Percentage Rate', meaning: 'The true annual cost of a loan including fees and interest.', when: 'Comparing mortgage offers; use APR not just interest rate for accurate comparison.' },
   { acronym: 'MERV', full: 'Minimum Efficiency Reporting Value', meaning: 'Rating scale 1–16 measuring air filter effectiveness.', when: 'Choosing HVAC filters; DFW allergists recommend MERV 11–13 for pollen.' },
-  { acronym: 'GFI', full: 'Ground Fault Interrupter (informal for GFCI)', meaning: 'Common informal shorthand for GFCI used by contractors and inspectors.', when: 'You\'ll hear this from DFW electricians as a casual reference to GFCI devices.' },
+  { acronym: 'GFI', full: 'Ground Fault Interrupter (informal for GFCI)', meaning: 'Common informal shorthand for GFCI used by contractors and inspectors.', when: 'You\’ll hear this from DFW electricians as a casual reference to GFCI devices.' },
   { acronym: 'HEL', full: 'Home Equity Loan', meaning: 'A lump-sum loan using home equity as collateral; fixed rate.', when: 'Financing DFW home improvements; Texas has strict 80% LTV cap on HELs.' },
   { acronym: 'HELOC', full: 'Home Equity Line of Credit', meaning: 'A revolving credit line using home equity; variable rate.', when: 'Flexible DFW renovation financing; draw as needed, subject to Texas 80% LTV rule.' },
   { acronym: 'REO', full: 'Real Estate Owned', meaning: 'Properties owned by a bank after foreclosure when no buyer bid at auction.', when: 'Buying bank-owned homes; DFW REO inventory spikes in economic downturns.' },

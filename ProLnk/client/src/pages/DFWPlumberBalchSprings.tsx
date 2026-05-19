@@ -15,7 +15,7 @@ const DIAGNOSIS: Record<string, Record<string, { issue: string; approach: string
   },
   post1990: {
     lowpressure: { issue: 'Pressure Regulator or Fixture Issue', approach: 'Newer homes rarely have pipe issues — check PRV (pressure reducing valve) and aerators before any major work.', estimate: '$150–$350 PRV replacement' },
-    discolored: { issue: 'Water Heater Anode or Municipal Issue', approach: 'Modern pipes don\'t cause discoloration — check water heater anode rod and call city to rule out main line issue.', estimate: '$80–$200 anode rod replacement' },
+    discolored: { issue: 'Water Heater Anode or Municipal Issue', approach: 'Modern pipes don\’t cause discoloration — check water heater anode rod and call city to rule out main line issue.', estimate: '$80–$200 anode rod replacement' },
     slow: { issue: 'Grease or Hair Clog', approach: 'Simple drain clearing — no pipe concern at this age. Enzyme treatment monthly prevents recurrence.', estimate: '$75–$150 clearing service' },
     leak: { issue: 'Fitting or Connection Failure', approach: 'Isolated repair at the connection point. Warranty may still cover if home is under 10 years old.', estimate: '$100–$400 fitting repair' },
   },

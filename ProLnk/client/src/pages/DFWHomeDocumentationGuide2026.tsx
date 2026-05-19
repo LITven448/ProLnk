@@ -36,7 +36,7 @@ const guides: Record<string, { title: string; items: { name: string; where: stri
     ],
   },
   service: {
-    title: 'Service Records — Your Home's History',
+    title: 'Service Records — Your Home’s History',
     items: [
       { name: 'HVAC Service Records', where: 'ProLnk Vault (auto-logged)', why: 'Proves maintenance — adds value, validates warranty' },
       { name: 'Plumbing & Electrical Work', where: 'ProLnk Vault (auto-logged)', why: 'Documents known issues and repairs for buyers' },

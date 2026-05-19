@@ -117,9 +117,9 @@ export default function DFWHVACArlington() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🏆 What Arlington HVAC Specialists Know</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
-              { icon: '🌡️', title: 'Heat Load Calculation', desc: 'Right-sized systems for Arlington\'s heat index — oversized units short-cycle and fail early.' },
+              { icon: '🌡️', title: 'Heat Load Calculation', desc: 'Right-sized systems for Arlington\’s heat index — oversized units short-cycle and fail early.' },
               { icon: '🏠', title: 'Attic Duct Expertise', desc: 'Arlington attics reach 160°F in summer — poorly insulated ducts waste 30% of your cooling capacity.' },
-              { icon: '⚡', title: 'Emergency Response', desc: 'Peak-season availability networks so you\'re not waiting 3 days in 102°F heat.' },
+              { icon: '⚡', title: 'Emergency Response', desc: 'Peak-season availability networks so you\’re not waiting 3 days in 102°F heat.' },
               { icon: '💰', title: 'Rebate Navigation', desc: 'Oncor and AEP offer up to $1,500 in rebates for qualifying high-efficiency replacements.' },
             ].map(item => (
               <div key={item.title} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16 }}>

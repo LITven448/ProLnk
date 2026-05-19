@@ -46,7 +46,7 @@ const situations = [
     label: '🌳 Legacy Minded',
     recs: [
       'Build a family home maintenance fund — even $500/year compounds to protect the asset.',
-      'Document every improvement with permits and records so heirs understand the home\'s history.',
+      'Document every improvement with permits and records so heirs understand the home\’s history.',
       'Origination rights + Home Health Vault data make your home a documented, income-generating legacy.',
     ],
     insight: 'A well-documented DFW home is worth more and transfers far more smoothly to the next generation.',

@@ -113,7 +113,7 @@ export default function DFWElectricalRepairCostGuide() {
           <h3 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 0 }}>🚨 DFW Electrical Red Flags in Quotes</h3>
           {[
             ['No Permit Mentioned', 'Any electrician skipping permits on panel upgrades, rewires, or new circuits is cutting corners that could cost you far more later.'],
-            ['Aluminum Wiring Ignored', 'DFW homes built 1965–1973 often have aluminum branch wiring. Quotes that don\'t address this are incomplete.'],
+            ['Aluminum Wiring Ignored', 'DFW homes built 1965–1973 often have aluminum branch wiring. Quotes that don\’t address this are incomplete.'],
             ['No Written Scope', 'Electrical quotes should specify exactly which circuits, panels, or devices are included. Vague scope enables scope creep.'],
             ['Unlicensed Contractor', 'Texas requires licensed electricians for most work. Verify with TDLR (Texas Dept of Licensing and Regulation) before hiring.'],
           ].map(([title, desc]) => (

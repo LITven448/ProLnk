@@ -12,10 +12,10 @@ export default function DFWPriceReductionGuide() {
   function getRecommendation() {
     if (!dom || !showings) return null;
     if (domNum < 14) return { action: 'Hold', timing: 'Too early — DFW market standard is 14-21 days before evaluating.', size: 'No reduction yet', color: '#15803D', bg: '#F0FDF4', border: '#BBF7D0' };
-    if (domNum >= 14 && domNum <= 21 && showingsNum >= 8 && offersNum === 0) return { action: 'Consider Reduction', timing: 'You\'re at the DFW decision window. With strong showing traffic and no offers, price is the signal.', size: 'Reduce 2-3% from current list price (meaningful, not token)', color: '#92400E', bg: '#FFFBEA', border: '#F5E642' };
-    if (domNum >= 14 && domNum <= 21 && showingsNum < 8 && offersNum === 0) return { action: 'Monitor + Check Marketing', timing: 'Low showing volume may indicate marketing issue, not just price. Verify Zillow/Realtor listing quality before reducing.', size: 'Hold for 7 more days; if showings don\'t increase, reduce 1-2%', color: '#1D4ED8', bg: '#EFF6FF', border: '#BFDBFE' };
+    if (domNum >= 14 && domNum <= 21 && showingsNum >= 8 && offersNum === 0) return { action: 'Consider Reduction', timing: 'You\’re at the DFW decision window. With strong showing traffic and no offers, price is the signal.', size: 'Reduce 2-3% from current list price (meaningful, not token)', color: '#92400E', bg: '#FFFBEA', border: '#F5E642' };
+    if (domNum >= 14 && domNum <= 21 && showingsNum < 8 && offersNum === 0) return { action: 'Monitor + Check Marketing', timing: 'Low showing volume may indicate marketing issue, not just price. Verify Zillow/Realtor listing quality before reducing.', size: 'Hold for 7 more days; if showings don\’t increase, reduce 1-2%', color: '#1D4ED8', bg: '#EFF6FF', border: '#BFDBFE' };
     if (domNum > 21 && domNum <= 35 && offersNum === 0) return { action: 'Reduce Now', timing: 'Past the DFW critical window. Every day adds DOM stigma. Reduce this week.', size: 'Reduce 3-5% — enough to create new buyer urgency and trigger Zillow price drop alerts', color: '#BE123C', bg: '#FFF1F2', border: '#FECDD3' };
-    if (domNum > 35 && offersNum === 0) return { action: 'Significant Reduction Required', timing: 'High DOM stigma is now hurting you. Buyers are asking what\'s wrong with the home. Aggressive reset needed.', size: 'Reduce 5-8% or consider relisting after a 10-day withdrawal to reset DOM counter', color: '#7C2D12', bg: '#FFF7ED', border: '#FED7AA' };
+    if (domNum > 35 && offersNum === 0) return { action: 'Significant Reduction Required', timing: 'High DOM stigma is now hurting you. Buyers are asking what\’s wrong with the home. Aggressive reset needed.', size: 'Reduce 5-8% or consider relisting after a 10-day withdrawal to reset DOM counter', color: '#7C2D12', bg: '#FFF7ED', border: '#FED7AA' };
     if (offersNum > 0) return { action: 'Hold — You Have Offers', timing: 'Focus on negotiating your best offer, not reducing price. Reduction now signals desperation.', size: 'No reduction — counter or accept current offers', color: '#15803D', bg: '#F0FDF4', border: '#BBF7D0' };
     return null;
   }
@@ -31,11 +31,11 @@ export default function DFWPriceReductionGuide() {
   ];
 
   const sizingRules = [
-    ['Token reduction (under 1%)', 'Never — buyers and their agents see this as desperation without substance. It signals you\'re unwilling to be realistic.'],
+    ['Token reduction (under 1%)', 'Never — buyers and their agents see this as desperation without substance. It signals you\’re unwilling to be realistic.'],
     ['Small reduction (1-2%)', 'On $400K home = $4-8K. Appropriate for first reduction in early DOM if market is borderline. Keeps you competitive without signaling panic.'],
     ['Meaningful reduction (2-4%)', 'On $400K home = $8-16K. The right size for the 14-35 day window with strong showing/no-offer pattern.'],
     ['Aggressive reduction (4-6%)', 'On $400K home = $16-24K. Required after 35+ DOM or if you need to create new urgency and trigger buyer alerts.'],
-    ['Relist at new price', 'When DOM stigma has accumulated to the point that a reduction won\'t overcome buyer skepticism. Pull for 10 days, relist fresh.'],
+    ['Relist at new price', 'When DOM stigma has accumulated to the point that a reduction won\’t overcome buyer skepticism. Pull for 10 days, relist fresh.'],
   ];
 
   return (

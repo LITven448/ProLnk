@@ -31,9 +31,9 @@ const stories = [
   },
   {
     scenario: 'Selling a home, need multiple trades',
-    headline: '"Pre-listed with ProLnk and saved $8,400 vs my realtor\'s vendor list"',
+    headline: '"Pre-listed with ProLnk and saved $8,400 vs my realtor\’s vendor list"',
     homeowner: 'Angela T., Prosper',
-    detail: 'My realtor gave me a vendor list. I used ProLnk to get competing bids for every item on my pre-listing punch list — paint, flooring, HVAC service, electrical panel. The bids came back 15–30% lower than my realtor\'s referrals. I saved $8,400 total and listed 2 weeks earlier than expected.',
+    detail: 'My realtor gave me a vendor list. I used ProLnk to get competing bids for every item on my pre-listing punch list — paint, flooring, HVAC service, electrical panel. The bids came back 15–30% lower than my realtor\’s referrals. I saved $8,400 total and listed 2 weeks earlier than expected.',
     how: 'ProLnk works for any home service job, any trade. Sellers use it to run competitive bids on pre-listing repairs without relying on a single-source referral list.',
   },
 ];

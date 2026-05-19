@@ -29,19 +29,19 @@ export default function DFWHVACWinterModeGuide2026() {
     },
     furnace: {
       defrost: [
-        '🔥 Gas furnaces don't have defrost cycles — that's heat pump territory',
+        '🔥 Gas furnaces don’t have defrost cycles — that’s heat pump territory',
         '💨 First ignition each season may produce slight burning smell (normal, 15 min)',
         '🔊 Clicking on startup = igniter sparking — completely normal',
         '✅ DFW furnaces should run smoothly all winter with annual tune-up',
       ],
       emergency: [
-        '⚠️ Gas furnaces have no Emergency Heat mode — they either work or they don't',
-        '🔥 If furnace fails, use space heaters in DFW's mild winters temporarily',
+        '⚠️ Gas furnaces have no Emergency Heat mode — they either work or they don’t',
+        '🔥 If furnace fails, use space heaters in DFW’s mild winters temporarily',
         '📞 Call ProLnk immediately for emergency furnace repair',
         '🛡️ Keep carbon monoxide detector active — cracked heat exchanger is dangerous',
       ],
       backup: [
-        '🔥 Gas furnaces are highly efficient in DFW's mild climate',
+        '🔥 Gas furnaces are highly efficient in DFW’s mild climate',
         '💰 No backup electric strips — gas is your primary and sole heat source',
         '🌡️ DFW furnaces sized for local climate — rarely need to run at full capacity',
         '🛠️ Annual tune-up in October ensures peak efficiency for winter',
@@ -57,12 +57,12 @@ export default function DFWHVACWinterModeGuide2026() {
       emergency: [
         '⚡ Mini-splits have no Emergency Heat switch — if unit fails, no heat',
         '📞 DFW winter failure = call ProLnk for same-day emergency service',
-        '🔥 Portable heater as backup during repair wait in DFW's mild climate',
+        '🔥 Portable heater as backup during repair wait in DFW’s mild climate',
       ],
       backup: [
         '💡 Mini-splits run on electricity — no backup heat strips unlike central heat pumps',
         '🌡️ DFW winters rarely challenge mini-split limits (designed for -15°F)',
-        '💰 Mini-splits are most efficient heating option in DFW's climate',
+        '💰 Mini-splits are most efficient heating option in DFW’s climate',
         '✅ No backup needed — system handles DFW winters with ease',
       ],
     },

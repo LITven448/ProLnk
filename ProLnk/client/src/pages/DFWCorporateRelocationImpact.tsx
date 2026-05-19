@@ -39,8 +39,8 @@ type ImpactResult = {
 const areaImpacts: Record<string, ImpactResult> = {
   'Plano / Allen / McKinney': {
     headline: 'Corporate Relocation Ground Zero',
-    currentImpact: 'Toyota\'s 2017 move catalyzed the Legacy corridor transformation. Home prices near Toyota HQ appreciated 35-45% from 2017-2024. Still commanding $50-80K premium over comparable homes outside the corridor.',
-    futureOutlook: 'Next wave: fintech and healthcare companies following Toyota\'s talent ecosystem. Allen and McKinney absorbing overflow as Plano saturates.',
+    currentImpact: 'Toyota\’s 2017 move catalyzed the Legacy corridor transformation. Home prices near Toyota HQ appreciated 35-45% from 2017-2024. Still commanding $50-80K premium over comparable homes outside the corridor.',
+    futureOutlook: 'Next wave: fintech and healthcare companies following Toyota\’s talent ecosystem. Allen and McKinney absorbing overflow as Plano saturates.',
     actionAdvice: 'Strong buy corridor. Corporate demand floor means prices rarely crater here even during rate spikes.',
   },
   'Frisco / Prosper / Celina': {
@@ -63,7 +63,7 @@ const areaImpacts: Record<string, ImpactResult> = {
   },
   default: {
     headline: 'Indirect Relocation Beneficiary',
-    currentImpact: 'This area benefits from DFW\'s overall corporate relocation momentum — population growth, income growth, and job market strength all lift the broader metro.',
+    currentImpact: 'This area benefits from DFW\’s overall corporate relocation momentum — population growth, income growth, and job market strength all lift the broader metro.',
     futureOutlook: 'As primary corridors saturate, relocation-driven demand will continue to expand into adjacent markets. Watch for new corporate announcements.',
     actionAdvice: 'Solid DFW fundamentals apply. Not a primary corporate relocation play but benefits from metro-wide demand growth.',
   },

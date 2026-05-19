@@ -117,7 +117,7 @@ export default function ExteriorPaintGuide() {
             <p style={{ color: '#cbd5e1', marginBottom: '1rem' }}>Over 40% of DFW homes are in HOAs. Before you paint:</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {[
-                'Request your HOA\'s approved color palette — most restrict to 3–5 approved colors or families',
+                'Request your HOA\’s approved color palette — most restrict to 3–5 approved colors or families',
                 'Submit an Architectural Change Request (ACR) before starting — approval can take 2–4 weeks',
                 'Violations typically result in fines of $25–$200/month until corrected',
                 'Photographically document your color choice with the brand + code in case of disputes',

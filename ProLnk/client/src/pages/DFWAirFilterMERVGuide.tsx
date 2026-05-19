@@ -12,7 +12,7 @@ function getRecommendation(allergy: string, age: string) {
   if (highAllergy && newer) return { merv: 'MERV 13', freq: 'Every 60 days', cost: '$120–$180/yr', note: 'Your newer system can handle the airflow restriction. MERV 13 captures pollen, mold spores, and fine DFW dust.' };
   if (highAllergy && older) return { merv: 'MERV 11', freq: 'Every 45 days', cost: '$80–$130/yr', note: 'MERV 13 may starve your older system of airflow, raising energy bills and stressing the blower. MERV 11 is the sweet spot.' };
   if (!highAllergy && newer) return { merv: 'MERV 11', freq: 'Every 90 days', cost: '$60–$100/yr', note: 'Good balance for DFW dust and pollen without over-restricting airflow on your newer unit.' };
-  if (lowAllergy && older) return { merv: 'MERV 8', freq: 'Every 60 days', cost: '$40–$70/yr', note: 'MERV 8 protects your system without restriction. DFW dust is heavy — don't go lower.' };
+  if (lowAllergy && older) return { merv: 'MERV 8', freq: 'Every 60 days', cost: '$40–$70/yr', note: 'MERV 8 protects your system without restriction. DFW dust is heavy — don’t go lower.' };
   return { merv: 'MERV 11', freq: 'Every 75 days', cost: '$70–$110/yr', note: 'A reliable middle-ground for mid-age DFW systems. Monitor airflow monthly during peak summer.' };
 }
 

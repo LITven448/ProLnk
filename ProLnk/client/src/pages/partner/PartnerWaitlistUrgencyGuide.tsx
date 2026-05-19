@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const SITUATIONS = [
   'Prospect is interested but wants to wait',
-  'Prospect says they\'ll think about it',
+  'Prospect says they\’ll think about it',
   'Prospect asks "how long do I have?"',
   'Prospect doubts the waitlist is real',
   'Prospect already knows someone in ProLnk',
@@ -11,39 +11,39 @@ const SITUATIONS = [
 
 const messages: Record<string, { subject: string; timing: string; message: string; followUp: string }> = {
   'Prospect is interested but wants to wait': {
-    subject: 'What they\'re waiting for doesn\'t exist after 500',
-    timing: 'Use within the same conversation — don\'t let them leave without this.',
-    message: 'Totally understand. Here\'s the thing — waiting doesn\'t cost you nothing, it costs you Charter. After 500 applications close, there\'s no "come back and get Charter later." The $149/month locked forever, the 25% commission floor, the 4-level cascade — those are only for the 500 who apply before the door shuts. After that, the platform is open, but Charter is gone. Is there something specific you\'re waiting on that I can help you sort out today?',
+    subject: 'What they\’re waiting for doesn\’t exist after 500',
+    timing: 'Use within the same conversation — don\’t let them leave without this.',
+    message: 'Totally understand. Here\’s the thing — waiting doesn\’t cost you nothing, it costs you Charter. After 500 applications close, there\’s no "come back and get Charter later." The $149/month locked forever, the 25% commission floor, the 4-level cascade — those are only for the 500 who apply before the door shuts. After that, the platform is open, but Charter is gone. Is there something specific you\’re waiting on that I can help you sort out today?',
     followUp: 'Send a "waitlist counter" screenshot 24h later showing progress toward 500.',
   },
-  'Prospect says they\'ll think about it': {
+  'Prospect says they\’ll think about it': {
     subject: 'Reframe "think about it" to what changes after Charter closes',
-    timing: 'Send within 2 hours while you\'re still fresh in their mind.',
-    message: 'Totally fair — this is a real decision. While you\'re thinking, here\'s the one thing worth knowing: the thinking window and the Charter window are the same window. Once 500 applications are in, Charter closes. No exceptions. What opens after is a solid opportunity — but not this one. What questions can I answer that would help you think faster?',
+    timing: 'Send within 2 hours while you\’re still fresh in their mind.',
+    message: 'Totally fair — this is a real decision. While you\’re thinking, here\’s the one thing worth knowing: the thinking window and the Charter window are the same window. Once 500 applications are in, Charter closes. No exceptions. What opens after is a solid opportunity — but not this one. What questions can I answer that would help you think faster?',
     followUp: 'Share the Charter vs Post-Charter comparison table 48h later.',
   },
   'Prospect asks "how long do I have?"': {
     subject: 'Give them an honest, specific answer',
     timing: 'Deliver in real-time — this is an active interest signal.',
-    message: 'Honest answer: we don\'t know exactly — it\'s not time-based, it\'s application-based. When we hit 500 approved Charter applications, that\'s it. Right now we\'re [XX] applications in. Based on our current pace, we\'re weeks away, not months. The right question isn\'t "how long do I have?" — it\'s "do I want to be in the first 500 or not?" Because the benefits are categorically different.',
+    message: 'Honest answer: we don\’t know exactly — it\’s not time-based, it\’s application-based. When we hit 500 approved Charter applications, that\’s it. Right now we\’re [XX] applications in. Based on our current pace, we\’re weeks away, not months. The right question isn\’t "how long do I have?" — it\’s "do I want to be in the first 500 or not?" Because the benefits are categorically different.',
     followUp: 'Follow up with current application count in 3 days to show movement.',
   },
   'Prospect doubts the waitlist is real': {
-    subject: 'Show, don\'t just tell',
+    subject: 'Show, don\’t just tell',
     timing: 'Address this in real-time — doubt unaddressed becomes a no.',
-    message: 'Fair skepticism. Here\'s what\'s real: the platform is built and being tested now. The network income structure is locked in by contract, not by policy — it\'s in the Charter member agreement you\'d sign. The 500-application cap is enforced by the system, not a sales tactic. Happy to walk you through the Charter member agreement or show you the active platform. What would make this feel real to you?',
+    message: 'Fair skepticism. Here\’s what\’s real: the platform is built and being tested now. The network income structure is locked in by contract, not by policy — it\’s in the Charter member agreement you\’d sign. The 500-application cap is enforced by the system, not a sales tactic. Happy to walk you through the Charter member agreement or show you the active platform. What would make this feel real to you?',
     followUp: 'Offer a platform walkthrough or send the Charter member agreement document.',
   },
   'Prospect already knows someone in ProLnk': {
-    subject: 'They\'re closer than they think — use social proof',
+    subject: 'They\’re closer than they think — use social proof',
     timing: 'This is a warm moment — close it now.',
-    message: 'That\'s actually a great sign — you already know the community is real. The people you know are Charter members. That\'s the tier you\'d be joining. You\'d be at the same level, with the same locked benefits, in the same network. The question is whether you join them or watch them build while you wait.',
+    message: 'That\’s actually a great sign — you already know the community is real. The people you know are Charter members. That\’s the tier you\’d be joining. You\’d be at the same level, with the same locked benefits, in the same network. The question is whether you join them or watch them build while you wait.',
     followUp: 'Offer to connect them with their ProLnk contact for validation.',
   },
   'Prospect wants to talk to their spouse first': {
     subject: 'Give them the tools to make that conversation easy',
     timing: 'Send within the hour — strike while engagement is high.',
-    message: 'Completely reasonable — this is worth a conversation. Here\'s what I\'d share with them: the decision is $149/month, locked forever. That\'s less than most streaming subscriptions. What you\'re deciding is whether to get in at Charter pricing while it exists, or pay a higher rate when the platform opens publicly. The opportunity is real; I\'d just hate for the timing to be the thing that changes everything.',
+    message: 'Completely reasonable — this is worth a conversation. Here\’s what I\’d share with them: the decision is $149/month, locked forever. That\’s less than most streaming subscriptions. What you\’re deciding is whether to get in at Charter pricing while it exists, or pay a higher rate when the platform opens publicly. The opportunity is real; I\’d just hate for the timing to be the thing that changes everything.',
     followUp: 'Send a spouse-friendly one-pager they can share: "What is ProLnk? What are we deciding?"',
   },
 };

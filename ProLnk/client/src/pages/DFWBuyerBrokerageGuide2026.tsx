@@ -5,14 +5,14 @@ const situations = [
     id: 'first-time',
     label: 'First-time buyer, just starting to look',
     rec: 'Sign a non-exclusive buyer agency agreement (BAA) limited to 90 days with a specific agent before touring any homes — now legally required.',
-    agreement: ['Commission rate clearly stated (typically 2.5–3%)', 'Term length: 90 days or less to start', 'Specific vs. exclusive representation', 'How to terminate early if relationship isn\'t working'],
-    flags: ['Agent refuses to give you a written agreement', 'Agreement locks you in for 12 months', 'Agent won\'t disclose their compensation'],
+    agreement: ['Commission rate clearly stated (typically 2.5–3%)', 'Term length: 90 days or less to start', 'Specific vs. exclusive representation', 'How to terminate early if relationship isn\’t working'],
+    flags: ['Agent refuses to give you a written agreement', 'Agreement locks you in for 12 months', 'Agent won\’t disclose their compensation'],
   },
   {
     id: 'unrepresented',
     label: 'Considering going unrepresented to save money',
-    rec: 'Proceed with caution. Texas law allows unrepresented buyers but listing agents represent the seller. You\'ll negotiate alone against a professional.',
-    agreement: ['Request a "transaction broker" or "intermediary" arrangement in writing', 'Never assume the listing agent represents your interests', 'Consider a flat-fee buyer\'s agent for review only'],
+    rec: 'Proceed with caution. Texas law allows unrepresented buyers but listing agents represent the seller. You\’ll negotiate alone against a professional.',
+    agreement: ['Request a "transaction broker" or "intermediary" arrangement in writing', 'Never assume the listing agent represents your interests', 'Consider a flat-fee buyer\’s agent for review only'],
     flags: ['Listing agent implies they can represent both parties equally', 'No written disclosure of agency relationship', 'Agent discourages you from getting independent legal review'],
   },
   {
@@ -42,10 +42,10 @@ export default function DFWBuyerBrokerageGuide2026() {
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 24 }}>
           {[
-            { icon: '📝', title: 'The New Rule: Written Agreement First', body: 'As of August 2024, REALTORS must have a signed Buyer Representation Agreement before showing any property. This is NOT optional. If an agent shows you homes without one, they\'re violating NAR rules.' },
+            { icon: '📝', title: 'The New Rule: Written Agreement First', body: 'As of August 2024, REALTORS must have a signed Buyer Representation Agreement before showing any property. This is NOT optional. If an agent shows you homes without one, they\’re violating NAR rules.' },
             { icon: '💰', title: 'Who Pays the Buyer Agent Now?', body: 'Sellers are no longer required to offer buyer agent compensation. Buyers may pay their own agent directly, negotiate compensation into the purchase offer, or find sellers who voluntarily offer buyer agent co-op. Always negotiate — this is a new world.' },
-            { icon: '⚖️', title: 'Unrepresented Buyer Risks in Texas', body: 'Texas listing agents represent the seller. If you tour and offer without your own agent, you\'re negotiating against a trained professional. In DFW\'s competitive market, this can cost you thousands — or result in missing critical inspection or contract protections.' },
-            { icon: '🔎', title: 'What to Put in Your Buyer Agreement', body: 'Negotiate: commission rate (not all charge 3%), term length (90 days max to start), geographic scope (don\'t sign for all of DFW unless you\'re ready), and early termination rights. Get it in writing and don\'t sign under pressure.' },
+            { icon: '⚖️', title: 'Unrepresented Buyer Risks in Texas', body: 'Texas listing agents represent the seller. If you tour and offer without your own agent, you\’re negotiating against a trained professional. In DFW\’s competitive market, this can cost you thousands — or result in missing critical inspection or contract protections.' },
+            { icon: '🔎', title: 'What to Put in Your Buyer Agreement', body: 'Negotiate: commission rate (not all charge 3%), term length (90 days max to start), geographic scope (don\’t sign for all of DFW unless you\’re ready), and early termination rights. Get it in writing and don\’t sign under pressure.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#fff', borderRadius: 10, padding: 20, boxShadow: '0 1px 6px rgba(0,0,0,0.07)' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>

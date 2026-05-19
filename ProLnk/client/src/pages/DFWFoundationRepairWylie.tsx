@@ -14,7 +14,7 @@ const matrix: Record<string, Record<string, FoundResult>> = {
     'Uneven Floors': { severity: '🔴 High Concern', action: 'Floor slope in new construction suggests soil compression or poor compaction at build time. Get structural evaluation.', cost: '$6,000 – $18,000', urgency: 'Inspect immediately.' },
   },
   'Built 2000–2010': {
-    'None — Preventive': { severity: '✅ Proactive Smart Move', action: 'Wylie\'s east Collin County soils shrink in drought and expand in rain. Evaluate drainage and root barriers.', cost: '$300 – $700', urgency: 'Schedule before next dry season.' },
+    'None — Preventive': { severity: '✅ Proactive Smart Move', action: 'Wylie\’s east Collin County soils shrink in drought and expand in rain. Evaluate drainage and root barriers.', cost: '$300 – $700', urgency: 'Schedule before next dry season.' },
     'Sticking Doors/Windows': { severity: '🟡 Probable Soil Movement', action: 'Homes this age in Wylie commonly show soil-driven movement. Hydraulic pier evaluation is the next step.', cost: '$3,000 – $8,000', urgency: 'Schedule within 30 days.' },
     'Visible Cracks — Interior': { severity: '🟡 Evaluate Soon', action: 'Interior cracks in this age bracket often indicate progressive settlement. Document crack widths before evaluation.', cost: '$4,000 – $12,000', urgency: 'Schedule within 2–3 weeks.' },
     'Visible Cracks — Exterior': { severity: '🔴 Urgent', action: 'Exterior cracks on homes 15–25 years old in Wylie are a significant signal. Hydraulic piers likely needed.', cost: '$8,000 – $20,000', urgency: 'Do not delay — schedule this week.' },
@@ -25,7 +25,7 @@ const matrix: Record<string, Record<string, FoundResult>> = {
     'Sticking Doors/Windows': { severity: '🔴 Likely Foundation Movement', action: 'At this age, sticking doors and windows in Wylie soil almost always trace to foundation settlement.', cost: '$5,000 – $14,000', urgency: 'Schedule within 2 weeks.' },
     'Visible Cracks — Interior': { severity: '🔴 Action Required', action: 'Interior stair-step cracks in 25+ year Wylie homes are a red flag. Get three foundation contractor bids.', cost: '$7,000 – $18,000', urgency: 'Schedule this week.' },
     'Visible Cracks — Exterior': { severity: '🚨 Emergency Assessment', action: 'Wide exterior cracks (>1/4 inch) on older Wylie homes indicate significant soil-driven movement. Act now.', cost: '$12,000 – $28,000', urgency: 'Schedule inspection immediately.' },
-    'Uneven Floors': { severity: '🚨 Structural Emergency', action: 'Severe floor slope on 30-year Wylie construction requires engineer\'s report alongside contractor evaluation.', cost: '$15,000 – $35,000', urgency: 'Structural engineer + contractor today.' },
+    'Uneven Floors': { severity: '🚨 Structural Emergency', action: 'Severe floor slope on 30-year Wylie construction requires engineer\’s report alongside contractor evaluation.', cost: '$15,000 – $35,000', urgency: 'Structural engineer + contractor today.' },
   },
   'Built before 1990': {
     'None — Preventive': { severity: '🟡 High-Priority Inspection', action: 'Pre-1990 Wylie homes have had 35+ years of soil movement cycles. Baseline inspection is essential.', cost: '$400 – $900', urgency: 'Do not skip annual inspection.' },

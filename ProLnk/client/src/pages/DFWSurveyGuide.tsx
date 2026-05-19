@@ -14,7 +14,7 @@ const CLAY_FACTS = [
   { fact: 'Foundation movement of 1–4 inches over 20 years is common — this can push structures toward or over property lines' },
   { fact: 'Pier-and-beam foundations in older DFW homes absorb some movement; slab foundations shift as a unit' },
   { fact: 'Survey encroachments found on older DFW homes are often due to clay movement, not original construction error' },
-  { fact: 'If a neighbor's fence or structure has encroached due to clay movement, this is still a legal encroachment — survey protects you' },
+  { fact: 'If a neighbor’s fence or structure has encroached due to clay movement, this is still a legal encroachment — survey protects you' },
 ];
 
 export default function DFWSurveyGuide() {

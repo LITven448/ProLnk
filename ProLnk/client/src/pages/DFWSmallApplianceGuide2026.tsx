@@ -22,7 +22,7 @@ export default function DFWSmallApplianceGuide2026() {
     let msg = `⚡ Estimated load: ${totalW}W (~${amps.toFixed(1)}A) on counter circuits.
 
 `;
-    if (amps > 20) msg += '🔴 Overload risk — you\'re exceeding standard 20A counter circuits. You need a dedicated circuit for high-draw appliances. Call a TDLR electrician.';
+    if (amps > 20) msg += '🔴 Overload risk — you\’re exceeding standard 20A counter circuits. You need a dedicated circuit for high-draw appliances. Call a TDLR electrician.';
     else if (amps > 15) msg += '🟡 Near capacity — avoid running all simultaneously. Consider a dedicated 20A circuit for air fryer or toaster oven.';
     else msg += '🟢 Your load is manageable on standard DFW kitchen circuits (typically two 20A GFCI circuits per NEC 2020).';
     if (o < 4 && count > 3) msg += '

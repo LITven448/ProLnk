@@ -39,7 +39,7 @@ export default function DFWProLnkValueProposition2026() {
           {(['homeowner', 'pro'] as UserType[]).map((t) => (
             <button key={t} onClick={() => setUserType(t)}
               style={{ background: userType === t ? '#F5E642' : '#1e293b', color: userType === t ? '#0A1628' : '#f1f5f9', border: userType === t ? 'none' : '1px solid #334155', borderRadius: 10, padding: '0.7rem 2rem', cursor: 'pointer', fontWeight: 700, fontSize: '1rem' }}>
-              {t === 'homeowner' ? '🏠 I\'m a Homeowner' : '🔧 I\'m a Pro'}
+              {t === 'homeowner' ? '🏠 I\’m a Homeowner' : '🔧 I\’m a Pro'}
             </button>
           ))}
         </div>

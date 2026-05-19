@@ -3,7 +3,7 @@ import { useState } from 'react';
 const holidays = [
   { id: 'thanksgiving', label: '🦃 Thanksgiving', guests: 8, cookingHours: 6, extraLoad: 'HIGH' },
   { id: 'christmas', label: '🎄 Christmas', guests: 10, cookingHours: 4, extraLoad: 'HIGH' },
-  { id: 'newYear', label: '🎆 New Year\'s', guests: 15, cookingHours: 2, extraLoad: 'MEDIUM' },
+  { id: 'newYear', label: '🎆 New Year\’s', guests: 15, cookingHours: 2, extraLoad: 'MEDIUM' },
   { id: 'july4', label: '🎇 Fourth of July', guests: 20, cookingHours: 3, extraLoad: 'EXTREME' },
   { id: 'memorial', label: '🇺🇸 Memorial Day', guests: 12, cookingHours: 3, extraLoad: 'EXTREME' },
 ];

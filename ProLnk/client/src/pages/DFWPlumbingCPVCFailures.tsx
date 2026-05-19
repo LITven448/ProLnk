@@ -31,7 +31,7 @@ export default function DFWPlumbingCPVCFailures() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
-            { icon: '☀️', title: 'DFW Attic Heat', desc: 'Attic temps exceed 160°F in summer, far above CPVC's rated threshold' },
+            { icon: '☀️', title: 'DFW Attic Heat', desc: 'Attic temps exceed 160°F in summer, far above CPVC’s rated threshold' },
             { icon: '🔵', title: 'Chloramine Water', desc: 'DFW uses chloramine disinfection which degrades CPVC fittings over time' },
             { icon: '🧪', title: 'Chemical Risk', desc: 'Common drain cleaners and certain oils dissolve CPVC from outside' },
           ].map((c, i) => (

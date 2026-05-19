@@ -57,7 +57,7 @@ export default function DFWSoffitAndFasciaGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🐝 DFW-Specific Issues</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {[
-              { icon: '💧', text: 'Moisture damage from DFW spring storms saturates wood fascia within 2–3 seasons if gutters aren\'t maintained.' },
+              { icon: '💧', text: 'Moisture damage from DFW spring storms saturates wood fascia within 2–3 seasons if gutters aren\’t maintained.' },
               { icon: '🐿️', text: 'Squirrels and wasps commonly enter through even small gaps in damaged soffit — common complaint in North Dallas suburbs.' },
               { icon: '🌡️', text: 'Blocked soffit vents from paint or damage cause attic heat buildup, accelerating roof shingle deterioration in DFW summers.' },
             ].map((item, i) => (

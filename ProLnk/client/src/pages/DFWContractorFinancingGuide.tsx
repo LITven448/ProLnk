@@ -10,8 +10,8 @@ const programs = [
 
 const redFlags = [
   'No interest if paid in full — read the fine print (deferred interest)',
-  'Price goes up if you don\'t use their financing',
-  'Contractor won\'t give a cash price upfront',
+  'Price goes up if you don\’t use their financing',
+  'Contractor won\’t give a cash price upfront',
   'Monthly payment framed, not total cost',
   '"Today only" pressure on the financing offer',
 ];

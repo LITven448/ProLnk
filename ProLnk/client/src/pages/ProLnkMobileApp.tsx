@@ -13,7 +13,7 @@ const scenarios = [
   { label: 'Starting my morning', result: 'Open app → see 3 new matches in your area → check home history for the best one → accept in 30 seconds. Day starts with a confirmed job.' },
   { label: 'Finishing a job', result: 'Tap "Complete Job" → customer gets payment prompt → funds clear in 24 hrs → commission auto-calculated across your network.' },
   { label: 'Growing my network', result: 'Share your referral link from the app → new pro signs up → you see them appear in your Network tab → cascade income activates immediately.' },
-  { label: 'Checking my income', result: 'Dashboard shows this week: $1,240 direct, $340 network override, $89 subscription, $22 origination. Total: $1,691 — and it\'s only Wednesday.' },
+  { label: 'Checking my income', result: 'Dashboard shows this week: $1,240 direct, $340 network override, $89 subscription, $22 origination. Total: $1,691 — and it\’s only Wednesday.' },
 ];
 
 export default function ProLnkMobileApp() {

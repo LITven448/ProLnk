@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const standardChecks = [
-  { item: 'All shut-off valves', detail: 'Main, individual supply stops — verify they turn and don\'t leak under operation' },
+  { item: 'All shut-off valves', detail: 'Main, individual supply stops — verify they turn and don\’t leak under operation' },
   { item: 'Water pressure test', detail: 'DFW target 60–80 PSI; high pressure (>80) damages appliances and joints over time' },
   { item: 'Water heater', detail: 'Anode rod condition, sediment flush, T&P valve test, sacrificial metal check' },
   { item: 'Drain line flow', detail: 'Camera or dye test on older drains to find root intrusion, scale buildup, or belly' },

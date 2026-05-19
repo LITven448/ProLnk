@@ -9,7 +9,7 @@ export default function DFWHVACAfternoonPeak2026() {
     single: {
       none: 'Pre-cool to 72°F by 3:30pm. Raise setpoint to 78°F at 4pm. Run ceiling fans in occupied rooms. Close west-facing blinds by 2pm. Enroll in ERCOT demand response for bill credits.',
       precool: 'Great start. Confirm setpoint rises to 78°F at 4pm. Add ceiling fans — they let you feel 4°F cooler. Check for west-window blackout curtains to cut solar gain 30%.',
-      smart: 'Enable your thermostat's peak-period schedule: 72°F until 3:30pm, 78°F 4-7pm, resume 74°F at 7pm. Pair with ERCOT demand response enrollment for direct bill credits.',
+      smart: 'Enable your thermostat’s peak-period schedule: 72°F until 3:30pm, 78°F 4-7pm, resume 74°F at 7pm. Pair with ERCOT demand response enrollment for direct bill credits.',
     },
     duplex: {
       none: 'Shared walls help retain cool air. Pre-cool to 71°F by 3:30pm, hold 77°F during peak. Coordinate with neighbor if shared HVAC. West units feel peak heat more — prioritize blackout curtains.',

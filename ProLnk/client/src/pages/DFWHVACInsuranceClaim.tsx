@@ -14,7 +14,7 @@ const damageTypes = [
     icon: '🌨️',
     covered: 'Usually YES',
     coverageDetail: 'Hail denting or cracking the condenser coil, refrigerant lines, or cabinet is a covered wind/hail peril. Document before cleanup or any repairs.',
-    docs: ['Weather.gov hail report for your ZIP and date', 'Photos of dents, fin damage, and refrigerant line impact', 'Adjuster-acceptable repair estimate', 'Manufacturer's documentation on hail damage thresholds'],
+    docs: ['Weather.gov hail report for your ZIP and date', 'Photos of dents, fin damage, and refrigerant line impact', 'Adjuster-acceptable repair estimate', 'Manufacturer’s documentation on hail damage thresholds'],
     adjuster: 'Insist on including refrigerant recharge cost in estimate. Adjusters often exclude it. Also include fin straightening or full coil replacement if warranted.',
   },
   {

@@ -1,17 +1,17 @@
 import { useState } from 'react';
 
 const questions = [
-  { id: 1, text: 'How old is your current roof?', emoji: '📅', options: ['I don\'t know', 'Over 15 years', '8–15 years', 'Under 8 years'], scores: [0, 1, 2, 3] },
+  { id: 1, text: 'How old is your current roof?', emoji: '📅', options: ['I don\’t know', 'Over 15 years', '8–15 years', 'Under 8 years'], scores: [0, 1, 2, 3] },
   { id: 2, text: 'What type of shingles do you have?', emoji: '🏠', options: ['No idea', '3-tab asphalt', 'Architectural asphalt', 'Metal or tile'], scores: [0, 1, 2, 3] },
   { id: 3, text: 'When was the last significant hail event at your DFW address?', emoji: '⛈️', options: ['I never track this', 'More than 3 years ago', '1–3 years ago', 'Within the last year'], scores: [0, 1, 2, 3] },
-  { id: 4, text: 'Do you know your roof\'s wind resistance rating?', emoji: '💨', options: ['No idea', 'I think it\'s standard', 'I know it\'s 110+ mph', 'Yes, I have the spec sheet'], scores: [0, 1, 2, 3] },
+  { id: 4, text: 'Do you know your roof\’s wind resistance rating?', emoji: '💨', options: ['No idea', 'I think it\’s standard', 'I know it\’s 110+ mph', 'Yes, I have the spec sheet'], scores: [0, 1, 2, 3] },
   { id: 5, text: 'When was your last professional roof inspection?', emoji: '🔍', options: ['Never / Unknown', 'More than 3 years', '1–3 years ago', 'Within the last year'], scores: [0, 1, 2, 3] },
 ];
 
 const getResult = (score: number) => {
   if (score <= 4) return { label: 'DFW Roofing Novice', color: '#ef4444', tip: 'DFW averages 6+ hail events per year. An uninspected roof can fail without warning — and insurance claims require proof of pre-storm condition. Get an inspection now.' };
   if (score <= 8) return { label: 'Roofing Risk Present', color: '#f97316', tip: 'You have gaps in your roof knowledge. Post-hail inspections are often free — request one through ProLnk before storm season peaks.' };
-  if (score <= 11) return { label: 'Roof Aware', color: '#eab308', tip: 'Solid basics. Document your wind rating and shingle type in ProLnk Vault — it\'s required for many insurance claims and will speed up any future claim.' };
+  if (score <= 11) return { label: 'Roof Aware', color: '#eab308', tip: 'Solid basics. Document your wind rating and shingle type in ProLnk Vault — it\’s required for many insurance claims and will speed up any future claim.' };
   return { label: 'DFW Roofing Pro Homeowner', color: '#22c55e', tip: 'Outstanding! Your documentation protects your insurance claim rights. Upload all records to ProLnk Vault for permanent safekeeping.' };
 };
 
@@ -64,7 +64,7 @@ export default function DFWRoofingQuiz2026() {
                 {score < 5 && '✅ Book a free post-storm inspection through ProLnk\n✅ Find out your roof age from permit records or prior owner\n✅ Check shingle brand in your attic or old paperwork\n✅ Log everything in ProLnk Vault before next storm'}
                 {score >= 5 && score < 9 && '✅ Request a ProLnk inspection — hail may have gone undetected\n✅ Ask your roofer for your wind resistance rating\n✅ Set a storm-tracking alert for your zip code\n✅ Store inspection report in ProLnk Vault'}
                 {score >= 9 && score < 12 && '✅ Get your wind rating spec sheet and upload to ProLnk Vault\n✅ Note your last hail event date — insurers will ask\n✅ Schedule annual inspection every spring before hail season\n✅ Consider impact-resistant shingles at next replacement'}
-                {score >= 12 && '✅ You\'re a DFW roofing champion!\n✅ Ensure all docs are in ProLnk Vault for insurance\n✅ Share ProLnk with neighbors before next storm season\n✅ Refer a ProLnk roofer to earn Network Income'}
+                {score >= 12 && '✅ You\’re a DFW roofing champion!\n✅ Ensure all docs are in ProLnk Vault for insurance\n✅ Share ProLnk with neighbors before next storm season\n✅ Refer a ProLnk roofer to earn Network Income'}
               </p>
             </div>
             <button onClick={() => { setAnswers({}); setSubmitted(false); }}

@@ -6,7 +6,7 @@ export default function DFWInsulationMaterialsGuide2026() {
 
   const getRecommendation = () => {
     const map: Record<string, string> = {
-      attic: 'Blown fiberglass R-38 to R-60 + radiant barrier foil. Radiant barrier blocks DFW's 140°F attic heat — biggest single ROI upgrade for DFW homes. Install radiant barrier first if budget is limited.',
+      attic: 'Blown fiberglass R-38 to R-60 + radiant barrier foil. Radiant barrier blocks DFW’s 140°F attic heat — biggest single ROI upgrade for DFW homes. Install radiant barrier first if budget is limited.',
       walls: 'Fiberglass batt R-13 (2x4) or R-19 (2x6) is code minimum. Upgrade to R-15 mineral wool for better fire/sound. Closed-cell spray foam (R-6.5/inch) for maximum air seal on exterior walls.',
       crawlspace: 'Closed-cell spray foam under floor joists (R-19 minimum). Seals air and moisture — critical given DFW clay soil moisture movement. Condition the crawlspace if possible.',
       basement: 'Rigid foam (XPS) R-10 on interior foundation walls + unfaced fiberglass in stud cavities. DFW basements rare but moisture management is key with TX clay soils.',

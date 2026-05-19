@@ -38,7 +38,7 @@ export default function DFWHomeInventoryGuide2026() {
 
         <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>☁️ Where to Store Your Inventory</div>
-          {['Google Drive or iCloud — video walkthrough + photo folder','USAA Home Inventory App (free, insurance-linked)','State Farm Pocket Agent — built-in inventory tool','🔐 ProLnk Home Health Vault — contractor work + permit history stored automatically','USB drive kept off-site at a relative\'s home or safety deposit box'].map((t,i) => (
+          {['Google Drive or iCloud — video walkthrough + photo folder','USAA Home Inventory App (free, insurance-linked)','State Farm Pocket Agent — built-in inventory tool','🔐 ProLnk Home Health Vault — contractor work + permit history stored automatically','USB drive kept off-site at a relative\’s home or safety deposit box'].map((t,i) => (
             <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642' }}>✓</span>{t}</div>
           ))}
         </div>

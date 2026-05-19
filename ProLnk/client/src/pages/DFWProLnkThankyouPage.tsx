@@ -2,16 +2,16 @@ import { useState } from 'react';
 
 const whyDFW = [
   { emoji: '🌆', reason: 'Size & Growth', detail: 'DFW adds more households per year than almost any metro in America. That growth creates constant demand for home services — and constant opportunity for abuse.' },
-  { emoji: '🤝', reason: 'Community Trust', detail: 'DFW has a culture of neighbor-to-neighbor referrals and community pride. ProLnk\'s trust-based model fits naturally into how DFW residents already think about home decisions.' },
+  { emoji: '🤝', reason: 'Community Trust', detail: 'DFW has a culture of neighbor-to-neighbor referrals and community pride. ProLnk\’s trust-based model fits naturally into how DFW residents already think about home decisions.' },
   { emoji: '🔨', reason: 'Contractor Density', detail: 'DFW has one of the largest concentrations of home service contractors in the US — giving ProLnk the supply-side depth to match demand from day one.' },
   { emoji: '📊', reason: 'Market Signal', detail: 'If ProLnk works in DFW — with its mix of new builds, older homes, extreme weather, and economic diversity — it works everywhere.' },
 ];
 
 const timeMessages: Record<string, string> = {
-  early: 'You\'ve just started exploring ProLnk. Thank you for your curiosity — that\'s where every great decision begins. You\'ve already learned more than most DFW homeowners know.',
-  invested: 'You\'ve spent real time with us. That investment tells us you care about your home and your decisions. Thank you for taking this seriously — it means the world to the ProLnk team.',
-  committed: 'You\'ve gone deep. You\'re exactly the kind of informed, engaged DFW homeowner ProLnk was built for. Thank you for trusting us with your time. We won\'t waste it.',
-  founding: 'You\'ve read everything. You are a founding-level believer in what ProLnk is building. Thank you. Sincerely. You represent what early DFW trust means to us — and we carry that responsibility seriously.',
+  early: 'You\’ve just started exploring ProLnk. Thank you for your curiosity — that\’s where every great decision begins. You\’ve already learned more than most DFW homeowners know.',
+  invested: 'You\’ve spent real time with us. That investment tells us you care about your home and your decisions. Thank you for taking this seriously — it means the world to the ProLnk team.',
+  committed: 'You\’ve gone deep. You\’re exactly the kind of informed, engaged DFW homeowner ProLnk was built for. Thank you for trusting us with your time. We won\’t waste it.',
+  founding: 'You\’ve read everything. You are a founding-level believer in what ProLnk is building. Thank you. Sincerely. You represent what early DFW trust means to us — and we carry that responsibility seriously.',
 };
 
 export default function DFWProLnkThankyouPage() {

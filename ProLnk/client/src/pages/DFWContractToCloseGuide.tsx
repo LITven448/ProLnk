@@ -15,8 +15,8 @@ const issueTypes = [
 
 const issueGuide: Record<string, { action: string; rights: string; attorney: boolean }> = {
   'Inspection found major defects (roof, foundation, HVAC)': {
-    action: 'You have three options in Texas: repair, offer a credit at closing, or refuse and let buyer decide. Get contractor quotes immediately — a real number beats a buyer\'s inflated repair estimate every time. Major defects don\'t automatically kill the deal; how you respond does.',
-    rights: 'In Texas, sellers are not required to make any repairs — even after inspection. The buyer\'s option period gives them the right to terminate for any reason, but once the option expires, they must close or risk their earnest money.',
+    action: 'You have three options in Texas: repair, offer a credit at closing, or refuse and let buyer decide. Get contractor quotes immediately — a real number beats a buyer\’s inflated repair estimate every time. Major defects don\’t automatically kill the deal; how you respond does.',
+    rights: 'In Texas, sellers are not required to make any repairs — even after inspection. The buyer\’s option period gives them the right to terminate for any reason, but once the option expires, they must close or risk their earnest money.',
     attorney: false,
   },
   'Inspection found minor items (deferred maintenance)': {
@@ -25,7 +25,7 @@ const issueGuide: Record<string, { action: string; rights: string; attorney: boo
     attorney: false,
   },
   'Appraisal came in below contract price': {
-    action: 'You have four paths: (1) Reduce price to appraised value, (2) Meet buyer halfway, (3) Dispute the appraisal with comps your agent pulls, (4) Hold firm and let buyer make up the gap in cash. In DFW\'s volatile market, appraisal gaps are common — many buyers expect to cover them.',
+    action: 'You have four paths: (1) Reduce price to appraised value, (2) Meet buyer halfway, (3) Dispute the appraisal with comps your agent pulls, (4) Hold firm and let buyer make up the gap in cash. In DFW\’s volatile market, appraisal gaps are common — many buyers expect to cover them.',
     rights: 'If the contract has an appraisal contingency, buyer can terminate if value comes in low. If they waived appraisal contingency (common in competitive DFW offers), they must close at contract price regardless of appraised value.',
     attorney: false,
   },
@@ -35,17 +35,17 @@ const issueGuide: Record<string, { action: string; rights: string; attorney: boo
     attorney: false,
   },
   'Financing contingency — buyer loan denied': {
-    action: 'Immediately request written documentation of loan denial from buyer\'s lender. This triggers the financing contingency. You are entitled to release from contract and should get your home back on market within 24-48 hours. Return the earnest money — do not fight it.',
+    action: 'Immediately request written documentation of loan denial from buyer\’s lender. This triggers the financing contingency. You are entitled to release from contract and should get your home back on market within 24-48 hours. Return the earnest money — do not fight it.',
     rights: 'If the financing contingency is in the contract and the buyer provides timely written notice of loan denial, you must release the earnest money and the contract terminates. Fighting this is usually not worth the delay.',
     attorney: false,
   },
   'Financing contingency — buyer changing lenders': {
     action: 'Require written confirmation from the new lender of loan approval within 5 business days. Do not grant unlimited time. If the new lender cannot approve within that window, you have the right to terminate. Switching lenders mid-contract is a red flag — watch the timeline carefully.',
-    rights: 'The contract\'s financing deadline is a hard deadline. If buyer misses it without written extension agreement, you may have grounds to terminate and keep earnest money depending on contract language. Involve your agent immediately.',
+    rights: 'The contract\’s financing deadline is a hard deadline. If buyer misses it without written extension agreement, you may have grounds to terminate and keep earnest money depending on contract language. Involve your agent immediately.',
     attorney: true,
   },
   'Title issue found (lien, boundary dispute)': {
-    action: 'Do not panic — title issues are resolved before closing, not after. Your title company will identify what needs to be cleared. If it\'s a lien (contractor, HOA, IRS), you\'ll pay it at closing from proceeds. If it\'s a boundary dispute, you may need a survey and potentially a court order.',
+    action: 'Do not panic — title issues are resolved before closing, not after. Your title company will identify what needs to be cleared. If it\’s a lien (contractor, HOA, IRS), you\’ll pay it at closing from proceeds. If it\’s a boundary dispute, you may need a survey and potentially a court order.',
     rights: 'Texas contracts typically require sellers to deliver clear, marketable title. If you cannot clear a title issue before the closing date, the buyer has the right to terminate. Most title issues are resolvable with time — request an extension.',
     attorney: true,
   },
@@ -68,9 +68,9 @@ const issueGuide: Record<string, { action: string; rights: string; attorney: boo
 
 const stages = [
   { name: '📝 Offer Accepted', days: 'Day 0', items: ['Execute all addenda','Deliver earnest money instructions to buyer','Schedule option period end date on calendar'] },
-  { name: '🔍 Inspection Period', days: 'Days 1-10', items: ['Allow buyer\'s inspector full access','Prepare any pre-inspection disclosures','Negotiate repair requests or credits by option deadline'] },
+  { name: '🔍 Inspection Period', days: 'Days 1-10', items: ['Allow buyer\’s inspector full access','Prepare any pre-inspection disclosures','Negotiate repair requests or credits by option deadline'] },
   { name: '🏦 Appraisal', days: 'Days 7-21', items: ['Provide access for appraiser','Have your agent pull supporting comps','Prepare for appraisal gap conversation if DFW market is volatile'] },
-  { name: '💼 Financing', days: 'Days 7-30', items: ['Monitor buyer\'s financing deadline','Request proof of loan approval at deadline','Flag any lender delays to your agent immediately'] },
+  { name: '💼 Financing', days: 'Days 7-30', items: ['Monitor buyer\’s financing deadline','Request proof of loan approval at deadline','Flag any lender delays to your agent immediately'] },
   { name: '📜 Title Work', days: 'Days 1-30', items: ['Title company searches for liens and encumbrances','Clear any outstanding HOA dues or contractor liens','Review preliminary title commitment'] },
   { name: '🚶 Final Walkthrough', days: 'Day before close', items: ['Leave home in listing condition (no new damage)','Remove all personal property per contract','Confirm utilities on through closing date'] },
   { name: '🎉 Closing', days: 'Closing Day', items: ['Bring keys, garage openers, and manuals','Sign closing documents (can often be done early/remote)','Confirm wire instructions directly with title company (never via email)'] },

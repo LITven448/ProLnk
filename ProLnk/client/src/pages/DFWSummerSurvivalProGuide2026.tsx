@@ -15,7 +15,7 @@ const guides: Record<string, { heat: string[]; comms: string[]; schedule: string
   },
   plumbing: {
     heat: ['Outdoor crawlspace work: morning only', 'Under-slab work: same heat rules as outdoor', 'Indoor work all day — your advantage in summer', 'Hydration still critical in non-AC homes', 'Recognize when crawl or attic temps are unsafe'],
-    comms: ['Indoor plumbing: no scheduling excuses in summer', 'Outdoor work: communicate morning-only availability clearly', 'Leak emergencies: 24/7 response = premium rate positioning', 'Be the pro who communicates — most don't'],
+    comms: ['Indoor plumbing: no scheduling excuses in summer', 'Outdoor work: communicate morning-only availability clearly', 'Leak emergencies: 24/7 response = premium rate positioning', 'Be the pro who communicates — most don’t'],
     schedule: ['Front-load outdoor jobs 7am–11am', 'Afternoon block: indoor repairs, estimates, follow-ups', 'Emergency overnight slots = 2x rate — position now', 'Water heater replacements: garage work, do by noon'],
     prolnk: ['Summer leak emergency leads = highest intent buyers', 'Response time ranking: faster reply = more jobs', 'ProLnk tracks your response rate — top 10% get bonus leads'],
   },

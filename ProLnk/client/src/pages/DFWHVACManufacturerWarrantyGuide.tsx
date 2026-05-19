@@ -8,7 +8,7 @@ const brands = [
     parts: '10-year limited (registered), 5-year (unregistered)',
     heatExchanger: 'Lifetime limited on select models',
     register: 'Must register within 90 days at carrier.com. In DFW, registration is critical — do not skip.',
-    dfwRisk: 'High humidity and heat cycles accelerate coil corrosion. Carrier\'s warranty covers manufacturing defects but not corrosion from improper refrigerant charge — common in DFW.',
+    dfwRisk: 'High humidity and heat cycles accelerate coil corrosion. Carrier\’s warranty covers manufacturing defects but not corrosion from improper refrigerant charge — common in DFW.',
     voids: 'Improper refrigerant charge, unlicensed service, failure to register, use of non-approved refrigerant.',
   },
   {
@@ -17,7 +17,7 @@ const brands = [
     compressor: '10-year limited (registered), 5-year (unregistered)',
     parts: '5-year limited (registered and unregistered)',
     heatExchanger: '20-year limited on select Elite/Dave Lennox Signature models',
-    register: 'Register within 60 days at lennox.com. Lennox\'s registration window is shorter than competitors — set a reminder immediately after install.',
+    register: 'Register within 60 days at lennox.com. Lennox\’s registration window is shorter than competitors — set a reminder immediately after install.',
     dfwRisk: 'Lennox XC21 and XC25 perform exceptionally in DFW heat. Variable-speed models have more electronics — ensure warranty covers control boards explicitly.',
     voids: 'Non-Lennox parts, unlicensed service, refrigerant leaks left unrepaired, installation outside Lennox specs.',
   },
@@ -27,8 +27,8 @@ const brands = [
     compressor: '12-year limited (registered Trane Comfort Specialist install)',
     parts: '10-year limited (registered), 5-year (unregistered)',
     heatExchanger: 'Limited lifetime on XL and XR series',
-    register: 'Register within 60 days at trane.com. Trane\'s 12-year compressor warranty requires installation by a Trane Comfort Specialist — verify your contractor\'s certification.',
-    dfwRisk: 'Trane\'s all-aluminum Climatuff compressor handles DFW heat cycles well. However, DFW\'s hard water can cause issues with drain pans and coils — not covered under warranty.',
+    register: 'Register within 60 days at trane.com. Trane\’s 12-year compressor warranty requires installation by a Trane Comfort Specialist — verify your contractor\’s certification.',
+    dfwRisk: 'Trane\’s all-aluminum Climatuff compressor handles DFW heat cycles well. However, DFW\’s hard water can cause issues with drain pans and coils — not covered under warranty.',
     voids: 'Non-certified installer (voids 12-year to 5-year), failure to register, improper thermostat wiring, dirty coil due to skipped maintenance.',
   },
   {
@@ -38,7 +38,7 @@ const brands = [
     parts: '10-year limited (registered), 1-year (unregistered)',
     heatExchanger: '20-year limited on select models',
     register: 'Register within 90 days at johnsoncontrols.com/york. York often sold through contractor-exclusive channels in DFW — confirm you receive registration paperwork at install.',
-    dfwRisk: 'York\'s TM9E and YC series handle DFW cooling loads. Parts availability in DFW is good due to strong distribution network. Extended wait times unlikely.',
+    dfwRisk: 'York\’s TM9E and YC series handle DFW cooling loads. Parts availability in DFW is good due to strong distribution network. Extended wait times unlikely.',
     voids: 'Refrigerant substitutions, installation without AHRI-certified matched system, filter neglect causing coil freeze.',
   },
   {
@@ -47,8 +47,8 @@ const brands = [
     compressor: '10-year limited (registered), 5-year (unregistered)',
     parts: '10-year limited (registered), 5-year (unregistered)',
     heatExchanger: 'Limited lifetime on Classic Plus and Prestige series',
-    register: 'Register within 90 days at rheem.com. Rheem\'s online registration is straightforward — have model and serial numbers from install documentation.',
-    dfwRisk: 'Rheem\'s EcoNet connected systems provide monitoring — useful for documenting performance in DFW\'s extreme seasons. WiFi diagnostic data can support warranty claims.',
+    register: 'Register within 90 days at rheem.com. Rheem\’s online registration is straightforward — have model and serial numbers from install documentation.',
+    dfwRisk: 'Rheem\’s EcoNet connected systems provide monitoring — useful for documenting performance in DFW\’s extreme seasons. WiFi diagnostic data can support warranty claims.',
     voids: 'Damage from flooding (common in DFW storms), incorrect refrigerant type, installation without permit where required by city.',
   },
 ];

@@ -7,7 +7,7 @@ const needData: Record<string, { description: string; bestTime: string; worstTim
   'New Landscape Installation': {
     description: 'High-demand service. Quality landscapers in DFW book 4–8 weeks out during spring. Design-build firms even longer.',
     bestTime: 'October–November (fall planting) or February (early pre-spring)',
-    worstTime: 'April–May — every landscaper is booked solid. You\'ll get their C-team or pay a 30% premium.',
+    worstTime: 'April–May — every landscaper is booked solid. You\’ll get their C-team or pay a 30% premium.',
     tip: 'Lock in your landscaper in winter. Walk the property together in December for a spring start.',
   },
   'Irrigation System Repair / Install': {
@@ -44,7 +44,7 @@ const needData: Record<string, { description: string; bestTime: string; worstTim
     description: 'Moderate demand, concentrated October–November window. Good availability.',
     bestTime: 'October–early November for dormant seeding and pre-emergent applications.',
     worstTime: 'After first freeze — window has closed.',
-    tip: 'DFW\'s mild winters still require winterizer fertilizer in Nov for healthy spring green-up.',
+    tip: 'DFW\’s mild winters still require winterizer fertilizer in Nov for healthy spring green-up.',
   },
 };
 

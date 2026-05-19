@@ -22,7 +22,7 @@ function getUpgrade(method: string, concern: string) {
     'No irrigation — rely on rain': 'Install perimeter soaker hose system immediately — DFW summers cause rapid clay shrinkage without supplemental water.',
     'Manual hose watering': 'Upgrade to timer-based soaker hose — manual watering is inconsistent and rarely sufficient in DFW peak summer.',
     'Manual soaker hose (no timer)': 'Add a timer controller ($30–$80) — consistency is more important than volume in DFW clay management.',
-    'Timer-based soaker hose': 'Consider smart moisture-sensing controller for season-specific automation — you\'re close to optimal already.',
+    'Timer-based soaker hose': 'Consider smart moisture-sensing controller for season-specific automation — you\’re close to optimal already.',
     'Sprinkler system only': 'Add dedicated perimeter soaker hose — sprinklers wet surface only; foundation needs slow deep perimeter moisture.',
     'Smart irrigation controller': 'Optimize your moisture sensor placement — one sensor per side of home in DFW for best differential control.',
   };

@@ -25,8 +25,8 @@ export default function DFWHomeAIAssistantGuide() {
           {[
             ['🔍', 'Quote Intelligence', 'ProLnk AI analyzes 3–5 contractor quotes instantly, flags outliers, and explains pricing differences in plain English.'],
             ['🌡️', 'Predictive HVAC Scheduling', 'AI learns your DFW cooling habits and pre-cools before peak rate hours (3–7pm) saving $40–$90/month.'],
-            ['🏠', 'Natural Language Control', '"Make it 74 and don\'t run the AC after 6pm on weekdays" — AI understands context, not just commands.'],
-            ['📋', 'Contractor Briefing Packets', 'ProLnk\'s AI generates home-specific briefing docs so techs arrive knowing your system\'s history.'],
+            ['🏠', 'Natural Language Control', '"Make it 74 and don\’t run the AC after 6pm on weekdays" — AI understands context, not just commands.'],
+            ['📋', 'Contractor Briefing Packets', 'ProLnk\’s AI generates home-specific briefing docs so techs arrive knowing your system\’s history.'],
           ].map(([icon, title, desc]) => (
             <div key={title as string} style={{ display: 'flex', gap: 16, marginBottom: 20, background: '#0A1628', borderRadius: 12, padding: 16 }}>
               <span style={{ fontSize: 28 }}>{icon}</span>

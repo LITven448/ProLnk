@@ -10,7 +10,7 @@ export default function HomeInspectionGuide() {
       id: 'foundation',
       title: 'Foundation Elevation Survey',
       badge: 'Separate $350 Test',
-      detail: 'Standard inspectors visually check the foundation for visible cracks and bowing, but they do not perform elevation surveys. A slab foundation elevation survey (done with a water level or digital level) measures differential settlement across the slab. In DFW clay soil, differentials over 1.5 inches indicate active movement. This is a completely separate service — ask for a SLAB-A-LYZER or engineer's elevation certificate.'
+      detail: 'Standard inspectors visually check the foundation for visible cracks and bowing, but they do not perform elevation surveys. A slab foundation elevation survey (done with a water level or digital level) measures differential settlement across the slab. In DFW clay soil, differentials over 1.5 inches indicate active movement. This is a completely separate service — ask for a SLAB-A-LYZER or engineer’s elevation certificate.'
     },
     {
       id: 'roof',
@@ -22,25 +22,25 @@ export default function HomeInspectionGuide() {
       id: 'sewer',
       title: 'Sewer Line Camera Scope',
       badge: 'Not Included — $250–350',
-      detail: 'Standard inspections do not include sewer line scoping. In homes built before 2000, cast iron drain lines are common. These corrode, develop root intrusion, and collapse — and none of this is visible without a camera. A sewer scope runs $250–$350 and takes 30 minutes. For pre-2000 homes, it's non-negotiable. A failed sewer line is a $5,000–$15,000 repair.'
+      detail: 'Standard inspections do not include sewer line scoping. In homes built before 2000, cast iron drain lines are common. These corrode, develop root intrusion, and collapse — and none of this is visible without a camera. A sewer scope runs $250–$350 and takes 30 minutes. For pre-2000 homes, it’s non-negotiable. A failed sewer line is a $5,000–$15,000 repair.'
     },
     {
       id: 'pool',
       title: 'Pool and Spa Inspection',
       badge: 'Separate Inspector Needed',
-      detail: 'General home inspectors are not certified pool inspectors and will often note "pool present, not inspected." A certified pool inspector checks equipment age and function, shell integrity, coping and decking, plumbing leaks, and electrical safety. Pools can have $3,000–$8,000 in deferred maintenance that's invisible to the eye.'
+      detail: 'General home inspectors are not certified pool inspectors and will often note "pool present, not inspected." A certified pool inspector checks equipment age and function, shell integrity, coping and decking, plumbing leaks, and electrical safety. Pools can have $3,000–$8,000 in deferred maintenance that’s invisible to the eye.'
     },
     {
       id: 'drainage',
       title: 'Foundation Drainage and Grading',
       badge: 'Not Evaluated in Detail',
-      detail: 'Inspectors note obvious grading issues but don't evaluate drainage comprehensively. In DFW, where clay soil directs water toward foundations during heavy rain, French drains, downspout extensions, and grading corrections can run $1,500–$5,000. Walk the perimeter yourself during or after rain, or hire a drainage specialist.'
+      detail: 'Inspectors note obvious grading issues but don’t evaluate drainage comprehensively. In DFW, where clay soil directs water toward foundations during heavy rain, French drains, downspout extensions, and grading corrections can run $1,500–$5,000. Walk the perimeter yourself during or after rain, or hire a drainage specialist.'
     },
     {
       id: 'hail',
       title: 'Hail Damage Assessment',
       badge: 'Only Obvious Damage Detected',
-      detail: 'Inspectors can identify obvious hail damage but are not roofing specialists and cannot assess the full extent. Hail bruises asphalt shingles in ways that accelerate granule loss and water intrusion over the following years — invisible to a non-specialist. After your inspection, request a roofing company's hail damage assessment before closing.'
+      detail: 'Inspectors can identify obvious hail damage but are not roofing specialists and cannot assess the full extent. Hail bruises asphalt shingles in ways that accelerate granule loss and water intrusion over the following years — invisible to a non-specialist. After your inspection, request a roofing company’s hail damage assessment before closing.'
     },
   ];
 
@@ -52,7 +52,7 @@ export default function HomeInspectionGuide() {
   ];
 
   const redFlags = [
-    { flag: 'Foundation differential settlement > 1.5 inches', action: 'Require engineer's report + foundation company bid before proceeding' },
+    { flag: 'Foundation differential settlement > 1.5 inches', action: 'Require engineer’s report + foundation company bid before proceeding' },
     { flag: 'Active roof leaks or extensive hail bruising', action: 'Price reduction equal to full roof replacement cost ($12,000–$22,000)' },
     { flag: 'HVAC system 12+ years old', action: 'Negotiate $3,000–$5,000 credit or seller replacement' },
     { flag: 'Sewer line root intrusion or collapse on scope', action: 'Price reduction or repair contingency before close' },

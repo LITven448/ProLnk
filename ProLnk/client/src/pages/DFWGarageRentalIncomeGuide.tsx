@@ -31,9 +31,9 @@ const SUBURB_MULT: Record<string, number> = {
 };
 
 const INSURANCE_INFO: Record<string, string> = {
-  'General storage': 'Notify insurer — stored items are renter\'s responsibility. Consider requiring renter\'s insurance.',
-  'Vehicle storage': 'Your homeowner\'s policy likely excludes vehicles. Renter must carry comprehensive auto coverage.',
-  'Boat/RV storage': 'High-value items. Require proof of renter\'s watercraft/RV insurance. Inspect monthly.',
+  'General storage': 'Notify insurer — stored items are renter\’s responsibility. Consider requiring renter\’s insurance.',
+  'Vehicle storage': 'Your homeowner\’s policy likely excludes vehicles. Renter must carry comprehensive auto coverage.',
+  'Boat/RV storage': 'High-value items. Require proof of renter\’s watercraft/RV insurance. Inspect monthly.',
   'Workshop space': 'Highest liability risk. Require general liability policy from renter. Consult your agent.',
 };
 

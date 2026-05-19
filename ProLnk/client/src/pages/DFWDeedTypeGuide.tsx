@@ -8,7 +8,7 @@ const DEED_TYPES = [
   { transaction: 'Bank-owned (REO) or foreclosure purchase', deed: 'Special Warranty Deed', common: true,
     description: 'Seller only warrants title against defects arising during their ownership. Banks routinely use this. Get title insurance — it fills the coverage gap.',
     verify: ['Chain of title in Schedule B of title commitment', 'Any gaps in ownership history', 'Outstanding HOA dues or municipal liens', 'Foreclosure process completeness'],
-    caution: 'Always buy owner's title insurance on REO purchases. Special warranty leaves pre-bank issues uncovered.' },
+    caution: 'Always buy owner’s title insurance on REO purchases. Special warranty leaves pre-bank issues uncovered.' },
   { transaction: 'Divorce, estate, or family transfer', deed: 'Quitclaim Deed', common: false,
     description: 'Transfers whatever interest the grantor has — no warranty whatsoever. Commonly used between family members or spouses. Not typical for arms-length sales.',
     verify: ['All parties with ownership interest are signing', 'Community property considerations in Texas', 'No hidden liens or judgments', 'Court order if part of divorce decree'],

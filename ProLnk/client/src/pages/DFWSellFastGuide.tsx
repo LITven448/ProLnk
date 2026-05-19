@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 const marketTiming = {
-  spring: { label: 'Peak Season', avg: '8–14 days', color: '#27ae60', note: 'March–May is DFW\'s hottest window. Inventory low, buyers competing. Price right and expect multiple offers.' },
+  spring: { label: 'Peak Season', avg: '8–14 days', color: '#27ae60', note: 'March–May is DFW\’s hottest window. Inventory low, buyers competing. Price right and expect multiple offers.' },
   summer: { label: 'Strong Season', avg: '14–22 days', color: '#f39c12', note: 'June–August still active but heat slows weekend showings. Price slightly below comps to generate urgency.' },
   fall: { label: 'Good Season', avg: '18–28 days', color: '#2980b9', note: 'September–October strong. November slows with holidays.' },
   winter: { label: 'Slow Season', avg: '30–50 days', color: '#95a5a6', note: 'Fewer buyers but serious ones. Priced right, you can still move fast. Serious buyers in January especially.' },
 };
 
 const speedStrategies = [
-  { rank: 1, action: 'Price it right from Day 1 ✅', detail: 'Overpriced homes sit. DFW buyers watch DOM closely. Days 1–7 are your highest traffic window. Miss it and you\'re chasing the market.' },
+  { rank: 1, action: 'Price it right from Day 1 ✅', detail: 'Overpriced homes sit. DFW buyers watch DOM closely. Days 1–7 are your highest traffic window. Miss it and you\’re chasing the market.' },
   { rank: 2, action: 'Professional photos — no exceptions 📸', detail: 'Homes with professional photos get 3x more online views and show-ready buyers. Budget $200–400 — non-negotiable.' },
   { rank: 3, action: 'Accept showings immediately 🕐', detail: 'Within the first 48 hours of listing. Blocking showings signals problems to buyers and agents.' },
   { rank: 4, action: 'Offer incentives 💰', detail: 'Home warranty ($600–900) or closing cost credit ($3–5K) — signals goodwill and attracts buyers on edge.' },
@@ -26,7 +26,7 @@ export default function DFWSellFastGuide() {
     ? { rec: 'Price 4–7% below comps + cash buyer outreach', dom: '7–14 days', note: 'Target investors and cash buyers directly. Forgo some price for speed.' }
     : urgency === '30days'
     ? { rec: 'Price at comps + aggressive marketing', dom: '14–21 days', note: 'Hit price hard and market wide. Professional photos + early showings.' }
-    : { rec: 'Price at or just above comps', dom: '21–35 days', note: 'You have time to find the right retail buyer. Don\'t sacrifice price.' };
+    : { rec: 'Price at or just above comps', dom: '21–35 days', note: 'You have time to find the right retail buyer. Don\’t sacrifice price.' };
 
   return (
     <div style={{ fontFamily: 'sans-serif', background: '#0A1628', minHeight: '100vh', padding: '40px 20px' }}>

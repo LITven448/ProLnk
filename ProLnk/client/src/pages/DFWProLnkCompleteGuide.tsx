@@ -16,10 +16,10 @@ const tiers = [
 ];
 
 const situations = [
-  { id: 'homeowner', label: '🏠 I\'m a Homeowner', content: 'ProLnk connects you with vetted, licensed HVAC and home service professionals in DFW. Submit your job — ProLnk matches you with 3–5 qualified pros. You compare quotes and choose. No pressure. DFW launch expected late 2026. Join the homeowner waitlist to be first in your zip code.' },
-  { id: 'pro', label: '🔧 I\'m a Service Pro', content: 'ProLnk delivers exclusive, real-time leads to your phone. Charter and Founding members lock in $149/mo forever — rate never increases. You keep 72% of every match fee. Waitlist closes at 500 total applicants + 5,000 homes. Apply now before it closes.' },
+  { id: 'homeowner', label: '🏠 I\’m a Homeowner', content: 'ProLnk connects you with vetted, licensed HVAC and home service professionals in DFW. Submit your job — ProLnk matches you with 3–5 qualified pros. You compare quotes and choose. No pressure. DFW launch expected late 2026. Join the homeowner waitlist to be first in your zip code.' },
+  { id: 'pro', label: '🔧 I\’m a Service Pro', content: 'ProLnk delivers exclusive, real-time leads to your phone. Charter and Founding members lock in $149/mo forever — rate never increases. You keep 72% of every match fee. Waitlist closes at 500 total applicants + 5,000 homes. Apply now before it closes.' },
   { id: 'partner', label: '🤝 I Want to Be a Partner', content: 'Partners recruit pros and homeowners into the ProLnk ecosystem and earn across all 5 income streams. Your network of recruited pros generates passive override income at 4 levels deep. Best for networkers, contractors, insurance agents, and real estate professionals already in the DFW home services space.' },
-  { id: 'investor', label: '💡 I\'m an Investor', content: 'ProLnk is a two-sided marketplace with 85% target margins at scale. The Home Health Vault creates a permanent data asset across 50M+ homes. The 5-stream network income model creates switching costs that make retention near-automatic. Seed round in progress — contact andrew@prolnk.io.' },
+  { id: 'investor', label: '💡 I\’m an Investor', content: 'ProLnk is a two-sided marketplace with 85% target margins at scale. The Home Health Vault creates a permanent data asset across 50M+ homes. The 5-stream network income model creates switching costs that make retention near-automatic. Seed round in progress — contact andrew@prolnk.io.' },
 ];
 
 export default function DFWProLnkCompleteGuide() {

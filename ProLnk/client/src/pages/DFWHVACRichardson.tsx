@@ -41,7 +41,7 @@ export default function DFWHVACRichardson() {
             {[
               { icon: '📡', label: 'Telecom Corridor Hub', desc: 'AT&T, Cisco, Samsung, Ericsson — major employers offer home improvement benefits and contractor partnerships' },
               { icon: '🏘️', label: '1960s–1990s Housing Mix', desc: '40–60 year old homes dominate older Richardson neighborhoods, often with original or outdated ductwork' },
-              { icon: '🌡️', label: 'DFW Heat Extremes', desc: '100°F+ summers push aging systems to failure — Richardson\'s commercial density also raises ambient temps' },
+              { icon: '🌡️', label: 'DFW Heat Extremes', desc: '100°F+ summers push aging systems to failure — Richardson\’s commercial density also raises ambient temps' },
             ].map((item) => (
               <div key={item.label} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: '24px', flexShrink: 0 }}>{item.icon}</span>

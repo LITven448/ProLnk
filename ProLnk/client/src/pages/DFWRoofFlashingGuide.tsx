@@ -20,7 +20,7 @@ const recommendations: Record<string, { priority: string; action: string; cost: 
 
 const getRecommendation = (rt: string, ra: string, pc: string) => {
   const key = `${rt}|${ra}|${pc}`;
-  return recommendations[key] || { priority: 'Moderate', action: 'Schedule a professional flashing inspection. Your specific combination warrants hands-on evaluation, especially given DFW\'s extreme heat and severe storms.', cost: '$150–$500 inspection', color: '#EAB308' };
+  return recommendations[key] || { priority: 'Moderate', action: 'Schedule a professional flashing inspection. Your specific combination warrants hands-on evaluation, especially given DFW\’s extreme heat and severe storms.', cost: '$150–$500 inspection', color: '#EAB308' };
 };
 
 export default function DFWRoofFlashingGuide() {

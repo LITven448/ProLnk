@@ -7,7 +7,7 @@ const concernTypes = [
     resources: [
       { name: 'DCAD / TAD Appraisal District', url: 'dcad.org or tad.org', what: 'Search property by address — look for square footage discrepancies between listed size and tax records.' },
       { name: 'City Building Permits Portal', url: 'Varies by city (e.g., permits.cityoffrisco.org)', what: 'Pull all permits on record. Missing permits for decks, room additions, garage conversions = red flag.' },
-      { name: 'Your Inspector', url: 'N/A', what: 'Texas inspectors can note suspected unpermitted work. Ask specifically: "Does anything here look like it wasn\'t permitted?"' },
+      { name: 'Your Inspector', url: 'N/A', what: 'Texas inspectors can note suspected unpermitted work. Ask specifically: "Does anything here look like it wasn\’t permitted?"' },
     ],
     redFlags: ['Square footage on listing is 300+ sq ft more than tax records', 'Garage converted to bedroom without HVAC permit', 'Pool or deck added with no permit on record'],
     tip: 'Unpermitted work can void insurance claims and create liability when you sell. Get it permitted retroactively or negotiate price reduction.',
@@ -16,12 +16,12 @@ const concernTypes = [
     key: 'foundation',
     label: '🏚️ Foundation or structural issues',
     resources: [
-      { name: 'Seller\'s Disclosure Notice', url: 'Texas-required form', what: 'Sellers must disclose known foundation movement, cracks, or past repairs. Review line by line.' },
-      { name: 'County Clerk Property Records', url: 'County clerk website', what: 'Search for foundation repair company liens — often filed against property when repair isn\'t paid off.' },
-      { name: 'MLS History via Agent', url: 'Via your buyer\'s agent', what: 'Pull all prior listings. Multiple price cuts or "back on market" often signals inspection failures including foundation.' },
+      { name: 'Seller\’s Disclosure Notice', url: 'Texas-required form', what: 'Sellers must disclose known foundation movement, cracks, or past repairs. Review line by line.' },
+      { name: 'County Clerk Property Records', url: 'County clerk website', what: 'Search for foundation repair company liens — often filed against property when repair isn\’t paid off.' },
+      { name: 'MLS History via Agent', url: 'Via your buyer\’s agent', what: 'Pull all prior listings. Multiple price cuts or "back on market" often signals inspection failures including foundation.' },
     ],
-    redFlags: ['Disclosure mentions "pier and beam repair" but no engineer report provided', 'Stair-step cracks in brick exterior', 'Doors that stick or don\'t close flush'],
-    tip: 'North Texas expansive clay soil = foundation movement is common. Get an independent structural engineer report ($400–$600) if there\'s any doubt.',
+    redFlags: ['Disclosure mentions "pier and beam repair" but no engineer report provided', 'Stair-step cracks in brick exterior', 'Doors that stick or don\’t close flush'],
+    tip: 'North Texas expansive clay soil = foundation movement is common. Get an independent structural engineer report ($400–$600) if there\’s any doubt.',
   },
   {
     key: 'title',
@@ -32,18 +32,18 @@ const concernTypes = [
       { name: 'HOA Estoppel Letter', url: 'Via your agent from HOA management', what: 'Confirms any unpaid HOA dues or fines that transfer as liens to new owner.' },
     ],
     redFlags: ['Multiple owner transfers in 12 months (potential flipping chain with unclear title)', 'Tax liens or judgment liens showing in county records', 'HOA shows past-due balance not disclosed by seller'],
-    tip: 'Always use a local DFW title company with DFW-specific underwriter relationships. Title issues in Texas can be complex — don\'t skimp here.',
+    tip: 'Always use a local DFW title company with DFW-specific underwriter relationships. Title issues in Texas can be complex — don\’t skimp here.',
   },
   {
     key: 'price',
     label: '📉 Prior sales price and listing history',
     resources: [
-      { name: 'MLS History (via Agent)', url: 'Ask your buyer\'s agent for full MLS history', what: 'Shows every time the property listed, at what price, and how long it sat. Days on market tells a story.' },
+      { name: 'MLS History (via Agent)', url: 'Ask your buyer\’s agent for full MLS history', what: 'Shows every time the property listed, at what price, and how long it sat. Days on market tells a story.' },
       { name: 'Zillow / Redfin Price History', url: 'zillow.com, redfin.com', what: 'Public version of prior listing prices. Less complete than MLS but available to anyone.' },
       { name: 'DCAD / TAD Tax History', url: 'dcad.org or tad.org', what: 'Shows assessed value history and any homestead exemption lapses — which can reveal ownership changes.' },
     ],
     redFlags: ['Price dropped 3+ times in current listing cycle', 'Sold 6 months ago for 20% less than current ask without visible renovation', 'Listed and withdrawn multiple times in past 2 years'],
-    tip: 'A property that\'s been relisted 3+ times in 2 years often has a hidden issue. Ask the listing agent directly: "Why did the prior sales fall through?"',
+    tip: 'A property that\’s been relisted 3+ times in 2 years often has a hidden issue. Ask the listing agent directly: "Why did the prior sales fall through?"',
   },
   {
     key: 'environmental',
@@ -54,7 +54,7 @@ const concernTypes = [
       { name: 'Lead Paint Disclosure', url: 'Required for pre-1978 homes', what: 'Sellers must provide EPA lead paint disclosure for older homes. Request any test records.' },
     ],
     redFlags: ['Home built pre-1978 with original paint and no disclosure documentation', 'Property near former gas station, dry cleaner, or industrial site', 'Seller or agent reluctant to provide environmental records'],
-    tip: 'DFW has significant industrial history in areas like south Dallas and parts of Tarrant County. Check TCEQ\'s database before buying near any former industrial use.',
+    tip: 'DFW has significant industrial history in areas like south Dallas and parts of Tarrant County. Check TCEQ\’s database before buying near any former industrial use.',
   },
 ];
 

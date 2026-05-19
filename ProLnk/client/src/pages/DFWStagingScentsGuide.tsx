@@ -14,7 +14,7 @@ const scentPlans: Record<ConcernKey, ScentPlan> = {
   pet: {
     severity: '🔴 High Priority — Pet odors are the #1 deal killer in DFW',
     remediation: [
-      'Deep clean all carpet with enzymatic cleaner (Nature\'s Miracle or Rocco & Roxie) — standard cleaners mask, enzymes eliminate',
+      'Deep clean all carpet with enzymatic cleaner (Nature\’s Miracle or Rocco & Roxie) — standard cleaners mask, enzymes eliminate',
       'Replace HVAC filter immediately — pet dander circulates for weeks after pet removal',
       'Wash all soft surfaces: couch covers, curtains, throw blankets, dog beds (remove dog beds from home)',
       'Steam clean upholstered furniture — rent unit from Home Depot for $40/day',
@@ -85,7 +85,7 @@ const scentPlans: Record<ConcernKey, ScentPlan> = {
       'Leave bathroom fans running 1 hour before showing',
       'DRY scent only — eucalyptus or light linen, not floral',
     ],
-    avoid: ['Heavy fragrances over mildew — buyers detect both and it\'s worse', 'Closing off affected rooms'],
+    avoid: ['Heavy fragrances over mildew — buyers detect both and it\’s worse', 'Closing off affected rooms'],
     timeline: 'Fix moisture source 2–3 weeks before listing. Professional remediation if needed. Dehumidifier running through sale.',
   },
   neutral: {
@@ -101,7 +101,7 @@ const scentPlans: Record<ConcernKey, ScentPlan> = {
       'Open windows for 30 minutes if temperature is comfortable',
       'Clean neutral is the goal — buyers trust homes that smell like nothing artificial',
     ],
-    avoid: ['Adding scent just because — neutral is winning, don\'t change it', 'Plug-ins or heavy candles — unnecessary in a neutral home'],
+    avoid: ['Adding scent just because — neutral is winning, don\’t change it', 'Plug-ins or heavy candles — unnecessary in a neutral home'],
     timeline: 'Maintain current cleaning regimen. No remediation timeline needed.',
   },
 };
@@ -124,7 +124,7 @@ export default function DFWStagingScentsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               ['DFW is one of the most pet-friendly metros in the US — pet odors affect 40%+ of listings', '🐕'],
-              ['Modern DFW construction seals homes tightly — odors don\'t escape naturally', '🏠'],
+              ['Modern DFW construction seals homes tightly — odors don\’t escape naturally', '🏠'],
               ['Buyers decide in the first 30 seconds — scent is processed before vision', '⏱️'],
               ['Clean and neutral always beats scented — artificial fragrance signals cover-up', '✅'],
             ].map(([tip, icon], i) => (

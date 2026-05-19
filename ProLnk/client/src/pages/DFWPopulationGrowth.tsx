@@ -20,8 +20,8 @@ export default function DFWPopulationGrowth() {
 
   const reasons = [
     { emoji: '🏭', title: 'Corporate relocations', body: 'Toyota, Charles Schwab, Goldman Sachs, and 40+ Fortune 500 companies have relocated or expanded in DFW since 2018, bringing tens of thousands of high-income workers.' },
-    { emoji: '☀️', title: 'Climate migration', body: 'Residents fleeing high-cost, high-tax coastal cities find DFW's no state income tax, affordable housing, and 300+ sunny days per year irresistible.' },
-    { emoji: '✈️', title: 'Infrastructure', body: 'DFW Airport is the 4th busiest in the world. The region's highway and logistics infrastructure supports economic growth that attracts further migration.' },
+    { emoji: '☀️', title: 'Climate migration', body: 'Residents fleeing high-cost, high-tax coastal cities find DFW’s no state income tax, affordable housing, and 300+ sunny days per year irresistible.' },
+    { emoji: '✈️', title: 'Infrastructure', body: 'DFW Airport is the 4th busiest in the world. The region’s highway and logistics infrastructure supports economic growth that attracts further migration.' },
     { emoji: '🎓', title: 'University pipeline', body: 'UT Dallas, TCU, SMU, and UNT collectively graduate 35,000+ students annually. Many stay in the market, fueling a young professional demographic.' },
   ];
 

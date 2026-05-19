@@ -17,11 +17,11 @@ const situations = [
   { situation: 'Buying a home', recommendation: 'inspection', reason: 'A licensed inspection is standard practice and often required by lenders. It provides legal documentation of condition at time of purchase.' },
   { situation: 'Selling a home', recommendation: 'both', reason: 'Get a TrustyPro scan first to identify issues before listing. Then consider a pre-listing inspection to validate and build buyer trust.' },
   { situation: 'Annual home maintenance check', recommendation: 'trustypro', reason: 'TrustyPro scans are free and instant — ideal for catching small issues before they become expensive repairs.' },
-  { situation: 'You notice something is wrong', recommendation: 'trustypro', reason: 'Scan the area first. If AI flags it as significant, you\'ll have data to get an accurate estimate and may not need a full inspection.' },
-  { situation: 'Refinancing your home', recommendation: 'inspection', reason: 'Lenders require a licensed appraisal and often an inspection. TrustyPro doesn\'t substitute for this process.' },
+  { situation: 'You notice something is wrong', recommendation: 'trustypro', reason: 'Scan the area first. If AI flags it as significant, you\’ll have data to get an accurate estimate and may not need a full inspection.' },
+  { situation: 'Refinancing your home', recommendation: 'inspection', reason: 'Lenders require a licensed appraisal and often an inspection. TrustyPro doesn\’t substitute for this process.' },
   { situation: 'Pre-renovation planning', recommendation: 'trustypro', reason: 'TrustyPro scans help you scope the project and get matched with the right pros — faster and free.' },
-  { situation: 'HOA or insurance dispute', recommendation: 'inspection', reason: 'Only a licensed inspector\'s report carries legal weight in formal disputes.' },
-  { situation: 'Deciding if you need a contractor', recommendation: 'trustypro', reason: 'Scan it first. See the severity score. If it\'s flagged, TrustyPro connects you with the right pro automatically.' },
+  { situation: 'HOA or insurance dispute', recommendation: 'inspection', reason: 'Only a licensed inspector\’s report carries legal weight in formal disputes.' },
+  { situation: 'Deciding if you need a contractor', recommendation: 'trustypro', reason: 'Scan it first. See the severity score. If it\’s flagged, TrustyPro connects you with the right pro automatically.' },
 ];
 
 type Recommendation = 'trustypro' | 'inspection' | 'both';

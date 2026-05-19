@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const symptoms = [
   { id: 'no-heat', label: '🥶 Blows cold air, no heat', steps: ['Check thermostat — switch to HEAT mode, set 3° above room temp', 'Check furnace power switch on unit (looks like a light switch)', 'Check breaker — furnace has dedicated circuit', 'Check pilot light or ignitor indicator light on furnace', 'Replace filter — severely clogged filter causes furnace to shut off on high limit'] },
-  { id: 'no-ignite', label: '🔥 Furnace clicks but won't ignite', steps: ['Turn thermostat to HEAT and listen for ignitor glow (HSI) or click (spark)', 'If clicking repeatedly without flame: gas supply issue or dirty flame sensor', 'Check gas valve is open (parallel to pipe = open)', 'Reset furnace: flip power switch off, wait 30 sec, flip back on', '3 failed ignition attempts = call a pro to clean flame sensor'] },
+  { id: 'no-ignite', label: '🔥 Furnace clicks but won’t ignite', steps: ['Turn thermostat to HEAT and listen for ignitor glow (HSI) or click (spark)', 'If clicking repeatedly without flame: gas supply issue or dirty flame sensor', 'Check gas valve is open (parallel to pipe = open)', 'Reset furnace: flip power switch off, wait 30 sec, flip back on', '3 failed ignition attempts = call a pro to clean flame sensor'] },
   { id: 'partial-heat', label: '😬 Heats then shuts off', steps: ['Replace filter immediately — most common cause of high-limit shutoff', 'Check all vents open — restricted airflow causes overheating and shutoff', 'Check inducer motor running before burner starts', 'If error code showing on furnace board, Google the code + your model', 'Call a tech if same day — DFW cold fronts hit fast and book up HVAC techs same day'] },
 ];
 

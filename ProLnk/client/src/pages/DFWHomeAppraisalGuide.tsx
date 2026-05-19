@@ -88,7 +88,7 @@ export default function DFWHomeAppraisalGuide() {
 
         <section style={{ marginBottom: 36 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 14 }}>💡 How to Challenge a Low Appraisal</h2>
-          {['1. Request a copy of the appraisal report immediately.', '2. Review the comps used — were any in inferior condition or different neighborhoods?', '3. Provide the appraiser with better comps they may have missed (recent sales, pending sales if allowed).', '4. Document improvements: new roof, HVAC, kitchen remodel with receipts.', '5. Request a Reconsideration of Value (ROV) through your lender — it\'s free.', '6. If still unsatisfied, hire a second independent appraiser (~$450-700) for a second opinion.'].map((step, i) => (
+          {['1. Request a copy of the appraisal report immediately.', '2. Review the comps used — were any in inferior condition or different neighborhoods?', '3. Provide the appraiser with better comps they may have missed (recent sales, pending sales if allowed).', '4. Document improvements: new roof, HVAC, kitchen remodel with receipts.', '5. Request a Reconsideration of Value (ROV) through your lender — it\’s free.', '6. If still unsatisfied, hire a second independent appraiser (~$450-700) for a second opinion.'].map((step, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', marginBottom: 10 }}>
               <div style={{ background: '#0066cc', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
               <div style={{ lineHeight: 1.7, color: '#333' }}>{step}</div>

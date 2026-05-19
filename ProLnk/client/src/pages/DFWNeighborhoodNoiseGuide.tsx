@@ -26,7 +26,7 @@ export default function DFWNeighborhoodNoiseGuide() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🗺 Why DFW Is Loud</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            {[['✈️ DFW Airport', 'World's 2nd busiest — approach paths over Grapevine, Irving, Euless, Coppell'], ['💛 Love Field', 'Southwest hub — flight paths over Oak Cliff, University Park, Highland Park'], ['🛣 Freeway Grid', 'I-635, I-30, I-35E, Hwy 183, SH-121, SH-114 — dense and loud'], ['🚊 DART Expansion', 'Light rail expanding through Plano, Garland, Richardson, Irving, DeSoto']].map(([icon, desc]) => (
+            {[['✈️ DFW Airport', 'World’s 2nd busiest — approach paths over Grapevine, Irving, Euless, Coppell'], ['💛 Love Field', 'Southwest hub — flight paths over Oak Cliff, University Park, Highland Park'], ['🛣 Freeway Grid', 'I-635, I-30, I-35E, Hwy 183, SH-121, SH-114 — dense and loud'], ['🚊 DART Expansion', 'Light rail expanding through Plano, Garland, Richardson, Irving, DeSoto']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{icon}</div>
                 <div style={{ fontSize: '0.85rem', color: '#9BA3B8' }}>{desc}</div>

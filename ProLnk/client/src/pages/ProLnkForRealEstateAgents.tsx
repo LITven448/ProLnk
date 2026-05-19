@@ -11,7 +11,7 @@ const useCases = [
   { label: '🏚️ Pre-Listing Repairs', detail: 'Get sellers inspection-ready fast. ProLnk dispatches vetted pros within 48 hours — no contractor sourcing on your end.' },
   { label: '🔍 Buyer Due Diligence', detail: 'Offer buyers a ProLnk inspection report and trusted pro access during option period. Builds confidence and closes faster.' },
   { label: '💰 Referral Income', detail: 'Every homeowner you refer earns you a cut of match fees — permanently attached to that address via Home Health Vault.' },
-  { label: '📋 Listing Differentiator', detail: 'Listings with Home Health Vault history sell 11% faster on average. It\'s your competitive edge in a crowded DFW market.' },
+  { label: '📋 Listing Differentiator', detail: 'Listings with Home Health Vault history sell 11% faster on average. It\’s your competitive edge in a crowded DFW market.' },
 ];
 
 export default function ProLnkForRealEstateAgents() {

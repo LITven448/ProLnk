@@ -107,8 +107,8 @@ export default function DFWHVACMcKinney() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
           {[
-            { icon: '🏗️', title: 'Aging 2000s Systems', desc: 'Homes built in McKinney\'s boom years (2002–2015) have HVAC units hitting 15–20 year marks. That\'s end-of-life in DFW climate conditions.' },
-            { icon: '🌪️', title: 'Summer Emergency Demand', desc: 'When temps hit 105°F, every HVAC company in DFW is booked 2 weeks out. ProLnk\'s network gets you to the front of the line.' },
+            { icon: '🏗️', title: 'Aging 2000s Systems', desc: 'Homes built in McKinney\’s boom years (2002–2015) have HVAC units hitting 15–20 year marks. That\’s end-of-life in DFW climate conditions.' },
+            { icon: '🌪️', title: 'Summer Emergency Demand', desc: 'When temps hit 105°F, every HVAC company in DFW is booked 2 weeks out. ProLnk\’s network gets you to the front of the line.' },
             { icon: '⚡', title: 'Variable Refrigerant Tech', desc: 'Modern Carrier and Trane VRF systems can cut energy bills 30–40% vs. older R-22 units. McKinney pros on ProLnk are certified on both.' },
             { icon: '🔍', title: 'Duct Inspection First', desc: 'Many McKinney homes have undersized or leaky ductwork from original construction — fixing ducts before replacing units saves thousands.' },
           ].map(c => (

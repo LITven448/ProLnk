@@ -57,7 +57,7 @@ const stages = [
       'Accept best offer and execute Texas TREC contract',
       'Buyer inspection: 10-day option period is standard in DFW',
       'Negotiate inspection repairs — offer credits rather than completing repairs when possible',
-      'Appraisal ordered by buyer's lender (allow 2–3 weeks)',
+      'Appraisal ordered by buyer’s lender (allow 2–3 weeks)',
       'Clear any title issues — HOA liens, survey disputes common in DFW suburbs',
       'Final walkthrough 24 hours before closing',
       'Close at title company — wire funds, sign docs, hand over keys',
@@ -75,7 +75,7 @@ const stages = [
 const dealKillers = [
   {
     issue: 'Foundation Movement',
-    detail: 'DFW's expansive clay soil causes foundation issues in ~40% of older homes. Buyers will request engineering reports. Cost to repair: $3,000–$25,000.',
+    detail: 'DFW’s expansive clay soil causes foundation issues in ~40% of older homes. Buyers will request engineering reports. Cost to repair: $3,000–$25,000.',
     risk: 'High',
   },
   {
@@ -90,12 +90,12 @@ const dealKillers = [
   },
   {
     issue: 'Electrical Panels',
-    detail: 'Federal Pacific and Zinsco panels are fire hazards. Many insurers won't cover homes with them. Replacement runs $1,500–$3,500.',
+    detail: 'Federal Pacific and Zinsco panels are fire hazards. Many insurers won’t cover homes with them. Replacement runs $1,500–$3,500.',
     risk: 'Medium',
   },
   {
     issue: 'Inspection Findings Pile-Up',
-    detail: 'No single item kills a deal — it's the cumulative weight. Foundation + old HVAC + old roof in one report often sends buyers running.',
+    detail: 'No single item kills a deal — it’s the cumulative weight. Foundation + old HVAC + old roof in one report often sends buyers running.',
     risk: 'Medium',
   },
 ];

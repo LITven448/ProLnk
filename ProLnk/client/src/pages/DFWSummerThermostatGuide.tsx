@@ -39,7 +39,7 @@ export default function DFWSummerThermostatGuide() {
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌡️ The DFW Thermostat Rules</h2>
           {[
-            ['The 78°F myth', '78°F is often cited as the optimal summer setting, but DFW\'s humidity makes 78°F feel like 84°F to many people. Your comfort preference and home insulation quality matter more than any single number.'],
+            ['The 78°F myth', '78°F is often cited as the optimal summer setting, but DFW\’s humidity makes 78°F feel like 84°F to many people. Your comfort preference and home insulation quality matter more than any single number.'],
             ['The 82°F ceiling', 'Never set your DFW thermostat above 82°F while away. Above this threshold, relative humidity inside your home can climb high enough to promote mold growth in walls, under furniture, and in closets within 24–48 hours.'],
             ['Smart thermostat advantage', 'In DFW, smart thermostats earn their keep by pre-cooling your home before peak grid hours (3–7pm) when electricity rates are highest with time-of-use plans. They also learn your patterns faster than national averages due to the extreme and consistent summer cycle.'],
           ].map(([title, desc]) => (

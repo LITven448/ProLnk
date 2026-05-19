@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const FORMS = [
   { situation: 'Buying existing home (most common)', form: 'TREC 20-17: One to Four Family Residential Contract', terms: ['Sales price', 'Option period length', 'Option fee', 'Earnest money amount', 'Closing date'], flags: ['Survey exception language', 'HOA transfer fees', 'Existing liens', 'Seller disclosure acknowledgment'] },
-  { situation: 'Buying new construction', form: 'TREC 24-18: New Home Contract (Completed)', terms: ['Builder warranties', 'Completion date', 'Change order process', 'Upgrade credits'], flags: ['Builder's contract vs TREC form — read both', 'Lender approval deadline', 'Punch list process', 'Certificate of occupancy contingency'] },
+  { situation: 'Buying new construction', form: 'TREC 24-18: New Home Contract (Completed)', terms: ['Builder warranties', 'Completion date', 'Change order process', 'Upgrade credits'], flags: ['Builder’s contract vs TREC form — read both', 'Lender approval deadline', 'Punch list process', 'Certificate of occupancy contingency'] },
   { situation: 'Buying land / lot', form: 'TREC 25-15: Unimproved Property Contract', terms: ['Zoning contingency', 'Utility availability', 'Survey requirement', 'Environmental review'], flags: ['No homestead exemption until improved', 'Septic/well requirements in rural areas', 'Flood zone status', 'Deed restrictions'] },
   { situation: 'Buying farm or ranch', form: 'TREC 25-15 or Farm & Ranch Contract', terms: ['Mineral rights', 'Water rights', 'Agricultural exemption', 'Existing leases'], flags: ['Mineral rights conveyance — verify separately', 'Fence line agreements', 'Ag exemption rollback taxes', 'Pipeline easements'] },
 ];

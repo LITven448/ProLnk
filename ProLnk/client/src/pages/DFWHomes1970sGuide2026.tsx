@@ -10,7 +10,7 @@ const issues = [
 
 const repairs: Record<string, { priority: string; cost: string; note: string }> = {
   polybutylene: { priority: '🔴 Replace Now', cost: '$4,000–$16,000', note: 'PB pipes fail without warning — fittings crack first. Check your pipes: gray plastic, stamped "PB2110". Full repipe to PEX before you have a flood.' },
-  fpepanel: { priority: '🔴 Replace Immediately', cost: '$2,500–$5,000', note: 'FPE Stab-Lok breakers don't trip reliably under overload. Many insurers now require replacement. Don't wait — this is a documented fire hazard.' },
+  fpepanel: { priority: '🔴 Replace Immediately', cost: '$2,500–$5,000', note: 'FPE Stab-Lok breakers don’t trip reliably under overload. Many insurers now require replacement. Don’t wait — this is a documented fire hazard.' },
   hvac: { priority: '🔴 Replace', cost: '$7,000–$18,000', note: '1970s HVAC is long past its 15-20 year life. Inefficiency costs $100-200/mo extra in DFW summers. Modern 18+ SEER units cut bills by 40%.' },
   windows: { priority: '🟡 Upgrade When Ready', cost: '$6,000–$15,000', note: '1970s aluminum frames have zero thermal break — major heat loss. Low-E double pane pays back in DFW heat. Reduces UV damage to furnishings too.' },
   asbestos: { priority: '🟢 Test if Renovating', cost: '$800–$4,000', note: 'If your 1970s home was built before 1977, some materials may still contain asbestos. Test any popcorn ceiling or floor tiles before disturbance.' },

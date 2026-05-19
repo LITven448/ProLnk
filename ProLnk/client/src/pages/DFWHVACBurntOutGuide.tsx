@@ -4,7 +4,7 @@ const situations = [
   { label: 'Compressor humming but not starting', value: 'hum', burnoutChance: 40, cause: 'Possible locked rotor — may be mechanical failure, not burnout' },
   { label: 'Tripped breaker + burning smell from unit', value: 'smell', burnoutChance: 80, cause: 'Strong indicator of winding burnout — acid contamination likely' },
   { label: 'Compressor dead, acid test positive', value: 'acid', burnoutChance: 95, cause: 'Confirmed burnout with acid — full system flush required before new compressor' },
-  { label: 'Unit stopped on a 105°F+ DFW day, won't restart', value: 'heat', burnoutChance: 65, cause: 'Thermal overload or burnout from sustained extreme heat operation' },
+  { label: 'Unit stopped on a 105°F+ DFW day, won’t restart', value: 'heat', burnoutChance: 65, cause: 'Thermal overload or burnout from sustained extreme heat operation' },
 ];
 
 const ages = [

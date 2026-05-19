@@ -31,21 +31,21 @@ export default function DFWCreditScoreGuide() {
 
   const improvements = [
     { action: 'Pay down credit cards below 30% utilization', impact: '+20–80 pts', time: '1–2 months' },
-    { action: 'Become an authorized user on a family member\'s old card', impact: '+10–30 pts', time: '1 month' },
+    { action: 'Become an authorized user on a family member\’s old card', impact: '+10–30 pts', time: '1 month' },
     { action: 'Dispute errors on your credit report (free at AnnualCreditReport.com)', impact: '+10–50 pts', time: '30–60 days' },
-    { action: 'Don\'t close old credit cards — length of history matters', impact: '+5–15 pts', time: 'Ongoing' },
+    { action: 'Don\’t close old credit cards — length of history matters', impact: '+5–15 pts', time: 'Ongoing' },
     { action: 'Stop applying for new credit 6 months before buying', impact: 'Prevents drops', time: 'Now' },
     { action: 'Set up automatic payments to eliminate late payments', impact: 'Prevents drops', time: 'Now' },
     { action: 'Pay collections under $500 that are still reporting', impact: '+10–40 pts', time: '1–3 months' },
   ];
 
   const donts = [
-    'Don\'t open new credit cards or car loans',
-    'Don\'t make large cash deposits without documentation',
-    'Don\'t co-sign any loans for others',
-    'Don\'t miss any payments — even one is devastating',
-    'Don\'t close existing credit accounts',
-    'Don\'t max out existing credit lines',
+    'Don\’t open new credit cards or car loans',
+    'Don\’t make large cash deposits without documentation',
+    'Don\’t co-sign any loans for others',
+    'Don\’t miss any payments — even one is devastating',
+    'Don\’t close existing credit accounts',
+    'Don\’t max out existing credit lines',
   ];
 
   return (

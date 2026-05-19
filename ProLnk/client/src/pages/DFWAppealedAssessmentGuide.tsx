@@ -17,14 +17,14 @@ const evidenceGuide: Record<string, EvidenceResult> = {
     howToPresent: 'Bring itemized contractor bids on letterhead. Calculate: "A buyer would discount $X for known issues." Present adjusted value = assessment minus verified repair costs.',
     expectedOutcome: 'Strong for homes with $15,000+ in documented repairs. ARB grants 60–80% of repair deduction. Often overlooked by homeowners.',
   },
-  'Appraisal District\'s Own Data Errors': {
+  'Appraisal District\’s Own Data Errors': {
     strategy: 'Request the property record card from the appraisal district. Verify square footage, bedroom/bath count, pool status, and year built. Errors are common and are an automatic win.',
     howToPresent: 'Print the property card and highlight discrepancies. Bring your deed, permit records, or photos proving the correct facts.',
     expectedOutcome: 'Data errors result in immediate correction and reduction. Win rate is near 100% when errors are verified.',
   },
   'Unequal Appraisal (Equity Argument)': {
     strategy: 'Texas law allows protests based on unequal appraisal — meaning similar homes in your neighborhood are taxed lower than yours, regardless of market value.',
-    howToPresent: 'Download the appraisal district\'s comparable sales report for your protest. Show 5+ similar homes with lower assessed values per sqft. Focus on $/sqft comparison.',
+    howToPresent: 'Download the appraisal district\’s comparable sales report for your protest. Show 5+ similar homes with lower assessed values per sqft. Focus on $/sqft comparison.',
     expectedOutcome: 'ARB must equalize within 10% of the median. This argument wins even when market value is correct. Often most effective in fast-appreciating DFW neighborhoods.',
   },
   'Income Approach (Rental Properties)': {

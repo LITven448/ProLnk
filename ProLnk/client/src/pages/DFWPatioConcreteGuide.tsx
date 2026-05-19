@@ -45,7 +45,7 @@ export default function DFWPatioConcreteGuide() {
           {[
             { icon: '🌡️', title: 'DFW Heat: Color is Critical', desc: 'Standard gray concrete in DFW summer reaches 140–160°F — dangerous for pets and bare feet. Light buff, cream, or white finishes reflect more heat. Stamped concrete with dark release agents is a comfort mistake in DFW.' },
             { icon: '📐', title: 'Expansion Joints Are Non-Negotiable', desc: 'DFW summer temps swing 70°F+ from night to day. Without expansion joints every 8–10 feet, concrete slabs crack within 2–3 seasons. DFW contractors who skip joints are cutting corners dangerously.' },
-            { icon: '📉', title: 'Slope Away from Foundation', desc: 'All DFW patios must slope minimum 1/8" per foot away from the house. DFW clay soil doesn't drain well — water pooling against foundation causes movement and structural damage over time.' },
+            { icon: '📉', title: 'Slope Away from Foundation', desc: 'All DFW patios must slope minimum 1/8" per foot away from the house. DFW clay soil doesn’t drain well — water pooling against foundation causes movement and structural damage over time.' },
             { icon: '🌿', title: 'Shade Structure Integration', desc: 'Plan shade structure footings during concrete pour — retrofitting posts into cured concrete is expensive. DFW outdoor spaces without shade lose half their usability June–September.' },
             { icon: '🏗️', title: 'Standard vs Stamped vs Aggregate', desc: 'Standard: most durable, lowest cost, best for full-sun. Stamped: beautiful but requires resealing every 2 years in DFW UV. Exposed aggregate: good texture, moderate heat retention, excellent durability.' },
           ].map(item => (

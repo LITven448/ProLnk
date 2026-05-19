@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const situations = [
   { id: 'foundation', label: '🏠 I need help with my DFW foundation', entry: 'Foundation Hub: Start with DFW Foundation Month-by-Month Guide, then DFW Clay Soil Irrigation Deep Dive, then DFW Foundation Watering System Setup.' },
-  { id: 'roof', label: '🌩️ I\'m worried about my roof after a hail storm', entry: 'Roof Hub: Start with DFW Post-Storm Roof Inspection Checklist, then DFW Hail Insurance Claims Guide, then DFW Roofing Material Comparison.' },
-  { id: 'hvac', label: '🌡️ My AC can\'t keep up this summer', entry: 'HVAC Hub: Start with DFW Summer AC Performance Guide, then DFW Attic Ventilation and Heat Load, then DFW HVAC Upgrade ROI Calculator.' },
+  { id: 'roof', label: '🌩️ I\’m worried about my roof after a hail storm', entry: 'Roof Hub: Start with DFW Post-Storm Roof Inspection Checklist, then DFW Hail Insurance Claims Guide, then DFW Roofing Material Comparison.' },
+  { id: 'hvac', label: '🌡️ My AC can\’t keep up this summer', entry: 'HVAC Hub: Start with DFW Summer AC Performance Guide, then DFW Attic Ventilation and Heat Load, then DFW HVAC Upgrade ROI Calculator.' },
   { id: 'plumbing', label: '💧 I had a plumbing issue or want to prevent one', entry: 'Plumbing Hub: Start with DFW Plumbing Month-by-Month Guide, then DFW Freeze Preparation Checklist, then DFW Irrigation Backflow Testing Guide.' },
   { id: 'newowner', label: '🔑 I just moved to DFW and own a home here', entry: 'New DFW Homeowner Start: Begin with DFW Home Ownership Survival Guide, then DFW Foundation Basics for New Residents, then DFW Trade Directory by City.' },
-  { id: 'pro', label: '🔧 I\'m a home service pro looking for leads', entry: 'Pro Hub: Visit ProLnk Pro Signup, then DFW Lead Marketplace Overview, then DFW Service Area Coverage Map. ProLnk connects vetted pros with DFW homeowners actively requesting quotes.' },
+  { id: 'pro', label: '🔧 I\’m a home service pro looking for leads', entry: 'Pro Hub: Visit ProLnk Pro Signup, then DFW Lead Marketplace Overview, then DFW Service Area Coverage Map. ProLnk connects vetted pros with DFW homeowners actively requesting quotes.' },
 ];
 
 export default function DFWProLnk5000PagesMilestone() {

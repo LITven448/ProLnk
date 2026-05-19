@@ -26,7 +26,7 @@ const repairTypes = [
     notify: false,
     urgency: 'Not required, but beneficial',
     premiumImpact: 'Discount possible',
-    notes: 'New systems can earn discounts with some carriers. Ask your agent — it's not required to report but may save money.',
+    notes: 'New systems can earn discounts with some carriers. Ask your agent — it’s not required to report but may save money.',
   },
   {
     id: 'roof',
@@ -53,7 +53,7 @@ const repairTypes = [
     notify: true,
     urgency: 'Before work starts',
     premiumImpact: '+$150–400/year',
-    notes: 'During construction, standard policies may not cover materials or the addition. Ask about a builder\'s risk endorsement.',
+    notes: 'During construction, standard policies may not cover materials or the addition. Ask about a builder\’s risk endorsement.',
   },
   {
     id: 'solar',

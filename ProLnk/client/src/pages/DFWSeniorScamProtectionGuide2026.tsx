@@ -9,7 +9,7 @@ const scamTypes = [
       '🌪️ After every major DFW storm, out-of-state contractors flood neighborhoods looking for vulnerable homeowners',
       '💸 They collect a large deposit (sometimes full payment) and disappear',
       '🔴 Red flag: "I was already working in your neighborhood" — this is a rehearsed script',
-      '🔴 Red flag: "My price is only good today" — legitimate contractors don\'t pressure like this',
+      '🔴 Red flag: "My price is only good today" — legitimate contractors don\’t pressure like this',
       '✅ Protection: All ProLnk pros are DFW-based, verified, and background-checked — no fly-by-nights',
     ],
   },
@@ -22,7 +22,7 @@ const scamTypes = [
       '🔴 Red flag: Demanding 50%+ upfront, especially cash or check only',
       '🔴 Red flag: "I need to order special materials" — standard materials are stocked or ordered after contract',
       '🔴 Red flag: Asking to be paid via Venmo, Zelle, or gift cards — no legitimate contractor does this',
-      '✅ ProLnk uses milestone payments with documented scope — you see exactly what you\'re paying for',
+      '✅ ProLnk uses milestone payments with documented scope — you see exactly what you\’re paying for',
     ],
   },
   {
@@ -30,7 +30,7 @@ const scamTypes = [
     label: '⏰ High-Pressure Tactics',
     redFlags: [
       '🚨 "This price is only good right now" is a psychological manipulation tactic',
-      '📋 Reputable contractors have consistent pricing and don\'t create false urgency',
+      '📋 Reputable contractors have consistent pricing and don\’t create false urgency',
       '🔴 Red flag: Refusing to provide a written estimate before work starts',
       '🔴 Red flag: Refusing to allow you time to get a second opinion',
       '🔴 Red flag: Claiming "this damage is an emergency" without showing you documentation',

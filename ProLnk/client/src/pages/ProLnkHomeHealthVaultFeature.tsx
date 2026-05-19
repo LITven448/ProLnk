@@ -5,7 +5,7 @@ const docTypes = [
     type: 'Inspection Reports',
     emoji: '🔍',
     storage: 'Uploaded as PDF or connected from certified inspection companies. Timestamped and tamper-evident.',
-    privacy: 'You control who sees it — keep private or share with a buyer\'s agent link that expires.',
+    privacy: 'You control who sees it — keep private or share with a buyer\’s agent link that expires.',
     value: 'Buyers pay a premium when they can see pre-certified inspection results. Fewer negotiations, faster close.',
   },
   {
@@ -39,7 +39,7 @@ const docTypes = [
   {
     type: 'Scan History',
     emoji: '📡',
-    storage: 'TrustyPro visual scans create a 3D record of your home\'s condition stored in the Vault.',
+    storage: 'TrustyPro visual scans create a 3D record of your home\’s condition stored in the Vault.',
     privacy: 'Biometric and structural detail is yours — never sold to insurers or third parties.',
     value: 'Before-and-after scan history creates a documented transformation that justifies your asking price.',
   },

@@ -19,7 +19,7 @@ export default function ProLnkDisputeResolution() {
       { icon: '🔄', title: 'Re-Service or Refund', desc: 'For verified quality issues: pro returns to fix at no charge, or ProLnk issues a full refund.' },
     ],
     incomplete: [
-      { icon: '📝', title: 'Note What's Missing', desc: 'List the specific tasks from your original quote that were not completed.' },
+      { icon: '📝', title: 'Note What’s Missing', desc: 'List the specific tasks from your original quote that were not completed.' },
       { icon: '📋', title: 'File Incomplete Claim', desc: 'Submit within 48 hours. ProLnk flags the job and puts payment on hold.' },
       { icon: '📞', title: 'Contact Attempt', desc: 'ProLnk contacts the pro to schedule return visit within 48 hours.' },
       { icon: '💵', title: 'Partial Refund', desc: 'If pro cannot return, you are refunded for unfinished scope only.' },

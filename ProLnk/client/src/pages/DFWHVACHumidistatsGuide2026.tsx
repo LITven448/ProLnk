@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const situations = [
   { id: 'high', label: '🌡️ Humidity feels high (stuffy, muggy)', rec: 'Set humidistat to 45–50% in summer. Run dehumidifier mode. Check that your HVAC drain pan and condensate line are clear — DFW summers overwhelm clogged drains fast.' },
-  { id: 'low', label: '🏜️ Air feels too dry (static, cracked lips)', rec: 'Set humidistat to 35–40% in winter. A standalone or thermostat-integrated humidifier on the supply side is ideal for DFW\'s dry cold snaps.' },
+  { id: 'low', label: '🏜️ Air feels too dry (static, cracked lips)', rec: 'Set humidistat to 35–40% in winter. A standalone or thermostat-integrated humidifier on the supply side is ideal for DFW\’s dry cold snaps.' },
   { id: 'mold', label: '🍄 Worried about mold or condensation', rec: 'Keep indoor humidity below 50% year-round. A whole-home humidistat wired to your air handler is the most reliable fix. Inspect attic and crawl spaces in spring.' },
   { id: 'choosing', label: '🛒 Choosing between standalone vs integrated', rec: 'Thermostat-integrated (like Ecobee or Honeywell T6 Pro) is preferred for DFW — one device controls temp AND humidity. Standalone humidistats work but require manual coordination.' },
 ];

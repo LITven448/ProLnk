@@ -14,12 +14,12 @@ const SITUATION_PROFILES: Record<string, { priorities: string[]; insight: string
   'Long-term owner (10+ years)': {
     priorities: ['Full electrical audit — panel capacity, GFCI/AFCI compliance, weatherhead condition', 'Slab plumbing leak detection — electronic listening test every 3 years', 'Foundation engineer report if you see new cracks or have not had one in 5 years', 'Roof replacement planning — DFW shingles rarely exceed 20 years with UV/hail', 'HVAC system efficiency review — replace if over 12 years old'],
     insight: 'Long-term DFW ownership means managing multiple concurrent system replacements. Budget $3K–$8K per year for capital maintenance is the professional standard for 20+ year DFW homes.',
-    prolnk: 'ProLnk\'s Home Health Vault tracks your system ages and maintenance history — get ahead of replacements with scheduled bids.',
+    prolnk: 'ProLnk\’s Home Health Vault tracks your system ages and maintenance history — get ahead of replacements with scheduled bids.',
   },
   'Investor/landlord': {
     priorities: ['Annual professional inspection for each property', 'Termite bond and quarterly pest control — non-negotiable for rentals', 'HVAC filter replacement program for tenants', 'Document all foundation and plumbing conditions before each tenancy', 'Know your local rent-ready standards — HVAC, plumbing, and electrical must be code-compliant'],
     insight: 'Deferred maintenance in rental properties compounds faster than owner-occupied. DFW tenant standards are rising — HVAC failures and pest issues are top causes of complaint filings.',
-    prolnk: 'ProLnk\'s portfolio tools let landlords manage multiple properties, schedule recurring service, and track maintenance documentation in one place.',
+    prolnk: 'ProLnk\’s portfolio tools let landlords manage multiple properties, schedule recurring service, and track maintenance documentation in one place.',
   },
 };
 

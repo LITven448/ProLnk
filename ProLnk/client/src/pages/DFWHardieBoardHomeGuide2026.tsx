@@ -9,7 +9,7 @@ const conditions = [
 
 const facts = [
   { icon: '🔨', title: 'Hail Resistant', desc: 'Hardie board earns Class 4 impact rating — may qualify for DFW insurance discounts of 15-25%' },
-  { icon: '🔥', title: 'Fire Resistant', desc: 'Non-combustible fiber cement — won't ignite from embers, critical for Texas wildfire zones' },
+  { icon: '🔥', title: 'Fire Resistant', desc: 'Non-combustible fiber cement — won’t ignite from embers, critical for Texas wildfire zones' },
   { icon: '🎨', title: 'Repaint Every 12-15 Yrs', desc: 'DFW UV degrades paint faster — budget $4,000-10,000 for full repaint on average home' },
   { icon: '🔩', title: 'Caulk Joints Critical', desc: 'Butt joints must be caulked and maintained — uncaulked joints cause moisture and rot issues' },
   { icon: '🐦', title: 'No Woodpeckers', desc: 'Unlike real wood, fiber cement is impervious to woodpecker damage — a plus in wooded DFW areas' },

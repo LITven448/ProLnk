@@ -47,7 +47,7 @@ export default function ProLnkForMilitary() {
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🛡️ TrustyPro Benefits for Military</h2>
         <div style={{ display: 'grid', gap: 16, marginBottom: 48 }}>
           {[
-            { emoji: '📡', title: 'Deployment Protection', body: 'AI scan catches issues before they become major while you're deployed. Your spouse or designated contact gets alerts and automatic contractor dispatch — no need to search for contractors during a stressful time.' },
+            { emoji: '📡', title: 'Deployment Protection', body: 'AI scan catches issues before they become major while you’re deployed. Your spouse or designated contact gets alerts and automatic contractor dispatch — no need to search for contractors during a stressful time.' },
             { emoji: '📋', title: 'Home Health Record', body: 'Every maintenance event, contractor visit, and repair is logged. When you sell to another military family, the complete home health record transfers — a documented home commands a premium price.' },
             { emoji: '🚚', title: 'PCS-Ready Home', body: 'Origination rights on your home transfer when you sell, or you retain them if you keep the property as a rental. Your TrustyPro investment follows your life — not just your address.' },
           ].map(b => (

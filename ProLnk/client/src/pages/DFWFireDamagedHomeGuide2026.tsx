@@ -33,7 +33,7 @@ const guides: Record<string, { steps: string[]; tip: string; verdict: string }> 
   major: {
     verdict: '🔴 Investor/Builder Play Only',
     steps: [
-      '📋 Confirm insurability — some carriers won't write policies on fire-history homes',
+      '📋 Confirm insurability — some carriers won’t write policies on fire-history homes',
       '🏗️ Full structural demolition assessment required before any offer',
       '💰 Finance with hard money or cash only — conventional lenders decline fire damage',
       '🔍 Environmental test: burned materials may contain asbestos (pre-1980 DFW homes)',

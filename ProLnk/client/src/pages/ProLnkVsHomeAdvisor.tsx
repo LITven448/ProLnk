@@ -87,8 +87,8 @@ export default function ProLnkVsHomeAdvisor() {
                 {[
                   { icon: '📋', title: 'Mandatory Profile Fees', desc: 'HomeAdvisor charges profile listing fees before you ever receive a lead — you pay to exist on the platform.' },
                   { icon: '🎰', title: 'Wildly Variable Lead Quality', desc: '"Lead quality varies wildly" is the #1 complaint on every contractor forum. No minimum standard for homeowner intent.' },
-                  { icon: '🏁', title: 'Racing 5+ Competitors', desc: 'Every lead you receive went to at least 4 others first. You're always the underdog unless you answer in 5 minutes.' },
-                  { icon: '🔄', title: 'Auto-Renewing Annual Contracts', desc: 'Many pros discover they've been auto-renewed at higher rates. Cancellation requires a phone call and negotiation.' },
+                  { icon: '🏁', title: 'Racing 5+ Competitors', desc: 'Every lead you receive went to at least 4 others first. You’re always the underdog unless you answer in 5 minutes.' },
+                  { icon: '🔄', title: 'Auto-Renewing Annual Contracts', desc: 'Many pros discover they’ve been auto-renewed at higher rates. Cancellation requires a phone call and negotiation.' },
                 ].map(p => (
                   <div key={p.title} style={{ display: 'flex', gap: 14 }}>
                     <span style={{ fontSize: 24, flexShrink: 0 }}>{p.icon}</span>
@@ -145,7 +145,7 @@ export default function ProLnkVsHomeAdvisor() {
                 {[
                   { year: '1999', event: 'ServiceMagic founded — original pay-per-lead marketplace for home services.' },
                   { year: '2012', event: 'Rebranded to HomeAdvisor. Rapid expansion through aggressive lead volume, not quality.' },
-                  { year: '2017', event: 'IAC acquires HomeAdvisor and Angi's List — merges them into Angi. Same parent company, two brands.' },
+                  { year: '2017', event: 'IAC acquires HomeAdvisor and Angi’s List — merges them into Angi. Same parent company, two brands.' },
                   { year: '2021', event: 'Angi Inc. IPO. Revenue model remains identical: sell leads to as many pros as possible.' },
                   { year: '2023–24', event: 'FTC investigation into deceptive advertising. Ongoing class action suits from contractors over lead quality.' },
                   { year: '2025', event: 'Contractor exodus continues — Facebook groups with 50K+ pros sharing HomeAdvisor workarounds.' },

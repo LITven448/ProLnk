@@ -23,7 +23,7 @@ const processes: Record<string, { headline: string; steps: { icon: string; title
     headline: '⚠️ Worsening Symptoms — Respond Within 48 Hours',
     eta: 'Engineer-Supervised Match: Within 24 Hours',
     steps: [
-      { icon: '1️⃣', title: 'Describe What You\'re Seeing', detail: 'Document sticking doors, new cracks, or floor changes at prolnk.io — describe when symptoms started' },
+      { icon: '1️⃣', title: 'Describe What You\’re Seeing', detail: 'Document sticking doors, new cracks, or floor changes at prolnk.io — describe when symptoms started' },
       { icon: '2️⃣', title: 'ProLnk Routes to Charter Foundation Pro', detail: 'Worsening symptoms trigger our engineer-supervised routing — not a general handyman match' },
       { icon: '3️⃣', title: 'Inspection Scheduled Within 48 Hours', detail: 'Your Charter pro books a 2-hour inspection window that works with your schedule' },
       { icon: '4️⃣', title: 'Written Report with Repair Scope', detail: 'Report includes severity rating, recommended repair method (pier type, drainage, etc.) and cost range' },
@@ -34,7 +34,7 @@ const processes: Record<string, { headline: string; steps: { icon: string; title
     headline: '🟡 Monitoring Symptoms — Get Expert Eyes',
     eta: 'Charter Pro Match: Within 48 Hours',
     steps: [
-      { icon: '1️⃣', title: 'Go to prolnk.io', detail: 'Select Foundation Assessment — describe the symptoms you\'ve noticed and how long they\'ve been present' },
+      { icon: '1️⃣', title: 'Go to prolnk.io', detail: 'Select Foundation Assessment — describe the symptoms you\’ve noticed and how long they\’ve been present' },
       { icon: '2️⃣', title: 'ProLnk Routes to Charter Foundation Pro', detail: 'Even monitoring cases go to engineer-supervised pros — not general contractors' },
       { icon: '3️⃣', title: 'Inspection Scheduled at Your Convenience', detail: 'Choose from available windows — weekday or weekend inspections available in DFW metro' },
       { icon: '4️⃣', title: 'Written Report Provided', detail: 'Includes current measurement baseline — critical for future comparison if movement occurs' },
@@ -48,7 +48,7 @@ const processes: Record<string, { headline: string; steps: { icon: string; title
       { icon: '1️⃣', title: 'Go to prolnk.io', detail: 'Select Foundation Baseline Inspection — no symptoms required, this is proactive smart homeownership' },
       { icon: '2️⃣', title: 'Describe Your Home', detail: 'Share home age, soil type if known, and any past foundation work — more detail = better match' },
       { icon: '3️⃣', title: 'Charter Foundation Pro Assigned', detail: 'We match to an engineer-supervised pro in your DFW zip zone within 72 hours' },
-      { icon: '4️⃣', title: 'Baseline Measurements Provided', detail: 'Written report with elevation measurements at all corners — the foundation of your home\'s health record' },
+      { icon: '4️⃣', title: 'Baseline Measurements Provided', detail: 'Written report with elevation measurements at all corners — the foundation of your home\’s health record' },
       { icon: '5️⃣', title: 'Vault Entry — Permanent Health Record Begins', detail: 'Your Home Health Vault foundation record is now started — every future inspection adds to this history' },
     ],
   },

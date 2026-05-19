@@ -4,7 +4,7 @@ const homeTypes = ['1950s Slab', '1970s Pier & Beam', '1990s Two-Story', '2000s+
 
 const baseData = {
   panelSafety: ['Know your panel location and label every breaker', 'Never block panel access — 36" clearance required by code', 'Tripping breaker = overloaded circuit or failing breaker'],
-  gfci: ['Test GFCI outlets monthly: press TEST, confirm power off, press RESET', 'Required in: kitchen, bathrooms, garage, outdoors, pool area', 'Replace if test button doesn\'t cut power within 1 second'],
+  gfci: ['Test GFCI outlets monthly: press TEST, confirm power off, press RESET', 'Required in: kitchen, bathrooms, garage, outdoors, pool area', 'Replace if test button doesn\’t cut power within 1 second'],
   outdoor: ['Use weatherproof outlet covers year-round in DFW humidity', 'All outdoor circuits must be GFCI protected', 'Inspect landscape lighting wiring after hail storms'],
   storm: ['Surge protector whole-home unit at panel: $300–$600 installed', 'DFW averages 50+ storm days/year — surge risk is real', 'Unplug sensitive electronics during severe thunderstorm warnings'],
   upgrades: ['200-amp panel: standard for modern DFW homes', '100-amp or less: upgrade now if adding EV charger or AC unit', 'EV charger (Level 2): requires dedicated 240V 50-amp circuit'],

@@ -53,7 +53,7 @@ export default function DFWWindowInstallationGuide() {
           {[
             { icon: '☀️', title: 'SHGC Rating Critical in DFW', body: 'Solar Heat Gain Coefficient below 0.25 is essential. DFW receives intense southwest solar radiation — the wrong glass turns your home into a greenhouse.' },
             { icon: '🔲', title: 'Double Pane is the DFW Sweet Spot', body: 'Triple pane adds marginal benefit in DFW — our winters are mild. Double pane Low-E with argon is the most cost-effective choice for 90% of DFW homes.' },
-            { icon: '🏠', title: 'Insert vs Full-Frame', body: 'Insert replacement works when frames are solid. Full-frame is required for rot, major damage, or if you're changing window size. Full-frame costs 40–60% more in labor.' },
+            { icon: '🏠', title: 'Insert vs Full-Frame', body: 'Insert replacement works when frames are solid. Full-frame is required for rot, major damage, or if you’re changing window size. Full-frame costs 40–60% more in labor.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#1E2D45', borderRadius: 10, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>

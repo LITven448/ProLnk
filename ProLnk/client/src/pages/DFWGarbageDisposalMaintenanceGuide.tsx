@@ -33,7 +33,7 @@ export default function DFWGarbageDisposalMaintenanceGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🚫', title: 'Never Put In Disposal', body: 'Bones, celery, onion skins, potato peels, grease, pasta, rice, coffee grounds, eggshells — all cause jams or drain clogs in DFW pipes.' },
-            { icon: '🔄', title: 'Reset Button Location', body: 'Under the unit — small red button. Press if disposal hums but won\'t spin. Also try the hex key slot on the bottom to manually free the grind plate.' },
+            { icon: '🔄', title: 'Reset Button Location', body: 'Under the unit — small red button. Press if disposal hums but won\’t spin. Also try the hex key slot on the bottom to manually free the grind plate.' },
             { icon: '🧊', title: 'DFW Tip: Ice Cubes', body: 'Run ice cubes through monthly — cleans the grind plate and knocks loose mineral deposits from DFW hard water.' },
             { icon: '🔁', title: 'Repair vs. Replace', body: 'If the unit is 8+ years old and requires a second repair, replacement is almost always more cost-effective ($150–$450 installed).' },
           ].map(c => (

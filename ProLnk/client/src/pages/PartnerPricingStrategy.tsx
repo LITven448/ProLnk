@@ -91,7 +91,7 @@ export default function PartnerPricingStrategy() {
           {[
             { icon: '🌩️', tip: 'Storm Leads', color: '#fef3c7', border: '#fcd34d', accent: '#92400e', desc: 'Add 25-35% surge pricing on storm-related leads. Homeowners in crisis mode expect and accept higher prices. Availability matters more than cost after a major storm.' },
             { icon: '🤖', tip: 'AI-Detected Leads', color: '#ede9fe', border: '#c4b5fd', accent: '#5b21b6', desc: 'Include "our AI detected this issue in our system" in your quote. This increases perceived value and conversion. Homeowners trust data-backed recommendations.' },
-            { icon: '🤝', tip: 'Network Leads', color: '#dcfce7', border: '#86efac', accent: '#166534', desc: 'You arrive with credibility from your recruiter's reputation in that customer's network. Price at full market rate — no discount needed. The referral trust is the discount.' },
+            { icon: '🤝', tip: 'Network Leads', color: '#dcfce7', border: '#86efac', accent: '#166534', desc: 'You arrive with credibility from your recruiter’s reputation in that customer’s network. Price at full market rate — no discount needed. The referral trust is the discount.' },
           ].map(t => (
             <div key={t.tip} style={{ background: t.color, border: `1px solid ${t.border}`, borderRadius: 14, padding: 20 }}>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -111,7 +111,7 @@ export default function PartnerPricingStrategy() {
             {[
               'After earning 5 five-star reviews — social proof justifies higher rates',
               'When booked more than 3 weeks out — demand exceeds supply',
-              'When you reach 80%+ acceptance rate on quotes — you're priced too low',
+              'When you reach 80%+ acceptance rate on quotes — you’re priced too low',
               'When material costs rise — protect your margin immediately, not quarterly',
               'When you add certifications or specialty equipment',
             ].map(item => (

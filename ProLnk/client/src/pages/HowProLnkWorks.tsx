@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const steps = [
-  { emoji: '📋', title: 'Post Your Need', time: '2 min', desc: 'Describe the job: trade type, what's broken or needed, your address, and when you need it done. No account required to start.' },
+  { emoji: '📋', title: 'Post Your Need', time: '2 min', desc: 'Describe the job: trade type, what’s broken or needed, your address, and when you need it done. No account required to start.' },
   { emoji: '🤖', title: 'Get Matched', time: '< 2 hrs', desc: 'Our AI scans verified pros in your zip code, checks their ratings, availability, and specialization, and finds your best match.' },
-  { emoji: '📊', title: 'Compare Pros', time: '5 min', desc: 'Review your matched pro's profile — license info, reviews, response rate, and average job price. No obligation to move forward.' },
+  { emoji: '📊', title: 'Compare Pros', time: '5 min', desc: 'Review your matched pro’s profile — license info, reviews, response rate, and average job price. No obligation to move forward.' },
   { emoji: '🤝', title: 'Hire & Pay', time: 'Your timeline', desc: 'Contact the pro directly, agree on price and scope, then hire. You pay the pro, not ProLnk. We only facilitate the match.' },
 ];
 
@@ -31,10 +31,10 @@ const quizQuestions = [
 ];
 
 const outcomes: Record<string, string> = {
-  emergency: '🚨 We\'ll match you to an on-call pro in your area within 30 minutes. Emergency jobs are prioritized in our system.',
-  thisWeek: '📅 You\'ll have a matched pro reaching out within 2 hours. Most jobs are scheduled same-week.',
-  planning: '🗓️ Perfect timing — get matched now, review the pro\'s profile, and schedule when you\'re ready. No rush.',
-  default: '✅ Great news — ProLnk is built for exactly your situation. Post your need and we\'ll match you with the right pro for the job.',
+  emergency: '🚨 We\’ll match you to an on-call pro in your area within 30 minutes. Emergency jobs are prioritized in our system.',
+  thisWeek: '📅 You\’ll have a matched pro reaching out within 2 hours. Most jobs are scheduled same-week.',
+  planning: '🗓️ Perfect timing — get matched now, review the pro\’s profile, and schedule when you\’re ready. No rush.',
+  default: '✅ Great news — ProLnk is built for exactly your situation. Post your need and we\’ll match you with the right pro for the job.',
 };
 
 export default function HowProLnkWorks() {

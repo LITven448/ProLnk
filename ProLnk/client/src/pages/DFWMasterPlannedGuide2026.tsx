@@ -17,7 +17,7 @@ const lifestyles = [
     id: 'luxury',
     label: '🏆 Luxury Living',
     communities: ['Southlake - Timarron', 'Colleyville - Oakmont', 'Westlake - Vaquero'],
-    note: 'Guard-gated, custom homes, private golf, and some of DFW\'s highest home values. HOA dues $200–600/mo.',
+    note: 'Guard-gated, custom homes, private golf, and some of DFW\’s highest home values. HOA dues $200–600/mo.',
   },
   {
     id: 'value',

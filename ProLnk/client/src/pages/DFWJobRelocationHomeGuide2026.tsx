@@ -21,17 +21,17 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
   90days: {
     steps: [
       '📅 List 60-70 days before must-close date to allow 30-day escrow',
-      '🔧 ProLnk handles pre-listing repairs in 2-3 weeks — don't delay',
+      '🔧 ProLnk handles pre-listing repairs in 2-3 weeks — don’t delay',
       '💰 Standard sale likely nets more than iBuyer in 90-day window',
       '📋 Review relocation package: many cover closing costs, commission, temp housing',
-      '🏦 Bridge loan covers new home down payment if DFW home hasn't closed yet',
+      '🏦 Bridge loan covers new home down payment if DFW home hasn’t closed yet',
     ],
     tip: 'DFW average days-on-market 2026: 32 days — 90-day window is very workable.',
   },
   flexible: {
     steps: [
       '📈 List at peak spring season (March-May) for max DFW buyer traffic',
-      '🔧 Full repair and staging investment pays back in DFW's competitive market',
+      '🔧 Full repair and staging investment pays back in DFW’s competitive market',
       '💰 Negotiate relocation package to include duplicate housing allowance',
       '📋 Consider 1031 exchange if buying investment property in new city',
       '🏦 Rate lock your new mortgage before selling DFW home',

@@ -15,7 +15,7 @@ const data = {
     secured: false,
     flexible: false,
     pros: ['No home collateral risk', 'Fixed rate & payment', 'Faster approval', 'No equity required'],
-    cons: ['Higher interest rate', 'Lower loan limits ($50K typical)', 'Can\'t redraw funds', 'No tax benefit'],
+    cons: ['Higher interest rate', 'Lower loan limits ($50K typical)', 'Can\’t redraw funds', 'No tax benefit'],
   },
 };
 

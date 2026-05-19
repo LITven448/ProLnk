@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const SYMPTOMS_OTR = ['Sparks inside','No heat','Turntable broken','Display dead','Smells burnt','Fan not working'];
-const SYMPTOMS_CTR = ['No power','Uneven heating','Sparks','Door won\'t close','Display issues','Arcing'];
+const SYMPTOMS_CTR = ['No power','Uneven heating','Sparks','Door won\’t close','Display issues','Arcing'];
 
 export default function DFWMicrowaveGuide2026() {
   const [mType, setMType] = useState('');

@@ -30,7 +30,7 @@ const SCAMS = [
     tagColor: "#7C3AED",
     howItWorks: "A contractor offers to waive your insurance deductible, claiming 'we absorb the cost' or 'your insurance pays everything.' This is insurance fraud under Texas SB 2268 (effective Sept 1, 2019). The contractor inflates the claim to cover what you should owe — exposing you to policy cancellation and criminal charges.",
     redFlags: [
-      '"We'll waive your deductible — you pay nothing out of pocket"',
+      '"We’ll waive your deductible — you pay nothing out of pocket"',
       '"We handle everything, just sign here"',
       "Offers that seem too good to be true on full roof replacements",
       "Contractor insists on meeting with your adjuster in private",

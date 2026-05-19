@@ -20,7 +20,7 @@ const situations: Record<string, Situation> = {
   cash: {
     label: 'Paying cash (no mortgage)',
     recommended: ['Option Period', 'Inspection Contingency'],
-    warnings: ['You can waive financing and appraisal since there's no lender involved.', 'Still use the option period — it's your best protection for any reason.'],
+    warnings: ['You can waive financing and appraisal since there’s no lender involved.', 'Still use the option period — it’s your best protection for any reason.'],
   },
   selling: {
     label: 'Need to sell current home first',

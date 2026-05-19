@@ -17,7 +17,7 @@ const scenarios = [
     label: 'Backup Contract Position',
     emoji: '📋',
     canDoMultiple: true,
-    explanation: 'In DFW\'s competitive market, a seller may accept your offer as a "backup contract" while already under contract. This is a distinct legal position — you are second in line.',
+    explanation: 'In DFW\’s competitive market, a seller may accept your offer as a "backup contract" while already under contract. This is a distinct legal position — you are second in line.',
     howItWorks: ['Seller accepts your offer in "backup position" — marked in MLS', 'If primary contract falls through, yours automatically activates', 'You cannot actively pursue that home while in backup position', 'Primary buyers have incentive to terminate during option — backup activates immediately'],
     legalNote: 'Texas backup contracts are a standard TREC addendum. You can simultaneously be shopping other homes while in backup position on one property.',
     agentNote: 'Being in backup is not the same as being under contract. You can and should continue shopping until backup activates.',
@@ -31,7 +31,7 @@ const scenarios = [
     explanation: 'Investors routinely submit offers on multiple DFW properties simultaneously. This is standard practice — real estate investing is speculative by nature.',
     howItWorks: ['Submit offers on multiple investment properties at once', 'Negotiate each independently', 'Exercise option on best opportunity, terminate others', 'Some investors close on multiple properties in same month'],
     legalNote: 'Legal with no restrictions as an investor. Option fees are the cost of evaluating multiple opportunities simultaneously.',
-    agentNote: 'Work with a DFW investor-specialist agent who understands volume contract management and won\'t be put off by the process.',
+    agentNote: 'Work with a DFW investor-specialist agent who understands volume contract management and won\’t be put off by the process.',
     risks: ['Option fees accumulate across multiple contracts', 'Earnest money exposure if you default outside option period', 'Reputation with DFW agents if you terminate too often without good cause'],
   },
   {

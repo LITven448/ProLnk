@@ -26,7 +26,7 @@ const stakeholders = [
   {
     id: 'investor',
     label: '📊 Seed Investor',
-    impact: 'This content library is a defensible moat. 5,500 DFW-specific pages with topical authority took 18 months to build. Competitors cannot catch up without the same investment — and by then we\'ll be at 15,000 pages.',
+    impact: 'This content library is a defensible moat. 5,500 DFW-specific pages with topical authority took 18 months to build. Competitors cannot catch up without the same investment — and by then we\’ll be at 15,000 pages.',
     stats: [
       { label: 'Estimated organic traffic value', val: '$280K/mo equivalent' },
       { label: 'Pages with no direct competitor equivalent', val: '4,800+' },
@@ -37,7 +37,7 @@ const stakeholders = [
   {
     id: 'partner',
     label: '🤝 Enterprise / B2B Partner',
-    impact: 'ProLnk\'s content network is a distribution channel. Insurance partners, lenders, and home warranty companies can co-author pages and reach DFW homeowners with demonstrated maintenance intent.',
+    impact: 'ProLnk\’s content network is a distribution channel. Insurance partners, lenders, and home warranty companies can co-author pages and reach DFW homeowners with demonstrated maintenance intent.',
     stats: [
       { label: 'Pages suitable for insurance co-branding', val: '600+' },
       { label: 'Pages for lender / appraisal audience', val: '200+' },

@@ -16,14 +16,14 @@ const pros = [
 
 const testimonials = [
   { name: 'Tamara K.',  zip: 'Allen 75002', text: 'After the May 2024 storm I called my roofer — they said everything looked fine. TrustyPro found granule loss and two soft spots the naked eye missed. Filed a $19K insurance claim.' },
-  { name: 'Brian M.',   zip: 'Allen 75002', text: 'Chris had the emergency repair crew out in under 40 minutes after we found a leak during a storm. Most pros quoted 2–3 days. TrustyPro\'s network is unreal.' },
-  { name: 'Patricia S.', zip: 'Allen 75002', text: 'HVAC was blowing warm air in July. Yolanda diagnosed a refrigerant leak and had it fixed same day. I\'d been sweating through the weekends for two weeks before I found TrustyPro.' },
+  { name: 'Brian M.',   zip: 'Allen 75002', text: 'Chris had the emergency repair crew out in under 40 minutes after we found a leak during a storm. Most pros quoted 2–3 days. TrustyPro\’s network is unreal.' },
+  { name: 'Patricia S.', zip: 'Allen 75002', text: 'HVAC was blowing warm air in July. Yolanda diagnosed a refrigerant leak and had it fixed same day. I\’d been sweating through the weekends for two weeks before I found TrustyPro.' },
 ];
 
 const faqs = [
   {
     q: 'How do I know if my roof has hidden damage from the 2024 storms?',
-    a: 'Hail damage is often invisible from the ground. What you need to look for: soft spots on shingles (bruising), missing granules at downspout outlets, dented ridge caps, and cracked flashing around chimneys. TrustyPro\'s roof assessment covers all of these. If damage is found, we connect you with a licensed adjuster who works on your behalf — not the insurance company\'s.',
+    a: 'Hail damage is often invisible from the ground. What you need to look for: soft spots on shingles (bruising), missing granules at downspout outlets, dented ridge caps, and cracked flashing around chimneys. TrustyPro\’s roof assessment covers all of these. If damage is found, we connect you with a licensed adjuster who works on your behalf — not the insurance company\’s.',
   },
   {
     q: 'How fast can a TrustyPro pro respond to an emergency in Allen?',
@@ -110,7 +110,7 @@ export default function TrustyProAllen() {
           <p style={{ color: '#4b5563', fontSize: 16, marginBottom: 48 }}>Three steps from scan to solved</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }}>
             {[
-              { step: '01', icon: '🔍', title: 'Scan', desc: 'Answer 12 questions about your home. Our AI cross-references Allen storm event data, your home\'s age, and insurance claim patterns for ZIP 75002.' },
+              { step: '01', icon: '🔍', title: 'Scan', desc: 'Answer 12 questions about your home. Our AI cross-references Allen storm event data, your home\’s age, and insurance claim patterns for ZIP 75002.' },
               { step: '02', icon: '📊', title: 'Score', desc: 'Receive a 0–100 Home Health Score. Roof health is weighted heavily for Allen homes given the 2024 hail history.' },
               { step: '03', icon: '🔧', title: 'Book a Pro', desc: '23 verified pros serve ZIP 75002. Average emergency response: 38 minutes. Flat pricing, no upsells, documented workmanship.' },
             ].map(s => (
@@ -133,10 +133,10 @@ export default function TrustyProAllen() {
           <p style={{ color: '#6b7280', textAlign: 'center', marginBottom: 40, fontSize: 14 }}>What DFW's back-to-back storm seasons mean for your Allen home</p>
           <div style={{ display: 'grid', gap: 20 }}>
             {[
-              { icon: '🌨️', title: '2 Hail Events in 24 Months — Cumulative Damage', desc: 'Each hail event adds incremental damage to your roof: granule loss, micro-fractures in shingles, bent flashing, and bruised underlayment. A roof that "survived" two storms may have cumulative damage that shows up as a leak the next time DFW gets 3 inches of rain in an hour. TrustyPro\'s roof scan captures cumulative wear, not just obvious holes.' },
-              { icon: '🏠', title: '28% of Allen Homeowners Have Undetected Damage', desc: 'After the May 2024 storm, TrustyPro scan data across Allen 75002 showed 28% of homes had identifiable roof damage their owners were unaware of. Many of these homeowners never filed claims. If your home was in the storm zone and you haven\'t had a professional roof inspection, you likely have undocumented damage.' },
-              { icon: '⚡', title: 'Storm Surge and Electrical Exposure', desc: 'DFW storm events include lightning strikes and power surges that damage panel components, surge protectors, and connected appliances. TrustyPro\'s electrical check covers panel health, grounding integrity, and identifies surge vulnerability — a common oversight after hail-focused storm events.' },
-              { icon: '💧', title: 'Clay Soil + Heavy Rain = Foundation Stress', desc: 'Allen\'s Blackland Prairie clay absorbs heavy storm rainfall and expands rapidly, then dries and contracts. Two intense storm seasons in a row accelerates this cycle. Steve\'s foundation team uses moisture probes to measure soil saturation levels and predict future movement before cracks appear.' },
+              { icon: '🌨️', title: '2 Hail Events in 24 Months — Cumulative Damage', desc: 'Each hail event adds incremental damage to your roof: granule loss, micro-fractures in shingles, bent flashing, and bruised underlayment. A roof that "survived" two storms may have cumulative damage that shows up as a leak the next time DFW gets 3 inches of rain in an hour. TrustyPro\’s roof scan captures cumulative wear, not just obvious holes.' },
+              { icon: '🏠', title: '28% of Allen Homeowners Have Undetected Damage', desc: 'After the May 2024 storm, TrustyPro scan data across Allen 75002 showed 28% of homes had identifiable roof damage their owners were unaware of. Many of these homeowners never filed claims. If your home was in the storm zone and you haven\’t had a professional roof inspection, you likely have undocumented damage.' },
+              { icon: '⚡', title: 'Storm Surge and Electrical Exposure', desc: 'DFW storm events include lightning strikes and power surges that damage panel components, surge protectors, and connected appliances. TrustyPro\’s electrical check covers panel health, grounding integrity, and identifies surge vulnerability — a common oversight after hail-focused storm events.' },
+              { icon: '💧', title: 'Clay Soil + Heavy Rain = Foundation Stress', desc: 'Allen\’s Blackland Prairie clay absorbs heavy storm rainfall and expands rapidly, then dries and contracts. Two intense storm seasons in a row accelerates this cycle. Steve\’s foundation team uses moisture probes to measure soil saturation levels and predict future movement before cracks appear.' },
             ].map(r => (
               <div key={r.title} style={{ background: '#fff', borderRadius: 14, padding: 24, display: 'flex', gap: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: 32, flexShrink: 0 }}>{r.icon}</div>

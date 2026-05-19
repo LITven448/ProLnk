@@ -42,7 +42,7 @@ export default function DFWPricingStrategyGuide() {
             {[
               { bracket: 'Under $300K', insight: 'Highest volume in outer DFW. $299K gets dramatically more traffic than $301K.' },
               { bracket: '$399K–$400K', insight: 'FHA and first-time buyer cliff. $399K is one of the most powerful prices in DFW.' },
-              { bracket: '$499K–$500K', insight: 'DFW\'s biggest psychological barrier. $499K gets 3-5x Zillow impressions vs $500K.' },
+              { bracket: '$499K–$500K', insight: 'DFW\’s biggest psychological barrier. $499K gets 3-5x Zillow impressions vs $500K.' },
               { bracket: '$749K–$750K', insight: 'Move-up luxury threshold. Buyers set max at $750K — be at $749K.' },
               { bracket: '$999K–$1M', insight: 'Most powerful luxury bracket. $999K captures entire under-$1M filtered audience.' },
             ].map(item => (

@@ -13,7 +13,7 @@ const recommendations: Record<string, Record<string, { remove: string[]; keep: s
       add: ['Area rug (8x10)', 'Matching lamp pair', 'Simple throw + pillow set'],
     },
     large: {
-      remove: ['Mismatched furniture sets', 'Children\'s toys or play equipment', 'Extra gaming chairs', 'Dated entertainment centers'],
+      remove: ['Mismatched furniture sets', 'Children\’s toys or play equipment', 'Extra gaming chairs', 'Dated entertainment centers'],
       keep: ['Full seating arrangement', 'Coffee + end tables', 'Media setup'],
       add: ['Conversation grouping layout', 'Layered rugs', 'Statement art piece'],
     },
@@ -25,7 +25,7 @@ const recommendations: Record<string, Record<string, { remove: string[]; keep: s
       add: ['Neutral bedding set', 'Two matching lamps', 'Full-length mirror'],
     },
     medium: {
-      remove: ['Extra dressers beyond one', 'Workout equipment', 'Cluttered vanity', 'Kids\' furniture in adult rooms'],
+      remove: ['Extra dressers beyond one', 'Workout equipment', 'Cluttered vanity', 'Kids\’ furniture in adult rooms'],
       keep: ['Bed + two nightstands', 'One dresser or chest', 'Bench at foot of bed'],
       add: ['Coordinated bedding', 'Table lamps', 'Simple artwork above headboard'],
     },

@@ -10,7 +10,7 @@ export default function DFWDIYPaintingMistakes2026() {
       cutin: { problem: 'Visible roller texture on edges, missed corners', avoid: 'Always cut in 2-3 inches around edges, corners, and trim BEFORE rolling. Cut in while paint is wet.', fix: 'Re-cut-in edges after rolling while paint is still wet. If dry, touch up with a steady hand and quality brush.' },
       roller: { problem: 'Stippled, orange-peel, or lint-covered finish', avoid: 'Use 3/8" nap for smooth walls, 1/2" for texture. Premium Purdy or Wooster rollers eliminate lint.', fix: 'Sand stippled finish lightly (220 grit) after full cure, wipe dust, apply another coat with quality roller.' },
       feather: { problem: 'Lap marks — visible darker lines where sections overlap', avoid: 'Work in full-wall sections, maintain a wet edge, overlap 4-6 inches before wet paint dries.', fix: 'Light sanding of lap marks after full cure, then feather another coat blending the entire section.' },
-      tape: { problem: 'Bleed-through under painter's tape, ragged lines', avoid: 'Press FrogTape firmly with a putty knife. Remove tape at 45° while paint is still slightly tacky — not fully dry.', fix: 'Use a razor blade to score the tape line before pulling. For bleeds, touch up with a small artist brush.' },
+      tape: { problem: 'Bleed-through under painter’s tape, ragged lines', avoid: 'Press FrogTape firmly with a putty knife. Remove tape at 45° while paint is still slightly tacky — not fully dry.', fix: 'Use a razor blade to score the tape line before pulling. For bleeds, touch up with a small artist brush.' },
     };
     return map[mistake] || map.primer;
   };

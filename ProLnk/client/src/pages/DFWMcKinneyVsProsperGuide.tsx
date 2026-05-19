@@ -48,8 +48,8 @@ export default function DFWMcKinneyVsProsperGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 36 }}>
           {[
-            { name: 'McKinney', emoji: '🏛️', price: '$460K', color: '#3b82f6', desc: 'Texas\' most livable city (multiple rankings). Historic downtown square, eclectic dining, 100+ miles of trails. A real city with soul — not just suburbs. Massive Stonebridge/Eldorado corridor for modern homes too.', pros: ['Historic Downtown character', 'More affordable than Prosper', '72 parks + trail system', 'Established community events'], cons: ['McKinney ISD slightly below Prosper ISD', 'More traffic (larger city)', 'Older housing stock in some areas', 'Less new-home selection'] },
-            { name: 'Prosper', emoji: '🌟', price: '$580K', color: '#f59e0b', desc: 'Pure master-planned perfection. Prosper ISD is one of Texas\' best. Windsong Ranch is a landmark community. Newer everything — schools, roads, homes. Quieter and more residential-only feel.', pros: ['Prosper ISD (top-ranked)', 'Newest construction available', 'Quieter residential feel', 'Strong appreciation trajectory'], cons: ['No real downtown or character', '$120K higher than McKinney', 'Car-dependent for everything', 'Limited dining/retail nearby'] },
+            { name: 'McKinney', emoji: '🏛️', price: '$460K', color: '#3b82f6', desc: 'Texas\’ most livable city (multiple rankings). Historic downtown square, eclectic dining, 100+ miles of trails. A real city with soul — not just suburbs. Massive Stonebridge/Eldorado corridor for modern homes too.', pros: ['Historic Downtown character', 'More affordable than Prosper', '72 parks + trail system', 'Established community events'], cons: ['McKinney ISD slightly below Prosper ISD', 'More traffic (larger city)', 'Older housing stock in some areas', 'Less new-home selection'] },
+            { name: 'Prosper', emoji: '🌟', price: '$580K', color: '#f59e0b', desc: 'Pure master-planned perfection. Prosper ISD is one of Texas\’ best. Windsong Ranch is a landmark community. Newer everything — schools, roads, homes. Quieter and more residential-only feel.', pros: ['Prosper ISD (top-ranked)', 'Newest construction available', 'Quieter residential feel', 'Strong appreciation trajectory'], cons: ['No real downtown or character', '$120K higher than McKinney', 'Car-dependent for everything', 'Limited dining/retail nearby'] },
           ].map(city => (
             <div key={city.name} style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${city.color}40`, borderRadius: 16, padding: 24 }}>
               <div style={{ fontSize: 36, marginBottom: 8 }}>{city.emoji}</div>
@@ -118,7 +118,7 @@ export default function DFWMcKinneyVsProsperGuide() {
           <div style={{ background: 'rgba(245,230,66,0.15)', border: '1px solid #F5E642', borderRadius: 12, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>🏆 Best Fit: {winner}</div>
             <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>
-              {winner === 'McKinney' ? 'McKinney gives you city character, great value, and strong community — without sacrificing the suburban safety and schools you want.' : 'Prosper\'s master-planned excellence and Prosper ISD make it the right call when schools and new construction matter most.'}
+              {winner === 'McKinney' ? 'McKinney gives you city character, great value, and strong community — without sacrificing the suburban safety and schools you want.' : 'Prosper\’s master-planned excellence and Prosper ISD make it the right call when schools and new construction matter most.'}
             </div>
             <div style={{ fontSize: 13, color: '#64748b' }}>Top neighborhoods: {winnerHoods.join(', ')}</div>
           </div>

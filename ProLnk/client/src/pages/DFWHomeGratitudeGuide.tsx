@@ -5,9 +5,9 @@ const situations = [
     id: 'starter-home',
     label: '🌱 Starter Home',
     appreciations: [
-      'You are building equity instead of paying someone else\'s mortgage — every payment is yours.',
+      'You are building equity instead of paying someone else\’s mortgage — every payment is yours.',
       'DFW starter homes have appreciated 40–60% in 5 years, creating wealth while you sleep.',
-      'Your home shields you from Dallas\'s extreme heat and ice storms in ways a rental cannot.',
+      'Your home shields you from Dallas\’s extreme heat and ice storms in ways a rental cannot.',
     ],
     serving: 'Your starter home is becoming a financial springboard. Every year of ownership compounds.',
   },
@@ -16,7 +16,7 @@ const situations = [
     label: '🏡 Family Home',
     appreciations: [
       'Your home provides stability — school zones, neighborhoods, and routines that shape your children.',
-      'DFW family neighborhoods in McKinney and Prosper have some of America\'s top school districts.',
+      'DFW family neighborhoods in McKinney and Prosper have some of America\’s top school districts.',
       'The backyard, garage, and space are irreplaceable in an era of rising apartment rents.',
     ],
     serving: 'Your family home is doing the most important work a building can do — holding your world together.',
@@ -25,7 +25,7 @@ const situations = [
     id: 'investment-property',
     label: '📈 Investment Property',
     appreciations: [
-      'DFW is one of America\'s fastest-growing metros — your investment is in the right market.',
+      'DFW is one of America\’s fastest-growing metros — your investment is in the right market.',
       'Rental demand is at record highs across DFW suburbs, keeping your occupancy strong.',
       'Texas has no state income tax, maximizing your net return vs. other states.',
     ],

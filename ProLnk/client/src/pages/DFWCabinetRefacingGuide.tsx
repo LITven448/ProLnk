@@ -38,7 +38,7 @@ const kitchenSizes = ['Small (< 150 sq ft)', 'Medium (150–300 sq ft)', 'Large 
 const humidityTips = [
   { issue: 'Swollen drawer fronts', cause: 'DFW summer humidity warps MDF doors', fix: 'Upgrade to solid wood or thermofoil on reface' },
   { issue: 'Peeling veneer', cause: 'Glue bond fails in high-humidity months', fix: 'Use moisture-resistant adhesive, seal all edges' },
-  { issue: 'Warped cabinet boxes', cause: 'Particleboard soaks up moisture under sink', fix: 'Replace wet boxes before refacing — don\'t cover damage' },
+  { issue: 'Warped cabinet boxes', cause: 'Particleboard soaks up moisture under sink', fix: 'Replace wet boxes before refacing — don\’t cover damage' },
   { issue: 'Paint bubbling or cracking', cause: 'Humidity + heat cycles stress latex paint', fix: 'Use oil-based primer and cabinet-grade paint' },
 ];
 

@@ -29,7 +29,7 @@ function getRecommendation(homeType: string, familySize: number, budget: string)
   } else if (hasSlab) {
     type = 'Underground In-Yard Safe Room';
     cost = '$5,500–$8,500';
-    notes = 'Pre-cast concrete underground units installed in yard. Provides superior protection but requires drainage consideration — DFW\'s clay soil and flash flood risk requires proper sump installation.';
+    notes = 'Pre-cast concrete underground units installed in yard. Provides superior protection but requires drainage consideration — DFW\’s clay soil and flash flood risk requires proper sump installation.';
     grantEligible = true;
   } else {
     type = 'Above-Ground Safe Room (Interior Reinforced Room)';
@@ -70,10 +70,10 @@ export default function DFWStormShelterGuide() {
           {[
             { icon: '🌪️', title: 'DFW Tornado Alley Risk', body: 'The DFW metroplex has experienced direct hits from EF3+ tornadoes in Garland (2015), Dallas (2019), and Rowlett. Peak season is March–June, with a secondary peak in October. Warning time averages 13 minutes — a shelter must be accessible within seconds.' },
             { icon: '✅', title: 'FEMA-Rated vs Non-Rated', body: 'FEMA P-361 and ICC 500 are the governing standards. A certified safe room withstands 250 mph winds and debris impact from a 15-lb 2x4 fired at 100 mph. Non-rated "storm closets" offer NO certified protection. Always verify certification before purchase.' },
-            { icon: '⬇️', title: 'Underground vs Above-Ground', body: 'Underground units offer maximum protection and natural temperature control — but DFW\'s clay soil and flash flooding risk requires French drain or sump pump addition ($800–$1,500). Above-ground garage units are faster to access and cost less, with equivalent FEMA certification.' },
+            { icon: '⬇️', title: 'Underground vs Above-Ground', body: 'Underground units offer maximum protection and natural temperature control — but DFW\’s clay soil and flash flooding risk requires French drain or sump pump addition ($800–$1,500). Above-ground garage units are faster to access and cost less, with equivalent FEMA certification.' },
             { icon: '🚗', title: 'Garage vs Interior Room', body: 'Garage installations are the most common in DFW — easy slab anchoring, quick access from carport entry. Interior closet reinforcement costs less but may require structural modifications. Avoid bathrooms on exterior walls — windows are a debris hazard.' },
             { icon: '💰', title: 'Cost: $3,000–$8,000 Installed', body: 'Above-ground pre-built unit (garage): $2,800–$4,500 installed. Underground in-yard unit: $5,000–$8,500 installed. Interior safe room (reinforced room): $3,500–$6,000. All prices include installation, anchoring, and basic ventilation.' },
-            { icon: '🏛️', title: 'FEMA Grants Available in TX', body: 'FEMA\'s BRIC (Building Resilient Infrastructure and Communities) and HMGP programs provide grants to Texas homeowners for storm shelters. The Texas Division of Emergency Management administers local awards — typical individual grants cover $3,000–$4,000 of installed cost. Apply through your county.' },
+            { icon: '🏛️', title: 'FEMA Grants Available in TX', body: 'FEMA\’s BRIC (Building Resilient Infrastructure and Communities) and HMGP programs provide grants to Texas homeowners for storm shelters. The Texas Division of Emergency Management administers local awards — typical individual grants cover $3,000–$4,000 of installed cost. Apply through your county.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#0f2340', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '1.25rem' }}>
               <div style={{ fontSize: '1.6rem', marginBottom: '0.5rem' }}>{card.icon}</div>

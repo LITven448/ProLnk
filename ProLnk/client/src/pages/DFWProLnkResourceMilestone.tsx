@@ -5,7 +5,7 @@ const discoveryPaths = [
   { id: 'friend', label: '👥 Friend or Neighbor', desc: 'Someone in your network shared ProLnk' },
   { id: 'social', label: '📱 Social Media', desc: 'You found us on Facebook, Instagram, or Nextdoor' },
   { id: 'pro', label: '🔧 From a Contractor', desc: 'A pro you hired mentioned ProLnk' },
-  { id: 'direct', label: '🏠 I'm Already a Member', desc: 'You've been with ProLnk from the start' },
+  { id: 'direct', label: '🏠 I’m Already a Member', desc: 'You’ve been with ProLnk from the start' },
 ];
 
 const highlights: Record<string, { icon: string; title: string; desc: string }[]> = {
@@ -25,14 +25,14 @@ const highlights: Record<string, { icon: string; title: string; desc: string }[]
     { icon: '🔥', title: 'Summer Survival Pack', desc: 'AC prep, foundation watering, and heat-proofing your DFW home.' },
   ],
   pro: [
-    { icon: '🔧', title: 'Understanding Contractor Quotes', desc: 'Contractor-recommended reading — how to evaluate bids, what's standard, what's not.' },
+    { icon: '🔧', title: 'Understanding Contractor Quotes', desc: 'Contractor-recommended reading — how to evaluate bids, what’s standard, what’s not.' },
     { icon: '✅', title: 'ProLnk Vetting Standards', desc: 'How we screen every pro in our network — the standards your contractor meets.' },
     { icon: '🏗️', title: 'Project Planning Guides', desc: 'Pre-project checklists your contractor wants you to have read before work begins.' },
   ],
   direct: [
-    { icon: '🏆', title: 'Member Milestones', desc: 'The full story of ProLnk's growth — built by and for DFW homeowners like you.' },
+    { icon: '🏆', title: 'Member Milestones', desc: 'The full story of ProLnk’s growth — built by and for DFW homeowners like you.' },
     { icon: '🌐', title: 'The 2,700 Resource Library', desc: 'You helped make this possible. Every guide exists because members like you asked for it.' },
-    { icon: '🚀', title: 'What's Coming Next', desc: 'Mobile app, AI matching, Home Health Vault expansion — the roadmap only members see.' },
+    { icon: '🚀', title: 'What’s Coming Next', desc: 'Mobile app, AI matching, Home Health Vault expansion — the roadmap only members see.' },
   ],
 };
 

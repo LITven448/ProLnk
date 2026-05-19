@@ -25,14 +25,14 @@ export default function DFWContingencyGuide() {
       name: 'Appraisal Contingency',
       icon: '📊',
       protects: 'Lets you exit if home appraises below purchase price',
-      keep: 'If you cannot or won\'t cover an appraisal gap in cash',
+      keep: 'If you cannot or won\’t cover an appraisal gap in cash',
       waive: 'Only if you have cash to cover gap AND want to compete strongly',
       dfwNote: 'DFW hot pockets: waiving appraisal contingency is increasingly common and expected',
     },
     {
       name: 'Home Sale Contingency',
       icon: '🏠',
-      protects: 'Lets you exit if your current home doesn\'t sell in time',
+      protects: 'Lets you exit if your current home doesn\’t sell in time',
       keep: 'If you cannot qualify for two mortgages simultaneously',
       waive: 'Never waive — it protects you from financial disaster',
       dfwNote: 'DFW sellers HATE home sale contingencies — they will choose another buyer. Use bridge loan instead.',
@@ -59,7 +59,7 @@ export default function DFWContingencyGuide() {
       headline: '💼 Investor Strategy: Waive Most — Compete Aggressively',
       items: [
         { contingency: 'Financing', action: 'WAIVE', note: 'Cash offer — no financing needed' },
-        { contingency: 'Inspection', action: 'INFORMATIONAL ONLY', note: 'Know what you\'re buying, no repair demands' },
+        { contingency: 'Inspection', action: 'INFORMATIONAL ONLY', note: 'Know what you\’re buying, no repair demands' },
         { contingency: 'Appraisal', action: 'WAIVE', note: 'Cash buyers set their own price ceiling' },
         { contingency: 'Home Sale', action: 'N/A', note: 'Not applicable for investors' },
       ],
@@ -69,7 +69,7 @@ export default function DFWContingencyGuide() {
       items: [
         { contingency: 'Financing', action: 'KEEP', note: 'Critical — do not risk your earnest money' },
         { contingency: 'Inspection', action: 'KEEP FULL RIGHTS', note: 'First-time buyers especially need inspection protection' },
-        { contingency: 'Appraisal', action: 'KEEP', note: 'Don\'t commit cash you don\'t have for a gap' },
+        { contingency: 'Appraisal', action: 'KEEP', note: 'Don\’t commit cash you don\’t have for a gap' },
         { contingency: 'Home Sale', action: hasHome ? 'KEEP — but get bridge loan quote' : 'N/A', note: hasHome ? 'Sellers hate it — explore bridge loan to avoid this contingency' : '' },
       ],
     };

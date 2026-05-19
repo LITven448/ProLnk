@@ -4,7 +4,7 @@ const homeTypes = ['1950s Slab', '1970s Pier & Beam', '1990s Two-Story', '2000s+
 
 const baseData = {
   inspections: ['Inspect after every hail storm — even small hail damages shingles', 'Professional inspection: spring (post-storm season) + fall (pre-winter)', 'Binocular check from ground: look for missing, cracked, or curling shingles'],
-  hailProtocol: ['After hail: photograph damage immediately for insurance', 'File claim within 1 year of storm event (TX standard)', 'Don\'t sign with storm-chaser contractors at your door — get 3 bids'],
+  hailProtocol: ['After hail: photograph damage immediately for insurance', 'File claim within 1 year of storm event (TX standard)', 'Don\’t sign with storm-chaser contractors at your door — get 3 bids'],
   vetting: ['Verify roofing contractor with RCAT (Roofing Contractors Assoc of TX)', 'Require proof of insurance: $1M liability + workers comp', 'Never pay more than 10% deposit before work begins'],
   warranty: ['Manufacturer warranty (shingles): 25–50 years for quality products', 'Workmanship warranty: require minimum 5-year from contractor', 'Warranty transfers with home sale — get documentation at closing'],
   replacement: ['20–25 years: inspect annually, budget for replacement', '3 or more layers of shingles: tear-off required by code', 'Class 4 impact-resistant shingles: qualify for TX insurance discount'],

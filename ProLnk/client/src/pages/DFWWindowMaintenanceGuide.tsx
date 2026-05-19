@@ -20,7 +20,7 @@ export default function DFWWindowMaintenanceGuide() {
     const checklist: string[] = [
       'Clean tracks with vacuum + damp cloth — DFW dust accumulates in window tracks and jams operation',
       'Inspect exterior caulk at frame perimeter — DFW heat degrades caulk faster; replace cracked/missing caulk annually',
-      'Check weatherstripping seal — squeeze it; if it doesn\'t spring back, replace (DFW heat hardens seals in 3–5 years)',
+      'Check weatherstripping seal — squeeze it; if it doesn\’t spring back, replace (DFW heat hardens seals in 3–5 years)',
       'Test operation: open and close each window fully — DFW summer heat can warp vinyl and aluminum frames',
     ];
 
@@ -60,8 +60,8 @@ export default function DFWWindowMaintenanceGuide() {
         <div style={{ display: 'grid', gap: 20, marginBottom: 36 }}>
           {[
             { icon: '🌅', title: 'DFW UV Fades Interior Surfaces', body: 'DFW UV index peaks at 11 from May–September — comparable to South Florida. Unprotected windows allow UV to fade hardwood floors, furniture, and art within 2–3 years. Low-E glass blocks 95% of UV. Retrofit window film ($2–$8/sq ft) is a cost-effective upgrade for existing double-pane windows.' },
-            { icon: '🌡️', title: 'Weatherseal Fails Faster in DFW Heat', body: 'Vinyl weatherstripping rated for -40°F to 180°F hardens and loses seal in DFW\'s 150°F+ surface temps. Replace weatherstripping every 3–5 years vs 7–10 in northern climates. Test by running your hand along the closed window — airflow = seal failure = 15–25% HVAC energy loss.' },
-            { icon: '🔧', title: 'Exterior Caulk Requires Annual Inspection', body: 'DFW\'s thermal cycling (20°F winters, 110°F summers) puts extreme stress on caulk joints. Inspect every exterior window frame perimeter each spring. Replace any cracked, missing, or non-adhering caulk with paintable silicone caulk. This is a $200 annual job that prevents $5,000+ water damage repairs.' },
+            { icon: '🌡️', title: 'Weatherseal Fails Faster in DFW Heat', body: 'Vinyl weatherstripping rated for -40°F to 180°F hardens and loses seal in DFW\’s 150°F+ surface temps. Replace weatherstripping every 3–5 years vs 7–10 in northern climates. Test by running your hand along the closed window — airflow = seal failure = 15–25% HVAC energy loss.' },
+            { icon: '🔧', title: 'Exterior Caulk Requires Annual Inspection', body: 'DFW\’s thermal cycling (20°F winters, 110°F summers) puts extreme stress on caulk joints. Inspect every exterior window frame perimeter each spring. Replace any cracked, missing, or non-adhering caulk with paintable silicone caulk. This is a $200 annual job that prevents $5,000+ water damage repairs.' },
             { icon: '💨', title: 'Track Cleaning for DFW Dust', body: 'DFW red clay dust and pollen clog window tracks, degrade weatherstripping, and cause windows to stick. Clean tracks with a vacuum attachment monthly, followed by damp cloth. Use silicone lubricant spray (not petroleum-based) on vinyl tracks. Sticking windows often mean tracks, not mechanical failure.' },
             { icon: '🌀', title: 'DFW Heat Warps Frames', body: 'Aluminum frames conduct heat rapidly — interior surface temps can reach 140°F. This warps frames over time, compromising the seal. Vinyl frames expand and contract 3x more than wood — inspect for bowing on south and west-facing windows annually. Sticking + drafts on south-facing windows = warped frame.' },
           ].map(card => (

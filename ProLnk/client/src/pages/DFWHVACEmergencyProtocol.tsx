@@ -7,7 +7,7 @@ const problems = [
   'Water dripping/flooding inside',
   'Strange loud noise from unit',
   'Ice/frost on unit or lines',
-  'House won\'t cool below 80°F',
+  'House won\’t cool below 80°F',
   'Burning smell from vents',
 ];
 
@@ -42,7 +42,7 @@ const protocols: Record<string, { steps: { step: number; action: string; why: st
       { step: 5, action: 'If freezing recurs, call for refrigerant check', why: 'Repeat freeze-ups = low refrigerant = slow leak somewhere in system', diy: false },
     ],
     verdict: 'wait',
-    callNote: 'Schedule within 48 hours if freeze-up recurs after filter change. Not an emergency unless it\'s above 95°F and you have no backup cooling.',
+    callNote: 'Schedule within 48 hours if freeze-up recurs after filter change. Not an emergency unless it\’s above 95°F and you have no backup cooling.',
   },
   'AC running but no cold air': {
     steps: [
@@ -88,13 +88,13 @@ const protocols: Record<string, { steps: { step: number; action: string; why: st
     verdict: 'same-day',
     callNote: 'Warm air in DFW July/August with indoor temps climbing above 85°F = emergency call priority.',
   },
-  'House won\'t cool below 80°F': {
+  'House won\’t cool below 80°F': {
     steps: [
       { step: 1, action: 'Check thermostat set point and confirm COOL mode', why: 'Confirm system is actually trying to reach your target temp', diy: true },
       { step: 2, action: 'Check all vents are open and unobstructed', why: 'Furniture blocking vents reduces cooling capacity 10-20%', diy: true },
       { step: 3, action: 'Check air filter condition', why: 'Dirty filter reduces airflow and cooling capacity significantly', diy: true },
       { step: 4, action: 'Note outdoor temperature — above 105°F = normal struggle', why: 'DFW systems are typically designed for 95-100°F design day', diy: true },
-      { step: 5, action: 'If outdoor temp is under 100°F and house won\'t cool, call for service', why: 'Refrigerant leak or failing compressor likely — schedule diagnostic', diy: false },
+      { step: 5, action: 'If outdoor temp is under 100°F and house won\’t cool, call for service', why: 'Refrigerant leak or failing compressor likely — schedule diagnostic', diy: false },
     ],
     verdict: 'wait',
     callNote: 'Schedule within 2-3 days unless temps inside exceed 85°F with vulnerable occupants. This is typically not an emergency.',

@@ -56,7 +56,7 @@ function getBalanceDiagnosis(homeType: string, complaint: string) {
       severity: 'High',
       color: '#f97316',
       issue: 'Unbalanced system pulling humid outside air into building',
-      detail: 'DFW summer dewpoints regularly hit 70°F+. A negative-pressure home actively pulls this humid air in through the envelope, overwhelming the AC\'s dehumidification capacity.',
+      detail: 'DFW summer dewpoints regularly hit 70°F+. A negative-pressure home actively pulls this humid air in through the envelope, overwhelming the AC\’s dehumidification capacity.',
       solutions: [
         'Balance supply/return CFM within 5% for humidity control',
         'Ensure all return ducts are sealed (mastic, not tape)',

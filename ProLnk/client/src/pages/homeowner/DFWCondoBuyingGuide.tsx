@@ -50,7 +50,7 @@ export default function DFWCondoBuyingGuide() {
           <div style={{ display: 'grid', gap: 16 }}>
             {[
               { title: 'HOA Financial Health', detail: 'Request last 3 years of financials. Low reserves = special assessments ahead. A reserve fund below 50% funded is a red flag.' },
-              { title: 'HOA Meeting Minutes', detail: 'What problems are being discussed? Deferred maintenance? Litigation? A quiet HOA isn't always a healthy one.' },
+              { title: 'HOA Meeting Minutes', detail: 'What problems are being discussed? Deferred maintenance? Litigation? A quiet HOA isn’t always a healthy one.' },
               { title: 'Rental Restrictions', detail: 'Many DFW condo associations prohibit rentals under 6 months — killing Airbnb. Some restrict rentals entirely. Check before you assume.' },
               { title: 'Pet Restrictions', detail: 'More restrictive than single-family HOAs. Breed bans, weight limits (often 25 lbs), and pet deposits are common.' },
             ].map(item => (
@@ -81,7 +81,7 @@ export default function DFWCondoBuyingGuide() {
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 20px', color: '#f1f5f9' }}>🏛️ FHA/VA Condo Approval</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: '0 0 16px' }}>
-            Not all condos are FHA or VA approved. If you're using an FHA or VA loan, the entire condo community must be on HUD's approved list — not just your unit. Check <strong style={{ color: '#818cf8' }}>HUD.gov/program_offices/housing/sfh/reo/condos</strong> before you fall in love with a unit.
+            Not all condos are FHA or VA approved. If you're using an FHA or VA loan, the entire condo community must be on HUD’s approved list — not just your unit. Check <strong style={{ color: '#818cf8' }}>HUD.gov/program_offices/housing/sfh/reo/condos</strong> before you fall in love with a unit.
           </p>
         </div>
 

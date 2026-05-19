@@ -10,7 +10,7 @@ const topFacts = [
   { num: '07', fact: 'West-facing DFW homes receive 3-4 hours of direct afternoon sun — exterior solar screens are the highest-ROI improvement for summer bills.' },
   { num: '08', fact: 'The 2021 polar vortex exposed that most DFW HVAC systems are not rated for sustained sub-20F operation — emergency heat backup is essential.' },
   { num: '09', fact: 'Whole-house fans deliver the best ROI in DFW shoulder seasons — 90+ nights per year fall below 70F, enabling free cooling that delays AC runtime.' },
-  { num: '10', fact: 'System sizing matters most in DFW — an oversized AC short-cycles and fails to dehumidify, creating mold risk in DFW\'s humid spring and fall.' },
+  { num: '10', fact: 'System sizing matters most in DFW — an oversized AC short-cycles and fails to dehumidify, creating mold risk in DFW\’s humid spring and fall.' },
 ];
 
 const topActions = [

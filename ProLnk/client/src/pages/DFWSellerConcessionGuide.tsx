@@ -14,22 +14,22 @@ export default function DFWSellerConcessionGuide() {
 
     if (requestType === 'closing-costs') {
       strategy = marketCondition === 'buyers'
-        ? 'In a DFW buyer\'s market, closing cost credits are standard. Offer the credit rather than dropping price — it\'s the same money to you, but keeps your public sale price higher (matters for appraisals and comps).'
-        : 'In a seller\'s market, resist closing cost credits — counter by holding price and letting buyer use their own funds. If you must concede, cap it at 2%.';
+        ? 'In a DFW buyer\’s market, closing cost credits are standard. Offer the credit rather than dropping price — it\’s the same money to you, but keeps your public sale price higher (matters for appraisals and comps).'
+        : 'In a seller\’s market, resist closing cost credits — counter by holding price and letting buyer use their own funds. If you must concede, cap it at 2%.';
       comparison = [
         { option: 'Closing Cost Credit (2%)', cost: '$8,000 on $400K home', pros: 'Keeps sale price high, helps buyer qualify', cons: 'Cash out of proceeds at closing' },
         { option: 'Price Reduction (2%)', cost: '$8,000 on $400K home', pros: 'Simpler negotiation', cons: 'Lowers comp value for neighborhood, same net' },
       ];
     } else if (requestType === 'rate-buydown') {
-      strategy = 'Rate buydowns are extremely popular in 2024–2026 DFW due to elevated interest rates. A 2-1 buydown ($6,000–$10,000) can reduce buyer\'s monthly payment by $300–400/month for first two years — very compelling. Often more effective than a price cut at the same cost.';
+      strategy = 'Rate buydowns are extremely popular in 2024–2026 DFW due to elevated interest rates. A 2-1 buydown ($6,000–$10,000) can reduce buyer\’s monthly payment by $300–400/month for first two years — very compelling. Often more effective than a price cut at the same cost.';
       comparison = [
-        { option: '2-1 Temporary Buydown', cost: '$6,000–$10,000', pros: 'Lowers buyer\'s payment yr 1–2, very marketable', cons: 'Rate returns to full rate in year 3' },
+        { option: '2-1 Temporary Buydown', cost: '$6,000–$10,000', pros: 'Lowers buyer\’s payment yr 1–2, very marketable', cons: 'Rate returns to full rate in year 3' },
         { option: 'Permanent Rate Buydown (1pt)', cost: '~$5,000/point', pros: 'Permanent payment reduction', cons: 'More expensive, less buyer preference' },
         { option: 'Equivalent Price Reduction', cost: 'Same dollar amount', pros: 'Simpler', cons: 'Lower comp value, less buyer impact on monthly payment' },
       ];
     } else if (requestType === 'repair-credit') {
       strategy = motivation === 'close-fast'
-        ? 'Offer repair credits rather than doing the work yourself. It closes faster, avoids contractor scheduling delays, and lets the buyer choose their own vendors. Price the credit at 125% of your repair estimate to account for buyer\'s premium.'
+        ? 'Offer repair credits rather than doing the work yourself. It closes faster, avoids contractor scheduling delays, and lets the buyer choose their own vendors. Price the credit at 125% of your repair estimate to account for buyer\’s premium.'
         : 'If time permits, fix before listing. DFW buyers discount repair credits by 2x — they assume work will cost more than quoted. A $5,000 repair credit reduces offers by $8,000–10,000 in negotiation. Fix it, list it, and eliminate the negotiation lever.';
       comparison = [
         { option: 'Fix Before Listing', cost: 'Actual repair cost', pros: 'Eliminates negotiation leverage, cleaner inspection', cons: 'Time and contractor coordination required' },
@@ -39,7 +39,7 @@ export default function DFWSellerConcessionGuide() {
     } else {
       strategy = 'Home warranties ($400–$700/year) are low-cost, high-value concessions in DFW. They reduce buyer anxiety about unknown repairs and can unlock deals stuck over inspection concerns. Offer a 1-year home warranty rather than a repair credit when issues are minor.';
       comparison = [
-        { option: 'Home Warranty (1 year)', cost: '$400–$700', pros: 'Low cost, high perceived value, fast to execute', cons: 'Doesn\'t address structural or major system issues' },
+        { option: 'Home Warranty (1 year)', cost: '$400–$700', pros: 'Low cost, high perceived value, fast to execute', cons: 'Doesn\’t address structural or major system issues' },
         { option: 'Repair Credit', cost: 'Negotiated amount', pros: 'Flexible amount', cons: 'Can re-open negotiation spiral' },
       ];
     }

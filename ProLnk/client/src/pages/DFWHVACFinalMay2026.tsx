@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const situations = [
-  { id: 'no-service', label: 'Haven't had HVAC service in 12+ months', priority: 'URGENT: Book tune-up now — May window closing fast. Summer premium pricing starts June 1.' },
-  { id: 'recent-service', label: 'Had service within last 6 months', priority: 'You're set for AC season. Check filter monthly. Monitor for unusual sounds or warm spots.' },
+  { id: 'no-service', label: 'Haven’t had HVAC service in 12+ months', priority: 'URGENT: Book tune-up now — May window closing fast. Summer premium pricing starts June 1.' },
+  { id: 'recent-service', label: 'Had service within last 6 months', priority: 'You’re set for AC season. Check filter monthly. Monitor for unusual sounds or warm spots.' },
   { id: 'old-system', label: 'System is 12+ years old', priority: 'Pre-summer inspection critical. SEER2 upgrades now qualify for federal tax credits through 2026.' },
-  { id: 'new-system', label: 'New system (under 3 years)', label2: '', priority: 'Low risk. Confirm warranty is registered. Change filter. You're ready for summer.' },
-  { id: 'issues', label: 'Noticing issues (warm rooms, noise, high bills)', priority: 'Don't wait. DFW techs book out 2–3 weeks in June. Get diagnosed in May before it gets worse.' },
+  { id: 'new-system', label: 'New system (under 3 years)', label2: '', priority: 'Low risk. Confirm warranty is registered. Change filter. You’re ready for summer.' },
+  { id: 'issues', label: 'Noticing issues (warm rooms, noise, high bills)', priority: 'Don’t wait. DFW techs book out 2–3 weeks in June. Get diagnosed in May before it gets worse.' },
 ];
 
 export default function DFWHVACFinalMay2026() {
@@ -28,8 +28,8 @@ export default function DFWHVACFinalMay2026() {
 
         <div style={{ display: 'grid', gap: 12, marginBottom: 40 }}>
           {[
-            { icon: '📅', title: 'Tune-Up Window Closing', body: 'Most DFW HVAC companies book out 2–3 weeks by late May. If you wait until June, you\'re paying emergency rates and waiting in the heat.' },
-            { icon: '⚡', title: 'SEER2 Now Required', body: 'All new HVAC systems installed in Texas must meet SEER2 efficiency standards. If you\'re replacing, your contractor must install SEER2-rated equipment.' },
+            { icon: '📅', title: 'Tune-Up Window Closing', body: 'Most DFW HVAC companies book out 2–3 weeks by late May. If you wait until June, you\’re paying emergency rates and waiting in the heat.' },
+            { icon: '⚡', title: 'SEER2 Now Required', body: 'All new HVAC systems installed in Texas must meet SEER2 efficiency standards. If you\’re replacing, your contractor must install SEER2-rated equipment.' },
             { icon: '💨', title: 'May = High Pollen = Dirty Filters', body: 'North Texas pollen is at its peak in May. Check your filter now — a clogged filter in 95°F weather can cause system failure.' },
             { icon: '💧', title: 'Drain Line Check Before Humidity', body: 'Summer humidity is starting. A clogged condensate drain will shut your system down. Flush it with vinegar now.' },
           ].map(card => (

@@ -10,7 +10,7 @@ export default function DFWProLnk4700Pages2026() {
         { label: '🌡️ HVAC Library (900+ pages)', desc: 'Start with seasonal guides: spring tune-up, summer cooling efficiency, and DFW humidity control' },
         { label: '💧 Plumbing & Water (600+ pages)', desc: 'DFW water quality, hard water treatment, and emergency shutoff guides are most-read' },
         { label: '🏗️ Foundation & Structure (400+ pages)', desc: 'DFW expansive clay soil is unique — foundation movement guides are essential reading' },
-        { label: '⚡ Electrical Safety (300+ pages)', desc: 'Panel upgrades, EV charger prep, and GFCI requirements for DFW's newer homes' },
+        { label: '⚡ Electrical Safety (300+ pages)', desc: 'Panel upgrades, EV charger prep, and GFCI requirements for DFW’s newer homes' },
         { label: '🔗 ProLnk Homeowner Hub', desc: 'Join the waitlist and access your personalized DFW home maintenance calendar' },
       ],
     },

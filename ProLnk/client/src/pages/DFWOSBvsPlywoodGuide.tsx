@@ -9,7 +9,7 @@ function getMaterialRecommendation(application: string, exposure: string) {
       recommendation: 'NEITHER (for structural use)',
       color: '#FF4444',
       detail: 'Neither standard OSB nor plywood should be left permanently exposed to DFW weather without cladding or a protective finish. OSB degrades rapidly when wet. Plywood fares better but still fails without protection.',
-      dfwNote: 'DFW\'s heat-humidity swing causes even pressure-treated plywood to delaminate within 5–8 years if not sealed and covered.',
+      dfwNote: 'DFW\’s heat-humidity swing causes even pressure-treated plywood to delaminate within 5–8 years if not sealed and covered.',
       cost: 'If exposed structure is unavoidable: use ACX or MDO plywood with exterior primer + paint. Add $0.80–$1.50/sq ft vs standard materials.',
       winner: 'Plywood (with finishing)',
     };
@@ -18,7 +18,7 @@ function getMaterialRecommendation(application: string, exposure: string) {
     return {
       recommendation: 'OSB IS STANDARD — PLYWOOD IS PREMIUM',
       color: '#F5E642',
-      detail: 'OSB 7/16" is the DFW standard for roof decking and meets code. It performs well when dry. However, DFW\'s humidity and heat mean that in any re-roof, plywood decking adds longevity and resistance to humidity-driven swelling.',
+      detail: 'OSB 7/16" is the DFW standard for roof decking and meets code. It performs well when dry. However, DFW\’s humidity and heat mean that in any re-roof, plywood decking adds longevity and resistance to humidity-driven swelling.',
       dfwNote: 'OSB swells at edges when exposed during re-roofing. If your roofer removes old shingles during a rainy DFW spring day, OSB decking can swell measurably before new shingles go on.',
       cost: 'OSB 7/16": $1.20–$1.80/sq ft installed. Plywood 15/32": $1.80–$2.60/sq ft installed. Upgrade cost on 2,000 sq ft roof: ~$1,200–$1,600.',
       winner: 'Plywood (if budget allows)',
@@ -28,8 +28,8 @@ function getMaterialRecommendation(application: string, exposure: string) {
     return {
       recommendation: 'PLYWOOD STRONGLY PREFERRED',
       color: '#00CC66',
-      detail: 'DFW\'s expansive clay soils cause foundation movement that stresses subfloor connections repeatedly. Plywood\'s cross-laminated structure handles repeated loading better than OSB, which can develop fastener pull-through and edge swelling over time.',
-      dfwNote: 'After a plumbing leak — common in DFW\'s aging cast-iron supply lines — OSB subfloor can delaminate significantly faster than plywood. Plywood allows more time to dry and recover.',
+      detail: 'DFW\’s expansive clay soils cause foundation movement that stresses subfloor connections repeatedly. Plywood\’s cross-laminated structure handles repeated loading better than OSB, which can develop fastener pull-through and edge swelling over time.',
+      dfwNote: 'After a plumbing leak — common in DFW\’s aging cast-iron supply lines — OSB subfloor can delaminate significantly faster than plywood. Plywood allows more time to dry and recover.',
       cost: 'OSB 23/32": $1.40–$1.90/sq ft installed. Plywood 3/4" T&G: $2.00–$2.80/sq ft installed.',
       winner: 'Plywood (clear winner for DFW)',
     };
@@ -47,7 +47,7 @@ function getMaterialRecommendation(application: string, exposure: string) {
   return {
     recommendation: 'OSB IS FINE',
     color: '#00CC66',
-    detail: 'For interior and covered applications, OSB performs comparably to plywood at lower cost. DFW\'s interior climate-controlled environments do not stress OSB the way exterior humidity does.',
+    detail: 'For interior and covered applications, OSB performs comparably to plywood at lower cost. DFW\’s interior climate-controlled environments do not stress OSB the way exterior humidity does.',
     dfwNote: 'For garage shelving or interior utility uses, OSB is cost-effective and appropriate. Seal cut edges with wood sealer if any humidity is present.',
     cost: 'OSB: $0.70–$1.10/sq ft. Plywood: $1.20–$1.80/sq ft. Save 30–40% with OSB for interior applications.',
     winner: 'OSB (great value for interior)',
@@ -70,7 +70,7 @@ export default function DFWOSBvsPlywoodGuide() {
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '💧', title: 'How DFW Humidity Affects Each', body: 'OSB swells at edges when wet and does not fully recover dimensionally. Plywood\'s cross-laminated layers are more forgiving of moisture cycling. In DFW\'s summer humidity (60–80% RH), this difference matters for exposed or semi-exposed applications.' },
+            { icon: '💧', title: 'How DFW Humidity Affects Each', body: 'OSB swells at edges when wet and does not fully recover dimensionally. Plywood\’s cross-laminated layers are more forgiving of moisture cycling. In DFW\’s summer humidity (60–80% RH), this difference matters for exposed or semi-exposed applications.' },
             { icon: '🔥', title: 'Heat Performance', body: 'DFW attic temps exceed 150°F. Both materials perform similarly under dry heat. The risk is combined heat + moisture — common after a rain-interrupted roofing job or an AC condensate leak.' },
             { icon: '💰', title: 'Cost Reality in DFW', body: 'OSB is typically 25–40% cheaper than equivalent plywood. For most code-compliant applications, OSB is the contractor default. Plywood is the upgrade choice where moisture exposure is a real risk.' },
           ].map(c => (

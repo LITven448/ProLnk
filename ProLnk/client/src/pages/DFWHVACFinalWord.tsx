@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const stages: { id: string; label: string }[] = [
-  { id: 'new_homeowner', label: '🏠 I\'m a new DFW homeowner — just getting started' },
+  { id: 'new_homeowner', label: '🏠 I\’m a new DFW homeowner — just getting started' },
   { id: 'preventive', label: '🛡️ I already maintain my system — looking to optimize' },
   { id: 'aging_system', label: '⏳ My system is aging — preparing for replacement' },
-  { id: 'post_repair', label: '🔧 I just had a repair — wondering what\'s next' },
+  { id: 'post_repair', label: '🔧 I just had a repair — wondering what\’s next' },
   { id: 'post_install', label: '✅ I just got a new system — want to protect it' },
 ];
 
@@ -13,17 +13,17 @@ const finalWords: Record<string, { headline: string; truth: string; actions: str
     headline: 'The most important thing you can do right now is understand your system.',
     truth: 'DFW is one of the hardest climates in the country on HVAC equipment. A new homeowner who learns their system early — filter size, refrigerant type, service history — will spend thousands less over the next decade than one who waits for something to break.',
     actions: [
-      '📋 Find your system\'s model and serial number (on the outdoor unit)',
+      '📋 Find your system\’s model and serial number (on the outdoor unit)',
       '🗓️ Schedule a professional inspection before your first DFW summer',
       '🔍 Confirm your refrigerant type — R-22, R-410A, or new R-454B',
       '📱 Set a monthly filter change reminder for June–September',
-      '📁 Store your documents in ProLnk\'s Home Health Vault',
+      '📁 Store your documents in ProLnk\’s Home Health Vault',
     ],
-    promise: 'ProLnk\'s DFW HVAC network is here every season — from your first inspection to your first replacement.',
+    promise: 'ProLnk\’s DFW HVAC network is here every season — from your first inspection to your first replacement.',
   },
   preventive: {
-    headline: 'You\'re already winning — the final 20% is where most homeowners leave money on the table.',
-    truth: 'Preventive maintenance gets you 80% of the way. The final 20% is about optimizing for DFW\'s specific conditions: ERCOT peak demand management, R-410A phase-out awareness, smart thermostat integration, and knowing exactly when replacement economics beat repair costs.',
+    headline: 'You\’re already winning — the final 20% is where most homeowners leave money on the table.',
+    truth: 'Preventive maintenance gets you 80% of the way. The final 20% is about optimizing for DFW\’s specific conditions: ERCOT peak demand management, R-410A phase-out awareness, smart thermostat integration, and knowing exactly when replacement economics beat repair costs.',
     actions: [
       '⚡ Enroll your smart thermostat in Oncor or CoServ demand response for bill credits',
       '🌡️ Pre-cool your home to 72°F before 3pm on ERCOT high-demand days',
@@ -31,19 +31,19 @@ const finalWords: Record<string, { headline: string; truth: string; actions: str
       '🔄 Ask your tech about R-454B-compatible systems for your next replacement',
       '💰 Calculate your 5-year repair vs. replace number if system is over 10 years old',
     ],
-    promise: 'You\'re a model DFW homeowner. ProLnk exists to connect people like you with the pros who match your standard.',
+    promise: 'You\’re a model DFW homeowner. ProLnk exists to connect people like you with the pros who match your standard.',
   },
   aging_system: {
-    headline: 'Don\'t wait for failure. Plan your replacement on your timeline, not the heatwave\'s.',
+    headline: 'Don\’t wait for failure. Plan your replacement on your timeline, not the heatwave\’s.',
     truth: 'The average DFW homeowner spends $2,000–$4,000 extra on HVAC replacement when they wait for emergency failure in summer. R-410A phase-out is accelerating that cost. The best gift you can give yourself is a planned spring replacement before the system decides for you.',
     actions: [
       '📅 Target spring installation (March–April) — best pricing and availability',
-      '💵 Get 3 quotes now, even if you\'re not ready to buy — know your number',
+      '💵 Get 3 quotes now, even if you\’re not ready to buy — know your number',
       '🧾 Check for Oncor/CoServ rebates before current programs expire',
       '📐 Ask each contractor to do a Manual J load calculation — not just a guess',
       '🔋 Consider adding a communicating thermostat to your new system for long-term efficiency',
     ],
-    promise: 'ProLnk helps DFW homeowners replace on their terms — not in a panic. We\'ll have 3 vetted quotes to you within 24 hours.',
+    promise: 'ProLnk helps DFW homeowners replace on their terms — not in a panic. We\’ll have 3 vetted quotes to you within 24 hours.',
   },
   post_repair: {
     headline: 'A repair bought you time. Use it wisely.',
@@ -55,7 +55,7 @@ const finalWords: Record<string, { headline: string; truth: string; actions: str
       '💧 Watch for new symptoms: unusual sounds, uneven cooling, humidity spikes',
       '⚡ Monitor your energy bill — inefficiency often follows aging compressor repairs',
     ],
-    promise: 'ProLnk\'s DFW pros give honest assessments — not repair upsells. We\'ll tell you when replacement is smarter.',
+    promise: 'ProLnk\’s DFW pros give honest assessments — not repair upsells. We\’ll tell you when replacement is smarter.',
   },
   post_install: {
     headline: 'Your new system is an investment. The next 3 months determine the next 15 years.',
@@ -64,10 +64,10 @@ const finalWords: Record<string, { headline: string; truth: string; actions: str
       '📝 Register your warranty within 30 days — many require online registration',
       '🔍 Schedule a 30-day post-install check — confirm refrigerant charge and airflow',
       '📅 Set monthly filter reminders June–September; every 60 days in off-season',
-      '📱 Connect your smart thermostat to your utility\'s demand response program',
+      '📱 Connect your smart thermostat to your utility\’s demand response program',
       '📁 Store your installation invoice, model numbers, and warranty in Home Health Vault',
     ],
-    promise: 'ProLnk tracks your system from day one. We\'ll remind you when it\'s time for maintenance — and reach vetted pros when you need them.',
+    promise: 'ProLnk tracks your system from day one. We\’ll remind you when it\’s time for maintenance — and reach vetted pros when you need them.',
   },
 };
 
@@ -90,9 +90,9 @@ export default function DFWHVACFinalWord() {
             {[
               { icon: '🗓️', text: 'Maintenance is scheduled, not reactive. Filter changes happen before the first 90°F day.' },
               { icon: '📋', text: 'System history is documented. Model, serial, every service visit, every repair.' },
-              { icon: '💰', text: 'Replacement is planned. You know your system\'s age, refrigerant type, and your 5-year number.' },
+              { icon: '💰', text: 'Replacement is planned. You know your system\’s age, refrigerant type, and your 5-year number.' },
               { icon: '🤝', text: 'You have a trusted DFW HVAC pro — not a search-engine-at-midnight emergency contact.' },
-              { icon: '🏡', text: 'Your home stays comfortable through DFW\'s worst summers without drama or emergency bills.' },
+              { icon: '🏡', text: 'Your home stays comfortable through DFW\’s worst summers without drama or emergency bills.' },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div style={{ fontSize: 18, flexShrink: 0 }}>{item.icon}</div>

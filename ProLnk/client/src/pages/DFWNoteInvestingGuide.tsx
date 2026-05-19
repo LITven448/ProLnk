@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const NOTE_TYPES = [
-  { icon: '✅', label: 'Performing Notes', detail: 'Borrower is current on payments. Lower yield (6–10%) but predictable income stream. Like buying a landlord\'s mailbox — the tenant is already paying.' },
+  { icon: '✅', label: 'Performing Notes', detail: 'Borrower is current on payments. Lower yield (6–10%) but predictable income stream. Like buying a landlord\’s mailbox — the tenant is already paying.' },
   { icon: '⚠️', label: 'Non-Performing Notes (NPNs)', detail: 'Borrower is delinquent. Purchased at steep discounts (40–70 cents on the dollar). Higher yield potential through loan modification, deed-in-lieu, or foreclosure.' },
   { icon: '🏘️', label: 'DFW Market Context', detail: 'DFW mortgage notes are available through note brokers, bank portfolio sales, and private sellers. Courthouse auctions and FDIC asset sales also surface distressed notes tied to DFW properties.' },
 ];

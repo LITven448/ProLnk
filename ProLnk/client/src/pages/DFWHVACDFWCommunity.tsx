@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const situations = [
-  { id: 'neighbor', label: 'I want to recommend a contractor', message: 'Post the contractor\'s license number (TACLB or TACLA), what they did, and what you paid. DFW Nextdoor groups respond best to specific data. ProLnk makes this easier: share your matched pro\'s profile link — it includes their license, ratings, and verified job history.' },
-  { id: 'search', label: 'I\'m looking for a recommendation', message: 'Search your zip code + "HVAC" on Nextdoor and Facebook Neighborhood groups. Filter posts from the last 6 months — the DFW market changes fast. Then cross-reference any name you find on ProLnk before you call. We verify what the community cannot.' },
+  { id: 'neighbor', label: 'I want to recommend a contractor', message: 'Post the contractor\’s license number (TACLB or TACLA), what they did, and what you paid. DFW Nextdoor groups respond best to specific data. ProLnk makes this easier: share your matched pro\’s profile link — it includes their license, ratings, and verified job history.' },
+  { id: 'search', label: 'I\’m looking for a recommendation', message: 'Search your zip code + "HVAC" on Nextdoor and Facebook Neighborhood groups. Filter posts from the last 6 months — the DFW market changes fast. Then cross-reference any name you find on ProLnk before you call. We verify what the community cannot.' },
   { id: 'question', label: 'I have an HVAC question for my neighborhood', message: 'Post in Nextdoor with your specific model number and symptom. DFW has thousands of HVAC-literate homeowners who have seen every failure mode. Tag ProLnk in your post — our community team monitors DFW groups and often responds with verified guidance.' },
   { id: 'build', label: 'I want to help build the community', message: 'The most valuable community members share verified data: contractor names + prices + outcomes. If you want to go further, join ProLnk as a field scout — you earn Stream 4 income for every homeowner you refer, and you become a trusted resource in your area.' },
 ];

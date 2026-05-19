@@ -19,7 +19,7 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
     { title: 'Steel Pier vs Pressed Concrete Pier in Texas', desc: 'Complete comparison for DFW soil conditions.', tag: 'Pier Guide' },
     { title: 'Foundation Repair Cost Guide — DFW 2026', desc: 'Average costs by method, pier count, and severity.', tag: 'Pricing' },
     { title: 'Engineer vs Contractor — Who to Call First', desc: 'Why a PE evaluation changes everything in Texas.', tag: 'Critical' },
-    { title: 'Lifetime Warranties on Foundation Repair in Texas', desc: 'What\'s real, what\'s transferable, and what to avoid.', tag: 'Warranty' },
+    { title: 'Lifetime Warranties on Foundation Repair in Texas', desc: 'What\’s real, what\’s transferable, and what to avoid.', tag: 'Warranty' },
   ],
   drainage: [
     { title: 'French Drain Installation for DFW Homes', desc: 'Solving positive slope and foundation water intrusion.', tag: 'Drainage' },

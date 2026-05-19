@@ -21,7 +21,7 @@ const opportunities: Record<string, { org: string; mission: string; commitment: 
     { org: 'Rebuilding Together DFW', mission: 'HVAC repairs and weatherization for low-income homeowners', commitment: '1 day/project, flexible scheduling', impact: 'Reduce utility burden + improve health for vulnerable residents', contact: 'rebuildingtogetherdfw.org/hvac', proLnkMatch: true },
   ],
   Carpentry: [
-    { org: 'Habitat for Humanity DFW', mission: 'Framing, finishing, and structural work on new Habitat homes', commitment: '1–2 Saturdays/month', impact: 'Your framing work becomes a family\'s home within 6 months', contact: 'habitatdfw.org/skilled-volunteer', proLnkMatch: true },
+    { org: 'Habitat for Humanity DFW', mission: 'Framing, finishing, and structural work on new Habitat homes', commitment: '1–2 Saturdays/month', impact: 'Your framing work becomes a family\’s home within 6 months', contact: 'habitatdfw.org/skilled-volunteer', proLnkMatch: true },
     { org: 'Rebuilding Together DFW', mission: 'Accessibility modifications (ramps, grab bars, door widening)', commitment: '1 day per project', impact: 'Enable elderly/disabled homeowners to age in place', contact: 'rebuildingtogetherdfw.org/accessibility', proLnkMatch: true },
   ],
   Painting: [

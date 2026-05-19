@@ -7,7 +7,7 @@ export default function DFWOwensCorningVsGAFGuide2026() {
   const getRecommendation = () => {
     if (priority === 'warranty') setRecommendation('🏆 GAF Timberline HDZ with Golden Pledge Warranty — 50-year non-prorated coverage with installer-backed labor, the gold standard in DFW.');
     else if (priority === 'price') setRecommendation('💰 Owens Corning Duration Series — comparable performance at 5-10% lower installed cost in most DFW markets.');
-    else if (priority === 'impact') setRecommendation('🛡️ Either brand's Class 4 impact-resistant line — GAF Timberline ArmorShield II or OC Duration Storm — both qualify for DFW insurance discounts.');
+    else if (priority === 'impact') setRecommendation('🛡️ Either brand’s Class 4 impact-resistant line — GAF Timberline ArmorShield II or OC Duration Storm — both qualify for DFW insurance discounts.');
     else setRecommendation('');
   };
 

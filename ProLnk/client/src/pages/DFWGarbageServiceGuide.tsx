@@ -18,14 +18,14 @@ function getCityData(city: string) {
 
 function getWasteInfo(wasteType: string) {
   const map: Record<string, string> = {
-    'Regular household trash': '🗑️ Set out night before or morning of collection day. Don\'t overfill bin — lid must close fully.',
+    'Regular household trash': '🗑️ Set out night before or morning of collection day. Don\’t overfill bin — lid must close fully.',
     'Bulk furniture / appliances': '🛋️ Schedule in advance or check your monthly bulk day. No freon-containing appliances without certification.',
     'Electronics (e-waste)': '💻 Never in regular trash. Use city e-waste events, Best Buy drop-off, or Goodwill Tech Center.',
     'Hazardous materials (paint, batteries)': '⚠️ Latex paint: dry it out (kitty litter method) before trash. Oil paint, batteries, chemicals: HHW events only.',
     'Yard waste / brush': '🌿 Most cities accept in brown paper bags or tied bundles. Some cities have green cart programs.',
     'Construction debris': '🏗️ NOT covered by regular service. Rent a dumpster or hire a junk removal service. Some cities allow limited amounts.',
   };
-  return map[wasteType] || '📦 Check your city\'s solid waste website for specific disposal guidelines.';
+  return map[wasteType] || '📦 Check your city\’s solid waste website for specific disposal guidelines.';
 }
 
 export default function DFWGarbageServiceGuide() {

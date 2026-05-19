@@ -7,7 +7,7 @@ const bbqSetups: Record<string, Record<CommitLevel, { setup: string[]; cost: str
     'Weekend Warrior': {
       setup: ['22" kettle grill — charcoal for that Texas flavor', 'Side table for prep work', 'Covered area 8x10 min — DFW afternoon sun is brutal', 'Outdoor fan for smoke direction control'],
       cost: '$800–2,500',
-      note: 'Starter setup — you\'ll outgrow it fast'
+      note: 'Starter setup — you\’ll outgrow it fast'
     },
     'Serious Smoker': {
       setup: ['Offset smoker 20" x 36" — real Texas BBQ starts here', '3ft clearance from structure — fire code required', 'Wood storage rack with cover — 1/2 cord minimum', 'Sealed concrete or stone pad under smoker'],

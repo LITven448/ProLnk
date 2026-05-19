@@ -19,7 +19,7 @@ export default function DFWHVACRefrigerantTypes2026() {
       return 'R-32 is a current-generation refrigerant used in new mini-splits and some central systems. It has lower global warming potential than R-410A. Recharge is straightforward and affordable. Parts availability is excellent. You are on a future-proof refrigerant.';
     }
     if (refrigerant === 'r454b') {
-      return 'R-454B (Puron Advance) is Carrier's primary replacement for R-410A in new equipment as of 2025. It meets EPA 2025 requirements. Lower GWP than R-410A. Recharge costs are similar to R-410A. You have a modern, compliant system — maintain it well and it will last 15-20 years.';
+      return 'R-454B (Puron Advance) is Carrier’s primary replacement for R-410A in new equipment as of 2025. It meets EPA 2025 requirements. Lower GWP than R-410A. Recharge costs are similar to R-410A. You have a modern, compliant system — maintain it well and it will last 15-20 years.';
     }
     return null;
   };

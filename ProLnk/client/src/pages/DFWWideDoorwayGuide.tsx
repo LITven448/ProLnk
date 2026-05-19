@@ -3,7 +3,7 @@ import { useState } from 'react';
 const SOLUTIONS = [
   { name: 'Standard Widening (Non-Load-Bearing)', cost: '$800–$1,800/doorway', time: '1–2 days', desc: 'Remove framing, widen rough opening, install new header. Straightforward for interior non-structural walls.' },
   { name: 'Load-Bearing Widening', cost: '$2,000–$5,000/doorway', time: '3–5 days', desc: 'Requires temporary support, engineered beam, permit. Common in DFW homes with open floor plans.' },
-  { name: 'Pocket Door Conversion', cost: '$600–$1,500/doorway', time: '2–3 days', desc: 'No swing clearance needed. Gains 2–4\' of usable space. Requires wall depth of 4"+.' },
+  { name: 'Pocket Door Conversion', cost: '$600–$1,500/doorway', time: '2–3 days', desc: 'No swing clearance needed. Gains 2–4\’ of usable space. Requires wall depth of 4"+.' },
   { name: 'Barn Door', cost: '$400–$1,200/doorway', time: '1 day', desc: 'Surface-mounted, no wall modification. Easiest install. Not fully ADA compliant but adds clearance.' },
 ];
 

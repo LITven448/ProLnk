@@ -3,7 +3,7 @@ import { useState } from 'react';
 const referralMessages: Record<string, { headline: string; body: string; cta: string }> = {
   'Google Search': {
     headline: 'You searched — and you found something real.',
-    body: 'Most people searching for DFW HVAC help get generic advice from companies that don\'t know North Texas. You found ProLnk because we spent years building knowledge specific to DFW — the heat index, the TOU plans, the soil, the humidity. That knowledge is yours, and it\'s free. Now we\'re building the platform to connect you with pros who know this market as well as we do.',
+    body: 'Most people searching for DFW HVAC help get generic advice from companies that don\’t know North Texas. You found ProLnk because we spent years building knowledge specific to DFW — the heat index, the TOU plans, the soil, the humidity. That knowledge is yours, and it\’s free. Now we\’re building the platform to connect you with pros who know this market as well as we do.',
     cta: 'Join the DFW waitlist — be first to access vetted local pros.',
   },
   'Friend or Neighbor': {
@@ -13,17 +13,17 @@ const referralMessages: Record<string, { headline: string; body: string; cta: st
   },
   'Social Media': {
     headline: 'You scrolled past a lot of noise to find this.',
-    body: 'We don\'t buy ads or chase viral moments. If you found ProLnk on social, it\'s because someone in the DFW community thought this was worth sharing. That\'s our entire growth model — real value, real homeowners, real referrals. We hope the content lived up to it.',
+    body: 'We don\’t buy ads or chase viral moments. If you found ProLnk on social, it\’s because someone in the DFW community thought this was worth sharing. That\’s our entire growth model — real value, real homeowners, real referrals. We hope the content lived up to it.',
     cta: 'Join the waitlist. Tell a DFW neighbor.',
   },
   'ProLnk Article or Guide': {
     headline: 'You read one of our guides. Thank you.',
-    body: 'We\'ve published thousands of pages about DFW home services — HVAC efficiency, plumbing, electrical, foundation, and more. All of it written specifically for North Texas homeowners, not a generic audience. If something helped you today, we\'d love to build that relationship further through the platform.',
-    cta: 'Join the waitlist and let\'s keep helping each other.',
+    body: 'We\’ve published thousands of pages about DFW home services — HVAC efficiency, plumbing, electrical, foundation, and more. All of it written specifically for North Texas homeowners, not a generic audience. If something helped you today, we\’d love to build that relationship further through the platform.',
+    cta: 'Join the waitlist and let\’s keep helping each other.',
   },
   'Contractor or Pro Referral': {
-    headline: 'A DFW pro sent you here. That\'s a strong signal.',
-    body: 'When a contractor or service professional points a homeowner to ProLnk, it\'s usually because they believe in what we\'re building — a marketplace where good pros get found by the right homeowners, without paying for garbage leads. We\'re building that. You found it early.',
+    headline: 'A DFW pro sent you here. That\’s a strong signal.',
+    body: 'When a contractor or service professional points a homeowner to ProLnk, it\’s usually because they believe in what we\’re building — a marketplace where good pros get found by the right homeowners, without paying for garbage leads. We\’re building that. You found it early.',
     cta: 'Join the waitlist. Good things are coming.',
   },
 };
@@ -101,7 +101,7 @@ export default function DFWProLnkFinalMessage() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📖 What We\'ve Built for DFW</h2>
           {[
             ['3,000+ pages of DFW-specific guides', 'HVAC, plumbing, electrical, roofing, foundation — all written for North Texas homes, weather, and utilities.'],
-            ['A platform built on trust, not volume', 'We don\'t sell leads to the highest bidder. We match homeowners with pros who\'ve earned it.'],
+            ['A platform built on trust, not volume', 'We don\’t sell leads to the highest bidder. We match homeowners with pros who\’ve earned it.'],
             ['Network income for pros who grow it', 'DFW pros who refer other pros and homeowners earn from 5 income streams — permanently.'],
             ['Free knowledge, always', 'Everything on this site was built to help DFW homeowners make better decisions — free, forever.'],
           ].map(([title, body]) => (

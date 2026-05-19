@@ -56,8 +56,8 @@ export default function DFWHVACDuctSealingROI() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🔬 Aeroseal vs Manual Sealing</h2>
           {[
-            { name: 'Aeroseal', pros: 'Seals from inside — reaches joints manual can\'t. Computer-verified leakage reduction. Oncor rebate eligible.', cons: 'Higher upfront cost; attic access still needed for major disconnects' },
-            { name: 'Manual mastic sealing', pros: 'Lower cost; effective for accessible joints in conditioned crawlspace or mechanical room', cons: 'Can\'t seal interior joints or flex duct collar failures in attic without disassembly' },
+            { name: 'Aeroseal', pros: 'Seals from inside — reaches joints manual can\’t. Computer-verified leakage reduction. Oncor rebate eligible.', cons: 'Higher upfront cost; attic access still needed for major disconnects' },
+            { name: 'Manual mastic sealing', pros: 'Lower cost; effective for accessible joints in conditioned crawlspace or mechanical room', cons: 'Can\’t seal interior joints or flex duct collar failures in attic without disassembly' },
           ].map(m => (
             <div key={m.name} style={{ background: '#162035', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontWeight: 700, color: '#E8EAF0', marginBottom: 8 }}>{m.name}</div>

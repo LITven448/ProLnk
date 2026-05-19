@@ -10,12 +10,12 @@ const symptoms = [
 const diagnoses: Record<string, { title: string; cause: string; fix: string }> = {
   hotrooms: {
     title: 'Supply Plenum May Be Undersized',
-    cause: 'A supply plenum that\'s too small creates high static pressure, reducing airflow to distant rooms. DFW homes with add-on zones are especially prone to this.',
-    fix: 'Have a DFW HVAC tech measure static pressure at the plenum. If above 0.5" WC, the plenum or ducts need resizing. Don\'t just add a bigger blower — fix the root cause.',
+    cause: 'A supply plenum that\’s too small creates high static pressure, reducing airflow to distant rooms. DFW homes with add-on zones are especially prone to this.',
+    fix: 'Have a DFW HVAC tech measure static pressure at the plenum. If above 0.5" WC, the plenum or ducts need resizing. Don\’t just add a bigger blower — fix the root cause.',
   },
   noise: {
     title: 'Plenum Leaks at Seams or Transitions',
-    cause: 'Sheet metal plenums can separate at joints, especially in DFW\'s temperature extremes. Duct board plenums can delaminate. Air escaping at seams creates whistling or rumbling.',
+    cause: 'Sheet metal plenums can separate at joints, especially in DFW\’s temperature extremes. Duct board plenums can delaminate. Air escaping at seams creates whistling or rumbling.',
     fix: 'Inspect all plenum joints for gaps. Use mastic sealant (not duct tape) to seal seams. Re-inspect after one full DFW summer — thermal cycling can re-open gaps.',
   },
   highbill: {
@@ -25,8 +25,8 @@ const diagnoses: Record<string, { title: string; cause: string; fix: string }> =
   },
   humidity: {
     title: 'Short-Cycling Caused by Plenum Restriction',
-    cause: 'A restricted or undersized plenum causes the system to reach setpoint too quickly, short-cycling. Short cycles don\'t run long enough to dehumidify DFW\'s humid air.',
-    fix: 'Check plenum sizing against ACCA Manual D specs for your DFW home\'s square footage. If the system short-cycles (under 8 min runs), plenum redesign or dehumidifier addition may be needed.',
+    cause: 'A restricted or undersized plenum causes the system to reach setpoint too quickly, short-cycling. Short cycles don\’t run long enough to dehumidify DFW\’s humid air.',
+    fix: 'Check plenum sizing against ACCA Manual D specs for your DFW home\’s square footage. If the system short-cycles (under 8 min runs), plenum redesign or dehumidifier addition may be needed.',
   },
   default: {
     title: 'Select Your HVAC Symptom',

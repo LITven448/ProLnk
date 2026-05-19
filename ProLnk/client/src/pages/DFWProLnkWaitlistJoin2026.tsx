@@ -70,7 +70,7 @@ export default function DFWProLnkWaitlistJoin2026() {
                 ['1', 'Visit prolnk.io/homeowner-signup', 'Always free — no payment info needed'],
                 ['2', 'Describe your service need', 'HVAC, plumbing, electrical, roofing, and more'],
                 ['3', 'Add your DFW address', 'Needed to match you with local Charter pros'],
-                ['4', 'Receive match when pros activate', 'You'll be prioritized over post-launch signups'],
+                ['4', 'Receive match when pros activate', 'You’ll be prioritized over post-launch signups'],
               ].map(([n, title, desc]) => (
                 <div key={n} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
                   <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, flexShrink: 0 }}>{n}</div>

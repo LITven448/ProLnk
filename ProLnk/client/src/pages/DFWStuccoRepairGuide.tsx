@@ -51,7 +51,7 @@ export default function DFWStuccoRepairGuide() {
           {[
             { icon: '🌡️', title: 'DFW Heat Acceleration', desc: 'Dallas summers exceed 100°F for weeks. Traditional stucco expands and contracts daily, opening cracks 2–3x faster than in cooler climates. Elastomeric paint helps but is not a substitute for proper repair.' },
             { icon: '🆚', title: 'EIFS vs Traditional Stucco', desc: 'EIFS (synthetic stucco) is common in DFW 1990s–2010s construction. It looks identical but traps moisture differently. EIFS failures require complete removal and re-installation — no patch fix exists.' },
-            { icon: '💧', title: 'Moisture Intrusion', desc: 'DFW's combination of heavy spring rains and extreme summer heat creates pressure cycling that drives water behind stucco. Look for bubbling, discoloration, or soft spots — all indicate moisture behind the system.' },
+            { icon: '💧', title: 'Moisture Intrusion', desc: 'DFW’s combination of heavy spring rains and extreme summer heat creates pressure cycling that drives water behind stucco. Look for bubbling, discoloration, or soft spots — all indicate moisture behind the system.' },
             { icon: '🔄', title: 'Repair vs Replace', desc: 'Patches on traditional stucco work well if the substrate is sound and cracks are isolated. EIFS failures, widespread delamination, or moisture damage always require full section replacement.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#112240', borderRadius: 10, padding: '16px 20px', border: '1px solid #1e3a5f', display: 'flex', gap: 16, alignItems: 'flex-start' }}>

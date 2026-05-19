@@ -4,7 +4,7 @@ const plans: Record<string, { headline: string; steps: string[]; prolnk: boolean
   cancelled: {
     headline: '🚫 Contractor Cancelled Last Minute',
     steps: [
-      'Don\'t panic — DFW contractor no-show is common, especially in summer peak season',
+      'Don\’t panic — DFW contractor no-show is common, especially in summer peak season',
       'Request a reschedule in writing (text/email) so you have documentation',
       'Contact 2–3 backup contractors immediately while your first contractor is on hold',
       'Post the job on ProLnk — DFW has a bench of licensed pros ready for open slots',
@@ -53,7 +53,7 @@ const plans: Record<string, { headline: string; steps: string[]; prolnk: boolean
     steps: [
       'Send certified letter demanding return within 5 business days',
       'Document all work completed vs contracted with photos and timestamps',
-      'Contact Texas TDLR to file a complaint against the contractor\'s license',
+      'Contact Texas TDLR to file a complaint against the contractor\’s license',
       'Do not make any further payments until work is complete or settled',
       'Hire ProLnk-verified contractor to assess and complete the work',
       'Consider small claims court (up to $20K) or hire attorney for larger amounts',

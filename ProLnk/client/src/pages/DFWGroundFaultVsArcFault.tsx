@@ -41,7 +41,7 @@ export default function DFWGroundFaultVsArcFault() {
     } else {
       protection = '🛡️ Dual Protection Recommended';
       why = 'For comprehensive safety: GFCI where water is present, AFCI in living areas. Some locations require both.';
-      dfwFactor = 'DFW\'s age of housing stock (many 1970s–1990s homes) means aluminum wiring and original panels are common — both increase arc fault risk significantly.';
+      dfwFactor = 'DFW\’s age of housing stock (many 1970s–1990s homes) means aluminum wiring and original panels are common — both increase arc fault risk significantly.';
       cost = '$200–$600 to upgrade affected circuits';
     }
     setResult({ protection, why, dfwFactor, cost });

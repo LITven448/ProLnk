@@ -85,7 +85,7 @@ export default function DFWInfraredInspectionGuide() {
             {[
               'AC systems run nearly year-round in DFW — condensation line leaks are among the most common infrared findings.',
               'DFW attics regularly exceed 140°F in summer, degrading duct insulation and causing significant energy loss.',
-              'New construction infrared during the framing or drywall stage catches insulation misses before they're buried.',
+              'New construction infrared during the framing or drywall stage catches insulation misses before they’re buried.',
               'Best performed in the morning or evening when indoor/outdoor temperature differential is at least 15°F.',
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, backgroundColor: '#132240', borderRadius: 8, padding: 14 }}>

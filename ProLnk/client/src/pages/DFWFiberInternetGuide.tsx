@@ -46,7 +46,7 @@ export default function DFWFiberInternetGuide() {
             { icon: '⚡', title: 'Symmetrical Speeds', desc: 'Fiber gives equal upload and download — critical for DFW remote workers on video calls and large file transfers.' },
             { icon: '🎮', title: 'Low Latency Gaming', desc: 'Fiber latency in DFW averages 5–12ms vs 30–80ms on cable, a meaningful edge in competitive gaming.' },
             { icon: '📡', title: '5G as Alternative', desc: 'T-Mobile and Verizon Home Internet bring 100–300 Mbps to outer DFW areas where fiber has not reached yet.' },
-            { icon: '🏠', title: 'Remote Work Ready', desc: 'DFW fiber expansion supports the region\'s massive remote-work population with enterprise-grade residential service.' },
+            { icon: '🏠', title: 'Remote Work Ready', desc: 'DFW fiber expansion supports the region\’s massive remote-work population with enterprise-grade residential service.' },
           ].map((card) => (
             <div key={card.title} style={{ backgroundColor: '#111D35', border: '1px solid #1E2D4A', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>

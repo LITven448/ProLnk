@@ -11,18 +11,18 @@ const situations = [
     label: 'HOA Meeting',
     icon: '🏛️',
     how: 'HOA meetings are the perfect moment to share HVAC knowledge. Bring up seasonal maintenance timing, common DFW issues, and how ProLnk helps the whole neighborhood find trustworthy contractors.',
-    template: '"One quick thing — there\'s a free DFW HVAC library at ProLnk that covers everything from seasonal tune-ups to emergency protocols. I\'ve found it really useful and thought I\'d pass it along."',
+    template: '"One quick thing — there\’s a free DFW HVAC library at ProLnk that covers everything from seasonal tune-ups to emergency protocols. I\’ve found it really useful and thought I\’d pass it along."',
   },
   {
     label: 'Word of Mouth',
     icon: '💬',
-    how: 'The most powerful sharing is personal. When a neighbor mentions HVAC problems, mention ProLnk. When someone asks for a contractor recommendation, share what you\'ve learned from the library.',
+    how: 'The most powerful sharing is personal. When a neighbor mentions HVAC problems, mention ProLnk. When someone asks for a contractor recommendation, share what you\’ve learned from the library.',
     template: '"I actually just learned a lot about DFW HVAC from prolnk.io — they have a library with seasonal guides and you can match with verified contractors. Might help you."',
   },
   {
     label: 'ProLnk Referral',
     icon: '💰',
-    how: 'Referring neighbors and contractors to ProLnk isn\'t just helpful — it\'s income. The Network Income System pays you for homeowner referrals and contractor referrals through a 5-stream income structure.',
+    how: 'Referring neighbors and contractors to ProLnk isn\’t just helpful — it\’s income. The Network Income System pays you for homeowner referrals and contractor referrals through a 5-stream income structure.',
     template: 'Sign up at prolnk.io, get your referral link, and share it. Every homeowner and contractor you bring in creates a recurring income stream in your ProLnk network.',
   },
 ];

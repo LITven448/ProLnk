@@ -9,7 +9,7 @@ const issues = [
   {
     icon: '💧',
     title: 'Urban Humidity & Moisture Intrusion',
-    body: 'Addison's dense restaurant and bar scene generates ambient humidity levels 15–20% higher than surrounding suburbs. HVAC systems, attic insulation, and crawl spaces in residential units absorb this moisture year-round, accelerating mold risk and structural degradation.',
+    body: 'Addison’s dense restaurant and bar scene generates ambient humidity levels 15–20% higher than surrounding suburbs. HVAC systems, attic insulation, and crawl spaces in residential units absorb this moisture year-round, accelerating mold risk and structural degradation.',
   },
   {
     icon: '🏚️',
@@ -19,7 +19,7 @@ const issues = [
   {
     icon: '🌊',
     title: 'Urban Drainage Challenges',
-    body: 'High impervious surface coverage from parking lots, patios, and commercial hardscape redirects stormwater toward residential areas. Foundation drainage, French drains, and sump systems require annual inspection in Addison's urban basin.',
+    body: 'High impervious surface coverage from parking lots, patios, and commercial hardscape redirects stormwater toward residential areas. Foundation drainage, French drains, and sump systems require annual inspection in Addison’s urban basin.',
   },
   {
     icon: '🏢',

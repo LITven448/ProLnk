@@ -18,7 +18,7 @@ const stages = [
     dfwFit: 'Best Match for DFW',
     bestFor: 'Most DFW homes — captures 80% of modulating benefits at 30% of premium',
     cost: '+$300–$600 vs single stage',
-    dfwNote: 'DFW\'s occasional cold snaps (20–30°F) benefit from the high stage, while mild winter days run efficiently on low. This is the DFW sweet spot.',
+    dfwNote: 'DFW\’s occasional cold snaps (20–30°F) benefit from the high stage, while mild winter days run efficiently on low. This is the DFW sweet spot.',
     color: '#F5E642',
   },
   {
@@ -28,7 +28,7 @@ const stages = [
     dfwFit: 'Overkill for Most DFW Homes',
     bestFor: 'Large custom homes, cold climates, year-round comfort obsessives',
     cost: '+$1,200–$2,500 vs single stage',
-    dfwNote: 'DFW rarely needs a furnace. You\'re paying $2K+ premium for a system that runs 3 months/year. ROI is very poor for typical DFW usage patterns.',
+    dfwNote: 'DFW rarely needs a furnace. You\’re paying $2K+ premium for a system that runs 3 months/year. ROI is very poor for typical DFW usage patterns.',
     color: '#7ED321',
   },
 ];

@@ -10,7 +10,7 @@ export default function DallasLakewoodHomeownerGuide2026() {
   ];
 
   const lakewoodTips = [
-    { icon: '🌳', tip: 'Lakewood's mature oaks are beautiful but roots invade sewers — camera-inspect lines every 3–5 years' },
+    { icon: '🌳', tip: 'Lakewood’s mature oaks are beautiful but roots invade sewers — camera-inspect lines every 3–5 years' },
     { icon: '🏛️', tip: 'Historic overlay may restrict exterior changes — check with City of Dallas before any facade work' },
     { icon: '💧', tip: 'White Rock Lake proximity raises humidity — check crawlspaces for moisture and mold annually' },
     { icon: '⚡', tip: 'Many Lakewood homes still on 60–100A service — budget $6,000–$12,000 for panel upgrade' },

@@ -14,7 +14,7 @@ const RENO_MAP: Record<string, Record<string, { costRange: string; timeline: str
   full: {
     small: { costRange: '$65–$100 per sq ft', timeline: '8–14 weeks', permits: ['Full permit package required','Engineer-stamped structural if walls removed','ADA full compliance','Fire suppression review','CO required before occupancy'] },
     medium: { costRange: '$80–$130 per sq ft', timeline: '14–24 weeks', permits: ['Architect required','All trade permits','ADA path of travel compliance','Accessibility ramp if grade change','Updated fire alarm panel'] },
-    large: { costRange: '$100–$160 per sq ft', timeline: '20–36 weeks', permits: ['Owner\'s rep recommended','All permits + city plan review','Energy code compliance (IECC)','Life safety plan','CO and TAS inspection'] },
+    large: { costRange: '$100–$160 per sq ft', timeline: '20–36 weeks', permits: ['Owner\’s rep recommended','All permits + city plan review','Energy code compliance (IECC)','Life safety plan','CO and TAS inspection'] },
   },
 };
 
@@ -44,7 +44,7 @@ export default function DFWOfficeRenovationGuide() {
             { icon: '♿', title: 'ADA Compliance', body: 'Any renovation to an area requires bringing that zone to ADA compliance. Path of travel from public entrance to renovated space must also comply. Non-compliance risks $75K+ fines.' },
             { icon: '💻', title: 'IT Infrastructure', body: 'Plan conduit during renovation — not after. Cat6A for 10GB networks, dedicated circuits for server rooms, structured cabling in raised floors or ceiling trays.' },
             { icon: '❄️', title: 'HVAC Zone Control', body: 'Open offices need 1 zone per 2,000 sq ft. Private offices need individual zone control. VAV boxes (variable air volume) are standard in DFW commercial HVAC.' },
-            { icon: '💰', title: 'TI Allowances', body: 'DFW landlords currently offering $35–$80/sq ft in tenant improvement allowances for 5-year leases. Negotiate before signing — it\'s your money to spend on the build-out.' },
+            { icon: '💰', title: 'TI Allowances', body: 'DFW landlords currently offering $35–$80/sq ft in tenant improvement allowances for 5-year leases. Negotiate before signing — it\’s your money to spend on the build-out.' },
             { icon: '📐', title: 'Design Trend: Biophilic', body: 'Plants, natural light, wood tones. DFW contractors report 25% increase in biophilic design requests since 2024. Adds $5–$15/sq ft but reduces sick days 15%.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>

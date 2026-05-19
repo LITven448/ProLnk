@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const situations = [
   { id: 'app', label: '🔥 APP Modified Bitumen', tip: 'APP (Atactic Polypropylene) is torch-applied and performs better in sustained DFW heat. More rigid than SBS but excels in high UV environments above 95°F.' },
-  { id: 'sbs', label: '❄️ SBS Modified Bitumen', tip: 'SBS (Styrene Butadiene Styrene) is more flexible, handles DFW\'s winter temperature swings better. Cold-process application avoids open-flame liability on occupied buildings.' },
+  { id: 'sbs', label: '❄️ SBS Modified Bitumen', tip: 'SBS (Styrene Butadiene Styrene) is more flexible, handles DFW\’s winter temperature swings better. Cold-process application avoids open-flame liability on occupied buildings.' },
   { id: 'granulated', label: '⚪ Granulated vs Smooth', tip: 'Granulated cap sheet is strongly preferred in DFW — reflects UV radiation, extends membrane life 3–5 years. Smooth cap is cheaper but degrades faster in 100°F+ summers.' },
   { id: 'timing', label: '🌡️ Installation Timing', tip: 'Best installation windows: March–April and October–November. July/August torch work risks membrane bubbling and adhesive failure. Schedule around DFW heat if possible.' },
   { id: 'inspection', label: '🔍 Inspection Signs', tip: 'Look for blistering, alligatoring, or granule loss. In DFW, expect 10–15 year cap sheet life. Document condition annually in ProLnk Vault for insurance purposes.' },

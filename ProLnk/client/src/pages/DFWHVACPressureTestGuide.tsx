@@ -8,7 +8,7 @@ const homeOptions = [
 ];
 
 const complaintOptions = [
-  { label: 'Some rooms won\'t cool', issue: 'High static — undersized ducts restricting airflow to far zones', pressure: '0.35–0.55 in. w.g.', action: 'Duct resizing or supplemental return needed' },
+  { label: 'Some rooms won\’t cool', issue: 'High static — undersized ducts restricting airflow to far zones', pressure: '0.35–0.55 in. w.g.', action: 'Duct resizing or supplemental return needed' },
   { label: 'System runs constantly', issue: 'Low static — leaky ducts losing conditioned air before delivery', pressure: '0.05–0.09 in. w.g.', action: 'Duct sealing (Aeroseal recommended for DFW attics)' },
   { label: 'High energy bills only', issue: 'Borderline high static — common in DFW homes built before 2000', pressure: '0.22–0.35 in. w.g.', action: 'Return air improvement + coil cleaning' },
   { label: 'No complaints — routine check', issue: 'Baseline test — verify system is within spec', pressure: '0.10–0.20 in. w.g.', action: 'Document results; re-test after filter change' },

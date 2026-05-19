@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const months = [
-  { name: 'January', pests: [], prevention: 'No major pest threats — inspect foundation for entry points while it's dry' },
+  { name: 'January', pests: [], prevention: 'No major pest threats — inspect foundation for entry points while it’s dry' },
   { name: 'February', pests: ['Cedar elm aphids on early budding trees', 'Boxelder bugs congregating on south-facing walls'], prevention: 'Check window seals — boxelders squeeze through tiny gaps. Avoid squashing — they stain walls' },
   { name: 'March', pests: ['Termite swarm season begins (subterranean termites)', 'Fire ants emerge and rebuild mounds after winter'], prevention: 'Schedule termite inspection now before swarms peak. Apply fire ant bait to yard perimeter' },
   { name: 'April', pests: ['Termite swarms peak — watch for winged reproductives', 'Carpenter bees boring into wood trim'], prevention: 'Seal exposed wood with paint or sealant. Call termite pro if you see swarmers inside home' },

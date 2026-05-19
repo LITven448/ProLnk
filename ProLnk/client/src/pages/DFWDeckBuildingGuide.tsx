@@ -44,8 +44,8 @@ export default function DFWDeckBuildingGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginTop: 36 }}>
           {[
-            { icon: '☀️', title: 'DFW Heat Destroys Wood', body: 'DFW averages 60+ days above 100°F. Untreated wood decks cup, crack, and splinter within 3–5 years. Composite expands uniformly and won\'t splinter bare feet in summer.' },
-            { icon: '🐜', title: 'Termite Risk Is Real', body: 'DFW has one of Texas\'s highest subterranean termite pressures. Pressure-treated pine resists termites, but composite eliminates the risk entirely — no wood = no termite food source.' },
+            { icon: '☀️', title: 'DFW Heat Destroys Wood', body: 'DFW averages 60+ days above 100°F. Untreated wood decks cup, crack, and splinter within 3–5 years. Composite expands uniformly and won\’t splinter bare feet in summer.' },
+            { icon: '🐜', title: 'Termite Risk Is Real', body: 'DFW has one of Texas\’s highest subterranean termite pressures. Pressure-treated pine resists termites, but composite eliminates the risk entirely — no wood = no termite food source.' },
             { icon: '📋', title: 'Permit Requirements', body: 'Any deck over 30" from grade in most DFW cities requires a building permit. Frisco, McKinney, Plano, and Dallas all require stamped structural plans for elevated decks.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0D1F3C', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>

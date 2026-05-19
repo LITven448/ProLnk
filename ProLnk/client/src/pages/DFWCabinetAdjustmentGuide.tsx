@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const issueTypes = ['Door won't close flush', 'Door drooping/sagging on one side', 'Door hitting adjacent door or frame', 'Drawer not closing fully', 'Drawer sliding crooked', 'Door gap uneven top-to-bottom'];
+const issueTypes = ['Door won’t close flush', 'Door drooping/sagging on one side', 'Door hitting adjacent door or frame', 'Drawer not closing fully', 'Drawer sliding crooked', 'Door gap uneven top-to-bottom'];
 const cabinetEras = ['Pre-2000 (older American-style hinges)', '2000–2015 (likely European cup hinges)', '2015–present (definitely European cup hinges)'];
 
 type CabinetFix = { hingeType: string; adjustment: string; climate: string; replaceVsAdjust: string };

@@ -21,7 +21,7 @@ const outcomes: Record<string, { process: string[]; evidence: string[]; realisti
     realistic: 'ROV succeeds in 20–30% of cases with strong comps — worth attempting before paying for second appraisal',
   },
   'Property tax appraisal too high': {
-    process: ['File protest with Appraisal Review Board (ARB) by May 15 deadline', 'Present evidence at ARB hearing — you don\'t need an attorney', 'If unsatisfied, appeal to district court or binding arbitration', 'Consider hiring a property tax protest company (contingency fee)'],
+    process: ['File protest with Appraisal Review Board (ARB) by May 15 deadline', 'Present evidence at ARB hearing — you don\’t need an attorney', 'If unsatisfied, appeal to district court or binding arbitration', 'Consider hiring a property tax protest company (contingency fee)'],
     evidence: ['Sales of similar homes in your neighborhood', 'Photos of property condition issues', 'Recent purchase price if bought below appraised value'],
     realistic: 'DFW ARB protests succeed ~40–60% of time — especially effective for homes over $500K',
   },

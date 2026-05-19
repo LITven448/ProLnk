@@ -4,7 +4,7 @@ const redFlags = [
   { id: 'r22', label: '🚨 Contractor Recommending R-22 Refrigerant', category: 'refrigerant' },
   { id: 'lowseer', label: '📉 Quoting a System Below SEER2 15', category: 'efficiency' },
   { id: 'noload', label: '📐 No Load Calculation Mentioned', category: 'sizing' },
-  { id: 'nopermit', label: '🚫 "We Don\'t Need a Permit" Claim', category: 'permit' },
+  { id: 'nopermit', label: '🚫 "We Don\’t Need a Permit" Claim', category: 'permit' },
   { id: 'cash', label: '💵 Cash Only, No Written Contract', category: 'business' },
   { id: 'verbal', label: '🗣️ Verbal Quote Only — No Itemized Estimate', category: 'pricing' },
 ];
@@ -12,25 +12,25 @@ const redFlags = [
 const details: Record<string, { severity: string; meaning: string; avoid: string; dfwContext: string }> = {
   refrigerant: {
     severity: '🔴 Walk Away Immediately',
-    meaning: 'R-22 (Freon) has been illegal to manufacture in the US since 2020. Any contractor still working with R-22 systems is either using illegal stockpiles or doesn\'t know current regulations. New systems must use R-410A minimum; 2026 systems should use R-454B or R-32.',
+    meaning: 'R-22 (Freon) has been illegal to manufacture in the US since 2020. Any contractor still working with R-22 systems is either using illegal stockpiles or doesn\’t know current regulations. New systems must use R-410A minimum; 2026 systems should use R-454B or R-32.',
     avoid: 'Get the quote in writing showing refrigerant type. Verify with EPA Section 608 regulations.',
-    dfwContext: 'DFW has thousands of aging R-22 systems. Reputable contractors will tell you it\'s time to replace, not recharge.',
+    dfwContext: 'DFW has thousands of aging R-22 systems. Reputable contractors will tell you it\’s time to replace, not recharge.',
   },
   efficiency: {
     severity: '🔴 Code Violation Risk',
-    meaning: 'Texas follows DOE\'s 2023 SEER2 minimums: 14.3 SEER2 for split systems in the South region. Quoting below this is either a mistake or fraud. In DFW\'s extreme heat, you want 16+ SEER2 anyway for reasonable utility bills.',
-    avoid: 'Ask specifically for the SEER2 rating (not SEER — they\'re different metrics). Get it in writing.',
+    meaning: 'Texas follows DOE\’s 2023 SEER2 minimums: 14.3 SEER2 for split systems in the South region. Quoting below this is either a mistake or fraud. In DFW\’s extreme heat, you want 16+ SEER2 anyway for reasonable utility bills.',
+    avoid: 'Ask specifically for the SEER2 rating (not SEER — they\’re different metrics). Get it in writing.',
     dfwContext: 'A low-efficiency system in DFW will cost you $200-400 extra per summer in electric bills. The upgrade pays back fast.',
   },
   sizing: {
     severity: '🟠 Major Risk — Wrong-Size System',
     meaning: 'Manual J is the ACCA-approved load calculation that determines the correct HVAC size for your home. Without it, contractors guess — and a wrong-size system (over or undersized) will fail to dehumidify, short-cycle, or run constantly.',
     avoid: 'Ask: "Will you do a Manual J calculation?" A reputable contractor says yes. Replacing Rule-of-Thumb sizing with Manual J.',
-    dfwContext: 'DFW homes need precise sizing — oversized units don\'t remove humidity, leaving homes feeling clammy even at 72°F.',
+    dfwContext: 'DFW homes need precise sizing — oversized units don\’t remove humidity, leaving homes feeling clammy even at 72°F.',
   },
   permit: {
     severity: '🔴 Illegal and Risky for You',
-    meaning: 'HVAC replacement requires a permit in virtually all DFW municipalities (Dallas, Fort Worth, Plano, Frisco, etc.). Unpermitted work can void your homeowner\'s insurance, create issues at sale, and leave you with no recourse if work is done wrong.',
+    meaning: 'HVAC replacement requires a permit in virtually all DFW municipalities (Dallas, Fort Worth, Plano, Frisco, etc.). Unpermitted work can void your homeowner\’s insurance, create issues at sale, and leave you with no recourse if work is done wrong.',
     avoid: 'Always ask: "Will you pull a permit?" If no, find another contractor. Permit cost is typically included in reputable quotes.',
     dfwContext: 'DFW municipalities actively inspect HVAC work. Unpermitted systems are flagged during home sales — a major problem.',
   },

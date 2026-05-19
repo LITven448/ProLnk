@@ -24,7 +24,7 @@ const problems = [
   },
   {
     issue: 'High electric bills during DFW summer',
-    benefit: 'Running at 40% capacity uses far less power than on/off full-blast cycling — 20–30% energy savings during DFW\'s long cooling season.',
+    benefit: 'Running at 40% capacity uses far less power than on/off full-blast cycling — 20–30% energy savings during DFW\’s long cooling season.',
     premium: '+$800–$1,500',
     payback: '3–5 years via lower Oncor bills',
     icon: '⚡',
@@ -38,7 +38,7 @@ const problems = [
   },
   {
     issue: 'Long DFW cooling season (May–Oct)',
-    benefit: 'More runtime hours = more energy savings vs single speed. DFW\'s 6-month cooling season amplifies variable speed ROI vs northern climates.',
+    benefit: 'More runtime hours = more energy savings vs single speed. DFW\’s 6-month cooling season amplifies variable speed ROI vs northern climates.',
     premium: '+$800–$1,500',
     payback: '2–4 years in DFW vs 5–8 years in northern markets',
     icon: '📅',

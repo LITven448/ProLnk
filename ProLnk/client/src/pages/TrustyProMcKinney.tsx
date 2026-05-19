@@ -15,23 +15,23 @@ const pros = [
 ];
 
 const testimonials = [
-  { name: 'Brittany H.', zip: 'McKinney 75070', text: 'Our 2019 build felt brand-new. TrustyPro found the builder-grade HVAC was running at 78% efficiency — James replaced the air handler and we\'re saving $140/month in cooling costs.' },
+  { name: 'Brittany H.', zip: 'McKinney 75070', text: 'Our 2019 build felt brand-new. TrustyPro found the builder-grade HVAC was running at 78% efficiency — James replaced the air handler and we\’re saving $140/month in cooling costs.' },
   { name: 'Ryan P.',     zip: 'McKinney 75071', text: 'Irrigation system had 4 broken heads and a leaking zone valve. We had no idea — just thought the grass was patchy. Maria fixed it in 2 hours. Now our lawn is actually green.' },
-  { name: 'Ashley N.',   zip: 'McKinney 75069', text: 'Saw a diagonal crack in the drywall by our garage door. Kevin confirmed it was soil settlement, not structural failure. $2,800 repair vs. potentially $25K+ if we\'d waited.' },
+  { name: 'Ashley N.',   zip: 'McKinney 75069', text: 'Saw a diagonal crack in the drywall by our garage door. Kevin confirmed it was soil settlement, not structural failure. $2,800 repair vs. potentially $25K+ if we\’d waited.' },
 ];
 
 const faqs = [
   {
     q: 'Is new construction really at risk of home issues?',
-    a: 'Yes. Builder-grade systems are designed to meet code at the lowest viable cost — not for 20-year durability. McKinney homes built 2015–2019 are entering the 7–10 year window when HVAC coils, irrigation controllers, and soil settlement cracks typically surface. TrustyPro\'s scan is specifically calibrated for this age range.',
+    a: 'Yes. Builder-grade systems are designed to meet code at the lowest viable cost — not for 20-year durability. McKinney homes built 2015–2019 are entering the 7–10 year window when HVAC coils, irrigation controllers, and soil settlement cracks typically surface. TrustyPro\’s scan is specifically calibrated for this age range.',
   },
   {
-    q: 'What\'s the deal with soil settlement in McKinney?',
-    a: 'McKinney\'s rapid development graded and backfilled thousands of lots quickly. Fill soil takes 5–10 years to fully compact. This causes gradual foundation settlement — diagonal cracks at door corners, sticking doors, and sloping floors. Kevin catches this early when repair costs are measured in thousands, not tens of thousands.',
+    q: 'What\’s the deal with soil settlement in McKinney?',
+    a: 'McKinney\’s rapid development graded and backfilled thousands of lots quickly. Fill soil takes 5–10 years to fully compact. This causes gradual foundation settlement — diagonal cracks at door corners, sticking doors, and sloping floors. Kevin catches this early when repair costs are measured in thousands, not tens of thousands.',
   },
   {
     q: 'How do I know if my builder warranty is still valid?',
-    a: 'Most new construction comes with a 1-year workmanship warranty and 10-year structural warranty. However, you must document and report issues before the deadline. TrustyPro\'s scan helps you identify issues you can submit to your builder while you\'re still covered — this alone is worth the free scan.',
+    a: 'Most new construction comes with a 1-year workmanship warranty and 10-year structural warranty. However, you must document and report issues before the deadline. TrustyPro\’s scan helps you identify issues you can submit to your builder while you\’re still covered — this alone is worth the free scan.',
   },
   {
     q: 'Is the home health score free?',
@@ -103,7 +103,7 @@ export default function TrustyProMcKinney() {
           <p style={{ color: '#4b5563', fontSize: 16, marginBottom: 48 }}>Three steps from scan to solved</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }}>
             {[
-              { step: '01', icon: '🔍', title: 'Scan', desc: 'Answer 12 questions about your home. Our AI cross-references McKinney building permits, subdivision data, and your home\'s build year to identify age-specific risks.' },
+              { step: '01', icon: '🔍', title: 'Scan', desc: 'Answer 12 questions about your home. Our AI cross-references McKinney building permits, subdivision data, and your home\’s build year to identify age-specific risks.' },
               { step: '02', icon: '📊', title: 'Score', desc: 'Receive a 0–100 Home Health Score across 6 categories: structure, roof, HVAC, electrical, plumbing, and irrigation.' },
               { step: '03', icon: '🔧', title: 'Book a Pro', desc: 'Choose from verified McKinney pros experienced in new construction and builder-grade system replacement. Flat pricing, no upsells.' },
             ].map(s => (
@@ -126,10 +126,10 @@ export default function TrustyProMcKinney() {
           <p style={{ color: '#6b7280', textAlign: 'center', marginBottom: 40, fontSize: 14 }}>TrustyPro catches issues before warranties expire</p>
           <div style={{ display: 'grid', gap: 20 }}>
             {[
-              { icon: '🌡️', title: 'Builder-Grade HVAC Systems at Year 7–10', desc: 'Builder-grade HVAC systems use lower-efficiency components to hit price targets. By year 7, refrigerant tends to leak, coils corrode, and airflow drops. A failing HVAC in a McKinney summer isn\'t just uncomfortable — it\'s dangerous. TrustyPro measures your system\'s efficiency output, not just its age.' },
-              { icon: '💦', title: 'Irrigation System Failures', desc: 'Irrigation systems in McKinney\'s newer subdivisions are often installed at builder cost, not homeowner quality. Zone valves fail, solenoids stick, and heads break under soil movement. Undetected leaks add $40–$120 to your water bill monthly. Maria\'s team finds and fixes them in a single visit.' },
+              { icon: '🌡️', title: 'Builder-Grade HVAC Systems at Year 7–10', desc: 'Builder-grade HVAC systems use lower-efficiency components to hit price targets. By year 7, refrigerant tends to leak, coils corrode, and airflow drops. A failing HVAC in a McKinney summer isn\’t just uncomfortable — it\’s dangerous. TrustyPro measures your system\’s efficiency output, not just its age.' },
+              { icon: '💦', title: 'Irrigation System Failures', desc: 'Irrigation systems in McKinney\’s newer subdivisions are often installed at builder cost, not homeowner quality. Zone valves fail, solenoids stick, and heads break under soil movement. Undetected leaks add $40–$120 to your water bill monthly. Maria\’s team finds and fixes them in a single visit.' },
               { icon: '⬜', title: 'Soil Settlement Cracks in Fill Lots', desc: 'Rapidly developed areas backfill lots with imported soil that takes 5–10 years to stabilize. As it compresses, foundations shift slightly — causing diagonal drywall cracks, sticking doors, and subtle floor slopes. Catching this at year 6–8 means a $2,000–$5,000 fix, not a $30,000 structural repair.' },
-              { icon: '🏠', title: 'Warranty Window Closing Fast', desc: 'Most builder structural warranties expire at 10 years. If you\'re in a home built 2015–2018, your window is closing. TrustyPro\'s scan identifies defects you can submit for warranty coverage before the deadline — this single benefit alone pays for years of proactive maintenance.' },
+              { icon: '🏠', title: 'Warranty Window Closing Fast', desc: 'Most builder structural warranties expire at 10 years. If you\’re in a home built 2015–2018, your window is closing. TrustyPro\’s scan identifies defects you can submit for warranty coverage before the deadline — this single benefit alone pays for years of proactive maintenance.' },
             ].map(r => (
               <div key={r.title} style={{ background: '#fff', borderRadius: 14, padding: 24, display: 'flex', gap: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: 32, flexShrink: 0 }}>{r.icon}</div>

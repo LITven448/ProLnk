@@ -1,41 +1,41 @@
 import { useState } from 'react';
 
 const roles = [
-  { id: 'homeowner', label: '🏠 I\'m a DFW Homeowner', message: 'homeowner' },
-  { id: 'pro', label: '🔧 I\'m an HVAC Professional', message: 'pro' },
-  { id: 'investor', label: '💼 I\'m a Real Estate Investor', message: 'investor' },
-  { id: 'builder', label: '🏗️ I\'m a Builder or Developer', message: 'builder' },
-  { id: 'curious', label: '🧠 I\'m Just Curious About All This', message: 'curious' },
+  { id: 'homeowner', label: '🏠 I\’m a DFW Homeowner', message: 'homeowner' },
+  { id: 'pro', label: '🔧 I\’m an HVAC Professional', message: 'pro' },
+  { id: 'investor', label: '💼 I\’m a Real Estate Investor', message: 'investor' },
+  { id: 'builder', label: '🏗️ I\’m a Builder or Developer', message: 'builder' },
+  { id: 'curious', label: '🧠 I\’m Just Curious About All This', message: 'curious' },
 ];
 
 const messages: Record<string, { headline: string; body: string; cta: string; ctaLabel: string }> = {
   homeowner: {
     headline: 'You Are Now the Most Informed DFW Homeowner in Your Neighborhood',
-    body: 'You\'ve just completed the most comprehensive DFW HVAC knowledge session ever assembled — 3,200+ pages covering every system, every failure mode, every red flag, every green flag, every efficiency standard, every climate-specific nuance for North Texas. You know what your home needs. You know how to evaluate contractors. You know the difference between SEER and SEER2. You\'re ready.\n\nProLnk was built for this moment. We match DFW homeowners like you with vetted, transparent HVAC professionals who earned this placement by meeting every standard you just learned.',
+    body: 'You\’ve just completed the most comprehensive DFW HVAC knowledge session ever assembled — 3,200+ pages covering every system, every failure mode, every red flag, every green flag, every efficiency standard, every climate-specific nuance for North Texas. You know what your home needs. You know how to evaluate contractors. You know the difference between SEER and SEER2. You\’re ready.\n\nProLnk was built for this moment. We match DFW homeowners like you with vetted, transparent HVAC professionals who earned this placement by meeting every standard you just learned.',
     cta: '/prolnk-homeowner-signup',
     ctaLabel: 'Join ProLnk — Get My Free Quotes',
   },
   pro: {
-    headline: 'You\'re the Kind of Pro DFW Homeowners Are Looking For',
-    body: 'Every homeowner who completes this knowledge session is looking for exactly what you offer — if you offer it right. They know the difference between Manual J and guessing. They know R-22 is dead. They know SEER2 ratings matter. They know green flags from red ones.\n\nProLnk connects vetted HVAC professionals with informed, ready-to-hire DFW homeowners. No chasing leads. No competing on price with unlicensed crews. Just qualified matches with homeowners who appreciate expertise.\n\nIf you\'re NATE-certified, licensed, pulling permits, and doing the work right — ProLnk was built for you.',
+    headline: 'You\’re the Kind of Pro DFW Homeowners Are Looking For',
+    body: 'Every homeowner who completes this knowledge session is looking for exactly what you offer — if you offer it right. They know the difference between Manual J and guessing. They know R-22 is dead. They know SEER2 ratings matter. They know green flags from red ones.\n\nProLnk connects vetted HVAC professionals with informed, ready-to-hire DFW homeowners. No chasing leads. No competing on price with unlicensed crews. Just qualified matches with homeowners who appreciate expertise.\n\nIf you\’re NATE-certified, licensed, pulling permits, and doing the work right — ProLnk was built for you.',
     cta: '/prolnk-pro-signup',
     ctaLabel: 'Join ProLnk as a Pro — Get Matched',
   },
   investor: {
     headline: 'HVAC Intelligence Is a Real Estate Edge',
-    body: 'The DFW market moves fast. HVAC systems are among the most significant mechanical assets in any residential property — and the most misunderstood by investors who don\'t go deep.\n\nYou now know what a failing capacitor costs vs. a failing compressor. You know what R-22 in a system means for your portfolio. You know what SEER2 ratings mean for NOI in a rental. That\'s a competitive edge.\n\nProLnk\'s Home Health Vault is being built specifically for real estate investors — a structured, verified HVAC and mechanical history for every home in the system. You\'ll want early access.',
+    body: 'The DFW market moves fast. HVAC systems are among the most significant mechanical assets in any residential property — and the most misunderstood by investors who don\’t go deep.\n\nYou now know what a failing capacitor costs vs. a failing compressor. You know what R-22 in a system means for your portfolio. You know what SEER2 ratings mean for NOI in a rental. That\’s a competitive edge.\n\nProLnk\’s Home Health Vault is being built specifically for real estate investors — a structured, verified HVAC and mechanical history for every home in the system. You\’ll want early access.',
     cta: '/prolnk-homeowner-signup',
     ctaLabel: 'Join the ProLnk Waitlist',
   },
   builder: {
     headline: 'The DFW New Construction HVAC Standard Has Changed',
-    body: 'SEER2. Manual J required by code. R-454B refrigerant phasing in. The bar for new construction HVAC in DFW is higher than it\'s been in decades — and buyers are more informed than ever.\n\nThis session represents what your future buyers now know. They\'ll ask about SEER2 ratings. They\'ll ask if a Manual J was done. They\'ll ask which refrigerant. ProLnk is building the resource network that connects builders with top-tier DFW HVAC crews who meet the 2026 standard.',
+    body: 'SEER2. Manual J required by code. R-454B refrigerant phasing in. The bar for new construction HVAC in DFW is higher than it\’s been in decades — and buyers are more informed than ever.\n\nThis session represents what your future buyers now know. They\’ll ask about SEER2 ratings. They\’ll ask if a Manual J was done. They\’ll ask which refrigerant. ProLnk is building the resource network that connects builders with top-tier DFW HVAC crews who meet the 2026 standard.',
     cta: '/prolnk-pro-signup',
     ctaLabel: 'Connect ProLnk with Your HVAC Partners',
   },
   curious: {
     headline: 'You Just Absorbed 3,200+ Pages of DFW HVAC Knowledge',
-    body: 'That\'s not a small thing. You now understand DFW\'s climate dynamics, the equipment standards, the failure modes, the contractor quality signals, the refrigerant transition, the efficiency rating changes, the critical components, and the human side of home services.\n\nProLnk is the platform being built on top of all of this — a marketplace that brings homeowner knowledge and professional quality together, powered by AI that keeps getting smarter about what great home service looks like in North Texas.\n\nWhatever brought you here, we\'re glad you made it to the end. This is the beginning of something bigger.',
+    body: 'That\’s not a small thing. You now understand DFW\’s climate dynamics, the equipment standards, the failure modes, the contractor quality signals, the refrigerant transition, the efficiency rating changes, the critical components, and the human side of home services.\n\nProLnk is the platform being built on top of all of this — a marketplace that brings homeowner knowledge and professional quality together, powered by AI that keeps getting smarter about what great home service looks like in North Texas.\n\nWhatever brought you here, we\’re glad you made it to the end. This is the beginning of something bigger.',
     cta: '/prolnk-homeowner-signup',
     ctaLabel: 'Join the ProLnk Community',
   },

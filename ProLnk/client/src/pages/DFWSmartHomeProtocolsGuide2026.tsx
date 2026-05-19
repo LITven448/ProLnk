@@ -6,7 +6,7 @@ export default function DFWSmartHomeProtocolsGuide2026() {
   const getProtocol = () => {
     const protocols: Record<string, { name: string; why: string; devices: string; hub: string; tip: string }> = {
       reliability: { name: 'Z-Wave', why: 'Dedicated 908MHz spectrum — zero Wi-Fi interference in DFW homes', devices: 'Locks, switches, sensors, thermostats', hub: 'SmartThings, Hubitat, or Home Assistant', tip: 'Z-Wave mesh self-heals — more devices = stronger network' },
-      future: { name: 'Matter', why: 'Industry standard — works with Apple, Google, Amazon ecosystems', devices: 'Lights, plugs, locks, thermostats (Matter 1.3+)', hub: 'Any Matter-certified controller (no single hub lock-in)', tip: 'Buy Matter-compatible devices now — older devices can't upgrade' },
+      future: { name: 'Matter', why: 'Industry standard — works with Apple, Google, Amazon ecosystems', devices: 'Lights, plugs, locks, thermostats (Matter 1.3+)', hub: 'Any Matter-certified controller (no single hub lock-in)', tip: 'Buy Matter-compatible devices now — older devices can’t upgrade' },
       easy: { name: 'Wi-Fi Direct', why: 'No hub needed — works with any router you already have', devices: 'Cameras, video doorbells, smart plugs, bulbs', hub: 'None required — app-controlled', tip: 'Limit to 20-30 Wi-Fi smart devices max — 2.4GHz gets crowded' },
       automation: { name: 'Zigbee', why: 'Low power, fast mesh — ideal for sensors and automation triggers', devices: 'Motion sensors, door/window sensors, smart bulbs', hub: 'Philips Hue bridge, SmartThings, Hubitat', tip: 'Zigbee and Z-Wave can coexist on same hub for best coverage' },
     };

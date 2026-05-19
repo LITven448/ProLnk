@@ -73,7 +73,7 @@ export default function DFWWasherDryerGuide() {
           {[
             { icon: '💧', title: 'Hard Water Damage', desc: 'DFW water hardness averages 15–25 grains per gallon — among the highest in TX. Without a softener, mineral deposits clog water inlet valves, damage pump seals, and coat heating elements within 5–7 years.' },
             { icon: '🔄', title: 'Front vs. Top Load', desc: 'Top-loaders are more forgiving with DFW hard water. Front-loaders are 20–30% more water-efficient (critical with DFW water restrictions) but require more maintenance and bellow cleaning to prevent mold in humid summers.' },
-            { icon: '⚡', title: 'Gas vs. Electric Dryer', desc: 'Gas dryers cost $30–$60/year less to operate in Texas. If you have a gas hookup, it\'s almost always worth the $50–$100 premium. Electric heat-pump dryers are emerging as the most efficient option.' },
+            { icon: '⚡', title: 'Gas vs. Electric Dryer', desc: 'Gas dryers cost $30–$60/year less to operate in Texas. If you have a gas hookup, it\’s almost always worth the $50–$100 premium. Electric heat-pump dryers are emerging as the most efficient option.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#0D1E3A', border: '1px solid #1E3A5F', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>

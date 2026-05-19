@@ -46,7 +46,7 @@ const projectTypes: Record<string, ContractData> = {
       'No model number — protects contractor to substitute cheaper unit',
       'Full payment required before installation',
       'No mention of existing ductwork assessment',
-      '"We\'ll pull permit if needed" — it is always needed',
+      '"We\’ll pull permit if needed" — it is always needed',
     ],
     addBefore: [
       'Load calculation (Manual J) performed and provided to you',
@@ -66,7 +66,7 @@ const projectTypes: Record<string, ContractData> = {
       'Before and after elevation readings documented',
     ],
     redFlags: [
-      'Warranty that\'s non-transferable — kills resale value',
+      'Warranty that\’s non-transferable — kills resale value',
       'Lifetime warranty with no company guarantee or bond',
       'No mention of engineering review',
       'Vague pier count — "approximately X piers"',
@@ -81,7 +81,7 @@ const projectTypes: Record<string, ContractData> = {
   'Kitchen / Bath Remodel': {
     essentials: [
       'Complete material list: cabinet manufacturer/model, countertop material/color, tile, fixtures',
-      'Scope of demolition — what is and isn\'t being removed',
+      'Scope of demolition — what is and isn\’t being removed',
       'Subcontractor list — who handles plumbing, electrical, tile',
       'Permit responsibility for electrical and plumbing work',
       'Draw schedule tied to specific milestones, not calendar dates',
@@ -114,10 +114,10 @@ const projectTypes: Record<string, ContractData> = {
       'Any offer to skip permit to "save money" — major liability',
       'No mention of city inspection',
       'Unlicensed electrician (Texas requires TDLR license)',
-      '"We\'ll take care of inspection" without written confirmation',
+      '"We\’ll take care of inspection" without written confirmation',
     ],
     addBefore: [
-      'Copy of contractor\'s TDLR electrical license in contract',
+      'Copy of contractor\’s TDLR electrical license in contract',
       'Inspection certificate provided at completion',
       'Lien waiver upon final payment',
       'Load calculation if adding EV charger or major appliances',

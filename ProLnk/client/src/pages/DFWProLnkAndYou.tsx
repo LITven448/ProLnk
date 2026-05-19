@@ -26,7 +26,7 @@ const valueProps: Record<string, Record<string, { headline: string; points: stri
         '🏗️ Build contractor relationships before emergencies — pay planned rates, not panic rates',
         '📋 Access DFW-specific guides for foundation, HVAC, property tax, and seasonal prep',
         '🔔 Get vetted quotes from pre-screened DFW pros — no cold calls, no spam',
-        '📊 Track your home\'s health across all major systems in one place',
+        '📊 Track your home\’s health across all major systems in one place',
       ],
       cta: 'Join ProLnk as a DFW Homeowner',
       ctaUrl: '/homeowner-signup',
@@ -51,7 +51,7 @@ const valueProps: Record<string, Record<string, { headline: string; points: stri
       points: [
         '💵 Earn on every homeowner you refer — per-lead fees you negotiate directly',
         '📣 Earn on every pro you bring in — 10% of their $149/mo subscription, recurring',
-        '🌐 4-level network override — earn from your network\'s network',
+        '🌐 4-level network override — earn from your network\’s network',
         '🏆 Leaderboard recognition and Charter member status for top connectors',
       ],
       cta: 'Join as a ProLnk Network Partner',

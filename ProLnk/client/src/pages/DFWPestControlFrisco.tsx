@@ -58,7 +58,7 @@ export default function DFWPestControlFrisco() {
           {[
             ['🐜', 'Fire Ant Capital', 'New construction in Frisco disrupts fire ant colonies, triggering aggressive recolonization throughout new-build neighborhoods.'],
             ['🦟', 'Development Pond Mosquitoes', 'Every master-planned community pond is a mosquito breeding ground. Larvicide programs are essential near water.'],
-            ['🐛', 'Termite Endemic Zone', 'Frisco sits squarely in North Texas\'s high termite pressure zone. Pre-treatment during construction is strongly advised.'],
+            ['🐛', 'Termite Endemic Zone', 'Frisco sits squarely in North Texas\’s high termite pressure zone. Pre-treatment during construction is strongly advised.'],
             ['🏘️', 'HOA Coordination', 'Top Frisco pest companies coordinate community-wide programs that reduce per-home cost by 30–40%.'],
           ].map(([icon, title, desc]) => (
             <div key={title} style={{ backgroundColor: '#111e35', borderRadius: 12, padding: 24 }}>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DIMENSIONS = [
   { label: 'Contractor Cost', angi: 'Contractors pay $15–$80 per lead — costs passed to you in quotes', prolnk: 'ProLnk charges no per-lead fees — contractors pay a flat subscription only' },
-  { label: 'Contractor Vetting', angi: 'Any contractor who pays Angi's fee gets listed — minimal screening', prolnk: 'Background check, license verify, and insurance review before first match' },
+  { label: 'Contractor Vetting', angi: 'Any contractor who pays Angi’s fee gets listed — minimal screening', prolnk: 'Background check, license verify, and insurance review before first match' },
   { label: 'Homeowner Cost', angi: 'Free to browse, but quote quality varies due to lead-chasing contractors', prolnk: '100% free — no upsells, no premium tiers, no pay-to-match' },
   { label: 'Lead Quality', angi: 'Same lead sold to 5–8 contractors — expect spam calls within minutes', prolnk: 'Your job goes to exactly 3 matched pros — not broadcast to a crowd' },
   { label: 'Quote Speed', angi: 'Varies widely — contractors may ignore leads they deem low-value', prolnk: 'Match engine contacts pros within minutes; most quote within 24 hours' },
@@ -11,10 +11,10 @@ const DIMENSIONS = [
 ];
 
 const PRIORITIES = [
-  { label: 'Lowest price quotes', winner: 'prolnk', reason: 'No per-lead fees means contractors don't inflate quotes to recover acquisition cost.' },
-  { label: 'Widest contractor selection', winner: 'angi', reason: 'Angi has more total listings — though volume doesn't equal quality.' },
-  { label: 'Trustworthy contractors', winner: 'prolnk', reason: 'ProLnk's vetting process removes unverified contractors before they reach you.' },
-  { label: 'Speed to first response', winner: 'prolnk', reason: 'ProLnk's match engine beats Angi's browse-and-wait model by hours.' },
+  { label: 'Lowest price quotes', winner: 'prolnk', reason: 'No per-lead fees means contractors don’t inflate quotes to recover acquisition cost.' },
+  { label: 'Widest contractor selection', winner: 'angi', reason: 'Angi has more total listings — though volume doesn’t equal quality.' },
+  { label: 'Trustworthy contractors', winner: 'prolnk', reason: 'ProLnk’s vetting process removes unverified contractors before they reach you.' },
+  { label: 'Speed to first response', winner: 'prolnk', reason: 'ProLnk’s match engine beats Angi’s browse-and-wait model by hours.' },
   { label: 'No spam calls', winner: 'prolnk', reason: 'ProLnk sends your info to 3 pros max. Angi sells the same lead to up to 8.' },
 ];
 

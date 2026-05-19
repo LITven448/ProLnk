@@ -10,7 +10,7 @@ const RISK_FACTORS: Record<string, { weight: number; desc: string }> = {
 };
 
 const PROTECTIONS = [
-  { icon: '🏗️', title: 'Annual Home Inspection', desc: 'Catch foundation, roof, and plumbing early — DFW's clay soil is particularly aggressive.' },
+  { icon: '🏗️', title: 'Annual Home Inspection', desc: 'Catch foundation, roof, and plumbing early — DFW’s clay soil is particularly aggressive.' },
   { icon: '🌡️', title: 'HVAC Maintenance Plan', desc: 'DFW summers push HVAC hard. Annual contracts with Oncor-approved contractors.' },
   { icon: '💧', title: 'Moisture & Foundation Control', desc: 'Soaker hose systems prevent clay soil shrinkage that cracks slab foundations.' },
   { icon: '📈', title: 'Strategic Improvements', desc: 'Kitchen, bath, and curb appeal upgrades that match submarket buyer expectations.' },
@@ -48,7 +48,7 @@ export default function DFWHomeDepreciationGuide() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginTop: 0 }}>📚 DFW-Specific Depreciation Causes</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              { icon: '🏚️', title: 'Deferred Maintenance', desc: 'The #1 depreciation driver. In DFW\'s heat, unmaintained roofs and HVAC deteriorate fast.' },
+              { icon: '🏚️', title: 'Deferred Maintenance', desc: 'The #1 depreciation driver. In DFW\’s heat, unmaintained roofs and HVAC deteriorate fast.' },
               { icon: '🌍', title: 'Foundation Issues', desc: 'DFW clay soil expands and contracts, cracking slabs. A red flag for buyers and inspectors.' },
               { icon: '📉', title: 'Neighborhood Decline', desc: 'Rising vacancy, absentee ownership, and commercial blight pull all comps down.' },
               { icon: '🏭', title: 'Economic Shifts', desc: '2008 showed how employer exits create ghost-town streets — even in DFW pockets.' },
@@ -92,8 +92,8 @@ export default function DFWHomeDepreciationGuide() {
               <div style={{ fontWeight: 800, fontSize: 36, color: result.color }}>{result.score}/100</div>
               <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628', marginTop: 4 }}>{result.level} Depreciation Risk</div>
               <div style={{ fontSize: 13, color: '#64748B', marginTop: 8 }}>
-                {result.level === 'High' ? 'Take action now — deferred issues compound quickly in DFW\'s climate. Start with foundation and roof.' :
-                  result.level === 'Moderate' ? 'You\'re in manageable territory. Prioritize the highest-weight factors you selected.' :
+                {result.level === 'High' ? 'Take action now — deferred issues compound quickly in DFW\’s climate. Start with foundation and roof.' :
+                  result.level === 'Moderate' ? 'You\’re in manageable territory. Prioritize the highest-weight factors you selected.' :
                   'Strong position. Maintain the current care routine to preserve your DFW appreciation advantage.'}
               </div>
             </div>

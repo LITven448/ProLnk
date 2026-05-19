@@ -12,7 +12,7 @@ function getFastenerRecommendation(project: string, exposure: string) {
       fastener: salt ? 'Hot-dipped galvanized or 316 stainless steel' : 'Hot-dipped galvanized (HDG) or G185 coated',
       color: '#00CC66',
       risk: salt ? 'HIGH corrosion risk' : 'MODERATE corrosion risk',
-      detail: 'PT lumber treated with MCA or CA-C is corrosive to standard zinc-plated fasteners. DFW\'s humidity accelerates the reaction. Standard bright nails will fail within 2–5 years in PT framing.',
+      detail: 'PT lumber treated with MCA or CA-C is corrosive to standard zinc-plated fasteners. DFW\’s humidity accelerates the reaction. Standard bright nails will fail within 2–5 years in PT framing.',
       avoid: 'Avoid: standard zinc-plated nails, aluminum hardware (reacts with PT chemicals), electroplated galvanized.',
       lifespan: salt ? '15–25 years with 316 SS' : '20–30 years with proper HDG hardware',
     };
@@ -42,7 +42,7 @@ function getFastenerRecommendation(project: string, exposure: string) {
       fastener: 'Code-approved structural anchors: Simpson Strong-Tie or Hilti with specified corrosion rating',
       color: '#F5E642',
       risk: wet || salt ? 'HIGH corrosion risk' : 'MODERATE corrosion risk',
-      detail: 'Ledger-to-concrete connections are life-safety connections. DFW\'s humidity means standard zinc lag screws used in concrete anchor systems can corrode enough within 10–15 years to lose significant holding strength.',
+      detail: 'Ledger-to-concrete connections are life-safety connections. DFW\’s humidity means standard zinc lag screws used in concrete anchor systems can corrode enough within 10–15 years to lose significant holding strength.',
       avoid: 'Never use generic lag screws or standard hardware store anchors for structural ledger connections. Always use rated anchors per IRC Table R507.9.1.',
       lifespan: 'Stainless or HDG structural anchors: 30–50 years. Inspectable every 10 years.',
     };
@@ -74,7 +74,7 @@ export default function DFWFasteningGuide() {
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '⚗️', title: 'PT Lumber + Zinc = Problem', body: 'Modern pressure-treated lumber uses copper-based preservatives (MCA, CA-C) that are highly corrosive to standard zinc-plated fasteners. This reaction is accelerated by DFW humidity. Always use HDG or stainless hardware with PT lumber.' },
-            { icon: '🌊', title: 'DFW Soil Salts', body: 'DFW\'s alkaline clay soils — especially near creeks and drainage zones in areas like Rockwall, Rowlett, and Grapevine — contain elevated mineral content that accelerates fastener corrosion at soil-contact points. This is distinct from coastal salt air but real.' },
+            { icon: '🌊', title: 'DFW Soil Salts', body: 'DFW\’s alkaline clay soils — especially near creeks and drainage zones in areas like Rockwall, Rowlett, and Grapevine — contain elevated mineral content that accelerates fastener corrosion at soil-contact points. This is distinct from coastal salt air but real.' },
             { icon: '🔬', title: 'Fastener Metal Hierarchy', body: '316 Stainless > Hot-Dipped Galvanized > G185 Coated > Polymer/Ceramic Coated > Electroplated Galvanized > Standard Zinc. Move up the hierarchy as exposure and moisture increase.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#0F2040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>

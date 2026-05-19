@@ -14,12 +14,12 @@ export default function DFWWaterLineReplacement2026() {
         none: '🟡 Galvanized with no symptoms — inspect age. If 40+ years, DFW clay soil movement likely accelerating decay. Get a camera inspection ($150–250) before it fails.',
       },
       poly: {
-        rust: '🟡 Polyethylene (black poly) main lines don't rust, but UV degradation can cause brittleness near surface. Check for cracking where pipe exits ground.',
+        rust: '🟡 Polyethylene (black poly) main lines don’t rust, but UV degradation can cause brittleness near surface. Check for cracking where pipe exits ground.',
         low: '🟠 Low pressure with poly main — check for root intrusion near trees (DFW live oaks have aggressive roots) or fitting failures. Camera inspect before assuming pipe failure.',
         none: '✅ Poly main with no symptoms — check age. Pre-1985 poly uses a different formulation that degrades faster. If 30+ years, plan for replacement within 5 years.',
       },
       copper: {
-        rust: '🟡 Copper mains don't rust. Red/brown water = sediment from city main or water heater, not your copper line. Flush cold water 2+ minutes and test again.',
+        rust: '🟡 Copper mains don’t rust. Red/brown water = sediment from city main or water heater, not your copper line. Flush cold water 2+ minutes and test again.',
         low: '🟡 Low pressure in copper main — check meter valve (partially closed), pressure regulator (DFW PRV typically set 60–80 psi), or scale buildup at fixtures.',
         none: '✅ Copper main in good condition — typically lasts 50+ years. DFW clay soil can stress joints over time. No immediate action needed.',
       },

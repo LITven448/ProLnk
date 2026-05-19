@@ -35,7 +35,7 @@ const situations = [
     plan: {
       headline: 'Transparent Pricing — No Surprises',
       steps: [
-        'ProLnk\'s matching model means contractors compete for your job. DFW homeowners who submit requests through ProLnk report 15-25% lower quotes vs. calling contractors directly.',
+        'ProLnk\’s matching model means contractors compete for your job. DFW homeowners who submit requests through ProLnk report 15-25% lower quotes vs. calling contractors directly.',
         '2026 federal tax credits are real: up to $2,000 for qualifying heat pump installations, $600 for high-efficiency central AC. Your ProLnk contractor can confirm eligibility on-site.',
         'Oncor and TXU are running summer 2026 rebate programs for HVAC replacements meeting SEER2 17+ efficiency. Ask your matched pro to verify your utility zone eligibility.',
         'ProLnk offers no-cost multi-quote requests. You only pay the contractor you choose. No platform fee to homeowners.',
@@ -51,9 +51,9 @@ const situations = [
       steps: [
         'DFW summers are extreme. 105°F+ days from June through September. Your HVAC system is not optional equipment — it is life safety infrastructure. Budget accordingly.',
         'First thing: get a full HVAC inspection through ProLnk. New-to-DFW homeowners often inherit aging systems. Knowing your system age and condition before summer is critical.',
-        'Add your home to ProLnk\'s Home Health Vault at launch. Your property gets a permanent HVAC and home systems record that travels with the home if you sell.',
-        'DFW contractors are in high demand from April through September. Joining ProLnk\'s waitlist now guarantees you access to vetted pros — not whoever answers the phone in an emergency.',
-        'ProLnk\'s summer 2026 DFW network includes HVAC, plumbing, electrical, and roofing specialists. One platform for all your home service needs, all vetted before they arrive at your door.',
+        'Add your home to ProLnk\’s Home Health Vault at launch. Your property gets a permanent HVAC and home systems record that travels with the home if you sell.',
+        'DFW contractors are in high demand from April through September. Joining ProLnk\’s waitlist now guarantees you access to vetted pros — not whoever answers the phone in an emergency.',
+        'ProLnk\’s summer 2026 DFW network includes HVAC, plumbing, electrical, and roofing specialists. One platform for all your home service needs, all vetted before they arrive at your door.',
       ],
     },
   },
@@ -65,7 +65,7 @@ const situations = [
       steps: [
         'ProLnk summer 2026 supports multi-property homeowners. Submit service requests across all properties from a single account — matched separately per property address.',
         'Home Health Vault supports unlimited properties. Each property gets its own HVAC health record, service history, and risk score — important for rental property management and resale.',
-        'Landlord tip: HVAC failures at rental properties create tenant emergencies. ProLnk\'s 4-hour emergency match window for Charter homeowners reduces your liability window dramatically.',
+        'Landlord tip: HVAC failures at rental properties create tenant emergencies. ProLnk\’s 4-hour emergency match window for Charter homeowners reduces your liability window dramatically.',
         'Bulk scheduling available for summer tune-ups. Submit multiple properties in one request and ProLnk coordinates scheduling across your portfolio with minimal landlord involvement.',
         'Documented service history through ProLnk and Home Health Vault adds real value to DFW investment properties. Buyers and appraisers recognize maintained systems.',
       ],

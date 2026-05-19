@@ -9,7 +9,7 @@ function getChecklist(age: string, condition: string) {
   const vacant = condition === 'Vacant 6+ months';
 
   const hvac = [
-    '🌬️ Replace ALL air filters before first use — previous owners\' allergens',
+    '🌬️ Replace ALL air filters before first use — previous owners\’ allergens',
     '🧹 Vacuum all air vents and returns (DFW clay dust settles in ducts)',
     heavy ? '🔧 Professional duct cleaning recommended ($300–$600)' : '🔧 Inspect ductwork for visible mold or debris',
     vacant ? '❄️ Have HVAC system inspected — refrigerant may have leaked' : '❄️ Test AC and heat before move-in',

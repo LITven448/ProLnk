@@ -25,7 +25,7 @@ function buildPlan(situation: typeof guestSituations[0], home: typeof dfwHomes[0
   if (home.id === 'apt' || home.id === 'starter') tips.push('🏠 Small DFW spaces heat fast — check thermostat every 2 hours during peak occupancy');
   if (situation.days >= 7) tips.push('🔧 Check filter after day 5 — more people = more particles = faster clogging');
   tips.push('🌬️ Place portable fans strategically — they let you raise thermostat 4°F with same comfort');
-  if (situation.severity === 'EXTREME') tips.push('📞 Have a DFW HVAC pro\'s number ready — large gatherings can trip systems');
+  if (situation.severity === 'EXTREME') tips.push('📞 Have a DFW HVAC pro\’s number ready — large gatherings can trip systems');
   tips.push('🌙 At night: bump up 2°F — sleeping guests generate less heat');
   return tips;
 }

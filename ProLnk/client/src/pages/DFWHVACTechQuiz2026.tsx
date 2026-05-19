@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
 const questions = [
-  { id: 1, text: 'What is your current filter MERV rating?', emoji: '🔢', options: ['I don\'t know', 'MERV 1-4 (basic)', 'MERV 8-11 (mid)', 'MERV 13+ (high)'], scores: [0, 1, 2, 3] },
+  { id: 1, text: 'What is your current filter MERV rating?', emoji: '🔢', options: ['I don\’t know', 'MERV 1-4 (basic)', 'MERV 8-11 (mid)', 'MERV 13+ (high)'], scores: [0, 1, 2, 3] },
   { id: 2, text: 'When did you last change your air filter?', emoji: '📅', options: ['Over a year ago', '6-12 months ago', '3-6 months ago', 'Within 3 months'], scores: [0, 1, 2, 3] },
-  { id: 3, text: 'What refrigerant is in your HVAC system?', emoji: '❄️', options: ['I don\'t know', 'R-22 (Freon)', 'R-410A (Puron)', 'R-32 or R-454B'], scores: [0, 1, 2, 3] },
+  { id: 3, text: 'What refrigerant is in your HVAC system?', emoji: '❄️', options: ['I don\’t know', 'R-22 (Freon)', 'R-410A (Puron)', 'R-32 or R-454B'], scores: [0, 1, 2, 3] },
   { id: 4, text: 'When was your last professional HVAC tune-up?', emoji: '🔧', options: ['Never / Unknown', 'More than 2 years', '1-2 years ago', 'Within the last year'], scores: [0, 1, 2, 3] },
-  { id: 5, text: 'Do you have a float switch / overflow shutoff on your drain pan?', emoji: '💧', options: ['What\'s that?', 'Not sure', 'I think so', 'Yes, confirmed'], scores: [0, 1, 2, 3] },
+  { id: 5, text: 'Do you have a float switch / overflow shutoff on your drain pan?', emoji: '💧', options: ['What\’s that?', 'Not sure', 'I think so', 'Yes, confirmed'], scores: [0, 1, 2, 3] },
 ];
 
 const getResult = (score: number) => {
   if (score <= 4) return { label: 'DFW HVAC Novice', color: '#ef4444', tip: 'Your DFW home is at risk — summer heat can spike bills 40% with a dirty system. ProLnk can connect you with a certified HVAC tech today.' };
-  if (score <= 8) return { label: 'DFW HVAC Learner', color: '#f97316', tip: 'You\'re partway there. Schedule a tune-up before DFW summer hits and confirm your float switch to avoid costly water damage.' };
+  if (score <= 8) return { label: 'DFW HVAC Learner', color: '#f97316', tip: 'You\’re partway there. Schedule a tune-up before DFW summer hits and confirm your float switch to avoid costly water damage.' };
   if (score <= 11) return { label: 'DFW HVAC Aware', color: '#eab308', tip: 'Solid knowledge. Upgrade to MERV 13+ if you have pets or allergies — DFW air quality makes it worth it.' };
-  return { label: 'DFW HVAC Pro Homeowner', color: '#22c55e', tip: 'Excellent! You\'re protecting your investment. Log your system details in ProLnk Vault so your records follow your home forever.' };
+  return { label: 'DFW HVAC Pro Homeowner', color: '#22c55e', tip: 'Excellent! You\’re protecting your investment. Log your system details in ProLnk Vault so your records follow your home forever.' };
 };
 
 export default function DFWHVACTechQuiz2026() {

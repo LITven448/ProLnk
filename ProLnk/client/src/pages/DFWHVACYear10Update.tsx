@@ -24,13 +24,13 @@ const plans: Record<string, { title: string; steps: string[]; timeline: string; 
     title: 'Extended Life Plan — Maximize What You Have',
     steps: [
       'Treat the replaced component as the clock reset — track from replacement date',
-      'Ensure remaining components match the replaced part's lifespan',
+      'Ensure remaining components match the replaced part’s lifespan',
       'Mismatched system ages can cause efficiency loss — ask a tech to assess',
       'Keep full records: replaced part, brand, date, tech — for resale value',
       'Plan next 5 years of maintenance on the original components still in place',
     ],
     timeline: 'Potentially 5–8 more years depending on what was replaced',
-    insight: 'Replacing just the compressor on a 10-year-old system is common in DFW. It extends life but doesn't reset all components — track the full picture.',
+    insight: 'Replacing just the compressor on a 10-year-old system is common in DFW. It extends life but doesn’t reset all components — track the full picture.',
   },
   expensive: {
     title: 'Repair vs. Replace Decision Framework',

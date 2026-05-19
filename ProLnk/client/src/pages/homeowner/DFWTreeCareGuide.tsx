@@ -90,7 +90,7 @@ export default function DFWTreeCareGuide() {
               { icon: '🏠', tip: 'Foundation risk: Large trees within 15 feet draw moisture from DFW clay soil, accelerating foundation movement. This is the #1 tree-related home expense in North Texas.' },
               { icon: '🌲', tip: 'Cedar fever (Mountain cedar) peaks February–March. If a cedar tree is near your home, trimming before January reduces airborne pollen and fire risk.' },
               { icon: '🐜', tip: 'Fire ant mounds at tree bases indicate saturated soil or root decay. Treat mounds and check for root damage.' },
-              { icon: '✂️', tip: 'Crape myrtle murder: Never top crape myrtles. Heavy heading ruins the tree's structure. Correct trimming = remove suckers + cross-branches only.' },
+              { icon: '✂️', tip: 'Crape myrtle murder: Never top crape myrtles. Heavy heading ruins the tree’s structure. Correct trimming = remove suckers + cross-branches only.' },
             ].map(({ icon, tip }, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, color: '#CBD5E1', fontSize: 15, lineHeight: 1.6 }}>
                 <span style={{ fontSize: 20, flexShrink: 0 }}>{icon}</span>

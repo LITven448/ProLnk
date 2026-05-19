@@ -9,7 +9,7 @@ const challenges = [
 
 const homeownerTypes = [
   { label: 'New homebuyer', result: 'Get a Home Health Vault started from day one. Every repair documented. Future sale value protected from the first month.' },
-  { label: 'Long-time owner', result: 'Consolidate 10+ years of service history into a single verified record. Finally see what your home has cost — and what it\'s worth.' },
+  { label: 'Long-time owner', result: 'Consolidate 10+ years of service history into a single verified record. Finally see what your home has cost — and what it\’s worth.' },
   { label: 'Landlord / investor', result: 'Manage multiple properties from one dashboard. Vendors vetted, invoices tracked, maintenance history per address.' },
   { label: 'Selling soon', result: 'Vault-backed home history increases buyer confidence and supports a faster, higher close. Agents love it.' },
 ];

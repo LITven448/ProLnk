@@ -16,7 +16,7 @@ export default function DFWSellerNetProceedsGuide() {
 
     const items = [
       { label: 'Agent Commission', amount: -(price * commissionRate), note: `${agentRate}% of sale price (listing + buyer's agent)` },
-      { label: 'Title Policy (Owner)', amount: -(price * 0.006), note: 'Texas seller typically pays owner\'s title policy (~0.6%)' },
+      { label: 'Title Policy (Owner)', amount: -(price * 0.006), note: 'Texas seller typically pays owner\’s title policy (~0.6%)' },
       { label: 'Escrow / Closing Fee', amount: -1500, note: 'Title company closing/escrow fee (avg DFW)' },
       { label: 'Property Tax Proration', amount: -(price * 0.022 / 12 * 6), note: 'DFW avg 2.2% tax rate — prorated months to close' },
       { label: 'Survey (if needed)', amount: -650, note: 'New survey if existing not available (~$500–800)' },
@@ -45,9 +45,9 @@ export default function DFWSellerNetProceedsGuide() {
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 40 }}>
           {[
-            { icon: '🏷️', title: 'Agent Commission (Biggest Cost)', body: 'Traditionally 5–6% split between listing and buyer\'s agent. Post-NAR settlement, listing agents typically charge 2.5–3%, and buyer agent compensation is separately negotiated. On a $450K DFW home, 5% = $22,500.' },
-            { icon: '📄', title: 'Texas Title Policy — Seller Pays', body: 'Unlike most states where the buyer pays for title insurance, Texas custom puts the owner\'s title policy on the seller. This runs approximately 0.5–0.6% of the sale price — about $2,700 on a $450K home.' },
-            { icon: '🧾', title: 'Property Tax Proration', body: 'Texas has no state income tax, but property taxes average 2.1–2.5% in DFW. Sellers owe taxes for the months they owned the home in the closing year. On a $400K home at 2.2%, that\'s about $733/month — prorated to your closing date.' },
+            { icon: '🏷️', title: 'Agent Commission (Biggest Cost)', body: 'Traditionally 5–6% split between listing and buyer\’s agent. Post-NAR settlement, listing agents typically charge 2.5–3%, and buyer agent compensation is separately negotiated. On a $450K DFW home, 5% = $22,500.' },
+            { icon: '📄', title: 'Texas Title Policy — Seller Pays', body: 'Unlike most states where the buyer pays for title insurance, Texas custom puts the owner\’s title policy on the seller. This runs approximately 0.5–0.6% of the sale price — about $2,700 on a $450K home.' },
+            { icon: '🧾', title: 'Property Tax Proration', body: 'Texas has no state income tax, but property taxes average 2.1–2.5% in DFW. Sellers owe taxes for the months they owned the home in the closing year. On a $400K home at 2.2%, that\’s about $733/month — prorated to your closing date.' },
             { icon: '🏘️', title: 'HOA Fees at Closing', body: 'Most DFW communities (Frisco, Allen, McKinney, Prosper, Southlake) have HOAs. Expect a transfer fee ($200–500), resale certificate fee ($75–150), and possibly prorated HOA dues. Budget $400–700 total.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: '24px 28px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>

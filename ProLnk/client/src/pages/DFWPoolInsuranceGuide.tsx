@@ -9,7 +9,7 @@ const poolTypes = [
 ];
 
 const coverageLevels = [
-  { value: 'standard', label: 'Standard Homeowner\'s ($100K liability)' },
+  { value: 'standard', label: 'Standard Homeowner\’s ($100K liability)' },
   { value: 'extended', label: 'Extended Liability ($300K)' },
   { value: 'umbrella', label: 'Umbrella Policy ($1M+)' },
 ];
@@ -18,7 +18,7 @@ const riskData: Record<string, Record<string, { risk: string; exposure: string; 
   inground_gunite: {
     standard: { risk: 'HIGH', exposure: 'A single serious pool accident can easily exceed $100K in medical + legal costs. You are significantly underinsured.', recommendation: 'Add umbrella policy immediately. $1M coverage runs $200–350/yr in DFW.', costEst: '$200–350/yr for $1M umbrella' },
     extended: { risk: 'MEDIUM', exposure: '$300K covers most incidents but leaves you exposed to catastrophic claims or multiple-party events.', recommendation: 'Strongly consider a $1M umbrella. Minimal cost for substantial protection.', costEst: '$150–250/yr to add $1M umbrella' },
-    umbrella: { risk: 'LOW', exposure: 'You are well-positioned. Ensure your umbrella carrier is aware of the pool and it\'s listed on the policy.', recommendation: 'Confirm pool is scheduled on umbrella. Review annually as home value rises.', costEst: 'Review existing policy — confirm pool listed' },
+    umbrella: { risk: 'LOW', exposure: 'You are well-positioned. Ensure your umbrella carrier is aware of the pool and it\’s listed on the policy.', recommendation: 'Confirm pool is scheduled on umbrella. Review annually as home value rises.', costEst: 'Review existing policy — confirm pool listed' },
   },
   inground_fiberglass: {
     standard: { risk: 'HIGH', exposure: 'Same liability exposure as gunite pools. Coverage is insufficient.', recommendation: 'Add $1M umbrella. Fiberglass pools also face equipment coverage gaps — review endorsements.', costEst: '$200–350/yr for $1M umbrella' },

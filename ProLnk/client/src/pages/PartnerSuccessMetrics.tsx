@@ -12,7 +12,7 @@ const metrics = [
     action: (val) => val < 10
       ? 'Upload higher-quality photos with better lighting. Focus on HVAC units, roofs, and mechanicals.'
       : val < 15
-        ? 'You're close to target. Try wider shots that capture more of each system.'
+        ? 'You’re close to target. Try wider shots that capture more of each system.'
         : 'Excellent! Maintain photo quality and keep capturing all home systems.',
   },
   {
@@ -69,7 +69,7 @@ const metrics = [
       ? 'Slow payout. Ensure job completion is marked in the app same day — delays cause batch processing lag.'
       : val > 7
         ? 'Slightly above target. Confirm job status updates within 24h of completion.'
-        : 'Excellent velocity. You're processing faster than average.',
+        : 'Excellent velocity. You’re processing faster than average.',
     lowerIsBetter: true,
   },
 ];

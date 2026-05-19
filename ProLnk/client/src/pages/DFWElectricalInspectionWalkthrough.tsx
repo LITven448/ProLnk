@@ -73,7 +73,7 @@ export default function DFWElectricalInspectionWalkthrough() {
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '0.5rem' }}>Specific concerns</div>
-            {[['panel', '⚡ Panel issues or breakers frequently tripping'], ['outlets', '🔌 Outlets that don\'t work or sparks on plug-in'], ['safety', '🚨 No smoke detectors or CO detectors present'], ['addition', '🏗️ Addition or remodel of unknown permit status']].map(([key, label]) => (
+            {[['panel', '⚡ Panel issues or breakers frequently tripping'], ['outlets', '🔌 Outlets that don\’t work or sparks on plug-in'], ['safety', '🚨 No smoke detectors or CO detectors present'], ['addition', '🏗️ Addition or remodel of unknown permit status']].map(([key, label]) => (
               <label key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.5rem', cursor: 'pointer' }}>
                 <input type="checkbox" checked={concerns[key as keyof typeof concerns]} onChange={() => toggle(key as keyof typeof concerns)} style={{ width: 18, height: 18 }} />
                 {label}

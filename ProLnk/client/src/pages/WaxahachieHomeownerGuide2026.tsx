@@ -11,7 +11,7 @@ const guides: Record<string, { title: string; items: string[] }> = {
   pre1950: {
     title: 'Pre-1950 Historic Waxahachie Home Guide',
     items: [
-      '🏛️ Victorian millwork: use specialty contractors — standard lumber stores won't match profiles',
+      '🏛️ Victorian millwork: use specialty contractors — standard lumber stores won’t match profiles',
       '🔲 Original wood windows: restore rather than replace to preserve historic character',
       '🧱 Brick foundation piers: annual inspection for mortar loss and settling',
       '🔌 Knob-and-tube wiring: hire licensed electrician — insurance may require replacement',

@@ -15,7 +15,7 @@ const baseTasks: Priority[] = [
   { task: 'Set up pest control service', urgency: 'this-week', why: 'DFW is high-risk for scorpions, cockroaches, and termites' },
   { task: 'Document condition of every room with photos/video', urgency: 'this-week', why: 'Protects your warranty claims and home insurance' },
   { task: 'Find HVAC filter location and check/replace filter', urgency: 'this-week', why: 'Dirty filters = high DFW energy bills and HVAC failure' },
-  { task: 'Introduce yourself to immediate neighbors', urgency: 'this-week', why: 'They'll look out for your home and alert you to issues' },
+  { task: 'Introduce yourself to immediate neighbors', urgency: 'this-week', why: 'They’ll look out for your home and alert you to issues' },
   { task: 'Update address with USPS, bank, DMV, and employer', urgency: 'soon', why: 'Texas requires updated license within 30 days' },
   { task: 'Register with HOA and review CC&Rs if applicable', urgency: 'soon', why: 'Avoid fines from day one — know the rules' },
 ];

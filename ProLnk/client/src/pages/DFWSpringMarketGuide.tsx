@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const MARKET_FACTS = [
-  { icon: '📈', title: 'Peak Demand Window', body: 'February through May is DFW\'s hottest selling season. Listings receive 40% more showings than summer or fall. Buyer competition peaks in March and April.' },
+  { icon: '📈', title: 'Peak Demand Window', body: 'February through May is DFW\’s hottest selling season. Listings receive 40% more showings than summer or fall. Buyer competition peaks in March and April.' },
   { icon: '🌿', title: 'Lawn & Landscaping Surge', body: 'DFW landscapers are fully booked by mid-February. Schedule spring lawn treatment and sod installation in January to guarantee your preferred contractor and best pricing.' },
-  { icon: '🔧', title: 'Contractor Booking Crunch', body: 'HVAC, roofing, and exterior contractors see 2-3 week wait times by March. If you\'re selling in spring, complete repairs and updates no later than February 1.' },
-  { icon: '🏡', title: 'Why DFW Spring Works', body: 'Texas school calendars drive family moves in May-June. Buyers pre-shop February-April to close before summer. DFW\'s warm springs mean curb appeal peaks earlier than national markets.' },
-  { icon: '💧', title: 'Sprinkler System Prep', body: 'First spring activation often reveals cracked heads and valve failures after DFW\'s freeze events. Budget $150-$400 for a professional spring startup and inspection each March.' },
+  { icon: '🔧', title: 'Contractor Booking Crunch', body: 'HVAC, roofing, and exterior contractors see 2-3 week wait times by March. If you\’re selling in spring, complete repairs and updates no later than February 1.' },
+  { icon: '🏡', title: 'Why DFW Spring Works', body: 'Texas school calendars drive family moves in May-June. Buyers pre-shop February-April to close before summer. DFW\’s warm springs mean curb appeal peaks earlier than national markets.' },
+  { icon: '💧', title: 'Sprinkler System Prep', body: 'First spring activation often reveals cracked heads and valve failures after DFW\’s freeze events. Budget $150-$400 for a professional spring startup and inspection each March.' },
 ];
 
 type Role = 'buyer' | 'seller' | 'owner' | '';
@@ -28,7 +28,7 @@ const STRATEGIES: Record<string, { title: string; steps: string[] }> = {
       'Price at market, not above — overpriced spring listings stall and carry a stigma into summer',
       'Complete all cosmetic updates by February 15: fresh paint, new fixtures, deep clean, professional photos',
       'Request offers by Sunday at 5pm to create urgency and competitive multiple-offer situations',
-      'Accept escalation clauses with a reasonable ceiling — don\'t leave money on the table in a hot spring market',
+      'Accept escalation clauses with a reasonable ceiling — don\’t leave money on the table in a hot spring market',
     ],
   },
   owner: {

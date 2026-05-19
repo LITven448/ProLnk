@@ -32,7 +32,7 @@ const USE_CASES = [
     bg: '#f5f3ff',
     border: '#ddd6fe',
     cases: [
-      'Monitoring your home's current condition',
+      'Monitoring your home’s current condition',
       'Planning maintenance before it becomes urgent',
       'Building a documented health record to sell faster',
       'Connecting with vetted contractors for any job',

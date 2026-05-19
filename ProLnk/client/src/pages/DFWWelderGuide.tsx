@@ -55,7 +55,7 @@ export default function DFWWelderGuide() {
         <div style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 16, padding: 28, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🏙️ Finding Licensed Welders in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 12 }}>
-            {[['✅ AWS Certified','American Welding Society cert — ask for card'],['✅ Insured $1M+','General liability required for any gate/structural work'],['✅ Local References','DFW projects in last 12 months — verify addresses'],['⚠️ No door-knockers','Legitimate welders don\'t solicit door-to-door in DFW']].map(([t,d])=>(
+            {[['✅ AWS Certified','American Welding Society cert — ask for card'],['✅ Insured $1M+','General liability required for any gate/structural work'],['✅ Local References','DFW projects in last 12 months — verify addresses'],['⚠️ No door-knockers','Legitimate welders don\’t solicit door-to-door in DFW']].map(([t,d])=>(
               <div key={t} style={{ background: '#122040', borderRadius: 10, padding: 14 }}>
                 <div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: 13 }}>{t}</div>
                 <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>{d}</div>

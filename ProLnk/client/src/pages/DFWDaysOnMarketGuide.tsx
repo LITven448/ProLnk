@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const marketTypes = ['Seller\'s market (low inventory, fast sales)','Balanced market','Buyer\'s market (high inventory, slow sales)','Seasonal slow (Nov-Jan DFW)'];
+const marketTypes = ['Seller\’s market (low inventory, fast sales)','Balanced market','Buyer\’s market (high inventory, slow sales)','Seasonal slow (Nov-Jan DFW)'];
 
 const domBands = [
   { range: '0-14 days', label: 'Fresh Listing', buyerSignal: 'Buyers see a new listing — normal interest, no concern.', sellerAction: 'Hold steady. Do not reduce or negotiate below ask unless offer is strong.', color: '#15803D' },
@@ -11,14 +11,14 @@ const domBands = [
 ];
 
 const marketAdjustments: Record<string, string> = {
-  'Seller\'s market (low inventory, fast sales)': 'In a hot DFW seller\'s market, normal DOM is 7-18 days. Anything over 21 days signals real problems. The stigma timeline above accelerates by roughly 30%. Act faster than normal.',
+  'Seller\’s market (low inventory, fast sales)': 'In a hot DFW seller\’s market, normal DOM is 7-18 days. Anything over 21 days signals real problems. The stigma timeline above accelerates by roughly 30%. Act faster than normal.',
   'Balanced market': 'Standard DFW balanced market. The DOM bands above apply as written. 28-35 days is typical without concern.',
-  'Buyer\'s market (high inventory, slow sales)': 'In a slow DFW market, buyers expect to see homes sit. Normal DOM extends to 45-60 days before questions begin. Adjust your tolerance accordingly before reducing.',
+  'Buyer\’s market (high inventory, slow sales)': 'In a slow DFW market, buyers expect to see homes sit. Normal DOM extends to 45-60 days before questions begin. Adjust your tolerance accordingly before reducing.',
   'Seasonal slow (Nov-Jan DFW)': 'DFW November-January is historically slow. A 45-60 day DOM in this window is not unusual and carries less stigma. Buyers who are active in DFW winter are serious — price for them.',
 };
 
 const reframeScripts = [
-  ['Home was in probate/estate', 'This home just cleared estate proceedings — it\'s been off market during that process, not sitting unsold.'],
+  ['Home was in probate/estate', 'This home just cleared estate proceedings — it\’s been off market during that process, not sitting unsold.'],
   ['Seller was relocated mid-listing', 'Sellers relocated mid-listing and paused showings. The home is now available and priced to reflect current market.'],
   ['Price was reduced to true market', 'The seller made a strategic pricing adjustment to reflect current DFW comps. This is a buying opportunity at fair market value.'],
   ['Relisted after withdrawal', 'This is a new MLS listing. The prior listing was withdrawn and relisted fresh with updated pricing and marketing.'],

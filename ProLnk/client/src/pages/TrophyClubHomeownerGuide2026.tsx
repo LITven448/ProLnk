@@ -22,7 +22,7 @@ export default function TrophyClubHomeownerGuide2026() {
       id: 'custom',
       label: '🏡 Custom Home (1990s–2010s)',
       color: '#F5E642',
-      desc: 'Trophy Club's primary housing stock, custom builds with HOA design standards',
+      desc: 'Trophy Club’s primary housing stock, custom builds with HOA design standards',
       tips: [
         '🔩 Roof inspection post-hail — Denton/Tarrant border gets significant hail events',
         '🏗️ Pier-and-beam re-leveling — 1990s custom homes show movement at 25–35 years',

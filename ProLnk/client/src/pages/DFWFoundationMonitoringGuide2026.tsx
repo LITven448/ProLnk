@@ -55,7 +55,7 @@ const guides: Record<string, { title: string; steps: string[]; frequency: string
     title: 'Quarterly Foundation Walkthrough',
     steps: [
       'Complete all four checks: elevation, doors/windows, cracks, soil',
-      'Review last quarter\'s log for any trends',
+      'Review last quarter\’s log for any trends',
       'Check gutters and downspouts — direct water 6+ ft from foundation',
       'Inspect crawl space or pier-and-beam access points if applicable',
       'Schedule a professional inspection if any metric has worsened',

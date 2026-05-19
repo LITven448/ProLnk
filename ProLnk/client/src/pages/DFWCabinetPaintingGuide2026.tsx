@@ -54,7 +54,7 @@ export default function DFWCabinetPaintingGuide2026() {
 
         {[
           { icon: '🧼', title: 'Prep Is Everything', body: 'DFW kitchens accumulate grease faster in humid summers. Degrease with TSP substitute or Krud Kutter before any sanding. Skip degreasing and the paint will peel within 6 months. Sand with 150 grit after degreasing, then 220 before topcoat.' },
-          { icon: '🌡️', title: 'DFW Humidity and Cure Time', body: 'SW Emerald Urethane reaches handling hardness in 24-48 hours in DFW summer heat. Full cure takes 7 days. Do not rehang doors or place items on shelves early — you'll leave permanent impressions. DFW heat accelerates cure vs Northern states.' },
+          { icon: '🌡️', title: 'DFW Humidity and Cure Time', body: 'SW Emerald Urethane reaches handling hardness in 24-48 hours in DFW summer heat. Full cure takes 7 days. Do not rehang doors or place items on shelves early — you’ll leave permanent impressions. DFW heat accelerates cure vs Northern states.' },
           { icon: '🎯', title: 'Spray vs Brush — DFW Reality', body: 'Professional spray delivers a factory finish — no brush marks. HVLP sprayers are rented at Home Depot for ~$60/day. Setup and masking takes 3-4 hours. For DIY brush jobs, foam rollers on flat surfaces + a 2" angled brush in corners gives the next-best result.' },
         ].map((card, i) => (
           <div key={i} style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 20, marginBottom: 16 }}>

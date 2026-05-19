@@ -50,9 +50,9 @@ export default function DFWUVAirPurifierGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
           {[
             { icon: '✅', title: 'What UV Does Well', desc: 'Kills surface mold on coils and drain pans. Reduces odors from biological sources. Prevents coil fouling that reduces efficiency.' },
-            { icon: '❌', title: 'What UV Won't Fix', desc: 'Existing mold in walls or ducts. Particles (dust, pollen) — that's a filter job. Chemical odors from off-gassing furniture or paint.' },
+            { icon: '❌', title: 'What UV Won’t Fix', desc: 'Existing mold in walls or ducts. Particles (dust, pollen) — that’s a filter job. Chemical odors from off-gassing furniture or paint.' },
             { icon: '💡', title: 'UVGI vs PCO', desc: 'UVGI = germicidal UV only. PCO adds a catalyst that breaks down VOCs and odors at the molecular level. PCO combos cost more but tackle more problems.' },
-            { icon: '⚠️', title: 'Ozone Warning', desc: 'Some UV systems produce ozone as a byproduct. In DFW\'s already-polluted air, ozone can irritate lungs. Look for "ozone-free" certification.' },
+            { icon: '⚠️', title: 'Ozone Warning', desc: 'Some UV systems produce ozone as a byproduct. In DFW\’s already-polluted air, ozone can irritate lungs. Look for "ozone-free" certification.' },
           ].map(f => (
             <div key={f.title} style={{ background: '#0f2240', borderRadius: 10, padding: 16 }}>
               <p style={{ fontSize: 20, marginBottom: 4 }}>{f.icon}</p>

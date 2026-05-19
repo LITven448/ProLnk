@@ -8,15 +8,15 @@ const levels = [
     concepts: [
       {
         title: 'Find your filter — and change it monthly',
-        body: 'DFW\'s dust and pollen are extreme. A clogged filter is the #1 cause of HVAC failures and the #1 voider of warranties. Locate the filter, buy 6 at once, and set a phone reminder every 30 days.',
+        body: 'DFW\’s dust and pollen are extreme. A clogged filter is the #1 cause of HVAC failures and the #1 voider of warranties. Locate the filter, buy 6 at once, and set a phone reminder every 30 days.',
       },
       {
-        title: 'Know your system\'s age',
+        title: 'Know your system\’s age',
         body: 'Find the manufacture date on the data plate of the outdoor unit. DFW systems over 12 years old are in the replacement planning zone. Systems over 15 years are on borrowed time in this climate.',
       },
       {
         title: 'Register your equipment warranty today',
-        body: 'If the system was installed within the last 60–90 days, register it at the manufacturer\'s website. This unlocks 10-year coverage vs. 5-year. Look for a sticker with model and serial numbers on the outdoor unit.',
+        body: 'If the system was installed within the last 60–90 days, register it at the manufacturer\’s website. This unlocks 10-year coverage vs. 5-year. Look for a sticker with model and serial numbers on the outdoor unit.',
       },
     ],
   },
@@ -31,11 +31,11 @@ const levels = [
       },
       {
         title: 'Understand your SEER rating and what it means for your bill',
-        body: 'SEER2 measures efficiency. Every 2 SEER2 points above 14 reduces cooling costs roughly 10–12% in DFW. If your system is 10 SEER or below, upgrading to 16–18 SEER2 can save $400–700/yr given DFW\'s long cooling season.',
+        body: 'SEER2 measures efficiency. Every 2 SEER2 points above 14 reduces cooling costs roughly 10–12% in DFW. If your system is 10 SEER or below, upgrading to 16–18 SEER2 can save $400–700/yr given DFW\’s long cooling season.',
       },
       {
-        title: 'Learn to read your thermostat\'s runtime data',
-        body: 'Modern smart thermostats show daily and monthly runtime hours. In DFW, a properly sized system should run 12–16 hours/day in peak summer. If it\'s running 20+ hours, something is wrong: undersized system, refrigerant issue, or duct leaks.',
+        title: 'Learn to read your thermostat\’s runtime data',
+        body: 'Modern smart thermostats show daily and monthly runtime hours. In DFW, a properly sized system should run 12–16 hours/day in peak summer. If it\’s running 20+ hours, something is wrong: undersized system, refrigerant issue, or duct leaks.',
       },
       {
         title: 'Attic insulation is an HVAC upgrade',
@@ -50,7 +50,7 @@ const levels = [
     concepts: [
       {
         title: 'Manual J load calculations are non-negotiable for replacements',
-        body: 'When replacing your DFW system, any contractor worth hiring will run a Manual J load calculation — measuring your home\'s actual cooling and heating load based on square footage, insulation, windows, orientation, and infiltration. Oversized systems short-cycle, causing humidity problems and premature failures. Undersized systems can\'t handle DFW peak days. Demand this calculation in writing.',
+        body: 'When replacing your DFW system, any contractor worth hiring will run a Manual J load calculation — measuring your home\’s actual cooling and heating load based on square footage, insulation, windows, orientation, and infiltration. Oversized systems short-cycle, causing humidity problems and premature failures. Undersized systems can\’t handle DFW peak days. Demand this calculation in writing.',
       },
       {
         title: 'Duct leakage is the hidden efficiency killer',
@@ -61,8 +61,8 @@ const levels = [
         body: 'R-410A or R-454B charge must be within ±2 oz of the manufacturer specification for a split system. A tech who "tops it off" without finding the leak has done you a disservice. Demand a manifold gauge reading and weigh-in charge documentation every service visit.',
       },
       {
-        title: 'DFW\'s storm risk requires HVAC protection planning',
-        body: 'Hail, flooding, and lightning are major DFW HVAC risks. Ensure your homeowner\'s insurance covers HVAC equipment explicitly — many policies exclude flood damage to mechanical systems. Install a surge protector on your air handler and consider a hail guard for the condenser if you\'re in Hail Alley (Tarrant, Parker, Johnson counties).',
+        title: 'DFW\’s storm risk requires HVAC protection planning',
+        body: 'Hail, flooding, and lightning are major DFW HVAC risks. Ensure your homeowner\’s insurance covers HVAC equipment explicitly — many policies exclude flood damage to mechanical systems. Install a surge protector on your air handler and consider a hail guard for the condenser if you\’re in Hail Alley (Tarrant, Parker, Johnson counties).',
       },
       {
         title: 'The total cost of ownership lens: when replacement beats repair',

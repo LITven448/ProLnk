@@ -6,7 +6,7 @@ const steps = [
   { emoji: '🌿', title: 'Irrigation Backflow Preventer', detail: 'The backflow preventer on your irrigation system can crack in a freeze. Wrap with insulation and a foam cover. Ideally, blow out lines before Dec 1.' },
   { emoji: '🏊', title: 'Pool Equipment', detail: 'Run pool pump on freeze protection mode (continuous or scheduled for cold hours). Wrap pump and filter with insulating blankets.' },
   { emoji: '💧', title: 'Well Pump Houses', detail: 'Insulate the pump house and install a small electric heat source. Well pumps freeze quickly and cost $1,500-4,000 to replace.' },
-  { emoji: '🌡️', title: 'Water Heater', detail: 'Keep water heater thermostat at 120°F+ and verify the area isn\'t exposed to exterior cold. Garage water heaters are highest risk.' },
+  { emoji: '🌡️', title: 'Water Heater', detail: 'Keep water heater thermostat at 120°F+ and verify the area isn\’t exposed to exterior cold. Garage water heaters are highest risk.' },
 ];
 
 const checklists: Record<string, { items: string[]; note: string }> = {

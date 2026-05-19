@@ -23,7 +23,7 @@ export default function DFWOutdoorSpacesGuide() {
       roi: 'Very High',
       useRate: '87%',
       icon: '🍳',
-      description: 'Major resale value driver. DFW's 9-month outdoor season makes this a genuine extension of your living space, not a luxury.',
+      description: 'Major resale value driver. DFW’s 9-month outdoor season makes this a genuine extension of your living space, not a luxury.',
       tip: 'Minimum: built-in grill + counter + mini fridge. Add sink only if plumbing access is nearby.',
     },
     {

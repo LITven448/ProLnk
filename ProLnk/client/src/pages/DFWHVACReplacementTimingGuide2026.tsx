@@ -16,7 +16,7 @@ function getReplacementAssessment(age: string, repairQuote: string, timing: stri
   const timingAdvice = isPeak
     ? '⚠️ DFW Peak: Replacement during June–August means 1–3 week delays + premium pricing. If possible, do a temp repair now and replace in fall.'
     : isPreSeason
-    ? '✅ Ideal DFW timing: January–April installations have best availability, best pricing, and you\'re ready before summer heat.'
+    ? '✅ Ideal DFW timing: January–April installations have best availability, best pricing, and you\’re ready before summer heat.'
     : '✅ Good timing: Fall and early spring installations avoid DFW summer rush.';
   const dfwCost = '2026 DFW replacement cost: $4,200–$8,500 for 3–5 ton split system including labor. 2-stage or inverter systems run $6,500–$12,000.';
   return { decision, ruleCalc, timingAdvice, dfwCost };

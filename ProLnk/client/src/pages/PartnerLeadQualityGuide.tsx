@@ -11,7 +11,7 @@ const tiers = [
     desc: 'AI-detected storm damage. Homeowner is already aware of the issue and motivated to act. This is the hottest lead type in the ProLnk system.',
     tips: [
       'Respond within 15 minutes — gold leads are dispatched to 2 pros simultaneously',
-      'Use ProLnk's pre-drafted storm estimate template (in your partner dashboard)',
+      'Use ProLnk’s pre-drafted storm estimate template (in your partner dashboard)',
       'Mention the specific storm date and damage type — shows you know the situation',
       'Offer same-day or next-day estimate — storm leads move fast or go cold',
     ],
@@ -56,7 +56,7 @@ const tiers = [
     desc: 'Partner-referred lead with basic contact information. Requires outreach and qualification. Lower close rate but still valuable at volume.',
     tips: [
       'Call from a local number if possible — local area codes increase answer rates 40%',
-      'Lead with value: "I'm calling about the home improvement referral from [partner name]"',
+      'Lead with value: "I’m calling about the home improvement referral from [partner name]"',
       'Qualify need and timeline in the first 60 seconds',
       'Add to nurture sequence if no immediate need',
     ],

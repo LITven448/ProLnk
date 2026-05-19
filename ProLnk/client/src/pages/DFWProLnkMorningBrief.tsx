@@ -33,7 +33,7 @@ const briefs: Record<string, { title: string; status: string; items: { icon: str
     title: 'DFW HVAC Contractor Morning Brief — May 16',
     status: 'Peak DFW HVAC season is starting — position now',
     items: [
-      { icon: '🌡️', headline: 'DFW entering peak demand window', detail: 'May 16 marks the beginning of DFW\'s high-demand HVAC window. First 90-95°F days expose systems that struggled all winter. System failures peak in the next 6-8 weeks — your busiest time.' },
+      { icon: '🌡️', headline: 'DFW entering peak demand window', detail: 'May 16 marks the beginning of DFW\’s high-demand HVAC window. First 90-95°F days expose systems that struggled all winter. System failures peak in the next 6-8 weeks — your busiest time.' },
       { icon: '📋', headline: 'SEER2 compliance reminder', detail: 'All DFW installations must be 15 SEER2 minimum. New R-454B systems are entering the market — ensure your techs have updated recovery equipment and EPA 608 compliance for the new refrigerant.' },
       { icon: '💼', headline: 'ProLnk DFW contractor waitlist is still open', detail: 'ProLnk is accepting DFW HVAC contractors for the launch cohort. Charter Pros get locked $149/mo pricing, first-territory access, and 5-stream income potential from the launch day.' },
       { icon: '📊', headline: '3,000+ pages of DFW HVAC content driving homeowner education', detail: 'ProLnk has published a comprehensive DFW HVAC resource library — homeowners arriving via ProLnk are pre-educated on SEER2, proper sizing, and fair pricing. Less time spent on basics, more time closing.' },

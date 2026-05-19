@@ -35,7 +35,7 @@ function getSeverity(cracks: boolean, doors: boolean, water: boolean): SeverityR
 
   if (count === 2) return {
     score: 4, level: 'High — Act Within 30 Days', color: '#f97316',
-    detail: 'Two active symptoms in an Irving slab home signal foundation movement is underway. Irving's clay soil near the Trinity River corridor can shift 2-4 inches seasonally. Movement compounds over time — early repair is exponentially cheaper.',
+    detail: 'Two active symptoms in an Irving slab home signal foundation movement is underway. Irving’s clay soil near the Trinity River corridor can shift 2-4 inches seasonally. Movement compounds over time — early repair is exponentially cheaper.',
     nextSteps: ['Get 2-3 foundation contractor quotes immediately', 'Request a structural engineering report', 'Check with city for any area subsidence advisories', 'Review your homeowners insurance foundation coverage'],
     costRange: '$8,000–$20,000 (multiple piers, typical Irving mid-repair)'
   };
@@ -93,7 +93,7 @@ export default function DFWFoundationRepairIrving() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
           {[
-            { icon: '🏗️', title: 'Irving Clay Soil Experts', desc: 'Irving sits on some of DFW\'s most expansive clay soil. Our crews install deep bell-bottom concrete piers engineered for local conditions.' },
+            { icon: '🏗️', title: 'Irving Clay Soil Experts', desc: 'Irving sits on some of DFW\’s most expansive clay soil. Our crews install deep bell-bottom concrete piers engineered for local conditions.' },
             { icon: '✈️', title: 'Airport Corridor Specialists', desc: 'Homes near DFW and Love Field experience unique ground vibration and runoff patterns. We know Irving micro-zones.' },
             { icon: '📋', title: 'Engineered Repair Reports', desc: 'We partner with licensed structural engineers for certified reports — required for insurance claims and real estate transactions.' },
           ].map(card => (

@@ -38,7 +38,7 @@ const pitchData: Record<string, { connection: string; approach: string; points: 
   },
   'Commercial / Multi-line': {
     connection: 'Multi-line agents often serve small business owners who are also homeowners. ProLnk applies to both their commercial properties and personal homes.',
-    approach: 'Portfolio value pitch — ProLnk extends your value beyond the office to your clients\' personal lives.',
+    approach: 'Portfolio value pitch — ProLnk extends your value beyond the office to your clients\’ personal lives.',
     points: [
       'Small business owners often neglect personal home maintenance — ProLnk solves it',
       'Commercial property maintenance connections can refer to ProLnk for residential work',

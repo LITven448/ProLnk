@@ -13,7 +13,7 @@ const situations = [
   },
   {
     id: 'buyer-with-agent',
-    label: 'Working with a buyer\'s agent',
+    label: 'Working with a buyer\’s agent',
     sources: [
       { name: 'MLS Comparable Sales (CMA)', note: 'Most accurate — agent pulls actual closed sale prices' },
       { name: 'Days on Market & Price Reductions', note: 'MLS data reveals negotiation leverage' },
@@ -52,7 +52,7 @@ export default function DFWNonDisclosureStateGuide() {
             { icon: '🔒', title: 'What "Non-Disclosure" Actually Means', body: 'In Texas, neither buyer nor seller is legally required to report the sale price to any public database. County appraisal districts cannot compel disclosure. The result: Zillow, Redfin, and public records often show $0 or estimated values for TX homes.' },
             { icon: '📊', title: 'DCAD / TAD Assessed Values as a Proxy', body: 'Dallas Central Appraisal District (DCAD) and Tarrant Appraisal District (TAD) publish assessed values each spring. These are typically 10–20% below market but are the best free, public data point available. Use them as a floor, not a ceiling.' },
             { icon: '🏦', title: 'Where Real Prices Live', body: 'Actual sold prices exist in two places: (1) the MLS, accessible only to licensed agents and members, and (2) lender appraisal reports, which are private. This is why working with an agent who can pull a Comparative Market Analysis (CMA) is critical in DFW.' },
-            { icon: '⚠️', title: 'Zillow Accuracy Warning', body: 'Zestimates in Texas are less reliable than in disclosure states. Zillow\'s algorithm is trained on public sale data — which barely exists in TX. Margins of error can be 15–25% in some DFW submarkets. Treat Zestimates as rough order-of-magnitude only.' },
+            { icon: '⚠️', title: 'Zillow Accuracy Warning', body: 'Zestimates in Texas are less reliable than in disclosure states. Zillow\’s algorithm is trained on public sale data — which barely exists in TX. Margins of error can be 15–25% in some DFW submarkets. Treat Zestimates as rough order-of-magnitude only.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#fff', borderRadius: 10, padding: 20, boxShadow: '0 1px 6px rgba(0,0,0,0.07)' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>

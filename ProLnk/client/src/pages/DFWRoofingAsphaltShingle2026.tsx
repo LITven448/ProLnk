@@ -14,7 +14,7 @@ const concerns: Record<string, { title: string; info: string[]; tip: string }> =
   adhesive: {
     title: '🔒 Self-Seal Adhesive Strip Performance',
     info: ['Asphalt-based adhesive strip activates from heat — bonds adjacent shingles to resist wind uplift', 'DFW summer heat (130°F+ on roof deck) accelerates bond formation — good for new installs', 'In DFW winter, adhesive may not activate — installer should hand-seal in temps below 50°F', 'Budget shingles use smaller, intermittent adhesive strips — reduced wind rating in DFW storm season'],
-    tip: 'Wind rating matters: DFW code requires 130 mph wind resistance. Verify the shingle\'s ASTM D3161 Class F or UL 997 wind rating on the package.',
+    tip: 'Wind rating matters: DFW code requires 130 mph wind resistance. Verify the shingle\’s ASTM D3161 Class F or UL 997 wind rating on the package.',
   },
   asphalt: {
     title: '🛢️ Asphalt Coating Weight',

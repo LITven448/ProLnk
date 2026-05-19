@@ -74,9 +74,9 @@ export default function DFWDiverseFamilyHomeGuide() {
               <p style={{ color: '#8A9BB5', margin: '0.5rem 0 0', fontSize: '0.9rem' }}>
                 {selectedPriority === 'Good schools' && 'Frisco, Allen, Southlake, Keller — all ranked top 10% in TX. Plano ISD has strong bilingual programs.'}
                 {selectedPriority === 'Cultural community density' && 'Choose the neighborhood where your specific community is concentrated — density matters for schools, stores, and social connection.'}
-                {selectedPriority === 'Affordability' && 'Grand Prairie, Garland, Mesquite, DeSoto — DFW\'s most diverse AND affordable areas. Median home $280–320K.'}
+                {selectedPriority === 'Affordability' && 'Grand Prairie, Garland, Mesquite, DeSoto — DFW\’s most diverse AND affordable areas. Median home $280–320K.'}
                 {selectedPriority === 'Short commute to work' && 'Map your employer first — DFW is large. Irving works for Las Colinas employers; Plano/Allen for Legacy/Telecom Corridor jobs.'}
-                {selectedPriority === 'Safety' && 'Frisco, Allen, Flower Mound, Southlake consistently rank among TX\'s safest cities. Check SpotCrime for specific streets.'}
+                {selectedPriority === 'Safety' && 'Frisco, Allen, Flower Mound, Southlake consistently rank among TX\’s safest cities. Check SpotCrime for specific streets.'}
                 {selectedPriority === 'Diverse school environment' && 'Richardson ISD and Garland ISD are among the most diverse in TX — 60+ languages spoken in some schools.'}
               </p>
             </div>

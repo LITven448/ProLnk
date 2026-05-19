@@ -11,7 +11,7 @@ const TEXAS_HEAT_WARNINGS: Record<string, string> = {
   'Candles/wax items': 'Candles melt completely in Texas summer heat — pack last, move in AC vehicle',
   'Artwork/mirrors': 'Temperature swings cause canvas expansion/contraction — use specialty art boxes',
   'Wine collection': 'Heat destroys wine — transport in cooler or ship separately with temperature control',
-  'Plants': 'Most movers won\'t move plants — transport yourself in AC vehicle',
+  'Plants': 'Most movers won\’t move plants — transport yourself in AC vehicle',
   'Aquarium': 'Drain completely, transport fish separately, wrap tank in moving blankets',
 };
 
@@ -129,7 +129,7 @@ export default function DFWPackingGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
           <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
             <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏷️ Labeling System</h2>
-            {[['Room Name', 'Kitchen, Master BR, Office — in big letters'], ['Contents', 'Quick list of what\'s inside (e.g. "books, cables")'], ['Priority', 'OPEN FIRST for essentials box, LAST for storage'], ['Fragile', 'Mark on top AND all 4 sides — movers stack boxes'], ['Weight', 'Mark HEAVY on anything over 40 lbs']].map(([label, desc]) => (
+            {[['Room Name', 'Kitchen, Master BR, Office — in big letters'], ['Contents', 'Quick list of what\’s inside (e.g. "books, cables")'], ['Priority', 'OPEN FIRST for essentials box, LAST for storage'], ['Fragile', 'Mark on top AND all 4 sides — movers stack boxes'], ['Weight', 'Mark HEAVY on anything over 40 lbs']].map(([label, desc]) => (
               <div key={label} style={{ marginBottom: 12 }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 13 }}>{label}</div>
                 <div style={{ color: '#9BA3B8', fontSize: 13 }}>{desc}</div>

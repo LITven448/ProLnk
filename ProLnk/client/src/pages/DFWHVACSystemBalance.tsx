@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const balanceConcepts = [
-  { id: 'pressure', icon: '⚖️', name: 'Air Pressure Balance', desc: 'Each room should be at neutral pressure — air enters and leaves at equal rates.', dfwNote: 'In DFW's sealed homes, pressure imbalance worsens summer infiltration of hot humid air through wall cracks.' },
+  { id: 'pressure', icon: '⚖️', name: 'Air Pressure Balance', desc: 'Each room should be at neutral pressure — air enters and leaves at equal rates.', dfwNote: 'In DFW’s sealed homes, pressure imbalance worsens summer infiltration of hot humid air through wall cracks.' },
   { id: 'airflow', icon: '💨', name: 'Airflow Distribution', desc: 'Each room receives CFM airflow proportional to its size and heat load.', dfwNote: 'DFW west-facing rooms gain 40% more solar heat load — they need proportionally more supply airflow than north rooms.' },
   { id: 'zoning', icon: '🗺️', name: 'Zone Balance', desc: 'Multi-zone systems must balance damper positions to prevent over-conditioning one area.', dfwNote: 'Single-zone DFW systems almost always over-cool common areas while upstairs bedrooms stay hot in July-August.' },
-  { id: 'static', icon: '📊', name: 'Static Pressure', desc: 'Total external static pressure (TESP) must stay within equipment rating or airflow degrades.', dfwNote: 'High-efficiency filters in DFW homes often push TESP above 0.5" WC — killing system capacity when it's needed most.' },
+  { id: 'static', icon: '📊', name: 'Static Pressure', desc: 'Total external static pressure (TESP) must stay within equipment rating or airflow degrades.', dfwNote: 'High-efficiency filters in DFW homes often push TESP above 0.5" WC — killing system capacity when it’s needed most.' },
 ];
 
 const symptoms = [
@@ -27,7 +27,7 @@ const symptoms = [
     cost: '$50–$2,000',
   },
   {
-    symptom: 'Master bedroom won't cool at night',
+    symptom: 'Master bedroom won’t cool at night',
     diagnosis: 'Master wing often at end of duct run — longest static pressure loss path in DFW ranch homes',
     solutions: ['Install duct booster fan on master branch', 'Add dedicated mini-split to master', 'Re-route supply closer to air handler'],
     cost: '$200–$3,500',

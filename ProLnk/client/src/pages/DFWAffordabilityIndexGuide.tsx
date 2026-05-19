@@ -63,7 +63,7 @@ export default function DFWAffordabilityIndexGuide() {
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>⚠️ THE AFFORDABILITY REALITY IN DFW</div>
           {[
             '📉 DFW now ranks #38 in national affordability — down from #22 just 5 years ago due to rapid appreciation',
-            '🏠 Texas\'s property tax is a unique affordability drag: 2.1–2.5% annually vs national avg of 1.1%',
+            '🏠 Texas\’s property tax is a unique affordability drag: 2.1–2.5% annually vs national avg of 1.1%',
             '💰 A $450K DFW home can cost $1,200–$1,400/mo more than a similar home in a low-tax state',
             '🌟 Outer suburbs (Garland, Fort Worth, Denton) remain meaningfully more affordable than the national median',
             '📊 Affordability index below 100 = median income cannot qualify for median home price without stretch',

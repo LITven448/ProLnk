@@ -20,7 +20,7 @@ export default function DFWHeatingBackupGuide2026() {
       return;
     }
     if (features === 'none' && prepLevel === 'basic') {
-      setResult('🟡 Basic prep. Electric space heaters are your primary option. Concentrate people in one room — close off the rest. A 1,500W heater keeps a well-insulated 200 sqft room at 65°F when it\'s 20°F outside. Budget $100–$200 total: two heaters + extension cord rated for 15A minimum.');
+      setResult('🟡 Basic prep. Electric space heaters are your primary option. Concentrate people in one room — close off the rest. A 1,500W heater keeps a well-insulated 200 sqft room at 65°F when it\’s 20°F outside. Budget $100–$200 total: two heaters + extension cord rated for 15A minimum.');
       return;
     }
     if (prepLevel === 'full') {

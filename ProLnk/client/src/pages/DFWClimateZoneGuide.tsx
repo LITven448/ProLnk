@@ -8,7 +8,7 @@ const improvements = [
     national: 'R-30 attic standard in Zone 4 (most of US)',
     difference: 'DFW needs 25–50% more attic insulation than national baseline due to intense solar gain June–September.',
     hvac: 'Under-insulated attics can cause HVAC to run 40% longer in summer — the single biggest energy waste in DFW homes.',
-    tips: ['Spray foam attic deck seals air leaks better than batt', 'Radiant barrier on attic deck adds R-value equivalent in DFW', 'Don\'t insulate attic floor if HVAC equipment is in attic'],
+    tips: ['Spray foam attic deck seals air leaks better than batt', 'Radiant barrier on attic deck adds R-value equivalent in DFW', 'Don\’t insulate attic floor if HVAC equipment is in attic'],
   },
   {
     type: 'HVAC Sizing',
@@ -43,7 +43,7 @@ const improvements = [
     zone3a: { requirement: 'ACH50 ≤ 5 (ENERGY STAR); target ≤ 3 for high performance', note: 'Air sealing in Zone 3A prevents hot humid air infiltration — major cooling load.' },
     national: 'Same ACH50 targets but leakage affects heating vs. cooling depending on zone.',
     difference: 'In DFW, every air gap lets in 95°F humid outdoor air that your HVAC must then cool and dehumidify.',
-    hvac: 'Blower door test before and after sealing is the only way to verify — don\'t rely on visual inspection.',
+    hvac: 'Blower door test before and after sealing is the only way to verify — don\’t rely on visual inspection.',
     tips: ['Seal top plates, electrical boxes, plumbing penetrations first', 'Attic hatch must be weatherstripped and insulated — often forgotten', 'Recessed lights are major air leakers — use IC-rated airtight fixtures'],
   },
 ];

@@ -9,8 +9,8 @@ type TreeNode = { q: string; yes: TreeNode | string; no: TreeNode | string };
 const trees: Record<Problem, TreeNode> = {
   'HVAC not cooling': {
     q: 'Is the thermostat set to COOL and fan set to AUTO?',
-    yes: { q: 'Is the air filter clogged (hasn\'t been changed in 3+ months)?', yes: 'DIY: Replace filter — DFW dust clogs filters fast. Run system 30 min after.', no: { q: 'Is the outdoor unit running (can you hear/see it)?', yes: { q: 'Is there ice on the refrigerant lines outside?', yes: 'Call HVAC Pro: Frozen coil — turn system off, run fan only 2hrs, then call. Do not ignore.', no: 'Call HVAC Pro: System running but not cooling — likely low refrigerant or failing compressor.' }, no: 'Call HVAC Pro: Outdoor unit not starting — capacitor, contactor, or electrical failure. Do not DIY.' } },
-    no: 'DIY: Fix thermostat settings first. Check batteries if it\'s wireless. DFW tip: Set to 78°F, not lower.',
+    yes: { q: 'Is the air filter clogged (hasn\’t been changed in 3+ months)?', yes: 'DIY: Replace filter — DFW dust clogs filters fast. Run system 30 min after.', no: { q: 'Is the outdoor unit running (can you hear/see it)?', yes: { q: 'Is there ice on the refrigerant lines outside?', yes: 'Call HVAC Pro: Frozen coil — turn system off, run fan only 2hrs, then call. Do not ignore.', no: 'Call HVAC Pro: System running but not cooling — likely low refrigerant or failing compressor.' }, no: 'Call HVAC Pro: Outdoor unit not starting — capacitor, contactor, or electrical failure. Do not DIY.' } },
+    no: 'DIY: Fix thermostat settings first. Check batteries if it\’s wireless. DFW tip: Set to 78°F, not lower.',
   },
   'Drain slow': {
     q: 'Is it only one drain slow (not multiple throughout the house)?',
@@ -25,12 +25,12 @@ const trees: Record<Problem, TreeNode> = {
   'Foundation crack': {
     q: 'Is the crack horizontal (running side to side)?',
     yes: 'Emergency Structural Engineer: Horizontal cracks indicate serious lateral pressure — DFW clay soil is notorious for this. Do not wait.',
-    no: { q: 'Is the crack wider than 1/4 inch (width of a pencil)?', yes: 'Call Foundation Specialist: Large vertical or diagonal crack needs professional evaluation. DFW homes move constantly.', no: { q: 'Are doors or windows sticking that weren\'t before?', yes: 'Call Foundation Specialist: Hairline crack + sticking doors = active movement. Get pier evaluation.', no: 'Monitor: Small hairline cracks in DFW clay-soil areas are common. Photograph it with a ruler and check in 30 days. No immediate action needed.' } },
+    no: { q: 'Is the crack wider than 1/4 inch (width of a pencil)?', yes: 'Call Foundation Specialist: Large vertical or diagonal crack needs professional evaluation. DFW homes move constantly.', no: { q: 'Are doors or windows sticking that weren\’t before?', yes: 'Call Foundation Specialist: Hairline crack + sticking doors = active movement. Get pier evaluation.', no: 'Monitor: Small hairline cracks in DFW clay-soil areas are common. Photograph it with a ruler and check in 30 days. No immediate action needed.' } },
   },
   'Roof leak': {
     q: 'Is water actively dripping inside right now?',
     yes: 'Emergency Roofer: Place buckets, move valuables. Call emergency roofer — DFW storms can turn small leaks catastrophic. Document with photos for insurance.',
-    no: { q: 'Did you notice it after a recent hailstorm?', yes: 'Call Roofer + Insurance: DFW hail claims are common. Get 2–3 estimates before accepting insurance adjuster\'s number. Don\'t sign with storm chasers.', no: { q: 'Is the stain near a chimney, vent, or skylight?', yes: 'Call Roofer: Flashing failure around penetrations — most common non-storm leak in DFW. Usually a targeted repair.', no: 'Call Roofer for Inspection: Unidentified leaks need eyes on the roof. Don\'t DIY roof walking in DFW summer heat.' } },
+    no: { q: 'Did you notice it after a recent hailstorm?', yes: 'Call Roofer + Insurance: DFW hail claims are common. Get 2–3 estimates before accepting insurance adjuster\’s number. Don\’t sign with storm chasers.', no: { q: 'Is the stain near a chimney, vent, or skylight?', yes: 'Call Roofer: Flashing failure around penetrations — most common non-storm leak in DFW. Usually a targeted repair.', no: 'Call Roofer for Inspection: Unidentified leaks need eyes on the roof. Don\’t DIY roof walking in DFW summer heat.' } },
   },
 };
 

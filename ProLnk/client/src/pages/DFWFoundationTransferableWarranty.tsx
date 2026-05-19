@@ -88,7 +88,7 @@ export default function DFWFoundationTransferableWarranty() {
 
         <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>✅ How to Verify a Warranty is Still Valid</h2>
-          {['Call the company with your warranty number and ask for written confirmation of active coverage.', 'Search Texas SOS (sos.state.tx.us) to confirm the business is still registered.', 'Ask your realtor to include warranty verification as a condition of sale if you\'re buying.', 'Keep all original paperwork, photos, and work orders — they\'re required for warranty claims.'].map((item, i) => (
+          {['Call the company with your warranty number and ask for written confirmation of active coverage.', 'Search Texas SOS (sos.state.tx.us) to confirm the business is still registered.', 'Ask your realtor to include warranty verification as a condition of sale if you\’re buying.', 'Keep all original paperwork, photos, and work orders — they\’re required for warranty claims.'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.8rem', marginBottom: '0.8rem', alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 24 }}>{i + 1}.</span>
               <span style={{ color: '#CBD5E1', lineHeight: 1.6 }}>{item}</span>

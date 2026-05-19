@@ -3,7 +3,7 @@ import { useState } from 'react';
 const situations = ['Have PRV, no expansion tank', 'Have PRV, have expansion tank', 'No PRV', 'Not sure'];
 const guides: Record<string, string> = {
   'Have PRV, no expansion tank': '🔴 Action required. You have a closed system. Every time your water heater fires, pressure spikes. Code requires expansion tank. Cost: $150–250 installed. Also check pressure relief valve — it may already be dripping.'  ,
-  'Have PRV, have expansion tank': '✅ You're properly configured. Check expansion tank every 2–3 years — pre-charge pressure should match home static pressure. Bladder failure = waterlogged tank.'  ,
+  'Have PRV, have expansion tank': '✅ You’re properly configured. Check expansion tank every 2–3 years — pre-charge pressure should match home static pressure. Bladder failure = waterlogged tank.'  ,
   'No PRV': '⚠️ Open system. Pressure fluctuates with city main. No expansion tank needed, but check if pressure exceeds 80 PSI — PRV install recommended.'  ,
   'Not sure': '💡 Look for a bell-shaped brass fitting on incoming water line near shutoff. If present, assume closed system. Call plumber to verify and install expansion tank if missing.'  ,
 };

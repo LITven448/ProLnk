@@ -8,7 +8,7 @@ export default function DFWKitchenCabinetCosts2026() {
       label: 'Stock Cabinets',
       range: '$3,000 – $7,000 (materials only)',
       leadTime: '1–2 weeks',
-      pros: ['In-stock at Home Depot / Lowe's', 'Fastest install', 'Budget-friendly entry point'],
+      pros: ['In-stock at Home Depot / Lowe’s', 'Fastest install', 'Budget-friendly entry point'],
       cons: ['Limited sizes & finishes', 'Lower quality box construction', 'No custom configurations'],
     },
     ikea: {

@@ -40,7 +40,7 @@ export default function ProLnkGuaranteeExplainer() {
       covered: false,
       icon: '❌',
       title: 'Not Covered — Acts of God',
-      detail: 'Damage caused by severe weather, flooding, earthquakes, or other events outside the pro's control are not covered. We recommend homeowners maintain a separate home warranty policy for such events.',
+      detail: 'Damage caused by severe weather, flooding, earthquakes, or other events outside the pro’s control are not covered. We recommend homeowners maintain a separate home warranty policy for such events.',
     },
   };
 

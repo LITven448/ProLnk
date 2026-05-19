@@ -83,7 +83,7 @@ export default function DFWDIYWeatherstrippingGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 14px' }}>DFW-Specific Installation Tips</h2>
           {[
             ['Install in the morning', 'DFW heat makes adhesive weatherstripping fail in afternoon -- bond is strongest applied at 70-80 F'],
-            ['Clean with alcohol first', 'DFW dust and pollen coat door frames; adhesive won\'t bond to dirty surfaces'],
+            ['Clean with alcohol first', 'DFW dust and pollen coat door frames; adhesive won\’t bond to dirty surfaces'],
             ['Account for slab movement', 'DFW clay soil shifts slabs -- install adjustable door sweeps so you can re-set as doors drop over time'],
             ['Skip cheap foam tape', 'Big box store generic foam tape compresses flat in one DFW summer -- spend more on EPDM rubber or pile strip'],
           ].map(([tip, detail]) => (

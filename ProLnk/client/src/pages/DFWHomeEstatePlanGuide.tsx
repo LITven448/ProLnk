@@ -50,7 +50,7 @@ const plans: Record<string, EstatePlan> = {
     headline: 'Texas offers two tools specifically designed to transfer your DFW home to children with minimal hassle and tax efficiency.',
     structure: 'Lady Bird Deed (Enhanced Life Estate Deed) or TODD — both avoid probate and preserve stepped-up basis',
     texasTools: [
-      { name: 'Lady Bird Deed (Enhanced Life Estate Deed)', how: 'Deed names you as grantor-grantee with enhanced life estate, children as remaindermen', pros: 'Keeps full control during life, can sell or mortgage without children\'s consent, avoids probate, Medicaid estate recovery protection', cons: 'More complex than TODD, requires attorney drafting, not available in all title companies' },
+      { name: 'Lady Bird Deed (Enhanced Life Estate Deed)', how: 'Deed names you as grantor-grantee with enhanced life estate, children as remaindermen', pros: 'Keeps full control during life, can sell or mortgage without children\’s consent, avoids probate, Medicaid estate recovery protection', cons: 'More complex than TODD, requires attorney drafting, not available in all title companies' },
       { name: 'Transfer on Death Deed (TODD)', how: 'Simpler deed naming children as beneficiaries — recorded at county courthouse', pros: 'Easy to create and revoke, avoids probate, stepped-up basis for children', cons: 'Children have no interest during life, does not protect against Medicaid estate recovery like Lady Bird Deed' },
     ],
     homesteadNote: 'Lady Bird Deed is superior if you might need Medicaid for long-term care — Medicaid cannot recover from Lady Bird Deed remainder interest in Texas.',

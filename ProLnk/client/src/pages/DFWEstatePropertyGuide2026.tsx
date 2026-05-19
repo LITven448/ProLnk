@@ -24,7 +24,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
       '📋 Document occupant status before listing — disclose to all buyers',
       '📅 Negotiate possession date at closing (30-60 day leaseback may be needed)',
       '🔧 ProLnk handles repairs even with occupants — schedule around access windows',
-      '💰 Occupied estate homes sell faster: buyers see they're livable',
+      '💰 Occupied estate homes sell faster: buyers see they’re livable',
     ],
     tip: 'Never list an occupied estate home without written occupant cooperation agreement.',
   },

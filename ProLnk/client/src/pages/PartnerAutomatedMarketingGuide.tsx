@@ -44,7 +44,7 @@ const automations = [
       'Every time you photograph a job for ProLnk, save 3 versions: wide, detail, before',
       'Batch-schedule 3 posts/week on Sunday for the week ahead',
       'Use local hashtags: #DFWContractor, #DallasHomeRepair, #PlanoPlumber (example)',
-      'Repurpose ProLnk job completion photos — you're already taking them',
+      'Repurpose ProLnk job completion photos — you’re already taking them',
     ],
     prolnk: 'Photos you upload to ProLnk job completions can double as Instagram content. Zero extra effort for the photography.',
   },

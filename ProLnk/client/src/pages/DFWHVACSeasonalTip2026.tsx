@@ -8,7 +8,7 @@ const seasons = [
 
 const warnings = [
   { icon: '⚠️', title: 'Emergency Heat Risk', body: 'Emergency heat on a heat pump bypasses the heat pump entirely and uses electric resistance strips — extremely expensive. Only use during actual equipment failure, not just cold weather.' },
-  { icon: '🌡️', title: 'DFW Temperature Swings', body: 'DFW can swing 40°F in 24 hours. Test both systems in October when mild — don\'t wait until the first freeze at 28°F to discover your furnace won\'t fire.' },
+  { icon: '🌡️', title: 'DFW Temperature Swings', body: 'DFW can swing 40°F in 24 hours. Test both systems in October when mild — don\’t wait until the first freeze at 28°F to discover your furnace won\’t fire.' },
   { icon: '🔧', title: 'Thermostat Mode Verification', body: 'Always physically verify the thermostat mode matches the season. A thermostat left in HEAT mode in July will fight your AC and spike your electric bill.' },
 ];
 

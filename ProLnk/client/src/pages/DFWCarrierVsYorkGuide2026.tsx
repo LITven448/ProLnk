@@ -7,7 +7,7 @@ export default function DFWCarrierVsYorkGuide2026() {
   const recommendation = () => {
     if (!homeSize || !budget) return null;
     if (budget === 'tight') return { brand: 'York', reason: 'York delivers solid SEER2 compliance with a lower install cost — ideal when budget is the primary driver.', emoji: '💚' };
-    if (homeSize === 'large' && budget === 'flexible') return { brand: 'Carrier', reason: 'Carrier's Infinity series handles large DFW homes efficiently with best-in-class zoning support.', emoji: '⭐' };
+    if (homeSize === 'large' && budget === 'flexible') return { brand: 'Carrier', reason: 'Carrier’s Infinity series handles large DFW homes efficiently with best-in-class zoning support.', emoji: '⭐' };
     return { brand: 'Carrier', reason: 'Carrier offers better long-term parts availability across DFW and a premium brand that holds resale value.', emoji: '🏅' };
   };
 

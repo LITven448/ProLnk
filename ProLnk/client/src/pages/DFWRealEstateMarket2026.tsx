@@ -42,9 +42,9 @@ export default function DFWRealEstateMarket2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
             { label: 'Median Home Price', value: '$378K', note: 'Up 3.1% YoY' },
-            { label: 'Avg Days on Market', value: '28', note: 'Seller's market pace' },
+            { label: 'Avg Days on Market', value: '28', note: 'Seller’s market pace' },
             { label: 'Sale-to-List Ratio', value: '97.8%', note: 'Homes near asking price' },
-            { label: 'Inventory', value: '2.1 mo', note: 'Seller's market territory' },
+            { label: 'Inventory', value: '2.1 mo', note: 'Seller’s market territory' },
           ].map((card) => (
             <div key={card.label} style={{ background: '#fff', border: '1px solid #e5e5e5', borderRadius: 12, padding: '20px 16px' }}>
               <div style={{ fontSize: 13, color: '#888', marginBottom: 6 }}>{card.label}</div>

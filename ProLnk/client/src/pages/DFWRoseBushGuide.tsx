@@ -3,7 +3,7 @@ import { useState } from 'react';
 const roseData: Record<string, { varieties: string[]; schedule: string; diseasePrevention: string }> = {
   'knockout-sunny': {
     varieties: ['🌹 Knock Out® Red (virtually indestructible in DFW)', '🌸 Double Knock Out® Pink (reblooms all summer)', '🌺 Rainbow Knock Out® (multi-color, deer resistant)', '🌷 Sunny Knock Out® (yellow, heat tolerant)'],
-    schedule: 'Feb 14 (Valentine's Day): prune to 18 inches. Mar–Nov: fertilize every 6 weeks. Deadhead optional on Knock Out. Water 2x/week in summer.',
+    schedule: 'Feb 14 (Valentine’s Day): prune to 18 inches. Mar–Nov: fertilize every 6 weeks. Deadhead optional on Knock Out. Water 2x/week in summer.',
     diseasePrevention: 'Knock Out® roses bred for blackspot resistance — minimal spray needed. Monitor for Rose Rosette Disease (RRD) — spread by mites. Remove and destroy infected plants immediately.',
   },
   'knockout-partial': {
@@ -51,7 +51,7 @@ export default function DFWRoseBushGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               { icon: '🏆', label: 'Top Choice', val: 'Knock Out® roses — bred for Southern heat and humidity' },
-              { icon: '📅', label: 'Prune Date', val: 'Feb 14 (Valentine's Day) — DFW rule of thumb' },
+              { icon: '📅', label: 'Prune Date', val: 'Feb 14 (Valentine’s Day) — DFW rule of thumb' },
               { icon: '🦠', label: 'Main Threat', val: 'Blackspot fungus — worse in DFW humidity' },
               { icon: '⚠️', label: 'New Threat', val: 'Rose Rosette Disease — remove infected plants fast' },
             ].map((f) => (

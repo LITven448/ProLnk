@@ -6,7 +6,7 @@ const situations: Record<string, { label: string; totalTimeline: string; phases:
     totalTimeline: '3–6 months to completed repair + 6–12 months settling',
     phases: [
       { phase: 'Foundation Assessment', duration: '3–7 days', detail: 'Structural engineer visit + written report. DFW engineers typically schedule within 1 week.' },
-      { phase: 'Quote & Contractor Selection', duration: '1–2 weeks', detail: 'Get 2–3 quotes. DFW foundation companies: Baker\'s Waterproofing, Perma-Pier, HD Foundations.' },
+      { phase: 'Quote & Contractor Selection', duration: '1–2 weeks', detail: 'Get 2–3 quotes. DFW foundation companies: Baker\’s Waterproofing, Perma-Pier, HD Foundations.' },
       { phase: 'Scheduling Wait', duration: '2–6 weeks', detail: 'DFW demand is high year-round. Spring (Feb–May) has longest waits due to rain season.' },
       { phase: 'Repair Work', duration: '1–3 days', detail: 'Pier installation typically 1 day per 8–12 piers. Most DFW homes: 15–35 piers total.' },
       { phase: 'Engineer Letter', duration: '2–3 weeks', detail: 'Post-repair engineer inspection + letter required for home sale or insurance.' },

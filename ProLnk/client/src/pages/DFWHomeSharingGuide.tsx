@@ -24,7 +24,7 @@ const SUBURB_MULT: Record<string, number> = {
 };
 
 const INSURANCE_NOTES = [
-  'Standard homeowner\'s policy typically does NOT cover short-term rentals',
+  'Standard homeowner\’s policy typically does NOT cover short-term rentals',
   'Airbnb Host Protection: up to $1M liability coverage while guests are present',
   'VRBO: requires separate short-term rental rider (~$200-400/yr)',
   'USAA, State Farm, and Allstate all offer short-term rental endorsements in Texas',

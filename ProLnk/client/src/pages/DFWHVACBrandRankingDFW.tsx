@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const brands = [
-  { id: 'trane', name: 'Trane', icon: '🥇', heat: 95, service: 90, warranty: 88, efficiency: 92, price: 'Premium', dfwRank: 1, verdict: 'Best overall for DFW heat reliability. Trane's Comfort systems are field-proven in Texas extremes.' },
+  { id: 'trane', name: 'Trane', icon: '🥇', heat: 95, service: 90, warranty: 88, efficiency: 92, price: 'Premium', dfwRank: 1, verdict: 'Best overall for DFW heat reliability. Trane’s Comfort systems are field-proven in Texas extremes.' },
   { id: 'carrier', name: 'Carrier', icon: '🥈', heat: 92, service: 88, warranty: 90, efficiency: 94, price: 'Premium', dfwRank: 2, verdict: 'Excellent efficiency and warranty. Carrier Infinity series handles DFW peaks with minimal efficiency loss.' },
   { id: 'lennox', name: 'Lennox', icon: '🥉', heat: 88, service: 82, warranty: 85, efficiency: 96, price: 'Premium', dfwRank: 3, verdict: 'Highest SEER2 ratings but dealer network thinner in DFW suburbs. Best for efficiency-first buyers.' },
   { id: 'rheem', name: 'Rheem / Ruud', icon: '4️⃣', heat: 85, service: 92, warranty: 82, efficiency: 88, price: 'Mid-range', dfwRank: 4, verdict: 'Widest service availability in DFW — great for maintenance access. Slightly lower efficiency ceiling.' },

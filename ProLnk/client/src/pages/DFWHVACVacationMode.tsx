@@ -17,7 +17,7 @@ const dfwSeasons = [
 function buildVacationPlan(trip: typeof tripLengths[0], season: typeof dfwSeasons[0]) {
   const tips: string[] = [];
   tips.push(`🌡️ Set thermostat to ${season.vacationMax}°F — never higher in DFW regardless of season`);
-  if (season.risk === 'CRITICAL') tips.push('🚨 DFW summer: if AC fails and it\'s off, interior hits 120°F+ within 48 hrs — wood, paint, and electronics damaged');
+  if (season.risk === 'CRITICAL') tips.push('🚨 DFW summer: if AC fails and it\’s off, interior hits 120°F+ within 48 hrs — wood, paint, and electronics damaged');
   if (season.humidity === 'HIGH') tips.push('💧 Humidity: Set humidity control to 60% max — mold starts at 70%+ in DFW summers');
   tips.push('📱 Smart thermostat required for trips over 3 days — you need remote visibility from anywhere');
   if (trip.days >= 7) tips.push('🔌 Unplug electronics — they generate heat and consume standby power');

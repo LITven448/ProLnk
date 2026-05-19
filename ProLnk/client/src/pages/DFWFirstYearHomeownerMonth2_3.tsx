@@ -26,7 +26,7 @@ export default function DFWFirstYearHomeownerMonth2_3() {
       '🌡️ Inspect attic before holiday storage goes in',
       '📄 Review HOA docs for holiday decoration rules — many DFW HOAs restrict display dates',
       '🌧️ Reduce foundation watering — fall rains usually handle it',
-      '👋 Introduce yourself before the holidays if you haven't yet',
+      '👋 Introduce yourself before the holidays if you haven’t yet',
     ],
     winter: [
       '🔥 Test furnace now — DFW had a freeze event in 2021 that exposed many unready homes',

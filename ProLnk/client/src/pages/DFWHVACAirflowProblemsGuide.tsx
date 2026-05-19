@@ -25,7 +25,7 @@ const symptoms = [
   {
     symptom: 'One room noticeably warmer, register barely blowing',
     cause: 'Closed supply register',
-    detail: 'Closed registers don't save energy — they increase static pressure and can cause duct leakage or air handler damage.',
+    detail: 'Closed registers don’t save energy — they increase static pressure and can cause duct leakage or air handler damage.',
     fix: 'Open all supply registers fully. Balance system by partially closing registers in overcooled rooms rather than undercooled.',
     cost: 'Free — homeowner DIY',
   },

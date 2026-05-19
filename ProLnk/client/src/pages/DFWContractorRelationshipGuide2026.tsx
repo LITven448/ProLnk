@@ -4,7 +4,7 @@ const stages = [
   { id: 'searching', label: '🔍 Still Searching', desc: 'Looking for reliable contractors' },
   { id: 'first', label: '🤝 First Job Done', desc: 'Just used a new contractor' },
   { id: 'repeat', label: '🔄 Repeat Customer', desc: 'Used them 2–3 times' },
-  { id: 'partner', label: '🏆 Long-Term Partner', desc: 'They're my go-to for the trade' },
+  { id: 'partner', label: '🏆 Long-Term Partner', desc: 'They’re my go-to for the trade' },
 ];
 
 const guides: Record<string, { title: string; tips: string[] }> = {

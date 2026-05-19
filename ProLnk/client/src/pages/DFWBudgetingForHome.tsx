@@ -43,7 +43,7 @@ export default function DFWBudgetingForHome() {
     { month: '5–6', title: 'Reduce credit card utilization below 30%', detail: 'Pay down balances to improve credit score before pre-approval.' },
     { month: '7–8', title: 'Get pre-approved', detail: 'Talk to 2–3 lenders. Compare rates, fees, and loan types.' },
     { month: '9–10', title: 'Research DFW neighborhoods and school districts', detail: 'Visit target areas, check flood maps, research property tax rates by ZIP.' },
-    { month: '11–12', title: 'Start actively touring homes', detail: 'You\'re financially ready. Find a buyer\'s agent and begin serious search.' },
+    { month: '11–12', title: 'Start actively touring homes', detail: 'You\’re financially ready. Find a buyer\’s agent and begin serious search.' },
   ];
 
   return (

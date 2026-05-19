@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 const redFlags = [
   { id: 'storm_chaser', label: '🚩 Storm Chaser (out-of-state plates)', description: 'Arrives within 48 hrs of a storm from Oklahoma, Louisiana, or elsewhere. No local ties, will be gone before warranty issues surface.', weight: -2 },
-  { id: 'door_knock', label: '🚩 Unsolicited Door-to-Door', description: 'Legitimate local roofers don\'t cold knock after storms. This is the #1 indicator of a scam operation in DFW.', weight: -2 },
-  { id: 'no_address', label: '🚩 No Local Physical Address', description: 'P.O. Box, UPS Store, or address that matches a residence. Can\'t be served legally if things go wrong.', weight: -2 },
+  { id: 'door_knock', label: '🚩 Unsolicited Door-to-Door', description: 'Legitimate local roofers don\’t cold knock after storms. This is the #1 indicator of a scam operation in DFW.', weight: -2 },
+  { id: 'no_address', label: '🚩 No Local Physical Address', description: 'P.O. Box, UPS Store, or address that matches a residence. Can\’t be served legally if things go wrong.', weight: -2 },
   { id: 'cash_only', label: '🚩 Cash or Zelle Only', description: 'No paper trail. No recourse. No warranty enforcement. A legitimate contractor accepts check or credit card.', weight: -2 },
   { id: 'aob', label: '🚩 Requests Assignment of Benefits', description: 'Signing AOB transfers your insurance rights to the contractor. Illegal in some states, extremely risky in TX.', weight: -2 },
-  { id: 'sign_today', label: '🚩 "Sign Today" Pressure', description: 'High-quality roofers are in demand and don\'t need to pressure you. Same-day pressure is a manipulation tactic.', weight: -1 },
+  { id: 'sign_today', label: '🚩 "Sign Today" Pressure', description: 'High-quality roofers are in demand and don\’t need to pressure you. Same-day pressure is a manipulation tactic.', weight: -1 },
   { id: 'no_written', label: '🚩 No Written Estimate', description: 'Verbal estimates are unenforceable. Everything must be in writing: materials, scope, cost, timeline, warranty.', weight: -1 },
-  { id: 'low_ball', label: '🚩 Estimate Way Below Others', description: 'If one bid is 40%+ below others, they\'re planning to cut corners or add extras mid-job. Not a deal — a trap.', weight: -1 },
+  { id: 'low_ball', label: '🚩 Estimate Way Below Others', description: 'If one bid is 40%+ below others, they\’re planning to cut corners or add extras mid-job. Not a deal — a trap.', weight: -1 },
 ];
 
 const greenFlags = [
   { id: 'tx_license', label: '✅ Texas Roofing Contractor License', description: 'Texas does not require state licensing for roofers but top contractors pursue RCAT certification. Verify with your city.' },
-  { id: 'local_address', label: '✅ Established Local Address (5+ Years)', description: 'A real office in DFW you can find on Google Maps Street View. Longevity matters — storm chasers don\'t last.' },
+  { id: 'local_address', label: '✅ Established Local Address (5+ Years)', description: 'A real office in DFW you can find on Google Maps Street View. Longevity matters — storm chasers don\’t last.' },
   { id: 'bbb', label: '✅ Better Business Bureau A+ Rating', description: 'Check bbb.org. Look for rating AND complaint history. An A+ with zero complaints is the standard to aim for.' },
   { id: 'manufacturer_cert', label: '✅ Manufacturer Certification (GAF, Owens Corning)', description: 'Certified contractors receive training and can offer extended warranties unavailable to uncertified roofers.' },
   { id: 'written_warranty', label: '✅ Written Workmanship Warranty (5+ Years)', description: 'Manufacturer warranties cover materials. Workmanship warranties cover installation errors. Both in writing.' },

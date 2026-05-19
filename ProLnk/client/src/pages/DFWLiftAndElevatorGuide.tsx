@@ -9,7 +9,7 @@ const LIFT_TYPES = [
 function getRecommendation(floors: string, usage: string, budget: string) {
   const f = parseInt(floors) || 2;
   const b = parseInt(budget) || 30000;
-  if (f <= 2 && b < 20000) return { rec: 'Platform Lift / LULA', cost: '$8,000–$20,000', req: 'No structural hoistway needed. 110V outlet, 5\'x5\' footprint minimum.', maint: '$300–$600/year' };
+  if (f <= 2 && b < 20000) return { rec: 'Platform Lift / LULA', cost: '$8,000–$20,000', req: 'No structural hoistway needed. 110V outlet, 5\’x5\’ footprint minimum.', maint: '$300–$600/year' };
   if (b < 35000 || usage === 'Occasional') return { rec: 'Pneumatic Vacuum Elevator', cost: '$20,000–$35,000', req: 'No pit or machine room. Self-supporting cylinder. 110–220V power.', maint: '$400–$800/year' };
   return { rec: 'Traditional Hydraulic Elevator', cost: '$30,000–$55,000', req: 'Structural hoistway, machine room, 3"–4" pit. 220V dedicated circuit.', maint: '$600–$1,200/year' };
 }

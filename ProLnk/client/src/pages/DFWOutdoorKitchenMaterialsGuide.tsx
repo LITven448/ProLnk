@@ -27,7 +27,7 @@ const recommendations: Record<string, Record<string, { material: string; mainten
   'Appliance Surrounds': {
     'Fully Covered Patio': { material: '🥇 Stainless steel 304 — industry standard for DFW outdoor kitchens. Handles heat from grill/smoker proximity.', maintenance: 'Monthly polish, inspect door gaskets annually, check for rust spots at welds', cost: '$500–$3,000 per appliance surround', avoid: 'Painted steel — DFW humidity causes rust under paint within 2 years' },
     'Partially Covered': { material: '🥇 Stainless steel 304 — same recommendation. Partially covered is still significant DFW weather exposure.', maintenance: 'Apply stainless protector quarterly, cover appliances during extended absences', cost: '$600–$3,500 per surround', avoid: 'Powder-coated steel surrounds — coating chips and rust follows in DFW humidity' },
-    'Fully Exposed': { material: '🥇 Marine-grade stainless steel 316 — higher nickel content resists pitting in DFW\'s humidity + heat combination.', maintenance: 'Monthly cleaning + protective wax coating, covers when not in use', cost: '$800–$4,500 per surround', avoid: 'Any non-stainless metal — will rust within 1–3 years in full DFW exposure' },
+    'Fully Exposed': { material: '🥇 Marine-grade stainless steel 316 — higher nickel content resists pitting in DFW\’s humidity + heat combination.', maintenance: 'Monthly cleaning + protective wax coating, covers when not in use', cost: '$800–$4,500 per surround', avoid: 'Any non-stainless metal — will rust within 1–3 years in full DFW exposure' },
   },
 };
 

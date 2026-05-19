@@ -28,7 +28,7 @@ const styles = {
 };
 
 const whenToInspect = [
-  { icon: '🏠', trigger: 'Buying a home', detail: 'Always get a foundation inspection before closing — it\'s separate from a standard home inspection.' },
+  { icon: '🏠', trigger: 'Buying a home', detail: 'Always get a foundation inspection before closing — it\’s separate from a standard home inspection.' },
   { icon: '🌩️', trigger: 'After a major storm', detail: 'Heavy rains, hail, or tornado events can shift DFW clay soil rapidly.' },
   { icon: '📐', trigger: 'Seeing new cracks', detail: 'Any crack wider than 1/8" or horizontal cracks in brick or drywall.' },
   { icon: '🚪', trigger: 'Doors/windows sticking', detail: 'Sudden difficulty opening or closing interior doors is a classic early sign.' },

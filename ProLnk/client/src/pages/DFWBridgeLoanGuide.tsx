@@ -13,7 +13,7 @@ const data = {
       body: 'Interest rate: typically Prime + 2% (currently ~10.5%). Origination fee: 1–2 points. No payments often required during the loan term — interest accrues. You pay it off when your current home sells.',
     },
     {
-      heading: '⚠️ Risk: What If Your Home Doesn\'t Sell?',
+      heading: '⚠️ Risk: What If Your Home Doesn\’t Sell?',
       body: 'If your DFW home sits unsold, you carry two mortgages plus bridge loan interest. DFW median days-on-market is under 30, but over-priced or condition-challenged homes can linger. Most lenders require a 20% equity cushion to approve.',
     },
     {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const HVAC_ANALYSIS: Record<string, Record<string, { verdict: string; savings: string; recommendation: string }>> = {
   pre1980: {
     pre2000: { verdict: 'Replace — Strong Case', savings: 'Up to 40–50% reduction in cooling bills. R-22 refrigerant systems cost $150+/lb to recharge vs $20/lb for modern R-410A.', recommendation: 'Replace with 16+ SEER heat pump. Financing at $80–$120/month beats repair costs within 18 months. Rebates up to $500 from Oncor.' },
-    '2000to2014': { verdict: 'Replace Soon', savings: '25–35% efficiency gain. System at or past 12-year useful life.', recommendation: 'Get replacement quotes now — don\'t wait for summer failure. 14 SEER minimum, 16 SEER recommended for Forest Hill heat.' },
+    '2000to2014': { verdict: 'Replace Soon', savings: '25–35% efficiency gain. System at or past 12-year useful life.', recommendation: 'Get replacement quotes now — don\’t wait for summer failure. 14 SEER minimum, 16 SEER recommended for Forest Hill heat.' },
     post2014: { verdict: 'Repair if Under $800', savings: 'Newer efficient system worth maintaining. Repair extends life 3–5 years at lower cost than replacement.', recommendation: 'Annual tune-up + capacitor/contactor inspection. Replace if single repair exceeds $800.' },
   },
   '1980to2000': {

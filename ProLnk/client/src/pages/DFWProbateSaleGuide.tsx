@@ -8,7 +8,7 @@ const sections = [
   },
   {
     icon: '⚡',
-    heading: 'Muniment of Title: Texas\' Fast-Track Option',
+    heading: 'Muniment of Title: Texas\’ Fast-Track Option',
     body: 'If the deceased had a valid will, no unpaid debts (except mortgage), and the only asset is real estate, Texas allows "muniment of title" — no formal probate administration. Timeline: 4–6 weeks. The will itself becomes the transfer document. Available only in Texas; not recognized in all states.',
   },
   {

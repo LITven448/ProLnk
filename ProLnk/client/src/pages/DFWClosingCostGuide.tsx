@@ -52,7 +52,7 @@ export default function DFWClosingCostGuide() {
             <h2 style={{ color: '#92400e', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏠 Seller Closing Costs</h2>
             {[
               { label: 'Agent Commission', value: '5–6% of sale price', note: 'Split between listing and buyer agent' },
-              { label: 'Owner\'s Title Policy', value: '~0.5–0.6% of price', note: 'Negotiable — sometimes buyer pays in DFW' },
+              { label: 'Owner\’s Title Policy', value: '~0.5–0.6% of price', note: 'Negotiable — sometimes buyer pays in DFW' },
               { label: 'Survey', value: '$500–$800', note: 'Required by most lenders' },
               { label: 'Tax Proration', value: 'Varies', note: 'Seller pays taxes through closing date' },
               { label: 'HOA Resale Certificate', value: '$200–$500', note: 'If in HOA' },
@@ -75,7 +75,7 @@ export default function DFWClosingCostGuide() {
             <h2 style={{ color: '#0c4a6e', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔑 Buyer Closing Costs</h2>
             {[
               { label: 'Lender Origination Fees', value: '$2,500–$4,000', note: 'Varies by loan type and lender' },
-              { label: 'Title Insurance (Lender\'s)', value: '~0.3% of loan', note: 'Required by all lenders' },
+              { label: 'Title Insurance (Lender\’s)', value: '~0.3% of loan', note: 'Required by all lenders' },
               { label: 'Prepaid Interest', value: '15–30 days', note: 'Interest paid through first payment date' },
               { label: 'Homeowners Insurance', value: '$1,500–$3,000', note: 'Full year upfront at closing' },
               { label: 'Property Tax Escrow', value: '2–3 months', note: 'Escrowed for future tax payments' },

@@ -8,14 +8,14 @@ const plan = [
 ];
 
 const discoveries = [
-  { icon: '🔍', title: 'Issues the inspector missed', detail: 'AI catches approximately 40% more issues than standard home inspections — particularly early-stage moisture intrusion, early HVAC wear, and minor structural concerns that aren't yet code violations.' },
+  { icon: '🔍', title: 'Issues the inspector missed', detail: 'AI catches approximately 40% more issues than standard home inspections — particularly early-stage moisture intrusion, early HVAC wear, and minor structural concerns that aren’t yet code violations.' },
   { icon: '⏰', title: 'Aging systems approaching end of life', detail: 'Know before they fail. HVAC systems average 15–20 years, water heaters 10–12 years, roofs 20–25 years. Budget ahead instead of getting surprised.' },
   { icon: '📋', title: 'Previous repair history', detail: 'If your home was already in the TrustyPro vault before you purchased, you may have access to past scan records and documented repairs — a significant advantage.' },
 ];
 
 const budgetTips = [
   { tip: 'Budget 1–2% of home value per year for maintenance', icon: '💰' },
-  { tip: 'First-year surprises are normal — TrustyPro helps you prioritize what's urgent vs. not', icon: '📅' },
+  { tip: 'First-year surprises are normal — TrustyPro helps you prioritize what’s urgent vs. not', icon: '📅' },
   { tip: 'Document everything from day one — that record has financial value when you sell', icon: '📝' },
   { tip: 'Monthly reminders, seasonal guides, and storm alerts are automatic once your home is in the vault', icon: '🔔' },
   { tip: 'Connect with verified pros early — the good ones book out 4–6 weeks', icon: '⭐' },

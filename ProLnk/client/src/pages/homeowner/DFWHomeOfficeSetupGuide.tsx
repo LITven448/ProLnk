@@ -55,7 +55,7 @@ export default function DFWHomeOfficeSetupGuide() {
               {
                 icon: '📶',
                 title: '1. Reliable Internet',
-                detail: 'AT&T Fiber covers most DFW suburbs. Don't just assume — test your speed. Minimum: 100 Mbps download, 50 Mbps upload for video calls. If you're on cable, upgrade.',
+                detail: 'AT&T Fiber covers most DFW suburbs. Don’t just assume — test your speed. Minimum: 100 Mbps download, 50 Mbps upload for video calls. If you’re on cable, upgrade.',
               },
               {
                 icon: '⚡',
@@ -65,7 +65,7 @@ export default function DFWHomeOfficeSetupGuide() {
               {
                 icon: '❄️',
                 title: '3. Temperature Control',
-                detail: 'DFW HVAC can't keep up with a home office corner in July. Portable AC ($200–600) works for smaller rooms. Ductless mini-split ($1,500–2,500) for a dedicated room.',
+                detail: 'DFW HVAC can’t keep up with a home office corner in July. Portable AC ($200–600) works for smaller rooms. Ductless mini-split ($1,500–2,500) for a dedicated room.',
               },
               {
                 icon: '🔋',
@@ -91,8 +91,8 @@ export default function DFWHomeOfficeSetupGuide() {
             {[
               { icon: '🖥️', item: 'Standing Desk', cost: '$300–800', note: 'DFW workers average 8+ hrs at desk. Non-negotiable.' },
               { icon: '📺', item: 'Monitor Arm', cost: '$50–150', note: 'Eye level = no neck strain. Cheap fix, big impact.' },
-              { icon: '🪑', item: 'Quality Chair', cost: '$300–800', note: 'Don't cheap out on what you sit in 8 hrs/day.' },
-              { icon: '💡', item: 'Smart Lighting', cost: '$80–200', note: 'Face window, don't sit with it behind you. 4,000K LED supplement.' },
+              { icon: '🪑', item: 'Quality Chair', cost: '$300–800', note: 'Don’t cheap out on what you sit in 8 hrs/day.' },
+              { icon: '💡', item: 'Smart Lighting', cost: '$80–200', note: 'Face window, don’t sit with it behind you. 4,000K LED supplement.' },
             ].map(item => (
               <div key={item.item} style={{ background: '#0f172a', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>

@@ -30,7 +30,7 @@ export default function DFWAtticHatchGuide() {
       savings = '$8 – $20/month in DFW summers';
       steps = [
         'Cut a piece of 2" polyiso rigid foam to fit the hatch opening (R-13 per inch)',
-        'Add 3" polyiso for R-20+ — ideal for DFW\'s 150°F attic temperatures',
+        'Add 3" polyiso for R-20+ — ideal for DFW\’s 150°F attic temperatures',
         'Glue foam layers together if stacking for added R-value',
         'Attach foam adhesive-backed weatherstripping to the hatch frame',
         'Add a latch or simple hook to pull hatch tight against weatherstripping',

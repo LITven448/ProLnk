@@ -31,7 +31,7 @@ const topics = [
   },
   {
     id: 'prolnk',
-    label: '🔗 ProLnk's Role',
+    label: '🔗 ProLnk’s Role',
     title: 'How ProLnk Fits Into DFW HVAC in 2026',
     status: 'ProLnk matches DFW homeowners with vetted, licensed HVAC professionals in their specific ZIP code. No call centers, no upsell pressure. Quotes are transparent. Pros are background-checked and trade-licensed.',
     action: 'Sign up at prolnk.io to get matched with a vetted DFW HVAC pro — free for homeowners.',

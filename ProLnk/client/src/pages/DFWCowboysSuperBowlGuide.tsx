@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const SECTIONS = [
-  { id: 'hosting', label: '🏟️ AT&T Stadium & Super Bowl', content: 'AT&T Stadium in Arlington has hosted Super Bowl XLV (2011) and is a perennial candidate. DFW\'s 13M+ metro population and hotel capacity make it a top NFL choice for marquee events.' },
+  { id: 'hosting', label: '🏟️ AT&T Stadium & Super Bowl', content: 'AT&T Stadium in Arlington has hosted Super Bowl XLV (2011) and is a perennial candidate. DFW\’s 13M+ metro population and hotel capacity make it a top NFL choice for marquee events.' },
   { id: 'parking', label: '🚗 Parking Income Potential', content: 'Homes within 2 miles of AT&T Stadium can earn $75-$200/day during Super Bowl weekend. List on Neighbor.com or SpotHero 60 days before the event for maximum exposure.' },
   { id: 'rental', label: '🏠 Short-Term Rental Surge', content: 'Super Bowl weeks trigger 300-500% Airbnb price spikes in Arlington, Grand Prairie, and Irving. A 3BR home near the stadium can generate $3,000-$8,000 for a single week.' },
   { id: 'prep', label: '🔧 Pre-Event Home Prep', content: 'Deep clean, minor repairs, and professional photography 8 weeks before the event maximizes rental income. HVAC servicing is critical — guests expect perfect climate control.' },

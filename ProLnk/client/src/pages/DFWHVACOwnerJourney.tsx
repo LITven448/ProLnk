@@ -22,8 +22,8 @@ const journeyMap: Record<string, { next: string; learn: string[]; prolnk: string
   year1: {
     next: 'Years 3–5: Build real diagnostic intuition',
     learn: [
-      '📊 How your electric bill changes seasonally and what\'s normal vs. alarming',
-      '🔄 The rhythm of spring and fall tune-ups as DFW\'s two critical prep windows',
+      '📊 How your electric bill changes seasonally and what\’s normal vs. alarming',
+      '🔄 The rhythm of spring and fall tune-ups as DFW\’s two critical prep windows',
       '⚠️ Your first warning signs: short cycling, warm spots, musty smells',
       '💰 That HVAC emergencies are expensive — the $2,000 emergency fund is real',
       '🌧️ How DFW hail, ice, and 100°F+ heat each stress your system differently',
@@ -33,7 +33,7 @@ const journeyMap: Record<string, { next: string; learn: string[]; prolnk: string
   year3: {
     next: 'Year 10+: Manage your HVAC as a long-term financial asset',
     learn: [
-      '🔬 How to read your own system\'s performance patterns',
+      '🔬 How to read your own system\’s performance patterns',
       '📐 What SEER ratings mean for your DFW energy bill and when to upgrade',
       '🤝 The value of a trusted tech relationship built over multiple seasons',
       '🏠 How HVAC condition affects home value and appraisals in DFW',

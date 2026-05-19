@@ -27,11 +27,11 @@ const dataGuide: Record<string, { primarySource: string; secondarySource: string
     dfwNote: 'DFW leads the US in new home construction. Collin County alone issued 15,000+ residential permits in 2024. New construction fundamentally caps resale appreciation in adjacent areas.'
   },
   'Permit activity and development': {
-    primarySource: 'Each DFW city\'s building permit portal. Dallas: dallascityhall.com/departments/sustainabledevelopment. Fort Worth: fortworthtexas.gov/departments/pdd. Plano: plano.gov/permits.',
+    primarySource: 'Each DFW city\’s building permit portal. Dallas: dallascityhall.com/departments/sustainabledevelopment. Fort Worth: fortworthtexas.gov/departments/pdd. Plano: plano.gov/permits.',
     secondarySource: 'DCAD (Dallas Central Appraisal District) and TAD (Tarrant Appraisal District) — both have GIS mapping tools showing recent improvement filings which lag actual permits by 30–60 days.',
     permitSource: 'iSqFt (isqft.com) and BuildCentral track commercial and large residential permit activity. Good for identifying apartment pipeline that will affect rental markets.',
     interpretation: 'Commercial permit density predicts future residential demand. A new Amazon fulfillment center or corporate campus permit in a DFW submarket typically drives 2,000–5,000 new households within 3 years. Watch commercial before residential.',
-    dfwNote: 'Celina and Prosper are issuing commercial permits at a rate not seen since Frisco\'s 2010–2015 explosion. These are leading indicators for the next appreciation wave in northern Collin County.'
+    dfwNote: 'Celina and Prosper are issuing commercial permits at a rate not seen since Frisco\’s 2010–2015 explosion. These are leading indicators for the next appreciation wave in northern Collin County.'
   },
   'Tax-assessed vs. market value': {
     primarySource: 'DCAD (dcad.org) for Dallas County properties — free online lookup by address or owner. TAD (tad.org) for Tarrant County. CCAD (collincad.org) for Collin County. DCAD and CCAD both have excellent online portals.',
@@ -52,7 +52,7 @@ const dataGuide: Record<string, { primarySource: string; secondarySource: string
     secondarySource: 'TRERC (trerc.tamu.edu) publishes rental housing reports for Texas metros. Apartment Data Services (aptdata.com) covers DFW multifamily specifically.',
     permitSource: 'Not applicable for rental data.',
     interpretation: 'DFW SFR cap rates typically run 4.5–6.5% in 2024–2026. Multifamily cap rates 5–7%. Markets with high new apartment supply (Frisco, Far North Dallas) compress cap rates as rents soften. Track rent growth rate: if asking rents are flat or declining, cap rate compression is near.',
-    dfwNote: 'DFW\'s institutional SFR buyer presence (Invitation Homes, Progress Residential) is concentrated in Tarrant and southern Dallas County — these buyers have established rent floors that support investor pro formas.'
+    dfwNote: 'DFW\’s institutional SFR buyer presence (Invitation Homes, Progress Residential) is concentrated in Tarrant and southern Dallas County — these buyers have established rent floors that support investor pro formas.'
   },
   'Comparable sales (comps)': {
     primarySource: 'NTREIS MLS — only accessible through a licensed DFW agent. Request a CMA (Comparative Market Analysis) for any submarket. This is the most reliable comp source.',

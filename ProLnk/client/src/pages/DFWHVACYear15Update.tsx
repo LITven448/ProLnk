@@ -18,7 +18,7 @@ const plans: Record<string, { urgency: string; title: string; steps: string[]; w
       'Ask about 0% financing through manufacturers — Carrier, Trane, Lennox all offer it',
       'Store system records in ProLnk Home Health Vault — warranty transfer ready',
     ],
-    warning: 'A 15-year DFW system failing in July is a $12,000–$18,000 emergency decision made in 95°F heat with no leverage. Replace on your schedule, not the system's.',
+    warning: 'A 15-year DFW system failing in July is a $12,000–$18,000 emergency decision made in 95°F heat with no leverage. Replace on your schedule, not the system’s.',
     insight: 'DFW compressors fail at 15–17 years as electrolytic capacitors degrade. The failure is sudden, total, and happens during peak demand when installers are booked out.',
   },
   failure: {
@@ -27,7 +27,7 @@ const plans: Record<string, { urgency: string; title: string; steps: string[]; w
     steps: [
       'Get 3 quotes within 24 hours — ProLnk can match you fast',
       'Avoid accepting the first quote from whoever shows up — markup is 30–40% in emergencies',
-      'Confirm the replacement is a full system — don't mix a new condenser with a 15-year air handler',
+      'Confirm the replacement is a full system — don’t mix a new condenser with a 15-year air handler',
       'Demand a Manual J calculation to verify proper sizing for your home',
       'Verify installer pulls a permit — required in DFW; protects your warranty and resale',
     ],
@@ -44,8 +44,8 @@ const plans: Record<string, { urgency: string; title: string; steps: string[]; w
       'Ask if quote includes coil replacement — often excluded from condenser quotes',
       'Check Oncor rebate eligibility: up to $1,500 for qualifying high-efficiency systems',
     ],
-    warning: 'The cheapest replacement quote often excludes the air handler coil. That's a $1,500–$3,000 add-on after installation. Read the line items.',
-    insight: 'At 15 years, DFW homeowners upgrading from 13–14 SEER to 18–20 SEER typically break even in 4–6 years on energy savings alone. It's not just a replacement — it's an investment.',
+    warning: 'The cheapest replacement quote often excludes the air handler coil. That’s a $1,500–$3,000 add-on after installation. Read the line items.',
+    insight: 'At 15 years, DFW homeowners upgrading from 13–14 SEER to 18–20 SEER typically break even in 4–6 years on energy savings alone. It’s not just a replacement — it’s an investment.',
   },
   rental: {
     urgency: 'HIGH',

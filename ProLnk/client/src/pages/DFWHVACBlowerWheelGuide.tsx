@@ -27,7 +27,7 @@ export default function DFWHVACBlowerWheelGuide() {
           <h2 style={{ fontSize: 18, color: '#F5E642', marginBottom: 16 }}>⚙️ Why DFW Blower Wheels Fail Faster</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { icon: '🌾', title: 'High Pollen', desc: 'DFW\'s oak, cedar, and grass pollen coats blower blades, building imbalance over time' },
+              { icon: '🌾', title: 'High Pollen', desc: 'DFW\’s oak, cedar, and grass pollen coats blower blades, building imbalance over time' },
               { icon: '🏜️', title: 'Dust & Particulates', desc: 'Spring dust storms push particulates through even well-filtered return air grilles' },
               { icon: '💧', title: 'Humidity Bonding', desc: 'DFW humidity causes dust to stick to blades rather than pass through cleanly' },
               { icon: '🕐', title: 'Long Run Hours', desc: '8–12 hrs/day operation in summer means 3x more debris accumulation than northern climates' },

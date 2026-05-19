@@ -16,13 +16,13 @@ const myths = [
   {
     belief: 'Foundation repair is a dealbreaker when buying',
     verdict: 'MYTH',
-    reality: 'DFW is one of the most active foundation repair markets in the US. Documented repairs with a transferable warranty and an engineer\'s completion letter are considered routine and acceptable by most lenders and buyers. Undisclosed issues are the dealbreaker — not disclosed and repaired ones.',
+    reality: 'DFW is one of the most active foundation repair markets in the US. Documented repairs with a transferable warranty and an engineer\’s completion letter are considered routine and acceptable by most lenders and buyers. Undisclosed issues are the dealbreaker — not disclosed and repaired ones.',
     icon: '📋',
   },
   {
     belief: 'Watering your foundation is a Texas myth',
     verdict: 'MYTH',
-    reality: 'It\'s very real — but most homeowners do it wrong. DFW foundation watering should maintain consistent soil moisture, not saturate. A soaker hose 12–18 inches from the perimeter, run 30–60 min 3x per week in dry seasons, is the standard recommendation by DFW structural engineers.',
+    reality: 'It\’s very real — but most homeowners do it wrong. DFW foundation watering should maintain consistent soil moisture, not saturate. A soaker hose 12–18 inches from the perimeter, run 30–60 min 3x per week in dry seasons, is the standard recommendation by DFW structural engineers.',
     icon: '💧',
   },
   {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const steps = [
   { icon: '📱', step: '01', title: 'Scan Your Home', desc: 'Walk your property with the TrustyPro app. AI guides you through each zone — roof, foundation, exterior, interior.' },
   { icon: '🤖', step: '02', title: 'AI Analysis', desc: 'Computer vision models trained on 10M+ property images analyze each photo in real time. Results in under 60 seconds.' },
-  { icon: '🏥', step: '03', title: 'Health Score', desc: 'Each zone gets a 0–100 score. The full home receives an overall Health Index — your property\'s vital signs.' },
+  { icon: '🏥', step: '03', title: 'Health Score', desc: 'Each zone gets a 0–100 score. The full home receives an overall Health Index — your property\’s vital signs.' },
   { icon: '🔗', step: '04', title: 'Matched to Pros', desc: 'Flagged issues are matched to verified pros in your area. You control who sees what — always.' },
 ];
 

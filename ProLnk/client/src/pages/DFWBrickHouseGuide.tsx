@@ -52,7 +52,7 @@ export default function DFWBrickHouseGuide() {
           {[
             { icon: '☀️', label: 'Thermal Mass', text: 'Brick absorbs DFW heat and releases it slowly, reducing AC load by 10–15%' },
             { icon: '🌧️', label: 'Hail Resistance', text: 'Solid brick shrugs off DFW hail storms — no denting, no replacement after storms' },
-            { icon: '⚠️', label: 'Clay Soil Risk', text: 'DFW\'s expansive clay soil causes foundation movement that cracks brick veneer' },
+            { icon: '⚠️', label: 'Clay Soil Risk', text: 'DFW\’s expansive clay soil causes foundation movement that cracks brick veneer' },
             { icon: '💧', label: 'Efflorescence', text: 'Mineral salts migrate through brick in DFW humidity — white staining is common' },
           ].map(card => (
             <div key={card.label} style={{ background: '#111D35', borderRadius: 12, padding: 20 }}>

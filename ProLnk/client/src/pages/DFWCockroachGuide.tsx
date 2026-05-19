@@ -43,7 +43,7 @@ const RECS: Record<string, Record<string, { treatment: string; exclusion: string
       tip: 'American roaches (palmetto bugs) are seasonal in DFW — peak invasion happens in summer heat and winter cold snaps.',
     },
     bathroom: {
-      treatment: 'Treat drains with American Roach Gel or drain foam. Perimeter spray exterior near foundation. They\'re coming in, not breeding inside.',
+      treatment: 'Treat drains with American Roach Gel or drain foam. Perimeter spray exterior near foundation. They\’re coming in, not breeding inside.',
       exclusion: 'Seal gaps around tub drain, toilet base, and supply lines. Check exterior for cracks near bathroom exterior wall.',
       tip: 'American roaches found in bathrooms are usually individuals seeking water, not a full infestation. Exclusion fixes 80% of cases.',
     },
@@ -62,7 +62,7 @@ const RECS: Record<string, Record<string, { treatment: string; exclusion: string
     kitchen: {
       treatment: 'Use gel bait for small ones (German), perimeter spray for large ones (American). Photograph and compare to ID species.',
       exclusion: 'Seal plumbing gaps under sink. Remove cardboard. Fix any drips. Cover both small and large species entry points.',
-      tip: 'In DFW, if they\'re small and tan indoors, assume German. If large and reddish-brown, assume American entering from outside.',
+      tip: 'In DFW, if they\’re small and tan indoors, assume German. If large and reddish-brown, assume American entering from outside.',
     },
     bathroom: {
       treatment: 'Gel bait under vanity for German roaches. Drain treatments for American roaches. Both if you see both sizes.',

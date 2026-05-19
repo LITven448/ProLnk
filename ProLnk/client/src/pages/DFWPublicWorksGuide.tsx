@@ -66,10 +66,10 @@ const issueData: Record<string, {
   'Tree on Private Property': {
     responsibility: 'homeowner',
     cityScope: 'City has no obligation for private property trees unless it has fallen on public infrastructure.',
-    homeownerScope: 'Your tree, your cost. If it falls on neighbor\'s property, insurance applies — but may still be your liability.',
+    homeownerScope: 'Your tree, your cost. If it falls on neighbor\’s property, insurance applies — but may still be your liability.',
     howToReport: 'No city reporting for private trees. Hire a licensed arborist.',
     responseTime: 'N/A — private matter.',
-    tip: 'If your tree is dead or leaning toward a neighbor\'s home, document it in writing NOW. Failure to act on a known hazard creates liability.',
+    tip: 'If your tree is dead or leaning toward a neighbor\’s home, document it in writing NOW. Failure to act on a known hazard creates liability.',
   },
   'Sewer Backup': {
     responsibility: 'shared',
@@ -77,7 +77,7 @@ const issueData: Record<string, {
     homeownerScope: 'Lateral line from your home to the main (in your yard and under your foundation) is your cost. This can be $3,000–$15,000+.',
     howToReport: '311 emergency line. Sewer backups are treated as urgent. Available 24/7.',
     responseTime: 'Same day for active backups. City will camera the main to determine fault point.',
-    tip: 'Request camera inspection from city before paying any plumber. If the fault is on the city\'s side of the cleanout, it\'s free. Many homeowners pay thousands unnecessarily.',
+    tip: 'Request camera inspection from city before paying any plumber. If the fault is on the city\’s side of the cleanout, it\’s free. Many homeowners pay thousands unnecessarily.',
   },
   'Water Main Leak': {
     responsibility: 'shared',
@@ -89,7 +89,7 @@ const issueData: Record<string, {
   },
   'Neighbor Fence Dispute': {
     responsibility: 'homeowner',
-    cityScope: 'City does not arbitrate property disputes. Police may respond if it escalates but won\'t resolve ownership.',
+    cityScope: 'City does not arbitrate property disputes. Police may respond if it escalates but won\’t resolve ownership.',
     homeownerScope: 'Survey your property. Shared fences are typically co-owned and co-maintained in Texas.',
     howToReport: 'Contact an HOA (if applicable) first. Otherwise consult a property attorney or hire a surveyor.',
     responseTime: 'N/A — civil matter.',

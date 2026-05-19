@@ -24,7 +24,7 @@ const recs: Record<string, { type: string; glazing: string; heatMitigation: stri
     glazing: 'Dual-pane Low-E sufficient for east exposure. Less heat gain risk.',
     heatMitigation: 'Standard shade blind optional. East skylights in DFW are the most energy-neutral option.',
     cost: '$1,800–$4,500 installed',
-    veluxNote: 'East-facing is DFW\'s sweet spot — beautiful morning light, minimal afternoon heat load.'
+    veluxNote: 'East-facing is DFW\’s sweet spot — beautiful morning light, minimal afternoon heat load.'
   },
   'North roof (minimal sun)': {
     type: 'Any VELUX model — north skylights in DFW are virtually heat-neutral',

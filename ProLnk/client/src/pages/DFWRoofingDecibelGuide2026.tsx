@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const scenarios = [
   { id: 'metal-rain', label: '🌧️ Metal roof + heavy DFW rain', advice: 'Metal roofing amplifies rain impact significantly. DFW spring storms can create 80+ dB impact noise. Solution: add mass-loaded vinyl (MLV) under metal panels or upgrade attic insulation to R-38+ dense-pack. Ribbed metal is louder than standing seam.' },
-  { id: 'highway', label: '🛣️ Home near DFW highway or tollway', advice: 'I-35, 635, DNT, and 121 corridors require special consideration. Architectural shingles alone won\'t block traffic noise — you need roof deck mass (5/8" OSB minimum) plus attic insulation. Consider STC-rated roof assemblies for homes within 1,500 feet of major roads.' },
+  { id: 'highway', label: '🛣️ Home near DFW highway or tollway', advice: 'I-35, 635, DNT, and 121 corridors require special consideration. Architectural shingles alone won\’t block traffic noise — you need roof deck mass (5/8" OSB minimum) plus attic insulation. Consider STC-rated roof assemblies for homes within 1,500 feet of major roads.' },
   { id: 'shingle-impact', label: '🪨 Hail impact noise on shingles', advice: 'Architectural shingles absorb energy better than 3-tab, reducing impact noise 8–12 dB. Class 4 impact-resistant shingles (polymer-modified) further dampen hail sound. DFW hail season (March–June) makes this a real quality-of-life consideration.' },
   { id: 'thin-deck', label: '📦 Hearing every creak and expansion noise', advice: 'Thermal expansion of roof decking creates noise as DFW temperatures swing 40°F daily in spring. Thin 7/16" OSB decks are noisier than 5/8" plywood. Re-decking with plywood and ring-shank nails reduces thermal creak significantly.' },
-  { id: 'neighbor', label: '🏘️ Neighbor\'s AC unit near your bedroom', advice: 'Exterior noise from adjacent units travels through soffit and attic more than roofing material. Add baffled ridge vents and seal attic bypasses to reduce transmitted mechanical noise from neighbor equipment.' },
+  { id: 'neighbor', label: '🏘️ Neighbor\’s AC unit near your bedroom', advice: 'Exterior noise from adjacent units travels through soffit and attic more than roofing material. Add baffled ridge vents and seal attic bypasses to reduce transmitted mechanical noise from neighbor equipment.' },
 ];
 
 export default function DFWRoofingDecibelGuide2026() {

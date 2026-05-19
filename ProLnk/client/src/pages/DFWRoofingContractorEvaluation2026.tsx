@@ -13,7 +13,7 @@ export default function DFWRoofingContractorEvaluation2026() {
   const getVerdict = () => {
     if (score >= 85) return { label: 'Hire Confidently', color: '#4CAF50', message: 'This contractor meets DFW professional standards. Proceed with written contract and payment schedule.' };
     if (score >= 65) return { label: 'Hire With Caution', color: '#F5A623', message: 'Acceptable but address missing items before signing. Require the missing elements in writing.' };
-    if (score >= 40) return { label: 'High Risk — Seek Alternatives', color: '#FF4444', message: 'Significant gaps in this contractor's qualifications. Get 2 more quotes from fully qualified contractors.' };
+    if (score >= 40) return { label: 'High Risk — Seek Alternatives', color: '#FF4444', message: 'Significant gaps in this contractor’s qualifications. Get 2 more quotes from fully qualified contractors.' };
     return { label: 'Do Not Hire', color: '#CC0000', message: 'This contractor fails basic DFW professional requirements. Risk of storm chasing, poor work, or no recourse on claims.' };
   };
 

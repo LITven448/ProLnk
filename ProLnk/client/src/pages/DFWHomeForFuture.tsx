@@ -29,7 +29,7 @@ export default function DFWHomeForFuture() {
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
-          {[{ label: '⚡ EV Infrastructure', value: 'DFW EV registrations doubled in 2024. A 50A outlet today costs $800. In 5 years, it\'s table stakes.' }, { label: '☀️ Solar Opportunity', value: 'DFW gets 225+ sunny days/year. A 10kW system generates $1,800–$2,400 in annual savings.' }, { label: '🔋 Grid Risk', value: 'ERCOT failed in Feb 2021 and again in 2023. Home battery backup is now an ROI conversation.' }, { label: '🏠 Aging in Place', value: 'DFW boomers are staying put — wider doors, first-floor masters, and walk-in showers are smart now.' }].map(card => (
+          {[{ label: '⚡ EV Infrastructure', value: 'DFW EV registrations doubled in 2024. A 50A outlet today costs $800. In 5 years, it\’s table stakes.' }, { label: '☀️ Solar Opportunity', value: 'DFW gets 225+ sunny days/year. A 10kW system generates $1,800–$2,400 in annual savings.' }, { label: '🔋 Grid Risk', value: 'ERCOT failed in Feb 2021 and again in 2023. Home battery backup is now an ROI conversation.' }, { label: '🏠 Aging in Place', value: 'DFW boomers are staying put — wider doors, first-floor masters, and walk-in showers are smart now.' }].map(card => (
             <div key={card.label} style={{ backgroundColor: '#0F2137', borderRadius: 10, padding: 16, border: '1px solid #1C3352' }}>
               <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{card.label}</div>
               <div style={{ fontSize: 13, color: '#9AABB8', lineHeight: 1.5 }}>{card.value}</div>

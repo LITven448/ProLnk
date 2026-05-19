@@ -8,7 +8,7 @@ type TitleIssue = {
 
 const titleIssues: Record<string, TitleIssue> = {
   lien: {
-    insurance: 'Owner\'s title policy covers undisclosed liens discovered after closing — insurer pays to resolve or compensates you for loss',
+    insurance: 'Owner\’s title policy covers undisclosed liens discovered after closing — insurer pays to resolve or compensates you for loss',
     action: 'Before closing: demand seller clear the lien from proceeds or get a lien release. Do not close with an open lien.',
     severity: 'high',
   },
@@ -23,7 +23,7 @@ const titleIssues: Record<string, TitleIssue> = {
     severity: 'low',
   },
   heir: {
-    insurance: 'If an undisclosed heir surfaces post-closing with a claim, your owner\'s title policy defends you and covers losses',
+    insurance: 'If an undisclosed heir surfaces post-closing with a claim, your owner\’s title policy defends you and covers losses',
     action: 'Ensure title search goes back at least 40 years (standard in Texas). Ask title company about estates in chain of title.',
     severity: 'medium',
   },
@@ -34,7 +34,7 @@ const titleIssues: Record<string, TitleIssue> = {
   },
   encroachment: {
     insurance: 'Standard policies often exclude encroachments shown on survey — require the ALTA/NSPS survey and endorsement',
-    action: 'Encroachments onto neighbor\'s property or from neighbor onto yours: get in writing who resolves it and by when',
+    action: 'Encroachments onto neighbor\’s property or from neighbor onto yours: get in writing who resolves it and by when',
     severity: 'medium',
   },
 };
@@ -70,7 +70,7 @@ export default function DFWTitleSearchGuide() {
           <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1rem' }}>📋 What a Title Search Reveals</div>
           {[
             ['👤', 'Chain of ownership (who has held title)', '40+ year history in Texas'],
-            ['🔗', 'Liens (mortgages, mechanic\'s liens, tax liens)', 'Must be cleared at closing'],
+            ['🔗', 'Liens (mortgages, mechanic\’s liens, tax liens)', 'Must be cleared at closing'],
             ['⚖️', 'Judgments against prior owners', 'Can attach to property'],
             ['📐', 'Easements and restrictions', 'Utility, drainage, access rights'],
             ['👥', 'Potential heir claims', 'Estates, divorces, probate issues'],

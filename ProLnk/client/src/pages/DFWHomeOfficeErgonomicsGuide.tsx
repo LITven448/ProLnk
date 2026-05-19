@@ -61,7 +61,7 @@ export default function DFWHomeOfficeErgonomicsGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0' }}>
           {[
             { icon: '🌡️', title: 'DFW Afternoon Heat', body: 'South- and west-facing offices can hit 85°F by 3 PM even with central AC. A mini-split or dedicated zone is the single biggest productivity upgrade for DFW remote workers. Cost: $1,500–$3,500 installed.' },
-            { icon: '🔊', title: 'Open Floor Plan Acoustics', body: 'DFW\'s modern open-plan homes create echo chambers that sound terrible on calls. Two panels of 2" rockwool acoustic panels ($200–$600) can transform call quality and eliminate background reverb.' },
+            { icon: '🔊', title: 'Open Floor Plan Acoustics', body: 'DFW\’s modern open-plan homes create echo chambers that sound terrible on calls. Two panels of 2" rockwool acoustic panels ($200–$600) can transform call quality and eliminate background reverb.' },
             { icon: '🦴', title: 'Standing Desk ROI', body: 'Studies show alternating sitting/standing reduces lower back pain by 54% after 4 weeks. In DFW where most remote workers sit 8–10 hours, a motorized desk pays for itself in reduced healthcare costs within 18 months.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#112240', border: '1px solid #1E3A5F', borderRadius: 12, padding: 24 }}>
@@ -77,7 +77,7 @@ export default function DFWHomeOfficeErgonomicsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
             {[
               { label: 'Monitor Height', value: 'Top of screen at or slightly below eye level' },
-              { label: 'Monitor Distance', value: 'Arm\'s length (20–28 inches from face)' },
+              { label: 'Monitor Distance', value: 'Arm\’s length (20–28 inches from face)' },
               { label: 'Chair Height', value: 'Thighs parallel, feet flat, 90° at hips/knees' },
               { label: 'Keyboard Position', value: 'Elbows at 90°, wrists neutral (not bent up)' },
               { label: 'Lighting Direction', value: 'Light source 90° to monitor — never behind screen' },

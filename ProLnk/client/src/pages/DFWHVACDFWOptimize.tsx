@@ -24,15 +24,15 @@ const responses: Record<string, { title: string; tips: string[] }> = {
     tips: [
       '💧 DFW has a bipolar humidity problem: humid spring/fall, dry summer peaks — your system needs to handle both',
       '🌡️ If humidity > 55% RH when AC is running, your unit may be oversized (short-cycling) — oversizing is epidemic in DFW new construction',
-      '🔧 Have a tech check your evaporator coil airflow — reducing fan speed 10–15% dramatically improves dehumidification in DFW\'s shoulder seasons',
+      '🔧 Have a tech check your evaporator coil airflow — reducing fan speed 10–15% dramatically improves dehumidification in DFW\’s shoulder seasons',
       '🏠 Whole-home dehumidifier costs $1,200–$2,000 installed and transforms DFW spring comfort',
-      '📐 Check ductwork for leaks — DFW attic duct leaks pull humid air in, negating your system\'s dehumidification',
+      '📐 Check ductwork for leaks — DFW attic duct leaks pull humid air in, negating your system\’s dehumidification',
     ],
   },
   hotspots: {
     title: 'DFW Zoning & Airflow',
     tips: [
-      '🔧 DFW homes built before 2000 commonly have single-zone systems that can\'t handle the sun load variation — west-facing rooms get brutal afternoon heat',
+      '🔧 DFW homes built before 2000 commonly have single-zone systems that can\’t handle the sun load variation — west-facing rooms get brutal afternoon heat',
       '🏠 Zone dampers cost $2,000–$4,000 and solve most hotspot problems in DFW two-story homes',
       '🌬️ Check supply vent sizing in problem rooms — undersized vents are the #1 cheap fix for hotspots',
       '🪟 Window film on west-facing windows reduces cooling load 30–40% in DFW afternoon — cheap fix before HVAC upgrades',
@@ -42,9 +42,9 @@ const responses: Record<string, { title: string; tips: string[] }> = {
   runslong: {
     title: 'DFW Constant-Run Causes',
     tips: [
-      '🌡️ If it\'s 100°F+ outside and your AC runs 18+ hours, that can be normal for DFW — systems are sized for 95°F design temperature',
+      '🌡️ If it\’s 100°F+ outside and your AC runs 18+ hours, that can be normal for DFW — systems are sized for 95°F design temperature',
       '🔍 First check: is it maintaining temperature? Running long but hitting setpoint = normal DFW operation. Running long but NOT hitting setpoint = problem',
-      '🧊 Low refrigerant is the #1 cause of constant-run in DFW — symptoms appear in July because that\'s when demand spikes',
+      '🧊 Low refrigerant is the #1 cause of constant-run in DFW — symptoms appear in July because that\’s when demand spikes',
       '🔄 Dirty evaporator coil is #2 — restricts heat transfer, makes system run 20–30% longer',
       '🏠 Duct leaks in DFW attic (160°F) can lose 20–30% of conditioned air — dramatically extends runtime',
     ],
@@ -56,7 +56,7 @@ const responses: Record<string, { title: string; tips: string[] }> = {
       '📋 Request contractor service history from the seller — most DFW contractors keep 7–10 year records',
       '🔍 Check refrigerant type: R-22 systems are obsolete in DFW and cost 3–5x more to service',
       '📐 Verify system sizing: DFW standard is 400–500 sq ft per ton — oversized systems are common in new DFW construction',
-      '🏦 Add your home to ProLnk\'s Home Health Vault on day one — start your DFW HVAC legacy from the beginning',
+      '🏦 Add your home to ProLnk\’s Home Health Vault on day one — start your DFW HVAC legacy from the beginning',
     ],
   },
 };

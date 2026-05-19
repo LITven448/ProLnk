@@ -11,7 +11,7 @@ const seasons = [
       '✅ Temps 55–75°F — contractors can work efficiently without heat fatigue',
       '✅ Maximum tech availability before summer rush',
       '✅ Oncor and CoServ rebates ($300–$600) still active',
-      '✅ Manufacturers\' pre-season inventory is at its peak',
+      '✅ Manufacturers\’ pre-season inventory is at its peak',
       '✅ You have 6–8 weeks to schedule without urgency',
       '✅ Negotiate hard — techs want to fill their spring calendar',
     ],
@@ -86,15 +86,15 @@ const situations: { id: string; label: string; seasonId: string; advice: string 
   },
   {
     id: 'post_summer',
-    label: '😮‍💨 My system barely survived last summer — it\'s fall now',
+    label: '😮‍💨 My system barely survived last summer — it\’s fall now',
     seasonId: 'fall',
-    advice: 'This fall is ideal. Your system has already shown signs of stress. Don\'t risk another DFW summer on a failing unit. Fall pricing is excellent and techs are hungry for work after the summer rush.',
+    advice: 'This fall is ideal. Your system has already shown signs of stress. Don\’t risk another DFW summer on a failing unit. Fall pricing is excellent and techs are hungry for work after the summer rush.',
   },
   {
     id: 'emergency',
     label: '🚨 My system failed during a heat event',
     seasonId: 'summer',
-    advice: 'Move fast. Call ProLnk to reach available DFW techs immediately. In a summer emergency, getting a working system within 48 hours outweighs optimal pricing. Get 2 quotes if possible but don\'t delay over 24 hours in extreme heat.',
+    advice: 'Move fast. Call ProLnk to reach available DFW techs immediately. In a summer emergency, getting a working system within 48 hours outweighs optimal pricing. Get 2 quotes if possible but don\’t delay over 24 hours in extreme heat.',
   },
 ];
 

@@ -20,10 +20,10 @@ const stageContent: Record<Stage, { headline: string; insight: string; actions: 
       { action: 'Replace filter and flush condensate drain', detail: 'Do both on day 1. DFW summer will test your system immediately — start clean.', urgency: 'critical' },
       { action: 'Schedule a full inspection with a NATE-certified tech', detail: 'Not a free estimate, a paid inspection. Ask for refrigerant charge check, heat exchanger inspection, and condensate system evaluation.', urgency: 'important' },
     ],
-    dfwFact: 'DFW HVAC systems work harder than almost anywhere in the US — 5,000+ cooling hours per year vs. 1,500 in northern states. Your system\'s "age" in DFW is equivalent to much older equipment in milder climates.',
+    dfwFact: 'DFW HVAC systems work harder than almost anywhere in the US — 5,000+ cooling hours per year vs. 1,500 in northern states. Your system\’s "age" in DFW is equivalent to much older equipment in milder climates.',
   },
   'five-years': {
-    headline: 'You\'re in the optimization phase — extend system life and catch problems early.',
+    headline: 'You\’re in the optimization phase — extend system life and catch problems early.',
     insight: 'At 5 years in, you know your system. The goal now is to protect your investment, reduce operating costs, and catch the early signs of degradation before they become emergencies. DFW systems at this age should be running efficiently if maintained.',
     actions: [
       { action: 'Verify your filter change habits are correct for DFW', detail: 'Standard DFW recommendation: every 30 days April–September, every 60 days Oct–March. Using MERV 8-11, not MERV 13+ which restricts flow.', urgency: 'critical' },
@@ -35,10 +35,10 @@ const stageContent: Record<Stage, { headline: string; insight: string; actions: 
     dfwFact: 'DFW homeowners spend an average of $2,400/year on HVAC energy costs. Proper maintenance and duct sealing can reduce that to $1,800-2,000 — a $400-600 annual savings for $200-400 in maintenance.',
   },
   'approaching-replacement': {
-    headline: 'At 10-12+ years, you\'re in the replacement planning window. Know your options before an emergency decides for you.',
+    headline: 'At 10-12+ years, you\’re in the replacement planning window. Know your options before an emergency decides for you.',
     insight: 'The worst time to buy a new HVAC system is when your current one has just failed in a DFW July. At that point you have no time to compare quotes, no leverage, and no ability to plan financing. The best time to plan is 2-3 years before you need it.',
     actions: [
-      { action: 'Get a system assessment — not a tune-up', detail: 'Ask your tech: "Honestly, how long does this system have?" A good tech will tell you what\'s wearing and what\'s likely to fail next. You want truth, not just service.', urgency: 'critical' },
+      { action: 'Get a system assessment — not a tune-up', detail: 'Ask your tech: "Honestly, how long does this system have?" A good tech will tell you what\’s wearing and what\’s likely to fail next. You want truth, not just service.', urgency: 'critical' },
       { action: 'Get 2-3 replacement quotes now, not in crisis', detail: 'Compare quotes with no time pressure. Know what a good DFW system replacement costs ($8,000-16,000 for full system depending on size and efficiency).', urgency: 'critical' },
       { action: 'Evaluate heat pump vs. traditional system', detail: 'New federal incentives (25C tax credit) make heat pumps attractive. DFW climate is excellent for heat pumps — evaluate if switching makes sense.', urgency: 'important' },
       { action: 'Understand SEER2 ratings and long-term energy cost', detail: 'Minimum SEER2 is now 15 in Texas. A 20 SEER2 system vs. 15 SEER2 saves $300-500/year in DFW. Calculate payback period.', urgency: 'important' },
@@ -47,14 +47,14 @@ const stageContent: Record<Stage, { headline: string; insight: string; actions: 
     dfwFact: 'DFW HVAC replacement rates spike every summer after heat waves. Contractors get booked 2-3 weeks out and prices increase 10-15% during peak demand. Getting quotes in winter gives you 3-4 week lead time and better pricing.',
   },
   'replacing': {
-    headline: 'You\'re making a 12-15 year decision. Get it right.',
+    headline: 'You\’re making a 12-15 year decision. Get it right.',
     insight: 'A DFW HVAC replacement is a $10,000-18,000 decision that will affect your home comfort, energy bills, and repair costs for the next 12-15 years. The brand matters less than the contractor, the sizing, and the installation quality.',
     actions: [
-      { action: 'Demand a Manual J load calculation before accepting any quote', detail: 'Any contractor who quotes without a Manual J calculation is guessing your system size. Wrong size = short-cycling, poor humidity control, premature failure. Walk away from any contractor who won\'t do this.', urgency: 'critical' },
+      { action: 'Demand a Manual J load calculation before accepting any quote', detail: 'Any contractor who quotes without a Manual J calculation is guessing your system size. Wrong size = short-cycling, poor humidity control, premature failure. Walk away from any contractor who won\’t do this.', urgency: 'critical' },
       { action: 'Verify contractor is NATE-certified and licensed in Texas', detail: 'Check TDLR license at tdlr.texas.gov. NATE certification means technicians have passed standardized competency tests. Non-negotiable.', urgency: 'critical' },
       { action: 'Replace both indoor and outdoor units together', detail: 'Mismatched systems void efficiency ratings and warranties. Replacing only the condenser and keeping an old air handler is almost always a false economy.', urgency: 'critical' },
       { action: 'Evaluate heat pump with gas backup (dual fuel) for DFW', detail: 'Ideal for DFW climate — heat pump for mild winters (80% of days), gas backup for DFW cold snaps. Best of both efficiency and heating capacity.', urgency: 'important' },
-      { action: 'Negotiate a 2-year parts and labor warranty minimum', detail: 'Manufacturer warranties cover parts. Labor warranty covers installation defects. First year is most important — that\'s when installation issues surface.', urgency: 'important' },
+      { action: 'Negotiate a 2-year parts and labor warranty minimum', detail: 'Manufacturer warranties cover parts. Labor warranty covers installation defects. First year is most important — that\’s when installation issues surface.', urgency: 'important' },
       { action: 'Request duct inspection and sealing as part of replacement', detail: 'New equipment on old leaky ducts loses 20-30% efficiency. Ask the contractor to pressure-test ducts and seal them with the replacement. Get it in the quote.', urgency: 'important' },
     ],
     dfwFact: 'Installation quality matters more than brand in DFW. A correctly installed mid-tier system outperforms a poorly installed premium brand. Ask your contractor: "Will you do a Manual J, refrigerant charge verification after startup, and airflow measurement?" If they hesitate, find another contractor.',

@@ -4,8 +4,8 @@ const SECTIONS = [
   { id: 'timing', label: '📅 Fair Timing', content: 'The State Fair of Texas runs late September through mid-October at Fair Park in Dallas. Plan all major home projects to finish before or after this 24-day window.' },
   { id: 'parking', label: '🚗 Parking Income', content: 'Homes within 1-3 miles of Fair Park can earn $20-$60/day renting driveways during the Fair. Use SpotHero or Neighbor.com to list your space with zero effort.' },
   { id: 'traffic', label: '🚦 Traffic Strategy', content: 'I-30, I-45, and US-175 see severe congestion during peak Fair hours (11am-10pm). Schedule contractor visits before 9am or after 11pm during Fair weeks.' },
-  { id: 'history', label: '🏛️ Fair Park History', content: 'Fair Park is a National Historic Landmark built for the 1936 Texas Centennial. The surrounding East Dallas neighborhoods have seen consistent appreciation tied to the venue\'s cultural draw.' },
-  { id: 'november', label: '🔨 November Deals', content: 'November is a DFW contractor\'s slow season. Book HVAC tune-ups, roofing inspections, and exterior painting 2-4 weeks post-Fair for 10-20% better pricing and faster scheduling.' },
+  { id: 'history', label: '🏛️ Fair Park History', content: 'Fair Park is a National Historic Landmark built for the 1936 Texas Centennial. The surrounding East Dallas neighborhoods have seen consistent appreciation tied to the venue\’s cultural draw.' },
+  { id: 'november', label: '🔨 November Deals', content: 'November is a DFW contractor\’s slow season. Book HVAC tune-ups, roofing inspections, and exterior painting 2-4 weeks post-Fair for 10-20% better pricing and faster scheduling.' },
 ];
 
 const PROXIMITY_TIPS: Record<string, string> = {

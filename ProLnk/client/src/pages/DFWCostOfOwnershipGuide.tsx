@@ -25,7 +25,7 @@ export default function DFWCostOfOwnershipGuide() {
 
   const hiddenCostsList = [
     { item: 'Property Tax (2.4% DFW avg)', amount: propertyTax },
-    { item: 'Homeowner\'s Insurance', amount: insurance },
+    { item: 'Homeowner\’s Insurance', amount: insurance },
     { item: 'HOA Fees (avg DFW)', amount: hoa },
     { item: 'Maintenance (1% rule)', amount: maintenance },
     { item: 'Opportunity Cost on Down Payment', amount: opportunityCost },

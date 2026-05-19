@@ -43,8 +43,8 @@ export default function TrustyProForHomeowners() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24, marginBottom: 80 }}>
           {[
             { icon: '🔍', title: 'See What Pros See', desc: 'Know exactly what condition your roof, foundation, HVAC, and more are in — before any contractor tells you.' },
-            { icon: '💪', title: 'Negotiate from Knowledge', desc: 'Walk into every estimate with a verified property report. No more wondering if you\'re being oversold.' },
-            { icon: '🆓', title: '100% Free Forever', desc: 'TrustyPro\'s homeowner health reports are free. We make money when pros win jobs — not from you.' },
+            { icon: '💪', title: 'Negotiate from Knowledge', desc: 'Walk into every estimate with a verified property report. No more wondering if you\’re being oversold.' },
+            { icon: '🆓', title: '100% Free Forever', desc: 'TrustyPro\’s homeowner health reports are free. We make money when pros win jobs — not from you.' },
             { icon: '🔒', title: 'Your Data Stays Yours', desc: 'You control who sees your scan data. Share with a contractor, keep it private, or delete it anytime.' },
           ].map((b, i) => (
             <div key={i} style={{ background: '#0f1e35', borderRadius: 16, padding: 28, border: '1px solid #1e3a5f' }}>

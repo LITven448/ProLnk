@@ -7,7 +7,7 @@ export default function DFWHVACProLnkAdvantage2026() {
     { id: 'emergency', label: '🚨 Emergency — no AC', advantage: 'Priority Dispatch', detail: 'Charter HVAC pros in ProLnk opt into summer emergency dispatch. DFW heat index above 100°F qualifies for priority routing — average response under 2 hours.' },
     { id: 'new-system', label: '🆕 New system install', advantage: 'EPA 608 + TDLR Verified', detail: 'Every ProLnk HVAC pro carries verified EPA 608 certification for refrigerant handling and an active TDLR license. We check before you meet them — not after.' },
     { id: 'repair', label: '🔧 Repair needed', advantage: 'Performance Score Verified', detail: 'ProLnk HVAC pros are scored on every DFW job — response time, price accuracy, and job completion rate. You see the score before you book.' },
-    { id: 'maintenance', label: '🔁 Seasonal tune-up', advantage: 'Licensed & Insured', detail: 'Every ProLnk pro carries general liability insurance minimum M. You\'re protected from accidental damage — not just hoping they are insured.' },
+    { id: 'maintenance', label: '🔁 Seasonal tune-up', advantage: 'Licensed & Insured', detail: 'Every ProLnk pro carries general liability insurance minimum M. You\’re protected from accidental damage — not just hoping they are insured.' },
     { id: 'second-opinion', label: '🤔 Second opinion', advantage: 'No High-Pressure Sales', detail: 'ProLnk charter pros agree to no upsell pressure policies. If another company told you need a full replacement, get a second opinion from a ProLnk-verified tech.' },
   ];
 

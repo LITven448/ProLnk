@@ -34,7 +34,7 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
     { title: 'First-Year Tree and Landscaping Guide for DFW', desc: 'Native plants, watering restrictions, and foundation-safe trees.', tag: 'Landscaping' },
   ],
   ongoing: [
-    { title: 'DFW Home Health Vault — Track Your Home\'s History', desc: 'Store repair records, warranties, and permit history digitally.', tag: 'ProLnk' },
+    { title: 'DFW Home Health Vault — Track Your Home\’s History', desc: 'Store repair records, warranties, and permit history digitally.', tag: 'ProLnk' },
     { title: 'Annual DFW Home Maintenance Budget Guide', desc: '1-3% rule applied to North Texas average home values.', tag: 'Budgeting' },
     { title: 'DFW Neighborhood Resources and Community Guide', desc: 'NextDoor, local Facebook groups, and city resource portals.', tag: 'Community' },
     { title: 'Sell or Stay? DFW Equity and Upgrade Planning', desc: 'When to tap equity for improvements vs sell in DFW market.', tag: 'Long-Term' },

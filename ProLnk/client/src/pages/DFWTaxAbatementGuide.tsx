@@ -23,7 +23,7 @@ const scenarios = [
     label: 'Commercial or mixed-use property owner',
     programs: [
       { name: 'Chapter 312 Tax Abatement Agreement', benefit: 'Up to 100% exemption on added value for 10 years', apply: 'Negotiate directly with City or County economic development office before commencing project', eligibility: 'New investment meeting job creation or capital investment thresholds; varies by jurisdiction' },
-      { name: 'Enterprise Zone Program', benefit: 'Sales tax refunds + state tax credits for qualified businesses', apply: 'Texas Governor\'s Office — gov.texas.gov/business', eligibility: 'Qualified investments in designated enterprise zones (check map first)' },
+      { name: 'Enterprise Zone Program', benefit: 'Sales tax refunds + state tax credits for qualified businesses', apply: 'Texas Governor\’s Office — gov.texas.gov/business', eligibility: 'Qualified investments in designated enterprise zones (check map first)' },
     ],
   },
   {
@@ -58,7 +58,7 @@ export default function DFWTaxAbatementGuide() {
             { icon: '📊', title: 'Texas Property Taxes: The Context', body: 'DFW property tax rates range from 1.8% to 2.8% of assessed value depending on city and school district. A $400K home can carry $8,000–$11,000/year in property taxes. Exemptions and abatements are not automatic — you must apply.' },
             { icon: '🏛️', title: 'Chapter 312: The Main Commercial Tool', body: 'Chapter 312 of the Texas Tax Code allows cities and counties to offer 10-year abatements on improvements to attract investment. These apply to commercial, industrial, and mixed-use projects — not typically single-family homes. But nearby Chapter 312 projects fund infrastructure that lifts residential values.' },
             { icon: '🏚️', title: 'Historic Preservation Credits', body: 'The Texas Historic Preservation Tax Credit (25%) applies to certified historic structures undergoing substantial rehabilitation. In DFW, this covers parts of downtown Dallas, Sundance Square in Fort Worth, and designated neighborhood historic districts.' },
-            { icon: '🏠', title: 'Don\'t Miss Your Homestead Exemption', body: 'The most valuable and most commonly missed exemption: Texas homestead. As of 2023, it removes $100,000 from your assessed value for school taxes — saving roughly $1,300–$2,500/year. File by April 30 of the year after you move in. Late applications can be filed for up to 2 years back.' },
+            { icon: '🏠', title: 'Don\’t Miss Your Homestead Exemption', body: 'The most valuable and most commonly missed exemption: Texas homestead. As of 2023, it removes $100,000 from your assessed value for school taxes — saving roughly $1,300–$2,500/year. File by April 30 of the year after you move in. Late applications can be filed for up to 2 years back.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>

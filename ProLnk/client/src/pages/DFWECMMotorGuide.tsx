@@ -54,7 +54,7 @@ export default function DFWECMMotorGuide() {
             { icon: '⚙️', title: 'PSC Motor (Old Tech)', desc: 'Permanent Split Capacitor. Single speed — 100% or off. Common in systems built before 2010. Energy-hungry and poor at dehumidification.' },
             { icon: '🔋', title: 'ECM Motor (Modern)', desc: 'Electronically Commutated Motor. Variable speed from 20–100%. Uses brushless DC technology. Standard in high-efficiency systems (16+ SEER).' },
             { icon: '💧', title: 'DFW Humidity Win', desc: 'ECM runs at low speed for longer cycles. More air contact with the cold coil = more moisture removed. Critical in DFW summers where humidity stays 60–80%.' },
-            { icon: '📉', title: '75% Less Energy', desc: 'At low speed, ECM uses ~100W vs PSC\'s 400–600W. In DFW where the blower runs 8–12 hours/day, that\'s $200–$400/year straight back in your pocket.' },
+            { icon: '📉', title: '75% Less Energy', desc: 'At low speed, ECM uses ~100W vs PSC\’s 400–600W. In DFW where the blower runs 8–12 hours/day, that\’s $200–$400/year straight back in your pocket.' },
           ].map(f => (
             <div key={f.title} style={{ background: '#0f2240', borderRadius: 10, padding: 16 }}>
               <p style={{ fontSize: 22, marginBottom: 4 }}>{f.icon}</p>

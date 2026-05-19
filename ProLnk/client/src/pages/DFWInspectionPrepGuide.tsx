@@ -16,8 +16,8 @@ const beforeItems = [
   'Schedule 3–4 hours minimum — do not rush an inspection',
   'Attend in person — never skip this step in DFW',
   'Arrange childcare so you can focus fully',
-  'Get inspector's credentials (TREC license required in Texas)',
-  'Review seller's disclosure before the inspection',
+  'Get inspector’s credentials (TREC license required in Texas)',
+  'Review seller’s disclosure before the inspection',
 ];
 
 const watchItems: Record<string, Record<string, string[]>> = {

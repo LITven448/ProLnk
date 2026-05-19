@@ -11,7 +11,7 @@ const previews: Record<string, { title: string; launch: string; desc: string; fe
   predictive: {
     title: 'Predictive Maintenance Alerts',
     launch: 'Q2 2027',
-    desc: 'ProLnk AI learns your home's equipment age, brand, and service history — then predicts failure windows before they happen.',
+    desc: 'ProLnk AI learns your home’s equipment age, brand, and service history — then predicts failure windows before they happen.',
     features: [
       'HVAC failure prediction: 30-day warning before likely breakdown',
       'Water heater lifespan modeling based on age and water hardness',
@@ -32,7 +32,7 @@ const previews: Record<string, { title: string; launch: string; desc: string; fe
       'Vault auto-logs the assessment with photos attached',
       'Charter Pro reviews the AI diagnosis before responding',
     ],
-    impact: 'Eliminates the "I don't know who to call" problem for 90% of home issues.',
+    impact: 'Eliminates the "I don’t know who to call" problem for 90% of home issues.',
   },
   insurance: {
     title: 'Insurance Integration',

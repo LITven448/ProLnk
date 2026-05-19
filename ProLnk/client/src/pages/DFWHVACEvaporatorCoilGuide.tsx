@@ -28,7 +28,7 @@ export default function DFWHVACEvaporatorCoilGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
               { icon: '🌬️', title: 'Absorbs Heat', desc: 'Cold refrigerant inside coil tubes absorbs heat from warm air passing over it' },
-              { icon: '💧', title: 'Removes Humidity', desc: 'Moisture condenses on cold coil surface — critical in DFW\'s humid summers' },
+              { icon: '💧', title: 'Removes Humidity', desc: 'Moisture condenses on cold coil surface — critical in DFW\’s humid summers' },
               { icon: '🦠', title: 'Mold Magnet', desc: 'Constant moisture + organic dust = ideal mold growth conditions' },
               { icon: '📉', title: 'Efficiency Killer', desc: 'Dirty or corroded coil forces longer run times and higher energy bills' },
             ].map(item => (
@@ -48,7 +48,7 @@ export default function DFWHVACEvaporatorCoilGuide() {
               { freq: 'Monthly', task: 'Check/replace air filter — dirty filters starve the coil of airflow and accelerate freeze-ups' },
               { freq: 'Annually', task: 'Professional coil inspection and no-rinse coil cleaner application before cooling season' },
               { freq: 'Every 3–5 yrs', task: 'Deep coil cleaning with coil pulled from air handler if significant buildup detected' },
-              { freq: 'Replace', task: 'Coil replacement when pitted/corroded (formicary corrosion from DFW\'s chemical-heavy tap water) or refrigerant leaking' },
+              { freq: 'Replace', task: 'Coil replacement when pitted/corroded (formicary corrosion from DFW\’s chemical-heavy tap water) or refrigerant leaking' },
             ].map(item => (
               <div key={item.freq} style={{ display: 'flex', gap: 16, background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, minWidth: 110, fontSize: 14 }}>{item.freq}</div>

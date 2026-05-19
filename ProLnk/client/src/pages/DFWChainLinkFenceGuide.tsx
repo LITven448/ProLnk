@@ -44,7 +44,7 @@ export default function DFWChainLinkFenceGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginTop: 36 }}>
           {[
             { icon: '🐕', title: 'Best DFW Use Cases', body: 'Chain link excels for dog runs, back yard utility, and commercial perimeter. Galvanized steel handles DFW heat and rain with zero maintenance for 30–40+ years.' },
-            { icon: '🏘️', title: 'HOA Reality Check', body: 'Roughly 70% of DFW\'s residential HOAs prohibit chain link in front yards. Many also restrict back yard chain link to under 6ft. Always check CC&Rs before ordering.' },
+            { icon: '🏘️', title: 'HOA Reality Check', body: 'Roughly 70% of DFW\’s residential HOAs prohibit chain link in front yards. Many also restrict back yard chain link to under 6ft. Always check CC&Rs before ordering.' },
             { icon: '🔒', title: 'Privacy Slat Upgrade', body: 'Aluminum or polyethylene privacy slats thread into chain link and add 85–95% visual privacy. In DFW, aluminum slats hold up better to UV and heat than plastic alternatives.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0D1F3C', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>

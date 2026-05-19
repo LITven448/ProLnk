@@ -11,12 +11,12 @@ const recommendations: Record<Priority, { type: string; why: string; caveats: st
   feel: {
     type: '🧂 Salt Water Pool',
     why: 'Salt water feels noticeably softer and silkier — DFW swimmers almost universally prefer the feel. Less eye and skin irritation. Hair and swimwear hold up better long-term.',
-    caveats: ['Budget $1,500-2,500 for conversion of existing pool', 'DFW hard water requires quarterly salt cell cleaning — don\'t skip this', 'Still need to balance chemistry weekly — salt is not "no maintenance"'],
+    caveats: ['Budget $1,500-2,500 for conversion of existing pool', 'DFW hard water requires quarterly salt cell cleaning — don\’t skip this', 'Still need to balance chemistry weekly — salt is not "no maintenance"'],
   },
   maintenance: {
     type: '⚖️ Either Works — Your Habits Matter More',
     why: 'Both systems require weekly chemistry testing in DFW. Salt pools need quarterly cell cleaning instead of buying chlorine tabs. Total time commitment is similar — just different tasks.',
-    caveats: ['Salt: remember cell cleaning every 90 days or you\'ll lose chlorine output', 'Chlorine: remember to check tabs weekly — DFW heat burns through tabs fast', 'Automation + either system is the real maintenance reducer'],
+    caveats: ['Salt: remember cell cleaning every 90 days or you\’ll lose chlorine output', 'Chlorine: remember to check tabs weekly — DFW heat burns through tabs fast', 'Automation + either system is the real maintenance reducer'],
   },
   environment: {
     type: '🧂 Salt Water Pool (Slight Edge)',

@@ -4,9 +4,9 @@ type RedFlag = { id: string; label: string; level: 'reject'|'caution'; descripti
 
 const FLAGS: RedFlag[] = [
   { id: 'no_tdlr', label: '🚫 No TDLR License', level: 'reject', description: 'Illegal to operate HVAC in TX without TDLR. Immediate rejection.' },
-  { id: 'no_coi', label: '📑 Won't Provide COI', level: 'reject', description: 'You will be liable for any damage or injury. Never hire without COI.' },
+  { id: 'no_coi', label: '📑 Won’t Provide COI', level: 'reject', description: 'You will be liable for any damage or injury. Never hire without COI.' },
   { id: 'cash_only', label: '💵 Cash Only / No Invoice', level: 'reject', description: 'No paper trail means no accountability. Reject immediately.' },
-  { id: 'no_permit', label: '🔨 Won't Pull Permits', level: 'reject', description: 'Unpermitted installs may require expensive removal + redo. Reject.' },
+  { id: 'no_permit', label: '🔨 Won’t Pull Permits', level: 'reject', description: 'Unpermitted installs may require expensive removal + redo. Reject.' },
   { id: 'phone_quote', label: '📞 Quote Over Phone Without Inspection', level: 'caution', description: 'HVAC sizing requires manual J calc. Phone quotes are guesses.' },
   { id: 'pressure_replace', label: '⚠️ Pressures Replacement Before Diagnosis', level: 'caution', description: 'Reputable techs diagnose first. Pressure to replace is a sales tactic.' },
   { id: 'no_written_estimate', label: '📝 No Written Estimate Offered', level: 'caution', description: 'Verbal quotes disappear. Always require written estimates.' },

@@ -4,7 +4,7 @@ const SITUATIONS = [
   {
     type: "Contractor Filed a Lien",
     icon: '🔨',
-    steps: ['Verify lien was filed within 15 days of contract start (perfected mechanic's lien in TX)', 'Pull lien from Tarrant or Dallas County Clerk — confirm it's valid', 'Dispute with contractor in writing within 30 days', 'Request itemized accounting of unpaid balance', 'If legitimate, negotiate lien release in exchange for payment'],
+    steps: ['Verify lien was filed within 15 days of contract start (perfected mechanic’s lien in TX)', 'Pull lien from Tarrant or Dallas County Clerk — confirm it’s valid', 'Dispute with contractor in writing within 30 days', 'Request itemized accounting of unpaid balance', 'If legitimate, negotiate lien release in exchange for payment'],
     timeline: '4–16 weeks to resolve depending on dispute complexity',
     cost: 'Lien release negotiation: $300–$800 | Lien bond to release: 1.5x lien amount | Litigation: $5,000–$25,000'
   },

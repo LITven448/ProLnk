@@ -21,7 +21,7 @@ export default function DFWCondenserUnitGuide2026() {
   };
 
   const symptomList = [
-    { id: 'nostart', label: 'Unit won't start' },
+    { id: 'nostart', label: 'Unit won’t start' },
     { id: 'loudnoise', label: 'Loud noise / rattling' },
     { id: 'icingup', label: 'Ice forming on unit' },
     { id: 'shortcycle', label: 'Cycling on/off frequently' },

@@ -62,7 +62,7 @@ export default function DFWNativeGardenGuide() {
             { step: '1', title: 'Sheet Mulch', desc: 'Lay cardboard over existing lawn, wet thoroughly, cover with 4" mulch. Kills grass without chemicals.' },
             { step: '2', title: 'Plant in Fall', desc: 'Oct–Nov is best for DFW natives — roots establish during mild winter before brutal summer.' },
             { step: '3', title: 'Water Year 1 Only', desc: 'Deep water weekly first summer. After that: zero irrigation needed for most natives.' },
-            { step: '4', title: 'Navigate HOA', desc: 'Frame as "low-water landscape." Show neighbors\' examples. Most HOAs allow if kept tidy.' },
+            { step: '4', title: 'Navigate HOA', desc: 'Frame as "low-water landscape." Show neighbors\’ examples. Most HOAs allow if kept tidy.' },
           ].map(s => (
             <div key={s.step} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
               <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, flexShrink: 0 }}>{s.step}</div>

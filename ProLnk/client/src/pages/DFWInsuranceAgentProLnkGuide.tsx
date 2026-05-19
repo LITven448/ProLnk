@@ -10,8 +10,8 @@ const reasons = [
 const talkingPoints = [
   'Keeping your home well-maintained can prevent costly claims and keep your premiums stable.',
   'ProLnk connects you with vetted, insured contractors — the kind we like to see doing work on your home.',
-  'As your agent, I\'ve enrolled your home in the ProLnk Health Vault so you always have a trusted resource.',
-  'No subscription fee for homeowners — it\'s a benefit I\'m providing as part of our relationship.',
+  'As your agent, I\’ve enrolled your home in the ProLnk Health Vault so you always have a trusted resource.',
+  'No subscription fee for homeowners — it\’s a benefit I\’m providing as part of our relationship.',
 ];
 
 export default function DFWInsuranceAgentProLnkGuide() {

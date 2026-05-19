@@ -26,10 +26,10 @@ const categories = [
     border: '#fbbf24',
     findings: [
       { id: 'n1', name: 'HVAC System Over 10 Years Old', desc: 'Serviceable but end-of-life. In DFW heat, HVAC failure during summer is not optional.', cost: '$5,000–12,000 to replace', action: 'Request $6,000–8,000 credit at closing' },
-      { id: 'n2', name: 'Roof Over 15 Years or Hail Damage', desc: 'DFW hail shortens roof life. Most insurance companies won't pay for roofs over 20 years.', cost: '$12,000–22,000 to replace', action: 'Request full replacement credit or require seller to replace' },
+      { id: 'n2', name: 'Roof Over 15 Years or Hail Damage', desc: 'DFW hail shortens roof life. Most insurance companies won’t pay for roofs over 20 years.', cost: '$12,000–22,000 to replace', action: 'Request full replacement credit or require seller to replace' },
       { id: 'n3', name: 'Galvanized Steel Plumbing', desc: 'Corrodes from the inside out. Reduced flow, rust, and eventual failure. Pre-1970 homes at highest risk.', cost: '$7,000–15,000 to repipe', action: 'Negotiate $8,000–10,000 credit' },
       { id: 'n4', name: 'Knob-and-Tube Wiring', desc: 'Pre-1940 wiring — no grounding, cloth insulation, overloaded by modern loads. Most insurers refuse coverage.', cost: '$8,000–25,000 to rewire', action: 'Negotiate full rewire credit or walk away from older homes without update' },
-      { id: 'n5', name: 'Foundation Issues Without Interior Damage', desc: 'Pier and beam settling or slab movement that hasn't yet reached interior. Addressable but real.', cost: '$5,000–20,000 for foundation repair', action: 'Get foundation company estimate, negotiate 120% of estimate as credit' },
+      { id: 'n5', name: 'Foundation Issues Without Interior Damage', desc: 'Pier and beam settling or slab movement that hasn’t yet reached interior. Addressable but real.', cost: '$5,000–20,000 for foundation repair', action: 'Get foundation company estimate, negotiate 120% of estimate as credit' },
     ],
   },
   {

@@ -28,9 +28,9 @@ export default function ProLnkForSeniors() {
           </h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {[
-              { icon: '🚿', title: 'Falls Are the #1 Cause of Senior Injury', body: 'Bathroom grab bars, better lighting, and trip hazard removal can dramatically reduce fall risk. TrustyPro's AI scan identifies these hazards during routine maintenance visits — no separate safety assessment needed.' },
-              { icon: '💸', title: 'Deferred Maintenance Compounds on Fixed Income', body: 'A small roof leak becomes a $15,000 mold remediation problem in 18 months. Early detection through regular TrustyPro inspections saves money you can't afford to spend on preventable emergencies.' },
-              { icon: '🔧', title: 'Trusted Contractor Network — No Scammer Risk', body: 'Door-to-door contractor scams target seniors at an alarming rate. Every TrustyPro contractor is vetted, reviewed, and accountable. You'll never be pressured into unnecessary work.' },
+              { icon: '🚿', title: 'Falls Are the #1 Cause of Senior Injury', body: 'Bathroom grab bars, better lighting, and trip hazard removal can dramatically reduce fall risk. TrustyPro’s AI scan identifies these hazards during routine maintenance visits — no separate safety assessment needed.' },
+              { icon: '💸', title: 'Deferred Maintenance Compounds on Fixed Income', body: 'A small roof leak becomes a $15,000 mold remediation problem in 18 months. Early detection through regular TrustyPro inspections saves money you can’t afford to spend on preventable emergencies.' },
+              { icon: '🔧', title: 'Trusted Contractor Network — No Scammer Risk', body: 'Door-to-door contractor scams target seniors at an alarming rate. Every TrustyPro contractor is vetted, reviewed, and accountable. You’ll never be pressured into unnecessary work.' },
             ].map(item => (
               <div key={item.title} style={{ display: 'flex', gap: 16, padding: 20, background: '#f8f9fa', borderRadius: 12 }}>
                 <div style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</div>
@@ -50,7 +50,7 @@ export default function ProLnkForSeniors() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
             {[
               { icon: '🤖', label: 'AI Safety Scanning', desc: 'Catches hazards before they become emergencies — water intrusion, electrical issues, structural concerns' },
-              { icon: '👨‍👩‍👧', label: 'Family Remote Access', desc: 'Adult children monitor home health from anywhere. They'll sleep better knowing it's covered.' },
+              { icon: '👨‍👩‍👧', label: 'Family Remote Access', desc: 'Adult children monitor home health from anywhere. They’ll sleep better knowing it’s covered.' },
               { icon: '🚨', label: 'Emergency Dispatch', desc: 'Solo seniors can activate emergency contractor response without calling around or waiting on hold' },
               { icon: '📊', label: 'Plain-Language Reports', desc: 'No jargon — every finding explained clearly with recommended action, timeline, and cost estimate' },
             ].map(b => (
@@ -106,7 +106,7 @@ export default function ProLnkForSeniors() {
           {[
             { key: 'pace', title: 'PACE Financing', body: 'Property Assessed Clean Energy financing is available in most DFW counties for energy efficiency and safety improvements. Repaid through property taxes — no upfront cost, no monthly payment.' },
             { key: 'grants', title: 'DFW County Home Repair Grants', body: 'Several DFW counties offer home repair assistance grants specifically for seniors. Dallas County, Tarrant County, and others maintain programs — eligibility varies by income and property value.' },
-            { key: 'medicare', title: 'Medicare Advantage Home Modification', body: 'Some Medicare Advantage plans (2026 benefit expansions) now cover home safety modifications. Check your plan's supplemental benefits before paying out of pocket.' },
+            { key: 'medicare', title: 'Medicare Advantage Home Modification', body: 'Some Medicare Advantage plans (2026 benefit expansions) now cover home safety modifications. Check your plan’s supplemental benefits before paying out of pocket.' },
           ].map(item => (
             <div key={item.key} style={{ marginBottom: 12, border: '1px solid #e2e8f0', borderRadius: 10, overflow: 'hidden' }}>
               <button

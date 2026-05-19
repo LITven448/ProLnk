@@ -21,7 +21,7 @@ const VIOLATIONS = [
     type: 'Unpermitted Structures',
     icon: '🏗️',
     cities: { Dallas: 'Stop work order + permit or demolish', 'Fort Worth': 'Same; 30-day cure', Plano: '15 days + retroactive permit or remove', Arlington: '30 days' },
-    cure: 'Apply for retroactive permit immediately. If structure doesn't meet code, you may need to modify or demolish. Permit fees are retroactive plus penalty (typically 2x normal).',
+    cure: 'Apply for retroactive permit immediately. If structure doesn’t meet code, you may need to modify or demolish. Permit fees are retroactive plus penalty (typically 2x normal).',
     appeal: 'Hardship appeals and variances available at Board of Adjustment. Hire a permit expeditor ($500–$2,000) to navigate.',
     report: 'Requires specific address. Provide description and approximate size of unpermitted structure.'
   },

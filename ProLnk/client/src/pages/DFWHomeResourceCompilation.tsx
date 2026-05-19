@@ -29,7 +29,7 @@ const categories = [
       { title: 'Q4 DFW Home Guide', url: '/dfw-fourth-quarter-home-guide', desc: 'October-December checklist for DFW homeowners.' },
       { title: 'Spring Storm Preparation', url: '/dfw-spring-storm-prep', desc: 'Hail, tornadoes, and flooding — DFW spring survival guide.' },
       { title: 'Summer Energy Management', url: '/dfw-summer-energy-management', desc: 'Keep bills under control when temps hit triple digits.' },
-      { title: 'Freeze Prep for DFW', url: '/dfw-freeze-preparation', desc: 'DFW gets 2-4 hard freezes yearly — most homes aren\'t ready.' },
+      { title: 'Freeze Prep for DFW', url: '/dfw-freeze-preparation', desc: 'DFW gets 2-4 hard freezes yearly — most homes aren\’t ready.' },
     ],
   },
   {
@@ -40,7 +40,7 @@ const categories = [
       { title: 'Property Tax Protest Guide', url: '/dfw-property-tax-protest-guide', desc: 'Step-by-step: protest DCAD/CCAD/TCAD and win.' },
       { title: 'Top 10 DFW Improvements by ROI', url: '/dfw-top-10-improvements', desc: 'Ranked by actual DFW resale data and appraisal patterns.' },
       { title: 'Top 10 DFW Homeowner Mistakes', url: '/dfw-homeowner-top-10-mistakes', desc: 'Most expensive mistakes ranked by total damage.' },
-      { title: 'DFW Home Equity Calculator', url: '/dfw-home-equity-calculator', desc: 'Track what you\'ve built based on local appreciation data.' },
+      { title: 'DFW Home Equity Calculator', url: '/dfw-home-equity-calculator', desc: 'Track what you\’ve built based on local appreciation data.' },
     ],
   },
   {

@@ -140,7 +140,7 @@ export default function ContractorPaymentGuide() {
         <section style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🚩 Payment Red Flags</h2>
           {[
-            ['Cash only — no invoice', 'They\'re avoiding taxes and there\'s no paper trail. No paper trail = no recourse.'],
+            ['Cash only — no invoice', 'They\’re avoiding taxes and there\’s no paper trail. No paper trail = no recourse.'],
             ['Large upfront deposit (>30%)', 'Standard is 10%. Anything above 20% is a red flag. 50%+ upfront is a scam pattern.'],
             ['Wire transfer required', 'Wires are irreversible. A contractor demanding wire transfer for a residential job is unusual and risky.'],
             ['No contract, just verbal agreement', 'Verbal contracts are nearly unenforceable. Get everything in writing, always.'],

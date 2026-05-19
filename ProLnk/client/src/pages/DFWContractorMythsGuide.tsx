@@ -10,7 +10,7 @@ const myths = [
   {
     belief: 'Word of mouth is enough to verify a contractor',
     verdict: 'MYTH',
-    reality: 'Texas requires most contractors to be licensed and insured. A neighbor recommendation doesn\'t verify active licensure, current insurance, or no active complaints with TDLR (Texas Dept of Licensing and Regulation). Always check credentials independently.',
+    reality: 'Texas requires most contractors to be licensed and insured. A neighbor recommendation doesn\’t verify active licensure, current insurance, or no active complaints with TDLR (Texas Dept of Licensing and Regulation). Always check credentials independently.',
     icon: '👥',
   },
   {

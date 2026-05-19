@@ -37,7 +37,7 @@ const whenToHire = [
   { icon: '🏗️', reason: 'Foundation concerns', detail: 'Wide cracks, significant settling, or before a major foundation repair. Engineer provides a stamped report for insurance and contractors.' },
   { icon: '🚪', reason: 'Removing a load-bearing wall', detail: 'Contractors cannot legally determine if a wall is load-bearing without an engineer. A PE specifies beam size, connections, and post requirements.' },
   { icon: '🛏️', reason: 'Adding a room addition or second story', detail: 'New loads must be calculated against existing structure capacity. Required for permits in all DFW cities.' },
-  { icon: '🏠', reason: 'Buying an older home (pre-1980)', detail: 'Protect yourself before closing. An engineer finds structural issues a home inspector isn\'t licensed to assess.' },
+  { icon: '🏠', reason: 'Buying an older home (pre-1980)', detail: 'Protect yourself before closing. An engineer finds structural issues a home inspector isn\’t licensed to assess.' },
   { icon: '🌩️', reason: 'Storm or wind damage', detail: 'Insurance adjusters respect PE reports. Ensures you get full claim value for structural repairs.' },
   { icon: '🏊', reason: 'Adding a pool', detail: 'Pools affect soil loading and drainage. Engineered plans required for permits in most DFW jurisdictions.' },
 ];
@@ -54,7 +54,7 @@ const reportSections = [
   { name: 'Site Observations', desc: 'Documented conditions observed during site visit — crack locations, measurements, drainage, soil conditions.' },
   { name: 'Structural Assessment', desc: 'Engineering analysis of observed conditions. Identifies structural risk level and likely cause.' },
   { name: 'Recommendations', desc: 'Specific repair or remediation recommendations with methodology. Contractors bid against this scope.' },
-  { name: 'Engineer\'s Stamp & Signature', desc: 'PE license number and stamp — required for permit applications and insurance claims.' },
+  { name: 'Engineer\’s Stamp & Signature', desc: 'PE license number and stamp — required for permit applications and insurance claims.' },
   { name: 'Drawings (when applicable)', desc: 'Engineered plans for beam sizing, connection details, or foundation repair specs.' },
 ];
 
@@ -65,7 +65,7 @@ const projectLogic: Record<string, { need: string; label: string; cost: string; 
   buying_older: { need: 'maybe', label: '🟡 Recommended If Issues Found', cost: '$500–1,000', expect: 'Pre-purchase structural review. Hire after standard home inspection if inspector flags concerns. Negotiation leverage for repairs.' },
   storm_damage: { need: 'yes', label: '✅ Yes — Strongly Recommended', cost: '$600–1,500', expect: 'Damage documentation for insurance claim. PE report maximizes claim value and ensures full scope is covered.' },
   pool: { need: 'maybe', label: '🟡 Check With Your City', cost: '$500–1,000', expect: 'Many DFW cities require engineered plans for pools. Pool builder should confirm permit requirements before you hire.' },
-  roof: { need: 'no', label: '❌ Typically Not Needed', cost: 'N/A', expect: 'Standard roof replacement doesn\'t require a structural engineer unless there\'s underlying structural damage to rafters or trusses.' },
+  roof: { need: 'no', label: '❌ Typically Not Needed', cost: 'N/A', expect: 'Standard roof replacement doesn\’t require a structural engineer unless there\’s underlying structural damage to rafters or trusses.' },
   hvac: { need: 'no', label: '❌ Not Needed', cost: 'N/A', expect: 'HVAC replacement is a mechanical trade, not structural. Licensed HVAC contractor handles permits independently.' },
 };
 

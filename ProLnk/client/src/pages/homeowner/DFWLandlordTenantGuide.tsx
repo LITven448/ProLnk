@@ -3,10 +3,10 @@ import { useState } from 'react';
 const issueTypes = [
   {
     id: 'repairs',
-    label: 'Landlord Won't Make Repairs',
+    label: 'Landlord Won’t Make Repairs',
     law: 'Texas Property Code §92.056',
     summary: 'Landlord must maintain habitability — working heat/AC, plumbing, and freedom from pests. After written notice, landlord has a "reasonable time" (courts typically interpret as 7 days for urgent issues).',
-    action: 'Send written notice (email or certified mail). If no response in 7 days, you may have the right to repair and deduct — up to 1 month's rent — after giving a second written notice.',
+    action: 'Send written notice (email or certified mail). If no response in 7 days, you may have the right to repair and deduct — up to 1 month’s rent — after giving a second written notice.',
     severity: 'High',
   },
   {
@@ -30,7 +30,7 @@ const issueTypes = [
     label: 'Eviction Notice Received',
     law: 'Texas Property Code §24',
     summary: '3-day notice for non-payment. 30-day notice for lease violations (or as specified in lease). Must file in Justice Court after notice period.',
-    action: 'Do not ignore the notice. Pay owed rent if possible within the 3-day window. If you believe the eviction is retaliatory or improper, consult a tenant's rights attorney immediately.',
+    action: 'Do not ignore the notice. Pay owed rent if possible within the 3-day window. If you believe the eviction is retaliatory or improper, consult a tenant’s rights attorney immediately.',
     severity: 'High',
   },
   {

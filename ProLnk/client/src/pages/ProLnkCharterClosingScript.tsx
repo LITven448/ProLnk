@@ -12,19 +12,19 @@ export default function ProLnkCharterClosingScript() {
     },
     {
       id: 'timing',
-      label: '⏰ "I\'ll sign up later"',
+      label: '⏰ "I\’ll sign up later"',
       response: 'Charter closes when we hit 500 applications — we are tracking that in real time. The rate tier you sign up at is permanent. There is no "upgrade to Charter" path once the tier closes. Three months from now when you are sending me jobs and I am making more on each one than you, I want you to remember this conversation.',
       proof: 'Charter closes: 500 total applications DFW-wide\nCurrent: filling fast — no extensions planned\n"Later" very likely means permanent Founding rate',
     },
     {
       id: 'trust',
-      label: '🤔 "I don\'t know if this works"',
+      label: '🤔 "I don\’t know if this works"',
       response: 'That is fair — you have not seen a match yet. Sign up Charter now, get your first match within 30 days or I personally help you troubleshoot. The platform only makes money when you make money. ProLnk income is tied to your match volume — they have every reason to make sure you win.',
       proof: 'ProLnk only earns when matches close\nNo match = no platform fee collected\nAligned incentives: your success = their revenue',
     },
     {
       id: 'busy',
-      label: '📋 "I\'m already too busy"',
+      label: '📋 "I\’m already too busy"',
       response: 'Being busy is exactly why Charter makes sense right now. You recruit two guys who are not as busy as you, they take the overflow ProLnk matches, and you earn a network override on everything they do. You go from too busy to running a small team — without hiring employees. ProLnk is the infrastructure.',
       proof: 'Charter network override: 7% of L1 job value\n2 recruited pros at $800/job x 20 jobs/mo = $2,240/mo passive\nBusy pros are the best network recruiters on the platform',
     },

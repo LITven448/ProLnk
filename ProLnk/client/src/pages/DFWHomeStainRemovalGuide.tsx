@@ -7,7 +7,7 @@ const guide: Record<string, { method: string; products: string; prevention: stri
   'Clay soil on concrete/driveway': {
     method: 'Let clay dry completely first — never scrub wet DFW clay. Then use a stiff brush + alkaline degreaser. Pressure wash at 2500+ PSI after pre-treatment soak (15 min).',
     products: 'Zep Driveway & Concrete Cleaner (Home Depot), Simple Green Concrete Cleaner. For tough stains: muriatic acid diluted 1:10 (use eye protection).',
-    prevention: 'Seal concrete every 2–3 years. DFW\'s clay-heavy soil (Blackland Prairie) tracks easily — rubber boot scraper at entry points helps.',
+    prevention: 'Seal concrete every 2–3 years. DFW\’s clay-heavy soil (Blackland Prairie) tracks easily — rubber boot scraper at entry points helps.',
     difficulty: '⚡ Moderate — DFW clay is iron-rich and stains fast'
   },
   'Hard water on fixtures': {
@@ -18,13 +18,13 @@ const guide: Record<string, { method: string; products: string; prevention: stri
   },
   'Algae/mildew on siding': {
     method: 'Mix 1 part bleach to 4 parts water + 1 oz dish soap. Apply with garden sprayer. Wait 15 min. Rinse from top down with garden hose. DFW humid pockets (near creeks, shaded north sides) breed algae fast.',
-    products: 'Wet & Forget Outdoor (Lowe\'s) — no scrubbing needed, works over 2 weeks. For immediate removal: Mold Armor E-Z House Wash (Home Depot).',
+    products: 'Wet & Forget Outdoor (Lowe\’s) — no scrubbing needed, works over 2 weeks. For immediate removal: Mold Armor E-Z House Wash (Home Depot).',
     prevention: 'Trim trees and shrubs to increase airflow. Zinc strips on roofline prevent algae from washing down siding. Re-treat annually in spring.',
     difficulty: '✅ Easy — prevention is the key in DFW humidity pockets'
   },
   'Bird droppings on light finishes': {
     method: 'Never scrub dry bird droppings — the uric acid etches paint. Soak with warm water 5 min first, then wipe gently. For cured droppings: Auto Detailer spray or diluted dish soap. Rinse well.',
-    products: 'Chemical Guys Bird Dropping Remover (AutoZone), Meguiar\'s Quick Detailer. For siding: Simple Green diluted 1:5.',
+    products: 'Chemical Guys Bird Dropping Remover (AutoZone), Meguiar\’s Quick Detailer. For siding: Simple Green diluted 1:5.',
     prevention: 'Bird spikes on fence tops and window sills. Reflective tape or predator decoys near problem areas. In DFW, grackles are the main culprit — most active March–November.',
     difficulty: '✅ Easy if caught early — difficult if left to cure in DFW summer heat'
   },

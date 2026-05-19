@@ -33,7 +33,7 @@ export default function DFWCompostBinGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 32 }}>
           {[
             { icon: '🌡️', title: 'DFW Summer = Speed', desc: 'Pile temps hit 140–160°F in summer. Compost that takes 6 months up north finishes in 3–6 weeks here.' },
-            { icon: '🧱', title: 'Clay Soil Fix', desc: 'DFW\'s heavy clay compacts and drains poorly. Compost breaks it up — the only long-term fix for DFW soil.' },
+            { icon: '🧱', title: 'Clay Soil Fix', desc: 'DFW\’s heavy clay compacts and drains poorly. Compost breaks it up — the only long-term fix for DFW soil.' },
             { icon: '🔄', title: 'Tumbler vs. Open Bin', desc: 'Tumblers: contained, fast, rodent-proof. Open bins: more volume, requires turning. Both work great in DFW.' },
           ].map(p => (
             <div key={p.title} style={{ background: '#1E2D45', borderRadius: 10, padding: '1.2rem' }}>

@@ -9,7 +9,7 @@ const recommendations: Record<string, { type: string; reason: string; sizing: st
   },
   energy: {
     type: 'ERV (Energy Recovery Ventilator)',
-    reason: 'DFW\'s mixed-humid climate favors ERV year-round. In summer, ERV transfers humidity from hot outdoor air to outgoing conditioned air — reducing latent load on your AC.',
+    reason: 'DFW\’s mixed-humid climate favors ERV year-round. In summer, ERV transfers humidity from hot outdoor air to outgoing conditioned air — reducing latent load on your AC.',
     sizing: '75–150 CFM for most DFW homes',
     cost: '$1,800–$3,500 installed',
   },

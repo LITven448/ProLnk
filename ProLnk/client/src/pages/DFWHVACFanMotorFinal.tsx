@@ -13,7 +13,7 @@ const getMotorRec = (situation: string, size: string) => {
   if (situation.includes('Motor just failed')) return {
     type: 'ECM Motor (mandatory upgrade)',
     saving: `$${annualSavings}/year`,
-    reason: 'If your motor failed on a system over 10 years old, replacing with ECM now avoids replacing it again in 5 years. ECMs last 15-20 years vs PSC\'s 10-12.',
+    reason: 'If your motor failed on a system over 10 years old, replacing with ECM now avoids replacing it again in 5 years. ECMs last 15-20 years vs PSC\’s 10-12.',
     dfwNote: 'DFW fans run 7-8 months continuously. PSC motors overheat and fail faster in sustained DFW heat.',
     cost: '$400–$800 motor swap | $150–$350 extra for ECM vs PSC'
   };
@@ -27,14 +27,14 @@ const getMotorRec = (situation: string, size: string) => {
   if (situation.includes('constant') || situation.includes('always on')) return {
     type: 'ECM Motor — designed for continuous operation',
     saving: `$${annualSavings}/year`,
-    reason: 'If you run fan continuously for air quality, ECM uses only 50-80W vs PSC\'s 300-500W. For DFW homes running fan 24/7, ECM pays back in under 2 years.',
+    reason: 'If you run fan continuously for air quality, ECM uses only 50-80W vs PSC\’s 300-500W. For DFW homes running fan 24/7, ECM pays back in under 2 years.',
     dfwNote: 'Running PSC fan continuously in DFW costs $250–$400/year in electricity alone.',
     cost: '$150–$350 premium | Payback: 18–30 months'
   };
   return {
     type: 'ECM Motor — the clear DFW choice',
     saving: `$${annualSavings}/year`,
-    reason: 'DFW\'s 7-month cooling season makes ECM\'s energy advantage more valuable than almost any other US market. PSC motors also struggle with sustained heat — ECMs run cooler and last longer.',
+    reason: 'DFW\’s 7-month cooling season makes ECM\’s energy advantage more valuable than almost any other US market. PSC motors also struggle with sustained heat — ECMs run cooler and last longer.',
     dfwNote: 'ECM efficiency advantage is greatest when run continuously — exactly how DFW operates.',
     cost: '$150–$350 premium over PSC | Payback: 2–4 years'
   };

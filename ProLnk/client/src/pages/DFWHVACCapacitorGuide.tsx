@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const symptoms = ['AC clicks but won\'t start', 'Motor hums but doesn\'t spin', 'AC shuts off quickly', 'Warm air from vents', 'Unusual buzzing noise'];
+const symptoms = ['AC clicks but won\’t start', 'Motor hums but doesn\’t spin', 'AC shuts off quickly', 'Warm air from vents', 'Unusual buzzing noise'];
 const seasons = ['Peak Summer (Jun-Sep)', 'Early Summer (May)', 'Fall (Oct-Nov)', 'Winter (Dec-Feb)', 'Spring (Mar-Apr)'];
 
 function getAssessment(symptom: string, season: string) {

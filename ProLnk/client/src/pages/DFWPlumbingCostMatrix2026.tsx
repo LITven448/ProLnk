@@ -6,7 +6,7 @@ const services = [
   { id: 'faucet', label: 'Faucet Repair / Replace', icon: '🚿', cost: '$150–$300', tag: 'Minor', detail: 'Includes labor and standard faucet. DFW hard water (300+ ppm) destroys cartridges and aerators faster than most cities — expect to replace faucets every 7–12 years.' },
   { id: 'toilet', label: 'Toilet Replacement', icon: '🚽', cost: '$250–$450', tag: 'Minor', detail: 'Includes labor and standard toilet. Dual-flush units recommended for DFW drought restrictions. Add $100–200 for removal/disposal of old unit.' },
   { id: 'wh', label: 'Water Heater Replacement', icon: '🔥', cost: '$800–$1,500', tag: 'Major', detail: 'Standard 40–50 gallon tank. DFW hard water shortens water heater life to 8–10 years vs national avg of 12. Tankless upgrade: $2,500–4,500 installed.' },
-  { id: 'slab', label: 'Slab Leak Spot Repair', icon: '🏠', cost: '$1,500–$3,000', tag: 'Urgent', detail: 'Tunneling or jackhammer to reach pipe, repair, and restore slab. DFW\'s shifting clay causes more slab leaks per capita than most US metros. Confirm location precisely before digging.' },
+  { id: 'slab', label: 'Slab Leak Spot Repair', icon: '🏠', cost: '$1,500–$3,000', tag: 'Urgent', detail: 'Tunneling or jackhammer to reach pipe, repair, and restore slab. DFW\’s shifting clay causes more slab leaks per capita than most US metros. Confirm location precisely before digging.' },
   { id: 'repipe', label: 'Whole-Home Repipe', icon: '🔧', cost: '$8,000–$15,000', tag: 'Major', detail: 'Full replacement of supply lines (galvanized or polybutylene → PEX). 3–5 day project. Homes built 1960–1995 in DFW often need this. 25-year warranty on PEX.' },
 ];
 

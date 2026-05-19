@@ -27,7 +27,7 @@ const pestData: Record<PestKey, { treatment: string; frequency: string; cost: st
     cost: '$75–$150/treatment or $500–$800/season',
     urgency: 'Seasonal',
     urgencyColor: '#F5E642',
-    notes: 'Plano\'s mature tree coverage creates ideal mosquito habitat. Peak season is June–September. Barrier sprays last 21–30 days.',
+    notes: 'Plano\’s mature tree coverage creates ideal mosquito habitat. Peak season is June–September. Barrier sprays last 21–30 days.',
   },
   termites: {
     treatment: 'Bait station system (Sentricon) or liquid barrier (Termidor)',
@@ -43,7 +43,7 @@ const pestData: Record<PestKey, { treatment: string; frequency: string; cost: st
     cost: '$120–$250/treatment',
     urgency: 'Moderate',
     urgencyColor: '#F5E642',
-    notes: 'Plano\'s suburban lawns are prime fire ant territory. Imported fire ants are extremely aggressive and harmful to children and pets. Two-step method is most effective.',
+    notes: 'Plano\’s suburban lawns are prime fire ant territory. Imported fire ants are extremely aggressive and harmful to children and pets. Two-step method is most effective.',
   },
   roaches: {
     treatment: 'Gel bait placement + perimeter exclusion spray',
@@ -51,7 +51,7 @@ const pestData: Record<PestKey, { treatment: string; frequency: string; cost: st
     cost: '$150–$300/quarter',
     urgency: 'High Priority',
     urgencyColor: '#FF6B35',
-    notes: 'American cockroaches thrive in DFW\'s heat. German cockroaches require intensive treatment. Exclusion (sealing entry points) is critical for lasting control.',
+    notes: 'American cockroaches thrive in DFW\’s heat. German cockroaches require intensive treatment. Exclusion (sealing entry points) is critical for lasting control.',
   },
   rodents: {
     treatment: 'Exclusion + trap placement + bait stations (exterior only)',

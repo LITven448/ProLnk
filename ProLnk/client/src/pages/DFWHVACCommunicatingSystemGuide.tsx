@@ -10,7 +10,7 @@ const systems = [
     dfwStrength: 'Industry-leading EER performance at DFW peak temps (95°F+)',
     cost: '$6,500–$9,500 installed',
     warranty: '10-year parts + labor with registration',
-    notes: 'Carrier\'s Infinity system (thermostat + air handler + compressor) all communicate via proprietary protocol. Requires Infinity thermostat.',
+    notes: 'Carrier\’s Infinity system (thermostat + air handler + compressor) all communicate via proprietary protocol. Requires Infinity thermostat.',
     color: '#4A9EFF',
   },
   {
@@ -19,7 +19,7 @@ const systems = [
     type: 'Communicating Inverter',
     seer2: '22 SEER2',
     eer: 'EER 13.0',
-    dfwStrength: 'Strong reliability record in DFW\'s harsh environment, excellent dealer network',
+    dfwStrength: 'Strong reliability record in DFW\’s harsh environment, excellent dealer network',
     cost: '$6,000–$9,000 installed',
     warranty: '12-year compressor, 10-year parts',
     notes: 'ComfortLink II system. Trane dealers widely available in DFW — service availability matters in summer emergencies.',
@@ -40,12 +40,12 @@ const systems = [
 ];
 
 const situations = [
-  { situation: 'Replacing 10–15 year old system', rec: 'Yes — communicating makes sense', detail: 'At full replacement, the incremental cost is $1,500–$2,500 over standard high-efficiency. DFW\'s long season makes payback 5–8 years.' },
+  { situation: 'Replacing 10–15 year old system', rec: 'Yes — communicating makes sense', detail: 'At full replacement, the incremental cost is $1,500–$2,500 over standard high-efficiency. DFW\’s long season makes payback 5–8 years.' },
   { situation: 'Adding to existing older system (partial)', rec: 'No — mixed systems lose benefits', detail: 'Communicating systems need matched equipment. Mixing communicating compressor with non-communicating air handler eliminates the efficiency gains.' },
   { situation: 'Home over 2,500 sq ft with zoning', rec: 'Yes — biggest benefits here', detail: 'Larger homes in DFW have extreme heat gain variation. Communicating inverter + zoning dramatically cuts hot-spot problems.' },
-  { situation: 'Budget-conscious full replacement', rec: 'Maybe — run the numbers', detail: 'At $1,500–$2,500 premium, DFW\'s summer Oncor bills make payback realistic. Get quotes on variable-speed non-communicating (middle option).' },
+  { situation: 'Budget-conscious full replacement', rec: 'Maybe — run the numbers', detail: 'At $1,500–$2,500 premium, DFW\’s summer Oncor bills make payback realistic. Get quotes on variable-speed non-communicating (middle option).' },
   { situation: 'Home under 1,200 sq ft', rec: 'Skip — diminishing returns', detail: 'Smaller homes have lower cooling loads. Standard high-efficiency variable speed will perform very similarly at lower cost.' },
-  { situation: 'Rental property or flip', rec: 'No — wrong investment', detail: 'Tenants don\'t see efficiency savings and buyers rarely pay full premium for HVAC brand/tier. Use reliable two-stage standard efficiency.' },
+  { situation: 'Rental property or flip', rec: 'No — wrong investment', detail: 'Tenants don\’t see efficiency savings and buyers rarely pay full premium for HVAC brand/tier. Use reliable two-stage standard efficiency.' },
 ];
 
 export default function DFWHVACCommunicatingSystemGuide() {

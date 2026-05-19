@@ -7,7 +7,7 @@ const wfhPlans: Record<string, Record<string, string[]>> = {
       '🌡️ Set office zone to 70–72°F; use ceiling fan to reduce AC load by 4–8%',
       '💡 Close blinds in office during peak sun hours (2–5pm DFW) — reduces heat load 20%',
       '📅 Add one extra filter check per year — WFH adds light additional demand',
-      '🔇 Check that office HVAC vents aren\'t blocked by desk equipment — reduces efficiency',
+      '🔇 Check that office HVAC vents aren\’t blocked by desk equipment — reduces efficiency',
     ],
     medium: [
       '🏠 Light WFH, medium home: Zoning matters more — cool office, allow others to drift',

@@ -3,12 +3,12 @@ import { useState } from 'react';
 const checklist = [
   { id: 1, label: 'You own a home in DFW (or manage one)', tip: 'ProLnk serves homeowners, landlords, and property managers in the DFW metro.' },
   { id: 2, label: 'Your HVAC system is 2 years or older', tip: 'Systems under 2 years old are typically under warranty — ProLnk is for maintenance and repairs outside warranty.' },
-  { id: 3, label: 'You've had an HVAC service need in the last 3 years', tip: 'If your system is running perfectly, ProLnk is still the fastest way to get quotes when you do need service.' },
-  { id: 4, label: 'You've ever waited more than 24 hours for an HVAC tech to show up', tip: 'ProLnk connects you with available DFW pros — not a dispatcher queue.' },
+  { id: 3, label: 'You’ve had an HVAC service need in the last 3 years', tip: 'If your system is running perfectly, ProLnk is still the fastest way to get quotes when you do need service.' },
+  { id: 4, label: 'You’ve ever waited more than 24 hours for an HVAC tech to show up', tip: 'ProLnk connects you with available DFW pros — not a dispatcher queue.' },
   { id: 5, label: 'You want price transparency before a tech shows up', tip: 'ProLnk shows you upfront quotes from multiple DFW pros so you negotiate from knowledge, not desperation.' },
   { id: 6, label: 'You want to choose your pro based on reviews and credentials', tip: 'Every ProLnk HVAC pro is license-verified, insured, and rated by DFW homeowners like you.' },
-  { id: 7, label: 'You're open to scheduling maintenance before it becomes an emergency', tip: 'ProLnk makes it easy to schedule tune-ups, so you're never booking from a crisis.' },
-  { id: 8, label: 'You have a smartphone and 5 minutes to describe your HVAC need', tip: 'That's all it takes to get matched with a verified DFW HVAC pro on ProLnk.' },
+  { id: 7, label: 'You’re open to scheduling maintenance before it becomes an emergency', tip: 'ProLnk makes it easy to schedule tune-ups, so you’re never booking from a crisis.' },
+  { id: 8, label: 'You have a smartphone and 5 minutes to describe your HVAC need', tip: 'That’s all it takes to get matched with a verified DFW HVAC pro on ProLnk.' },
 ];
 
 export default function DFWHVACProLnkReady() {
@@ -22,7 +22,7 @@ export default function DFWHVACProLnkReady() {
   const score = Math.round((checked.length / checklist.length) * 100);
   const missing = checklist.filter(item => !checked.includes(item.id));
   const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642' : '#3b82f6';
-  const scoreLabel = score >= 80 ? '🔗 ProLnk Ready — Let's Go!' : score >= 50 ? '⚡ Almost Ready' : '📋 A Few Steps First';
+  const scoreLabel = score >= 80 ? '🔗 ProLnk Ready — Let’s Go!' : score >= 50 ? '⚡ Almost Ready' : '📋 A Few Steps First';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#fff' }}>

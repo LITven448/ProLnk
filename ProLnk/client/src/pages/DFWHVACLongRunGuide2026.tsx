@@ -10,7 +10,7 @@ export default function DFWHVACLongRunGuide2026() {
     if (pattern === 'variable') {
       setResult('✅ NORMAL — Variable-speed systems are designed to run continuously at low capacity. This is more efficient than cycling on/off. No action needed.');
     } else if (pattern === 'constant' && temp === '100plus') {
-      setResult('✅ LIKELY NORMAL — When it's 100°F+ in DFW, even a properly functioning single-stage AC may run all day to maintain setpoint. Check that indoor temp is actually reaching your setting.');
+      setResult('✅ LIKELY NORMAL — When it’s 100°F+ in DFW, even a properly functioning single-stage AC may run all day to maintain setpoint. Check that indoor temp is actually reaching your setting.');
     } else if (pattern === 'constant' && temp === 'under100') {
       setResult('⚠️ INVESTIGATE — Continuous run below 100°F and not reaching setpoint may indicate low refrigerant, dirty coils, or undersized system. Book a ProLnk HVAC check.');
     } else if (pattern === 'never-cools') {
@@ -35,7 +35,7 @@ export default function DFWHVACLongRunGuide2026() {
             {[
               { icon: '✅', label: 'Variable-Speed Systems', desc: 'Designed to run all day at low capacity — this is the efficient mode. Expect 18-22 hours/day runtime in July.' },
               { icon: '⚠️', label: 'Single-Stage in July (100°F+)', desc: 'May run 20+ hours/day and still be fine. The system is fighting DFW heat. Check your actual indoor temp.' },
-              { icon: '🚨', label: 'Never Reaches Setpoint', desc: 'If indoor temp never hits your target, that's a system problem regardless of runtime. Refrigerant, coils, or sizing issue.' },
+              { icon: '🚨', label: 'Never Reaches Setpoint', desc: 'If indoor temp never hits your target, that’s a system problem regardless of runtime. Refrigerant, coils, or sizing issue.' },
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', gap: 12, padding: '12px', background: '#1a2f4a', borderRadius: 8 }}>
                 <span style={{ fontSize: 20 }}>{item.icon}</span>

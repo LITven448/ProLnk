@@ -37,7 +37,7 @@ const roles = [
     description: "I'm a contractor — I want to serve DFW homeowners better through ProLnk",
     resources: [
       { category: 'ProLnk Network', emoji: '🌐', items: ['How matching works: homeowner to pro', '5-tier commission and income system', 'Home Health Vault contractor access', 'Partner network and referral cascade'] },
-      { category: 'Business Growth', emoji: '📈', items: ['Building a maintenance agreement base', 'Emergency availability advantages', 'Rating system and reputation management', 'ProLnk\'s 3,200+ DFW HVAC resource library'] },
+      { category: 'Business Growth', emoji: '📈', items: ['Building a maintenance agreement base', 'Emergency availability advantages', 'Rating system and reputation management', 'ProLnk\’s 3,200+ DFW HVAC resource library'] },
       { category: 'DFW Market', emoji: '🗺️', items: ['2026 refrigerant transition: R-454B prep', 'DFW peak season capacity planning', 'Commercial expansion through ProLnk', 'Territory management and lead targeting'] },
     ],
   },

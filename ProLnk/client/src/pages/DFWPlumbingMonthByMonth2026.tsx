@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const months = [
-  { id: '2', label: 'February', actions: ['Freeze watch — DFW\'s 2021 Uri freeze burst millions of pipes statewide', 'Know your main shutoff location before a freeze event hits', 'Wrap exposed exterior pipes in unheated spaces (garage, crawl space)', 'Let cold-side faucets drip at 20°F or below if pipes are exterior-wall'] },
+  { id: '2', label: 'February', actions: ['Freeze watch — DFW\’s 2021 Uri freeze burst millions of pipes statewide', 'Know your main shutoff location before a freeze event hits', 'Wrap exposed exterior pipes in unheated spaces (garage, crawl space)', 'Let cold-side faucets drip at 20°F or below if pipes are exterior-wall'] },
   { id: '4', label: 'April', actions: ['Irrigation startup: turn on system zone by zone', 'Test backflow preventer — DFW code requires annual test', 'Check for broken heads and spray adjustments after winter', 'Run a full cycle and look for wet spots indicating underground leaks'] },
   { id: '6', label: 'June', actions: ['AC condensate drain flush — DFW summer humidity causes algae buildup fast', 'Pour cup of diluted bleach into condensate pan', 'Verify drain line is flowing freely — blockage causes water damage', 'Test water heater pressure relief valve annually (June is a good reminder)'] },
   { id: '10', label: 'October', actions: ['Reduce irrigation schedule as temps drop below 80°F', 'Transition to 2–3x/week from daily summer schedule', 'Check hose bibs for any drips before cold season', 'Clear leaves from outdoor drain areas before fall rains'] },
-  { id: '12', label: 'December', actions: ['Full freeze prep: disconnect all garden hoses', 'Insulate exposed pipes in attic, garage, and crawl space', 'Know your main shutoff — label it if it isn\'t', 'If traveling over holidays, leave heat at 58°F minimum'] },
+  { id: '12', label: 'December', actions: ['Full freeze prep: disconnect all garden hoses', 'Insulate exposed pipes in attic, garage, and crawl space', 'Know your main shutoff — label it if it isn\’t', 'If traveling over holidays, leave heat at 58°F minimum'] },
 ];
 
 export default function DFWPlumbingMonthByMonth2026() {

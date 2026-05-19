@@ -4,7 +4,7 @@ const movingInChecklist = [
   { icon: '🔑', item: 'Change all locks within 48 hours of closing.' },
   { icon: '💡', item: 'Transfer utilities before move-in: electric, gas, water, trash.' },
   { icon: '📬', item: 'Update address with USPS, bank, employer, IRS, and DMV.' },
-  { icon: '🚗', item: 'Get a Texas driver's license within 90 days of establishing residency.' },
+  { icon: '🚗', item: 'Get a Texas driver’s license within 90 days of establishing residency.' },
   { icon: '🏡', item: 'File for homestead exemption with your county appraisal district (Jan 1 – May 1).' },
   { icon: '📡', item: 'Schedule internet installation — lead times in new suburbs can be 2–4 weeks.' },
   { icon: '🩺', item: 'Find a local doctor, dentist, and pediatrician before you need them.' },

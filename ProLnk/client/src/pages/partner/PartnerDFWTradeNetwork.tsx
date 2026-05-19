@@ -11,13 +11,13 @@ const VENUES: TradeVenues = {
   HVAC: [
     { name: 'Johnstone Supply (multiple DFW locations)', type: '🏪 Supply House', tip: 'Go at 7–8am. Techs buying parts before jobs. Have a one-pager ready.' },
     { name: 'Collin College HVAC Program (McKinney)', type: '🎓 Trade School', tip: 'Connect with instructor first. Offer to guest-speak on "income beyond service calls."' },
-    { name: 'North Texas HVAC Facebook Group (18K members)', type: '📘 Online Community', tip: 'Post value first for 2 weeks before pitching. Engage on others\' posts.' },
+    { name: 'North Texas HVAC Facebook Group (18K members)', type: '📘 Online Community', tip: 'Post value first for 2 weeks before pitching. Engage on others\’ posts.' },
     { name: 'Ferguson HVAC (Plano & Addison)', type: '🏪 Supply House', tip: 'Counter staff knows regulars. Build a relationship with counter staff to get warm intros.' },
   ],
   Plumbing: [
     { name: 'Barnett & Sons Plumbing Supply (Garland)', type: '🏪 Supply House', tip: 'Large contractor base. Early morning is best — 6:30–8am.' },
     { name: 'North Texas Plumbers Association', type: '🤝 Association', tip: 'Monthly meetings in Dallas. Sponsor a lunch to get speaking time.' },
-    { name: 'Lowe\'s Pro desk (multiple locations)', type: '🏗️ Big Box Pro Desk', tip: 'Talk to the Pro desk associates — they\'re a warm intro channel to their regulars.' },
+    { name: 'Lowe\’s Pro desk (multiple locations)', type: '🏗️ Big Box Pro Desk', tip: 'Talk to the Pro desk associates — they\’re a warm intro channel to their regulars.' },
     { name: 'DFW Plumbing Facebook Group', type: '📘 Online Community', tip: 'Engage with technical questions before introducing ProLnk.' },
   ],
   Electrical: [
@@ -48,7 +48,7 @@ const VENUES: TradeVenues = {
 
 const SUBMARKET_STRATEGY: SubmarketStrategy = {
   Frisco: { approach: 'Professional + income-focused', conversion: '28%', focus: 'High-income homeowner origination rights angle — permanent passive income' },
-  McKinney: { approach: 'Growth opportunity framing', conversion: '31%', focus: 'New construction boom — get in early before it\'s saturated' },
+  McKinney: { approach: 'Growth opportunity framing', conversion: '31%', focus: 'New construction boom — get in early before it\’s saturated' },
   Allen: { approach: 'Community / neighbor angle', conversion: '26%', focus: 'Dense suburban neighborhoods — homeowner referrals flow easily here' },
   Plano: { approach: 'Business-minded / ROI focused', conversion: '24%', focus: 'Emphasize scalability — Plano pros tend to think in systems' },
   Arlington: { approach: 'Volume / hustle framing', conversion: '22%', focus: 'Larger workforce, more competitive — lead with the math' },

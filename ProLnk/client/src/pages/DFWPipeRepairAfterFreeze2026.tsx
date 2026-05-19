@@ -28,7 +28,7 @@ const damageGuides: Record<string, { cost: string; urgent: string[]; avoid: stri
   'Burst pipe + flooring damage': {
     cost: '$5,000 – $30,000+',
     urgent: ['Shut off water + document everything before cleanup', 'File insurance claim — flooring replacement is typically covered', 'Get licensed plumber + water mitigation company', 'Do NOT let anyone install new flooring until subfloor is dry (measured)', 'Keep contractor receipts for all work'],
-    avoid: 'Do NOT install new flooring over wet subfloor. Mold will grow underneath and you\'ll spend far more later.',
+    avoid: 'Do NOT install new flooring over wet subfloor. Mold will grow underneath and you\’ll spend far more later.',
   },
 };
 

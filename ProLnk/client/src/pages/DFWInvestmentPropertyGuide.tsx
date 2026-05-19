@@ -101,7 +101,7 @@ export default function DFWInvestmentPropertyGuide() {
               <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>💰 Property Management Cost Breakdown</h3>
               {[
                 { item: 'Monthly Management Fee', cost: '8–10% of gross rent', note: 'On $1,850/mo rent = $148–$185/mo' },
-                { item: 'Leasing Fee (tenant placement)', cost: '50–100% of 1 month\'s rent', note: 'One-time when tenant placed' },
+                { item: 'Leasing Fee (tenant placement)', cost: '50–100% of 1 month\’s rent', note: 'One-time when tenant placed' },
                 { item: 'Lease Renewal Fee', cost: '$150–$300', note: 'Per renewal, every 12 months' },
                 { item: 'Maintenance Coordination', cost: '$0 or 10% markup on repairs', note: 'Ask how they handle contractor billing' },
                 { item: 'Vacancy Period Coverage', cost: 'No fee during vacancy (typically)', note: 'Verify this in your management agreement' },

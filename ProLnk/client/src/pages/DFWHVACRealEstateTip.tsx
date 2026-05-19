@@ -12,11 +12,11 @@ const roles = [
       },
       {
         title: 'An inspection report is not an HVAC evaluation',
-        detail: 'Home inspectors check if the unit turns on. They don\'t assess capacity, efficiency decline, refrigerant charge, duct leakage, or remaining life. Budget $75–150 for a separate HVAC eval.',
+        detail: 'Home inspectors check if the unit turns on. They don\’t assess capacity, efficiency decline, refrigerant charge, duct leakage, or remaining life. Budget $75–150 for a separate HVAC eval.',
       },
       {
         title: 'DFW rule: units over 10 years old are negotiation chips',
-        detail: 'In DFW\'s heat, HVAC systems age faster. A 10-year unit may have 2–5 years left. Factor replacement cost ($6,000–15,000) into your offer or ask for a concession.',
+        detail: 'In DFW\’s heat, HVAC systems age faster. A 10-year unit may have 2–5 years left. Factor replacement cost ($6,000–15,000) into your offer or ask for a concession.',
       },
       {
         title: 'Check for R-22 refrigerant',
@@ -39,19 +39,19 @@ const roles = [
       },
       {
         title: 'Document the age clearly and accurately',
-        detail: 'Find the model number and calculate the actual installation year. Disclosing this honestly upfront prevents the buyer\'s inspector from discovering a discrepancy and triggering renegotiation.',
+        detail: 'Find the model number and calculate the actual installation year. Disclosing this honestly upfront prevents the buyer\’s inspector from discovering a discrepancy and triggering renegotiation.',
       },
       {
-        title: 'Know what\'s still under warranty',
-        detail: 'Manufacturer warranties (5–10 yr parts, 1 yr labor) are sometimes transferable. Check your unit\'s paperwork. A transferable warranty is a selling point worth $500–1,000 in buyer perception.',
+        title: 'Know what\’s still under warranty',
+        detail: 'Manufacturer warranties (5–10 yr parts, 1 yr labor) are sometimes transferable. Check your unit\’s paperwork. A transferable warranty is a selling point worth $500–1,000 in buyer perception.',
       },
       {
         title: 'DFW summer showings: keep the house cold',
-        detail: 'Buyers touring a 78°F home in July immediately notice. Set your thermostat to 72°F during showing windows. If the unit can\'t hold that temperature, it signals a problem.',
+        detail: 'Buyers touring a 78°F home in July immediately notice. Set your thermostat to 72°F during showing windows. If the unit can\’t hold that temperature, it signals a problem.',
       },
       {
-        title: 'Don\'t replace preemptively unless unit is under 12 SEER',
-        detail: 'Replacing a functional 14 SEER unit rarely returns dollar-for-dollar. Fix what\'s broken, service what\'s running, and price the home accordingly.',
+        title: 'Don\’t replace preemptively unless unit is under 12 SEER',
+        detail: 'Replacing a functional 14 SEER unit rarely returns dollar-for-dollar. Fix what\’s broken, service what\’s running, and price the home accordingly.',
       },
     ],
   },

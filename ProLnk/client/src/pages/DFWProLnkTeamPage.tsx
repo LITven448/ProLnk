@@ -5,9 +5,9 @@ const team = [
     name: 'Andrew Frakes',
     role: 'CEO & Co-Founder',
     emoji: '🏗️',
-    background: 'Real estate investor and DFW homeowner who experienced firsthand the broken home services market. Built ProLnk to solve the problem he couldn\'t find a solution to.',
+    background: 'Real estate investor and DFW homeowner who experienced firsthand the broken home services market. Built ProLnk to solve the problem he couldn\’t find a solution to.',
     serves: {
-      homeowner: 'Andrew designed ProLnk from the homeowner\'s perspective — every feature exists because he wished it existed before his own bad contractor experiences.',
+      homeowner: 'Andrew designed ProLnk from the homeowner\’s perspective — every feature exists because he wished it existed before his own bad contractor experiences.',
       contractor: 'Andrew understands what verified, quality-focused pros need: a lead pipeline that respects their work and pays fairly.',
       investor: 'Andrew brings operator-level clarity: unit economics, growth trajectory, and the mission behind every number.',
     },
@@ -16,7 +16,7 @@ const team = [
     name: 'Technology Team',
     role: 'Platform & AI Architecture',
     emoji: '⚙️',
-    background: 'Engineers with backgrounds in marketplace platforms, AI systems, and real estate tech. Built ProLnk\'s matching engine, Home Health Vault, and contractor verification infrastructure.',
+    background: 'Engineers with backgrounds in marketplace platforms, AI systems, and real estate tech. Built ProLnk\’s matching engine, Home Health Vault, and contractor verification infrastructure.',
     serves: {
       homeowner: 'The tech team built the transparency tools homeowners need — verified profiles, price benchmarks, and match quality scores.',
       contractor: 'AI-powered lead matching means contractors get qualified jobs, not tire-kickers. The system learns and improves with every match.',
@@ -29,7 +29,7 @@ const team = [
     emoji: '🤝',
     background: 'Boots on the ground across DFW — deep relationships with real estate professionals, trade associations, and community leaders who know the market from the inside.',
     serves: {
-      homeowner: 'Local knowledge means better contractor recommendations — not just who\'s licensed, but who does great work in your specific neighborhood.',
+      homeowner: 'Local knowledge means better contractor recommendations — not just who\’s licensed, but who does great work in your specific neighborhood.',
       contractor: 'The network creates warm referral channels, not cold lead lists. Contractors who join through community trust convert better.',
       investor: 'DFW market penetration is faster when you have community roots. This team reduces customer acquisition cost significantly.',
     },

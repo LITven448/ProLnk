@@ -7,9 +7,9 @@ const transitions = [
     icon: '🍂',
     title: 'Switching to Heat Mode',
     steps: [
-      { step: 'Test heat in late September', detail: 'DFW gets surprise cold fronts — don't wait until you need it. Run heat for 30 min to burn off summer dust smell safely.' },
+      { step: 'Test heat in late September', detail: 'DFW gets surprise cold fronts — don’t wait until you need it. Run heat for 30 min to burn off summer dust smell safely.' },
       { step: 'Change air filter', detail: 'After 6 months of summer cooling, your filter is clogged. Replace before heating season.' },
-      { step: 'Switch thermostat to HEAT mode', detail: 'Don't leave it on AUTO-COOL. Set to HEAT, set temp to 68-70°F for DFW winters.' },
+      { step: 'Switch thermostat to HEAT mode', detail: 'Don’t leave it on AUTO-COOL. Set to HEAT, set temp to 68-70°F for DFW winters.' },
       { step: 'Check outdoor unit clearance', detail: 'Clear any leaves/debris around heat pump or furnace exhaust. DFW fall brings significant leaf accumulation.' },
       { step: 'Schedule pre-season heater tune-up', detail: 'October is the right time — before the rush. Most DFW HVAC companies are fully booked by first cold snap.' },
     ]

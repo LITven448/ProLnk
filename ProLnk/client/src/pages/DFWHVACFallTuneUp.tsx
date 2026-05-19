@@ -8,7 +8,7 @@ const fallItems = [
   { task: 'Gas pressure and burner inspection', urgency: 'HIGH', note: 'DFW natural gas demand spikes in February — proper combustion prevents carbon monoxide', season: 'heating' },
   { task: 'Ignitor and flame sensor test', urgency: 'HIGH', note: 'February 2021 proved DFW winters are real — ignitor failure in ice storm = frozen pipes', season: 'heating' },
   { task: 'Heat pump reversing valve test', urgency: 'HIGH', note: 'Reversing valve stuck in cooling mode means no heat — test before first cold snap', season: 'heat pump' },
-  { task: 'Thermostat heat mode changeover test', urgency: 'MEDIUM', note: 'Many DFW thermostats haven\'t been in heat mode since March — test the full cycle', season: 'all' },
+  { task: 'Thermostat heat mode changeover test', urgency: 'MEDIUM', note: 'Many DFW thermostats haven\’t been in heat mode since March — test the full cycle', season: 'all' },
   { task: 'Condensate drain winterization check', urgency: 'MEDIUM', note: 'DFW freeze events can crack condensate lines — ensure drain slope is adequate', season: 'all' },
   { task: 'Refrigerant check (heat pump systems)', urgency: 'MEDIUM', note: 'Heat pumps move refrigerant both ways — low charge reduces heating efficiency 30%+', season: 'heat pump' },
   { task: 'Outdoor unit clearance for winter debris', urgency: 'LOW', note: 'DFW November brings cedar and oak leaf drop — ensure 18" clearance around condenser', season: 'all' },
@@ -16,7 +16,7 @@ const fallItems = [
   { task: 'Carbon monoxide detector test & battery', urgency: 'HIGH', note: 'Required with any gas system — CO is odorless; February is highest-risk period in DFW', season: 'heating' },
 ];
 
-const februaryFact = 'Winter Storm Uri (February 2021) showed DFW HVAC systems were not prepared for sustained below-freezing temps. The lesson: DFW\'s \'mild\' winter is a once-per-decade myth. Treat fall tune-ups like spring ones.';
+const februaryFact = 'Winter Storm Uri (February 2021) showed DFW HVAC systems were not prepared for sustained below-freezing temps. The lesson: DFW\’s \’mild\’ winter is a once-per-decade myth. Treat fall tune-ups like spring ones.';
 
 export default function DFWHVACFallTuneUp() {
   const [homeType, setHomeType] = useState('');

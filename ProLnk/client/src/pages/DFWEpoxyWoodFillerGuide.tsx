@@ -32,7 +32,7 @@ const fillerMap: Record<string, FillerResult> = {
     uvNote: 'Always use PT lumber for exterior structural replacements in DFW. Standard lumber rots within 3-5 years.',
   },
   'cosmetic-interior': {
-    recommendation: 'Elmer\'s Carpenter\'s Wood Filler or DAP Plastic Wood',
+    recommendation: 'Elmer\’s Carpenter\’s Wood Filler or DAP Plastic Wood',
     approach: 'Overfill slightly, sand flush when dry. Works for nail holes, small dings, trim repairs.',
     brands: ["Elmer's Carpenter's Wood Filler", 'DAP Plastic Wood', 'Famowood Wood Filler'],
     cost: '$8-18 per container',
@@ -75,7 +75,7 @@ export default function DFWEpoxyWoodFillerGuide() {
               'DFW heat accelerates rot 2-3x vs northern climates',
               'Single-part fillers crack outdoors within 1 DFW summer',
               'Working time for epoxy: 5-8 min in DFW summer vs 15 min inside',
-              'Always fix moisture source — rot returns if you don\'t',
+              'Always fix moisture source — rot returns if you don\’t',
             ].map(f => (
               <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5A623' }}>
                 ⚠️ {f}

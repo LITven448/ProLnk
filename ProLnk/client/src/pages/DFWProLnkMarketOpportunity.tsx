@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STAKEHOLDERS = [
-  { key: 'homeowner', label: '🏠 I\'m a Homeowner', desc: 'I own property in DFW' },
-  { key: 'contractor', label: '🔨 I\'m a Contractor', desc: 'I provide home services' },
-  { key: 'partner', label: '🤝 I\'m a Partner/Scout', desc: 'I want to refer and earn' },
-  { key: 'investor', label: '📈 I\'m an Investor', desc: 'I\'m evaluating the opportunity' },
-  { key: 'agent', label: '🏡 I\'m a Real Estate Agent', desc: 'I work with buyers and sellers' },
+  { key: 'homeowner', label: '🏠 I\’m a Homeowner', desc: 'I own property in DFW' },
+  { key: 'contractor', label: '🔨 I\’m a Contractor', desc: 'I provide home services' },
+  { key: 'partner', label: '🤝 I\’m a Partner/Scout', desc: 'I want to refer and earn' },
+  { key: 'investor', label: '📈 I\’m an Investor', desc: 'I\’m evaluating the opportunity' },
+  { key: 'agent', label: '🏡 I\’m a Real Estate Agent', desc: 'I work with buyers and sellers' },
 ];
 
 const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; value: string }[]; insight: string; cta: string }> = {
@@ -28,7 +28,7 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
       { label: 'Jobs lost to no-show / no-contact', value: '30%' },
       { label: 'Avg cost of a bad lead (Angi/etc)', value: '$85' },
     ],
-    insight: 'DFW contractors waste 35% of their marketing budget on unqualified leads. ProLnk\'s match-only model means every lead you receive is pre-qualified for your trade, your territory, and your availability. Charter members pay $149/mo and earn 5 income streams — including a permanent cut of every homeowner they originate.',
+    insight: 'DFW contractors waste 35% of their marketing budget on unqualified leads. ProLnk\’s match-only model means every lead you receive is pre-qualified for your trade, your territory, and your availability. Charter members pay $149/mo and earn 5 income streams — including a permanent cut of every homeowner they originate.',
     cta: 'Apply for Charter Pro membership — 500 spots at founding rate',
   },
   partner: {
@@ -39,7 +39,7 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
       { label: 'Partner income streams available', value: '5' },
       { label: 'Avg monthly partner earning at 1K pros', value: '$4,200' },
     ],
-    insight: 'No platform in DFW has built a referral partner network for home services. ProLnk\'s 5-stream income model means you earn from every contractor you recruit, every homeowner you refer, every home added to the Vault — permanently. Founding partners lock in the highest commission rates before the market matures.',
+    insight: 'No platform in DFW has built a referral partner network for home services. ProLnk\’s 5-stream income model means you earn from every contractor you recruit, every homeowner you refer, every home added to the Vault — permanently. Founding partners lock in the highest commission rates before the market matures.',
     cta: 'Get partner onboarding info — founding partner rates closing soon',
   },
   investor: {
@@ -50,7 +50,7 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
       { label: 'Market growth rate (annual)', value: '8% YoY' },
       { label: 'ProLnk take rate at scale', value: '15-22%' },
     ],
-    insight: 'No incumbent owns the DFW home services marketplace. Angi is a national directory with no local density advantage. Thumbtack is a bid marketplace with high contractor churn. ProLnk\'s match-only + data moat + 5-stream network income creates a flywheel that incumbents structurally cannot replicate. Break-even at 500 Charter Pros. Current waitlist: 400+ applicants.',
+    insight: 'No incumbent owns the DFW home services marketplace. Angi is a national directory with no local density advantage. Thumbtack is a bid marketplace with high contractor churn. ProLnk\’s match-only + data moat + 5-stream network income creates a flywheel that incumbents structurally cannot replicate. Break-even at 500 Charter Pros. Current waitlist: 400+ applicants.',
     cta: 'Request investor materials — seed round closing Q3 2026',
   },
   agent: {
@@ -61,7 +61,7 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
       { label: 'Agent referral income per transaction', value: '$0 today' },
       { label: 'Potential partner income per transaction', value: '$340+' },
     ],
-    insight: 'Real estate agents refer contractors constantly — inspectors, handymen, HVAC techs — and earn nothing from it. ProLnk\'s partner model pays agents for every homeowner they originate, every contractor they recruit, and every service job completed on homes they bring in. A 20-transaction/year agent could earn $6,800+/yr in passive partner income.',
+    insight: 'Real estate agents refer contractors constantly — inspectors, handymen, HVAC techs — and earn nothing from it. ProLnk\’s partner model pays agents for every homeowner they originate, every contractor they recruit, and every service job completed on homes they bring in. A 20-transaction/year agent could earn $6,800+/yr in passive partner income.',
     cta: 'Join the agent partner program — founding rates available',
   },
 };

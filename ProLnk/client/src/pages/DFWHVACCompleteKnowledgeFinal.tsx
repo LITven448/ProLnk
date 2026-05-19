@@ -47,7 +47,7 @@ const resources: Record<string, { title: string; items: string[] }[]> = {
       'Measure supply temp at register vs return temp — DFW summer delta-T should be 16-22°F',
       'If delta-T is low (<14°F in DFW heat), suspect low refrigerant or dirty evap coil',
       'Monitor runtime: healthy DFW system cycles 2-3 times/hour — continuous run = undersized or failing',
-      'Check refrigerant lines: suction line should sweat in DFW summer — if it\'s warm, call a pro',
+      'Check refrigerant lines: suction line should sweat in DFW summer — if it\’s warm, call a pro',
     ]},
   ],
   expert: [

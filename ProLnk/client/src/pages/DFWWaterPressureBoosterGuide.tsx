@@ -27,7 +27,7 @@ function getResult(pressure: string, homeType: string) {
       action: 'Booster Pump Recommended',
       cost: '$800–$1,800 installed',
       hp: multiStory ? '1.5–2 HP variable-speed booster' : '1 HP variable-speed booster',
-      note: 'Very low pressure requires diagnosis first — a booster won\'t help if the cause is a partially closed valve or corroded pipe. Fix root cause, then boost if still needed.',
+      note: 'Very low pressure requires diagnosis first — a booster won\’t help if the cause is a partially closed valve or corroded pipe. Fix root cause, then boost if still needed.',
     };
   }
   if (largeHome || multiStory) {

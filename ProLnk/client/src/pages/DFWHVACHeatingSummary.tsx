@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const situations = [
-  { label: 'My heat isn\'t working well', key: 'poor_heat' },
+  { label: 'My heat isn\’t working well', key: 'poor_heat' },
   { label: 'Worried about a rare DFW freeze', key: 'freeze' },
   { label: 'Choosing heat pump vs gas furnace', key: 'choosing' },
   { label: 'Emergency — heat is completely out in cold snap', key: 'emergency' },
@@ -23,7 +23,7 @@ const plans: Record<string, { title: string; steps: string[] }> = {
   freeze: {
     title: '🧊 DFW Freeze Preparedness Plan',
     steps: [
-      '📅 Prep in November — don\'t wait for the forecast',
+      '📅 Prep in November — don\’t wait for the forecast',
       '🔧 Schedule furnace tune-up before first cold snap',
       '💧 Know pipe locations — wrap exposed pipes before hard freeze',
       '🌡️ Keep thermostat at 68°F minimum even when away during freeze',

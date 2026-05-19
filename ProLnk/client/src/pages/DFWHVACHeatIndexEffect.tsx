@@ -87,7 +87,7 @@ export default function DFWHVACHeatIndexEffect() {
             ['Rated capacity is tested at 95°F', 'Most AC units are rated at 95°F outdoor temp. DFW routinely exceeds that.'],
             ['Every 10°F above 95°F ≈ 5–7% capacity loss', 'Heat index compounds this — humid air requires more refrigerant work.'],
             ['Undersized units fall behind after 2pm', 'Peak heat index in DFW is 3–5pm. Homes can rise 2–4°F before cooling resumes.'],
-            ['Oversizing doesn\'t always help', 'Short-cycling in high humidity causes its own problems — moisture stays in the air.'],
+            ['Oversizing doesn\’t always help', 'Short-cycling in high humidity causes its own problems — moisture stays in the air.'],
           ].map(([title, body]) => (
             <div key={title} style={{ borderLeft: '3px solid #F5E642', paddingLeft: 16, marginBottom: 16 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{title}</div>

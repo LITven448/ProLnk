@@ -7,7 +7,7 @@ const journey = [
     milestone: 'Find the right DFW home',
     description: 'DFW is one of the fastest-moving markets in the US. Median days on market: 18. Competition is real — but so is opportunity.',
     tips: ['Get pre-approved before you tour', 'Focus on school district + commute + neighborhood trajectory', 'In DFW: soil matters as much as location — check Blackland Prairie zones', 'Inspect thoroughly — DFW clay soil causes 80% of foundation issues'],
-    prolnk: 'ProLnk can connect you with vetted home inspectors before you close — know what you're buying.',
+    prolnk: 'ProLnk can connect you with vetted home inspectors before you close — know what you’re buying.',
     next: 'Buy & Close'
   },
   {
@@ -34,7 +34,7 @@ const journey = [
     milestone: 'Protect your investment',
     description: 'DFW homes need active maintenance. Clay soil, 100°F summers, and severe storms make neglect expensive fast.',
     tips: ['HVAC filters every 30 days in summer', 'Foundation watering May–Sept is not optional', 'Post-storm roof inspection after every hail event', 'Annual pest inspection — termites are silent and expensive'],
-    prolnk: 'ProLnk's annual maintenance plan connects you with vetted pros for every item on your list — one platform.',
+    prolnk: 'ProLnk’s annual maintenance plan connects you with vetted pros for every item on your list — one platform.',
     next: 'Improve'
   },
   {

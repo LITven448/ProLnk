@@ -26,7 +26,7 @@ function getVerdict(score: number) {
     verdict: 'Duct cleaning NOT needed yet',
     color: '#22C55E',
     icon: '✅',
-    details: 'Your ducts are likely clean. EPA and NADCA agree duct cleaning is only needed when there\'s visible mold, vermin evidence, or construction debris — not on a routine schedule.',
+    details: 'Your ducts are likely clean. EPA and NADCA agree duct cleaning is only needed when there\’s visible mold, vermin evidence, or construction debris — not on a routine schedule.',
     cost: 'N/A',
     watch: 'Re-evaluate if you notice musty odors, visible dust from registers, or if allergy symptoms worsen.',
   };
@@ -92,7 +92,7 @@ export default function DFWAirDuctCleaningGuide() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>✅ EPA: 3 Reasons to Actually Clean Ducts</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 40 }}>
             {[
-              { num: '01', title: 'Visible Mold Inside Ducts or HVAC Components', desc: 'Mold requires professional remediation. However, confirm via lab test — not just a technician\'s claim. Mold inside ducts in DFW is more common after flood events or sustained high humidity.' },
+              { num: '01', title: 'Visible Mold Inside Ducts or HVAC Components', desc: 'Mold requires professional remediation. However, confirm via lab test — not just a technician\’s claim. Mold inside ducts in DFW is more common after flood events or sustained high humidity.' },
               { num: '02', title: 'Vermin Infestation (Rodents or Insects)', desc: 'Confirmed evidence of animals living in ductwork. Check for droppings, nesting material, or entry points near the air handler in your attic.' },
               { num: '03', title: 'Excessive Debris Blocking Airflow', desc: 'Post-construction: drywall dust, insulation particles, or debris from renovations. Registers blowing visible dust particles after major work.' },
             ].map(item => (

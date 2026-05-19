@@ -32,7 +32,7 @@ export default function DFWFoundationEngineerGuide() {
     if (pierBid || score >= 8) return {
       label: 'Structural Engineer Required',
       color: '#FF6B6B',
-      rec: 'Do not rely on a foundation company\'s own assessment. A PE provides an independent structural opinion that protects your negotiation and is required by most lenders for foundation work.',
+      rec: 'Do not rely on a foundation company\’s own assessment. A PE provides an independent structural opinion that protects your negotiation and is required by most lenders for foundation work.',
       cost: '$500 – $1,500',
       expect: 'Written report with elevation survey, cause analysis, and repair scope. Can be used to bid multiple contractors.',
     };
@@ -85,7 +85,7 @@ export default function DFWFoundationEngineerGuide() {
             {[
               { icon: '🎓', title: 'Licensed Structural Engineer (PE)', desc: 'Issues legally binding structural opinion. Performs elevation survey with transit level. Can testify in court. Required by lenders for major foundation work. Independent — no financial interest in repair outcome.' },
               { icon: '🔍', title: 'TREC Home Inspector', desc: 'Visual assessment only. Can note crack patterns and flag concerns. Cannot issue structural opinion or perform elevation survey. Required report on all TREC inspections.' },
-              { icon: '🔨', title: 'Foundation Repair Company', desc: 'Free bids often inflate scope. Incentivized to recommend maximum piers. Not independent. Never use a foundation company\'s report as your sole assessment.' },
+              { icon: '🔨', title: 'Foundation Repair Company', desc: 'Free bids often inflate scope. Incentivized to recommend maximum piers. Not independent. Never use a foundation company\’s report as your sole assessment.' },
             ].map(item => (
               <div key={item.title} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', backgroundColor: '#132240', borderRadius: 8, padding: 16 }}>
                 <span style={{ fontSize: 22 }}>{item.icon}</span>

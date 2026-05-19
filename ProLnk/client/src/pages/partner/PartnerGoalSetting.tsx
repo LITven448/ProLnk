@@ -111,7 +111,7 @@ export default function PartnerGoalSetting() {
             {[
               { label: 'L1 Partners Needed', value: calc.l1, emoji: '👤', desc: 'Direct recruits' },
               { label: 'L2 Partners', value: calc.l2, emoji: '👥', desc: 'Their recruits' },
-              { label: 'L3 Partners', value: calc.l3, emoji: '🌐', desc: 'L2\'s recruits' },
+              { label: 'L3 Partners', value: calc.l3, emoji: '🌐', desc: 'L2\’s recruits' },
               { label: 'Jobs / Month', value: calc.jobsPerMonth, emoji: '🔧', desc: 'Across all L1s' },
               { label: 'Recruits / Week', value: calc.weeklyRecruits, emoji: '📅', desc: 'To hit in 12 mo' },
             ].map((stat, i) => (

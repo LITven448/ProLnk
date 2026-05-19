@@ -25,20 +25,20 @@ const assessments: Record<string, { rating: string; meaning: string; expect: str
   permit: {
     rating: '✅ Legal, Insurable, and Inspectable',
     meaning: 'A contractor who pulls permits without being asked is confident in their work quality and operates legally. The permit triggers a city inspection — your independent quality check.',
-    expect: 'Permit cost ($50-200) should be included in the quote. You\'ll receive a notice of inspection — be present or request the inspection report.',
+    expect: 'Permit cost ($50-200) should be included in the quote. You\’ll receive a notice of inspection — be present or request the inspection report.',
     dfwNote: 'All DFW municipalities require permits for HVAC replacement. Dallas, Fort Worth, Plano, Frisco, McKinney — all inspect. No exceptions.',
   },
   certification: {
     rating: '✅ Industry Gold Standard for Technicians',
-    meaning: 'NATE (North American Technician Excellence) certification requires technicians to pass rigorous exams on HVAC installation and service. It\'s the most respected technician certification in the industry.',
+    meaning: 'NATE (North American Technician Excellence) certification requires technicians to pass rigorous exams on HVAC installation and service. It\’s the most respected technician certification in the industry.',
     expect: 'Ask to see NATE certification cards. Contractors with NATE techs typically charge fair rates and stand behind their work.',
-    dfwNote: 'In DFW\'s competitive market, top contractors use NATE certification as a differentiator — it\'s a real signal of commitment to quality.',
+    dfwNote: 'In DFW\’s competitive market, top contractors use NATE certification as a differentiator — it\’s a real signal of commitment to quality.',
   },
   pricing: {
     rating: '✅ Transparent and Accountable',
     meaning: 'A fully itemized estimate lists equipment model numbers, refrigerant type and charge, labor costs, permit fees, and warranty terms separately. This prevents surprises and enables apples-to-apples comparison.',
     expect: 'Equipment model number, SEER2 rating, refrigerant type, labor hours estimate, permit included/excluded, and warranty terms all spelled out.',
-    dfwNote: 'DFW has 500+ HVAC contractors. The best ones know transparent pricing wins business long-term — and they\'re right.',
+    dfwNote: 'DFW has 500+ HVAC contractors. The best ones know transparent pricing wins business long-term — and they\’re right.',
   },
   warranty: {
     rating: '✅ Service Above and Beyond',

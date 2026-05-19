@@ -23,7 +23,7 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
   ],
   contractors: [
     { title: 'How to Hire a Roofing Contractor in DFW', desc: '10 questions to ask before signing any roofing contract.', tag: 'Hiring' },
-    { title: 'Roofing License Requirements in Texas', desc: 'What Texas law requires — and what it doesn\'t.', tag: 'Legal' },
+    { title: 'Roofing License Requirements in Texas', desc: 'What Texas law requires — and what it doesn\’t.', tag: 'Legal' },
     { title: 'Roofing Contract Red Flags in Texas', desc: 'Assignment of benefits, waived deductibles, and other traps.', tag: 'Warning' },
     { title: 'Join ProLnk as a DFW Roofing Pro', desc: 'Get vetted leads with Charter membership and 5 income streams.', tag: '⭐ ProLnk' },
   ],

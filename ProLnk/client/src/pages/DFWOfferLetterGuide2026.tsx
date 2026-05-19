@@ -41,7 +41,7 @@ export default function DFWOfferLetterGuide2026() {
           {[
             ['💰 Price', 'Net proceeds after commissions and concessions'],
             ['✅ Certainty', 'Strong pre-approval, less contingencies = less risk'],
-            ['📅 Timing', 'Close date matching seller\'s move-out timeline'],
+            ['📅 Timing', 'Close date matching seller\’s move-out timeline'],
             ['🔑 Possession', 'Leaseback option (seller stays after close) is often a win-win'],
           ].map(([icon, desc]) => (
             <div key={icon} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.65rem' }}>

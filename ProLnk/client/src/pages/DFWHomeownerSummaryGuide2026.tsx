@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const homeownerTypes = [
   { id: 'new', label: '🏠 New Homeowner', tips: ['Start a Home Health Vault profile before your first repair', 'Water your foundation within 18" of slab daily in summer', 'Schedule HVAC tune-up every March before heat hits', 'Use ProLnk to get 3 bids before hiring any contractor', 'Document every repair with photos — protects resale value'] },
-  { id: 'established', label: '🏡 Established Owner', tips: ['Audit your foundation watering system this month', 'Check HVAC filter — replace if it's been over 30 days', 'Review your Home Health Vault — add recent repairs', 'Vet your next contractor on ProLnk before calling anyone', 'Pre-season HVAC service saves $800+ in emergency calls'] },
+  { id: 'established', label: '🏡 Established Owner', tips: ['Audit your foundation watering system this month', 'Check HVAC filter — replace if it’s been over 30 days', 'Review your Home Health Vault — add recent repairs', 'Vet your next contractor on ProLnk before calling anyone', 'Pre-season HVAC service saves $800+ in emergency calls'] },
   { id: 'investor', label: '💼 Property Investor', tips: ['Add all properties to Home Health Vault for portfolio health view', 'ProLnk Charter pros handle multi-property portfolios', 'Foundation checks on all DFW properties every 2 years', 'HVAC age over 12 years = plan a replacement budget now', 'Hail season: check roofs every April before insurance windows close'] },
 ];
 
@@ -11,7 +11,7 @@ const mustKnow = [
   { icon: '❄️', title: 'HVAC Tune-Up Every March', body: 'Before 100°F days hit, service your system. A $150 tune-up prevents a $4,000 emergency compressor replacement in July.' },
   { icon: '⛈️', title: 'Hail Season Prep (April–June)', body: 'DFW averages 10+ hail events per year. Check your roof in early April. Delays cost you your insurance window.' },
   { icon: '🔍', title: 'Vet Every Contractor on ProLnk', body: '70% of DFW homeowner regret stories start with hiring off a flyer. ProLnk Charter pros are vetted, reviewed, and accountable.' },
-  { icon: '🏦', title: 'Home Health Vault Protects Resale', body: 'Homes with documented repair histories sell 8–12% faster and command higher offers. Start your Vault today — it's free.' },
+  { icon: '🏦', title: 'Home Health Vault Protects Resale', body: 'Homes with documented repair histories sell 8–12% faster and command higher offers. Start your Vault today — it’s free.' },
 ];
 
 export default function DFWHomeownerSummaryGuide2026() {

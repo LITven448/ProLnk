@@ -14,7 +14,7 @@ export default function DFWCopperLinesetGuide() {
       urgency = '🔴 Replacement Required';
       include = '✅ Must include in HVAC replacement';
       cost = '$800–$2,200 for lineset replacement (varies by run length and attic routing)';
-      detail = 'Degraded insulation in DFW\'s 140°F+ attic conditions causes refrigerant-side heat gain that reduces system efficiency by 10–25%. Cracked or bare copper lines also risk refrigerant leaks. Never put a new system on a failed lineset.';
+      detail = 'Degraded insulation in DFW\’s 140°F+ attic conditions causes refrigerant-side heat gain that reduces system efficiency by 10–25%. Cracked or bare copper lines also risk refrigerant leaks. Never put a new system on a failed lineset.';
     } else if (condition === 'stiff' || y >= 10) {
       urgency = '🟡 Evaluate Before Deciding';
       include = '⚠️ Strongly consider including — ask your tech to inspect';

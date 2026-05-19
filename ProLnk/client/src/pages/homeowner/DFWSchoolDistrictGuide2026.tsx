@@ -181,7 +181,7 @@ export default function DFWSchoolDistrictGuide2026() {
               { icon: '🗺️', title: 'Boundaries ≠ City Limits', desc: 'School district boundaries do not follow city limits. A home in "Frisco" may be in Prosper ISD or Little Elm ISD. Always verify at schooldigger.com or the Texas Education Agency boundary lookup before making an offer.' },
               { icon: '🎓', title: 'Magnet Programs as an Alternative', desc: 'Lower-rated districts often have magnet or specialty programs (STEM, International Baccalaureate, Fine Arts) that rival top-district quality — and eliminate the price premium entirely.' },
               { icon: '🏫', title: 'Private School Option', desc: 'If you plan to use private school, the district rating matters less for your family but still affects resale value — buyers without private school plans will discount for a lower-rated district.' },
-              { icon: '🏡', title: 'The Resale Rule', desc: 'Buy in the best school district you can afford. You'll thank yourself at resale. Even when interest rates are high and the market is slow, homes in top-rated districts hold value better and sell faster than comparable homes outside those boundaries.' },
+              { icon: '🏡', title: 'The Resale Rule', desc: 'Buy in the best school district you can afford. You’ll thank yourself at resale. Even when interest rates are high and the market is slow, homes in top-rated districts hold value better and sell faster than comparable homes outside those boundaries.' },
             ].map(tip => (
               <div key={tip.title} style={{ background: '#0D2144', border: '1px solid #1E3A5F', borderRadius: 12, padding: 22 }}>
                 <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>

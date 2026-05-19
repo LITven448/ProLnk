@@ -14,7 +14,7 @@ const streams = [
     icon: '🔨',
     title: 'Job Commissions — Maximize Per-Job Value',
     tips: [
-      'Upload photos within 2 hours of job completion — it's the #1 quality signal the algorithm tracks.',
+      'Upload photos within 2 hours of job completion — it’s the #1 quality signal the algorithm tracks.',
       'Maintain 85%+ lead acceptance rate to stay in the top-tier dispatch pool.',
       'Storm response within 15 minutes earns premium dispatch priority.',
       'Target jobs $3,000+ — best commission per hour of your time.',
@@ -40,7 +40,7 @@ const streams = [
     tips: [
       'Each active recruit earns you $18–22/month in subscription overrides, forever.',
       'Focus on recruiting full-time pros, not side-giggers. Full-time pros stay active longer.',
-      'Your override continues as long as they're subscribed — prioritize recruit retention conversations.',
+      'Your override continues as long as they’re subscribed — prioritize recruit retention conversations.',
       '10 active recruits = $220+/month with zero ongoing work.',
     ],
     math: '10 recruits × $20/mo avg = $200/mo passive',
@@ -53,7 +53,7 @@ const streams = [
       'Use the TrustyPro homeowner link after every job. "Want to see what AI found about your home?" is the opener.',
       'This is a natural conversation — you just completed work on their home. Your credibility is at its peak.',
       'Each qualified homeowner referral pays $25–100 depending on service type.',
-      'The best time to share is during or immediately after the job — while you're still on-site.',
+      'The best time to share is during or immediately after the job — while you’re still on-site.',
     ],
     math: '5 referrals/mo × $75 avg = $375/mo',
   },

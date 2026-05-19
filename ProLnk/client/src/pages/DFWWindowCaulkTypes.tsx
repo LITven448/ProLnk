@@ -8,7 +8,7 @@ type ResultMap = Record<string, Record<string, Result>>;
 
 const results: ResultMap = {
   'Exterior Window Frame (Outside)': {
-    'Full DFW Sun / South or West Facing': { caulkType: '100% Silicone', product: 'Clear or color-matched 100% silicone (GE Supreme, Gorilla All-Conditions)', tips: 'Silicone handles DFW\'s extreme thermal expansion on south/west facades. Apply between 50–90°F. Tool within 5 minutes. Do not paint over silicone.', redoFrequency: 'Every 7–12 years (silicone outlasts latex 3:1 in DFW heat)' },
+    'Full DFW Sun / South or West Facing': { caulkType: '100% Silicone', product: 'Clear or color-matched 100% silicone (GE Supreme, Gorilla All-Conditions)', tips: 'Silicone handles DFW\’s extreme thermal expansion on south/west facades. Apply between 50–90°F. Tool within 5 minutes. Do not paint over silicone.', redoFrequency: 'Every 7–12 years (silicone outlasts latex 3:1 in DFW heat)' },
     'Shaded / North Facing': { caulkType: '100% Silicone or Siliconized Latex', product: 'Paintable siliconized latex is acceptable for shaded north-facing windows', tips: 'Lower UV exposure means latex-silicone blends perform adequately. Still prefer pure silicone for best longevity on DFW exteriors.', redoFrequency: 'Every 5–8 years' },
     'High Humidity Area': { caulkType: '100% Silicone (mold-resistant formula)', product: 'DAP Kwik Seal Plus or GE Sealants Kitchen & Bath silicone', tips: 'Mold-resistant silicone prevents black streaking on DFW exteriors near sprinkler zones or downspouts.', redoFrequency: 'Every 7–10 years' },
     'New Window Installation': { caulkType: '100% Silicone', product: 'Apply between window flange and house wrap / sheathing', tips: 'Caulk after flashing tape is installed. Do not rely on caulk alone for window-to-rough-opening sealing — flash first, then caulk exterior trim.', redoFrequency: 'Inspect at 5 years; redo at first sign of separation' },
@@ -91,7 +91,7 @@ export default function DFWWindowCaulkTypes() {
 
         <div style={{ display: 'grid', gap: '16px' }}>
           {[
-            { icon: '☀️', title: 'Why DFW Heat Destroys Latex Caulk', body: 'Exterior latex caulk exposed to DFW summer heat becomes brittle and cracks within 2–3 years on south or west-facing facades. Silicone maintains elasticity through DFW\'s full temperature range of 20°F–110°F.' },
+            { icon: '☀️', title: 'Why DFW Heat Destroys Latex Caulk', body: 'Exterior latex caulk exposed to DFW summer heat becomes brittle and cracks within 2–3 years on south or west-facing facades. Silicone maintains elasticity through DFW\’s full temperature range of 20°F–110°F.' },
             { icon: '🖌️', title: 'Silicone Cannot Be Painted', body: 'Pure silicone is not paintable. Use it on exterior joints where appearance is secondary. For painted interior trim, use paintable latex or siliconized latex. Painting over silicone causes paint peeling.' },
             { icon: '📅', title: 'DFW Annual Caulk Inspection', body: 'Check all window caulk joints each spring before storm season. Look for cracks, gaps, or separation from the frame. Catching failures early prevents water intrusion that leads to framing rot.' },
           ].map(card => (

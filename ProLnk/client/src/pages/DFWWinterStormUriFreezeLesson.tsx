@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const lessons = [
   { emoji: '🔵', title: 'Insulate Exterior Pipes', detail: 'Pipes on exterior walls and in attics with no heat are first to freeze. Foam pipe insulation costs $2/ft — the repair costs $2,000+.' },
-  { emoji: '🚰', title: 'Know Your Main Shutoff', detail: 'In Uri, many homeowners didn\'t know where their shutoff was. When pipes burst, every second counts. Find it now. Test it.' },
+  { emoji: '🚰', title: 'Know Your Main Shutoff', detail: 'In Uri, many homeowners didn\’t know where their shutoff was. When pipes burst, every second counts. Find it now. Test it.' },
   { emoji: '🔥', title: 'Backup Heat Source', detail: 'When the grid failed, homes lost heat for 4-5 days. A propane heater, wood stove, or generator keeps core rooms livable.' },
   { emoji: '⚡', title: 'Generator or Battery Backup', detail: 'A 3,500W generator runs a space heater, lights, and phone chargers. Whole-home battery backup (e.g. Powerwall) is the premium option.' },
   { emoji: '🏠', title: 'Pipes on Exterior Walls', detail: 'Kitchen and bathroom pipes on exterior walls burst most in Uri. Insulate under sinks and inside cabinets — open cabinet doors during freeze events.' },

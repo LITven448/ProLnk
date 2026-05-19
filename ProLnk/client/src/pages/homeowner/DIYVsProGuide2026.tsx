@@ -16,7 +16,7 @@ const projects: Project[] = [
     inspection: 'Required',
     license: 'Not required for own home',
     recommendation: 'DIY possible — but get the permit.',
-    note: 'You cannot do electrical work on someone else's home without a license. For your own home, pull the permit and pass inspection. Unpermitted electrical work will surface in a buyer's inspection and can kill a sale.',
+    note: 'You cannot do electrical work on someone else’s home without a license. For your own home, pull the permit and pass inspection. Unpermitted electrical work will surface in a buyer’s inspection and can kill a sale.',
   },
   {
     label: 'Plumbing',
@@ -32,7 +32,7 @@ const projects: Project[] = [
     inspection: 'Required',
     license: 'EPA 608 cert required for refrigerant',
     recommendation: 'Hire a pro for anything involving refrigerant.',
-    note: 'Refrigerant handling is federally regulated. EPA 608 certification is required regardless of whether it's your home. Ductwork, filter changes, and coil cleaning are fair DIY game.',
+    note: 'Refrigerant handling is federally regulated. EPA 608 certification is required regardless of whether it’s your home. Ductwork, filter changes, and coil cleaning are fair DIY game.',
   },
   {
     label: 'Roofing',
@@ -40,7 +40,7 @@ const projects: Project[] = [
     inspection: 'Sometimes required',
     license: 'Not required in most TX cities',
     recommendation: 'Hire a licensed roofer for insurance coverage.',
-    note: 'No TX state license for roofing. But your homeowner's insurance may deny claims for damage traced to unlicensed or DIY work. This is the catch most homeowners miss.',
+    note: 'No TX state license for roofing. But your homeowner’s insurance may deny claims for damage traced to unlicensed or DIY work. This is the catch most homeowners miss.',
   },
   {
     label: 'Painting / Flooring / Landscaping',
@@ -55,9 +55,9 @@ const projects: Project[] = [
 const costMoreItems = [
   'You need multiple service calls to fix your own mistake — the "DIY tax".',
   'You void a manufacturer or contractor warranty by working on the system yourself.',
-  'You can't get a permit signed off and must pay a contractor to redo the work legally.',
+  'You can’t get a permit signed off and must pay a contractor to redo the work legally.',
   'The project takes 10x longer than expected and you lose income from your own work.',
-  'A buyer's inspector flags unpermitted work and you negotiate a price reduction at closing.',
+  'A buyer’s inspector flags unpermitted work and you negotiate a price reduction at closing.',
 ];
 
 export default function DIYVsProGuide2026() {

@@ -29,7 +29,7 @@ const logData: Record<Stage, { label: string; template: string[]; whyItMatters: 
       'Condensate drain flushes and treatments',
       'DFW weather extremes and how system responded',
     ],
-    whyItMatters: 'The first year reveals your system\'s baseline. Problems that appear in year one are often warranty-covered — documented proof is required for claims.',
+    whyItMatters: 'The first year reveals your system\’s baseline. Problems that appear in year one are often warranty-covered — documented proof is required for claims.',
   },
   ongoing: {
     label: '🔄 Ongoing Maintenance',

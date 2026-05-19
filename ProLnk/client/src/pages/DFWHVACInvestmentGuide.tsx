@@ -18,9 +18,9 @@ const strategies: Record<string, { headline: string; roi: string; timeline: stri
       'A 10-year-old 10 SEER DFW system running 3,000 hours/year at $0.14/kWh costs approximately $1,400-1,800/year in electricity for cooling a 2,000 sq ft home.',
       'Replacing with a 20 SEER2 system cuts that to $700-900/year — saving $700-900 annually. System cost premium over minimum efficiency: $1,500-3,000.',
       'Federal tax credit: 25C allows 30% of cost up to $600 for qualifying high-efficiency equipment. Texas has no state income tax, so federal credits are the primary incentive.',
-      'DFW\'s long cooling season (May-October, 6+ months) generates more annual savings than the same upgrade in a northern climate. ROI in DFW is 30-40% better than the national average.',
+      'DFW\’s long cooling season (May-October, 6+ months) generates more annual savings than the same upgrade in a northern climate. ROI in DFW is 30-40% better than the national average.',
     ],
-    verdict: 'Strong investment. DFW\'s extreme cooling season maximizes efficiency savings. Act before May to avoid mid-summer emergency pricing.',
+    verdict: 'Strong investment. DFW\’s extreme cooling season maximizes efficiency savings. Act before May to avoid mid-summer emergency pricing.',
   },
   'Add High-Efficiency System': {
     headline: 'Premium efficiency pays back faster in DFW than anywhere in Texas',

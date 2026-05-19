@@ -6,7 +6,7 @@ const FAQ_ITEMS = [
     a: 'Yes, completely free. No credit card required, no hidden fees, no premium tiers. Homeowners always pay $0 to use TrustyPro.',
   },
   {
-    q: 'How does TrustyPro make money if homeowners don't pay?',
+    q: 'How does TrustyPro make money if homeowners don’t pay?',
     a: 'Contractors (our "Partners") pay a monthly subscription of $149/month plus a commission on jobs they close through TrustyPro. This funds the entire platform. Homeowners never contribute to this.',
   },
   {
@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
     a: 'Yes. Homeowner accounts have no commitment. You can close your account at any time and all your data will be removed from our systems within 30 days.',
   },
   {
-    q: 'What's the difference between TrustyPro and Angi or HomeAdvisor?',
+    q: 'What’s the difference between TrustyPro and Angi or HomeAdvisor?',
     a: 'Angi charges homeowners for premium lead access ($4–10 per request). HomeAdvisor charges contractors per lead whether the job closes or not. TrustyPro charges contractors only on successful job commissions — homeowners pay nothing and contractors only pay when they win work.',
   },
 ];
@@ -53,7 +53,7 @@ export default function TrustyProPricing() {
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#0f172a' }}>✅ What Homeowners Get for Free</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              ['🤖', 'Unlimited AI Home Scans', 'Instant visual analysis of your home's systems and condition'],
+              ['🤖', 'Unlimited AI Home Scans', 'Instant visual analysis of your home’s systems and condition'],
               ['🏠', 'Home Health Vault', 'Secure permanent record of your property history, repairs, and health data'],
               ['🔔', 'Maintenance Reminders', 'Seasonal service reminders based on your home age and systems'],
               ['⛈️', 'Storm Alerts', 'Real-time severe weather notifications with damage assessment'],

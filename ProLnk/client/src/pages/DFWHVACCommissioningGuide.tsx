@@ -33,7 +33,7 @@ const stages: Record<string, { title: string; items: { check: string; spec: stri
     items: [
       { check: 'Verify all electrical connections torqued', spec: 'Per manufacturer specs, no loose lugs', dfwNote: 'DFW heat causes thermal expansion — loose connections are a fire risk and common callback cause' },
       { check: 'Condensate drain test', spec: 'Water flows freely, no backup, float switch tested', dfwNote: 'DFW summers produce massive condensate — blocked drains cause ceiling damage monthly' },
-      { check: 'System cycling under load', spec: 'Minimum 10-minute runtime at design conditions', dfwNote: 'Short cycling in DFW summer means undersized or improperly charged system — don\'t sign off' },
+      { check: 'System cycling under load', spec: 'Minimum 10-minute runtime at design conditions', dfwNote: 'Short cycling in DFW summer means undersized or improperly charged system — don\’t sign off' },
       { check: 'Homeowner walkthrough complete', spec: 'Filter location, thermostat operation, drain pan location explained', dfwNote: 'DFW homeowners need to know condensate drain access — show them before you leave' },
     ],
   },
@@ -108,7 +108,7 @@ export default function DFWHVACCommissioningGuide() {
         <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>💰 Before You Sign Off in DFW</h2>
         {[
           { icon: '📄', tip: 'Request written commissioning report with actual measured values — not just "checked OK"' },
-          { icon: '🌡️', tip: 'TESP reading must be documented — if contractor refuses, that\'s a red flag' },
+          { icon: '🌡️', tip: 'TESP reading must be documented — if contractor refuses, that\’s a red flag' },
           { icon: '❄️', tip: 'Delta T and refrigerant charge must be measured at outdoor temps above 85°F for DFW accuracy' },
           { icon: '💧', tip: 'Test condensate drain with water before contractor leaves — not optional in DFW summer' },
           { icon: '🔁', tip: 'Watch system cycle at least once — minimum 10 minutes runtime confirms sizing is correct' },

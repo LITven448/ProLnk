@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const issues = [
   { issue: 'Water pooling against foundation after rain', emoji: '💧', cause: 'Negative grade — soil slopes toward house. DFW clay holds water and expands directly against foundation.', solution: 'Add soil to create 6-inch drop over first 10 feet away from house. Use non-expansive fill dirt, not DFW clay.', urgency: 'High' },
-  { issue: 'Foundation cracks appearing after dry summer', emoji: '🌵', cause: 'Extreme moisture loss in DFW clay causes soil shrinkage and foundation settlement. Grade alone won\'t fix active settlement.', solution: 'Maintain consistent soil moisture with soaker hoses during drought. Regrade after soil stabilizes.', urgency: 'High' },
+  { issue: 'Foundation cracks appearing after dry summer', emoji: '🌵', cause: 'Extreme moisture loss in DFW clay causes soil shrinkage and foundation settlement. Grade alone won\’t fix active settlement.', solution: 'Maintain consistent soil moisture with soaker hoses during drought. Regrade after soil stabilizes.', urgency: 'High' },
   { issue: 'Settling visible after landscaping work', emoji: '🌱', cause: 'New soil placed against house compacts over time. DFW annual cycle of wet/dry seasons accelerates settling.', solution: 'Expect annual touchup of grading — especially first 3 years after new landscaping or foundation work.', urgency: 'Medium' },
   { issue: 'Soil added above brick weep holes', emoji: '🧱', cause: 'Weep holes allow moisture to escape brick cavity. Burying them causes moisture to wick into wall, rot framing, and create mold.', solution: 'Never add soil above weep holes. Weep holes must remain exposed. Regrade using gravel or mulch below hole level.', urgency: 'Critical' },
-  { issue: 'French drain or swale needed', emoji: '🏞️', cause: 'Some DFW lots have grading challenges that soil alone can\'t fix — neighboring runoff, low-lying yards, or caliche layers below.', solution: 'Hire a grading contractor for French drain installation. Budget $2,000–$6,000 depending on scope and linear feet.', urgency: 'Varies' },
+  { issue: 'French drain or swale needed', emoji: '🏞️', cause: 'Some DFW lots have grading challenges that soil alone can\’t fix — neighboring runoff, low-lying yards, or caliche layers below.', solution: 'Hire a grading contractor for French drain installation. Budget $2,000–$6,000 depending on scope and linear feet.', urgency: 'Varies' },
 ];
 
 export default function DFWFoundationEarthwork2026() {

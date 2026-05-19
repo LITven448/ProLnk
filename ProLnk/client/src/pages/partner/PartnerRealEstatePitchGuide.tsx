@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SPECIALTIES = ['Buyer\'s Agent', 'Listing Agent', 'Both / General'];
+const SPECIALTIES = ['Buyer\’s Agent', 'Listing Agent', 'Both / General'];
 const MARKETS = ['Urban Core (Dallas/Fort Worth)', 'Suburbs (Plano, Frisco, Allen)', 'Luxury ($1M+)', 'First-Time Buyer Focus'];
 
 const pitchData: Record<string, Record<string, { approach: string; points: string[]; opportunity: string }>> = {
@@ -22,7 +22,7 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
     },
     'First-Time Buyer Focus': {
       approach: 'Confidence builder — first-time buyers are intimidated by homeownership. ProLnk removes the overwhelm.',
-      points: ['First-timers don't know any contractors; ProLnk is their safety net', 'You become the trusted advisor who set them up to succeed', 'High referral rate from first-timers who feel taken care of'],
+      points: ['First-timers don’t know any contractors; ProLnk is their safety net', 'You become the trusted advisor who set them up to succeed', 'High referral rate from first-timers who feel taken care of'],
       opportunity: 'Co-hosted homeowner 101 webinar — your brand + ProLnk education.',
     },
   },
@@ -39,8 +39,8 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
     },
     'Luxury ($1M+)': {
       approach: 'Premium positioning — luxury sellers expect white-glove staging support. ProLnk is the contractor layer.',
-      points: ['Luxury buyers do deep inspections; prep matters more', 'ProLnk's vetted pro network matches the quality expectation of the home', 'Documented maintenance history is a luxury selling point'],
-      opportunity: 'Featured listing agent on ProLnk's luxury partner showcase.',
+      points: ['Luxury buyers do deep inspections; prep matters more', 'ProLnk’s vetted pro network matches the quality expectation of the home', 'Documented maintenance history is a luxury selling point'],
+      opportunity: 'Featured listing agent on ProLnk’s luxury partner showcase.',
     },
     'First-Time Buyer Focus': {
       approach: 'Move-in ready focus — first-time buyers need properties ready to go. ProLnk ensures repairs are done right.',
@@ -51,17 +51,17 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
   'Both / General': {
     'Urban Core (Dallas/Fort Worth)': {
       approach: 'Full-cycle relationship pitch — you serve buyers and sellers. ProLnk adds value at every stage.',
-      points: ['Buyers: closing gift + ongoing resource', 'Sellers: pre-listing prep + inspection confidence', 'Your brand stays in clients\' homes for years via ProLnk'],
+      points: ['Buyers: closing gift + ongoing resource', 'Sellers: pre-listing prep + inspection confidence', 'Your brand stays in clients\’ homes for years via ProLnk'],
       opportunity: 'Dual co-marketing: buyer welcome kit + seller prep guide, both co-branded.',
     },
     'Suburbs (Plano, Frisco, Allen)': {
       approach: 'Community ambassador angle — position yourself as the agent who takes care of the whole neighborhood.',
       points: ['Suburb neighborhoods are relationship-dense; one happy client = 5 referrals', 'ProLnk gives you a repeatable client care system at zero cost', 'Annual home maintenance reminder = touchpoint that feels helpful, not salesy'],
-      opportunity: 'Neighborhood partner spotlight in ProLnk's local partner directory.',
+      opportunity: 'Neighborhood partner spotlight in ProLnk’s local partner directory.',
     },
     'Luxury ($1M+)': {
       approach: 'Concierge differentiation — luxury clients expect you to know people. ProLnk is your secret weapon.',
-      points: ['Curated access to Charter-tier pros signals quality you endorse', 'Buyers and sellers both benefit — doubles your value proposition', 'Very few luxury agents offer this — it's a genuine differentiator'],
+      points: ['Curated access to Charter-tier pros signals quality you endorse', 'Buyers and sellers both benefit — doubles your value proposition', 'Very few luxury agents offer this — it’s a genuine differentiator'],
       opportunity: 'Priority placement in ProLnk luxury partner network (DFW launch only).',
     },
     'First-Time Buyer Focus': {

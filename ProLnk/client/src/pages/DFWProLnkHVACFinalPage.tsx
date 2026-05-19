@@ -9,7 +9,7 @@ const roles = [
 
 const commitments: Record<string, { headline: string; promises: string[]; invitation: string }> = {
   homeowner: {
-    headline: 'ProLnk\'s Commitment to You as a DFW Homeowner',
+    headline: 'ProLnk\’s Commitment to You as a DFW Homeowner',
     promises: [
       '🛡️ We will only connect you with vetted, credentialed HVAC professionals — no fly-by-nights',
       '⚡ We will match you with available pros within hours, not days, even in peak August',
@@ -21,7 +21,7 @@ const commitments: Record<string, { headline: string; promises: string[]; invita
     invitation: 'Join ProLnk — the network DFW homeowners built, vetted, and trust.',
   },
   pro: {
-    headline: 'ProLnk\'s Commitment to You as a DFW HVAC Professional',
+    headline: 'ProLnk\’s Commitment to You as a DFW HVAC Professional',
     promises: [
       '🏅 We will protect your reputation by only listing credentialed, reviewed professionals',
       '📱 We will send you qualified leads — homeowners who understand the value of proper service',
@@ -33,7 +33,7 @@ const commitments: Record<string, { headline: string; promises: string[]; invita
     invitation: 'Join ProLnk — the professional network that values your craft as much as you do.',
   },
   scout: {
-    headline: 'ProLnk\'s Commitment to You as a Community Scout',
+    headline: 'ProLnk\’s Commitment to You as a Community Scout',
     promises: [
       '💼 We will build income streams that reward your network and relationships',
       '🌟 We will give you tools to serve your community with real value, not just referrals',
@@ -45,7 +45,7 @@ const commitments: Record<string, { headline: string; promises: string[]; invita
     invitation: 'Join ProLnk Scout — build real income connecting your community to trusted HVAC care.',
   },
   investor: {
-    headline: 'ProLnk\'s Commitment to DFW\'s Built Environment',
+    headline: 'ProLnk\’s Commitment to DFW\’s Built Environment',
     promises: [
       '🏗️ We will build the data infrastructure that makes DFW homes more valuable and trackable',
       '📊 We will create service history records that inform appraisals and transactions',
@@ -54,7 +54,7 @@ const commitments: Record<string, { headline: string; promises: string[]; invita
       '🌆 We will expand to every major DFW ZIP code within 18 months of launch',
       '🤝 We will partner with builders, investors, and property managers to raise the standard of HVAC care across the metro',
     ],
-    invitation: 'Partner with ProLnk — the platform building DFW\'s home services infrastructure.',
+    invitation: 'Partner with ProLnk — the platform building DFW\’s home services infrastructure.',
   },
 };
 

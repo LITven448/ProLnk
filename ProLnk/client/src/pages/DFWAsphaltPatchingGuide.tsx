@@ -13,7 +13,7 @@ function getRepairRecommendation(crack: string, season: string, area: string) {
   if (isHot) {
     return {
       method: 'Wait or Early Morning Only',
-      note: 'DFW summer heat (100°F+) makes asphalt pliable — sealants won\'t cure properly. Work before 8am or wait for fall.',
+      note: 'DFW summer heat (100°F+) makes asphalt pliable — sealants won\’t cure properly. Work before 8am or wait for fall.',
       material: isLarge ? 'Hot mix patch + professional crew' : 'Rubberized crack filler',
       cost: bigArea ? '$800–$2,400' : '$150–$600',
     };

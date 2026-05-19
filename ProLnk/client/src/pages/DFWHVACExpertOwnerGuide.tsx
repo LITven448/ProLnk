@@ -12,10 +12,10 @@ const mastery: Record<string, { title: string; insights: string[] }> = {
     insights: [
       '🌡️ You understand the refrigeration cycle: compression → condensation → expansion → evaporation',
       '💨 You know airflow dynamics — CFM requirements, static pressure limits, duct sizing principles',
-      '⚡ You\'re literate in electrical basics: capacitor failure symptoms, contactor wear, blower motor draws',
+      '⚡ You\’re literate in electrical basics: capacitor failure symptoms, contactor wear, blower motor draws',
       '🌧️ You understand humidity management — DFW humidity swings make latent load as critical as sensible load',
       '🔧 You know the difference between a tune-up, a diagnostic, a repair, and a replacement consult',
-      '📐 You\'ve reviewed a Manual J load calculation and understand what it means for your home',
+      '📐 You\’ve reviewed a Manual J load calculation and understand what it means for your home',
     ],
   },
   diagnostic: {
@@ -24,7 +24,7 @@ const mastery: Record<string, { title: string; insights: string[] }> = {
       '🌡️ You interpret thermostat data: temperature differential, cycle time, recovery rate all tell a story',
       '💧 You spot early refrigerant issues: low delta-T, iced coils, hissing sounds — before a tech visit',
       '📊 You track energy usage patterns — a 15% efficiency drop triggers investigation, not assumption',
-      '🔊 You know your system\'s sound signatures: normal hum vs. capacitor buzz vs. contactor chatter',
+      '🔊 You know your system\’s sound signatures: normal hum vs. capacitor buzz vs. contactor chatter',
       '🌿 Post-DFW storm, you assess condenser fin damage, check drain line integrity, verify airflow',
       '📱 You use ProLnk to log observations and get expert interpretation before committing to a repair',
     ],
@@ -34,10 +34,10 @@ const mastery: Record<string, { title: string; insights: string[] }> = {
     insights: [
       '📈 You track replacement cost curves — DFW HVAC prices rise 6-8% annually; timing matters',
       '🏠 You factor HVAC into home value: an efficient, documented system adds $5,000–$10,000 at appraisal',
-      '⚡ You\'ve modeled a heat pump conversion — DFW\'s mild winters make hybrid heat pump ROI 4–6 years',
-      '☀️ You\'ve assessed solar + battery storage integration with your HVAC load profile',
+      '⚡ You\’ve modeled a heat pump conversion — DFW\’s mild winters make hybrid heat pump ROI 4–6 years',
+      '☀️ You\’ve assessed solar + battery storage integration with your HVAC load profile',
       '🤝 You negotiate multi-year maintenance contracts with performance SLAs — not just "come when called"',
-      '🔗 You use ProLnk\'s network as a market intelligence layer — comparing quotes, vetting credentials',
+      '🔗 You use ProLnk\’s network as a market intelligence layer — comparing quotes, vetting credentials',
     ],
   },
 };

@@ -27,7 +27,7 @@ const neighborhoods = [
     lake: 'Lake Ray Hubbard (west shore)',
     trailMiles: 28,
     activities: ['kayaking', 'fishing', 'cycling'],
-    parks: ['Wet 'N Wild (closed)', 'Harry Myers Regional'],
+    parks: ['Wet ’N Wild (closed)', 'Harry Myers Regional'],
     golf: 1,
     highlight: 'Affordable lake access — best price-to-lake ratio in DFW',
   },

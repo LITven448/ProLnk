@@ -71,7 +71,7 @@ export default function DFWHomeBuyerGuide() {
               },
               {
                 title: 'Budget for maintenance (1–2% of home value per year)',
-                detail: 'On a $380K home, that's $3,800–$7,600 per year in expected maintenance. In DFW, with clay soil, extreme weather, and hard water, budget closer to 2%. This is not optional money — it's home preservation capital.'
+                detail: 'On a $380K home, that’s $3,800–$7,600 per year in expected maintenance. In DFW, with clay soil, extreme weather, and hard water, budget closer to 2%. This is not optional money — it’s home preservation capital.'
               },
             ].map((item, i) => (
               <div
@@ -104,7 +104,7 @@ export default function DFWHomeBuyerGuide() {
               { icon: '❄️', title: 'HVAC Inspection', timing: 'Within 90 days', detail: 'DFW HVAC systems run 8–10 months per year. Have a certified tech inspect coils, refrigerant, drain lines, and filter situation. Identify issues before summer heat hits. Cost: $80–$150.' },
               { icon: '🔥', title: 'Test Smoke & CO Detectors', timing: 'Day 1', detail: 'Test every detector. Replace batteries even if they seem fine. Texas law requires interconnected smoke alarms in new construction — verify older homes have adequate coverage.' },
               { icon: '🔒', title: 'Change All Locks', timing: 'Day 1', detail: 'The sellers gave you their set of keys. You have no idea how many copies exist. Rekeying all locks costs $20–$40 per lock. Consider adding a smart lock for the front door ($150–$300).' },
-              { icon: '🔧', title: 'Locate All Shutoffs', timing: 'First week', detail: 'Water main shutoff, individual fixture shutoffs, gas shutoff at meter, main electrical panel location and labeling. A burst pipe found fast is a $500 repair. Found slow, it's a $15,000 remediation.' },
+              { icon: '🔧', title: 'Locate All Shutoffs', timing: 'First week', detail: 'Water main shutoff, individual fixture shutoffs, gas shutoff at meter, main electrical panel location and labeling. A burst pipe found fast is a $500 repair. Found slow, it’s a $15,000 remediation.' },
             ].map((item) => (
               <div key={item.title} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 10, padding: '22px 20px' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>

@@ -7,10 +7,10 @@ export default function DFWHVACMiniSplitHeating2026() {
   const getGuide = () => {
     if (!situation) { setResult('Please select your heating situation.'); return; }
     const guides: Record<string, string> = {
-      primary: '🟢 GREAT FIT FOR DFW: Mini-splits as primary heat work well in DFW. Our winters average 40°F lows — well within mini-split efficiency range (above 35°F). Standard mini-splits (HSPF 9+) run at peak efficiency. You\'ll see 2-3x efficiency vs. electric resistance heat. Keep existing gas backup for rare sub-35°F nights.',
-      supplement: '✅ IDEAL USE CASE: Mini-splits as supplemental heat for specific zones (sunroom, garage, addition) is one of the best DFW applications. Heat only the rooms you use without running whole-home systems. Very cost-effective for DFW\'s mild winter heating needs.',
-      extreme: '🌨️ COLD CLIMATE UNITS RECOMMENDED: For DFW\'s rare extreme cold events (December 2022-style), a cold-climate mini-split like Mitsubishi H2i operates to -13°F. Standard units may lock out below 30-32°F. If your home is all-electric and you want resilience, spec a cold-climate unit. The premium is worth it for peace of mind.',
-      replace: '🔄 EVALUATE CAREFULLY: Full gas furnace replacement with mini-splits in DFW requires careful load calculation. Gas is typically cheaper per BTU in DFW. Mini-splits make sense for homes without existing ductwork, or if you\'re adding zones. Get a Manual J load calculation from a licensed DFW HVAC tech before committing.'
+      primary: '🟢 GREAT FIT FOR DFW: Mini-splits as primary heat work well in DFW. Our winters average 40°F lows — well within mini-split efficiency range (above 35°F). Standard mini-splits (HSPF 9+) run at peak efficiency. You\’ll see 2-3x efficiency vs. electric resistance heat. Keep existing gas backup for rare sub-35°F nights.',
+      supplement: '✅ IDEAL USE CASE: Mini-splits as supplemental heat for specific zones (sunroom, garage, addition) is one of the best DFW applications. Heat only the rooms you use without running whole-home systems. Very cost-effective for DFW\’s mild winter heating needs.',
+      extreme: '🌨️ COLD CLIMATE UNITS RECOMMENDED: For DFW\’s rare extreme cold events (December 2022-style), a cold-climate mini-split like Mitsubishi H2i operates to -13°F. Standard units may lock out below 30-32°F. If your home is all-electric and you want resilience, spec a cold-climate unit. The premium is worth it for peace of mind.',
+      replace: '🔄 EVALUATE CAREFULLY: Full gas furnace replacement with mini-splits in DFW requires careful load calculation. Gas is typically cheaper per BTU in DFW. Mini-splits make sense for homes without existing ductwork, or if you\’re adding zones. Get a Manual J load calculation from a licensed DFW HVAC tech before committing.'
     };
     setResult(guides[situation] || '');
   };

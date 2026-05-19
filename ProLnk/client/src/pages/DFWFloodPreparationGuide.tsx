@@ -44,7 +44,7 @@ export default function DFWFloodPreparationGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>💧 DFW Flood Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[['🌧️ Growth Problem', 'DFW added 1.3M people in 10 years — concrete and pavement overwhelm aging drainage infrastructure'], ['⚡ Flash Flood Speed', 'DFW creeks can rise 20+ feet in under an hour — Turn Around, Don\'t Drown applies even on local roads'], ['🏠 False Security', '25% of NFIP claims come from Zone X (low risk) — location on a map doesn\'t make you immune'], ['📊 Record Events', 'May 2015: 11 inches in 24 hours. 2022: $3B in DFW flood losses. 2024: multiple hundred-year events in one season']].map(([t, d]) => (
+            {[['🌧️ Growth Problem', 'DFW added 1.3M people in 10 years — concrete and pavement overwhelm aging drainage infrastructure'], ['⚡ Flash Flood Speed', 'DFW creeks can rise 20+ feet in under an hour — Turn Around, Don\’t Drown applies even on local roads'], ['🏠 False Security', '25% of NFIP claims come from Zone X (low risk) — location on a map doesn\’t make you immune'], ['📊 Record Events', 'May 2015: 11 inches in 24 hours. 2022: $3B in DFW flood losses. 2024: multiple hundred-year events in one season']].map(([t, d]) => (
               <div key={t as string} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 6 }}>{t}</div>
                 <div style={{ fontSize: 13, color: '#94a3b8' }}>{d}</div>

@@ -44,7 +44,7 @@ const envPlans: Record<string, Record<string, string[]>> = {
     tune: [
       '📈 SEER2 maintenance: dirty systems lose 5–15% of rated efficiency annually',
       '⚡ Coil cleaning: fouled evaporator coil is #1 cause of efficiency loss in DFW dusty environment',
-      '🌱 Filter maintenance: MERV-13 at right change interval doesn\'t sacrifice airflow efficiency',
+      '🌱 Filter maintenance: MERV-13 at right change interval doesn\’t sacrifice airflow efficiency',
       '💰 Annual tune-up maintains rated SEER2 — worth $200–300 to preserve system efficiency',
     ],
   },

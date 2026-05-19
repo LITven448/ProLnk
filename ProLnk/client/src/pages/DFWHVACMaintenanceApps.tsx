@@ -47,19 +47,19 @@ const needs: { id: string; label: string; appId: string; howTo: string }[] = [
     id: 'history',
     label: '📋 I want to track all my service history in one place',
     appId: 'homezada',
-    howTo: 'Use HomeZada\'s Maintenance Log. Create an HVAC appliance entry, then add each service visit with date, tech name, cost, and what was done. Upload invoices as attachments.',
+    howTo: 'Use HomeZada\’s Maintenance Log. Create an HVAC appliance entry, then add each service visit with date, tech name, cost, and what was done. Upload invoices as attachments.',
   },
   {
     id: 'booking',
     label: '🛠️ I want reminders AND easy access to DFW pros',
     appId: 'prolnk',
-    howTo: 'ProLnk\'s tracker sends DFW-specific alerts in April (pre-season tune-up), June (summer prep), and October (fall check). One tap connects you to available local pros.',
+    howTo: 'ProLnk\’s tracker sends DFW-specific alerts in April (pre-season tune-up), June (summer prep), and October (fall check). One tap connects you to available local pros.',
   },
   {
     id: 'documents',
     label: '📄 I need to store HVAC manuals and warranty docs',
     appId: 'homezada',
-    howTo: 'HomeZada\'s document vault is ideal. Upload your equipment manual, original invoice, and warranty card. Tag them with your HVAC system for instant retrieval during service calls.',
+    howTo: 'HomeZada\’s document vault is ideal. Upload your equipment manual, original invoice, and warranty card. Tag them with your HVAC system for instant retrieval during service calls.',
   },
 ];
 

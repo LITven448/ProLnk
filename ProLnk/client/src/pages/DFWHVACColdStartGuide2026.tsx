@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const symptoms = [
   { id: 'smell', label: '💨 Burning Smell from Vents', tip: 'Normal — dust burning off heat exchanger after months dormant. Should clear in 15–30 minutes. If it persists or smells like burning plastic/rubber, shut off and call tech.' },
-  { id: 'nostart', label: '❌ Furnace Won\'t Ignite', tip: 'Check if crankcase heater has been on. Heat pumps need crankcase heater running 24/7 — if power was cut, wait 24 hours before starting. Cold oil can damage compressor.' },
+  { id: 'nostart', label: '❌ Furnace Won\’t Ignite', tip: 'Check if crankcase heater has been on. Heat pumps need crankcase heater running 24/7 — if power was cut, wait 24 hours before starting. Cold oil can damage compressor.' },
   { id: 'heatpump', label: '🔁 Heat Pump Not Heating', tip: 'DFW heat pumps struggle below 35°F. Aux/emergency heat should kick in automatically. Check that aux heat strips are functional before first cold snap each year.' },
-  { id: 'capacitor', label: '⚡ AC/Furnace Hums but Won\'t Start', tip: 'Capacitor failure — common in DFW after sitting idle. Capacitors weaken in extreme heat. Humming + no startup = likely failed start or run capacitor. Inexpensive fix.' },
+  { id: 'capacitor', label: '⚡ AC/Furnace Hums but Won\’t Start', tip: 'Capacitor failure — common in DFW after sitting idle. Capacitors weaken in extreme heat. Humming + no startup = likely failed start or run capacitor. Inexpensive fix.' },
   { id: 'board', label: '🖥️ Thermostat Shows Heat but Nothing Happens', tip: 'Control board confusion after long dormancy is rare but real. Try cycling power at the breaker. If error codes appear, document them before calling. Check ProLnk for verified HVAC techs.' },
 ];
 

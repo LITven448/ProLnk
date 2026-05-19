@@ -26,7 +26,7 @@ const systems = [
 const quizQuestions = [
   {
     id: 'budget',
-    question: '💰 What\'s your monthly security budget?',
+    question: '💰 What\’s your monthly security budget?',
     options: [{ label: 'Under $15/mo', value: 'low' }, { label: '$15–$35/mo', value: 'mid' }, { label: '$35+/mo (full protection)', value: 'high' }]
   },
   {
@@ -104,7 +104,7 @@ export default function HomeSecurityGuide() {
             {[
               {
                 type: 'Professionally Monitored', icon: '🛡️', color: '#22c55e',
-                pros: ['24/7 dispatch if alarm triggers', 'Works even if you\'re unreachable', 'Faster police response tier'],
+                pros: ['24/7 dispatch if alarm triggers', 'Works even if you\’re unreachable', 'Faster police response tier'],
                 cons: ['Monthly fee required', 'Long contracts possible'],
               },
               {
@@ -115,7 +115,7 @@ export default function HomeSecurityGuide() {
               {
                 type: 'DIY Only', icon: '🔧', color: '#60a5fa',
                 pros: ['Lowest cost', 'No subscriptions', 'Cameras + locks only'],
-                cons: ['No alarm response', 'Cameras deter, don\'t respond', 'Most risk'],
+                cons: ['No alarm response', 'Cameras deter, don\’t respond', 'Most risk'],
               },
             ].map(m => (
               <div key={m.type} style={{ background: '#1e2d45', borderRadius: '10px', padding: '1.2rem', border: `1px solid ${m.color}` }}>

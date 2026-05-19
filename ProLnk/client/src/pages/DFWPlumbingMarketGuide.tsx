@@ -32,7 +32,7 @@ const serviceData: Record<string, { conditions: string; strategy: string; priceR
     conditions: '🟢 Best time to establish a relationship. Non-emergency means leverage to vet thoroughly.',
     strategy: 'Find a plumber before you need one. Pre-winter inspection (October) is smart in DFW. Ask about maintenance plans.',
     priceRange: '$85–$200 inspection / maintenance visit',
-    uriNote: 'Winter preparedness matters in DFW. February freezes happen. A trusted plumber\'s cell number is worth more than any app when pipes burst at 2am.',
+    uriNote: 'Winter preparedness matters in DFW. February freezes happen. A trusted plumber\’s cell number is worth more than any app when pipes burst at 2am.',
   },
 };
 

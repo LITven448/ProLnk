@@ -88,7 +88,7 @@ export default function BasementWaterproofingGuide() {
               },
               {
                 type: 'Slab Foundation',
-                problem: 'Water intrusion at slab edges common in older homes. The slab itself isn't the issue — the perimeter joint is.',
+                problem: 'Water intrusion at slab edges common in older homes. The slab itself isn’t the issue — the perimeter joint is.',
                 solution: 'Exterior grading correction + interior slab edge sealing with hydraulic cement.',
                 icon: '🏗️',
               },

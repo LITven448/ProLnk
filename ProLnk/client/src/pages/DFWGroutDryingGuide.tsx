@@ -26,7 +26,7 @@ export default function DFWGroutDryingGuide() {
         exterior: { trafficTime: '48–72 hrs', cureTime: '28 days', sealTime: '21 days', hardWater: 'Low impact outdoors', tip: 'Unsanded rarely used outdoors — if used for pool tile: DFW chlorine + minerals accelerate grout degradation' },
       },
       mild: {
-        shower: { trafficTime: '24–48 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'Plan sealing at 28 days before summer', tip: 'Install in fall: grout is set before DFW\'s hard water summer season begins' },
+        shower: { trafficTime: '24–48 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'Plan sealing at 28 days before summer', tip: 'Install in fall: grout is set before DFW\’s hard water summer season begins' },
         floor: { trafficTime: '24 hrs', cureTime: '28 days', sealTime: '28 days', hardWater: 'Moderate', tip: 'Optimal conditions for unsanded grout — low humidity gives clean tool lines and minimal shrinkage' },
         exterior: { trafficTime: '48 hrs', cureTime: '28 days', sealTime: '21 days', hardWater: 'Low', tip: 'Fall installation recommended for any exterior tile work in DFW' },
       },

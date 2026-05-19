@@ -125,7 +125,7 @@ export default function GeneratorGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, marginBottom: 60 }}>
           {[
             { icon: '🔥', fuel: 'Natural Gas', verdict: 'Most Reliable', color: '#34d399', desc: 'Gas lines usually remain pressurized during ice storms unlike electric grid. If your home has gas service, this is your best standby fuel.' },
-            { icon: '🛢️', fuel: 'Propane', verdict: 'Good Backup', color: '#fbbf24', desc: 'Requires a large tank ($400–$1,000 to fill). Stores indefinitely. Great if you're not on the gas grid. Order early before storms.' },
+            { icon: '🛢️', fuel: 'Propane', verdict: 'Good Backup', color: '#fbbf24', desc: 'Requires a large tank ($400–$1,000 to fill). Stores indefinitely. Great if you’re not on the gas grid. Order early before storms.' },
             { icon: '⛽', fuel: 'Gasoline', verdict: 'Use Cautiously', color: '#f87171', desc: 'Degrades within 30–90 days without stabilizer. Creates fire hazard when stockpiled. Shortages occur during emergencies. Least preferred.' },
           ].map(f => (
             <div key={f.fuel} style={{ background: '#1c1a28', border: `1px solid ${f.color}33`, borderRadius: 12, padding: 24 }}>

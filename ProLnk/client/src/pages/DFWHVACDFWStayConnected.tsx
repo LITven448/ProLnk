@@ -16,13 +16,13 @@ const prefs = [
   {
     label: 'Get Reminders',
     icon: '🔔',
-    detail: 'Seasonal HVAC reminders help DFW homeowners never miss a tune-up, filter change, or storm prep window. Subscribe to smart reminders tailored to DFW\'s climate calendar.',
+    detail: 'Seasonal HVAC reminders help DFW homeowners never miss a tune-up, filter change, or storm prep window. Subscribe to smart reminders tailored to DFW\’s climate calendar.',
     action: 'Sign up with your email at prolnk.io — reminder preferences come next.',
   },
   {
     label: 'Join the Community',
     icon: '🏘️',
-    detail: 'DFW homeowners who share HVAC knowledge build stronger neighborhoods. The ProLnk community connects you with people in your ZIP code who\'ve been through the same challenges.',
+    detail: 'DFW homeowners who share HVAC knowledge build stronger neighborhoods. The ProLnk community connects you with people in your ZIP code who\’ve been through the same challenges.',
     action: 'Join the ProLnk waitlist and opt into the community beta.',
   },
 ];

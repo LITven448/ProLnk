@@ -8,7 +8,7 @@ export default function DFWFoundationWeeklyCheck2026() {
   const actions: Record<string, string> = {
     doors_fine: 'Doors opening and closing smoothly — foundation stable this week. Log as "nominal" in ProLnk Vault. Continue Friday soil moisture check.',
     doors_stiff: 'Stiff door indicates soil moisture change. Check perimeter soil immediately — likely too dry. Water foundation 30 min per side, recheck doors in 48 hours. If persists 2 weeks, call ProLnk for evaluation.',
-    cracks_none: 'No new wall cracks — great sign. Check again Wednesday. Take baseline photos of existing cracks monthly to track if they're growing.',
+    cracks_none: 'No new wall cracks — great sign. Check again Wednesday. Take baseline photos of existing cracks monthly to track if they’re growing.',
     cracks_new: 'New crack found. Photograph with a coin for scale. Measure width with a ruler and record. Hairline (< 1/16 inch) = monitor weekly. Wider or horizontal = call ProLnk today.',
     soil_moist: 'Soil moisture adequate. Confirm 6-inch depth stays moist but not soggy. No watering needed this cycle. Check again Friday.',
     soil_dry: 'Soil is dry more than 6 inches down — foundation at risk of differential settlement. Water each side 20-30 minutes with soaker hose. Recheck in 24 hours. DFW clay shrinks fast in heat.',

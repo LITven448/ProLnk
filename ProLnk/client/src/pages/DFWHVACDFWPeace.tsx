@@ -20,7 +20,7 @@ const stressLevels = [
       '✅ Review your last service report and flag anything unresolved',
       '✅ Set calendar reminders for filter changes every 60 days',
       '✅ Confirm your contractor offers 24/7 emergency service',
-      '✅ Know your system's warranty status and what it covers',
+      '✅ Know your system’s warranty status and what it covers',
     ],
   },
   {
@@ -28,7 +28,7 @@ const stressLevels = [
     emoji: '😊',
     description: 'Mostly calm — your system is maintained and you have a plan',
     solutions: [
-      '✅ You're ahead of 80% of DFW homeowners — keep it up',
+      '✅ You’re ahead of 80% of DFW homeowners — keep it up',
       '✅ Use ProLnk to compare your current contractor vs. top-rated alternatives',
       '✅ Add your system to Home Health Vault for long-term tracking',
       '✅ Share your peace-of-mind approach with neighbors and earn referrals',

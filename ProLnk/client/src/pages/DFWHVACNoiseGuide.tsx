@@ -56,7 +56,7 @@ const DIAG: Record<NoiseKey, Record<TimingKey, DiagEntry>> = {
     startup: { cause: 'Compressor or capacitor struggling to start', urgency: '⚠️ Call Soon', urgencyColor: '#F59E0B', action: 'A loud hum at startup can mean a weak capacitor. Capacitors are inexpensive — get it tested.', diy: false },
     running: { cause: 'Normal transformer hum (low) or capacitor issue (loud)', urgency: '⚠️ Have Checked', urgencyColor: '#F59E0B', action: 'Soft electrical hum is normal. Loud buzzing = capacitor or contactor. Call a tech to test.', diy: false },
     shutoff: { cause: 'Capacitor discharging — usually normal', urgency: '✅ Monitor', urgencyColor: '#10B981', action: 'Brief hum at shutoff is normal. If it lasts more than a second or two, mention it at your next service.', diy: true },
-    always: { cause: 'Failing capacitor or loose electrical connection', urgency: '🚨 Call Soon', urgencyColor: '#EF4444', action: 'Constant humming/buzzing = electrical issue. Don\'t ignore — capacitor failure can damage the compressor.', diy: false },
+    always: { cause: 'Failing capacitor or loose electrical connection', urgency: '🚨 Call Soon', urgencyColor: '#EF4444', action: 'Constant humming/buzzing = electrical issue. Don\’t ignore — capacitor failure can damage the compressor.', diy: false },
   },
   hissing: {
     startup: { cause: 'Refrigerant equalizing between high/low side — normal', urgency: '✅ Normal', urgencyColor: '#10B981', action: 'Brief hiss at startup is normal pressure equalization. No action needed.', diy: true },

@@ -58,7 +58,7 @@ const emergencies = [
       'Evacuate everyone immediately — do not stop to gather belongings',
       'Do NOT flip any light switches',
       'Do NOT use your phone inside the home',
-      'Call 911 from outside or neighbor\'s house',
+      'Call 911 from outside or neighbor\’s house',
       'Call Atmos Energy: 1-888-286-6700',
     ],
     dontDo: 'Do NOT re-enter until cleared by fire department.',

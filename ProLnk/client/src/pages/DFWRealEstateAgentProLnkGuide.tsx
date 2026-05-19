@@ -10,7 +10,7 @@ const streams = [
 const faqs = [
   { q: 'Does this conflict with my real estate license?', a: 'No. ProLnk referral income is classified as marketing compensation, not a real estate commission. Consult your broker to confirm compliance with your brokerage agreement.' },
   { q: 'When do I get paid?', a: 'Origination rights pay monthly as long as homes you enrolled remain active. Referral commissions pay within 30 days of a confirmed match.' },
-  { q: 'How do I onboard a home?', a: 'After a closing, invite your buyer to register their new home in ProLnk\'s Home Health Vault. Takes 3 minutes and locks in your origination rights permanently.' },
+  { q: 'How do I onboard a home?', a: 'After a closing, invite your buyer to register their new home in ProLnk\’s Home Health Vault. Takes 3 minutes and locks in your origination rights permanently.' },
 ];
 
 export default function DFWRealEstateAgentProLnkGuide() {

@@ -9,7 +9,7 @@ const INCOME_STREAMS = [
 ];
 
 const TRADE_PATHS: Record<string, { fit: string; income: string; start: string }> = {
-  hvac: { fit: 'Perfect — HVAC is DFW's highest-demand trade year-round', income: '$4,200–$9,800/mo at Tier 3+', start: 'Apply as a Field Pro and start with residential HVAC leads in your DFW zip codes' },
+  hvac: { fit: 'Perfect — HVAC is DFW’s highest-demand trade year-round', income: '$4,200–$9,800/mo at Tier 3+', start: 'Apply as a Field Pro and start with residential HVAC leads in your DFW zip codes' },
   plumber: { fit: 'Excellent — hard water and aging pipes keep demand constant', income: '$3,500–$8,200/mo at Tier 3+', start: 'Join as a Field Pro; ProLnk routes urgent leak and installation jobs first' },
   electrician: { fit: 'Strong — panel upgrades and EV chargers are surging in DFW suburbs', income: '$3,800–$9,000/mo at Tier 3+', start: 'Apply as a Field Pro; specialize in EV and panel work for premium job routing' },
   roofer: { fit: 'Great — DFW hail season creates surge demand every spring', income: '$5,000–$12,000/mo seasonal', start: 'Join before hail season; ProLnk routes storm assessments during surge periods' },

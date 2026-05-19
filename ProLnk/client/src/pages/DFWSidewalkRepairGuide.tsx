@@ -31,7 +31,7 @@ export default function DFWSidewalkRepairGuide() {
     const dt = DAMAGE_TYPES.find(x => x.id === damage);
     const rd = REPAIR_DETAILS[dt.repair];
     const responsibility = ownership === 'city_adjacent'
-      ? 'Contact your city first. In DFW: Dallas requires homeowners to repair adjacent sidewalks. Fort Worth repairs its own. Plano, Frisco, and McKinney vary. Check with your city's public works department before hiring anyone.'
+      ? 'Contact your city first. In DFW: Dallas requires homeowners to repair adjacent sidewalks. Fort Worth repairs its own. Plano, Frisco, and McKinney vary. Check with your city’s public works department before hiring anyone.'
       : ownership === 'private'
       ? 'This is fully your responsibility. Obtain permits if required — DFW municipalities typically require permits for sidewalk replacement over 50 sq ft.'
       : 'Look for a sidewalk easement on your property survey. The plat map at your county appraisal district will show public ROW boundaries.';
@@ -52,7 +52,7 @@ export default function DFWSidewalkRepairGuide() {
           {[
             { icon: '🏛️', title: 'City vs Homeowner — DFW Varies', desc: 'Dallas: homeowners responsible for adjacent sidewalks. Fort Worth: city repairs its sidewalks. Plano, McKinney, Frisco: check individually. Always verify before paying — some DFW cities have repair programs or cost-share arrangements.' },
             { icon: '🌍', title: 'Clay Heave — DFW Specific', desc: 'Blackland Prairie clay expands when wet and contracts when dry, lifting sidewalk panels seasonally. Unlike tree root heave, clay heave can sometimes be addressed with mudjacking and drainage improvements.' },
-            { icon: '🌳', title: 'Tree Root Responsibility', desc: 'If a city street tree's roots caused the damage, the city may be responsible. Document root-to-tree connection with photos before repair. DFW cities have settled sidewalk injury claims.' },
+            { icon: '🌳', title: 'Tree Root Responsibility', desc: 'If a city street tree’s roots caused the damage, the city may be responsible. Document root-to-tree connection with photos before repair. DFW cities have settled sidewalk injury claims.' },
             { icon: '♿', title: 'ADA Compliance', desc: 'Sidewalks adjacent to public ways must meet ADA standards: max 1/4" vertical change at joints, 2% cross-slope max, 5% running slope max. Non-compliant repairs create liability.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#112240', borderRadius: 10, padding: '16px 20px', border: '1px solid #1e3a5f', display: 'flex', gap: 16, alignItems: 'flex-start' }}>

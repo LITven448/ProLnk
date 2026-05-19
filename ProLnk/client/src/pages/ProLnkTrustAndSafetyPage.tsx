@@ -19,7 +19,7 @@ const concerns = [
     concern: 'What if they damage my home?',
     emoji: '🛡️',
     mechanism: 'Insurance Confirmation',
-    detail: 'General liability ($1M minimum) and workers\' comp are verified with certificate of insurance uploaded to the platform. We contact the insurer directly to confirm active coverage.',
+    detail: 'General liability ($1M minimum) and workers\’ comp are verified with certificate of insurance uploaded to the platform. We contact the insurer directly to confirm active coverage.',
     ongoing: 'Policy expiration dates tracked — contractors removed from active matching 14 days before lapse.',
   },
   {

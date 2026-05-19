@@ -171,10 +171,10 @@ export default function DFWPropertyInvestmentGuide() {
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#111827', marginBottom: '24px' }}>🔗 ProLnk + TrustyPro for Real Estate Investors</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             {[
-              { emoji: '🏠', title: 'AI Property Monitoring', desc: 'Add your investment properties to TrustyPro vault. AI monitors condition remotely so you don't need to be on-site to know your properties are being maintained.' },
-              { emoji: '⚡', title: 'Fast Contractor Access', desc: 'ProLnk's vetted contractor network means maintenance requests get filled fast — critical for tenant satisfaction and turnover minimization.' },
+              { emoji: '🏠', title: 'AI Property Monitoring', desc: 'Add your investment properties to TrustyPro vault. AI monitors condition remotely so you don’t need to be on-site to know your properties are being maintained.' },
+              { emoji: '⚡', title: 'Fast Contractor Access', desc: 'ProLnk’s vetted contractor network means maintenance requests get filled fast — critical for tenant satisfaction and turnover minimization.' },
               { emoji: '💰', title: 'Partner Income Opportunity', desc: 'ProLnk partners earn commission income from referring other pros and homeowners. Your investment income + platform income = diversified cash flow.' },
-              { emoji: '📊', title: 'Home Health Data', desc: 'TrustyPro's home health scores give you objective condition data at sale, supporting your asking price and accelerating due diligence for buyers.' },
+              { emoji: '📊', title: 'Home Health Data', desc: 'TrustyPro’s home health scores give you objective condition data at sale, supporting your asking price and accelerating due diligence for buyers.' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '12px', padding: '24px' }}>
                 <div style={{ fontSize: '28px', marginBottom: '8px' }}>{item.emoji}</div>

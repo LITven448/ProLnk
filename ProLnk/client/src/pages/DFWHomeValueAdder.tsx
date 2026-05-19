@@ -39,7 +39,7 @@ const improvements: Record<TierKey, Array<{ name: string; cost: string; valueAdd
     { name: 'Full guest house / casita', cost: '$100,000–$250,000', valueAdd: '$80,000–$180,000', roi: '75–85%', note: 'DFW luxury buyers with multi-gen households value separate guest quarters highly' },
     { name: 'Full landscape architecture', cost: '$50,000–$150,000', valueAdd: '$40,000–$120,000', roi: '75–85%', note: 'Magazine-quality landscaping is table stakes at this DFW tier' },
     { name: 'Home theater (dedicated room)', cost: '$40,000–$120,000', valueAdd: '$30,000–$80,000', roi: '70–80%', note: 'Custom built-out theater adds genuine wow factor for luxury buyers' },
-    { name: 'Resort-style pool complex', cost: '$100,000–$300,000', valueAdd: '$60,000–$180,000', roi: '60–75%', note: 'At luxury tier, it\'s expected — but differentiating with grotto/lazy river adds more' },
+    { name: 'Resort-style pool complex', cost: '$100,000–$300,000', valueAdd: '$60,000–$180,000', roi: '60–75%', note: 'At luxury tier, it\’s expected — but differentiating with grotto/lazy river adds more' },
     { name: 'Whole-home automation (Crestron)', cost: '$50,000–$150,000', valueAdd: '$40,000–$100,000', roi: '70–80%', note: 'Full integration including climate, security, AV — expected by luxury DFW buyers' },
   ],
 };

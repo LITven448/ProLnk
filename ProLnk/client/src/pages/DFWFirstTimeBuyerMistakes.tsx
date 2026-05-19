@@ -6,7 +6,7 @@ const mistakes = [
     label: 'Skipping the home inspection',
     triggers: ['trying to win bidding war', 'buying new construction'],
     risk: 'High',
-    detail: 'In DFW\'s competitive market, buyers waive inspections to win. This can mean inheriting $20K–$80K in hidden repairs. Always get an inspection — even on new builds.',
+    detail: 'In DFW\’s competitive market, buyers waive inspections to win. This can mean inheriting $20K–$80K in hidden repairs. Always get an inspection — even on new builds.',
     fix: 'Make your offer strong in other ways (price, earnest money, flexible close). Never waive inspection.',
   },
   {
@@ -14,7 +14,7 @@ const mistakes = [
     label: 'Touring homes before getting pre-approved',
     triggers: ['just browsing', 'not sure about budget yet'],
     risk: 'High',
-    detail: 'DFW homes sell in days. Without pre-approval, sellers won\'t take you seriously and you risk heartbreak over homes you can\'t qualify for.',
+    detail: 'DFW homes sell in days. Without pre-approval, sellers won\’t take you seriously and you risk heartbreak over homes you can\’t qualify for.',
     fix: 'Get pre-approved with a lender before your first showing. Know your max budget.',
   },
   {
@@ -31,7 +31,7 @@ const mistakes = [
     triggers: ['buying in older neighborhood', 'love the look of the home'],
     risk: 'High',
     detail: 'North Texas clay soil expands and contracts with moisture. Foundation issues are endemic and can cost $5K–$40K+. Look for prior repairs, cracks, and sticking doors.',
-    fix: 'Get a structural engineer\'s report separately from the general inspection on any home over 15 years old.',
+    fix: 'Get a structural engineer\’s report separately from the general inspection on any home over 15 years old.',
   },
   {
     id: 'flood',
@@ -46,7 +46,7 @@ const mistakes = [
     label: 'Underestimating DFW property taxes',
     triggers: ['comparing to other states', 'focused only on mortgage payment'],
     risk: 'High',
-    detail: 'Texas has no state income tax but property taxes average 2.0–2.5% of assessed value. On a $390K home that\'s $7,800–$9,750/yr or $650–$813/mo added to your payment.',
+    detail: 'Texas has no state income tax but property taxes average 2.0–2.5% of assessed value. On a $390K home that\’s $7,800–$9,750/yr or $650–$813/mo added to your payment.',
     fix: 'Always calculate the full PITI payment (Principal + Interest + Taxes + Insurance) when budgeting.',
   },
   {
@@ -70,7 +70,7 @@ const mistakes = [
     label: 'Forgetting to budget for closing costs',
     triggers: ['maxing out savings for down payment'],
     risk: 'Medium',
-    detail: 'Closing costs in Texas run 2–5% of the loan amount — on a $390K home, that\'s $7,800–$19,500 due at closing in addition to your down payment.',
+    detail: 'Closing costs in Texas run 2–5% of the loan amount — on a $390K home, that\’s $7,800–$19,500 due at closing in addition to your down payment.',
     fix: 'Budget 3–4% of purchase price for closing costs. Ask your lender for a Loan Estimate early.',
   },
   {

@@ -16,7 +16,7 @@ const vettingChecklist = [
   ['📋', 'Check TPEA Registration', 'Foundation companies must be registered with the Texas Residential Construction Commission (TRCC). Verify before signing.'],
   ['💰', 'Get 3+ Bids', 'Foundation repair pricing varies 2–3x for the same job. Never accept first bid.'],
   ['🔍', 'Ask About Lifetime Warranty', 'Most reputable companies offer transferable lifetime warranties. Confirm what voids it.'],
-  ['⚠️', 'Understand the Conflict of Interest', 'Foundation companies profit from larger jobs. An independent engineer\'s diagnosis is always more trustworthy for scope of work.'],
+  ['⚠️', 'Understand the Conflict of Interest', 'Foundation companies profit from larger jobs. An independent engineer\’s diagnosis is always more trustworthy for scope of work.'],
   ['📅', 'Timing Matters', 'Avoid repairs in peak summer drought — soil is too dry and compressed. Fall/winter often better for pier placement.'],
 ];
 

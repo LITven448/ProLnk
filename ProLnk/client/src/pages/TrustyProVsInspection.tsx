@@ -156,7 +156,7 @@ export default function TrustyProVsInspection() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
               { step: '1', label: 'Buying', desc: 'Traditional inspection for legal due diligence and negotiation', color: '#fbbf24' },
-              { step: '2', label: 'Move-In', desc: 'TrustyPro baseline scan to establish your home's starting condition', color: '#34d399' },
+              { step: '2', label: 'Move-In', desc: 'TrustyPro baseline scan to establish your home’s starting condition', color: '#34d399' },
               { step: '3', label: 'Annually', desc: 'TrustyPro yearly scan to track changes and plan maintenance', color: '#60a5fa' },
               { step: '4', label: 'After Storms', desc: 'TrustyPro immediate scan to detect storm damage early', color: '#a78bfa' },
             ].map(s => (

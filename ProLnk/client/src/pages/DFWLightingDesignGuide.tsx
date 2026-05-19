@@ -61,7 +61,7 @@ const lightingPlans: Record<RoomType, {
     accent: 'Landscape uplighting on trees + pathway lights + pool lighting',
     recommended: ['Weatherproof ceiling fan + light', 'String lights on patio (mandatory)', 'Landscape uplighting (3–5 fixtures)', 'Smart timer for path lights'],
     cost: '$2,000 – $12,000',
-    dfwNote: 'DFW outdoor living runs 9+ months. Outdoor lighting is not optional — it\'s an extension of your living space. The ROI on outdoor lighting in DFW rivals kitchen remodels.',
+    dfwNote: 'DFW outdoor living runs 9+ months. Outdoor lighting is not optional — it\’s an extension of your living space. The ROI on outdoor lighting in DFW rivals kitchen remodels.',
   },
 };
 

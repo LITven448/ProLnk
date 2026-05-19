@@ -46,7 +46,7 @@ const recommendations: Record<string, Record<string, Rec[]>> = {
       { service: 'Landscape refresh (mature trees + formal beds)', multiplier: '1.8× → $25,000–$55,000', note: 'Formal HP aesthetic' },
     ],
     '$150K–$300K': [
-      { service: 'Kitchen + butler's pantry expansion', multiplier: '1.6× → $130,000–$220,000', note: 'Full structural if wall removal needed' },
+      { service: 'Kitchen + butler’s pantry expansion', multiplier: '1.6× → $130,000–$220,000', note: 'Full structural if wall removal needed' },
       { service: 'Media room / home theater build-out', multiplier: '1.9× → $50,000–$90,000', note: 'Acoustic treatment, 4K projection, riser seating' },
       { service: 'Guest suite renovation (full bath + sitting)', multiplier: '1.5× → $45,000–$80,000', note: 'Hotel-quality finishes' },
       { service: 'Smart home full integration', multiplier: '1.7× → $45,000–$80,000', note: 'Control4, Lutron, whole-home' },
@@ -67,7 +67,7 @@ const recommendations: Record<string, Record<string, Rec[]>> = {
     ],
     '$75K–$150K': [
       { service: 'Full HVAC replacement (3–4 units)', multiplier: '1.5× → $35,000–$65,000', note: 'Multiple units, zoned control required' },
-      { service: 'Secondary kitchen / butler's pantry build', multiplier: '1.6× → $40,000–$80,000', note: 'Full appliance package, custom cabinetry' },
+      { service: 'Secondary kitchen / butler’s pantry build', multiplier: '1.6× → $40,000–$80,000', note: 'Full appliance package, custom cabinetry' },
       { service: 'Whole-home generator (whole-house standby)', multiplier: '1.4× → $25,000–$45,000', note: 'Natural gas, automatic transfer switch' },
       { service: 'Wine cellar + cigar room', multiplier: '2.0× → $35,000–$70,000', note: 'Climate-controlled, humidor system' },
     ],

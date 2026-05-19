@@ -24,7 +24,7 @@ export default function DFWElectricHeatStripGuide() {
     else sizing = '20+ kW — large DFW home or all-electric primary heat setup';
     const detail = systemType === 'primary'
       ? 'Using heat strips as primary heat in DFW is costly but manageable given the short heating season. DFW averages only 30–40 days per year below 35°F. The real risk is the occasional ice storm or hard freeze when strips run continuously for 48–72 hours and usage spikes dramatically.'
-      : 'Heat pumps in DFW efficiently handle most winter days (COP of 2.5–3.5 down to ~25°F). Heat strips activate as backup only when temps drop below the heat pump\'s balance point — usually 17–22°F in DFW. This is rare but happens 5–15 days per year.';
+      : 'Heat pumps in DFW efficiently handle most winter days (COP of 2.5–3.5 down to ~25°F). Heat strips activate as backup only when temps drop below the heat pump\’s balance point — usually 17–22°F in DFW. This is rare but happens 5–15 days per year.';
     setResult({ sizing, annualCost: `$${annualCost}/year`, hpComparison: `Heat pump equivalent: $${hpCost}/year (saves ~$${savings}/yr)`, detail });
   }
 

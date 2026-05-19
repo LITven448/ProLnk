@@ -13,7 +13,7 @@ export default function DFWHVACAirSealAttic2026() {
 
   const priorities: Record<string, string> = {
     'blown-insulation': 'HIGH PRIORITY: Blown-in insulation hides air gaps. Pull back insulation at top plates, seal wiring penetrations with foam, caulk recessed light housings, then re-cover. Attic hatch needs weatherstripping + rigid foam lid.',
-    'batts': 'MODERATE: Batts don't conform to gaps. Seal top plates and wiring holes first with canned foam, then re-lay batts. Check whole-house fan opening — often completely unsealed.',
+    'batts': 'MODERATE: Batts don’t conform to gaps. Seal top plates and wiring holes first with canned foam, then re-lay batts. Check whole-house fan opening — often completely unsealed.',
     'spray-foam': 'LOW (Encapsulated): If fully encapsulated, air sealing is built-in. Inspect penetrations at HVAC boots and electrical boxes. Verify foam meets roofline completely with no gaps.',
     'no-insulation': 'CRITICAL: No insulation = no protection. Full air seal required before adding insulation. Every top plate, joist bay, wiring hole, recessed light, and attic hatch must be sealed first — skipping this wastes insulation investment.',
   };

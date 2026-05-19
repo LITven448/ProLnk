@@ -71,7 +71,7 @@ const PHASES = [
     tasks: [
       'Review all offer terms: price, earnest money, option fee, closing date',
       'Confirm title company is ordered and survey is on file',
-      'Prepare for buyer\'s inspection — repair requests are likely',
+      'Prepare for buyer\’s inspection — repair requests are likely',
       'Negotiate repair requests strategically — credits vs. actual repairs',
       'Confirm appraisal is scheduled and provide comps to appraiser',
       'Begin your own move — assume closing date is firm',

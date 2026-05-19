@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const guides = [
   { condition: 'Ponding water visible', icon: '💧', priority: 'URGENT', steps: ['Ponding >48hrs accelerates membrane deterioration — act immediately', 'DFW clay soil causes irregular settlement creating low spots — grade correction may be needed', 'Install crickets or tapered insulation to redirect drainage to drains/scuppers'] },
-  { condition: 'Blistering or bubbling', icon: '🔵', priority: 'High', steps: ['Moisture trapped under modified bitumen — common in DFW humidity fluctuations', 'Small blisters: monitor but don'''t puncture unless actively leaking', 'Large blisters or open breaks: cut out, dry, patch with torch-down membrane'] },
+  { condition: 'Blistering or bubbling', icon: '🔵', priority: 'High', steps: ['Moisture trapped under modified bitumen — common in DFW humidity fluctuations', 'Small blisters: monitor but don''’t puncture unless actively leaking', 'Large blisters or open breaks: cut out, dry, patch with torch-down membrane'] },
   { condition: 'Seam separation', icon: '↔️', priority: 'High', steps: ['Modified bitumen seam failure — most common DFW low-slope failure point', 'Re-torch open seams or apply lap caulk rated for DFW temps (-20°F to 200°F)', 'Check for pattern — widespread seam issues indicate membrane end-of-life'] },
   { condition: 'Routine maintenance', icon: '🔧', priority: 'Preventive', steps: ['Clear drains and scuppers every 6 months — DFW storms dump debris', 'Inspect flashing at parapet walls, penetrations, and HVAC curbs twice yearly', 'Apply reflective coating every 5-7 years to reduce DFW UV degradation'] },
 ];

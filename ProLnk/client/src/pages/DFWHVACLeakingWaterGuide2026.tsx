@@ -56,7 +56,7 @@ export default function DFWHVACLeakingWaterGuide2026() {
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>🚨 Call a Pro Immediately If</h2>
-          {['Water stain appearing on ceiling', 'Secondary drain pan is full of water', 'DIY flush didn't clear the clog', 'Mold smell near air handler'].map((item, i) => (
+          {['Water stain appearing on ceiling', 'Secondary drain pan is full of water', 'DIY flush didn’t clear the clog', 'Mold smell near air handler'].map((item, i) => (
             <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', color: '#ff6b6b', fontWeight: 600 }}>🚨 {item}</div>
           ))}
           <div style={{ marginTop: 20, background: '#F5E642', borderRadius: 8, padding: 16, textAlign: 'center' }}>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const APPS = [
   { name: 'TaskEasy', emoji: '🌿', strength: 'Recurring lawn care, automated scheduling', cost: '$29–$79/visit', dfwNote: 'Good coverage in suburban DFW zip codes', best: ['lawn', 'recurring'] },
   { name: 'Thumbtack', emoji: '📌', strength: 'Wide trade variety, competitive quotes', cost: 'Varies by job', dfwNote: 'Large DFW contractor pool but quality varies', best: ['onetime', 'compare'] },
-  { name: 'HomeZada', emoji: '🏠', strength: 'Home inventory, maintenance calendar, document storage', cost: '$5–$15/mo', dfwNote: 'Great for tracking your DFW home's maintenance history', best: ['tracking', 'organize'] },
+  { name: 'HomeZada', emoji: '🏠', strength: 'Home inventory, maintenance calendar, document storage', cost: '$5–$15/mo', dfwNote: 'Great for tracking your DFW home’s maintenance history', best: ['tracking', 'organize'] },
   { name: 'BrightNest', emoji: '✨', strength: 'Personalized maintenance reminders, DIY tips', cost: 'Free', dfwNote: 'Seasonal reminders tuned to DFW climate helpful', best: ['diy', 'reminders'] },
   { name: 'ProLnk', emoji: '🔗', strength: 'Vetted DFW pros + Home Health Vault + income opportunity', cost: 'Free for homeowners', dfwNote: 'Built specifically for DFW market with local pro vetting', best: ['vetted', 'onetime', 'track', 'income'] },
 ];

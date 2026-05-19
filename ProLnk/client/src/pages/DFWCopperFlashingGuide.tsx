@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const flashingData: Record<string, Record<string, { recommendation: string; cost: string; lifespan: string; notes: string }>> = {
   'Chimney flashing': {
-    'Premium / long-term': { recommendation: 'Copper flashing', cost: '$400–800 for full chimney', lifespan: '50–100 years', notes: 'Copper is the gold standard for DFW chimneys. Develops patina that actually seals better over time. DFW thermal expansion is handled naturally by copper\'s flexibility. Compatible with all DFW masonry types.' },
+    'Premium / long-term': { recommendation: 'Copper flashing', cost: '$400–800 for full chimney', lifespan: '50–100 years', notes: 'Copper is the gold standard for DFW chimneys. Develops patina that actually seals better over time. DFW thermal expansion is handled naturally by copper\’s flexibility. Compatible with all DFW masonry types.' },
     'Budget / standard': { recommendation: 'Galvanized steel flashing', cost: '$150–300 for full chimney', lifespan: '15–25 years in DFW', notes: 'Galvanized corrodes faster in DFW humidity. Expect rust bleeding onto masonry after 10 years. Repaint with zinc-rich primer every 5 years to extend life. Fine for starter homes or before selling.' },
   },
   'Valley flashing': {
-    'Premium / long-term': { recommendation: 'Copper valley flashing', cost: '$8–15 per linear foot installed', lifespan: '50+ years', notes: 'Copper valleys are extremely low-maintenance. DFW high-wind events (hail, 60+ mph gusts) — copper\'s flexibility prevents cracking. Does not stain shingles. Best choice if staying in home 10+ years.' },
+    'Premium / long-term': { recommendation: 'Copper valley flashing', cost: '$8–15 per linear foot installed', lifespan: '50+ years', notes: 'Copper valleys are extremely low-maintenance. DFW high-wind events (hail, 60+ mph gusts) — copper\’s flexibility prevents cracking. Does not stain shingles. Best choice if staying in home 10+ years.' },
     'Budget / standard': { recommendation: 'Aluminum or galvanized valley flashing', cost: '$3–6 per linear foot installed', lifespan: '10–20 years in DFW', notes: 'Aluminum reacts with some DFW concrete tile shingles — verify compatibility. Galvanized is safe with all shingle types but rusts. Adequate for most DFW budget re-roofs.' },
   },
   'Step flashing (siding to roof)': {

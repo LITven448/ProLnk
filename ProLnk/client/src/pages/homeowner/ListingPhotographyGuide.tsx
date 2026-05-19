@@ -87,7 +87,7 @@ export default function ListingPhotographyGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
               ['✅ Professional Photographer', 'Always for listings $300K+, vacant homes, or staged homes. No exceptions.', true],
-              ['📱 iPhone / DIY DSLR', 'Acceptable for rentals under $1,200/mo or bare land listings where interior photos aren't the selling point.', false],
+              ['📱 iPhone / DIY DSLR', 'Acceptable for rentals under $1,200/mo or bare land listings where interior photos aren’t the selling point.', false],
               ['🚁 Drone', 'Always for lots over 1 acre, homes with pools, scenic views, or acreage listings. Adds perceived value.', true],
             ].map(([label, desc, recommended]) => (
               <div key={String(label)} style={{ padding: 16, borderRadius: 8, border: `1px solid ${recommended ? '#166534' : '#334155'}`, backgroundColor: recommended ? '#0c2118' : '#0f172a' }}>

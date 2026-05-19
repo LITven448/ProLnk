@@ -15,12 +15,12 @@ const springItems = [
 ];
 
 const questionsByIssue: Record<string, string[]> = {
-  'High energy bills': ['What is the system\'s SEER rating — is it still operating at spec?', 'Can you measure static pressure to find airflow restrictions?', 'Is the refrigerant charge within 2% of manufacturer spec?'],
+  'High energy bills': ['What is the system\’s SEER rating — is it still operating at spec?', 'Can you measure static pressure to find airflow restrictions?', 'Is the refrigerant charge within 2% of manufacturer spec?'],
   'Uneven cooling (hot rooms)': ['Can you do a room-by-room temperature split test?', 'Are there any duct leaks or disconnections in unconditioned spaces?', 'Is the blower speed properly matched to my duct system?'],
   'System froze up or iced over': ['What caused the freeze — refrigerant, airflow, or thermostat fault?', 'Is the evaporator coil clean or showing microbial growth?', 'Is the drain pan clear and does the safety float switch work?'],
-  'Strange noises': ['Can you identify the noise source — blower, compressor, or refrigerant flow?', 'Are refrigerant line insulation and vibration mounts intact?', 'Is the contactor chattering — a sign it\'s about to fail?'],
+  'Strange noises': ['Can you identify the noise source — blower, compressor, or refrigerant flow?', 'Are refrigerant line insulation and vibration mounts intact?', 'Is the contactor chattering — a sign it\’s about to fail?'],
   'Humidity problems indoors': ['Is my system undersized or oversized for my current home load?', 'Should I add a whole-home dehumidifier before DFW summer?', 'Are any supply/return air leaks pulling unconditioned attic air in?'],
-  'No issues last year': ['What\'s the projected lifespan of my current system?', 'Is there anything you\'re watching that could become an issue this summer?', 'Is my system operating at original efficiency or has it degraded?'],
+  'No issues last year': ['What\’s the projected lifespan of my current system?', 'Is there anything you\’re watching that could become an issue this summer?', 'Is my system operating at original efficiency or has it degraded?'],
 };
 
 export default function DFWHVACSpringTuneUp() {

@@ -6,7 +6,7 @@ const faqs = [
   { q: 'How does ProLnk make money?', a: 'Pros pay a match fee only when they are connected to a homeowner who hires them. No lead fees, no subscriptions.' },
   { q: 'What trades are on ProLnk?', a: 'Plumbing, electrical, HVAC, roofing, painting, landscaping, flooring, general contracting, and 40+ more categories.' },
   { q: 'Is my personal information safe?', a: 'Your contact details are never shared until you approve a match. ProLnk is CCPA and GDPR compliant.' },
-  { q: 'What if I'm not satisfied with the pro?', a: 'ProLnk has a dispute resolution process backed by our Satisfaction Guarantee program.' },
+  { q: 'What if I’m not satisfied with the pro?', a: 'ProLnk has a dispute resolution process backed by our Satisfaction Guarantee program.' },
   { q: 'Can I use ProLnk for commercial properties?', a: 'Currently ProLnk focuses on residential homes. Commercial services are on our 2027 roadmap.' },
 ];
 

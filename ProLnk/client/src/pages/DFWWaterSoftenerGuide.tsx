@@ -26,7 +26,7 @@ function getCostComparison(hardness: number) {
 
 function getRecommendation(hardness: number) {
   if (hardness >= 17) return { type: 'Dual-Tank Salt-Based Softener', reason: 'Extremely hard water requires maximum capacity. Dual tank ensures no downtime during regeneration.' };
-  if (hardness >= 14) return { type: 'Salt-Based Ion Exchange Softener', reason: 'Standard solution for DFW\'s hard water. Most cost-effective for whole-home protection.' };
+  if (hardness >= 14) return { type: 'Salt-Based Ion Exchange Softener', reason: 'Standard solution for DFW\’s hard water. Most cost-effective for whole-home protection.' };
   return { type: 'Salt-Free Conditioner', reason: 'Moderate hardness — a conditioner prevents scale without the ongoing salt cost.' };
 }
 

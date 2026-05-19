@@ -7,7 +7,7 @@ const ROOMS = [
     items: [
       'Check for diagonal cracks in brick mortar (clay soil shifting)',
       'Inspect interior drywall for stair-step cracks near corners',
-      'Look for doors or windows that stick or won\'t close properly',
+      'Look for doors or windows that stick or won\’t close properly',
       'Examine pier-and-beam crawl space for moisture or rot (if applicable)',
       'Check slab perimeter for separation from brick veneer',
       'Walk perimeter and note soil pulling away from foundation',

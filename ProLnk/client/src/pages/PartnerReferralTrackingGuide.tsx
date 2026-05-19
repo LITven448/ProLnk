@@ -10,7 +10,7 @@ const shareChannels = [
 ];
 
 const messages = [
-  { label: 'High performer', text: '"Just earned $312 from a job I already did. Here's how:"' },
+  { label: 'High performer', text: '"Just earned $312 from a job I already did. Here’s how:"' },
   { label: 'Value add', text: '"I just started using a platform that sends me pre-screened homeowner leads. Worth a look."' },
   { label: 'Homeowner angle', text: '"This tool shows the full health history of your home. Pretty interesting — [link]"' },
 ];
@@ -101,7 +101,7 @@ export default function PartnerReferralTrackingGuide() {
               'Test different channels — track which drives the most signups from your dashboard',
               'Time your shares — post after completing a job with good before/after photos',
               'Be specific — stories about real earnings outperform generic "join this platform" messages',
-              'Follow up — if someone clicked but didn't sign up, a personal message converts 3x better',
+              'Follow up — if someone clicked but didn’t sign up, a personal message converts 3x better',
             ].map((tip, i) => (
               <div key={i} style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 8, padding: '14px 18px', display: 'flex', gap: 12 }}>
                 <div style={{ color: '#6366f1', fontWeight: 800, fontSize: 16 }}>{i + 1}</div>

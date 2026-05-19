@@ -24,7 +24,7 @@ const benefitRows: BenefitRow[] = [
 
 const charterPerks = [
   { emoji: '🔒', title: '$149/Month — Forever', desc: 'Locked by contract. When ProLnk raises prices (and it will), you never pay more. Founding price, forever.' },
-  { emoji: '📈', title: '25% Commission Floor', desc: 'You start where others peak. Standard members begin at 12%. You\'re already at 25% on day one and climb the same way they do.' },
+  { emoji: '📈', title: '25% Commission Floor', desc: 'You start where others peak. Standard members begin at 12%. You\’re already at 25% on day one and climb the same way they do.' },
   { emoji: '🌲', title: '4-Level Cascade Network', desc: 'Earn 7%, 4%, 2%, and 1% down 4 levels of your network. Standard members only earn 1 level deep.' },
   { emoji: '🏛️', title: '1.5% Permanent Origination Rights', desc: 'Every home you add to the Home Health Vault generates 1.5% of platform fees from that address — forever. Standard: 0.25%.' },
   { emoji: '🏅', title: 'Charter Founding Status', desc: 'Permanent record as one of the first 25 Charter members. This is the ProLnk equivalent of being a series seed investor.' },

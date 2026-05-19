@@ -12,7 +12,7 @@ const vsComparison = [
 const whenToHire = [
   { trigger: 'Large Claims ($15K+)', detail: 'Public adjuster fees (10-15%) are covered by the increase in settlement — often net positive', rec: '✅ Strongly Recommend' },
   { trigger: 'Denied Claim', detail: 'PAs specialize in reversing denials — they know policy language and common denial tactics', rec: '✅ Strongly Recommend' },
-  { trigger: 'Underpaid Settlement', detail: 'If contractor estimate exceeds insurer\'s by 20%+, a PA can recover the difference and more', rec: '✅ Recommend' },
+  { trigger: 'Underpaid Settlement', detail: 'If contractor estimate exceeds insurer\’s by 20%+, a PA can recover the difference and more', rec: '✅ Recommend' },
   { trigger: 'Total Loss', detail: 'Complex rebuild calculations, code upgrades, and ALE claims benefit from professional advocacy', rec: '✅ Strongly Recommend' },
   { trigger: 'Small Claims Under $5K', detail: 'PA fees may exceed benefit. Negotiate directly or hire a contractor to help scope', rec: '⚠️ Often Not Worth It' },
   { trigger: 'Straightforward Approval', detail: 'If insurer approved full contractor estimate, a PA adds little value', rec: '❌ Not Needed' },
@@ -94,7 +94,7 @@ export default function DFWPublicAdjusterGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginBottom: 20 }}>
             {[
               { label: 'Standard Fee Range', value: '10–15% of settlement', note: 'Most charge 12–13% in DFW' },
-              { label: 'Minimum Claim Size', value: '$10,000–$15,000', note: 'Below this, most PAs won\'t take the case' },
+              { label: 'Minimum Claim Size', value: '$10,000–$15,000', note: 'Below this, most PAs won\’t take the case' },
               { label: 'Texas License Required', value: 'Yes — TDI regulated', note: 'Verify at tdi.texas.gov before signing' },
               { label: 'Average Recovery Increase', value: '25–55% higher settlement', note: 'Varies widely by claim type and complexity' },
             ].map(c => (

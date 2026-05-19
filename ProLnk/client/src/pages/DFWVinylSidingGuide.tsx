@@ -15,7 +15,7 @@ const decisions: Record<string, { decision: string; options: string[]; note: str
   '10–20 Years|Fair — Warping/Fading|South/West (Full DFW Sun)': { decision: '🔄 Plan Replacement', options: ['Fiber cement: $8–$15/sq ft installed', 'Engineered wood: $6–$12/sq ft installed'], note: 'Budget for replacement within 2–3 years — get quotes now' },
   '20–30 Years|Good — Minor Issues|North/East (Less Sun)': { decision: '⚠️ Budget for Future Replacement', options: ['Replace in 3–5 year window', 'Fiber cement strongly recommended'], note: 'Even good 20-year vinyl is nearing end of practical life in DFW' },
   '20–30 Years|Fair — Warping/Fading|South/West (Full DFW Sun)': { decision: '🔄 Replace Now', options: ['James Hardie HardiePlank', 'LP SmartSide — excellent in DFW heat'], note: 'Cost of DFW damage from failing siding exceeds replacement cost' },
-  '30+ Years|Good — Minor Issues|North/East (Less Sun)': { decision: '🔄 Replace — End of Life', options: ['Fiber cement — 50-year lifespan', 'Won\'t need replacement again for most homeowners'], note: '30+ year vinyl is past design life — replace before problems compound' },
+  '30+ Years|Good — Minor Issues|North/East (Less Sun)': { decision: '🔄 Replace — End of Life', options: ['Fiber cement — 50-year lifespan', 'Won\’t need replacement again for most homeowners'], note: '30+ year vinyl is past design life — replace before problems compound' },
   '30+ Years|Failing — Multiple Problems|South/West (Full DFW Sun)': { decision: '🚨 Urgent Replacement', options: ['Immediate fiber cement installation', 'Address moisture damage first'], note: 'Failing siding allows DFW heat and moisture to damage structural sheathing' },
 };
 

@@ -70,7 +70,7 @@ function getSetbackStrategy(homeType: HomeType, season: Season): SetbackResult {
       savings: '15-25% vs. summer cooling costs',
       warning: null,
       color: '#22c55e',
-      explanation: 'October-November nights in DFW commonly drop to 55-65°F. This is DFW\'s best setback season — overnight temperatures may allow free ventilation cooling, especially in well-sealed modern homes.',
+      explanation: 'October-November nights in DFW commonly drop to 55-65°F. This is DFW\’s best setback season — overnight temperatures may allow free ventilation cooling, especially in well-sealed modern homes.',
       tips: [
         'Consider whole-house fan if well-insulated — brings in 60°F night air',
         'Open windows strategically on 60°F nights to pre-cool thermal mass',

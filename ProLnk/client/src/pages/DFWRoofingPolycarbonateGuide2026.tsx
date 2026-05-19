@@ -3,7 +3,7 @@ import { useState } from 'react';
 const situations = [
   { id: 'new-patio', label: 'Building new patio cover — choose panel type', guide: 'Twin-wall polycarbonate with UV coating rated for DFW: minimum 10-year UV warranty. 8mm twin-wall balances light diffusion and insulation for DFW summers.' },
   { id: 'yellowing', label: 'Existing panels yellowing / cloudy', guide: 'UV coating has failed — common in DFW at 5-7 years on budget panels. Replace with UV-stabilized panels. No restoration product fully reverses polycarbonate UV damage.' },
-  { id: 'cracking', label: 'Panels cracking or splitting', guide: 'Thermal expansion stress in DFW\'s 0-110°F range without proper fastening gaps causes cracking. Polycarbonate expands 0.065mm per foot per 10°F — always pre-drill oversize holes.' },
+  { id: 'cracking', label: 'Panels cracking or splitting', guide: 'Thermal expansion stress in DFW\’s 0-110°F range without proper fastening gaps causes cracking. Polycarbonate expands 0.065mm per foot per 10°F — always pre-drill oversize holes.' },
   { id: 'leaking', label: 'Water leaking at seams / fasteners', guide: 'Improperly sealed laps or over-tightened fasteners. In DFW heat, fasteners compress seals — use neoprene-backed screws. Seal laps with polycarbonate-compatible sealant.' },
   { id: 'too-hot', label: 'Patio too hot under panels', guide: 'Clear panels transmit 85-90% of heat in DFW sun. Switch to bronze or opal tint (50% light, 40% heat reduction). Twin-wall adds insulation value over solid.' },
 ];

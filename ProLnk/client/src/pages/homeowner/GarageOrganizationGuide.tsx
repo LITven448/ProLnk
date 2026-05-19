@@ -22,14 +22,14 @@ function getOrgPlan(sqft: number, use: GarageUse): OrgResult {
     workshop: {
       system: 'Pegboard Wall + Cabinet System',
       topItems: ['Pegboard for hand tools ($150-300)', 'Heavy-duty workbench ($400-800)', 'Tool chest/cabinet ($500-1,500)', 'Task lighting (critical in DFW dark garage)'],
-      climateRecommendation: 'Mini-split required — you're working in there. Heat exhaustion risk above 90°F. Budget $1,500-3,500.',
+      climateRecommendation: 'Mini-split required — you’re working in there. Heat exhaustion risk above 90°F. Budget $1,500-3,500.',
       estimatedCost: { low: 2000, high: 6000 },
       notes: ['Apply garage floor epoxy to make cleanup easier ($1,500-3,500 professional)', 'Rust-proof tool storage — DFW spring/fall humidity causes tool rust', 'Dedicated circuit for compressors and heavy tools — get permit'],
     },
     gym: {
       system: 'Floor Mat + Wall Mirror System',
       topItems: ['Rubber floor mats (full coverage $600-1,200)', 'Wall-mounted mirrors ($300-600)', 'Wall-mounted equipment storage ($200-500)', 'Fan/cooling system (non-negotiable in DFW)'],
-      climateRecommendation: 'Mini-split is table stakes for a DFW garage gym. Without it, you can't use the space June-September safely.',
+      climateRecommendation: 'Mini-split is table stakes for a DFW garage gym. Without it, you can’t use the space June-September safely.',
       estimatedCost: { low: 3000, high: 8000 },
       notes: ['DFW heat makes garage gym unusable without climate control (garage hits 130°F)', 'Rubber mats protect concrete floor and reduce joint impact', 'Consider insulated garage door — reduces cooling load significantly', 'Install proper lighting — avoid shadowy spots near equipment'],
     },
@@ -38,7 +38,7 @@ function getOrgPlan(sqft: number, use: GarageUse): OrgResult {
       topItems: ['Wall-mounted bike hoists ($80-150 each)', 'Overhead ceiling hooks for seasonal items', 'Slim shelving units along walls', 'Parking guides ($20-50) to position vehicle perfectly'],
       climateRecommendation: 'Basic insulated door ($800-1,500) reduces interior temp by 20-30°F and is worth it for vehicle protection.',
       estimatedCost: { low: 400, high: 1500 },
-      notes: ['Don't store gasoline or propane tanks in enclosed garage', 'Install carbon monoxide detector', 'Floor drain maintenance: keep clear for DFW rain events', 'Magnetic tool strips on walls use zero floor space'],
+      notes: ['Don’t store gasoline or propane tanks in enclosed garage', 'Install carbon monoxide detector', 'Floor drain maintenance: keep clear for DFW rain events', 'Magnetic tool strips on walls use zero floor space'],
     },
     mixed: {
       system: 'Zoned Multi-Use System',
@@ -149,7 +149,7 @@ export default function GarageOrganizationGuide() {
           {[
             { icon: '❄️', title: 'Mini-Split AC/Heat', cost: '$1,500-3,500 installed', body: 'Makes garage usable year-round. Required for workshops, gyms, and serious storage. Most cost-effective long-term solution for DFW heat.' },
             { icon: '💨', title: 'Portable AC', cost: '$300-600', body: 'Cheaper entry point. Less effective than mini-split but works for occasional use. Requires window/vent exhaust — most garages can accommodate.' },
-            { icon: '🚪', title: 'Insulated Garage Door Upgrade', cost: '$800-1,500', body: 'Reduces heat gain significantly. R-value of 12-18 vs. standard door's R-2. A worthwhile first step before adding active cooling.' },
+            { icon: '🚪', title: 'Insulated Garage Door Upgrade', cost: '$800-1,500', body: 'Reduces heat gain significantly. R-value of 12-18 vs. standard door’s R-2. A worthwhile first step before adding active cooling.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#1e293b', borderRadius: 10, padding: 20, display: 'flex', gap: 16 }}>
               <span style={{ fontSize: 24, flexShrink: 0 }}>{item.icon}</span>

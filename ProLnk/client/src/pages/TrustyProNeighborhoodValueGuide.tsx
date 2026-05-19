@@ -8,7 +8,7 @@ const DATA_COLLECTED = [
 ];
 
 const VALUE_PROTECTIONS = [
-  { title: 'Early Warning', desc: 'If your neighbors aren't maintaining their homes, it affects your value. TrustyPro alerts you to neighborhood trends before they show up in Zillow.' },
+  { title: 'Early Warning', desc: 'If your neighbors aren’t maintaining their homes, it affects your value. TrustyPro alerts you to neighborhood trends before they show up in Zillow.' },
   { title: 'Insurance', desc: 'Areas with high water damage rates see insurance premium increases. Proactive maintenance helps keep your rates competitive.' },
   { title: 'Resale Positioning', desc: 'When you list, TrustyPro data lets you differentiate: "Our home health score: 87 vs. neighborhood average 71."' },
 ];

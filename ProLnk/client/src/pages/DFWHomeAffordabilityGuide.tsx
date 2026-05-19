@@ -163,7 +163,7 @@ export default function DFWHomeAffordabilityGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📋 DFW Homebuyer Checklist</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 14, color: '#475569' }}>
-            {['✅ Budget for 2.1–2.8% annual property tax','✅ Add homeowner\'s insurance ($150–200/mo)','✅ Check HOA fees in target neighborhoods','✅ Budget 1% home value/yr for maintenance','✅ Consider Texas homestead exemption savings','✅ Get pre-approved before touring homes'].map(item => (
+            {['✅ Budget for 2.1–2.8% annual property tax','✅ Add homeowner\’s insurance ($150–200/mo)','✅ Check HOA fees in target neighborhoods','✅ Budget 1% home value/yr for maintenance','✅ Consider Texas homestead exemption savings','✅ Get pre-approved before touring homes'].map(item => (
               <div key={item} style={{ padding: '8px 12px', background: '#F9FAFB', borderRadius: 8 }}>{item}</div>
             ))}
           </div>

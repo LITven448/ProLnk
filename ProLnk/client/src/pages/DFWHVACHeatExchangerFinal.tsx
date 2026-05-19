@@ -29,9 +29,9 @@ const getAssessment = (age: string, situation: string) => {
   if (isSmell) return {
     urgency: '🟡 Schedule Inspection Soon',
     color: '#f59e0b',
-    assessment: 'Unusual smells during furnace operation should always be investigated. Even newer systems can have manufacturing defects or early fatigue cracks. DFW\'s humidity and temperature extremes stress components.',
+    assessment: 'Unusual smells during furnace operation should always be investigated. Even newer systems can have manufacturing defects or early fatigue cracks. DFW\’s humidity and temperature extremes stress components.',
     recommendation: 'Schedule inspection within 2 weeks. Likely nothing serious but should be confirmed.',
-    inspectionNote: 'Ask for combustion analysis — it\'s the only reliable way to detect a crack that looks fine visually.',
+    inspectionNote: 'Ask for combustion analysis — it\’s the only reliable way to detect a crack that looks fine visually.',
     cost: 'Inspection: $100–$200 | Usually no repair needed on newer systems'
   };
   if (isOld) return {
@@ -45,9 +45,9 @@ const getAssessment = (age: string, situation: string) => {
   if (isMid) return {
     urgency: '🟢 Normal Maintenance Window',
     color: '#22c55e',
-    assessment: 'A 10-15 year DFW furnace is entering the age where heat exchanger inspection becomes important. DFW\'s short but intense heating season means fewer cycles than northern cities, but temperature extremes cause more stress per cycle.',
+    assessment: 'A 10-15 year DFW furnace is entering the age where heat exchanger inspection becomes important. DFW\’s short but intense heating season means fewer cycles than northern cities, but temperature extremes cause more stress per cycle.',
     recommendation: 'Include combustion analysis in annual tune-up. No immediate concern.',
-    inspectionNote: 'Start keeping records now — if a crack develops, you\'ll want documentation for warranty or insurance.',
+    inspectionNote: 'Start keeping records now — if a crack develops, you\’ll want documentation for warranty or insurance.',
     cost: 'Annual tune-up with combustion analysis: $100–$175'
   };
   return {
@@ -76,7 +76,7 @@ export default function DFWHVACHeatExchangerFinal() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔥 What Does a Heat Exchanger Do?</h2>
           <div style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: 16 }}>The heat exchanger is a metal chamber inside your furnace that separates combustion gases (CO, NOx) from the air blown into your home. Flame heats the metal; your air handler blows over it to capture that heat without mixing with combustion byproducts. When it cracks, those gases enter your living space.</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[['🌡️ DFW Stress Factor', 'DFW furnaces cycle from 40°F to 140°F per firing. Short intense winters cause fewer cycles but more thermal shock than northern cities.'],['⏰ Expected Lifespan', '15-25 years. DFW\'s humidity in off-season causes internal corrosion — inspect earlier than northern markets.'],['🚨 Crack Warning Signs', 'Burning/metallic smell, CO alarm, soot on furnace, visible rust streaks, higher bills when heating.'],['🔬 Inspection Method', 'Combustion analysis + mirror/camera visual + CO reading at registers. Dye test for definitive confirmation.']].map(([title, desc]) => (
+            {[['🌡️ DFW Stress Factor', 'DFW furnaces cycle from 40°F to 140°F per firing. Short intense winters cause fewer cycles but more thermal shock than northern cities.'],['⏰ Expected Lifespan', '15-25 years. DFW\’s humidity in off-season causes internal corrosion — inspect earlier than northern markets.'],['🚨 Crack Warning Signs', 'Burning/metallic smell, CO alarm, soot on furnace, visible rust streaks, higher bills when heating.'],['🔬 Inspection Method', 'Combustion analysis + mirror/camera visual + CO reading at registers. Dye test for definitive confirmation.']].map(([title, desc]) => (
               <div key={title} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{title}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{desc}</div>

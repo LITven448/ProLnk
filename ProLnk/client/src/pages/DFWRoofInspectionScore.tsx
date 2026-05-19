@@ -70,7 +70,7 @@ export default function DFWRoofInspectionScore() {
     if (answers[3] === 2) priorities.push('⚠️ Flashing gaps — seal before next storm. DFW spring storms guarantee water intrusion');
     if (answers[5] === 3) priorities.push('🔴 Bare mat visible — shingles at end of life, full replacement needed');
     if (answers[7] === 2) priorities.push('🪵 Active fascia rot — water is getting behind gutters, repair before mold spreads');
-    if (answers[0] === 3 && answers[1] >= 2) priorities.push('📅 20+ year non-impact shingles — replacement overdue in DFW\'s hail environment');
+    if (answers[0] === 3 && answers[1] >= 2) priorities.push('📅 20+ year non-impact shingles — replacement overdue in DFW\’s hail environment');
     if (priorities.length === 0) priorities.push('✅ No critical issues found — maintain annual inspection schedule');
     setResult({ score, grade: g, hail, uv, priorities });
   }

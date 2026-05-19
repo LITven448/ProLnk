@@ -48,7 +48,7 @@ const evacuationRoutes = [
   '📍 Fort Worth: Trinity River corridor fills fast — avoid low bridges',
   '📍 Plano / Richardson: Spring Creek watershed — check creek alerts',
   '📍 Never drive through water — 6 inches can sweep an adult off feet',
-  '📍 "Turn Around, Don't Drown" — 50% of flood deaths are in vehicles',
+  '📍 "Turn Around, Don’t Drown" — 50% of flood deaths are in vehicles',
 ];
 
 export default function DFWFloodKit() {

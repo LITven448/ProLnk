@@ -23,7 +23,7 @@ const concerns = [
     id: 'competition',
     label: 'Contractor Competition',
     thumbtack: 'Same lead sold to multiple contractors. Race to respond fastest. Contractors undercut each other on price to win.',
-    prolnk: 'Single-match model. You win the match or you don't. No bidding war. Compete on quality and reputation, not speed.',
+    prolnk: 'Single-match model. You win the match or you don’t. No bidding war. Compete on quality and reputation, not speed.',
   },
 ];
 

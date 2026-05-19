@@ -9,13 +9,13 @@ const HEAT_TIPS = [
 
 const BULK_TIPS = [
   { store: 'Costco', categories: ['Paper goods', 'Canned goods', 'Condiments', 'Cleaning supplies'], tip: 'Allocate 2 pantry shelves just for Costco hauls. Rotate stock by date.' },
-  { store: "Sam's Club", categories: ['Beverages', 'Frozen protein', 'Snack multipacks', 'Baking supplies'], tip: 'Sam\'s Club DFW locations peak on weekends. Shop Tuesday for selection.' },
+  { store: "Sam's Club", categories: ['Beverages', 'Frozen protein', 'Snack multipacks', 'Baking supplies'], tip: 'Sam\’s Club DFW locations peak on weekends. Shop Tuesday for selection.' },
 ];
 
 const SYSTEMS: Record<string, { name: string; items: string[]; cost: string; spice: string; bulk: string }> = {
   small: { name: 'Small Kitchen Maximizer', items: ['Over-door pantry organizer (48 slots)', 'Pull-out cabinet organizers x3', 'Lazy Susan for corner cabinet', 'Magnetic spice strips on fridge side', 'Under-sink tension rods for cleaners'], cost: '$150–$400', spice: 'Magnetic tins on fridge side — saves 2 full drawers of space.', bulk: 'Designate top shelf for Costco overstock. Pull to front as you use.' },
   medium: { name: 'Mid-Size Pantry System', items: ['Adjustable wire shelving (5 shelves)', 'Clear stackable bins with labels', 'Can organizer racks (FIFO rotation)', 'Spice drawer insert (30 slots)', 'Snack basket zone for kids'], cost: '$300–$700', spice: 'Spice drawer insert at counter height. Alphabetize or group by cuisine type.', bulk: 'Dedicate bottom shelf to bulk items. Decant cereals/pasta into airtight canisters.' },
-  large: { name: 'Walk-In Pantry Organization', items: ['Floor-to-ceiling adjustable shelving', 'Zone labels (baking, canned, snacks, beverages)', 'Pull-out drawers for produce', 'Chest freezer area for bulk protein', 'Beverage refrigerator for drinks'], cost: '$800–$2,500', spice: 'Full spice wall — alphabetical on 3 rows. Group Tex-Mex spices together.', bulk: 'Dedicated Costco/Sam\'s zone — 2 shelves minimum. Date sticker on everything.' },
+  large: { name: 'Walk-In Pantry Organization', items: ['Floor-to-ceiling adjustable shelving', 'Zone labels (baking, canned, snacks, beverages)', 'Pull-out drawers for produce', 'Chest freezer area for bulk protein', 'Beverage refrigerator for drinks'], cost: '$800–$2,500', spice: 'Full spice wall — alphabetical on 3 rows. Group Tex-Mex spices together.', bulk: 'Dedicated Costco/Sam\’s zone — 2 shelves minimum. Date sticker on everything.' },
 };
 
 const COOKING_STYLES = [

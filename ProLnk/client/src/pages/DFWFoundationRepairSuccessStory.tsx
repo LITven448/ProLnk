@@ -13,7 +13,7 @@ const situations = [
     outcome: 'Negotiated credit → closed on time',
     docs: ['Independent structural engineer report', 'Two contractor repair estimates', 'Explanation of DFW clay soil causes'],
     buyerScript: 'Our engineer confirms this is common DFW clay soil movement and is fully repairable. We are crediting $X at closing so you can choose your own contractor.',
-    detail: 'The Petersons were selling their 1988 McKinney home when the buyer\'s inspector flagged cracks. The sellers ordered an independent engineer report ($450) confirming minor pier movement. They provided two repair estimates and offered a $9,800 credit. Buyer accepted. Closed on schedule.',
+    detail: 'The Petersons were selling their 1988 McKinney home when the buyer\’s inspector flagged cracks. The sellers ordered an independent engineer report ($450) confirming minor pier movement. They provided two repair estimates and offered a $9,800 credit. Buyer accepted. Closed on schedule.',
   },
   {
     label: 'Already disclosed at listing',
@@ -26,8 +26,8 @@ const situations = [
     label: 'Failed to disclose — cautionary',
     outcome: 'Buyer discovered at closing → $22K loss',
     docs: ['What you should have disclosed', 'Required Texas disclosure forms', 'Seller liability risk'],
-    buyerScript: 'N/A — this seller did not disclose. The buyer\'s lender required a repair before funding. Seller paid $18K for emergency repair plus $4K in concessions.',
-    detail: 'A Frisco seller chose not to mention known foundation cracks. The buyer\'s appraiser flagged it. The lender required repairs before funding. The seller paid $18,000 in rushed repairs, gave a $4,000 concession, and nearly lost the buyer entirely. Texas disclosure law requires known foundation issues to be disclosed.',
+    buyerScript: 'N/A — this seller did not disclose. The buyer\’s lender required a repair before funding. Seller paid $18K for emergency repair plus $4K in concessions.',
+    detail: 'A Frisco seller chose not to mention known foundation cracks. The buyer\’s appraiser flagged it. The lender required repairs before funding. The seller paid $18,000 in rushed repairs, gave a $4,000 concession, and nearly lost the buyer entirely. Texas disclosure law requires known foundation issues to be disclosed.',
   },
 ];
 

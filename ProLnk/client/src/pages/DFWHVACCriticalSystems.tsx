@@ -14,14 +14,14 @@ const components: Record<string, { name: string; icon: string; priority: string;
     name: 'Capacitor',
     icon: '⚡',
     priority: '🔴 High Priority — Common DFW Failure',
-    why: 'Capacitors store and release electrical charge to start compressors and fan motors. DFW\'s extreme heat (100°F+) causes capacitors to swell and fail — often mid-season when you need AC most. Most common HVAC service call in DFW summers.',
+    why: 'Capacitors store and release electrical charge to start compressors and fan motors. DFW\’s extreme heat (100°F+) causes capacitors to swell and fail — often mid-season when you need AC most. Most common HVAC service call in DFW summers.',
     maintenance: ['Test capacitor microfarad rating each spring', 'Replace proactively if 5+ years old', 'Keep voltage within rated range — surges degrade capacitors', 'Cost: $80-200 parts + labor'],
   },
   motor: {
     name: 'Condenser Fan Motor',
     icon: '🌀',
     priority: '🔴 Critical — Failure = System Lockout',
-    why: 'The condenser fan motor expels heat from your system. In DFW\'s 105°F heat, this motor runs near its thermal limit constantly. When it fails, the compressor overheats and shuts off on a safety limit — potentially damaging the compressor (a $2,000+ repair).',
+    why: 'The condenser fan motor expels heat from your system. In DFW\’s 105°F heat, this motor runs near its thermal limit constantly. When it fails, the compressor overheats and shuts off on a safety limit — potentially damaging the compressor (a $2,000+ repair).',
     maintenance: ['Lubricate motor bearings annually (if serviceable)', 'Listen for screeching — indicates bearing wear', 'Replace at first sign of struggling (slow start, noise)', 'Cost: $200-500 parts + labor'],
   },
   drain: {

@@ -11,7 +11,7 @@ const personas = [
     id: 'pro',
     label: 'DFW Home Service Pro',
     icon: '🔧',
-    message: 'Good morning. You\'ve spent years building your skills and your reputation — and you\'ve done it without the platform that matches those skills to the homeowners who actually need you. ProLnk changes that. No more slow seasons hunting for leads. No more paying per-lead fees for tire-kickers. ProLnk sends you qualified DFW homeowners who need exactly what you do, in your service area, ready to hire. Charter Pro spots are available. The Network Income System means you earn not just from jobs — but from building the network around you.',
+    message: 'Good morning. You\’ve spent years building your skills and your reputation — and you\’ve done it without the platform that matches those skills to the homeowners who actually need you. ProLnk changes that. No more slow seasons hunting for leads. No more paying per-lead fees for tire-kickers. ProLnk sends you qualified DFW homeowners who need exactly what you do, in your service area, ready to hire. Charter Pro spots are available. The Network Income System means you earn not just from jobs — but from building the network around you.',
   },
   {
     id: 'investor',
@@ -23,7 +23,7 @@ const personas = [
     id: 'scout',
     label: 'ProLnk Scout / Networker',
     icon: '🌐',
-    message: 'Good morning, Scout. You see the opportunity before most people do — and that\'s exactly why the Network Income System was built for you. Every pro you bring onto ProLnk earns you a lifetime override on their subscription and their job commissions. Every homeowner you introduce earns you a per-lead fee. Four levels deep, the cascade compounds. Charter Scouts who move this week lock in the highest rate tiers. The DFW home services market is $4.2B/yr. Your piece of it starts with a conversation.',
+    message: 'Good morning, Scout. You see the opportunity before most people do — and that\’s exactly why the Network Income System was built for you. Every pro you bring onto ProLnk earns you a lifetime override on their subscription and their job commissions. Every homeowner you introduce earns you a per-lead fee. Four levels deep, the cascade compounds. Charter Scouts who move this week lock in the highest rate tiers. The DFW home services market is $4.2B/yr. Your piece of it starts with a conversation.',
   },
 ];
 

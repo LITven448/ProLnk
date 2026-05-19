@@ -9,7 +9,7 @@ export default function DFWRoofingWindDamageCalc2026() {
     if (!windSpeed || !roofAge) { setResult('Please select both options.'); return; }
     if (windSpeed === 'under60') { setResult('Under 60 mph: Below typical claim threshold. Document any visible damage. Insurance may deny claim — focus on hail if concurrent.'); return; }
     if (windSpeed === '60_80' && roofAge === 'new') { setResult('60-80 mph on newer roof: Potential claim. Document lifted shingles, missing tabs, granule loss in gutters. Call adjuster within 30 days of storm.'); return; }
-    if (windSpeed === '60_80') { setResult('60-80 mph on older roof: Strong claim candidate. Older shingles more susceptible. Photo all damage from ground, don't walk roof alone. Request adjuster inspection.'); return; }
+    if (windSpeed === '60_80') { setResult('60-80 mph on older roof: Strong claim candidate. Older shingles more susceptible. Photo all damage from ground, don’t walk roof alone. Request adjuster inspection.'); return; }
     if (windSpeed === 'over80') { setResult('80+ mph — High-probability claim. All ages of roof susceptible. File immediately. Document: missing shingles, damaged flashing, ridge cap loss, gutters bent. Get contractor estimate before adjuster visit.'); return; }
     setResult('Document everything immediately: Photos of storm date/time from weather app, drone or ground photos of all visible damage, interior water intrusion.');
   };

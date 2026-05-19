@@ -45,7 +45,7 @@ export default function DFWHeatWaveGuide() {
     { step: 'AC down 1-2 hours', action: 'Draw shades, move to lowest floor, set up battery fans. Monitor for vulnerable family members.' },
     { step: 'AC down 4+ hours on 100°F+ day', action: 'Call HVAC for emergency service (expect 2-4hr wait). Consider hotel or cooling center if vulnerable occupants.' },
     { step: 'AC down overnight', action: 'Take a cool bath before bed, sleep on lowest floor, use a battery fan. Go to cooling center if over 80°F inside at midnight.' },
-    { step: 'No HVAC repair available for 24h+', action: 'Move to cooling center or family/friend's home. Do not remain in a home above 90°F if elderly, infant, or medically fragile.' },
+    { step: 'No HVAC repair available for 24h+', action: 'Move to cooling center or family/friend’s home. Do not remain in a home above 90°F if elderly, infant, or medically fragile.' },
   ];
 
   return (

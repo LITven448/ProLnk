@@ -8,13 +8,13 @@ const certInfo = {
     label: 'NATE Certification',
     emoji: '🎓',
     why: 'NATE (North American Technician Excellence) is the gold standard for HVAC technicians in DFW. Certified techs pass rigorous exams on installation and service. Most major DFW HVAC contractors require NATE certification for their lead techs.',
-    howToVerify: 'Ask to see the tech\'s NATE ID card or look up their name at natex.org. Legitimate NATE certs expire every 5 years — check the date.',
+    howToVerify: 'Ask to see the tech\’s NATE ID card or look up their name at natex.org. Legitimate NATE certs expire every 5 years — check the date.',
   },
   mfr: {
     label: 'Manufacturer Authorization',
     emoji: '🏭',
     why: 'Carrier, Trane, Lennox, and Rheem each have factory-authorized dealer programs. Getting service or installation from an authorized dealer in DFW means: (1) warranty is valid, (2) tech has brand-specific training, (3) parts are OEM.',
-    howToVerify: 'Check the manufacturer\'s website dealer locator. For Carrier: carrier.com/dealer. For Trane: trane.com/dealer. For Lennox: lennox.com/dealer.',
+    howToVerify: 'Check the manufacturer\’s website dealer locator. For Carrier: carrier.com/dealer. For Trane: trane.com/dealer. For Lennox: lennox.com/dealer.',
   },
 };
 
@@ -31,7 +31,7 @@ const goodInstall = [
 
 const redFlags = [
   '🚩 Quote given without seeing your home or measuring duct system',
-  '🚩 "We\'ll match the old size" — proper sizing requires Manual J calc',
+  '🚩 "We\’ll match the old size" — proper sizing requires Manual J calc',
   '🚩 No permit offered — illegal in most DFW cities, voids warranty',
   '🚩 Refuses to show NATE credentials or manufacturer authorization',
   '🚩 Cash only with no written contract',

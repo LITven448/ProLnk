@@ -19,7 +19,7 @@ const issues = [
   {
     icon: '🌍',
     title: 'Blackland Prairie Clay Soil Movement',
-    body: 'Dallas County's Blackland Prairie clay expands and contracts dramatically with moisture changes. In Farmers Branch's older housing stock, this seasonal movement has been stressing slab foundations for five decades, making professional foundation assessment non-optional.',
+    body: 'Dallas County’s Blackland Prairie clay expands and contracts dramatically with moisture changes. In Farmers Branch’s older housing stock, this seasonal movement has been stressing slab foundations for five decades, making professional foundation assessment non-optional.',
   },
   {
     icon: '🚿',

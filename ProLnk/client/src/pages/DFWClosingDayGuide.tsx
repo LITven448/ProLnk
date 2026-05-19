@@ -4,8 +4,8 @@ const loanTypes = ['Conventional', 'FHA', 'VA', 'Cash Purchase'];
 const counties = ['Dallas County', 'Tarrant County', 'Collin County', 'Denton County', 'Rockwall County'];
 
 const bringAlways = [
-  '🪪 Government-issued photo ID (driver\'s license or passport)',
-  '💵 Cashier\'s check or wire confirmation for closing costs',
+  '🪪 Government-issued photo ID (driver\’s license or passport)',
+  '💵 Cashier\’s check or wire confirmation for closing costs',
   '📄 Any documents requested by title company in advance',
   '📱 Phone (you may need to confirm wire from your bank app)',
 ];

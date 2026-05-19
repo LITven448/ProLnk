@@ -17,11 +17,11 @@ const scopeLevels: Record<string, { label: string; rooms: string; totalTimeline:
     totalTimeline: '14–22 weeks',
     phases: [
       { name: 'Structural (if any)', order: 1, duration: '1–3 weeks', trades: 'Structural engineer, framing crew', note: 'Walls, beams, load paths must be resolved FIRST before anything else' },
-      { name: 'Mechanical Rough-In', order: 2, duration: '2–4 weeks', trades: 'Plumber, HVAC, electrician', note: 'DFW reality: can\'t book all 3 at once. Plumber first, then HVAC, then electrician. Allow 1 week per trade.' },
+      { name: 'Mechanical Rough-In', order: 2, duration: '2–4 weeks', trades: 'Plumber, HVAC, electrician', note: 'DFW reality: can\’t book all 3 at once. Plumber first, then HVAC, then electrician. Allow 1 week per trade.' },
       { name: 'Inspections', order: 3, duration: '1–2 weeks', trades: 'City inspector', note: 'DFW cities require rough inspection before drywall. Schedule immediately after rough-in.' },
       { name: 'Drywall & Insulation', order: 4, duration: '1–2 weeks', trades: 'Drywall crew', note: 'After all inspections pass. Insulation required in exterior walls before drywall close.' },
       { name: 'Cabinets & Tile', order: 5, duration: '3–5 weeks', trades: 'Cabinet installer, tile setter', note: 'Cabinets first, then countertop template, then backsplash. Tile in baths in parallel if separate crew.' },
-      { name: 'Finishes & Punch List', order: 6, duration: '2–3 weeks', trades: 'Painter, trim carpenter, fixture install', note: 'Final inspections at end. Don\'t schedule move-in until all city sign-offs received.' },
+      { name: 'Finishes & Punch List', order: 6, duration: '2–3 weeks', trades: 'Painter, trim carpenter, fixture install', note: 'Final inspections at end. Don\’t schedule move-in until all city sign-offs received.' },
     ],
   },
   full: {

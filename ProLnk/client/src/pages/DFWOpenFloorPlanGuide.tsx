@@ -70,7 +70,7 @@ export default function DFWOpenFloorPlanGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
           {[
             { icon: '🎉', title: 'Why DFW Loves Open Plans', body: 'Entertaining is a lifestyle in DFW. From Cowboys watch parties to holiday gatherings, open plans let hosts stay connected to guests across cooking, dining, and living spaces.' },
-            { icon: '🌬️', title: 'Indoor-Outdoor Flow', body: 'DFW\'s 9-month outdoor season means sliding glass walls, bifold doors, and covered patio connections are often planned simultaneously with floor plan opens.' },
+            { icon: '🌬️', title: 'Indoor-Outdoor Flow', body: 'DFW\’s 9-month outdoor season means sliding glass walls, bifold doors, and covered patio connections are often planned simultaneously with floor plan opens.' },
             { icon: '🔊', title: 'Acoustic Challenges', body: 'Open plans amplify sound. DFW remodelers increasingly add area rugs, upholstered panels, and island overhangs to dampen echo in hard-surface-heavy homes.' },
             { icon: '📋', title: 'DFW Permit Reality', body: 'Any structural wall removal in Dallas, Fort Worth, Plano, Frisco, or surrounding cities requires a permit. Unpermitted work kills resale value — always pull the permit.' },
           ].map(({ icon, title, body }) => (

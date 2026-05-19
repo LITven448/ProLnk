@@ -11,7 +11,7 @@ const decisions: Record<string, { verdict: string; reason: string; cost: string;
   'Medium-Good': { verdict: 'Powder Coat', reason: 'Medium iron fences and gates are the sweet spot for powder coating ROI in DFW.', cost: '$400–$900', lifespan: '12–15 years' },
   'Medium-Fair': { verdict: 'Powder Coat', reason: 'Sandblasting + powder coat is still cheaper than replacement and far more durable than repainting.', cost: '$600–$1,100', lifespan: '10–14 years' },
   'Medium-Poor': { verdict: 'Powder Coat or Replace', reason: 'Get a quote from a DFW powder coat shop — if prep cost exceeds 40% of replacement, replace.', cost: '$700–$1,400', lifespan: '8–12 years' },
-  'Large-Good': { verdict: 'Powder Coat', reason: 'Large iron fences are DFW\'s most common powder coat job. Economies of scale reduce per-sq-ft cost.', cost: '$900–$2,200', lifespan: '12–15 years' },
+  'Large-Good': { verdict: 'Powder Coat', reason: 'Large iron fences are DFW\’s most common powder coat job. Economies of scale reduce per-sq-ft cost.', cost: '$900–$2,200', lifespan: '12–15 years' },
   'Large-Fair': { verdict: 'Powder Coat', reason: 'Full sandblast and recoat is standard practice for large fencing in DFW — most shops do this in-house.', cost: '$1,200–$2,800', lifespan: '10–14 years' },
   'Large-Poor': { verdict: 'Replace or Powder Coat Sections', reason: 'Section-by-section replacement + powder coat of good sections is often the best strategy.', cost: '$1,500–$4,000', lifespan: '10–15 years on new sections' },
   'Extra large-Good': { verdict: 'Powder Coat — Batch Quote', reason: 'At this scale, get 3 DFW shop quotes. Batch pricing significantly reduces per-unit cost.', cost: '$2,000–$5,000', lifespan: '12–15 years' },

@@ -9,19 +9,19 @@ type SitType = typeof situations[number];
 const pitches: Record<Prospect, Record<SitType, { reason: string; gain: string[]; loss: string[]; next: string }>> = {
   'licensed contractor': {
     'just exploring': {
-      reason: 'Explore now — Charter closes at 500 and you\'re in a window most pros miss',
+      reason: 'Explore now — Charter closes at 500 and you\’re in a window most pros miss',
       gain: ['🔒 $149/mo subscription locked forever at Charter rate', '💰 25 referral slots at 72% commission keep rate', '🏆 Founding member status — priority lead routing in DFW'],
       loss: ['📈 Every week you wait, another contractor in your trade claims Charter', '⬆️ Next tier is $199/mo — $50/mo more for the same access'],
-      next: 'Browse the lead feed at prolnk.io — no commitment required to see what\'s available',
+      next: 'Browse the lead feed at prolnk.io — no commitment required to see what\’s available',
     },
     'ready to join': {
-      reason: 'You\'re exactly who Charter was built for — lock your rate before it\'s gone',
+      reason: 'You\’re exactly who Charter was built for — lock your rate before it\’s gone',
       gain: ['⚡ Claim Charter in under 5 minutes — app, trade, service area', '🔧 Lead delivery starts within 48 hours of verification', '💳 No payment until your first match — zero risk to start'],
       loss: ['⏳ 500-application limit — at current signup rate, closes in < 30 days', '🚫 After Charter: no founding benefits, no locked rate, no referral head start'],
       next: 'Apply at prolnk.io/pro — 3 fields, 4 minutes, done',
     },
     'on the fence': {
-      reason: 'The fence is expensive — Charter won\'t exist in 6 months',
+      reason: 'The fence is expensive — Charter won\’t exist in 6 months',
       gain: ['📋 Apply with zero commitment — explore the platform before you decide', '💬 Talk to a current Charter contractor: partner@prolnk.io', '🔄 Cancel anytime in the first 30 days — no questions asked'],
       loss: ['💸 Founding rate gone after 500 apps — next tier is $199/mo minimum', '📉 Contractor slots in your trade are finite — your area fills up'],
       next: 'Start the application — you can pause at any step and come back',
@@ -35,34 +35,34 @@ const pitches: Record<Prospect, Record<SitType, { reason: string; gain: string[]
       next: 'Download the income structure at prolnk.io/partners and model your market',
     },
     'ready to join': {
-      reason: 'You\'ve done the math — now claim your spot before someone in your network beats you to it',
-      gain: ['🚀 Start building your Level 1 network immediately after approval', '📈 Commission tracking live from first referral — no black-box payouts', '🎯 Marketing materials provided — you don\'t have to build from scratch'],
+      reason: 'You\’ve done the math — now claim your spot before someone in your network beats you to it',
+      gain: ['🚀 Start building your Level 1 network immediately after approval', '📈 Commission tracking live from first referral — no black-box payouts', '🎯 Marketing materials provided — you don\’t have to build from scratch'],
       loss: ['⏳ 475 of 500 Charter slots spoken for — this is not urgency theater', '🤝 The pros you know are your best recruits — someone else may get to them first'],
       next: 'Apply at prolnk.io/partner — 5 minutes to Charter status',
     },
     'on the fence': {
       reason: 'The risk is $149 — the opportunity is a 4-level network income system',
-      gain: ['🔄 30-day money-back if you don\'t see value — no gotchas', '💬 Partner support team walks you through your first 5 recruits', '📊 Real earnings data from current partners available on request'],
-      loss: ['🏁 Charter is a founding moment — you can\'t recreate it later', '📅 Prices increase at each tier — waiting costs real money long-term'],
-      next: 'Email partner@prolnk.io with "Fence" in the subject — we\'ll answer every question',
+      gain: ['🔄 30-day money-back if you don\’t see value — no gotchas', '💬 Partner support team walks you through your first 5 recruits', '📊 Real earnings data from current partners available on request'],
+      loss: ['🏁 Charter is a founding moment — you can\’t recreate it later', '📅 Prices increase at each tier — waiting costs real money long-term'],
+      next: 'Email partner@prolnk.io with "Fence" in the subject — we\’ll answer every question',
     },
   },
   'homeowner': {
     'just exploring': {
       reason: 'Free to explore — ProLnk never charges homeowners',
       gain: ['🏠 Post a job in 2 minutes — no account required to browse', '⚡ First quote typically within 4 hours of posting', '✅ All matched pros verified, licensed, and insured in Texas'],
-      loss: ['📅 Unvetted pros fill the gap while you wait — quality isn\'t guaranteed', '💰 Homeowners who wait pay 20–35% more on average for rush jobs'],
-      next: 'Post your first job free at prolnk.io — see who\'s available in your zip code',
+      loss: ['📅 Unvetted pros fill the gap while you wait — quality isn\’t guaranteed', '💰 Homeowners who wait pay 20–35% more on average for rush jobs'],
+      next: 'Post your first job free at prolnk.io — see who\’s available in your zip code',
     },
     'ready to join': {
-      reason: 'You already know you need it — let\'s get you matched today',
+      reason: 'You already know you need it — let\’s get you matched today',
       gain: ['📲 Post now, quotes by tonight — DFW contractors check leads hourly', '🔒 Your address and contact info encrypted — never sold to advertisers', '⭐ Rate the pro after — your review helps the whole community'],
       loss: ['🕐 Every day delayed is a day the job sits undone', '🔧 Texas summers are brutal — HVAC, roofing, and plumbing wait for no one'],
       next: 'Post your job at prolnk.io — it takes less time than calling 3 contractors',
     },
     'on the fence': {
-      reason: 'Free for homeowners — there\'s no financial risk to trying it once',
-      gain: ['💬 Read reviews from real DFW homeowners before committing', '🚫 Decline any quote that doesn\'t feel right — zero obligation', '📞 ProLnk support available if anything goes wrong'],
+      reason: 'Free for homeowners — there\’s no financial risk to trying it once',
+      gain: ['💬 Read reviews from real DFW homeowners before committing', '🚫 Decline any quote that doesn\’t feel right — zero obligation', '📞 ProLnk support available if anything goes wrong'],
       loss: ['⚠️ DIY platforms require you to vet pros yourself — ProLnk does it for you', '⏳ Good contractors book up fast — waiting shrinks your options'],
       next: 'Try it risk-free at prolnk.io — post one job, see what comes back',
     },
@@ -70,12 +70,12 @@ const pitches: Record<Prospect, Record<SitType, { reason: string; gain: string[]
   'investor': {
     'just exploring': {
       reason: 'The seed round is moving — data room is open but the window is short',
-      gain: ['📊 ProLnk unit economics: 85% margin at 500 pros, 10,000 pro capacity', '🏆 Home Health Vault: structural data on 50M+ US homes — standalone asset', '🌐 Network income creates retention that SaaS can\'t match'],
+      gain: ['📊 ProLnk unit economics: 85% margin at 500 pros, 10,000 pro capacity', '🏆 Home Health Vault: structural data on 50M+ US homes — standalone asset', '🌐 Network income creates retention that SaaS can\’t match'],
       loss: ['📅 Round closes Q3 2026 — early-access terms are not available post-close', '🏁 Lead investor anchor in negotiation — available now, not after lead closes'],
       next: 'Request the data room: invest@prolnk.io — deck and financials returned same day',
     },
     'ready to join': {
-      reason: 'You\'ve reviewed the numbers — let\'s talk structure and close',
+      reason: 'You\’ve reviewed the numbers — let\’s talk structure and close',
       gain: ['⚡ Term sheet drafted within 48 hours of verbal commitment', '📋 Founders available for extended diligence call this week', '💼 Co-investor rights available at seed terms — ask about pro-rata'],
       loss: ['🏁 Lead investor slot filled — follow-on terms are set by lead', '📅 Delay risks missing DFW launch window data — most valuable early metric'],
       next: 'Email invest@prolnk.io with "Committed" in subject — we move fast',

@@ -4,7 +4,7 @@ const needs = [
   { id: 'emergency', label: 'AC is out right now', resources: ['Emergency HVAC Dispatch Guide', 'DFW Same-Day AC Repair', 'What To Do When AC Fails in 100°F Heat', 'ProLnk Emergency Matching — 2-Hour SLA'] },
   { id: 'cost', label: 'I need to understand HVAC costs', resources: ['DFW HVAC Pricing Guide 2026', 'Repair vs. Replace Calculator', 'City-by-City Cost Benchmarks (Allen to Weatherford)', 'How ProLnk Drives Prices Down Through Competition'] },
   { id: 'seasonal', label: 'I want seasonal maintenance help', resources: ['Spring Tune-Up Checklist (Pre-Summer)', 'Fall Shutdown & Heating Prep', 'Filter Replacement Schedule by DFW Zone', 'Annual HVAC Budget Planner'] },
-  { id: 'buying', label: 'I\'m buying a new home in DFW', resources: ['HVAC Pre-Purchase Inspection Checklist', 'Age & Condition Red Flags by DFW City', 'SEER2 Requirements for Texas Climate Zones', 'Negotiating HVAC in DFW Real Estate Contracts'] },
+  { id: 'buying', label: 'I\’m buying a new home in DFW', resources: ['HVAC Pre-Purchase Inspection Checklist', 'Age & Condition Red Flags by DFW City', 'SEER2 Requirements for Texas Climate Zones', 'Negotiating HVAC in DFW Real Estate Contracts'] },
   { id: 'replace', label: 'I need to replace my system', resources: ['Replacement Decision Framework', 'Brand Comparison: Carrier vs. Lennox vs. Trane in DFW', 'Financing Options for DFW Homeowners', 'ProLnk 3-Quote Matching for Replacement Jobs'] },
   { id: 'pro', label: 'I want to verify or find a pro', resources: ['How to Read a TACLB License', 'Red Flags in HVAC Contractor Proposals', 'ProLnk Pro Verification Standards', 'DFW HVAC Contractor Background Check Guide'] },
 ];

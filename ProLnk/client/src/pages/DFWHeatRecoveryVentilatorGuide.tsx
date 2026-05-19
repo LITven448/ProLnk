@@ -10,7 +10,7 @@ const concerns = [
   { id: 'humidity', label: '💧 DFW summer humidity / stuffiness' },
   { id: 'co2', label: '😮‍💨 Stale air / CO2 buildup (work from home)' },
   { id: 'mold', label: '🍄 Mold or moisture concerns' },
-  { id: 'energy', label: '⚡ Energy efficiency — don't want to waste conditioned air' },
+  { id: 'energy', label: '⚡ Energy efficiency — don’t want to waste conditioned air' },
 ];
 
 function getResult(age: string, concern: string) {
@@ -28,7 +28,7 @@ function getResult(age: string, concern: string) {
     sizing: age === 'new' ? '150–200 CFM unit for 2,000–3,000 sq ft DFW home' : '100–150 CFM retrofit unit',
     cost: '$1,800–$4,500 installed in DFW',
     note: useERV
-      ? 'ERVs transfer both heat AND moisture between exhaust and fresh air. In DFW\'s humid summers, this prevents outside humidity from flooding your home while still providing fresh air. Essential for new tight construction.'
+      ? 'ERVs transfer both heat AND moisture between exhaust and fresh air. In DFW\’s humid summers, this prevents outside humidity from flooding your home while still providing fresh air. Essential for new tight construction.'
       : 'HRVs recover heat only — ideal for DFW winter use when outdoor air is dry and cold. For CO2 and stale air concerns without humidity worries, HRV performs well and costs slightly less than ERV.',
   };
 }

@@ -10,7 +10,7 @@ const situations = [
 const guides: Record<string, { steps: string[]; tip: string }> = {
   buyout: {
     steps: [
-      '🏦 Refinance mortgage into buying spouse's name only',
+      '🏦 Refinance mortgage into buying spouse’s name only',
       '📋 Get independent home appraisal (both spouses choose appraiser)',
       '💰 Paying spouse compensates other: equity / 2 in cash or assets',
       '⚖️ File Deed of Trust and Warranty Deed with Dallas/Tarrant County',
@@ -34,7 +34,7 @@ const guides: Record<string, { steps: string[]; tip: string }> = {
       '🗓️ Set hard future sale date (e.g., youngest child turns 18)',
       '🔧 ProLnk handles maintenance — avoids disputes over deferred upkeep',
       '💰 Agree now on split % when home eventually sells',
-      '⚠️ Both stay on mortgage — affects each spouse's borrowing power',
+      '⚠️ Both stay on mortgage — affects each spouse’s borrowing power',
     ],
     tip: 'Co-ownership post-divorce is risky; use a detailed agreement drafted by your attorney.',
   },

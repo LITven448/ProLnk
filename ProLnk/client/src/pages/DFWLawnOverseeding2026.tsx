@@ -26,7 +26,7 @@ const guides: Record<string, { title: string; steps: string[]; timing: string; s
       'Reduce to normal schedule once established',
       'Ryegrass dies naturally when Bermuda resumes in April–May',
     ],
-    note: 'Spring transition: ryegrass fades as temps hit 85°F. Bermuda resumes automatically. Don't mow ryegrass below 2 inches or Bermuda transition slows.',
+    note: 'Spring transition: ryegrass fades as temps hit 85°F. Bermuda resumes automatically. Don’t mow ryegrass below 2 inches or Bermuda transition slows.',
   },
   'bermuda-curb': {
     title: 'Bermuda Winter Overseed for Curb Appeal',

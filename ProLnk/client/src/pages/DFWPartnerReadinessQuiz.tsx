@@ -11,7 +11,7 @@ const questions = [
   { q: 'How motivated are you by residual income (earning while you sleep)?', options: ['Not a priority', 'Nice to have', 'Very interested', 'This is my primary goal'], answer: 3 },
   { q: 'Can you commit to at least 12 months of consistent partner activity?', options: ['No, looking short-term', 'Maybe 3-6 months', '6-12 months', 'Yes, 12+ months'], answer: 3 },
   { q: 'Do you know homeowners or contractors in DFW who need connections?', options: ['No', '1-2 people', '5-10 people', '10+ people you could contact this week'], answer: 3 },
-  { q: 'How familiar are you with ProLnk\'s 5-stream income model?', options: ['Never heard of it', 'Read the overview', 'Understand the basics', 'Understand all 5 streams in detail'], answer: 3 },
+  { q: 'How familiar are you with ProLnk\’s 5-stream income model?', options: ['Never heard of it', 'Read the overview', 'Understand the basics', 'Understand all 5 streams in detail'], answer: 3 },
   { q: 'What describes your natural personality?', options: ['Introvert, prefer solo work', 'Analytical, data-focused', 'Occasional networker', 'Natural connector, love making introductions'], answer: 3 },
 ];
 

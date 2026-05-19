@@ -65,7 +65,7 @@ const situations = [
     likelihood: 'Not Covered',
     color: '#dc3545',
     docs: [],
-    process: 'Mold from HVAC neglect is explicitly excluded. Regular HVAC maintenance (including coil cleaning) is the homeowner\'s responsibility.',
+    process: 'Mold from HVAC neglect is explicitly excluded. Regular HVAC maintenance (including coil cleaning) is the homeowner\’s responsibility.',
   },
   {
     id: 'bathroom_grout',

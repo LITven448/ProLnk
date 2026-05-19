@@ -3,7 +3,7 @@ import { useState } from 'react';
 const situations = [
   { id: 'heavy-rain', label: '🌧️ Just Had Heavy Rain', advice: 'Walk your perimeter within 24 hrs. Check all downspout exits — water pooling within 6ft of foundation = immediate action. Clay soil absorbs slowly; surface water lingers 12-36 hrs.', risk: 'High' },
   { id: 'new-crack', label: '🔍 Noticed a New Crack', advice: 'Mark crack ends with pencil and date. Upward movement or horizontal cracks = call engineer. Hairline vertical cracks from settlement are common — monitor for 30 days.', risk: 'Medium' },
-  { id: 'door-sticking', label: '🚪 Door Won\'t Close Fully', advice: 'Doors sticking or gaps appearing at corners during wet season = foundation heave from clay saturation. Stop ALL foundation watering immediately. Let soil stabilize before calling a contractor.', risk: 'High' },
+  { id: 'door-sticking', label: '🚪 Door Won\’t Close Fully', advice: 'Doors sticking or gaps appearing at corners during wet season = foundation heave from clay saturation. Stop ALL foundation watering immediately. Let soil stabilize before calling a contractor.', risk: 'High' },
   { id: 'watering', label: '💧 Should I Still Water?', advice: 'April-May in DFW: skip watering when weekly rainfall exceeds 1 inch. Clay is likely saturated. Resume light watering only if 2+ weeks dry. Goal: consistent soil moisture, not maximum moisture.', risk: 'Low' },
 ];
 

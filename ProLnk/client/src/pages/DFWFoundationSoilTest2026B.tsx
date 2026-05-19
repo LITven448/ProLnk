@@ -4,7 +4,7 @@ const projects = [
   { type: 'New Construction', emoji: '🏗️', requiresGeo: true, piNeeded: true, desc: 'Geotech report is mandatory before any foundation design. Engineers need PI (Plasticity Index) and soil bearing capacity.', rec: 'Hire a licensed geotechnical firm before breaking ground. Expect $1,500–$4,000 for a full report.' },
   { type: 'Major Addition or Pool', emoji: '🏊', requiresGeo: true, piNeeded: true, desc: 'New load on existing foundation or excavation near footing zone requires soil assessment. Clay expansion unpredictable in DFW.', rec: 'Geotech required. Soil PI determines whether piers or conventional slab is safer for your addition.' },
   { type: 'Foundation Renovation', emoji: '🔧', requiresGeo: false, piNeeded: true, desc: 'Geotech sometimes needed depending on scope. If adding piers or regrading, PI measurement guides depth selection.', rec: 'Ask your foundation contractor if a geotech report is included. For pier work, PI measurement is essential.' },
-  { type: 'Minor Repair (Crack Fill)', emoji: '🪣', requiresGeo: false, piNeeded: false, desc: 'Small cosmetic repairs typically don't require soil testing. Monitor for widening cracks or door/window sticking.', rec: 'No geotech needed now. Document cracks with photos. If cracks return or widen, escalate to full assessment.' },
+  { type: 'Minor Repair (Crack Fill)', emoji: '🪣', requiresGeo: false, piNeeded: false, desc: 'Small cosmetic repairs typically don’t require soil testing. Monitor for widening cracks or door/window sticking.', rec: 'No geotech needed now. Document cracks with photos. If cracks return or widen, escalate to full assessment.' },
 ];
 
 const piRanges = [

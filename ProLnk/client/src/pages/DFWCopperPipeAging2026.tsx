@@ -30,7 +30,7 @@ export default function DFWCopperPipeAging2026() {
         <p style={{ color: '#94A3B8', marginBottom: 32 }}>DFW hard water doesn't corrode copper — but it does leave scale inside and create other long-term failure modes.</p>
 
         {[
-          { icon: '💧', title: 'DFW Hard Water (300+ ppm)', body: 'Dallas-Fort Worth has some of the hardest water in the US. Calcium and magnesium deposits build up inside copper pipes over decades, restricting flow and increasing pressure on joints. Doesn't corrode copper but does reduce lifespan of fixtures and water heaters.' },
+          { icon: '💧', title: 'DFW Hard Water (300+ ppm)', body: 'Dallas-Fort Worth has some of the hardest water in the US. Calcium and magnesium deposits build up inside copper pipes over decades, restricting flow and increasing pressure on joints. Doesn’t corrode copper but does reduce lifespan of fixtures and water heaters.' },
           { icon: '🕳️', title: 'Pinhole Leaks in Copper', body: 'Caused by: aggressive chloramine chemistry (DFW switched from chlorine ~2005), Type M thin-wall copper used in budget builds 1985–2000, or turbulent flow from high pressure. Pinholes appear mid-pipe, not at joints.' },
           { icon: '⚡', title: 'Electrolysis (Pipe to Pipe)', body: 'Copper + aluminum fittings in the same system create galvanic corrosion. DFW homes built during aluminum wiring era (1965–1973) may have mixed metals. Results in pitting corrosion at connection points.' },
           { icon: '🏠', title: 'Copper Grades in DFW', body: 'Type K (thick wall, outdoor/underground), Type L (residential standard — most DFW homes), Type M (thin wall — used to cut costs, more common in tract homes). Type M fails sooner in hard water.' },

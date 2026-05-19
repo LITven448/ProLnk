@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const needs = [
-  { id: 'smell', label: '🚨 Smell Gas', contact: '888-286-6700', process: 'LEAVE IMMEDIATELY. Do not turn lights on/off. Call 888-286-6700 from outside or neighbor's phone. Atmos responds 24/7 within 60 minutes. Do not re-enter until cleared by Atmos technician.' },
+  { id: 'smell', label: '🚨 Smell Gas', contact: '888-286-6700', process: 'LEAVE IMMEDIATELY. Do not turn lights on/off. Call 888-286-6700 from outside or neighbor’s phone. Atmos responds 24/7 within 60 minutes. Do not re-enter until cleared by Atmos technician.' },
   { id: 'newservice', label: '🏗️ New Gas Service', contact: '888-286-6700', process: 'Call Atmos to install new gas service for additions, new appliances, or new construction. Requires licensed plumber to install interior gas line. Atmos installs meter and street connection. Lead time: 10-20 business days.' },
-  { id: 'locate', label: '📍 Gas Line Locate', contact: '811 (Call Before You Dig)', process: 'Always call 811 before any digging — it's free and required by law. Atmos marks gas lines within 2 business days. Covers up to 18 inches from marked line.' },
+  { id: 'locate', label: '📍 Gas Line Locate', contact: '811 (Call Before You Dig)', process: 'Always call 811 before any digging — it’s free and required by law. Atmos marks gas lines within 2 business days. Covers up to 18 inches from marked line.' },
   { id: 'meter', label: '📊 Meter Reading', contact: '888-286-6700', process: 'Atmos reads meters monthly. Access your usage history at atmosenergy.com. Report a suspected meter problem by calling or submitting online. Estimated bills occur if meter is inaccessible.' },
   { id: 'assistance', label: '💰 Energy Assistance', contact: 'atmossavings.com', process: 'Atmos offers LIHEAP enrollment, budget billing to level monthly payments, and weatherization assistance for income-qualified customers. Apply at atmossavings.com or call 888-286-6700.' },
 ];

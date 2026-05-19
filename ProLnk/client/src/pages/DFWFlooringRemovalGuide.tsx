@@ -46,7 +46,7 @@ export default function DFWFlooringRemovalGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 40 }}>
           {[
             { icon: '🧹', title: 'Carpet Removal', body: 'Easiest removal in DFW. Carpet + pad typically come up in 20-30 minutes per room. Tack strips add 15 minutes. Average DFW crew removes 1,000 sqft of carpet in 2-3 hours. Many pros include carpet removal free with new floor install.' },
-            { icon: '⛏️', title: 'Tile Removal Over Slab', body: 'DFW\'s most labor-intensive removal. Ceramic tile is often glued directly to concrete slab with thin-set mortar. Removal requires jackhammering — generates massive debris volume. Cost: $2-4/sqft. Often leaves slab damaged requiring leveling compound.' },
+            { icon: '⛏️', title: 'Tile Removal Over Slab', body: 'DFW\’s most labor-intensive removal. Ceramic tile is often glued directly to concrete slab with thin-set mortar. Removal requires jackhammering — generates massive debris volume. Cost: $2-4/sqft. Often leaves slab damaged requiring leveling compound.' },
             { icon: '🪵', title: 'Hardwood: Remove or Refinish?', body: 'Solid hardwood can be sanded and refinished 4-6 times. If ¾" boards have 2+ sands remaining, refinishing at $3-5/sqft beats $8-15/sqft replacement. Check board thickness with a putty knife at a vent. Engineered hardwood has limited sanding capacity.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#111D35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>

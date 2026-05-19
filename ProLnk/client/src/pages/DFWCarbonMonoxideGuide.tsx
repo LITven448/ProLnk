@@ -37,7 +37,7 @@ export default function DFWCarbonMonoxideGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
           {[
-            { icon: '⚡', title: 'Why DFW Is High-Risk Year-Round', body: 'Gas furnaces run hard in DFW winters. Hot water heaters run constantly. After summer storms, gas generators are fired up in garages — the #1 source of CO deaths. DFW\'s mild-to-hot climate doesn\'t eliminate risk; it shifts it seasonally.' },
+            { icon: '⚡', title: 'Why DFW Is High-Risk Year-Round', body: 'Gas furnaces run hard in DFW winters. Hot water heaters run constantly. After summer storms, gas generators are fired up in garages — the #1 source of CO deaths. DFW\’s mild-to-hot climate doesn\’t eliminate risk; it shifts it seasonally.' },
             { icon: '📍', title: 'Where to Place Detectors', body: '12–15 inches from the ceiling on walls, or on the ceiling. CO is slightly lighter than air and disperses evenly — ceiling placement works. Place one outside EACH sleeping area and on every level of the home.' },
             { icon: '🔗', title: 'Interconnected Detectors', body: 'When one interconnected alarm sounds, ALL alarms sound. This is critical in two-story DFW homes where a basement or utility room CO event needs to wake occupants on upper floors. Look for Z-Wave or RF-linked models.' },
             { icon: '🚨', title: 'Evacuate vs. Investigate', body: 'If alarm sounds: leave immediately, call 911 from outside. Do NOT return until fire department clears the home. Low-level chirping (under 70 ppm) may indicate a developing problem — still leave and call. Never investigate CO yourself.' },

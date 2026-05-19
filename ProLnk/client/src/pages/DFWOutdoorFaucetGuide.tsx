@@ -34,7 +34,7 @@ export default function DFWOutdoorFaucetGuide() {
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E2D4A' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ DFW Outdoor Faucet Code</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[['🛡️ Anti-Siphon Required', 'All DFW cities require backflow prevention on garden hose connections'],['❄️ Freeze Risk', 'DFW gets 1–3 hard freezes per year — know your shutoff location NOW'],['🔧 Frost-Free Best Practice', 'DFW doesn\'t require frost-free but Valentine\'s Day 2021 proved they help'],['🏗️ Permit Required', 'New outdoor faucet installation typically requires DFW city permit']].map(([label, val]) => (
+            {[['🛡️ Anti-Siphon Required', 'All DFW cities require backflow prevention on garden hose connections'],['❄️ Freeze Risk', 'DFW gets 1–3 hard freezes per year — know your shutoff location NOW'],['🔧 Frost-Free Best Practice', 'DFW doesn\’t require frost-free but Valentine\’s Day 2021 proved they help'],['🏗️ Permit Required', 'New outdoor faucet installation typically requires DFW city permit']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{label}</div>
                 <div style={{ fontSize: 13, color: '#8B9CC8' }}>{val}</div>

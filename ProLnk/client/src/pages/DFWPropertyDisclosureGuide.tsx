@@ -17,7 +17,7 @@ const disclosures: Record<string, DisclosureDetail> = {
   foundation: {
     verification: 'Hire a structural engineer (not just home inspector), pull permits for any foundation work done, ask for transferable warranty documentation',
     meaning: 'DFW expansive clay soil means foundation issues are common — the key is whether repair was done properly and with a warranty',
-    negotiation: 'Demand transferable engineer warranty, price reduction for risk, or seller credit equal to engineer\'s recommended preventive maintenance cost',
+    negotiation: 'Demand transferable engineer warranty, price reduction for risk, or seller credit equal to engineer\’s recommended preventive maintenance cost',
     severity: 'serious',
   },
   hvac: {

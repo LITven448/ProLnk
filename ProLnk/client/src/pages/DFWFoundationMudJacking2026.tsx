@@ -8,7 +8,7 @@ export default function DFWFoundationMudJacking2026() {
 
   const getRecommendation = () => {
     if (!concreteType || !voidSize || !budget) { setResult('Please answer all questions.'); return; }
-    if (voidSize === 'large') { setResult('🟡 POLYURETHANE FOAM: Large voids need foam — it expands to fill irregular spaces that slurry can\'t reach efficiently. In DFW clay soil, foam also bonds better long-term and weighs far less, reducing future settlement risk.'); return; }
+    if (voidSize === 'large') { setResult('🟡 POLYURETHANE FOAM: Large voids need foam — it expands to fill irregular spaces that slurry can\’t reach efficiently. In DFW clay soil, foam also bonds better long-term and weighs far less, reducing future settlement risk.'); return; }
     if (budget === 'low' && concreteType !== 'pool') { setResult('🟢 MUDJACKING: For smaller voids on standard concrete (driveways, patios, sidewalks) with budget constraints, mudjacking delivers solid results at $3–$8/sqft vs foam at $5–$25/sqft. Ask for a 2-year workmanship warranty.'); return; }
     if (concreteType === 'pool' || budget === 'high') { setResult('🟢 POLYURETHANE FOAM: Lightweight foam is ideal for pool decks (no extra weight stress on pool shell) and premium applications where longevity matters. In DFW clay, foam outperforms mudjacking 5–7 years out.'); return; }
     setResult('🟡 GET BOTH QUOTES: Your situation could go either way. Get quotes for both methods — mudjacking ($3–$8/sqft) and polyurethane foam ($5–$25/sqft). The price difference often makes foam the better long-term value in DFW clay.');

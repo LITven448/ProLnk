@@ -14,7 +14,7 @@ const trendingPalettes = [
 const recommendations: Record<string, string> = {
   'HOA with color palette': 'Work with a certified color consultant who knows local HOA palettes — they can save you a rejection and $3,000 in repaints.',
   'HOA strict approval required': 'Professional color consultation is nearly mandatory. Many DFW HOAs require submitting paint chips before approval — a pro knows exactly which brands/codes pass.',
-  'No HOA': 'You have full creative freedom. A professional consultation ($300–$600) pays for itself by avoiding costly color mistakes in DFW's intense sunlight.',
+  'No HOA': 'You have full creative freedom. A professional consultation ($300–$600) pays for itself by avoiding costly color mistakes in DFW’s intense sunlight.',
 };
 
 export default function DFWExteriorColorConsultGuide() {

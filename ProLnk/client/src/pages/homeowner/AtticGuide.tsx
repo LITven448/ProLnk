@@ -68,7 +68,7 @@ export default function AtticGuide() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
             {[
-              { title: 'Soffit vents (intake)', desc: 'At the roof's lowest edge. Cool outside air enters here.' },
+              { title: 'Soffit vents (intake)', desc: 'At the roof’s lowest edge. Cool outside air enters here.' },
               { title: 'Ridge vent (exhaust)', desc: 'At the peak. Hot air escapes. Must be balanced with soffit intake.' },
             ].map((v) => (
               <div key={v.title} style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>

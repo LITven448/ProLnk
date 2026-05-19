@@ -14,7 +14,7 @@ const sections = [
   {
     icon: '🔄',
     heading: 'One Spouse Buying Out the Other',
-    body: 'The buying spouse must: 1) Qualify for a new mortgage in their name alone, 2) Refinance within a court-ordered timeframe (usually 90 days), 3) Pay departing spouse their equity share at closing. If the buying spouse can\'t qualify, the home must be sold.',
+    body: 'The buying spouse must: 1) Qualify for a new mortgage in their name alone, 2) Refinance within a court-ordered timeframe (usually 90 days), 3) Pay departing spouse their equity share at closing. If the buying spouse can\’t qualify, the home must be sold.',
   },
   {
     icon: '💸',
@@ -32,7 +32,7 @@ const situations: Record<string, string> = {
   'Agreed Sale': 'List the home, split net proceeds 50/50. Timeline: 30–90 days. Cleanest option.',
   'Buyout': 'Buying spouse must refi to remove other from mortgage. Requires income qualification. Pay equity share at closing.',
   'Court-Ordered Sale': 'A receiver manages the sale. Slower (6–18 months), higher costs, less control over sale price.',
-  'Underwater': 'Short sale requires lender approval. Both spouses\' credit is affected. Explore deed-in-lieu as alternative.',
+  'Underwater': 'Short sale requires lender approval. Both spouses\’ credit is affected. Explore deed-in-lieu as alternative.',
 };
 
 export default function DFWDivorceSaleGuide() {

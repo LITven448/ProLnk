@@ -28,7 +28,7 @@ const painPoints = [
   {
     emoji: '🔓',
     problem: 'Unverified competition',
-    thumbtack: 'Background checks optional. Homeowners can't tell the good from the fly-by-night.',
+    thumbtack: 'Background checks optional. Homeowners can’t tell the good from the fly-by-night.',
     prolnk: 'Every ProLnk partner is licensed, insured, and background-checked before lead #1.',
   },
 ];

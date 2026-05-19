@@ -15,12 +15,12 @@ const profiles: Record<Situation, { label: string; protections: string[]; howToC
     howToClaim: [
       'File Form 50-114 with your DFW county appraisal district (Dallas CAD, Tarrant CAD, Collin CAD, etc.)',
       'Deadline: April 30 of the tax year (late filing allowed with good cause)',
-      'Required: Texas driver\'s license or ID matching property address',
+      'Required: Texas driver\’s license or ID matching property address',
       'File once — exemption auto-renews each year unless you move',
       'Homestead designation (legal protection) is automatic — no filing needed',
     ],
     whatProtected: ['Primary residence only (not rental properties)', 'All equity regardless of amount', 'Against: credit card debt, medical bills, most lawsuits', 'Against: IRS liens (federal — partial protection only)'],
-    notProtected: ['Mortgage (purchase money lien)', 'Home equity loans (HELOC)', 'Property taxes', 'HOA liens in some cases', 'Mechanic\'s liens for unpaid contractors'],
+    notProtected: ['Mortgage (purchase money lien)', 'Home equity loans (HELOC)', 'Property taxes', 'HOA liens in some cases', 'Mechanic\’s liens for unpaid contractors'],
     deadline: 'April 30 annually for exemption; designation is automatic',
   },
   senior: {
@@ -54,7 +54,7 @@ const profiles: Record<Situation, { label: string; protections: string[]; howToC
     ],
     howToClaim: [
       'File Form 50-114 with disability documentation',
-      'Accepted proof: Social Security disability award letter or physician\'s statement',
+      'Accepted proof: Social Security disability award letter or physician\’s statement',
       'DFW county will verify disability status',
       'Re-application may be required if disability status changes',
     ],
@@ -139,7 +139,7 @@ export default function DFWHomestead2026Guide() {
           <div>
             <div style={{ color: '#F5E642', fontSize: 16, fontWeight: 800, marginBottom: 16 }}>{profile.label}</div>
             <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-              {[['protections', '🛡️ Protections'], ['claim', '📋 How to Claim'], ['scope', '🔍 What\'s Covered']] .map(([k, label]) => (
+              {[['protections', '🛡️ Protections'], ['claim', '📋 How to Claim'], ['scope', '🔍 What\’s Covered']] .map(([k, label]) => (
                 <button key={k} onClick={() => setActiveTab(k as 'protections' | 'claim' | 'scope')} style={{ background: activeTab === k ? '#F5E642' : '#111E35', color: activeTab === k ? '#0A1628' : '#E8EAF0', border: '1px solid ' + (activeTab === k ? '#F5E642' : '#1E2D45'), borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 700, fontSize: 12 }}>{label}</button>
               ))}
             </div>

@@ -24,9 +24,9 @@ export default function DFWFoundationInsurance2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { label: '❌ What\'s Excluded', desc: 'Settling, clay soil movement, poor drainage, tree roots — all excluded as "earth movement" or maintenance issues.' },
-            { label: '✅ What\'s Covered', desc: 'Sudden collapse, foundation damage from burst pipe, fire, or vehicle impact. Must be sudden and accidental.' },
-            { label: '📋 Engineer\'s Report', desc: 'For any claim over $10K, insurers may require a PE report ($300-600). Get one before filing — it protects you.' },
+            { label: '❌ What\’s Excluded', desc: 'Settling, clay soil movement, poor drainage, tree roots — all excluded as "earth movement" or maintenance issues.' },
+            { label: '✅ What\’s Covered', desc: 'Sudden collapse, foundation damage from burst pipe, fire, or vehicle impact. Must be sudden and accidental.' },
+            { label: '📋 Engineer\’s Report', desc: 'For any claim over $10K, insurers may require a PE report ($300-600). Get one before filing — it protects you.' },
             { label: '🛡️ Company Warranties', desc: 'Reputable foundation companies offer lifetime transferable warranties. This is your real "insurance" for DFW foundations.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>

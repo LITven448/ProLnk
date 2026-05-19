@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const situations = [
-  { id: 'not-joined', label: 'Haven\'t joined ProLnk yet', action: 'Go to prolnk.io right now. Takes 2 minutes. If you\'re a Pro, you\'re locking the Charter rate ($149/mo forever) before the 500-app cap hits. If you\'re a homeowner, you\'re getting first access when DFW launches.' },
-  { id: 'just-joined', label: 'Just joined the waitlist', action: 'Next step: add your home to the Health Vault (homeowners) or complete your Pro profile with your trade and service area. Then share your referral link with one neighbor — that\'s all it takes to start earning network income.' },
+  { id: 'not-joined', label: 'Haven\’t joined ProLnk yet', action: 'Go to prolnk.io right now. Takes 2 minutes. If you\’re a Pro, you\’re locking the Charter rate ($149/mo forever) before the 500-app cap hits. If you\’re a homeowner, you\’re getting first access when DFW launches.' },
+  { id: 'just-joined', label: 'Just joined the waitlist', action: 'Next step: add your home to the Health Vault (homeowners) or complete your Pro profile with your trade and service area. Then share your referral link with one neighbor — that\’s all it takes to start earning network income.' },
   { id: 'want-hvac', label: 'Need HVAC service now', action: 'Join ProLnk as a homeowner and select HVAC as your service need. Our beta matching will connect you with a verified DFW HVAC pro. You avoid the price surge that hits in June when demand peaks.' },
   { id: 'tell-neighbor', label: 'Want to tell a neighbor about ProLnk', action: 'Share prolnk.io with them. Tell them: "Charter tier closes at 500 Pros. If they want the locked rate, they need to get in now." If they sign up through your link, you get 12% of their subscription — every month, forever.' },
-  { id: 'pro-unsure', label: 'Pro — not sure if it\'s worth it', action: 'The math: $149/mo to access DFW homeowner leads + network income from pros you refer. If you close one job/month through ProLnk, the fee pays for itself many times over. Join, try the beta, decide with data.' },
-  { id: 'all-done', label: 'Already joined and profile is complete', action: 'You\'re ahead of the curve. Now: (1) Refer one pro and one homeowner from your network today. (2) Add your home to Health Vault if you haven\'t. (3) Watch for your beta match notification — DFW launch is close.' },
+  { id: 'pro-unsure', label: 'Pro — not sure if it\’s worth it', action: 'The math: $149/mo to access DFW homeowner leads + network income from pros you refer. If you close one job/month through ProLnk, the fee pays for itself many times over. Join, try the beta, decide with data.' },
+  { id: 'all-done', label: 'Already joined and profile is complete', action: 'You\’re ahead of the curve. Now: (1) Refer one pro and one homeowner from your network today. (2) Add your home to Health Vault if you haven\’t. (3) Watch for your beta match notification — DFW launch is close.' },
 ];
 
 export default function DFWProLnkNow() {
@@ -29,10 +29,10 @@ export default function DFWProLnkNow() {
 
         <div style={{ display: 'grid', gap: 12, marginBottom: 40 }}>
           {[
-            { icon: '⏳', title: 'Charter Closes at 500 — Not a Soft Deadline', body: 'This is a hard cap. 500 Charter Pro applications, then the $149/mo locked rate is gone. New Pros will pay market rate. The window is open now — it won\'t be for long.' },
+            { icon: '⏳', title: 'Charter Closes at 500 — Not a Soft Deadline', body: 'This is a hard cap. 500 Charter Pro applications, then the $149/mo locked rate is gone. New Pros will pay market rate. The window is open now — it won\’t be for long.' },
             { icon: '🏠', title: 'Beta HVAC Matching Open in DFW', body: 'ProLnk is actively matching DFW homeowners with verified HVAC pros in beta. If you need HVAC service before summer, join now and get matched before June pricing kicks in.' },
             { icon: '👥', title: 'Every Referral Earns You Ongoing Income', body: 'When you refer a Pro who joins Charter, you earn 12% of their $149/mo subscription — every month, forever. Refer 10 Pros = $178.80/mo in passive income. Permanently locked to your account.' },
-            { icon: '🔐', title: 'Health Vault — Private, Free, Valuable', body: 'Add your home now. Your structural data, HVAC history, appliance ages. It stays private, improves your match quality, and earns you 1.5% origination rights on the home\'s platform fees long-term.' },
+            { icon: '🔐', title: 'Health Vault — Private, Free, Valuable', body: 'Add your home now. Your structural data, HVAC history, appliance ages. It stays private, improves your match quality, and earns you 1.5% origination rights on the home\’s platform fees long-term.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0f2040', borderRadius: 12, padding: '20px 24px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 24, flexShrink: 0 }}>{card.icon}</span>

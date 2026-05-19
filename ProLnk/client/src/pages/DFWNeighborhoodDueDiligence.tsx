@@ -16,7 +16,7 @@ const concerns: Record<string, ConcernDetail> = {
       'City of Dallas / Fort Worth / Plano open data portals',
       'Local Facebook neighborhood groups',
     ],
-    evaluation: 'Compare crime rate to city average, not just absolute numbers. Trend matters — is it improving or worsening? Ask your agent about the neighborhood\'s 5-year trajectory.',
+    evaluation: 'Compare crime rate to city average, not just absolute numbers. Trend matters — is it improving or worsening? Ask your agent about the neighborhood\’s 5-year trajectory.',
   },
   development: {
     method: 'Check city GIS and zoning maps for all vacant and commercial parcels within 1 mile. File open records requests for any pending plat or zoning applications.',
@@ -49,7 +49,7 @@ const concerns: Record<string, ConcernDetail> = {
       'Union Pacific / BNSF rail maps for freight corridors',
       'City noise complaint records (open records request)',
     ],
-    evaluation: 'DFW airport expansion has shifted flight paths. If within 5 miles of DFW or Love Field, research current and proposed flight corridors on the FAA\'s NextGen site.',
+    evaluation: 'DFW airport expansion has shifted flight paths. If within 5 miles of DFW or Love Field, research current and proposed flight corridors on the FAA\’s NextGen site.',
   },
   flood: {
     method: 'Check FEMA FIRM maps AND local city flood maps (cities often have more detailed data). Walk the drainage channels near the property after a heavy rain if possible.',
@@ -103,7 +103,7 @@ export default function DFWNeighborhoodDueDiligence() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {[
               ['Weekday 7–8am', 'Traffic pattern, school drop-off chaos, commute reality'],
-              ['Weekday noon', 'Neighborhood activity, who\'s around during the day'],
+              ['Weekday noon', 'Neighborhood activity, who\’s around during the day'],
               ['Friday 5–7pm', 'Rush hour on your actual commute route'],
               ['Saturday morning', 'How the community uses its space, noise levels'],
               ['After heavy rain', 'Drainage, low spots, neighbors with water in yards'],

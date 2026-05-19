@@ -161,7 +161,7 @@ export default function DFWHomeServiceStats() {
               { stat: '23%', label: 'Demand-supply gap in DFW', desc: 'Contractors cannot fill all incoming service requests.' },
               { stat: '4.1 days', label: 'Average wait time for a plumber', desc: 'Up from 1.8 days in 2022 as demand outpaces supply.' },
               { stat: '38%', label: 'Of pros plan to retire in 5 years', desc: 'Creating an even larger workforce gap by 2030.' },
-              { stat: '$2,400', label: 'Average revenue lost per unfilled job', desc: 'By homeowners who couldn\'t find a qualified contractor.' },
+              { stat: '$2,400', label: 'Average revenue lost per unfilled job', desc: 'By homeowners who couldn\’t find a qualified contractor.' },
             ].map((item, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 10, padding: '16px 20px' }}>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{item.stat}</div>

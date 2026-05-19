@@ -5,7 +5,7 @@ export default function DFWWasherDryerGuide2026() {
   const [symptoms, setSymptoms] = useState<string[]>([]);
   const [result, setResult] = useState('');
 
-  const SYMS = ['Clothes still wet','Burning smell','Takes too long','Shaking/vibrating','Error codes','Won\'t start'];
+  const SYMS = ['Clothes still wet','Burning smell','Takes too long','Shaking/vibrating','Error codes','Won\’t start'];
 
   function toggle(s: string) {
     setSymptoms(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);

@@ -9,12 +9,12 @@ const steps = [
   {
     label: 'Share with a Neighbor',
     icon: '🤝',
-    content: 'Your neighbor probably doesn\'t know about the DFW HVAC library. Send them the ProLnk link. Host a quick HOA conversation. Shared knowledge multiplies its value across the whole community.',
+    content: 'Your neighbor probably doesn\’t know about the DFW HVAC library. Send them the ProLnk link. Host a quick HOA conversation. Shared knowledge multiplies its value across the whole community.',
   },
   {
     label: 'Use ProLnk When Ready',
     icon: '⚡',
-    content: 'When your HVAC needs service, don\'t guess. Use ProLnk to match with a verified DFW contractor. The network you\'ve learned about is ready to serve you the moment you need it.',
+    content: 'When your HVAC needs service, don\’t guess. Use ProLnk to match with a verified DFW contractor. The network you\’ve learned about is ready to serve you the moment you need it.',
   },
   {
     label: 'Build the Network',

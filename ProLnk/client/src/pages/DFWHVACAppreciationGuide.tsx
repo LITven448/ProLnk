@@ -18,7 +18,7 @@ const submarkets = [
 ];
 
 const marketFacts = [
-  { icon: '🌡️', stat: '100+ days', label: 'above 95°F annually in DFW', detail: 'HVAC isn't optional — it's life-critical infrastructure.' },
+  { icon: '🌡️', stat: '100+ days', label: 'above 95°F annually in DFW', detail: 'HVAC isn’t optional — it’s life-critical infrastructure.' },
   { icon: '💵', stat: '$8K-$15K', label: 'average HVAC replacement cost', detail: 'DFW 3-ton systems. Labor is 30-40% of total cost.' },
   { icon: '📊', stat: '3-5%', label: 'appreciation premium for new systems', detail: 'DFW buyer surveys consistently show HVAC as top inspection concern.' },
   { icon: '⏱️', stat: '7-10 years', label: 'average DFW HVAC lifespan', detail: 'Heat, humidity, and system runtime shorten life vs. national average.' },

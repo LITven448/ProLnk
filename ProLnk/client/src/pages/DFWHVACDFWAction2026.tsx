@@ -8,7 +8,7 @@ const actions = [
     steps: [
       'Book a 21-point inspection: coils, refrigerant level, capacitors, drain line, thermostat calibration.',
       'Ask the tech to check your air handler filter and replace if over 3 months old.',
-      'Request a written inspection report — you'll need it if the system fails under warranty.',
+      'Request a written inspection report — you’ll need it if the system fails under warranty.',
       'Verify the contractor is NATE-certified and licensed in Texas (TDL #).',
     ],
     why: 'DFW summers routinely exceed 105°F. Systems that go into summer without a tune-up fail at 3× the rate of inspected systems.',
@@ -18,8 +18,8 @@ const actions = [
     label: '📄 Register Warranty',
     title: 'Register Your HVAC Warranty in 2026',
     steps: [
-      'Locate your system\'s model and serial number (usually on the outdoor unit nameplate).',
-      'Visit the manufacturer's website (Carrier, Trane, Lennox, Goodman, etc.) and register within 60 days of install.',
+      'Locate your system\’s model and serial number (usually on the outdoor unit nameplate).',
+      'Visit the manufacturer’s website (Carrier, Trane, Lennox, Goodman, etc.) and register within 60 days of install.',
       'Store your warranty certificate in your Home Health Vault for future reference.',
       'Note: unregistered systems often default to 5-year parts — registered units get 10-year coverage.',
     ],

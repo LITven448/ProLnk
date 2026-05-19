@@ -25,7 +25,7 @@ export default function DFWPlumberLicensingGuide() {
     if (currentIdx === -1) return;
     const next = pathway[currentIdx + 1];
     if (!next) {
-      setResult({ nextLevel: 'You\'ve reached the top!', yearsLeft: 0, examNote: 'Consider PHCC membership and business licensing to maximize DFW revenue.', bondReq: 10000, incomeRange: '$75,000 – $130,000+/yr' });
+      setResult({ nextLevel: 'You\’ve reached the top!', yearsLeft: 0, examNote: 'Consider PHCC membership and business licensing to maximize DFW revenue.', bondReq: 10000, incomeRange: '$75,000 – $130,000+/yr' });
       return;
     }
     const yearsLeft = Math.max(0, next.years - years);

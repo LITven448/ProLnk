@@ -14,7 +14,7 @@ const mistakes = [
     icon: '📋',
     title: 'Not Verifying the License',
     risk: 'No legal recourse + insurance void',
-    detail: 'Texas law requires licenses for HVAC, electrical, plumbing, and several other trades. Unlicensed work voids your homeowner\'s insurance on related claims and creates legal liability for you as the property owner.',
+    detail: 'Texas law requires licenses for HVAC, electrical, plumbing, and several other trades. Unlicensed work voids your homeowner\’s insurance on related claims and creates legal liability for you as the property owner.',
     prolnk: 'ProLnk verifies every trade license against the TDLR database at onboarding and re-checks quarterly. You never need to Google "how do I look up a contractor license" again.',
   },
   {
@@ -22,8 +22,8 @@ const mistakes = [
     icon: '💸',
     title: 'Paying Full Amount Upfront',
     risk: '$0 recourse if work is abandoned',
-    detail: 'Paying 100% upfront removes all leverage. Legitimate contractors don\'t need full payment before starting. Deposit (10–30%) is normal; full payment before completion is not.',
-    prolnk: 'ProLnk\'s milestone payment structure (coming in Phase 2) ties payments to job milestones verified by the platform. No disappearing acts after full payment.',
+    detail: 'Paying 100% upfront removes all leverage. Legitimate contractors don\’t need full payment before starting. Deposit (10–30%) is normal; full payment before completion is not.',
+    prolnk: 'ProLnk\’s milestone payment structure (coming in Phase 2) ties payments to job milestones verified by the platform. No disappearing acts after full payment.',
   },
   {
     id: 'contract',
@@ -37,9 +37,9 @@ const mistakes = [
     id: 'reviews',
     icon: '⭐',
     title: 'Ignoring Review Patterns',
-    risk: 'Repeating other homeowners\' mistakes',
-    detail: 'One bad review might be a difficult customer. Five reviews mentioning "didn\'t show up," "left job unfinished," or "added charges" is a pattern. Most homeowners only check the star rating, not the text.',
-    prolnk: 'ProLnk\'s review system tags reviews by issue type (reliability, communication, quality, pricing). You see patterns instantly — not just a 4.1-star average.',
+    risk: 'Repeating other homeowners\’ mistakes',
+    detail: 'One bad review might be a difficult customer. Five reviews mentioning "didn\’t show up," "left job unfinished," or "added charges" is a pattern. Most homeowners only check the star rating, not the text.',
+    prolnk: 'ProLnk\’s review system tags reviews by issue type (reliability, communication, quality, pricing). You see patterns instantly — not just a 4.1-star average.',
   },
 ];
 

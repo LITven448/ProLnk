@@ -23,7 +23,7 @@ function buildChecklist(system: typeof dfwSystemTypes[0]) {
       '📱 Download manufacturer app if smart thermostat included',
     ]},
     { week: 'Week 2-4', items: [
-      '🔄 Note how system handles DFW\'s temperature swings — document any unusual cycling',
+      '🔄 Note how system handles DFW\’s temperature swings — document any unusual cycling',
       `${system.id === 'heatPump' || system.id === 'dualFuel' ? '⚡ Heat pump: verify emergency heat switch works — test before first DFW freeze' : '🔥 Verify furnace ignites cleanly — test before first DFW cold snap'}`,
       '📞 Call installer if any strange sounds, smells, or uneven cooling in DFW summer heat',
       '✅ Schedule 1-year warranty inspection — most DFW HVAC warranties require annual pro service',
@@ -32,7 +32,7 @@ function buildChecklist(system: typeof dfwSystemTypes[0]) {
       '📅 Mark calendar: change filter every 30-60 days in DFW (dust + pollen = faster clogging)',
       '🌞 DFW summer: check system is achieving setpoint by noon — if not, call for service immediately',
       '🧼 Clean condensate drain with bleach/water quarterly in DFW humidity',
-      '🤝 Build relationship with your DFW installer — priority service matters when it\'s 105°F',
+      '🤝 Build relationship with your DFW installer — priority service matters when it\’s 105°F',
     ]},
   ];
 }

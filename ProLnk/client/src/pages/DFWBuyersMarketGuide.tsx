@@ -12,21 +12,21 @@ const DFW_AREAS = [
 ];
 
 const MARKET_CONDITIONS = [
-  '7+ months inventory (deep buyer\'s market)',
-  '6-7 months inventory (moderate buyer\'s market)',
+  '7+ months inventory (deep buyer\’s market)',
+  '6-7 months inventory (moderate buyer\’s market)',
   '4-6 months inventory (balanced)',
-  'Under 4 months (seller\'s market)',
+  'Under 4 months (seller\’s market)',
 ];
 
 const strategies: Record<string, Record<string, { strategy: string; concessions: string[]; leverage: string }>> = {
-  '7+ months inventory (deep buyer\'s market)': {
+  '7+ months inventory (deep buyer\’s market)': {
     default: {
       strategy: 'Maximum negotiating power — ask for everything. Sellers are motivated and options are limited for them.',
       concessions: ['2-3% closing cost assistance', '1-year home warranty paid by seller', 'Price reductions of 5-8% below list', 'Repair credits after inspection', 'Flexible closing timeline'],
       leverage: 'Extended inspection periods (15+ days), financing contingencies with no penalty, and walk-away rights are all negotiable.',
     },
   },
-  '6-7 months inventory (moderate buyer\'s market)': {
+  '6-7 months inventory (moderate buyer\’s market)': {
     default: {
       strategy: 'Solid leverage but tempered. Target 2-4% below list and request meaningful concessions without overplaying your hand.',
       concessions: ['1-2% closing cost assistance', 'Home warranty ($500-800)', 'Price reduction of 3-5% below list', 'Select repair credits post-inspection'],
@@ -40,9 +40,9 @@ const strategies: Record<string, Record<string, { strategy: string; concessions:
       leverage: 'Inspection contingency is your strongest tool. Financing contingencies expected but sellers may push back on extended timelines.',
     },
   },
-  'Under 4 months (seller\'s market)': {
+  'Under 4 months (seller\’s market)': {
     default: {
-      strategy: 'DFW\'s most common state. Come in at or above list, minimize contingencies, and move fast — days on market are often under 7.',
+      strategy: 'DFW\’s most common state. Come in at or above list, minimize contingencies, and move fast — days on market are often under 7.',
       concessions: ['Minimal — focus on winning first', 'Escalation clauses to $5-15K over list', 'Shorten inspection window to 7-10 days'],
       leverage: 'Cash-equivalent financing (pre-underwritten approval) and flexible close dates are your only real edges.',
     },
@@ -54,7 +54,7 @@ export default function DFWBuyersMarketGuide() {
   const [condition, setCondition] = useState('');
 
   const result = condition ? strategies[condition]?.default : null;
-  const isRarelyBuyerMarket = condition === 'Under 4 months (seller\'s market)' || condition === '4-6 months inventory (balanced)';
+  const isRarelyBuyerMarket = condition === 'Under 4 months (seller\’s market)' || condition === '4-6 months inventory (balanced)';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' }}>

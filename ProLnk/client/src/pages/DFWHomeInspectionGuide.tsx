@@ -3,13 +3,13 @@ import { useState } from 'react';
 const checklistItems = [
   { category: 'Access', items: ['Unlock all doors, gates, sheds, and garage', 'Leave ALL interior doors open', 'Clear access to attic hatch', 'Move vehicles out of garage', 'Ensure electricity is on and all circuits active'] },
   { category: 'Systems', items: ['Turn on all pilot lights (water heater, fireplace)', 'Leave HVAC at normal operating temp', 'Do not run dishwasher or laundry during inspection', 'Ensure water is on and pressure is normal', 'Leave all appliances plugged in and accessible'] },
-  { category: 'Exterior', items: ['Clear debris from foundation perimeter', 'Trim back bushes from exterior walls', 'Move items away from AC condenser', 'Ensure roof access isn\'t blocked', 'Clear gutters of visible debris if possible'] },
+  { category: 'Exterior', items: ['Clear debris from foundation perimeter', 'Trim back bushes from exterior walls', 'Move items away from AC condenser', 'Ensure roof access isn\’t blocked', 'Clear gutters of visible debris if possible'] },
   { category: 'Documentation', items: ['Leave all appliance manuals', 'Leave previous inspection reports if available', 'Note any known issues to disclose', 'Provide access to utility bills if requested', 'Leave permits for recent work'] },
 ];
 
 const dfwRedFlags = [
   { flag: 'Active Foundation Movement', severity: 'DEAL BREAKER', color: '#EF4444', icon: '🚨', desc: 'Cracks wider than 1/4 inch, stair-step cracks in brick, doors/windows out of square. DFW clay soil expands and contracts — foundation repair costs $8K–$30K+.' },
-  { flag: 'Unpermitted Additions', severity: 'DEAL BREAKER', color: '#EF4444', icon: '🚨', desc: 'Garage conversions, room additions, or structural changes without city permits. Insurance won\'t cover, lenders may refuse, and you inherit the liability.' },
+  { flag: 'Unpermitted Additions', severity: 'DEAL BREAKER', color: '#EF4444', icon: '🚨', desc: 'Garage conversions, room additions, or structural changes without city permits. Insurance won\’t cover, lenders may refuse, and you inherit the liability.' },
   { flag: 'Active Roof Leaks', severity: 'DEAL BREAKER', color: '#EF4444', icon: '🚨', desc: 'Water stains on ceilings, attic moisture damage, rotted decking. DFW hail storms accelerate roof deterioration — replacement costs $12K–$28K.' },
   { flag: 'Knob & Tube or Aluminum Wiring', severity: 'SERIOUS', color: '#F97316', icon: '⚠️', desc: 'Fire risk. Older Dallas-area homes may still have original wiring. Rewiring a full home runs $8K–$20K.' },
   { flag: 'HVAC End of Life', severity: 'SERIOUS', color: '#F97316', icon: '⚠️', desc: 'DFW summers are brutal — 100°+ days from June–September. A failing HVAC unit means $6K–$14K replacement. Verify age and service history.' },
@@ -84,8 +84,8 @@ export default function DFWHomeInspectionGuide() {
           <div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
               {[
-                { label: 'What\'s Covered', icon: '✅', items: ['Roof condition and visible decking', 'Foundation cracks and drainage', 'Electrical panel and visible wiring', 'HVAC age, operation, and airflow', 'Plumbing supply, drain, and water pressure', 'Water heater age and condition', 'All built-in appliances', 'Attic insulation and ventilation', 'Windows, doors, and weatherstripping', 'Exterior grading and drainage'] },
-                { label: 'What\'s NOT Covered', icon: '❌', items: ['Inside walls (inspector doesn\'t open walls)', 'Underground plumbing (add sewer scope)', 'Pool and spa (add pool inspection)', 'Septic systems (add septic inspection)', 'Chinese drywall (requires specialized test)', 'Mold (requires air quality sampling)', 'Pest/termite inspection (add separately)', 'Chimney interior (add chimney scope)', 'Foundation engineering report (add if needed)', 'Survey and boundary disputes'] },
+                { label: 'What\’s Covered', icon: '✅', items: ['Roof condition and visible decking', 'Foundation cracks and drainage', 'Electrical panel and visible wiring', 'HVAC age, operation, and airflow', 'Plumbing supply, drain, and water pressure', 'Water heater age and condition', 'All built-in appliances', 'Attic insulation and ventilation', 'Windows, doors, and weatherstripping', 'Exterior grading and drainage'] },
+                { label: 'What\’s NOT Covered', icon: '❌', items: ['Inside walls (inspector doesn\’t open walls)', 'Underground plumbing (add sewer scope)', 'Pool and spa (add pool inspection)', 'Septic systems (add septic inspection)', 'Chinese drywall (requires specialized test)', 'Mold (requires air quality sampling)', 'Pest/termite inspection (add separately)', 'Chimney interior (add chimney scope)', 'Foundation engineering report (add if needed)', 'Survey and boundary disputes'] },
               ].map(card => (
                 <div key={card.label} style={{ background: '#1E3A5F', borderRadius: 12, padding: 24 }}>
                   <h3 style={{ color: '#F5E642', marginBottom: 16, fontSize: 16 }}>{card.icon} {card.label}</h3>
@@ -133,7 +133,7 @@ export default function DFWHomeInspectionGuide() {
                 { issue: 'Hail Damage to Roof', freq: 'Common', desc: 'North Texas averages 4–6 hail events per year. Inspectors check for bruised shingles, dented metal flashing, and gutters. Previous insurance claims may have been filed.' },
                 { issue: 'Inadequate Attic Insulation', freq: 'Common', desc: 'Older DFW homes frequently have R-19 or less. Code requires R-38. Upgrading saves 20–30% on cooling bills in summer.' },
                 { issue: 'HVAC Oversizing', freq: 'Common', desc: 'Short-cycling systems from oversized equipment. Common in DFW additions. Causes humidity problems and shortened equipment life.' },
-                { issue: 'Drain Grade Issues', freq: 'Common', desc: 'DFW\'s flat terrain means poor grading directs water toward foundations. Inspectors check 6-inch drop in first 10 feet from foundation.' },
+                { issue: 'Drain Grade Issues', freq: 'Common', desc: 'DFW\’s flat terrain means poor grading directs water toward foundations. Inspectors check 6-inch drop in first 10 feet from foundation.' },
               ].map(item => (
                 <div key={item.issue} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -256,7 +256,7 @@ export default function DFWHomeInspectionGuide() {
             </div>
             <div style={{ background: '#1E3A5F', borderRadius: 12, padding: 28 }}>
               <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🧮 How to Use the Report in Negotiations</h3>
-              {['Focus on safety issues and major defects — ignore cosmetic items in your request', 'Ask for repair credits rather than repairs — you\'ll control quality and timeline', 'Get contractor bids for major items before submitting repair request', 'Prioritize items that affect lender appraisal or insurability', 'In competitive markets, request credit for top 3 items only — avoid overwhelming sellers', 'Use report to renegotiate price if significant undisclosed issues are found', 'Always attend the inspection in person — photos miss context'].map(tip => (
+              {['Focus on safety issues and major defects — ignore cosmetic items in your request', 'Ask for repair credits rather than repairs — you\’ll control quality and timeline', 'Get contractor bids for major items before submitting repair request', 'Prioritize items that affect lender appraisal or insurability', 'In competitive markets, request credit for top 3 items only — avoid overwhelming sellers', 'Use report to renegotiate price if significant undisclosed issues are found', 'Always attend the inspection in person — photos miss context'].map(tip => (
                 <div key={tip} style={{ display: 'flex', gap: 12, marginBottom: 12, color: '#CBD5E1', fontSize: 14 }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span> {tip}
                 </div>

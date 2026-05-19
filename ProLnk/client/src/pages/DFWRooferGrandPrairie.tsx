@@ -39,7 +39,7 @@ const damageData: Record<DamageLevel, {
     recommendation: 'Full Replacement',
     repairRange: 'Temporary tarp only: $400 – $900',
     replaceRange: '$11,000 – $22,000',
-    verdict: 'Full replacement required. Insurance claim is strongly recommended — most policies cover storm damage. Do NOT patch — it won\'t pass inspection.',
+    verdict: 'Full replacement required. Insurance claim is strongly recommended — most policies cover storm damage. Do NOT patch — it won\’t pass inspection.',
     verdictIcon: '🏗️',
   },
 };

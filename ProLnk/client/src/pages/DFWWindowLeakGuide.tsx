@@ -63,7 +63,7 @@ const SYMPTOMS = [
   },
   {
     id: 'sticking_sash',
-    label: '🪟 Window Won't Open / Close',
+    label: '🪟 Window Won’t Open / Close',
     severity: 'Usually DIY',
     severityColor: '#22C55E',
     cause: 'Swollen wood (rare in DFW), paint sealing, hardware failure, or racked frame from foundation settling',

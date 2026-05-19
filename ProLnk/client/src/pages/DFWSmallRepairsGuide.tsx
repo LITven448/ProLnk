@@ -27,7 +27,7 @@ const repairs = [
     steps: [
       '🔌 Turn off the circuit breaker for that room (covers only — no wiring)',
       '🪛 Remove the center screw holding the old cover plate',
-      '🗑️ Pull off the old cover — note if it's a 1-gang, 2-gang, or specialty size',
+      '🗑️ Pull off the old cover — note if it’s a 1-gang, 2-gang, or specialty size',
       '🛍️ Buy the matching size — standard, Decora, or round cover',
       '📐 Align the new cover over the outlet/switch',
       '🔩 Tighten the center screw — snug but not so tight it cracks the plate',
@@ -41,7 +41,7 @@ const repairs = [
     time: '3 hrs (includes dry time)',
     tools: ['Drywall patch kit or mesh tape', 'Joint compound', 'Putty knife', 'Sandpaper (120 + 220 grit)', 'Primer + matching paint'],
     steps: [
-      '🧹 Clean loose debris from hole edges — remove any paper that's peeling',
+      '🧹 Clean loose debris from hole edges — remove any paper that’s peeling',
       '🕸️ Apply self-adhesive mesh patch over the hole, centered',
       '🖼️ Spread joint compound over mesh with putty knife — feather edges wide',
       '⏳ Let dry 4-6 hours (DFW humidity: add 1-2 hours in summer)',

@@ -8,7 +8,7 @@ const TRADES = [
 const BASE_SCHEDULE = [
   { time: '7:00–7:30 AM', label: 'Morning Routine', emoji: '🌅', tasks: [
     'Check ProLnk dashboard for new leads',
-    'Accept leads in today's service area',
+    'Accept leads in today’s service area',
     'Review any storm/weather alerts',
     'Upload photos from yesterday if not done',
   ]},
@@ -21,7 +21,7 @@ const BASE_SCHEDULE = [
   { time: '5:30–5:45 PM', label: 'Evening Wrap', emoji: '🌇', tasks: [
     'Confirm all leads accepted for tomorrow',
     'Review any new dispatches',
-    'Send follow-up message to today's homeowners',
+    'Send follow-up message to today’s homeowners',
     'Check for new recruits' activity in your network',
   ]},
 ];
@@ -91,7 +91,7 @@ export default function PartnerDailyPlannerGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 16px', color: '#0f172a' }}>📆 Weekly Tasks (1 hour)</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              'Review Photo Detection Rate — adjust what you're photographing if below 12%',
+              'Review Photo Detection Rate — adjust what you’re photographing if below 12%',
               'Send one recruiting message to a qualified prospect',
               'Post one before/after photo on social media',
               'Add 5 homes to your origination vault',

@@ -22,7 +22,7 @@ const concerns = [
   {
     id: 'accountability',
     label: '📋 Accountability if job goes wrong?',
-    nextdoor: 'Post a frustrated comment. That\'s it.',
+    nextdoor: 'Post a frustrated comment. That\’s it.',
     prolnk: 'ProLnk dispute system, performance score, potential deactivation.',
   },
   {

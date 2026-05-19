@@ -12,7 +12,7 @@ const steps = [
     phase: 'Step 2',
     title: 'Review Your Policy Deductible',
     icon: '📋',
-    detail: 'DFW policies often have a separate "wind/hail deductible" — typically 1-2% of dwelling value. On a $400K home that\'s $4,000–$8,000 out of pocket before insurance pays.',
+    detail: 'DFW policies often have a separate "wind/hail deductible" — typically 1-2% of dwelling value. On a $400K home that\’s $4,000–$8,000 out of pocket before insurance pays.',
     risk: 'Missing the hail deductible is the #1 surprise for homeowners.',
   },
   {
@@ -26,21 +26,21 @@ const steps = [
     phase: 'Step 4',
     title: 'Adjuster Visit',
     icon: '🔍',
-    detail: 'The adjuster inspects within 15 days (TX law). Have your roofer present if possible — they catch damage adjusters miss. Get a copy of the adjuster\'s report.',
+    detail: 'The adjuster inspects within 15 days (TX law). Have your roofer present if possible — they catch damage adjusters miss. Get a copy of the adjuster\’s report.',
     risk: 'Adjusters undercount damage. A second opinion is your right.',
   },
   {
     phase: 'Step 5',
     title: 'Review the Estimate & Negotiate',
     icon: '📊',
-    detail: 'Compare the adjuster\'s estimate to your roofer\'s. Gaps of 20-40% are common. Submit your roofer\'s estimate as a counter. Document all communications.',
+    detail: 'Compare the adjuster\’s estimate to your roofer\’s. Gaps of 20-40% are common. Submit your roofer\’s estimate as a counter. Document all communications.',
     risk: 'Accepting the first estimate often leaves money on the table.',
   },
   {
     phase: 'Step 6',
     title: 'Payout & Repair',
     icon: '💰',
-    detail: 'Initial payment is ACV (Actual Cash Value). After repair completion, you receive the depreciation holdback to reach RCV (Replacement Cost Value). Do not skip this step — it\'s often $2,000–$5,000.',
+    detail: 'Initial payment is ACV (Actual Cash Value). After repair completion, you receive the depreciation holdback to reach RCV (Replacement Cost Value). Do not skip this step — it\’s often $2,000–$5,000.',
     risk: 'Many homeowners forget to file for the depreciation release.',
   },
 ];

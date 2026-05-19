@@ -52,7 +52,7 @@ const results: Partial<Record<ResultKey, { load: string; schedule: string; savin
   },
   gas_pool_standard_ac: {
     load: 'Gas pool heater has no electrical impact on AC load — separate fuel source entirely.',
-    schedule: 'Gas heating at night is most efficient — heat loss is lower and you're not competing with daytime AC.',
+    schedule: 'Gas heating at night is most efficient — heat loss is lower and you’re not competing with daytime AC.',
     savings: 'No electrical load conflict. Gas heater adds $40–$90/month gas cost in pool season',
   },
   unheated_standard_ac: {

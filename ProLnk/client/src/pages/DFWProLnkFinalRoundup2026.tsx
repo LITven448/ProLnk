@@ -20,7 +20,7 @@ const guides: Record<string, { title: string; milestones: { icon: string; milest
     ],
   },
   'pro': {
-    title: 'What's Next for DFW Pros',
+    title: 'What’s Next for DFW Pros',
     milestones: [
       { icon: '⚡', milestone: 'Charter Tier Closing', status: 'Urgent', detail: '500 Charter spots total — apply now before waitlist closes forever. $149/mo locked rate for life' },
       { icon: '✅', milestone: 'Waitlist Active', status: 'Now Open', detail: 'Submitted your application? You are on the list — we will contact you when matching goes live' },
@@ -30,7 +30,7 @@ const guides: Record<string, { title: string; milestones: { icon: string; milest
     ],
   },
   'homeowner': {
-    title: 'What's Next for DFW Homeowners',
+    title: 'What’s Next for DFW Homeowners',
     milestones: [
       { icon: '✅', milestone: 'Join Waitlist', status: 'Now Open', detail: 'Sign up at prolnk.io — enter your DFW address and service needs, confirmation email sent instantly' },
       { icon: '✅', milestone: 'Home Health Vault', status: 'Building Now', detail: 'Your DFW home is already in our database — service history being built as pros join' },

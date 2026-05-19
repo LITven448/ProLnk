@@ -12,7 +12,7 @@ const ownerSituations = [
       '4️⃣ Get an inspection: hire a ProLnk-vetted tech for a full system diagnostic',
       '5️⃣ Register on Home Health Vault: your permanent DFW home health record starts now',
     ],
-    resource: 'Start with a diagnostic — you need to know what you\'re working with before summer.',
+    resource: 'Start with a diagnostic — you need to know what you\’re working with before summer.',
   },
   {
     situation: 'System Is 5–10 Years Old',

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const charterBenefits = [
   { icon: '🔒', title: 'Rate Locked Forever', detail: 'Charter pros pay $149/mo. When ProLnk raises prices to $249/mo in 2027, Charter pros keep $149/mo for life of membership.' },
-  { icon: '⚡', title: 'Priority Match Queue', detail: 'Charter pros receive leads within 1 hour of homeowner submission. Standard pros wait 4-8 hours. In DFW\'s fast market, speed wins.' },
+  { icon: '⚡', title: 'Priority Match Queue', detail: 'Charter pros receive leads within 1 hour of homeowner submission. Standard pros wait 4-8 hours. In DFW\’s fast market, speed wins.' },
   { icon: '📊', title: 'DFW Market Data Access', detail: 'Weekly data reports: average job value by zip, busiest service types, competitor density map. Standard pros have no market intel.' },
   { icon: '🏆', title: 'ProLnk Performance Certification', detail: 'Charter pros earn a verified badge visible on all quotes. Homeowners see "ProLnk Certified Charter Pro" — highest trust signal on platform.' },
   { icon: '🤝', title: 'Exclusive Network Events', detail: 'Quarterly DFW Charter pro meetups for referral partnerships, trade sharing, and vendor introductions. Invite-only, not open to standard pros.' },

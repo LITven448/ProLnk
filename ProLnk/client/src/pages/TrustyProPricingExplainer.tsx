@@ -10,7 +10,7 @@ export default function TrustyProPricingExplainer() {
     { icon: '⛈️', title: 'Storm Alerts by ZIP Code', desc: 'Real-time alerts when severe weather is heading to your property. Know before the damage happens.' },
     { icon: '✅', title: 'Vetted Contractor Matching', desc: 'Get matched with background-checked, licensed, insured contractors. No cold calling random companies.' },
     { icon: '💰', title: 'Group Deal Access', desc: 'Group buying power for common services (HVAC tune-ups, pest control, roof inspections) at negotiated rates.' },
-    { icon: '📈', title: 'Home Value Monitoring', desc: 'Powered by ATTOM data. Track your home's estimated value alongside maintenance investment and ROI.' },
+    { icon: '📈', title: 'Home Value Monitoring', desc: 'Powered by ATTOM data. Track your home’s estimated value alongside maintenance investment and ROI.' },
   ];
 
   const howItsFunded = [
@@ -51,7 +51,7 @@ export default function TrustyProPricingExplainer() {
         <div style={{ display: 'flex', gap: 0, marginBottom: 32, borderRadius: 10, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
           {[
             { key: 'homeowners', label: '🏠 What Homeowners Get' },
-            { key: 'funded', label: '💰 How It's Funded' },
+            { key: 'funded', label: '💰 How It’s Funded' },
           ].map(tab => (
             <button
               key={tab.key}
@@ -104,9 +104,9 @@ export default function TrustyProPricingExplainer() {
               <h3 style={{ fontWeight: 700, color: '#14532d', marginBottom: 12 }}>Why This Model Works</h3>
               <div style={{ display: 'grid', gap: 10 }}>
                 {[
-                  'Homeowners who use TrustyPro book 3x more services than those who don't',
+                  'Homeowners who use TrustyPro book 3x more services than those who don’t',
                   'More bookings = more commission = sustainable platform without homeowner fees',
-                  'Partners earn more from better-educated, higher-trust homeowners who understand their home's needs',
+                  'Partners earn more from better-educated, higher-trust homeowners who understand their home’s needs',
                   'Homeowner trust is worth more to TrustyPro than any fee we could charge',
                 ].map((point, i) => (
                   <div key={i} style={{ display: 'flex', gap: 12 }}>

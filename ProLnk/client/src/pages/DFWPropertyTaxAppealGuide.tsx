@@ -19,7 +19,7 @@ const EVIDENCE_ITEMS = [
 
 const STEPS = [
   { n: 1, title: 'Receive Appraisal Notice', desc: 'CAD mails notices by April 1. Protest deadline is May 15 or 30 days from notice date, whichever is later.' },
-  { n: 2, title: 'File Your Protest', desc: 'File online at your county\'s CAD portal (e.g., DCAD.org, TCAD.org). Free, takes 5 minutes.' },
+  { n: 2, title: 'File Your Protest', desc: 'File online at your county\’s CAD portal (e.g., DCAD.org, TCAD.org). Free, takes 5 minutes.' },
   { n: 3, title: 'Informal Hearing', desc: 'Meet with an appraiser to negotiate. ~60% of cases settle here. Bring your evidence.' },
   { n: 4, title: 'ARB Formal Hearing', desc: 'If informal fails, present to Appraisal Review Board. Three-member panel, 15-20 minutes.' },
   { n: 5, title: 'Receive Decision', desc: 'ARB issues written decision. You can still appeal to district court or SOAH if unsatisfied.' },
@@ -110,7 +110,7 @@ export default function DFWPropertyTaxAppealGuide() {
 
           <div style={{ background: worthFiling ? '#F0FDF4' : '#FFF7ED', borderRadius: 10, padding: '20px', marginTop: 20, border: `2px solid ${worthFiling ? '#22C55E' : '#F97316'}` }}>
             <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 14 }}>
-              {worthFiling ? '✅ Worth Filing — Here\'s Your Case' : '⚠️ Borderline — Review the Numbers'}
+              {worthFiling ? '✅ Worth Filing — Here\’s Your Case' : '⚠️ Borderline — Review the Numbers'}
             </div>
             {[
               { label: 'Average of Your Comps', value: `$${avgComp.toLocaleString()}` },

@@ -6,7 +6,7 @@ const primerData: Record<string, Record<string, { primerType: string; coats: str
     'DFW exterior': { primerType: 'Exterior acrylic primer + UV blocker', coats: '2 coats required', notes: 'DFW UV is intense — exterior surfaces degrade fast without UV-blocking primer. Apply in early morning, not midday. DFW summer temps can blister exterior primer applied above 95°F.' },
   },
   'Stain or smoke damage': {
-    'Interior': { primerType: 'Oil-based stain-blocking primer (Zinsser BIN or Kilz)', coats: '2 coats', notes: 'Water-based primers don\'t block smoke and nicotine. Oil-based seals odors. DFW tip: ventilate well — fumes accumulate fast in tight DFW homes. Allow 48h dry before topcoat.' },
+    'Interior': { primerType: 'Oil-based stain-blocking primer (Zinsser BIN or Kilz)', coats: '2 coats', notes: 'Water-based primers don\’t block smoke and nicotine. Oil-based seals odors. DFW tip: ventilate well — fumes accumulate fast in tight DFW homes. Allow 48h dry before topcoat.' },
     'DFW exterior': { primerType: 'Shellac-based primer', coats: '1–2 coats', notes: 'For exterior stains (rust, wood tannin bleed). In DFW summer, shellac dries in 45 min — fast recoat. Follow with exterior topcoat same day if temps allow.' },
   },
   'Dark to light color': {

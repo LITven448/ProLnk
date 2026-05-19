@@ -45,7 +45,7 @@ export default function DFWSmartWaterHeaterGuide() {
 
     const dfwTip = isVacation || isRental
       ? '📍 DFW vacation property tip: Smart WH pays for itself in one prevented freeze or leak event. DFW pipes freeze fast during winter storms — remote monitoring is not optional for unoccupied homes.'
-      : '📍 DFW Oncor tip: Oncor\'s 4-9pm peak window costs 3× more than off-peak rates in summer. Smart scheduling to heat at 9pm instead of 5pm saves meaningful money across DFW\'s 100°F summers.';
+      : '📍 DFW Oncor tip: Oncor\’s 4-9pm peak window costs 3× more than off-peak rates in summer. Smart scheduling to heat at 9pm instead of 5pm saves meaningful money across DFW\’s 100°F summers.';
 
     setResult({ features, units, premium, dfwTip });
   }

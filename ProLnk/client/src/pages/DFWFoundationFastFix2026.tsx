@@ -17,7 +17,7 @@ export default function DFWFoundationFastFix2026() {
   const guides: Record<string, string> = {
     slab_leak: 'URGENT — Do not wait. Active slab leaks cause rapid soil erosion and heave. Call a plumber AND foundation specialist today. Water pressure under slab can shift foundation in 24–72 hours. Document everything for insurance.',
     large_crack: 'URGENT — Sudden cracks wider than 1/4 inch or stair-step cracks in brick indicate rapid movement. Get a structural engineer assessment within 72 hours. Photograph with a coin for scale.',
-    floor_collapse: 'URGENT — Floor soft spots or visible sag indicate structural failure risk. Evacuate the area and call a structural engineer immediately. DFW's expansive clay can create voids under slabs.',
+    floor_collapse: 'URGENT — Floor soft spots or visible sag indicate structural failure risk. Evacuate the area and call a structural engineer immediately. DFW’s expansive clay can create voids under slabs.',
     doors_sticking: 'CAN WAIT 30–90 DAYS — Door and window sticking is an early sign of movement. Schedule a foundation inspection but it is not an emergency. Monitor weekly; if sticking worsens rapidly, accelerate timeline.',
     slow_cracks: 'CAN WAIT 30–90 DAYS — Hairline cracks in drywall are normal in DFW due to clay soil. Mark crack ends with pencil and date. If crack grows more than 1/8 inch in 30 days, call for inspection sooner.',
     seasonal: 'SEASONAL MONITORING — DFW foundations shift most in summer drought and fall rains. Annual inspection in October (post-drought) is ideal. Maintain consistent soil moisture with soaker hoses in summer.',

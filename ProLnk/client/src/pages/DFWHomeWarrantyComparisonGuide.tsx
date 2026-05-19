@@ -148,7 +148,7 @@ export default function DFWHomeWarrantyComparisonGuide() {
               { label: 'At purchase', detail: 'Best time — sellers often pay first year as concession. Ask during negotiation.' },
               { label: 'Before summer', detail: 'HVAC claims spike June–August. Buy in April–May before your system is stressed.' },
               { label: 'After first failure', detail: 'Most plans have a 30-day waiting period. Buy before things break, not during.' },
-              { label: 'When home is 8+ years', detail: 'DFW systems average first major failure at 8–10 years. That\'s the buy window.' },
+              { label: 'When home is 8+ years', detail: 'DFW systems average first major failure at 8–10 years. That\’s the buy window.' },
             ].map(t => (
               <div key={t.label} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1E3A5F' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, minWidth: 130, fontSize: 14 }}>{t.label}</div>

@@ -7,7 +7,7 @@ export default function DFWIBuyerGuide2026() {
   const analysis: Record<string, Record<string, { verdict: string; color: string; reason: string; action: string }>> = {
     relocation: {
       fast: { verdict: 'iBuyer Wins', color: '#22c55e', reason: 'You need to close in 14 days — iBuyer is built for this. Accept 5-8% discount to eliminate logistical chaos.', action: 'Get offers from Opendoor and Offerpad same day.' },
-      flexible: { verdict: 'Traditional Wins', color: '#F5E642', reason: 'With time, traditional listing earns 5-8% more. That's $25K+ on a $400K home.', action: 'List with ProLnk partner agent, price 2-3% above target.' },
+      flexible: { verdict: 'Traditional Wins', color: '#F5E642', reason: 'With time, traditional listing earns 5-8% more. That’s $25K+ on a $400K home.', action: 'List with ProLnk partner agent, price 2-3% above target.' },
     },
     estate: {
       fast: { verdict: 'iBuyer Wins', color: '#22c55e', reason: 'Estate situations benefit from certainty. iBuyer removes inspections, showings, and emotion from the sale.', action: 'Contact Opendoor first — they have the most DFW volume.' },
@@ -19,10 +19,10 @@ export default function DFWIBuyerGuide2026() {
     },
     upgrade: {
       fast: { verdict: 'Traditional Wins', color: '#F5E642', reason: 'Even on a tight timeline, iBuyer discount is hard to swallow for a voluntary sale. Try 30-day close.', action: 'List at market price with a 30-day close requirement.' },
-      flexible: { verdict: 'Traditional Wins', color: '#F5E642', reason: 'You're leaving $20-40K on the table with an iBuyer. No reason to do it with flexibility.', action: 'Spring listing with ProLnk documentation = maximum value.' },
+      flexible: { verdict: 'Traditional Wins', color: '#F5E642', reason: 'You’re leaving $20-40K on the table with an iBuyer. No reason to do it with flexibility.', action: 'Spring listing with ProLnk documentation = maximum value.' },
     },
     distressed: {
-      fast: { verdict: 'Cash Buyer / iBuyer', color: '#22c55e', reason: 'Distressed properties often don't qualify for iBuyer. Local cash buyers may be your fastest option.', action: 'Try iBuyer first. If denied, seek local DFW cash investor.' },
+      fast: { verdict: 'Cash Buyer / iBuyer', color: '#22c55e', reason: 'Distressed properties often don’t qualify for iBuyer. Local cash buyers may be your fastest option.', action: 'Try iBuyer first. If denied, seek local DFW cash investor.' },
       flexible: { verdict: 'Consider Both', color: '#f97316', reason: 'Make repairs first if possible. Every dollar in repairs can return 3x at closing.', action: 'Get a pre-listing repair ROI assessment from ProLnk.' },
     },
   };

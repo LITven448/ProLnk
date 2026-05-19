@@ -33,7 +33,7 @@ export default function DFWRoofRepairVsReplaceGuide() {
     } else if (pctLife > 0.5 && damageType === 'hail') {
       recommend = 'Replace — Borderline';
       reason = `Mid-life roof with hail damage is the classic DFW dilemma. Insurance replacement now locks in a new roof at minimal out-of-pocket cost. Patching hail damage often fails inspection if you try to sell.`;
-      insurancePath = 'File an insurance claim. If approved, proceed. If denied, get a public adjuster's second opinion.';
+      insurancePath = 'File an insurance claim. If approved, proceed. If denied, get a public adjuster’s second opinion.';
     } else {
       recommend = 'Repair';
       reason = `At ${age} years with ${remaining} years remaining and localized damage, repair is the right call. DFW roofers average $${DFW_REPAIR_COST.toLocaleString()} for patch jobs vs $${DFW_REPLACE_COST.toLocaleString()}+ for full replacement.`;

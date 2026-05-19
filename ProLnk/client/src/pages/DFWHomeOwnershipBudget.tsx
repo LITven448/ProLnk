@@ -37,7 +37,7 @@ export default function DFWHomeOwnershipBudget() {
   const rows = result ? [
     { label: 'Mortgage (P&I)', val: result.mortgage, note: '' },
     { label: 'Property Tax (escrow)', val: result.propertyTax, note: '⚠️ Most underestimated' },
-    { label: 'Homeowner\'s Insurance', val: result.insurance, note: '' },
+    { label: 'Homeowner\’s Insurance', val: result.insurance, note: '' },
     { label: 'HOA Fees', val: result.hoa, note: '' },
     { label: 'Maintenance Reserve', val: result.maintenance, note: '1.5% of home value/yr' },
     { label: 'Utilities (est.)', val: result.utilities, note: 'Electric peaks in summer' },

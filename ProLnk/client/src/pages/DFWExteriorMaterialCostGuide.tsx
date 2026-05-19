@@ -19,7 +19,7 @@ const RECOMMENDATIONS: Record<string, Record<string, { topPick: string; runner: 
   medium: {
     durability: { topPick: 'Brick Veneer', runner: 'Fiber Cement (HardiePlank)', avoid: 'Stucco / EIFS', rationale: 'At mid-range budget, brick veneer is the clear DFW choice. 75-year lifespan, excellent hail resistance, and low maintenance offset the higher install cost over 20 years.' },
     beauty: { topPick: 'Stone Veneer (MSV)', runner: 'Brick Veneer', avoid: 'Vinyl Siding', rationale: 'MSV delivers premium aesthetics. Ensure proper flashing and drainage plane in DFW installs — MSV moisture failure is expensive.' },
-    resale: { topPick: 'Brick Veneer', runner: 'Stone Veneer (MSV)', avoid: 'Stucco / EIFS', rationale: 'Brick consistently tops DFW resale value studies. Buyers recognize brick's permanence. Stucco/EIFS actually discounts some DFW buyers due to known failure issues.' },
+    resale: { topPick: 'Brick Veneer', runner: 'Stone Veneer (MSV)', avoid: 'Stucco / EIFS', rationale: 'Brick consistently tops DFW resale value studies. Buyers recognize brick’s permanence. Stucco/EIFS actually discounts some DFW buyers due to known failure issues.' },
   },
   high: {
     durability: { topPick: 'Natural Stone', runner: 'Brick Veneer', avoid: 'Stucco / EIFS', rationale: 'Natural limestone (DFW native) lasts 100+ years with minimal maintenance. Install cost is high but 20-year total cost is often lower than alternatives due to near-zero maintenance.' },

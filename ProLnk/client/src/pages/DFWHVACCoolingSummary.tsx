@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const situations = [
-  { label: 'My AC isn\'t cooling well', key: 'poor_cooling' },
+  { label: 'My AC isn\’t cooling well', key: 'poor_cooling' },
   { label: 'My energy bills are too high', key: 'high_bills' },
   { label: 'Need a new AC system', key: 'replacement' },
   { label: 'Emergency — AC is completely out', key: 'emergency' },

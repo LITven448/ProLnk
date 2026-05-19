@@ -29,7 +29,7 @@ const CONTENT: Record<string, { headline: string; points: string[] }> = {
       '📋 Quote requests go live — pros compete for your project',
       '⭐ Review and rating system activates for every completed job',
       '🏠 Your home enters the Health Vault for future service history',
-      '📍 Priority matching if you're in Frisco, Plano, McKinney, or Allen',
+      '📍 Priority matching if you’re in Frisco, Plano, McKinney, or Allen',
     ],
   },
 };
@@ -51,7 +51,7 @@ export default function ProLnkLaunchDayPage() {
         <div style={{ display: 'inline-flex', background: '#111827', borderRadius: '12px', padding: '6px', gap: '4px' }}>
           {(['partner', 'homeowner'] as const).map(t => (
             <button key={t} onClick={() => setUserType(t)} style={{ padding: '12px 28px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '15px', background: userType === t ? '#f59e0b' : 'transparent', color: userType === t ? '#0a0f1e' : '#64748b', transition: 'all 0.2s' }}>
-              {t === 'partner' ? '🔧 I\'m a Partner Pro' : '🏠 I\'m a Homeowner'}
+              {t === 'partner' ? '🔧 I\’m a Partner Pro' : '🏠 I\’m a Homeowner'}
             </button>
           ))}
         </div>

@@ -19,7 +19,7 @@ function getRecommendation(value: number, years: number, goal: Goal): { headline
     return {
       headline: 'Invest in Daily Life Quality — DFW Lifestyle Upgrades',
       actions: ['Outdoor covered patio — extends your living space 7+ months/year in DFW', 'Pool or hot tub — transforms DFW summer entertainment', 'Home office if remote work — DFW traffic makes WFH valuable', 'Smart HVAC — Texas electric bills are the #1 comfort complaint'],
-      insight: 'DFW homes are lived in hard. Invest in what makes daily life better — you\'ll recoup it at sale.'
+      insight: 'DFW homes are lived in hard. Invest in what makes daily life better — you\’ll recoup it at sale.'
     };
   }
   if (value < 400000) return {

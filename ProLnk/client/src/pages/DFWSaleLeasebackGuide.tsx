@@ -14,7 +14,7 @@ const sections = [
   {
     icon: '📝',
     heading: 'How to Negotiate Leaseback Terms',
-    body: '• Length: 30–90 days most common. 6 months is possible with motivated investors.\n• Rent: Typically set at buyer\'s PITI (principal, interest, taxes, insurance) per month.\n• Deposit: Usually $2,000–$5,000, credited back if you leave on time.\n• Condition clause: Document home condition at close to protect your deposit.',
+    body: '• Length: 30–90 days most common. 6 months is possible with motivated investors.\n• Rent: Typically set at buyer\’s PITI (principal, interest, taxes, insurance) per month.\n• Deposit: Usually $2,000–$5,000, credited back if you leave on time.\n• Condition clause: Document home condition at close to protect your deposit.',
   },
   {
     icon: '⚠️',
@@ -24,7 +24,7 @@ const sections = [
   {
     icon: '📊',
     heading: 'DFW Market Context',
-    body: 'DFW\'s active investor market (institutional and individual) makes sale-leasebacks more viable here than most U.S. markets. Metroplex has 40,000+ active real estate investors. In a seller\'s market, buyers are motivated to offer leaseback to win the deal.',
+    body: 'DFW\’s active investor market (institutional and individual) makes sale-leasebacks more viable here than most U.S. markets. Metroplex has 40,000+ active real estate investors. In a seller\’s market, buyers are motivated to offer leaseback to win the deal.',
   },
 ];
 

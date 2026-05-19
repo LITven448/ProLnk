@@ -3,7 +3,7 @@ import { useState } from 'react';
 const legalInfo = [
   { icon: '📜', title: 'Texas SB 769 — Rainwater Is Legal', desc: 'Texas Senate Bill 769 explicitly permits residential rainwater harvesting for outdoor and indoor non-potable uses. Some municipalities even offer rebates.' },
   { icon: '🏛️', title: 'DFW Municipal Rules', desc: 'Dallas and Fort Worth allow rainwater harvesting. Always check if your HOA has additional rules. Potable use requires filtration and health department approval.' },
-  { icon: '🚫', title: 'What You Cannot Do', desc: 'Cannot divert stormwater runoff from neighbors\' properties. Cannot use untreated water for drinking without certified filtration and testing.' },
+  { icon: '🚫', title: 'What You Cannot Do', desc: 'Cannot divert stormwater runoff from neighbors\’ properties. Cannot use untreated water for drinking without certified filtration and testing.' },
 ];
 
 const systemTypes = [

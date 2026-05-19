@@ -62,7 +62,7 @@ const phases = [
 const incomeStreams = [
   { stream: 'Direct Commission', range: '12–70%', note: 'Per match; grows with your tier' },
   { stream: 'Pro Override (L1)', range: '1%', note: 'Of every match your recruits close' },
-  { stream: 'Pro Override (L2)', range: '0.5%', note: 'Your recruits\'s recruits' },
+  { stream: 'Pro Override (L2)', range: '0.5%', note: 'Your recruits\’s recruits' },
   { stream: 'Pro Override (L3)', range: '0.25%', note: '3 levels deep' },
   { stream: 'Pro Override (L4)', range: '0.1%', note: '4 levels deep' },
   { stream: 'Subscription Override', range: '10%', note: 'Recurring monthly from referred pros' },
@@ -73,10 +73,10 @@ const incomeStreams = [
 const objections = [
   {
     q: '"This sounds like MLM."',
-    a: 'You earn primarily from direct job commissions — up to 70%. Override income from your network is a bonus, not the foundation. It\'s a contractor income system with a referral layer.',
+    a: 'You earn primarily from direct job commissions — up to 70%. Override income from your network is a bonus, not the foundation. It\’s a contractor income system with a referral layer.',
   },
   {
-    q: '"I don\'t have time to recruit."',
+    q: '"I don\’t have time to recruit."',
     a: 'One group Zoom call per week takes 20 minutes. After your first 5 recruits are active, the system duplicates itself. Your time investment drops as your override income climbs.',
   },
   {

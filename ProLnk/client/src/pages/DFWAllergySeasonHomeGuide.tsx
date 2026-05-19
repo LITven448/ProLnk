@@ -4,7 +4,7 @@ type AllergyType = 'Mountain Cedar' | 'Oak / Tree Pollen' | 'Grass Pollen' | 'Ra
 type HomeFeature = 'Central HVAC' | 'Window Units' | 'No AC (rare)';
 
 const allergySeasons = [
-  { allergen: 'Mountain Cedar', months: 'Dec – Feb', severity: 'EXTREME', color: '#FF4444', tip: 'DFW\'s worst allergy event — "cedar fever" affects 80% of residents' },
+  { allergen: 'Mountain Cedar', months: 'Dec – Feb', severity: 'EXTREME', color: '#FF4444', tip: 'DFW\’s worst allergy event — "cedar fever" affects 80% of residents' },
   { allergen: 'Oak & Tree Pollen', months: 'Mar – Apr', severity: 'HIGH', color: '#FF8C00', tip: 'Spring peak — pollen counts frequently exceed 1,000 grains/m³ in DFW' },
   { allergen: 'Grass Pollen', months: 'May – Jul', severity: 'HIGH', color: '#FF8C00', tip: 'Bermuda grass dominates — mow lawns before 10am to reduce exposure' },
   { allergen: 'Ragweed & Mold', months: 'Aug – Nov', severity: 'MODERATE', color: '#F5E642', tip: 'Fall ragweed + mold from late-summer rains — peaks after first frost' },

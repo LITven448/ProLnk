@@ -14,7 +14,7 @@ const RECS: Record<RecKey, { size: string; cost: string; permit: string; note: s
   'New Construction|Large (20yd+ needed)': { size: '30-Yard Dumpster', cost: '$700–1,100', permit: 'GC typically manages permit — confirm in contract', note: 'New construction in DFW produces substantial framing and wrap waste. 30yd is standard for new builds — GC should include dumpster in their scope.' },
 };
 
-const DEFAULT_REC = { size: '10-Yard Dumpster', cost: '$350–500', permit: 'Free on private property; $50–150 permit for street placement', note: 'The 10-yard is DFW's most versatile dumpster — fits in most driveways and handles the majority of residential projects without overage fees.' };
+const DEFAULT_REC = { size: '10-Yard Dumpster', cost: '$350–500', permit: 'Free on private property; $50–150 permit for street placement', note: 'The 10-yard is DFW’s most versatile dumpster — fits in most driveways and handles the majority of residential projects without overage fees.' };
 
 const PERMIT_INFO: Record<string, string> = {
   'Dallas': 'Dallas requires a $65 street use permit for dumpster placement in public right-of-way. Apply at dallascityhall.com/departments/public-works.',

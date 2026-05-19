@@ -14,7 +14,7 @@ const DRIVE_TYPES = [
     noise: '⭐⭐ Loud',
     durability: '⭐⭐⭐⭐⭐',
     cost: '$150–$280 installed',
-    dfwNote: 'Most durable in DFW heat. Best for detached garages where noise isn\'t a concern. Budget pick.',
+    dfwNote: 'Most durable in DFW heat. Best for detached garages where noise isn\’t a concern. Budget pick.',
     recommended: false,
   },
   {

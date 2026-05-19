@@ -79,7 +79,7 @@ export default function PartnerNetworkHealthReport() {
               {
                 label: 'Average Jobs per Recruit',
                 target: '5+ jobs/month per active recruit',
-                desc: 'Below 3 jobs/month means your recruits aren't hitting their earning threshold. They need coaching on the client conversation, not more motivation.',
+                desc: 'Below 3 jobs/month means your recruits aren’t hitting their earning threshold. They need coaching on the client conversation, not more motivation.',
                 icon: '🔨',
               },
               {
@@ -91,13 +91,13 @@ export default function PartnerNetworkHealthReport() {
               {
                 label: 'Depth Growth',
                 target: 'Each L1 recruit brings in 0.5 recruits/month',
-                desc: 'If your recruits aren't recruiting, your network income flatlines. Teach them the same conversation you used to recruit them.',
+                desc: 'If your recruits aren’t recruiting, your network income flatlines. Teach them the same conversation you used to recruit them.',
                 icon: '🌳',
               },
               {
                 label: 'Income Growth Rate',
                 target: '10–15%/month in first 12 months',
-                desc: 'Network income should compound in the early months. If it's plateauing at 6+ months in, diagnose the specific weak metric first.',
+                desc: 'Network income should compound in the early months. If it’s plateauing at 6+ months in, diagnose the specific weak metric first.',
                 icon: '📈',
               },
             ].map(item => (
@@ -118,10 +118,10 @@ export default function PartnerNetworkHealthReport() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 24 }}>🩺 Diagnosing Network Problems</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {[
-              { problem: 'Low Recruit Activity', fix: 'They haven't learned the photo documentation process. Schedule a 30-minute live training call. Watch how fast it turns around.' },
-              { problem: 'No L2/L3 Growth', fix: 'Recruits aren't recruiting. Teach them the same conversation you had with them. Role-play it. Make the script available.' },
+              { problem: 'Low Recruit Activity', fix: 'They haven’t learned the photo documentation process. Schedule a 30-minute live training call. Watch how fast it turns around.' },
+              { problem: 'No L2/L3 Growth', fix: 'Recruits aren’t recruiting. Teach them the same conversation you had with them. Role-play it. Make the script available.' },
               { problem: 'Income Plateau', fix: 'All your recruits are in the same trade or area. Diversify — recruit complementary trades. HVAC + plumbing + electrical = compounding, non-competing referrals.' },
-              { problem: 'High Churn', fix: 'Partners quitting usually means they didn't earn in their first 30 days. Front-load coaching for new recruits in week 1-2, not week 4.' },
+              { problem: 'High Churn', fix: 'Partners quitting usually means they didn’t earn in their first 30 days. Front-load coaching for new recruits in week 1-2, not week 4.' },
             ].map(item => (
               <div key={item.problem} style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 20, boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
                 <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>⚠️ {item.problem}</div>

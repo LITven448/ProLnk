@@ -44,7 +44,7 @@ const scenarios = [
       '✅ Search address in ProLnk Home Health Vault',
       '✅ Review uploaded permits, engineer reports, and warranties',
       '✅ Check moisture sensor history if available',
-      '✅ Verify repair dates match seller's disclosure',
+      '✅ Verify repair dates match seller’s disclosure',
       '✅ Look for annual inspection records — gap = warranty may be void',
       '✅ Request Vault transfer to your name at closing',
     ],

@@ -27,7 +27,7 @@ const priorities: Record<string, { q3Task: string; timing: string; urgency: stri
     { q3Task: 'Inspect for summer heat warping and loose boards', timing: 'August', urgency: 'MEDIUM', why: 'Extreme heat causes wood to expand and contract. Check posts, gates, and deck boards for movement. Schedule repairs for fall.' },
   ],
   'Planning fall projects': [
-    { q3Task: 'Get contractor bids in August for fall work', timing: 'August (before fall rush)', urgency: 'HIGH', why: 'Fall is DFW\'s busiest home improvement season. Contractors who are free in August book October/November faster than any other month. Lock in bids now at 10–20% better pricing.' },
+    { q3Task: 'Get contractor bids in August for fall work', timing: 'August (before fall rush)', urgency: 'HIGH', why: 'Fall is DFW\’s busiest home improvement season. Contractors who are free in August book October/November faster than any other month. Lock in bids now at 10–20% better pricing.' },
     { q3Task: 'Order materials for fall projects in September', timing: 'September', urgency: 'MEDIUM', why: 'Supply chain delays and fall demand mean popular materials (pavers, lumber, roofing) can be 3–4 weeks out by October.' },
   ],
 };

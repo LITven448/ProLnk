@@ -19,7 +19,7 @@ const options = [
     pros: ['Lower cost (flat fee $1,500–$5,000)', 'Good if you know exactly what you want', 'Faster close — you make all decisions'],
     cons: ['No negotiation support', 'You carry the risk of missing issues', 'No market pricing advice'],
     cost: 'Flat fee $1,500–$5,000 regardless of price',
-    bestFor: 'Experienced buyers who\'ve bought in DFW before and know the market',
+    bestFor: 'Experienced buyers who\’ve bought in DFW before and know the market',
   },
   {
     key: 'unrepresented',

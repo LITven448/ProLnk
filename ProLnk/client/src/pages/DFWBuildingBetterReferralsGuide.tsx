@@ -10,8 +10,8 @@ const tradeProfiles = [
 
 const tactics = [
   { icon: '⭐', title: 'Ask for the Google Review Before You Leave', desc: 'Text the homeowner your Google review link before you pack up your truck. Response rate drops by 60% if you wait 24 hours.' },
-  { icon: '🏘️', title: 'The Nextdoor Neighbor Method', desc: 'After every job, ask: "Would you mind posting on Nextdoor that you used us? We\'re trying to serve more neighbors in this area." One post = 3–8 new inquiries on average.' },
-  { icon: '📸', title: 'Before/After on Facebook Groups', desc: 'DFW has 200+ neighborhood Facebook groups. Post a before/after with homeowner permission. Tag the neighborhood. Boost is free if you\'re a local member.' },
+  { icon: '🏘️', title: 'The Nextdoor Neighbor Method', desc: 'After every job, ask: "Would you mind posting on Nextdoor that you used us? We\’re trying to serve more neighbors in this area." One post = 3–8 new inquiries on average.' },
+  { icon: '📸', title: 'Before/After on Facebook Groups', desc: 'DFW has 200+ neighborhood Facebook groups. Post a before/after with homeowner permission. Tag the neighborhood. Boost is free if you\’re a local member.' },
   { icon: '📞', title: '30-Day Follow-Up Call', desc: 'Call every customer 30 days after job. Ask how everything is holding up. Ask if they know anyone who needs your service. 23% of referrals come from this single touchpoint.' },
   { icon: '💌', title: 'Referral Card Left at Job Site', desc: 'Leave 3 business cards at every DFW home with a handwritten note: "If your neighbors ask, give them one of these." Simple. Works.' },
   { icon: '🎁', title: 'Refer-a-Neighbor Incentive', desc: 'Offer $25 off their next service for every neighbor they refer who books. In DFW, this pays back 8x on average.' },

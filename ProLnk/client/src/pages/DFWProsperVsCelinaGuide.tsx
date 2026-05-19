@@ -37,7 +37,7 @@ export default function DFWProsperVsCelinaGuide() {
   const scores = getRecommendation();
   const winner = scores.prosper > scores.celina ? 'Prosper' : 'Celina';
   const reasoning = winner === 'Prosper'
-    ? 'Prosper ISD is one of Texas\'s top districts, more established retail, and closer to Frisco employment hub.'
+    ? 'Prosper ISD is one of Texas\’s top districts, more established retail, and closer to Frisco employment hub.'
     : 'Celina offers significantly lower prices, larger lots, and rural character with explosive appreciation potential.';
 
   const prosperNeighborhoods = ['Windsong Ranch', 'Star Trail', 'Gentle Creek', 'Lakes of La Cima'];
@@ -55,7 +55,7 @@ export default function DFWProsperVsCelinaGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
             { name: 'Prosper', emoji: '🏘️', price: '$580K', desc: 'Established master-planned community with Prosper ISD, closer to Frisco and employment centers. More suburban feel, higher price.', color: '#3b82f6' },
-            { name: 'Celina', emoji: '🌅', price: '$380K', desc: 'Texas\' fastest-growing city. Still rural pockets, massive lots available, Celina ISD growing fast. Best value play in outer DFW.', color: '#22c55e' },
+            { name: 'Celina', emoji: '🌅', price: '$380K', desc: 'Texas\’ fastest-growing city. Still rural pockets, massive lots available, Celina ISD growing fast. Best value play in outer DFW.', color: '#22c55e' },
           ].map(city => (
             <div key={city.name} style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${city.color}40`, borderRadius: 16, padding: 24 }}>
               <div style={{ fontSize: 40, marginBottom: 8 }}>{city.emoji}</div>

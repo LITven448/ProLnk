@@ -14,7 +14,7 @@ const platforms = [
     verdict: 'Best for contractors who want quality leads and multiple income streams.',
   },
   {
-    name: 'Angi (formerly Angie\'s List)',
+    name: 'Angi (formerly Angie\’s List)',
     logo: '🟠',
     costModel: 'Pay per lead',
     leadQuality: '⭐⭐',
@@ -71,7 +71,7 @@ const platforms = [
     responseTime: 'Fast (Google screened)',
     monthlyCost: '$400–$1,200/mo',
     recommended: false,
-    verdict: 'High quality but expensive in competitive markets. Requires Google\'s background check process.',
+    verdict: 'High quality but expensive in competitive markets. Requires Google\’s background check process.',
   },
 ];
 
@@ -79,7 +79,7 @@ const tradeRecommendations: Record<string, string[]> = {
   Plumbing: ['ProLnk', 'Google Local Services'],
   Electrical: ['ProLnk', 'Google Local Services'],
   HVAC: ['ProLnk', 'Thumbtack'],
-  Roofing: ['ProLnk', 'Angi (formerly Angie\'s List)'],
+  Roofing: ['ProLnk', 'Angi (formerly Angie\’s List)'],
   Landscaping: ['ProLnk', 'Nextdoor Pro'],
   General: ['ProLnk', 'Google Local Services'],
 };

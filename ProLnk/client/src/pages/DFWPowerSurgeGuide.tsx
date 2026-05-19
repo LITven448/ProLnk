@@ -51,7 +51,7 @@ export default function DFWPowerSurgeGuide() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🌩️ DFW Surge Sources</div>
           {[
-            ['⚡ Lightning Strikes', 'DFW\'s open prairie geography + flat terrain = frequent direct and nearby strikes.'],
+            ['⚡ Lightning Strikes', 'DFW\’s open prairie geography + flat terrain = frequent direct and nearby strikes.'],
             ['🔄 HVAC Cycling', 'Your AC compressor creates small surges every time it starts/stops — 20+ times daily in summer.'],
             ['🔌 Utility Grid Events', 'Oncor switching events during storms send transient surges through neighborhood lines.'],
           ].map(([title, desc]) => (

@@ -54,7 +54,7 @@ const guides: Record<string, { title: string; steps: string[]; callProLnk: strin
     steps: [
       '📞 Call ProLnk TODAY — 15+ year shingles are past actuarial end-of-life in DFW',
       '🚫 Do not patch — insurance may deny future claims on a failed system',
-      '🏛️ Verify your homeowner\'s insurance status — some carriers drop 15+ year roofs',
+      '🏛️ Verify your homeowner\’s insurance status — some carriers drop 15+ year roofs',
       '📐 Request a full replacement scope with decking inspection included',
       '💡 Ask about Class 4 impact-resistant shingles — 20–30% insurance discount available',
       '🗃️ New roof logged in Home Health Vault adds measurable resale value',
@@ -72,7 +72,7 @@ const guides: Record<string, { title: string; steps: string[]; callProLnk: strin
       '🚫 Do not sign any roofing contract until you have an independent inspection report',
       '💰 Texas law: roofers cannot solicit your deductible — any who offer to are in violation',
     ],
-    callProLnk: 'Get a HAAG-certified inspection before insurance adjuster visit — it\'s the difference between approval and denial.',
+    callProLnk: 'Get a HAAG-certified inspection before insurance adjuster visit — it\’s the difference between approval and denial.',
   },
 };
 

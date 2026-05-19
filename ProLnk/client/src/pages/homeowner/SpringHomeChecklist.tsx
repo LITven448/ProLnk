@@ -97,7 +97,7 @@ const CATEGORIES: Category[] = [
     icon: '🔧',
     color: 'from-cyan-900/40 to-slate-800/60 border-cyan-700/30',
     items: [
-      { id: 'plumb-1', label: 'Turn on outdoor faucets and check for winter damage', detail: 'Even mild DFW winters can crack outdoor faucets that weren\'t properly drained. Turn on slowly and check connections for drips.' },
+      { id: 'plumb-1', label: 'Turn on outdoor faucets and check for winter damage', detail: 'Even mild DFW winters can crack outdoor faucets that weren\’t properly drained. Turn on slowly and check connections for drips.' },
       { id: 'plumb-2', label: 'Reactivate irrigation system backflow preventer', detail: 'If you winterized your irrigation, reconnect the backflow preventer and pressurize slowly to avoid water hammer.' },
       { id: 'plumb-3', label: 'Flush water heater sediment', detail: 'DFW hard water (300–400 ppm hardness) causes heavy sediment buildup. Annual flush extends water heater life 3–5 years.' },
       { id: 'plumb-4', label: 'Inspect under sinks for slow leaks', detail: 'Check supply lines, drain connections, and garbage disposal seals. Slow leaks behind cabinet doors cause significant wood damage.' },

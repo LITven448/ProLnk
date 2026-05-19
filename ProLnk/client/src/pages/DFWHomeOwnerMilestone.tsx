@@ -3,15 +3,15 @@ import { useState } from 'react';
 const topics = [
   { label: 'Seasonal Maintenance', emoji: '🌤️', detail: 'You now know that DFW summers demand AC checks in April, and winters need pipe insulation before December. That knowledge saves $800–$2,400 per year on average.' },
   { label: 'Contractor Vetting', emoji: '🔍', detail: 'You understand how to verify licenses, read reviews across platforms, and spot red flags before signing. Most DFW homeowners learn this the hard way—after a $3,000 mistake.' },
-  { label: 'Home Health Systems', emoji: '🏠', detail: 'You\'ve learned how plumbing, electrical, HVAC, and foundation systems interact. That systems view helps you catch cascading problems early.' },
-  { label: 'Market-Aware Repairs', emoji: '📊', detail: 'You understand how DFW\'s fast-moving real estate market affects repair ROI. Not every fix adds value—but the right ones do.' },
+  { label: 'Home Health Systems', emoji: '🏠', detail: 'You\’ve learned how plumbing, electrical, HVAC, and foundation systems interact. That systems view helps you catch cascading problems early.' },
+  { label: 'Market-Aware Repairs', emoji: '📊', detail: 'You understand how DFW\’s fast-moving real estate market affects repair ROI. Not every fix adds value—but the right ones do.' },
 ];
 
 const masteryLevels = [
-  { min: 0, max: 2, label: 'Getting Started', emoji: '🌱', message: 'You\'ve begun building real DFW homeowner knowledge. Every page you\'ve read is worth dollars saved.' },
+  { min: 0, max: 2, label: 'Getting Started', emoji: '🌱', message: 'You\’ve begun building real DFW homeowner knowledge. Every page you\’ve read is worth dollars saved.' },
   { min: 3, max: 5, label: 'Informed Owner', emoji: '📘', message: 'You know more than 70% of DFW homeowners. You can spot problems early and hire smarter.' },
-  { min: 6, max: 9, label: 'Savvy Homeowner', emoji: '🏆', message: 'You\'re operating at expert level. You ask the right questions, hire confidently, and protect your investment.' },
-  { min: 10, max: 999, label: 'DFW Mastery', emoji: '⭐', message: 'You\'ve achieved genuine mastery. ProLnk was built for homeowners exactly like you—ready to make every service decision count.' },
+  { min: 6, max: 9, label: 'Savvy Homeowner', emoji: '🏆', message: 'You\’re operating at expert level. You ask the right questions, hire confidently, and protect your investment.' },
+  { min: 10, max: 999, label: 'DFW Mastery', emoji: '⭐', message: 'You\’ve achieved genuine mastery. ProLnk was built for homeowners exactly like you—ready to make every service decision count.' },
 ];
 
 export default function DFWHomeOwnerMilestone() {

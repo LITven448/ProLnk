@@ -12,7 +12,7 @@ const NO_STORE = [
 const OK_STORE = [
   { item: '🎄 Holiday Decorations', tip: 'Use sealed bins — DFW attics get mouse activity Oct–Nov' },
   { item: '👗 Seasonal Clothing', tip: 'Vacuum-sealed bags + airtight containers. Label by season.' },
-  { item: '🧸 Kids\' Toys (plastic)', tip: 'Avoid vinyl — it off-gasses and degrades. Hard plastic OK.' },
+  { item: '🧸 Kids\’ Toys (plastic)', tip: 'Avoid vinyl — it off-gasses and degrades. Hard plastic OK.' },
   { item: '🏕️ Camping Gear', tip: 'Sleeping bags, tents — heat-tolerant. Check seams annually.' },
   { item: '📦 Moving Boxes (empty)', tip: 'Flat-stack. Reuse for next DFW move — averages every 5 years.' },
   { item: '🏈 Sports Equipment', tip: 'Balls, pads, helmets — durable. Avoid leather gloves.' },

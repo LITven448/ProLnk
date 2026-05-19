@@ -11,7 +11,7 @@ const innovations = [
     id: 'solar',
     label: '☀️ Solar + HVAC Integration',
     path: 'Size your solar array to cover your HVAC load first — in DFW, HVAC is 50-60% of annual electricity use. A 10kW solar system covers most DFW homes' HVAC needs. Add a 10kWh battery backup and your HVAC runs through ERCOT outages. With solar and heat pump: average DFW utility bill under $40/month.',
-    prolnk: 'ProLnk connects innovators with DFW's solar-HVAC integration specialists who design both systems together — not two contractors bolting incompatible systems together.',
+    prolnk: 'ProLnk connects innovators with DFW’s solar-HVAC integration specialists who design both systems together — not two contractors bolting incompatible systems together.',
   },
   {
     id: 'battery',

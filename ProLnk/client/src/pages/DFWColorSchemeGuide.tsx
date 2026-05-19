@@ -61,7 +61,7 @@ export default function DFWColorSchemeGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 40 }}>
           {[
-            { icon: '☀️', title: 'Texas Light Reality', note: 'Colors that look perfect in northern states can read purple, yellow, or green under DFW\'s intense sun' },
+            { icon: '☀️', title: 'Texas Light Reality', note: 'Colors that look perfect in northern states can read purple, yellow, or green under DFW\’s intense sun' },
             { icon: '🏘️', title: 'HOA Compliance', note: '85% of DFW new construction is in HOA communities — exterior colors must be pre-approved' },
             { icon: '🌧️', title: 'Hail Resistance', note: 'Choose paint quality over trendy colors — hail events annually in DFW make durability critical' },
             { icon: '🏠', title: 'Broad Appeal Wins', note: 'Neutral palettes increase buyer pool size — the right neutral adds $15K–$30K vs bold choices' },

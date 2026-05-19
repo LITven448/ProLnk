@@ -7,14 +7,14 @@ const PROMISES: Record<UserType, { headline: string; points: string[] }> = {
     headline: 'You will never wonder if your contractor is trustworthy.',
     points: [
       '✅ Every contractor is licensed, insured, and background-checked before you see their name.',
-      '✅ The price you're quoted is the price you pay — no surprise upcharges.',
-      '✅ Your home's data lives in the Home Health Vault, owned by you, never sold.',
-      '✅ If a match doesn't feel right, you can decline with zero consequences.',
+      '✅ The price you’re quoted is the price you pay — no surprise upcharges.',
+      '✅ Your home’s data lives in the Home Health Vault, owned by you, never sold.',
+      '✅ If a match doesn’t feel right, you can decline with zero consequences.',
       '✅ DFW-local contractors who know your neighborhood, code requirements, and weather.',
     ],
   },
   contractor: {
-    headline: 'You will never pay for a lead you didn't earn.',
+    headline: 'You will never pay for a lead you didn’t earn.',
     points: [
       '✅ Match-only revenue model: you pay only when you win the job.',
       '✅ No bidding wars. Homeowners see your credentials, not your ad budget.',

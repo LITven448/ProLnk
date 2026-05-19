@@ -12,7 +12,7 @@ const milestones = [
 
 const tradeAdvantage: Record<string, string> = {
   'Plumbing': 'Slab leak + water heater replacement are top DFW needs — your trade knowledge makes referrals highly credible.',
-  'HVAC/AC': 'DFW\'s 100°F summers mean HVAC is the #1 homeowner pain — you know when a system is failing before they do.',
+  'HVAC/AC': 'DFW\’s 100°F summers mean HVAC is the #1 homeowner pain — you know when a system is failing before they do.',
   'Electrical': 'Panel upgrades and EV chargers are surging in DFW new-builds — position as the electrical authority.',
   'Roofing': 'DFW hail season (March-June) creates massive demand spikes — time referrals around storm activity.',
   'Foundation': 'Clay soil is unique to DFW — your expertise in pier systems is a major credibility advantage.',

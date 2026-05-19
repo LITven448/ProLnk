@@ -43,12 +43,12 @@ const seasonData: Record<SeasonKey, { emoji: string; label: string; color: strin
       '🌀 Listen for AC startup — compressor should click on smoothly as temp rises',
       '💧 Check condensate drain area — spring pollen clogs drains fast in DFW',
       '🌿 Step outside — inspect condenser for pollen/debris buildup on fins',
-      '🔄 Filter check — replace now if you haven\'t since fall',
+      '🔄 Filter check — replace now if you haven\’t since fall',
     ],
     comingUp: [
       '📅 May: DFW temps hit 90°F — your AC should already be tuned up',
       '📅 June: Full summer load begins — ensure refrigerant charge is correct',
-      '💡 Schedule tune-up now if you haven\'t — don\'t wait until 100°F days',
+      '💡 Schedule tune-up now if you haven\’t — don\’t wait until 100°F days',
     ],
   },
   summer: {
@@ -61,9 +61,9 @@ const seasonData: Record<SeasonKey, { emoji: string; label: string; color: strin
       '💧 Check condensate drain outside — should be dripping on hot July days',
     ],
     comingUp: [
-      '📅 August: Peak DFW heat — HVAC failures hit highest rate; have tech\'s number ready',
+      '📅 August: Peak DFW heat — HVAC failures hit highest rate; have tech\’s number ready',
       '📅 September: Schedule fall furnace tune-up now before October rush',
-      '💡 If system ran 24/7 and didn\'t keep up, it\'s undersized or low on refrigerant',
+      '💡 If system ran 24/7 and didn\’t keep up, it\’s undersized or low on refrigerant',
     ],
   },
   fall: {
@@ -76,7 +76,7 @@ const seasonData: Record<SeasonKey, { emoji: string; label: string; color: strin
       '🔄 Replace air filter — heating pulls more static and clogs filters faster',
     ],
     comingUp: [
-      '📅 November: First DFW cold snap possible — don\'t be caught with unserviced furnace',
+      '📅 November: First DFW cold snap possible — don\’t be caught with unserviced furnace',
       '📅 December/January: DFW ice events — know your emergency heat settings',
       '💡 October tune-up window is closing fast — book now',
     ],
@@ -87,7 +87,7 @@ const situationAdvice: Record<string, string> = {
   'Running great — just doing a check': '✅ Great habit. Today just do your morning check — 5 min is all it takes to catch early issues.',
   'Unit is older (10+ years)': '⚠️ Older DFW systems need monthly filter checks and should get a full tune-up each season. Start budgeting for replacement — average DFW lifespan is 12–15 years.',
   'Bills seem higher than usual': '💡 Check filter first (clogged filter = 15–25% efficiency loss). Then compare bill to same month last year. If delta is >20%, call a tech for a refrigerant and static pressure check.',
-  'Heard a strange noise recently': '🔊 Describe the noise: Squealing = bearings. Banging = loose part. Clicking on startup = normal. Clicking continuously = relay or capacitor. Hissing = refrigerant leak. Don\'t ignore — get it checked.',
+  'Heard a strange noise recently': '🔊 Describe the noise: Squealing = bearings. Banging = loose part. Clicking on startup = normal. Clicking continuously = relay or capacitor. Hissing = refrigerant leak. Don\’t ignore — get it checked.',
   'Not cooling / heating as well as before': '❄️ Check filter and vents first. Then feel supply air temp. If delta-T is below 12°F in summer or supply heat is weak, you likely have a refrigerant or heat exchanger issue. Call a DFW tech today.',
 };
 

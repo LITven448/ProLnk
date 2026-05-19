@@ -9,7 +9,7 @@ const tenantTypes = {
   'Apartment': {
     responsible: ['Replace light bulbs inside unit', 'Change HVAC filter if unit has individual air handler', 'Keep balcony/patio clean and clear', 'Report any mold, leaks, pests immediately', 'Properly dispose of trash — DFW HOA rules apply'],
     landlord: ['HVAC central system repairs', 'Common area maintenance', 'Pest control for building', 'All structural repairs', 'Appliances provided in unit'],
-    tips: ['DFW apartment pools: HOA rules vary — read lease carefully', 'Noise ordinances in DFW cities — 10 PM-7 AM in most municipalities', 'Renter\'s insurance recommended: DFW hail/storm risk'],
+    tips: ['DFW apartment pools: HOA rules vary — read lease carefully', 'Noise ordinances in DFW cities — 10 PM-7 AM in most municipalities', 'Renter\’s insurance recommended: DFW hail/storm risk'],
   },
   'Townhome': {
     responsible: ['Interior maintenance per lease', 'Patio/small yard if attached', 'HVAC filter changes', 'Parking area cleanliness', 'Interior pest control'],

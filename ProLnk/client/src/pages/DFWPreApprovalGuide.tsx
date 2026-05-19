@@ -59,7 +59,7 @@ export default function DFWPreApprovalGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
-            { label: 'Pre-Qualification', icon: '📄', desc: 'Basic income/asset check, no doc verification. DFW sellers don\'t trust these.', strength: 'Weak', color: '#e74c3c' },
+            { label: 'Pre-Qualification', icon: '📄', desc: 'Basic income/asset check, no doc verification. DFW sellers don\’t trust these.', strength: 'Weak', color: '#e74c3c' },
             { label: 'Pre-Approval', icon: '✅', desc: 'Docs verified, credit pulled. Standard in DFW — required minimum to write offers.', strength: 'Good', color: '#e67e22' },
             { label: 'Underwritten', icon: '🏆', desc: 'Full underwriting done — file is approved pending appraisal only. Sellers love this.', strength: 'Gold Standard', color: '#27ae60' },
           ].map((item, i) => (

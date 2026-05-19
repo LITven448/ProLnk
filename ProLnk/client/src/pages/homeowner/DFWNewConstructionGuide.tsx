@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const purchaseStages = [
-  { stage: 'Pre-Contract', items: ['Research builder reputation online (Google, BBB, Yelp)', 'Visit completed communities — talk to current residents', 'Hire your own buyer's agent (builder pays commission, costs you nothing)', 'Get pre-approved with an outside lender before visiting sales office'] },
-  { stage: 'Contract Signing', items: ['Read the entire purchase agreement before signing', 'Negotiate upgrades, not list price (builders rarely move on price)', 'Avoid builder's lender incentives — they often don't pencil out', 'Document everything verbally promised in writing'] },
+  { stage: 'Pre-Contract', items: ['Research builder reputation online (Google, BBB, Yelp)', 'Visit completed communities — talk to current residents', 'Hire your own buyer’s agent (builder pays commission, costs you nothing)', 'Get pre-approved with an outside lender before visiting sales office'] },
+  { stage: 'Contract Signing', items: ['Read the entire purchase agreement before signing', 'Negotiate upgrades, not list price (builders rarely move on price)', 'Avoid builder’s lender incentives — they often don’t pencil out', 'Document everything verbally promised in writing'] },
   { stage: 'Construction Phase', items: ['Schedule pre-pour inspection (foundation before concrete pours)', 'Schedule framing inspection (after framing, before drywall)', 'Document any changes to plans with builder in writing', 'Visit the site regularly — bring your agent'] },
   { stage: 'Pre-Closing', items: ['Hire an independent home inspector — non-negotiable', 'Do final walkthrough 1–2 days before close (not same day)', 'Document all punch-list items with photos', 'Confirm all permits pulled and inspections passed'] },
   { stage: 'Post-Close (Year 1)', items: ['Document all warranty claims in writing immediately', 'Schedule a TrustyPro scan before year-1 warranty expires', 'Test all systems: HVAC, plumbing, electrical', 'Submit all builder warranty repairs before 12-month mark'] },
@@ -82,9 +82,9 @@ export default function DFWNewConstructionGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             {[
               { flag: '"Design Center" Markups', detail: 'Builder design centers mark up options 60–80% over retail. Granite that costs $2,000 installed gets charged at $4,500. Budget selectively — only upgrade what you cannot easily change later (flooring, cabinets, tile).' },
-              { flag: 'Using the Builder's Lender', detail: 'Builders offer incentives ($5K toward upgrades, rate buydowns) to use their preferred lender. Run the numbers carefully — these incentives often don't offset the higher rate or fees. Always get a competing quote from an outside lender.' },
+              { flag: 'Using the Builder’s Lender', detail: 'Builders offer incentives ($5K toward upgrades, rate buydowns) to use their preferred lender. Run the numbers carefully — these incentives often don’t offset the higher rate or fees. Always get a competing quote from an outside lender.' },
               { flag: 'Waiving the Inspection', detail: 'Never, ever waive the independent home inspection on new construction. Builder-employed quality control inspectors miss or ignore issues. Common finds: unsealed plumbing penetrations, uncommissioned HVAC, insulation gaps, improperly graded lots.' },
-              { flag: 'Verbal Promises Without Documentation', detail: 'If it's not in the purchase contract or an addendum, it does not exist legally. Every promised upgrade, change, or inclusion must be in writing with builder signature.' },
+              { flag: 'Verbal Promises Without Documentation', detail: 'If it’s not in the purchase contract or an addendum, it does not exist legally. Every promised upgrade, change, or inclusion must be in writing with builder signature.' },
             ].map(item => (
               <div key={item.flag} style={{ background: '#1A0D0D', border: '1px solid #4A1515', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#F87171', marginBottom: 8 }}>🚩 {item.flag}</div>

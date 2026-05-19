@@ -57,9 +57,9 @@ export default function DFWRoofingDebrisGuide2026() {
         </p>
 
         {[
-          { icon: '🍂', title: 'November Oak Leaf Drop', desc: 'DFW live oaks drop late (November–December) and heavily. Leaves in roof valleys trap moisture for weeks — DFW's remaining mild temps keep them damp, accelerating granule loss.' },
+          { icon: '🍂', title: 'November Oak Leaf Drop', desc: 'DFW live oaks drop late (November–December) and heavily. Leaves in roof valleys trap moisture for weeks — DFW’s remaining mild temps keep them damp, accelerating granule loss.' },
           { icon: '🌲', title: 'Cluster Pine Needles', desc: 'Loblolly and shortleaf pines are common in DFW older neighborhoods. Needles are acidic and lodge in valleys year-round. Properties with overhanging branches need semi-annual cleaning.' },
-          { icon: '❄️', title: 'Cottonwood Seeds (May)', desc: 'Unique to DFW's creek corridors. Seeds look like snow but compact into moisture-holding mats when wet. Most time-sensitive of all DFW roof debris — act within days, not weeks.' },
+          { icon: '❄️', title: 'Cottonwood Seeds (May)', desc: 'Unique to DFW’s creek corridors. Seeds look like snow but compact into moisture-holding mats when wet. Most time-sensitive of all DFW roof debris — act within days, not weeks.' },
           { icon: '⚠️', title: 'Granule Loss Warning', desc: 'Debris-induced granule loss voids most DFW shingle warranties. Document roof condition annually. Granule loss in gutters = sign debris has been sitting too long on your roof.' },
         ].map((item) => (
           <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>

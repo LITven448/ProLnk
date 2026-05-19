@@ -22,7 +22,7 @@ const mistakes = [
     title: 'Not Protesting Property Taxes',
     cost: '$400–$800/yr',
     when: 'Every year',
-    detail: 'DCAD, CCAD, and TCAD appraise aggressively. The majority of protests are settled informally — you don\'t even need a hearing. Missing the May deadline means paying full appraised value all year.',
+    detail: 'DCAD, CCAD, and TCAD appraise aggressively. The majority of protests are settled informally — you don\’t even need a hearing. Missing the May deadline means paying full appraised value all year.',
     fix: 'File online protest by May 15. Bring 3 comp sales lower than your appraisal.',
   },
   {
@@ -30,7 +30,7 @@ const mistakes = [
     title: 'Overimproving for the Neighborhood',
     cost: '$15K–$60K',
     when: 'Year 2–5',
-    detail: 'DFW home values are neighborhood-capped. A $60K kitchen remodel in a $250K neighborhood adds $10-15K in resale, max. Buyers don\'t pay above neighborhood comparables regardless of your finishes.',
+    detail: 'DFW home values are neighborhood-capped. A $60K kitchen remodel in a $250K neighborhood adds $10-15K in resale, max. Buyers don\’t pay above neighborhood comparables regardless of your finishes.',
     fix: 'Know your neighborhood ceiling before any project over $10K.',
   },
   {
@@ -70,7 +70,7 @@ const mistakes = [
     title: 'DIY Electrical Without Permits',
     cost: '$5K–$15K',
     when: 'Any time',
-    detail: 'Unpermitted electrical work is a material disclosure item in Texas. Buyers\' inspectors flag it every time. You\'ll pay to redo it at sale — properly this time, plus permit fees, plus code upgrades.',
+    detail: 'Unpermitted electrical work is a material disclosure item in Texas. Buyers\’ inspectors flag it every time. You\’ll pay to redo it at sale — properly this time, plus permit fees, plus code upgrades.',
     fix: 'Always pull permits. DFW cities are reasonable — permits protect you at resale.',
   },
   {
@@ -79,7 +79,7 @@ const mistakes = [
     cost: '$1K–$5K deferred',
     when: 'Annually',
     detail: 'Buyers get inspections. Homeowners rarely do. An annual inspection ($350-450) catches $1K-5K in deferred maintenance before it becomes $10K+ in emergency repairs.',
-    fix: '$400 annual inspection catches problems when they\'re still cheap to fix.',
+    fix: '$400 annual inspection catches problems when they\’re still cheap to fix.',
   },
 ];
 

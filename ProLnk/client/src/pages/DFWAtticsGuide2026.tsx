@@ -22,7 +22,7 @@ export default function DFWAtticsGuide2026() {
         { label: 'Attic Power Vent Fan', cost: '$350–$700', roi: 'Reduces attic temp when breezy' },
         { label: 'Solar Attic Fan', cost: '$400–$900', roi: 'Passive cooling, no operating cost' },
       ],
-      facts: ['Ventilation ratio: 1 sq ft vent per 150 sq ft attic', 'Poor ventilation causes moisture + mold in winter', 'Over-ventilation can be as harmful as under', 'Verify soffit vents aren't blocked by insulation'],
+      facts: ['Ventilation ratio: 1 sq ft vent per 150 sq ft attic', 'Poor ventilation causes moisture + mold in winter', 'Over-ventilation can be as harmful as under', 'Verify soffit vents aren’t blocked by insulation'],
     },
     "hvac-in-attic": {
       priority: 'Major Focus — DFW-Specific Challenge',

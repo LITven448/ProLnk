@@ -33,7 +33,7 @@ export default function DFWMoldTestingGuide() {
       label: 'Skip Testing — Remediate Directly',
       color: '#FF6B6B',
       type: 'Remediation First',
-      msg: 'If mold is visible, you already know it\'s there. Testing visible mold is unnecessary — the money is better spent on remediation. Hire a certified mold remediation contractor and request post-remediation clearance testing.',
+      msg: 'If mold is visible, you already know it\’s there. Testing visible mold is unnecessary — the money is better spent on remediation. Hire a certified mold remediation contractor and request post-remediation clearance testing.',
       cost: 'Remediation: $500–$6,000+ depending on scope. Clearance testing: $200–$400.',
     };
     if (score >= 8) return {

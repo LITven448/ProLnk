@@ -12,12 +12,12 @@ const HOME_FEATURES = [
 
 const MOAT_DETAILS: Record<string, { headline: string; points: string[]; dataValue: string }> = {
   new_buyer: {
-    headline: 'Your home\'s complete service history — day one',
+    headline: 'Your home\’s complete service history — day one',
     points: [
       'See every repair, replacement, and upgrade ever done on this home',
       'Know which contractor did each job and their quality rating',
       'Identify deferred maintenance before it becomes expensive',
-      'AI instantly flags what\'s likely to need attention in year 1',
+      'AI instantly flags what\’s likely to need attention in year 1',
     ],
     dataValue: 'Avg value of home history data: $3,200 in avoided surprises',
   },
@@ -25,9 +25,9 @@ const MOAT_DETAILS: Record<string, { headline: string; points: string[]; dataVal
     headline: 'The right contractor, matched to your exact home',
     points: [
       '50M+ homes means contractors know your specific model, age, and quirks',
-      'AI matches based on your home\'s actual systems — not just zip code',
+      'AI matches based on your home\’s actual systems — not just zip code',
       'Contractor win rate data shows who actually completes jobs well',
-      'Your home\'s prior service history reduces diagnostic time and cost',
+      'Your home\’s prior service history reduces diagnostic time and cost',
     ],
     dataValue: 'Avg time savings vs. random contractor search: 4.2 hours',
   },
@@ -35,14 +35,14 @@ const MOAT_DETAILS: Record<string, { headline: string; points: string[]; dataVal
     headline: 'Data-driven ROI on every home improvement',
     points: [
       'ProLnk data shows which improvements deliver highest resale ROI in DFW',
-      'Your home\'s specific age and condition factors into recommendations',
-      'Compare your home\'s systems against neighborhood comps',
+      'Your home\’s specific age and condition factors into recommendations',
+      'Compare your home\’s systems against neighborhood comps',
       'AI predicts which deferred items will hurt your appraised value most',
     ],
     dataValue: 'Avg improvement ROI lift using ProLnk data: +14%',
   },
   lower_insurance: {
-    headline: 'Document your home\'s health for insurance leverage',
+    headline: 'Document your home\’s health for insurance leverage',
     points: [
       'Complete service records prove maintenance diligence to insurers',
       'Roof age, HVAC, electrical history are key insurance pricing factors',
@@ -65,7 +65,7 @@ const MOAT_DETAILS: Record<string, { headline: string; points: string[]; dataVal
     headline: 'AI pattern recognition spots problems before they escalate',
     points: [
       'Service patterns across 50M homes reveal hidden failure sequences',
-      'Your home\'s age + region + weather data flags high-risk systems proactively',
+      'Your home\’s age + region + weather data flags high-risk systems proactively',
       'Contractor notes from prior visits surface non-obvious observations',
       'Foundation, roof, and plumbing correlations caught months earlier',
     ],

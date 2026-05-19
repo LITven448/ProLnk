@@ -38,7 +38,7 @@ export default function DFWCoworkingVsHomeOfficeGuide() {
             <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 12, color: '#0F172A' }}>Home Office</div>
             <div style={{ fontSize: 14, color: '#475569', lineHeight: 1.7, marginBottom: 16 }}>One-time investment, maximum flexibility, and home office tax deductions.</div>
             <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: 16 }}>
-              {[['Setup Cost', '$3,000–8,000 (desk, chair, monitor, lighting)'],['Monthly Cost', '$0 ongoing'],['Meeting Rooms', 'None — use coffee shops or client\'s office'],['Tax Benefit', 'Home office deduction ($1,500 simplified or actual costs)']].map(([k, v]) => (
+              {[['Setup Cost', '$3,000–8,000 (desk, chair, monitor, lighting)'],['Monthly Cost', '$0 ongoing'],['Meeting Rooms', 'None — use coffee shops or client\’s office'],['Tax Benefit', 'Home office deduction ($1,500 simplified or actual costs)']].map(([k, v]) => (
                 <div key={k as string} style={{ marginBottom: 10 }}>
                   <div style={{ fontSize: 11, color: '#94A3B8', fontWeight: 600 }}>{k as string}</div>
                   <div style={{ fontSize: 14, color: '#334155' }}>{v as string}</div>

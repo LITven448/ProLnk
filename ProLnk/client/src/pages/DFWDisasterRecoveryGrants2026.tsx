@@ -7,7 +7,7 @@ export default function DFWDisasterRecoveryGrants2026() {
   const programs: Record<string, string[]> = {
     hail: [
       '🌩️ FEMA Individual Assistance: After a federal disaster declaration, FEMA may provide grants (typically up to $43,900) for home repairs not covered by insurance. Register at DisasterAssistance.gov or call 1-800-621-FEMA.',
-      '🏦 SBA Disaster Home Loan: Low-interest loans (1.5–4%) up to $500,000 for homeowners to repair/replace disaster-damaged property. Apply at SBA.gov/disaster — available even if you don't have a business.',
+      '🏦 SBA Disaster Home Loan: Low-interest loans (1.5–4%) up to $500,000 for homeowners to repair/replace disaster-damaged property. Apply at SBA.gov/disaster — available even if you don’t have a business.',
       '🏛️ Texas GLO CDBG-DR: After major Texas hail events, the Texas General Land Office may open CDBG Disaster Recovery applications. Monitor glo.texas.gov/recovery for open rounds.',
     ],
     tornado: [

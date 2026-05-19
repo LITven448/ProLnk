@@ -29,7 +29,7 @@ function getBabyPlan(age: string, home: string): BabyPlan {
       isNewborn ? '📱 Set up temperature monitoring alert on smart thermostat — alert if nursery exceeds 74°F or drops below 66°F' : '✅ Move nursery humidifier away from crib — position 3+ feet from sleeping area, clean weekly to prevent mold',
     ],
     humidity: isOldHome ? 'DFW winter target: 40–50% humidity in nursery. Older DFW homes with poor insulation lose humidity faster — expect to run humidifier 6–8 hours/day in January.' : 'DFW winter target: 40–45% humidity in nursery. DFW summer: run AC to keep humidity below 50% — above 60% promotes mold growth near cribs.',
-    coNote: isOldHome ? '🚨 CO PRIORITY: Pre-1980 DFW homes with original gas furnaces have highest CO risk. Annual inspection is non-negotiable with a baby in the home.' : '✅ CO SAFETY: Install Kidde or First Alert CO detector at baby\'s breathing level (crib height), not ceiling mounted. CO is heavier than air.',
+    coNote: isOldHome ? '🚨 CO PRIORITY: Pre-1980 DFW homes with original gas furnaces have highest CO risk. Annual inspection is non-negotiable with a baby in the home.' : '✅ CO SAFETY: Install Kidde or First Alert CO detector at baby\’s breathing level (crib height), not ceiling mounted. CO is heavier than air.',
     cost: isPreparing ? '$600–$1,200 (full nursery prep)' : isOldHome ? '$400–$900 (inspection + upgrades)' : '$200–$500 (filter + humidifier + CO detectors)',
   };
 }

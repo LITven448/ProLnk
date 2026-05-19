@@ -11,7 +11,7 @@ const TASKS = [
 ];
 
 const PUNCH_LIST = [
-  { id: 'doors', label: 'Doors that stick or won\'t latch properly' },
+  { id: 'doors', label: 'Doors that stick or won\’t latch properly' },
   { id: 'caulk', label: 'Missing caulk around tubs, windows, or trim' },
   { id: 'grout', label: 'Cracked or missing grout in tile' },
   { id: 'drywall', label: 'Drywall nail pops or settlement cracks' },

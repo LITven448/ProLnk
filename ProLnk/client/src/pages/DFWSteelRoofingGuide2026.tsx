@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const considerations = [
-  { situation: 'Replacing aging shingle roof', icon: '🔄', verdict: 'Strong Candidate', detail: 'Steel standing seam lasts 40-60 years vs 20-25 for shingles in DFW. Cost $18-28/sqft installed. At 2,000 sqft that'''s $36-56K but may be your last roof — factor into comparison.' },
+  { situation: 'Replacing aging shingle roof', icon: '🔄', verdict: 'Strong Candidate', detail: 'Steel standing seam lasts 40-60 years vs 20-25 for shingles in DFW. Cost $18-28/sqft installed. At 2,000 sqft that''’s $36-56K but may be your last roof — factor into comparison.' },
   { situation: 'Frequent hail damage claims', icon: '⛈️', verdict: 'Excellent Choice', detail: 'Class 4 impact rating qualifies for Texas insurance discounts up to 30%. DFW hail frequency makes payback strong — get your insurance agent to confirm discount before deciding.' },
   { situation: 'Noise concern from DFW storms', icon: '🌧️', verdict: 'Solvable', detail: 'Solid decking + quality underlayment eliminates rain noise. Spray foam insulation under metal deck reduces sound to below shingle levels. Budget $0.50-1/sqft extra for noise package.' },
-  { situation: 'DFW temperature extremes', icon: '🌡️', verdict: 'Engineered For It', detail: 'Standing seam panels expand/contract independently — floating clips allow 1.5-2" movement across 40-foot panel in DFW'''s -5°F to 130°F range. Exposed fastener panels are NOT recommended for DFW for this reason.' },
+  { situation: 'DFW temperature extremes', icon: '🌡️', verdict: 'Engineered For It', detail: 'Standing seam panels expand/contract independently — floating clips allow 1.5-2" movement across 40-foot panel in DFW''’s -5°F to 130°F range. Exposed fastener panels are NOT recommended for DFW for this reason.' },
 ];
 
 export default function DFWSteelRoofingGuide2026() {

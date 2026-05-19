@@ -3,7 +3,7 @@ import { useState } from 'react';
 const milestones = [
   { year: '2023', emoji: '💡', title: 'The Problem Identified', detail: 'Andrew Frakes, a DFW homeowner, watched a neighbor get charged $4,200 for a repair that should have cost $800. No way to verify the contractor, no price transparency, no recourse. The problem was clear.' },
   { year: '2024', emoji: '🔨', title: 'Building Begins', detail: 'A small team of builders, real estate veterans, and technology architects began designing the ProLnk platform — focused first on DFW because they knew it deeply.' },
-  { year: '2025', emoji: '🏗️', title: 'Platform Architecture', detail: 'ProLnk\'s two-sided marketplace took shape: verified pros on one side, informed homeowners on the other, with the Home Health Vault as the data backbone.' },
+  { year: '2025', emoji: '🏗️', title: 'Platform Architecture', detail: 'ProLnk\’s two-sided marketplace took shape: verified pros on one side, informed homeowners on the other, with the Home Health Vault as the data backbone.' },
   { year: '2026', emoji: '🚀', title: 'DFW Launch', detail: 'ProLnk opens its waitlist to DFW homeowners and service professionals — the beginning of a transparent, trustworthy home services network.' },
 ];
 
@@ -15,10 +15,10 @@ const aspects = [
 ];
 
 const aspectDetails: Record<string, string> = {
-  'The DFW Problem': 'DFW is one of the fastest-growing metros in America — but home services infrastructure hasn\'t kept pace. Fly-by-night contractors, opaque pricing, and zero accountability have cost DFW homeowners billions. ProLnk was built to fix that, starting block by block.',
-  'The Team Story': 'The ProLnk founding team has roots in DFW real estate, home renovation, and software. They\'ve been on both sides: hiring contractors and being hired. That lived experience shapes every product decision.',
-  'The Technology': 'ProLnk\'s platform runs on a verified contractor network, a Home Health Vault with data on millions of homes, and AI-powered matching that connects the right pro to the right job — not just whoever bids first.',
-  'The Mission': 'ProLnk\'s mission is simple: make home services trustworthy. Every vetted contractor, every transparent quote, every protected homeowner decision moves that mission forward.',
+  'The DFW Problem': 'DFW is one of the fastest-growing metros in America — but home services infrastructure hasn\’t kept pace. Fly-by-night contractors, opaque pricing, and zero accountability have cost DFW homeowners billions. ProLnk was built to fix that, starting block by block.',
+  'The Team Story': 'The ProLnk founding team has roots in DFW real estate, home renovation, and software. They\’ve been on both sides: hiring contractors and being hired. That lived experience shapes every product decision.',
+  'The Technology': 'ProLnk\’s platform runs on a verified contractor network, a Home Health Vault with data on millions of homes, and AI-powered matching that connects the right pro to the right job — not just whoever bids first.',
+  'The Mission': 'ProLnk\’s mission is simple: make home services trustworthy. Every vetted contractor, every transparent quote, every protected homeowner decision moves that mission forward.',
 };
 
 export default function DFWProLnkHistoryPage() {

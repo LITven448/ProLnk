@@ -28,7 +28,7 @@ const disputeTypes = [
       'Dispute reviewed against original job specs and any change order records',
     ],
     timeline: '5 business days',
-    tip: 'Use ProLnk's in-platform change order tool before starting ANY additional work. Verbal agreements are not binding.',
+    tip: 'Use ProLnk’s in-platform change order tool before starting ANY additional work. Verbal agreements are not binding.',
   },
   {
     id: 'cancellation',
@@ -71,7 +71,7 @@ const disputeTypes = [
       'If fraud is suspected (photo manipulation, date tampering): both partners investigated',
     ],
     timeline: '48 hours',
-    tip: 'Upload immediately after photographing — don't save photos to batch upload later. First upload = your origination right.',
+    tip: 'Upload immediately after photographing — don’t save photos to batch upload later. First upload = your origination right.',
   },
 ];
 
@@ -171,7 +171,7 @@ export default function PartnerDisputeResolutionGuide() {
           <h2 style={{ color: '#0f172a', fontSize: 17, fontWeight: 800, margin: '0 0 16px' }}>🛡️ How to Avoid Disputes Entirely</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              'Always confirm scope in writing before starting any work — use ProLnk's in-platform change order tool',
+              'Always confirm scope in writing before starting any work — use ProLnk’s in-platform change order tool',
               'Upload photos DURING the job — time-stamped photos carry significantly more weight than post-job submissions',
               'Communicate any issues to the homeowner in writing through the ProLnk platform (not text or phone)',
               'For photo origination: upload immediately after photographing — first verified upload wins',

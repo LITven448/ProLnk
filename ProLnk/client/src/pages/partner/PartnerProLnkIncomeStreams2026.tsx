@@ -19,7 +19,7 @@ const focusMap: Record<string, Record<string, { active: number[]; focus: string[
   },
   'Building (10–49 matches)': {
     'Passive (< 5 hrs/week)': { active: [2, 3], focus: ['Your recruited pros are now generating passive income — focus on adding more', 'Stream 2 cascade is building — every pro your recruits bring in earns you 0.5%', 'Maintain homeowner pipeline for Stream 4 income between matches'] },
-    'Part-Time (5–15 hrs/week)': { active: [1, 2, 3, 4], focus: ['All 4 active streams are running — optimize each', 'Push for 50 total matches to unlock Tier 3 (35%) — that\'s a 75% pay increase', 'Recruit pros into your downline while you still have the Charter advantage'] },
+    'Part-Time (5–15 hrs/week)': { active: [1, 2, 3, 4], focus: ['All 4 active streams are running — optimize each', 'Push for 50 total matches to unlock Tier 3 (35%) — that\’s a 75% pay increase', 'Recruit pros into your downline while you still have the Charter advantage'] },
     'Full-Time (15+ hrs/week)': { active: [1, 2, 3, 4], focus: ['Sprint to 50 matches — Tier 3 is a massive jump in per-match income', 'Your recruiting window is most powerful now — Charter tier closes at 500 apps', 'Document your process to train recruits — leverage multiplies everything'] },
   },
   'Growing (50–99 matches)': {
@@ -30,11 +30,11 @@ const focusMap: Record<string, Record<string, { active: number[]; focus: string[
   'Established (100–499 matches)': {
     'Passive (< 5 hrs/week)': { active: [2, 3], focus: ['At 50% direct commission, even occasional matches generate strong income', 'Focus entirely on downline growth — recruit actively or train recruiters in your network', 'Prepare for Stream 5 launch — identify 10+ homeowners to add to Vault'] },
     'Part-Time (5–15 hrs/week)': { active: [1, 2, 3, 4], focus: ['Tier 4 (50%) is exceptional — maintain match cadence', '500 matches = Tier 5 (70%) — the top tier is within reach', 'Your downline is producing — track and optimize your 4-level cascade'] },
-    'Full-Time (15+ hrs/week)': { active: [1, 2, 3, 4], focus: ['500 matches = Tier 5 (70%) — this is the income ceiling, go get it', 'Build and document a recruiting system — you\'re becoming a leader', 'Position yourself for Stream 5 origination rights at scale'] },
+    'Full-Time (15+ hrs/week)': { active: [1, 2, 3, 4], focus: ['500 matches = Tier 5 (70%) — this is the income ceiling, go get it', 'Build and document a recruiting system — you\’re becoming a leader', 'Position yourself for Stream 5 origination rights at scale'] },
   },
   'Top Producer (500+ matches)': {
     'Passive (< 5 hrs/week)': { active: [2, 3, 5], focus: ['At 70%, even passive matching is high-yield', 'Stream 2 cascade at your level is significant — maintain downline health', 'Stream 5 origination rights will compound for years — max it early'] },
-    'Part-Time (5–15 hrs/week)': { active: [1, 2, 3, 4, 5], focus: ['All 5 streams active — you\'re at full income potential', 'Mentorship and recruiting now multiplies income faster than personal matching', 'Document your system — it\'s your most valuable asset'] },
+    'Part-Time (5–15 hrs/week)': { active: [1, 2, 3, 4, 5], focus: ['All 5 streams active — you\’re at full income potential', 'Mentorship and recruiting now multiplies income faster than personal matching', 'Document your system — it\’s your most valuable asset'] },
     'Full-Time (15+ hrs/week)': { active: [1, 2, 3, 4, 5], focus: ['You are the proof of concept — lead with your results', 'Build a team of Charter recruits before waitlist closes', 'Stream 5 origination rights will be your most durable long-term income'] },
   },
 };

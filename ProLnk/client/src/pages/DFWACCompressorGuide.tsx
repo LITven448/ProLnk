@@ -49,7 +49,7 @@ export default function DFWACCompressorGuide() {
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ Why DFW Is Hard on Compressors</h2>
           {[
-            ['🌡️ Extreme Duty Cycle', 'DFW ACs run May through October almost continuously. That\'s 2x the hours of systems in cooler climates, accelerating oil breakdown and motor wear inside the compressor.'],
+            ['🌡️ Extreme Duty Cycle', 'DFW ACs run May through October almost continuously. That\’s 2x the hours of systems in cooler climates, accelerating oil breakdown and motor wear inside the compressor.'],
             ['☀️ Outdoor Unit Heat Soak', 'Outdoor temperatures regularly hit 100–112°F. Compressors reject heat to ambient air — the hotter it is outside, the harder the compressor works and the shorter its life.'],
             ['💧 Refrigerant Stress', 'High-load conditions increase refrigerant pressure cycles. Over time, this stresses seals and valves inside the compressor scroll or piston assembly.'],
           ].map(([title, desc]) => (

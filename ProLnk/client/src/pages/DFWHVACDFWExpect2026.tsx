@@ -13,7 +13,7 @@ const services = [
     label: '⚙️ Emergency Repair',
     traditional: { wait: '4–24 hours, often next-day', price: '$200–$800+ with surprise add-ons', quality: 'Unknown — usually whoever answers the call' },
     prolnk: { wait: 'Same-day matched pro in your ZIP', price: 'Itemized upfront quote before work starts', quality: 'Verified license + 4.5-star minimum rating requirement' },
-    insight: 'In summer 2026, DFW HVAC repair demand will peak in July–August. ProLnk\'s pre-matched network means faster access.',
+    insight: 'In summer 2026, DFW HVAC repair demand will peak in July–August. ProLnk\’s pre-matched network means faster access.',
   },
   {
     id: 'quote',
@@ -27,7 +27,7 @@ const services = [
     label: '🏗️ New System Install',
     traditional: { wait: '2–4 weeks from quote to install', price: 'Often bundled with aggressive financing', quality: 'Warranty valid only if contractor registered — often missed' },
     prolnk: { wait: '1–2 weeks from quote to install', price: 'Clean itemized proposal: equipment + labor + permit', quality: 'Contractor handles ACCA Manual J sizing and permit filing' },
-    insight: 'Proper sizing is critical in DFW\'s extreme heat. Undersized systems run constantly. Oversized systems short-cycle. ProLnk pros are trained on Manual J.',
+    insight: 'Proper sizing is critical in DFW\’s extreme heat. Undersized systems run constantly. Oversized systems short-cycle. ProLnk pros are trained on Manual J.',
   },
   {
     id: 'smart',

@@ -4,7 +4,7 @@ const serviceTypes = [
   { label: 'Emergency Lockout — Residential', low: 65, high: 150, flags: ['Refuses to show ID', 'Price jumps after arrival', 'No physical address'], verify: ['Check Google reviews > 50', 'Confirm local address', 'Ask for written quote before work'] },
   { label: 'Emergency Lockout — Vehicle', low: 75, high: 175, flags: ['Quotes $35 on phone, charges $300 on-site', 'Van has no company branding'], verify: ['Confirm flat-rate quote by phone', 'Match tech ID to company name', 'Pay by card not cash'] },
   { label: 'Rekey After Move-In', low: 100, high: 200, flags: ['Insists on full lock replacement when rekeying would work', 'No lock brands you recognize'], verify: ['Rekeying is always cheaper than replacement', 'Should take 15–30 min per lock'] },
-  { label: 'Smart Lock Installation', low: 150, high: 350, flags: ['Won\'t give itemized parts + labor breakdown'], verify: ['Confirm lock brand compatibility', 'Ask if they program the app or just install hardware'] },
+  { label: 'Smart Lock Installation', low: 150, high: 350, flags: ['Won\’t give itemized parts + labor breakdown'], verify: ['Confirm lock brand compatibility', 'Ask if they program the app or just install hardware'] },
   { label: 'High-Security Lock Upgrade', low: 200, high: 500, flags: ['Pushes Medeco/Mul-T-Lock copies from unknown brands'], verify: ['Medeco, Mul-T-Lock, ASSA Abloy only', 'Ask for ALOA certification'] },
   { label: 'Automotive Key Programming', low: 125, high: 400, flags: ['No OBD2 diagnostic tool visible', 'Quote doubles after they see car model'], verify: ['Ask for OEM or matched aftermarket part', 'Get written quote including programming fee'] },
 ];

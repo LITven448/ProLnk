@@ -10,7 +10,7 @@ const situations = [
       '🎨 Paint: neutral colors sell faster — Sherwin-Williams "Accessible Beige" is a DFW favorite',
       '✅ ProLnk: Get a verified contractor to do a pre-sale inspection punch list',
       '💡 ROI: Kitchen and bathroom refreshes return 80-95 cents per dollar spent in DFW market',
-      '🚫 Don\'t over-renovate — buyers want to personalize; focus on condition, not taste',
+      '🚫 Don\’t over-renovate — buyers want to personalize; focus on condition, not taste',
     ],
   },
   {

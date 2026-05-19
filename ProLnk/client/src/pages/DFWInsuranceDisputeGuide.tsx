@@ -20,7 +20,7 @@ const resolutionData: Record<string, { path: string[]; timeline: string; outcome
     outcome: 'Attorney referral strongly recommended — bad faith cases often settle pre-suit',
   },
   'Adjuster slow or unresponsive': {
-    path: ['Texas law requires acknowledgment within 15 days and decision within 15 days of proof', 'Send certified letter citing §542 prompt payment law', 'File TDI complaint — insurers face 18% interest penalties for delays', 'Escalate to insurer\'s complaints department'],
+    path: ['Texas law requires acknowledgment within 15 days and decision within 15 days of proof', 'Send certified letter citing §542 prompt payment law', 'File TDI complaint — insurers face 18% interest penalties for delays', 'Escalate to insurer\’s complaints department'],
     timeline: '15–45 days',
     outcome: 'TDI complaints resolve most adjuster delays within 30 days',
   },

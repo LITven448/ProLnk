@@ -52,7 +52,7 @@ const GUIDES: Record<string, { title: string; points: string[] }> = {
     title: 'Home Health Vault — Goes Live on Launch Day',
     points: [
       '🗄️ Home Health Vault activates for all registered homes on launch day',
-      '🏥 Your home's service history, permits, and health data aggregated in one place',
+      '🏥 Your home’s service history, permits, and health data aggregated in one place',
       '🔍 Pros matched to your home can see relevant system ages — better quotes',
       '📊 Health score assigned to your home based on available data',
       '🔒 You control data sharing permissions at the pro and job level',
@@ -67,7 +67,7 @@ const GUIDES: Record<string, { title: string; points: string[] }> = {
       '🔗 ProLnk connects DFW homeowners with vetted, licensed service professionals',
       '🏅 Charter and Founding tiers are for pros who want priority access and locked rates',
       '🏠 Homeowners get matched — no bidding, no cold outreach, just qualified pros',
-      '🗄️ Home Health Vault is a permanent record of your home's health and history',
+      '🗄️ Home Health Vault is a permanent record of your home’s health and history',
       '💰 Network Income System: 5 streams for pros who refer other pros and homeowners',
       '🌐 Launch day is when the match engine goes fully live for the first time',
       '📋 Waitlist signup takes 2 minutes — homeowner or pro, both welcome',

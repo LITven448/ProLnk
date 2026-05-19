@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const timeRanges = [
   { id: 'just', label: 'Just arrived', desc: 'You just landed on this page' },
-  { id: 'few', label: 'A few minutes', desc: 'You've been exploring a bit' },
-  { id: 'while', label: 'A while (15+ min)', desc: 'You've been reading seriously' },
-  { id: 'deep', label: 'Deep dive (30+ min)', desc: 'You're a true DFW home resource explorer' },
+  { id: 'few', label: 'A few minutes', desc: 'You’ve been exploring a bit' },
+  { id: 'while', label: 'A while (15+ min)', desc: 'You’ve been reading seriously' },
+  { id: 'deep', label: 'Deep dive (30+ min)', desc: 'You’re a true DFW home resource explorer' },
 ];
 
 const resources: Record<string, { icon: string; title: string; desc: string }[]> = {
@@ -16,17 +16,17 @@ const resources: Record<string, { icon: string; title: string; desc: string }[]>
   few: [
     { icon: '🌡️', title: 'DFW HVAC Survival Guide', desc: 'When AC fails in July, you need answers fast. This guide has them.' },
     { icon: '🌧️', title: 'Storm Damage Response Timeline', desc: 'What to do in the first 24 hours after a DFW hailstorm or tornado.' },
-    { icon: '💧', title: 'Foundation Watering Guide', desc: 'DFW clay soil demands a consistent watering schedule. Here's the formula.' },
+    { icon: '💧', title: 'Foundation Watering Guide', desc: 'DFW clay soil demands a consistent watering schedule. Here’s the formula.' },
   ],
   while: [
-    { icon: '📋', title: 'Annual Home Maintenance Calendar', desc: 'Every task, every month, organized for DFW's unique climate.' },
-    { icon: '🏊', title: 'DFW Pool Owner's Maintenance Guide', desc: 'Year-round pool care for DFW's brutal summers and surprise freezes.' },
-    { icon: '🔍', title: 'How to Evaluate a Contractor Quote', desc: 'What's included, what's not, what's a red flag. Read this before you sign.' },
+    { icon: '📋', title: 'Annual Home Maintenance Calendar', desc: 'Every task, every month, organized for DFW’s unique climate.' },
+    { icon: '🏊', title: 'DFW Pool Owner’s Maintenance Guide', desc: 'Year-round pool care for DFW’s brutal summers and surprise freezes.' },
+    { icon: '🔍', title: 'How to Evaluate a Contractor Quote', desc: 'What’s included, what’s not, what’s a red flag. Read this before you sign.' },
   ],
   deep: [
     { icon: '🏗️', title: 'DFW Renovation ROI Guide', desc: 'Which home improvements actually pay back in the DFW market?' },
-    { icon: '📊', title: 'Home Health Score Explained', desc: 'How ProLnk's Home Health Vault scores your property and why it matters.' },
-    { icon: '🤝', title: 'The ProLnk Pro Network Explained', desc: 'How we vet, rank, and match contractors — and why it's better than Google.' },
+    { icon: '📊', title: 'Home Health Score Explained', desc: 'How ProLnk’s Home Health Vault scores your property and why it matters.' },
+    { icon: '🤝', title: 'The ProLnk Pro Network Explained', desc: 'How we vet, rank, and match contractors — and why it’s better than Google.' },
   ],
 };
 

@@ -65,10 +65,10 @@ export default function DFWInventoryGuide() {
         <div style={{ background: '#0F2137', borderRadius: 16, padding: 28, marginBottom: 32 }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📦 UNDERSTANDING INVENTORY LEVELS</div>
           {[
-            '⚡ Under 2 months: Severe seller\'s market — homes sell in days, often above ask with multiple offers',
+            '⚡ Under 2 months: Severe seller\’s market — homes sell in days, often above ask with multiple offers',
             '⚖️ 2–4 months: Balanced to slight seller lean — normal negotiation, reasonable timelines',
             '🏠 4–6 months: Balanced — buyer and seller have equal leverage',
-            '🌊 6+ months: Buyer\'s market — price reductions, concessions, and longer days on market are common',
+            '🌊 6+ months: Buyer\’s market — price reductions, concessions, and longer days on market are common',
             '🌸 Seasonal pattern: DFW inventory peaks April–June, tightens September–November',
           ].map((item) => (
             <div key={item} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, lineHeight: 1.5 }}>{item}</div>

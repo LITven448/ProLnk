@@ -42,7 +42,7 @@ export default function DFWPaintApplicationGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌡️ DFW Paint Temperature Rules</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {[
-              { range: 'Below 50°F', label: 'Never Paint', color: '#3b82f6', note: 'Paint won\'t cure properly, adhesion fails' },
+              { range: 'Below 50°F', label: 'Never Paint', color: '#3b82f6', note: 'Paint won\’t cure properly, adhesion fails' },
               { range: '50°F – 90°F', label: 'Ideal Window', color: '#22c55e', note: 'Optimal conditions for all paint types' },
               { range: 'Above 90°F', label: 'Avoid Exterior', color: '#ef4444', note: 'Surface blistering, moisture trap, early peeling' },
             ].map(item => (

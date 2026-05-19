@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'What is a Group Deal and do I have to participate?',
-    a: 'When 5+ neighbors need the same service category in the same area, TrustyPro negotiates group pricing on your behalf. Participation is always optional — you'll see the group rate vs. individual rate and choose.',
+    a: 'When 5+ neighbors need the same service category in the same area, TrustyPro negotiates group pricing on your behalf. Participation is always optional — you’ll see the group rate vs. individual rate and choose.',
   },
 ];
 
@@ -88,7 +88,7 @@ export default function HowTrustyProWorks() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 16 }}>
             {[
-              { icon: '📁', title: 'Permanent record', desc: 'Every scan saves to your Home Health Vault. Your home's health history builds over time.' },
+              { icon: '📁', title: 'Permanent record', desc: 'Every scan saves to your Home Health Vault. Your home’s health history builds over time.' },
               { icon: '💰', title: 'Adds sale value', desc: 'When you sell, buyers see your maintenance record. Documented care commands higher offers.' },
               { icon: '🔒', title: 'You control access', desc: 'Your data is encrypted. You decide who sees it — no third-party sales, ever.' },
               { icon: '🤝', title: 'Origination rights', desc: 'Contractors who serve your home earn origination rights on future work at that address.' },

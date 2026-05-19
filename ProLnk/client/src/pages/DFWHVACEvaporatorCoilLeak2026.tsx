@@ -35,7 +35,7 @@ export default function DFWHVACEvaporatorCoilLeak2026() {
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>🔧 Signs You Have a Coil Leak</h2>
-          {['AC runs but home won\'t cool below 78°F','Ice forming on the refrigerant line or indoor unit','Hissing or bubbling sounds near air handler','Higher-than-normal electric bills with reduced cooling','Technician finds low refrigerant charge on inspection'].map((s, i) => (
+          {['AC runs but home won\’t cool below 78°F','Ice forming on the refrigerant line or indoor unit','Hissing or bubbling sounds near air handler','Higher-than-normal electric bills with reduced cooling','Technician finds low refrigerant charge on inspection'].map((s, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
               <span style={{ color: '#F5E642', fontSize: '16px', marginTop: '1px' }}>▸</span>
               <span style={{ color: '#cbd5e1', fontSize: '15px' }}>{s}</span>

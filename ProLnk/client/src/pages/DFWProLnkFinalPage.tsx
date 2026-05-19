@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 const situations = [
   {
-    label: 'I\'m a DFW homeowner',
+    label: 'I\’m a DFW homeowner',
     emoji: '🏠',
     nextStep: 'Join the ProLnk homeowner waitlist. Add your home to the Health Vault when it opens. Your most important next step is securing your founding member status before the waitlist closes at 5,000 homes.',
     cta: 'Join as a Homeowner',
   },
   {
-    label: 'I\'m a DFW contractor',
+    label: 'I\’m a DFW contractor',
     emoji: '🔧',
     nextStep: 'Apply to the ProLnk contractor network. Founding contractors get priority placement, lower match fees, and founding member recognition. The 500-contractor limit is your signal to move now.',
     cta: 'Apply as a Contractor',
@@ -20,9 +20,9 @@ const situations = [
     cta: 'Join as a Referrer',
   },
   {
-    label: 'I\'m just exploring',
+    label: 'I\’m just exploring',
     emoji: '🔍',
-    nextStep: 'Join the waitlist with no commitment. You\'ll get first access to ProLnk when matching goes live, and you\'ll be inside the community where all early announcements happen. There\'s no downside to joining now.',
+    nextStep: 'Join the waitlist with no commitment. You\’ll get first access to ProLnk when matching goes live, and you\’ll be inside the community where all early announcements happen. There\’s no downside to joining now.',
     cta: 'Join the Waitlist',
   },
 ];
@@ -30,7 +30,7 @@ const situations = [
 const promise = [
   { emoji: '🔒', text: 'We will only match you with verified, accountable contractors.' },
   { emoji: '💡', text: 'We will give you transparent pricing benchmarks before every decision.' },
-  { emoji: '🏆', text: 'We will protect your home\'s history in the Health Vault — permanently.' },
+  { emoji: '🏆', text: 'We will protect your home\’s history in the Health Vault — permanently.' },
   { emoji: '🤝', text: 'We will earn your trust one match at a time, not assume it.' },
 ];
 

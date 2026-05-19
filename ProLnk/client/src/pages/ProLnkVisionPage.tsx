@@ -13,7 +13,7 @@ const visions = [
     type: 'Homeowner',
     emoji: '🏠',
     future: [
-      'Your home\'s entire life story lives in one place — searchable, shareable, and yours forever.',
+      'Your home\’s entire life story lives in one place — searchable, shareable, and yours forever.',
       'AI recommends maintenance before problems happen — saving you thousands in emergency repair costs.',
       'Every contractor you ever hire is pre-vetted, insured, rated, and accountable.',
       'Your Home Health Vault adds measurable value to your home at sale — verified history builds buyer trust.',

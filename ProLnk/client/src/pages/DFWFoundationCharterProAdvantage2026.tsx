@@ -14,7 +14,7 @@ export default function DFWFoundationCharterProAdvantage2026() {
   const results: Record<string, string> = {
     solo: 'Charter priority matching puts you first for the $8K-$18K pier-and-beam jobs. 12% on $12K avg = $1,440/job. Lock $149/mo before the waitlist closes at 500.',
     crew: 'Your crew multiplies Charter value. Each foundation tech you recruit earns 7% network override. 5 crew members on ProLnk × $12K avg job = $4,200/mo network income.',
-    company: 'Charter gives your company permanent first-mover advantage in DFW's $1.1B/yr foundation market. Priority queue + 12% commission + subscription overrides compound daily.',
+    company: 'Charter gives your company permanent first-mover advantage in DFW’s $1.1B/yr foundation market. Priority queue + 12% commission + subscription overrides compound daily.',
     new: 'Start Charter now while the rate is locked at $149/mo. DFW foundation market is massive — expansive clay soil means every neighborhood is a potential customer. Build your pipeline early.',
   };
 

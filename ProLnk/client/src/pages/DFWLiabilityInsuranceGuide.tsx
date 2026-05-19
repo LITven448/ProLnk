@@ -37,7 +37,7 @@ export default function DFWLiabilityInsuranceGuide() {
     const notes: string[] = [];
     if (selectedFeatures.includes('dog')) notes.push('Texas follows the "one-bite rule" — but documentation of prior aggression creates strict liability. Keep bite history records.');
     if (selectedFeatures.includes('pool')) notes.push('Pool + guests = your highest single liability exposure. Umbrella policy is non-negotiable.');
-    if (selectedFeatures.includes('rental')) notes.push('Standard homeowner\'s rarely covers short-term rental liability. You likely need a business policy or host endorsement.');
+    if (selectedFeatures.includes('rental')) notes.push('Standard homeowner\’s rarely covers short-term rental liability. You likely need a business policy or host endorsement.');
     if (selectedFeatures.includes('contractor')) notes.push('Verify contractors carry their own liability insurance. An uninsured contractor injury on your property can be your claim.');
     if (selectedFeatures.includes('trampoline')) notes.push('Many DFW insurers surcharge or exclude trampolines. Disclose immediately to avoid claim denial.');
     let level = 'LOW', recommended = '$100K–$300K standard liability', umbrella = false, costEst = '$0–50/yr adjustment';

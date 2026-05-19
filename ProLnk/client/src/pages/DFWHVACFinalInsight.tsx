@@ -34,8 +34,8 @@ const situations = [
 ];
 
 const pillars = [
-  { icon: '🌡️', title: 'Biggest Comfort Factor', body: 'In DFW's 100°F+ summers, HVAC failure is not an inconvenience — it's a health emergency. No other home system affects daily quality of life more.' },
-  { icon: '💰', title: 'Biggest Operating Expense', body: 'HVAC accounts for 50-70% of a DFW home's energy bill. Over 10 years, you'll spend $18K-$35K on energy and maintenance. It deserves active management.' },
+  { icon: '🌡️', title: 'Biggest Comfort Factor', body: 'In DFW’s 100°F+ summers, HVAC failure is not an inconvenience — it’s a health emergency. No other home system affects daily quality of life more.' },
+  { icon: '💰', title: 'Biggest Operating Expense', body: 'HVAC accounts for 50-70% of a DFW home’s energy bill. Over 10 years, you’ll spend $18K-$35K on energy and maintenance. It deserves active management.' },
   { icon: '🏠', title: 'Biggest Equity Risk', body: 'A failing HVAC can trigger $8K-$15K in buyer credits or kill a sale outright. No other deferred maintenance item has this much power over your transaction.' },
   { icon: '🔄', title: 'Best Maintenance ROI', body: 'Annual $150 tune-ups return $800-$2,500/year in energy savings + extended system life. No home improvement beats preventive HVAC maintenance on ROI.' },
 ];

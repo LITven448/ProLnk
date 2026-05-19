@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const situations = [
-  { id: 'old-no-tune', label: 'System 12+ years, no recent service', word: 'Get a diagnostic this week. At 12+ years in DFW summers, you\'re one heat wave from a breakdown. If tech says replacement is near, start planning now — SEER2 units qualify for 2026 federal tax credits.' },
-  { id: 'good-shape', label: 'System in good shape, recent service', word: 'Change your filter now (May pollen is brutal). Flush the drain line with vinegar. Set a reminder for October service. You\'re in good shape — keep it that way.' },
-  { id: 'planning-replace', label: 'Planning to replace this year', word: 'Don\'t wait until it dies in July. Schedule now, get 3 quotes, insist on SEER2. ProLnk is matching homeowners with verified HVAC pros — join the waitlist for pre-launch pricing.' },
-  { id: 'rental', label: 'Landlord / rental property', word: 'Tenant comfort + liability = act now. Pre-summer service protects both. Add the property to ProLnk\'s Home Health Vault to track maintenance history across all units.' },
-  { id: 'just-bought', label: 'Just bought the home', word: 'Get a full HVAC inspection before summer. Don\'t trust the seller disclosure. Know exactly what you\'re working with before 100°F hits. Join ProLnk for verified local pros.' },
+  { id: 'old-no-tune', label: 'System 12+ years, no recent service', word: 'Get a diagnostic this week. At 12+ years in DFW summers, you\’re one heat wave from a breakdown. If tech says replacement is near, start planning now — SEER2 units qualify for 2026 federal tax credits.' },
+  { id: 'good-shape', label: 'System in good shape, recent service', word: 'Change your filter now (May pollen is brutal). Flush the drain line with vinegar. Set a reminder for October service. You\’re in good shape — keep it that way.' },
+  { id: 'planning-replace', label: 'Planning to replace this year', word: 'Don\’t wait until it dies in July. Schedule now, get 3 quotes, insist on SEER2. ProLnk is matching homeowners with verified HVAC pros — join the waitlist for pre-launch pricing.' },
+  { id: 'rental', label: 'Landlord / rental property', word: 'Tenant comfort + liability = act now. Pre-summer service protects both. Add the property to ProLnk\’s Home Health Vault to track maintenance history across all units.' },
+  { id: 'just-bought', label: 'Just bought the home', word: 'Get a full HVAC inspection before summer. Don\’t trust the seller disclosure. Know exactly what you\’re working with before 100°F hits. Join ProLnk for verified local pros.' },
 ];
 
 export default function DFWHVACDFWLastWord2026() {

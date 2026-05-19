@@ -63,9 +63,9 @@ export default function SmartHomeIntegrationGuide() {
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#ffffff', marginBottom: '32px' }}>⚙️ How TrustyPro Uses Smart Home Data</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
             {[
-              { emoji: '🌡️', title: 'HVAC Runtime Analysis', desc: 'When your thermostat logs 18+ hours of runtime on a mild day, TrustyPro's AI flags it as a potential refrigerant or filter issue — before your system fails.', status: '2026 Beta', color: '#818cf8' },
+              { emoji: '🌡️', title: 'HVAC Runtime Analysis', desc: 'When your thermostat logs 18+ hours of runtime on a mild day, TrustyPro’s AI flags it as a potential refrigerant or filter issue — before your system fails.', status: '2026 Beta', color: '#818cf8' },
               { emoji: '💧', title: 'Leak Sensor Correlation', desc: 'Smart leak detectors feed real-time data. A detection event triggers an immediate alert + automatic contractor connection from your ProLnk network.', status: '2026 Beta', color: '#818cf8' },
-              { emoji: '💦', title: 'Foundation Watering', desc: 'DFW foundations expand/contract with moisture. Smart irrigation schedule data helps TrustyPro calculate your foundation's moisture consistency — critical for DFW clay soil.', status: '2026 Beta', color: '#818cf8' },
+              { emoji: '💦', title: 'Foundation Watering', desc: 'DFW foundations expand/contract with moisture. Smart irrigation schedule data helps TrustyPro calculate your foundation’s moisture consistency — critical for DFW clay soil.', status: '2026 Beta', color: '#818cf8' },
               { emoji: '🏠', title: 'Predictive Maintenance', desc: 'IoT data + AI = maintenance predictions before failures happen. Know your water heater is approaching end-of-life before the flood, not after.', status: '2027 Roadmap', color: '#f59e0b' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '12px', padding: '24px' }}>
@@ -87,7 +87,7 @@ export default function SmartHomeIntegrationGuide() {
             {[
               { year: 'Today', label: 'AI Photo Scans', desc: 'Manual exterior and interior photo uploads analyzed by TrustyPro AI. Identifies visible condition issues, aging systems, deferred maintenance.', color: '#22c55e', items: ['Photo-based AI condition scoring', 'Manual home data input', 'Home health vault data storage'] },
               { year: '2026', label: 'Smart Sensor Beta', desc: 'First wave of IoT integrations. Smart thermostat, leak detectors, and smart irrigation connect to TrustyPro dashboard.', color: '#818cf8', items: ['Nest/Ecobee thermostat integration', 'Leak detector real-time alerts', 'Alexa + Google Home voice commands', 'Smart irrigation foundation correlation'] },
-              { year: '2027', label: 'Predictive Intelligence', desc: 'Full IoT data layer enables predictive maintenance. AI learns your home's patterns and flags anomalies before they become failures.', color: '#f59e0b', items: ['Predictive maintenance from HVAC data', 'Apple HomeKit + SmartThings full integration', 'Automated contractor dispatch on sensor events', 'Insurance integration for premium reduction'] },
+              { year: '2027', label: 'Predictive Intelligence', desc: 'Full IoT data layer enables predictive maintenance. AI learns your home’s patterns and flags anomalies before they become failures.', color: '#f59e0b', items: ['Predictive maintenance from HVAC data', 'Apple HomeKit + SmartThings full integration', 'Automated contractor dispatch on sensor events', 'Insurance integration for premium reduction'] },
             ].map((phase, i) => (
               <div key={i} style={{ display: 'flex', gap: '24px', marginBottom: '8px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '80px' }}>

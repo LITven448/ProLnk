@@ -60,7 +60,7 @@ export default function DFWHVACWeatherford() {
             have become the gold standard for new installs here.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {['🔥 Propane common — Atmos doesn't reach all areas', '🏡 Larger homes need 4–5+ ton systems',
+            {['🔥 Propane common — Atmos doesn’t reach all areas', '🏡 Larger homes need 4–5+ ton systems',
               '❄️ Colder winters than inner DFW suburbs', '⚡ Dual-fuel heat pumps = best efficiency'].map(item => (
               <div key={item} style={{ background: '#0A1628', borderRadius: 8, padding: 12, color: '#ccc', fontSize: 14 }}>{item}</div>
             ))}

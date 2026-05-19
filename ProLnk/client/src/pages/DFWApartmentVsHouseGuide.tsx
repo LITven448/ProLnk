@@ -35,7 +35,7 @@ export default function DFWApartmentVsHouseGuide() {
     let reason = '';
     if (household === 'single' && location === 'urban') {
       rec = '🏢 Apartment';
-      reason = 'Walkable DFW neighborhoods like Uptown offer lifestyle premium apartments can\'t match with a house. Flexibility wins.';
+      reason = 'Walkable DFW neighborhoods like Uptown offer lifestyle premium apartments can\’t match with a house. Flexibility wins.';
     } else if (household === 'family') {
       rec = '🏡 House';
       reason = 'DFW suburban school districts (Frisco ISD, Plano ISD) are top-rated. Yard space and garage essential for family life here.';

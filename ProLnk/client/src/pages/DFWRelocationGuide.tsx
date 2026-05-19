@@ -179,7 +179,7 @@ export default function DFWRelocationGuide() {
                 { tip: 'Summer heat is real', detail: 'June–September averages 95–105°F. Your HVAC will run 8+ hours/day. Budget $250–$400/month in summer electricity.' },
                 { tip: 'You need a car', detail: 'DFW is sprawling. DART light rail is useful in Dallas city core but most suburbs require driving. Commutes of 25–45 min are normal.' },
                 { tip: 'Property taxes offset no income tax', detail: 'Texas has no income tax but property taxes run 2.0–2.5% of home value annually. On a $450K home, expect $9K–$11K/year.' },
-                { tip: 'Hail insurance matters', detail: 'North Texas is in Hail Alley. Make sure your homeowner\'s insurance covers roof replacement. Ask about actual cash value vs replacement cost coverage.' },
+                { tip: 'Hail insurance matters', detail: 'North Texas is in Hail Alley. Make sure your homeowner\’s insurance covers roof replacement. Ask about actual cash value vs replacement cost coverage.' },
                 { tip: 'Schools vary dramatically', detail: 'Collin County (Frisco, Allen, Plano, McKinney) has top-rated districts. Dallas ISD is large and uneven — research individual schools.' },
               ].map(item => (
                 <div key={item.tip} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>

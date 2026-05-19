@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DOM_IMPACT = [
   { days: '0–7', perception: 'Fresh listing — buyers compete', offerStrength: '100–103% of list' },
   { days: '8–21', perception: 'Solid interest, some hesitation', offerStrength: '97–100% of list' },
-  { days: '22–45', perception: '"Why hasn't this sold?" stigma begins', offerStrength: '94–97% of list' },
+  { days: '22–45', perception: '"Why hasn’t this sold?" stigma begins', offerStrength: '94–97% of list' },
   { days: '46–90', perception: 'Distressed or overpriced perception', offerStrength: '88–94% of list' },
   { days: '90+', perception: 'Major red flag — buyers lowball', offerStrength: '<88% of list' },
 ];
@@ -22,7 +22,7 @@ export default function DFWPricingHomeToSellGuide() {
     const outcomes: { label: string; price: number; note: string }[] = [];
 
     if (timeline === 'fast' && strategy === 'multiple-offers') {
-      rec = 'Price 1–2% below comparable sales to trigger multiple-offer scenario. DFW buyers are data-savvy — they will know if you're priced right.';
+      rec = 'Price 1–2% below comparable sales to trigger multiple-offer scenario. DFW buyers are data-savvy — they will know if you’re priced right.';
       outcomes.push({ label: 'Aggressive (below market)', price: price * 0.98, note: 'Highest chance of multiple offers, closes in 7–14 days' });
       outcomes.push({ label: 'At market', price: price, note: 'Solid demand, likely 1–2 offers in first week' });
       outcomes.push({ label: 'Slightly over', price: price * 1.02, note: 'Risk of sitting — reduce expected by week 3' });
@@ -56,7 +56,7 @@ export default function DFWPricingHomeToSellGuide() {
             { icon: '🕷️', title: 'The Overpricing Trap', body: 'DFW buyers are among the most comp-savvy in the country. When a home is overpriced by even 3–4%, buyers notice immediately — and so do buyer agents who track list-to-sale ratios. The result: fewer showings, lower offers, and a price cut that signals weakness.' },
             { icon: '🎯', title: 'The Multiple-Offer Strategy', body: 'Pricing 1–2% below recent comparable sales in DFW neighborhoods like Frisco, McKinney, Plano, and Southlake consistently generates multiple-offer scenarios. When you get 3–5 offers, buyers drive the price up above list — you win more than you gave up.' },
             { icon: '📅', title: 'When to List in DFW', body: 'March through May is peak DFW listing season. Avoid listing in August — the Texas summer heat kills foot traffic, families are in back-to-school mode, and homes listed in August sit 40% longer than spring listings. January and September are second-tier windows.' },
-            { icon: '✂️', title: 'Price Reductions Signal Weakness', body: 'Every price reduction in DFW is public record on Zillow, Redfin, and MLS history. Buyers use reductions as negotiating leverage — "it's been reduced twice, let's offer under asking." One well-priced listing is worth more than two reductions.' },
+            { icon: '✂️', title: 'Price Reductions Signal Weakness', body: 'Every price reduction in DFW is public record on Zillow, Redfin, and MLS history. Buyers use reductions as negotiating leverage — "it’s been reduced twice, let’s offer under asking." One well-priced listing is worth more than two reductions.' },
           ].map(card => (
             <div key={card.title} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: '24px 28px', border: '1px solid rgba(255,255,255,0.08)' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>

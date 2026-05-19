@@ -6,10 +6,10 @@ const poolGuides: Record<string, Record<string, { setup: string[]; etiquette: st
       setup: ['Pool fence required — HOA + DFW code both mandate it', 'Pool house or outdoor bathroom — neighbors expect it at this level', 'Outdoor kitchen adjacent to pool — DFW entertaining standard', 'LED lighting — evening pool parties run late in DFW summers', 'Pool heater for shoulder season — extends to 9 months of use'],
       etiquette: ['Post pool hours on fence — respect neighbors even in HOA', 'Kids swim by invitation only — this is Texas, fences matter', 'Keep decibel level reasonable after 9pm — HOA will enforce', 'Maintain pool weekly — green pools tank neighborhood values'],
       safety: ['Fence with self-latching gate — Texas law requires it', 'Life ring with rope visible poolside', 'No diving board without 9ft depth — depth matters', 'Pool alarm if children in household — DFW insurance requires it'],
-      social: 'HOA pool home = neighborhood social hub. You\'re now responsible for summer fun.'
+      social: 'HOA pool home = neighborhood social hub. You\’re now responsible for summer fun.'
     },
     'No HOA / Rural Lot': {
-      setup: ['More design freedom — no HOA restrictions', 'Outdoor speaker system — pool + music + Texas = perfect', 'Fire pit adjacent to pool — cool nights in DFW still happen', 'Outdoor shower — Texas clay doesn\'t belong in your house', 'Dive board or slide possible if depth allows'],
+      setup: ['More design freedom — no HOA restrictions', 'Outdoor speaker system — pool + music + Texas = perfect', 'Fire pit adjacent to pool — cool nights in DFW still happen', 'Outdoor shower — Texas clay doesn\’t belong in your house', 'Dive board or slide possible if depth allows'],
       etiquette: ['No HOA = personal responsibility — set your own rules clearly', 'Neighbor relations matter more — no HOA to mediate', 'Gates and fencing are your insurance requirement, not HOA mandate', 'Pool = neighborhood kids wanting to come over — decide your policy early'],
       safety: ['Texas law: residential pool fence required regardless of HOA', 'Pool alarm — DFW has drowning prevention law for homes with children', 'First aid kit visible poolside — DFW fire code recommends it', 'Clear depth markers — guests in Texas drink beer and swim simultaneously'],
       social: 'No HOA pool = freedom to entertain large. DFW is a party culture — own it.'
@@ -19,13 +19,13 @@ const poolGuides: Record<string, Record<string, { setup: string[]; etiquette: st
     'HOA Neighborhood': {
       setup: ['Check HOA rules first — many DFW HOAs ban above-ground pools', 'Deck build-out to make it look permanent and integrated', 'Privacy screening if HOA allows — required in many DFW covenants', 'Quality pump and filter — DFW summer heat breeds algae fast'],
       etiquette: ['HOA visibility rules are strict — check before building deck', 'No visibility from street in most DFW HOA communities', 'Keep it maintained — HOA will cite you for green water', 'Invite neighbors before they complain — be proactive'],
-      safety: ['Ladder lock when unattended — children are resourceful', 'Above-ground pool still requires fence if children in home', 'Weight limit enforcement — Texas summer parties get crowded', 'Level ground — DFW clay shifts and levels don\'t stay true'],
-      social: 'Modest setup, still social. DFW kids don\'t care if it\'s above ground — they just want to swim.'
+      safety: ['Ladder lock when unattended — children are resourceful', 'Above-ground pool still requires fence if children in home', 'Weight limit enforcement — Texas summer parties get crowded', 'Level ground — DFW clay shifts and levels don\’t stay true'],
+      social: 'Modest setup, still social. DFW kids don\’t care if it\’s above ground — they just want to swim.'
     },
     'No HOA / Rural Lot': {
       setup: ['Full freedom — go bigger than you think', '18ft round minimum for adult entertaining', 'Deck build-out with built-in seating', 'Portable outdoor bar adjacent — DFW pool culture requires drinks'],
       etiquette: ['No restrictions — set your own rules', 'Be the fun neighbor — DFW rewards it', 'Communicate pool party days to close neighbors — good faith gesture', 'Clean it before guests — algae is not Texas hospitality'],
-      safety: ['Ladder lock mandatory when unattended', 'Level pad — inspect seasonally as DFW clay shifts', 'Night lighting — Texas nights don\'t stop the pool party', 'Clear rules posted: no diving, weight limits'],
+      safety: ['Ladder lock mandatory when unattended', 'Level pad — inspect seasonally as DFW clay shifts', 'Night lighting — Texas nights don\’t stop the pool party', 'Clear rules posted: no diving, weight limits'],
       social: 'No HOA freedom = biggest social asset in DFW. Use it.'
     }
   }

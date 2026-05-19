@@ -5,7 +5,7 @@ const situations = [
   { id: 'skipped', label: 'Skipped annual service', icon: '📅', risk: 'HIGH', detail: 'Most manufacturers require annual professional maintenance to keep warranty valid. Missing even one year can void coverage.' },
   { id: 'modified', label: 'Modified the system', icon: '🔧', risk: 'HIGH', detail: 'Any unauthorized modifications — adding components, changing refrigerant lines, altering controls — voids warranty immediately.' },
   { id: 'installation', label: 'Improper installation', icon: '⚠️', risk: 'HIGH', detail: 'The #1 warranty void reason. Wrong charge, undersized linesets, improper electrical — manufacturer denies claims if install was non-compliant.' },
-  { id: 'registration', label: 'Didn't register within 60 days', icon: '📋', risk: 'MEDIUM', detail: 'Most brands give base warranty (5yr parts) without registration but extended warranty (10yr) requires registration within 60-90 days of install.' },
+  { id: 'registration', label: 'Didn’t register within 60 days', icon: '📋', risk: 'MEDIUM', detail: 'Most brands give base warranty (5yr parts) without registration but extended warranty (10yr) requires registration within 60-90 days of install.' },
   { id: 'parts', label: 'Used third-party parts', icon: '🔩', risk: 'MEDIUM', detail: 'Non-OEM parts can void coverage on the specific component and potentially the whole system depending on manufacturer policy.' },
   { id: 'none', label: 'None of the above', icon: '✅', risk: 'LOW', detail: 'Your warranty is likely intact! Keep records of all service visits and your registration confirmation.' },
 ];

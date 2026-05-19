@@ -148,9 +148,9 @@ export default function DFWElectricianProsper() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
           {[
             { icon: '🚘', title: 'EV Capital of DFW', desc: 'Prosper has one of the highest EV ownership rates in North Texas. Level 2 charger installs are the #1 electrical job in the city right now.' },
-            { icon: '🏡', title: 'Oversized New Homes', desc: 'Prosper\'s average new home exceeds 3,200 sq ft. Larger homes need 400A panels — many builders still install 200A as standard, creating immediate upgrade demand.' },
+            { icon: '🏡', title: 'Oversized New Homes', desc: 'Prosper\’s average new home exceeds 3,200 sq ft. Larger homes need 400A panels — many builders still install 200A as standard, creating immediate upgrade demand.' },
             { icon: '🔌', title: 'Smart Home Wiring', desc: 'Buyers in the $600K+ range expect Lutron, Control4, and whole-home audio. Running low-voltage alongside electrical requires specialized experience.' },
-            { icon: '🔋', title: 'Generator Prep', desc: 'After 2021\'s Winter Storm Uri, Prosper residents invested heavily in standby generators. Transfer switch and hookup work keeps area electricians busy year-round.' },
+            { icon: '🔋', title: 'Generator Prep', desc: 'After 2021\’s Winter Storm Uri, Prosper residents invested heavily in standby generators. Transfer switch and hookup work keeps area electricians busy year-round.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>

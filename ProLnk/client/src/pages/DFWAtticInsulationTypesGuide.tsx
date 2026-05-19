@@ -8,8 +8,8 @@ type ResultMap = Record<string, Record<string, { type: string; rValue: string; c
 const results: ResultMap = {
   'Vented Attic (standard)': {
     'Extreme Heat (Cooling Costs)': { type: 'Blown-In Fiberglass', rValue: 'R-49 to R-60', cost: '$1.00–$1.50/sq ft installed', reason: 'Blown-in fiberglass is ideal for vented DFW attics battling heat. It fills every gap, achieves high R-values, and handles DFW temperature swings without settling like cellulose.' },
-    'Humidity / Moisture Control': { type: 'Blown-In Cellulose', rValue: 'R-49 to R-60', cost: '$1.10–$1.60/sq ft installed', reason: 'Cellulose manages moisture buffering well and is a strong choice for DFW\'s humid periods. Treated for mold resistance and made from recycled content.' },
-    'Air Sealing Priority': { type: 'Blown-In Fiberglass + Air Sealing', rValue: 'R-49', cost: '$1.20–$1.80/sq ft installed', reason: 'Air seal all penetrations first, then blow fiberglass over. DFW\'s mixed climate makes air sealing as impactful as insulation R-value.' },
+    'Humidity / Moisture Control': { type: 'Blown-In Cellulose', rValue: 'R-49 to R-60', cost: '$1.10–$1.60/sq ft installed', reason: 'Cellulose manages moisture buffering well and is a strong choice for DFW\’s humid periods. Treated for mold resistance and made from recycled content.' },
+    'Air Sealing Priority': { type: 'Blown-In Fiberglass + Air Sealing', rValue: 'R-49', cost: '$1.20–$1.80/sq ft installed', reason: 'Air seal all penetrations first, then blow fiberglass over. DFW\’s mixed climate makes air sealing as impactful as insulation R-value.' },
     'Cost-Effectiveness': { type: 'Blown-In Fiberglass', rValue: 'R-38 to R-49', cost: '$0.90–$1.30/sq ft installed', reason: 'Blown-in fiberglass gives the best value for DFW vented attics—installed quickly and performs well at moderate R-values for most homes.' },
   },
   'Unvented / Conditioned Attic': {
@@ -20,14 +20,14 @@ const results: ResultMap = {
   },
   'Cathedral Ceiling': {
     'Extreme Heat (Cooling Costs)': { type: 'Closed-Cell Spray Foam', rValue: 'R-28 to R-38', cost: '$3.00–$5.00/sq ft installed', reason: 'Cathedral ceilings in DFW have no room for error—closed-cell spray foam delivers maximum R-value per inch in tight rafter bays.' },
-    'Humidity / Moisture Control': { type: 'Closed-Cell Spray Foam', rValue: 'R-28+', cost: '$3.00–$5.00/sq ft installed', reason: 'Closed-cell controls vapor drive in cathedral assemblies—DFW\'s humidity swings make this critical to avoid moisture damage inside the ceiling.' },
+    'Humidity / Moisture Control': { type: 'Closed-Cell Spray Foam', rValue: 'R-28+', cost: '$3.00–$5.00/sq ft installed', reason: 'Closed-cell controls vapor drive in cathedral assemblies—DFW\’s humidity swings make this critical to avoid moisture damage inside the ceiling.' },
     'Air Sealing Priority': { type: 'Closed-Cell Spray Foam', rValue: 'R-20+', cost: '$2.50–$4.00/sq ft installed', reason: 'Cathedral ceilings must be fully air-sealed; spray foam is the only practical solution for the confined rafter cavity.' },
     'Cost-Effectiveness': { type: 'Rigid Foam Boards + Air Sealing', rValue: 'R-20 to R-28', cost: '$2.00–$3.50/sq ft installed', reason: 'Rigid foam is less expensive than spray foam and can achieve good performance in cathedral ceilings when carefully installed and sealed.' },
   },
   'Flat Roof Assembly': {
     'Extreme Heat (Cooling Costs)': { type: 'Polyiso Rigid Board', rValue: 'R-25 to R-35', cost: '$2.00–$3.50/sq ft installed', reason: 'Polyiso performs well in DFW flat roofs—high R-value per inch and UV-stable when covered with proper membrane.' },
     'Humidity / Moisture Control': { type: 'EPS Rigid Board', rValue: 'R-20 to R-30', cost: '$1.50–$2.50/sq ft installed', reason: 'EPS does not absorb moisture like polyiso can in wet conditions—better for DFW flat roofs that may experience ponding.' },
-    'Air Sealing Priority': { type: 'Closed-Cell Spray Foam (roof deck)', rValue: 'R-20+', cost: '$2.50–$4.00/sq ft installed', reason: 'Spray foam under the roof membrane eliminates air gaps in flat roof assemblies—important for DFW\'s temperature-driven air movement.' },
+    'Air Sealing Priority': { type: 'Closed-Cell Spray Foam (roof deck)', rValue: 'R-20+', cost: '$2.50–$4.00/sq ft installed', reason: 'Spray foam under the roof membrane eliminates air gaps in flat roof assemblies—important for DFW\’s temperature-driven air movement.' },
     'Cost-Effectiveness': { type: 'EPS Rigid Board', rValue: 'R-20', cost: '$1.00–$1.80/sq ft installed', reason: 'EPS is the most cost-effective rigid board for DFW flat roofs, with good long-term moisture resistance.' },
   },
 };

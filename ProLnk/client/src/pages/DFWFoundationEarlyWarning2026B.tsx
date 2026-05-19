@@ -8,7 +8,7 @@ export default function DFWFoundationEarlyWarning2026B() {
     grout_crack: 'Tile grout cracking in a line across the floor = floor movement from foundation shift. Isolated grout crack near an edge could be thermal expansion — check if it forms a pattern or follows a direction. A line of cracked grout spanning multiple tiles pointing toward an exterior wall is a foundation signal. Mark the ends with tape and measure weekly.',
     nail_pops: 'Nail pops in drywall are small drywall fasteners pushing through paint as framing moves with the foundation. One or two near doors = normal seasonal movement. Multiple in a line or concentrated in one room = document and schedule evaluation. DFW clay movement causes this in cycles — track which season they appear.',
     ceiling_gap: 'Gap at ceiling-wall junction = wall is pulling away or ceiling is sagging due to framing movement tied to foundation. Measure the gap with a business card. Gap you can see daylight through = call ProLnk this week. Hairline gap that appeared gradually = monitor weekly and document photos.',
-    window_lock: 'Window that won't lock properly = frame has racked due to foundation movement. Test all windows on that wall. If multiple windows on the same wall have alignment issues, the foundation under that wall has shifted. This is an actionable sign — call ProLnk for a pier and beam or slab evaluation.',
+    window_lock: 'Window that won’t lock properly = frame has racked due to foundation movement. Test all windows on that wall. If multiple windows on the same wall have alignment issues, the foundation under that wall has shifted. This is an actionable sign — call ProLnk for a pier and beam or slab evaluation.',
     pier_moisture: 'Moisture staining on pier and beam foundation walls or under-house moisture = critical in DFW. Pier and beam homes need positive drainage away from the house and vapor barriers under the crawl space. Moisture causes wood rot and undermines the beam support structure. Schedule inspection immediately — this escalates fast in DFW summer humidity.',
     sticky_interior: 'Interior doors sticking (not just exterior) = structural frame movement from foundation shift. Exterior doors can swell from humidity, but interior hollow-core doors sticking = framing has moved. Note which doors, mark the contact points, and watch whether the sticking increases or spreads to adjacent doors.',
   };
@@ -29,7 +29,7 @@ export default function DFWFoundationEarlyWarning2026B() {
           { emoji: '⬛', sign: 'Grout cracking in tile', subtle: 'Floor movement from foundation shift' },
           { emoji: '📌', sign: 'Nail pops in drywall', subtle: 'Framing moving with the foundation' },
           { emoji: '↔️', sign: 'Gap at ceiling-wall junction', subtle: 'Wall pulling away from framing' },
-          { emoji: '🔒', sign: 'Window won't lock properly', subtle: 'Frame racked by foundation movement' },
+          { emoji: '🔒', sign: 'Window won’t lock properly', subtle: 'Frame racked by foundation movement' },
           { emoji: '💧', sign: 'Pier and beam moisture', subtle: 'Wood rot risk in crawl space' },
           { emoji: '🚪', sign: 'Interior doors sticking', subtle: 'Structural frame movement — not humidity' },
         ].map((item) => (

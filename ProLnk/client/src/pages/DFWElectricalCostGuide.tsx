@@ -9,7 +9,7 @@ export default function DFWElectricalCostGuide() {
       a: 'Yes. Most electrical work in Dallas, Fort Worth, and surrounding cities requires a permit. Your licensed electrician should pull the permit — if they suggest skipping it, walk away.',
     },
     {
-      q: 'How do I verify a Texas electrician's license?',
+      q: 'How do I verify a Texas electrician’s license?',
       a: 'Visit the TDLR website (tdlr.texas.gov) and search by license number or name. Ask the contractor for their license number before work begins — any legitimate electrician will provide it immediately.',
     },
     {

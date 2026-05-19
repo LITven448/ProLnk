@@ -57,7 +57,7 @@ export default function DFWFlashFloodPreventionGuide() {
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '1rem' }}>💡 DFW Flash Flood Facts</div>
           {[['🌧️', 'Speed', 'DFW can get 2–4" of rain in under 1 hour during severe storms'],
             ['🏠', 'Foundation first', 'Any water against your foundation for 6+ hours causes cumulative damage'],
-            ['🚗', 'Turn around', '"Turn around, don\'t drown" — 12 inches of moving water can float a car'],
+            ['🚗', 'Turn around', '"Turn around, don\’t drown" — 12 inches of moving water can float a car'],
             ['💧', 'Backflow risk', 'Heavy rain can push sewage backwards into homes without a backflow preventer'],
             ['🌲', 'Neighbor effect', 'Uphill neighbors with poor drainage send their runoff to your property'],
           ].map(([emoji, label, desc]) => (

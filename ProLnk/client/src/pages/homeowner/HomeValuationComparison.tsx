@@ -24,7 +24,7 @@ const recommendations = {
   planning: { tool: 'TrustyPro Home Value + ATTOM Data', reason: 'TrustyPro for ongoing tracking, ATTOM for deep-dive analysis when making major financial decisions.' },
   refinance: { tool: 'Licensed Appraiser', reason: 'Lenders require a licensed appraisal for refinancing. No AVM tool is accepted as a substitute.' },
   selling: { tool: 'CMA by Realtor + TrustyPro', reason: 'Get a free CMA from your listing agent and use TrustyPro to track value while you prepare to sell.' },
-  buying: { tool: 'CMA by Realtor', reason: 'Your buyer\'s agent will run a CMA on any property you\'re serious about — it\'s free and highly accurate.' },
+  buying: { tool: 'CMA by Realtor', reason: 'Your buyer\’s agent will run a CMA on any property you\’re serious about — it\’s free and highly accurate.' },
   estate: { tool: 'Licensed Appraiser', reason: 'Estate and legal matters require a certified appraisal. Only option with legal standing in court or IRS filings.' },
   crosscheck: { tool: 'Zillow + Realtor.com + TrustyPro', reason: 'Run all three and triangulate. If they agree within 5%, confidence is high. If they diverge, consider a CMA.' },
 };

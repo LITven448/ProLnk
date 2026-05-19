@@ -43,7 +43,7 @@ const crawlTypes = [
   },
   {
     icon: '❄️', name: 'Conditioned Crawl Space',
-    desc: 'Encapsulated AND connected to your home\'s HVAC system. Heated/cooled like interior space.',
+    desc: 'Encapsulated AND connected to your home\’s HVAC system. Heated/cooled like interior space.',
     verdict: 'Premium option — warmest floors, best air quality. Higher HVAC operating cost but lowest moisture risk long-term.',
     dfwNote: '✅ Premium Option',
   },

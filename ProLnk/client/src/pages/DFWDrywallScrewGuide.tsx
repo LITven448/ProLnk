@@ -9,7 +9,7 @@ const screwData: Record<string, Record<string, { type: string; length: string; t
   '5/8': {
     'Single layer to wood stud': { type: 'Coarse thread #6', length: '1-5/8"', technique: 'Standard for ceilings and fire-rated walls. Dimple carefully — 5/8 paper tears easier.' },
     'Single layer to metal stud': { type: 'Fine thread #6', length: '1-1/4"', technique: 'Fine thread required for metal. DFW commercial builds use 5/8 + metal almost exclusively.' },
-    'Double layer': { type: 'Coarse thread #6', length: '2"', technique: 'Two full layers — screw must reach stud. Check torque: DFW humidity swells wood, don\'t over-drive.' },
+    'Double layer': { type: 'Coarse thread #6', length: '2"', technique: 'Two full layers — screw must reach stud. Check torque: DFW humidity swells wood, don\’t over-drive.' },
   },
 };
 

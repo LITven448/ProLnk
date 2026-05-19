@@ -26,7 +26,7 @@ const prospects = [
   {
     id: 'investor',
     label: '💼 Investor / Operator',
-    urgency: 'DFW is America\'s fastest-growing metro. The platform serving it will be worth billions.',
+    urgency: 'DFW is America\’s fastest-growing metro. The platform serving it will be worth billions.',
     costs: [
       'Delay means watching Charter income accrue to early adopters instead of you.',
       'Every home added to the Vault before you join builds data moat you will pay more for later.',
@@ -37,7 +37,7 @@ const prospects = [
   {
     id: 'agent',
     label: '🏡 Real Estate Agent',
-    urgency: 'ProLnk is the post-purchase relationship you\'ve never had with clients.',
+    urgency: 'ProLnk is the post-purchase relationship you\’ve never had with clients.',
     costs: [
       'Without ProLnk, your clients call random contractors — and blame you when it goes wrong.',
       'Origination rights mean every home you refer earns you recurring income after closing.',

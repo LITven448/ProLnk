@@ -29,8 +29,8 @@ export default function DFWIBuyerGuide() {
     const rec = timeline === 'fast' && condition !== 'excellent'
       ? 'iBuyer may be worth considering — you gain speed and certainty but expect to leave significant money on the table. Best for sellers who prioritize convenience over maximum proceeds.'
       : timeline === 'flexible' && condition === 'excellent'
-      ? 'Traditional listing is strongly recommended. Your home\'s condition supports a competitive market listing, and you have time to maximize proceeds. The iBuyer discount on a well-maintained home is rarely justified.'
-      : 'Run both paths in parallel — get an iBuyer offer for free and compare to a local agent\'s CMA. Use the iBuyer offer as your floor, not your ceiling.';
+      ? 'Traditional listing is strongly recommended. Your home\’s condition supports a competitive market listing, and you have time to maximize proceeds. The iBuyer discount on a well-maintained home is rarely justified.'
+      : 'Run both paths in parallel — get an iBuyer offer for free and compare to a local agent\’s CMA. Use the iBuyer offer as your floor, not your ceiling.';
 
     setResult({ ibuyer: { offer: ibuyer_offer, fees: ibuyer_fees, net: ibuyer_net }, traditional: { offer: trad_offer, costs: trad_costs, net: trad_net }, diff, rec });
   }
@@ -50,11 +50,11 @@ export default function DFWIBuyerGuide() {
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 40 }}>
           {[
-            { icon: '⚡', title: 'How iBuyers Work', body: 'Opendoor and Offerpad use algorithms to generate a cash offer within 24–48 hours. You choose a flexible closing date (typically 14–90 days). No showings, no contingencies, no open houses. The trade-off: their offer reflects their risk margin, not your home\'s market ceiling.' },
+            { icon: '⚡', title: 'How iBuyers Work', body: 'Opendoor and Offerpad use algorithms to generate a cash offer within 24–48 hours. You choose a flexible closing date (typically 14–90 days). No showings, no contingencies, no open houses. The trade-off: their offer reflects their risk margin, not your home\’s market ceiling.' },
             { icon: '📉', title: 'What iBuyers Actually Pay', body: 'iBuyer offers in DFW typically come in 5–10% below market value, depending on condition and the current algorithmic pricing model. On top of that, they charge a "service fee" of 5–8% — similar to agent commissions. Total gap vs. traditional: 8–15% of value.' },
-            { icon: '✅', title: 'When iBuyer Makes Sense', body: 'Speed and certainty are the only valid reasons to choose an iBuyer over a traditional listing. Ideal candidates: sellers who\'ve already purchased another home and can\'t carry two mortgages, sellers relocating on a fixed deadline, or homes with deferred maintenance the seller can\'t address before listing.' },
-            { icon: '🔄', title: 'DFW Market Conditions & iBuyer Activity', body: 'iBuyers scale back offers and activity in volatile markets. In hot markets they\'re more aggressive; in cooling markets they pad their margins further. In 2024–2026 DFW (balanced to slight buyer\'s market), expect iBuyer offers to be on the conservative side — they price in inventory risk.' },
-            { icon: '🎯', title: 'The Smart Move: Run Both Tracks', body: 'Getting an iBuyer offer is free and takes 10 minutes. Use it as your guaranteed floor. Simultaneously, get a local agent\'s CMA and price comparison. If the spread is under $15,000, convenience may win. If it\'s $30,000+, the traditional listing is almost always worth the effort.' },
+            { icon: '✅', title: 'When iBuyer Makes Sense', body: 'Speed and certainty are the only valid reasons to choose an iBuyer over a traditional listing. Ideal candidates: sellers who\’ve already purchased another home and can\’t carry two mortgages, sellers relocating on a fixed deadline, or homes with deferred maintenance the seller can\’t address before listing.' },
+            { icon: '🔄', title: 'DFW Market Conditions & iBuyer Activity', body: 'iBuyers scale back offers and activity in volatile markets. In hot markets they\’re more aggressive; in cooling markets they pad their margins further. In 2024–2026 DFW (balanced to slight buyer\’s market), expect iBuyer offers to be on the conservative side — they price in inventory risk.' },
+            { icon: '🎯', title: 'The Smart Move: Run Both Tracks', body: 'Getting an iBuyer offer is free and takes 10 minutes. Use it as your guaranteed floor. Simultaneously, get a local agent\’s CMA and price comparison. If the spread is under $15,000, convenience may win. If it\’s $30,000+, the traditional listing is almost always worth the effort.' },
           ].map(card => (
             <div key={card.title} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: '24px 28px', border: '1px solid rgba(255,255,255,0.08)' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>

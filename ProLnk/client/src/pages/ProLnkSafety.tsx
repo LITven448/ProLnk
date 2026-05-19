@@ -19,7 +19,7 @@ const CONCERNS = [
   {
     label: 'Damage or disputes',
     prolnk: 'ProLnk has a structured dispute workflow. File a complaint through the platform and our team mediates between you and the contractor.',
-    responsibility: 'For major damage claims, homeowners may also need to file with the contractor\'s insurer directly. ProLnk can facilitate documentation.',
+    responsibility: 'For major damage claims, homeowners may also need to file with the contractor\’s insurer directly. ProLnk can facilitate documentation.',
   },
   {
     label: 'Contractor ratings',
@@ -28,7 +28,7 @@ const CONCERNS = [
   },
   {
     label: 'Unvetted platforms',
-    prolnk: 'ProLnk\'s vetting removes contractors who fail background checks, have lapsed licenses, or carry insufficient insurance — none of that filtering exists on Google or Nextdoor.',
+    prolnk: 'ProLnk\’s vetting removes contractors who fail background checks, have lapsed licenses, or carry insufficient insurance — none of that filtering exists on Google or Nextdoor.',
     responsibility: 'When using unvetted platforms, homeowners assume the full risk of hiring an unscreened contractor.',
   },
 ];
@@ -39,7 +39,7 @@ const CHECKS = [
   { emoji: '🪪', label: 'Identity Verification', detail: 'Government-issued ID and SSN verification to confirm the applicant is who they claim to be' },
   { emoji: '📜', label: 'Trade License', detail: 'Active state license confirmed in the applicable trade at time of onboarding and annually' },
   { emoji: '🛡️', label: 'General Liability', detail: 'Minimum $1M general liability insurance certificate required — coverage for property damage and injury' },
-  { emoji: '👷', label: "Workers' Compensation", detail: 'Active workers\' comp policy required for any contractor with employees' },
+  { emoji: '👷', label: "Workers' Compensation", detail: 'Active workers\’ comp policy required for any contractor with employees' },
 ];
 
 const DISPUTE_STEPS = [

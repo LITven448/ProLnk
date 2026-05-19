@@ -16,7 +16,7 @@ const plans = {
     actions: ['Wear rubber gloves and boots — sewage is hazardous', 'Remove standing sewage water carefully', 'Document all damage with photos before cleanup', 'Call plumber then your insurance company'],
   },
   single_drain: {
-    cause: 'Isolated blockage in branch line — likely grease, debris, or roots in that fixture\'s drain',
+    cause: 'Isolated blockage in branch line — likely grease, debris, or roots in that fixture\’s drain',
     who: 'Plumber or DIY with drain snake for minor clogs',
     cost: '$75–$250 professional snaking | $20–$80 DIY snake rental',
     pays: 'Typically not covered by insurance — maintenance item',

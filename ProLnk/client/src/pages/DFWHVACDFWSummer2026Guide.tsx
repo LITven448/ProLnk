@@ -23,7 +23,7 @@ const priorities: Record<string, string[]> = {
     '🟢 Change to MERV-11 filters now; DFW pollen peaks April–May and clogs coils fast',
   ],
   new: [
-    '🟡 Register your warranty if you haven\'t — some manufacturers require it within 90 days',
+    '🟡 Register your warranty if you haven\’t — some manufacturers require it within 90 days',
     '🟡 ERCOT demand response programs may earn you bill credits — enroll your smart thermostat',
     '🟢 Set cooling schedule: 78°F when away, 74°F by 4pm before you arrive home',
     '🟢 Clean condensate drain line now — DFW humidity causes algae clogs every summer',

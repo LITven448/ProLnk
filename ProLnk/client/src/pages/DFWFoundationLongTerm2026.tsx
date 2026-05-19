@@ -14,7 +14,7 @@ export default function DFWFoundationLongTerm2026() {
   ];
 
   const urgency: Record<string, string> = {
-    'under5': '🟢 You're in the golden window. Establish watering now and you'll likely avoid major repair for 15+ years.',
+    'under5': '🟢 You’re in the golden window. Establish watering now and you’ll likely avoid major repair for 15+ years.',
     '5to15': '🟡 Critical maintenance phase. Consistent watering and annual surveys are essential in DFW clay.',
     '15to25': '🟠 High vigilance required. Get an elevation survey and prioritize drainage this year.',
     'over25': '🔴 Structural assessment recommended. DFW clay homes over 25 without documented care often need piers.',

@@ -25,7 +25,7 @@ const references: Record<string, { title: string; sections: { heading: string; c
     title: '🔄 DFW HVAC Replacement Complete Reference',
     sections: [
       { heading: 'When to Replace vs Repair', content: 'Rule of thumb: if repair cost exceeds 50% of new system cost AND system is over 10 years old, replace. In DFW, systems last 12-15 years due to extreme heat stress. A 15-year-old R-22 system must be replaced — R-22 refrigerant is no longer manufactured.' },
-      { heading: 'What Size System Do You Need?', content: 'Do not trust rule-of-thumb square footage sizing. DFW requires Manual J load calculations that account for your home\'s insulation, windows, orientation, and heat island zone. Oversizing is as bad as undersizing — it causes short-cycling and high humidity.' },
+      { heading: 'What Size System Do You Need?', content: 'Do not trust rule-of-thumb square footage sizing. DFW requires Manual J load calculations that account for your home\’s insulation, windows, orientation, and heat island zone. Oversizing is as bad as undersizing — it causes short-cycling and high humidity.' },
       { heading: 'Heat Pump vs Gas Furnace in DFW', content: 'DFW heating loads are modest — average 900 heating degree days vs 3,400 cooling degree days. A heat pump handles DFW heating down to 25°F efficiently. Below that, auxiliary electric strips or a dual-fuel backup covers the rare extreme cold snap.' },
       { heading: 'Efficiency Ratings and Tax Credits', content: 'Federal tax credits (25C): $2,000 for qualifying heat pumps, $600 for qualifying furnaces. Target 16+ SEER2 for AC units in DFW. Variable-speed or inverter systems reduce energy use 30-40% vs single-stage. Worth the $1,500-3,000 premium.' },
     ],
@@ -61,7 +61,7 @@ const references: Record<string, { title: string; sections: { heading: string; c
     title: '🌿 DFW Green HVAC Reference',
     sections: [
       { heading: 'Your Biggest Carbon Lever', content: 'Replacing a natural gas furnace with a heat pump is the single highest-impact carbon action a DFW homeowner can take. It eliminates direct methane combustion and reduces HVAC carbon by 45-60%. The $2,000 federal tax credit applies through 2032.' },
-      { heading: 'Solar + Heat Pump in DFW', content: 'DFW gets 234 sunny days per year — more than Los Angeles. A 6-8kW solar array covers 80-100% of a heat pump\'s annual electricity use. Combined carbon reduction: 85-95% vs gas furnace + standard AC. Payback: 9-12 years at current ERCOT rates.' },
+      { heading: 'Solar + Heat Pump in DFW', content: 'DFW gets 234 sunny days per year — more than Los Angeles. A 6-8kW solar array covers 80-100% of a heat pump\’s annual electricity use. Combined carbon reduction: 85-95% vs gas furnace + standard AC. Payback: 9-12 years at current ERCOT rates.' },
       { heading: 'ERCOT Green Energy Plans', content: 'Choose a retail electric provider (REP) offering 100% renewable energy certificates. Providers like Green Mountain Energy and TXU offer green plans without premium in DFW. This further reduces the carbon intensity of your electric heat pump.' },
       { heading: 'ProLnk Green HVAC Network', content: 'ProLnk connects DFW homeowners with HVAC pros certified in heat pump installation and solar-ready system design. When requesting quotes, specify you want heat pump options and ask about solar panel readiness.' },
     ],

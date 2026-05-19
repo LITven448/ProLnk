@@ -47,7 +47,7 @@ export default function DFWWindowCleaningGuide() {
                 { icon: '🌿', title: 'Cedar Pollen', desc: 'Jan–March: DFW cedar "fever" season coats everything in yellow-green pollen that etches glass over time.' },
                 { icon: '🏗️', title: 'Construction Dust', desc: 'DFW is one of the most active construction metros in the US. Silica dust from nearby sites settles on windows constantly.' },
                 { icon: '💧', title: 'Hard Water', desc: 'DFW municipal water is hard (200–350 ppm). Sprinkler overspray leaves white calcium spots that require acid washing to remove.' },
-                { icon: '💨', title: 'Southerly Winds', desc: 'DFW\'s prevailing southerly winds carry fine dirt and clay particles that bond to glass during humid summer conditions.' },
+                { icon: '💨', title: 'Southerly Winds', desc: 'DFW\’s prevailing southerly winds carry fine dirt and clay particles that bond to glass during humid summer conditions.' },
               ].map(item => (
                 <div key={item.title} style={{ padding: 14, background: '#0A1628', borderRadius: 8, border: '1px solid #1E3054' }}>
                   <div style={{ fontSize: 22, marginBottom: 8 }}>{item.icon}</div>

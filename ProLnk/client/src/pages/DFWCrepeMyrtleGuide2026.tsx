@@ -6,18 +6,18 @@ export default function DFWCrepeMyrtleGuide2026() {
 
   const varieties: Record<string, Record<string, string>> = {
     dwarf: {
-      accent: 'Dwarf varieties (3-6ft): 'Pixie White' or 'Chickasaw' Pink. Perfect for foundation beds. No pruning needed — natural mounding shape. Summer blooms June–Sept in DFW heat.',
+      accent: 'Dwarf varieties (3-6ft): ’Pixie White' or 'Chickasaw' Pink. Perfect for foundation beds. No pruning needed — natural mounding shape. Summer blooms June–Sept in DFW heat.',
       privacy: 'Dwarf too small for privacy screening. Step up to semi-dwarf (8-15ft) for a hedge effect. Dwarf works best as accent or container specimen.',
       shade: 'Dwarf provides no meaningful shade. Use as ornamental color plant near hardscape. For shade, select full-size variety.',
     },
     medium: {
-      accent: 'Semi-dwarf (8-15ft): 'Acoma' White or 'Hopi' Pink. Flanks driveways and entries beautifully. Multi-stem natural form — no topping required.',
+      accent: 'Semi-dwarf (8-15ft): ’Acoma' White or 'Hopi' Pink. Flanks driveways and entries beautifully. Multi-stem natural form — no topping required.',
       privacy: 'Semi-dwarf row at 8ft spacing creates a 10ft privacy screen within 4 seasons. Acoma White blooms all summer. Loses leaves Nov–Mar — deciduous privacy gap in winter.',
       shade: 'Limited shade canopy. Better for filtered dappled light near patios than full shade. Pair with shade tree for functional outdoor cooling.',
     },
     large: {
-      accent: 'Full-size (20-30ft): 'Natchez' White or 'Muskogee' Lavender — DFW standards. Multi-trunk canopy tree. Stunning in bloom July–Aug. Heritage specimens in DFW over 50 years old.',
-      privacy: 'Full-size row at 15ft spacing. Provides height privacy plus ornamental value. Muskogee Lavender is DFW's most-planted large crepe myrtle for this purpose.',
+      accent: 'Full-size (20-30ft): ’Natchez' White or 'Muskogee' Lavender — DFW standards. Multi-trunk canopy tree. Stunning in bloom July–Aug. Heritage specimens in DFW over 50 years old.',
+      privacy: 'Full-size row at 15ft spacing. Provides height privacy plus ornamental value. Muskogee Lavender is DFW’s most-planted large crepe myrtle for this purpose.',
       shade: 'Natchez can provide 20ft canopy at maturity. Real shade possible under full-size crepe myrtle — DFW summers proven. Drought-tolerant once established (2 years).',
     },
   };

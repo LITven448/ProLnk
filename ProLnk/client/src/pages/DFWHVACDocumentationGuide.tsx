@@ -15,7 +15,7 @@ const STATUS_OPTIONS = ['Just getting started — I have none of this', 'I have 
 const GUIDANCE: Record<string, string> = {
   'Just getting started — I have none of this': 'Start with the equipment nameplate today — photograph it with your phone. That single step unlocks model, serial, and approximate age. Then call the company that installed or last serviced your system and request any records they have on file.',
   'I have the equipment info but no service records': 'Contact every HVAC company that has serviced your home and request copies of all invoices and service reports. Most companies keep 5-7 years of records. Store everything in a single folder — physical or digital.',
-  'I have some records but they are scattered': 'Consolidate everything into one location. ProLnk\'s Home Health Vault is purpose-built for this — every service visit is logged automatically when a ProLnk tech does the work.',
+  'I have some records but they are scattered': 'Consolidate everything into one location. ProLnk\’s Home Health Vault is purpose-built for this — every service visit is logged automatically when a ProLnk tech does the work.',
   'I have most of this documented': 'Check warranty registration — this is the most commonly missed item. Also confirm your filter change log is current. Schedule a tune-up to get a professional assessment added to your records.',
   'Fully documented': 'You are in the top 5% of DFW homeowners for documentation. Ensure your Home Health Vault is current and share access with your primary HVAC tech so they arrive informed.',
 };

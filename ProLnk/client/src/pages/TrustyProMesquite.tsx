@@ -27,7 +27,7 @@ const testimonials = [
 const faqs = [
   {
     q: 'How bad was the April 2012 Mesquite tornado and how does it affect homes today?',
-    a: 'The April 3, 2012 EF3 tornado carved a path through Mesquite with winds exceeding 135 mph, damaging over 1,500 structures. Many homes that received cosmetic repairs have latent structural damage — roof decking, wall connections, and foundation movement from wind uplift that was patched but never properly engineered. TrustyPro\'s scan specifically looks for these post-storm indicators.',
+    a: 'The April 3, 2012 EF3 tornado carved a path through Mesquite with winds exceeding 135 mph, damaging over 1,500 structures. Many homes that received cosmetic repairs have latent structural damage — roof decking, wall connections, and foundation movement from wind uplift that was patched but never properly engineered. TrustyPro\’s scan specifically looks for these post-storm indicators.',
   },
   {
     q: 'What is deferred maintenance and why is it common in Mesquite?',

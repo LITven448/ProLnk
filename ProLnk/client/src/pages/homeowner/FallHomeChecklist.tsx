@@ -61,7 +61,7 @@ const CATEGORIES: Category[] = [
     items: [
       { id: 'found-1', label: 'Reduce irrigation schedule gradually (October)', detail: 'Abruptly stopping irrigation after a wet summer stresses DFW clay foundations. Reduce 25% per week through October rather than stopping cold.' },
       { id: 'found-2', label: 'Check for gaps and new cracks after summer shrinkage', detail: 'DFW clay shrinks in summer drought. Walk the foundation perimeter in October and document any gaps that opened since spring.' },
-      { id: 'found-3', label: 'Verify positive drainage before winter rains', detail: 'November–December are DFW\'s wettest months. Ensure all soil and grading drains water away from the foundation before these rains arrive.' },
+      { id: 'found-3', label: 'Verify positive drainage before winter rains', detail: 'November–December are DFW\’s wettest months. Ensure all soil and grading drains water away from the foundation before these rains arrive.' },
     ],
   },
   {
@@ -84,7 +84,7 @@ const CATEGORIES: Category[] = [
       { id: 'uri-1', label: 'Know where your gas shutoff valve is and own a shutoff wrench', detail: 'A gas shutoff wrench ($8) attached to your meter allows you to shut off gas if pipes burst. ATMOS Energy recommends homeowners know this location.' },
       { id: 'uri-2', label: 'Have pipe insulation materials staged and ready', detail: 'Keep 20 feet of foam pipe insulation in your garage. During a freeze warning, you can wrap exposed pipes in minutes — not hours spent finding supplies.' },
       { id: 'uri-3', label: 'Know which faucets to drip and have the NWS notification set up', detail: 'Sign up for National Weather Service Dallas/Fort Worth freeze warnings at weather.gov. Set phone alerts. Know your drip protocol BEFORE the warning hits.' },
-      { id: 'uri-4', label: 'Have a backup heat source that doesn\'t require electricity', detail: 'Propane or kerosene heater kept in garage with full tank. Do NOT use indoors without proper ventilation. For garage use only during power outage.' },
+      { id: 'uri-4', label: 'Have a backup heat source that doesn\’t require electricity', detail: 'Propane or kerosene heater kept in garage with full tank. Do NOT use indoors without proper ventilation. For garage use only during power outage.' },
       { id: 'uri-5', label: 'Know your neighbors — establish a check-in system', detail: 'Uri 2021 killed people who were alone. Exchange numbers with 2 neighbors. Plan to check on each other during extended power outages.' },
     ],
   },
@@ -159,7 +159,7 @@ export default function FallHomeChecklist() {
               <p className="text-white font-semibold text-lg">{done} of {total} items complete</p>
               <p className="text-slate-400 text-sm mt-1">
                 {pct < 25 && 'Start now — the first cold front can arrive with 48 hours notice.'}
-                {pct >= 25 && pct < 50 && 'Good progress. Don\'t stop — the Uri items are still ahead.'}
+                {pct >= 25 && pct < 50 && 'Good progress. Don\’t stop — the Uri items are still ahead.'}
                 {pct >= 50 && pct < 75 && 'More than halfway. Finish the emergency section before anything else.'}
                 {pct >= 75 && pct < 100 && 'Almost ready. Finish the last few — those remaining items matter.'}
                 {pct === 100 && '✅ Your home is winter-ready. Well done.'}

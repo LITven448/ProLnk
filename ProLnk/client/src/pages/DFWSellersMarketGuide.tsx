@@ -28,8 +28,8 @@ type StrategyResult = {
 
 const strategies: Record<string, Record<string, StrategyResult>> = {
   'Move-in ready / fully updated': {
-    'Plano / Allen / McKinney': { pricing: 'List at top of comp range — updated homes in this corridor command premium. Don\'t leave money on the table by underpricing.', timing: 'List Thursday to capture weekend showings. February-June is peak; expect fastest movement April-May.', dom: '5-12 days', premium: '3-7% over list typical in hot periods', offerExpectation: 'Expect 3-8 offers in peak season. Set offer deadline 48-72 hours after listing.' },
-    default: { pricing: 'Price at or slightly above top comps. Updated homes sell fast in seller\'s market DFW — trust the market.', timing: 'Spring listing (Feb-June) maximizes exposure. Thursday list date captures full weekend traffic.', dom: '7-15 days', premium: '2-5% over list', offerExpectation: 'Multiple offers expected. Structured offer deadline in 48-72 hours.' },
+    'Plano / Allen / McKinney': { pricing: 'List at top of comp range — updated homes in this corridor command premium. Don\’t leave money on the table by underpricing.', timing: 'List Thursday to capture weekend showings. February-June is peak; expect fastest movement April-May.', dom: '5-12 days', premium: '3-7% over list typical in hot periods', offerExpectation: 'Expect 3-8 offers in peak season. Set offer deadline 48-72 hours after listing.' },
+    default: { pricing: 'Price at or slightly above top comps. Updated homes sell fast in seller\’s market DFW — trust the market.', timing: 'Spring listing (Feb-June) maximizes exposure. Thursday list date captures full weekend traffic.', dom: '7-15 days', premium: '2-5% over list', offerExpectation: 'Multiple offers expected. Structured offer deadline in 48-72 hours.' },
   },
   'Minor cosmetic updates needed': {
     default: { pricing: 'Price slightly below fully updated comps — buyers will discount mentally for paint/carpet/fixtures. Let the price do the work.', timing: 'Spring still optimal. If listing off-season, price more aggressively to compensate for lower traffic.', dom: '14-25 days', premium: '0-2% over list if priced right', offerExpectation: '1-3 offers typical. Some buyers will negotiate; be ready to offer small credit in lieu of repairs.' },
@@ -38,7 +38,7 @@ const strategies: Record<string, Record<string, StrategyResult>> = {
     default: { pricing: 'Price for the condition — discount 8-15% from updated comps. Buyers renovating expect a deal. Overpricing stales the listing fast.', timing: 'Condition matters less than price. Spring helps but a well-priced fixer sells year-round in DFW.', dom: '20-45 days', premium: 'Unlikely — focus on preventing reductions', offerExpectation: 'Investors and handy buyers. Expect low offers; counter with data. One clean offer is the goal.' },
   },
   'Fixer-upper / as-is sale': {
-    default: { pricing: 'Investor pricing: ARV minus repairs minus 20-25% profit margin. Price it right day one — as-is stigma compounds if you sit.', timing: 'As-is sells year-round to investors. Spring doesn\'t matter much; wholesalers and flippers shop constantly.', dom: '10-30 days if priced right, 60-90+ if not', premium: 'None — discount from market expected', offerExpectation: 'Cash offers, quick close, no contingencies. Trade speed for price.' },
+    default: { pricing: 'Investor pricing: ARV minus repairs minus 20-25% profit margin. Price it right day one — as-is stigma compounds if you sit.', timing: 'As-is sells year-round to investors. Spring doesn\’t matter much; wholesalers and flippers shop constantly.', dom: '10-30 days if priced right, 60-90+ if not', premium: 'None — discount from market expected', offerExpectation: 'Cash offers, quick close, no contingencies. Trade speed for price.' },
   },
 };
 
@@ -134,7 +134,7 @@ export default function DFWSellersMarketGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🔑 DFW Seller's Playbook: Top 5 Rules</h2>
-          {['List Thursday — Friday-Sunday showings drive offer velocity.', 'Set an offer deadline — creates urgency and prevents lowballs from anchoring.', 'Don\'t skip pre-listing inspection — surprises at closing kill deals.', 'Stage or virtually stage — DFW buyers browse Zillow before driving.', 'Price it right day one — stale listings lose 3-8% vs. comparable fresh ones.'].map((tip, i) => (
+          {['List Thursday — Friday-Sunday showings drive offer velocity.', 'Set an offer deadline — creates urgency and prevents lowballs from anchoring.', 'Don\’t skip pre-listing inspection — surprises at closing kill deals.', 'Stage or virtually stage — DFW buyers browse Zillow before driving.', 'Price it right day one — stale listings lose 3-8% vs. comparable fresh ones.'].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
               <div style={{ minWidth: 28, height: 28, background: '#F5E642', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{i + 1}</div>
               <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.5, paddingTop: 4 }}>{tip}</div>

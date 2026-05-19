@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const devices = ['Smart Thermostat', 'Smart Lights', 'Smart Lock', 'Hub/Bridge', 'Security Camera', 'Smart Plug'];
-const symptoms = ['Won\'t Respond', 'Offline in App', 'Slow/Laggy', 'Dead Battery', 'WiFi Disconnecting', 'Failed After Outage'];
+const symptoms = ['Won\’t Respond', 'Offline in App', 'Slow/Laggy', 'Dead Battery', 'WiFi Disconnecting', 'Failed After Outage'];
 
 function getSteps(device: string, symptom: string) {
   const climateNote = 'DFW summers push attic temps to 150°F+ — devices in unconditioned spaces degrade fast.';
   const steps: Record<string, string[]> = {
-    'Smart Thermostat-Won\'t Respond': ['Check C-wire voltage (most DFW installs lack C-wire)', 'Restart at breaker — 30s off', 'Re-pair in app after restart', 'If Ecobee/Nest: check wifi band (2.4GHz only)', climateNote],
+    'Smart Thermostat-Won\’t Respond': ['Check C-wire voltage (most DFW installs lack C-wire)', 'Restart at breaker — 30s off', 'Re-pair in app after restart', 'If Ecobee/Nest: check wifi band (2.4GHz only)', climateNote],
     'Hub/Bridge-Failed After Outage': ['DFW storms cause brownouts — always use UPS battery backup', 'Hard reset hub (hold button 10s)', 'Re-add devices one at a time', 'Set hub outlet to surge protector', 'Consider generator or whole-home battery backup'],
     'Smart Lock-Dead Battery': ['DFW heat kills AA batteries in 2-3 months vs 6-12 elsewhere', 'Switch to lithium batteries (last 2x longer in heat)', 'Add physical keypad backup code', 'Check door alignment — dragging increases battery drain', climateNote],
     'Security Camera-WiFi Disconnecting': ['Outdoor cameras suffer in 110°F+ DFW direct sun', 'Move to shaded mounting if possible', 'Use 2.4GHz for range over 5GHz for speed', 'Add outdoor-rated WiFi extender on eave', 'Replace if housing is warped/cracked from sun'],
@@ -16,7 +16,7 @@ function getSteps(device: string, symptom: string) {
     `Power cycle ${device} completely (unplug 60s)`,
     'Remove and re-add device in app',
     'Check for firmware update in manufacturer app',
-    'Verify 2.4GHz WiFi (most smart devices don\'t support 5GHz)',
+    'Verify 2.4GHz WiFi (most smart devices don\’t support 5GHz)',
     climateNote,
     'If failure persists after 3 resets → replace unit',
   ];

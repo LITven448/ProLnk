@@ -25,13 +25,13 @@ const PROTEST_STEPS = [
   {
     step: 2,
     title: 'Find 3–5 comps that sold below your assessed value',
-    detail: 'You need sales of comparable homes (same neighborhood, same size ±15%, same age) that sold for less than your county\'s assessed value. If your home is assessed at $500K but 4 similar homes sold for $460–$480K, you have a strong case.',
-    tip: 'Focus on arm\'s-length sales (not foreclosures or family sales) within 1 mile.',
+    detail: 'You need sales of comparable homes (same neighborhood, same size ±15%, same age) that sold for less than your county\’s assessed value. If your home is assessed at $500K but 4 similar homes sold for $460–$480K, you have a strong case.',
+    tip: 'Focus on arm\’s-length sales (not foreclosures or family sales) within 1 mile.',
   },
   {
     step: 3,
     title: 'File your protest online by May 15',
-    detail: 'All four DFW counties allow online protest filing. You only need to file a "Notice of Protest" by May 15 — you don\'t need all your evidence yet. Filing preserves your right; evidence comes later.',
+    detail: 'All four DFW counties allow online protest filing. You only need to file a "Notice of Protest" by May 15 — you don\’t need all your evidence yet. Filing preserves your right; evidence comes later.',
     tip: 'If May 15 falls on a weekend, the deadline extends to the next business day.',
   },
   {
@@ -43,7 +43,7 @@ const PROTEST_STEPS = [
   {
     step: 5,
     title: 'Request formal ARB hearing if unsatisfied',
-    detail: 'If the informal hearing doesn\'t produce a satisfactory result, you can escalate to the Appraisal Review Board (ARB) — an independent panel. Bring the same evidence plus any additional documentation. You can also hire a property tax consultant who typically works on contingency (they charge 30–50% of first-year savings).',
+    detail: 'If the informal hearing doesn\’t produce a satisfactory result, you can escalate to the Appraisal Review Board (ARB) — an independent panel. Bring the same evidence plus any additional documentation. You can also hire a property tax consultant who typically works on contingency (they charge 30–50% of first-year savings).',
     tip: 'ARB hearings are formal but not adversarial. Present your evidence calmly and ask the appraiser to justify their assessment.',
   },
 ];

@@ -7,7 +7,7 @@ function getQuarterRoundAssessment(flooring: string, situation: string) {
   if (situation.includes('no gap') || flooring === 'Tile') return {
     needed: 'Optional / Decorative Only',
     method: 'Adhesive only — no nails into tile',
-    expansion: 'Tile doesn\'t expand — quarter round is cosmetic on tile floors',
+    expansion: 'Tile doesn\’t expand — quarter round is cosmetic on tile floors',
     dfwNote: 'DFW grout lines absorb minor thermal movement in tile — no gap required',
     color: '#22C55E'
   };
@@ -35,8 +35,8 @@ function getQuarterRoundAssessment(flooring: string, situation: string) {
   return {
     needed: 'Recommended',
     method: 'Nail to baseboard only, standard 1/2" gap',
-    expansion: 'Follow manufacturer\'s expansion gap requirements for DFW climate zone',
-    dfwNote: 'DFW\'s temperature range is one of the widest in the U.S. — always use maximum recommended gap',
+    expansion: 'Follow manufacturer\’s expansion gap requirements for DFW climate zone',
+    dfwNote: 'DFW\’s temperature range is one of the widest in the U.S. — always use maximum recommended gap',
     color: '#22C55E'
   };
 }

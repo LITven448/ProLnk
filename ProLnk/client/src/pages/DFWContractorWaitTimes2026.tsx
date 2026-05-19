@@ -22,7 +22,7 @@ const tradeData: Record<Trade, { label: string; icon: string; base: Record<Urgen
   gc: {
     label: 'General Contractor', icon: '🧱',
     base: { emergency: 'N/A', urgent: '2 – 6 weeks', planned: '2 – 12 weeks' },
-    note: 'GCs don't do emergency calls. Q1 = 2 week lead times. Summer spring = 8-12 weeks for kitchens/baths.',
+    note: 'GCs don’t do emergency calls. Q1 = 2 week lead times. Summer spring = 8-12 weeks for kitchens/baths.',
   },
   painter: {
     label: 'Painter', icon: '🖌️',

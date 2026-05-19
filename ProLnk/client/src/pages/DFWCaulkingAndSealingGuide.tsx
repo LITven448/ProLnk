@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const caulkTypes = [
-  { type: 'Silicone', bestFor: 'Bathtubs, showers, glass, metal', lifespan: '20+ years', dfwNote: 'Best for DFW heat — stays flexible, won\'t crack', paintable: false, cost: '$5–$15/tube' },
+  { type: 'Silicone', bestFor: 'Bathtubs, showers, glass, metal', lifespan: '20+ years', dfwNote: 'Best for DFW heat — stays flexible, won\’t crack', paintable: false, cost: '$5–$15/tube' },
   { type: 'Latex / Acrylic', bestFor: 'Interior trim, baseboards, drywall gaps', lifespan: '5–10 years', dfwNote: 'Easy to apply, paintable, but fails faster in DFW heat', paintable: true, cost: '$3–$8/tube' },
   { type: 'Polyurethane', bestFor: 'Exterior siding, masonry, foundations', lifespan: '10–20 years', dfwNote: 'Best for exterior DFW applications — handles temp swings', paintable: true, cost: '$8–$20/tube' },
   { type: 'Butyl Rubber', bestFor: 'Gutters, flashing, rooflines', lifespan: '10–15 years', dfwNote: 'Waterproof — ideal for DFW storm season applications', paintable: false, cost: '$6–$12/tube' },

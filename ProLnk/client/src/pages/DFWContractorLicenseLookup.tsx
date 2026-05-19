@@ -24,8 +24,8 @@ const tradeData: Record<string, { authority: string; website: string; lookupStep
   },
   general: {
     authority: 'City Building Department (no state GC license in Texas)',
-    website: 'Check your specific city\'s development/permits portal',
-    lookupSteps: 'Texas has NO state general contractor license. Verify through city: (1) Ask for city contractor registration number, (2) Check city\'s registered contractor list, (3) Confirm liability insurance + workers\' comp certificates directly.',
+    website: 'Check your specific city\’s development/permits portal',
+    lookupSteps: 'Texas has NO state general contractor license. Verify through city: (1) Ask for city contractor registration number, (2) Check city\’s registered contractor list, (3) Confirm liability insurance + workers\’ comp certificates directly.',
     redFlags: 'Cannot provide proof of liability insurance ($1M minimum). No city registration for the city where work is happening. Only offering verbal guarantee of license.',
     cityNote: 'License does NOT transfer between DFW cities. A contractor registered in Plano must separately register in Frisco, Allen, McKinney, etc. Always verify in your specific city.',
   },

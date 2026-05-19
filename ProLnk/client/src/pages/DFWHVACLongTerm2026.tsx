@@ -15,7 +15,7 @@ export default function DFWHVACLongTerm2026() {
   const statusMap: Record<string, { color: string; msg: string }> = {
     '0to5': { color: '#22c55e', msg: '🟢 Honeymoon phase. Focus on annual tune-ups and filter changes. Document everything.' },
     '5to10': { color: '#eab308', msg: '🟡 Maintenance critical window. Coil cleaning and duct testing now prevent major failures in years 12-15.' },
-    '10to12': { color: '#f97316', msg: '🟠 Start budgeting for replacement. You're approaching the optimal DFW replacement window.' },
+    '10to12': { color: '#f97316', msg: '🟠 Start budgeting for replacement. You’re approaching the optimal DFW replacement window.' },
     '12to15': { color: '#ef4444', msg: '🔴 Optimal replacement window now. Get bids before summer — avoid emergency pricing.' },
     'over15': { color: '#dc2626', msg: '🆘 High failure risk in DFW heat. Any repair should be evaluated against replacement cost first.' },
   };

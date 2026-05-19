@@ -61,7 +61,7 @@ export default function DFWWoodRotRepairGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '2rem' }}>
           {[
             { icon: '🏠', title: 'Fascia Boards', desc: 'Runs along your roofline where gutters attach. DFW homes with overflowing gutters saturate fascia year after year — wood rot is nearly guaranteed within 10 years without protection.' },
-            { icon: '🪟', title: 'Window Sills', desc: 'Horizontal sills collect rainwater and debris. Paint failure in DFW\'s UV-intense summers exposes bare wood to rapid moisture penetration and rot.' },
+            { icon: '🪟', title: 'Window Sills', desc: 'Horizontal sills collect rainwater and debris. Paint failure in DFW\’s UV-intense summers exposes bare wood to rapid moisture penetration and rot.' },
             { icon: '🚪', title: 'Door Frames', desc: 'Bottom corners of exterior door frames are a rot hotspot — water pools here after rain and wicks into the wood. Often misdiagnosed as a settling crack.' },
             { icon: '🏗️', title: 'Deck Posts', desc: 'Where post meets concrete or soil is where rot starts. DFW clay holds moisture around post bases long after rain — a post base bracket is the best prevention.' },
           ].map(item => (

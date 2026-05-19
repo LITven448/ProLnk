@@ -67,7 +67,7 @@ const decades = [
     ],
     budget: '$3,500–$9,000 for system replacement when needed',
     dfw: 'The "repair vs. replace" threshold: if repair > $1,500 and system is >15 years old, replace.',
-    note: 'DFW\'s extreme heat shortens HVAC life vs. national averages. Expect 15–18 year lifespan for most residential equipment.',
+    note: 'DFW\’s extreme heat shortens HVAC life vs. national averages. Expect 15–18 year lifespan for most residential equipment.',
   },
   {
     label: '2010s',

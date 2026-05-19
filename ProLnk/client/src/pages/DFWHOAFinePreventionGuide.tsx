@@ -17,7 +17,7 @@ const violations: Record<string, { topViolations: string[]; prevention: string[]
   },
   'New construction tract home HOA': {
     topViolations: ['Construction debris left in yard (DFW wind spreads it to neighbors — immediate violation)', 'Sod not installed per builder timeline (HOA enforces landscaping completion deadlines)', 'Mailbox style deviation from community standard', 'Exterior light fixtures not matching approved styles', 'Patio furniture visible from street (some new HOAs prohibit front-visible patio items)'],
-    prevention: ['Get builder\'s HOA compliance checklist at closing — they often don\'t volunteer it', 'Install landscaping within HOA timeline (usually 6–12 months from close)', 'Photograph your mailbox and compare to HOA standard document before any replacement', 'Join community Facebook group — violation notices get posted and you learn the enforcement patterns', 'Read deed restrictions — new construction HOAs in DFW are often builder-controlled for first 5 years'],
+    prevention: ['Get builder\’s HOA compliance checklist at closing — they often don\’t volunteer it', 'Install landscaping within HOA timeline (usually 6–12 months from close)', 'Photograph your mailbox and compare to HOA standard document before any replacement', 'Join community Facebook group — violation notices get posted and you learn the enforcement patterns', 'Read deed restrictions — new construction HOAs in DFW are often builder-controlled for first 5 years'],
     fineRange: '$50–$200 first offense. Builder-controlled HOAs can move faster than resident-controlled ones',
     proTip: 'New construction tract HOAs in DFW are often the strictest because the builder controls the ARB for years. Document everything and submit modification requests in writing with photos.'
   },
@@ -29,7 +29,7 @@ const violations: Record<string, { topViolations: string[]; prevention: string[]
   },
   'Golf course community': {
     topViolations: ['Cart path encroachment (placing items on cart path easement)', 'Exterior lighting visible from course (light ordinances protect golfer visibility)', 'Landscaping that obstructs course sightlines', 'Unapproved fence height (course views protected by most CC&Rs)', 'Guest parking in course-adjacent lots without guest pass'],
-    prevention: ['Know your lot\'s easement boundaries — golf course easements in DFW can extend 10–20 feet into your yard', 'Submit all landscape plans before planting near course boundary', 'Review course sightline restrictions in CC&Rs — trees are the most common violation trigger', 'Fence permit: always check with HOA before installing — heights often restricted to 4 feet on course-side', 'Get guest parking passes in advance for parties'],
+    prevention: ['Know your lot\’s easement boundaries — golf course easements in DFW can extend 10–20 feet into your yard', 'Submit all landscape plans before planting near course boundary', 'Review course sightline restrictions in CC&Rs — trees are the most common violation trigger', 'Fence permit: always check with HOA before installing — heights often restricted to 4 feet on course-side', 'Get guest parking passes in advance for parties'],
     fineRange: '$100–$500 first offense in most DFW golf communities. Course encroachment can result in mandatory removal at owner cost',
     proTip: 'Golf course community HOA meetings in DFW are often dominated by course-related disputes. Attend at least one meeting per year to understand the current enforcement priorities.'
   },

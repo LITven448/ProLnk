@@ -3,7 +3,7 @@ import { useState } from 'react';
 const CONTENT_TYPES = [
   { emoji: '🎬', title: '30-Second Before/After', desc: 'Walk into job, show problem, cut to fixed result. No voiceover needed. The transformation speaks for itself.' },
   { emoji: '🔍', title: '"What I Found Today"', desc: 'Educational 60-second reel — show the issue (aging HVAC, foundation crack) + why it matters to homeowners.' },
-  { emoji: '⛈️', title: 'Storm Damage Documentation', desc: 'Real-time video right after a storm has enormous reach. Film the damage, explain what you're seeing.' },
+  { emoji: '⛈️', title: 'Storm Damage Documentation', desc: 'Real-time video right after a storm has enormous reach. Film the damage, explain what you’re seeing.' },
   { emoji: '🚚', title: 'Day in the Life', desc: 'Show your crew, your truck, your process — people hire people they trust.' },
   { emoji: '❓', title: 'Answering Common Questions', desc: '"How do I know if my foundation is moving?" Short answer = authority building. Use native text captions.' },
 ];
@@ -35,7 +35,7 @@ const CONTENT_IDEAS: Record<string, Record<string, string[]>> = {
       'Week 4: DFW summer prep guide',
     ],
     '2x per month': [
-      'Post 1: Best before/after content this month', 'Post 2: Educational — top homeowner question you've answered',
+      'Post 1: Best before/after content this month', 'Post 2: Educational — top homeowner question you’ve answered',
     ],
   },
   'Roofing': {

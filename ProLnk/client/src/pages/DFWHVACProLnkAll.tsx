@@ -19,7 +19,7 @@ const scenarios = [
   {
     id: 'contractors',
     label: '🤝 HVAC Contractors: Join the Network',
-    solution: 'ProLnk's partner network gives DFW HVAC contractors qualified, pre-vetted leads instead of paid advertising. Contractors pay per matched job, not per click. The network handles intake, qualification, and routing — contractors focus on service, not marketing.',
+    solution: 'ProLnk’s partner network gives DFW HVAC contractors qualified, pre-vetted leads instead of paid advertising. Contractors pay per matched job, not per click. The network handles intake, qualification, and routing — contractors focus on service, not marketing.',
   },
   {
     id: 'alerts',

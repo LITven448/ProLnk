@@ -129,7 +129,7 @@ export default function DFWHomeImprovementROI2026() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#14532D', marginBottom: 16 }}>💡 DFW Market Tips 2026</h2>
           {[
             'Attic insulation is the best ROI project in DFW — it lowers energy bills dramatically and transfers immediately to appraisers.',
-            'Garage door replacement has the highest ROI on this list because it's highly visible and dramatically improves curb appeal for under $2,500.',
+            'Garage door replacement has the highest ROI on this list because it’s highly visible and dramatically improves curb appeal for under $2,500.',
             'Neutral exterior paint (greige, warm white, light gray) sells faster in DFW than bold colors — appeal to the widest buyer pool.',
             'Roof replacement and HVAC are marked "essential for sale" — buyers will negotiate hard or walk away if these are deferred. They are necessities, not upgrades.',
             'Pool additions average only 27% ROI in DFW — despite our hot climate, many buyers factor in ongoing maintenance ($3,000–8,000/yr) and safety concerns.',

@@ -7,7 +7,7 @@ export default function DFWDrywallTextureGuide() {
 
   const guide = {
     skipTrowel: {
-      small: { technique: 'Hand-apply with 6" trowel, pull at 15° angle', tools: 'Trowel, joint compound, sanding sponge', diy: true, note: 'Skip trowel is forgiving — DFW\'s most DIY-friendly texture' },
+      small: { technique: 'Hand-apply with 6" trowel, pull at 15° angle', tools: 'Trowel, joint compound, sanding sponge', diy: true, note: 'Skip trowel is forgiving — DFW\’s most DIY-friendly texture' },
       medium: { technique: 'Multiple passes with trowel, feather edges 8" out', tools: '6" and 10" trowel, mud pan, sanding block', diy: true, note: 'Practice on cardboard first to match your existing skip pattern' },
       large: { technique: 'Full section re-texture recommended', tools: 'All trowels + spray equipment', diy: false, note: 'Large areas are hard to blend — consider professional for rooms over 10 sq ft' },
     },

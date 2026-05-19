@@ -17,25 +17,25 @@ type SeasonResult = {
 const goalResults: Record<string, SeasonResult> = {
   'Buy at the lowest price possible': {
     bestMonths: 'August — October',
-    whyItWorks: 'DFW\'s slowest season. Sellers who listed in spring and didn\'t sell are motivated. Fewer competing buyers. Back-to-school mindset kills buyer traffic — use it to your advantage.',
+    whyItWorks: 'DFW\’s slowest season. Sellers who listed in spring and didn\’t sell are motivated. Fewer competing buyers. Back-to-school mindset kills buyer traffic — use it to your advantage.',
     tradeoffs: 'Less inventory to choose from. Best homes sold in spring. You may be shopping second-tier selection but getting first-tier deals.',
     tips: ['Target listings with 30+ DOM in August — sellers are tired', 'Ask for closing cost assistance more freely off-season', 'Rate locks often easier to get in fall (less volume)', 'December closings can mean motivated sellers wanting year-end tax benefits'],
   },
   'Sell for the highest price possible': {
     bestMonths: 'March — May',
-    whyItWorks: 'DFW\'s peak buying season aligns with families planning before school year. Relocation buyers from corporate moves arrive Jan-March. Inventory demand spikes before spring listings flood market.',
+    whyItWorks: 'DFW\’s peak buying season aligns with families planning before school year. Relocation buyers from corporate moves arrive Jan-March. Inventory demand spikes before spring listings flood market.',
     tradeoffs: 'More competition from other sellers listing at same time. Homes need to stand out. Buyer pool is large but also more selective.',
     tips: ['List by March 1 to capture first wave before competition floods', 'Stage aggressively — spring buyers have seen more homes', 'New construction competing in Frisco/Prosper means pricing precision matters', 'April-May closings typically net 3-5% more than October-December closings'],
   },
   'Buy with the best selection of homes': {
     bestMonths: 'April — June',
-    whyItWorks: 'Peak listing season in DFW. Most homes come to market Feb-June. You\'ll see more variety, more price points, more neighborhoods. Competition is higher but selection is unmatched.',
-    tradeoffs: 'Multiple offer situations are common. You\'ll pay closer to or above list price. Fast decisions required.',
+    whyItWorks: 'Peak listing season in DFW. Most homes come to market Feb-June. You\’ll see more variety, more price points, more neighborhoods. Competition is higher but selection is unmatched.',
+    tradeoffs: 'Multiple offer situations are common. You\’ll pay closer to or above list price. Fast decisions required.',
     tips: ['Get pre-underwritten (not just pre-approved) to move fast', 'Set Zillow/Realtor.com alerts — new listings move in 48-72 hours', 'View new listings same day they go live in hot corridors', 'Escalation clauses are standard in April-June DFW'],
   },
   'Sell fastest (minimize days on market)': {
     bestMonths: 'February — April',
-    whyItWorks: 'Early spring buyers are the most motivated — they\'ve been waiting all winter and are ready to move. List before the spring inventory wave arrives and you\'ll face less competition with maximum demand.',
+    whyItWorks: 'Early spring buyers are the most motivated — they\’ve been waiting all winter and are ready to move. List before the spring inventory wave arrives and you\’ll face less competition with maximum demand.',
     tradeoffs: 'Weather can be unpredictable in February. Fewer total buyers than April-May but buyers in market are serious.',
     tips: ['List the first Thursday of February if ready — early mover advantage is real', 'Homes listed Feb 1-15 often see the fastest sales with least contingencies', 'Price to sell in 7 days, not to maximize — fast sale reduces carrying costs', 'Texas school year starts in August — families need to close by July 31 to enroll'],
   },

@@ -30,8 +30,8 @@ export default function DFWHVACCopperLinesDFW2026() {
         </p>
 
         {[
-          { icon: '🌡️', title: 'Soft Copper — DFW Standard', desc: 'Soft copper tubing is standard for residential line sets. DFW's UV index (8–10 in summer) degrades outdoor insulation in 8–12 years vs. 15+ in northern climates.' },
-          { icon: '🔗', title: 'Flare vs. Braze Connections', desc: 'Flare connections are mechanical and can loosen. Brazed connections are permanent but require proper technique. DFW's thermal expansion cycles stress both connection types over time.' },
+          { icon: '🌡️', title: 'Soft Copper — DFW Standard', desc: 'Soft copper tubing is standard for residential line sets. DFW’s UV index (8–10 in summer) degrades outdoor insulation in 8–12 years vs. 15+ in northern climates.' },
+          { icon: '🔗', title: 'Flare vs. Braze Connections', desc: 'Flare connections are mechanical and can loosen. Brazed connections are permanent but require proper technique. DFW’s thermal expansion cycles stress both connection types over time.' },
           { icon: '📉', title: '20% Efficiency Loss Threshold', desc: 'A line set with degraded insulation creates heat gain on the suction line, forcing compressor to work harder. This shows up as high electric bills before any diagnostic fault code.' },
           { icon: '🔒', title: 'Copper Theft — DFW Reality', desc: 'DFW metro ranks in top 10 nationwide for HVAC copper theft. Exposed outdoor line sets in accessible locations (side yards, back fences) are targets. Security cages cost $200–$500 installed.' },
         ].map((item) => (

@@ -70,7 +70,7 @@ export default function DFWExpansionTankGuide() {
       });
     } else {
       setResult({
-        requirement: '📋 Consult Local Code — verify your specific city\'s requirements',
+        requirement: '📋 Consult Local Code — verify your specific city\’s requirements',
         risk: 'Without a closed system, thermal expansion is less critical but still best practice',
         cost: 'Expansion tank: $180–$400 installed',
         urgency: 'Recommended regardless; especially if you have a PRV installed',

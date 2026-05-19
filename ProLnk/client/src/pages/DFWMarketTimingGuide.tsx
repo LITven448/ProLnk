@@ -87,7 +87,7 @@ export default function DFWMarketTimingGuide() {
           <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 22 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
               {[
-                { icon: '📦', label: 'Months of Supply', desc: 'Under 3: seller\'s market. 3-6: balanced. Over 6: buyer\'s market. DFW typically runs 2-4.' },
+                { icon: '📦', label: 'Months of Supply', desc: 'Under 3: seller\’s market. 3-6: balanced. Over 6: buyer\’s market. DFW typically runs 2-4.' },
                 { icon: '💰', label: 'List-to-Sale Ratio', desc: 'Over 100% means buyers routinely pay above asking. DFW averages 99-102% depending on season.' },
                 { icon: '📆', label: 'Days on Market (DOM)', desc: 'DFW averages 19-50 days depending on month. Under 21 days = hot. Over 45 = buyer leverage.' },
                 { icon: '🏗️', label: 'New Construction', desc: 'DFW adds ~45,000 new homes/year. Frisco, Celina, Princeton have highest new supply — limits appreciation.' },

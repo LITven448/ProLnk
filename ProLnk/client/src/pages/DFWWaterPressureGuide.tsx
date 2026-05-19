@@ -18,14 +18,14 @@ const pressureFixes = {
   low_whole: {
     cause: 'Whole-house low pressure — common causes: PRV set too low, corroded galvanized pipes (pre-1980 DFW homes), main shutoff partially closed, or municipal supply issue',
     diy: false,
-    steps: ['Check that main shutoff valve is fully open', 'Test pressure at meter with a gauge — compare to inside pressure', 'If meter pressure is normal but inside is low, suspect corroded pipes or PRV', 'Call DFW water utility to check if there\'s a main line issue in your neighborhood', 'Schedule a plumber to assess PRV and pipe condition'],
+    steps: ['Check that main shutoff valve is fully open', 'Test pressure at meter with a gauge — compare to inside pressure', 'If meter pressure is normal but inside is low, suspect corroded pipes or PRV', 'Call DFW water utility to check if there\’s a main line issue in your neighborhood', 'Schedule a plumber to assess PRV and pipe condition'],
     cost: 'PRV adjustment: $100–$200 | Galvanized pipe repipe: $4,000–$15,000',
     urgency: 'Moderate — investigate root cause before pipes fail completely',
   },
   low_single: {
     cause: 'Isolated low pressure — clogged aerator, mineral buildup in supply valve, or failing fixture cartridge',
     diy: true,
-    steps: ['Unscrew and clean faucet aerator — DFW hard water clogs aerators every 1–2 years', 'Soak aerator in white vinegar for 30 minutes to dissolve calcium', 'Check angle stop valve under sink — partially closed valves restrict flow', 'If pressure is low at shower only, showerhead may have calcium buildup — soak in vinegar', 'If cleaning doesn\'t help, faucet cartridge may need replacement'],
+    steps: ['Unscrew and clean faucet aerator — DFW hard water clogs aerators every 1–2 years', 'Soak aerator in white vinegar for 30 minutes to dissolve calcium', 'Check angle stop valve under sink — partially closed valves restrict flow', 'If pressure is low at shower only, showerhead may have calcium buildup — soak in vinegar', 'If cleaning doesn\’t help, faucet cartridge may need replacement'],
     cost: 'Aerator cleaning: free | Aerator replacement: $5–$20 | Cartridge replacement: $30–$150',
     urgency: 'Low — inconvenient but not damaging',
   },

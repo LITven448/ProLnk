@@ -9,7 +9,7 @@ const communities = [
 ];
 
 const timeline = [
-  { phase: '12–18 Months Out', tasks: ['Declutter systematically — one room per month', 'Research 55+ communities and target neighborhoods', 'Track your current home\'s market value monthly', 'Meet with financial advisor on tax implications', 'Start downsizing large furniture that won\'t fit'] },
+  { phase: '12–18 Months Out', tasks: ['Declutter systematically — one room per month', 'Research 55+ communities and target neighborhoods', 'Track your current home\’s market value monthly', 'Meet with financial advisor on tax implications', 'Start downsizing large furniture that won\’t fit'] },
   { phase: '6–12 Months Out', tasks: ['Get a pre-listing home inspection', 'Complete light repairs and paint to maximize value', 'Stage your home for photography', 'Tour 5–10 target properties or communities', 'Get pre-approved for new mortgage if needed'] },
   { phase: '3–6 Months Out', tasks: ['List your current home', 'Make offer on target home (bridge loan if needed)', 'Reserve storage unit for staging period', 'Begin shipping or donating excess belongings', 'Coordinate movers for both properties'] },
   { phase: 'Closing Month', tasks: ['Final walkthrough on new home', 'Transfer utilities 2 weeks ahead', 'Update address with USPS, Medicare, Social Security', 'Set up home monitoring/security in new home', 'Review HOA rules and restrictions before move-in'] },
@@ -67,7 +67,7 @@ export default function DFWDownsizingGuide() {
           <div>
             <div style={{ display: 'grid', gap: 20, marginBottom: 28 }}>
               {[
-                { trigger: 'Empty Nest', icon: '🐣', detail: 'Children have left home. You\'re maintaining 4 bedrooms for 2 people. The math no longer works — and neither does the cleaning.' },
+                { trigger: 'Empty Nest', icon: '🐣', detail: 'Children have left home. You\’re maintaining 4 bedrooms for 2 people. The math no longer works — and neither does the cleaning.' },
                 { trigger: 'Approaching Retirement', icon: '🌅', detail: 'Fixed income makes large mortgages and high property taxes harder. Freeing equity now funds retirement lifestyle and reduces stress.' },
                 { trigger: 'Maintenance Burden', icon: '🔧', detail: 'A 3,500 sqft home with a pool and large yard requires significant time, money, and physical upkeep. Downsizing reclaims both.' },
                 { trigger: 'Mobility Considerations', icon: '♿', detail: 'Single-story homes, wider doorways, and step-free entries become practical needs. Planning ahead beats retrofitting.' },

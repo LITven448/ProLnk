@@ -118,7 +118,7 @@ export default function DFWRefrigeratorRepairGuide() {
 
         <div style={{ backgroundColor: '#0D1E3A', border: '1px solid #1E3A5F', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, margin: '0 0 12px' }}>💡 DFW Energy Savings Tip</h2>
-          <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7 }}>A 2015 or older fridge uses 700–1,200 kWh/year. New Energy Star models use under 400 kWh. At Oncor's average rate of $0.13/kWh, that's <strong style={{ color: '#F5E642' }}>$40–$100/year in savings</strong> — plus Oncor occasionally offers $50–$100 appliance recycling rebates. Check <span style={{ color: '#F5E642' }}>oncor.com/rebates</span> before replacing.</p>
+          <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7 }}>A 2015 or older fridge uses 700–1,200 kWh/year. New Energy Star models use under 400 kWh. At Oncor's average rate of $0.13/kWh, that’s <strong style={{ color: '#F5E642' }}>$40–$100/year in savings</strong> — plus Oncor occasionally offers $50–$100 appliance recycling rebates. Check <span style={{ color: '#F5E642' }}>oncor.com/rebates</span> before replacing.</p>
         </div>
       </div>
     </div>

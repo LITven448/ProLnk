@@ -23,15 +23,15 @@ const upgrades = [
     savings: '8–12% on total HVAC energy bill',
     realistic: 'Ecobee and Nest data show 10–12% savings in DFW when schedules are properly configured. Savings depend heavily on prior thermostat habits.',
     document: 'Enable energy reports in the thermostat app from day one. Export monthly reports for before/after comparison. Free documentation built in.',
-    pitfall: 'A smart thermostat without a properly sized system cannot overcome fundamental HVAC inefficiency. It\'s an optimizer, not a fix.',
+    pitfall: 'A smart thermostat without a properly sized system cannot overcome fundamental HVAC inefficiency. It\’s an optimizer, not a fix.',
   },
   {
     id: 'variable_speed',
     label: 'Variable speed air handler upgrade',
     savings: '20–30% reduction in fan energy costs year-round',
-    realistic: 'Variable speed motors use 60–75% less electricity than single-stage. In DFW\'s long cooling season, this adds up fast. Realistic savings: $200–400/yr.',
+    realistic: 'Variable speed motors use 60–75% less electricity than single-stage. In DFW\’s long cooling season, this adds up fast. Realistic savings: $200–400/yr.',
     document: 'Compare kWh on utility bills for fan-heavy months. Ask manufacturer for certified AHRI efficiency data for your specific model combination.',
-    pitfall: 'Variable speed benefits require proper static pressure design. If ducts aren\'t right, efficiency gains are cut in half.',
+    pitfall: 'Variable speed benefits require proper static pressure design. If ducts aren\’t right, efficiency gains are cut in half.',
   },
   {
     id: 'insulation',
@@ -39,7 +39,7 @@ const upgrades = [
     savings: '25–40% total HVAC system energy reduction',
     realistic: 'This is the highest-ROI upgrade in DFW. Attic temps reach 140°F+ in summer. Proper insulation and sealed ducts dramatically cut load.',
     document: 'Get a blower door test before and after. Compare duct leakage percentage. Calculate savings from reduced runtime hours using smart thermostat data.',
-    pitfall: 'HVAC contractors should not guarantee insulation savings they didn\'t install. Require a whole-home energy audit to document baseline.',
+    pitfall: 'HVAC contractors should not guarantee insulation savings they didn\’t install. Require a whole-home energy audit to document baseline.',
   },
 ];
 

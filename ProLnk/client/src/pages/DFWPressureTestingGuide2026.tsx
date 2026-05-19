@@ -5,7 +5,7 @@ type TestSituation = 'post_repair' | 'new_install' | 'suspect_leak' | 'pre_sale'
 const situations: { id: TestSituation; label: string; emoji: string }[] = [
   { id: 'post_repair', label: 'Verifying a repair just completed', emoji: '🔧' },
   { id: 'new_install', label: 'New plumbing installation', emoji: '🏗️' },
-  { id: 'suspect_leak', label: 'Suspect a leak but can't find it', emoji: '🔍' },
+  { id: 'suspect_leak', label: 'Suspect a leak but can’t find it', emoji: '🔍' },
   { id: 'pre_sale', label: 'Pre-sale plumbing inspection', emoji: '🏠' },
   { id: 'permit', label: 'City permit inspection requirement', emoji: '📋' },
 ];

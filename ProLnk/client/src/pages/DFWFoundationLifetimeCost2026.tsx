@@ -10,7 +10,7 @@ const ageGroups = [
     inspections: 1200,
     repairs: 2000,
     note: 'Newer DFW homes typically have engineered foundations. Focus is on establishing good soil moisture habits early.',
-    tip: 'Install a soaker hose system in year 1 ($400–800). Prevents shrink-swell cycle from starting. Cheapest decade of foundation care you\'ll ever have.',
+    tip: 'Install a soaker hose system in year 1 ($400–800). Prevents shrink-swell cycle from starting. Cheapest decade of foundation care you\’ll ever have.',
   },
   {
     id: 'mid',

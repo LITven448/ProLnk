@@ -3,7 +3,7 @@ import { useState } from 'react';
 const sizes = [
   { label: 'Under 1,500 sqft', icon: '🏠', rec: 'Mini-Split or Small Central', detail: 'A ductless mini-split or small single-zone central system (1.5–2 ton) handles this efficiently. Mini-splits are ideal for older DFW homes without existing ductwork.' },
   { label: '1,500 – 2,500 sqft', icon: '🏡', rec: 'Standard Split System', detail: 'A 3–4 ton standard split system with a single-stage or two-stage compressor is the most cost-effective choice for most DFW homes in this range.' },
-  { label: '2,500 – 4,000 sqft', icon: '🏘️', rec: 'Two-Zone or Larger System', detail: 'A two-zone system or a 5-ton single unit prevents hot/cold spots across floors and wings — critical for DFW\'s 100°+ summer heat.' },
+  { label: '2,500 – 4,000 sqft', icon: '🏘️', rec: 'Two-Zone or Larger System', detail: 'A two-zone system or a 5-ton single unit prevents hot/cold spots across floors and wings — critical for DFW\’s 100°+ summer heat.' },
   { label: '4,000+ sqft', icon: '🏰', rec: 'VRF or Multiple Systems', detail: 'Variable Refrigerant Flow (VRF) or multiple dedicated systems by zone give independent control and efficiency at scale. Best for large DFW estates and custom homes.' },
 ];
 

@@ -120,8 +120,8 @@ export default function InsuranceForContractors() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 32 }}>
           {[
             { icon: '🏗️', title: 'General Liability', sub: '$1M minimum required', detail: 'Covers property damage and bodily injury caused by your work. Non-negotiable for ProLnk partnership. Most trades need $1M per occurrence / $2M aggregate.' },
-            { icon: '👷', title: 'Workers Compensation', sub: 'Required if you have employees', detail: 'Covers your employees if injured on the job. Texas is unique — it\'s not legally required, but ProLnk requires it if you have W-2 employees to reduce homeowner liability.' },
-            { icon: '🚗', title: 'Commercial Auto', sub: 'Strongly recommended', detail: 'Personal auto policies don\'t cover accidents during jobs. If you drive to work sites, you need commercial coverage. Often bundled cheaply with GL.' },
+            { icon: '👷', title: 'Workers Compensation', sub: 'Required if you have employees', detail: 'Covers your employees if injured on the job. Texas is unique — it\’s not legally required, but ProLnk requires it if you have W-2 employees to reduce homeowner liability.' },
+            { icon: '🚗', title: 'Commercial Auto', sub: 'Strongly recommended', detail: 'Personal auto policies don\’t cover accidents during jobs. If you drive to work sites, you need commercial coverage. Often bundled cheaply with GL.' },
             { icon: '🔧', title: 'Tools & Equipment', sub: 'Optional but smart', detail: 'Covers theft or damage to your tools and equipment. For trades with $5K+ in tools, this pays for itself after one incident.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 12, padding: 24 }}>

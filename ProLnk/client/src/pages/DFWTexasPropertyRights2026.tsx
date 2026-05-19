@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const issues = [
-  { label: '🌳 Neighbor's tree branch over my property', guide: 'In Texas, you have the right to trim branches that cross your property line at your own expense. You may NOT enter the neighbor's property to do so. If the tree is dead or diseased and poses hazard, send written notice — neighbor may be liable for damages.' },
+  { label: '🌳 Neighbor’s tree branch over my property', guide: 'In Texas, you have the right to trim branches that cross your property line at your own expense. You may NOT enter the neighbor’s property to do so. If the tree is dead or diseased and poses hazard, send written notice — neighbor may be liable for damages.' },
   { label: '🚧 Property line / fence dispute', guide: 'Texas follows the "Good Neighbor Fence" rule — costs are typically shared equally for boundary fences. Get a licensed surveyor to establish the line legally. Disputes go to Justice of the Peace court for amounts under $20K.' },
   { label: '🏠 Adverse possession / squatter concern', guide: 'Texas adverse possession requires open, continuous, hostile use for 10 years (25 years with color of title). Post "No Trespassing" signs and document unauthorized use immediately. Consult a property attorney if someone makes a claim.' },
   { label: '🔫 Castle Doctrine / self-defense question', guide: 'Texas Castle Doctrine (Penal Code §9.31-9.32) allows use of force to protect your home, vehicle, or workplace. No duty to retreat on your own property. Deadly force is justified against arson, burglary, robbery, or sexual assault.' },
@@ -19,7 +19,7 @@ export default function DFWTexasPropertyRights2026() {
         <p style={{ color: '#94A3B8', marginBottom: '2rem' }}>Texas property law is uniquely homeowner-friendly. Know your rights before a dispute escalates — most issues can be resolved without a lawyer if you act on the right information early.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', marginBottom: '2rem' }}>
-          {[['🔫','Castle Doctrine','Nation\'s strongest self-defense law'],['⏳','10 Years','Adverse possession timeline in TX'],['🤝','50/50','Shared fence cost default under TX law']].map(([icon,label,val]) => (
+          {[['🔫','Castle Doctrine','Nation\’s strongest self-defense law'],['⏳','10 Years','Adverse possession timeline in TX'],['🤝','50/50','Shared fence cost default under TX law']].map(([icon,label,val]) => (
             <div key={label} style={{ background: '#111C30', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem' }}>{icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.9rem', marginTop: 4 }}>{label}</div>

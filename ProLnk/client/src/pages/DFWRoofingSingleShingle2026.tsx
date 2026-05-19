@@ -11,7 +11,7 @@ export default function DFWRoofingSingleShingle2026() {
     } else if (situation === 'blow-off') {
       setResult('✅ SINGLE REPLACEMENT OK — A wind blow-off is textbook single shingle repair. Slide flat bar under overlapping shingles, remove old nails, slide new shingle in, nail and seal edges.');
     } else if (situation === 'widespread') {
-      setResult('🚨 FULL SECTION REPAIR NEEDED — Widespread damage means underlying decking or multiple shingles are affected. Single replacement won't address the root cause. Get a ProLnk roofer assessment.');
+      setResult('🚨 FULL SECTION REPAIR NEEDED — Widespread damage means underlying decking or multiple shingles are affected. Single replacement won’t address the root cause. Get a ProLnk roofer assessment.');
     } else if (situation === 'old-roof') {
       setResult('⚠️ REPLACEMENT MAY BE BETTER — If the roof is 15+ years old, matching shingles is difficult and patching prolongs an aging system. A ProLnk roofer can give you a patch vs. replace cost comparison.');
     } else if (situation === 'cold') {
@@ -34,7 +34,7 @@ export default function DFWRoofingSingleShingle2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🌡️ DFW Temperature Factor</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              { temp: 'Below 40°F', status: '🚫 Too Cold', note: 'Shingles crack and won't seal. Wait for warmer weather.' },
+              { temp: 'Below 40°F', status: '🚫 Too Cold', note: 'Shingles crack and won’t seal. Wait for warmer weather.' },
               { temp: '60–80°F', status: '✅ Ideal', note: 'Shingles are pliable, seal correctly, easiest installation.' },
               { temp: 'Above 90°F', status: '⚠️ Challenging', note: 'Shingles are sticky and soft — walk carefully. Early morning only.' },
             ].map(item => (

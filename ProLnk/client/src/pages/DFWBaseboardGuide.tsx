@@ -75,7 +75,7 @@ export default function DFWBaseboardGuide() {
               { icon: '🟧', name: 'MDF (Unprimed)', desc: 'Cheap — but in DFW humidity will swell. MUST prime all 6 sides or replace in 3–5 years.' },
               { icon: '🌲', name: 'Finger-Jointed Pine', desc: 'Most stable for DFW — handles humidity cycles well, takes paint beautifully, knot-free.' },
               { icon: '🪵', name: 'Solid Wood', desc: 'Best longevity — ideal for high-end DFW remodels. Expands slightly but predictably.' },
-              { icon: '🔳', name: 'PVC / Vinyl', desc: 'Immune to DFW humidity — perfect for bathrooms, laundry. Doesn\'t absorb moisture ever.' },
+              { icon: '🔳', name: 'PVC / Vinyl', desc: 'Immune to DFW humidity — perfect for bathrooms, laundry. Doesn\’t absorb moisture ever.' },
             ].map(({ icon, name, desc }) => (
               <div key={name} style={{ background: '#162035', borderRadius: '8px', padding: '14px' }}>
                 <div style={{ fontSize: '20px', marginBottom: '6px' }}>{icon}</div>

@@ -77,7 +77,7 @@ export default function DFWHomeDesignTrends2026() {
         </h1>
 
         <p style={{ color: '#9ca3af', fontSize: 18, lineHeight: 1.7, marginBottom: 50 }}>
-          DFW is one of the most competitive housing markets in the US. Buyers here are sophisticated — they know what they want and they walk away from homes that don't deliver it. These trends are not aesthetic preferences. They're <strong style={{ color: '#f0ede8' }}>deal-makers and deal-breakers.</strong>
+          DFW is one of the most competitive housing markets in the US. Buyers here are sophisticated — they know what they want and they walk away from homes that don't deliver it. These trends are not aesthetic preferences. They’re <strong style={{ color: '#f0ede8' }}>deal-makers and deal-breakers.</strong>
         </p>
 
         {/* What's OUT */}

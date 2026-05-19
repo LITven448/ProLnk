@@ -24,7 +24,7 @@ const issues = [
   {
     icon: '💧',
     title: 'Irrigation & Drainage Maturity',
-    body: 'Established landscaping means complex irrigation zones installed over two decades. Aging valves, cracked manifolds, and root intrusion in drainage lines are common in Coppell's mature subdivisions.',
+    body: 'Established landscaping means complex irrigation zones installed over two decades. Aging valves, cracked manifolds, and root intrusion in drainage lines are common in Coppell’s mature subdivisions.',
   },
 ];
 

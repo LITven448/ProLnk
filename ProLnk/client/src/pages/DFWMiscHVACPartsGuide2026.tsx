@@ -20,7 +20,7 @@ export default function DFWMiscHVACPartsGuide2026() {
       name: 'Service Valve',
       aka: 'Isolation Valve',
       desc: 'Allows tech to isolate the system during refrigerant work. Ball valve on suction or liquid line.',
-      symptoms: ['Valve won't fully open or close', 'Refrigerant leak at valve body', 'Frost buildup on valve'],
+      symptoms: ['Valve won’t fully open or close', 'Refrigerant leak at valve body', 'Frost buildup on valve'],
       fix: 'Tighten packing nut first. Full replacement $80–$200 part + labor.',
       cost: '$150–$350 total',
     },

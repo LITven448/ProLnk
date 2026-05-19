@@ -35,7 +35,7 @@ function getResult(room: string, hvac: string): Result | null {
     return { suitability: '✅ Good DFW Choice', species: 'Strand Woven Bamboo — handles chair caster wear better than other bamboo types', care: 'Use chair mat to protect from casters — bamboo dents under rolling pressure', cost: '$4–$8/sq ft installed', note: 'Office equipment and occupancy help stabilize DFW humidity. Use a chair mat — bamboo is harder than regular hardwood but still dents under heavy caster pressure' };
   }
   if (room === 'High-Traffic Hallway') {
-    return { suitability: '✅ Strong Performer if Strand Woven', species: 'Strand Woven Bamboo only — flat grain and carbonized will show wear too fast', care: 'Add area rug at entry — DFW dirt and grit is highly abrasive to bamboo finish', cost: '$5–$9/sq ft installed', note: 'Strand woven bamboo\'s extreme hardness (Janka 3000+) makes it ideal for DFW hallways. Protect finish with area rugs at exterior doors where DFW clay soil and grit track in' };
+    return { suitability: '✅ Strong Performer if Strand Woven', species: 'Strand Woven Bamboo only — flat grain and carbonized will show wear too fast', care: 'Add area rug at entry — DFW dirt and grit is highly abrasive to bamboo finish', cost: '$5–$9/sq ft installed', note: 'Strand woven bamboo\’s extreme hardness (Janka 3000+) makes it ideal for DFW hallways. Protect finish with area rugs at exterior doors where DFW clay soil and grit track in' };
   }
   return { suitability: '✅ Feasible with Good HVAC', species: 'Strand Woven Bamboo recommended for DFW', care: 'Maintain 35–55% RH, sweep regularly', cost: '$4–$9/sq ft installed', note: 'Bamboo is viable in DFW with consistent HVAC — strand woven is always the safest choice for DFW conditions' };
 }

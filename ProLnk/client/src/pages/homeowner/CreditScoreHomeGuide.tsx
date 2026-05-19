@@ -10,7 +10,7 @@ const creditImpacts = [
 const improvements = [
   { icon: '🏦', label: 'Auto-pay mortgage', detail: 'Never miss. One missed payment destroys 60–110 points.' },
   { icon: '💳', label: 'Keep debt below 30% utilization', detail: 'High utilization is the #2 score killer after missed payments.' },
-  { icon: '🕰️', label: 'Don't close old cards', detail: 'Closing them lowers average account age and available credit.' },
+  { icon: '🕰️', label: 'Don’t close old cards', detail: 'Closing them lowers average account age and available credit.' },
   { icon: '🏘️', label: 'Report rental income if applicable', detail: 'Some bureaus now count rent payment history in your score.' },
 ];
 

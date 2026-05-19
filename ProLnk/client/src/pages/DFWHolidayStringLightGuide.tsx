@@ -23,7 +23,7 @@ const strategies: Record<string, Record<string, Strategy>> = {
 };
 
 const fallback: Strategy = {
-  approach: 'LED roofline + accent lighting sized to your home's linear footage',
+  approach: 'LED roofline + accent lighting sized to your home’s linear footage',
   power: '1 circuit per 150 linear feet — plan 15A circuits with GFCI protection',
   led: 'LED saves 80% vs incandescent — DFW warm winters make outdoor lighting very enjoyable',
   gfci: 'All outdoor outlets require GFCI protection per NEC code (enforced in DFW)',

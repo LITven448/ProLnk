@@ -13,7 +13,7 @@ const carbonData: Record<string, { lbs: number; rating: string; reduction: strin
     lbs: 14200,
     rating: 'High',
     reduction: 'Highest impact: switch to heat pump — saves 6,000–8,000 lbs CO₂/year in DFW',
-    plan: '🌿 Your natural gas furnace burns 40–60 therms/month in peak winter. In DFW, this accounts for 35% of your home\'s carbon. Replace with a heat pump to cut HVAC carbon by 45-60%. Use the $2,000 federal heat pump tax credit toward upgrade cost.',
+    plan: '🌿 Your natural gas furnace burns 40–60 therms/month in peak winter. In DFW, this accounts for 35% of your home\’s carbon. Replace with a heat pump to cut HVAC carbon by 45-60%. Use the $2,000 federal heat pump tax credit toward upgrade cost.',
     color: '#ef4444',
   },
   'Heat pump (electric only)': {
@@ -34,14 +34,14 @@ const carbonData: Record<string, { lbs: number; rating: string; reduction: strin
     lbs: 6400,
     rating: 'Moderate',
     reduction: 'Add solar to dramatically reduce remaining carbon footprint',
-    plan: '🌬️ Mini-splits are 25-40% more efficient than central AC, so you\'re already doing well. Your carbon comes entirely from ERCOT grid electricity. A 4kW solar system in DFW generates enough to cover mini-split usage 8 months of the year.',
+    plan: '🌬️ Mini-splits are 25-40% more efficient than central AC, so you\’re already doing well. Your carbon comes entirely from ERCOT grid electricity. A 4kW solar system in DFW generates enough to cover mini-split usage 8 months of the year.',
     color: '#eab308',
   },
   'Mini-split + battery storage': {
     lbs: 900,
     rating: 'Very Low',
     reduction: 'Add solar generation to achieve near-zero HVAC carbon',
-    plan: '⚡ Excellent setup — you have the storage, now add the generation. A 5-6kW solar array will make your DFW HVAC system carbon-negative (you\'ll export excess power back to the grid). Your total HVAC carbon could drop below 200 lbs/year.',
+    plan: '⚡ Excellent setup — you have the storage, now add the generation. A 5-6kW solar array will make your DFW HVAC system carbon-negative (you\’ll export excess power back to the grid). Your total HVAC carbon could drop below 200 lbs/year.',
     color: '#06b6d4',
   },
 };

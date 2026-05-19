@@ -67,8 +67,8 @@ const situations: Situation[] = [
     strategy: [
       'New HVAC does NOT trigger automatic reassessment in Texas',
       'HVAC upgrades may increase appraised value at next scheduled review',
-      'Homestead exemption caps annual value increase at 10% — you\'re protected',
-      'File for homestead exemption before April 30 if you haven\'t',
+      'Homestead exemption caps annual value increase at 10% — you\’re protected',
+      'File for homestead exemption before April 30 if you haven\’t',
       'Consider timing upgrade after your annual appraisal notice (usually May)',
     ],
     timing: 'Upgrade after May appraisal notices to defer any value adjustment by ~1 year',

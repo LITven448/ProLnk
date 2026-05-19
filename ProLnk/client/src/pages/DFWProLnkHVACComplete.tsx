@@ -20,7 +20,7 @@ const stages = [
     headline: 'Seasonal care resources',
     resources: [
       'DFW HVAC Spring Tune-Up Checklist',
-      'HVAC Efficiency Drop Calculator — Know What You're Losing',
+      'HVAC Efficiency Drop Calculator — Know What You’re Losing',
       'Coil Cleaning Guide for DFW Humidity',
       'Filter Replacement Schedule for DFW Homeowners',
     ],

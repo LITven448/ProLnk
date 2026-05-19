@@ -16,7 +16,7 @@ const tradeItems = [
   { id: 'countertops', label: 'Countertops', order: 10, conflicts: ['fixtures'], note: 'Template after cabinets, install before plumbing fixtures.' },
   { id: 'trim', label: 'Trim / Base / Casings', order: 11, conflicts: ['fixtures'], note: 'Install trim after flooring, before finish hardware.' },
   { id: 'fixtures', label: 'Plumbing & Electrical Fixtures', order: 12, conflicts: [], note: 'Final step — set fixtures, connect devices, test all systems.' },
-  { id: 'punch', label: 'Punch List / Final Inspection', order: 13, conflicts: [], note: 'Walk every trade\'s work before final release of holdbacks.' },
+  { id: 'punch', label: 'Punch List / Final Inspection', order: 13, conflicts: [], note: 'Walk every trade\’s work before final release of holdbacks.' },
 ];
 
 export default function MultipleContractorProjectGuide() {
@@ -67,8 +67,8 @@ export default function MultipleContractorProjectGuide() {
               {[
                 'Project has 3 or fewer trade scopes',
                 'You have time for daily site oversight',
-                'Each trade\'s scope is clearly independent',
-                'You\'ve done this project type before',
+                'Each trade\’s scope is clearly independent',
+                'You\’ve done this project type before',
                 'Saving 15–25% on overhead is material to your budget',
               ].map(i => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1E2D45' }}>{i}</div>)}
             </div>
@@ -76,7 +76,7 @@ export default function MultipleContractorProjectGuide() {
               <h3 style={{ color: '#f87171', fontWeight: 700, marginBottom: 14 }}>❌ Hire a GC When:</h3>
               {[
                 'Project involves 5+ separate trade scopes',
-                'You travel or can\'t be on-site daily',
+                'You travel or can\’t be on-site daily',
                 'Structural or MEP work is involved',
                 'Project requires multiple permits and inspections',
                 'Budget exceeds $75K — coordination risk compounds',
@@ -115,8 +115,8 @@ export default function MultipleContractorProjectGuide() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>⚡ Managing Scheduling Conflicts</h2>
           {[
             ['Build buffer into every milestone', 'Any contractor will take longer than estimated. Build 10–15% schedule buffer at every phase transition, especially before inspections.'],
-            ['Never let one trade hold another\'s check', 'If the plumber finishes rough-in but the electrician is delayed, the plumber still gets paid. Don\'t chain payments across trades.'],
-            ['Confirm inspections before scheduling next trade', 'Never let Trade B start until Trade A\'s inspection is officially passed. One failed inspection cascades into weeks of delay.'],
+            ['Never let one trade hold another\’s check', 'If the plumber finishes rough-in but the electrician is delayed, the plumber still gets paid. Don\’t chain payments across trades.'],
+            ['Confirm inspections before scheduling next trade', 'Never let Trade B start until Trade A\’s inspection is officially passed. One failed inspection cascades into weeks of delay.'],
             ['Get a weekly schedule commitment in writing', 'At the start of each week, email every active contractor to confirm their days on-site and scope for the week. This creates accountability.'],
           ].map(([tip, detail]) => (
             <div key={tip as string} style={{ backgroundColor: '#0D2240', borderRadius: 10, padding: '18px 22px', marginBottom: 10 }}>
@@ -132,7 +132,7 @@ export default function MultipleContractorProjectGuide() {
             The #1 cause of multi-contractor project failures is undefined scope at the boundary between trades. Every contractor needs to know exactly where their scope ends and the next one begins.
           </p>
           {[
-            ['Drywall vs. Tile', 'Who installs the cement board behind the tile? Define it. Drywall crew says it\'s tile\'s job. Tile crew says it\'s drywall\'s job.'],
+            ['Drywall vs. Tile', 'Who installs the cement board behind the tile? Define it. Drywall crew says it\’s tile\’s job. Tile crew says it\’s drywall\’s job.'],
             ['Plumber vs. HVAC', 'Who installs the condensate drain line for the AC? Both trades touch it. Define ownership in each contract.'],
             ['Electrician vs. Low-Voltage', 'Who runs wire for the thermostat? Who installs the panel for the security system? Define both.'],
             ['GC vs. Homeowner-Supplied Materials', 'If you supply fixtures or appliances, define who is responsible if they arrive damaged and who is responsible for installation defects.'],

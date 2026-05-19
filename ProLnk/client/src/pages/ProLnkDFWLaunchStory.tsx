@@ -29,7 +29,7 @@ const perspectives = {
     headline: 'DFW is the ideal launch market for a national platform',
     points: [
       { icon: '📊', title: '2.3M homes, $4.2B TAM', detail: 'DFW has 2.3M residential homes, over 200K licensed contractors, and $4.2B in annual home services spend. It is the 4th largest metro in the US.' },
-      { icon: '🔥', title: 'High churn from existing platforms', detail: 'HomeAdvisor NPS averages below 20 in DFW. Angie\'s and Thumbtack have similar problems. There is a massive trust gap to fill.' },
+      { icon: '🔥', title: 'High churn from existing platforms', detail: 'HomeAdvisor NPS averages below 20 in DFW. Angie\’s and Thumbtack have similar problems. There is a massive trust gap to fill.' },
       { icon: '🧠', title: 'Data moat from day one', detail: 'Every match and every repair adds to the Home Health Vault data asset. The data compounds with each transaction across 50M+ homes nationally.' },
       { icon: '🚀', title: 'Proven founder, local network', detail: 'Andrew Frakes spent years in DFW real estate witnessing the fraud and inefficiency firsthand. This is not a remote team building for a market they do not know.' },
     ],

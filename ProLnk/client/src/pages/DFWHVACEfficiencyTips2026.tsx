@@ -11,7 +11,7 @@ const tips = [
   { icon: '🌡️', title: 'Set 78°F Away — Not Higher', detail: 'DFW attic temps hit 150°F. Higher setpoints make your system run hours to recover.' },
   { icon: '🔄', title: 'Ceiling Fan Counterclockwise in Summer', detail: 'Creates wind-chill effect. Allows 4°F higher thermostat setting with same comfort.' },
   { icon: '🪟', title: 'Close West Blinds 2–6 PM', detail: 'West-facing glass is the #1 heat load in DFW summer afternoons. Block it.' },
-  { icon: '🍳', title: 'Cook Outside or Use Microwave', detail: 'Oven adds 3,000 BTU of heat. In July, that's real money fighting back.' },
+  { icon: '🍳', title: 'Cook Outside or Use Microwave', detail: 'Oven adds 3,000 BTU of heat. In July, that’s real money fighting back.' },
   { icon: '🚪', title: 'Seal Your Attic Hatch', detail: 'Uninsulated attic doors leak conditioned air into a 150°F space.' },
   { icon: '🧹', title: 'Clean Condenser Coils Annually', detail: 'Dirty coils cut efficiency 20–30%. Rinse with garden hose in spring.' },
   { icon: '💧', title: 'Flush Condensate Drain Quarterly', detail: 'Algae clogs = water damage + shutdown. Pour vinegar monthly.' },

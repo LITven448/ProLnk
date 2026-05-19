@@ -44,9 +44,9 @@ export default function ProLnkVsAngi() {
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#991B1B', margin: '0 0 20px' }}>😤 The Real Pain of Using Angi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
             {[
-              { icon: '💸', title: 'Pay Whether You Win or Lose', desc: '$300 lead fee — they close with someone else. You're still charged. No recourse.' },
-              { icon: '👥', title: 'Racing 4 Other Pros', desc: 'Angi sells the same lead to 3–5 contractors simultaneously. You're in a race on price, not quality.' },
-              { icon: '⭐', title: 'Reviews You Can't Trust', desc: 'Competitors leave fake 1-stars. Happy clients don't leave reviews. Your rating is held hostage.' },
+              { icon: '💸', title: 'Pay Whether You Win or Lose', desc: '$300 lead fee — they close with someone else. You’re still charged. No recourse.' },
+              { icon: '👥', title: 'Racing 4 Other Pros', desc: 'Angi sells the same lead to 3–5 contractors simultaneously. You’re in a race on price, not quality.' },
+              { icon: '⭐', title: 'Reviews You Can’t Trust', desc: 'Competitors leave fake 1-stars. Happy clients don’t leave reviews. Your rating is held hostage.' },
               { icon: '📈', title: 'No Passive Income', desc: 'Every dollar you earn requires active work. No referral system, no network earnings, no residuals.' },
             ].map(p => (
               <div key={p.title}>
@@ -122,10 +122,10 @@ export default function ProLnkVsAngi() {
           <h3 style={{ fontSize: 20, fontWeight: 800, color: '#9A3412', margin: '0 0 16px' }}>🕵️ The Hidden Cost of Angi</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              { title: 'Lead recycling', desc: 'Your $150 lead was also sold to 3 other pros. You're not getting a qualified homeowner — you're getting a name.' },
-              { title: 'Review manipulation', desc: 'Competitors leave fake 1-star reviews. Angi's review team rarely removes them. Your reputation is permanently damaged.' },
-              { title: 'No recourse for bad leads', desc: '"Homeowner went silent" or "they already hired someone" — Angi's standard response is a credit toward your next lead purchase.' },
-              { title: 'Lead inflation during peak season', desc: 'Angi charges more per lead during summer (HVAC season) and storm season — exactly when you're already busy.' },
+              { title: 'Lead recycling', desc: 'Your $150 lead was also sold to 3 other pros. You’re not getting a qualified homeowner — you’re getting a name.' },
+              { title: 'Review manipulation', desc: 'Competitors leave fake 1-star reviews. Angi’s review team rarely removes them. Your reputation is permanently damaged.' },
+              { title: 'No recourse for bad leads', desc: '"Homeowner went silent" or "they already hired someone" — Angi’s standard response is a credit toward your next lead purchase.' },
+              { title: 'Lead inflation during peak season', desc: 'Angi charges more per lead during summer (HVAC season) and storm season — exactly when you’re already busy.' },
             ].map(item => (
               <div key={item.title} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ color: '#EF4444', fontWeight: 900, marginTop: 1 }}>✗</span>

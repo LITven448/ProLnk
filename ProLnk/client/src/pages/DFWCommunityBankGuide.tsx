@@ -21,7 +21,7 @@ const factors = [
 function recommend(complexity: string, loanType: string, creditScore: number) {
   if (complexity === 'high') return { rec: 'Community Bank or Credit Union', reason: 'Your profile needs manual underwriting — avoid big bank algorithms.' };
   if (loanType === 'investment') return { rec: 'Community Bank (Frost, Veritex)', reason: 'Investment properties need local portfolio lenders who know DFW market.' };
-  if (creditScore >= 740 && complexity === 'low') return { rec: 'Big Bank or Credit Union', reason: 'You\'ll qualify for best conforming rates. Shop Navy Federal and Chase.' };
+  if (creditScore >= 740 && complexity === 'low') return { rec: 'Big Bank or Credit Union', reason: 'You\’ll qualify for best conforming rates. Shop Navy Federal and Chase.' };
   return { rec: 'Credit Union (Texans or Navy Federal)', reason: 'Member-owned = aligned incentives. Strong middle ground for your profile.' };
 }
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const vintages = [
   { range: 'Pre-1950', era: 'Window Fan Era', hvac: 'No central system — attic fans, window fans, sleeping porches', note: 'Homes built before AC was affordable typically need full duct system installation.' },
   { range: '1950–1969', era: 'Window Unit Era', hvac: 'Window AC units, floor furnaces, wall heaters', note: 'Window units cooled one room at a time. Expect aging electrical panels that may need upgrades.' },
-  { range: '1970–1984', era: 'Central AC Adoption', hvac: 'First-gen central AC, gas furnaces became standard', note: 'DFW's 70s building boom drove central AC adoption. R-22 refrigerant systems — now obsolete.' },
+  { range: '1970–1984', era: 'Central AC Adoption', hvac: 'First-gen central AC, gas furnaces became standard', note: 'DFW’s 70s building boom drove central AC adoption. R-22 refrigerant systems — now obsolete.' },
   { range: '1985–1999', era: 'Efficiency Standards Begin', hvac: 'Higher SEER requirements, digital thermostats emerge', note: 'First efficiency standards pushed better equipment. Ductwork in these homes often needs sealing.' },
   { range: '2000–2014', era: 'Smart Controls + High SEER', hvac: 'Variable-speed systems, smart thermostats, 13+ SEER minimum', note: 'Programmable thermostats became standard. Systems are aging into replacement zone now.' },
   { range: '2015–2026', era: 'Heat Pump + AI Era', hvac: 'Cold-climate heat pumps, AI diagnostics, all-electric options', note: 'Modern DFW builds increasingly use heat pumps. Smart sensors monitor performance in real time.' },

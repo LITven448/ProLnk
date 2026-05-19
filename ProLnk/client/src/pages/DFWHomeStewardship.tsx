@@ -13,7 +13,7 @@ const priorities = [
     label: '🛠️ Strategic Improvements',
     description: 'Energy-efficient windows, updated kitchens, and modern landscaping that fit the neighborhood.',
     cost: '$5,000–$50,000 depending on scope',
-    impact: 'Adds 70–85 cents of value per dollar spent in DFW\'s high-demand market.',
+    impact: 'Adds 70–85 cents of value per dollar spent in DFW\’s high-demand market.',
   },
   {
     id: 'permits',
@@ -27,7 +27,7 @@ const priorities = [
     label: '🏘️ Neighborhood Contribution',
     description: 'Maintain curb appeal, participate in HOA, and support block-level beautification.',
     cost: 'Time + $200–$800/year for exterior care',
-    impact: 'A well-maintained street lifts every home\'s value including yours by 2–5%.',
+    impact: 'A well-maintained street lifts every home\’s value including yours by 2–5%.',
   },
   {
     id: 'contractors',

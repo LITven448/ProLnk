@@ -114,10 +114,10 @@ export default function DFWLawnAerationGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📍 DFW Aeration Timing Rules</h2>
           {[
             ['🌿 Bermuda / St. Aug / Zoysia', 'April–May ONLY — aerate during active growth, never during dormancy'],
-            ['🌾 Tall Fescue', 'September–October ONLY — fall is fescue\'s growing season in DFW'],
+            ['🌾 Tall Fescue', 'September–October ONLY — fall is fescue\’s growing season in DFW'],
             ['❄️ Never aerate dormant grass', 'Aerating Bermuda in fall/winter causes unnecessary stress and slow recovery'],
             ['🏡 Core aeration vs spike', 'Core aeration (pulls plugs) is always better — spike aeration compacts surrounding clay more'],
-            ['📏 Plug depth matters', 'Quality machines pull 2.5–3" plugs — shallow plugs don\'t help DFW clay'],
+            ['📏 Plug depth matters', 'Quality machines pull 2.5–3" plugs — shallow plugs don\’t help DFW clay'],
           ].map(([label, detail], i) => (
             <div key={i} style={{ marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600 }}>{label}</div>

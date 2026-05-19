@@ -5,7 +5,7 @@ const tradeData: Record<string, { employees: string; types: { name: string; requ
     employees: '0',
     types: [
       { name: 'General Liability ($1M/$2M)', required: true, cost: '$600–$1,200/yr', reason: 'Required for all ProLnk HVAC leads. Refrigerant work has high property damage risk.' },
-      { name: 'Commercial Auto', required: true, cost: '$1,000–$2,000/yr', reason: 'Service vehicles are business use — personal auto won't cover accidents on the job.' },
+      { name: 'Commercial Auto', required: true, cost: '$1,000–$2,000/yr', reason: 'Service vehicles are business use — personal auto won’t cover accidents on the job.' },
       { name: 'Tools & Equipment', required: false, cost: '$200–$400/yr', reason: 'HVAC tools and gauges are expensive. Strongly recommended.' },
       { name: 'Errors & Omissions', required: false, cost: '$800–$2,000/yr', reason: 'Required for manufacturer warranty work on some premium brands (Lennox, Carrier).' },
     ],
@@ -128,7 +128,7 @@ export default function PartnerInsuranceRequirementsGuide() {
                 coverage: 'Your personal auto policy excludes business use',
                 cost: '$800–$2,500/year',
                 covers: 'Accidents, liability, and damage when driving to job sites',
-                proTip: 'One accident driving to a job site without commercial auto = claim denied. Don't risk it.',
+                proTip: 'One accident driving to a job site without commercial auto = claim denied. Don’t risk it.',
               },
               {
                 name: 'Tools & Equipment',

@@ -14,7 +14,7 @@ const motorTypes = [
   { type: 'Direct Drive', noise: 'Very Quiet', cost: '$250–$400', best: 'Premium installs' },
 ];
 
-const symptoms = ['Noisy operation', 'Slow movement', 'Won\'t open fully', 'Visible rust/rot', 'Broken springs', 'Panels dented'];
+const symptoms = ['Noisy operation', 'Slow movement', 'Won\’t open fully', 'Visible rust/rot', 'Broken springs', 'Panels dented'];
 
 export default function GarageDoorGuide() {
   const [age, setAge] = useState('');

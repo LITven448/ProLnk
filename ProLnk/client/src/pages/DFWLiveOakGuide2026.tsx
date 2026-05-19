@@ -11,7 +11,7 @@ export default function DFWLiveOakGuide2026() {
       back: 'Back corner placement, 25ft from fence line. Live Oak canopy will eventually overhang neighbors — communicate early and plan for cooperative pruning.',
     },
     medium: {
-      front: 'Two Live Oaks flanking entry at 30ft spacing. Keep 20ft from foundation. They'll merge canopies in 40 years creating a signature shade arch.',
+      front: 'Two Live Oaks flanking entry at 30ft spacing. Keep 20ft from foundation. They’ll merge canopies in 40 years creating a signature shade arch.',
       side: 'Single Live Oak on north or east side — avoids afternoon root stress + foundation proximity. Root barrier strongly recommended within 25ft of slab.',
       back: 'Back yard specimen tree 30ft from structure. Pair with Cedar Elm for faster early shade while Live Oak establishes its century-long presence.',
     },

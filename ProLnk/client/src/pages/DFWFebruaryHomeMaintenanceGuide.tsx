@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const highlights = [
-  { emoji: '🌪️', title: 'Winter Storm Risk', detail: 'February is DFW\'s most dangerous month for ice storms. Uri hit Feb 10-20, 2021. Be ready every year.' },
+  { emoji: '🌪️', title: 'Winter Storm Risk', detail: 'February is DFW\’s most dangerous month for ice storms. Uri hit Feb 10-20, 2021. Be ready every year.' },
   { emoji: '🌲', title: 'Cedar Fever Peak', detail: 'Mountain cedar pollen peaks Feb in DFW. Change HVAC filters to MERV 11+ and run purifiers.' },
   { emoji: '🌸', title: 'Spring Pre-Planning', detail: 'February is the last chance to book spring HVAC tuneups before April-May schedules fill.' },
   { emoji: '🔧', title: 'HVAC Annual Tuneup', detail: 'Book your spring AC service now. Most DFW HVAC companies are booked 6 weeks out by March.' },
@@ -35,7 +35,7 @@ const actions: Record<string, string[]> = {
     '✅ Send written freeze prep notice to all tenants (liability)',
   ],
   'Long-time DFW resident': [
-    '✅ Don\'t assume "it won\'t happen again" — plan anyway',
+    '✅ Don\’t assume "it won\’t happen again" — plan anyway',
     '✅ Upgrade any missing pipe insulation from Uri lessons',
     '✅ Test generator or portable heater now (not during storm)',
     '✅ Book HVAC tuneup for spring NOW',

@@ -8,7 +8,7 @@ const drillMap: Record<string, DrillResult> = {
     bitType: '3/16" Carbide-Tipped Masonry Bit',
     anchor: 'Plastic Conical Anchor with #8 screw',
     cost: 'Drill rental $25-40/day | Bit $4-8 | Anchors $5 for 20pk',
-    tips: ['DFW brick is hard fired clay — don\'t use standard drill bits (they dull in seconds)', 'Drill perpendicular to mortar joint if possible — easier than brick face', 'Use water or compressed air to clear dust every 30 seconds', 'Stop if you feel the bit walking — re-center with smaller pilot hole', 'DFW summer: drill before 10am — bit overheats faster in hot weather'],
+    tips: ['DFW brick is hard fired clay — don\’t use standard drill bits (they dull in seconds)', 'Drill perpendicular to mortar joint if possible — easier than brick face', 'Use water or compressed air to clear dust every 30 seconds', 'Stop if you feel the bit walking — re-center with smaller pilot hole', 'DFW summer: drill before 10am — bit overheats faster in hot weather'],
   },
   'brick-heavy': {
     drillType: 'Rotary Hammer (SDS-Plus, 1" class minimum)',

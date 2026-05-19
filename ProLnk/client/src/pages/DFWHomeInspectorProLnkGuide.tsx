@@ -10,8 +10,8 @@ const whyInspectors = [
 const script = [
   { step: 'In the Report', text: 'Add a section: "Next Steps for Buyers" with ProLnk highlighted as your recommended platform for finding vetted contractors to address the items in this report.' },
   { step: 'At the Walkthrough', text: '"I always recommend ProLnk for finding contractors to fix what we found today. They pre-screen all their pros — no random Google searches."' },
-  { step: 'Follow-Up Email', text: 'Send the inspection report with a ProLnk referral link: "Here\'s the report — and here\'s where I\'d start for contractors."' },
-  { step: 'Social Proof', text: 'Share inspection statistics: "X% of homes I inspect have HVAC issues — here\'s how ProLnk buyers got theirs fixed fast."' },
+  { step: 'Follow-Up Email', text: 'Send the inspection report with a ProLnk referral link: "Here\’s the report — and here\’s where I\’d start for contractors."' },
+  { step: 'Social Proof', text: 'Share inspection statistics: "X% of homes I inspect have HVAC issues — here\’s how ProLnk buyers got theirs fixed fast."' },
 ];
 
 export default function DFWHomeInspectorProLnkGuide() {

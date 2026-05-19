@@ -23,7 +23,7 @@ export default function DFWForeClosureDataGuide2026() {
         'Pull the foreclosure auction list from county trustee (Tuesdays in TX)',
         'Research title and lien history before bidding',
         'Set a firm max bid — no financing contingency at auction',
-        'Bring cashier's check (full payment often due same day)',
+        'Bring cashier’s check (full payment often due same day)',
         'Budget 10–20% of purchase price for post-close repairs',
       ],
       risks: ['No inspection possible pre-auction', 'Occupied properties — eviction costs', 'Second liens survive in some cases'],

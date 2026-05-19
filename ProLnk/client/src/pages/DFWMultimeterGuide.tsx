@@ -17,7 +17,7 @@ const testMap: Record<string, TestResult> = {
       { value: '50-90V', meaning: 'Partial power — likely loose connection at outlet or in junction box. Call electrician.' },
       { value: '0V', meaning: 'No power — tripped GFCI, tripped breaker, or open circuit. Check those first.' },
     ],
-    safety: ['Never touch probe metal tips together while both inserted', 'One hand in pocket while testing (prevents current path through chest)', 'Don\'t test with wet hands — DFW summer sweating counts as wet'],
+    safety: ['Never touch probe metal tips together while both inserted', 'One hand in pocket while testing (prevents current path through chest)', 'Don\’t test with wet hands — DFW summer sweating counts as wet'],
     dfwNote: 'DFW summer AC load causes breaker and GFCI trips more than any other season. Most "dead outlets" in DFW are just tripped GFCIs in bathroom, kitchen, or garage that protect multiple outlets.',
   },
   'gfci-test': {
@@ -27,7 +27,7 @@ const testMap: Record<string, TestResult> = {
       'Test outlet before pressing TEST: should read 120V',
       'Press TEST button: multimeter should drop to 0V (GFCI tripped correctly)',
       'Press RESET: multimeter should return to 120V',
-      'If GFCI doesn\'t trip or won\'t reset: GFCI outlet is failed and needs replacement ($15-25)',
+      'If GFCI doesn\’t trip or won\’t reset: GFCI outlet is failed and needs replacement ($15-25)',
     ],
     readings: [
       { value: '120V → 0V on TEST', meaning: 'GFCI is working correctly — protects you from ground faults.' },
@@ -40,7 +40,7 @@ const testMap: Record<string, TestResult> = {
   'breaker-find': {
     testSteps: [
       'Plug a lamp or phone charger (with indicator light) into the outlet you want to identify',
-      'Set multimeter to AC Voltage at the outlet to confirm it\'s live (120V)',
+      'Set multimeter to AC Voltage at the outlet to confirm it\’s live (120V)',
       'Go to breaker panel — flip breakers one at a time to OFF',
       'After each flip, check multimeter or lamp: when it reads 0V / goes dark, you found the breaker',
       'Label the breaker with permanent marker before turning back ON',
@@ -50,8 +50,8 @@ const testMap: Record<string, TestResult> = {
       { value: '120V at outlet', meaning: 'Breaker is ON and feeding this outlet.' },
       { value: '0V at outlet', meaning: 'Breaker controlling this outlet is now OFF — label it.' },
     ],
-    safety: ['DFW panel heat: panels in garages or on exterior walls run hot in summer — let panel cool before extended work inside it', 'Old Federal Pacific and Zinsco panels are common in 1970-1990 DFW homes — they\'re fire hazards, do not rely on breakers as protection', 'Never flip main breaker without warning family — DFW summer AC loss in 100°F+ weather is a safety issue'],
-    dfwNote: 'DFW homes built 1970-1990 frequently have Federal Pacific Stab-Lok or Zinsco panels. These breakers don\'t trip reliably. If your panel brand is either of these, use this exercise to map circuits but prioritize panel replacement. Many DFW home inspectors flag these.',
+    safety: ['DFW panel heat: panels in garages or on exterior walls run hot in summer — let panel cool before extended work inside it', 'Old Federal Pacific and Zinsco panels are common in 1970-1990 DFW homes — they\’re fire hazards, do not rely on breakers as protection', 'Never flip main breaker without warning family — DFW summer AC loss in 100°F+ weather is a safety issue'],
+    dfwNote: 'DFW homes built 1970-1990 frequently have Federal Pacific Stab-Lok or Zinsco panels. These breakers don\’t trip reliably. If your panel brand is either of these, use this exercise to map circuits but prioritize panel replacement. Many DFW home inspectors flag these.',
   },
   'voltage-check': {
     testSteps: [
@@ -68,8 +68,8 @@ const testMap: Record<string, TestResult> = {
       { value: '127-135V', meaning: 'High voltage — can burn out electronics. Call Oncor immediately.' },
       { value: '5V+ (neutral-ground)', meaning: 'Wiring fault or overloaded neutral. Electrician required.' },
     ],
-    safety: ['NEVER probe inside a breaker panel if you don\'t know what you\'re doing — 240V service is lethal', 'DFW summer: HVAC units pulling heavy load can cause momentary voltage sags — test at different times of day', 'If you see burn marks, smell burning, or hear buzzing: don\'t test, call electrician or fire department'],
-    dfwNote: 'Oncor (DFW\'s electric utility) maintains voltage within ±5% of 120V. If you measure consistently low (under 110V) or high (over 127V), call Oncor\'s voltage complaint line — it\'s free and they\'ll send a tech. DFW summer peak demand (July-August 2-6pm) causes the most voltage issues.',
+    safety: ['NEVER probe inside a breaker panel if you don\’t know what you\’re doing — 240V service is lethal', 'DFW summer: HVAC units pulling heavy load can cause momentary voltage sags — test at different times of day', 'If you see burn marks, smell burning, or hear buzzing: don\’t test, call electrician or fire department'],
+    dfwNote: 'Oncor (DFW\’s electric utility) maintains voltage within ±5% of 120V. If you measure consistently low (under 110V) or high (over 127V), call Oncor\’s voltage complaint line — it\’s free and they\’ll send a tech. DFW summer peak demand (July-August 2-6pm) causes the most voltage issues.',
   },
 };
 

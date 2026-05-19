@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const situations: { id: string; label: string }[] = [
-  { id: 'working_spring', label: '✅ My system still works — it\'s spring right now' },
-  { id: 'working_summer', label: '⚠️ My system still works — but it\'s already hot' },
-  { id: 'broken_summer', label: '🚨 My system broke — it\'s 100°F outside' },
+  { id: 'working_spring', label: '✅ My system still works — it\’s spring right now' },
+  { id: 'working_summer', label: '⚠️ My system still works — but it\’s already hot' },
+  { id: 'broken_summer', label: '🚨 My system broke — it\’s 100°F outside' },
   { id: 'planning_fall', label: '📅 Planning ahead — fall or winter replacement' },
 ];
 
@@ -36,10 +36,10 @@ const strategies: Record<string, { timing: string; strategy: string; compare: st
   },
   broken_summer: {
     timing: '🔴 Emergency Situation — Act Fast, Stay Smart',
-    strategy: 'A broken system in DFW heat is dangerous for elderly, children, and pets. You need to move fast, but "emergency" contractors charge 20–40% more. Here\'s how to get service quickly without getting gouged.',
+    strategy: 'A broken system in DFW heat is dangerous for elderly, children, and pets. You need to move fast, but "emergency" contractors charge 20–40% more. Here\’s how to get service quickly without getting gouged.',
     compare: [
       'Call ProLnk first — we can reach available DFW techs within hours',
-      'Ask upfront: "What\'s the service call fee and how does it apply to the repair or replacement?"',
+      'Ask upfront: "What\’s the service call fee and how does it apply to the repair or replacement?"',
       'If quoted over $11,000 for a 3-ton system, get a second opinion before signing',
       'Avoid same-day contracts over $8,000 without a second call — even 2 hours matters',
       'Request itemized quote: equipment cost + labor + materials listed separately',
@@ -49,7 +49,7 @@ const strategies: Record<string, { timing: string; strategy: string; compare: st
   },
   planning_fall: {
     timing: '🟢 Strategic Timing — Excellent Choice',
-    strategy: 'October–November is DFW\'s second-best window. Techs are post-summer and eager for work, inventory is restocked, and you can take your time. Fewer rebates but maximum leverage for negotiation.',
+    strategy: 'October–November is DFW\’s second-best window. Techs are post-summer and eager for work, inventory is restocked, and you can take your time. Fewer rebates but maximum leverage for negotiation.',
     compare: [
       'Fall installations: best availability, least scheduling stress',
       'Negotiate hard — contractors are slower in October and will compete on price',

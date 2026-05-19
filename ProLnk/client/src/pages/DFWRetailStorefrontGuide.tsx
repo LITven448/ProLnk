@@ -9,7 +9,7 @@ const LEASE_MAP: Record<string, Record<string, { tenantPays: string[]; landlordP
   nnn: {
     small: { tenantPays: ['All interior AND exterior maintenance','HVAC service and repair','Roof repairs (sometimes — check lease)','Property taxes and insurance (pro-rata)','Parking lot maintenance (pro-rata)'], landlordPays: ['Capital replacements (structure, major systems)','Roof replacement when beyond repair','Façade structural repairs'], tiBudget: '$25,000–$70,000 (NNN landlords often give more TI to offset your obligations)' },
     medium: { tenantPays: ['All operating expenses (NNN)','HVAC replacement if lease says so — common in NNN','All interior renovation costs','Signage installation and permits','Landscaping and snow removal'], landlordPays: ['Structural repairs only','Major capital events per lease terms'], tiBudget: '$60,000–$180,000' },
-    large: { tenantPays: ['Full NNN operating costs','All systems maintenance','Full renovation responsibility','Permitting costs for improvements'], landlordPays: ['Building shell structure only','Land (you\'re effectively paying everything else)'], tiBudget: '$150,000–$500,000+' },
+    large: { tenantPays: ['Full NNN operating costs','All systems maintenance','Full renovation responsibility','Permitting costs for improvements'], landlordPays: ['Building shell structure only','Land (you\’re effectively paying everything else)'], tiBudget: '$150,000–$500,000+' },
   },
 };
 
@@ -34,7 +34,7 @@ export default function DFWRetailStorefrontGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginBottom: 40 }}>
           {[
-            { icon: '🪧', title: 'Exterior Signage Permits', body: 'Every DFW city has unique sign codes. Dallas limits square footage by building frontage. Plano requires landlord approval + city permit. Most cities: 2–6 week permit turnaround. ProLnk sign contractors know each city\'s rules.' },
+            { icon: '🪧', title: 'Exterior Signage Permits', body: 'Every DFW city has unique sign codes. Dallas limits square footage by building frontage. Plano requires landlord approval + city permit. Most cities: 2–6 week permit turnaround. ProLnk sign contractors know each city\’s rules.' },
             { icon: '♿', title: 'ADA Entrance Requirements', body: 'Any renovation triggers ADA path of travel compliance from parking to renovated area. Door hardware (lever handles required), thresholds (1/2" max), entrance mats all count. Violations: $75K first offense.' },
             { icon: '❄️', title: 'HVAC for High-Traffic Retail', body: 'Retail HVAC runs 3,000–4,000 hours/yr vs 2,000 for office. Size for 1.5–2x ventilation. DFW summer door traffic spikes load 30%. Variable-speed units save 20–35% on energy.' },
             { icon: '🔒', title: 'Security Systems', body: 'DFW retail security: camera system ($3,000–$12,000 installed), alarm monitoring ($30–$80/mo), panic buttons at POS. Check lease — some landlords require alarm company approval.' },

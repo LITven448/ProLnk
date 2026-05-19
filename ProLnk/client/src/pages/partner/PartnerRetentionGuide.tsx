@@ -23,7 +23,7 @@ const healthQuestions = [
   'Do you celebrate wins publicly (group chat, leaderboard)?',
   'Have all your partners completed the onboarding checklist?',
   'Do you have a clear reactivation plan for inactive partners?',
-  'Are you tracking each partner\'s monthly homeowner signups?',
+  'Are you tracking each partner\’s monthly homeowner signups?',
   'Has anyone on your team referred a new partner in the last 30 days?',
 ];
 

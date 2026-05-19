@@ -6,31 +6,31 @@ const situations: { id: Situation; label: string; question: string }[] = [
   { id: 'first-time', label: '❄️ First Startup Ever', question: 'Turning AC on for the first time this spring in DFW' },
   { id: 'smells', label: '👃 Strange Smells', question: 'AC is running but I notice unusual odors' },
   { id: 'not-cooling', label: '🌡️ Not Cooling', question: 'System runs but house stays warm' },
-  { id: 'noisy', label: '🔊 Making Noise', question: 'Hearing sounds I haven\'t heard before' },
-  { id: 'wont-start', label: '❌ Won\'t Start', question: 'System won\'t turn on at all' },
+  { id: 'noisy', label: '🔊 Making Noise', question: 'Hearing sounds I haven\’t heard before' },
+  { id: 'wont-start', label: '❌ Won\’t Start', question: 'System won\’t turn on at all' },
 ];
 
 const guidance: Record<Situation, { normal: string[]; notNormal: string[]; steps: string[]; callNow: boolean; callTip: string }> = {
   'first-time': {
     normal: ['Brief burning smell first 15-30 min (dust burning off coils)', 'Clicking sounds at startup', 'System runs longer first cycle to pull down house temp', 'Slight refrigerant gurgling sound'],
     notNormal: ['No cold air after 20 minutes running', 'Loud grinding or screaming from outdoor unit', 'Tripping circuit breaker', 'Ice forming on any component'],
-    steps: ['Set thermostat to COOL, 3° below current temp', 'Replace filter before starting (mandatory in DFW spring)', 'Clear debris from around outdoor condenser', 'Check that condenser disconnect is on (gray box near unit)', 'Run 20 minutes, check supply registers for cold air', 'Let system run full cycle — don\'t short-cycle by adjusting thermostat repeatedly'],
+    steps: ['Set thermostat to COOL, 3° below current temp', 'Replace filter before starting (mandatory in DFW spring)', 'Clear debris from around outdoor condenser', 'Check that condenser disconnect is on (gray box near unit)', 'Run 20 minutes, check supply registers for cold air', 'Let system run full cycle — don\’t short-cycle by adjusting thermostat repeatedly'],
     callNow: false,
-    callTip: 'If you\'re not getting cold air after 20-30 min of normal startup, call — refrigerant may have leaked over winter.',
+    callTip: 'If you\’re not getting cold air after 20-30 min of normal startup, call — refrigerant may have leaked over winter.',
   },
   'smells': {
     normal: ['Musty smell first 10-15 min (condensate pan drying out)', 'Faint dusty smell on first cool day (dust on coils)', 'Slight electrical smell first run of season'],
-    notNormal: ['Rotten egg / sulfur smell — possible gas leak, evacuate and call 911', 'Burning plastic smell continuing after 20 min', 'Mildew that doesn\'t clear — dirty evaporator coil', 'Sweet chemical smell — refrigerant leak'],
+    notNormal: ['Rotten egg / sulfur smell — possible gas leak, evacuate and call 911', 'Burning plastic smell continuing after 20 min', 'Mildew that doesn\’t clear — dirty evaporator coil', 'Sweet chemical smell — refrigerant leak'],
     steps: ['Open windows briefly to air out on first startup', 'Check that drain pan is empty and clean', 'Replace filter if musty smell persists', 'Schedule coil cleaning if mildew persists after filter change'],
     callNow: true,
     callTip: 'Burning plastic or sweet refrigerant smell = shut system off and call. Never ignore refrigerant odor.',
   },
   'not-cooling': {
     normal: ['First 30 min may not cool well — system pulling down from setback temp', 'Humid DFW days make it feel warmer even when system is working'],
-    notNormal: ['Supply air isn\'t cold (hold hand at vent)', 'Outdoor unit not running but air handler is', 'Ice on indoor or outdoor unit', 'Circuit breaker tripped for condenser'],
+    notNormal: ['Supply air isn\’t cold (hold hand at vent)', 'Outdoor unit not running but air handler is', 'Ice on indoor or outdoor unit', 'Circuit breaker tripped for condenser'],
     steps: ['Check thermostat is in COOL mode, fan AUTO', 'Replace filter — clogged filter is #1 cause of poor cooling in DFW', 'Check outdoor unit is running (should hear compressor humming)', 'Check outdoor disconnect box is switched on', 'Inspect visible ductwork for disconnected sections', 'Give system 1 hour before calling — initial pull-down takes time'],
     callNow: false,
-    callTip: 'If outdoor unit isn\'t running, check the breaker at the electrical panel first. Then call if breaker is fine.',
+    callTip: 'If outdoor unit isn\’t running, check the breaker at the electrical panel first. Then call if breaker is fine.',
   },
   'noisy': {
     normal: ['Clicking at startup/shutdown (normal relay sound)', 'Whooshing air sound from vents', 'Occasional gurgling in refrigerant lines', 'Expansion/contraction ticking in ducts'],
@@ -41,10 +41,10 @@ const guidance: Record<Situation, { normal: string[]; notNormal: string[]; steps
   },
   'wont-start': {
     normal: [],
-    notNormal: ['Nothing happens when thermostat is set to cool', 'Air handler runs but outdoor unit doesn\'t', 'System trips breaker immediately on startup'],
+    notNormal: ['Nothing happens when thermostat is set to cool', 'Air handler runs but outdoor unit doesn\’t', 'System trips breaker immediately on startup'],
     steps: ['Check thermostat batteries (replace if 1+ year old)', 'Check circuit breaker for both air handler and condenser', 'Check outdoor disconnect box (gray box near condenser)', 'Verify thermostat is in COOL mode, set below current temp', 'Wait 30 min — high-pressure lockout resets automatically', 'Check for error code flashing on air handler board'],
     callNow: false,
-    callTip: 'Breaker trips immediately on startup = compressor may be seized. Don\'t reset repeatedly — call for diagnosis.',
+    callTip: 'Breaker trips immediately on startup = compressor may be seized. Don\’t reset repeatedly — call for diagnosis.',
   },
 };
 

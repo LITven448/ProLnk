@@ -76,7 +76,7 @@ export default function TrustyProScanAnalyticsGuide() {
             {[
               {
                 label: 'Health Score 0–100',
-                desc: 'Weighted average across all detected systems and conditions. It's not a simple average — Structural and Mechanical items carry more weight than cosmetic findings. A score of 75 with no Critical items is very different from a 75 with two Critical findings.',
+                desc: 'Weighted average across all detected systems and conditions. It’s not a simple average — Structural and Mechanical items carry more weight than cosmetic findings. A score of 75 with no Critical items is very different from a 75 with two Critical findings.',
                 icon: '💯',
               },
               {
@@ -115,7 +115,7 @@ export default function TrustyProScanAnalyticsGuide() {
               { label: 'Mechanical', weight: 'Second Highest', desc: 'HVAC, plumbing, and visible electrical components. In DFW, HVAC runs nearly year-round — mechanical wear is faster here than most markets.', color: '#f97316' },
               { label: 'Envelope', weight: 'Third Highest', desc: 'Roof, windows, doors, and siding. Moisture barrier integrity. A compromised envelope leads to structural damage over time.', color: '#eab308' },
               { label: 'Site', weight: 'Supporting', desc: 'Drainage, grading, and landscaping impact on the home. The most preventable damage category — most drainage issues are fixable for under $2,000.', color: '#22c55e' },
-              { label: 'Interior', weight: 'Observable Only', desc: 'Floors, walls, ceilings, and visible systems. The AI can only assess what's visible — interior findings often point to underlying issues in other categories.', color: '#38bdf8' },
+              { label: 'Interior', weight: 'Observable Only', desc: 'Floors, walls, ceilings, and visible systems. The AI can only assess what’s visible — interior findings often point to underlying issues in other categories.', color: '#38bdf8' },
             ].map(item => (
               <div key={item.label} style={{ background: '#0f1a24', border: `1px solid ${item.color}33`, borderRadius: 10, padding: 18, display: 'flex', gap: 16 }}>
                 <div style={{ width: 10, height: 10, borderRadius: '50%', background: item.color, marginTop: 5, flexShrink: 0 }} />
@@ -139,7 +139,7 @@ export default function TrustyProScanAnalyticsGuide() {
               {
                 scenario: 'Before a Storm',
                 icon: '⛈️',
-                desc: 'Document current condition before high-wind or hail events. Your scan timestamp creates an objective pre-storm baseline that's invaluable for insurance claims. If damage occurs, your scan proves what was already there vs. what the storm caused.',
+                desc: 'Document current condition before high-wind or hail events. Your scan timestamp creates an objective pre-storm baseline that’s invaluable for insurance claims. If damage occurs, your scan proves what was already there vs. what the storm caused.',
               },
               {
                 scenario: 'Before Selling',
@@ -149,7 +149,7 @@ export default function TrustyProScanAnalyticsGuide() {
               {
                 scenario: 'For Budget Planning',
                 icon: '📊',
-                desc: 'Prioritize Critical and Warning items for this year's maintenance budget. Use your scan as the input to your annual home maintenance spend. A $500 drainage fix today prevents a $15,000 foundation repair in 5 years.',
+                desc: 'Prioritize Critical and Warning items for this year’s maintenance budget. Use your scan as the input to your annual home maintenance spend. A $500 drainage fix today prevents a $15,000 foundation repair in 5 years.',
               },
             ].map(item => (
               <div key={item.scenario} style={{ background: '#0f1a24', border: '1px solid #1a2a3a', borderRadius: 12, padding: 20, display: 'flex', gap: 16 }}>

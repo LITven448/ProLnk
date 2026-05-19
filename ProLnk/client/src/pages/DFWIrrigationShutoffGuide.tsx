@@ -14,7 +14,7 @@ const restrictions: Record<string, string> = {
   'Garland': 'Follows NTMWD guidelines. Garlandtx.gov/Water.',
   'Denton': '2 days/week spring-fall, 1 day/week winter. DentonTexas.com.',
   'Allen': 'Twice-weekly schedule. AllenTX.gov.',
-  'Other DFW': 'Check your city\'s water utility website for current restrictions.',
+  'Other DFW': 'Check your city\’s water utility website for current restrictions.',
 };
 
 function getSteps(city: string, system: string) {

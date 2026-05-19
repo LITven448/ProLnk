@@ -69,7 +69,7 @@ export default function DFWWindDamagePreventionGuide() {
             ['⛈️ Thunderstorm Downbursts', '60–80mph gusts are common in severe DFW storms — not tornadoes but equally destructive'],
             ['🌪️ Tornadoes', 'DFW is in Tornado Alley — average 3–5 significant tornadoes per year in the metroplex'],
             ['🌳 Tree Failure', 'Wind + saturated soil = falling trees — biggest insurance claim driver in DFW'],
-            ['🏠 Garage Doors', '#1 residential failure point in high wind — acts as a sail, can collapse the home\'s structure'],
+            ['🏠 Garage Doors', '#1 residential failure point in high wind — acts as a sail, can collapse the home\’s structure'],
           ].map(([label, desc]) => (
             <div key={label} style={{ marginBottom: '0.75rem', display: 'flex', gap: '0.75rem' }}>
               <span style={{ whiteSpace: 'nowrap', color: '#F5E642', fontWeight: 600, fontSize: '0.9rem' }}>{label}</span>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const ROOM_SIZES = ['Small (under 120 sqft)', 'Medium (120–180 sqft)', 'Large (180–250 sqft)', 'Extra large (250+ sqft)'];
-const TARGET_USES = ['Home office', 'Playroom / kids space', 'Library / reading room', 'Butler's pantry / prep kitchen', 'Home bar / wine room', 'Mudroom / drop zone'];
+const TARGET_USES = ['Home office', 'Playroom / kids space', 'Library / reading room', 'Butler’s pantry / prep kitchen', 'Home bar / wine room', 'Mudroom / drop zone'];
 const ADJACENT_SPACES = ['Open to kitchen', 'Separated by doorway only', 'Separated by wall', 'Open to living room', 'Corner room — two walls shared'];
 
 const FEASIBILITY_MAP: Record<string, Record<string, string>> = {
@@ -12,7 +12,7 @@ const FEASIBILITY_MAP: Record<string, Record<string, string>> = {
     'Open to living room': 'Low — acoustics challenging. Consider partial wall with pocket door.',
     'Corner room — two walls shared': 'High — natural acoustic buffer. Great natural light potential.',
   },
-  'Butler's pantry / prep kitchen': {
+  'Butler’s pantry / prep kitchen': {
     'Open to kitchen': 'Very High — ideal location. Plumbing tie-in straightforward.',
     'Separated by doorway only': 'High — door removal easy, plumbing run from adjacent kitchen.',
     'Separated by wall': 'Moderate — plumbing run adds cost depending on distance.',
@@ -25,7 +25,7 @@ const COST_BY_USE: Record<string, Record<string, string>> = {
   'Home office': { 'Small (under 120 sqft)': '$5K–$12K', 'Medium (120–180 sqft)': '$8K–$18K', 'Large (180–250 sqft)': '$10K–$22K', 'Extra large (250+ sqft)': '$12K–$28K' },
   'Playroom / kids space': { 'Small (under 120 sqft)': '$4K–$10K', 'Medium (120–180 sqft)': '$6K–$14K', 'Large (180–250 sqft)': '$8K–$18K', 'Extra large (250+ sqft)': '$10K–$22K' },
   'Library / reading room': { 'Small (under 120 sqft)': '$8K–$18K', 'Medium (120–180 sqft)': '$12K–$25K', 'Large (180–250 sqft)': '$16K–$32K', 'Extra large (250+ sqft)': '$20K–$40K' },
-  'Butler's pantry / prep kitchen': { 'Small (under 120 sqft)': '$18K–$35K', 'Medium (120–180 sqft)': '$25K–$50K', 'Large (180–250 sqft)': '$32K–$65K', 'Extra large (250+ sqft)': '$40K–$80K' },
+  'Butler’s pantry / prep kitchen': { 'Small (under 120 sqft)': '$18K–$35K', 'Medium (120–180 sqft)': '$25K–$50K', 'Large (180–250 sqft)': '$32K–$65K', 'Extra large (250+ sqft)': '$40K–$80K' },
   'Home bar / wine room': { 'Small (under 120 sqft)': '$15K–$30K', 'Medium (120–180 sqft)': '$22K–$45K', 'Large (180–250 sqft)': '$30K–$60K', 'Extra large (250+ sqft)': '$38K–$75K' },
   'Mudroom / drop zone': { 'Small (under 120 sqft)': '$6K–$14K', 'Medium (120–180 sqft)': '$8K–$18K', 'Large (180–250 sqft)': '$10K–$22K', 'Extra large (250+ sqft)': '$12K–$26K' },
 };
@@ -34,7 +34,7 @@ const PERMIT_NEEDED: Record<string, string> = {
   'Home office': 'Electrical permit if adding circuits. No structural permit if no walls moved.',
   'Playroom / kids space': 'No permit typically needed for cosmetic conversion.',
   'Library / reading room': 'No permit for built-in shelving in most DFW cities. Electrical if adding sconces.',
-  'Butler's pantry / prep kitchen': 'Plumbing + electrical permit required. May require mechanical if adding ventilation.',
+  'Butler’s pantry / prep kitchen': 'Plumbing + electrical permit required. May require mechanical if adding ventilation.',
   'Home bar / wine room': 'Electrical permit. Plumbing permit if adding sink. No structural if no walls moved.',
   'Mudroom / drop zone': 'No permit for built-ins and flooring. Electrical if adding circuits.',
 };

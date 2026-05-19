@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const problems = ['One room is much hotter than others in summer', 'Room is too cold even on mild days', 'Rattling or vibrating from register', 'Weak airflow from ceiling register', 'Return grille is clogged or hasn\'t been cleaned'];
+const problems = ['One room is much hotter than others in summer', 'Room is too cold even on mild days', 'Rattling or vibrating from register', 'Weak airflow from ceiling register', 'Return grille is clogged or hasn\’t been cleaned'];
 const registerTypes = ['Supply register (adjustable louvers — air comes out)', 'Return grille (no louvers — air goes in)', 'Not sure which type'];
 
 const guidance: Record<string, Record<string, { diagnosis: string; action: string; warning: string }>> = {
@@ -24,7 +24,7 @@ const guidance: Record<string, Record<string, { diagnosis: string; action: strin
     'Return grille (no louvers — air goes in)': { diagnosis: '⚠️ Weak return pull is usually a clogged filter, undersized return grille, or disconnected return duct in attic.', action: 'Replace filter first. Measure return grille — rule of thumb is 1 sq ft of return grille per 400 CFM of system airflow. A 3-ton system (1,200 CFM) needs 3 sq ft minimum of return grille area.', warning: '⚠️ Undersized returns are the most common design flaw in DFW tract homes. Adding a return is often more impactful than adding supply.' },
     'Not sure which type': { diagnosis: '🔍 Determine direction first. Weak supply vs weak return have completely different solutions.', action: 'Paper test. If supply is weak: check duct. If return is weak: check filter and return sizing.', warning: '⚠️ Do not confuse weak supply with strong return pull — they can feel similar but require opposite approaches.' },
   },
-  'Return grille is clogged or hasn\'t been cleaned': {
+  'Return grille is clogged or hasn\’t been cleaned': {
     'Supply register (adjustable louvers — air comes out)': { diagnosis: '🔍 Supply registers rarely clog but dust buildup on louvers reduces airflow efficiency and looks bad.', action: 'Remove register, vacuum louvers, wash with soapy water, dry fully before reinstalling. Consider upgrading to registers with wider blade spacing for easier cleaning.', warning: '✅ Low urgency but worth doing during annual HVAC maintenance.' },
     'Return grille (no louvers — air goes in)': { diagnosis: '🔴 Critical maintenance item. Clogged return grille = restricted airflow to entire system. In DFW, this is second only to dirty filters as a system killer.', action: 'Remove grille, vacuum thoroughly, wash with warm soapy water. Replace filter behind grille if present. This should be done every 30–90 days in DFW due to construction dust and allergens.', warning: '🔴 A clogged return grille can cause: frozen evaporator coil, compressor overheating, and early system failure. Priority maintenance task in DFW.' },
     'Not sure which type': { diagnosis: '🔍 Determine type. Return grilles need cleaning much more urgently than supply registers.', action: 'Paper test to determine type. Clean whichever it is, but prioritize return grilles.', warning: '⚠️ In DFW with construction dust and seasonal allergens, return grilles should be inspected monthly during heavy HVAC use (June–September).' },

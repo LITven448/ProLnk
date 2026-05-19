@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const levels = [
   { id: 'good', label: '✅ Good Owner', desc: 'I do the basics consistently' },
-  { id: 'aware', label: '🧠 System Aware', desc: 'I know my system\'s history' },
+  { id: 'aware', label: '🧠 System Aware', desc: 'I know my system\’s history' },
   { id: 'prepared', label: '🛡️ Fully Prepared', desc: 'I have a plan for everything' },
 ];
 
@@ -10,10 +10,10 @@ const elevations: Record<string, { title: string; items: string[] }> = {
   good: {
     title: 'What Elevates You From Good to Great',
     items: [
-      '📅 Know your system\'s exact age — DFW units average 12-15 years; great owners know their countdown',
+      '📅 Know your system\’s exact age — DFW units average 12-15 years; great owners know their countdown',
       '⚠️ Memorize the 5 DFW warning signs: ice on coils, musty air, short cycling, climbing bills, weak airflow',
       '💰 Maintain a $2,000–$3,500 HVAC emergency fund — average DFW replacement is $8,500–$14,000',
-      '📞 Have 2 vetted HVAC techs\' numbers saved — one books out in August; you need a backup',
+      '📞 Have 2 vetted HVAC techs\’ numbers saved — one books out in August; you need a backup',
       '🌡️ Install a smart thermostat with alerts — catch problems before they become failures',
       '📋 Know your warranty status: compressor, parts, and labor coverage differ by brand',
     ],
@@ -32,10 +32,10 @@ const elevations: Record<string, { title: string; items: string[] }> = {
   prepared: {
     title: 'Great Owners Who Are Fully Prepared Do This',
     items: [
-      '🚨 You have a 24/7 emergency HVAC contact — great owners don\'t scramble at 10pm on a 104°F day',
-      '📖 You\'ve read your equipment manual — you know reset procedures, error codes, and filter specs',
-      '💡 You\'ve optimized insulation and air sealing — the HVAC system is only as good as the envelope',
-      '🌿 Your landscaping protects the condenser — 3 ft clearance, shade that doesn\'t restrict airflow',
+      '🚨 You have a 24/7 emergency HVAC contact — great owners don\’t scramble at 10pm on a 104°F day',
+      '📖 You\’ve read your equipment manual — you know reset procedures, error codes, and filter specs',
+      '💡 You\’ve optimized insulation and air sealing — the HVAC system is only as good as the envelope',
+      '🌿 Your landscaping protects the condenser — 3 ft clearance, shade that doesn\’t restrict airflow',
       '🔗 You use ProLnk as a network resource — not just for emergencies but for quality second opinions',
       '🏆 You mentor neighbors — great owners in DFW create communities of great owners',
     ],

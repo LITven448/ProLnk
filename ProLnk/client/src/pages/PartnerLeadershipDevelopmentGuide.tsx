@@ -5,17 +5,17 @@ const questions = [
   { q: 'How many partners have you directly recruited to date?', opts: ['0', '1–2', '3–5', '6+'], scores: [0, 1, 2, 3] },
   { q: 'How often do you communicate with your recruits?', opts: ['Never', 'When they ask', 'Monthly', 'Weekly or more'], scores: [0, 1, 2, 3] },
   { q: 'Have you taught any of your recruits how to recruit others?', opts: ['No, not my job', 'Thought about it', 'Tried once', 'Yes, actively'], scores: [0, 1, 2, 3] },
-  { q: 'Do you track your network's photo volume or earnings?', opts: ['No', 'Occasionally check', 'Monthly review', 'Weekly with spreadsheet'], scores: [0, 1, 2, 3] },
+  { q: 'Do you track your network’s photo volume or earnings?', opts: ['No', 'Occasionally check', 'Monthly review', 'Weekly with spreadsheet'], scores: [0, 1, 2, 3] },
   { q: 'How do you handle a recruit who goes inactive?', opts: ['Let them go', 'Wait for them to return', 'Send one message', 'Have a reactivation conversation'], scores: [0, 1, 2, 3] },
   { q: 'Do you share your income progress with your network?', opts: ['Never — private', 'Only if asked', 'Occasionally', 'Yes, transparency is my strategy'], scores: [0, 1, 2, 3] },
-  { q: 'What's your current primary ProLnk focus?', opts: ['Only my own commissions', 'My commissions + light recruiting', 'Equal split', 'Mostly building network depth'], scores: [0, 1, 2, 3] },
+  { q: 'What’s your current primary ProLnk focus?', opts: ['Only my own commissions', 'My commissions + light recruiting', 'Equal split', 'Mostly building network depth'], scores: [0, 1, 2, 3] },
 ];
 
 const stages = [
-  { min: 0, max: 8, label: 'Solo Earner', color: '#64748b', next: ['Get to 30+ personal photos/month before anything else.', 'Study the commission structure until you can explain it in 30 seconds.', 'Identify 3 people in your life who should be Partners — don't recruit yet, just identify.'] },
+  { min: 0, max: 8, label: 'Solo Earner', color: '#64748b', next: ['Get to 30+ personal photos/month before anything else.', 'Study the commission structure until you can explain it in 30 seconds.', 'Identify 3 people in your life who should be Partners — don’t recruit yet, just identify.'] },
   { min: 9, max: 15, label: 'Emerging Builder', color: '#3b82f6', next: ['Recruit your first 3 partners this month. Teach them your exact photo process.', 'Set up a group text with your recruits — weekly check-ins start now.', 'Track your L1 photo volume — you should know this number every week.'] },
   { min: 16, max: 20, label: 'Network Builder', color: '#8b5cf6', next: ['Shift 30% of your focus to helping your recruits recruit (L2 income is where leverage starts).', 'Host a 30-minute Zoom call monthly with your network — share your numbers.', 'Identify your 1–2 top performers and give them personal coaching time.'] },
-  { min: 21, max: 24, label: 'Network Leader', color: '#f59e0b', next: ['Focus on depth: help your L2 partners build their own L1 networks.', 'Create recognition within your team — call out top performers publicly.', 'You're building a system now, not just recruiting. Document your playbook.'] },
+  { min: 21, max: 24, label: 'Network Leader', color: '#f59e0b', next: ['Focus on depth: help your L2 partners build their own L1 networks.', 'Create recognition within your team — call out top performers publicly.', 'You’re building a system now, not just recruiting. Document your playbook.'] },
 ];
 
 export default function PartnerLeadershipDevelopmentGuide() {
@@ -62,9 +62,9 @@ export default function PartnerLeadershipDevelopmentGuide() {
           <div style={{ display: 'grid', gap: 14 }}>
             {[
               { icon: '📞', action: 'Weekly team calls', detail: '30 minutes, focused on photo volume and recruiting. Consistency over intensity.' },
-              { icon: '🎓', action: 'Personal coaching for new recruits', detail: 'Every recruit gets 1-on-1 attention in their first 14 days. That's when most people quit.' },
+              { icon: '🎓', action: 'Personal coaching for new recruits', detail: 'Every recruit gets 1-on-1 attention in their first 14 days. That’s when most people quit.' },
               { icon: '📊', action: 'Monthly income transparency', detail: 'Share their numbers with their network. Transparency builds belief. Belief drives action.' },
-              { icon: '🏅', action: 'Recognition programs', detail: 'Call out top performers publicly. People work harder when they know someone's watching and celebrating.' },
+              { icon: '🏅', action: 'Recognition programs', detail: 'Call out top performers publicly. People work harder when they know someone’s watching and celebrating.' },
               { icon: '🧩', action: 'Strategic recruiting', detail: 'Target complementary trades, not just your own. An electrician recruiting HVAC techs expands coverage.' },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 16, padding: '16px 20px', background: '#f8fafc', borderRadius: 10, alignItems: 'flex-start' }}>

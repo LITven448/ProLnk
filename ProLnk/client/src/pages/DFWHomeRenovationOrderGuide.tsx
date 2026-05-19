@@ -11,8 +11,8 @@ type SequenceItem = { step: number; project: string; reason: string; parallel?: 
 
 const SEQUENCE_RULES: Record<string, { step: number; reason: string; parallel?: string; weeks: number }> = {
   'Foundation repair': { step: 1, reason: 'DFW clay soil: foundation MUST be done before any cosmetic work or floors.', weeks: 3 },
-  'Roof replacement': { step: 2, reason: 'Weathertight envelope before interior work. DFW storms won\'t wait.', weeks: 2 },
-  'Electrical panel upgrade': { step: 3, reason: 'Rough electrical before drywall. You\'ll open walls anyway.', weeks: 1 },
+  'Roof replacement': { step: 2, reason: 'Weathertight envelope before interior work. DFW storms won\’t wait.', weeks: 2 },
+  'Electrical panel upgrade': { step: 3, reason: 'Rough electrical before drywall. You\’ll open walls anyway.', weeks: 1 },
   'Plumbing re-pipe': { step: 3, reason: 'Rough plumbing before drywall — same wall-open window as electrical.', parallel: 'Electrical panel upgrade', weeks: 1 },
   'HVAC replacement': { step: 4, reason: 'Install HVAC before insulation — ductwork needs clear attic access.', weeks: 1 },
   'Attic insulation': { step: 5, reason: 'After HVAC ductwork is set. Major energy savings in DFW heat.', weeks: 1 },
@@ -64,7 +64,7 @@ export default function DFWHomeRenovationOrderGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {[
-            { title: 'Paint Before Floors', icon: '🎨', detail: 'Paint first so drips don\'t hit new flooring. Less masking, better finish.' },
+            { title: 'Paint Before Floors', icon: '🎨', detail: 'Paint first so drips don\’t hit new flooring. Less masking, better finish.' },
             { title: 'Rough-In Before Drywall', icon: '⚡', detail: 'Electrical, plumbing, HVAC all go in before closing the walls. One opening, multiple trades.' },
             { title: 'HVAC Before Insulation', icon: '❄️', detail: 'Ductwork needs clear attic access. Insulation covers the ducts after installation.' },
             { title: 'Foundation Before Everything', icon: '🏠', detail: 'DFW-specific: clay soil movement will crack any cosmetic work on an unstable foundation.' },

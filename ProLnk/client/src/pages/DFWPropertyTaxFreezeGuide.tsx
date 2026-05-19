@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const counties = [
-  { id: 'dallas', label: 'Dallas County', district: 'Dallas CAD', phone: '(214) 631-0910', website: 'dallascad.org', process: ['Complete Form 50-116 (Over-65 Exemption)','Attach proof of age (driver's license or birth certificate)','File with Dallas CAD by April 30 of qualifying year','Freeze is retroactive to Jan 1 of filing year'] },
+  { id: 'dallas', label: 'Dallas County', district: 'Dallas CAD', phone: '(214) 631-0910', website: 'dallascad.org', process: ['Complete Form 50-116 (Over-65 Exemption)','Attach proof of age (driver’s license or birth certificate)','File with Dallas CAD by April 30 of qualifying year','Freeze is retroactive to Jan 1 of filing year'] },
   { id: 'tarrant', label: 'Tarrant County', district: 'Tarrant CAD', phone: '(817) 284-0024', website: 'tad.org', process: ['File Form 50-114 or 50-116 with Tarrant CAD','Provide Texas DL or ID showing DOB 65+','Homestead must be your primary residence','Freeze applies to school portion of tax bill'] },
   { id: 'collin', label: 'Collin County', district: 'Collin CAD', phone: '(469) 742-9200', website: 'collincad.org', process: ['Apply online at collincad.org or mail Form 50-116','Copy of government-issued ID with birthdate required','Surviving spouses 55+ can maintain freeze if spouse was 65+','Freeze transfers to new home of same or lesser value'] },
   { id: 'denton', label: 'Denton County', district: 'Denton CAD', phone: '(940) 349-3800', website: 'dentoncad.com', process: ['File application with Denton CAD by April 30','Attach photo ID showing age 65 or older','Qualifying year — freeze starts Jan 1 of that year','Once frozen, school taxes cannot increase'] },

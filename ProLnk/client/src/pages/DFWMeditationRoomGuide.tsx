@@ -67,7 +67,7 @@ export default function DFWMeditationRoomGuide() {
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, margin: '40px 0' }}>
           {[
-            { icon: '🔇', title: 'DFW Traffic Noise Reality', body: 'DFW\'s explosive growth means many homes are within 500 ft of busy roads. Acoustic window inserts ($300–$600 per window) add a secondary glazing layer and can reduce noise by 70% without replacing your existing windows.' },
+            { icon: '🔇', title: 'DFW Traffic Noise Reality', body: 'DFW\’s explosive growth means many homes are within 500 ft of busy roads. Acoustic window inserts ($300–$600 per window) add a secondary glazing layer and can reduce noise by 70% without replacing your existing windows.' },
             { icon: '🎨', title: 'Color Science for Calm', body: 'Studies show warm greys (Agreeable Grey, Repose Grey) and soft greens (Sage, Eucalyptus) lower cortisol measurably. Avoid cool whites and blues in meditation rooms — they activate alertness rather than calm.' },
             { icon: '🌿', title: 'Air Quality Matters', body: 'Essential oil diffusers require adequate ventilation to avoid indoor air quality issues. Install a small exhaust fan or ensure 1 air change per hour. Snake plants and peace lilies also remove VOCs naturally.' },
           ].map(card => (

@@ -31,7 +31,7 @@ export default function DFWHVACSessionWrapUp() {
     if (matched) {
       setAnswer(matched.a);
     } else {
-      setAnswer('Great question. Based on 3,300+ pages of DFW HVAC knowledge: the most important thing any DFW homeowner can do is schedule a professional tune-up each spring and fall, maintain a $2,000 emergency reserve, and have a verified HVAC pro\'s contact saved before you need one. ProLnk makes that last step instant — join the waitlist at prolnk.io.');
+      setAnswer('Great question. Based on 3,300+ pages of DFW HVAC knowledge: the most important thing any DFW homeowner can do is schedule a professional tune-up each spring and fall, maintain a $2,000 emergency reserve, and have a verified HVAC pro\’s contact saved before you need one. ProLnk makes that last step instant — join the waitlist at prolnk.io.');
     }
     setSubmitted(true);
   };

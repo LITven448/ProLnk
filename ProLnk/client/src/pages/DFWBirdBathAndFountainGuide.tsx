@@ -65,7 +65,7 @@ export default function DFWBirdBathAndFountainGuide() {
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🌿 DFW Birds Most Attracted to Water Features</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[['American Robin', 'Year-round DFW resident — loves to bathe'], ['Northern Cardinal', 'DFW favorite — visits daily for water'], ['Baltimore Oriole', 'Spring/Fall migrant through DFW on Central Flyway'], ['Ruby-throated Hummingbird', 'Spring/Fall — loves misting fountain spray'], ['White-winged Dove', 'Year-round DFW — drinks daily from baths'], ['Painted Bunting', 'Spring migrant — one of North America\'s most colorful birds']].map(([bird, note]) => (
+            {[['American Robin', 'Year-round DFW resident — loves to bathe'], ['Northern Cardinal', 'DFW favorite — visits daily for water'], ['Baltimore Oriole', 'Spring/Fall migrant through DFW on Central Flyway'], ['Ruby-throated Hummingbird', 'Spring/Fall — loves misting fountain spray'], ['White-winged Dove', 'Year-round DFW — drinks daily from baths'], ['Painted Bunting', 'Spring migrant — one of North America\’s most colorful birds']].map(([bird, note]) => (
               <div key={bird} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <p style={{ color: '#F5E642', fontWeight: 700, margin: '0 0 4px', fontSize: 13 }}>{bird}</p>
                 <p style={{ color: '#64748b', fontSize: 12, margin: 0 }}>{note}</p>

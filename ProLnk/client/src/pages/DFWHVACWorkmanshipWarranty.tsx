@@ -7,15 +7,15 @@ const warrantyTerms = [
     evaluation: 'Meets minimum acceptable standard for DFW. Industry baseline — most reputable contractors offer this.',
     covers: 'All labor costs to repair defects caused by improper installation. Includes refrigerant line issues, electrical connections, duct sealing failures, and thermostat wiring errors from the original install.',
     lookFor: 'Make sure "labor" is explicitly defined. It should cover return trips, diagnostic time, and parts labor — not just the service call fee.',
-    redFlags: 'Any warranty shorter than 1 year. A 90-day labor warranty means the contractor doesn\'t stand behind their work.',
+    redFlags: 'Any warranty shorter than 1 year. A 90-day labor warranty means the contractor doesn\’t stand behind their work.',
   },
   {
     id: '2_year',
     label: '2-Year Labor Warranty',
     evaluation: 'Above average — a signal this contractor is confident in their installation quality.',
-    covers: 'Everything in a 1-year warranty, plus coverage through the second cooling and heating season. DFW\'s extreme heat stress-tests systems hardest in Year 1 and 2.',
+    covers: 'Everything in a 1-year warranty, plus coverage through the second cooling and heating season. DFW\’s extreme heat stress-tests systems hardest in Year 1 and 2.',
     lookFor: 'Confirm the warranty is transferable if you sell the home. This adds resale value and signals contractor confidence.',
-    redFlags: 'Vague language like "defects covered at our discretion." The warranty should list what\'s covered, not leave it up to the contractor.',
+    redFlags: 'Vague language like "defects covered at our discretion." The warranty should list what\’s covered, not leave it up to the contractor.',
   },
   {
     id: '3_year',
@@ -28,10 +28,10 @@ const warrantyTerms = [
   {
     id: 'no_warranty',
     label: 'No Written Labor Warranty',
-    evaluation: 'Unacceptable. Walk away from any DFW HVAC installer who won\'t provide a written labor warranty.',
+    evaluation: 'Unacceptable. Walk away from any DFW HVAC installer who won\’t provide a written labor warranty.',
     covers: 'Nothing — you have no protection if the system fails due to installation error.',
-    lookFor: 'You shouldn\'t be looking for anything. This contractor is not a professional.',
-    redFlags: 'Verbal promises of "we\'ll take care of you" are not warranties. In Texas, without a written warranty, you have limited legal recourse on installation defects.',
+    lookFor: 'You shouldn\’t be looking for anything. This contractor is not a professional.',
+    redFlags: 'Verbal promises of "we\’ll take care of you" are not warranties. In Texas, without a written warranty, you have limited legal recourse on installation defects.',
   },
 ];
 

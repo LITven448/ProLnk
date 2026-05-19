@@ -17,7 +17,7 @@ const assessments: Record<string, { title: string; cause: string; action: string
   },
   door: {
     title: 'Lateral Clay Movement May Be Affecting Piers',
-    cause: 'DFW\'s expansive black clay doesn\'t just move vertically — it moves laterally. This lateral force can push piers sideways, breaking the bracket connection or tilting the pier column.',
+    cause: 'DFW\’s expansive black clay doesn\’t just move vertically — it moves laterally. This lateral force can push piers sideways, breaking the bracket connection or tilting the pier column.',
     action: 'Have an engineer assess pier bracket connections. Look for bracket separation or pier lean. This is common in DFW homes on filled lots or near slopes. Document movement direction.',
     severity: 'Medium-High',
     color: '#f59e0b',
@@ -31,7 +31,7 @@ const assessments: Record<string, { title: string; cause: string; action: string
   },
   water: {
     title: 'Saturated Soil Reducing Pier Friction',
-    cause: 'DFW pier systems rely partly on soil friction along the pier shaft. When the clay is fully saturated (after extended rain), friction capacity drops — temporarily reducing the pier\'s load capacity.',
+    cause: 'DFW pier systems rely partly on soil friction along the pier shaft. When the clay is fully saturated (after extended rain), friction capacity drops — temporarily reducing the pier\’s load capacity.',
     action: 'Monitor the settled area for 2–4 weeks after soil dries. If it recovers fully, the piers may be adequate but marginally sized. If it does not recover, the piers likely did not reach stable soil depth.',
     severity: 'Medium',
     color: '#f59e0b',
@@ -39,7 +39,7 @@ const assessments: Record<string, { title: string; cause: string; action: string
   default: {
     title: 'Select Post-Repair Symptom',
     cause: '',
-    action: 'Choose the symptom you\'re experiencing after a previous foundation repair to assess if your DFW piers may be failing.',
+    action: 'Choose the symptom you\’re experiencing after a previous foundation repair to assess if your DFW piers may be failing.',
     severity: '',
     color: '#64748b',
   },

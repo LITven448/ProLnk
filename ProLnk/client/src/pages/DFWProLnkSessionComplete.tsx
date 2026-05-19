@@ -5,7 +5,7 @@ const roles = ['DFW Homeowner', 'DFW HVAC Pro', 'ProLnk Team Member', 'Andrew (F
 const messages: Record<string, { headline: string; body: string; cta: string; steps: string[] }> = {
   'DFW Homeowner': {
     headline: 'Your DFW Home Is About to Get a Lot Smarter',
-    body: 'You just found the most comprehensive HVAC knowledge base ever built for DFW homeowners. From heat pump sizing to solar-ready prep to cost calculators — it\'s all here. ProLnk connects you with DFW HVAC pros who actually know this stuff.',
+    body: 'You just found the most comprehensive HVAC knowledge base ever built for DFW homeowners. From heat pump sizing to solar-ready prep to cost calculators — it\’s all here. ProLnk connects you with DFW HVAC pros who actually know this stuff.',
     cta: '🏠 Find My DFW HVAC Pro',
     steps: [
       'Browse your specific HVAC question using our DFW resource library',
@@ -16,7 +16,7 @@ const messages: Record<string, { headline: string; body: string; cta: string; st
   },
   'DFW HVAC Pro': {
     headline: 'The Leads Are Here. Are You?',
-    body: 'This knowledge base isn\'t just for homeowners — it positions you as the expert. DFW homeowners using these calculators and guides are ready-to-buy customers. ProLnk connects you with them.',
+    body: 'This knowledge base isn\’t just for homeowners — it positions you as the expert. DFW homeowners using these calculators and guides are ready-to-buy customers. ProLnk connects you with them.',
     cta: '⚡ Join ProLnk as a DFW Pro',
     steps: [
       'Sign up on the ProLnk waitlist — DFW HVAC slots are limited',
@@ -37,7 +37,7 @@ const messages: Record<string, { headline: string; body: string; cta: string; st
     ],
   },
   'Andrew (Founder)': {
-    headline: 'The Machine Ran All Night. Here\'s What\'s Done.',
+    headline: 'The Machine Ran All Night. Here\’s What\’s Done.',
     body: 'Solar-ready HVAC, all-electric path, heat pump ROI calculator, sizing guide, install requirements, and this session complete page — all live, all DFW-specific, all deployed. The content moat deepens. Next: indexing, internal links, and the next vertical.',
     cta: '🚀 Review Next Sprint',
     steps: [

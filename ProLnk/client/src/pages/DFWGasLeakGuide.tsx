@@ -9,7 +9,7 @@ const responses = {
   },
   strong_inside: {
     severity: 'CRITICAL',
-    steps: ['Leave immediately — do not turn on/off any lights or electronics', 'Do not use your phone until you are outside and away from the building', 'Leave the door open as you exit to allow ventilation', 'Call 911 from neighbor\'s phone or safe distance', 'Call Atmos Energy: 1-866-322-8667'],
+    steps: ['Leave immediately — do not turn on/off any lights or electronics', 'Do not use your phone until you are outside and away from the building', 'Leave the door open as you exit to allow ventilation', 'Call 911 from neighbor\’s phone or safe distance', 'Call Atmos Energy: 1-866-322-8667'],
     callTech: 'Tell the technician: strong odor inside home, evacuated, specific room where smell is strongest, type of appliances on gas (furnace, water heater, stove)',
     wait: 'Do not re-enter until fire department and Atmos Energy clear the structure.',
   },

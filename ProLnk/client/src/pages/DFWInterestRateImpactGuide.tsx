@@ -146,7 +146,7 @@ export default function DFWInterestRateImpactGuide() {
 
         <div style={{ background: '#0F172A', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🔒 When to Lock Your Rate in DFW</h2>
-          {['Lock as soon as you go under contract — DFW deals move fast and float risk isn\'t worth it in volatile rate environments.', 'If rates drop after locking, ask about float-down options — some lenders offer one-time adjustment at no cost.', 'Pre-underwritten approval (not just pre-qual) lets you lock faster when you find the right home.', 'In DFW\'s fast market, being locked gives sellers confidence — treat it as a negotiating asset.'].map((tip, i) => (
+          {['Lock as soon as you go under contract — DFW deals move fast and float risk isn\’t worth it in volatile rate environments.', 'If rates drop after locking, ask about float-down options — some lenders offer one-time adjustment at no cost.', 'Pre-underwritten approval (not just pre-qual) lets you lock faster when you find the right home.', 'In DFW\’s fast market, being locked gives sellers confidence — treat it as a negotiating asset.'].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'flex-start' }}>
               <div style={{ minWidth: 24, height: 24, background: '#F5E642', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: '#0A1628', marginTop: 1 }}>{i + 1}</div>
               <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.5 }}>{tip}</div>

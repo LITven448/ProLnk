@@ -6,7 +6,7 @@ const complaints = [
     label: 'Hot or cold spots in rooms',
     guarantee: 'Temperature within 2°F of thermostat setpoint in all occupied rooms',
     holdThem: 'Request a room-by-room temp test with a calibrated thermometer during peak load. Document readings and compare to setpoint.',
-    redFlags: 'Contractor says "that\'s normal" without testing — it\'s not. All rooms should reach setpoint within 30 min of system run time.',
+    redFlags: 'Contractor says "that\’s normal" without testing — it\’s not. All rooms should reach setpoint within 30 min of system run time.',
   },
   {
     id: 'humidity',
@@ -33,8 +33,8 @@ const complaints = [
     id: 'airflow',
     label: 'Weak airflow from vents',
     guarantee: 'Airflow within 10% of design CFM per duct, per ACCA Manual D specifications',
-    holdThem: 'Request a duct balancing report post-install. A quality DFW installer will measure and document each duct\'s airflow.',
-    redFlags: 'No duct sizing calculation provided. Manual D compliance is not optional — it\'s how proper DFW systems are designed.',
+    holdThem: 'Request a duct balancing report post-install. A quality DFW installer will measure and document each duct\’s airflow.',
+    redFlags: 'No duct sizing calculation provided. Manual D compliance is not optional — it\’s how proper DFW systems are designed.',
   },
 ];
 

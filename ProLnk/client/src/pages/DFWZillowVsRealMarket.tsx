@@ -39,9 +39,9 @@ function getZillowAnalysis(area: string, type: string): ZillowResult {
     accuracy: 'Very Poor (often 10–20% off)',
     avgError: '$25,000–$80,000 typical error',
     direction: 'Almost always undervalues — cannot account for upgrades and community premiums',
-    betterAlternatives: ['Builder\'s base price + upgrade list', 'Ask builder sales agent for community comps', 'Compare to builder\'s price sheet for same plan'],
+    betterAlternatives: ['Builder\’s base price + upgrade list', 'Ask builder sales agent for community comps', 'Compare to builder\’s price sheet for same plan'],
     whyTexas: 'New construction upgrades are not in public records. Texas non-disclosure makes builder pricing completely opaque to Zillow.',
-    action: 'For new construction in DFW, trust the builder\'s price sheet and compare to inventory homes in the same community.',
+    action: 'For new construction in DFW, trust the builder\’s price sheet and compare to inventory homes in the same community.',
   };
   if (isOuterSuburb) return {
     accuracy: 'Moderate (4–8% off)',

@@ -96,7 +96,7 @@ export default function DFWDrivewayParkingIncomeGuide() {
               { venue: 'Globe Life Field', team: 'Texas Rangers', events: '81+ home games/yr' },
               { venue: 'AT&T Stadium', team: 'Dallas Cowboys', events: '10+ events/yr, avg 80K fans' },
               { venue: 'American Airlines Center', team: 'Mavs & Stars', events: '100+ events/yr' },
-              { venue: 'DFW Airport', team: 'World\'s 2nd busiest airport', events: '75M passengers/yr' },
+              { venue: 'DFW Airport', team: 'World\’s 2nd busiest airport', events: '75M passengers/yr' },
               { venue: 'Toyota Music Factory', team: 'Irving concert venue', events: '200+ shows/yr' },
             ].map(v => (
               <div key={v.venue} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 14px', background: 'rgba(255,255,255,0.05)', borderRadius: 8 }}>

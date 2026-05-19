@@ -12,13 +12,13 @@ const warrantyTypes = [
       'Shingle splitting or cracking from defect',
     ],
     exclusions: [
-      'Improper installation (your roofer\'s fault, not manufacturer\'s)',
+      'Improper installation (your roofer\’s fault, not manufacturer\’s)',
       'Acts of God — wind, hail, lightning',
       'Damage from walking on roof without protection',
       'Improper attic ventilation — voids immediately',
       'Any modification by unlicensed contractor',
     ],
-    dfwNote: 'DFW\'s extreme UV and heat (120°F+ attic temps) accelerate shingle aging. Manufacturer warranties are prorated — 30-year warranty pays about 10% of cost in year 25.',
+    dfwNote: 'DFW\’s extreme UV and heat (120°F+ attic temps) accelerate shingle aging. Manufacturer warranties are prorated — 30-year warranty pays about 10% of cost in year 25.',
     transferable: 'Sometimes — usually one transfer, often $100–$150 fee',
   },
   {
@@ -38,7 +38,7 @@ const warrantyTypes = [
       'Damage from HVAC equipment on roof',
       'Contractor goes out of business — warranty worthless',
     ],
-    dfwNote: 'Storm chasers offer lifetime workmanship warranties they know they\'ll never honor. A 5-year warranty from a 20-year DFW company beats a lifetime from a storm chaser.',
+    dfwNote: 'Storm chasers offer lifetime workmanship warranties they know they\’ll never honor. A 5-year warranty from a 20-year DFW company beats a lifetime from a storm chaser.',
     transferable: 'Rarely — dies when contractor goes out of business',
   },
   {
@@ -78,7 +78,7 @@ const warrantyTypes = [
       'Excludes hail damage (separate rider available in some markets)',
       'Voids if ventilation requirements not met per code',
     ],
-    dfwNote: 'OC Platinum\'s corporate backing is a key advantage — if your installer goes out of business, OC still honors the warranty. Worth the premium for DFW homeowners planning to sell.',
+    dfwNote: 'OC Platinum\’s corporate backing is a key advantage — if your installer goes out of business, OC still honors the warranty. Worth the premium for DFW homeowners planning to sell.',
     transferable: 'Yes — one transfer, free of charge',
   },
 ];
@@ -87,7 +87,7 @@ const voidReasons = [
   { icon: '💨', title: 'Improper Ventilation', desc: 'DFW attics need 1 sq ft of ventilation per 150 sq ft. Too little traps heat and moisture, destroying shingles from below. Most warranty voids trace back here.' },
   { icon: '🚶', title: 'Walking Damage', desc: 'HVAC technicians, solar installers, or satellite dish crews walking a roof without proper footwear and protection can crack shingles and void warranties without visible exterior damage.' },
   { icon: '☀️', title: 'Adding Solar Incorrectly', desc: 'Penetrating the roof deck for solar mounts without re-flashing and coordinating with your roofer voids both workmanship and manufacturer warranties.' },
-  { icon: '🧹', title: 'Pressure Washing', desc: 'Power washing removes granules — your shingles\' UV protection. Even one cleaning can accelerate aging by 5-10 years and void algae warranty clauses.' },
+  { icon: '🧹', title: 'Pressure Washing', desc: 'Power washing removes granules — your shingles\’ UV protection. Even one cleaning can accelerate aging by 5-10 years and void algae warranty clauses.' },
 ];
 
 export default function DFWRoofingWarrantyGuide() {

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const YEAR_END_TASKS = [
-  { id: 'tax', label: '💰 Pay Property Taxes Before Dec 31', content: 'DFW property taxes are due January 31, but paying before December 31 allows you to deduct them on the current year\'s federal return (if itemizing). The SALT deduction cap is $10,000 — factor this into your strategy with your CPA.' },
+  { id: 'tax', label: '💰 Pay Property Taxes Before Dec 31', content: 'DFW property taxes are due January 31, but paying before December 31 allows you to deduct them on the current year\’s federal return (if itemizing). The SALT deduction cap is $10,000 — factor this into your strategy with your CPA.' },
   { id: 'credits', label: '⚡ Complete Projects for 25C Credits', content: 'Federal 25C energy tax credits (30%, up to $3,200/year) require the project to be completed and paid in the same tax year. Heat pump HVAC, insulation, and ENERGY STAR windows must be installed by December 31 to claim current-year credits.' },
   { id: 'booking', label: '📅 Book January-February Projects Now', content: 'DFW contractors are least busy January through February. Book roofing, foundation inspections, interior painting, and kitchen remodels now for 10-25% better pricing and guaranteed scheduling. Demand spikes again in March.' },
-  { id: 'insurance', label: '🛡️ Update Home Insurance', content: 'Year-end is the ideal time to review your homeowner\'s policy. DFW hail and wind events frequently trigger undercoverage issues. Request a coverage review and ensure your dwelling limit matches current reconstruction costs (DFW labor costs have risen 30% since 2020).' },
-  { id: 'hvac', label: '❄️ HVAC Winter Prep', content: 'DFW\'s occasional hard freezes (like Winter Storm Uri in 2021) expose heating vulnerabilities. Schedule a furnace/heat pump inspection in November before demand spikes. Replace filters, check heat exchanger integrity, and verify thermostat calibration.' },
+  { id: 'insurance', label: '🛡️ Update Home Insurance', content: 'Year-end is the ideal time to review your homeowner\’s policy. DFW hail and wind events frequently trigger undercoverage issues. Request a coverage review and ensure your dwelling limit matches current reconstruction costs (DFW labor costs have risen 30% since 2020).' },
+  { id: 'hvac', label: '❄️ HVAC Winter Prep', content: 'DFW\’s occasional hard freezes (like Winter Storm Uri in 2021) expose heating vulnerabilities. Schedule a furnace/heat pump inspection in November before demand spikes. Replace filters, check heat exchanger integrity, and verify thermostat calibration.' },
   { id: 'pipes', label: '🔧 Freeze Protection', content: 'Insulate exposed pipes in garages, crawl spaces, and attic runs before December. Know where your main water shutoff is located. Keep interior heat above 55°F during hard freeze events. A single burst pipe in DFW averages $8,000-$15,000 in damage.' },
 ];
 

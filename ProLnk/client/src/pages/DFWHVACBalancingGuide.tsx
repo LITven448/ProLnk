@@ -3,7 +3,7 @@ import { useState } from 'react';
 const causes: Record<string, Record<string, { cause: string; solutions: { label: string; cost: string }[] }>> = {
   hot: {
     small: { cause: 'Likely duct leakage or undersized supply register near exterior walls', solutions: [{ label: 'Seal duct leaks (DIY mastic)', cost: '$50–$150' }, { label: 'Add booster fan to supply', cost: '$80–$200' }, { label: 'Mini-split supplemental', cost: '$1,800–$3,500' }] },
-    large: { cause: 'Common in DFW large homes — single-zone system can\'t serve all areas equally; west-facing rooms worst', solutions: [{ label: 'Add zoning board + dampers', cost: '$1,500–$3,000' }, { label: 'Mini-split for hot zone', cost: '$2,000–$4,500' }, { label: 'ERV for fresh air balance', cost: '$1,200–$2,500' }] },
+    large: { cause: 'Common in DFW large homes — single-zone system can\’t serve all areas equally; west-facing rooms worst', solutions: [{ label: 'Add zoning board + dampers', cost: '$1,500–$3,000' }, { label: 'Mini-split for hot zone', cost: '$2,000–$4,500' }, { label: 'ERV for fresh air balance', cost: '$1,200–$2,500' }] },
   },
   cold: {
     small: { cause: 'Oversized supply or damper too open; cold air dumping near return', solutions: [{ label: 'Partially close supply damper', cost: 'DIY free' }, { label: 'Rebalance duct system', cost: '$300–$600' }, { label: 'Install zone damper control', cost: '$800–$1,500' }] },

@@ -8,7 +8,7 @@ const solutions: Record<string, Record<string, Solution>> = {
     recurring: { cause: 'Deep grease + soap scum layer in P-trap and drain line', approach: '🔧 Remove and clean P-trap ($0 DIY). Then enzyme drain cleaner for 48 hrs. For main line — hydro-jetting recommended.', diy: '$15-30', pro: '$200-500', proWhen: 'After 2 DIY attempts fail' },
   },
   bathroom: {
-    first: { cause: 'Hair + DFW hard water soap scum combination', approach: '🔓 Drain snake (Zip-It tool $3). DFW hard water turns soap into solid calcium soap — physically remove, don't dissolve.', diy: '$3-15', pro: '$85-150', proWhen: 'If snake won't reach or pull clog' },
+    first: { cause: 'Hair + DFW hard water soap scum combination', approach: '🔓 Drain snake (Zip-It tool $3). DFW hard water turns soap into solid calcium soap — physically remove, don’t dissolve.', diy: '$3-15', pro: '$85-150', proWhen: 'If snake won’t reach or pull clog' },
     recurring: { cause: 'Soap scum scale lining drain walls', approach: '⚗️ Enzyme drain cleaner monthly. DFW mineral deposits bind with hair creating rock-hard clogs. Consider installing hair catcher immediately.', diy: '$20-40', pro: '$150-300', proWhen: 'Monthly clogs = professional hydro-jet' },
   },
   mainline: {

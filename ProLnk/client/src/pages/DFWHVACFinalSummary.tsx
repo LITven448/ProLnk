@@ -16,7 +16,7 @@ type SummarySection = { icon: string; title: string; content: string };
 
 const summaryByVintage: Record<HomeVintage, SummarySection[]> = {
   '1960s': [
-    { icon: '📐', title: 'Sizing', content: 'Homes from this era were often built for window units — central HVAC was added later and may be dramatically oversized for today's insulation levels. Manual J load calc is essential before replacement. Expect to downsize.' },
+    { icon: '📐', title: 'Sizing', content: 'Homes from this era were often built for window units — central HVAC was added later and may be dramatically oversized for today’s insulation levels. Manual J load calc is essential before replacement. Expect to downsize.' },
     { icon: '⚡', title: 'Efficiency', content: 'Attic insulation is likely R-11 or less. Duct leakage is high. Upgrade insulation before HVAC — the system size drops significantly and efficiency gains multiply. SEER2 16+ recommended.' },
     { icon: '🏭', title: 'Equipment', content: 'R-22 refrigerant systems very likely still present. Full replacement required — R-22 is no longer manufactured. Budget $10,000-$15,000 for system plus duct sealing.' },
     { icon: '📝', title: 'Warranty', content: 'Any existing warranty is long expired. Full documentation reset on new system: register within 60 days, keep all service records from day one.' },

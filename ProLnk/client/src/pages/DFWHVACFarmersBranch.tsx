@@ -9,9 +9,9 @@ function getAssessment(age: string, vintage: string) {
   const total = ageScore * 2 + (4 - vintageScore);
   const cost = 4500 + ageScore * 1200 + (4 - vintageScore) * 400;
   if (total >= 10) return { urgency: 'REPLACE NOW', detail: 'System is near or past end-of-life. Efficiency losses are costing you money monthly. Old ductwork in pre-1980s homes may need replacement too.', estimate: `$${cost.toLocaleString()}–$${(cost + 2500).toLocaleString()}`, color: '#FF4444' };
-  if (total >= 6) return { urgency: 'PLAN REPLACEMENT', detail: 'Within 2-3 years you\'ll need a new system. Start budgeting now. Consider a tune-up to extend life and lower bills.', estimate: `$${cost.toLocaleString()}–$${(cost + 2000).toLocaleString()}`, color: '#FF8C00' };
+  if (total >= 6) return { urgency: 'PLAN REPLACEMENT', detail: 'Within 2-3 years you\’ll need a new system. Start budgeting now. Consider a tune-up to extend life and lower bills.', estimate: `$${cost.toLocaleString()}–$${(cost + 2000).toLocaleString()}`, color: '#FF8C00' };
   if (total >= 3) return { urgency: 'MAINTAIN & MONITOR', detail: 'System has good life remaining. Annual tune-ups and filter changes keep efficiency high. Watch for unusual sounds or rising bills.', estimate: '$150–$350/year maintenance', color: '#F5E642' };
-  return { urgency: 'IN GOOD SHAPE', detail: 'Newer system in a well-built home. Keep up with filter changes and annual inspections. You\'re in great shape.', estimate: '$100–$200/year maintenance', color: '#44FF88' };
+  return { urgency: 'IN GOOD SHAPE', detail: 'Newer system in a well-built home. Keep up with filter changes and annual inspections. You\’re in great shape.', estimate: '$100–$200/year maintenance', color: '#44FF88' };
 }
 
 export default function DFWHVACFarmersBranch() {

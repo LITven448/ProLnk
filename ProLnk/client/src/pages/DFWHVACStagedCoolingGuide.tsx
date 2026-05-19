@@ -9,7 +9,7 @@ function getStagedAssessment(situation: string, humidity: string) {
   const recommendation = hasHumidityIssue ? 'Two-Stage or Variable Speed — Strong Recommendation' : isNewOrReplace ? 'Two-Stage — Recommended for DFW' : 'Two-Stage worthwhile — cost/benefit favorable';
   const humidityImprovement = hasHumidityIssue ? '30–50% improvement in relative humidity control' : 'Noticeable improvement, especially June–September';
   const costPremium = '$600–$1,400 over single-stage at time of installation';
-  const dfwAdvantage = 'DFW\'s long humid shoulder seasons (May, October) make two-stage run times ideal — low-stage dehumidifies while maintaining comfort at lower cost';
+  const dfwAdvantage = 'DFW\’s long humid shoulder seasons (May, October) make two-stage run times ideal — low-stage dehumidifies while maintaining comfort at lower cost';
   const payback = hasHumidityIssue ? '2–4 years via energy savings + avoided dehumidifier costs' : '4–7 years via energy savings alone';
   return { recommendation, humidityImprovement, costPremium, dfwAdvantage, payback };
 }

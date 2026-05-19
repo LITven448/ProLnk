@@ -27,7 +27,7 @@ export default function DFWDuctworkGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🔍', title: 'Signs of Duct Problems', body: 'Rooms that won't cool below 78°F, high electric bills vs. neighbors, dusty vents, AC running constantly, musty smell from vents.' },
+            { icon: '🔍', title: 'Signs of Duct Problems', body: 'Rooms that won’t cool below 78°F, high electric bills vs. neighbors, dusty vents, AC running constantly, musty smell from vents.' },
             { icon: '🧪', title: 'Blower Door Test', body: '$300-500 professional test quantifies duct leakage. Results show CFM25 — target under 8% of system capacity. Many DFW homes test at 20-35%.' },
             { icon: '🔧', title: 'Sealing vs Replacement', body: 'Sealing with mastic or Aeroseal ($1,200-2,500) fixes minor leaks. Full replacement ($3,000-7,000) needed for collapsed or severely degraded ductwork.' },
             { icon: '🌡️', title: 'Attic Insulation Impact', body: 'Wrap attic ducts in R-8 minimum. Radiant barrier on roof deck reduces radiant heat load 25-40°F — less heat soaking through duct walls.' },

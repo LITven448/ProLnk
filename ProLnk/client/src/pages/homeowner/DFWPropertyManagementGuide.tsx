@@ -49,7 +49,7 @@ export default function DFWPropertyManagementGuide() {
               { metric: 'Tenant Screening Time', value: '5–15 hours per vacancy', note: 'Applications, credit checks, calls, background screening, decision' },
               { metric: 'Maintenance Coordination', value: '2–5 hours/month ongoing', note: 'Fielding requests, scheduling, overseeing, follow-up per property' },
               { metric: 'Legal Compliance', value: 'Constantly changing', note: 'TX landlord-tenant law, fair housing, habitability standards, lease updates' },
-              { metric: 'Emergency Calls', value: 'Your phone, any hour', note: 'AC failures in July, burst pipes at 2am — it's your responsibility' },
+              { metric: 'Emergency Calls', value: 'Your phone, any hour', note: 'AC failures in July, burst pipes at 2am — it’s your responsibility' },
               { metric: 'DIY Threshold', value: '1–3 properties', note: 'Most landlords self-manage here. Consider hiring at 4+ properties.' },
             ].map(item => (
               <div key={item.metric} style={{ background: '#1a0f1a', border: '1px solid #2a1a2a', borderRadius: 10, padding: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
@@ -69,7 +69,7 @@ export default function DFWPropertyManagementGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
             {[
               { label: 'Monthly Management', range: '8–12% of collected rent', desc: 'The core ongoing fee. On $2,000/month rent = $160–$240/month.' },
-              { label: 'Tenant Placement', range: '50–100% of first month's rent', desc: 'One-time fee when they find and place a new tenant. On $2,000 rent = $1,000–$2,000.' },
+              { label: 'Tenant Placement', range: '50–100% of first month’s rent', desc: 'One-time fee when they find and place a new tenant. On $2,000 rent = $1,000–$2,000.' },
               { label: 'Lease Renewal', range: '$200–$400', desc: 'Charged each time an existing tenant renews. Negotiate this or get it waived.' },
               { label: 'Maintenance Markup', range: '5–15% on repairs', desc: 'Some PMs mark up contractor invoices. Ask upfront — it should be disclosed.' },
             ].map(item => (

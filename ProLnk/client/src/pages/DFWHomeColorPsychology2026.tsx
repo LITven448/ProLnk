@@ -13,7 +13,7 @@ const colorMap: Record<string, Record<string, { color: string; hex: string; note
   },
   'Energizing': {
     'North-facing': { color: 'Citron Yellow', hex: '#D4C84A', note: 'Bring DFW sunshine indoors — citron compensates for the lack of direct light.' },
-    'South-facing': { color: 'Terracotta', hex: '#C1654A', note: 'South light amplifies warm tones — terracotta thrives in DFW's intense south exposure.' },
+    'South-facing': { color: 'Terracotta', hex: '#C1654A', note: 'South light amplifies warm tones — terracotta thrives in DFW’s intense south exposure.' },
     'East-facing': { color: 'Coral Spice', hex: '#E07850', note: 'Morning east sun makes coral sing — perfect DFW wake-up energy.' },
     'West-facing': { color: 'Burnt Amber', hex: '#C47830', note: 'West afternoon sun turns amber into liquid gold in DFW light.' },
   },

@@ -25,7 +25,7 @@ const phases = [
     steps: [
       { when: 'Days 1–3', action: 'Listed on MLS + Zillow + Realtor. Expect 50–80% of all showings in the first week.' },
       { when: 'Days 3–7', action: 'Offers typically come in during week 1 in hot DFW markets. Multiple offers are common in spring.' },
-      { when: 'Days 7–30', action: 'If no offer by day 10, evaluate immediately: price, condition, photos, staging. Don't wait.' },
+      { when: 'Days 7–30', action: 'If no offer by day 10, evaluate immediately: price, condition, photos, staging. Don’t wait.' },
     ],
   },
   {
@@ -37,7 +37,7 @@ const phases = [
     months: 1,
     steps: [
       { when: 'Days 1–10 (Option Period)', action: 'Buyer inspection and renegotiation. Most deals are renegotiated here. Be ready for repair requests or price adjustments.' },
-      { when: 'Days 11–30', action: 'Appraisal ordered by buyer's lender. Financing approval process. Keep home in show-ready condition.' },
+      { when: 'Days 11–30', action: 'Appraisal ordered by buyer’s lender. Financing approval process. Keep home in show-ready condition.' },
       { when: 'Days 30–45', action: 'Final walkthrough by buyer. Closing documents prepared. Title company coordinates with both parties.' },
       { when: 'Days 45–60', action: 'Closing day. You receive proceeds by wire. Keys transfer. Transaction complete.' },
     ],

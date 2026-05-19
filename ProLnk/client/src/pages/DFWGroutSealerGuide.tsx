@@ -73,8 +73,8 @@ export default function DFWGroutSealerGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚠️ DFW-Specific Grout Threats</h2>
           {[
             { icon: '💧', title: 'Hard Water Scale', desc: 'DFW tap water averages 15–25 grains of hardness. Mineral deposits penetrate unsealed grout and cause permanent white staining. Seal before first use.' },
-            { icon: '🌫️', title: 'Clay Dust Infiltration', desc: 'DFW\'s Blackland Prairie clay dust is ultra-fine and oil-absorbing. It infiltrates grout pores and causes gray discoloration that ordinary cleaning cannot remove.' },
-            { icon: '☀️', title: 'UV Degradation (Exterior)', desc: 'DFW\'s 234+ sunny days per year degrade surface sealers rapidly. Use penetrating sealers on exterior grout — they won\'t peel or chalk.' },
+            { icon: '🌫️', title: 'Clay Dust Infiltration', desc: 'DFW\’s Blackland Prairie clay dust is ultra-fine and oil-absorbing. It infiltrates grout pores and causes gray discoloration that ordinary cleaning cannot remove.' },
+            { icon: '☀️', title: 'UV Degradation (Exterior)', desc: 'DFW\’s 234+ sunny days per year degrade surface sealers rapidly. Use penetrating sealers on exterior grout — they won\’t peel or chalk.' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.icon} {item.title}</div>

@@ -13,7 +13,7 @@ const symptoms = [
   'Door reverses when closing',
   'Door moves slowly or strains',
   'Loud banging or grinding',
-  'Door won't stay closed',
+  'Door won’t stay closed',
   'Safety sensor light blinking',
 ];
 
@@ -21,7 +21,7 @@ const getDiag = (sym: string) => {
   if (sym === 'Door reverses when closing') return 'Photo eyes are blocked or misaligned. Clean both sensors and check alignment — LED should be solid, not blinking.';
   if (sym === 'Door moves slowly or strains') return 'Springs likely out of balance or worn. Do the balance test. DFW heat accelerates spring fatigue — check tension.';
   if (sym === 'Loud banging or grinding') return 'Lubricate springs, rollers, and hinges with white lithium grease. Check for broken rollers (crack or flat spot).';
-  if (sym === 'Door won't stay closed') return 'Track misalignment from DFW thermal expansion. Check for gaps in tracks and adjust mounting brackets to re-plumb.';
+  if (sym === 'Door won’t stay closed') return 'Track misalignment from DFW thermal expansion. Check for gaps in tracks and adjust mounting brackets to re-plumb.';
   return 'Safety sensor fault. Check wiring for pinches or fraying. Clean both lenses. Confirm 6-inch height from floor.';
 };
 

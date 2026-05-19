@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const recommendations: Record<string, { dimmer: string; neutral: string; cost: string; note: string }> = {
-  led_smart: { dimmer: 'Lutron Caseta PD-6WCL', neutral: 'No neutral required', cost: '$60–$80', note: 'Best for DFW — Lutron mesh is far more reliable than Z-Wave in DFW\'s dense suburbs.' },
+  led_smart: { dimmer: 'Lutron Caseta PD-6WCL', neutral: 'No neutral required', cost: '$60–$80', note: 'Best for DFW — Lutron mesh is far more reliable than Z-Wave in DFW\’s dense suburbs.' },
   led_basic: { dimmer: 'Lutron Diva DVELV-300P', neutral: 'Not required', cost: '$25–$40', note: 'Eliminates buzzing from most LED bulbs. Check bulb compatibility list on Lutron site.' },
   incandescent_smart: { dimmer: 'Lutron Caseta PD-6ANS', neutral: 'Required — check your box', cost: '$65–$85', note: 'Works with any incandescent load. If no neutral wire, use PD-6WCL instead.' },
   incandescent_basic: { dimmer: 'Lutron Skylark CL', neutral: 'Not required', cost: '$15–$25', note: 'Simple, reliable, no-fuss dimmer for traditional incandescent bulbs.' },

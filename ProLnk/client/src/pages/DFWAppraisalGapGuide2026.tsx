@@ -51,7 +51,7 @@ export default function DFWAppraisalGapGuide2026() {
 
           <div style={{ background: `${decisionColors[decision]}22`, border: `2px solid ${decisionColors[decision]}`, borderRadius: 10, padding: 20 }}>
             <div style={{ fontWeight: 800, fontSize: 18, color: decisionColors[decision] }}>
-              {decision === 'APPRAISE_OK' && '✅ You\'re in the Clear!'}
+              {decision === 'APPRAISE_OK' && '✅ You\’re in the Clear!'}
               {decision === 'COVER_GAP' && '💰 Cover the Small Gap'}
               {decision === 'CONSIDER_COVERING' && '⚠️ Consider Covering — But Negotiate First'}
               {decision === 'NEGOTIATE_OR_WALK' && '🚨 Negotiate Hard or Walk Away'}
@@ -59,7 +59,7 @@ export default function DFWAppraisalGapGuide2026() {
             <div style={{ color: '#94A3B8', marginTop: 8, fontSize: 14 }}>
               {decision === 'APPRAISE_OK' && 'Home appraised at or above offer — your lender is happy and you have no gap to cover.'}
               {decision === 'COVER_GAP' && `$${gap.toLocaleString()} is manageable. Paying the gap makes sense if you love the home and the market's competitive.`}
-              {decision === 'CONSIDER_COVERING' && 'Ask the seller to reduce price first. If they won\'t budge, weigh the gap against how much you want this home.'}
+              {decision === 'CONSIDER_COVERING' && 'Ask the seller to reduce price first. If they won\’t budge, weigh the gap against how much you want this home.'}
               {decision === 'NEGOTIATE_OR_WALK' && 'This gap is significant. Try renegotiating the price, challenge the appraisal with recent comps, or protect yourself with an appraisal contingency.'}
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function DFWAppraisalGapGuide2026() {
         <div style={{ background: '#1E293B', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🛠️ Your 4 Options When There's a Gap</h2>
           {[
-            ['1', 'Pay the Difference in Cash', 'Bridge the gap from savings. Only works if you have the reserves — and it\'s worth it to you.', '#34D399'],
+            ['1', 'Pay the Difference in Cash', 'Bridge the gap from savings. Only works if you have the reserves — and it\’s worth it to you.', '#34D399'],
             ['2', 'Renegotiate the Price', 'Use the appraisal as leverage to ask seller to reduce. Works best in a slower market.', '#60A5FA'],
             ['3', 'Challenge the Appraisal', 'Provide recent comparable sales to the appraiser. If the comps support it, they can revise upward.', '#F5E642'],
             ['4', 'Walk Away', 'If you have an appraisal contingency, you can exit without losing your earnest money. Know your rights.', '#F87171'],

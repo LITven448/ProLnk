@@ -30,7 +30,7 @@ export default function DFWMicrobialControlGuide2026() {
       mold: [
         '🔬 Mini-split coils are notorious for mold — run fan-only mode after cooling',
         '💨 10-minute fan-only cooldown dries the coil and prevents mold growth',
-        '🧽 Clean washable filters every 2 weeks in DFW's humid summers',
+        '🧽 Clean washable filters every 2 weeks in DFW’s humid summers',
         '🛠️ Professional coil cleaning annually — mold hides in fins',
       ],
       bacteria: [

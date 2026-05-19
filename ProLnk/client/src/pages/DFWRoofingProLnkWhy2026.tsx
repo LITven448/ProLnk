@@ -11,13 +11,13 @@ export default function DFWRoofingProLnkWhy2026() {
     } else if (concern === 'unlicensed') {
       setResult('✅ LICENSE + INSURANCE VERIFIED — ProLnk requires current Texas roofing license and general liability insurance before activation. We re-verify annually. You see the license number before booking.');
     } else if (concern === 'cant-find-anyone') {
-      setResult('⚡ FAST MATCH DURING HAIL SEASON — This is ProLnk's biggest advantage. Our Charter pros stay on platform year-round. During hail season when everyone else is overloaded, ProLnk matches you within hours — not weeks.');
+      setResult('⚡ FAST MATCH DURING HAIL SEASON — This is ProLnk’s biggest advantage. Our Charter pros stay on platform year-round. During hail season when everyone else is overloaded, ProLnk matches you within hours — not weeks.');
     } else if (concern === 'up-front-payment') {
       setResult('✅ NO UP-FRONT PAYMENT PRESSURE — ProLnk pros are prohibited from requiring full payment before work starts. Standard: 0% up front, 50% at start, 50% at completion. Any pro asking for full payment up front is flagged.');
     } else if (concern === 'quality') {
       setResult('⭐ PERFORMANCE SCORE RATED — Every ProLnk roofer has a public performance score based on real job ratings. Low-rated pros are removed from the platform. You see the score before you match.');
     } else {
-      setResult('ProLnk's DFW roofing network combines local verification, licensing checks, performance ratings, and fast matching — the combination that storm-chaser directories can't offer.');
+      setResult('ProLnk’s DFW roofing network combines local verification, licensing checks, performance ratings, and fast matching — the combination that storm-chaser directories can’t offer.');
     }
   };
 

@@ -28,7 +28,7 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
     { title: 'EV Charger Installation Business in DFW 2026', desc: 'The fastest-growing electrical service in North Texas homes.', tag: 'Growth Niche' },
   ],
   roofing: [
-    { title: 'Texas Roofing License Requirements 2026', desc: 'What\'s required, what\'s not, and what protects your business.', tag: 'Licensing' },
+    { title: 'Texas Roofing License Requirements 2026', desc: 'What\’s required, what\’s not, and what protects your business.', tag: 'Licensing' },
     { title: 'Hail Season Business Planning for DFW Roofers', desc: 'Scaling crew, subs, and materials for storm surge in North Texas.', tag: 'Operations' },
     { title: 'Insurance Claim Process for DFW Roofing Contractors', desc: 'Supplement claims, Xactimate, and Matterport for roofing pros.', tag: 'Insurance Jobs' },
     { title: 'ProLnk Charter for DFW Roofers — Storm Lead System', desc: 'Get matched with homeowners immediately after DFW hailstorms.', tag: '⭐ Charter' },

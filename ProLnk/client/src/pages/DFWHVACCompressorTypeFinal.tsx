@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const problemOptions = ['Can\'t keep up with DFW heat (100°F+ days)', 'High humidity indoors even when cool', 'Huge electric bills in summer', 'Short cycling — turns on/off constantly', 'Noise from the outdoor unit', 'Want best long-term efficiency'];
+const problemOptions = ['Can\’t keep up with DFW heat (100°F+ days)', 'High humidity indoors even when cool', 'Huge electric bills in summer', 'Short cycling — turns on/off constantly', 'Noise from the outdoor unit', 'Want best long-term efficiency'];
 const budgetOptions = ['Under $5,000', '$5,000–$8,000', '$8,000–$12,000', '$12,000+', 'Best value for the money'];
 
 const getCompressorRec = (problem: string, budget: string) => {
@@ -11,7 +11,7 @@ const getCompressorRec = (problem: string, budget: string) => {
   if (problem.includes('humidity') || problem.includes('Short cycling')) return {
     type: 'Variable Speed Compressor',
     brands: 'Carrier Infinity, Lennox XC21, Trane XV20i',
-    reason: 'Variable speed runs at low capacity for long cycles — exactly what DFW needs for humidity control. Short cycles can\'t dehumidify; variable speed removes moisture continuously.',
+    reason: 'Variable speed runs at low capacity for long cycles — exactly what DFW needs for humidity control. Short cycles can\’t dehumidify; variable speed removes moisture continuously.',
     dfwBenefit: 'Can drop indoor RH from 65% to 45% without overcooling — critical for DFW summers',
     costPremium: '$2,000–$4,000 over two-stage',
     payback: '4–7 years via energy savings + comfort'
@@ -19,7 +19,7 @@ const getCompressorRec = (problem: string, budget: string) => {
   if (problem.includes('bills') && isHighBudget) return {
     type: 'Variable Speed Compressor',
     brands: 'Carrier Infinity, Lennox XC21, Daikin DX20VC',
-    reason: 'In DFW\'s 7-month cooling season, variable speed saves 30-40% vs single-stage. The longer the season, the faster the payback.',
+    reason: 'In DFW\’s 7-month cooling season, variable speed saves 30-40% vs single-stage. The longer the season, the faster the payback.',
     dfwBenefit: '~$600–$900/year savings for a 2,500 sqft DFW home vs. single-stage',
     costPremium: '$3,000–$5,000 more than single-stage',
     payback: '4–6 years then pure savings'
@@ -35,8 +35,8 @@ const getCompressorRec = (problem: string, budget: string) => {
   if (problem.includes('keep up') || problem.includes('100°F')) return {
     type: 'Variable Speed or Two-Stage',
     brands: 'Check SEER2 rating + proper sizing first',
-    reason: 'If the system can\'t keep up, it may be undersized first. But if sized correctly, variable speed maintains comfort even at 105°F by matching load precisely.',
-    dfwBenefit: 'Proper sizing matters — an oversized single-stage unit cools fast but can\'t handle DFW humidity',
+    reason: 'If the system can\’t keep up, it may be undersized first. But if sized correctly, variable speed maintains comfort even at 105°F by matching load precisely.',
+    dfwBenefit: 'Proper sizing matters — an oversized single-stage unit cools fast but can\’t handle DFW humidity',
     costPremium: '$1,500–$4,000 depending on type chosen',
     payback: '3–7 years'
   };
@@ -44,7 +44,7 @@ const getCompressorRec = (problem: string, budget: string) => {
     type: 'Two-Stage Compressor',
     brands: 'Carrier 24ACC, Lennox XC17, Rheem RA17',
     reason: 'Two-stage is the DFW sweet spot — significantly better than single-stage for humidity and efficiency, without the full variable speed premium.',
-    dfwBenefit: '60-70% low-stage operation in DFW\'s mild shoulder seasons cuts bills and noise',
+    dfwBenefit: '60-70% low-stage operation in DFW\’s mild shoulder seasons cuts bills and noise',
     costPremium: '$800–$1,500 over single-stage',
     payback: '3–5 years'
   };

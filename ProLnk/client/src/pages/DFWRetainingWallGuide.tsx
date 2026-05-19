@@ -96,7 +96,7 @@ export default function DFWRetainingWallGuide() {
         <div style={styles.card}>
           <div style={styles.cardTitle}><span>🏔️</span> When You Need a Retaining Wall in DFW</div>
           <ul style={styles.list}>
-            {['Your lot has a slope over 2 feet of elevation change', 'Soil is eroding from your yard after heavy rains', 'You\'re adding a pool deck and need level ground', 'You want to create terraced garden beds on a hillside', 'A neighbor\'s drainage is pushing water onto your property', 'Building a driveway cut that exposes a soil face'].map((item, i) => <li key={i} style={styles.listItem}><span>🔸</span><span>{item}</span></li>)}
+            {['Your lot has a slope over 2 feet of elevation change', 'Soil is eroding from your yard after heavy rains', 'You\’re adding a pool deck and need level ground', 'You want to create terraced garden beds on a hillside', 'A neighbor\’s drainage is pushing water onto your property', 'Building a driveway cut that exposes a soil face'].map((item, i) => <li key={i} style={styles.listItem}><span>🔸</span><span>{item}</span></li>)}
           </ul>
         </div>
 

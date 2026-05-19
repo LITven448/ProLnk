@@ -43,7 +43,7 @@ const PHASES = [
       'Flush water heater tank to remove sediment',
       'Clean dryer vent duct from exterior — fire risk in DFW heat',
       'Inspect caulking around tubs, showers, and kitchen sink',
-      'Check attic insulation and ensure vents aren\'t blocked',
+      'Check attic insulation and ensure vents aren\’t blocked',
       'Deep clean range hood filter and test exhaust fan',
       'Apply weatherstripping to exterior doors if drafts noticed',
       'Test sprinkler zones and adjust heads for season',

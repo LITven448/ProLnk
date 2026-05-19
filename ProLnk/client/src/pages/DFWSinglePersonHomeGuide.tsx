@@ -9,10 +9,10 @@ const situations = [
 
 const guides: Record<string, { headline: string; items: { title: string; detail: string; dfwSpecific: string }[]; neighborhoods: { name: string; why: string; price: string }[] }> = {
   'first-buy': {
-    headline: 'Single buyers are 17% of the market — you\'re not unusual, and you have real advantages',
+    headline: 'Single buyers are 17% of the market — you\’re not unusual, and you have real advantages',
     items: [
       { title: 'You move faster', detail: 'No need to align schedules or compromise on location — you decide and act', dfwSpecific: 'DFW median days on market is 18 — solo buyers can move same-day on offers' },
-      { title: 'Qualifying alone', detail: 'Lenders look at your income only — ensure your DTI (debt-to-income) is under 43%', dfwSpecific: 'FHA loans at 3.5% down work well for single incomes in DFW\'s $300–400K range' },
+      { title: 'Qualifying alone', detail: 'Lenders look at your income only — ensure your DTI (debt-to-income) is under 43%', dfwSpecific: 'FHA loans at 3.5% down work well for single incomes in DFW\’s $300–400K range' },
       { title: 'Budget reality check', detail: 'Total housing cost (PITI + HOA) should be under 28% of gross monthly income', dfwSpecific: 'At $70K/yr income, target homes under $325K in DFW for comfortable margins' },
     ],
     neighborhoods: [
@@ -22,7 +22,7 @@ const guides: Record<string, { headline: string; items: { title: string; detail:
     ],
   },
   'safety': {
-    headline: 'Safety is a practical priority for single homeowners — here\'s a DFW-specific approach',
+    headline: 'Safety is a practical priority for single homeowners — here\’s a DFW-specific approach',
     items: [
       { title: 'Alarm system first', detail: 'Install before move-in: ADT, SimpliSafe, Ring — monitored systems deter break-ins by 60%', dfwSpecific: 'SimpliSafe is popular in DFW — works on cell, no landline required, month-to-month contract' },
       { title: 'Neighborhood research', detail: 'Use SpotCrime.com, NeighborhoodScout, and city crime maps before buying', dfwSpecific: 'DFW crime varies dramatically by ZIP — 75201 (Downtown) vs 76244 (Keller) are completely different' },
@@ -30,7 +30,7 @@ const guides: Record<string, { headline: string; items: { title: string; detail:
       { title: 'Smart home basics', detail: 'Video doorbell (Ring/Nest), motion lights, smart locks — total cost $400–600', dfwSpecific: 'Ring Doorbell works well in DFW heat — verified to operate up to 120°F' },
     ],
     neighborhoods: [
-      { name: 'Southlake', why: 'Consistently ranked Texas\'s safest city, excellent schools', price: '$600K+ (premium)' },
+      { name: 'Southlake', why: 'Consistently ranked Texas\’s safest city, excellent schools', price: '$600K+ (premium)' },
       { name: 'Frisco', why: 'Top 10 safest in TX, active community, excellent lighting', price: '$450–650K' },
       { name: 'Allen', why: 'Low crime, walkable town center, camera systems throughout', price: '$380–520K' },
     ],
@@ -44,7 +44,7 @@ const guides: Record<string, { headline: string; items: { title: string; detail:
       { title: 'Income growth runway', detail: 'Buy at 80% of what you technically qualify for — career income should grow into the payment', dfwSpecific: 'DFW job market is strong — median household income growing 4% annually, good long-term outlook' },
     ],
     neighborhoods: [
-      { name: 'Mesquite', why: 'DFW\'s best value for singles — low property tax rate (relatively)', price: '$265–320K homes' },
+      { name: 'Mesquite', why: 'DFW\’s best value for singles — low property tax rate (relatively)', price: '$265–320K homes' },
       { name: 'Garland', why: 'HOA-free options, diverse, affordable, near DART', price: '$280–360K homes' },
       { name: 'Haltom City', why: 'Cheap entry price, Fort Worth proximity, improving area', price: '$220–290K homes' },
     ],

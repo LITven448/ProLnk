@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const questions = [
   { q: 'What does SEER stand for and what does it measure?', options: ['System Efficiency Energy Rating', 'Seasonal Energy Efficiency Ratio', 'Summer Energy Exchange Rate', 'Standard Equipment Efficiency Ranking'], answer: 1 },
-  { q: 'What minimum SEER rating is recommended for DFW climate?', options: ['10 SEER', '13-14 SEER', '16+ SEER', 'SEER doesn\'t matter in DFW'], answer: 2 },
+  { q: 'What minimum SEER rating is recommended for DFW climate?', options: ['10 SEER', '13-14 SEER', '16+ SEER', 'SEER doesn\’t matter in DFW'], answer: 2 },
   { q: 'How often should you change a 1-inch HVAC filter in DFW?', options: ['Every 6 months', 'Every 3-4 months', 'Every 1-3 months', 'Once a year'], answer: 2 },
   { q: 'What is the recommended thermostat setting for DFW summer when away from home?', options: ['68°F', '72°F', '78-80°F', '85°F'], answer: 2 },
   { q: 'A sign your DFW AC is low on refrigerant is:', options: ['Higher electricity bills', 'Ice on refrigerant lines or the evaporator coil', 'Loud clicking noise', 'Yellow flame on furnace'], answer: 1 },
@@ -14,7 +14,7 @@ const questions = [
   { q: 'What is the average lifespan of a DFW air conditioning unit running at peak load?', options: ['5-8 years', '10-12 years', '15-20 years', '25+ years'], answer: 1 },
   { q: 'If your DFW AC is running constantly but not cooling, the first thing to check is:', options: ['Call an HVAC company immediately', 'Check/replace the air filter and verify thermostat settings', 'Add refrigerant yourself', 'Replace the compressor'], answer: 1 },
   { q: 'What DFW-specific issue causes HVAC drain lines to clog frequently?', options: ['Hard water deposits', 'Algae growth in humid indoor air', 'Dust and pollen buildup', 'Refrigerant crystallization'], answer: 1 },
-  { q: 'A two-stage or variable-speed AC compressor is beneficial in DFW because:', options: ['It\'s cheaper upfront', 'It runs longer at lower capacity, better humidity control', 'It uses more power efficiently', 'It doesn\'t require filters'], answer: 1 },
+  { q: 'A two-stage or variable-speed AC compressor is beneficial in DFW because:', options: ['It\’s cheaper upfront', 'It runs longer at lower capacity, better humidity control', 'It uses more power efficiently', 'It doesn\’t require filters'], answer: 1 },
   { q: 'When should you consider replacing vs repairing your DFW HVAC system?', options: ['Any repair over $500', 'Repair cost exceeds 50% of new unit cost or system is 10+ years old', 'After the first breakdown', 'Only when it stops completely'], answer: 1 },
 ];
 

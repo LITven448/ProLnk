@@ -121,7 +121,7 @@ export default function BathroomRenovationGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
               { icon: '🚿', tip: 'Walk-in showers are preferred by DFW buyers over soaking tubs. Convert a tub-only bathroom to a walk-in and recover 60–70% of the cost in added value.' },
-              { icon: '🪞', tip: 'Double vanity is a top request in DFW master baths. If space allows, it's worth the plumbing move cost.' },
+              { icon: '🪞', tip: 'Double vanity is a top request in DFW master baths. If space allows, it’s worth the plumbing move cost.' },
               { icon: '✨', tip: 'Frameless glass shower enclosures photograph better for MLS listings and command premium resale prices.' },
               { icon: '🌡️', tip: 'Heated floors are an emerging feature in DFW luxury builds. Electric mat systems cost $800–$2,000 and are a strong differentiator.' },
             ].map(({ icon, tip }, i) => (

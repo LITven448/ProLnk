@@ -14,7 +14,7 @@ const COMPONENT_DATA = {
     },
     {
       heading: 'Year-One Tax Impact',
-      body: 'A well-executed study can reclassify 20–40% of a property\'s cost basis into shorter-life assets. On a $1M acquisition, that might mean $200K–$400K of accelerated deductions in year one — potentially eliminating taxable income from the property entirely and creating passive losses that offset other income for qualifying real estate professionals.',
+      body: 'A well-executed study can reclassify 20–40% of a property\’s cost basis into shorter-life assets. On a $1M acquisition, that might mean $200K–$400K of accelerated deductions in year one — potentially eliminating taxable income from the property entirely and creating passive losses that offset other income for qualifying real estate professionals.',
     },
     {
       heading: 'Finding a DFW Cost Segregation CPA',

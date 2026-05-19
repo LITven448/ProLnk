@@ -38,7 +38,7 @@ function getChimneyRecommendation(type: string, freq: string, season: string) {
   return {
     schedule: 'Annual gas insert service + chimney inspection',
     firstCheck: isFirstUse ? 'Verify insert was professionally installed — improper liner sizing is a DFW safety issue.' : 'Check thermocouple, pilot, and venting annually.',
-    warning: 'Gas inserts in DFW: use sparingly — most DFW "cold" days don\'t justify extended operation. Monitor CO detector near fireplace.',
+    warning: 'Gas inserts in DFW: use sparingly — most DFW "cold" days don\’t justify extended operation. Monitor CO detector near fireplace.',
     cost: '$100–$200/yr service | CO detector: $30–$80',
   };
 }

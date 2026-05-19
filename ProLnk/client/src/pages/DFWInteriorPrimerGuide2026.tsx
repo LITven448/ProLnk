@@ -8,7 +8,7 @@ export default function DFWInteriorPrimerGuide2026() {
       drywall: { primer: 'PVA Drywall Primer', brand: 'Sherwin-Williams ProMar PVA Primer', tip: 'Always prime new drywall — paint alone will absorb unevenly and look blotchy.' },
       dark: { primer: 'Tinted High-Hide Primer', brand: 'Zinsser Bulls Eye 1-2-3 tinted gray', tip: 'Ask your paint store to tint primer toward your finish color — reduces coats from 3 to 2.' },
       sheen: { primer: 'Bonding Primer', brand: 'KILZ Adhesion or SW Extreme Bond', tip: 'Degloss with liquid deglosser first, then apply bonding primer. Skipping this step causes peeling within 1 year.' },
-      stain: { primer: 'Shellac-Based Stain Blocker', brand: 'Zinsser BIN Shellac', tip: 'Water stains, smoke, and pet odors require shellac. Latex stain blockers won't seal — only shellac works.' },
+      stain: { primer: 'Shellac-Based Stain Blocker', brand: 'Zinsser BIN Shellac', tip: 'Water stains, smoke, and pet odors require shellac. Latex stain blockers won’t seal — only shellac works.' },
       bare: { primer: 'Oil or Latex Wood Primer', brand: 'SW Premium Wall & Wood Primer', tip: 'Sand bare wood to 120 grit before priming. Raise the grain with a damp cloth, let dry, sand again.' },
     };
     return map[surface] || map.drywall;
@@ -45,7 +45,7 @@ export default function DFWInteriorPrimerGuide2026() {
         {[
           { icon: '☀️', title: 'DFW Humidity Timing Rule', body: 'Oil-based primers need 40-60% humidity to cure properly. DFW summers can spike to 80%+ humidity in the morning. Prime after 10am when humidity drops. Check Weather.com before starting — high humidity causes oil primer to stay tacky for days.' },
           { icon: '🚫', title: 'When You Can Skip Primer', body: 'If walls are already painted with latex in good condition, same color family, and no stains — you can skip primer. Self-priming paints like SW Emerald work in this case. But in DFW homes with hard water or pet stains, always prime.' },
-          { icon: '⏱️', title: 'Dry Time in DFW Summers', body: 'Latex primer: 1-2 hours dry, 4 hours recoat in DFW summer heat. Oil primer: 8-24 hours. Shellac: 45 minutes — fastest option and works in high humidity. Shellac is the DFW painter's secret weapon for problem surfaces.' },
+          { icon: '⏱️', title: 'Dry Time in DFW Summers', body: 'Latex primer: 1-2 hours dry, 4 hours recoat in DFW summer heat. Oil primer: 8-24 hours. Shellac: 45 minutes — fastest option and works in high humidity. Shellac is the DFW painter’s secret weapon for problem surfaces.' },
         ].map((card, i) => (
           <div key={i} style={{ backgroundColor: '#111f38', borderRadius: 12, padding: 20, marginBottom: 16 }}>
             <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{card.icon} {card.title}</div>

@@ -76,7 +76,7 @@ const subjects = [
       'Soffit vents — clear or blocked',
       'Ridge vent from inside looking up',
     ],
-    tip: 'Use your phone's night mode — attic photos need maximum light capture to show insulation texture and moisture patterns.',
+    tip: 'Use your phone’s night mode — attic photos need maximum light capture to show insulation texture and moisture patterns.',
   },
   {
     name: 'Exterior',

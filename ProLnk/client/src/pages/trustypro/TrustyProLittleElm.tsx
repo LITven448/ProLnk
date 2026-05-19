@@ -14,7 +14,7 @@ const ISSUES = [
   {
     icon: '🏗️',
     title: 'New Construction Builder Warranty Windows',
-    desc: '2010–2024 builds are still within or recently past builder warranty windows. Structural defects, HVAC sizing errors, and plumbing rough-in issues often surface 2–5 years post-close. Knowing what's warrantable vs. owner responsibility matters.',
+    desc: '2010–2024 builds are still within or recently past builder warranty windows. Structural defects, HVAC sizing errors, and plumbing rough-in issues often surface 2–5 years post-close. Knowing what’s warrantable vs. owner responsibility matters.',
   },
   {
     icon: '🏡',

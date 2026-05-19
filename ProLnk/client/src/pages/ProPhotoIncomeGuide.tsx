@@ -54,7 +54,7 @@ export default function ProPhotoIncomeGuide() {
               { step: 1, text: 'You complete any job', sub: 'Plumbing, HVAC, electrical — any trade' },
               { step: 2, text: 'Upload job photos to ProLnk', sub: 'Takes 60 seconds from your phone' },
               { step: 3, text: 'AI analyzes in real-time', sub: 'Identifies aging systems, damage, upgrade opportunities' },
-              { step: 4, text: 'Matched homeowners receive AI-generated insight', sub: '"Your neighbor's water heater is similar age — worth checking yours"' },
+              { step: 4, text: 'Matched homeowners receive AI-generated insight', sub: '"Your neighbor’s water heater is similar age — worth checking yours"' },
               { step: 5, text: 'They request a quote', sub: 'Routed back to you or your network' },
               { step: 6, text: 'When they book → you earn commission', sub: 'On top of what you already made on the first job' },
             ].map((item, i) => (

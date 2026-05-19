@@ -57,22 +57,22 @@ export default function HomeRepairScamGuide() {
             {
               title: '1. Storm Chasers',
               desc: 'After every major DFW hailstorm, out-of-state roofing companies flood the area. They knock on doors, offer "free inspections," and push homeowners to file inflated insurance claims. After cashing the insurance check, they disappear or do shoddy work that fails inspection. In 2023 alone, Texas saw thousands of storm chaser complaints.',
-              signs: ['Arrived right after the storm', 'Out-of-state license plates', 'Offers to "handle your insurance claim"', 'Can\'t provide a local TDLR number'],
+              signs: ['Arrived right after the storm', 'Out-of-state license plates', 'Offers to "handle your insurance claim"', 'Can\’t provide a local TDLR number'],
             },
             {
               title: '2. The "Just Finished Nearby" Knocker',
-              desc: 'A truck parks on your street. Someone knocks and says they just finished a driveway, fence, or exterior paint job nearby and have leftover materials at a huge discount. The discount is fake — they\'ll use low-grade materials and the job will fail within months. No contract, no license, no recourse.',
+              desc: 'A truck parks on your street. Someone knocks and says they just finished a driveway, fence, or exterior paint job nearby and have leftover materials at a huge discount. The discount is fake — they\’ll use low-grade materials and the job will fail within months. No contract, no license, no recourse.',
               signs: ['Unsolicited door knock', 'Claims "leftover materials" from nearby job', 'Pushes for same-day decision', 'No written quote available'],
             },
             {
               title: '3. Sealcoating / Driveway Scams',
               desc: 'One of the oldest scams in DFW: a crew in an unmarked truck offers to sealcoat your driveway at a steep discount. They may use motor oil or waste product instead of actual sealcoat — which will wash off in the first rain and can damage the concrete. When you call to complain, the number is disconnected.',
-              signs: ['No company markings on truck', 'Extremely low price', 'Demands cash only', 'Can\'t explain what product they\'re applying'],
+              signs: ['No company markings on truck', 'Extremely low price', 'Demands cash only', 'Can\’t explain what product they\’re applying'],
             },
             {
               title: '4. HVAC Tune-Up Bait and Switch',
               desc: 'Advertised at $49–$79, these "tune-up" visits always find a "critical" problem. The tech shows homeowners a photo of a dirty part or fake meter reading and quotes $800–$3,000 for "emergency" repairs. Many repairs are invented or unnecessary. Always get a second opinion before authorizing HVAC repairs over $500.',
-              signs: ['Unusually cheap inspection offer', 'Finds expensive problem every single visit', 'Pressure to approve same-day repairs', 'Can\'t show you the actual failed part'],
+              signs: ['Unusually cheap inspection offer', 'Finds expensive problem every single visit', 'Pressure to approve same-day repairs', 'Can\’t show you the actual failed part'],
             },
           ].map((scam) => (
             <div key={scam.title} style={{ backgroundColor: '#132040', borderRadius: 12, padding: '24px', marginBottom: 16 }}>
@@ -115,7 +115,7 @@ export default function HomeRepairScamGuide() {
             ['Texas Attorney General', 'File a consumer complaint at texasattorneygeneral.gov. The AG office has a contractor fraud unit and actively pursues repeat offenders.'],
             ['Better Business Bureau', 'File at bbb.org. Even if nothing comes of it, it protects the next homeowner who searches.'],
             ['Texas TDLR', 'If a licensed contractor did substandard work, file a complaint with TDLR — they can revoke the license.'],
-            ['Your insurance company', 'If damage resulted from the fraud, your homeowner\'s policy may cover some losses.'],
+            ['Your insurance company', 'If damage resulted from the fraud, your homeowner\’s policy may cover some losses.'],
             ['Local police', 'If the contractor took money and disappeared (contractor abandonment), this is criminal fraud. File a police report.'],
           ].map(([action, detail]) => (
             <div key={action as string} style={{ backgroundColor: '#132040', borderRadius: 10, padding: '16px 20px', marginBottom: 10 }}>

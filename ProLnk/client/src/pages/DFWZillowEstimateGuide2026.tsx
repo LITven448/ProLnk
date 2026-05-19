@@ -72,7 +72,7 @@ export default function DFWZillowEstimateGuide2026() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>✅ When to Trust the Zestimate</h2>
-          {['Stable neighborhood with no recent major changes', 'Home hasn\'t been renovated in 5+ years', 'Multiple recent comps within 0.5 miles', 'No foundation, roof, or HOA issues'].map(t => (
+          {['Stable neighborhood with no recent major changes', 'Home hasn\’t been renovated in 5+ years', 'Multiple recent comps within 0.5 miles', 'No foundation, roof, or HOA issues'].map(t => (
             <div key={t} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #22c55e' }}>{t}</div>
           ))}
         </div>

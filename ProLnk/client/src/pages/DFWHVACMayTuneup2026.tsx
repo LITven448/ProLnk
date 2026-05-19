@@ -9,13 +9,13 @@ export default function DFWHVACMayTuneup2026() {
     if (situation === 'not-serviced') {
       setResult('🚨 URGENT — Book this week. May is the last window before June emergency pricing hits. A ProLnk Charter pro can get you scheduled within 48 hours. Waiting until June typically costs $150-300 more for the same service.');
     } else if (situation === 'last-year') {
-      setResult('⚠️ SCHEDULE NOW — Annual DFW tune-ups are essential. Last year's service won't carry you through another DFW summer. Coils get dirty, refrigerant can leak slowly. May slots are filling fast.');
+      setResult('⚠️ SCHEDULE NOW — Annual DFW tune-ups are essential. Last year’s service won’t carry you through another DFW summer. Coils get dirty, refrigerant can leak slowly. May slots are filling fast.');
     } else if (situation === 'not-working') {
-      setResult('🚨 EMERGENCY — Don't wait for a tune-up. Book an emergency diagnostic now. In DFW heat, a non-functioning AC is a health risk. ProLnk has 24-hour pros available.');
+      setResult('🚨 EMERGENCY — Don’t wait for a tune-up. Book an emergency diagnostic now. In DFW heat, a non-functioning AC is a health risk. ProLnk has 24-hour pros available.');
     } else if (situation === 'new-system') {
       setResult('✅ GOOD TIMING — New systems still need first-summer prep: verify refrigerant charge, check all connections, test thermostat calibration. A quick check in May catches any installation issues before peak heat.');
     } else if (situation === 'serviced-this-year') {
-      setResult('✅ YOU'RE SET — Great job. If your tune-up included coil cleaning, refrigerant check, and filter replacement, you're ready for DFW summer. Change filters monthly June-August.');
+      setResult('✅ YOU’RE SET — Great job. If your tune-up included coil cleaning, refrigerant check, and filter replacement, you’re ready for DFW summer. Change filters monthly June-August.');
     } else {
       setResult('May is the optimal window for DFW HVAC service. June and July pricing spikes 30-50% as demand surges. Book through ProLnk for vetted local Charter pros.');
     }

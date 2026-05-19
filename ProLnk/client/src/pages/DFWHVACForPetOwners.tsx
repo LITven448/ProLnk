@@ -29,7 +29,7 @@ const petPlans: Record<string, Record<string, string[]>> = {
   cat: {
     '1': [
       '🐈 1 cat: MERV-11 filter, change every 60 days',
-      '🌀 Air purifier near cat's favorite spots — cats groom and release dander constantly',
+      '🌀 Air purifier near cat’s favorite spots — cats groom and release dander constantly',
       '🌡️ Cats tolerate heat better than dogs but still need AC below 80°F in DFW summer',
       '🧹 Clean return vents monthly — cat hair is finer and penetrates filters more easily',
     ],

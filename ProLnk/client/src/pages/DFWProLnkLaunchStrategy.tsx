@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
 const INTERESTS = [
-  { key: 'contractor_dfw', label: '🔨 I\'m a DFW Contractor', desc: 'I work in the market' },
-  { key: 'homeowner_dfw', label: '🏠 I\'m a DFW Homeowner', desc: 'I own property here' },
-  { key: 'partner_dfw', label: '🤝 I\'m a Potential Partner', desc: 'I want to build income' },
-  { key: 'national', label: '🌎 I\'m Outside DFW', desc: 'I\'m in another market' },
-  { key: 'investor_view', label: '📈 I\'m Evaluating Investment', desc: 'I want the full strategy' },
+  { key: 'contractor_dfw', label: '🔨 I\’m a DFW Contractor', desc: 'I work in the market' },
+  { key: 'homeowner_dfw', label: '🏠 I\’m a DFW Homeowner', desc: 'I own property here' },
+  { key: 'partner_dfw', label: '🤝 I\’m a Potential Partner', desc: 'I want to build income' },
+  { key: 'national', label: '🌎 I\’m Outside DFW', desc: 'I\’m in another market' },
+  { key: 'investor_view', label: '📈 I\’m Evaluating Investment', desc: 'I want the full strategy' },
 ];
 
 const STRATEGY: Record<string, { headline: string; why_dfw: string[]; what_it_means: string[]; timeline: string }> = {
   contractor_dfw: {
-    headline: 'You\'re in the right place at the right time',
+    headline: 'You\’re in the right place at the right time',
     why_dfw: [
       '🏗️ 48,000 new homes built per year — highest new construction rate in the US',
       '👷 Contractor shortage: 12,000 unfilled skilled trade jobs in DFW today',
@@ -19,7 +19,7 @@ const STRATEGY: Record<string, { headline: string; why_dfw: string[]; what_it_me
     ],
     what_it_means: [
       'Charter Pros get first access to every homeowner in their trade and zip code',
-      'AI match quality is highest in DFW because we\'re launching here first',
+      'AI match quality is highest in DFW because we\’re launching here first',
       'Founding rate of $149/mo locks in before prices rise with platform growth',
       'Your referral network pays lifetime overrides — built during the best window',
     ],
@@ -52,7 +52,7 @@ const STRATEGY: Record<string, { headline: string; why_dfw: string[]; what_it_me
     what_it_means: [
       'Founding partners lock in the highest commission tier — permanent, not time-limited',
       'DFW is the national proof-of-concept — partners here become case studies for other markets',
-      'Your recruits\' recruits\' recruits still pay you — 4-level cascade, forever',
+      'Your recruits\’ recruits\’ recruits still pay you — 4-level cascade, forever',
       'First 500 Charter Pros recruited are in your downline if you join at founding',
     ],
     timeline: '⏰ Founding partner rates available until waitlist closes. Apply before then.',

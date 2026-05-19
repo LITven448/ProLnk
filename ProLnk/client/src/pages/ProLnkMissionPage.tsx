@@ -3,7 +3,7 @@ import { useState } from 'react';
 const frustrations = [
   { label: 'Got ripped off by a contractor', solution: 'Every ProLnk pro is background-checked, license-verified, and rated by real DFW homeowners. No anonymous strangers. No fly-by-night operations.' },
   { label: 'Paid for a job done wrong', solution: 'ProLnk pros are held to completion standards. Job details and outcomes are logged in your Home Health Vault — accountability built in.' },
-  { label: 'Couldn\'t find a pro who showed up', solution: 'ProLnk matches you with pros who have confirmed availability. No ghosting — our system tracks commitment rates and removes no-shows.' },
+  { label: 'Couldn\’t find a pro who showed up', solution: 'ProLnk matches you with pros who have confirmed availability. No ghosting — our system tracks commitment rates and removes no-shows.' },
   { label: 'Bid too high, no transparency', solution: 'Transparent upfront pricing before any work starts. Compare 3 quotes from vetted pros — no pressure, no hidden fees.' },
   { label: 'Lost paperwork from old repairs', solution: 'Home Health Vault permanently stores every job, every contractor, every warranty — searchable and shareable forever.' },
 ];

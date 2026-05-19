@@ -21,7 +21,7 @@ const CONCERN_MAP: Record<string, { benefit: string; limitations: string; cost: 
   },
   'General DFW air quality': {
     benefit: 'Adds a layer of active air treatment on top of passive filtration.',
-    limitations: 'DFW's outdoor ozone levels are already elevated (non-attainment area) — avoid units that produce additional ozone.',
+    limitations: 'DFW’s outdoor ozone levels are already elevated (non-attainment area) — avoid units that produce additional ozone.',
     cost: '$500–$1,500 installed',
     alternatives: 'UV + MERV-13 + dehumidification is a more proven DFW IAQ stack.',
   },

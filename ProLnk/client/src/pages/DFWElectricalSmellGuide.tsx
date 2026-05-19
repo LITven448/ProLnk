@@ -9,7 +9,7 @@ const immediateSteps = [
 
 const dfwFactors = [
   { emoji: '❄️', factor: 'AC Overload', detail: 'DFW AC systems run near maximum capacity all summer. This overloads circuits and can overheat wiring in homes wired pre-1990.' },
-  { emoji: '🏠', factor: '1980s Wiring', detail: 'Many DFW suburbs built in the 1980s still have aluminum branch circuit wiring or older panels that struggle with today\'s electrical demand.' },
+  { emoji: '🏠', factor: '1980s Wiring', detail: 'Many DFW suburbs built in the 1980s still have aluminum branch circuit wiring or older panels that struggle with today\’s electrical demand.' },
   { emoji: '⛈️', factor: 'Storm Surge', detail: 'DFW storms cause voltage spikes and surges that burn out outlets and can damage wiring inside walls.' },
   { emoji: '🌡️', factor: 'Attic Heat', detail: 'DFW attics hit 140°F+ in summer. Wiring insulation in attics degrades faster, increasing fire risk in older homes.' },
 ];

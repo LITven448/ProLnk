@@ -5,9 +5,9 @@ type Role = 'homeowner' | 'pro' | null;
 const homeownerQuestions = [
   { id: 1, text: 'Have you needed a home service (HVAC, plumbing, electrical, roofing, foundation) in the last 12 months?', emoji: '🔧' },
   { id: 2, text: 'Have you struggled to find a reliable, licensed contractor in DFW?', emoji: '😤' },
-  { id: 3, text: 'Do you want a permanent digital record of your home\'s service history and systems?', emoji: '📁' },
+  { id: 3, text: 'Do you want a permanent digital record of your home\’s service history and systems?', emoji: '📁' },
   { id: 4, text: 'Would you prefer getting 3+ competitive quotes instead of calling one contractor?', emoji: '📋' },
-  { id: 5, text: 'Do you want to know your home\'s true health score before major issues arise?', emoji: '❤️' },
+  { id: 5, text: 'Do you want to know your home\’s true health score before major issues arise?', emoji: '❤️' },
 ];
 
 const proQuestions = [
@@ -28,9 +28,9 @@ export default function DFWProLnkReadinessCheck2026() {
   const answered = Object.keys(answers).length;
 
   const getReadiness = () => {
-    if (yesCount >= 4) return { label: 'You\'re Ready to Join ProLnk!', color: '#22c55e', emoji: '🚀', msg: role === 'homeowner' ? 'ProLnk was built for DFW homeowners exactly like you. Join the waitlist today — launch is limited and closing fast.' : 'You\'re exactly who ProLnk is built for. Charter Pros lock in $149/mo forever. Join the waitlist now before 500 spots fill.' };
+    if (yesCount >= 4) return { label: 'You\’re Ready to Join ProLnk!', color: '#22c55e', emoji: '🚀', msg: role === 'homeowner' ? 'ProLnk was built for DFW homeowners exactly like you. Join the waitlist today — launch is limited and closing fast.' : 'You\’re exactly who ProLnk is built for. Charter Pros lock in $149/mo forever. Join the waitlist now before 500 spots fill.' };
     if (yesCount >= 2) return { label: 'Strong Candidate', color: '#F5E642', emoji: '✅', msg: role === 'homeowner' ? 'ProLnk would add real value to your homeownership experience. Join the waitlist and explore how the platform protects your investment.' : 'ProLnk could be a great fit. Review the Charter Pro benefits and join the waitlist if the passive income model resonates with you.' };
-    return { label: 'Explore More First', color: '#94a3b8', emoji: '🔎', msg: role === 'homeowner' ? 'ProLnk may not be an urgent fit yet — but when you need a contractor, you\'ll wish you were already on the platform.' : 'Get your licensing sorted first, then come back. Charter Pro spots will be limited — don\'t miss the founding tier.' };
+    return { label: 'Explore More First', color: '#94a3b8', emoji: '🔎', msg: role === 'homeowner' ? 'ProLnk may not be an urgent fit yet — but when you need a contractor, you\’ll wish you were already on the platform.' : 'Get your licensing sorted first, then come back. Charter Pro spots will be limited — don\’t miss the founding tier.' };
   };
 
   return (
@@ -44,7 +44,7 @@ export default function DFWProLnkReadinessCheck2026() {
 
         {!role && (
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {[{ key: 'homeowner', label: '🏠 I\'m a Homeowner', desc: 'I need reliable home service contractors' }, { key: 'pro', label: '🔧 I\'m a Service Pro', desc: 'I provide home services in DFW' }].map(r => (
+            {[{ key: 'homeowner', label: '🏠 I\’m a Homeowner', desc: 'I need reliable home service contractors' }, { key: 'pro', label: '🔧 I\’m a Service Pro', desc: 'I provide home services in DFW' }].map(r => (
               <button key={r.key} onClick={() => setRole(r.key as Role)}
                 style={{ background: '#0f2040', border: '2px solid #F5E642', borderRadius: 16, padding: '24px 32px', cursor: 'pointer', textAlign: 'center', color: '#fff', flex: '1 1 200px' }}>
                 <div style={{ fontSize: 36, marginBottom: 8 }}>{r.label.split(' ')[0]}</div>

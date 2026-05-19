@@ -29,7 +29,7 @@ const trends = [
   {
     num: '06',
     title: 'Aging Housing Stock',
-    body: 'Much of Dallas's 1960s–1980s housing stock is hitting critical maintenance windows simultaneously. HVAC, roofing, and plumbing systems are all aging out at once, creating sustained demand for skilled trades.',
+    body: 'Much of Dallas’s 1960s–1980s housing stock is hitting critical maintenance windows simultaneously. HVAC, roofing, and plumbing systems are all aging out at once, creating sustained demand for skilled trades.',
   },
 ];
 

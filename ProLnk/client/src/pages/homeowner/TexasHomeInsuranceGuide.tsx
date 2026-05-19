@@ -104,7 +104,7 @@ export default function TexasHomeInsuranceGuide() {
             },
             {
               title: 'TWIA — Texas Windstorm Insurance',
-              content: 'The Texas Windstorm Insurance Association provides coverage for coastal areas (19 counties + JFK Causeway). If you're in DFW inland, you don't need TWIA — but you do need wind/hail coverage on your standard policy.',
+              content: 'The Texas Windstorm Insurance Association provides coverage for coastal areas (19 counties + JFK Causeway). If you’re in DFW inland, you don’t need TWIA — but you do need wind/hail coverage on your standard policy.',
             },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0F2033', border: '1px solid #1E3A5F', borderRadius: 12, padding: 24 }}>

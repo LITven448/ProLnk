@@ -11,7 +11,7 @@ const spaHeaterOptions = {
     monthly_dfwWinter: '$35–$75',
     monthly_dfwSummer: '$8–$18',
     best_for: 'Most DFW spas — simple, reliable, no gas line needed',
-    dfwNote: 'The DFW standard for spas. Mild winters mean you\'re not running the heater hard. 11kW heaters recover heat fast after use — even in rare DFW freezes.',
+    dfwNote: 'The DFW standard for spas. Mild winters mean you\’re not running the heater hard. 11kW heaters recover heat fast after use — even in rare DFW freezes.',
     sizing: { small: '5.5kW', medium: '11kW', large: '11kW + secondary' },
   },
   gas_natural: {
@@ -37,7 +37,7 @@ const spaHeaterOptions = {
     monthly_dfwWinter: '$15–$35',
     monthly_dfwSummer: '$5–$12',
     best_for: 'Eco-conscious DFW owners, spas used on planned schedule',
-    dfwNote: 'Lowest operating cost but not practical for spontaneous DFW spa use — slow to heat. DFW\'s mild climate makes heat pumps efficient but the slow heat-up is a pain.',
+    dfwNote: 'Lowest operating cost but not practical for spontaneous DFW spa use — slow to heat. DFW\’s mild climate makes heat pumps efficient but the slow heat-up is a pain.',
     sizing: { small: '5 ton', medium: '5–6 ton', large: '6–8 ton' },
   },
 };

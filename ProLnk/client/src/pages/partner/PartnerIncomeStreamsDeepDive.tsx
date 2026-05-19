@@ -51,7 +51,7 @@ export default function PartnerIncomeStreamsDeepDive() {
       howItWorks: 'Every pro you recruit pays $149/month for their ProLnk membership. You earn 10% of that subscription every month, recurring, as long as they stay active.',
       rate: `10% × $149/mo × ${l1Network} active pros`,
       example: `${l1Network} pros in your L1 network = $${Math.round(l1Network * 149 * 0.10)}/month in pure recurring subscription income.`,
-      tips: ['This income is recurring — it pays even when you\'re on vacation', 'Retention matters — keep your recruits engaged so they stay active', 'At 30 recruited pros this stream alone covers your ProLnk subscription cost 20x'],
+      tips: ['This income is recurring — it pays even when you\’re on vacation', 'Retention matters — keep your recruits engaged so they stay active', 'At 30 recruited pros this stream alone covers your ProLnk subscription cost 20x'],
     },
     {
       id: 4, name: 'Homeowner Referral Override', emoji: '🏠',
@@ -69,7 +69,7 @@ export default function PartnerIncomeStreamsDeepDive() {
       howItWorks: 'When you help a homeowner register their property in the ProLnk Home Health Vault, you earn a permanent percentage of every job fee generated at that property — forever.',
       rate: `${(t.originRate * 100).toFixed(1)}% of every job value — permanently — on ${homesOriginated} homes`,
       example: `${homesOriginated} homes × avg 3 jobs/year × $1,400 avg → $${Math.round(homesOriginated * 3 * 1400 * t.originRate)}/year in permanent origination income.`,
-      tips: ['This is the most durable income stream — it survives even if you stop active recruiting', 'Charter tier earns 1.5% vs Founding\'s 1.0% — a 50% advantage that compounds for life', 'One high-activity home (landlord with maintenance needs) can generate $100s annually alone'],
+      tips: ['This is the most durable income stream — it survives even if you stop active recruiting', 'Charter tier earns 1.5% vs Founding\’s 1.0% — a 50% advantage that compounds for life', 'One high-activity home (landlord with maintenance needs) can generate $100s annually alone'],
     },
   ];
 

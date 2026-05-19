@@ -16,7 +16,7 @@ const projects: Record<string, { borrow: { tool: string; from: string; tip: stri
       { tool: '💨 Leaf blower (backpack)', from: 'Nextdoor neighbor', tip: 'Most neighbors happy to share for a few hours — just return with full tank' }
     ],
     buy: ['Hand trowel', 'Garden hose + nozzle', 'Pruning shears'],
-    template: 'Hi neighbors! I'm tackling some spring landscaping this weekend and wondering if anyone has a tiller or backpack blower I could borrow for a few hours on Saturday? Happy to return it cleaned up and full of gas!',
+    template: 'Hi neighbors! I’m tackling some spring landscaping this weekend and wondering if anyone has a tiller or backpack blower I could borrow for a few hours on Saturday? Happy to return it cleaned up and full of gas!',
     offer: '🌱 Offer your garden hose, wheelbarrow, or some of your seedlings/plants in return'
   },
   painting: {
@@ -24,8 +24,8 @@ const projects: Record<string, { borrow: { tool: string; from: string; tip: stri
       { tool: '🎨 Paint sprayer', from: 'Home Depot / Nextdoor', tip: 'For fence/exterior only — practice on cardboard first. $40/day rental' },
       { tool: '🪜 Extension ladder (24–32 ft)', from: 'Nextdoor neighbor', tip: 'Almost every DFW homeowner has one — post on Nextdoor, usually free' }
     ],
-    buy: ['Roller set', 'Brush set', 'Drop cloth', 'Painter's tape'],
-    template: 'Hey everyone! Painting my house exterior this weekend. Does anyone have a 24–32 ft extension ladder I could borrow? I'll return it same day, washed off. Thanks! 🏠',
+    buy: ['Roller set', 'Brush set', 'Drop cloth', 'Painter’s tape'],
+    template: 'Hey everyone! Painting my house exterior this weekend. Does anyone have a 24–32 ft extension ladder I could borrow? I’ll return it same day, washed off. Thanks! 🏠',
     offer: '🎨 Offer your pressure washer for prep or leftover paint for touch-ups'
   },
   cleaning: {

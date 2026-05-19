@@ -13,7 +13,7 @@ const needs = [
     icon: '🔊',
     resource: 'DFW Contractor Network',
     detail: 'Banging, rattling, or squealing from your HVAC unit usually signals a mechanical issue. The DFW contractor network has specialists who diagnose noise issues fast.',
-    steps: ['Note when the noise occurs', 'Check if it\'s indoor or outdoor unit', 'Use ProLnk to find a diagnostic specialist', 'Book a diagnostic appointment'],
+    steps: ['Note when the noise occurs', 'Check if it\’s indoor or outdoor unit', 'Use ProLnk to find a diagnostic specialist', 'Book a diagnostic appointment'],
   },
   {
     label: 'High Energy Bills',
@@ -26,8 +26,8 @@ const needs = [
     label: 'Emergency / No Heat',
     icon: '🚨',
     resource: 'Emergency Protocol',
-    detail: 'A heating failure during a DFW winter cold snap can be dangerous. ProLnk\'s emergency protocol connects you to an on-call technician within 60 minutes.',
-    steps: ['Call the ProLnk emergency line', 'Confirm your address and unit type', 'An on-call tech is dispatched immediately', 'Stay warm — we\'ve got you'],
+    detail: 'A heating failure during a DFW winter cold snap can be dangerous. ProLnk\’s emergency protocol connects you to an on-call technician within 60 minutes.',
+    steps: ['Call the ProLnk emergency line', 'Confirm your address and unit type', 'An on-call tech is dispatched immediately', 'Stay warm — we\’ve got you'],
   },
 ];
 

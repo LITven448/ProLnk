@@ -20,7 +20,7 @@ const CATEGORIES = [
     items: [
       'Schedule heating system service before season (October ideal)',
       'Replace HVAC filter (clean filter = more efficient heat)',
-      'Test heat mode now — don't wait for the first cold night',
+      'Test heat mode now — don’t wait for the first cold night',
       'Test all carbon monoxide detectors near sleeping areas',
       'Save your HVAC emergency contact — book now, not during a freeze',
     ],
@@ -55,7 +55,7 @@ const CATEGORIES = [
       'Open cabinet doors under sinks on exterior walls',
       'Keep thermostat at 68°F minimum even if you leave home',
       'Know how to shut off water main in under 30 seconds',
-      'Have a plumber's emergency number saved before the freeze',
+      'Have a plumber’s emergency number saved before the freeze',
     ],
   },
 ];

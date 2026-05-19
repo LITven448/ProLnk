@@ -15,23 +15,23 @@ const futures = [
     title: 'AI-Driven Thermostat and Grid Integration',
     timeline: '2026–2027',
     description: 'Ecobee, Nest, and new entrants now offer AI-adaptive scheduling that learns your household patterns and pre-cools before ERCOT peak events. Utilities are rolling out dynamic pricing in 2026 — systems that auto-respond will save homeowners $200–$400/year.',
-    doNow: 'If you don\'t have a smart thermostat, install one before June. Enroll in your utility\'s demand-response program to start earning credits this summer.',
+    doNow: 'If you don\’t have a smart thermostat, install one before June. Enroll in your utility\’s demand-response program to start earning credits this summer.',
   },
   {
     id: 'ai',
     label: '🤖 ProLnk AI Matching',
-    title: 'ProLnk's AI Matches by System Type, Not Just ZIP',
+    title: 'ProLnk’s AI Matches by System Type, Not Just ZIP',
     timeline: '2026 (in progress)',
-    description: 'ProLnk is building AI-powered matching that considers your system brand, age, refrigerant type, and service history — not just geography. This means the pro you\'re matched with already knows your system type and arrives prepared. Match accuracy improves with every home added.',
+    description: 'ProLnk is building AI-powered matching that considers your system brand, age, refrigerant type, and service history — not just geography. This means the pro you\’re matched with already knows your system type and arrives prepared. Match accuracy improves with every home added.',
     doNow: 'Sign up now to be in the founding group. Early members help train the matching model and get first access to verified pros as the network grows.',
   },
   {
     id: 'vault',
     label: '🏥 Home Health Vault',
-    title: 'Your Home's HVAC History Becomes a Permanent Asset',
+    title: 'Your Home’s HVAC History Becomes a Permanent Asset',
     timeline: '2026–2027',
-    description: 'The Home Health Vault stores your system model, install date, service records, filter change logs, and warranty info — permanently linked to your home\'s address. Future buyers, pros, and insurance companies can access verified history. Homes with Vault records sell faster and at higher prices.',
-    doNow: 'Start your Vault now by adding your HVAC system details. Every service visit you log increases your home\'s data value and makes future service calls faster.',
+    description: 'The Home Health Vault stores your system model, install date, service records, filter change logs, and warranty info — permanently linked to your home\’s address. Future buyers, pros, and insurance companies can access verified history. Homes with Vault records sell faster and at higher prices.',
+    doNow: 'Start your Vault now by adding your HVAC system details. Every service visit you log increases your home\’s data value and makes future service calls faster.',
   },
   {
     id: 'refrigerant',
@@ -39,7 +39,7 @@ const futures = [
     title: 'R-410A Out, R-32 and R-454B Take Over',
     timeline: '2026–2030',
     description: 'R-410A is no longer produced for new equipment as of January 2026. R-32 (lower GWP) and R-454B (Puron Advance) are the new standards. This means new systems are more efficient and environmentally compliant. Service of existing R-410A systems continues but recharge costs will keep rising.',
-    doNow: 'If your system is R-410A and over 8 years old, budget for replacement within 2–3 years. Get a replacement quote now from a ProLnk pro to know what you\'re working toward.',
+    doNow: 'If your system is R-410A and over 8 years old, budget for replacement within 2–3 years. Get a replacement quote now from a ProLnk pro to know what you\’re working toward.',
   },
 ];
 

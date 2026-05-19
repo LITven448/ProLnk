@@ -16,7 +16,7 @@ const replacementTypes = [
   {
     type: 'Insurance Claim Replacement',
     checklist: ['Adjuster scope vs contractor scope reconciliation — ask for both', 'Supplement process: who handles code upgrades not in adjuster scope?', 'Depreciation recovery: contractor recovers recoverable depreciation?', 'Shingle match to existing if partial — document in writing', 'ACV vs RCV policy: contractor understands your policy type?', 'All above items from Full Replacement'],
-    redFlags: ['Contractor won\'t show you the adjuster scope', 'No supplement experience', 'Storm chaser from out of state', 'Demanding signature before adjuster visits'],
+    redFlags: ['Contractor won\’t show you the adjuster scope', 'No supplement experience', 'Storm chaser from out of state', 'Demanding signature before adjuster visits'],
   },
 ];
 

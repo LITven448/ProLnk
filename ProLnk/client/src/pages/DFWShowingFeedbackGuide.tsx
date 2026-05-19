@@ -7,7 +7,7 @@ const feedbackTypes = [
   'Loved the home, chose another',
   'No feedback at all from agent',
   'Location concerns',
-  'Layout doesn\'t work for their needs',
+  'Layout doesn\’t work for their needs',
   'Too many showings, no offers',
 ];
 
@@ -18,12 +18,12 @@ const interpretations: Record<string, { meaning: string; action: string; reduce:
     reduce: true,
   },
   'Price too high — one buyer mentioned it': {
-    meaning: 'Soft signal. One buyer saying price may just be negotiation positioning or may reflect their budget ceiling, not market consensus. In DFW\'s tiered market, one data point is not a trend.',
+    meaning: 'Soft signal. One buyer saying price may just be negotiation positioning or may reflect their budget ceiling, not market consensus. In DFW\’s tiered market, one data point is not a trend.',
     action: 'Monitor for 7 more days. If showing volume drops and no offers emerge, treat this as early confirmation. Do not reduce immediately on one comment.',
     reduce: false,
   },
   'Condition issues (specific room/feature)': {
-    meaning: 'Condition feedback is often actionable and more reliable than price feedback. If multiple buyers cite the same specific issue (dated kitchen, worn carpet, roof age), that feature is devaluing the property in buyers\' eyes.',
+    meaning: 'Condition feedback is often actionable and more reliable than price feedback. If multiple buyers cite the same specific issue (dated kitchen, worn carpet, roof age), that feature is devaluing the property in buyers\’ eyes.',
     action: 'Get a contractor quote on the specific issue. Compare cost to fix vs. price reduction needed. Often a $2,000 carpet replacement beats a $10,000 price cut in buyer psychology.',
     reduce: false,
   },
@@ -33,23 +33,23 @@ const interpretations: Record<string, { meaning: string; action: string; reduce:
     reduce: false,
   },
   'No feedback at all from agent': {
-    meaning: 'Buyer\'s agents often filter or withhold feedback to avoid tipping their hand. Lack of feedback is not positive — it usually means the buyer passed quickly and the agent didn\'t bother. In DFW, this is especially common in the $300-500K range.',
+    meaning: 'Buyer\’s agents often filter or withhold feedback to avoid tipping their hand. Lack of feedback is not positive — it usually means the buyer passed quickly and the agent didn\’t bother. In DFW, this is especially common in the $300-500K range.',
     action: 'Ask your agent to follow up directly 48 hours after every showing. Pattern of no-feedback showings with no offers after 21 days = price signal.',
     reduce: false,
   },
   'Location concerns': {
-    meaning: 'Location feedback is almost always the buyer\'s way of saying they want a different area — it is rarely fixable. In DFW, this often means proximity to traffic corridors, school district lines, or neighborhood perception.',
-    action: 'You cannot fix location. The question is whether you\'re pricing to attract buyers who\'ve already accepted the location. If DFW location is truly a drawback, price must compensate.',
+    meaning: 'Location feedback is almost always the buyer\’s way of saying they want a different area — it is rarely fixable. In DFW, this often means proximity to traffic corridors, school district lines, or neighborhood perception.',
+    action: 'You cannot fix location. The question is whether you\’re pricing to attract buyers who\’ve already accepted the location. If DFW location is truly a drawback, price must compensate.',
     reduce: true,
   },
-  'Layout doesn\'t work for their needs': {
-    meaning: 'Layout feedback means you\'re attracting the wrong buyer profile. In DFW, this often signals a mismatch between how the home is marketed (photography, description) and the actual layout experience.',
+  'Layout doesn\’t work for their needs': {
+    meaning: 'Layout feedback means you\’re attracting the wrong buyer profile. In DFW, this often signals a mismatch between how the home is marketed (photography, description) and the actual layout experience.',
     action: 'Review how the home is being shown and described. Can staging or photography make the layout work better? This is a marketing fix, not necessarily a price fix.',
     reduce: false,
   },
   'Too many showings, no offers': {
     meaning: 'High showing volume + zero offers is the clearest price signal in real estate. Buyers are interested enough to visit but unwilling to make an offer at your price. In DFW, more than 12 showings with no offer is a definitive pricing problem.',
-    action: 'Price reduction is required. Calculate: take the highest offer you\'ve received (or the average buyer budget if no offers), and price to that number or just below it.',
+    action: 'Price reduction is required. Calculate: take the highest offer you\’ve received (or the average buyer budget if no offers), and price to that number or just below it.',
     reduce: true,
   },
 };

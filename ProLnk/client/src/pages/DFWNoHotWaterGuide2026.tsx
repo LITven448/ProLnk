@@ -7,7 +7,7 @@ export default function DFWNoHotWaterGuide2026() {
 
   const diagnose = () => {
     if (heaterType === 'gas' && symptom === 'no-heat') {
-      setDiagnosis('🔥 Pilot light is likely out. Locate the pilot assembly, turn the knob to PILOT, press and hold while lighting. If it won't stay lit, the thermocouple may need replacement ($20-40 part, $80-120 labor).');
+      setDiagnosis('🔥 Pilot light is likely out. Locate the pilot assembly, turn the knob to PILOT, press and hold while lighting. If it won’t stay lit, the thermocouple may need replacement ($20-40 part, $80-120 labor).');
     } else if (heaterType === 'electric' && symptom === 'no-heat') {
       setDiagnosis('⚡ Check your breaker panel. Electric water heaters trip breakers during power surges. Reset breaker once. If it trips again, upper heating element has likely failed ($30 part, $100-150 labor).');
     } else if (symptom === 'lukewarm') {

@@ -43,7 +43,7 @@ const coverTypes = [
     tempEffect: 'Neutral to slight cooling',
     costRange: '$200–$700 DIY',
     pros: ['Affordable', 'Lets rain through (no pump needed)', 'Easy to remove in spring'],
-    cons: ['Not safety rated', 'Won't heat pool', 'Debris accumulates on mesh'],
+    cons: ['Not safety rated', 'Won’t heat pool', 'Debris accumulates on mesh'],
   },
 ];
 

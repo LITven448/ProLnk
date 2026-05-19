@@ -239,12 +239,12 @@ const mistakes = [
   '"Price good for 30 days" — creates urgency but also distrust. Use 7 days max.',
   'No scope of work — just a dollar amount with "labor and materials" is not a bid.',
   'Vague timelines like "weather permitting" without a defined start date.',
-  'Missing warranty language — homeowners assume the worst if you don't specify.',
-  'Typos and grammatical errors — they signal you don't care about details.'
+  'Missing warranty language — homeowners assume the worst if you don’t specify.',
+  'Typos and grammatical errors — they signal you don’t care about details.'
 ];
 
 const tips = [
-  'Use the homeowner's name in the opening and at least once more in the body.',
+  'Use the homeowner’s name in the opening and at least once more in the body.',
   'Reference something specific you observed: "the rust staining near your main shutoff suggests..."',
   'Follow up within 24 hours of delivering the bid — response rate drops 60% after that.',
   'Add a photo of the problem area in your email — it reinforces your diagnosis.',

@@ -6,7 +6,7 @@ const situations = [
     label: 'My AC is 12+ years old and runs constantly in summer',
     mindset: 'Safety & Function First',
     framework: [
-      '🌡️ In DFW, a failing AC is not a comfort issue — it\'s a safety issue. Temps above 100°F kill people in homes without cooling.',
+      '🌡️ In DFW, a failing AC is not a comfort issue — it\’s a safety issue. Temps above 100°F kill people in homes without cooling.',
       '💡 Proactive replacement before failure = your choice of timing, contractor, and unit. Emergency replacement = premium pricing and whatever is available.',
       '📊 New high-efficiency unit (18+ SEER) cuts your electric bill 30-40% in DFW — often pays back in 5-7 years.',
       '⚡ DFW grid stress in summer means more power outages. Consider a unit with battery-compatible design.',
@@ -24,7 +24,7 @@ const situations = [
       '🏠 DFW clay soil is the most active in the country. Seasonal movement is normal — cracking is not always crisis.',
       '🔍 Rule of thumb: hairline cracks = seasonal movement. Stair-step cracks in brick or cracks wider than 1/4" = call an engineer.',
       '💧 Foundation watering is the #1 most important thing you can do. Consistent moisture prevents the shrink-swell cycle that breaks foundations.',
-      '⚠️ Don\'t let foundation companies scare you into repairs. Get an independent structural engineer\'s opinion first ($500-800).',
+      '⚠️ Don\’t let foundation companies scare you into repairs. Get an independent structural engineer\’s opinion first ($500-800).',
     ],
     approach: 'Hire a structural engineer first, then a foundation company',
     timeline: 'Within 60-90 days of noticing',
@@ -36,8 +36,8 @@ const situations = [
     label: 'I want to update my kitchen for value or enjoyment',
     mindset: 'Value vs Joy — Clarify Your Goal First',
     framework: [
-      '📈 DFW kitchen remodels return 60-80% on investment at resale. It\'s good ROI but not a profit center.',
-      '🏠 If you\'re staying 5+ years: optimize for how you live. If selling in 2 years: neutral finishes, quality appliances, no niche choices.',
+      '📈 DFW kitchen remodels return 60-80% on investment at resale. It\’s good ROI but not a profit center.',
+      '🏠 If you\’re staying 5+ years: optimize for how you live. If selling in 2 years: neutral finishes, quality appliances, no niche choices.',
       '💰 The 3 high-ROI moves: cabinet paint or refacing ($3-8K), new countertops ($4-12K), updated lighting ($1-3K). Full gut is luxury, not investment.',
       '⚡ Always check electrical — DFW homes built before 2000 often need panel upgrades to support modern kitchen appliances.',
     ],
@@ -83,7 +83,7 @@ const situations = [
     framework: [
       '🏊 DFW pool reality: pools add $30-50K to value but cost $60-120K to build. Pure lifestyle decision, not ROI.',
       '💧 Operating costs are real: $1,800-3,500/year in chemicals, electricity, and maintenance. Factor into your decision.',
-      '⚠️ DFW clay soil requires specific pool engineering. Get a structural engineer\'s soil report before signing a pool contract.',
+      '⚠️ DFW clay soil requires specific pool engineering. Get a structural engineer\’s soil report before signing a pool contract.',
       '📋 HOA check first, permit requirements in your city, setback rules from property lines — all before you fall in love with a design.',
     ],
     approach: 'Hire a licensed DFW pool builder — this is not DIY territory',

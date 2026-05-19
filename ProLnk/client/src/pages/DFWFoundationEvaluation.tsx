@@ -78,7 +78,7 @@ export default function DFWFoundationEvaluation() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem' }}>
           <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 What Type of Evaluation Do You Need?</h2>
           <div style={{ marginBottom: '1rem' }}>
-            {[['cracks', '🪟 Cracks at door/window corners or in drywall'], ['doors', '🚪 Doors or windows that stick or won\'t close properly'], ['slopes', '📐 Noticeable floor slope (marble rolls across room)'], ['gaps', '🔓 Gap between baseboard and floor or wall and ceiling']].map(([key, label]) => (
+            {[['cracks', '🪟 Cracks at door/window corners or in drywall'], ['doors', '🚪 Doors or windows that stick or won\’t close properly'], ['slopes', '📐 Noticeable floor slope (marble rolls across room)'], ['gaps', '🔓 Gap between baseboard and floor or wall and ceiling']].map(([key, label]) => (
               <label key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#cbd5e1', fontSize: '0.9rem', marginBottom: '0.5rem', cursor: 'pointer' }}>
                 <input type="checkbox" checked={symptoms[key as keyof typeof symptoms]} onChange={() => toggle(key as keyof typeof symptoms)} style={{ width: 18, height: 18 }} />
                 {label}

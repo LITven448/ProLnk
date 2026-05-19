@@ -6,7 +6,7 @@ const communities = [
     label: 'Heritage The Colony',
     hoa: '$250–350/mo',
     amenities: ['18-hole golf course', 'Resort pool & spa', 'Pickleball & tennis', 'Lifestyle director', 'Clubhouse dining'],
-    note: 'One of DFW\'s most established 55+ communities. Sold-out sections regularly resell at $350K–600K.',
+    note: 'One of DFW\’s most established 55+ communities. Sold-out sections regularly resell at $350K–600K.',
   },
   {
     id: 'delwebb',

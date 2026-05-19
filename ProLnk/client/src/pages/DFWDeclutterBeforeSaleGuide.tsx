@@ -24,7 +24,7 @@ export default function DFWDeclutterBeforeSaleGuide() {
     : (clutterLevel === 'light' ? 25 : clutterLevel === 'moderate' ? 48 : 80);
 
   const weeks = Math.ceil(hours / 10);
-  const storageNeeded = homeSize === 'large' || clutterLevel === 'heavy' ? '10x20 unit' : clutterLevel === 'moderate' ? '10x10 unit' : 'Small pod or friend\'s garage';
+  const storageNeeded = homeSize === 'large' || clutterLevel === 'heavy' ? '10x20 unit' : clutterLevel === 'moderate' ? '10x10 unit' : 'Small pod or friend\’s garage';
 
   return (
     <div style={{ fontFamily: 'sans-serif', background: '#f9f7f4', minHeight: '100vh', padding: '40px 20px' }}>

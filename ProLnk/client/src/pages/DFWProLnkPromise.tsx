@@ -11,7 +11,7 @@ const PROMISES: Record<Persona, { title: string; icon: string; commitments: { he
       { headline: '✅ Only Vetted Contractors', detail: 'Every ProLnk contractor is license-verified, background-checked, and rated by real DFW homeowners.' },
       { headline: '💰 Transparent Pricing Always', detail: 'You see itemized quotes before any work begins. No hidden fees, no surprise charges.' },
       { headline: '🔒 Your Home Data Stays Yours', detail: 'We store your Home Health Vault data under your control. You choose who sees what — always.' },
-      { headline: '📈 Better Every Year', detail: 'Our AI improves every match. The longer you\'re on ProLnk, the better your contractor matches get.' },
+      { headline: '📈 Better Every Year', detail: 'Our AI improves every match. The longer you\’re on ProLnk, the better your contractor matches get.' },
     ],
   },
   partner: {

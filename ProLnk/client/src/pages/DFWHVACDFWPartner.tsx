@@ -22,14 +22,14 @@ const relationshipTypes = [
     emoji: '🤝',
     description: "I have someone I've used before but no ongoing commitment",
     gaps: [
-      '⚠️ Inconsistent service means no one knows your system's full history',
-      '⚠️ You're probably paying retail pricing instead of preferred-customer rates',
+      '⚠️ Inconsistent service means no one knows your system’s full history',
+      '⚠️ You’re probably paying retail pricing instead of preferred-customer rates',
       '⚠️ No priority scheduling when everyone else is in crisis mode in July',
       '⚠️ No proactive alerts when your system starts showing early warning signs',
     ],
     steps: [
       '→ Call your contractor and ask about a maintenance agreement — it changes the dynamic',
-      '→ If they don\'t offer one, use ProLnk to find contractors who do',
+      '→ If they don\’t offer one, use ProLnk to find contractors who do',
       '→ A formal relationship earns you priority, better pricing, and accountability',
     ],
   },
@@ -38,15 +38,15 @@ const relationshipTypes = [
     emoji: '📋',
     description: 'I have an annual service agreement with a specific contractor',
     gaps: [
-      '✅ You\'re ahead of 70% of DFW homeowners — great foundation',
+      '✅ You\’re ahead of 70% of DFW homeowners — great foundation',
       '⚠️ Make sure the agreement includes: 2 visits/year, filter check, refrigerant check, priority emergency service',
       '⚠️ Document every visit — save service reports in Home Health Vault',
-      '⚠️ Review your contractor\'s response time commitment — 24hr max in DFW summers',
+      '⚠️ Review your contractor\’s response time commitment — 24hr max in DFW summers',
     ],
     steps: [
       '→ Request a copy of every service report — this is your right and your protection',
       '→ Add your service history to Home Health Vault to protect home resale value',
-      '→ Use ProLnk annually to benchmark your contractor\'s pricing vs. market',
+      '→ Use ProLnk annually to benchmark your contractor\’s pricing vs. market',
     ],
   },
   {
@@ -54,7 +54,7 @@ const relationshipTypes = [
     emoji: '⭐',
     description: 'My contractor knows my system, calls me proactively, and I trust them completely',
     gaps: [
-      '🏆 This is the gold standard — you\'ve built something valuable',
+      '🏆 This is the gold standard — you\’ve built something valuable',
       '✅ Your contractor has full system history and flags issues before they become crises',
       '✅ You get priority emergency slots, better pricing, and honest recommendations',
       '✅ Home Health Vault + a true partner = maximum home value protection',

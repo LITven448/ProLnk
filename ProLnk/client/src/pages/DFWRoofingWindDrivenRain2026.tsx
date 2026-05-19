@@ -20,7 +20,7 @@ const guides: Record<string, { title: string; detail: string; tips: string[] }> 
   },
   shape: {
     title: 'Gable Roofs Are Most Vulnerable in DFW',
-    detail: 'Gable roofs present large flat surfaces perpendicular to wind. In DFW\'s frequent straight-line wind events, gable ends receive direct pressure that drives rain under soffits and into the attic. Hip roofs shed wind from all directions.',
+    detail: 'Gable roofs present large flat surfaces perpendicular to wind. In DFW\’s frequent straight-line wind events, gable ends receive direct pressure that drives rain under soffits and into the attic. Hip roofs shed wind from all directions.',
     tips: ['Brace gable end walls from inside attic (IBHS recommends 2x4 bracing)', 'Seal all gable vent openings with wind-driven rain baffles', 'Check gable soffit condition after every storm over 60 mph', 'Consider hip-to-gable roof conversion when reroofing — adds significant storm resilience'],
   },
   valley: {

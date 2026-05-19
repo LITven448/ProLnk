@@ -43,7 +43,7 @@ export default function DFWHousingSupplyGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
             { icon: '🏠', label: 'Active Listings (Metro)', value: '22,400', sub: 'As of May 2026' },
-            { icon: '📅', label: 'Months of Supply', value: '2.1 months', sub: 'Below 3 = seller\'s market' },
+            { icon: '📅', label: 'Months of Supply', value: '2.1 months', sub: 'Below 3 = seller\’s market' },
             { icon: '🏗️', label: 'New Permits Issued', value: '48,200/yr', sub: '2025 DFW building permits' },
             { icon: '💰', label: 'Median Home Price', value: '$394,000', sub: 'DFW metro, May 2026' },
           ].map(card => (

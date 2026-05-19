@@ -135,7 +135,7 @@ export default function DFWAsbestosLeadGuide() {
 
           <button onClick={() => setShowResult(true)} disabled={!builtYear}
             style={{ width: '100%', backgroundColor: builtYear ? '#F5E642' : '#334155', color: builtYear ? '#0A1628' : '#64748b', border: 'none', borderRadius: 8, padding: '12px 0', fontWeight: 700, fontSize: 15, cursor: builtYear ? 'pointer' : 'not-allowed' }}>
-            {builtYear ? 'Check My Risk Level →' : 'Enter your home\'s build year above'}
+            {builtYear ? 'Check My Risk Level →' : 'Enter your home\’s build year above'}
           </button>
 
           {showResult && builtYear && (

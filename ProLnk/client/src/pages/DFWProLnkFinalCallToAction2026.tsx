@@ -3,9 +3,9 @@ import { useState } from 'react';
 const stakeholders = [
   {
     id: 'homeowner',
-    label: '🏠 I'm a Homeowner',
+    label: '🏠 I’m a Homeowner',
     headline: 'Join Before Charter Pros Are Gone',
-    urgency: 'Charter Pro slots are limited to 500 — once they're full, founding pricing closes permanently',
+    urgency: 'Charter Pro slots are limited to 500 — once they’re full, founding pricing closes permanently',
     steps: [
       'Sign up free at prolnk.io — takes 2 minutes',
       'Add your home address and top service need',
@@ -17,7 +17,7 @@ const stakeholders = [
   },
   {
     id: 'pro',
-    label: '🔨 I'm a Service Pro',
+    label: '🔨 I’m a Service Pro',
     headline: 'Charter Closes at 500 Pros — Spots Approaching Fast',
     urgency: 'Charter Pros lock in $149/mo forever. After 500, pricing moves to $299/mo and you lose founding income multipliers',
     steps: [
@@ -31,7 +31,7 @@ const stakeholders = [
   },
   {
     id: 'investor',
-    label: '💰 I'm an Investor',
+    label: '💰 I’m an Investor',
     headline: '$2M Seed Round Open — YC-Caliber Unit Economics',
     urgency: '85% net margins at 1,000 pros. Waitlist validates demand. Data moat grows with every home added to the Vault',
     steps: [
@@ -45,7 +45,7 @@ const stakeholders = [
   },
   {
     id: 'partner',
-    label: '🤝 I'm a Partner',
+    label: '🤝 I’m a Partner',
     headline: 'B2B Programs — Data, API, and White-Label Available',
     urgency: 'Home Health Vault data and lead infrastructure available for licensed integration. Limited partner slots in 2026',
     steps: [

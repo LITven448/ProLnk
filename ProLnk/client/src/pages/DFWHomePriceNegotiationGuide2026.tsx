@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const findings = [
-  { label: 'Foundation cracks (active)', credit: '$8K–$25K', leverage: 'High', strategy: 'Demand repair credit or price reduction. Get contractor estimates before submitting. Foundation issues are DFW\'s #1 negotiation lever.' },
+  { label: 'Foundation cracks (active)', credit: '$8K–$25K', leverage: 'High', strategy: 'Demand repair credit or price reduction. Get contractor estimates before submitting. Foundation issues are DFW\’s #1 negotiation lever.' },
   { label: 'HVAC over 12 years old', credit: '$4K–$10K', leverage: 'High', strategy: 'Request replacement credit. DFW summers make this non-negotiable for buyers. Sellers often settle at $5–7K.' },
   { label: 'Roof damage or aging shingles', credit: '$6K–$18K', leverage: 'High', strategy: 'Get two roofing bids, submit the higher one. Sellers typically split the difference or offer closing cost credit.' },
   { label: 'Plumbing issues / galvanized pipes', credit: '$2K–$8K', leverage: 'Medium', strategy: 'Specify exact items only. Focus on sewer scope results if available. Avoid broad plumbing credit language.' },
-  { label: 'Outdated electrical panel', credit: '$3K–$6K', leverage: 'Medium', strategy: 'Frame as insurance requirement. Many DFW insurers won\'t cover pre-2000 panels — strong negotiation position.' },
+  { label: 'Outdated electrical panel', credit: '$3K–$6K', leverage: 'Medium', strategy: 'Frame as insurance requirement. Many DFW insurers won\’t cover pre-2000 panels — strong negotiation position.' },
   { label: 'Minor cosmetic issues only', credit: '$0–$1K', leverage: 'Low', strategy: 'Do not over-negotiate cosmetics. DFW sellers in 2026 will walk if you nitpick paint and carpet in a well-maintained home.' },
 ];
 

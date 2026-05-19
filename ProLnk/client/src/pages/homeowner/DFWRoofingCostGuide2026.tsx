@@ -11,7 +11,7 @@ const priceTable = [
 const claimSteps = [
   { n: 1, label: 'Document everything', detail: 'Photos, videos, dates. More is more.' },
   { n: 2, label: 'Call your insurer',   detail: 'File claim within 24–48 hrs of damage.' },
-  { n: 3, label: 'Get 3 estimates',     detail: 'Never accept just the insurer's adjuster estimate.' },
+  { n: 3, label: 'Get 3 estimates',     detail: 'Never accept just the insurer’s adjuster estimate.' },
   { n: 4, label: 'Choose contractor',   detail: 'Verify license at TDLR.texas.gov.' },
   { n: 5, label: 'Sign agreement',      detail: 'Read before signing. No deductible waivers.' },
   { n: 6, label: 'Work begins',         detail: 'Get a project timeline in writing.' },

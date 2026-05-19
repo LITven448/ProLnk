@@ -4,14 +4,14 @@ const yardSizes = ['Small (<1/4 acre)', 'Medium (1/4–1/2 acre)', 'Large (>1/2 
 const goals = ['Improve Garden Soil', 'Reduce Lawn Waste', 'Reduce Food Waste', 'Full Yard Sustainability'];
 
 const binTypes: Record<string, { bin: string; desc: string; cost: string; dfwNote: string }> = {
-  'Small (<1/4 acre)': { bin: 'Tumbler Composter', desc: 'Enclosed tumbler accelerates composting in DFW heat — tumble daily in summer and you\'ll have finished compost in 6 weeks. Keeps wildlife out.', cost: '$80–150', dfwNote: 'DFW heat is your ally. In July–August, internal temps can hit 140°F — ideal for fast decomposition.' },
+  'Small (<1/4 acre)': { bin: 'Tumbler Composter', desc: 'Enclosed tumbler accelerates composting in DFW heat — tumble daily in summer and you\’ll have finished compost in 6 weeks. Keeps wildlife out.', cost: '$80–150', dfwNote: 'DFW heat is your ally. In July–August, internal temps can hit 140°F — ideal for fast decomposition.' },
   'Medium (1/4–1/2 acre)': { bin: '3-Bin Pallet System', desc: 'Build with free pallets from hardware stores. Bin 1: fresh material. Bin 2: active composting. Bin 3: finished compost. Turn weekly in DFW summer.', cost: '$0–30 (free pallets)', dfwNote: 'In DFW summer, the active bin can finish in 6–8 weeks if you keep it moist and turn it every 3–4 days.' },
   'Large (>1/2 acre)': { bin: 'Open Windrow Pile', desc: 'Large piles retain heat better. Use a 3-4 ft tall pile and turn with a pitchfork weekly. DFW summer heat does the work fast.', cost: '$0 (pitchfork only)', dfwNote: 'Larger piles need more watering in DFW summers — the pile should feel like a wrung-out sponge.' },
 };
 
 const addFast = ['Grass clippings (DFW bermuda and zoysia clippings are nitrogen-rich)', 'Vegetable scraps', 'Coffee grounds', 'Torn cardboard (no tape)', 'Shredded dry leaves (DFW oaks drop massively in spring)', 'Fruit peels and cores'];
 const addSlow = ['Small wood chips', 'Paper bags', 'Egg shells (take months to break down)', 'Hair and nail clippings'];
-const avoid = ['Meat and bones (attracts armadillos, raccoons, possums — all abundant in DFW)', 'Grease and oils', 'Pet waste (dog/cat — DFW\'s pet density makes this common)', 'Diseased plant material', 'Treated wood products'];
+const avoid = ['Meat and bones (attracts armadillos, raccoons, possums — all abundant in DFW)', 'Grease and oils', 'Pet waste (dog/cat — DFW\’s pet density makes this common)', 'Diseased plant material', 'Treated wood products'];
 
 const seasonalCalendar = [
   { season: 'Spring (Mar–May)', icon: '🌸', tip: 'DFW spring is prime time. Warm but not extreme heat. Start new pile in March. Add fresh bermuda clippings as lawn wakes up (high nitrogen). Finished compost ready to apply before summer planting.' },

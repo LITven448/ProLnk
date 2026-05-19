@@ -5,7 +5,7 @@ const SCENARIOS = [
     id: 'job_site',
     label: '🏗️ At a job site',
     relationship: 'colleague',
-    script: 'Hey, have you heard of ProLnk? I've been making extra money uploading photos from jobs I'm already doing. Worth 5 minutes to look at if you want.',
+    script: 'Hey, have you heard of ProLnk? I’ve been making extra money uploading photos from jobs I’m already doing. Worth 5 minutes to look at if you want.',
   },
   {
     id: 'supply_house',
@@ -17,28 +17,28 @@ const SCENARIOS = [
     id: 'social_media',
     label: '📱 On social media',
     relationship: 'online',
-    script: 'Saw your work — great quality. Are you on ProLnk? With photos like that, you'd be generating a lot of AI-detected leads. DM me if you want to know more.',
+    script: 'Saw your work — great quality. Are you on ProLnk? With photos like that, you’d be generating a lot of AI-detected leads. DM me if you want to know more.',
   },
   {
     id: 'former_colleague',
     label: '📞 Former colleague',
     relationship: 'existing',
-    script: 'Catching up — are you still doing [trade] work? I started using ProLnk and it's been a solid extra income stream. Let me know if you want to hop on a call — I can show you what I earn.',
+    script: 'Catching up — are you still doing [trade] work? I started using ProLnk and it’s been a solid extra income stream. Let me know if you want to hop on a call — I can show you what I earn.',
   },
   {
     id: 'customer_contractor',
-    label: '🤝 Customer who's also a contractor',
+    label: '🤝 Customer who’s also a contractor',
     relationship: 'trust',
     script: 'I know you do [trade] work — have you looked at ProLnk? Homeowners refer other contractors they trust. Your reputation would go a long way there.',
   },
 ];
 
 const RELATIONSHIP_NOTES: Record<string, string> = {
-  colleague: 'Keep it casual. You're sharing something helpful, not selling.',
-  peer: 'Lead with the income number — it's relevant to their day.',
+  colleague: 'Keep it casual. You’re sharing something helpful, not selling.',
+  peer: 'Lead with the income number — it’s relevant to their day.',
   online: 'Compliment the work first. Authenticity converts.',
   existing: 'Re-connection opens the door. Make it about them.',
-  trust: 'Leverage their existing credibility. They're already trusted.',
+  trust: 'Leverage their existing credibility. They’re already trusted.',
 };
 
 export default function PartnerProspectingScriptGuide() {
@@ -116,9 +116,9 @@ export default function PartnerProspectingScriptGuide() {
           <h3 style={{ fontSize: 18, fontWeight: 700, color: '#991b1b', margin: '0 0 16px' }}>🚫 What NOT to Say</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              { bad: 'Don't lead with "network income" or "referral cascade"', reason: 'Sounds like MLM. You'll lose them in 3 words.' },
-              { bad: 'Don't quote specific dollar amounts without context', reason: '"I made $4,200 last month" without context sounds unrealistic.' },
-              { bad: 'Don't push after one "no"', reason: 'One mention, one follow-up. Then let it go. Pressure destroys trust.' },
+              { bad: 'Don’t lead with "network income" or "referral cascade"', reason: 'Sounds like MLM. You’ll lose them in 3 words.' },
+              { bad: 'Don’t quote specific dollar amounts without context', reason: '"I made $4,200 last month" without context sounds unrealistic.' },
+              { bad: 'Don’t push after one "no"', reason: 'One mention, one follow-up. Then let it go. Pressure destroys trust.' },
             ].map(item => (
               <div key={item.bad} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', borderLeft: '3px solid #ef4444' }}>
                 <div style={{ color: '#991b1b', fontWeight: 700, marginBottom: 4 }}>✗ {item.bad}</div>

@@ -25,7 +25,7 @@ const appliances: Appliance[] = [
   { name: 'Water Softener', icon: '💧', avgLifespan: 15, dfwLifespan: 15, warningSign: 'Soap not lathering, scale buildup, salty water taste', replacementCost: '$400–$1,200', runToFailure: true },
   { name: 'Pool Pump', icon: '🏊', avgLifespan: 10, dfwLifespan: 10, warningSign: 'Loud motor, low suction, leaking around shaft', replacementCost: '$500–$1,200', runToFailure: false },
   { name: 'Sprinkler Controller', icon: '🌱', avgLifespan: 12, dfwLifespan: 12, warningSign: 'Erratic scheduling, zones not activating, screen failure', replacementCost: '$100–$300', runToFailure: true },
-  { name: 'Generator', icon: '⚡', avgLifespan: 20, dfwLifespan: 20, warningSign: 'Doesn't start, power fluctuations, excessive oil use', replacementCost: '$2,000–$15,000', runToFailure: false },
+  { name: 'Generator', icon: '⚡', avgLifespan: 20, dfwLifespan: 20, warningSign: 'Doesn’t start, power fluctuations, excessive oil use', replacementCost: '$2,000–$15,000', runToFailure: false },
 ];
 
 export default function ApplianceLifespanGuide() {

@@ -23,7 +23,7 @@ const situations = [
     emergencyContacts: ['Foundation specialist: Get 3 ProLnk quotes', 'Plumbing leak: Shut water main first, then call', 'HVAC failure: Average DFW unit age 12-15 years', 'Electrical panel upgrade: Licensed electrician only'],
     topPriorities: ['Foundation inspection — DFW clay causes movement in older homes', 'HVAC replacement planning if unit is 12+ years old', 'Re-pipe assessment if original copper or galvanized', 'Roof age — DFW shingles last 15-20 years (hail reduces lifespan)', 'Electrical panel — Federal Pacific or Zinsco panels need replacement'],
     maintenanceHighlights: ['DFW aging home priorities: Foundation (clay soil movement), HVAC (extreme heat cycling), Roof (hail exposure), Plumbing (water heater 8-12 yr life). Add all to Home Health Vault with service dates.'],
-    prolnkTip: 'Home Health Vault tracks your home\'s age, systems, and service history. ProLnk connects you with DFW specialists for each major system.',
+    prolnkTip: 'Home Health Vault tracks your home\’s age, systems, and service history. ProLnk connects you with DFW specialists for each major system.',
   },
   {
     situation: 'Landlord / Rental Property',

@@ -117,12 +117,12 @@ export default function DFWPermitGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>📝 How to Pull a Permit in DFW</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {[
-              ['1', 'Confirm your city\'s requirements', 'Visit your city\'s building department website or call them directly'],
+              ['1', 'Confirm your city\’s requirements', 'Visit your city\’s building department website or call them directly'],
               ['2', 'Gather project documents', 'Site plan, scope of work, materials list, sometimes engineered drawings'],
               ['3', 'Submit application online or in person', 'Most DFW cities now have online portals for common permits'],
               ['4', 'Pay permit fee', 'Usually based on project valuation'],
               ['5', 'Schedule inspections', 'Inspections happen at key milestones (rough-in, framing, final)'],
-              ['6', 'Get your certificate of completion', 'Keep this — you\'ll need it when you sell'],
+              ['6', 'Get your certificate of completion', 'Keep this — you\’ll need it when you sell'],
             ].map(([step, title, desc]) => (
               <div key={step} style={{ display: 'flex', gap: '1rem', background: '#1e2d45', borderRadius: '8px', padding: '1rem', alignItems: 'flex-start' }}>
                 <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem' }}>{step}</div>

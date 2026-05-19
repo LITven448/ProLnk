@@ -24,7 +24,7 @@ function getRiskLevel(score: number): { label: string; color: string; descriptio
   if (score <= 2) return {
     label: 'Low Risk',
     color: '#4CAF50',
-    description: 'Your home\'s electrical system appears to be in generally good condition.',
+    description: 'Your home\’s electrical system appears to be in generally good condition.',
     priority: ['Schedule a routine inspection every 5 years', 'Verify GFCI outlets are functional monthly', 'Keep panel area clear and accessible'],
   };
   if (score <= 5) return {

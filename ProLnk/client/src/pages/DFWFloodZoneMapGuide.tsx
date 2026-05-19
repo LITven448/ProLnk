@@ -78,7 +78,7 @@ const floodZoneData: Record<FloodZone, {
 
 const dfwFloodContext = [
   { icon: '🌧️', title: 'DFW Development Effect', desc: 'Massive impervious surface growth (rooftops, parking, roads) means water that once soaked in now runs off instantly. Neighborhoods that never flooded in 1990 now flood regularly.' },
-  { icon: '🗺️', title: 'FEMA Maps Are Often Outdated', desc: 'Many DFW flood maps haven\'t been updated in 5–15 years. Upstream development that increased runoff isn\'t reflected. Your actual risk may be higher than your zone suggests.' },
+  { icon: '🗺️', title: 'FEMA Maps Are Often Outdated', desc: 'Many DFW flood maps haven\’t been updated in 5–15 years. Upstream development that increased runoff isn\’t reflected. Your actual risk may be higher than your zone suggests.' },
   { icon: '📐', title: 'How to Look Up Your Zone', desc: 'Go to FEMA Flood Map Service Center (msc.fema.gov). Enter your address. Look for your FIRM panel number and zone designation.' },
   { icon: '📋', title: 'Elevation Certificate', desc: 'A licensed surveyor measures your lowest floor elevation relative to BFE. Costs $300–$700 but can dramatically reduce your insurance premium or support a LOMA application.' },
   { icon: '⚠️', title: 'LOMA Application Process', desc: 'Letter of Map Amendment removes you from the floodplain. Requires elevation certificate showing you are above BFE. FEMA review takes 60–90 days. Success rate high when documentation is solid.' },

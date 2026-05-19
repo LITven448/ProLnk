@@ -25,7 +25,7 @@ const PERSONAL_MEANING: Record<Stakeholder, { title: string; points: string[] }>
     points: [
       '📈 Your DFW reputation score compounds year over year — impossible to replicate.',
       '🗓️ Predictive maintenance creates a forward job calendar, not reactive scrambles.',
-      '🧠 AI match context means you arrive at jobs knowing exactly what you're walking into.',
+      '🧠 AI match context means you arrive at jobs knowing exactly what you’re walking into.',
       '💼 The platform handles invoicing, history, and reputation — you focus on craft.',
     ],
   },

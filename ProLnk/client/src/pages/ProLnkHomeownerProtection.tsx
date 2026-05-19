@@ -13,7 +13,7 @@ const scenarios = [
     icon: '⚠️',
     prolnk: 'Submit a quality dispute within 7 days of job completion. ProLnk will mediate between you and the partner. Partners with documented quality disputes are reviewed for platform status.',
     you: 'Take photos before and after the work. Keep any written quotes or text communications with the partner.',
-    outside: 'ProLnk is not a warranty provider. Actual repair liability rests with the licensed contractor\'s insurance.',
+    outside: 'ProLnk is not a warranty provider. Actual repair liability rests with the licensed contractor\’s insurance.',
   },
   {
     label: 'Partner asks for cash',
@@ -25,14 +25,14 @@ const scenarios = [
   {
     label: 'Partner damages property',
     icon: '🏚️',
-    prolnk: 'Document the damage immediately and report it via the platform. ProLnk will facilitate contact with the partner\'s insurance carrier and flag the incident on their partner account.',
-    you: 'Photograph all damage before any cleanup. Get an independent repair estimate. File a claim with the partner\'s insurer directly.',
-    outside: 'ProLnk does not hold repair funds in escrow. Actual insurance claims are between you and the contractor\'s carrier.',
+    prolnk: 'Document the damage immediately and report it via the platform. ProLnk will facilitate contact with the partner\’s insurance carrier and flag the incident on their partner account.',
+    you: 'Photograph all damage before any cleanup. Get an independent repair estimate. File a claim with the partner\’s insurer directly.',
+    outside: 'ProLnk does not hold repair funds in escrow. Actual insurance claims are between you and the contractor\’s carrier.',
   },
   {
     label: 'Partner shares my info',
     icon: '🔐',
-    prolnk: 'Partners agree to ProLnk\'s data use policy at signup. Using homeowner contact info for unsolicited marketing or sharing with third parties violates the partner agreement and results in immediate removal.',
+    prolnk: 'Partners agree to ProLnk\’s data use policy at signup. Using homeowner contact info for unsolicited marketing or sharing with third parties violates the partner agreement and results in immediate removal.',
     you: 'Report any unwanted contact using the in-app reporting feature. Include the partner name, date, and nature of contact.',
     outside: 'ProLnk cannot prevent a removed partner from retaining contact info they already received. Consider blocking the number.',
   },

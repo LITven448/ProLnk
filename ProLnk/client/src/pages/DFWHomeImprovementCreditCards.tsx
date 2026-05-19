@@ -5,7 +5,7 @@ const cards = [
   { name: 'Citi Custom Cash', apy: '0% for 15 months then 18.24%', reward: '5% back on top category', bestFor: 'Contractor spend as top category', type: 'Cash Back' },
   { name: 'Chase Freedom Unlimited', apy: '0% for 15 months then 19.74%', reward: '1.5% on everything', bestFor: 'Simple flat-rate rewards on supplies', type: 'Cash Back' },
   { name: 'Home Depot Card', apy: '0% for 6–24 months (deferred!)', reward: 'Special financing only', bestFor: 'Only if paying in full — deferred interest trap', type: 'Store Card' },
-  { name: 'Lowe\'s Advantage', apy: '0% for 6 months or 5% discount', reward: '5% off or financing', bestFor: 'Smaller purchases, pay in full', type: 'Store Card' },
+  { name: 'Lowe\’s Advantage', apy: '0% for 6 months or 5% discount', reward: '5% off or financing', bestFor: 'Smaller purchases, pay in full', type: 'Store Card' },
 ];
 
 function calcResults(cost: number, months: number, score: number, timeline: number) {
@@ -43,7 +43,7 @@ export default function DFWHomeImprovementCreditCards() {
           </div>
           <div style={{ background: '#FEF2F2', borderRadius: 10, padding: '1.25rem', border: '1px solid #FECACA' }}>
             <div style={{ fontWeight: 700, marginBottom: 8, color: '#991B1B' }}>❌ When Cards Are Risky</div>
-            {['Project over $25K', 'Can\'t repay in 0% period', 'APR kicks in at 20–30%', 'Store cards with deferred interest', 'Carrying balance long-term'].map(i => <div key={i} style={{ fontSize: 13, marginBottom: 3, color: '#7F1D1D' }}>• {i}</div>)}
+            {['Project over $25K', 'Can\’t repay in 0% period', 'APR kicks in at 20–30%', 'Store cards with deferred interest', 'Carrying balance long-term'].map(i => <div key={i} style={{ fontSize: 13, marginBottom: 3, color: '#7F1D1D' }}>• {i}</div>)}
           </div>
         </div>
         <div style={{ marginBottom: '1.5rem' }}>

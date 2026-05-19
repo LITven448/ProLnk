@@ -28,7 +28,7 @@ export default function DFWElectricalPanelLifespan() {
       color = '#FF4444';
     } else if (a >= 40) {
       urgency = 'Proactive Replacement Recommended';
-      message = 'Your panel is at or past its typical lifespan. DFW\'s high AC load (summer heat runs systems 8–12 hrs/day) accelerates wear. Schedule an electrician evaluation this year.';
+      message = 'Your panel is at or past its typical lifespan. DFW\’s high AC load (summer heat runs systems 8–12 hrs/day) accelerates wear. Schedule an electrician evaluation this year.';
       color = '#FF9900';
     } else if (a >= 25 && ac === 'yes') {
       urgency = 'Evaluation Recommended';

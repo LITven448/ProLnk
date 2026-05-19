@@ -4,12 +4,12 @@ const dealers = [
   { name: 'Johnstone Supply', icon: '🏭', type: 'Contractor Distributor', note: 'Largest HVAC parts distributor in DFW — pros buy equipment and parts here' },
   { name: 'Waxman Supply', icon: '🔧', type: 'DFW Distributor', note: 'Strong DFW presence, Trane and Carrier dealer, fast delivery for contractors' },
   { name: 'Lennox', icon: '❄️', type: 'DFW Manufacturer', note: 'Headquartered in Richardson TX — DFW pros have direct factory access' },
-  { name: 'Trane', icon: '💨', type: 'Premium Brand', note: 'It's Hard to Stop a Trane — high end, dealer-only installation in DFW' },
+  { name: 'Trane', icon: '💨', type: 'Premium Brand', note: 'It’s Hard to Stop a Trane — high end, dealer-only installation in DFW' },
   { name: 'Carrier', icon: '🌡️', type: 'Premium Brand', note: 'SEER2 leader, strong DFW dealer network, best for new construction' },
 ];
 
 const prefGuide: Record<string, { guide: string; reason: string }> = {
-  'Brand Doesn't Matter': { guide: 'Lennox or Carrier', reason: 'Installer quality drives 80% of HVAC performance — ProLnk vets the tech, not the logo' },
+  'Brand Doesn’t Matter': { guide: 'Lennox or Carrier', reason: 'Installer quality drives 80% of HVAC performance — ProLnk vets the tech, not the logo' },
   'Lennox Fan': { guide: 'Waxman Supply dealers', reason: 'DFW Lennox dealers — factory HQ in Richardson means fast parts + warranty support' },
   'Trane Preferred': { guide: 'Trane ComfortSite dealers', reason: 'Trane dealer locator → DFW certified installers with factory training' },
   'Carrier Preferred': { guide: 'Carrier Factory Authorized dealers', reason: 'FAD program = vetted DFW contractors with Carrier-backed warranty' },
@@ -18,7 +18,7 @@ const prefGuide: Record<string, { guide: string; reason: string }> = {
 
 export default function DFWHVACLocalBrandsGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
-  const [pref, setPref] = useState<string>('Brand Doesn't Matter');
+  const [pref, setPref] = useState<string>('Brand Doesn’t Matter');
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>

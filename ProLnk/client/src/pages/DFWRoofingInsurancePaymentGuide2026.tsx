@@ -10,7 +10,7 @@ export default function DFWRoofingInsurancePaymentGuide2026() {
     const actions = {
       'acv-received': {
         'yes': '📋 ACTION: 1) Do NOT spend the ACV check yet. 2) Contact your mortgage company — their name is likely on the check and requires endorsement. 3) Ask them about their draw process (many hold funds in escrow). 4) Get your contractor started — they often work with mortgage companies. 5) Keep all receipts for the supplement claim.',
-        'no': '📋 ACTION: 1) Review the ACV check — confirm it matches the adjuster\'s estimate. 2) Do NOT spend this check — it is only the first payment. 3) Share the estimate with your chosen contractor. 4) Contractor completes the job, then you file for the RCV supplement (depreciation recovery). 5) Supplement check arrives after proof of completion.',
+        'no': '📋 ACTION: 1) Review the ACV check — confirm it matches the adjuster\’s estimate. 2) Do NOT spend this check — it is only the first payment. 3) Share the estimate with your chosen contractor. 4) Contractor completes the job, then you file for the RCV supplement (depreciation recovery). 5) Supplement check arrives after proof of completion.',
       },
       'supplement-pending': {
         'yes': '📋 ACTION: 1) Submit Certificate of Completion + final invoice to your insurer. 2) Follow up weekly — supplements take 2–6 weeks. 3) When check arrives, your mortgage company name may be on it again. 4) Coordinate with mortgage company for endorsement and release of funds. 5) Pay contractor remaining balance from supplement.',
@@ -43,7 +43,7 @@ export default function DFWRoofingInsurancePaymentGuide2026() {
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>🏦 The Mortgage Company Complication</h2>
-          {['If you have a mortgage, your lender is a co-insured — their name appears on the insurance check','You CANNOT cash the check without their endorsement (signature)','Most mortgage companies have a draw process — they hold funds in escrow and release in draws as work progresses','Call your mortgage servicer\'s insurance loss department as soon as you receive the ACV check','Ask about their inspection requirements before they release final draw funds'].map((s, i) => (
+          {['If you have a mortgage, your lender is a co-insured — their name appears on the insurance check','You CANNOT cash the check without their endorsement (signature)','Most mortgage companies have a draw process — they hold funds in escrow and release in draws as work progresses','Call your mortgage servicer\’s insurance loss department as soon as you receive the ACV check','Ask about their inspection requirements before they release final draw funds'].map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', minWidth: '20px', fontWeight: '700' }}>{i + 1}.</span>
               <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>{s}</span>

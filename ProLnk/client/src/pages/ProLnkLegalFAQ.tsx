@@ -11,34 +11,34 @@ const FAQS = [
   },
   {
     q: 'What if a homeowner sues a pro I referred?',
-    a: 'If you referred a pro to ProLnk (as part of the Network Income System), you are not legally liable for that pro\'s work. You are not their employer, partner, or guarantor. However, each pro is required to carry general liability insurance that protects against claims from homeowners.',
+    a: 'If you referred a pro to ProLnk (as part of the Network Income System), you are not legally liable for that pro\’s work. You are not their employer, partner, or guarantor. However, each pro is required to carry general liability insurance that protects against claims from homeowners.',
   },
   {
     q: 'Is ProLnk compliant with RESPA for real estate-adjacent work?',
-    a: 'Yes. RESPA (Real Estate Settlement Procedures Act) prohibits kickbacks for referrals on federally related mortgage transactions. ProLnk\'s lead matching is based on trade, geography, and availability — not financial incentives between pros and real estate agents. Our system does not allow steering homeowners to specific pros for financial benefit.',
+    a: 'Yes. RESPA (Real Estate Settlement Procedures Act) prohibits kickbacks for referrals on federally related mortgage transactions. ProLnk\’s lead matching is based on trade, geography, and availability — not financial incentives between pros and real estate agents. Our system does not allow steering homeowners to specific pros for financial benefit.',
   },
   {
     q: 'What does the Independent Contractor Agreement cover?',
-    a: 'The IC Agreement covers: (1) your classification as an independent contractor, (2) your obligation to carry proper insurance and licensing, (3) ProLnk\'s right to remove you from the platform for violations, (4) payment terms for commissions, (5) confidentiality of homeowner data, and (6) dispute resolution procedures.',
+    a: 'The IC Agreement covers: (1) your classification as an independent contractor, (2) your obligation to carry proper insurance and licensing, (3) ProLnk\’s right to remove you from the platform for violations, (4) payment terms for commissions, (5) confidentiality of homeowner data, and (6) dispute resolution procedures.',
   },
   {
     q: 'Does ProLnk share my personal information with homeowners?',
-    a: 'ProLnk shares your trade, service area, ratings, and business name with homeowners during the matching process. We do not share your home address, personal phone number, or Social Security Number. Homeowners communicate with you through the platform\'s messaging system until you choose to share direct contact.',
+    a: 'ProLnk shares your trade, service area, ratings, and business name with homeowners during the matching process. We do not share your home address, personal phone number, or Social Security Number. Homeowners communicate with you through the platform\’s messaging system until you choose to share direct contact.',
   },
   {
     q: 'Can ProLnk terminate my account without notice?',
     a: 'ProLnk reserves the right to suspend or terminate accounts for violations of the Terms of Service, including fraud, misrepresentation of credentials, homeowner complaints, insurance lapses, or abusive behavior. We provide notice except in cases of immediate safety concerns.',
   },
   {
-    q: 'Who is responsible if I damage a homeowner\'s property?',
+    q: 'Who is responsible if I damage a homeowner\’s property?',
     a: 'You are responsible for any damage caused by your work. This is why ProLnk requires general liability insurance — it protects both you and the homeowner. ProLnk does not indemnify pros for damage claims. Your GL policy should cover third-party property damage.',
   },
   {
-    q: 'Can homeowners sue ProLnk for the quality of a pro\'s work?',
+    q: 'Can homeowners sue ProLnk for the quality of a pro\’s work?',
     a: 'ProLnk is a marketplace, not a contractor. Our Terms of Service explicitly state that ProLnk does not guarantee the quality of any service performed by a pro. Homeowners agree to this when signing up. Any quality dispute is between the homeowner and the pro.',
   },
   {
-    q: 'What happens to my earnings if I\'m suspended?',
+    q: 'What happens to my earnings if I\’m suspended?',
     a: 'Earned commissions for completed matches are paid out on the regular payout schedule, even if your account is later suspended. Pending commissions for disputed matches may be held until the dispute is resolved. Commissions for fraudulent activity are forfeited.',
   },
   {
@@ -59,7 +59,7 @@ const FAQS = [
   },
   {
     q: 'Can I recruit other pros to ProLnk?',
-    a: 'Yes — this is the Network Income System\'s Stream 2. You earn override commissions on earnings from pros you recruit, up to 4 levels deep. Recruitment must be honest and transparent. Misrepresenting ProLnk\'s earning potential to recruits is a violation of the Terms.',
+    a: 'Yes — this is the Network Income System\’s Stream 2. You earn override commissions on earnings from pros you recruit, up to 4 levels deep. Recruitment must be honest and transparent. Misrepresenting ProLnk\’s earning potential to recruits is a violation of the Terms.',
   },
   {
     q: 'What happens if a homeowner files a fraudulent complaint?',
@@ -74,7 +74,7 @@ const FAQS = [
     a: 'ProLnk issues 1099-NEC forms to pros earning $600 or more in a calendar year. Earnings are reported to the IRS. You are responsible for paying self-employment tax on your ProLnk income. Consult a tax professional to set up quarterly estimated payments.',
   },
   {
-    q: 'What is ProLnk\'s privacy policy summary?',
+    q: 'What is ProLnk\’s privacy policy summary?',
     a: 'ProLnk collects name, contact info, trade info, license numbers, and service area data. This data is used to match you with homeowners, process commissions, and improve the platform. We do not sell your personal data to advertisers. Data is encrypted in transit and at rest. You can request data deletion at any time.',
   },
   {

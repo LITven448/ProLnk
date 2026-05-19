@@ -5,7 +5,7 @@ const EXTENTS = ['Single room — visible soot', 'Multiple rooms — odor only',
 
 const guide: Record<string, { assessment: string; diy: string; professional: string; whoFirst: string; cost: string; dfwNote: string }> = {
   'Kitchen/cooking fire smoke': {
-    assessment: 'Check ceiling, cabinets, and HVAC return vents for soot. Test smoke odor in adjacent rooms — smoke travels through HVAC fast in DFW\'s continuously running systems.',
+    assessment: 'Check ceiling, cabinets, and HVAC return vents for soot. Test smoke odor in adjacent rooms — smoke travels through HVAC fast in DFW\’s continuously running systems.',
     diy: 'Wipe soot with dry chemical sponge (never wet first). Clean hard surfaces with TSP substitute. Replace HVAC filters immediately. Run air purifier with HEPA + activated carbon.',
     professional: 'If HVAC ducts show soot or odor persists after 48 hours of ventilation — call certified smoke remediation. Ozone treatment needed for protein smoke from cooking fires.',
     whoFirst: '1. HVAC company to inspect and clean ductwork 2. Smoke remediation specialist for ozone treatment 3. General contractor for any structural damage',

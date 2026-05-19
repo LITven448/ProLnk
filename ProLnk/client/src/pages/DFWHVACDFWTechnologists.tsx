@@ -12,7 +12,7 @@ const technologies = [
     id: 'heat-pump',
     label: '🔥 Cold-Climate Heat Pumps',
     status: 'proven',
-    recommendation: 'ADOPT NOW. Modern cold-climate heat pumps (Bosch, Mitsubishi, Daikin) are rated to -13°F and perform efficiently at 105°F ambient — DFW's full range. Pairs with solar and batteries for near-zero utility cost. Proven in DFW for 5+ years.',
+    recommendation: 'ADOPT NOW. Modern cold-climate heat pumps (Bosch, Mitsubishi, Daikin) are rated to -13°F and perform efficiently at 105°F ambient — DFW’s full range. Pairs with solar and batteries for near-zero utility cost. Proven in DFW for 5+ years.',
     maturity: '✅ Proven DFW Technology',
   },
   {
@@ -26,14 +26,14 @@ const technologies = [
     id: 'predictive',
     label: '📊 Predictive Maintenance Sensors',
     status: 'maturing',
-    recommendation: 'WAIT 12-18 MONTHS. Vibration and refrigerant sensors that predict failures are promising but diagnostic accuracy in DFW's extreme duty cycles is still inconsistent. Early adopters report 20% false-positive rates. Leading brands are Augury and SpotSee — check back in 2027.',
+    recommendation: 'WAIT 12-18 MONTHS. Vibration and refrigerant sensors that predict failures are promising but diagnostic accuracy in DFW’s extreme duty cycles is still inconsistent. Early adopters report 20% false-positive rates. Leading brands are Augury and SpotSee — check back in 2027.',
     maturity: '⏳ Maturing — Wait for DFW Track Record',
   },
   {
     id: 'solar-hvac',
     label: '☀️ Solar-Integrated HVAC',
     status: 'maturing',
-    recommendation: 'ADOPT WITH CAUTION. Solar DC-direct HVAC (no inverter losses) is genuinely innovative and DFW's 300+ sun days make it economically strong. However, installation quality varies wildly. ProLnk can match you with the 3-4 DFW contractors with real track records in this system.',
+    recommendation: 'ADOPT WITH CAUTION. Solar DC-direct HVAC (no inverter losses) is genuinely innovative and DFW’s 300+ sun days make it economically strong. However, installation quality varies wildly. ProLnk can match you with the 3-4 DFW contractors with real track records in this system.',
     maturity: '⚠️ Promising — Vet Your Contractor Carefully',
   },
 ];

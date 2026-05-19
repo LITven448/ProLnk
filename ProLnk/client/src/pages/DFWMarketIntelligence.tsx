@@ -18,7 +18,7 @@ const trends = [
   },
   {
     icon: '☀️',
-    headline: 'Solar + Battery Storage 2x'd in 12 Months',
+    headline: 'Solar + Battery Storage 2x’d in 12 Months',
     body: 'Post-ERCOT anxiety is driving adoption. Homeowners want independence from the grid. Installers with NABCEP certification command 40% premium.',
     tag: 'ELECTRICIANS + HVAC'
   },

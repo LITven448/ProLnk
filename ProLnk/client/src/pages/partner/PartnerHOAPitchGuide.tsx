@@ -8,17 +8,17 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
     'Single-Family': {
       approach: 'Peer-to-peer trust pitch — small boards know every homeowner personally. Frame ProLnk as the neighborhood advantage.',
       points: ['Vetted pros reduce fly-by-night contractor risk for neighbors', 'Home values stay consistent when maintenance is reliable', 'One contact for every trade — board members stop fielding contractor questions'],
-      objections: ['We already have preferred vendors → ProLnk expands the bench, no exclusivity required', 'We don't want to endorse anyone → It's a resource, not an endorsement'],
+      objections: ['We already have preferred vendors → ProLnk expands the bench, no exclusivity required', 'We don’t want to endorse anyone → It’s a resource, not an endorsement'],
     },
     'Townhome': {
-      approach: 'Shared-wall sensitivity pitch — townhome boards face liability when one owner's neglect damages neighbors.',
+      approach: 'Shared-wall sensitivity pitch — townhome boards face liability when one owner’s neglect damages neighbors.',
       points: ['Preventive maintenance culture reduces shared-wall incidents', 'Documented repair history helps in disputes', 'Residents get quotes fast — fewer deferred repairs'],
       objections: ['CC&Rs restrict contractor access → ProLnk coordinates with HOA approval workflows', 'Board bandwidth is limited → We handle all resident coordination'],
     },
     'Condo / High-Rise': {
       approach: 'Interior unit pitch — condo HOAs care about in-unit work that impacts common areas.',
       points: ['Insured pros only — protects association from liability', 'Scheduling coordination reduces elevator / lobby disruption', 'Maintenance logs support reserve study documentation'],
-      objections: ['We have a property manager → ProLnk complements, doesn't replace', 'Unit owners handle their own repairs → We make it easy for them to do it right'],
+      objections: ['We have a property manager → ProLnk complements, doesn’t replace', 'Unit owners handle their own repairs → We make it easy for them to do it right'],
     },
   },
   'Mid (50–200 homes)': {
@@ -42,7 +42,7 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
     'Single-Family': {
       approach: 'Scale and data pitch — large boards think in aggregate. Give them community-level metrics.',
       points: ['Aggregate maintenance data flags infrastructure trends early', 'Volume of homes = better pro pricing for all residents', 'Board gets quarterly report: trade categories, activity, satisfaction'],
-      objections: ['We have a professional management company → ProLnk is a resident-facing tool they'd want', 'Risk of recommending a platform → No-liability referral, purely informational'],
+      objections: ['We have a professional management company → ProLnk is a resident-facing tool they’d want', 'Risk of recommending a platform → No-liability referral, purely informational'],
     },
     'Townhome': {
       approach: 'Portfolio management pitch — large townhome communities are closer to commercial real estate.',
@@ -52,7 +52,7 @@ const pitchData: Record<string, Record<string, { approach: string; points: strin
     'Condo / High-Rise': {
       approach: 'Institutional pitch — large condo boards operate like small businesses. Speak ROI.',
       points: ['Documented maintenance history supports asset valuation', 'Reduce uninsured contractor incidents that become association liability', 'Resident engagement tool — differentiator for HOA marketing'],
-      objections: ['Our attorney would need to review → Standard referral program, no formal agreement required', 'We're already overwhelmed → This requires zero board time after one announcement'],
+      objections: ['Our attorney would need to review → Standard referral program, no formal agreement required', 'We’re already overwhelmed → This requires zero board time after one announcement'],
     },
   },
 };

@@ -15,7 +15,7 @@ const CHAMPION_ACTIONS = [
   { icon: '🤝', action: 'Host monthly DFW contractor meetup or virtual Q&A', impact: '+Trust & referrals' },
   { icon: '📱', action: 'Share 2 social posts/week about ProLnk wins in DFW', impact: '+Organic pipeline' },
   { icon: '🎯', action: 'Onboard each new recruit personally in first 48 hrs', impact: '-Attrition by 40%' },
-  { icon: '📊', action: 'Review your team\'s match rates monthly, coach low performers', impact: '+Team income' },
+  { icon: '📊', action: 'Review your team\’s match rates monthly, coach low performers', impact: '+Team income' },
   { icon: '🏆', action: 'Target DFW trade expos (PHCC, NECA, ABC events)', impact: '+Bulk recruiting' },
 ];
 

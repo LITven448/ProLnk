@@ -13,7 +13,7 @@ const phases = [
       'Perfect your photo process — capture every job site before, during, and after.',
       'Build a consistent weekly photo upload habit. Consistency beats volume.',
       'Maximize AI detection — ensure good lighting and full coverage of systems.',
-      'Focus on your primary trade. Don't spread thin in the first 90 days.',
+      'Focus on your primary trade. Don’t spread thin in the first 90 days.',
       'Request reviews from every satisfied customer immediately after the job.',
     ],
   },
@@ -28,7 +28,7 @@ const phases = [
     steps: [
       'Recruit 1 quality partner per week. Quality over quantity — teach before you recruit more.',
       'Teach your first 3 partners the exact photo process that worked for you.',
-      'Choose trade partners that complement yours (if you're HVAC, recruit plumbers and electricians).',
+      'Choose trade partners that complement yours (if you’re HVAC, recruit plumbers and electricians).',
       'Track your network income weekly — let the numbers motivate your recruits.',
       'Host a simple monthly call with your team to share wins and troubleshoot.',
     ],

@@ -7,7 +7,7 @@ const TASKS = [
   { id: 'water', category: 'Utilities', label: 'Set up city water & trash', time: '20 min', cost: '$0', priority: 'high', note: 'Contact your city (Dallas, Fort Worth, Plano, Frisco, etc.) — not one statewide provider' },
   { id: 'internet', category: 'Utilities', label: 'Schedule internet installation', time: '1 hr + wait', cost: '$0–$150 setup', priority: 'high', note: 'AT&T Fiber or Spectrum most common in DFW; book 1–2 weeks out' },
   { id: 'usps', category: 'Admin', label: 'USPS address change', time: '10 min', cost: '$1.10 (identity verify)', priority: 'high', note: 'Go to usps.com/move — activates mail forwarding for 12 months' },
-  { id: 'txdl', category: 'Admin', label: 'Update Texas driver\'s license', time: '1–2 hrs (wait)', cost: '$11', priority: 'high', note: 'Required within 30 days of moving in Texas — visit DPS office or use dlr.dps.texas.gov' },
+  { id: 'txdl', category: 'Admin', label: 'Update Texas driver\’s license', time: '1–2 hrs (wait)', cost: '$11', priority: 'high', note: 'Required within 30 days of moving in Texas — visit DPS office or use dlr.dps.texas.gov' },
   { id: 'voter', category: 'Admin', label: 'Update voter registration', time: '10 min', cost: '$0', priority: 'medium', note: 'VoteTexas.gov — must update 30 days before an election to vote at new precinct' },
   { id: 'school', category: 'Family', label: 'School enrollment & district transfer', time: '2–3 hrs', cost: '$0', priority: 'high', note: 'Contact your new ISD (DISD, FWISD, PISD, FISD, etc.) — bring proof of residency + immunization records' },
   { id: 'nextdoor', category: 'Community', label: 'Join Nextdoor for your neighborhood', time: '10 min', cost: '$0', priority: 'low', note: 'Great for local recommendations, lost pets, neighborhood alerts, contractor referrals' },
@@ -86,7 +86,7 @@ export default function DFWNeighborhoodMoveInGuide() {
         <div style={{ marginTop: 32, backgroundColor: '#FFFFFF', borderRadius: 16, padding: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📞 Key DFW Contacts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
-            {[['Oncor (Power Delivery)', 'oncor.com / 888-313-4747'], ['Power to Choose (Retail)', 'powertochoose.org'], ['Atmos Energy (Gas)', 'atmosenergy.com / 888-286-6700'], ['USPS Change of Address', 'usps.com/move ($1.10)'], ['TX DPS (Driver\'s License)', 'dlr.dps.texas.gov'], ['Vote Texas (Voter Reg)', 'votetexas.gov']].map(([name, contact]) => (
+            {[['Oncor (Power Delivery)', 'oncor.com / 888-313-4747'], ['Power to Choose (Retail)', 'powertochoose.org'], ['Atmos Energy (Gas)', 'atmosenergy.com / 888-286-6700'], ['USPS Change of Address', 'usps.com/move ($1.10)'], ['TX DPS (Driver\’s License)', 'dlr.dps.texas.gov'], ['Vote Texas (Voter Reg)', 'votetexas.gov']].map(([name, contact]) => (
               <div key={name} style={{ backgroundColor: '#F8F9FC', borderRadius: 10, padding: 14 }}>
                 <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 13, marginBottom: 4 }}>{name}</div>
                 <div style={{ color: '#2563EB', fontSize: 13 }}>{contact}</div>

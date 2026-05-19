@@ -12,7 +12,7 @@ const data: Record<string, Record<string, { finish: string; timing: string; avoi
   'Patio': {
     'Summer (Jun-Sep)': { finish: 'Exposed Aggregate or Stamped', timing: 'Expose aggregate or stamp within 25-35 min — DFW heat accelerates set dramatically', avoid: 'Smooth trowel — radiates heat and becomes blinding in DFW sun', heatTip: 'Erect shade canopy over pour area. Schedule pour at 6-7am', slip: '⭐⭐⭐⭐ Traction' },
     'Spring/Fall (Mar-May, Oct-Nov)': { finish: 'Stamped Concrete', timing: 'Stamp 40-60 min after pour — ideal DFW window for detailed work', avoid: 'Working alone — stamping requires team in any DFW weather', heatTip: 'Perfect DFW season for decorative finishes — lower risk of premature hardening', slip: '⭐⭐⭐ Moderate' },
-    'Winter (Dec-Feb)': { finish: 'Broom or Light Trowel', timing: 'Float 50-70 min after pour. Finish before temps drop in evening', avoid: 'Stamping in below-40°F temps — color hardener won\'t cure properly', heatTip: 'Warm sub-base before pouring on cold DFW days', slip: '⭐⭐⭐⭐ Traction' },
+    'Winter (Dec-Feb)': { finish: 'Broom or Light Trowel', timing: 'Float 50-70 min after pour. Finish before temps drop in evening', avoid: 'Stamping in below-40°F temps — color hardener won\’t cure properly', heatTip: 'Warm sub-base before pouring on cold DFW days', slip: '⭐⭐⭐⭐ Traction' },
   },
   'Pool Deck': {
     'Summer (Jun-Sep)': { finish: 'Kool Deck / Broom (Fine Texture)', timing: 'Apply Kool Deck overlay 24-48 hrs after base. Base broom within 25 min', avoid: 'Dark stamped concrete — absorbs DFW heat, burns bare feet at 140°F+', heatTip: 'Kool Deck or cool-tone exposed aggregate mandatory for DFW pool decks', slip: '⭐⭐⭐⭐⭐ Maximum' },
@@ -32,7 +32,7 @@ const data: Record<string, Record<string, { finish: string; timing: string; avoi
   'Entryway': {
     'Summer (Jun-Sep)': { finish: 'Exposed Aggregate or Stamp', timing: 'Stamp or expose 25-35 min — DFW heat is unforgiving on decorative work', avoid: 'Smooth trowel — slick when DFW storms hit', heatTip: 'Schedule at sunrise. Have team ready before mixing', slip: '⭐⭐⭐⭐ Traction' },
     'Spring/Fall (Mar-May, Oct-Nov)': { finish: 'Stamped with Antiquing Release', timing: 'Stamp 45-65 min after pour — ideal decorative window', avoid: 'Skipping sealer — DFW rain and traffic destroy unsealed stamped concrete', heatTip: 'Perfect DFW conditions for premium finishes and color work', slip: '⭐⭐⭐ Moderate with texture' },
-    'Winter (Dec-Feb)': { finish: 'Broom Finish', timing: 'Float 50-70 min. Broom 65-85 min after pour', avoid: 'Stamping when color hardener won\'t cure in cold DFW temps', heatTip: 'Protect with blankets 48 hrs — DFW nights drop fast in winter', slip: '⭐⭐⭐⭐ Traction' },
+    'Winter (Dec-Feb)': { finish: 'Broom Finish', timing: 'Float 50-70 min. Broom 65-85 min after pour', avoid: 'Stamping when color hardener won\’t cure in cold DFW temps', heatTip: 'Protect with blankets 48 hrs — DFW nights drop fast in winter', slip: '⭐⭐⭐⭐ Traction' },
   },
 };
 

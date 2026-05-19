@@ -28,7 +28,7 @@ export default function ProLnkCommunicationGuide() {
     no_response: {
       icon: '⏰',
       rule: 'Charter pros must respond within 60 minutes or the match can be reassigned.',
-      howTo: 'If you haven't heard back after 60 minutes, tap "Request New Pro" in the job thread. ProLnk logs the no-response, flags the pro's response score, and dispatches a new Charter match immediately.',
+      howTo: 'If you haven’t heard back after 60 minutes, tap "Request New Pro" in the job thread. ProLnk logs the no-response, flags the pro’s response score, and dispatches a new Charter match immediately.',
       vault: false,
     },
     personal_info: {

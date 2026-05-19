@@ -4,13 +4,13 @@ const myths = [
   {
     belief: 'DIY always saves money vs. hiring a pro',
     verdict: 'MYTH',
-    reality: 'In DFW, DIY electrical, plumbing, and HVAC work done without permits can void homeowner\'s insurance, fail home inspection at resale, and require licensed correction. The "savings" of a $300 DIY electrical fix can become a $2,000 licensed re-do at sale. Cosmetic DIY (paint, landscaping) is fine — structural/mechanical is risky.',
+    reality: 'In DFW, DIY electrical, plumbing, and HVAC work done without permits can void homeowner\’s insurance, fail home inspection at resale, and require licensed correction. The "savings" of a $300 DIY electrical fix can become a $2,000 licensed re-do at sale. Cosmetic DIY (paint, landscaping) is fine — structural/mechanical is risky.',
     icon: '🔨',
   },
   {
     belief: 'Premium materials always last longer in DFW',
     verdict: 'MYTH',
-    reality: 'DFW climate — 100°F summers, freeze-thaw cycles, clay soil — degrades materials based on suitability, not price. A $4/sqft DFW-appropriate caulk outperforms a $12/sqft premium product not rated for Texas temperature swings. Ask your contractor what\'s climate-tested for DFW, not what\'s most expensive.',
+    reality: 'DFW climate — 100°F summers, freeze-thaw cycles, clay soil — degrades materials based on suitability, not price. A $4/sqft DFW-appropriate caulk outperforms a $12/sqft premium product not rated for Texas temperature swings. Ask your contractor what\’s climate-tested for DFW, not what\’s most expensive.',
     icon: '🪟',
   },
   {
@@ -22,13 +22,13 @@ const myths = [
   {
     belief: 'Permits are just bureaucracy with no real benefit',
     verdict: 'MYTH',
-    reality: 'Unpermitted work in DFW is a material fact that must be disclosed at sale. Buyers can demand it be remediated before closing. Permitted work is inspected for safety and creates a legal record. Permits protect your investment, your sale, and your family\'s safety — not just city revenue.',
+    reality: 'Unpermitted work in DFW is a material fact that must be disclosed at sale. Buyers can demand it be remediated before closing. Permitted work is inspected for safety and creates a legal record. Permits protect your investment, your sale, and your family\’s safety — not just city revenue.',
     icon: '🏛️',
   },
   {
     belief: 'Roof damage in DFW is always covered by insurance',
     verdict: 'MYTH',
-    reality: 'DFW insurers have tightened hail and storm coverage significantly. Many policies now have separate hail deductibles (1–3% of home value), require wind mitigation credits, or exclude roofs over 15 years old. Review your policy before assuming you\'re covered after a DFW storm.',
+    reality: 'DFW insurers have tightened hail and storm coverage significantly. Many policies now have separate hail deductibles (1–3% of home value), require wind mitigation credits, or exclude roofs over 15 years old. Review your policy before assuming you\’re covered after a DFW storm.',
     icon: '⛈️',
   },
 ];

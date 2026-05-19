@@ -16,7 +16,7 @@ function getRecommendation(location: string, condition: string, sqft: number) {
   const isFair = condition.startsWith('Fair');
 
   const groutType = isShower ? 'Epoxy grout (Laticrete SpectraLOCK)' : isFloor ? 'Sanded cement grout (Mapei Keracolor S)' : 'Unsanded cement grout (Mapei Ultracolor Plus)';
-  const sealer = isShower ? 'Aqua Mix Sealer\'s Choice Gold — apply 72 hrs after grout cures' : 'Aqua Mix Sealer\'s Choice — DFW hard water etches unsealed grout fast';
+  const sealer = isShower ? 'Aqua Mix Sealer\’s Choice Gold — apply 72 hrs after grout cures' : 'Aqua Mix Sealer\’s Choice — DFW hard water etches unsealed grout fast';
   const diyVsPro = isPoor ? 'pro' : sqft > 45 ? 'borderline' : 'diy';
   const bags = Math.ceil(sqft / 25);
   const hours = sqft < 20 ? 3 : sqft < 50 ? 6 : 10;
@@ -56,7 +56,7 @@ export default function DFWDIYTileGroutGuide() {
             ['Oscillating tool (best)', 'Dremel or Fein Multimaster with grout blade — fast, precise, low tile-chip risk'],
             ['Manual grout saw', 'Works for small areas; tiring for anything over 5 sq ft'],
             ['Angle grinder (avoid DIY)', 'High risk of cracking tiles — leave to pros for large floor jobs'],
-            ['Depth rule', 'Remove at least 2/3 of grout depth — surface scratching won\'t bond properly'],
+            ['Depth rule', 'Remove at least 2/3 of grout depth — surface scratching won\’t bond properly'],
           ].map(([method, detail]) => (
             <div key={method} style={{ marginBottom: 12, padding: 14, background: '#0A1628', borderRadius: 8 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{method}</div>
@@ -69,7 +69,7 @@ export default function DFWDIYTileGroutGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 14px' }}>🧪 Grout Type Guide for DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              ['Epoxy Grout', 'Showers, wet rooms', 'Stain-proof, DFW hard water won\'t etch it, no sealing needed — harder to apply'],
+              ['Epoxy Grout', 'Showers, wet rooms', 'Stain-proof, DFW hard water won\’t etch it, no sealing needed — harder to apply'],
               ['Sanded Cement', 'Floor joints > 1/8"', 'Strong under foot traffic, seal every 1–2 years in DFW'],
               ['Unsanded Cement', 'Wall tiles, joints < 1/8"', 'Smooth finish, scratches glass tiles — must seal in DFW'],
               ['Premixed Latex', 'Backsplashes only', 'Easy application, never use in wet areas — not DFW humidity rated'],

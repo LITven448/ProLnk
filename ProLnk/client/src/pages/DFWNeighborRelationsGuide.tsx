@@ -3,7 +3,7 @@ import { useState } from 'react';
 const issues: Record<string, { law: string; approach: string; escalation: string }> = {
   fence: {
     law: '⚖️ Texas law: fences on the property line are jointly owned and maintained unless a deed restricts otherwise. HOA rules often override — check CC&Rs. Cost sharing is typically 50/50. A survey is legally required to establish true boundary before any dispute.',
-    approach: '👋 Step 1: Friendly knock with a photo of the issue. Step 2: Written note with photo + your contact. Say "I wanted to make sure we're on the same page before I call anyone." Use "we" language — "our fence" not "your fence."',
+    approach: '👋 Step 1: Friendly knock with a photo of the issue. Step 2: Written note with photo + your contact. Say "I wanted to make sure we’re on the same page before I call anyone." Use "we" language — "our fence" not "your fence."',
     escalation: '📋 Escalation: HOA complaint (if applicable) → Mediation through Dallas/Tarrant County dispute center (free) → Small claims court up to $20K. Attorney needed only if survey is contested.'
   },
   tree: {
@@ -13,7 +13,7 @@ const issues: Record<string, { law: string; approach: string; escalation: string
   },
   noise: {
     law: '🔊 DFW noise ordinances: most cities (Dallas, Frisco, Plano, McKinney) prohibit loud noise 10 PM–7 AM weekdays, 11 PM–8 AM weekends. HOA rules may be stricter. Construction noise typically restricted to 7 AM–9 PM. Document with video timestamps.',
-    approach: '😊 First offense: friendly text or knock. Assume they don't know. Second offense: note in writing with city ordinance referenced. Avoid threatening language — "I wanted to check in" is better than "you're violating."',
+    approach: '😊 First offense: friendly text or knock. Assume they don’t know. Second offense: note in writing with city ordinance referenced. Avoid threatening language — "I wanted to check in" is better than "you’re violating."',
     escalation: '📋 Escalation: Non-emergency police line for ordinance violation. HOA complaint in writing. For chronic violations, file city code enforcement complaint. Nuisance lawsuit only after documented pattern.'
   },
   hoa: {
@@ -22,7 +22,7 @@ const issues: Record<string, { law: string; approach: string; escalation: string
     escalation: '📋 Escalation: Written dispute to board → Request for hearing (legal right in TX) → Mediation → Attorney General HOA complaint (Texas AG HOA Help Line: 1-800-252-8011) → Civil suit for wrongful enforcement.'
   },
   parking: {
-    law: '🚗 Public streets: local city parking ordinances apply (typically 48–72 hour max in same spot). HOA common areas: CC&Rs govern. Driveway blocking: call non-emergency police — it's an obstruction. RVs and commercial vehicles: most DFW HOAs prohibit visible storage.',
+    law: '🚗 Public streets: local city parking ordinances apply (typically 48–72 hour max in same spot). HOA common areas: CC&Rs govern. Driveway blocking: call non-emergency police — it’s an obstruction. RVs and commercial vehicles: most DFW HOAs prohibit visible storage.',
     approach: '📝 Street parking: friendly note first. Driveway blocking: polite knock — could be a guest situation. HOA rule violations: document with dated photos before contacting HOA.',
     escalation: '📋 Escalation: Non-emergency police for driveway blocking or street violations. HOA complaint for CC&R violations. Consistent issues → city code enforcement → HOA attorney if HOA refuses to enforce.'
   }

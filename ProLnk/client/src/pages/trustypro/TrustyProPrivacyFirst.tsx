@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Is TrustyPro CCPA compliant?',
-    a: 'Yes. California residents can request a full copy of all data we hold, request deletion, and opt out of any sale (we don\'t sell data, but the opt-out is available regardless). We honor these rights for all users, not just California residents.',
+    a: 'Yes. California residents can request a full copy of all data we hold, request deletion, and opt out of any sale (we don\’t sell data, but the opt-out is available regardless). We honor these rights for all users, not just California residents.',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function TrustyProPrivacyFirst() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24, marginBottom: 80 }}>
           {[
             { icon: '🙋', title: 'You Own It', desc: 'Scan data, photos, and health scores are legally yours. TrustyPro holds it in trust at your direction.' },
-            { icon: '🚫', title: 'Never Sold', desc: 'We don\'t sell, license, or broker your property data to any third party. Period.' },
+            { icon: '🚫', title: 'Never Sold', desc: 'We don\’t sell, license, or broker your property data to any third party. Period.' },
             { icon: '🏥', title: 'Not for Insurance', desc: 'Your scan data cannot be used by insurers to raise premiums. This is a hard technical and contractual block.' },
             { icon: '🗑️', title: 'Delete Anytime', desc: 'Permanently delete all your data in two clicks. Gone within 72 hours, no questions asked.' },
           ].map((b, i) => (

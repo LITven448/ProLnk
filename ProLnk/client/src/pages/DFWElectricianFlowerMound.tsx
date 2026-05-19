@@ -7,7 +7,7 @@ type ElecResult = { permit: string; details: string; cost: string; note: string 
 
 const matrix: Record<string, Record<string, ElecResult>> = {
   '1990 – 1999': {
-    'Panel Upgrade': { permit: '📋 Permit Required', details: '100A panels from this era need upgrade to 200A+ for modern loads. Denton County permit required — 5–10 day turnaround.', cost: '$2,200 – $3,800', note: 'Most 90s Flower Mound homes have undersized panels for today\'s load.' },
+    'Panel Upgrade': { permit: '📋 Permit Required', details: '100A panels from this era need upgrade to 200A+ for modern loads. Denton County permit required — 5–10 day turnaround.', cost: '$2,200 – $3,800', note: 'Most 90s Flower Mound homes have undersized panels for today\’s load.' },
     'EV Charger Install': { permit: '📋 Permit Required', details: '240V/50A dedicated circuit plus panel capacity check. Older panels may require upgrade first.', cost: '$800 – $2,500', note: 'Panel upgrade may add $1,500–$2,500 to project if needed.' },
     'Whole-Home Generator': { permit: '📋 Permit + Inspection', details: 'Standby generator with transfer switch. Requires load calculation and utility notification in Denton County.', cost: '$8,000 – $16,000', note: 'Permit required. Inspection within 30 days of install.' },
     'Outlet / Wiring': { permit: '📋 Permit Varies', details: 'New circuits require permit. Simple outlet replacement may not. Confirm with contractor before starting.', cost: '$150 – $600/outlet', note: 'Aluminum wiring in some 90s homes requires anti-oxidant treatment at connections.' },
@@ -58,7 +58,7 @@ export default function DFWElectricianFlowerMound() {
           {[
             ['🌊', 'Lake Community Expertise', 'Dock wiring, boathouse circuits, and marine-grade waterproof installations require specialty electricians.'],
             ['📋', 'Denton County Permits', 'All major electrical work in Flower Mound requires Denton County permits. Pros here know the process.'],
-            ['🚗', 'EV Charging Demand', 'Flower Mound\'s affluent demographic drives high EV charger install demand — a growing specialty service.'],
+            ['🚗', 'EV Charging Demand', 'Flower Mound\’s affluent demographic drives high EV charger install demand — a growing specialty service.'],
             ['⚡', 'Generator Market', 'Post-Winter Storm Uri, whole-home generator installs are surging across all Flower Mound subdivisions.'],
           ].map(([icon, title, desc]) => (
             <div key={title} style={{ backgroundColor: '#111e35', borderRadius: 12, padding: 24 }}>

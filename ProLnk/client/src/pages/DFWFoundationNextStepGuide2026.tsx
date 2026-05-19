@@ -33,7 +33,7 @@ const guides: Record<string, { title: string; steps: string[]; waterSchedule: st
       '🔍 Inspect for new cracks each season — especially after drought or heavy rain',
       '📊 Annual ProLnk check-in keeps your Vault data current and your warranty valid',
     ],
-    waterSchedule: 'Water slowly and deeply 2–3x per week in summer. Reduce in winter but don\'t stop entirely.',
+    waterSchedule: 'Water slowly and deeply 2–3x per week in summer. Reduce in winter but don\’t stop entirely.',
     callProLnk: 'Schedule an annual foundation review to catch movement before it becomes costly.',
   },
   'early-symptoms': {

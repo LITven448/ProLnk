@@ -17,7 +17,7 @@ export default function ProLnkMatchingAlgorithm() {
 
   const responseTime = urgency === 0 ? '< 15 min' : urgency === 1 ? '< 2 hrs' : urgency === 2 ? '< 24 hrs' : '< 48 hrs';
   const priority = urgency === 0 ? 'Rating + proximity only — speed is mandatory' : urgency === 1 ? 'Availability + proximity + rating' : 'Rating + price + fit score equally weighted';
-  const advantage = urgency < 2 ? 'Open marketplaces can\'t guarantee emergency response. ProLnk guarantees 3 vetted partners in minutes.' : 'Hand-picked partners, not a 200-bid race to the bottom.';
+  const advantage = urgency < 2 ? 'Open marketplaces can\’t guarantee emergency response. ProLnk guarantees 3 vetted partners in minutes.' : 'Hand-picked partners, not a 200-bid race to the bottom.';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '40px 20px' }}>

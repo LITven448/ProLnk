@@ -4,9 +4,9 @@ type Concern = '' | 'panel-bedroom' | 'smart-meter' | 'wiring' | 'general';
 
 const emfSources = [
   { source: 'Main Electrical Panel', icon: '⚡', field: 'Magnetic field strongest within 1 ft; drops to background at 3 ft.', dfw: 'Panels are typically in utility closets or garages in DFW homes. If yours is on a bedroom wall, the room on the other side may have elevated fields at the panel location.' },
-  { source: 'Smart Meter (Oncor)', icon: '📡', field: 'RF pulses every 4–30 seconds to report usage. Magnetic/electric field from meter wiring is similar to any meter.', dfw: 'Oncor\'s smart meters transmit at low wattage (~1W peak). At 3+ ft from the meter exterior wall, RF exposure is below FCC limits by a significant margin.' },
+  { source: 'Smart Meter (Oncor)', icon: '📡', field: 'RF pulses every 4–30 seconds to report usage. Magnetic/electric field from meter wiring is similar to any meter.', dfw: 'Oncor\’s smart meters transmit at low wattage (~1W peak). At 3+ ft from the meter exterior wall, RF exposure is below FCC limits by a significant margin.' },
   { source: 'In-Wall Wiring', icon: '🔌', field: 'Balanced wiring (Romex) produces minimal net field because hot and neutral cancel. Older knob-and-tube (separated conductors) produces higher fields.', dfw: 'Pre-1960 DFW homes may have knob-and-tube wiring with elevated fields. Most post-1970 DFW homes use Romex with minimal field.' },
-  { source: 'Power Lines (Overhead)', icon: '🔋', field: 'Distribution lines (the ones on poles in DFW neighborhoods) produce fields that drop to background at 50–100 ft.', dfw: 'DFW\'s distribution network is overhead in most neighborhoods. At the property line of a typical DFW lot, fields from street lines are typically well below 2 mG.' },
+  { source: 'Power Lines (Overhead)', icon: '🔋', field: 'Distribution lines (the ones on poles in DFW neighborhoods) produce fields that drop to background at 50–100 ft.', dfw: 'DFW\’s distribution network is overhead in most neighborhoods. At the property line of a typical DFW lot, fields from street lines are typically well below 2 mG.' },
 ];
 
 const adviceMap: Record<Exclude<Concern, ''>, { summary: string; actions: string[]; science: string }> = {

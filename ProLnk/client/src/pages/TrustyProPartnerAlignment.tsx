@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const platforms = [
-  { name: 'Angi', icon: '😤', homeownerProblem: 'Pays for leads they never wanted', partnerProblem: 'Pays for leads that don't convert', model: 'Pay-per-lead chaos' },
+  { name: 'Angi', icon: '😤', homeownerProblem: 'Pays for leads they never wanted', partnerProblem: 'Pays for leads that don’t convert', model: 'Pay-per-lead chaos' },
   { name: 'HomeAdvisor', icon: '😤', homeownerProblem: 'Same as Angi — same parent company', partnerProblem: 'Same lead quality issues, same model', model: 'Race to the bottom' },
   { name: 'Thumbtack', icon: '😤', homeownerProblem: 'Overwhelmed by competing bids', partnerProblem: 'Forced to compete on price, not quality', model: 'Auction model' },
   { name: 'ProLnk + TrustyPro', icon: '✅', homeownerProblem: 'Gets relevant, pre-qualified recommendations', partnerProblem: 'Earns commission without competing on price', model: 'AI-driven alignment' },

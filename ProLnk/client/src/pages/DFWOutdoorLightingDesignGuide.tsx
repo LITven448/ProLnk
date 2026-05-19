@@ -36,7 +36,7 @@ export default function DFWOutdoorLightingDesignGuide() {
             { icon: '🌳', title: 'Uplighting', desc: 'Accent trees and plants from below. Creates drama and depth at night.' },
             { icon: '🚶', title: 'Path Lights', desc: 'Safety + ambiance along walkways and driveways. 8–10 ft spacing ideal.' },
             { icon: '✨', title: 'String Lights', desc: 'Pergolas, fences, trees. Warm 2700K bulbs for DFW outdoor dining feel.' },
-            { icon: '🏠', title: 'Soffit/Facade', desc: 'Wash home\'s front face with light. Huge curb appeal boost.' },
+            { icon: '🏠', title: 'Soffit/Facade', desc: 'Wash home\’s front face with light. Huge curb appeal boost.' },
             { icon: '🌊', title: 'Pool/Water', desc: 'Underwater LEDs + surrounding landscape lighting = resort at home.' },
             { icon: '📱', title: 'Smart Controls', desc: 'Schedule, dim, and color-shift from phone. Worth the upgrade for large installs.' },
           ].map(p => (

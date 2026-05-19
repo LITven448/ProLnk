@@ -122,9 +122,9 @@ export default function KitchenRenovationGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
               { icon: '🚪', tip: 'Open floor plan is the #1 request from DFW buyers. Removing a non-load-bearing wall costs $2,000–$5,000 and can add $10,000+ to resale value.' },
-              { icon: '🪨', tip: 'Choose quartz over granite. DFW summers are brutal — quartz handles heat better and doesn't require sealing.' },
+              { icon: '🪨', tip: 'Choose quartz over granite. DFW summers are brutal — quartz handles heat better and doesn’t require sealing.' },
               { icon: '✨', tip: 'Stainless steel appliances are the baseline expectation in DFW. Upgrade to fingerprint-resistant finish for a cleaner look.' },
-              { icon: '💡', tip: 'Pot lights (recessed) are expected. Under-cabinet lighting adds $800–$1,500 and dramatically improves the kitchen's feel.' },
+              { icon: '💡', tip: 'Pot lights (recessed) are expected. Under-cabinet lighting adds $800–$1,500 and dramatically improves the kitchen’s feel.' },
             ].map(({ icon, tip }, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, color: '#CBD5E1', fontSize: 15, lineHeight: 1.6 }}>
                 <span style={{ fontSize: 20, flexShrink: 0 }}>{icon}</span>

@@ -10,7 +10,7 @@ const stages = [
 
 const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
   buying: [
-    { title: 'DFW Home Buyer\'s Complete Guide 2026', desc: 'From pre-approval to closing in North Texas — every step explained.', tag: 'Master Guide' },
+    { title: 'DFW Home Buyer\’s Complete Guide 2026', desc: 'From pre-approval to closing in North Texas — every step explained.', tag: 'Master Guide' },
     { title: 'DFW Neighborhood Comparison Guide 2026', desc: 'Plano vs Frisco vs McKinney vs Allen — detailed comparison.', tag: 'Location' },
     { title: 'Pre-Purchase Home Inspection Guide for DFW', desc: 'What to look for in North Texas homes — foundation, HVAC, roof.', tag: 'Inspection' },
     { title: 'DFW Property Tax Guide for Buyers 2026', desc: 'How CAD appraisals work and what to expect at closing.', tag: 'Taxes' },
@@ -18,11 +18,11 @@ const guides: Record<string, { title: string; desc: string; tag: string }[]> = {
   movingin: [
     { title: 'DFW Move-In Day Master Checklist', desc: 'Everything to do in the first 72 hours in your North Texas home.', tag: 'Checklist' },
     { title: 'Setting Up Utilities in DFW — Complete Guide', desc: 'Electricity, gas, water, internet — every provider and step.', tag: 'Utilities' },
-    { title: 'DFW Homestead Exemption — File Immediately', desc: 'Deadline April 30, saves thousands annually — don\'t miss it.', tag: 'Save Money' },
+    { title: 'DFW Homestead Exemption — File Immediately', desc: 'Deadline April 30, saves thousands annually — don\’t miss it.', tag: 'Save Money' },
     { title: 'Register Your DFW Home on ProLnk', desc: 'Connect your home to the Home Health Vault and get matched pros.', tag: '⭐ ProLnk' },
   ],
   maintaining: [
-    { title: 'DFW Annual Home Maintenance Calendar 2026', desc: 'Every month\'s critical tasks for North Texas climate and soil.', tag: 'Schedule' },
+    { title: 'DFW Annual Home Maintenance Calendar 2026', desc: 'Every month\’s critical tasks for North Texas climate and soil.', tag: 'Schedule' },
     { title: 'DFW Foundation Watering — The $10K Habit', desc: 'Why consistent watering prevents the most expensive repair in Texas.', tag: 'Foundation' },
     { title: 'HVAC Maintenance Schedule for DFW Homeowners', desc: 'Filter changes, tune-ups, and when to call for your North Texas system.', tag: 'HVAC' },
     { title: 'DFW Roof Inspection Checklist — After Every Storm', desc: 'What to check yourself and when to call a pro after hail.', tag: 'Roof' },

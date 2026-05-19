@@ -7,7 +7,7 @@ const DIFFERENTIATORS = [
     emoji: '💵',
     title: 'Match-Only Revenue Model',
     tagline: 'We earn when you earn. Not before.',
-    detail: 'Most platforms charge per lead — win or lose. ProLnk charges only when a match converts. This aligns the platform's incentive with yours. We are structurally motivated to send you only serious, qualified matches.',
+    detail: 'Most platforms charge per lead — win or lose. ProLnk charges only when a match converts. This aligns the platform’s incentive with yours. We are structurally motivated to send you only serious, qualified matches.',
     addresses: ['cost', 'trust'] as Concern[],
   },
   {
@@ -21,7 +21,7 @@ const DIFFERENTIATORS = [
     emoji: '🔗',
     title: '4-Level Cascade Network',
     tagline: 'Partners who build loyalty cannot be poached.',
-    detail: 'When your income depends on the success of the people you brought in, you don't leave. The cascade creates a self-reinforcing loyalty structure that no competitor can dissolve with a better commission rate.',
+    detail: 'When your income depends on the success of the people you brought in, you don’t leave. The cascade creates a self-reinforcing loyalty structure that no competitor can dissolve with a better commission rate.',
     addresses: ['competition', 'trust'] as Concern[],
   },
   {

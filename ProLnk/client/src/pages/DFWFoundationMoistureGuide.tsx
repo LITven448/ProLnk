@@ -64,7 +64,7 @@ export default function DFWFoundationMoistureGuide() {
         ? ['Schedule structural engineer inspection within 30 days', 'Begin daily soaker hose program immediately', 'Check and clear all gutters and downspouts', 'Document all cracks with photos and dates']
         : score >= 3
         ? ['Start consistent soaker hose schedule this week', 'Monitor cracks monthly with tape markers', 'Improve drainage grading around perimeter', 'Consider annual foundation inspection']
-        : ['Maintain current watering schedule — you\'re doing well', 'Inspect drainage annually', 'Monitor any hairline cracks seasonally'];
+        : ['Maintain current watering schedule — you\’re doing well', 'Inspect drainage annually', 'Monitor any hairline cracks seasonally'];
 
     setResult({ score, label: score >= 6 ? 'High Risk' : score >= 3 ? 'Moderate Risk' : 'Low Risk', actions });
   }

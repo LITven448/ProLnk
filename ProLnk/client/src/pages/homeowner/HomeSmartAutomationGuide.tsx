@@ -13,8 +13,8 @@ export default function HomeSmartAutomationGuide() {
       payback: '1.7 years',
       diy: 'DIY-possible',
       icon: '🌡️',
-      dfwNote: 'DFW's extreme temperature swings (20°F to 108°F) make smart thermostats deliver some of the highest ROI of any smart home device nationally. HVAC accounts for 50-60% of DFW utility bills.',
-      tips: ['Pre-cool your home before peak rate hours (3-7pm)', 'Set vacation mode before travel — don't let AC run empty at full capacity', 'Ecobee's room sensors work well in large DFW single-story homes'],
+      dfwNote: 'DFW’s extreme temperature swings (20°F to 108°F) make smart thermostats deliver some of the highest ROI of any smart home device nationally. HVAC accounts for 50-60% of DFW utility bills.',
+      tips: ['Pre-cool your home before peak rate hours (3-7pm)', 'Set vacation mode before travel — don’t let AC run empty at full capacity', 'Ecobee’s room sensors work well in large DFW single-story homes'],
     },
     {
       rank: 2,
@@ -49,7 +49,7 @@ export default function HomeSmartAutomationGuide() {
       payback: 'Lifestyle upgrade',
       diy: 'DIY-possible',
       icon: '🔐',
-      dfwNote: 'Useful for letting contractors in remotely — critical in DFW where service windows are wide and you're often at work. Create temporary codes for specific time windows.',
+      dfwNote: 'Useful for letting contractors in remotely — critical in DFW where service windows are wide and you’re often at work. Create temporary codes for specific time windows.',
       tips: ['Choose Z-Wave or Zigbee protocol for broader smart home compatibility', 'Keep a physical backup key — smart locks can fail during power outages', 'Set auto-lock timer for 5-10 minutes'],
     },
     {

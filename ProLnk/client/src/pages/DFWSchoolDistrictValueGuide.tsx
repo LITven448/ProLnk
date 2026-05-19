@@ -47,7 +47,7 @@ export default function DFWSchoolDistrictValueGuide() {
             { icon: '🏆', title: 'Carroll ISD Effect', desc: 'Southlake homes zoned Carroll ISD sell for 25–35% more than equivalent homes in adjacent ISDs. The premium is real and persistent.' },
             { icon: '📊', title: 'Frisco vs Allen Trade-off', desc: 'Both are rated 9/10. Frisco ISD homes run $30K–$50K higher than Allen ISD equivalents — much of it driven by newer construction and HOA quality rather than school quality alone.' },
             { icon: '📉', title: 'Rating Changes = Price Changes', desc: 'When a school district rating drops from 8 to 7, median home values in that district typically lag nearby ISDs by 3–8% within 2–3 years.' },
-            { icon: '🗺️', title: 'Boundary Awareness', desc: 'Two homes on opposite sides of a street can be in different ISDs. Always verify the specific address on the district's boundary map before buying.' },
+            { icon: '🗺️', title: 'Boundary Awareness', desc: 'Two homes on opposite sides of a street can be in different ISDs. Always verify the specific address on the district’s boundary map before buying.' },
           ].map(c => (
             <div key={c.title} style={{ background: '#12213A', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>

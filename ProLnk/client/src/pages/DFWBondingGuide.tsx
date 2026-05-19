@@ -20,7 +20,7 @@ export default function DFWBondingGuide() {
         cost = '$800–$2,500 depending on pool age and scope';
       } else {
         what = '✅ Pool Bonding Inspection';
-        prevents = 'Prevents electrocution and corrosion — DFW\'s high mineral water accelerates galvanic corrosion without proper bonding';
+        prevents = 'Prevents electrocution and corrosion — DFW\’s high mineral water accelerates galvanic corrosion without proper bonding';
         required = 'Verify #8 AWG solid copper bonding grid connects all metal, check sacrificial anode condition';
         cost = '$150–$300 inspection';
       }
@@ -36,12 +36,12 @@ export default function DFWBondingGuide() {
       cost = '$150–$350';
     } else if (appType === 'HVAC equipment') {
       what = '❄️ HVAC Bonding';
-      prevents = 'Prevents static buildup on ductwork and chassis — DFW\'s dry winter air increases static risk. Reduces interference with smart thermostats';
+      prevents = 'Prevents static buildup on ductwork and chassis — DFW\’s dry winter air increases static risk. Reduces interference with smart thermostats';
       required = 'Equipment grounding conductor on disconnect + duct bonding jumpers at flex connections';
       cost = '$100–$300';
     } else {
       what = '🏗️ Structural Steel Bonding';
-      prevents = 'Prevents stray currents from corroding rebar — critical in DFW\'s expansive clay that moves rebar seasonally';
+      prevents = 'Prevents stray currents from corroding rebar — critical in DFW\’s expansive clay that moves rebar seasonally';
       required = 'Bond rebar cage to grounding system during construction. Retrofit requires accessing rebar or using driven rods';
       cost = '$400–$1,200';
     }

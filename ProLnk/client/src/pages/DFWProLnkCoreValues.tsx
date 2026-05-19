@@ -29,7 +29,7 @@ const VALUES = [
     emoji: '🤖',
     title: 'Innovation',
     description: 'AI matching, Home Health Vault, and autonomous agents replace the old broken model.',
-    forHomeowner: 'Your home's full service history lives in the Vault — contractors arrive informed.',
+    forHomeowner: 'Your home’s full service history lives in the Vault — contractors arrive informed.',
     forContractor: 'AI pre-qualifies leads so you spend time on real jobs, not tire-kickers.',
     forPartner: 'The platform improves automatically — your network income compounds without extra work.',
   },

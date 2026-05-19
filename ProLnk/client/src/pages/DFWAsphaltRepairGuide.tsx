@@ -10,7 +10,7 @@ const CONDITIONS = [
 
 const ACTIONS = {
   sealcoat: { label: 'Sealcoating', costPerSqft: 0.18, desc: 'Apply coal tar or asphalt-based sealer. In DFW, sealcoat every 2–3 years — UV and summer heat degrade asphalt binder faster than cooler climates. Do not sealcoat new asphalt for 6–12 months.' },
-  crack_seal: { label: 'Crack Sealing + Sealcoat', costPerSqft: 0.45, desc: 'Hot-pour rubberized crack filler into cracks, then sealcoat. Stops water infiltration before base damage occurs. DFW's spring rains make this timing critical — repair before rainy season.' },
+  crack_seal: { label: 'Crack Sealing + Sealcoat', costPerSqft: 0.45, desc: 'Hot-pour rubberized crack filler into cracks, then sealcoat. Stops water infiltration before base damage occurs. DFW’s spring rains make this timing critical — repair before rainy season.' },
   patch: { label: 'Pothole Patching', costPerSqft: 3.5, desc: 'Remove failed area, compact new base, fill with hot-mix asphalt. DFW summer heat softens asphalt — pothole patches placed in peak summer sometimes re-fail. Night work or spring/fall timing preferred.' },
   resurface: { label: 'Asphalt Overlay (Resurfacing)', costPerSqft: 2.5, desc: 'Mill top 1.5–2" of asphalt, apply fresh hot-mix overlay. Restores surface without removing base. Most cost-effective option when base is still sound — typical DFW driveway life is 15–20 years before resurfacing.' },
   replace: { label: 'Full Replacement', costPerSqft: 4.5, desc: 'Remove all asphalt and base material, re-grade, compact new base (4–6" in DFW clay), install 3" hot-mix asphalt. DFW clay soils require proper geotextile fabric to prevent base contamination and premature failure.' },

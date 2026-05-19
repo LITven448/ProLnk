@@ -29,7 +29,7 @@ const roles = [
       'DFW Foundation Season Guide — Homeowners already worried about their slab',
       'DFW Electrical Panel Guide — Homeowners who know they need an upgrade',
     ],
-    what3000Means: 'At 3,000 pages, ProLnk's DFW library generates thousands of monthly organic searches. Each search is a DFW homeowner with a problem — and a potential match for your business.',
+    what3000Means: 'At 3,000 pages, ProLnk’s DFW library generates thousands of monthly organic searches. Each search is a DFW homeowner with a problem — and a potential match for your business.',
   },
   {
     id: 'investor',

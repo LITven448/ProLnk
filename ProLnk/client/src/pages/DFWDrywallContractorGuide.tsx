@@ -6,7 +6,7 @@ const HIRE_MODES = ['All-in-One Contractor', 'Separate Specialists'];
 
 type RecKey = string;
 const RECS: Record<RecKey, { cost: string; mode: string; note: string }> = {
-  'Small Patch (<50 sqft)|Skip Trowel|All-in-One Contractor': { cost: '$300–600', mode: 'All-in-One', note: 'Texture matching is an art — skip trowel is DFW's most common texture. For patches, hire someone who specializes in matching, not just hanging.' },
+  'Small Patch (<50 sqft)|Skip Trowel|All-in-One Contractor': { cost: '$300–600', mode: 'All-in-One', note: 'Texture matching is an art — skip trowel is DFW’s most common texture. For patches, hire someone who specializes in matching, not just hanging.' },
   'Single Room (50–300 sqft)|Orange Peel|All-in-One Contractor': { cost: '$800–1,800', mode: 'All-in-One', note: 'Orange peel is spray-applied — full room is actually easier than patching. One contractor can hang, tape, texture, and prime efficiently.' },
   'Multiple Rooms / Floor (300–1000 sqft)|Smooth / Level 5|Separate Specialists': { cost: '$3,500–7,000', mode: 'Specialists', note: 'Level 5 smooth finish is unforgiving — DFW trend but demands a finish expert. Separate your taper and finish coat pro from your painter.' },
   'Full Home or Addition (1000+ sqft)|Skip Trowel|All-in-One Contractor': { cost: '$8,000–18,000', mode: 'All-in-One', note: 'At this scale, all-in-one GC manages sequencing — taping, texture, prime, and paint on a tight schedule reduces total project time by 2–3 weeks.' },
@@ -49,8 +49,8 @@ export default function DFWDrywallContractorGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem' }}>⚠️ DFW-Specific Considerations</h2>
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[{ title: 'Moisture-Resistant Drywall', body: 'Required in DFW bathrooms and kitchens — standard greenboard or cement board depending on tile application. Never use standard gypsum in wet areas.' },
-              { title: 'Garage Fire Rating', body: 'DFW code: 5/8" Type X drywall required on garage-to-living-space walls and ceilings. Most contractors know this — still verify it's in the scope before signing.' },
-              { title: 'Foundation Crack Repairs', body: 'DFW's expansive clay soil causes drywall cracks yearly. Address the foundation cause first — drywall repairs without fixing the root issue will repeat within 12 months.' },
+              { title: 'Garage Fire Rating', body: 'DFW code: 5/8" Type X drywall required on garage-to-living-space walls and ceilings. Most contractors know this — still verify it’s in the scope before signing.' },
+              { title: 'Foundation Crack Repairs', body: 'DFW’s expansive clay soil causes drywall cracks yearly. Address the foundation cause first — drywall repairs without fixing the root issue will repeat within 12 months.' },
             ].map(item => (
               <div key={item.title} style={{ borderLeft: '3px solid #F5E642', paddingLeft: '1rem' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.title}</div>

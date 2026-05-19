@@ -120,7 +120,7 @@ export default function DFWPierAndBeamGuide() {
           <ul style={styles.list}>
             {[
               'Floors feel noticeably sloped or bouncy when walking',
-              'Doors or windows stick and won\'t close properly',
+              'Doors or windows stick and won\’t close properly',
               'Visible gaps between walls and ceiling or floor',
               'You can see daylight or large gaps under the home',
               'During purchase inspection on a home over 30 years old',

@@ -3,14 +3,14 @@ import { useState } from 'react';
 const gapRanges = [
   { id: 'none', label: '🟢 No visible gap — walls flush to floor', assessment: 'Normal', detail: 'Clay soil is currently well-hydrated. Good drainage and foundation watering are maintaining stable moisture levels. Monitor seasonally.', risk: 'Low' },
   { id: 'small', label: '🟡 Small gap — under 1/4 inch (pencil tip)', assessment: 'Normal Seasonal Movement', detail: 'This is the typical DFW shrinkage range during dry periods. Blackland Prairie clay contracts as it dries. This gap should close with rain or irrigation. Consider caulking with paintable latex caulk if cosmetically bothersome.', risk: 'Low–Moderate' },
-  { id: 'medium', label: '🟠 Medium gap — 1/4 to 1/2 inch (pencil width)', assessment: 'Monitor Closely', detail: 'Soil moisture is significantly depleted. Start foundation watering immediately (slow drip 18 inches from foundation, 30 min/day). Gap should reduce within 2–3 weeks. If it doesn\'t close, consult a structural engineer.', risk: 'Moderate' },
+  { id: 'medium', label: '🟠 Medium gap — 1/4 to 1/2 inch (pencil width)', assessment: 'Monitor Closely', detail: 'Soil moisture is significantly depleted. Start foundation watering immediately (slow drip 18 inches from foundation, 30 min/day). Gap should reduce within 2–3 weeks. If it doesn\’t close, consult a structural engineer.', risk: 'Moderate' },
   { id: 'large', label: '🔴 Large gap — over 1/2 inch (fingertip fits in)', assessment: 'Structural Evaluation Needed', detail: 'This exceeds normal seasonal movement range for DFW clay. Combined with other signs (sticking doors, diagonal cracks at corners, sloping floors), this warrants a licensed structural engineer evaluation — not just a foundation company sales visit.', risk: 'High' },
 ];
 
 const tips = [
   { icon: '💧', title: 'Foundation Watering Connection', body: 'DFW gaps are almost always a soil moisture problem. A soaker hose system 18 inches from the foundation, running 30 minutes daily during drought, prevents most seasonal gap formation.' },
   { icon: '🧱', title: 'Caulking Small Gaps', body: 'For gaps under 1/4 inch: clean with a dry cloth, apply paintable latex caulk, smooth with a wet finger. Do not use rigid caulk — it will crack when soil re-expands in wet season.' },
-  { icon: '🔍', title: 'What to Watch Alongside Gaps', body: 'Gaps alone aren\'t alarming. Combine gap size with: sticking doors/windows, diagonal cracks from corners, floors sloping more than 1 inch over 20 feet, or exterior brick step cracks.' },
+  { icon: '🔍', title: 'What to Watch Alongside Gaps', body: 'Gaps alone aren\’t alarming. Combine gap size with: sticking doors/windows, diagonal cracks from corners, floors sloping more than 1 inch over 20 feet, or exterior brick step cracks.' },
 ];
 
 export default function DFWFoundationShrinkageGap2026() {

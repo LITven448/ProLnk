@@ -96,7 +96,7 @@ export default function DFWMasonryCaulkingGuide() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 600, marginBottom: 12 }}>📋 Caulk Type Reference</h2>
-          {[['Silicone', '50-year life, waterproof, flexible — can\'t be painted. Use at windows, wet areas.'],
+          {[['Silicone', '50-year life, waterproof, flexible — can\’t be painted. Use at windows, wet areas.'],
             ['Polyurethane', 'Paintable, best adhesion, handles DFW movement well. Best for foundations.'],
             ['Siliconized Acrylic', 'Paintable, decent flexibility, fast cure. Good for interior-adjacent brick.'],
             ['High-Temp Silicone', 'Chimney, fireplace surrounds — rated 650°F+. Required around heat sources.']].map(([type, desc]) => (

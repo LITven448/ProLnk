@@ -54,7 +54,7 @@ const recs: Record<string, { title: string; merv: string; type: string; frequenc
     type: 'Pleated or Fiberglass',
     frequency: 'Every 4 weeks year-round',
     notes: [
-      '⚠️ Older systems have weaker blower motors — don\'t restrict airflow',
+      '⚠️ Older systems have weaker blower motors — don\’t restrict airflow',
       '🚫 Avoid MERV 11+ on systems 10+ years old — causes strain',
       '🔄 MERV 8 is the safe maximum for aging DFW equipment',
       '📞 Consider scheduling an HVAC assessment — system may need upgrade',

@@ -103,7 +103,7 @@ export default function TrustyProVaultBenefits() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#065f46', marginBottom: 16 }}>🔒 What's NOT in the Vault</h2>
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
             {[
-              { icon: '👤', item: 'Your personal identity', detail: 'Property records are address-linked, not name-linked. Public records don't expose your vault.' },
+              { icon: '👤', item: 'Your personal identity', detail: 'Property records are address-linked, not name-linked. Public records don’t expose your vault.' },
               { icon: '💳', item: 'Financial information', detail: 'No payment data, income data, or financial records are ever stored in the vault.' },
               { icon: '🔑', item: 'Access is your decision', detail: 'Only you control who sees your vault. You share access when you want — for a sale, for a contractor, for an inspector.' },
             ].map(p => (

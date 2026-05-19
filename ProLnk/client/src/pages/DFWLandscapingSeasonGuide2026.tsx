@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const months = [
-  { name: 'January', action: 'Planning month — review last year's lawn, order seed and amendments, sharpen mower blades' },
+  { name: 'January', action: 'Planning month — review last year’s lawn, order seed and amendments, sharpen mower blades' },
   { name: 'February', action: 'Apply pre-emergent herbicide for summer weeds (crabgrass, spurge). Target soil temp 50–55°F. Do NOT fertilize yet' },
   { name: 'March', action: 'Bermuda grass waking from dormancy — scalp lawn to 1 inch to remove thatch and jump-start green-up. Begin mowing as needed' },
   { name: 'April', action: 'Prime DFW planting season — annuals, perennials, warm-season veggies. Fertilize Bermuda with slow-release nitrogen. Water 1 inch per week' },

@@ -36,7 +36,7 @@ export default function DFWPoolLightingGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🌅 Why DFW Pool Lighting Matters More Than Anywhere</h2>
           {[
             ['⏰ Evening Swimming', 'DFW swimmers typically enter the pool after 7–8pm in peak summer. Lighting extends the usable window by 4+ hours.'],
-            ['🎉 Entertaining Value', 'A lit pool draws guests outdoors at night — when DFW temps finally drop below 90°F. It\'s the social anchor of every DFW backyard party.'],
+            ['🎉 Entertaining Value', 'A lit pool draws guests outdoors at night — when DFW temps finally drop below 90°F. It\’s the social anchor of every DFW backyard party.'],
             ['🏡 Resale Premium', 'DFW real estate appraisers note that well-lit, well-maintained pools add $30,000–$80,000 in perceived value depending on neighborhood.'],
             ['🔒 Safety Requirement', 'All swimmers — adults and children — need to see the pool bottom clearly at night. Safety lighting is non-negotiable, not optional.'],
           ].map(([title, desc]) => (

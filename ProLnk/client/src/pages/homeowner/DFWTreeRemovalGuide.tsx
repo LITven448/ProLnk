@@ -64,8 +64,8 @@ export default function DFWTreeRemovalGuide() {
             </h2>
             {[
               { icon: '🍂', text: 'Just because it drops leaves or seed pods — messy but normal' },
-              { icon: '📏', text: 'Because it's big — a large healthy tree adds $10,000–$30,000 in property value' },
-              { icon: '😰', text: 'Just because you're scared of it — get an ISA certified arborist assessment first' },
+              { icon: '📏', text: 'Because it’s big — a large healthy tree adds $10,000–$30,000 in property value' },
+              { icon: '😰', text: 'Just because you’re scared of it — get an ISA certified arborist assessment first' },
             ].map(r => (
               <div key={r.text} style={{ display: 'flex', gap: 10, marginBottom: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{r.icon}</span>
@@ -87,7 +87,7 @@ export default function DFWTreeRemovalGuide() {
               { city: 'Dallas', rule: 'Dallas Urban Forest Management requires permit for "significant trees"' },
               { city: 'Frisco', rule: 'Tree Preservation Ordinance — permit required for removal of any "protected tree"' },
               { city: 'Plano', rule: 'City approval required for trees 12" DBH or larger' },
-              { city: 'Other DFW cities', rule: 'Verify with your city's planning/development department before removal' },
+              { city: 'Other DFW cities', rule: 'Verify with your city’s planning/development department before removal' },
             ].map(c => (
               <div key={c.city} style={{ display: 'flex', gap: 12, padding: 14, background: '#0f172a', borderRadius: 10 }}>
                 <div style={{ fontWeight: 700, color: '#fbbf24', minWidth: 100, fontSize: 14 }}>{c.city}</div>

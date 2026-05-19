@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const windConcerns = [
-  { id: 'deductible', label: '🌀 Wind/Hail Deductible', desc: 'DFW policies carry a separate wind/hail deductible — typically 1-2% of dwelling value. On a $400K home that\'s $4,000-$8,000 out of pocket before coverage kicks in.', tip: 'Ask your agent for the exact dollar amount of your wind/hail deductible and compare it across carriers.' },
+  { id: 'deductible', label: '🌀 Wind/Hail Deductible', desc: 'DFW policies carry a separate wind/hail deductible — typically 1-2% of dwelling value. On a $400K home that\’s $4,000-$8,000 out of pocket before coverage kicks in.', tip: 'Ask your agent for the exact dollar amount of your wind/hail deductible and compare it across carriers.' },
   { id: 'coverage', label: '🏠 Standard Coverage', desc: 'Unlike coastal Texas homeowners who need a separate Texas Windstorm Insurance Association (TWIA) policy, DFW homeowners get wind coverage bundled in their standard HO-3 policy.', tip: 'Confirm your HO-3 declarations page lists wind and hail as covered perils — it should for DFW.' },
   { id: 'discount', label: '💰 Roof Discount', desc: 'Impact-resistant (Class 3 or Class 4) roofing materials can earn 15-30% discounts on wind/hail premiums in DFW. The savings often offset the cost of upgrading during a re-roof.', tip: 'Ask for a quote with Class 4 roofing — get the UL 2218 rating certificate from your roofer.' },
   { id: 'rating', label: '📊 DFW vs Gulf Coast', desc: 'DFW properties are rated in a much lower wind risk tier than Gulf Coast homes. Premiums reflect this — DFW wind coverage costs a fraction of what Galveston homeowners pay for TWIA.', tip: 'If an agent quotes Gulf-Coast-level wind premiums for a DFW address, get a second opinion immediately.' },

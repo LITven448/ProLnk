@@ -48,7 +48,7 @@ export default function DFWBasementAlternativesGuide() {
               {[
                 { icon: '🟤', title: 'Expansive Clay Soil (Blackland Prairie)', body: 'DFW sits on some of the most expansive clay soil in North America. This soil swells up to 20% when wet and shrinks when dry — movements that would crack any basement walls within years.' },
                 { icon: '💧', title: 'High Water Table in Many Areas', body: 'Much of DFW (especially Trinity River floodplain areas) has a water table just 10–20 feet down. Basements would require constant waterproofing and sump systems.' },
-                { icon: '🌡️', title: 'Climate Made It Unnecessary', body: 'Basements historically served as root cellars and tornado shelters. DFW\'s mild-winter climate eliminated the root cellar need, and single-story ranch homes became the default.' },
+                { icon: '🌡️', title: 'Climate Made It Unnecessary', body: 'Basements historically served as root cellars and tornado shelters. DFW\’s mild-winter climate eliminated the root cellar need, and single-story ranch homes became the default.' },
                 { icon: '💰', title: 'Cost Prohibitive Given the Soil', body: 'Building a waterproof basement in DFW clay costs $50,000–$150,000+ vs. $0 for slab — making builders default to grade-level construction for 70+ years.' },
               ].map(item => (
                 <div key={item.title} style={{ display: 'flex', gap: 16, backgroundColor: '#162840', borderRadius: 10, padding: '16px 18px' }}>

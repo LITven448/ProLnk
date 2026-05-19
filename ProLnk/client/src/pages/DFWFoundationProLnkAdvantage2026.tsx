@@ -5,10 +5,10 @@ export default function DFWFoundationProLnkAdvantage2026() {
 
   const concerns = [
     { id: 'cracks', label: '🧱 Wall or floor cracks', advantage: 'Engineer-Supervised Work', detail: 'DFW foundation repair often requires a licensed structural engineer to specify the repair method. ProLnk Charter foundation pros use engineer-supervised plans — not guesswork or cookie-cutter piers.' },
-    { id: 'doors', label: '🚪 Sticking doors', advantage: 'DFW Clay Soil Expertise', detail: 'Not every foundation company understands DFW\'s expansive Blackland Prairie clay. ProLnk requires proof of DFW-specific project history — pros who have solved this exact soil problem before.' },
+    { id: 'doors', label: '🚪 Sticking doors', advantage: 'DFW Clay Soil Expertise', detail: 'Not every foundation company understands DFW\’s expansive Blackland Prairie clay. ProLnk requires proof of DFW-specific project history — pros who have solved this exact soil problem before.' },
     { id: 'drainage', label: '🌧️ Water pooling near house', advantage: 'Warranty in Health Vault', detail: 'Every ProLnk foundation job generates a warranty document stored permanently in your Home Health Vault. When you sell, buyers can verify the repair scope and warranty status instantly.' },
     { id: 'estimate', label: '💰 High-pressure estimate', advantage: 'No High-Pressure Sales', detail: 'ProLnk Charter pros agree to a no-pressure policy. If another company is pushing you to sign today, get a ProLnk second opinion first. Our pros lose their charter status for coercive sales tactics.' },
-    { id: 'insurance', label: '📋 Insurance claim', advantage: 'Licensed & Insured', detail: 'DFW foundation pros in ProLnk carry contractor liability and workers\' comp. If a worker is hurt on your property, you are protected. Ask for certificates of insurance before any work begins.' },
+    { id: 'insurance', label: '📋 Insurance claim', advantage: 'Licensed & Insured', detail: 'DFW foundation pros in ProLnk carry contractor liability and workers\’ comp. If a worker is hurt on your property, you are protected. Ask for certificates of insurance before any work begins.' },
   ];
 
   const selected = concerns.find(c => c.id === concern);

@@ -5,7 +5,7 @@ const solutions: Record<string, { name: string; cfm: string; cost: string; notes
     name: 'ERV (Energy Recovery Ventilator)',
     cfm: '50–150 CFM',
     cost: '$1,800–$3,500 installed',
-    notes: 'Best for tight DFW homes — recovers 70-80% of energy, manages humidity in DFW\'s mixed climate',
+    notes: 'Best for tight DFW homes — recovers 70-80% of energy, manages humidity in DFW\’s mixed climate',
   },
   freshAirDamper: {
     name: 'Fresh Air Damper on AHU',

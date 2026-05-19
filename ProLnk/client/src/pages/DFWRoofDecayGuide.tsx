@@ -11,7 +11,7 @@ function getDecayAssessment(condition: string, age: string) {
     return {
       likelihood: 'HIGH',
       color: '#FF4444',
-      detail: 'Soft spots under foot pressure indicate OSB delamination or rot. DFW\'s summer heat (150°F+ attic temps) plus occasional moisture intrusion accelerates OSB breakdown.',
+      detail: 'Soft spots under foot pressure indicate OSB delamination or rot. DFW\’s summer heat (150°F+ attic temps) plus occasional moisture intrusion accelerates OSB breakdown.',
       request: 'Ask your contractor to probe all soft areas before nailing new shingles. Replace all compromised panels.',
       cost: 'Partial deck replacement: $300–$800 per square (10x10 ft). Full deck on 2,000 sq ft home: $4,000–$9,000.',
     };
@@ -38,7 +38,7 @@ function getDecayAssessment(condition: string, age: string) {
     return {
       likelihood: 'HIGH',
       color: '#FF4444',
-      detail: 'Eave edge crumbling is a telltale sign of chronic gutter overflow and moisture wicking. DFW\'s heavy rain events overwhelm clogged gutters, soaking sheathing edges repeatedly.',
+      detail: 'Eave edge crumbling is a telltale sign of chronic gutter overflow and moisture wicking. DFW\’s heavy rain events overwhelm clogged gutters, soaking sheathing edges repeatedly.',
       request: 'Replace eave-edge sheathing AND install drip edge flashing AND clean/upgrade gutters. Address root cause or decay returns.',
       cost: 'Eave deck repair + drip edge: $600–$2,500 depending on linear footage and damage depth.',
     };
@@ -48,7 +48,7 @@ function getDecayAssessment(condition: string, age: string) {
     color: old ? '#F5E642' : '#00CC66',
     detail: old
       ? 'At 15–20+ years, DFW roof decks — especially OSB — are nearing end of expected life. Even without visible issues, ask your roofer to assess deck integrity during your next inspection.'
-      : 'No visible deck issues. DFW\'s climate is harsh but quality OSB lasts 20–30 years with proper ventilation and dry conditions.',
+      : 'No visible deck issues. DFW\’s climate is harsh but quality OSB lasts 20–30 years with proper ventilation and dry conditions.',
     request: 'Schedule professional roof inspection annually, especially after hail events. Ask inspector to check attic underside for staining.',
     cost: 'Preventive inspection: $150–$400. Budget for potential deck work in planning for your next re-roof.',
   };
@@ -70,7 +70,7 @@ export default function DFWRoofDecayGuide() {
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🌡️', title: 'DFW\'s Hidden Deck Killer', body: 'Attic temperatures in DFW exceed 150°F in summer. This heat cycling — combined with winter humidity and rare freeze events — causes OSB to swell, delaminate, and lose structural integrity over 15–25 years.' },
+            { icon: '🌡️', title: 'DFW\’s Hidden Deck Killer', body: 'Attic temperatures in DFW exceed 150°F in summer. This heat cycling — combined with winter humidity and rare freeze events — causes OSB to swell, delaminate, and lose structural integrity over 15–25 years.' },
             { icon: '🔍', title: 'When It Gets Discovered', body: 'Deck decay is almost always invisible from the outside. Contractors discover it when they tear off old shingles. This is normal — budget $500–$2,500 for deck repairs in any DFW re-roofing project.' },
             { icon: '🪵', title: 'Partial vs Full Replacement', body: 'Full deck replacement is rarely needed unless the home is 30+ years old with the original deck and chronic moisture issues. Spot replacement of failed panels is standard and cost-effective.' },
           ].map(c => (

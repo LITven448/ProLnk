@@ -14,7 +14,7 @@ export default function DFWLowWaterPressureGuide2026() {
     } else if (location === 'hot-only') {
       setDiagnosis('🌡️ Water Heater Shutoff or Failing PRV. Check the shutoff valve on cold inlet to water heater — fully open? Also, water heater pressure relief valve may be partially engaged. Have a plumber inspect both.');
     } else if (location === 'neighbor-same') {
-      setDiagnosis('🏘️ Shared Line / Municipal Issue. Call Dallas Water Utilities (214-651-1441) or your city's water department to report low pressure. May be a main break or area-wide issue. No repair needed on your end.');
+      setDiagnosis('🏘️ Shared Line / Municipal Issue. Call Dallas Water Utilities (214-651-1441) or your city’s water department to report low pressure. May be a main break or area-wide issue. No repair needed on your end.');
     } else {
       setDiagnosis('Select symptom location above for a diagnosis.');
     }

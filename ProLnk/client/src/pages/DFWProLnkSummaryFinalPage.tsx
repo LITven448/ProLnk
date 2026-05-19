@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const situations = [
-  { label: 'I\'m a homeowner needing home services', key: 'homeowner' },
-  { label: 'I\'m a service professional looking for leads', key: 'pro' },
-  { label: 'I\'m in DFW and want better home services', key: 'dfw' },
+  { label: 'I\’m a homeowner needing home services', key: 'homeowner' },
+  { label: 'I\’m a service professional looking for leads', key: 'pro' },
+  { label: 'I\’m in DFW and want better home services', key: 'dfw' },
   { label: 'I want to refer others and earn income', key: 'partner' },
   { label: 'I want to understand how ProLnk works', key: 'overview' },
 ];
@@ -24,7 +24,7 @@ const answers: Record<string, { title: string; headline: string; body: string; c
   dfw: {
     title: '📍 For DFW Homeowners',
     headline: 'DFW has 7M+ residents and a home services market with too many bad actors.',
-    body: 'ProLnk was built for DFW first. Every pro in the DFW network is vetted — licensed, insured, reviewed. Whether it\'s HVAC during a 110°F summer, plumbing after a winter freeze, or electrical work — ProLnk gives you one trusted place to find the right pro, fast.',
+    body: 'ProLnk was built for DFW first. Every pro in the DFW network is vetted — licensed, insured, reviewed. Whether it\’s HVAC during a 110°F summer, plumbing after a winter freeze, or electrical work — ProLnk gives you one trusted place to find the right pro, fast.',
     cta: 'Find a vetted DFW pro — no spam, ever',
   },
   partner: {
@@ -36,7 +36,7 @@ const answers: Record<string, { title: string; headline: string; body: string; c
   overview: {
     title: '🔍 How ProLnk Works',
     headline: 'ProLnk is the operating system for home services — matching demand to supply intelligently.',
-    body: '1. Homeowners submit service needs. 2. ProLnk\'s AI matches them with 2–3 vetted local pros based on trade, area, ratings, and availability. 3. Pros compete on quality, not price-gouging. 4. The Home Health Vault stores verified data about every home, making future matches faster and smarter. Everyone wins.',
+    body: '1. Homeowners submit service needs. 2. ProLnk\’s AI matches them with 2–3 vetted local pros based on trade, area, ratings, and availability. 3. Pros compete on quality, not price-gouging. 4. The Home Health Vault stores verified data about every home, making future matches faster and smarter. Everyone wins.',
     cta: 'See how ProLnk works for your situation',
   },
 };
@@ -65,7 +65,7 @@ export default function DFWProLnkSummaryFinalPage() {
             { icon: '🏠', title: 'Free for Homeowners', body: 'Submit once, get 2–3 vetted pros. No spam. No directories. No cold calls.' },
             { icon: '⚡', title: '5 Income Streams', body: 'Pros and partners earn from direct commissions, network overrides, and origination rights.' },
             { icon: '📍', title: 'Built for DFW', body: 'Every DFW pro is vetted — licensed, insured, reviewed. 7M+ residents, one trusted platform.' },
-            { icon: '🏦', title: 'Home Health Vault', body: 'Permanent record of your home\'s health and safety. Grows smarter with every service.' },
+            { icon: '🏦', title: 'Home Health Vault', body: 'Permanent record of your home\’s health and safety. Grows smarter with every service.' },
             { icon: '🤝', title: 'Vetted Only', body: 'No open directories. Every pro is approved. Homeowners never talk to an unvetted contractor.' },
             { icon: '🚀', title: 'Charter Waitlist', body: '500 Charter Pro spots. 5,000 home spots. Waitlist closes permanently at capacity.' },
           ].map(card => (

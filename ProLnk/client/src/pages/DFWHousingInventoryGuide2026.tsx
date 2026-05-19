@@ -8,11 +8,11 @@ export default function DFWHousingInventoryGuide2026() {
       emoji: '🏠',
       title: 'First-Time Buyer Navigation',
       tactics: [
-        'Get pre-approved before you find a home — agents won't show without it',
+        'Get pre-approved before you find a home — agents won’t show without it',
         'Set alerts on Zillow/Realtor.com for new listings — move within hours not days',
         'Consider new construction in Celina, Anna, Forney for more selection',
         'Ask about 2-1 rate buydowns from builders to lower Year 1-2 payments',
-        'Don't skip the inspection — low inventory creates pressure to waive; resist',
+        'Don’t skip the inspection — low inventory creates pressure to waive; resist',
       ],
       outlook: 'Market slightly favors sellers but you have leverage in new construction communities hungry for closings.',
     },
@@ -50,7 +50,7 @@ export default function DFWHousingInventoryGuide2026() {
         'Temporary housing (30-90 day leases) buys time to find the right home',
         'Research school districts first — they drive 30-40% of location decisions in DFW',
       ],
-      outlook: 'DFW's growth means inventory in your target area exists — a good local agent is your competitive advantage.',
+      outlook: 'DFW’s growth means inventory in your target area exists — a good local agent is your competitive advantage.',
     },
   };
 

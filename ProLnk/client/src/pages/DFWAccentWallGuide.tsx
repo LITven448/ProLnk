@@ -37,7 +37,7 @@ const materialData: Record<Material, { dfw: string; rooms: string; diy: string; 
     timeRange: '4–8 hours per wall',
   },
   paint: {
-    dfw: 'Paint is the #1 DFW accent wall choice. DFW\'s bright sun makes colors look different throughout the day — always test samples in your actual light before committing.',
+    dfw: 'Paint is the #1 DFW accent wall choice. DFW\’s bright sun makes colors look different throughout the day — always test samples in your actual light before committing.',
     rooms: 'Every room — most versatile and reversible option',
     diy: '$0.50–1/sq ft (paint + supplies)',
     pro: '$2–5/sq ft with professional prep and finish',

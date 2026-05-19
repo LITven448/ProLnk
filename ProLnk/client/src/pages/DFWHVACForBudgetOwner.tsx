@@ -67,7 +67,7 @@ const budgetPlans: Record<string, Record<string, string[]>> = {
       '💳 Emergency financing: most DFW HVAC companies offer same-day credit decisions for qualified buyers',
       '🔧 Temporary solutions while waiting: portable AC unit ($300–500) rents time without wasting emergency premium',
       '📋 Package unit (roof-mounted): sometimes faster install in emergencies — discuss with contractor',
-      '🛡️ Don\'t panic-buy: even in emergency, getting 2 quotes takes 2 hours and can save $500–1,000',
+      '🛡️ Don\’t panic-buy: even in emergency, getting 2 quotes takes 2 hours and can save $500–1,000',
       '📅 Off-season replacement after emergency repair: patch to survive summer, replace in fall at lower cost',
     ],
     maintain: [

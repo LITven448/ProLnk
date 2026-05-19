@@ -31,7 +31,7 @@ const stages = [
     label: '🔧 Installation Day Checklist',
     actions: [
       'Verify crew pulls permit card and posts it (required by DFW municipal code)',
-      'Ask tech to walk you through what they\'re installing before they start',
+      'Ask tech to walk you through what they\’re installing before they start',
       'Confirm new disconnect box is installed at condenser',
       'Ensure new air handler drain pan and condensate line are properly routed',
       'Take photos of all equipment model/serial numbers before covers go on',

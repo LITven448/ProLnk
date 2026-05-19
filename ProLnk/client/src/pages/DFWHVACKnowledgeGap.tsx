@@ -6,7 +6,7 @@ const questions = [
     question: 'What SEER2 rating qualifies for the 2026 federal tax credit in DFW?',
     options: ['13 SEER2', '15 SEER2', '14 SEER2', '16 SEER2'],
     correct: 1,
-    explanation: '15 SEER2 (or 8.5 HSPF2 for heat pumps) is the minimum for the IRA 25C credit. DFW\'s climate zone requires 15 SEER2 minimum — higher than cooler regions.',
+    explanation: '15 SEER2 (or 8.5 HSPF2 for heat pumps) is the minimum for the IRA 25C credit. DFW\’s climate zone requires 15 SEER2 minimum — higher than cooler regions.',
     resource: 'HVAC Tax Credit Guide',
   },
   {
@@ -28,9 +28,9 @@ const questions = [
   {
     id: 'q4',
     question: 'R-22 refrigerant was phased out. What does this mean for DFW homeowners with old systems?',
-    options: ['Nothing — it\'s still available', 'R-22 now costs $100+/lb, making leaks = replacement', 'EPA provides free replacement', 'Only applies in other states'],
+    options: ['Nothing — it\’s still available', 'R-22 now costs $100+/lb, making leaks = replacement', 'EPA provides free replacement', 'Only applies in other states'],
     correct: 1,
-    explanation: 'R-22 production and import was banned in 2020. Existing stockpiles command $100+/lb. A refrigerant leak in an R-22 system usually means it\'s more cost-effective to replace the entire system.',
+    explanation: 'R-22 production and import was banned in 2020. Existing stockpiles command $100+/lb. A refrigerant leak in an R-22 system usually means it\’s more cost-effective to replace the entire system.',
     resource: 'HVAC Knowledge Base',
   },
   {
@@ -43,8 +43,8 @@ const questions = [
   },
   {
     id: 'q6',
-    question: 'If you\'re buying a home, where should you find the true age of the HVAC unit?',
-    options: ['The seller\'s disclosure', 'The home inspection report', 'The model/serial number on the unit', 'The county records'],
+    question: 'If you\’re buying a home, where should you find the true age of the HVAC unit?',
+    options: ['The seller\’s disclosure', 'The home inspection report', 'The model/serial number on the unit', 'The county records'],
     correct: 2,
     explanation: 'The model and serial number on the unit encodes the manufacture date. Sellers routinely misremember, and home inspectors just confirm it turns on. The serial number decoder is the only reliable source.',
     resource: 'Real Estate HVAC Tips',
@@ -62,7 +62,7 @@ const questions = [
     question: 'Can a landlord claim the IRA 25C tax credit for a rental property HVAC replacement?',
     options: ['Yes, up to $2,000', 'No — 25C only applies to primary/secondary residences', 'Yes, but only for heat pumps', 'Yes, if the property is in DFW'],
     correct: 1,
-    explanation: 'The 25C credit is limited to the taxpayer\'s primary or secondary residence. Rental property HVAC replacements must use Section 179 expensing or standard depreciation instead.',
+    explanation: 'The 25C credit is limited to the taxpayer\’s primary or secondary residence. Rental property HVAC replacements must use Section 179 expensing or standard depreciation instead.',
     resource: 'HVAC Tax Planning Guide',
   },
   {
@@ -181,7 +181,7 @@ export default function DFWHVACKnowledgeGap() {
               <div style={{ fontWeight: 800, fontSize: 32, color: '#F5E642' }}>{score}/{questions.length}</div>
               <div style={{ color: '#94a3b8', marginTop: 4 }}>{pct}% correct</div>
               <div style={{ marginTop: 12, fontSize: 16 }}>
-                {pct >= 80 ? 'Strong DFW HVAC knowledge — you\'re well-prepared.' : pct >= 60 ? 'Good foundation with some gaps to fill.' : 'Several key gaps — the resources below will help.'}
+                {pct >= 80 ? 'Strong DFW HVAC knowledge — you\’re well-prepared.' : pct >= 60 ? 'Good foundation with some gaps to fill.' : 'Several key gaps — the resources below will help.'}
               </div>
             </div>
             {gaps.length > 0 && (

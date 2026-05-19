@@ -22,7 +22,7 @@ const phases = [
     label: 'Predictive Maintenance Tools',
     icon: '🔮',
     color: '#8B5CF6',
-    desc: 'AI-powered tools that predict failures before they happen — based on your home's age, equipment data, and DFW climate patterns.',
+    desc: 'AI-powered tools that predict failures before they happen — based on your home’s age, equipment data, and DFW climate patterns.',
     examples: ['AC failure probability calculator', 'Seasonal maintenance scheduler', 'Equipment lifespan tracker', 'Cost-to-repair vs replace modeler'],
   },
   {
@@ -30,7 +30,7 @@ const phases = [
     label: 'Home Health Vault Integration',
     icon: '🏦',
     color: '#F5E642',
-    desc: 'Your home's complete service history, permits, equipment specs, and maintenance records — all in one secure vault. Increases home value at resale.',
+    desc: 'Your home’s complete service history, permits, equipment specs, and maintenance records — all in one secure vault. Increases home value at resale.',
     examples: ['Digital permit archive', 'Equipment warranty tracker', 'Contractor history log', 'Home health score'],
   },
   {

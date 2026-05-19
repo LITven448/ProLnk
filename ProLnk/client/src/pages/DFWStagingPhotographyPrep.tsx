@@ -56,7 +56,7 @@ const photoPrep: Record<RoomKey, PhotoPrep> = {
       'Fingerprints on stainless appliances — wipe down with stainless cleaner right before',
       'One cabinet left slightly open',
       'Trash can visible',
-      'Children\'s artwork still on refrigerator',
+      'Children\’s artwork still on refrigerator',
     ],
     dfwTip: 'DFW kitchens with east-facing windows photograph beautifully in morning. West-facing kitchens: shoot before noon to avoid harsh afternoon Texas sun through windows.',
   },
@@ -140,7 +140,7 @@ const photoPrep: Record<RoomKey, PhotoPrep> = {
       'Remove 90% of desk items — only monitor, lamp, and one small decor item remains',
       'Organize and hide all cables with cable management clips',
       'Clear all bookshelves to 30% capacity — space between books is key',
-      'Remove personal plaques, kids\' drawings, and family photos',
+      'Remove personal plaques, kids\’ drawings, and family photos',
       'Clean monitor screen — smudges show under photo lighting',
     ],
     dayOf: [
@@ -155,7 +155,7 @@ const photoPrep: Record<RoomKey, PhotoPrep> = {
       'Power strip visible on floor',
       'Personal sticky notes still on monitor',
     ],
-    dfwTip: 'Work-from-home office photos became high-value after 2020. A clean, minimal office adds perceived value to DFW listings — don\'t skip it.',
+    dfwTip: 'Work-from-home office photos became high-value after 2020. A clean, minimal office adds perceived value to DFW listings — don\’t skip it.',
   },
 };
 

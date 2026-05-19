@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const PLATFORMS = [
   { name: 'Google Search', emoji: '🔍', pro: 'Widest reach, free, fast', con: 'No vetting — unlicensed contractors rank equally', best: 'Research & price checks only' },
-  { name: 'Angi (Angie's List)', emoji: '🏷️', pro: 'Large contractor network, background checks', con: 'Pay-to-play rankings, spam calls common', best: 'Non-urgent jobs with time to compare' },
+  { name: 'Angi (Angie’s List)', emoji: '🏷️', pro: 'Large contractor network, background checks', con: 'Pay-to-play rankings, spam calls common', best: 'Non-urgent jobs with time to compare' },
   { name: 'Thumbtack', emoji: '📌', pro: 'Fast quotes, wide trade coverage', con: 'Contractor quality varies widely in DFW', best: 'Simple, lower-risk jobs' },
   { name: 'Nextdoor', emoji: '🏘️', pro: 'Real neighbor recommendations', con: 'Anecdotal, no license verification', best: 'Handyman, landscaping, low-stakes tasks' },
   { name: 'HomeAdvisor', emoji: '🏡', pro: 'Instant match to multiple contractors', con: 'Heavy upsell, contractor lead fees passed to you', best: 'Speed over price or quality' },

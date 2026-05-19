@@ -13,8 +13,8 @@ const stages = [
   },
   {
     day: 'Days 6–14', title: 'Adjuster Visit', icon: '🔍',
-    steps: ['Meet the adjuster at your property — do not skip this', 'Walk through every area of damage together', 'Ask: "Is this covered under my policy?" for each item', 'Get the adjuster\'s estimate in writing before they leave if possible'],
-    risks: 'Adjusters work for the insurer. Be polite but thorough — point out everything. If you miss something now, it\'s harder to add later.',
+    steps: ['Meet the adjuster at your property — do not skip this', 'Walk through every area of damage together', 'Ask: "Is this covered under my policy?" for each item', 'Get the adjuster\’s estimate in writing before they leave if possible'],
+    risks: 'Adjusters work for the insurer. Be polite but thorough — point out everything. If you miss something now, it\’s harder to add later.',
   },
   {
     day: 'Days 15–30', title: 'Claim Decision', icon: '📋',
@@ -29,7 +29,7 @@ const stages = [
 ];
 
 const appealSteps = [
-  { step: '1', action: 'Request full claim file', detail: 'You\'re entitled to all documents, adjuster notes, and photos in your file' },
+  { step: '1', action: 'Request full claim file', detail: 'You\’re entitled to all documents, adjuster notes, and photos in your file' },
   { step: '2', action: 'Get an independent estimate', detail: 'Hire a contractor to provide a detailed line-item estimate' },
   { step: '3', action: 'Submit written dispute', detail: 'Send certified mail: dispute letter + independent estimate + your documentation' },
   { step: '4', action: 'Invoke appraisal clause', detail: 'Most policies have an appraisal process — both sides hire appraisers + neutral umpire' },

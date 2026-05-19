@@ -52,7 +52,7 @@ const geoRisks: Record<string, { riskType: string; color: string; level: string;
     riskType: 'Clay Soil Collapse (Non-Karst)',
     color: '#F5E642',
     level: 'Low-Moderate',
-    description: 'East Dallas and most of Dallas County overlies Austin Chalk and Eagle Ford shale — not limestone karst. True sinkholes are extremely rare. The primary risk is clay soil collapse: DFW\'s expansive clay shrinks dramatically during drought, creating underground channels. When rain saturates those channels, the soil collapses inward. This mimics a sinkhole but has a different mechanism and is generally less severe.',
+    description: 'East Dallas and most of Dallas County overlies Austin Chalk and Eagle Ford shale — not limestone karst. True sinkholes are extremely rare. The primary risk is clay soil collapse: DFW\’s expansive clay shrinks dramatically during drought, creating underground channels. When rain saturates those channels, the soil collapses inward. This mimics a sinkhole but has a different mechanism and is generally less severe.',
     watch: [
       'Seasonal depressions that appear in August-September (peak drought) and fill in after fall rains',
       'Cracks in clay soil adjacent to foundation — normal in DFW but track width trends',
@@ -120,7 +120,7 @@ export default function DFWSinkholeRiskGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {[
             ['True Karst Sinkholes', 'Limestone dissolves in groundwater over decades, creating underground voids. Collapse can be sudden and serious. Western DFW edge.'],
-            ['Clay Soil Collapse', 'DFW\'s expansive clay creates channels when drought-dry, then collapses when wet. Mimics sinkholes — usually shallower and repairable.'],
+            ['Clay Soil Collapse', 'DFW\’s expansive clay creates channels when drought-dry, then collapses when wet. Mimics sinkholes — usually shallower and repairable.'],
             ['Engineered Fill Settlement', 'Rapid DFW development left some lots with improperly compacted fill. Can settle years after construction, especially in Collin County.'],
             ['Utility-Induced Voids', 'Leaking water and sewer lines throughout DFW create underground voids that surface as depressions — any area, any age of home.'],
           ].map(([title, desc]) => (

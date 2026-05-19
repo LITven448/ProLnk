@@ -17,8 +17,8 @@ const situations = [
   },
   {
     id: 'selling-before-payoff',
-    label: 'I\'m selling my home before the mortgage is paid off',
-    implications: 'At closing, the title company will pay off your existing mortgage from sale proceeds. The lender\'s lien is released as part of the closing process — you don\'t have to manage this separately.',
+    label: 'I\’m selling my home before the mortgage is paid off',
+    implications: 'At closing, the title company will pay off your existing mortgage from sale proceeds. The lender\’s lien is released as part of the closing process — you don\’t have to manage this separately.',
     process: [
       'Request a payoff quote from your lender (valid 30 days)',
       'Provide payoff quote to title company handling closing',
@@ -31,16 +31,16 @@ const situations = [
   },
   {
     id: 'refinancing',
-    label: 'I\'m refinancing my mortgage',
-    implications: 'When you refinance, your old lender\'s deed of trust lien is paid off and released. A new lien is placed by your new lender. Both are handled by the title company at refi closing.',
+    label: 'I\’m refinancing my mortgage',
+    implications: 'When you refinance, your old lender\’s deed of trust lien is paid off and released. A new lien is placed by your new lender. Both are handled by the title company at refi closing.',
     process: [
       'New lender orders title search to verify first lien position',
       'At closing, new loan funds pay off old mortgage',
       'Old lender files release of lien (may take 30–90 days)',
-      'New lender\'s deed of trust is recorded immediately at closing',
+      'New lender\’s deed of trust is recorded immediately at closing',
       'Confirm old lien was released by checking county records after 90 days',
     ],
-    verify: 'Check county clerk records 90 days post-refi closing. If old lien isn\'t released, contact your old lender directly — they are legally obligated to file.',
+    verify: 'Check county clerk records 90 days post-refi closing. If old lien isn\’t released, contact your old lender directly — they are legally obligated to file.',
     cost: 'Included in refinance closing costs; recording fees $25–$40 per instrument.',
   },
   {
@@ -51,7 +51,7 @@ const situations = [
       'Obtain certified copy of death certificate',
       'Contact lender to notify of death and discuss options',
       'Request assumption options — federal law protects heirs in many cases',
-      'Consult a Texas probate attorney if there\'s no will or complex estate',
+      'Consult a Texas probate attorney if there\’s no will or complex estate',
       'Title must be clear before you can refinance or sell',
     ],
     verify: 'Order a title search from a Texas title company to identify all liens on the property. Costs $150–$300 and reveals everything recorded against the home.',
@@ -80,7 +80,7 @@ export default function DFWHomeMortgageLienGuide() {
             { icon: '📄', title: 'Texas Uses Deed of Trust (Not a Mortgage)', body: 'In Texas, you sign a Deed of Trust — not a traditional mortgage — when buying with a loan. This means a third-party trustee holds the lien on your property for the lender. It functions similarly but affects how foreclosure works (Texas allows non-judicial foreclosure, meaning faster process).' },
             { icon: '🔒', title: 'What a Lien Means for Your Ownership', body: 'A lien is a legal claim against your property. While you own the home, the lender has a security interest recorded in county records. You can live in, rent, and benefit from the property — but you cannot sell or refinance without satisfying (paying off) the lien first.' },
             { icon: '📋', title: 'Release of Lien: What Happens When You Pay Off', body: 'After final payment, your lender must file a Release of Lien with the county clerk. This clears the lien from public record. If they fail to do so within a reasonable time, you can send written demand. Texas law requires the release be filed promptly or lender faces penalties.' },
-            { icon: '🔍', title: 'How to Verify Your Lien Status', body: 'Search the county property records online. Dallas County: dallascounty.org. Tarrant County: tarrantcountytx.gov. Search by your name or property address to see all recorded documents — deeds, liens, and releases. It\'s free and public.' },
+            { icon: '🔍', title: 'How to Verify Your Lien Status', body: 'Search the county property records online. Dallas County: dallascounty.org. Tarrant County: tarrantcountytx.gov. Search by your name or property address to see all recorded documents — deeds, liens, and releases. It\’s free and public.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#fff', borderRadius: 10, padding: 20, boxShadow: '0 1px 6px rgba(0,0,0,0.07)' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>

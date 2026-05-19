@@ -14,7 +14,7 @@ const bathAdvice: Record<string, { score: number; priorities: string[]; layout: 
     priorities: ['Walk-in shower separate from soaking tub', 'Double vanity minimum 60" wide', 'Large mirror spanning vanity width', 'Frameless glass shower enclosure', 'Heated floors — DFW luxury baseline in 2026'],
     layout: 'Place double vanity on longest wall. Separate wet area (shower + tub) behind glass partition or in alcove. Toilet in private water closet with door. Large format tile (24x24 or herringbone) with minimal grout lines.',
     cost: '$8,000–$25,000 to optimize or renovate',
-    dfwNote: 'Large primary baths are a DFW differentiator — new DFW construction often has 150+ sq ft primaries. A large bath that isn\'t upgraded loses its competitive advantage vs new construction comps.',
+    dfwNote: 'Large primary baths are a DFW differentiator — new DFW construction often has 150+ sq ft primaries. A large bath that isn\’t upgraded loses its competitive advantage vs new construction comps.',
   },
   primary_small: {
     score: 65,
@@ -42,7 +42,7 @@ const bathAdvice: Record<string, { score: number; priorities: string[]; layout: 
     priorities: ['Statement vanity or vessel sink — powder rooms allow design risk', 'Bold wallpaper or paint — only room in DFW homes buyers expect a statement', 'Floating vanity to maximize floor space visual', 'Dramatic light fixture — powder room is Instagram-worthy in DFW buyer tours', 'Quality hand soap display and accessory set for showings'],
     layout: 'Powder rooms are small but high-impact — DFW buyers and their agents remember a well-designed powder room. Vessel sink on floating vanity. Bold paint or wallpaper on one or all walls. Dramatic pendant or sconce.',
     cost: '$2,000–$6,000 for statement refresh',
-    dfwNote: 'Powder rooms in DFW are conversation pieces — buyers often mention them in offers. The only room where bold design is rewarded. Don\'t play it safe here.',
+    dfwNote: 'Powder rooms in DFW are conversation pieces — buyers often mention them in offers. The only room where bold design is rewarded. Don\’t play it safe here.',
   },
 };
 

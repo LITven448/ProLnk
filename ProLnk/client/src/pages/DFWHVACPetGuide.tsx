@@ -31,7 +31,7 @@ function getPetPlan(petType: string, count: string): PetPlan {
     summerSafety: [
       `🌡️ DFW summer temps hit 108°F — a failed AC with ${isDog ? 'a dog' : 'pets'} indoors becomes life-threatening within 2–3 hours`,
       '⚠️ Keep emergency vet number in your phone along with your HVAC service number',
-      '🔔 Install a smart thermostat with phone alerts — get notified if temp rises above 80°F while you\'re away',
+      '🔔 Install a smart thermostat with phone alerts — get notified if temp rises above 80°F while you\’re away',
       isDog ? '🐕 Never leave dogs in a car — DFW car interior hits 140°F within 10 min in July' : '🐈 Cats tolerate heat better than dogs but need AC below 85°F — install temperature sensor in pet area',
       '🧊 Emergency plan: frozen water bottles in towels, wet towel on pet, immediate vet contact if pet is panting excessively',
     ],

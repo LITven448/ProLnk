@@ -5,10 +5,10 @@ export default function DFWHomeownerActionPlan2026() {
 
   const actions: Record<string, { title: string; steps: string[] }> = {
     new: {
-      title: '🏠 New DFW Homeowner — Today's Priority List',
+      title: '🏠 New DFW Homeowner — Today’s Priority List',
       steps: [
         '🔗 Join ProLnk waitlist NOW — Charter tier closes at 500 homeowners (you get locked-in pricing)',
-        '🏦 Sign up for Home Health Vault — free digital record of your home's health and history',
+        '🏦 Sign up for Home Health Vault — free digital record of your home’s health and history',
         '📍 Find and label all shutoffs: main water, gas shutoff, electrical panel breakers',
         '📞 Save ProLnk in your phone as "Home Emergency" — instant access to DFW pros',
         '🌡️ Schedule HVAC tune-up if not done this spring — DFW summer starts early',
@@ -18,7 +18,7 @@ export default function DFWHomeownerActionPlan2026() {
     established: {
       title: '🏡 Established DFW Homeowner — Upgrade Your Setup',
       steps: [
-        '🔗 Check if you're on ProLnk waitlist — Charter pricing still available briefly',
+        '🔗 Check if you’re on ProLnk waitlist — Charter pricing still available briefly',
         '🏦 Add your home to Home Health Vault — protects your equity and simplifies selling',
         '🌡️ HVAC tune-up before June — DFW summers stress systems hard',
         '🔍 Walk your roof after any hail event — DFW hail season peaks May–June',

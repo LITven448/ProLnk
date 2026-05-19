@@ -59,7 +59,7 @@ export default function DFWElectricalGroundingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             {[
               ['⚡ Fault Path', 'Provides safe return path for fault current — trips breaker instead of shocking you'],
-              ['🌩️ Lightning', 'Dissipates surge energy into earth — critical in DFW\'s active storm season'],
+              ['🌩️ Lightning', 'Dissipates surge energy into earth — critical in DFW\’s active storm season'],
               ['🛡️ Equipment', 'Protects sensitive electronics from voltage spikes and noise'],
               ['🏠 Code Requirement', 'NEC requires ground rods at service entrance — DFW inspections verify'],
             ].map(([title, desc]) => (

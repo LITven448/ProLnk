@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: 'Does DFW airport flight path noise really damage foundations?',
-    a: 'Vibration from repeated aircraft flyovers can cause micro-fracturing in older foundation materials over decades. Combined with clay soil movement, homes in Lewisville\'s eastern corridor near I-35E and the approach path see compounded stress on concrete piers. Our scan captures visible evidence and recommends a structural engineer review when warranted.',
+    a: 'Vibration from repeated aircraft flyovers can cause micro-fracturing in older foundation materials over decades. Combined with clay soil movement, homes in Lewisville\’s eastern corridor near I-35E and the approach path see compounded stress on concrete piers. Our scan captures visible evidence and recommends a structural engineer review when warranted.',
   },
   {
     q: 'Is the home health score free?',

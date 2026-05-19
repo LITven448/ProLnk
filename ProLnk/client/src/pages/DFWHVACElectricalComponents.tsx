@@ -17,7 +17,7 @@ const results: Record<string, Record<string, { likelihood: string; diy: string; 
   },
   contactor: {
     'Spring (pre-season)': { likelihood: 'Medium — contacts may be pitted from last summer', diy: 'Inspect contacts for pitting or carbon buildup. DIY replacement is straightforward', cost: '$20–$60 DIY | $150–$350 tech' },
-    'Summer Peak (Jun–Sep)': { likelihood: 'HIGH — chattering or humming contactor means it\'s about to fail; DFW heat accelerates contact pitting', diy: 'Call tech — contactor failure means no cooling. Often same-day repair', cost: '$150–$350 tech visit' },
+    'Summer Peak (Jun–Sep)': { likelihood: 'HIGH — chattering or humming contactor means it\’s about to fail; DFW heat accelerates contact pitting', diy: 'Call tech — contactor failure means no cooling. Often same-day repair', cost: '$150–$350 tech visit' },
     'Fall': { likelihood: 'Low — reduced cycling reduces contact wear', diy: 'DIY replacement now is cheap insurance before next summer', cost: '$20–$60 DIY part' },
     'Winter': { likelihood: 'Very Low', diy: 'No action needed unless troubleshooting heat pump issues', cost: 'N/A' },
   },

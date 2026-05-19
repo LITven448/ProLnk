@@ -34,13 +34,13 @@ const metrics = [
     dfwRelevance: '⭐⭐ Heat Pump / Geothermal Only',
     description: 'Ratio of heat moved to electricity used — primary metric for heat pumps and geothermal.',
     goodValue: 'COP ≥ 3.5 for DFW heat pumps',
-    why: 'DFW\'s mild winters make heat pumps viable — COP tells you how efficiently they heat vs a gas furnace.',
+    why: 'DFW\’s mild winters make heat pumps viable — COP tells you how efficiently they heat vs a gas furnace.',
     color: '#E87D4A',
   },
 ];
 
 const concerns = [
-  { label: 'High summer electric bills', metric: 'EER', detail: 'EER ≥ 12.5 cuts peak cooling costs the most in DFW\'s 95°F+ summers.' },
+  { label: 'High summer electric bills', metric: 'EER', detail: 'EER ≥ 12.5 cuts peak cooling costs the most in DFW\’s 95°F+ summers.' },
   { label: 'Comparing two quotes side-by-side', metric: 'SEER2', detail: 'SEER2 is on every spec sheet — use it for apples-to-apples, then check EER for DFW accuracy.' },
   { label: 'Variable-speed or 2-stage system', metric: 'IEER', detail: 'IEER shows part-load efficiency — critical for variable systems running at 40–70% capacity.' },
   { label: 'Heat pump or geothermal', metric: 'COP', detail: 'COP ≥ 3.5 means the unit moves 3.5x more energy than it consumes — very achievable in DFW.' },

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const COMPARISONS = [
   { label: 'Contractor Vetting', nextdoor: 'Zero vetting — neighbor recommendations with no background check or license check', prolnk: 'Criminal background, license verify, insurance confirm — every contractor, every time' },
-  { label: 'Accountability', nextdoor: 'No formal accountability — reviews are neighbors' opinions, no enforcement', prolnk: 'Performance scores, complaint review, and automatic suspension for bad actors' },
+  { label: 'Accountability', nextdoor: 'No formal accountability — reviews are neighbors' opinions, no enforcement', prolnk: ’Performance scores, complaint review, and automatic suspension for bad actors' },
   { label: 'Insurance Coverage', nextdoor: 'Unknown — homeowner has no way to verify contractor is insured', prolnk: 'Insurance certificates verified before any contractor joins the network' },
   { label: 'Quote Process', nextdoor: 'DM the contractor yourself — no structured quote comparison', prolnk: '3 vetted contractors respond to your one job posting with competing quotes' },
   { label: 'Speed', nextdoor: 'Dependent on community activity and response rate — can take days', prolnk: 'Match engine routes your job within minutes; quotes arrive in 24 hours' },
@@ -10,11 +10,11 @@ const COMPARISONS = [
 ];
 
 const SCENARIOS = [
-  { job: 'Leaky faucet or minor plumbing', risk: 'low', rec: 'nextdoor', reason: 'Low-stakes, low-cost job where a neighbor's recommendation is often enough. Nextdoor works fine here.' },
+  { job: 'Leaky faucet or minor plumbing', risk: 'low', rec: 'nextdoor', reason: 'Low-stakes, low-cost job where a neighbor’s recommendation is often enough. Nextdoor works fine here.' },
   { job: 'Roof replacement or major structural work', risk: 'high', rec: 'prolnk', reason: 'High-dollar job with major liability. Always use a licensed, insured, background-checked contractor — ProLnk.' },
   { job: 'Electrical panel upgrade', risk: 'high', rec: 'prolnk', reason: 'Electrical work requires licensed electricians and permits. ProLnk verifies credentials Nextdoor cannot.' },
-  { job: 'Lawn mowing or yard cleanup', risk: 'low', rec: 'nextdoor', reason: 'Low risk, and your neighbor's recommended landscaper is probably fine for this.' },
-  { job: 'HVAC installation or replacement', risk: 'high', rec: 'prolnk', reason: 'HVAC requires refrigerant licensing and manufacturer certification. ProLnk's vetting catches this — Nextdoor doesn't.' },
+  { job: 'Lawn mowing or yard cleanup', risk: 'low', rec: 'nextdoor', reason: 'Low risk, and your neighbor’s recommended landscaper is probably fine for this.' },
+  { job: 'HVAC installation or replacement', risk: 'high', rec: 'prolnk', reason: 'HVAC requires refrigerant licensing and manufacturer certification. ProLnk’s vetting catches this — Nextdoor doesn’t.' },
   { job: 'House cleaning or organizing', risk: 'low', rec: 'either', reason: 'Moderate risk — Nextdoor for trusted neighbor referrals, ProLnk for background-checked professionals.' },
 ];
 

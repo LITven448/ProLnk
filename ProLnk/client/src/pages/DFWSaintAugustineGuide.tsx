@@ -39,7 +39,7 @@ export default function DFWSaintAugustineGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>⚡ St. Augustine vs Bermuda in DFW</h2>
           {[
             ['🌤️ Shade tolerance', 'St. Aug wins — handles 3–6 hrs sun; Bermuda needs 6+'],
-            ['💧 Water needs', 'Bermuda wins — St. Aug needs 1.5–2"/week vs Bermuda\'s 1"'],
+            ['💧 Water needs', 'Bermuda wins — St. Aug needs 1.5–2"/week vs Bermuda\’s 1"'],
             ['🌡️ Drought resistance', 'Bermuda wins — St. Aug will brown and die without water'],
             ['🐛 Pest vulnerability', 'Bermuda wins — chinch bugs devastate DFW St. Aug in July–Aug'],
             ['💵 Installation cost', 'Similar — both require sod at $0.80–$1.50/sq ft'],

@@ -116,7 +116,7 @@ export default function TrustyProForLandlords() {
         <div style={{ background: '#0F172A', borderRadius: 16, padding: 36, marginBottom: 48, color: '#E2E8F0' }}>
           <h2 style={{ fontSize: 24, fontWeight: 800, color: '#FBBF24', marginBottom: 16 }}>💎 Origination Rights — The Landlord Advantage</h2>
           <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 20 }}>
-            As a landlord adding multiple properties to the Home Health Vault, you're not just a customer — you're a <strong style={{ color: '#F8FAFC' }}>data contributor</strong>. Founding tier members earn:
+            As a landlord adding multiple properties to the Home Health Vault, you're not just a customer — you’re a <strong style={{ color: '#F8FAFC' }}>data contributor</strong>. Founding tier members earn:
           </p>
           <div style={{ background: '#1E293B', borderRadius: 12, padding: 24, marginBottom: 20 }}>
             <div style={{ fontSize: 32, fontWeight: 900, color: '#FBBF24', textAlign: 'center', marginBottom: 8 }}>1.0%</div>

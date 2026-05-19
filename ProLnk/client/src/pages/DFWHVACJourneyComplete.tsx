@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const knowledgeAreas = [
   { id: 'maintenance', label: '🔧 Maintenance & Prevention', description: 'Annual tune-ups, filter changes, coil cleaning — the foundation of HVAC longevity.' },
-  { id: 'money', label: '💰 Money & Negotiation', description: 'When to spend, when to save, how to negotiate in DFW's competitive HVAC market.' },
+  { id: 'money', label: '💰 Money & Negotiation', description: 'When to spend, when to save, how to negotiate in DFW’s competitive HVAC market.' },
   { id: 'equity', label: '🏠 Home Equity & Value', description: 'How HVAC age and condition directly affects what buyers will pay for your home.' },
   { id: 'appreciation', label: '📈 Appreciation & Market', description: 'DFW submarket dynamics and how a new system creates buyer premiums.' },
   { id: 'prolnk', label: '⚡ ProLnk & Vetted Pros', description: 'How the ProLnk platform eliminates HVAC service anxiety for DFW homeowners.' },
@@ -12,7 +12,7 @@ const actionPlans: Record<string, { title: string; steps: string[]; cta: string 
   maintenance: {
     title: 'Your Maintenance Action Plan',
     steps: [
-      'Schedule a tune-up this month if you haven't had one in 12+ months ($89-$150)',
+      'Schedule a tune-up this month if you haven’t had one in 12+ months ($89-$150)',
       'Set a recurring October calendar reminder for annual fall HVAC service',
       'Replace filters every 60-90 days — mark it on your calendar now',
       'Keep a simple log of all service dates, techs, and findings',
@@ -42,10 +42,10 @@ const actionPlans: Record<string, { title: string; steps: string[]; cta: string 
   appreciation: {
     title: 'Your Appreciation Action Plan',
     steps: [
-      'Research your DFW submarket's average sale price for similar homes',
+      'Research your DFW submarket’s average sale price for similar homes',
       'Get a quote for a new 16+ SEER2 system — know the investment needed',
-      'Track your neighborhood's HVAC disclosure patterns in recent sales',
-      'Document your current system's age, brand, and SEER rating for future buyers',
+      'Track your neighborhood’s HVAC disclosure patterns in recent sales',
+      'Document your current system’s age, brand, and SEER rating for future buyers',
     ],
     cta: 'Get a DFW HVAC upgrade quote from ProLnk vetted pros',
   },
@@ -53,7 +53,7 @@ const actionPlans: Record<string, { title: string; steps: string[]; cta: string 
     title: 'Your ProLnk Action Plan',
     steps: [
       'Join the ProLnk waitlist — DFW HVAC pros are being vetted and added now',
-      'Add your home's HVAC details to the Home Health Vault for permanent records',
+      'Add your home’s HVAC details to the Home Health Vault for permanent records',
       'Refer one neighbor — they get vetted service, you build your ProLnk network',
       'When you need HVAC service, use ProLnk first — not Google, not Angi',
     ],

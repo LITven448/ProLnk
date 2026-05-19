@@ -5,7 +5,7 @@ const locations = [
   { id: 'fortworth', label: 'Fort Worth', icon: '🤠', county: 'Tarrant County', status: '✅ Full Coverage', pros: 'HVAC, Roofing, Foundation, Plumbing, Electrical, General Contracting', note: 'Fort Worth + Tarrant County suburbs including Keller, Southlake, Colleyville.' },
   { id: 'plano', label: 'Plano / Frisco / McKinney', icon: '🏘️', county: 'Collin County', status: '✅ Full Coverage', pros: 'All major trades + specialty services for newer construction', note: 'Collin County is one of the fastest-growing counties in America — ProLnk built for this growth.' },
   { id: 'denton', label: 'Denton / Flower Mound / Lewisville', icon: '🌿', county: 'Denton County', status: '✅ Full Coverage', pros: 'HVAC, Roofing, Foundation, Plumbing, Electrical', note: 'Denton County growing rapidly — Charter pros filling coverage gaps now.' },
-  { id: 'arlington', label: 'Arlington / Irving / Grand Prairie', icon: '⚽', county: 'Tarrant + Dallas County', status: '✅ Full Coverage', pros: 'Full trade coverage — high-density residential market', note: 'Mid-cities corridor: some of DFW's highest home service demand per square mile.' },
+  { id: 'arlington', label: 'Arlington / Irving / Grand Prairie', icon: '⚽', county: 'Tarrant + Dallas County', status: '✅ Full Coverage', pros: 'Full trade coverage — high-density residential market', note: 'Mid-cities corridor: some of DFW’s highest home service demand per square mile.' },
   { id: 'outer', label: 'Rockwall / Kaufman / Ellis', icon: '🌾', county: 'Outer DFW Counties', status: '🟡 Expanding Coverage', pros: 'Core trades available; specialty trades expanding', note: 'Outer counties served by Charter pros willing to travel. Coverage density growing monthly.' },
 ];
 

@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const spaceTypes = [
   { label: 'Room addition (no ductwork)', icon: '🏗️', baseScenario: 'mini-split', baseReason: 'Extending ductwork to an addition costs $3,000–$6,000+ and rarely balances well with existing system. Mini-split is almost always the right call.' },
-  { label: 'Garage (detached or attached)', icon: '🚗', baseScenario: 'mini-split', baseReason: 'Garages need dedicated units — no central system is designed to serve a garage in DFW\'s heat. Mini-split is the only real option.' },
-  { label: 'Bonus room (above garage)', icon: '🛋️', baseScenario: 'mini-split', baseReason: 'Bonus rooms over garages are DFW\'s worst hot spots — 10–15°F hotter than the rest of the house. Central ducts can\'t compensate; mini-split fixes it.' },
+  { label: 'Garage (detached or attached)', icon: '🚗', baseScenario: 'mini-split', baseReason: 'Garages need dedicated units — no central system is designed to serve a garage in DFW\’s heat. Mini-split is the only real option.' },
+  { label: 'Bonus room (above garage)', icon: '🛋️', baseScenario: 'mini-split', baseReason: 'Bonus rooms over garages are DFW\’s worst hot spots — 10–15°F hotter than the rest of the house. Central ducts can\’t compensate; mini-split fixes it.' },
   { label: 'Sunroom / enclosed patio', icon: '☀️', baseScenario: 'mini-split', baseReason: 'High solar gain in DFW summers makes sunrooms impossible to cool with shared central systems. Dedicated mini-split is the only reliable solution.' },
-  { label: 'Home office (remote from air handler)', icon: '💼', baseScenario: 'compare', baseReason: 'If the office is on the same floor and ductwork is reachable, extending ducts may be cheaper. If it\'s distant or has hot spots, mini-split wins.' },
+  { label: 'Home office (remote from air handler)', icon: '💼', baseScenario: 'compare', baseReason: 'If the office is on the same floor and ductwork is reachable, extending ducts may be cheaper. If it\’s distant or has hot spots, mini-split wins.' },
   { label: 'Master bedroom (always too hot)', icon: '🛏️', baseScenario: 'compare', baseReason: 'If your central system is undersized for DFW heat, a mini-split supplements. But check if adding a zone damper or balancing ducts solves it first.' },
 ];
 

@@ -10,7 +10,7 @@ const faqs = [
     a: 'Commissions are calculated monthly and paid out by the 15th of the following month. For example, April earnings are paid by May 15. Payouts are sent via ACH direct deposit or check. Minimum payout threshold is $25.',
   },
   {
-    q: 'What if a client doesn\'t pay?',
+    q: 'What if a client doesn\’t pay?',
     a: 'You earn commissions only on completed and paid jobs. If a homeowner cancels before the job is finished or disputes a payment, the commission on that job is held pending resolution. Chargebacks that are reversed are retroactively credited to your account.',
   },
   {
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'How does the 4-level override work?',
-    a: 'When you recruit Partner A, and A recruits Partner B, you earn a Level 2 override on B\'s job commissions. This cascades 4 levels deep: Level 1 = 7%, Level 2 = 4%, Level 3 = 2%, Level 4 = 1%. Network income compounds as your downline grows.',
+    a: 'When you recruit Partner A, and A recruits Partner B, you earn a Level 2 override on B\’s job commissions. This cascades 4 levels deep: Level 1 = 7%, Level 2 = 4%, Level 3 = 2%, Level 4 = 1%. Network income compounds as your downline grows.',
   },
   {
     q: 'What is a "matching fee"?',
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: 'What is the Home Health Vault?',
-    a: 'The Home Health Vault is ProLnk\'s proprietary home data asset. It stores structural, safety, and maintenance history for homes. When you originate a home (get a homeowner to register their property), you earn a permanent 1.5% origination right on future platform revenue from that home.',
+    a: 'The Home Health Vault is ProLnk\’s proprietary home data asset. It stores structural, safety, and maintenance history for homes. When you originate a home (get a homeowner to register their property), you earn a permanent 1.5% origination right on future platform revenue from that home.',
   },
   {
     q: 'What is an origination right?',

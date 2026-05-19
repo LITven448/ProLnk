@@ -99,9 +99,9 @@ export default function DIYPermitPullingGuide() {
         <section style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>⚠️ Risks of Owner-Builder Permits</h2>
           {[
-            ['Insurance implications', 'Your homeowner\'s insurance may not cover damage from unpermitted or improperly inspected work. Verify with your carrier before you start.'],
+            ['Insurance implications', 'Your homeowner\’s insurance may not cover damage from unpermitted or improperly inspected work. Verify with your carrier before you start.'],
             ['Resale disclosure', 'In Texas, you must disclose known defects at resale. If an owner-built project later fails inspection, it becomes a disclosure liability.'],
-            ['Safety liability', 'If a sub you hire under your owner-builder permit is injured on-site, you may be personally liable in the absence of workers\' comp coverage.'],
+            ['Safety liability', 'If a sub you hire under your owner-builder permit is injured on-site, you may be personally liable in the absence of workers\’ comp coverage.'],
             ['12-month resale rule', 'If you sell within 12 months of owner-builder completion, the Texas AG can presume you were acting as a contractor, which may trigger contractor licensing requirements.'],
           ].map(([risk, detail]) => (
             <div key={risk as string} style={{ backgroundColor: '#FEF9C3', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #FDE047' }}>
@@ -117,8 +117,8 @@ export default function DIYPermitPullingGuide() {
             As an owner-builder, you can hire licensed subcontractors directly. Each trade sub will still need to pull their own sub-permits in most cities. Your role is coordination and accountability.
           </p>
           {[
-            'Verify each sub\'s TDLR license independently — don\'t take their word for it',
-            'Require proof of liability insurance and workers\' comp from every sub',
+            'Verify each sub\’s TDLR license independently — don\’t take their word for it',
+            'Require proof of liability insurance and workers\’ comp from every sub',
             'Each sub should provide a lien waiver when paid',
             'You are responsible for scheduling inspections after each trade completes their scope',
             'Keep a written log of every payment, inspection result, and communication',

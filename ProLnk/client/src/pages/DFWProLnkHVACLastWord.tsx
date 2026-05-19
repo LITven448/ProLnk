@@ -4,12 +4,12 @@ const personas = [
   {
     id: 'homeowner',
     label: '🏡 I am a DFW homeowner',
-    message: 'You deserve to know your HVAC tech before they arrive. You deserve fair, competitive quotes without spending a week calling around. You deserve a record of your home's HVAC history that travels with the house. ProLnk is building all of it — for you, starting now. Join the waitlist. Be one of the first DFW homeowners with a verified tech in their corner.',
+    message: 'You deserve to know your HVAC tech before they arrive. You deserve fair, competitive quotes without spending a week calling around. You deserve a record of your home’s HVAC history that travels with the house. ProLnk is building all of it — for you, starting now. Join the waitlist. Be one of the first DFW homeowners with a verified tech in their corner.',
   },
   {
     id: 'landlord',
     label: '🏘️ I own rental properties in DFW',
-    message: 'HVAC failure in a rental is an emergency on someone else's timeline. ProLnk gives you a network of vetted pros you can dispatch fast. Health Vault tracks every system across every property. Maintenance history builds evidence for security deposit disputes. This is property management infrastructure that pays for itself in the first emergency.',
+    message: 'HVAC failure in a rental is an emergency on someone else’s timeline. ProLnk gives you a network of vetted pros you can dispatch fast. Health Vault tracks every system across every property. Maintenance history builds evidence for security deposit disputes. This is property management infrastructure that pays for itself in the first emergency.',
   },
   {
     id: 'contractor',

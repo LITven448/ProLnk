@@ -92,7 +92,7 @@ export default function DFWSmartIrrigationROIGuide() {
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24 }}>
           <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🏆 Why Smart Irrigation ROI is Exceptional in DFW</h3>
-          {['DFW irrigation season runs April-October (7 months) — 2x longer than northern states', 'Clay soil over-absorbs then repels water — smart controllers adjust for DFW clay behavior', 'Stage 1-3 water restrictions fine non-compliance — smart systems keep you automatically compliant', 'NTMWD (North Texas Municipal Water District) future rate increases make savings compound over time', 'Rachio\'s Weather Intelligence uses DFW NWS data to skip watering before/after rain events'].map((fact, i) => (
+          {['DFW irrigation season runs April-October (7 months) — 2x longer than northern states', 'Clay soil over-absorbs then repels water — smart controllers adjust for DFW clay behavior', 'Stage 1-3 water restrictions fine non-compliance — smart systems keep you automatically compliant', 'NTMWD (North Texas Municipal Water District) future rate increases make savings compound over time', 'Rachio\’s Weather Intelligence uses DFW NWS data to skip watering before/after rain events'].map((fact, i) => (
             <div key={i} style={{ color: '#CBD5E1', marginBottom: 10, paddingLeft: 16, borderLeft: '2px solid #F5E642', lineHeight: 1.5 }}>{fact}</div>
           ))}
         </div>

@@ -6,7 +6,7 @@ const situations = [
     icon: '🔨',
     free: 'Posting your job, receiving matches, communicating with partners, reviewing partner profiles, leaving ratings.',
     cost: 'Nothing. ProLnk is 100% free for homeowners on standard matches.',
-    how: 'ProLnk earns a match fee from the partner\'s side only after a successful connection is made.',
+    how: 'ProLnk earns a match fee from the partner\’s side only after a successful connection is made.',
   },
   {
     label: 'Emergency repair',

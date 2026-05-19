@@ -26,7 +26,7 @@ const recommendations: Record<string, Record<string, Record<string, { frame: str
   },
 };
 
-const defaultRec = { frame: 'Fiberglass — DFW Universal Recommendation', reason: 'Fiberglass outperforms all other frame materials in DFW\'s extreme climate. When in doubt, fiberglass wins.', costPremium: '+30–60% over vinyl baseline', lifespan: '40–70 years' };
+const defaultRec = { frame: 'Fiberglass — DFW Universal Recommendation', reason: 'Fiberglass outperforms all other frame materials in DFW\’s extreme climate. When in doubt, fiberglass wins.', costPremium: '+30–60% over vinyl baseline', lifespan: '40–70 years' };
 
 export default function DFWWindowFrameMaterialGuide() {
   const [exposure, setExposure] = useState('');

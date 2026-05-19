@@ -12,7 +12,7 @@ export default function PartnerPhotoEquipmentGuide() {
 
   const settings = [
     { setting: 'Auto-HDR', value: 'ON', reason: 'Balances bright/dark areas in a single shot — essential for exterior-to-interior transitions' },
-    { setting: 'Live Photo', value: 'OFF', reason: 'Wastes storage and doesn't help AI detection. Always turn this off.' },
+    { setting: 'Live Photo', value: 'OFF', reason: 'Wastes storage and doesn’t help AI detection. Always turn this off.' },
     { setting: 'Portrait Mode', value: 'ONLY for close-ups', reason: 'Use for equipment tags and serial numbers. Not helpful for room shots.' },
     { setting: 'Aspect Ratio', value: '4:3', reason: 'Higher resolution than 16:9. More pixel data = better AI detection accuracy.' },
     { setting: 'Lens cleanliness', value: 'ALWAYS clean', reason: 'Single biggest impact on detection quality. Clean before every job, especially dusty sites.' },

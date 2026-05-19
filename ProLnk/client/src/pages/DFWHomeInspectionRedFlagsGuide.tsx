@@ -53,7 +53,7 @@ export default function DFWHomeInspectionRedFlagsGuide() {
             <div style={{ background: hasWalkAway ? '#450A0A' : '#052E16', border: `2px solid ${hasWalkAway ? '#DC2626' : '#16A34A'}`, borderRadius: 12, padding: 20, marginBottom: 24, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{hasWalkAway ? '🚨' : '🤝'}</div>
               <h2 style={{ fontSize: 22, fontWeight: 800, color: hasWalkAway ? '#FCA5A5' : '#86EFAC', marginBottom: 4 }}>
-                {hasWalkAway ? 'CONSIDER WALKING AWAY' : 'NEGOTIATE — DON\'T WALK'}
+                {hasWalkAway ? 'CONSIDER WALKING AWAY' : 'NEGOTIATE — DON\’T WALK'}
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 14 }}>{criticalCount} critical issue{criticalCount !== 1 ? 's' : ''} detected across {selected_findings.length} finding{selected_findings.length !== 1 ? 's' : ''}</p>
             </div>

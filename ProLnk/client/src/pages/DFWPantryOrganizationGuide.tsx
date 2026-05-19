@@ -32,7 +32,7 @@ export default function DFWPantryOrganizationGuide() {
     else if (sqft >= 15) { rec = 'Walk-In with adjustable shelving'; shelving = '$600–1,800'; }
     else { rec = 'Reach-In with door organizers + rollout trays'; shelving = '$200–700'; }
 
-    if (ppl >= 5) tip = 'Large household: dedicate a full shelf to Costco/Sam\'s bulk bins (gallon containers, airtight lids essential in DFW humidity)';
+    if (ppl >= 5) tip = 'Large household: dedicate a full shelf to Costco/Sam\’s bulk bins (gallon containers, airtight lids essential in DFW humidity)';
     else tip = 'Install a dehumidifier pack or rechargeable Eva-Dry unit in pantry — DFW humidity destroys dry goods fast';
 
     setResult({ rec, shelving, tip });

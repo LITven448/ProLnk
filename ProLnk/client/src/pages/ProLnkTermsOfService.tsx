@@ -35,13 +35,13 @@ const terms: Record<UserType, { title: string; rights: string[]; responsibilitie
     responsibilities: [
       '✅ Recruit only qualified, licensed home service professionals',
       '🚫 Do not make income guarantees to prospects',
-      '📝 Accurate representation of ProLnk's products and pricing',
+      '📝 Accurate representation of ProLnk’s products and pricing',
       '🔒 Keep your referral links and credentials confidential',
     ],
     highlights: [
       'Commission rates locked for Charter tier ($149/mo, 25 referrals)',
       'Network income cascades 4 levels deep — no cap on depth',
-      'Charter tier closes at 500 applications — act before it's full',
+      'Charter tier closes at 500 applications — act before it’s full',
     ],
   },
   contractor: {

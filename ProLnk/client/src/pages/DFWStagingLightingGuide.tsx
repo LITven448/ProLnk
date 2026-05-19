@@ -101,7 +101,7 @@ export default function DFWStagingLightingGuide() {
             {[
               ['DFW homes are often under-lit for showings — especially north-facing rooms', '⚠️'],
               ['2700K warm white is the standard — cool daylight bulbs make homes feel clinical', '🌡️'],
-              ['Schedule showings 10am–2pm to leverage DFW\'s signature sunshine', '🌞'],
+              ['Schedule showings 10am–2pm to leverage DFW\’s signature sunshine', '🌞'],
               ['Under-cabinet kitchen lighting is the highest ROI lighting upgrade in DFW listings', '🏆'],
             ].map(([tip, icon], i) => (
               <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>

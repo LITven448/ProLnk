@@ -16,7 +16,7 @@ const reportItems = [
   'Photo documentation of every area found in need of repair',
   'Distinction between maintenance items vs replacement triggers',
   'Hail damage notation with approximate impact size',
-  'Ventilation calculation (net free area) vs what\'s installed',
+  'Ventilation calculation (net free area) vs what\’s installed',
 ];
 
 export default function DFWRoofInspectionWalkthrough() {

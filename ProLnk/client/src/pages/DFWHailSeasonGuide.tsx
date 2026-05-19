@@ -79,7 +79,7 @@ export default function DFWHailSeasonGuide() {
               { title: '🏠 Shelter Location', tip: 'Interior room on lowest floor, away from windows. A bathroom or closet in the center of the home is ideal.' },
               { title: '🚗 Your Vehicle', tip: 'If indoors, stay there. Do not run to garage during active storm. Metal doors and windows are storm hazards.' },
               { title: '❄️ HVAC Unit', tip: 'Turn AC off during heavy hail. Crushed condenser fins operating under load can burn out the motor.' },
-              { title: '📱 Storm Tracking', tip: 'Use NOAA Weather app, iNaturalist hail reports, or DFW's local KHOU/NBC5/WFAA for real-time radar and storm path.' },
+              { title: '📱 Storm Tracking', tip: 'Use NOAA Weather app, iNaturalist hail reports, or DFW’s local KHOU/NBC5/WFAA for real-time radar and storm path.' },
             ].map(item => (
               <div key={item.title} style={{ background: '#111f35', borderRadius: 10, padding: '16px 18px', marginBottom: 12 }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 14, marginBottom: 8 }}>{item.title}</div>

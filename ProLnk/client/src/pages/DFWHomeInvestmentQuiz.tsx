@@ -8,10 +8,10 @@ const questions = [
   { q: 'What DFW investment strategy interests you most?', options: ['No strategy yet', 'Buy and hold rentals', 'Fix and flip', 'Short-term rental / Airbnb or BRRRR'], answer: 3 },
   { q: 'Do you understand DSCR loans vs conventional for investment properties?', options: ['No', 'Heard of DSCR', 'Basic understanding', 'Have used or actively researching DSCR'], answer: 3 },
   { q: 'What is your target cash-on-cash return for a DFW rental?', options: ['No target yet', 'Anything positive', '4-6%', '7%+ or I pass'], answer: 3 },
-  { q: 'How do DFW property taxes affect investment underwriting?', options: ['Haven\'t thought about it', 'They\'re high, reduces returns', 'Factor them into NOI', 'Model them at 2%+ and stress test'], answer: 3 },
+  { q: 'How do DFW property taxes affect investment underwriting?', options: ['Haven\’t thought about it', 'They\’re high, reduces returns', 'Factor them into NOI', 'Model them at 2%+ and stress test'], answer: 3 },
   { q: 'How familiar are you with the DFW short-term rental regulatory landscape?', options: ['No knowledge', 'Heard some cities restrict it', 'Know which cities allow/restrict', 'Know HOA, city rules, and occupancy tax requirements'], answer: 3 },
   { q: 'Do you have a property management plan for DFW rentals?', options: ['None', 'Self-manage plan', 'PM company shortlist', 'Active PM relationship with local market data'], answer: 3 },
-  { q: 'How has DFW population growth affected real estate demand?', options: ['Don\'t track it', 'Know DFW is growing', 'Know in-migration patterns', 'Track employment hubs, migration sources, and new development corridors'], answer: 3 },
+  { q: 'How has DFW population growth affected real estate demand?', options: ['Don\’t track it', 'Know DFW is growing', 'Know in-migration patterns', 'Track employment hubs, migration sources, and new development corridors'], answer: 3 },
   { q: 'What is your timeline to close on your first (or next) DFW investment property?', options: ['No timeline', '12-24 months', '6-12 months', 'Under 6 months — actively shopping'], answer: 3 },
 ];
 

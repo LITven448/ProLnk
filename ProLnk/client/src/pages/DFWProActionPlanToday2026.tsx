@@ -25,7 +25,7 @@ export default function DFWProActionPlanToday2026() {
     },
     plumbing: {
       new: [
-        '🔗 Plumbing is DFW's #1 lead category — apply for Charter immediately',
+        '🔗 Plumbing is DFW’s #1 lead category — apply for Charter immediately',
         '🪛 List all services: leak repair, water heater, drain clearing, repipe',
         '📍 DFW service area tip: North Dallas and Frisco have highest density',
         '⭐ One strong review beats ten weak ones — ask your best customer first',

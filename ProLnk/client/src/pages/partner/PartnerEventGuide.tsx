@@ -4,7 +4,7 @@ const events = [
   {
     id: 'chamber',
     label: '🏛️ Chamber of Commerce Mixer',
-    pitch: '"I help licensed tradespeople in DFW build a second income stream through a new platform called ProLnk — it matches pros with homeowners who need quotes. I\'m looking for a few solid pros to be founding partners."',
+    pitch: '"I help licensed tradespeople in DFW build a second income stream through a new platform called ProLnk — it matches pros with homeowners who need quotes. I\’m looking for a few solid pros to be founding partners."',
     approach: 'Conversational networking — no table, no materials. Be curious about their business first.',
     materials: 'Business cards only. QR code to your sign-up page if asked.',
     starters: ['What kind of work does your company do?', 'Are you primarily residential or commercial?', 'Have you tried any lead services before?'],
@@ -13,7 +13,7 @@ const events = [
   {
     id: 'homeexpo',
     label: '🏠 DFW Home & Garden Expo',
-    pitch: '"ProLnk connects homeowners like you with vetted local pros. If you\'ve ever struggled to find a good plumber or contractor, this is built for you. Sign up free and get matched when you need someone."',
+    pitch: '"ProLnk connects homeowners like you with vetted local pros. If you\’ve ever struggled to find a good plumber or contractor, this is built for you. Sign up free and get matched when you need someone."',
     approach: 'Set up a small display with a clear value prop for homeowners AND pros. Two separate pitches.',
     materials: 'Branded table cover, 1-page flyer, tablet for signups, small bowl of candy.',
     starters: ['Have you had trouble finding reliable contractors?', 'Are you a homeowner or a trade pro?', 'What projects are on your to-do list this year?'],
@@ -31,7 +31,7 @@ const events = [
   {
     id: 'hoa',
     label: '🏘️ HOA Annual Meeting',
-    pitch: '"I wanted to mention a new service for homeowners in the area — ProLnk connects you with vetted local pros for home service quotes. It\'s free for homeowners and still in early access."',
+    pitch: '"I wanted to mention a new service for homeowners in the area — ProLnk connects you with vetted local pros for home service quotes. It\’s free for homeowners and still in early access."',
     approach: 'Ask board permission first. Low-key, community-service framing. Not a sales pitch — an announcement.',
     materials: 'Flyer for the bulletin board, QR code, contact info for follow-up questions.',
     starters: ['Is there a neighborhood Facebook group I could share this in?', 'Would the board be open to including this in the newsletter?'],

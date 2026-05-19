@@ -9,7 +9,7 @@ const considerations = [
 
 const financialOptions = [
   { option: 'Sell & Downsize', pros: ['Unlock $200K–$600K equity', 'Reduce monthly carrying cost', 'Simplify estate planning'], cons: ['Transaction costs 6-8%', 'Emotional disruption', 'DFW smaller homes still expensive'] },
-  { option: 'Renovate & Age in Place', pros: ['No move disruption', 'Preserve community ties', 'Potential HELOC access'], cons: ['Renovation costs don\'t fully recoup', 'Still maintaining large home', 'Accessibility may require future work'] },
+  { option: 'Renovate & Age in Place', pros: ['No move disruption', 'Preserve community ties', 'Potential HELOC access'], cons: ['Renovation costs don\’t fully recoup', 'Still maintaining large home', 'Accessibility may require future work'] },
   { option: 'Reverse Mortgage', pros: ['Cash flow from equity', 'Stay in home', 'No monthly payments'], cons: ['Reduces estate inheritance', 'Costs and fees significant', 'Requires 62+ age and primary residence'] },
 ];
 

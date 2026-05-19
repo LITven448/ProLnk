@@ -15,7 +15,7 @@ const symptoms = [
   },
   {
     id: 'doorJam',
-    label: 'Door jammed shut or won't latch — appeared suddenly',
+    label: 'Door jammed shut or won’t latch — appeared suddenly',
     verdict: 'urgent',
     detail: '⚠️ URGENT — Sudden door jamming across multiple doors simultaneously signals active foundation movement. Single door may be humidity swelling. Multiple doors = engineer visit this week.'
   },

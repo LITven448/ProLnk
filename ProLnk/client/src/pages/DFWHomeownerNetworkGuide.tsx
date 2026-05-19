@@ -14,7 +14,7 @@ const NETWORK_RESOURCES: Record<string, { priorities: string[]; resources: strin
     resources: ['Texas A&M AgriLife Extension (Collin, Tarrant, Dallas counties)', 'Local feed & farm stores for referrals', 'County Facebook groups for rural homeowners', 'ProLnk for general contractors serving rural DFW'],
   },
   hoa_community: {
-    priorities: ['Understand what your HOA covers (roofing, fencing, exterior paint) before hiring anyone', 'Your HOA may have preferred vendors — check before paying out-of-pocket', 'Attend HOA board meetings — you\'ll meet the neighbors who know everything'],
+    priorities: ['Understand what your HOA covers (roofing, fencing, exterior paint) before hiring anyone', 'Your HOA may have preferred vendors — check before paying out-of-pocket', 'Attend HOA board meetings — you\’ll meet the neighbors who know everything'],
     resources: ['HOA management portal', 'HOA board member contacts', 'Architectural review committee for approval before exterior work', 'ProLnk for contractors familiar with HOA approval processes'],
   },
 };

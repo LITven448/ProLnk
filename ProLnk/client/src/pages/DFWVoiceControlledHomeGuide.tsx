@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const ecosystems = [
   { id: 'alexa', label: 'Amazon Alexa', commands: [
-    { cmd: '"Alexa, what\'s the temp outside?"', benefit: 'Check DFW heat index before opening up the house or turning off AC' },
+    { cmd: '"Alexa, what\’s the temp outside?"', benefit: 'Check DFW heat index before opening up the house or turning off AC' },
     { cmd: '"Alexa, set the thermostat to 74"', benefit: 'Instant HVAC adjustment without walking to the panel' },
     { cmd: '"Alexa, turn off all downstairs lights"', benefit: 'Energy savings during DFW peak rate hours (3–7pm)' },
     { cmd: '"Alexa, lock the front door"', benefit: 'Security check when leaving for weekend travel' },
@@ -10,7 +10,7 @@ const ecosystems = [
   ]},
   { id: 'google', label: 'Google Home', commands: [
     { cmd: '"Hey Google, pre-cool to 72 before I get home"', benefit: 'AI schedules cool-down using DFW traffic ETA from Maps' },
-    { cmd: '"Hey Google, what\'s my energy usage today?"', benefit: 'Real-time Oncor smart meter data in DFW areas' },
+    { cmd: '"Hey Google, what\’s my energy usage today?"', benefit: 'Real-time Oncor smart meter data in DFW areas' },
     { cmd: '"Hey Google, close the garage door"', benefit: 'Secure after forgetting — huge in DFW suburbs' },
     { cmd: '"Hey Google, set vacation mode"', benefit: 'Automated schedule + security while traveling' },
     { cmd: '"Hey Google, find me an HVAC tech"', benefit: 'Pulls ProLnk-matched contractors for your DFW zip' },

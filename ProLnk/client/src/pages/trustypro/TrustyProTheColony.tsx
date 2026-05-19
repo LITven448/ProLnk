@@ -4,7 +4,7 @@ const ISSUES = [
   {
     icon: '🔧',
     title: 'Deferred Maintenance — The Quiet Risk',
-    desc: 'The Colony's working-class and middle-class homeowner mix means more deferred maintenance than premium suburbs. Small issues (slow drains, minor roof wear, hairline cracks) get pushed back until they become expensive emergencies. Regular maintenance programs prevent this cycle.',
+    desc: 'The Colony’s working-class and middle-class homeowner mix means more deferred maintenance than premium suburbs. Small issues (slow drains, minor roof wear, hairline cracks) get pushed back until they become expensive emergencies. Regular maintenance programs prevent this cycle.',
   },
   {
     icon: '⚡',
@@ -29,7 +29,7 @@ const ISSUES = [
   {
     icon: '🏗️',
     title: 'Grandscape-Driven Property Value Pressure',
-    desc: 'The Grandscape development has raised The Colony's profile. Homeowners looking to sell into a rising market need condition reports and targeted upgrades to meet buyer expectations for a community with new commercial energy.',
+    desc: 'The Grandscape development has raised The Colony’s profile. Homeowners looking to sell into a rising market need condition reports and targeted upgrades to meet buyer expectations for a community with new commercial energy.',
   },
 ];
 

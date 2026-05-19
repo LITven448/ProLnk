@@ -10,7 +10,7 @@ const roles = [
   {
     label: 'HVAC Professional',
     icon: '🔧',
-    message: 'This library was built in part because of pros like you — the standards you set, the work you do, the DFW homeowners you serve every day. ProLnk will connect you with verified, high-quality leads and pay you fairly. We\'re building this for you.',
+    message: 'This library was built in part because of pros like you — the standards you set, the work you do, the DFW homeowners you serve every day. ProLnk will connect you with verified, high-quality leads and pay you fairly. We\’re building this for you.',
     next: 'Sign up as a Pro at prolnk.io and get priority access to the DFW lead network.',
   },
   {
@@ -22,7 +22,7 @@ const roles = [
   {
     label: 'Just a Visitor',
     icon: '👋',
-    message: 'You stumbled into something extraordinary. 3,308 pages of DFW HVAC knowledge, a verified contractor network, a Network Income System, and a platform built entirely for DFW homeowners. The door is open. Come back whenever you\'re ready.',
+    message: 'You stumbled into something extraordinary. 3,308 pages of DFW HVAC knowledge, a verified contractor network, a Network Income System, and a platform built entirely for DFW homeowners. The door is open. Come back whenever you\’re ready.',
     next: 'Bookmark prolnk.io. The DFW HVAC library will be here when you need it.',
   },
 ];

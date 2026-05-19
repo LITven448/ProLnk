@@ -6,8 +6,8 @@ const PAIN_POINTS: Record<StakeholderType, string[]> = {
   homeowner: [
     'Spam calls after requesting a quote',
     'No idea if the contractor is trustworthy',
-    'Can\'t compare prices easily',
-    'Contractors don\'t show up',
+    'Can\’t compare prices easily',
+    'Contractors don\’t show up',
     'Overcharged with no recourse',
   ],
   partner: [
@@ -30,8 +30,8 @@ const SOLUTIONS: Record<StakeholderType, Record<string, string>> = {
   homeowner: {
     'Spam calls after requesting a quote': '🚫 ProLnk never sells your number. One match request = vetted responses only, no call centers.',
     'No idea if the contractor is trustworthy': '✅ Every pro is license-verified, background-checked, and reviewed by DFW homeowners like you.',
-    'Can\'t compare prices easily': '📊 Transparent quote comparison — side-by-side pricing, scope, and timeline before you decide.',
-    'Contractors don\'t show up': '📱 Real-time confirmation + GPS tracking so you know exactly when your pro arrives.',
+    'Can\’t compare prices easily': '📊 Transparent quote comparison — side-by-side pricing, scope, and timeline before you decide.',
+    'Contractors don\’t show up': '📱 Real-time confirmation + GPS tracking so you know exactly when your pro arrives.',
     'Overcharged with no recourse': '🛡️ ProLnk guarantee: dispute resolution and rebooking at no extra cost if something goes wrong.',
   },
   partner: {
@@ -43,7 +43,7 @@ const SOLUTIONS: Record<StakeholderType, Record<string, string>> = {
   },
   pro: {
     'Too many unqualified leads': '🎯 AI-matched leads based on your trade, service area, capacity, and review score. No junk.',
-    'Lead aggregators charge too much': '💸 ProLnk charges per match only — no monthly fees until you\'re earning.',
+    'Lead aggregators charge too much': '💸 ProLnk charges per match only — no monthly fees until you\’re earning.',
     'No loyalty for long-term customers': '⭐ Repeat homeowner bookings are routed back to the same pro. Your reputation compounds.',
     'Hard to differentiate from competitors': '🏆 TrustyPro Pro profile highlights your specialties, reviews, and response rate to homeowners.',
     'No visibility into match quality before buying': '👁️ Preview match score and homeowner rating before accepting a lead.',

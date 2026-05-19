@@ -35,7 +35,7 @@ export default function DFWFloorLevelingGuide() {
           {[['Clay soil moves everything', 'DFW sits on some of the most expansive clay in North America. Slabs move as soil moisture fluctuates.'],
             ['The 1-in-10 DFW rule', 'Over 1 inch of drop per 10 linear feet in a DFW home = get a foundation evaluation before any leveling.'],
             ['Self-leveling compound has limits', 'It cannot fix an active foundation problem. If the slab is still moving, leveling compound cracks within months.'],
-            ['Seasonal vs. permanent unlevel', 'If floors are worse in dry summers and improve after rain — that\'s clay movement, not structural failure (yet).'],
+            ['Seasonal vs. permanent unlevel', 'If floors are worse in dry summers and improve after rain — that\’s clay movement, not structural failure (yet).'],
           ].map(([title, desc]) => (
             <div key={title} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 'bold', color: '#e2e8f0' }}>{title}</div>

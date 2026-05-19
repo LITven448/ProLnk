@@ -3,7 +3,7 @@ import { useState } from 'react';
 const stages = [
   { id: 'preApproval', label: '💳 Getting Pre-Approved', tips: ['Get pre-approved before viewing a single home — DFW moves in 48 hours', 'Pre-approval vs pre-qualification: sellers only respect pre-approval', 'Check your credit 90 days before applying — dispute errors early', 'Avoid new credit cards or car loans 6 months before mortgage application', 'Get pre-approved with 2 lenders — use the better rate at closing' ] },
   { id: 'searching', label: '🔍 Home Searching', tips: ['Option period (usually 5–10 days) is your full inspection window', 'Foundation inspection is separate from general inspection — always order both', 'Check HVAC age before submitting offer — over 10 years = negotiate credit', 'Drive the neighborhood at 7am and 10pm — see real traffic and activity', 'Survey is not optional in DFW — lot line disputes are common' ] },
-  { id: 'underContract', label: '📝 Under Contract', tips: ['Order foundation inspection day 1 of option period, not day 8', 'Read the seller's disclosure carefully — foundation and water history', 'Request Home Health Vault records if the seller has a Vault', 'Do not waive inspection contingency in DFW — foundation risk is real', 'Confirm survey is ordered and scheduled — delays can extend closing' ] },
+  { id: 'underContract', label: '📝 Under Contract', tips: ['Order foundation inspection day 1 of option period, not day 8', 'Read the seller’s disclosure carefully — foundation and water history', 'Request Home Health Vault records if the seller has a Vault', 'Do not waive inspection contingency in DFW — foundation risk is real', 'Confirm survey is ordered and scheduled — delays can extend closing' ] },
   { id: 'closing', label: '🏁 Approaching Closing', tips: ['Call ProLnk before you close — get Charter HVAC and plumbing pros lined up', 'Start your Home Health Vault profile the week you close', 'Do a final walkthrough 24 hours before closing, not day-of', 'Confirm all repairs from inspection are completed and documented', 'Change all locks and garage codes your first day in the home' ] },
 ];
 
@@ -12,7 +12,7 @@ const summaryFacts = [
   { icon: '⏰', title: 'Option Period Is Everything', body: 'Your option period (typically 5–10 days) is your unrestricted right to back out. Use every day of it for inspections.' },
   { icon: '🏗️', title: 'Foundation Inspection Is Separate', body: 'General inspectors are not structural engineers. Always hire a licensed structural engineer separately — costs $400, worth $25,000.' },
   { icon: '❄️', title: 'HVAC Age Check Is Non-Negotiable', body: 'A 13-year-old HVAC in DFW heat could fail next summer. Check age in disclosure, verify on unit label, negotiate a credit or replacement.' },
-  { icon: '📋', title: 'Don't Skip the Survey', body: 'DFW lot line disputes, encroachments, and easement issues are common. A survey protects you from inheriting the previous owner's boundary problem.' },
+  { icon: '📋', title: 'Don’t Skip the Survey', body: 'DFW lot line disputes, encroachments, and easement issues are common. A survey protects you from inheriting the previous owner’s boundary problem.' },
 ];
 
 export default function DFWBuyingInDFW2026Summary() {

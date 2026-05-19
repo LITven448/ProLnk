@@ -36,7 +36,7 @@ const processes: Record<string, { headline: string; steps: { icon: string; title
     steps: [
       { icon: '1️⃣', title: 'Describe Your Claim', detail: 'Go to prolnk.io — share what happened, your insurance company, and your claim number if you have one' },
       { icon: '2️⃣', title: 'ProLnk Routes to HAAG-Certified Charter Roofer', detail: 'Insurance claims require HAAG documentation — we route specifically to pros who build claim-ready reports' },
-      { icon: '3️⃣', title: 'Inspection Scheduled Before Adjuster Visit', detail: 'Always get a private inspection BEFORE your insurance adjuster arrives — it\'s your right under TX law' },
+      { icon: '3️⃣', title: 'Inspection Scheduled Before Adjuster Visit', detail: 'Always get a private inspection BEFORE your insurance adjuster arrives — it\’s your right under TX law' },
       { icon: '4️⃣', title: 'Written Insurance-Grade Report in Hand', detail: 'Report includes all damage itemized by location, storm data correlation, and estimated replacement cost' },
       { icon: '5️⃣', title: 'Report Documented in Vault', detail: 'Your claim report permanently stored in Vault — protects you if the claim is disputed or reopened' },
     ],
@@ -45,7 +45,7 @@ const processes: Record<string, { headline: string; steps: { icon: string; title
     headline: '🔵 Preventive Inspection or Replacement Planning',
     eta: 'HAAG-Certified Pro Match: Within 72 Hours',
     steps: [
-      { icon: '1️⃣', title: 'Describe Your Concern', detail: 'Go to prolnk.io — share roof age, last inspection date, and any concerns you\'ve noticed' },
+      { icon: '1️⃣', title: 'Describe Your Concern', detail: 'Go to prolnk.io — share roof age, last inspection date, and any concerns you\’ve noticed' },
       { icon: '2️⃣', title: 'ProLnk Routes to HAAG-Certified Charter Roofer', detail: 'Even preventive inspections are done by HAAG-certified pros — your baseline deserves accuracy' },
       { icon: '3️⃣', title: 'Inspection Scheduled at Your Convenience', detail: 'Choose from available windows — weekday or weekend. Spring slots fill fast in DFW — book early' },
       { icon: '4️⃣', title: 'Written Condition Report and Recommendations Provided', detail: 'Report includes remaining life estimate, Class 4 shingle upgrade options, and Oncor rebate eligibility' },

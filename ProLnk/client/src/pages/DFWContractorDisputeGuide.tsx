@@ -41,7 +41,7 @@ const resolutionPaths = [
 
 const demandLetter = [
   'Your full name, address, and contact information',
-  'Contractor\'s name, license number, and business address',
+  'Contractor\’s name, license number, and business address',
   'Contract date and project description',
   'Specific deficiencies with dates first noticed',
   'Dollar amount of damages or remedy requested',
@@ -80,8 +80,8 @@ export default function DFWContractorDisputeGuide() {
     };
     const timelines: Record<string, string> = { defective: amount < 20000 ? '2–5 months' : '8–24 months', unfinished: '1–6 months', overcharge: '1–3 months', unlicensed: '2–6 months' };
     const tips: Record<string, string> = {
-      defective: 'Get an independent contractor\'s written assessment of the defects — this is your strongest evidence in any proceeding.',
-      unfinished: 'If contractor has your deposit and won\'t respond, file AG complaint immediately — this triggers fraud investigation and creates urgency.',
+      defective: 'Get an independent contractor\’s written assessment of the defects — this is your strongest evidence in any proceeding.',
+      unfinished: 'If contractor has your deposit and won\’t respond, file AG complaint immediately — this triggers fraud investigation and creates urgency.',
       overcharge: 'Compare your final invoice line-by-line against the original written contract. Verbal change orders are difficult to enforce.',
       unlicensed: 'Verify license at tdlr.texas.gov — if unlicensed, you may be entitled to contract rescission and refund under Texas law.',
     };

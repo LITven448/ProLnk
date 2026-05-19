@@ -20,6 +20,7 @@ import TrustyProHome from "./pages/trustypro/TrustyProHome";
 import HomeownerWaitlistForm from "./pages/HomeownerWaitlistForm";
 import TrustyProWaitlistPage from "./pages/TrustyProWaitlist";
 import JoinLanding from "./pages/JoinLanding";
+import JoinBySlug from "./pages/JoinBySlug";
 import ReferralLanding from "./pages/ReferralLanding";
 const GetQuotes = lazy(() => import("./pages/GetQuotes"));
 const QuoteComparison = lazy(() => import("./pages/QuoteComparison"));
@@ -606,6 +607,7 @@ function Router() {
       <Route path="/get-quotes" component={GetQuotes} />
       <Route path="/quotes/compare" component={QuoteComparison} />
       <Route path="/home-health-vault" component={HomeHealthVaultLanding} />
+      <Route path="/join/:slug" component={JoinBySlug} />
       <Route path="/join" component={JoinLanding} />
       <Route path="/pro/join" component={JoinLanding} />
       <Route path="/referral" component={ReferralLanding} />
